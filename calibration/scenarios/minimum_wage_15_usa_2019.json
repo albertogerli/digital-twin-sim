@@ -1,0 +1,27 @@
+{
+  "scenario_name": "$15 Minimum Wage Support USA (2014-2019)",
+  "description": "The Fight for $15 movement, launched by fast-food workers in 2012, gradually shifted public opinion on a $15 federal minimum wage from ~50% support (2014) to ~67% (2019). City and state-level victories created demonstration effects that reduced opposition over five years.",
+  "domain": "labor/economic",
+  "final_outcome_pro_pct": 67,
+  "final_outcome_against_pct": 28,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 50, "against_pct": 38, "undecided_pct": 12},
+    {"round_equivalent": 2, "pro_pct": 52, "against_pct": 36, "undecided_pct": 12},
+    {"round_equivalent": 3, "pro_pct": 55, "against_pct": 34, "undecided_pct": 11},
+    {"round_equivalent": 4, "pro_pct": 57, "against_pct": 33, "undecided_pct": 10},
+    {"round_equivalent": 5, "pro_pct": 59, "against_pct": 32, "undecided_pct": 9},
+    {"round_equivalent": 6, "pro_pct": 61, "against_pct": 31, "undecided_pct": 8},
+    {"round_equivalent": 7, "pro_pct": 63, "against_pct": 30, "undecided_pct": 7},
+    {"round_equivalent": 8, "pro_pct": 65, "against_pct": 29, "undecided_pct": 6},
+    {"round_equivalent": 9, "pro_pct": 67, "against_pct": 28, "undecided_pct": 5}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Fight for $15 movement gains momentum (2014). Fast-food strikes in 150+ cities. Seattle becomes first major city to pass $15 minimum wage. Issue enters mainstream debate."},
+    {"round_equivalent": 3, "description": "New York and California announce phased $15 minimum wage laws (2016). 'Sky didn't fall' narrative from Seattle early data. Democrats adopt $15 as platform plank."},
+    {"round_equivalent": 5, "description": "Amazon raises minimum wage to $15 (October 2018). Jeff Bezos challenges other retailers. Target, Costco follow. Corporate adoption legitimizes the number."},
+    {"round_equivalent": 7, "description": "House passes Raise the Wage Act (July 2019) with $15 target. CBO estimates 1.3M lifted from poverty but 1.3M job losses. Debate shifts from 'if' to 'how fast.'"},
+    {"round_equivalent": 9, "description": "2019 polls: Pew shows 67% support raising to $15. Even 43% of Republicans support $12+. Florida votes 60.8% for $15 ballot measure in 2020. Overton window shifted."}
+  ],
+  "calibration_notes": "Textbook gradual opinion shift driven by demonstration effects and Overton window movement. Pew Research tracked support growing steadily: 2014 (~50%), 2016 (~58%), 2019 (~67%). Key mechanism: city/state-level policy adoption provided evidence that predicted job losses didn't materialize at predicted scale, converting undecideds. Corporate adoption (Amazon, Target) further normalized the $15 figure. Tests: slow consensus building, demonstration effect, Overton window shift, bottom-up to mainstream trajectory."
+}

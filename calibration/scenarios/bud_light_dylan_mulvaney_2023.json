@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Bud Light / Dylan Mulvaney Controversy 2023",
+  "description": "Bud Light sent personalized cans to trans influencer Dylan Mulvaney in April 2023, triggering a massive conservative boycott. Brand favorability among Republicans crashed ~40 points. Sales dropped 26% YoY. Tests culture war brand polarization and boycott cascade dynamics.",
+  "domain": "marketing/cultural",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 52, "against_pct": 18, "undecided_pct": 30},
+    {"round_equivalent": 2, "pro_pct": 48, "against_pct": 28, "undecided_pct": 24},
+    {"round_equivalent": 3, "pro_pct": 42, "against_pct": 38, "undecided_pct": 20},
+    {"round_equivalent": 4, "pro_pct": 38, "against_pct": 45, "undecided_pct": 17},
+    {"round_equivalent": 5, "pro_pct": 36, "against_pct": 50, "undecided_pct": 14},
+    {"round_equivalent": 6, "pro_pct": 35, "against_pct": 52, "undecided_pct": 13},
+    {"round_equivalent": 7, "pro_pct": 36, "against_pct": 52, "undecided_pct": 12},
+    {"round_equivalent": 8, "pro_pct": 37, "against_pct": 52, "undecided_pct": 11},
+    {"round_equivalent": 9, "pro_pct": 38, "against_pct": 52, "undecided_pct": 10}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Dylan Mulvaney posts Instagram video with personalized Bud Light can on April 1. Initially low-key, standard influencer marketing."},
+    {"round_equivalent": 2, "description": "Kid Rock posts video shooting Bud Light cases with assault rifle. Conservative boycott goes viral on social media."},
+    {"round_equivalent": 4, "description": "Anheuser-Busch CEO issues statement but avoids directly addressing the partnership. Both sides feel alienated. Sales crater 26% YoY."},
+    {"round_equivalent": 5, "description": "Two Bud Light marketing executives placed on leave. Brand loses #1 US beer position to Modelo Especial."},
+    {"round_equivalent": 7, "description": "Bud Light pivots messaging to patriotic/sports themes. Conservative boycott persists. Progressive consumers also boycott over perceived abandonment of Mulvaney."}
+  ],
+  "calibration_notes": "Tests asymmetric polarization cascade. Key patterns: pre-existing brand had broad moderate appeal, culture war framing created rapid partisan sorting, corporate non-response amplified backlash from both sides, boycott stickiness (sales never recovered to baseline), cross-partisan alienation (both conservatives and progressives turned against brand). Morning Consult favorability data used for trajectory."
+}

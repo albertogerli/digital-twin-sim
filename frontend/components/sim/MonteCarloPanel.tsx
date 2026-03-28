@@ -1,0 +1,169 @@
+"use client";
+
+import {
+  AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer,
+  BarChart, Bar, Cell,
+} from "recharts";
+
+interface MonteCarloRound {
+  round: number;
+  polarization: { mean: number; std: number; ci_low: number; ci_high: number };
+  avg_position: { mean: number; std: number };
+  sentiment: { positive: number; neutral: number; negative: number };
+}
+
+interface MonteCarloData {
+  n_runs: number;
+  n_completed: number;
+  final_polarization: { mean: number; std: number; ci_low: number; ci_high: number };
+  final_position: { mean: number; std: number; ci_low: number; ci_high: number };
+  outcome_probability: { pro_pct: number; against_pct: number };
+  rounds: MonteCarloRound[];
+  per_run: { run: number; final_polarization: number; final_avg_position: number }[];
+}
+
+interface MonteCarloProps {
+  data: MonteCarloData;
+  positiveLabel?: string;
+  negativeLabel?: string;
+}
+
+export default function MonteCarloPanel({ data, positiveLabel = "Pro", negativeLabel = "Contro" }: MonteCarloProps) {
+  if (!data || !data.rounds) return null;
+
+  const chartData = data.rounds.map((r) => ({
+    round: r.round,
+    polMean: r.polarization.mean,
+    polLow: r.polarization.ci_low,
+    polHigh: r.polarization.ci_high,
+    posMean: r.avg_position.mean,
+  }));
+
+  // Histogram of final positions
+  const bins = 10;
+  const binWidth = 2 / bins; // -1 to +1
+  const histogram = Array.from({ length: bins }, (_, i) => {
+    const lo = -1 + i * binWidth;
+    const hi = lo + binWidth;
+    const count = data.per_run.filter(
+      (r) => r.final_avg_position >= lo && r.final_avg_position < hi
+    ).length;
+    return {
+      label: lo.toFixed(1),
+      count,
+      color: lo + binWidth / 2 > 0 ? "#22c55e" : lo + binWidth / 2 < 0 ? "#ef4444" : "#94a3b8",
+    };
+  });
+
+  return (
+    <div className="bg-white border border-gray-200 rounded-xl p-5 space-y-5">
+      <div className="flex items-center gap-2">
+        <h3 className="text-sm font-semibold text-gray-700">Analisi Monte Carlo</h3>
+        <span className="px-2 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-[10px] font-mono text-purple-600">
+          {data.n_completed}/{data.n_runs} runs
+        </span>
+      </div>
+
+      {/* Key metrics */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="bg-gray-50 rounded-lg p-3 text-center">
+          <div className="text-[10px] font-mono text-gray-400 uppercase">Outcome</div>
+          <div className="text-lg font-bold text-emerald-600">{data.outcome_probability.pro_pct}%</div>
+          <div className="text-[10px] text-gray-400">{positiveLabel}</div>
+        </div>
+        <div className="bg-gray-50 rounded-lg p-3 text-center">
+          <div className="text-[10px] font-mono text-gray-400 uppercase">Outcome</div>
+          <div className="text-lg font-bold text-red-600">{data.outcome_probability.against_pct}%</div>
+          <div className="text-[10px] text-gray-400">{negativeLabel}</div>
+        </div>
+        <div className="bg-gray-50 rounded-lg p-3 text-center">
+          <div className="text-[10px] font-mono text-gray-400 uppercase">Polarizzazione</div>
+          <div className="text-lg font-bold text-gray-900">{data.final_polarization.mean}</div>
+          <div className="text-[10px] text-gray-400">&plusmn;{data.final_polarization.std}</div>
+        </div>
+        <div className="bg-gray-50 rounded-lg p-3 text-center">
+          <div className="text-[10px] font-mono text-gray-400 uppercase">Posizione</div>
+          <div className="text-lg font-bold text-gray-900">{data.final_position.mean > 0 ? "+" : ""}{data.final_position.mean}</div>
+          <div className="text-[10px] text-gray-400">
+            CI [{data.final_position.ci_low}, {data.final_position.ci_high}]
+          </div>
+        </div>
+      </div>
+
+      {/* Polarization with CI band */}
+      <div>
+        <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">
+          Polarizzazione (95% CI)
+        </p>
+        <div className="h-36">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={chartData} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
+              <defs>
+                <linearGradient id="mcCi" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.2} />
+                  <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.05} />
+                </linearGradient>
+              </defs>
+              <XAxis dataKey="round" tick={{ fontSize: 10 }} tickLine={false} axisLine={false} />
+              <YAxis domain={[0, 10]} tick={{ fontSize: 10 }} tickLine={false} axisLine={false} />
+              <Tooltip
+                contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e5e7eb" }}
+                labelFormatter={(l) => `Round ${l}`}
+              />
+              <Area
+                type="monotone"
+                dataKey="polHigh"
+                stroke="none"
+                fill="url(#mcCi)"
+                animationDuration={600}
+              />
+              <Area
+                type="monotone"
+                dataKey="polLow"
+                stroke="none"
+                fill="#fff"
+                animationDuration={600}
+              />
+              <Area
+                type="monotone"
+                dataKey="polMean"
+                stroke="#8b5cf6"
+                strokeWidth={2}
+                fill="none"
+                animationDuration={600}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* Outcome distribution */}
+      <div>
+        <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">
+          Distribuzione Outcome
+        </p>
+        <div className="h-28">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={histogram} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
+              <XAxis dataKey="label" tick={{ fontSize: 9 }} tickLine={false} axisLine={false} />
+              <YAxis tick={{ fontSize: 9 }} tickLine={false} axisLine={false} />
+              <Tooltip
+                contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e5e7eb" }}
+                formatter={(v) => [`${v} runs`]}
+              />
+              <Bar dataKey="count" animationDuration={600}>
+                {histogram.map((entry, i) => (
+                  <Cell key={i} fill={entry.color} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+        <div className="flex justify-between text-[9px] text-gray-400 px-2 mt-1">
+          <span>{negativeLabel}</span>
+          <span>{positiveLabel}</span>
+        </div>
+      </div>
+    </div>
+  );
+}

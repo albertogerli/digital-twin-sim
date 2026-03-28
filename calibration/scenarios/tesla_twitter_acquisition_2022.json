@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Tesla Favorability During Musk Twitter Acquisition 2022",
+  "description": "Elon Musk's acquisition of Twitter (Oct 2022) and subsequent controversial actions polarized opinion on Tesla. Democratic favorability of Tesla dropped from ~44% to ~15% while Republican favorability rose. Overall net favorability shifted negative. Tests CEO political polarization contagion to brand.",
+  "domain": "corporate",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 44, "against_pct": 28, "undecided_pct": 28},
+    {"round_equivalent": 2, "pro_pct": 42, "against_pct": 30, "undecided_pct": 28},
+    {"round_equivalent": 3, "pro_pct": 39, "against_pct": 33, "undecided_pct": 28},
+    {"round_equivalent": 4, "pro_pct": 36, "against_pct": 38, "undecided_pct": 26},
+    {"round_equivalent": 5, "pro_pct": 34, "against_pct": 42, "undecided_pct": 24},
+    {"round_equivalent": 6, "pro_pct": 32, "against_pct": 45, "undecided_pct": 23},
+    {"round_equivalent": 7, "pro_pct": 31, "against_pct": 48, "undecided_pct": 21},
+    {"round_equivalent": 8, "pro_pct": 30, "against_pct": 52, "undecided_pct": 18},
+    {"round_equivalent": 9, "pro_pct": 30, "against_pct": 70, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Musk completes $44B Twitter acquisition (Oct 27, 2022). Immediately fires top executives and begins mass layoffs of ~50% of staff."},
+    {"round_equivalent": 3, "description": "Twitter verification chaos, advertiser exodus. Musk tweets increasingly political content, endorses Republicans ahead of midterms."},
+    {"round_equivalent": 5, "description": "Musk reinstates banned accounts including Trump, shares conspiracy theories, and promotes anti-trans content. Democratic Tesla favorability drops below 20%."},
+    {"round_equivalent": 6, "description": "Tesla stock drops ~65% from peak. Investors worry Musk is distracted. Brand perception surveys show Tesla becoming politically coded."},
+    {"round_equivalent": 8, "description": "Morning Consult data shows Tesla's net favorability among Democrats dropped from +44 to -20, while gaining only modestly among Republicans (+15 to +25)."}
+  ],
+  "calibration_notes": "Tests CEO personal brand contamination of corporate brand, with asymmetric partisan effects. Tesla's core customer base (educated, environmentally conscious, urban) overlapped heavily with demographics most alienated by Musk's post-acquisition behavior. Key dynamics: CEO-brand conflation in personality-driven companies, political polarization contagion, asymmetric brand damage (lost more from alienated base than gained from new supporters), stock price as sentiment amplifier, and the challenge of being simultaneously a liberal product (EVs) and conservative spokesperson."
+}

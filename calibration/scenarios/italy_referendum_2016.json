@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Referendum Renzi-Boschi 2016",
+  "domain": "political",
+  "description": "Referendum confermativo sulla riforma costituzionale Renzi-Boschi. Superamento bicameralismo paritario, trasformazione Senato. Renzi personalizzò il voto. NO vinse 59.1% con affluenza 65.5%.",
+  "final_outcome_pro_pct": 40.9,
+  "final_outcome_against_pct": 59.1,
+  "final_turnout_pct": 65.5,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 48, "against_pct": 35, "undecided_pct": 17},
+    {"round_equivalent": 2, "pro_pct": 46, "against_pct": 38, "undecided_pct": 16},
+    {"round_equivalent": 3, "pro_pct": 44, "against_pct": 40, "undecided_pct": 16},
+    {"round_equivalent": 4, "pro_pct": 42, "against_pct": 42, "undecided_pct": 16},
+    {"round_equivalent": 5, "pro_pct": 40, "against_pct": 44, "undecided_pct": 16},
+    {"round_equivalent": 6, "pro_pct": 39, "against_pct": 46, "undecided_pct": 15},
+    {"round_equivalent": 7, "pro_pct": 38, "against_pct": 48, "undecided_pct": 14},
+    {"round_equivalent": 8, "pro_pct": 38, "against_pct": 50, "undecided_pct": 12},
+    {"round_equivalent": 9, "pro_pct": 40, "against_pct": 55, "undecided_pct": 5}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Renzi lancia la campagna per il SÌ, promette dimissioni in caso di sconfitta"},
+    {"round_equivalent": 3, "description": "Si forma fronte del NO trasversale: M5S + Lega + FI + minoranza PD"},
+    {"round_equivalent": 5, "description": "Costituzionalisti critici pubblicano appello contro la riforma"},
+    {"round_equivalent": 7, "description": "Sondaggi mostrano sorpasso del NO. Renzi intensifica campagna personale"},
+    {"round_equivalent": 9, "description": "Referendum: NO 59.1%, affluenza 65.5%. Renzi si dimette"}
+  ],
+  "calibration_notes": "Caso emblematico di personalizzazione = sconfitta. Utile per calibrare: effetto herd (tutti contro il leader), velocità del shift NO, effetto della coalizione trasversale."
+}

@@ -1,0 +1,7 @@
+{
+  "scenario_id": "Flat_Org_AI_Restructuring",
+  "scenario_name": "Flat Org AI Restructuring",
+  "num_rounds": 4,
+  "domain": "corporate",
+  "description": "A Fortune 500 tech company announces a sweeping restructuring that removes all middle management and replaces coordination layers with AI-enabled workflows. The simulation tracks stakeholder reactions, internal morale, labor response, investor sentiment, and the operational consequences of rapidly flattening the organization."
+}

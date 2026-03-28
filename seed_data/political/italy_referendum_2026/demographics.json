@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Elettorato centrodestra fidelizzato",
+    "description": "Elettori stabili di FdI/Lega/FI, favorevoli alle riforme del governo. Sovrapposizione con elettorato over-50, piccoli imprenditori, professionisti del Nord.",
+    "population_share": 0.30,
+    "known_position": 0.6,
+    "position_source": "polling",
+    "key_concerns": ["sicurezza", "efficienza giustizia", "lotta alla burocrazia", "tasse"],
+    "info_channel": "tv",
+    "demographic_attributes": {
+      "age_range": "45-70",
+      "education": "media-alta",
+      "location": "Nord e Centro Italia",
+      "income": "medio-alto"
+    }
+  },
+  {
+    "name": "Elettorato progressista mobilitato",
+    "description": "Elettori PD/AVS/M5S, fortemente contrari alla riforma. Concentrati nelle grandi città, laureati, settore pubblico e terziario.",
+    "population_share": 0.25,
+    "known_position": -0.65,
+    "position_source": "polling",
+    "key_concerns": ["indipendenza magistratura", "diritti civili", "contrappesi democratici", "lotta alla mafia"],
+    "info_channel": "press",
+    "demographic_attributes": {
+      "age_range": "25-55",
+      "education": "alta",
+      "location": "grandi città, Centro-Nord",
+      "income": "medio"
+    }
+  },
+  {
+    "name": "Giovani disillusi (18-30)",
+    "description": "Generazione Z e millennial, bassa affluenza storica ai referendum, informati via social. Opinione frammentata, tendenzialmente disinteressati alla riforma.",
+    "population_share": 0.15,
+    "known_position": -0.1,
+    "position_source": "polling",
+    "key_concerns": ["lavoro precario", "costo della vita", "clima", "futuro"],
+    "info_channel": "social",
+    "demographic_attributes": {
+      "age_range": "18-30",
+      "education": "media-alta (in corso)",
+      "location": "urbano, tutta Italia",
+      "income": "basso"
+    }
+  },
+  {
+    "name": "Anziani moderati",
+    "description": "Over 65, alta affluenza, tendenzialmente conservatori ma attenti all'equilibrio istituzionale. Informati via TV e giornali.",
+    "population_share": 0.15,
+    "known_position": 0.15,
+    "position_source": "polling",
+    "key_concerns": ["pensioni", "sanità", "stabilità", "ordine"],
+    "info_channel": "tv",
+    "demographic_attributes": {
+      "age_range": "65+",
+      "education": "media",
+      "location": "tutta Italia",
+      "income": "medio-basso"
+    }
+  },
+  {
+    "name": "Ceto medio indeciso",
+    "description": "Fascia di elettori non schierati, impiegati, partite IVA, famiglie. Seguono poco la politica, decidono tardi. Swing voters decisivi.",
+    "population_share": 0.15,
+    "known_position": 0.0,
+    "position_source": "polling",
+    "key_concerns": ["bollette", "scuola", "sanità", "burocrazia"],
+    "info_channel": "tv",
+    "demographic_attributes": {
+      "age_range": "35-60",
+      "education": "media",
+      "location": "periferie urbane, provincia",
+      "income": "medio"
+    }
+  }
+]

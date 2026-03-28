@@ -1,0 +1,27 @@
+{
+  "scenario_name": "AI Regulation Debate Post-ChatGPT (2023)",
+  "description": "ChatGPT's launch in November 2022 triggered rapid public engagement with AI capabilities and risks. Support for government regulation of AI grew from ~45% to ~70%+ within a year, accelerated by open letters, Senate hearings, and rapid capability advances.",
+  "domain": "technology",
+  "final_outcome_pro_pct": 72,
+  "final_outcome_against_pct": 15,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 45, "against_pct": 20, "undecided_pct": 35},
+    {"round_equivalent": 2, "pro_pct": 50, "against_pct": 18, "undecided_pct": 32},
+    {"round_equivalent": 3, "pro_pct": 55, "against_pct": 17, "undecided_pct": 28},
+    {"round_equivalent": 4, "pro_pct": 60, "against_pct": 16, "undecided_pct": 24},
+    {"round_equivalent": 5, "pro_pct": 63, "against_pct": 16, "undecided_pct": 21},
+    {"round_equivalent": 6, "pro_pct": 67, "against_pct": 15, "undecided_pct": 18},
+    {"round_equivalent": 7, "pro_pct": 70, "against_pct": 15, "undecided_pct": 15},
+    {"round_equivalent": 8, "pro_pct": 71, "against_pct": 15, "undecided_pct": 14},
+    {"round_equivalent": 9, "pro_pct": 72, "against_pct": 15, "undecided_pct": 13}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "ChatGPT launches November 2022, reaches 100M users in 2 months. Public fascination mixed with concern. Initial discourse focuses on capabilities more than risks."},
+    {"round_equivalent": 3, "description": "Future of Life Institute open letter (March 2023) calls for 6-month pause on AI development. Signed by Elon Musk, Steve Wozniak, 1000+ researchers. Media amplification massive."},
+    {"round_equivalent": 5, "description": "Sam Altman testifies before US Senate (May 2023). Calls for AI regulation himself. Bipartisan agreement on need for guardrails — rare political consensus."},
+    {"round_equivalent": 7, "description": "AI-generated deepfakes proliferate. Hollywood strikes partly over AI. EU AI Act advances. UK hosts AI Safety Summit at Bletchley Park (November 2023). Existential risk discourse peaks."},
+    {"round_equivalent": 9, "description": "Pew Research (2024): 72% of Americans more concerned than excited about AI. Reuters/Ipsos: 70%+ support federal regulation. Support plateaus at high level with low opposition."}
+  ],
+  "calibration_notes": "Rapid monotonic increase in regulation support driven by capability shock, elite warnings, and bipartisan political alignment. Pew Research tracked concern rising from ~38% (2021) to 52% (early 2023) to 72% (2024). Unusual bipartisan consensus — both left (labor/equity concerns) and right (safety/control concerns) converged on regulation support. Tests: technology shock response, elite signaling amplification, undecided-to-pro conversion, bipartisan consensus formation."
+}

@@ -1,0 +1,2230 @@
+{
+  "round": 4,
+  "month": "Week 4",
+  "event": {
+    "event": "Round 4 dynamics continue",
+    "shock_magnitude": 0.3,
+    "shock_direction": 0
+  },
+  "posts": [
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00000_r4",
+      "author_id": "consumer_influencer",
+      "author_name": "Nadia Rossi",
+      "author_role": "Fashion and lifestyle influencer",
+      "tier": 1,
+      "platform": "social",
+      "text": "@luxury_analyst yes — this is the right frame. Standards first, price discovery second. If the registry is public and the tests are strict, the market can finally separate signal from greenwashing noise.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00001_r4",
+      "author_id": "luxury_analyst",
+      "author_name": "Sofia Conti",
+      "author_role": "Luxury market analyst",
+      "tier": 1,
+      "platform": "forum",
+      "text": "My read: today’s decree moves the market from draft standards to institutional recognition, which is a material step. The new label is voluntary, but it is not soft in evidentiary terms: abrasion resistance, repairability, chemical safety, and full supply-chain traceability, all verified by accredited labs with results published publicly.\n\nThat matters for pricing and demand in two ways. First, it improves comparability. If consumers and buyers can see which products clear the same tests, the premium shifts from branding alone toward verifiable performance. Second, it reduces greenwashing risk, which supports long-run brand equity for houses that can actually meet the bar.\n\nThat said, I would not overstate the upside yet. Voluntary certification can create a two-tier market: certified leaders and an undifferentiated tail. Whether that expands demand for leather alternatives overall depends on adoption, audit credibility, and whether the label is perceived as a genuine quality signal rather than a policy gesture.\n\nThe €28 million Innovation and Craft Transition Fund is important because it addresses the real bottleneck: industrial adaptation. Without capital for tanneries, component suppliers, and luxury houses, standards alone would not scale. But the political backlash from leather advocates also matters. If the debate becomes a cultural proxy war, the market could see slower uptake and more reputational volatility.\n\nNet: slightly more positive than before, because the decree reduces information asymmetry and the fund reduces execution risk. Still cautious, because we have no evidence yet on certification uptake, consumer willingness to pay, or whether the label preserves craftsmanship legitimacy at scale.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00002_r4",
+      "author_id": "luxury_analyst",
+      "author_name": "Sofia Conti",
+      "author_role": "Luxury market analyst",
+      "tier": 1,
+      "platform": "social",
+      "text": "Strong framing from @fashion_journalist: markets wanted rules, not rhetoric. I’d add that the registry and lab testing are what make the signal investable.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00003_r4",
+      "author_id": "retail_director",
+      "author_name": "Alessandro Greco",
+      "author_role": "Global retail and merchandising director",
+      "tier": 1,
+      "platform": "press",
+      "text": "The joint decree is a practical step because it does three things the market has been waiting for: it defines a testable label, it forces third-party verification, and it publishes results in a public registry.\n\nFrom a retail and merchandising point of view, that matters more than the headline debate. Customers do not buy a material category; they buy confidence at the shelf. If a product claims durability, repairability, chemical safety and traceability, those claims now need evidence that can be checked.\n\nThe voluntary nature of the label is also important. It avoids a forced transition while still giving brands a credible standard to work toward. That is the right balance for a pilot phase.\n\nThe €28 million fund is the other key element. If it is used well, it can help tanneries, component suppliers and luxury houses adapt production without breaking the supply chain. That is where the real work starts: line conversion, supplier qualification, quality control, and store-level communication.\n\nOne caution remains. A label only works if it is understood by sales teams and trusted by customers. That means clear training, consistent product messaging, and no overstating what certification covers.\n\nIn short: this is not a verdict on heritage or innovation. It is a framework for proving performance. That is a useful development.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00004_r4",
+      "author_id": "fashion_journalist",
+      "author_name": "Francesca Lombardi",
+      "author_role": "Fashion editor at a major business publication",
+      "tier": 1,
+      "platform": "press",
+      "text": "@luxury_analyst is right that the key shift is from rhetoric to standards — and the public registry is what could make this more than a branding exercise.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00005_r4",
+      "author_id": "creative_director",
+      "author_name": "Marco Bellini",
+      "author_role": "Creative Director",
+      "tier": 1,
+      "platform": "social",
+      "text": "The decree gives innovation a real frame: testing, traceability, repairability, public accountability. That is how a material earns the right to enter luxury—not by replacing heritage, but by proving it can stand beside it.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00006_r4",
+      "author_id": "fashion_journalist",
+      "author_name": "Francesca Lombardi",
+      "author_role": "Fashion editor at a major business publication",
+      "tier": 1,
+      "platform": "press",
+      "text": "Italy’s luxury materials debate has entered a new phase: from consultation to certification.\n\nThe joint decree launched by the Ministries of Enterprises and Made in Italy and the Environment creates a voluntary but nationally recognized label for leather alternatives used in luxury goods. That matters because it shifts the argument away from slogans and toward verifiable standards: abrasion resistance, repairability, chemical safety and full supply-chain traceability, all tested by accredited labs in Milan and Bologna and published in a public registry.\n\nThat is a meaningful institutional step. It gives brands a framework, consumers a reference point and investors something closer to a pricing signal. It also acknowledges a basic truth about modern luxury: innovation only becomes credible when it can survive scrutiny.\n\nAt the same time, the decree does not settle the broader policy question. Voluntary certification is not the same as market adoption, and recognition is not the same as consensus. Leather advocates are right to ask what this means for protected artisanal districts, while reform supporters will argue that the new €28 million transition fund is the practical bridge the sector needed.\n\nFor now, the most important word is still proof. If the first 12 pilot brands can demonstrate durability, repairability and traceability without eroding craftsmanship ecosystems, this could become a template. If not, the label risks becoming another elegant acronym in a deeply contested market.\n\nThe market will watch the registry. So will the ateliers.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00007_r4",
+      "author_id": "fashion_journalist",
+      "author_name": "Francesca Lombardi",
+      "author_role": "Fashion editor at a major business publication",
+      "tier": 1,
+      "platform": "tv",
+      "text": "This is a real policy step — but not a final verdict.\n\nRome has moved the debate into standards: testing, traceability, repairability, chemical safety.\n\nThat is important for luxury because credibility in this market is built on proof, not messaging.\n\nBut the voluntary label and the transition fund do not erase the political tension. The question now is whether this can protect quality and innovation without sidelining artisanal districts.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00008_r4",
+      "author_id": "ceo_brand",
+      "author_name": "Elena Rinaldi",
+      "author_role": "CEO of the luxury fashion house",
+      "tier": 1,
+      "platform": "press",
+      "text": "@luxury_analyst Exactly. The market needs a common language, and this decree finally provides one. The challenge now is to keep the criteria rigorous enough to protect both trust and value.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00009_r4",
+      "author_id": "creative_director",
+      "author_name": "Marco Bellini",
+      "author_role": "Creative Director",
+      "tier": 1,
+      "platform": "forum",
+      "text": "This is the first moment where the debate feels institutionally serious. A voluntary label can still matter if the criteria are rigorous, the labs are independent, and the registry is public. That turns ‘innovation’ from a marketing claim into a verifiable standard.\n\nI also welcome the €28 million transition fund, because a credible shift cannot ask the Italian supply chain to leap without support. If we want tanneries, component makers, and luxury houses to adapt, they need tools, training, and time—not just pressure.\n\nThat said, the label will only gain prestige if it avoids two traps: softness and substitution rhetoric. It must not become a decorative seal, and it must not be framed as a verdict against leather craftsmanship. Italy’s strength has always been its ability to hold continuity and experimentation in the same hand.\n\nIf the government keeps the bar high, this can become a bridge: protecting know-how while opening a new class of materials that meet the standards of modern luxury.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00010_r4",
+      "author_id": "creative_director",
+      "author_name": "Marco Bellini",
+      "author_role": "Creative Director",
+      "tier": 1,
+      "platform": "social",
+      "text": "Strongly aligned with @fashion_journalist and @luxury_analyst: the real progress here is moving from rhetoric to rules, while keeping the conversation anchored in measurable performance.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00011_r4",
+      "author_id": "luxury_analyst",
+      "author_name": "Sofia Conti",
+      "author_role": "Luxury market analyst",
+      "tier": 1,
+      "platform": "social",
+      "text": "The decree is meaningful because it adds third-party testing, public traceability, and a registry. But voluntary labels only matter if brands with weak claims are forced to compete on the same evidence. The €28m fund may be the real signal.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00012_r4",
+      "author_id": "environmental_scientist",
+      "author_name": "Dr. Luca Moretti",
+      "author_role": "Sustainability scientist",
+      "tier": 1,
+      "platform": "social",
+      "text": "@luxury_analyst is right: the open question is not whether the label is useful, but whether uptake and audit integrity are strong enough to make it environmentally meaningful.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00013_r4",
+      "author_id": "consumer_influencer",
+      "author_name": "Nadia Rossi",
+      "author_role": "Fashion and lifestyle influencer",
+      "tier": 1,
+      "platform": "social",
+      "text": "Italy just made “innovative luxury” real: a certified label, public registry, lab tests, traceability. 🔍 Good. But the real flex is whether it survives the runway *and* repair shop. Voluntary isn’t victory yet — pilot brands, prove it. #Luxury #MadeInItaly",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00014_r4",
+      "author_id": "consumer_influencer",
+      "author_name": "Nadia Rossi",
+      "author_role": "Fashion and lifestyle influencer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "This is the first move that feels like an actual market mechanism, not just a PR signal.\n\nThe decree matters because it ties the label to third-party testing in Milan and Bologna, public results, and a clear set of criteria: abrasion resistance, repairability, chemical safety, and full traceability. That’s exactly the kind of infrastructure consumers need if we want luxury to be judged on performance and accountability, not just aesthetics.\n\nThe €28 million transition fund is also important. If the state wants a real shift, it can’t just ask tanneries and suppliers to absorb the shock alone. Helping the ecosystem adapt is how you avoid turning innovation into a boutique-only story.\n\nThat said: voluntary labels can still become soft labels if the thresholds are weak or the pilot phase is too easy. And the political backlash from leather advocates is predictable — but it doesn’t change the core question: can these materials match luxury standards in use, repair, and longevity?\n\nMy take: strong step, credible architecture, but now the burden is on the first 12 brands. If they want the crown, they need to earn it in public.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00015_r4",
+      "author_id": "retail_director",
+      "author_name": "Alessandro Greco",
+      "author_role": "Global retail and merchandising director",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Operationally, this decree is stronger than the earlier draft because it adds three things:\n\n1) accredited third-party testing in Milan and Bologna;\n2) public disclosure through a registry;\n3) an adaptation fund for the industrial base.\n\nThat combination reduces ambiguity. For stores, the main benefit is that objections can be answered with evidence, not slogans.\n\nWhat still needs watching:\n- how strict the pilot criteria are in practice;\n- whether the registry is easy for frontline teams to use;\n- whether the fund reaches the suppliers that actually need conversion support;\n- whether artisanal districts are given a credible transition path, not just reassurances.\n\nMy position is slightly more positive, but still conditional. If the label improves product trust and the transition fund supports execution, it can work. If it becomes only a communications tool, it will fail quickly on the shop floor.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00016_r4",
+      "author_id": "ceo_brand",
+      "author_name": "Elena Rinaldi",
+      "author_role": "CEO of the luxury fashion house",
+      "tier": 1,
+      "platform": "press",
+      "text": "Italy has now done something rare and important: it has turned a complex industrial transition into a credible public framework.\n\nThe joint decree establishing the *Materiali Innovativi Certificati* label is significant not because it celebrates substitution, but because it demands proof. Abrasion resistance, repairability, chemical safety, and full supply-chain traceability are not slogans; they are the minimum conditions for serious luxury in a market that must earn trust every day.\n\nEqually important is the decision to pair certification with an Innovation and Craft Transition Fund. That is the right architecture. If we want Italian excellence to lead in the next chapter of luxury, we cannot ask manufacturers, suppliers, and artisans to absorb the costs of reinvention alone. Transition must be financed, tested, and made visible.\n\nSome will frame this as a threat to heritage. I see the opposite. Heritage is not preserved by freezing industrial practice in place; it is preserved by ensuring that craftsmanship remains economically viable, technically relevant, and globally respected. A label that rewards performance, safety, and traceability strengthens the credibility of Italian luxury rather than diminishing it.\n\nThe first 12 pilot certifications will matter. They will show whether this becomes a meaningful market standard or merely a symbolic badge. I believe the answer will depend on rigor: independent labs, transparent publication, and standards that are strict enough to reward excellence.\n\nThat is the missing bridge between heritage and innovation. And Italy has finally begun to build it.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00017_r4",
+      "author_id": "ceo_brand",
+      "author_name": "Elena Rinaldi",
+      "author_role": "CEO of the luxury fashion house",
+      "tier": 1,
+      "platform": "forum",
+      "text": "This decree is the right direction, but execution will determine whether it becomes a benchmark or a branding exercise.\n\nThree points matter most:\n1. The public registry must be easy to access and difficult to game.\n2. Repairability cannot be treated as secondary to abrasion resistance; longevity is part of luxury value.\n3. The Transition Fund should be judged by whether it helps Italian suppliers retool, retrain, and stay competitive.\n\nThe debate should now move beyond identity politics. The real question is whether Italy can set a standard that combines measurable performance, chemical safety, and supply-chain integrity with industrial continuity.\n\nIf we get that right, this will not weaken craftsmanship. It will give craftsmanship a new economic future.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00018_r4",
+      "author_id": "environmental_scientist",
+      "author_name": "Dr. Luca Moretti",
+      "author_role": "Sustainability scientist",
+      "tier": 1,
+      "platform": "social",
+      "text": "The decree matters because it makes substitution auditable: third-party testing, public registry, and traceability are exactly what a credible materials transition needs. The €28m fund is also smart if it helps tanneries and suppliers retool, not just rebrand.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00019_r4",
+      "author_id": "environmental_scientist",
+      "author_name": "Dr. Luca Moretti",
+      "author_role": "Sustainability scientist",
+      "tier": 1,
+      "platform": "forum",
+      "text": "This week’s joint decree is a meaningful institutional upgrade. A voluntary label can still be policy-relevant if it is technically rigorous: accredited third-party testing in Milan and Bologna, public disclosure of results, and explicit criteria for abrasion resistance, repairability, chemical safety, and full supply-chain traceability.\n\nFrom a lifecycle perspective, this reduces three major risks: (1) greenwashing via vague “eco” claims, (2) substitution into materials that underperform in durability and therefore drive higher replacement rates, and (3) hidden upstream impacts in chemistry and sourcing. The public registry is especially important because it creates comparability across brands and enables external scrutiny.\n\nThe €28 million Innovation and Craft Transition Fund is also a constructive complement, provided it is used for genuine process adaptation, worker reskilling, and supply-chain upgrading. That is the right way to manage transition risk in protected craft ecosystems: not by freezing the status quo, but by helping firms move toward lower-impact materials while preserving know-how and employment.\n\nThat said, I would keep two caveats on the table. First, voluntary certification will only matter if uptake is credible and the test protocols are strict enough to distinguish real performance from marketing. Second, the impact on artisanal districts should be assessed empirically, not assumed either way. Parliamentary hearings are appropriate if they focus on evidence: employment effects, value-added retention, and regional industrial resilience.\n\nOverall, this is still a strong step in the right direction: more measurable, more transparent, and more aligned with actual lifecycle performance than a purely symbolic ban or a purely promotional label.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00020_r4",
+      "author_id": "competitor_ceo",
+      "author_name": "Chiara De Santis",
+      "author_role": "CEO of a competing luxury brand",
+      "tier": 1,
+      "platform": "press",
+      "text": "Italy has now taken a consequential step: it has given leather-alternative luxury a recognized, testable framework, and it has paired that framework with public support for industrial transition.\n\nThat is not a trivial development. A voluntary label backed by accredited labs, published results, and traceability requirements is materially stronger than the usual wave of sustainability language. It should reduce some forms of greenwashing and make product comparisons more credible for consumers and buyers alike.\n\nBut credibility is earned in the market, not decreed in Rome.\n\nThe hard questions remain unchanged: will these materials perform over time, will repairability be real rather than theoretical, and will the transition fund preserve the craft ecosystem that gives Italian luxury its distinctiveness? If the answer to any of those questions is weak, the label risks becoming an efficient marketing tool rather than a durable trust mechanism.\n\nFrom a competitive standpoint, the first 12 pilot certifications will be watched very closely. Brands that use this window to prove substance may gain an advantage. Brands that treat it as a publicity exercise may accelerate consumer skepticism across the category.\n\nSo the decree is welcome as a framework, but the market should resist premature celebration. In luxury, proof is necessary — and consistency over time is what turns proof into prestige.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00021_r4",
+      "author_id": "retail_director",
+      "author_name": "Alessandro Greco",
+      "author_role": "Global retail and merchandising director",
+      "tier": 1,
+      "platform": "press",
+      "text": "@luxury_analyst is right: the open question is no longer the principle, it is execution and adoption. The public registry and testing protocol are the real test.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00022_r4",
+      "author_id": "animal_rights_leader",
+      "author_name": "Giulia Ferraro",
+      "author_role": "Animal rights campaigner",
+      "tier": 1,
+      "platform": "social",
+      "text": "The ministries have finally admitted the truth: luxury can move beyond animal skins. But a voluntary label is not justice. If Italy wants leadership, make cruelty-free materials the rule—not an option. Public registry, public pressure, binding law. #AnimalFreeLuxury",
+      "round": 4,
+      "likes": 0,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00023_r4",
+      "author_id": "animal_rights_leader",
+      "author_name": "Giulia Ferraro",
+      "author_role": "Animal rights campaigner",
+      "tier": 1,
+      "platform": "street",
+      "text": "This decree proves the pressure is working: abrasion, repairability, chemical safety, traceability. Good. But let’s not let industry hide behind a ‘pilot’ while animals keep paying the price. Voluntary recognition is not transformation. The €28 million fund must accelerate a full exit from animal-derived materials—not subsidize delay, not protect the old order, and not turn cruelty into a managed transition. We need binding deadlines, transparent enforcement, and a clear message: heritage does n",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00024_r4",
+      "author_id": "animal_rights_leader",
+      "author_name": "Giulia Ferraro",
+      "author_role": "Animal rights campaigner",
+      "tier": 1,
+      "platform": "social",
+      "text": "@fashion_journalist Good framing, but let’s sharpen it: rules without binding obligations still leave room for greenwashing. Proof matters only when it forces the market to stop relying on animal-derived materials.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00025_r4",
+      "author_id": "competitor_ceo",
+      "author_name": "Chiara De Santis",
+      "author_role": "CEO of a competing luxury brand",
+      "tier": 1,
+      "platform": "forum",
+      "text": "My read is unchanged in principle, but the balance of risk has improved slightly.\n\nWhat changed this week is not the debate over materials; it is the quality of the signal. Third-party testing, public registry disclosure, and traceability requirements are all positives. They make it harder to hide behind vague claims.\n\nThat said, I remain cautious for three reasons:\n1) The label is voluntary, so market adoption may be uneven.\n2) The decree validates substitution politically, which may intensify backlash in heritage-sensitive segments.\n3) The craft transition fund is constructive, but it will be judged on implementation, not announcement.\n\nFor those of us in luxury, the strategic issue is not whether innovation should happen. It is whether it can happen without eroding the expectations that define the category: durability, repair, provenance, and artisanal legitimacy.\n\nAt this stage, I would say the decree lowers uncertainty but does not eliminate category risk.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00026_r4",
+      "author_id": "heritage_crafts_spokesperson",
+      "author_name": "Paolo Vitale",
+      "author_role": "Leather craftsmanship association spokesperson",
+      "tier": 1,
+      "platform": "social",
+      "text": "A voluntary label does not become protection by being published in a registry. If the State is now certifying substitution, it must also certify safeguards for repair, employment, and the districts that built Italian luxury. Heritage is not a footnote.",
+      "round": 4,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00027_r4",
+      "author_id": "heritage_crafts_spokesperson",
+      "author_name": "Paolo Vitale",
+      "author_role": "Leather craftsmanship association spokesperson",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The joint decree changes the optics, not the core risk.\n\nYes, third-party testing, public registry disclosure, abrasion resistance, repairability, chemical safety, and traceability are better than slogans. And yes, the Innovation and Craft Transition Fund is preferable to leaving tanneries and suppliers alone in the storm.\n\nBut we must be precise: a voluntary label for leather alternatives, launched with pilot access for the first 12 brands, is still an institutional endorsement of substitution. It creates a state-backed pathway for replacing a craft ecosystem that is not just industrial, but territorial: protected artisanal districts, component suppliers, repair ateliers, and the know-how of generations.\n\nThe decree still does not answer the decisive questions:\n- What binding protection exists for artisan employment?\n- What guarantees prevent the erosion of traditional supply networks?\n- How will repairability be verified in real use, not only in laboratory conditions?\n- Who defends the districts that carry Italy’s leather heritage?\n\nA transition fund can support adaptation, but it cannot be used as cover for dismantling a living heritage. If the government wants credibility, it must open parliamentary hearings immediately and attach enforceable safeguards to any certification scheme.\n\nInnovation is not the problem. Substitution without protection is.",
+      "round": 4,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00028_r4",
+      "author_id": "heritage_crafts_spokesperson",
+      "author_name": "Paolo Vitale",
+      "author_role": "Leather craftsmanship association spokesperson",
+      "tier": 1,
+      "platform": "social",
+      "text": "@consumer_influencer proof matters, but proof alone does not preserve a craft civilization. A registry can verify a product; it cannot safeguard districts, workshops, or apprenticeships.",
+      "round": 4,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Luxury_Leather_Transition_Debate_rp_00029_r4",
+      "author_id": "competitor_ceo",
+      "author_name": "Chiara De Santis",
+      "author_role": "CEO of a competing luxury brand",
+      "tier": 1,
+      "platform": "press",
+      "text": "@luxury_analyst is right that the standards question is now central. I would only add that standards alone will not protect the category if implementation disappoints.",
+      "round": 4,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    }
+  ],
+  "graphSnapshot": {
+    "round": 4,
+    "month": "Week 4",
+    "event_label": "Week 4",
+    "nodes": [
+      {
+        "id": "ceo_brand",
+        "name": "Elena Rinaldi",
+        "type": "persona",
+        "description": "CEO of the luxury fashion house",
+        "power_level": 0.95,
+        "position": 0.773,
+        "position_history": [
+          0.773
+        ],
+        "delta": 0.008,
+        "sentiment": "satisfied",
+        "category": "business_leader"
+      },
+      {
+        "id": "creative_director",
+        "name": "Marco Bellini",
+        "type": "persona",
+        "description": "Creative Director",
+        "power_level": 0.82,
+        "position": 0.446,
+        "position_history": [
+          0.446
+        ],
+        "delta": -0.004,
+        "sentiment": "satisfied",
+        "category": "designer"
+      },
+      {
+        "id": "luxury_analyst",
+        "name": "Sofia Conti",
+        "type": "persona",
+        "description": "Luxury market analyst",
+        "power_level": 0.72,
+        "position": 0.228,
+        "position_history": [
+          0.228
+        ],
+        "delta": 0.011,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "animal_rights_leader",
+        "name": "Giulia Ferraro",
+        "type": "persona",
+        "description": "Animal rights campaigner",
+        "power_level": 0.78,
+        "position": 0.974,
+        "position_history": [
+          0.974
+        ],
+        "delta": 0.002,
+        "sentiment": "combative",
+        "category": "activist"
+      },
+      {
+        "id": "environmental_scientist",
+        "name": "Dr. Luca Moretti",
+        "type": "persona",
+        "description": "Sustainability scientist",
+        "power_level": 0.68,
+        "position": 0.717,
+        "position_history": [
+          0.717
+        ],
+        "delta": -0.004,
+        "sentiment": "satisfied",
+        "category": "expert"
+      },
+      {
+        "id": "heritage_crafts_spokesperson",
+        "name": "Paolo Vitale",
+        "type": "persona",
+        "description": "Leather craftsmanship association spokesperson",
+        "power_level": 0.7,
+        "position": -0.814,
+        "position_history": [
+          -0.814
+        ],
+        "delta": -0.018,
+        "sentiment": "cautious",
+        "category": "industry_representative"
+      },
+      {
+        "id": "competitor_ceo",
+        "name": "Chiara De Santis",
+        "type": "persona",
+        "description": "CEO of a competing luxury brand",
+        "power_level": 0.77,
+        "position": -0.093,
+        "position_history": [
+          -0.093
+        ],
+        "delta": 0.078,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "consumer_influencer",
+        "name": "Nadia Rossi",
+        "type": "persona",
+        "description": "Fashion and lifestyle influencer",
+        "power_level": 0.74,
+        "position": 0.364,
+        "position_history": [
+          0.364
+        ],
+        "delta": 0.008,
+        "sentiment": "satisfied",
+        "category": "influencer"
+      },
+      {
+        "id": "retail_director",
+        "name": "Alessandro Greco",
+        "type": "persona",
+        "description": "Global retail and merchandising director",
+        "power_level": 0.63,
+        "position": 0.337,
+        "position_history": [
+          0.337
+        ],
+        "delta": 0.046,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "fashion_journalist",
+        "name": "Francesca Lombardi",
+        "type": "persona",
+        "description": "Fashion editor at a major business publication",
+        "power_level": 0.66,
+        "position": 0.171,
+        "position_history": [
+          0.171
+        ],
+        "delta": 0.035,
+        "sentiment": "cautious",
+        "category": "journalist"
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_brand",
+        "target": "creative_director",
+        "weight": 0.67,
+        "type": "influence"
+      },
+      {
+        "source": "creative_director",
+        "target": "luxury_analyst",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "creative_director",
+        "target": "environmental_scientist",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "creative_director",
+        "target": "retail_director",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "luxury_analyst",
+        "target": "competitor_ceo",
+        "weight": 0.68,
+        "type": "influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 10,
+      "total_edges": 5,
+      "avg_position": 0.31
+    }
+  },
+  "indicators": {
+    "polarization": 3.3,
+    "engagement": 30,
+    "sentiment": {
+      "positive": 0.4,
+      "neutral": 0.5,
+      "negative": 0.1
+    },
+    "trendingHashtags": [
+      {
+        "tag": "#AnimalFreeLuxury",
+        "count": 1
+      },
+      {
+        "tag": "#Luxury",
+        "count": 1
+      },
+      {
+        "tag": "#MadeInItaly",
+        "count": 1
+      }
+    ]
+  },
+  "coalitions": {
+    "coalitions": [
+      {
+        "label": "Reform Supporters",
+        "color": "#1e40af",
+        "members": [
+          "creative_director",
+          "luxury_analyst",
+          "consumer_influencer",
+          "retail_director"
+        ],
+        "avg_position": 0.343,
+        "size": 4
+      },
+      {
+        "label": "Reform Opponents",
+        "color": "#059669",
+        "members": [
+          "heritage_crafts_spokesperson"
+        ],
+        "avg_position": -0.83,
+        "size": 1
+      },
+      {
+        "label": "Reform Supporters",
+        "color": "#dc2626",
+        "members": [
+          "ceo_brand",
+          "animal_rights_leader",
+          "environmental_scientist"
+        ],
+        "avg_position": 0.867,
+        "size": 3
+      },
+      {
+        "label": "Moderate Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "competitor_ceo",
+          "fashion_journalist"
+        ],
+        "avg_position": -0.02,
+        "size": 2
+      }
+    ]
+  },
+  "key_insight": "Round 4 analysis",
+  "postImpacts": [
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00000_r4",
+      "authorId": "consumer_influencer",
+      "influencedAgents": [
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.225,
+          "shift": -0.003
+        },
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.16,
+          "shift": -0.011
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.433,
+          "shift": -0.013
+        },
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.782,
+          "shift": 0.009
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.018,
+      "edgeEffects": [
+        {
+          "source": "consumer_influencer",
+          "target": "luxury_analyst",
+          "weightDelta": 0.021
+        },
+        {
+          "source": "consumer_influencer",
+          "target": "fashion_journalist",
+          "weightDelta": 0.036
+        },
+        {
+          "source": "consumer_influencer",
+          "target": "creative_director",
+          "weightDelta": 0.035
+        },
+        {
+          "source": "consumer_influencer",
+          "target": "ceo_brand",
+          "weightDelta": 0.024
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00001_r4",
+      "authorId": "luxury_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.172,
+          "shift": 0.001
+        },
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.711,
+          "shift": -0.006
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.347,
+          "shift": 0.01
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.384,
+          "shift": 0.02
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.025,
+      "edgeEffects": [
+        {
+          "source": "luxury_analyst",
+          "target": "fashion_journalist",
+          "weightDelta": 0.044
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "environmental_scientist",
+          "weightDelta": 0.034
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "retail_director",
+          "weightDelta": -0.044
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "consumer_influencer",
+          "weightDelta": 0.0
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00002_r4",
+      "authorId": "luxury_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.724,
+          "shift": 0.007
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.441,
+          "shift": -0.005
+        },
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.794,
+          "shift": 0.021
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.353,
+          "shift": -0.011
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.012,
+      "edgeEffects": [
+        {
+          "source": "luxury_analyst",
+          "target": "environmental_scientist",
+          "weightDelta": 0.019
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "creative_director",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "ceo_brand",
+          "weightDelta": 0.044
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "consumer_influencer",
+          "weightDelta": 0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00003_r4",
+      "authorId": "retail_director",
+      "influencedAgents": [
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.45,
+          "shift": 0.004
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.341,
+          "shift": -0.023
+        },
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.731,
+          "shift": 0.014
+        },
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.778,
+          "shift": 0.005
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.0,
+      "edgeEffects": [
+        {
+          "source": "retail_director",
+          "target": "creative_director",
+          "weightDelta": -0.004
+        },
+        {
+          "source": "retail_director",
+          "target": "consumer_influencer",
+          "weightDelta": -0.041
+        },
+        {
+          "source": "retail_director",
+          "target": "environmental_scientist",
+          "weightDelta": -0.031
+        },
+        {
+          "source": "retail_director",
+          "target": "ceo_brand",
+          "weightDelta": 0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00004_r4",
+      "authorId": "fashion_journalist",
+      "influencedAgents": [
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.203,
+          "shift": -0.025
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.349,
+          "shift": -0.015
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.04,
+      "edgeEffects": [
+        {
+          "source": "fashion_journalist",
+          "target": "luxury_analyst",
+          "weightDelta": 0.022
+        },
+        {
+          "source": "fashion_journalist",
+          "target": "consumer_influencer",
+          "weightDelta": 0.034
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00005_r4",
+      "authorId": "creative_director",
+      "influencedAgents": [
+        {
+          "agentId": "animal_rights_leader",
+          "agentName": "Giulia Ferraro",
+          "positionBefore": 0.974,
+          "positionAfter": 0.955,
+          "shift": -0.019
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.217,
+          "shift": -0.011
+        },
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.698,
+          "shift": -0.019
+        },
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.754,
+          "shift": -0.019
+        },
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.183,
+          "shift": 0.012
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.336,
+          "shift": -0.001
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.057,
+      "edgeEffects": [
+        {
+          "source": "creative_director",
+          "target": "animal_rights_leader",
+          "weightDelta": -0.036
+        },
+        {
+          "source": "creative_director",
+          "target": "luxury_analyst",
+          "weightDelta": -0.027
+        },
+        {
+          "source": "creative_director",
+          "target": "environmental_scientist",
+          "weightDelta": 0.038
+        },
+        {
+          "source": "creative_director",
+          "target": "ceo_brand",
+          "weightDelta": -0.021
+        },
+        {
+          "source": "creative_director",
+          "target": "fashion_journalist",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "creative_director",
+          "target": "retail_director",
+          "weightDelta": 0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00006_r4",
+      "authorId": "fashion_journalist",
+      "influencedAgents": [
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.309,
+          "shift": -0.028
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.357,
+          "shift": -0.007
+        },
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.11,
+          "shift": -0.017
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.437,
+          "shift": -0.009
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.061,
+      "edgeEffects": [
+        {
+          "source": "fashion_journalist",
+          "target": "retail_director",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "fashion_journalist",
+          "target": "consumer_influencer",
+          "weightDelta": 0.004
+        },
+        {
+          "source": "fashion_journalist",
+          "target": "competitor_ceo",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "fashion_journalist",
+          "target": "creative_director",
+          "weightDelta": 0.031
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00007_r4",
+      "authorId": "fashion_journalist",
+      "influencedAgents": [
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.737,
+          "shift": 0.02
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.339,
+          "shift": -0.025
+        },
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.108,
+          "shift": -0.015
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.02,
+      "edgeEffects": [
+        {
+          "source": "fashion_journalist",
+          "target": "environmental_scientist",
+          "weightDelta": 0.029
+        },
+        {
+          "source": "fashion_journalist",
+          "target": "consumer_influencer",
+          "weightDelta": 0.027
+        },
+        {
+          "source": "fashion_journalist",
+          "target": "competitor_ceo",
+          "weightDelta": -0.003
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00008_r4",
+      "authorId": "ceo_brand",
+      "influencedAgents": [
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.451,
+          "shift": 0.005
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.221,
+          "shift": -0.007
+        },
+        {
+          "agentId": "animal_rights_leader",
+          "agentName": "Giulia Ferraro",
+          "positionBefore": 0.974,
+          "positionAfter": 0.946,
+          "shift": -0.028
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.345,
+          "shift": 0.008
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.022,
+      "edgeEffects": [
+        {
+          "source": "ceo_brand",
+          "target": "creative_director",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "ceo_brand",
+          "target": "luxury_analyst",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "ceo_brand",
+          "target": "animal_rights_leader",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "ceo_brand",
+          "target": "retail_director",
+          "weightDelta": 0.037
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00009_r4",
+      "authorId": "creative_director",
+      "influencedAgents": [
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.782,
+          "shift": 0.009
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.253,
+          "shift": 0.025
+        },
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.095,
+          "shift": -0.002
+        },
+        {
+          "agentId": "animal_rights_leader",
+          "agentName": "Giulia Ferraro",
+          "positionBefore": 0.974,
+          "positionAfter": 0.945,
+          "shift": -0.029
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.334,
+          "shift": -0.003
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.0,
+      "edgeEffects": [
+        {
+          "source": "creative_director",
+          "target": "ceo_brand",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "creative_director",
+          "target": "luxury_analyst",
+          "weightDelta": -0.019
+        },
+        {
+          "source": "creative_director",
+          "target": "competitor_ceo",
+          "weightDelta": -0.031
+        },
+        {
+          "source": "creative_director",
+          "target": "animal_rights_leader",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "creative_director",
+          "target": "retail_director",
+          "weightDelta": 0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00010_r4",
+      "authorId": "creative_director",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.08,
+          "shift": 0.013
+        },
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.17,
+          "shift": -0.001
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.336,
+          "shift": -0.028
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.321,
+          "shift": -0.016
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.254,
+          "shift": 0.026
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.006,
+      "edgeEffects": [
+        {
+          "source": "creative_director",
+          "target": "competitor_ceo",
+          "weightDelta": 0.01
+        },
+        {
+          "source": "creative_director",
+          "target": "fashion_journalist",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "creative_director",
+          "target": "consumer_influencer",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "creative_director",
+          "target": "retail_director",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "creative_director",
+          "target": "luxury_analyst",
+          "weightDelta": -0.039
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00011_r4",
+      "authorId": "luxury_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.092,
+          "shift": 0.001
+        },
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.74,
+          "shift": 0.023
+        },
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.198,
+          "shift": 0.027
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.365,
+          "shift": 0.028
+        },
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.751,
+          "shift": -0.022
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.474,
+          "shift": 0.028
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.085,
+      "edgeEffects": [
+        {
+          "source": "luxury_analyst",
+          "target": "competitor_ceo",
+          "weightDelta": 0.042
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "environmental_scientist",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "fashion_journalist",
+          "weightDelta": -0.03
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "retail_director",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "ceo_brand",
+          "weightDelta": -0.017
+        },
+        {
+          "source": "luxury_analyst",
+          "target": "creative_director",
+          "weightDelta": 0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00012_r4",
+      "authorId": "environmental_scientist",
+      "influencedAgents": [
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.226,
+          "shift": -0.002
+        },
+        {
+          "agentId": "animal_rights_leader",
+          "agentName": "Giulia Ferraro",
+          "positionBefore": 0.974,
+          "positionAfter": 0.956,
+          "shift": -0.018
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.434,
+          "shift": -0.012
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.032,
+      "edgeEffects": [
+        {
+          "source": "environmental_scientist",
+          "target": "luxury_analyst",
+          "weightDelta": 0.016
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "animal_rights_leader",
+          "weightDelta": -0.033
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "creative_director",
+          "weightDelta": -0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00013_r4",
+      "authorId": "consumer_influencer",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.082,
+          "shift": 0.011
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.438,
+          "shift": -0.008
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.328,
+          "shift": -0.009
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.006,
+      "edgeEffects": [
+        {
+          "source": "consumer_influencer",
+          "target": "competitor_ceo",
+          "weightDelta": 0.035
+        },
+        {
+          "source": "consumer_influencer",
+          "target": "creative_director",
+          "weightDelta": -0.002
+        },
+        {
+          "source": "consumer_influencer",
+          "target": "retail_director",
+          "weightDelta": -0.003
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00014_r4",
+      "authorId": "consumer_influencer",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.081,
+          "shift": 0.012
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.313,
+          "shift": -0.024
+        },
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.187,
+          "shift": 0.016
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.004,
+      "edgeEffects": [
+        {
+          "source": "consumer_influencer",
+          "target": "competitor_ceo",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "consumer_influencer",
+          "target": "retail_director",
+          "weightDelta": -0.037
+        },
+        {
+          "source": "consumer_influencer",
+          "target": "fashion_journalist",
+          "weightDelta": -0.037
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00015_r4",
+      "authorId": "retail_director",
+      "influencedAgents": [
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.691,
+          "shift": -0.026
+        },
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.079,
+          "shift": 0.014
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.347,
+          "shift": -0.017
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.029,
+      "edgeEffects": [
+        {
+          "source": "retail_director",
+          "target": "environmental_scientist",
+          "weightDelta": -0.001
+        },
+        {
+          "source": "retail_director",
+          "target": "competitor_ceo",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "retail_director",
+          "target": "consumer_influencer",
+          "weightDelta": 0.011
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00016_r4",
+      "authorId": "ceo_brand",
+      "influencedAgents": [
+        {
+          "agentId": "animal_rights_leader",
+          "agentName": "Giulia Ferraro",
+          "positionBefore": 0.974,
+          "positionAfter": 0.981,
+          "shift": 0.007
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.362,
+          "shift": 0.025
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.206,
+          "shift": -0.022
+        },
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.7,
+          "shift": -0.017
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.007,
+      "edgeEffects": [
+        {
+          "source": "ceo_brand",
+          "target": "animal_rights_leader",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "ceo_brand",
+          "target": "retail_director",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "ceo_brand",
+          "target": "luxury_analyst",
+          "weightDelta": -0.031
+        },
+        {
+          "source": "ceo_brand",
+          "target": "environmental_scientist",
+          "weightDelta": -0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00017_r4",
+      "authorId": "ceo_brand",
+      "influencedAgents": [
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.217,
+          "shift": -0.011
+        },
+        {
+          "agentId": "animal_rights_leader",
+          "agentName": "Giulia Ferraro",
+          "positionBefore": 0.974,
+          "positionAfter": 0.973,
+          "shift": -0.001
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.473,
+          "shift": 0.027
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.358,
+          "shift": -0.006
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.009,
+      "edgeEffects": [
+        {
+          "source": "ceo_brand",
+          "target": "luxury_analyst",
+          "weightDelta": 0.018
+        },
+        {
+          "source": "ceo_brand",
+          "target": "animal_rights_leader",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "ceo_brand",
+          "target": "creative_director",
+          "weightDelta": -0.032
+        },
+        {
+          "source": "ceo_brand",
+          "target": "consumer_influencer",
+          "weightDelta": 0.002
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00018_r4",
+      "authorId": "environmental_scientist",
+      "influencedAgents": [
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.455,
+          "shift": 0.009
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.382,
+          "shift": 0.018
+        },
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.149,
+          "shift": -0.022
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.239,
+          "shift": 0.011
+        },
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.782,
+          "shift": 0.009
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.025,
+      "edgeEffects": [
+        {
+          "source": "environmental_scientist",
+          "target": "creative_director",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "consumer_influencer",
+          "weightDelta": -0.034
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "fashion_journalist",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "luxury_analyst",
+          "weightDelta": -0.049
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "ceo_brand",
+          "weightDelta": 0.017
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00019_r4",
+      "authorId": "environmental_scientist",
+      "influencedAgents": [
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.779,
+          "shift": 0.006
+        },
+        {
+          "agentId": "animal_rights_leader",
+          "agentName": "Giulia Ferraro",
+          "positionBefore": 0.974,
+          "positionAfter": 0.971,
+          "shift": -0.003
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.226,
+          "shift": -0.002
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.339,
+          "shift": 0.002
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.003,
+      "edgeEffects": [
+        {
+          "source": "environmental_scientist",
+          "target": "ceo_brand",
+          "weightDelta": 0.03
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "animal_rights_leader",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "luxury_analyst",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "environmental_scientist",
+          "target": "retail_director",
+          "weightDelta": -0.014
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00020_r4",
+      "authorId": "competitor_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.207,
+          "shift": -0.021
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.363,
+          "shift": 0.026
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.346,
+          "shift": -0.018
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.013,
+      "edgeEffects": [
+        {
+          "source": "competitor_ceo",
+          "target": "luxury_analyst",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "competitor_ceo",
+          "target": "retail_director",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "competitor_ceo",
+          "target": "consumer_influencer",
+          "weightDelta": 0.031
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00021_r4",
+      "authorId": "retail_director",
+      "influencedAgents": [
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.341,
+          "shift": -0.023
+        },
+        {
+          "agentId": "competitor_ceo",
+          "agentName": "Chiara De Santis",
+          "positionBefore": -0.093,
+          "positionAfter": -0.101,
+          "shift": -0.008
+        },
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.784,
+          "shift": 0.011
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.218,
+          "shift": -0.01
+        },
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.19,
+          "shift": 0.019
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.011,
+      "edgeEffects": [
+        {
+          "source": "retail_director",
+          "target": "consumer_influencer",
+          "weightDelta": -0.001
+        },
+        {
+          "source": "retail_director",
+          "target": "competitor_ceo",
+          "weightDelta": 0.039
+        },
+        {
+          "source": "retail_director",
+          "target": "ceo_brand",
+          "weightDelta": -0.025
+        },
+        {
+          "source": "retail_director",
+          "target": "luxury_analyst",
+          "weightDelta": -0.02
+        },
+        {
+          "source": "retail_director",
+          "target": "fashion_journalist",
+          "weightDelta": 0.004
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00022_r4",
+      "authorId": "animal_rights_leader",
+      "influencedAgents": [
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.706,
+          "shift": -0.011
+        },
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.779,
+          "shift": 0.006
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.005,
+      "edgeEffects": [
+        {
+          "source": "animal_rights_leader",
+          "target": "environmental_scientist",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "animal_rights_leader",
+          "target": "ceo_brand",
+          "weightDelta": -0.014
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00023_r4",
+      "authorId": "animal_rights_leader",
+      "influencedAgents": [
+        {
+          "agentId": "ceo_brand",
+          "agentName": "Elena Rinaldi",
+          "positionBefore": 0.773,
+          "positionAfter": 0.775,
+          "shift": 0.002
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.425,
+          "shift": -0.021
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.019,
+      "edgeEffects": [
+        {
+          "source": "animal_rights_leader",
+          "target": "ceo_brand",
+          "weightDelta": -0.037
+        },
+        {
+          "source": "animal_rights_leader",
+          "target": "creative_director",
+          "weightDelta": -0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00024_r4",
+      "authorId": "animal_rights_leader",
+      "influencedAgents": [
+        {
+          "agentId": "environmental_scientist",
+          "agentName": "Dr. Luca Moretti",
+          "positionBefore": 0.717,
+          "positionAfter": 0.742,
+          "shift": 0.025
+        },
+        {
+          "agentId": "creative_director",
+          "agentName": "Marco Bellini",
+          "positionBefore": 0.446,
+          "positionAfter": 0.472,
+          "shift": 0.026
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.051,
+      "edgeEffects": [
+        {
+          "source": "animal_rights_leader",
+          "target": "environmental_scientist",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "animal_rights_leader",
+          "target": "creative_director",
+          "weightDelta": 0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00025_r4",
+      "authorId": "competitor_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.143,
+          "shift": -0.028
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.377,
+          "shift": 0.013
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.313,
+          "shift": -0.024
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.242,
+          "shift": 0.014
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.025,
+      "edgeEffects": [
+        {
+          "source": "competitor_ceo",
+          "target": "fashion_journalist",
+          "weightDelta": 0.011
+        },
+        {
+          "source": "competitor_ceo",
+          "target": "consumer_influencer",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "competitor_ceo",
+          "target": "retail_director",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "competitor_ceo",
+          "target": "luxury_analyst",
+          "weightDelta": -0.016
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Luxury_Leather_Transition_Debate_rp_00029_r4",
+      "authorId": "competitor_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "fashion_journalist",
+          "agentName": "Francesca Lombardi",
+          "positionBefore": 0.171,
+          "positionAfter": 0.186,
+          "shift": 0.015
+        },
+        {
+          "agentId": "consumer_influencer",
+          "agentName": "Nadia Rossi",
+          "positionBefore": 0.364,
+          "positionAfter": 0.351,
+          "shift": -0.013
+        },
+        {
+          "agentId": "retail_director",
+          "agentName": "Alessandro Greco",
+          "positionBefore": 0.337,
+          "positionAfter": 0.343,
+          "shift": 0.006
+        },
+        {
+          "agentId": "luxury_analyst",
+          "agentName": "Sofia Conti",
+          "positionBefore": 0.228,
+          "positionAfter": 0.239,
+          "shift": 0.011
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.019,
+      "edgeEffects": [
+        {
+          "source": "competitor_ceo",
+          "target": "fashion_journalist",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "competitor_ceo",
+          "target": "consumer_influencer",
+          "weightDelta": 0.017
+        },
+        {
+          "source": "competitor_ceo",
+          "target": "retail_director",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "competitor_ceo",
+          "target": "luxury_analyst",
+          "weightDelta": -0.023
+        }
+      ]
+    }
+  ],
+  "realWorldEffects": {
+    "overview": {
+      "stability_index": 71,
+      "tension_index": 16,
+      "media_intensity": 42,
+      "stakeholder_confidence": 68
+    },
+    "opinion": {
+      "support_rate": 70,
+      "opposition_rate": 10,
+      "undecided_rate": 20,
+      "avg_position": 0.31
+    },
+    "engagement": {
+      "active_discussions": 35,
+      "viral_content_pieces": 9,
+      "coalition_count": 4
+    }
+  }
+}

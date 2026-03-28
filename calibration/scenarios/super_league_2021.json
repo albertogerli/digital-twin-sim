@@ -1,0 +1,27 @@
+{
+  "scenario_name": "European Super League Crisis (April 2021)",
+  "description": "12 top football clubs announced breakaway league. Collapsed within 48 hours due to massive backlash from fans, players, politicians, and governing bodies. Tests rapid opinion cascade with near-universal opposition.",
+  "domain": "commercial",
+  "final_outcome_pro_pct": 12,
+  "final_outcome_against_pct": 68,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 25, "against_pct": 35, "undecided_pct": 40},
+    {"round_equivalent": 2, "pro_pct": 12, "against_pct": 58, "undecided_pct": 30},
+    {"round_equivalent": 3, "pro_pct": 8, "against_pct": 72, "undecided_pct": 20},
+    {"round_equivalent": 4, "pro_pct": 6, "against_pct": 80, "undecided_pct": 14},
+    {"round_equivalent": 5, "pro_pct": 5, "against_pct": 85, "undecided_pct": 10},
+    {"round_equivalent": 6, "pro_pct": 4, "against_pct": 88, "undecided_pct": 8},
+    {"round_equivalent": 7, "pro_pct": 6, "against_pct": 82, "undecided_pct": 12},
+    {"round_equivalent": 8, "pro_pct": 10, "against_pct": 72, "undecided_pct": 18},
+    {"round_equivalent": 9, "pro_pct": 12, "against_pct": 68, "undecided_pct": 20}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Official announcement. JP Morgan backing ($3.5B). UEFA president Ceferin: 'spit in the face of football lovers'."},
+    {"round_equivalent": 3, "description": "Boris Johnson threatens legislation. UEFA threatens World Cup/Euros bans. Gary Neville viral monologue."},
+    {"round_equivalent": 4, "description": "Chelsea fans block team bus. Premier League captains' joint statement. Players break ranks."},
+    {"round_equivalent": 5, "description": "All six English clubs withdraw within hours. Ed Woodward resigns. Domino effect."},
+    {"round_equivalent": 6, "description": "Atletico, AC Milan, Inter withdraw. 9 of 12 gone in 48 hours. Florentino Perez: 'on standby'."}
+  ],
+  "calibration_notes": "Extreme case of rapid opinion cascade — near-universal opposition in 24-48 hours. Opposition coalition extraordinarily broad (fans, players, rival clubs, governments, FIFA/UEFA, media) with essentially no public constituency supporting it. Fastest collapse of a major sports/commercial initiative in history. Tests: cascade dynamics, coordinated multi-stakeholder backlash, absence of any counterweight constituency."
+}

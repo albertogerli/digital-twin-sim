@@ -1,0 +1,27 @@
+{
+  "scenario_name": "GameStop / WallStreetBets Short Squeeze (2021)",
+  "description": "Reddit retail investors vs hedge funds. GME surged from $17 to $347. Robinhood restricted buying. Tests grassroots vs institutional power dynamics with rules changed mid-game.",
+  "domain": "financial",
+  "final_outcome_pro_pct": 35,
+  "final_outcome_against_pct": 35,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 15, "against_pct": 10, "undecided_pct": 75},
+    {"round_equivalent": 2, "pro_pct": 30, "against_pct": 15, "undecided_pct": 55},
+    {"round_equivalent": 3, "pro_pct": 55, "against_pct": 18, "undecided_pct": 27},
+    {"round_equivalent": 4, "pro_pct": 62, "against_pct": 20, "undecided_pct": 18},
+    {"round_equivalent": 5, "pro_pct": 50, "against_pct": 28, "undecided_pct": 22},
+    {"round_equivalent": 6, "pro_pct": 45, "against_pct": 30, "undecided_pct": 25},
+    {"round_equivalent": 7, "pro_pct": 42, "against_pct": 32, "undecided_pct": 26},
+    {"round_equivalent": 8, "pro_pct": 38, "against_pct": 35, "undecided_pct": 27},
+    {"round_equivalent": 9, "pro_pct": 35, "against_pct": 35, "undecided_pct": 30}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Citron Research calls WSB 'suckers'. Elon Musk tweets 'Gamestonk!!'. WSB grows from 2M to 5M+ subscribers."},
+    {"round_equivalent": 3, "description": "GME hits $347. Melvin Capital gets $2.75B emergency bailout. David vs Goliath narrative dominates."},
+    {"round_equivalent": 4, "description": "Robinhood restricts buying — only selling allowed. Universal outrage. AOC and Ted Cruz agree. Peak pro-retail sentiment."},
+    {"round_equivalent": 5, "description": "GME drops from $325 to $53. Media splits between sympathy and cautionary tales. Many late buyers underwater."},
+    {"round_equivalent": 6, "description": "Congressional hearing. Keith Gill: 'I am not a cat'. Vlad Tenev evasive. No smoking gun found."}
+  ],
+  "calibration_notes": "Opinion axis is tricky: 'pro' = supporting retail/WSB was genuinely bipartisan (rare left-right agreement). Peak pro-retail sentiment (Round 4) coincided with stock price crash because Robinhood restrictions were seen as proof system is rigged. Final equilibrium roughly balanced as story became too complex for simple takes. Tests: populist energy vs structural power, narrative virality (Gamestonk), institutional rule-changing (Robinhood), and how grassroots movements lose cohesion as complexity increases."
+}

@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Occupy Wall Street 2011",
+  "description": "Occupy Wall Street began September 17, 2011 in Zuccotti Park, NYC. Support rose from ~40% to peak ~50% in October as 'We are the 99%' resonated, then faded to ~30% by December as camps were cleared and lack of concrete demands drew criticism. Tests protest movement lifecycle and media fatigue.",
+  "domain": "political/economic",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 50.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 25, "against_pct": 20, "undecided_pct": 55},
+    {"round_equivalent": 2, "pro_pct": 35, "against_pct": 22, "undecided_pct": 43},
+    {"round_equivalent": 3, "pro_pct": 43, "against_pct": 27, "undecided_pct": 30},
+    {"round_equivalent": 4, "pro_pct": 48, "against_pct": 30, "undecided_pct": 22},
+    {"round_equivalent": 5, "pro_pct": 50, "against_pct": 33, "undecided_pct": 17},
+    {"round_equivalent": 6, "pro_pct": 46, "against_pct": 37, "undecided_pct": 17},
+    {"round_equivalent": 7, "pro_pct": 40, "against_pct": 42, "undecided_pct": 18},
+    {"round_equivalent": 8, "pro_pct": 35, "against_pct": 46, "undecided_pct": 19},
+    {"round_equivalent": 9, "pro_pct": 30, "against_pct": 50, "undecided_pct": 20}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Occupy Wall Street begins Sept 17 in Zuccotti Park. 'We are the 99%' slogan goes viral. Initial media coverage treats as curiosity."},
+    {"round_equivalent": 3, "description": "NYPD mass arrest on Brooklyn Bridge (700 arrested). Police overreaction generates sympathy and massive media coverage. Support surges."},
+    {"round_equivalent": 5, "description": "Occupy spreads to 600+ communities worldwide. Unions endorse movement. Peak support ~50% in Quinnipiac/CBS polls."},
+    {"round_equivalent": 7, "description": "Zuccotti Park evicted by NYPD (Nov 15). Other camps cleared nationwide. Media narrative shifts to disorder, hygiene, lack of demands."},
+    {"round_equivalent": 9, "description": "Movement largely dissipated by year end. Criticism of leaderless structure and lack of policy demands dominates coverage. Support drops to ~30%."}
+  ],
+  "calibration_notes": "Tests protest movement rise-and-fall lifecycle. Key patterns: classic bell curve trajectory (unique among calibration scenarios), very high initial undecided (55%) indicating low awareness, police overreaction as catalyst for sympathy, peak reached in ~6 weeks, decline driven by media fatigue + negative framing (disorder, no demands), undecideds converting to opposition as movement faded, lasting legacy on income inequality discourse despite apparent failure. PPP, Quinnipiac, CBS/NYT polling data used."
+}

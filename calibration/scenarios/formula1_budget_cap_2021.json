@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Formula 1 Budget Cap Introduction (2021)",
+  "description": "F1 introduced a $145M budget cap for 2021, aiming to level the playing field between top teams (Mercedes, Red Bull, Ferrari) and midfield/backmarker teams. Support grew from ~55% to ~72% as closer racing materialized, though top-team fans remained skeptical.",
+  "domain": "sport",
+  "final_outcome_pro_pct": 72,
+  "final_outcome_against_pct": 18,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 55, "against_pct": 25, "undecided_pct": 20},
+    {"round_equivalent": 2, "pro_pct": 58, "against_pct": 24, "undecided_pct": 18},
+    {"round_equivalent": 3, "pro_pct": 60, "against_pct": 23, "undecided_pct": 17},
+    {"round_equivalent": 4, "pro_pct": 63, "against_pct": 22, "undecided_pct": 15},
+    {"round_equivalent": 5, "pro_pct": 65, "against_pct": 21, "undecided_pct": 14},
+    {"round_equivalent": 6, "pro_pct": 68, "against_pct": 19, "undecided_pct": 13},
+    {"round_equivalent": 7, "pro_pct": 70, "against_pct": 18, "undecided_pct": 12},
+    {"round_equivalent": 8, "pro_pct": 71, "against_pct": 18, "undecided_pct": 11},
+    {"round_equivalent": 9, "pro_pct": 72, "against_pct": 18, "undecided_pct": 10}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Budget cap officially enacted at $145M for 2021 season. Smaller teams (Williams, Haas, Alfa Romeo) strongly support. Mercedes and Red Bull express concerns about job cuts."},
+    {"round_equivalent": 4, "description": "2021 season delivers Hamilton vs. Verstappen title fight — closest championship battle in years. Fans credit competitive balance partly to cap anticipation and rule changes."},
+    {"round_equivalent": 6, "description": "Red Bull accused of exceeding the 2021 cap by $1.8M. FIA investigation begins. Debate over enforcement credibility."},
+    {"round_equivalent": 7, "description": "FIA confirms Red Bull minor overspend breach. $7M fine and 10% wind tunnel reduction penalty. Mixed reaction — some say too lenient, others accept it."},
+    {"round_equivalent": 9, "description": "2023 season shows midfield convergence. McLaren and Aston Martin become competitive. Cap widely credited with improving the sport's competitive balance."}
+  ],
+  "calibration_notes": "Steady upward trajectory in support driven by visible competitive improvements. Opposition concentrated among top-team fans and purists who valued engineering arms race. Red Bull cost cap breach briefly dented credibility but enforcement response stabilized opinion. Tests: institutional reform acceptance, gradual evidence-based persuasion, enforcement credibility effects."
+}

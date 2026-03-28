@@ -1,0 +1,491 @@
+budget_usd: 2.0
+channels:
+- channel_type: short_form
+  description: Public social media reactions, memes, complaints, and viral posts about
+    the price hike.
+  id: social_feed
+  max_length: 280
+- channel_type: long_form
+  description: Technology journalism coverage of the announcement, competitor responses,
+    and market implications.
+  id: tech_news
+  max_length: 1200
+- channel_type: official
+  description: Official corporate statements, investor messaging, and analyst Q&A
+    from Apple and competitors.
+  id: earnings_call
+  max_length: 2000
+- channel_type: short_form
+  description: Brand advertisements and promotional messaging from Apple, Samsung,
+    and Google.
+  id: ad_campaigns
+  max_length: 500
+- channel_type: long_form
+  description: Discussion threads where users compare devices, prices, and upgrade
+    decisions.
+  id: consumer_forums
+  max_length: 800
+citizen_clusters:
+- demographic_attributes:
+    age_range: 25-54
+    education: college+
+    income: upper-middle to high
+    location: urban/suburban global
+  description: High-income users deeply embedded in the Apple ecosystem who prioritize
+    status and convenience.
+  engagement_base: 0.55
+  id: apple_loyalists
+  info_channel: social_feed
+  name: Apple Loyalists
+  position: 0.75
+  size: 42000000
+- demographic_attributes:
+    age_range: 18-44
+    education: mixed
+    income: low to middle
+    location: global metro and suburban
+  description: Mainstream consumers who upgrade every few years and are highly sensitive
+    to sticker shock.
+  engagement_base: 0.72
+  id: budget_upgraders
+  info_channel: consumer_forums
+  name: Budget Upgraders
+  position: -0.8
+  size: 68000000
+- demographic_attributes:
+    age_range: 18-40
+    education: some college to graduate
+    income: middle
+    location: urban/global online
+  description: Early adopters who follow specs, AI features, and competitor launches
+    closely.
+  engagement_base: 0.86
+  id: tech_enthusiasts
+  info_channel: tech_news
+  name: Tech Enthusiasts
+  position: -0.15
+  size: 24000000
+- demographic_attributes:
+    age_range: 28-55
+    education: college+
+    income: middle to upper-middle
+    location: global urban
+  description: Busy professionals who value reliability, ecosystem integration, and
+    status but still compare alternatives.
+  engagement_base: 0.48
+  id: premium_professionals
+  info_channel: earnings_call
+  name: Premium Professionals
+  position: 0.2
+  size: 31000000
+- demographic_attributes:
+    age_range: 20-49
+    education: mixed
+    income: low to middle
+    location: global
+  description: Consumers willing to change brands if competitors offer better hardware
+    or financing deals.
+  engagement_base: 0.64
+  id: value_switchers
+  info_channel: ad_campaigns
+  name: Value Switchers
+  position: -0.65
+  size: 37000000
+- demographic_attributes:
+    age_range: 18-39
+    education: mixed
+    income: middle to high
+    location: urban
+  description: Brand-conscious buyers who may tolerate higher prices if the device
+    remains a visible luxury signal.
+  engagement_base: 0.41
+  id: status_seekers
+  info_channel: social_feed
+  name: Status Seekers
+  position: 0.55
+  size: 19000000
+- demographic_attributes:
+    age_range: 30-55
+    education: mixed
+    income: middle
+    location: suburban
+  description: Households buying for family members who scrutinize price increases
+    and trade-in value carefully.
+  engagement_base: 0.58
+  id: skeptical_parents
+  info_channel: consumer_forums
+  name: Skeptical Parents
+  position: -0.5
+  size: 28000000
+description: This simulation models the market, reputational, and consumer-response
+  effects of Apple raising iPhone prices by 40% worldwide. It tracks competitor counter-campaigns,
+  media framing, analyst sentiment, and how brand loyalty, affordability concerns,
+  and social backlash shape demand over time.
+domain: commercial
+elite_agents:
+- archetype: business_leader
+  bio: Leads Apple through a premium-margin strategy and defends the price increase
+    as a long-term investment in supply resilience and AI capability.
+  category: ''
+  communication_style: measured, polished, investor-friendly
+  domain_attributes: {}
+  id: tim_cook
+  influence: 0.98
+  key_trait: ''
+  key_traits:
+  - strategic
+  - disciplined
+  name: Tim Cook
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.5
+  rigidity: 0.72
+  role: Apple CEO
+  tier: 1
+- archetype: business_leader
+  bio: Frames the price hike as a margin-protecting necessity and emphasizes cost
+    structure, capital allocation, and shareholder value.
+  category: ''
+  communication_style: data-driven, cautious, precise
+  domain_attributes: {}
+  id: lucas_martin
+  influence: 0.82
+  key_trait: ''
+  key_traits:
+  - financially focused
+  - risk-averse
+  name: Lucas Martin
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.45
+  rigidity: 0.8
+  role: Apple CFO
+  tier: 1
+- archetype: marketing_executive
+  bio: Shapes Apple’s premium narrative by linking higher prices to innovation, exclusivity,
+    and ecosystem value.
+  category: ''
+  communication_style: aspirational, brand-centric, concise
+  domain_attributes: {}
+  id: sara_chen
+  influence: 0.78
+  key_trait: ''
+  key_traits:
+  - persuasive
+  - brand-aware
+  name: Sara Chen
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.35
+  rigidity: 0.6
+  role: Apple VP of Marketing
+  tier: 1
+- archetype: business_leader
+  bio: Moves quickly to position Samsung as the practical premium alternative with
+    stronger value and promotional offers.
+  category: ''
+  communication_style: competitive, upbeat, comparative
+  domain_attributes: {}
+  id: james_park
+  influence: 0.86
+  key_trait: ''
+  key_traits:
+  - opportunistic
+  - aggressive
+  name: James Park
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.75
+  rigidity: 0.7
+  role: Samsung Global Marketing Chief
+  tier: 1
+- archetype: business_leader
+  bio: Uses the price shock to highlight Pixel's AI features, cleaner software experience,
+    and better value proposition.
+  category: ''
+  communication_style: tech-forward, friendly, solution-oriented
+  domain_attributes: {}
+  id: mei_lin
+  influence: 0.74
+  key_trait: ''
+  key_traits:
+  - innovative
+  - consumer-focused
+  name: Mei Lin
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.65
+  rigidity: 0.62
+  role: Google Pixel Product Lead
+  tier: 1
+- archetype: analyst
+  bio: Evaluates whether Apple's pricing power can withstand consumer backlash without
+    materially harming unit demand.
+  category: ''
+  communication_style: balanced, analytical, evidence-based
+  domain_attributes: {}
+  id: david_ross
+  influence: 0.7
+  key_trait: ''
+  key_traits:
+  - skeptical
+  - measured
+  name: David Ross
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.1
+  rigidity: 0.4
+  role: Senior Tech Analyst
+  tier: 1
+- archetype: activist
+  bio: Publicly condemns the price increase as exploitative and encourages consumers
+    to reconsider loyalty to premium brands.
+  category: ''
+  communication_style: forceful, moralizing, viral-friendly
+  domain_attributes: {}
+  id: nina_patel
+  influence: 0.66
+  key_trait: ''
+  key_traits:
+  - outspoken
+  - principled
+  name: Nina Patel
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.9
+  rigidity: 0.88
+  role: Consumer Rights Advocate
+  tier: 1
+- archetype: consultant
+  bio: Argues that scarcity, prestige, and ecosystem lock-in can preserve demand even
+    after a steep price increase.
+  category: ''
+  communication_style: confident, strategic, advisory
+  domain_attributes: {}
+  id: oliver_bennett
+  influence: 0.58
+  key_trait: ''
+  key_traits:
+  - brand-loyalty oriented
+  - premium-minded
+  name: Oliver Bennett
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.65
+  rigidity: 0.55
+  role: Luxury Brand Strategist
+  tier: 1
+- archetype: business_leader
+  bio: Focuses on carrier promotions, trade-in offers, and inventory planning to soften
+    the impact on retail demand.
+  category: ''
+  communication_style: pragmatic, operational, customer-facing
+  domain_attributes: {}
+  id: elena_garcia
+  influence: 0.52
+  key_trait: ''
+  key_traits:
+  - practical
+  - adaptive
+  name: Elena Garcia
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.2
+  rigidity: 0.5
+  role: Retail Channel Executive
+  tier: 1
+- archetype: consultant
+  bio: Supports the cost rationale by pointing to component inflation, logistics volatility,
+    and AI chip investment requirements.
+  category: ''
+  communication_style: technical, explanatory, calm
+  domain_attributes: {}
+  id: kevin_zhou
+  influence: 0.49
+  key_trait: ''
+  key_traits:
+  - analytical
+  - detail-oriented
+  name: Kevin Zhou
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.2
+  rigidity: 0.45
+  role: Supply Chain Consultant
+  tier: 1
+initial_event: Apple announces a surprise 40% global price increase across all iPhone
+  models, framing the move as necessary to offset supply chain costs and fund AI chip
+  investments. The announcement triggers immediate backlash from consumers, especially
+  on social media, while Samsung and Google launch coordinated counter-campaigns emphasizing
+  value and innovation. Analysts and investors begin debating whether Apple's brand
+  loyalty and ecosystem lock-in can absorb the shock or whether demand will shift
+  toward rival devices.
+institutional_agents:
+- archetype: corporate
+  bio: ''
+  category: corporate
+  communication_style: ''
+  domain_attributes: {}
+  id: apple_inc
+  influence: 1.0
+  key_trait: premium brand power
+  key_traits: []
+  name: Apple Inc.
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.45
+  rigidity: 0.85
+  role: Price-setting platform and brand owner
+  tier: 2
+- archetype: corporate
+  bio: ''
+  category: corporate
+  communication_style: ''
+  domain_attributes: {}
+  id: samsung_electronics
+  influence: 0.92
+  key_trait: fast counter-marketing
+  key_traits: []
+  name: Samsung Electronics
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.8
+  rigidity: 0.7
+  role: Primary premium Android competitor
+  tier: 2
+- archetype: corporate
+  bio: ''
+  category: corporate
+  communication_style: ''
+  domain_attributes: {}
+  id: google_pixel
+  influence: 0.78
+  key_trait: value-plus-AI positioning
+  key_traits: []
+  name: Google Pixel Division
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.7
+  rigidity: 0.62
+  role: AI-first smartphone challenger
+  tier: 2
+- archetype: public
+  bio: ''
+  category: public
+  communication_style: ''
+  domain_attributes: {}
+  id: global_consumers
+  influence: 0.95
+  key_trait: price sensitivity
+  key_traits: []
+  name: Global Smartphone Consumers
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.35
+  rigidity: 0.35
+  role: Mass consumer demand pool
+  tier: 2
+- archetype: media
+  bio: ''
+  category: media
+  communication_style: ''
+  domain_attributes: {}
+  id: tech_media
+  influence: 0.83
+  key_trait: agenda-setting coverage
+  key_traits: []
+  name: Technology Media Outlets
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.15
+  rigidity: 0.5
+  role: News and review ecosystem
+  tier: 2
+- archetype: financial
+  bio: ''
+  category: financial
+  communication_style: ''
+  domain_attributes: {}
+  id: wall_street_analysts
+  influence: 0.88
+  key_trait: valuation impact focus
+  key_traits: []
+  name: Wall Street Analyst Community
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.05
+  rigidity: 0.55
+  role: Investor sentiment shapers
+  tier: 2
+- archetype: media
+  bio: ''
+  category: media
+  communication_style: ''
+  domain_attributes: {}
+  id: social_platforms
+  influence: 0.9
+  key_trait: rapid virality
+  key_traits: []
+  name: Social Media Platforms
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.2
+  rigidity: 0.4
+  role: Amplification layer for backlash and memes
+  tier: 2
+- archetype: commercial
+  bio: ''
+  category: commercial
+  communication_style: ''
+  domain_attributes: {}
+  id: mobile_carriers
+  influence: 0.7
+  key_trait: promotion leverage
+  key_traits: []
+  name: Mobile Carriers and Retailers
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.05
+  rigidity: 0.45
+  role: Distribution and financing intermediaries
+  tier: 2
+language: en
+metrics_to_track:
+- Apple brand sentiment
+- Consumer backlash intensity
+- iPhone demand change
+- Competitor campaign effectiveness
+- Analyst outlook
+- Investor confidence
+- Social media volume
+- Upgrade deferral rate
+- Switching intent to Samsung
+- Switching intent to Google Pixel
+- Perceived price fairness
+- Ecosystem loyalty resilience
+name: Global iPhone Price Shock
+num_rounds: 5
+position_axis:
+  negative_label: Strongly opposed to Apple's price increase and likely to support
+    competitors or criticize the move
+  neutral_label: Mixed or uncertain stance, balancing brand loyalty, value concerns,
+    and market logic
+  positive_label: Strongly supportive of Apple's pricing decision and likely to defend
+    premium positioning
+round_events: {}
+scenario_context: The simulation takes place in a highly competitive global smartphone
+  market where premium pricing, ecosystem loyalty, carrier subsidies, and upgrade
+  cycles strongly influence consumer behavior. Apple is attempting to protect margins
+  and finance next-generation AI hardware, but the move risks accelerating churn,
+  damaging brand sentiment, and giving rivals a rare opening to capture dissatisfied
+  users.
+timeline_labels:
+- Week 1
+- Week 2
+- Week 3
+- Week 4
+- Week 5
+- Week 6
+- Week 7
+- Week 8
+timeline_unit: week

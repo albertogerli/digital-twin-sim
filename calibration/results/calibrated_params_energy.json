@@ -1,0 +1,15 @@
+{
+  "domain": "energy",
+  "calibrated_params": {
+    "anchor_weight": 0.05,
+    "social_weight": 0.05,
+    "event_weight": 0.12,
+    "herd_weight": 0.02,
+    "herd_threshold": 0.15
+  },
+  "calibration_metrics": {
+    "avg_composite_score": 17.9,
+    "avg_outcome_error": 19.84,
+    "n_scenarios": 1
+  }
+}

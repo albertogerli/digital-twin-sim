@@ -1,0 +1,511 @@
+budget_usd: 2.0
+channels:
+- channel_type: short_form
+  description: Public social media discourse, viral clips, memes, and consumer reactions
+  id: social_feed
+  max_length: 280
+- channel_type: official
+  description: Official Nike and stakeholder statements to media and the public
+  id: press_statement
+  max_length: 500
+- channel_type: long_form
+  description: Journalistic reporting, commentary, and ethics analysis
+  id: news_analysis
+  max_length: 600
+- channel_type: official
+  description: Statements from the athlete's family or estate
+  id: family_response
+  max_length: 400
+- channel_type: official
+  description: Communications from retailers, distributors, and brand partners
+  id: retail_partner_channel
+  max_length: 350
+- channel_type: long_form
+  description: Investor and analyst reactions to sales, risk, and reputation impacts
+  id: investor_update
+  max_length: 400
+citizen_clusters:
+- demographic_attributes:
+    age_range: 16-34
+    education: mixed
+    income: mixed
+    location: urban/suburban
+  description: Core Nike customers who prioritize product performance and brand innovation
+  engagement_base: 0.72
+  id: brand_loyalists
+  info_channel: social_feed
+  name: Nike Brand Loyalists
+  position: 0.55
+  size: 12000000
+- demographic_attributes:
+    age_range: 25-54
+    education: mixed
+    income: mixed
+    location: national
+  description: Fans emotionally attached to the deceased athlete and sports history
+  engagement_base: 0.68
+  id: sports_fans
+  info_channel: news_analysis
+  name: Sports Memorabilia and Legacy Fans
+  position: -0.7
+  size: 8000000
+- demographic_attributes:
+    age_range: 13-27
+    education: high school to college
+    income: mixed
+    location: urban/suburban
+  description: Young consumers highly active on social media and responsive to viral
+    trends
+  engagement_base: 0.9
+  id: gen_z_digital_natives
+  info_channel: social_feed
+  name: Gen Z Digital Natives
+  position: 0.15
+  size: 15000000
+- demographic_attributes:
+    age_range: 28-60
+    education: college+
+    income: middle to high
+    location: urban
+  description: Educated consumers and professionals concerned with consent, authenticity,
+    and corporate conduct
+  engagement_base: 0.62
+  id: ethics_minded_professionals
+  info_channel: news_analysis
+  name: Ethics-Minded Professionals
+  position: -0.8
+  size: 7000000
+- demographic_attributes:
+    age_range: 18-55
+    education: mixed
+    income: low to middle
+    location: suburban/rural
+  description: Consumers focused on discounts, availability, and product value over
+    brand controversy
+  engagement_base: 0.4
+  id: price_sensitive_shoppers
+  info_channel: social_feed
+  name: Price-Sensitive Shoppers
+  position: 0.05
+  size: 10000000
+- demographic_attributes:
+    age_range: 18-45
+    education: mixed to college+
+    income: mixed
+    location: national
+  description: Highly engaged consumers who boycott brands over ethical concerns
+  engagement_base: 0.88
+  id: activist_consumers
+  info_channel: social_feed
+  name: Activist Consumers
+  position: -0.95
+  size: 5000000
+- demographic_attributes:
+    age_range: 15-30
+    education: high school to college
+    income: low to middle
+    location: urban/suburban
+  description: Young athletes and sneaker enthusiasts drawn to performance and celebrity
+    association
+  engagement_base: 0.76
+  id: aspirational_athletes
+  info_channel: social_feed
+  name: Aspirational Athletes
+  position: 0.4
+  size: 9000000
+description: This simulation models the launch of a viral Nike campaign that uses
+  a deepfake of a deceased legendary athlete to endorse a new shoe line. It tracks
+  the tension between explosive sales and engagement on one side, and escalating backlash
+  from family members, ethics advocates, media, regulators, and consumers on the other.
+domain: commercial
+elite_agents:
+- archetype: business_leader
+  bio: Leads Nike's global business and must weigh commercial upside against reputational
+    damage and legal exposure.
+  category: ''
+  communication_style: measured, strategic, corporate
+  domain_attributes: {}
+  id: nike_ceo
+  influence: 0.98
+  key_trait: ''
+  key_traits:
+  - results-driven
+  - risk-aware
+  name: Nike Chief Executive Officer
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.7
+  rigidity: 0.55
+  role: Global CEO overseeing brand strategy and crisis response
+  tier: 1
+- archetype: business_leader
+  bio: Championed the campaign as a bold creative move and is now defending its performance.
+  category: ''
+  communication_style: persuasive, brand-forward, polished
+  domain_attributes: {}
+  id: nike_cmo
+  influence: 0.9
+  key_trait: ''
+  key_traits:
+  - creative
+  - defensive
+  name: Nike Chief Marketing Officer
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.85
+  rigidity: 0.7
+  role: Head of global marketing and campaign approval
+  tier: 1
+- archetype: advocate
+  bio: Represents the family's moral and legal objections to the unauthorized use
+    of the athlete's likeness.
+  category: ''
+  communication_style: firm, emotional, legally grounded
+  domain_attributes: {}
+  id: estate_representative
+  influence: 0.82
+  key_trait: ''
+  key_traits:
+  - protective
+  - uncompromising
+  name: Athlete Estate Representative
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.98
+  rigidity: 0.95
+  role: Authorized spokesperson for the deceased athlete's family and estate
+  tier: 1
+- archetype: journalist
+  bio: Provides expert criticism on the ethical implications of deepfake advertising
+    and posthumous consent.
+  category: ''
+  communication_style: analytical, precise, cautionary
+  domain_attributes: {}
+  id: ethics_professor
+  influence: 0.58
+  key_trait: ''
+  key_traits:
+  - principled
+  - articulate
+  name: Media Ethics Professor
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.8
+  rigidity: 0.78
+  role: Academic commentator on synthetic media and consent
+  tier: 1
+- archetype: activist
+  bio: Argues that the campaign manipulates consumers and normalizes deceptive synthetic
+    media.
+  category: ''
+  communication_style: direct, mobilizing, plainspoken
+  domain_attributes: {}
+  id: consumer_advocate
+  influence: 0.66
+  key_trait: ''
+  key_traits:
+  - trust-focused
+  - mobilizing
+  name: Consumer Rights Advocate
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.72
+  rigidity: 0.8
+  role: Public advocate focused on deceptive marketing and consumer trust
+  tier: 1
+- archetype: journalist
+  bio: Frames the story around legacy, commercialization, and the public's emotional
+    response.
+  category: ''
+  communication_style: balanced, probing, narrative-driven
+  domain_attributes: {}
+  id: sports_journalist
+  influence: 0.7
+  key_trait: ''
+  key_traits:
+  - curious
+  - balanced
+  name: Senior Sports Journalist
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.35
+  rigidity: 0.45
+  role: Reporter covering athlete legacy, brand deals, and public reaction
+  tier: 1
+- archetype: influencer
+  bio: Uses viral posts and explainers to criticize the campaign as a dangerous precedent.
+  category: ''
+  communication_style: sharp, viral, explanatory
+  domain_attributes: {}
+  id: tech_ethics_influencer
+  influence: 0.74
+  key_trait: ''
+  key_traits:
+  - viral
+  - critical
+  name: AI Ethics Influencer
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.9
+  rigidity: 0.88
+  role: Online commentator on deepfakes, consent, and brand responsibility
+  tier: 1
+- archetype: business_leader
+  bio: Evaluates whether Nike can contain backlash while preserving the sales momentum.
+  category: ''
+  communication_style: pragmatic, data-oriented, advisory
+  domain_attributes: {}
+  id: brand_strategist
+  influence: 0.52
+  key_trait: ''
+  key_traits:
+  - pragmatic
+  - analytical
+  name: Independent Brand Strategist
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.15
+  rigidity: 0.35
+  role: Consultant assessing reputation and market impact
+  tier: 1
+- archetype: advocate
+  bio: Seeks to protect the athlete's legacy and demands accountability from Nike.
+  category: ''
+  communication_style: dignified, moral, formal
+  domain_attributes: {}
+  id: athlete_legacy_foundation_head
+  influence: 0.6
+  key_trait: ''
+  key_traits:
+  - legacy-minded
+  - steadfast
+  name: Athlete Legacy Foundation Director
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.88
+  rigidity: 0.9
+  role: Leader of a foundation preserving the athlete's image and values
+  tier: 1
+- archetype: business_leader
+  bio: Balances strong consumer demand against reputational and partner risk.
+  category: ''
+  communication_style: cautious, commercial, transactional
+  domain_attributes: {}
+  id: retail_chain_exec
+  influence: 0.63
+  key_trait: ''
+  key_traits:
+  - pragmatic
+  - risk-managed
+  name: Major Retail Chain Executive
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.05
+  rigidity: 0.4
+  role: Executive deciding whether to keep the shoe line on shelves
+  tier: 1
+- archetype: financial_analyst
+  bio: Focuses on whether controversy will dent earnings or fade after the launch
+    spike.
+  category: ''
+  communication_style: numbers-first, skeptical, concise
+  domain_attributes: {}
+  id: investor_analyst
+  influence: 0.57
+  key_trait: ''
+  key_traits:
+  - data-driven
+  - skeptical
+  name: Equity Research Analyst
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.25
+  rigidity: 0.3
+  role: Market analyst tracking Nike's sales and brand risk
+  tier: 1
+initial_event: Nike releases a high-budget ad campaign featuring a highly realistic
+  deepfake of a legendary deceased athlete endorsing a new shoe line. The ad spreads
+  rapidly across social media, driving record engagement, preorders, and media attention
+  within hours. The athlete's family publicly denounces the campaign as exploitative
+  and unauthorized, while ethics organizations and consumer advocates accuse Nike
+  of crossing a moral line. News outlets amplify the controversy, forcing Nike executives,
+  sponsors, retailers, and regulators to respond under intense public scrutiny.
+institutional_agents:
+- archetype: corporation
+  bio: ''
+  category: corporation
+  communication_style: ''
+  domain_attributes: {}
+  id: nike_corporation
+  influence: 0.99
+  key_trait: brand-protective
+  key_traits: []
+  name: Nike, Inc.
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.8
+  rigidity: 0.6
+  role: Campaign owner and primary decision-maker
+  tier: 2
+- archetype: advocacy_group
+  bio: ''
+  category: advocacy_group
+  communication_style: ''
+  domain_attributes: {}
+  id: athlete_estate
+  influence: 0.88
+  key_trait: rights-enforcing
+  key_traits: []
+  name: Athlete Estate
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.98
+  rigidity: 0.96
+  role: Rights holder and family-led legal authority
+  tier: 2
+- archetype: advocacy_group
+  bio: ''
+  category: advocacy_group
+  communication_style: ''
+  domain_attributes: {}
+  id: media_ethics_org
+  influence: 0.72
+  key_trait: norm-setting
+  key_traits: []
+  name: Media Ethics Coalition
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.9
+  rigidity: 0.9
+  role: Advocacy organization focused on responsible media use
+  tier: 2
+- archetype: advocacy_group
+  bio: ''
+  category: advocacy_group
+  communication_style: ''
+  domain_attributes: {}
+  id: consumer_watchdog
+  influence: 0.68
+  key_trait: trust-enforcing
+  key_traits: []
+  name: Consumer Protection Watch
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.75
+  rigidity: 0.82
+  role: Consumer advocacy and complaint organization
+  tier: 2
+- archetype: corporation
+  bio: ''
+  category: corporation
+  communication_style: ''
+  domain_attributes: {}
+  id: major_retailers
+  influence: 0.74
+  key_trait: margin-sensitive
+  key_traits: []
+  name: Major Retailers Consortium
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.1
+  rigidity: 0.45
+  role: Group of key retail partners carrying the shoe line
+  tier: 2
+- archetype: media
+  bio: ''
+  category: media
+  communication_style: ''
+  domain_attributes: {}
+  id: sports_media_network
+  influence: 0.8
+  key_trait: agenda-setting
+  key_traits: []
+  name: Sports Media Network
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.2
+  rigidity: 0.5
+  role: Broadcast and digital outlet shaping public framing
+  tier: 2
+- archetype: regulator
+  bio: ''
+  category: regulator
+  communication_style: ''
+  domain_attributes: {}
+  id: ad_regulator
+  influence: 0.77
+  key_trait: compliance-focused
+  key_traits: []
+  name: Advertising Standards Authority
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.6
+  rigidity: 0.88
+  role: Regulatory body reviewing deceptive or misleading advertising
+  tier: 2
+- archetype: platform
+  bio: ''
+  category: platform
+  communication_style: ''
+  domain_attributes: {}
+  id: social_platform
+  influence: 0.86
+  key_trait: amplification-driven
+  key_traits: []
+  name: Major Social Platform
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.05
+  rigidity: 0.4
+  role: Platform hosting and amplifying the viral campaign
+  tier: 2
+- archetype: financial_institution
+  bio: ''
+  category: financial_institution
+  communication_style: ''
+  domain_attributes: {}
+  id: investor_group
+  influence: 0.83
+  key_trait: returns-focused
+  key_traits: []
+  name: Institutional Investor Group
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.2
+  rigidity: 0.35
+  role: Shareholder bloc evaluating earnings and ESG risk
+  tier: 2
+language: en
+metrics_to_track:
+- brand_sentiment
+- sales_uplift
+- social_media_engagement
+- backlash_intensity
+- media_coverage_volume
+- consumer_trust
+- legal_risk
+- retailer_support
+- investor_confidence
+- apology_or_withdrawal_probability
+name: Nike Deepfake Ad Backlash
+num_rounds: 4
+position_axis:
+  negative_label: strongly condemns the deepfake campaign and demands withdrawal/apology
+  neutral_label: mixed, cautious, or undecided
+  positive_label: strongly supports the campaign as innovative and commercially justified
+round_events: {}
+scenario_context: The simulation takes place in a media environment where generative
+  AI and deepfake technologies are increasingly accessible, but public trust in synthetic
+  media remains fragile. Nike is balancing brand innovation, short-term sales gains,
+  and long-term reputation risk amid pressure from the deceased athlete's estate,
+  advocacy groups, athletes, retailers, and investors.
+timeline_labels:
+- Day 1
+- Day 2
+- Day 3
+- Day 4
+- Day 5
+- Day 6
+- Day 7
+- Day 8
+timeline_unit: day

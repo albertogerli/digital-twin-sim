@@ -1,0 +1,38 @@
+[
+  {
+    "round": 1,
+    "polarization": 3.37,
+    "avg_position": 0.296,
+    "num_agents": 10
+  },
+  {
+    "round": 2,
+    "polarization": 3.31,
+    "avg_position": 0.294,
+    "num_agents": 10
+  },
+  {
+    "round": 3,
+    "polarization": 3.33,
+    "avg_position": 0.294,
+    "num_agents": 10
+  },
+  {
+    "round": 4,
+    "polarization": 3.29,
+    "avg_position": 0.31,
+    "num_agents": 10
+  },
+  {
+    "round": 5,
+    "polarization": 3.4,
+    "avg_position": 0.277,
+    "num_agents": 10
+  },
+  {
+    "round": 6,
+    "polarization": 3.4,
+    "avg_position": 0.258,
+    "num_agents": 10
+  }
+]

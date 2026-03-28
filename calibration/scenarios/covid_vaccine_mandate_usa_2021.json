@@ -1,0 +1,27 @@
+{
+  "scenario_name": "COVID-19 Vaccine Mandate Debate (USA, 2021-2022)",
+  "description": "Biden announced federal vaccine mandate for large employers. OSHA rule blocked by Supreme Court Jan 2022. Tests policy polarization where executive action collapses undecideds into opposition.",
+  "domain": "public_health",
+  "final_outcome_pro_pct": 47,
+  "final_outcome_against_pct": 50,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 51, "against_pct": 40, "undecided_pct": 9},
+    {"round_equivalent": 2, "pro_pct": 55, "against_pct": 38, "undecided_pct": 7},
+    {"round_equivalent": 3, "pro_pct": 56, "against_pct": 37, "undecided_pct": 7},
+    {"round_equivalent": 4, "pro_pct": 52, "against_pct": 43, "undecided_pct": 5},
+    {"round_equivalent": 5, "pro_pct": 51, "against_pct": 44, "undecided_pct": 5},
+    {"round_equivalent": 6, "pro_pct": 50, "against_pct": 46, "undecided_pct": 4},
+    {"round_equivalent": 7, "pro_pct": 49, "against_pct": 47, "undecided_pct": 4},
+    {"round_equivalent": 8, "pro_pct": 48, "against_pct": 49, "undecided_pct": 3},
+    {"round_equivalent": 9, "pro_pct": 47, "against_pct": 50, "undecided_pct": 3}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Delta variant wave surges. Hospitalizations among unvaccinated spike. Fear effect boosts mandate support ~4pts."},
+    {"round_equivalent": 3, "description": "FDA grants full approval to Pfizer vaccine (Aug 23). Removes 'experimental' objection."},
+    {"round_equivalent": 4, "description": "Biden announces sweeping federal vaccine mandate for employers 100+ (Sep 9). Immediate partisan backlash. Support drops ~4pts."},
+    {"round_equivalent": 6, "description": "OSHA ETS published Nov 4. 5th Circuit stays rule Nov 6. Omicron variant detected Nov 26."},
+    {"round_equivalent": 8, "description": "Supreme Court blocks OSHA employer mandate Jan 13, 2022 (NFIB v. OSHA, 6-3). Opposition crosses 50%."}
+  ],
+  "calibration_notes": "Tests policy polarization dynamics. Moderate initial support peaks during health crisis (Delta), then sharply polarizes once policy becomes associated with specific political actor (Biden). The announcement itself collapses undecideds into opposition — does not create new supporters. Slow erosion as legal challenges reframe issue from public health to government overreach. Near-even final split with massive partisan sorting (>60pt gap between parties). Sources: KFF Vaccine Monitor, Gallup, AP-NORC, Pew Research."
+}

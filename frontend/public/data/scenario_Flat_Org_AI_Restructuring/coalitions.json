@@ -1,0 +1,226 @@
+[
+  {
+    "round": 1,
+    "coalitions": [
+      {
+        "label": "Change Champions",
+        "color": "#1e40af",
+        "members": [
+          "ceo_1",
+          "cfo_1",
+          "cto_1",
+          "company_exec_team",
+          "board_directors"
+        ],
+        "avg_position": 0.738,
+        "size": 5
+      },
+      {
+        "label": "Fence-sitters",
+        "color": "#059669",
+        "members": [
+          "chro_1",
+          "journalist_1",
+          "influencer_1",
+          "hr_department",
+          "people_ops",
+          "media_outlet",
+          "regulator_watch"
+        ],
+        "avg_position": -0.254,
+        "size": 7
+      },
+      {
+        "label": "Change Resistors",
+        "color": "#dc2626",
+        "members": [
+          "union_leader_1",
+          "manager_rep_1",
+          "tech_workers_union"
+        ],
+        "avg_position": -0.833,
+        "size": 3
+      },
+      {
+        "label": "Fence-sitters",
+        "color": "#f59e0b",
+        "members": [
+          "analyst_1",
+          "industry_voice_1",
+          "engineering_org",
+          "investor_group"
+        ],
+        "avg_position": 0.295,
+        "size": 4
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "coalitions": [
+      {
+        "label": "Change Champions",
+        "color": "#1e40af",
+        "members": [
+          "ceo_1",
+          "cfo_1",
+          "cto_1",
+          "company_exec_team",
+          "board_directors"
+        ],
+        "avg_position": 0.719,
+        "size": 5
+      },
+      {
+        "label": "Fence-sitters",
+        "color": "#059669",
+        "members": [
+          "chro_1",
+          "journalist_1",
+          "hr_department",
+          "people_ops",
+          "media_outlet",
+          "regulator_watch"
+        ],
+        "avg_position": -0.187,
+        "size": 6
+      },
+      {
+        "label": "Change Resistors",
+        "color": "#dc2626",
+        "members": [
+          "union_leader_1",
+          "manager_rep_1",
+          "influencer_1",
+          "tech_workers_union"
+        ],
+        "avg_position": -0.766,
+        "size": 4
+      },
+      {
+        "label": "Fence-sitters",
+        "color": "#f59e0b",
+        "members": [
+          "analyst_1",
+          "industry_voice_1",
+          "engineering_org",
+          "investor_group"
+        ],
+        "avg_position": 0.255,
+        "size": 4
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "coalitions": [
+      {
+        "label": "Fence-sitters",
+        "color": "#1e40af",
+        "members": [
+          "chro_1",
+          "journalist_1",
+          "hr_department",
+          "people_ops",
+          "media_outlet",
+          "regulator_watch"
+        ],
+        "avg_position": -0.18,
+        "size": 6
+      },
+      {
+        "label": "Change Champions",
+        "color": "#059669",
+        "members": [
+          "ceo_1",
+          "cfo_1",
+          "cto_1",
+          "company_exec_team",
+          "board_directors"
+        ],
+        "avg_position": 0.74,
+        "size": 5
+      },
+      {
+        "label": "Change Resistors",
+        "color": "#dc2626",
+        "members": [
+          "union_leader_1",
+          "manager_rep_1",
+          "influencer_1",
+          "tech_workers_union"
+        ],
+        "avg_position": -0.77,
+        "size": 4
+      },
+      {
+        "label": "Fence-sitters",
+        "color": "#f59e0b",
+        "members": [
+          "analyst_1",
+          "industry_voice_1",
+          "engineering_org",
+          "investor_group"
+        ],
+        "avg_position": 0.231,
+        "size": 4
+      }
+    ]
+  },
+  {
+    "round": 4,
+    "coalitions": [
+      {
+        "label": "Change Champions",
+        "color": "#1e40af",
+        "members": [
+          "cto_1",
+          "analyst_1",
+          "board_directors",
+          "investor_group"
+        ],
+        "avg_position": 0.449,
+        "size": 4
+      },
+      {
+        "label": "Change Resistors",
+        "color": "#059669",
+        "members": [
+          "union_leader_1",
+          "manager_rep_1",
+          "influencer_1",
+          "tech_workers_union"
+        ],
+        "avg_position": -0.772,
+        "size": 4
+      },
+      {
+        "label": "Fence-sitters",
+        "color": "#dc2626",
+        "members": [
+          "chro_1",
+          "journalist_1",
+          "industry_voice_1",
+          "hr_department",
+          "engineering_org",
+          "people_ops",
+          "media_outlet",
+          "regulator_watch"
+        ],
+        "avg_position": -0.106,
+        "size": 8
+      },
+      {
+        "label": "Change Champions",
+        "color": "#f59e0b",
+        "members": [
+          "ceo_1",
+          "cfo_1",
+          "company_exec_team"
+        ],
+        "avg_position": 0.796,
+        "size": 3
+      }
+    ]
+  }
+]

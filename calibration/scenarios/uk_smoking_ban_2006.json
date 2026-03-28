@@ -1,0 +1,27 @@
+{
+  "scenario_name": "UK Indoor Smoking Ban (2006-2007)",
+  "description": "Health Act 2006 banned smoking in enclosed public places. Support went from ~48% pre-debate to ~78% post-implementation. Tests policy acceptance curve — the classic opposition-to-support trajectory.",
+  "domain": "public_health",
+  "final_outcome_pro_pct": 78,
+  "final_outcome_against_pct": 18,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 48, "against_pct": 39, "undecided_pct": 13},
+    {"round_equivalent": 2, "pro_pct": 50, "against_pct": 37, "undecided_pct": 13},
+    {"round_equivalent": 3, "pro_pct": 53, "against_pct": 35, "undecided_pct": 12},
+    {"round_equivalent": 4, "pro_pct": 56, "against_pct": 33, "undecided_pct": 11},
+    {"round_equivalent": 5, "pro_pct": 61, "against_pct": 29, "undecided_pct": 10},
+    {"round_equivalent": 6, "pro_pct": 65, "against_pct": 26, "undecided_pct": 9},
+    {"round_equivalent": 7, "pro_pct": 70, "against_pct": 23, "undecided_pct": 7},
+    {"round_equivalent": 8, "pro_pct": 75, "against_pct": 20, "undecided_pct": 5},
+    {"round_equivalent": 9, "pro_pct": 78, "against_pct": 18, "undecided_pct": 4}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Public Health White Paper proposes partial smoking ban with pub exemptions (Nov 2004). Initial split."},
+    {"round_equivalent": 4, "description": "Parliament votes 384-184 for comprehensive ban in free vote (Feb 14, 2006). Bandwagon effect."},
+    {"round_equivalent": 5, "description": "Scotland implements ban (Mar 26, 2006). Visible proof of concept. Pubs survive, compliance high. Largest single opinion shift."},
+    {"round_equivalent": 7, "description": "Wales and Northern Ireland implement bans (Apr 2, 2007). Further normalization."},
+    {"round_equivalent": 8, "description": "English ban takes effect (Jul 1, 2007). 98%+ compliance. Experiential conversion — people enjoy smoke-free pubs."}
+  ],
+  "calibration_notes": "Tests the policy acceptance curve — opposition transforming into support after implementation. Pre-implementation fear-based opposition is strongest before anyone experiences the policy. Proof of concept from early adopters (Scotland) is the most powerful shift event. Post-implementation experiential effect is even stronger — status quo bias flips to favor the policy. One-way ratchet: support only goes up. Total shift ~30 points over 3 years (48% to 78%). Key mechanism: policy changes experienced environment, which changes preferences. Even smokers eventually accepted it. Sources: YouGov, Ipsos MORI, ASH, British Social Attitudes Survey."
+}

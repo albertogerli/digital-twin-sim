@@ -1,0 +1,118 @@
+{
+  "scenario": "Luxury_Leather_Transition_Debate",
+  "title": "Luxury Leather Transition Debate",
+  "totalRounds": 6,
+  "totalAgents": 10,
+  "agents": [
+    {
+      "id": "ceo_brand",
+      "name": "Elena Rinaldi",
+      "role": "CEO of the luxury fashion house",
+      "handle": "@ERinaldi",
+      "avatarColor": "#22c55e",
+      "position": 0.804,
+      "influence": 0.95,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "creative_director",
+      "name": "Marco Bellini",
+      "role": "Creative Director",
+      "handle": "@MBellini",
+      "avatarColor": "#3b82f6",
+      "position": 0.486,
+      "influence": 0.82,
+      "archetype": "designer",
+      "tier": 1
+    },
+    {
+      "id": "luxury_analyst",
+      "name": "Sofia Conti",
+      "role": "Luxury market analyst",
+      "handle": "@SConti",
+      "avatarColor": "#ef4444",
+      "position": 0.162,
+      "influence": 0.72,
+      "archetype": "analyst",
+      "tier": 1
+    },
+    {
+      "id": "animal_rights_leader",
+      "name": "Giulia Ferraro",
+      "role": "Animal rights campaigner",
+      "handle": "@GFerraro",
+      "avatarColor": "#f59e0b",
+      "position": 0.968,
+      "influence": 0.78,
+      "archetype": "activist",
+      "tier": 1
+    },
+    {
+      "id": "environmental_scientist",
+      "name": "Dr. Luca Moretti",
+      "role": "Sustainability scientist",
+      "handle": "@DMoretti",
+      "avatarColor": "#8b5cf6",
+      "position": 0.747,
+      "influence": 0.68,
+      "archetype": "expert",
+      "tier": 1
+    },
+    {
+      "id": "heritage_crafts_spokesperson",
+      "name": "Paolo Vitale",
+      "role": "Leather craftsmanship association spokesperson",
+      "handle": "@PVitale",
+      "avatarColor": "#ec4899",
+      "position": -0.787,
+      "influence": 0.7,
+      "archetype": "industry_representative",
+      "tier": 1
+    },
+    {
+      "id": "competitor_ceo",
+      "name": "Chiara De Santis",
+      "role": "CEO of a competing luxury brand",
+      "handle": "@CSantis",
+      "avatarColor": "#06b6d4",
+      "position": -0.141,
+      "influence": 0.77,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "consumer_influencer",
+      "name": "Nadia Rossi",
+      "role": "Fashion and lifestyle influencer",
+      "handle": "@NRossi",
+      "avatarColor": "#84cc16",
+      "position": 0.381,
+      "influence": 0.74,
+      "archetype": "influencer",
+      "tier": 1
+    },
+    {
+      "id": "retail_director",
+      "name": "Alessandro Greco",
+      "role": "Global retail and merchandising director",
+      "handle": "@AGreco",
+      "avatarColor": "#f97316",
+      "position": 0.208,
+      "influence": 0.63,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "fashion_journalist",
+      "name": "Francesca Lombardi",
+      "role": "Fashion editor at a major business publication",
+      "handle": "@FLombardi",
+      "avatarColor": "#6366f1",
+      "position": 0.127,
+      "influence": 0.66,
+      "archetype": "journalist",
+      "tier": 1
+    }
+  ]
+}

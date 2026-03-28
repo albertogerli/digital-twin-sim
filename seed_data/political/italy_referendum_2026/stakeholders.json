@@ -1,0 +1,175 @@
+[
+  {
+    "name": "Giorgia Meloni",
+    "role": "Presidente del Consiglio, leader Fratelli d'Italia",
+    "known_position": 0.85,
+    "position_source": "public_statement",
+    "bio_verified": "Presidente del Consiglio dal 2022, leader di FdI. Ha fatto della riforma della giustizia un pilastro programmatico.",
+    "key_quotes": [
+      "La separazione delle carriere non è una riforma contro i magistrati, è una riforma a favore dei cittadini.",
+      "Chi vi giudica non può aver condiviso uffici, carriera e percorso professionale con chi vi accusa."
+    ],
+    "archetype": "politician",
+    "communication_style": "Assertiva, populista-istituzionale, linguaggio diretto",
+    "influence": 0.95,
+    "rigidity": 0.8
+  },
+  {
+    "name": "Carlo Nordio",
+    "role": "Ministro della Giustizia",
+    "known_position": 0.95,
+    "position_source": "voting_record",
+    "bio_verified": "Ex magistrato con 35 anni di carriera in procura. Autore della riforma che porta il suo nome.",
+    "key_quotes": [
+      "Ho fatto il pubblico ministero per tutta la vita. So per esperienza diretta che la contiguità tra giudici e PM compromette la percezione di imparzialità.",
+      "Le correnti della magistratura sono diventate veri e propri partiti interni."
+    ],
+    "archetype": "politician",
+    "communication_style": "Tecnico-istituzionale, autorevole, cita esperienza diretta",
+    "influence": 0.85,
+    "rigidity": 0.9
+  },
+  {
+    "name": "Antonio Tajani",
+    "role": "Ministro degli Esteri, leader Forza Italia",
+    "known_position": 0.7,
+    "position_source": "public_statement",
+    "bio_verified": "Leader di Forza Italia dopo Berlusconi. Ha spostato il partito su posizioni più centriste ed europeiste.",
+    "key_quotes": [
+      "Silvio Berlusconi ha combattuto per trent'anni per questa riforma. Forza Italia la porta a compimento."
+    ],
+    "archetype": "politician",
+    "communication_style": "Diplomatico, moderato, richiama eredità berlusconiana",
+    "influence": 0.7,
+    "rigidity": 0.6
+  },
+  {
+    "name": "Matteo Salvini",
+    "role": "Vicepresidente del Consiglio, leader Lega",
+    "known_position": 0.75,
+    "position_source": "public_statement",
+    "bio_verified": "Leader della Lega, vicepresidente del Consiglio e Ministro delle Infrastrutture. Consensi in calo (~8-9%).",
+    "key_quotes": [
+      "Basta con i magistrati che un giorno ti accusano e il giorno dopo ti giudicano.",
+      "Il sorteggio è democrazia pura: niente raccomandazioni, niente accordi sottobanco."
+    ],
+    "archetype": "politician",
+    "communication_style": "Populista, diretto, slogan semplici, toni da social media",
+    "influence": 0.65,
+    "rigidity": 0.5
+  },
+  {
+    "name": "Elly Schlein",
+    "role": "Segretaria del Partito Democratico",
+    "known_position": -0.85,
+    "position_source": "public_statement",
+    "bio_verified": "Segretaria del PD, ha impresso una svolta a sinistra sui diritti. Guida l'opposizione parlamentare alla riforma.",
+    "key_quotes": [
+      "Questa non è una riforma della giustizia, è una riforma contro la giustizia.",
+      "Separare le carriere significa indebolire il pubblico ministero, renderlo più vulnerabile alle pressioni del potere politico."
+    ],
+    "archetype": "politician",
+    "communication_style": "Appassionata, progressista, argomentazione strutturata",
+    "influence": 0.8,
+    "rigidity": 0.75
+  },
+  {
+    "name": "Giuseppe Conte",
+    "role": "Leader Movimento 5 Stelle",
+    "known_position": -0.8,
+    "position_source": "public_statement",
+    "bio_verified": "Leader M5S, ex Presidente del Consiglio. Linea giustizialista, opposizione dura al governo.",
+    "key_quotes": [
+      "La separazione delle carriere è una soluzione a un problema che non esiste.",
+      "Un PM separato dalla magistratura giudicante è strutturalmente più vicino al potere esecutivo."
+    ],
+    "archetype": "politician",
+    "communication_style": "Professorale, tecnico-politico, toni pacati ma fermi",
+    "influence": 0.7,
+    "rigidity": 0.7
+  },
+  {
+    "name": "Nicola Fratoianni",
+    "role": "Co-leader Alleanza Verdi e Sinistra",
+    "known_position": -0.9,
+    "position_source": "public_statement",
+    "bio_verified": "Co-leader AVS con Bonelli. Posizione radicale contro tutte le riforme del governo Meloni.",
+    "key_quotes": [
+      "Premierato, autonomia differenziata, separazione delle carriere: tre riforme che convergono verso lo stesso obiettivo, concentrare il potere."
+    ],
+    "archetype": "politician",
+    "communication_style": "Militante, ideologico, retorica di sinistra",
+    "influence": 0.4,
+    "rigidity": 0.85
+  },
+  {
+    "name": "Maurizio Landini",
+    "role": "Segretario Generale CGIL",
+    "known_position": -0.75,
+    "position_source": "public_statement",
+    "bio_verified": "Leader della CGIL. Ha personalmente guidato la mobilitazione sindacale per il NO.",
+    "key_quotes": [
+      "Una magistratura indipendente è la prima garanzia dei diritti dei lavoratori e dei più deboli."
+    ],
+    "archetype": "union_leader",
+    "communication_style": "Sindacalista, combattivo, linguaggio di classe",
+    "influence": 0.6,
+    "rigidity": 0.7
+  },
+  {
+    "name": "Presidente ANM",
+    "role": "Presidente Associazione Nazionale Magistrati",
+    "known_position": -0.95,
+    "position_source": "institutional_statement",
+    "bio_verified": "Guida dell'ANM, principale voce istituzionale della magistratura contro la riforma.",
+    "key_quotes": [
+      "Lo stravolgimento più grave dell'assetto costituzionale della magistratura dalla nascita della Repubblica.",
+      "L'unicità della carriera è il fondamento della cultura della giurisdizione."
+    ],
+    "archetype": "magistrate",
+    "communication_style": "Istituzionale, tecnico-giuridico, toni gravi",
+    "influence": 0.7,
+    "rigidity": 0.9
+  },
+  {
+    "name": "Presidente UCPI",
+    "role": "Presidente Unione Camere Penali Italiane",
+    "known_position": 0.9,
+    "position_source": "institutional_statement",
+    "bio_verified": "Guida degli avvocati penalisti, che sostengono la separazione delle carriere da oltre vent'anni.",
+    "key_quotes": [
+      "La separazione delle carriere attua finalmente il principio della parità delle parti nel processo penale.",
+      "Con questa riforma, avvocato difensore e PM saranno finalmente pari davanti a un giudice terzo."
+    ],
+    "archetype": "lawyer",
+    "communication_style": "Forense, argomentativo, citazioni giuridiche",
+    "influence": 0.55,
+    "rigidity": 0.85
+  },
+  {
+    "name": "Don Luigi Ciotti",
+    "role": "Fondatore Libera — Associazioni contro le Mafie",
+    "known_position": -0.7,
+    "position_source": "public_statement",
+    "bio_verified": "Fondatore di Libera. Preoccupato per l'impatto della riforma sulla lotta alla criminalità organizzata.",
+    "key_quotes": [
+      "Un PM separato, isolato, potenzialmente più esposto a pressioni, è un PM meno efficace nella lotta alla mafia e alla corruzione."
+    ],
+    "archetype": "activist",
+    "communication_style": "Morale, appassionato, richiama memoria vittime mafia",
+    "influence": 0.55,
+    "rigidity": 0.65
+  },
+  {
+    "name": "Carlo Calenda",
+    "role": "Leader Azione",
+    "known_position": -0.2,
+    "position_source": "public_statement",
+    "bio_verified": "Leader centrista di Azione. Posizione critica verso il governo ma con distinguo sulle singole riforme.",
+    "key_quotes": [],
+    "archetype": "politician",
+    "communication_style": "Tecnocratico, polemico, distinguo continui",
+    "influence": 0.35,
+    "rigidity": 0.4
+  }
+]

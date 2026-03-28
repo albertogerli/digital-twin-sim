@@ -1,0 +1,7 @@
+{
+  "scenario_id": "Nike_Deepfake_Ad_Backlash",
+  "scenario_name": "Nike Deepfake Ad Backlash",
+  "num_rounds": 4,
+  "domain": "commercial",
+  "description": "This simulation models the launch of a viral Nike campaign that uses a deepfake of a deceased legendary athlete to endorse a new shoe line. It tracks the tension between explosive sales and engagement on one side, and escalating backlash from family members, ethics advocates, media, regulators, and consumers on the other."
+}

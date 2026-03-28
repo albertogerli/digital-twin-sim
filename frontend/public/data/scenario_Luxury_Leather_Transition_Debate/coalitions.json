@@ -1,0 +1,284 @@
+[
+  {
+    "round": 1,
+    "coalitions": [
+      {
+        "label": "Reform Supporters",
+        "color": "#1e40af",
+        "members": [
+          "ceo_brand",
+          "animal_rights_leader",
+          "environmental_scientist"
+        ],
+        "avg_position": 0.867,
+        "size": 3
+      },
+      {
+        "label": "Moderate Supporters",
+        "color": "#059669",
+        "members": [
+          "luxury_analyst",
+          "competitor_ceo",
+          "retail_director",
+          "fashion_journalist"
+        ],
+        "avg_position": 0.035,
+        "size": 4
+      },
+      {
+        "label": "Reform Supporters",
+        "color": "#dc2626",
+        "members": [
+          "creative_director",
+          "consumer_influencer"
+        ],
+        "avg_position": 0.43,
+        "size": 2
+      },
+      {
+        "label": "Reform Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "heritage_crafts_spokesperson"
+        ],
+        "avg_position": -0.8,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "coalitions": [
+      {
+        "label": "Moderate Opponents",
+        "color": "#1e40af",
+        "members": [
+          "competitor_ceo"
+        ],
+        "avg_position": -0.23,
+        "size": 1
+      },
+      {
+        "label": "Moderate Supporters",
+        "color": "#059669",
+        "members": [
+          "creative_director",
+          "luxury_analyst",
+          "consumer_influencer",
+          "retail_director",
+          "fashion_journalist"
+        ],
+        "avg_position": 0.258,
+        "size": 5
+      },
+      {
+        "label": "Reform Supporters",
+        "color": "#dc2626",
+        "members": [
+          "ceo_brand",
+          "animal_rights_leader",
+          "environmental_scientist"
+        ],
+        "avg_position": 0.853,
+        "size": 3
+      },
+      {
+        "label": "Reform Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "heritage_crafts_spokesperson"
+        ],
+        "avg_position": -0.82,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "coalitions": [
+      {
+        "label": "Moderate Opponents",
+        "color": "#1e40af",
+        "members": [
+          "competitor_ceo"
+        ],
+        "avg_position": -0.24,
+        "size": 1
+      },
+      {
+        "label": "Reform Supporters",
+        "color": "#059669",
+        "members": [
+          "ceo_brand",
+          "animal_rights_leader",
+          "environmental_scientist"
+        ],
+        "avg_position": 0.863,
+        "size": 3
+      },
+      {
+        "label": "Moderate Supporters",
+        "color": "#dc2626",
+        "members": [
+          "creative_director",
+          "luxury_analyst",
+          "consumer_influencer",
+          "retail_director",
+          "fashion_journalist"
+        ],
+        "avg_position": 0.272,
+        "size": 5
+      },
+      {
+        "label": "Reform Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "heritage_crafts_spokesperson"
+        ],
+        "avg_position": -0.81,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 4,
+    "coalitions": [
+      {
+        "label": "Reform Supporters",
+        "color": "#1e40af",
+        "members": [
+          "creative_director",
+          "luxury_analyst",
+          "consumer_influencer",
+          "retail_director"
+        ],
+        "avg_position": 0.343,
+        "size": 4
+      },
+      {
+        "label": "Reform Opponents",
+        "color": "#059669",
+        "members": [
+          "heritage_crafts_spokesperson"
+        ],
+        "avg_position": -0.83,
+        "size": 1
+      },
+      {
+        "label": "Reform Supporters",
+        "color": "#dc2626",
+        "members": [
+          "ceo_brand",
+          "animal_rights_leader",
+          "environmental_scientist"
+        ],
+        "avg_position": 0.867,
+        "size": 3
+      },
+      {
+        "label": "Moderate Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "competitor_ceo",
+          "fashion_journalist"
+        ],
+        "avg_position": -0.02,
+        "size": 2
+      }
+    ]
+  },
+  {
+    "round": 5,
+    "coalitions": [
+      {
+        "label": "Moderate Opponents",
+        "color": "#1e40af",
+        "members": [
+          "competitor_ceo"
+        ],
+        "avg_position": -0.24,
+        "size": 1
+      },
+      {
+        "label": "Reform Supporters",
+        "color": "#059669",
+        "members": [
+          "ceo_brand",
+          "animal_rights_leader",
+          "environmental_scientist"
+        ],
+        "avg_position": 0.857,
+        "size": 3
+      },
+      {
+        "label": "Moderate Supporters",
+        "color": "#dc2626",
+        "members": [
+          "creative_director",
+          "luxury_analyst",
+          "consumer_influencer",
+          "retail_director",
+          "fashion_journalist"
+        ],
+        "avg_position": 0.258,
+        "size": 5
+      },
+      {
+        "label": "Reform Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "heritage_crafts_spokesperson"
+        ],
+        "avg_position": -0.84,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 6,
+    "coalitions": [
+      {
+        "label": "Moderate Opponents",
+        "color": "#1e40af",
+        "members": [
+          "competitor_ceo",
+          "fashion_journalist"
+        ],
+        "avg_position": -0.08,
+        "size": 2
+      },
+      {
+        "label": "Reform Supporters",
+        "color": "#059669",
+        "members": [
+          "ceo_brand",
+          "animal_rights_leader",
+          "environmental_scientist"
+        ],
+        "avg_position": 0.847,
+        "size": 3
+      },
+      {
+        "label": "Moderate Supporters",
+        "color": "#dc2626",
+        "members": [
+          "creative_director",
+          "luxury_analyst",
+          "consumer_influencer",
+          "retail_director"
+        ],
+        "avg_position": 0.273,
+        "size": 4
+      },
+      {
+        "label": "Reform Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "heritage_crafts_spokesperson"
+        ],
+        "avg_position": -0.84,
+        "size": 1
+      }
+    ]
+  }
+]

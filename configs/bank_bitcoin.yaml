@@ -1,0 +1,469 @@
+budget_usd: 2.0
+channels:
+- channel_type: official
+  description: Official bank statements and regulatory disclosures
+  id: press_release
+  max_length: 1200
+- channel_type: short_form
+  description: Fast-moving financial news and analyst commentary
+  id: market_wire
+  max_length: 280
+- channel_type: short_form
+  description: Public reaction, memes, and retail investor discussion
+  id: social_feed
+  max_length: 280
+- channel_type: long_form
+  description: Internal strategic and risk-management communication
+  id: board_memo
+  max_length: 2000
+- channel_type: official
+  description: Supervisory guidance, inquiries, and enforcement signals
+  id: regulatory_notice
+  max_length: 1500
+citizen_clusters:
+- demographic_attributes:
+    age_range: 30-65
+    education: mixed
+    income: middle
+    location: urban and suburban Europe
+  description: Middle-income depositors focused on safety and account stability.
+  engagement_base: 0.42
+  id: retail_savers
+  info_channel: social_feed
+  name: Retail Savers
+  position: -0.55
+  size: 8500000
+- demographic_attributes:
+    age_range: 18-40
+    education: mixed to high
+    income: mixed
+    location: pan-European urban centers
+  description: Digitally native retail investors and Bitcoin supporters.
+  engagement_base: 0.88
+  id: crypto_enthusiasts
+  info_channel: social_feed
+  name: Crypto Enthusiasts
+  position: 0.95
+  size: 1200000
+- demographic_attributes:
+    age_range: 35-60
+    education: high
+    income: high
+    location: major financial hubs
+  description: Corporate treasurers and asset managers watching reserve policy implications.
+  engagement_base: 0.56
+  id: institutional_clients
+  info_channel: market_wire
+  name: Institutional Clients
+  position: 0.1
+  size: 240000
+- demographic_attributes:
+    age_range: 65+
+    education: mixed
+    income: lower-middle to middle
+    location: across Europe
+  description: Older savers with strong preference for capital preservation.
+  engagement_base: 0.34
+  id: risk_averse_pensioners
+  info_channel: press_release
+  name: Risk-Averse Pensioners
+  position: -0.8
+  size: 3100000
+- demographic_attributes:
+    age_range: 22-35
+    education: college-educated
+    income: middle to upper-middle
+    location: cities and tech corridors
+  description: Young professionals open to experimentation in finance and technology.
+  engagement_base: 0.61
+  id: young_finance_optimists
+  info_channel: social_feed
+  name: Young Finance Optimists
+  position: 0.35
+  size: 2800000
+- demographic_attributes:
+    age_range: 30-60
+    education: mixed
+    income: mixed
+    location: regional towns and cities
+  description: Owners concerned with lending stability, fees, and banking reliability.
+  engagement_base: 0.48
+  id: small_business_owners
+  info_channel: market_wire
+  name: Small Business Owners
+  position: -0.25
+  size: 1900000
+description: A major European bank publicly announces that it will hold Bitcoin as
+  part of its reserve assets, triggering immediate market volatility and intense scrutiny
+  from regulators, investors, and the media. The simulation explores how the bank,
+  policymakers, competitors, and the public respond as the decision ripples through
+  financial markets and institutional trust.
+domain: financial
+elite_agents:
+- archetype: business_leader
+  bio: A pragmatic CEO known for bold strategic moves and disciplined risk framing.
+  category: ''
+  communication_style: measured, investor-friendly, and decisive
+  domain_attributes: {}
+  id: ceo_bank
+  influence: 0.95
+  key_trait: ''
+  key_traits:
+  - strategic
+  - calm
+  - risk-aware
+  name: Elena Varga
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.7
+  rigidity: 0.45
+  role: Chief Executive Officer of the announcing bank
+  tier: 1
+- archetype: business_leader
+  bio: A conservative finance executive focused on capital preservation and balance-sheet
+    resilience.
+  category: ''
+  communication_style: technical, cautious, and detail-oriented
+  domain_attributes: {}
+  id: cfo_bank
+  influence: 0.82
+  key_trait: ''
+  key_traits:
+  - conservative
+  - analytical
+  - compliance-minded
+  name: Martin Keller
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.4
+  rigidity: 0.6
+  role: Chief Financial Officer
+  tier: 1
+- archetype: business_leader
+  bio: A seasoned risk officer skeptical of assets with extreme volatility and uncertain
+    regulatory treatment.
+  category: ''
+  communication_style: formal, cautious, and evidence-driven
+  domain_attributes: {}
+  id: risk_head
+  influence: 0.8
+  key_trait: ''
+  key_traits:
+  - skeptical
+  - rigorous
+  - defensive
+  name: Sofia Lindholm
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.2
+  rigidity: 0.78
+  role: Chief Risk Officer
+  tier: 1
+- archetype: business_leader
+  bio: An experienced board leader balancing innovation pressure with fiduciary responsibility.
+  category: ''
+  communication_style: measured, diplomatic, and governance-focused
+  domain_attributes: {}
+  id: board_chair
+  influence: 0.88
+  key_trait: ''
+  key_traits:
+  - balanced
+  - institutional
+  - prudent
+  name: Jacques Moreau
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.15
+  rigidity: 0.55
+  role: Board Chair
+  tier: 1
+- archetype: regulator
+  bio: A strict supervisor committed to financial stability and conservative reserve
+    management.
+  category: ''
+  communication_style: formal, precise, and authoritative
+  domain_attributes: {}
+  id: ecb_official
+  influence: 0.98
+  key_trait: ''
+  key_traits:
+  - strict
+  - institutionalist
+  - stability-focused
+  name: Dr. Anika Weber
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.85
+  rigidity: 0.9
+  role: European Central Bank supervisory official
+  tier: 1
+- archetype: politician
+  bio: A centrist policymaker wary of reputational risk but attentive to innovation
+    and competitiveness.
+  category: ''
+  communication_style: careful, political, and public-facing
+  domain_attributes: {}
+  id: finance_minister
+  influence: 0.9
+  key_trait: ''
+  key_traits:
+  - pragmatic
+  - cautious
+  - responsive
+  name: Paolo Ricci
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.35
+  rigidity: 0.65
+  role: National finance minister
+  tier: 1
+- archetype: business_leader
+  bio: A high-profile crypto executive eager to frame the bank's move as institutional
+    validation.
+  category: ''
+  communication_style: enthusiastic, promotional, and media-savvy
+  domain_attributes: {}
+  id: crypto_ceo
+  influence: 0.76
+  key_trait: ''
+  key_traits:
+  - optimistic
+  - persuasive
+  - aggressive
+  name: Nadia Petrova
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.95
+  rigidity: 0.4
+  role: CEO of a major crypto exchange
+  tier: 1
+- archetype: analyst
+  bio: A widely followed analyst who sees Bitcoin as a speculative but increasingly
+    relevant reserve diversification tool.
+  category: ''
+  communication_style: balanced, data-heavy, and explanatory
+  domain_attributes: {}
+  id: macro_analyst
+  influence: 0.7
+  key_trait: ''
+  key_traits:
+  - analytical
+  - publicly influential
+  - nuanced
+  name: Thomas Adler
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.2
+  rigidity: 0.5
+  role: Independent macro strategist
+  tier: 1
+- archetype: activist
+  bio: A consumer advocate concerned that risky reserve experiments could ultimately
+    harm ordinary depositors.
+  category: ''
+  communication_style: direct, skeptical, and protective
+  domain_attributes: {}
+  id: consumer_advocate
+  influence: 0.68
+  key_trait: ''
+  key_traits:
+  - protective
+  - critical
+  - persistent
+  name: Marta Silva
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.6
+  rigidity: 0.72
+  role: Financial consumer rights advocate
+  tier: 1
+- archetype: entrepreneur
+  bio: A fintech founder who views the announcement as proof that traditional finance
+    is converging with digital assets.
+  category: ''
+  communication_style: forward-looking, concise, and innovation-oriented
+  domain_attributes: {}
+  id: fintech_founder
+  influence: 0.62
+  key_trait: ''
+  key_traits:
+  - innovative
+  - opportunistic
+  - tech-forward
+  name: Leo Novak
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.55
+  rigidity: 0.35
+  role: Founder of a digital banking startup
+  tier: 1
+initial_event: A top-tier European bank issues an unexpected press release stating
+  that it will allocate a portion of its reserve portfolio to Bitcoin. The announcement
+  cites diversification, inflation hedging, and strategic innovation, but it immediately
+  raises concerns about volatility, capital adequacy, custody risk, and compliance.
+  Regulators demand clarification, competitors reassess their own digital asset strategies,
+  and crypto advocates frame the move as a historic legitimacy boost.
+institutional_agents:
+- archetype: bank
+  bio: ''
+  category: bank
+  communication_style: ''
+  domain_attributes: {}
+  id: announcing_bank
+  influence: 0.97
+  key_trait: systemically important
+  key_traits: []
+  name: EuroCapital Bank
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.65
+  rigidity: 0.5
+  role: Large European commercial bank making the announcement
+  tier: 2
+- archetype: central_bank
+  bio: ''
+  category: central_bank
+  communication_style: ''
+  domain_attributes: {}
+  id: ecb
+  influence: 1.0
+  key_trait: stability-first
+  key_traits: []
+  name: European Central Bank
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.9
+  rigidity: 0.92
+  role: Primary monetary authority and supervisor
+  tier: 2
+- archetype: regulator
+  bio: ''
+  category: regulator
+  communication_style: ''
+  domain_attributes: {}
+  id: national_banking_regulator
+  influence: 0.88
+  key_trait: rule-enforcing
+  key_traits: []
+  name: National Prudential Authority
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.8
+  rigidity: 0.88
+  role: Domestic bank supervisor
+  tier: 2
+- archetype: government
+  bio: ''
+  category: government
+  communication_style: ''
+  domain_attributes: {}
+  id: european_commission
+  influence: 0.84
+  key_trait: policy-balancing
+  key_traits: []
+  name: European Commission
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.3
+  rigidity: 0.7
+  role: EU policy and market oversight body
+  tier: 2
+- archetype: bank
+  bio: ''
+  category: bank
+  communication_style: ''
+  domain_attributes: {}
+  id: competitor_bank
+  influence: 0.72
+  key_trait: wait-and-see
+  key_traits: []
+  name: Continental Trust Group
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.05
+  rigidity: 0.62
+  role: Peer banking competitor
+  tier: 2
+- archetype: investor_group
+  bio: ''
+  category: investor_group
+  communication_style: ''
+  domain_attributes: {}
+  id: investor_association
+  influence: 0.66
+  key_trait: risk-sensitive
+  key_traits: []
+  name: European Bank Investors Association
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.15
+  rigidity: 0.58
+  role: Institutional investor representative body
+  tier: 2
+- archetype: public_institution
+  bio: ''
+  category: public_institution
+  communication_style: ''
+  domain_attributes: {}
+  id: deposit_insurance_fund
+  influence: 0.7
+  key_trait: loss-averse
+  key_traits: []
+  name: National Deposit Guarantee Scheme
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.7
+  rigidity: 0.8
+  role: Deposit protection institution
+  tier: 2
+- archetype: industry_group
+  bio: ''
+  category: industry_group
+  communication_style: ''
+  domain_attributes: {}
+  id: crypto_industry_group
+  influence: 0.63
+  key_trait: pro-adoption
+  key_traits: []
+  name: European Crypto Alliance
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.9
+  rigidity: 0.45
+  role: Industry advocacy organization
+  tier: 2
+language: en
+metrics_to_track:
+- bank share price volatility
+- Bitcoin price reaction
+- deposit outflows or inflows
+- regulatory response intensity
+- media sentiment
+- customer trust
+- peer bank adoption interest
+- institutional investor sentiment
+- social media engagement
+- compliance and legal risk perception
+name: Bank Bitcoin Reserve Shock
+num_rounds: 3
+position_axis:
+  negative_label: Strongly opposed to banks holding Bitcoin as reserves
+  neutral_label: Neutral or undecided on the policy
+  positive_label: Strongly supportive of banks holding Bitcoin as reserves
+round_events: {}
+scenario_context: The simulation takes place in a European financial environment shaped
+  by post-crisis regulation, cautious central banking norms, and growing institutional
+  interest in digital assets. The bank's decision could influence peer institutions,
+  supervisory responses, customer confidence, and broader debate over whether Bitcoin
+  belongs on regulated balance sheets.
+timeline_labels:
+- Week 1
+- Week 2
+- Week 3
+- Week 4
+- Week 5
+- Week 6
+- Week 7
+- Week 8
+timeline_unit: week

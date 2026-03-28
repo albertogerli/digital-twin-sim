@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Spotify Joe Rogan COVID Misinformation Controversy 2022",
+  "description": "Neil Young and other artists removed music from Spotify in protest of Joe Rogan's COVID misinformation podcasts. Sparked debate about platform responsibility. Spotify lost ~1.5M subscribers temporarily but retained Rogan. Tests platform content moderation crisis with divided audience.",
+  "domain": "corporate",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 52, "against_pct": 20, "undecided_pct": 28},
+    {"round_equivalent": 2, "pro_pct": 48, "against_pct": 25, "undecided_pct": 27},
+    {"round_equivalent": 3, "pro_pct": 42, "against_pct": 32, "undecided_pct": 26},
+    {"round_equivalent": 4, "pro_pct": 38, "against_pct": 38, "undecided_pct": 24},
+    {"round_equivalent": 5, "pro_pct": 36, "against_pct": 40, "undecided_pct": 24},
+    {"round_equivalent": 6, "pro_pct": 37, "against_pct": 40, "undecided_pct": 23},
+    {"round_equivalent": 7, "pro_pct": 38, "against_pct": 39, "undecided_pct": 23},
+    {"round_equivalent": 8, "pro_pct": 39, "against_pct": 38, "undecided_pct": 23},
+    {"round_equivalent": 9, "pro_pct": 38, "against_pct": 62, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Neil Young issues ultimatum to Spotify: remove Joe Rogan's podcast or remove his music. Spotify removes Young's catalog. #CancelSpotify trends."},
+    {"round_equivalent": 3, "description": "Joni Mitchell, Nils Lofgren, and 270 medical professionals join boycott. Compilation of Rogan using racial slurs surfaces, compounding crisis."},
+    {"round_equivalent": 4, "description": "Spotify CEO Daniel Ek announces $100M investment in diverse audio content and adds content advisories to COVID episodes. Rogan apologizes for racial slur clips."},
+    {"round_equivalent": 5, "description": "Spotify reports Q4 2021 earnings showing 1.5M subscriber loss attributed partially to controversy. Stock drops 17% (though broader market factors involved)."},
+    {"round_equivalent": 7, "description": "Controversy fades from news cycle. Subscriber numbers recover. Rogan remains Spotify's most popular podcast. Boycott loses momentum."}
+  ],
+  "calibration_notes": "Tests platform content moderation crisis with fading boycott dynamics. Unlike a product safety crisis, this was an identity/values conflict where the platform's audience was split. Key dynamics: boycott momentum peaking then fading (typical 2-3 week attention cycle), artist solidarity as novel pressure mechanism, platform choosing revenue over reputation, racial slur revelation as compounding secondary crisis, apology and content advisory as partial de-escalation, and the structural difficulty of sustained consumer boycotts against subscription platforms with network effects."
+}

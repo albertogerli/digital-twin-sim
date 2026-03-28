@@ -1,0 +1,27 @@
+{
+  "scenario_name": "NFL National Anthem Protests 2016-2017",
+  "description": "Colin Kaepernick's kneeling during the national anthem (2016) sparked a polarizing debate. Support for protests was initially ~35%, peaked ~45% after Trump's 'SOB' comments in September 2017 triggered solidarity kneeling, then settled ~40%. Tests elite provocation and counter-mobilization dynamics.",
+  "domain": "sport/political",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 28, "against_pct": 52, "undecided_pct": 20},
+    {"round_equivalent": 2, "pro_pct": 32, "against_pct": 50, "undecided_pct": 18},
+    {"round_equivalent": 3, "pro_pct": 35, "against_pct": 48, "undecided_pct": 17},
+    {"round_equivalent": 4, "pro_pct": 36, "against_pct": 48, "undecided_pct": 16},
+    {"round_equivalent": 5, "pro_pct": 38, "against_pct": 47, "undecided_pct": 15},
+    {"round_equivalent": 6, "pro_pct": 44, "against_pct": 44, "undecided_pct": 12},
+    {"round_equivalent": 7, "pro_pct": 45, "against_pct": 43, "undecided_pct": 12},
+    {"round_equivalent": 8, "pro_pct": 42, "against_pct": 46, "undecided_pct": 12},
+    {"round_equivalent": 9, "pro_pct": 40, "against_pct": 48, "undecided_pct": 12}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Kaepernick begins kneeling during national anthem (August 2016). Initial reaction heavily negative, especially among older white demographics."},
+    {"round_equivalent": 3, "description": "Other NFL players join protests. Eric Reid, Brandon Marshall kneel. Movement grows but Kaepernick goes unsigned by any NFL team."},
+    {"round_equivalent": 6, "description": "Trump calls kneeling players 'sons of bitches' at Alabama rally (Sept 22, 2017). Massive solidarity response: 200+ players kneel the following Sunday."},
+    {"round_equivalent": 7, "description": "Peak solidarity: entire teams kneel or link arms. NFL owners join protests. Support briefly reaches ~45%. Framing shifts from flag to free speech."},
+    {"round_equivalent": 9, "description": "NFL implements anthem policy requiring standing. Protests fade from visibility. Support settles at ~40%, a net gain of ~12pts from start."}
+  ],
+  "calibration_notes": "Tests elite provocation and counter-mobilization. Key patterns: initial minority position (~28% support), slow organic growth, Trump's attack backfired by generating solidarity and media attention (net +9pts in one week), but effect partially reversed as partisan sorting resumed, racial opinion gap enormous (Black Americans ~80% support vs White ~30%), sport/patriotism framing vs racial justice framing determined position. Reuters/Ipsos, Quinnipiac, Seton Hall poll data used."
+}

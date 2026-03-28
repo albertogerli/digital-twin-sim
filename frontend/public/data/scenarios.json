@@ -1,0 +1,100 @@
+[
+  {
+    "id": "AI_Generative_Expert_Appointment",
+    "name": "AI Generative Expert Appointment",
+    "domain": "corporate",
+    "description": "",
+    "num_rounds": 5
+  },
+  {
+    "id": "Arianna_Spa_Newco_Transfer_and_Market_Perception",
+    "name": "Arianna Spa Newco Transfer and Market Perception",
+    "domain": "corporate",
+    "description": "",
+    "num_rounds": 5
+  },
+  {
+    "id": "Azzurri_Crisis__Post-World_Cup_Elimination",
+    "name": "Azzurri Crisis  Post-World Cup Elimination",
+    "domain": "sport",
+    "description": "",
+    "num_rounds": 5
+  },
+  {
+    "id": "Bank_Bitcoin_Reserve_Shock",
+    "name": "Bank Bitcoin Reserve Shock",
+    "domain": "financial",
+    "description": "A major European bank publicly announces that it will hold Bitcoin as part of its reserve assets, triggering immediate market volatility and intense scrutiny from regulators, investors, and the media. The simulation explores how the bank, policymakers, competitors, and the public respond as the decision ripples through financial markets and institutional trust.",
+    "num_rounds": 3
+  },
+  {
+    "id": "City_Green_Light_Ownership_Transition",
+    "name": "City Green Light Ownership Transition",
+    "domain": "political",
+    "description": "",
+    "num_rounds": 5
+  },
+  {
+    "id": "Corsa_civica_per_Padova",
+    "name": "Corsa civica per Padova",
+    "domain": "political",
+    "description": "",
+    "num_rounds": 5
+  },
+  {
+    "id": "Cree_Lighting_Europe_restructuring_crisis",
+    "name": "Cree Lighting Europe restructuring crisis",
+    "domain": "corporate",
+    "description": "",
+    "num_rounds": 5
+  },
+  {
+    "id": "Flat_Org_AI_Restructuring",
+    "name": "Flat Org AI Restructuring",
+    "domain": "corporate",
+    "description": "A Fortune 500 tech company announces a sweeping restructuring that removes all middle management and replaces coordination layers with AI-enabled workflows. The simulation tracks stakeholder reactions, internal morale, labor response, investor sentiment, and the operational consequences of rapidly flattening the organization.",
+    "num_rounds": 4
+  },
+  {
+    "id": "Global_iPhone_Price_Shock",
+    "name": "Global iPhone Price Shock",
+    "domain": "commercial",
+    "description": "This simulation models the market, reputational, and consumer-response effects of Apple raising iPhone prices by 40% worldwide. It tracks competitor counter-campaigns, media framing, analyst sentiment, and how brand loyalty, affordability concerns, and social backlash shape demand over time.",
+    "num_rounds": 5
+  },
+  {
+    "id": "Italy_mRNA_Booster_Mandate_Backlash",
+    "name": "Italy mRNA Booster Mandate Backlash",
+    "domain": "public_health",
+    "description": "This simulation models the rollout of a mandatory mRNA booster vaccine for Italians over 50 after a surge in a novel respiratory virus variant. It explores how public health authorities, political leaders, medical professionals, media, anti-vaccine activists, and citizens respond to the mandate amid debates over safety, liberty, trust, and compliance.",
+    "num_rounds": 5
+  },
+  {
+    "id": "Leadership_Challenge_in_FIGB",
+    "name": "Leadership Challenge in FIGB",
+    "domain": "sport",
+    "description": "",
+    "num_rounds": 5
+  },
+  {
+    "id": "Luxury_Leather_Transition_Debate",
+    "name": "Luxury Leather Transition Debate",
+    "domain": "political",
+    "description": "A leading Italian luxury fashion brand announces a full transition away from animal leather toward lab-grown and plant-based materials. The simulation tracks how consumers, competitors, activists, analysts, and regulators react as the brand tries to protect its prestige while redefining sustainability and product quality.",
+    "num_rounds": 6
+  },
+  {
+    "id": "Nike_Deepfake_Ad_Backlash",
+    "name": "Nike Deepfake Ad Backlash",
+    "domain": "commercial",
+    "description": "This simulation models the launch of a viral Nike campaign that uses a deepfake of a deceased legendary athlete to endorse a new shoe line. It tracks the tension between explosive sales and engagement on one side, and escalating backlash from family members, ethics advocates, media, regulators, and consumers on the other.",
+    "num_rounds": 4
+  },
+  {
+    "id": "Ronaldo_a_Padova_e_colletta_dei_tifosi",
+    "name": "Ronaldo a Padova e colletta dei tifosi",
+    "domain": "sport",
+    "description": "",
+    "num_rounds": 5
+  }
+]

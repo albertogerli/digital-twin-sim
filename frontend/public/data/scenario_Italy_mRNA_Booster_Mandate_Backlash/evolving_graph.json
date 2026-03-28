@@ -1,0 +1,3589 @@
+[
+  {
+    "round": 1,
+    "month": "Week 1",
+    "event_label": "Week 1",
+    "nodes": [
+      {
+        "id": "pm_italy",
+        "name": "Prime Minister",
+        "type": "persona",
+        "description": "Head of government driving the mandate",
+        "power_level": 0.95,
+        "position": 0.703,
+        "position_history": [
+          0.703
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "health_minister",
+        "name": "Minister of Health",
+        "type": "persona",
+        "description": "Public face of the vaccination policy",
+        "power_level": 0.9,
+        "position": 0.831,
+        "position_history": [
+          0.831
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "regional_governor_lombardy",
+        "name": "Lombardy Regional Governor",
+        "type": "persona",
+        "description": "Regional executive managing local implementation",
+        "power_level": 0.75,
+        "position": 0.576,
+        "position_history": [
+          0.576
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "public_health_director",
+        "name": "National Public Health Director",
+        "type": "persona",
+        "description": "Top epidemiological advisor",
+        "power_level": 0.88,
+        "position": 0.873,
+        "position_history": [
+          0.873
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "scientist"
+      },
+      {
+        "id": "hospital_ceo",
+        "name": "Hospital Network CEO",
+        "type": "persona",
+        "description": "Leader of a major public hospital system",
+        "power_level": 0.7,
+        "position": 0.788,
+        "position_history": [
+          0.788
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "medical_association_president",
+        "name": "President, Italian Medical Association",
+        "type": "persona",
+        "description": "Representative of physicians",
+        "power_level": 0.78,
+        "position": 0.746,
+        "position_history": [
+          0.746
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "professional_leader"
+      },
+      {
+        "id": "anti_vax_leader",
+        "name": "Anti-Vaccine Movement Spokesperson",
+        "type": "persona",
+        "description": "Organizes protests and online opposition",
+        "power_level": 0.72,
+        "position": -0.946,
+        "position_history": [
+          -0.946
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "civil_liberties_lawyer",
+        "name": "Civil Liberties Lawyer",
+        "type": "persona",
+        "description": "Legal critic of the mandate",
+        "power_level": 0.62,
+        "position": -0.635,
+        "position_history": [
+          -0.635
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "legal_expert"
+      },
+      {
+        "id": "tv_anchor",
+        "name": "National TV News Anchor",
+        "type": "persona",
+        "description": "Mainstream media presenter shaping public framing",
+        "power_level": 0.8,
+        "position": 0.1,
+        "position_history": [
+          0.1
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "social_media_influencer",
+        "name": "Health Skeptic Influencer",
+        "type": "persona",
+        "description": "Popular online commentator amplifying doubts",
+        "power_level": 0.66,
+        "position": -0.789,
+        "position_history": [
+          -0.789
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "pharma_exec",
+        "name": "Biotech Company Executive",
+        "type": "persona",
+        "description": "Representative of the vaccine manufacturer",
+        "power_level": 0.58,
+        "position": 0.409,
+        "position_history": [
+          0.409
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "italian_government",
+        "name": "Italian Council of Ministers",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.788,
+        "position_history": [
+          0.788
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ministry_health",
+        "name": "Ministry of Health",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.873,
+        "position_history": [
+          0.873
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "iss",
+        "name": "Istituto Superiore di Sanità",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.856,
+        "position_history": [
+          0.856
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regional_health_service",
+        "name": "Regional Health Services",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.661,
+        "position_history": [
+          0.661
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_medical_association",
+        "name": "Italian Medical Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.703,
+        "position_history": [
+          0.703
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hospital_networks",
+        "name": "Public Hospital Networks",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.746,
+        "position_history": [
+          0.746
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "constitutional_court",
+        "name": "Constitutional Court",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.004,
+        "position_history": [
+          0.004
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_broadcaster",
+        "name": "RAI Public Broadcaster",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.167,
+        "position_history": [
+          0.167
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "older_compliant",
+        "name": "Older Compliant Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Compliant Adults",
+        "power_level": 0.5,
+        "position": 0.78,
+        "position_history": [
+          0.78
+        ],
+        "delta": 0.0,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 4200000
+      },
+      {
+        "id": "older_skeptical",
+        "name": "Older Skeptical Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Skeptical Adults",
+        "power_level": 0.5,
+        "position": -0.43,
+        "position_history": [
+          -0.43
+        ],
+        "delta": 0.0,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "rural_traditionalists",
+        "name": "Rural Traditionalist Families",
+        "type": "cluster",
+        "description": "Cluster: Rural Traditionalist Families",
+        "power_level": 0.5,
+        "position": -0.57,
+        "position_history": [
+          -0.57
+        ],
+        "delta": 0.0,
+        "sentiment": "anti_measure",
+        "category": "public_opinion",
+        "clusterSize": 2500000
+      },
+      {
+        "id": "urban_professionals",
+        "name": "Urban Health-Conscious Professionals",
+        "type": "cluster",
+        "description": "Cluster: Urban Health-Conscious Professionals",
+        "power_level": 0.5,
+        "position": 0.92,
+        "position_history": [
+          0.92
+        ],
+        "delta": 0.0,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 3600000
+      },
+      {
+        "id": "working_class_families",
+        "name": "Working-Class Families",
+        "type": "cluster",
+        "description": "Cluster: Working-Class Families",
+        "power_level": 0.5,
+        "position": -0.13,
+        "position_history": [
+          -0.13
+        ],
+        "delta": 0.0,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 5200000
+      },
+      {
+        "id": "retired_patients",
+        "name": "Retired Chronic-Condition Patients",
+        "type": "cluster",
+        "description": "Cluster: Retired Chronic-Condition Patients",
+        "power_level": 0.5,
+        "position": 0.72,
+        "position_history": [
+          0.72
+        ],
+        "delta": 0.0,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "young_adult_observers",
+        "name": "Young Adult Observers",
+        "type": "cluster",
+        "description": "Cluster: Young Adult Observers",
+        "power_level": 0.5,
+        "position": -0.03,
+        "position_history": [
+          -0.03
+        ],
+        "delta": 0.0,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 4800000
+      }
+    ],
+    "edges": [
+      {
+        "source": "pm_italy",
+        "target": "regional_governor_lombardy",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "medical_association_president",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "pharma_exec",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "regional_health_service",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "regional_governor_lombardy",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "medical_association_president",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "regional_health_service",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "hospital_networks",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "hospital_ceo",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "iss",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "medical_association_president",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "iss",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "regional_health_service",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "hospital_networks",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "regional_health_service",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "national_medical_association",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "pharma_exec",
+        "weight": 0.66,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "hospital_networks",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "anti_vax_leader",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "anti_vax_leader",
+        "target": "social_media_influencer",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "tv_anchor",
+        "target": "constitutional_court",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "national_broadcaster",
+        "weight": 0.76,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "regional_health_service",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "national_medical_association",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "hospital_networks",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "ministry_health",
+        "target": "regional_health_service",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "ministry_health",
+        "target": "hospital_networks",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "regional_health_service",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "hospital_networks",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "national_medical_association",
+        "target": "hospital_networks",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "hospital_ceo",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "italian_government",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "medical_association_president",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "hospital_networks",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.59,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "social_media_influencer",
+        "weight": 0.28,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "constitutional_court",
+        "weight": 0.13,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "anti_vax_leader",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "social_media_influencer",
+        "weight": 0.56,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "anti_vax_leader",
+        "weight": 0.25,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "public_health_director",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "ministry_health",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "iss",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "health_minister",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "constitutional_court",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "tv_anchor",
+        "weight": 0.54,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "national_broadcaster",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "pm_italy",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "national_medical_association",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "medical_association_president",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "hospital_networks",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "constitutional_court",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "tv_anchor",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "national_broadcaster",
+        "weight": 0.61,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "pharma_exec",
+        "weight": 0.12,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 58,
+      "avg_position": 0.335
+    }
+  },
+  {
+    "round": 2,
+    "month": "Week 2",
+    "event_label": "Week 2",
+    "nodes": [
+      {
+        "id": "pm_italy",
+        "name": "Prime Minister",
+        "type": "persona",
+        "description": "Head of government driving the mandate",
+        "power_level": 0.95,
+        "position": 0.729,
+        "position_history": [
+          0.729
+        ],
+        "delta": 0.026,
+        "sentiment": "worried",
+        "category": "politician"
+      },
+      {
+        "id": "health_minister",
+        "name": "Minister of Health",
+        "type": "persona",
+        "description": "Public face of the vaccination policy",
+        "power_level": 0.9,
+        "position": 0.848,
+        "position_history": [
+          0.848
+        ],
+        "delta": 0.017,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "regional_governor_lombardy",
+        "name": "Lombardy Regional Governor",
+        "type": "persona",
+        "description": "Regional executive managing local implementation",
+        "power_level": 0.75,
+        "position": 0.611,
+        "position_history": [
+          0.611
+        ],
+        "delta": 0.035,
+        "sentiment": "worried",
+        "category": "politician"
+      },
+      {
+        "id": "public_health_director",
+        "name": "National Public Health Director",
+        "type": "persona",
+        "description": "Top epidemiological advisor",
+        "power_level": 0.88,
+        "position": 0.889,
+        "position_history": [
+          0.889
+        ],
+        "delta": 0.016,
+        "sentiment": "worried",
+        "category": "scientist"
+      },
+      {
+        "id": "hospital_ceo",
+        "name": "Hospital Network CEO",
+        "type": "persona",
+        "description": "Leader of a major public hospital system",
+        "power_level": 0.7,
+        "position": 0.815,
+        "position_history": [
+          0.815
+        ],
+        "delta": 0.027,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "medical_association_president",
+        "name": "President, Italian Medical Association",
+        "type": "persona",
+        "description": "Representative of physicians",
+        "power_level": 0.78,
+        "position": 0.771,
+        "position_history": [
+          0.771
+        ],
+        "delta": 0.025,
+        "sentiment": "cautious",
+        "category": "professional_leader"
+      },
+      {
+        "id": "anti_vax_leader",
+        "name": "Anti-Vaccine Movement Spokesperson",
+        "type": "persona",
+        "description": "Organizes protests and online opposition",
+        "power_level": 0.72,
+        "position": -0.945,
+        "position_history": [
+          -0.945
+        ],
+        "delta": 0.001,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "civil_liberties_lawyer",
+        "name": "Civil Liberties Lawyer",
+        "type": "persona",
+        "description": "Legal critic of the mandate",
+        "power_level": 0.62,
+        "position": -0.595,
+        "position_history": [
+          -0.595
+        ],
+        "delta": 0.04,
+        "sentiment": "cautious",
+        "category": "legal_expert"
+      },
+      {
+        "id": "tv_anchor",
+        "name": "National TV News Anchor",
+        "type": "persona",
+        "description": "Mainstream media presenter shaping public framing",
+        "power_level": 0.8,
+        "position": 0.292,
+        "position_history": [
+          0.292
+        ],
+        "delta": 0.192,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "social_media_influencer",
+        "name": "Health Skeptic Influencer",
+        "type": "persona",
+        "description": "Popular online commentator amplifying doubts",
+        "power_level": 0.66,
+        "position": -0.75,
+        "position_history": [
+          -0.75
+        ],
+        "delta": 0.038,
+        "sentiment": "worried",
+        "category": "influencer"
+      },
+      {
+        "id": "pharma_exec",
+        "name": "Biotech Company Executive",
+        "type": "persona",
+        "description": "Representative of the vaccine manufacturer",
+        "power_level": 0.58,
+        "position": 0.423,
+        "position_history": [
+          0.423
+        ],
+        "delta": 0.014,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "italian_government",
+        "name": "Italian Council of Ministers",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.788,
+        "position_history": [
+          0.788
+        ],
+        "delta": -0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ministry_health",
+        "name": "Ministry of Health",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.86,
+        "position_history": [
+          0.86
+        ],
+        "delta": -0.013,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "iss",
+        "name": "Istituto Superiore di Sanità",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.846,
+        "position_history": [
+          0.846
+        ],
+        "delta": -0.01,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regional_health_service",
+        "name": "Regional Health Services",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.679,
+        "position_history": [
+          0.679
+        ],
+        "delta": 0.019,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_medical_association",
+        "name": "Italian Medical Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.716,
+        "position_history": [
+          0.716
+        ],
+        "delta": 0.013,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hospital_networks",
+        "name": "Public Hospital Networks",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.754,
+        "position_history": [
+          0.754
+        ],
+        "delta": 0.008,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "constitutional_court",
+        "name": "Constitutional Court",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.008,
+        "position_history": [
+          0.008
+        ],
+        "delta": 0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_broadcaster",
+        "name": "RAI Public Broadcaster",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.19,
+        "position_history": [
+          0.19
+        ],
+        "delta": 0.023,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "older_compliant",
+        "name": "Older Compliant Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Compliant Adults",
+        "power_level": 0.5,
+        "position": 0.86,
+        "position_history": [
+          0.86
+        ],
+        "delta": 0.08,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 4200000
+      },
+      {
+        "id": "older_skeptical",
+        "name": "Older Skeptical Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Skeptical Adults",
+        "power_level": 0.5,
+        "position": -0.51,
+        "position_history": [
+          -0.51
+        ],
+        "delta": -0.08,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "rural_traditionalists",
+        "name": "Rural Traditionalist Families",
+        "type": "cluster",
+        "description": "Cluster: Rural Traditionalist Families",
+        "power_level": 0.5,
+        "position": -0.65,
+        "position_history": [
+          -0.65
+        ],
+        "delta": -0.08,
+        "sentiment": "anti_measure",
+        "category": "public_opinion",
+        "clusterSize": 2500000
+      },
+      {
+        "id": "urban_professionals",
+        "name": "Urban Health-Conscious Professionals",
+        "type": "cluster",
+        "description": "Cluster: Urban Health-Conscious Professionals",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.08,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 3600000
+      },
+      {
+        "id": "working_class_families",
+        "name": "Working-Class Families",
+        "type": "cluster",
+        "description": "Cluster: Working-Class Families",
+        "power_level": 0.5,
+        "position": -0.07,
+        "position_history": [
+          -0.07
+        ],
+        "delta": 0.06,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 5200000
+      },
+      {
+        "id": "retired_patients",
+        "name": "Retired Chronic-Condition Patients",
+        "type": "cluster",
+        "description": "Cluster: Retired Chronic-Condition Patients",
+        "power_level": 0.5,
+        "position": 0.83,
+        "position_history": [
+          0.83
+        ],
+        "delta": 0.11,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "young_adult_observers",
+        "name": "Young Adult Observers",
+        "type": "cluster",
+        "description": "Cluster: Young Adult Observers",
+        "power_level": 0.5,
+        "position": 0.06,
+        "position_history": [
+          0.06
+        ],
+        "delta": 0.09,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 4800000
+      }
+    ],
+    "edges": [
+      {
+        "source": "pm_italy",
+        "target": "hospital_ceo",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "iss",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "regional_health_service",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "regional_governor_lombardy",
+        "weight": 0.76,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "regional_health_service",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "national_medical_association",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "hospital_networks",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "italian_government",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "hospital_networks",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "medical_association_president",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "iss",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "pharma_exec",
+        "weight": 0.65,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "ministry_health",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "tv_anchor",
+        "target": "regional_health_service",
+        "weight": 0.61,
+        "type": "influence"
+      },
+      {
+        "source": "tv_anchor",
+        "target": "constitutional_court",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "national_medical_association",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "national_medical_association",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "ministry_health",
+        "target": "hospital_networks",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "regional_health_service",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "regional_health_service",
+        "target": "hospital_networks",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "ministry_health",
+        "weight": 1.0,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "health_minister",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "iss",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "public_health_director",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "social_media_influencer",
+        "weight": 0.52,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "anti_vax_leader",
+        "weight": 0.13,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "social_media_influencer",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "anti_vax_leader",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "public_health_director",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "ministry_health",
+        "weight": 0.72,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "health_minister",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "iss",
+        "weight": 0.69,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "constitutional_court",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "national_broadcaster",
+        "weight": 0.48,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "tv_anchor",
+        "weight": 0.28,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "pharma_exec",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "hospital_ceo",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "iss",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "health_minister",
+        "weight": 0.96,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "ministry_health",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "constitutional_court",
+        "weight": 0.9,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "national_broadcaster",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "tv_anchor",
+        "weight": 0.54,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "pharma_exec",
+        "weight": 0.27,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 48,
+      "avg_position": 0.363
+    }
+  },
+  {
+    "round": 3,
+    "month": "Week 3",
+    "event_label": "Week 3",
+    "nodes": [
+      {
+        "id": "pm_italy",
+        "name": "Prime Minister",
+        "type": "persona",
+        "description": "Head of government driving the mandate",
+        "power_level": 0.95,
+        "position": 0.73,
+        "position_history": [
+          0.73
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "health_minister",
+        "name": "Minister of Health",
+        "type": "persona",
+        "description": "Public face of the vaccination policy",
+        "power_level": 0.9,
+        "position": 0.848,
+        "position_history": [
+          0.848
+        ],
+        "delta": 0.001,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "regional_governor_lombardy",
+        "name": "Lombardy Regional Governor",
+        "type": "persona",
+        "description": "Regional executive managing local implementation",
+        "power_level": 0.75,
+        "position": 0.6,
+        "position_history": [
+          0.6
+        ],
+        "delta": -0.01,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "public_health_director",
+        "name": "National Public Health Director",
+        "type": "persona",
+        "description": "Top epidemiological advisor",
+        "power_level": 0.88,
+        "position": 0.882,
+        "position_history": [
+          0.882
+        ],
+        "delta": -0.007,
+        "sentiment": "cautious",
+        "category": "scientist"
+      },
+      {
+        "id": "hospital_ceo",
+        "name": "Hospital Network CEO",
+        "type": "persona",
+        "description": "Leader of a major public hospital system",
+        "power_level": 0.7,
+        "position": 0.807,
+        "position_history": [
+          0.807
+        ],
+        "delta": -0.008,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "medical_association_president",
+        "name": "President, Italian Medical Association",
+        "type": "persona",
+        "description": "Representative of physicians",
+        "power_level": 0.78,
+        "position": 0.764,
+        "position_history": [
+          0.764
+        ],
+        "delta": -0.007,
+        "sentiment": "cautious",
+        "category": "professional_leader"
+      },
+      {
+        "id": "anti_vax_leader",
+        "name": "Anti-Vaccine Movement Spokesperson",
+        "type": "persona",
+        "description": "Organizes protests and online opposition",
+        "power_level": 0.72,
+        "position": -0.945,
+        "position_history": [
+          -0.945
+        ],
+        "delta": -0.0,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "civil_liberties_lawyer",
+        "name": "Civil Liberties Lawyer",
+        "type": "persona",
+        "description": "Legal critic of the mandate",
+        "power_level": 0.62,
+        "position": -0.558,
+        "position_history": [
+          -0.558
+        ],
+        "delta": 0.036,
+        "sentiment": "cautious",
+        "category": "legal_expert"
+      },
+      {
+        "id": "tv_anchor",
+        "name": "National TV News Anchor",
+        "type": "persona",
+        "description": "Mainstream media presenter shaping public framing",
+        "power_level": 0.8,
+        "position": 0.182,
+        "position_history": [
+          0.182
+        ],
+        "delta": -0.11,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "social_media_influencer",
+        "name": "Health Skeptic Influencer",
+        "type": "persona",
+        "description": "Popular online commentator amplifying doubts",
+        "power_level": 0.66,
+        "position": -0.805,
+        "position_history": [
+          -0.805
+        ],
+        "delta": -0.055,
+        "sentiment": "combative",
+        "category": "influencer"
+      },
+      {
+        "id": "pharma_exec",
+        "name": "Biotech Company Executive",
+        "type": "persona",
+        "description": "Representative of the vaccine manufacturer",
+        "power_level": 0.58,
+        "position": 0.436,
+        "position_history": [
+          0.436
+        ],
+        "delta": 0.013,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "italian_government",
+        "name": "Italian Council of Ministers",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.788,
+        "position_history": [
+          0.788
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ministry_health",
+        "name": "Ministry of Health",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.851,
+        "position_history": [
+          0.851
+        ],
+        "delta": -0.009,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "iss",
+        "name": "Istituto Superiore di Sanità",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.838,
+        "position_history": [
+          0.838
+        ],
+        "delta": -0.007,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regional_health_service",
+        "name": "Regional Health Services",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.694,
+        "position_history": [
+          0.694
+        ],
+        "delta": 0.015,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_medical_association",
+        "name": "Italian Medical Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.727,
+        "position_history": [
+          0.727
+        ],
+        "delta": 0.011,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hospital_networks",
+        "name": "Public Hospital Networks",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.761,
+        "position_history": [
+          0.761
+        ],
+        "delta": 0.007,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "constitutional_court",
+        "name": "Constitutional Court",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.012,
+        "position_history": [
+          0.012
+        ],
+        "delta": 0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_broadcaster",
+        "name": "RAI Public Broadcaster",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.212,
+        "position_history": [
+          0.212
+        ],
+        "delta": 0.021,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "older_compliant",
+        "name": "Older Compliant Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Compliant Adults",
+        "power_level": 0.5,
+        "position": 0.94,
+        "position_history": [
+          0.94
+        ],
+        "delta": 0.08,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 4200000
+      },
+      {
+        "id": "older_skeptical",
+        "name": "Older Skeptical Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Skeptical Adults",
+        "power_level": 0.5,
+        "position": -0.59,
+        "position_history": [
+          -0.59
+        ],
+        "delta": -0.08,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "rural_traditionalists",
+        "name": "Rural Traditionalist Families",
+        "type": "cluster",
+        "description": "Cluster: Rural Traditionalist Families",
+        "power_level": 0.5,
+        "position": -0.73,
+        "position_history": [
+          -0.73
+        ],
+        "delta": -0.08,
+        "sentiment": "anti_measure",
+        "category": "public_opinion",
+        "clusterSize": 2500000
+      },
+      {
+        "id": "urban_professionals",
+        "name": "Urban Health-Conscious Professionals",
+        "type": "cluster",
+        "description": "Cluster: Urban Health-Conscious Professionals",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 3600000
+      },
+      {
+        "id": "working_class_families",
+        "name": "Working-Class Families",
+        "type": "cluster",
+        "description": "Cluster: Working-Class Families",
+        "power_level": 0.5,
+        "position": -0.01,
+        "position_history": [
+          -0.01
+        ],
+        "delta": 0.06,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 5200000
+      },
+      {
+        "id": "retired_patients",
+        "name": "Retired Chronic-Condition Patients",
+        "type": "cluster",
+        "description": "Cluster: Retired Chronic-Condition Patients",
+        "power_level": 0.5,
+        "position": 0.91,
+        "position_history": [
+          0.91
+        ],
+        "delta": 0.08,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "young_adult_observers",
+        "name": "Young Adult Observers",
+        "type": "cluster",
+        "description": "Cluster: Young Adult Observers",
+        "power_level": 0.5,
+        "position": 0.11,
+        "position_history": [
+          0.11
+        ],
+        "delta": 0.05,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 4800000
+      }
+    ],
+    "edges": [
+      {
+        "source": "pm_italy",
+        "target": "public_health_director",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "ministry_health",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "regional_health_service",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "national_medical_association",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "public_health_director",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "medical_association_president",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "ministry_health",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "iss",
+        "weight": 0.76,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "regional_health_service",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "national_medical_association",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "medical_association_president",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "italian_government",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "pharma_exec",
+        "weight": 0.63,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "ministry_health",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "regional_health_service",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "italian_government",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "ministry_health",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "iss",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "national_medical_association",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "tv_anchor",
+        "target": "national_broadcaster",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "iss",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "regional_health_service",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "national_medical_association",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "hospital_networks",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "regional_health_service",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "national_medical_association",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "regional_health_service",
+        "target": "national_medical_association",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "regional_health_service",
+        "target": "hospital_networks",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "national_medical_association",
+        "target": "hospital_networks",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "public_health_director",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "ministry_health",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "health_minister",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "iss",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "social_media_influencer",
+        "weight": 0.57,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "anti_vax_leader",
+        "weight": 0.29,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "social_media_influencer",
+        "weight": 0.85,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "anti_vax_leader",
+        "weight": 0.57,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "public_health_director",
+        "weight": 0.76,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "ministry_health",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "health_minister",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "iss",
+        "weight": 0.68,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "constitutional_court",
+        "weight": 0.96,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "tv_anchor",
+        "weight": 0.62,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "national_broadcaster",
+        "weight": 0.56,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "pharma_exec",
+        "weight": 0.11,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "public_health_director",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "ministry_health",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "health_minister",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "iss",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "tv_anchor",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "constitutional_court",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "national_broadcaster",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "pharma_exec",
+        "weight": 0.35,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 57,
+      "avg_position": 0.364
+    }
+  },
+  {
+    "round": 4,
+    "month": "Week 4",
+    "event_label": "Week 4",
+    "nodes": [
+      {
+        "id": "pm_italy",
+        "name": "Prime Minister",
+        "type": "persona",
+        "description": "Head of government driving the mandate",
+        "power_level": 0.95,
+        "position": 0.673,
+        "position_history": [
+          0.673
+        ],
+        "delta": -0.057,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "health_minister",
+        "name": "Minister of Health",
+        "type": "persona",
+        "description": "Public face of the vaccination policy",
+        "power_level": 0.9,
+        "position": 0.816,
+        "position_history": [
+          0.816
+        ],
+        "delta": -0.032,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "regional_governor_lombardy",
+        "name": "Lombardy Regional Governor",
+        "type": "persona",
+        "description": "Regional executive managing local implementation",
+        "power_level": 0.75,
+        "position": 0.562,
+        "position_history": [
+          0.562
+        ],
+        "delta": -0.039,
+        "sentiment": "worried",
+        "category": "politician"
+      },
+      {
+        "id": "public_health_director",
+        "name": "National Public Health Director",
+        "type": "persona",
+        "description": "Top epidemiological advisor",
+        "power_level": 0.88,
+        "position": 0.863,
+        "position_history": [
+          0.863
+        ],
+        "delta": -0.019,
+        "sentiment": "cautious",
+        "category": "scientist"
+      },
+      {
+        "id": "hospital_ceo",
+        "name": "Hospital Network CEO",
+        "type": "persona",
+        "description": "Leader of a major public hospital system",
+        "power_level": 0.7,
+        "position": 0.798,
+        "position_history": [
+          0.798
+        ],
+        "delta": -0.009,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "medical_association_president",
+        "name": "President, Italian Medical Association",
+        "type": "persona",
+        "description": "Representative of physicians",
+        "power_level": 0.78,
+        "position": 0.747,
+        "position_history": [
+          0.747
+        ],
+        "delta": -0.017,
+        "sentiment": "cautious",
+        "category": "professional_leader"
+      },
+      {
+        "id": "anti_vax_leader",
+        "name": "Anti-Vaccine Movement Spokesperson",
+        "type": "persona",
+        "description": "Organizes protests and online opposition",
+        "power_level": 0.72,
+        "position": -0.955,
+        "position_history": [
+          -0.955
+        ],
+        "delta": -0.009,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "civil_liberties_lawyer",
+        "name": "Civil Liberties Lawyer",
+        "type": "persona",
+        "description": "Legal critic of the mandate",
+        "power_level": 0.62,
+        "position": -0.561,
+        "position_history": [
+          -0.561
+        ],
+        "delta": -0.003,
+        "sentiment": "cautious",
+        "category": "legal_expert"
+      },
+      {
+        "id": "tv_anchor",
+        "name": "National TV News Anchor",
+        "type": "persona",
+        "description": "Mainstream media presenter shaping public framing",
+        "power_level": 0.8,
+        "position": 0.249,
+        "position_history": [
+          0.249
+        ],
+        "delta": 0.067,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "social_media_influencer",
+        "name": "Health Skeptic Influencer",
+        "type": "persona",
+        "description": "Popular online commentator amplifying doubts",
+        "power_level": 0.66,
+        "position": -0.806,
+        "position_history": [
+          -0.806
+        ],
+        "delta": -0.001,
+        "sentiment": "worried",
+        "category": "influencer"
+      },
+      {
+        "id": "pharma_exec",
+        "name": "Biotech Company Executive",
+        "type": "persona",
+        "description": "Representative of the vaccine manufacturer",
+        "power_level": 0.58,
+        "position": 0.431,
+        "position_history": [
+          0.431
+        ],
+        "delta": -0.006,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "italian_government",
+        "name": "Italian Council of Ministers",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.772,
+        "position_history": [
+          0.772
+        ],
+        "delta": -0.016,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ministry_health",
+        "name": "Ministry of Health",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.827,
+        "position_history": [
+          0.827
+        ],
+        "delta": -0.023,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "iss",
+        "name": "Istituto Superiore di Sanità",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.816,
+        "position_history": [
+          0.816
+        ],
+        "delta": -0.022,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regional_health_service",
+        "name": "Regional Health Services",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.689,
+        "position_history": [
+          0.689
+        ],
+        "delta": -0.005,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_medical_association",
+        "name": "Italian Medical Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.718,
+        "position_history": [
+          0.718
+        ],
+        "delta": -0.009,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hospital_networks",
+        "name": "Public Hospital Networks",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.749,
+        "position_history": [
+          0.749
+        ],
+        "delta": -0.012,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "constitutional_court",
+        "name": "Constitutional Court",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.015,
+        "position_history": [
+          0.015
+        ],
+        "delta": 0.003,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_broadcaster",
+        "name": "RAI Public Broadcaster",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.275,
+        "position_history": [
+          0.275
+        ],
+        "delta": 0.064,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "older_compliant",
+        "name": "Older Compliant Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Compliant Adults",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.06,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 4200000
+      },
+      {
+        "id": "older_skeptical",
+        "name": "Older Skeptical Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Skeptical Adults",
+        "power_level": 0.5,
+        "position": -0.67,
+        "position_history": [
+          -0.67
+        ],
+        "delta": -0.08,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "rural_traditionalists",
+        "name": "Rural Traditionalist Families",
+        "type": "cluster",
+        "description": "Cluster: Rural Traditionalist Families",
+        "power_level": 0.5,
+        "position": -0.81,
+        "position_history": [
+          -0.81
+        ],
+        "delta": -0.08,
+        "sentiment": "anti_measure",
+        "category": "public_opinion",
+        "clusterSize": 2500000
+      },
+      {
+        "id": "urban_professionals",
+        "name": "Urban Health-Conscious Professionals",
+        "type": "cluster",
+        "description": "Cluster: Urban Health-Conscious Professionals",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 3600000
+      },
+      {
+        "id": "working_class_families",
+        "name": "Working-Class Families",
+        "type": "cluster",
+        "description": "Cluster: Working-Class Families",
+        "power_level": 0.5,
+        "position": 0.04,
+        "position_history": [
+          0.04
+        ],
+        "delta": 0.05,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 5200000
+      },
+      {
+        "id": "retired_patients",
+        "name": "Retired Chronic-Condition Patients",
+        "type": "cluster",
+        "description": "Cluster: Retired Chronic-Condition Patients",
+        "power_level": 0.5,
+        "position": 0.97,
+        "position_history": [
+          0.97
+        ],
+        "delta": 0.06,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "young_adult_observers",
+        "name": "Young Adult Observers",
+        "type": "cluster",
+        "description": "Cluster: Young Adult Observers",
+        "power_level": 0.5,
+        "position": 0.15,
+        "position_history": [
+          0.15
+        ],
+        "delta": 0.04,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 4800000
+      }
+    ],
+    "edges": [
+      {
+        "source": "pm_italy",
+        "target": "health_minister",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "regional_governor_lombardy",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "public_health_director",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "regional_health_service",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "national_broadcaster",
+        "weight": 0.6,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "italian_government",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "ministry_health",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "iss",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "public_health_director",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "tv_anchor",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "italian_government",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "ministry_health",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "national_medical_association",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "national_broadcaster",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "medical_association_president",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "iss",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "regional_health_service",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "national_medical_association",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "italian_government",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "iss",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "regional_health_service",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "national_medical_association",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "hospital_networks",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "anti_vax_leader",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.61,
+        "type": "influence"
+      },
+      {
+        "source": "anti_vax_leader",
+        "target": "social_media_influencer",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "civil_liberties_lawyer",
+        "target": "social_media_influencer",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "italian_government",
+        "weight": 0.66,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "regional_health_service",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "national_medical_association",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "ministry_health",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "national_medical_association",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "regional_health_service",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "hospital_networks",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "regional_health_service",
+        "target": "national_medical_association",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "national_medical_association",
+        "target": "hospital_networks",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "constitutional_court",
+        "target": "national_broadcaster",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "public_health_director",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "ministry_health",
+        "weight": 0.65,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "iss",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "health_minister",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "social_media_influencer",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "anti_vax_leader",
+        "weight": 0.43,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "social_media_influencer",
+        "weight": 0.99,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "anti_vax_leader",
+        "weight": 0.71,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.5,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "public_health_director",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "ministry_health",
+        "weight": 0.65,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "iss",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "health_minister",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "constitutional_court",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "tv_anchor",
+        "weight": 0.58,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "national_broadcaster",
+        "weight": 0.53,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "pharma_exec",
+        "weight": 0.22,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "public_health_director",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "ministry_health",
+        "weight": 0.71,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "iss",
+        "weight": 0.69,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "health_minister",
+        "weight": 0.69,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "tv_anchor",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "national_broadcaster",
+        "weight": 0.75,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "constitutional_court",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "pharma_exec",
+        "weight": 0.44,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 64,
+      "avg_position": 0.36
+    }
+  },
+  {
+    "round": 5,
+    "month": "Week 5",
+    "event_label": "Week 5",
+    "nodes": [
+      {
+        "id": "pm_italy",
+        "name": "Prime Minister",
+        "type": "persona",
+        "description": "Head of government driving the mandate",
+        "power_level": 0.95,
+        "position": 0.705,
+        "position_history": [
+          0.705
+        ],
+        "delta": 0.032,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "health_minister",
+        "name": "Minister of Health",
+        "type": "persona",
+        "description": "Public face of the vaccination policy",
+        "power_level": 0.9,
+        "position": 0.831,
+        "position_history": [
+          0.831
+        ],
+        "delta": 0.015,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "regional_governor_lombardy",
+        "name": "Lombardy Regional Governor",
+        "type": "persona",
+        "description": "Regional executive managing local implementation",
+        "power_level": 0.75,
+        "position": 0.586,
+        "position_history": [
+          0.586
+        ],
+        "delta": 0.025,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "public_health_director",
+        "name": "National Public Health Director",
+        "type": "persona",
+        "description": "Top epidemiological advisor",
+        "power_level": 0.88,
+        "position": 0.872,
+        "position_history": [
+          0.872
+        ],
+        "delta": 0.009,
+        "sentiment": "cautious",
+        "category": "scientist"
+      },
+      {
+        "id": "hospital_ceo",
+        "name": "Hospital Network CEO",
+        "type": "persona",
+        "description": "Leader of a major public hospital system",
+        "power_level": 0.7,
+        "position": 0.806,
+        "position_history": [
+          0.806
+        ],
+        "delta": 0.008,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "medical_association_president",
+        "name": "President, Italian Medical Association",
+        "type": "persona",
+        "description": "Representative of physicians",
+        "power_level": 0.78,
+        "position": 0.747,
+        "position_history": [
+          0.747
+        ],
+        "delta": -0.0,
+        "sentiment": "cautious",
+        "category": "professional_leader"
+      },
+      {
+        "id": "anti_vax_leader",
+        "name": "Anti-Vaccine Movement Spokesperson",
+        "type": "persona",
+        "description": "Organizes protests and online opposition",
+        "power_level": 0.72,
+        "position": -0.954,
+        "position_history": [
+          -0.954
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "civil_liberties_lawyer",
+        "name": "Civil Liberties Lawyer",
+        "type": "persona",
+        "description": "Legal critic of the mandate",
+        "power_level": 0.62,
+        "position": -0.595,
+        "position_history": [
+          -0.595
+        ],
+        "delta": -0.034,
+        "sentiment": "cautious",
+        "category": "legal_expert"
+      },
+      {
+        "id": "tv_anchor",
+        "name": "National TV News Anchor",
+        "type": "persona",
+        "description": "Mainstream media presenter shaping public framing",
+        "power_level": 0.8,
+        "position": 0.257,
+        "position_history": [
+          0.257
+        ],
+        "delta": 0.008,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "social_media_influencer",
+        "name": "Health Skeptic Influencer",
+        "type": "persona",
+        "description": "Popular online commentator amplifying doubts",
+        "power_level": 0.66,
+        "position": -0.787,
+        "position_history": [
+          -0.787
+        ],
+        "delta": 0.019,
+        "sentiment": "worried",
+        "category": "influencer"
+      },
+      {
+        "id": "pharma_exec",
+        "name": "Biotech Company Executive",
+        "type": "persona",
+        "description": "Representative of the vaccine manufacturer",
+        "power_level": 0.58,
+        "position": 0.433,
+        "position_history": [
+          0.433
+        ],
+        "delta": 0.002,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "italian_government",
+        "name": "Italian Council of Ministers",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.767,
+        "position_history": [
+          0.767
+        ],
+        "delta": -0.005,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ministry_health",
+        "name": "Ministry of Health",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.816,
+        "position_history": [
+          0.816
+        ],
+        "delta": -0.011,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "iss",
+        "name": "Istituto Superiore di Sanità",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.806,
+        "position_history": [
+          0.806
+        ],
+        "delta": -0.01,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regional_health_service",
+        "name": "Regional Health Services",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.693,
+        "position_history": [
+          0.693
+        ],
+        "delta": 0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_medical_association",
+        "name": "Italian Medical Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.72,
+        "position_history": [
+          0.72
+        ],
+        "delta": 0.001,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hospital_networks",
+        "name": "Public Hospital Networks",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.748,
+        "position_history": [
+          0.748
+        ],
+        "delta": -0.001,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "constitutional_court",
+        "name": "Constitutional Court",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.018,
+        "position_history": [
+          0.018
+        ],
+        "delta": 0.003,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_broadcaster",
+        "name": "RAI Public Broadcaster",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.333,
+        "position_history": [
+          0.333
+        ],
+        "delta": 0.058,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "older_compliant",
+        "name": "Older Compliant Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Compliant Adults",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 4200000
+      },
+      {
+        "id": "older_skeptical",
+        "name": "Older Skeptical Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Skeptical Adults",
+        "power_level": 0.5,
+        "position": -0.61,
+        "position_history": [
+          -0.61
+        ],
+        "delta": 0.06,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "rural_traditionalists",
+        "name": "Rural Traditionalist Families",
+        "type": "cluster",
+        "description": "Cluster: Rural Traditionalist Families",
+        "power_level": 0.5,
+        "position": -0.73,
+        "position_history": [
+          -0.73
+        ],
+        "delta": 0.08,
+        "sentiment": "anti_measure",
+        "category": "public_opinion",
+        "clusterSize": 2500000
+      },
+      {
+        "id": "urban_professionals",
+        "name": "Urban Health-Conscious Professionals",
+        "type": "cluster",
+        "description": "Cluster: Urban Health-Conscious Professionals",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 3600000
+      },
+      {
+        "id": "working_class_families",
+        "name": "Working-Class Families",
+        "type": "cluster",
+        "description": "Cluster: Working-Class Families",
+        "power_level": 0.5,
+        "position": 0.09,
+        "position_history": [
+          0.09
+        ],
+        "delta": 0.05,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 5200000
+      },
+      {
+        "id": "retired_patients",
+        "name": "Retired Chronic-Condition Patients",
+        "type": "cluster",
+        "description": "Cluster: Retired Chronic-Condition Patients",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.03,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "young_adult_observers",
+        "name": "Young Adult Observers",
+        "type": "cluster",
+        "description": "Cluster: Young Adult Observers",
+        "power_level": 0.5,
+        "position": 0.21,
+        "position_history": [
+          0.21
+        ],
+        "delta": 0.06,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 4800000
+      }
+    ],
+    "edges": [
+      {
+        "source": "pm_italy",
+        "target": "public_health_director",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "hospital_ceo",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "medical_association_president",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "hospital_networks",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "national_broadcaster",
+        "weight": 0.63,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "italian_government",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "ministry_health",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "iss",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "medical_association_president",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "italian_government",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "medical_association_president",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "iss",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "medical_association_president",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "italian_government",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "hospital_ceo",
+        "target": "hospital_networks",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "civil_liberties_lawyer",
+        "target": "social_media_influencer",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "regional_health_service",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "italian_government",
+        "target": "hospital_networks",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "regional_health_service",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "regional_health_service",
+        "target": "national_broadcaster",
+        "weight": 0.64,
+        "type": "influence"
+      },
+      {
+        "source": "national_medical_association",
+        "target": "national_broadcaster",
+        "weight": 0.61,
+        "type": "influence"
+      },
+      {
+        "source": "constitutional_court",
+        "target": "national_broadcaster",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "public_health_director",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "health_minister",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "ministry_health",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "iss",
+        "weight": 0.61,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "social_media_influencer",
+        "weight": 0.65,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "anti_vax_leader",
+        "weight": 0.31,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "social_media_influencer",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "anti_vax_leader",
+        "weight": 0.55,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "public_health_director",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "health_minister",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "ministry_health",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "iss",
+        "weight": 0.61,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "constitutional_court",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "tv_anchor",
+        "weight": 0.67,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "national_broadcaster",
+        "weight": 0.51,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "pharma_exec",
+        "weight": 0.31,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "public_health_director",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "health_minister",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "ministry_health",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "iss",
+        "weight": 0.61,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "tv_anchor",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "national_broadcaster",
+        "weight": 0.75,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "constitutional_court",
+        "weight": 0.62,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "pharma_exec",
+        "weight": 0.55,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 50,
+      "avg_position": 0.375
+    }
+  }
+]

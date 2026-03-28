@@ -1,0 +1,230 @@
+[
+  {
+    "round": 1,
+    "coalitions": [
+      {
+        "label": "Opponents",
+        "color": "#1e40af",
+        "members": [
+          "estate_representative",
+          "ethics_professor",
+          "consumer_advocate",
+          "tech_ethics_influencer",
+          "athlete_legacy_foundation_head",
+          "athlete_estate",
+          "media_ethics_org",
+          "consumer_watchdog"
+        ],
+        "avg_position": -0.9,
+        "size": 8
+      },
+      {
+        "label": "Wait-and-see",
+        "color": "#059669",
+        "members": [
+          "nike_ceo",
+          "brand_strategist",
+          "retail_chain_exec",
+          "investor_analyst",
+          "major_retailers",
+          "social_platform",
+          "investor_group"
+        ],
+        "avg_position": 0.114,
+        "size": 7
+      },
+      {
+        "label": "Opponents",
+        "color": "#dc2626",
+        "members": [
+          "sports_journalist",
+          "sports_media_network",
+          "ad_regulator"
+        ],
+        "avg_position": -0.427,
+        "size": 3
+      },
+      {
+        "label": "Adopters",
+        "color": "#f59e0b",
+        "members": [
+          "nike_cmo",
+          "nike_corporation"
+        ],
+        "avg_position": 0.79,
+        "size": 2
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "coalitions": [
+      {
+        "label": "Wait-and-see",
+        "color": "#1e40af",
+        "members": [
+          "nike_ceo",
+          "brand_strategist",
+          "retail_chain_exec",
+          "investor_analyst",
+          "major_retailers",
+          "sports_media_network",
+          "social_platform",
+          "investor_group"
+        ],
+        "avg_position": 0.023,
+        "size": 8
+      },
+      {
+        "label": "Opponents",
+        "color": "#059669",
+        "members": [
+          "estate_representative",
+          "tech_ethics_influencer",
+          "athlete_legacy_foundation_head",
+          "athlete_estate",
+          "media_ethics_org"
+        ],
+        "avg_position": -0.944,
+        "size": 5
+      },
+      {
+        "label": "Adopters",
+        "color": "#dc2626",
+        "members": [
+          "nike_cmo",
+          "nike_corporation"
+        ],
+        "avg_position": 0.696,
+        "size": 2
+      },
+      {
+        "label": "Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "ethics_professor",
+          "consumer_advocate",
+          "sports_journalist",
+          "consumer_watchdog",
+          "ad_regulator"
+        ],
+        "avg_position": -0.71,
+        "size": 5
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "coalitions": [
+      {
+        "label": "Opponents",
+        "color": "#1e40af",
+        "members": [
+          "nike_ceo",
+          "sports_journalist",
+          "retail_chain_exec",
+          "sports_media_network"
+        ],
+        "avg_position": -0.339,
+        "size": 4
+      },
+      {
+        "label": "Opponents",
+        "color": "#059669",
+        "members": [
+          "estate_representative",
+          "ethics_professor",
+          "consumer_advocate",
+          "tech_ethics_influencer",
+          "athlete_legacy_foundation_head",
+          "athlete_estate",
+          "media_ethics_org",
+          "consumer_watchdog",
+          "ad_regulator"
+        ],
+        "avg_position": -0.85,
+        "size": 9
+      },
+      {
+        "label": "Wait-and-see",
+        "color": "#dc2626",
+        "members": [
+          "nike_cmo",
+          "brand_strategist",
+          "investor_analyst",
+          "major_retailers",
+          "social_platform",
+          "investor_group"
+        ],
+        "avg_position": 0.1,
+        "size": 6
+      },
+      {
+        "label": "Adopters",
+        "color": "#f59e0b",
+        "members": [
+          "nike_corporation"
+        ],
+        "avg_position": 0.74,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 4,
+    "coalitions": [
+      {
+        "label": "Skeptics",
+        "color": "#1e40af",
+        "members": [
+          "nike_cmo",
+          "brand_strategist",
+          "retail_chain_exec",
+          "investor_analyst",
+          "major_retailers",
+          "sports_media_network",
+          "social_platform",
+          "investor_group"
+        ],
+        "avg_position": -0.021,
+        "size": 8
+      },
+      {
+        "label": "Opponents",
+        "color": "#059669",
+        "members": [
+          "nike_ceo",
+          "sports_journalist",
+          "ad_regulator"
+        ],
+        "avg_position": -0.607,
+        "size": 3
+      },
+      {
+        "label": "Opponents",
+        "color": "#dc2626",
+        "members": [
+          "estate_representative",
+          "ethics_professor",
+          "consumer_advocate",
+          "tech_ethics_influencer",
+          "athlete_legacy_foundation_head",
+          "athlete_estate",
+          "media_ethics_org",
+          "consumer_watchdog"
+        ],
+        "avg_position": -0.886,
+        "size": 8
+      },
+      {
+        "label": "Adopters",
+        "color": "#f59e0b",
+        "members": [
+          "nike_corporation"
+        ],
+        "avg_position": 0.702,
+        "size": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,2718 @@
+[
+  {
+    "round": 1,
+    "month": "Week 1",
+    "event_label": "Week 1",
+    "nodes": [
+      {
+        "id": "ceo_1",
+        "name": "Avery Chen",
+        "type": "persona",
+        "description": "Chief Executive Officer",
+        "power_level": 1.0,
+        "position": 0.892,
+        "position_history": [
+          0.892
+        ],
+        "delta": 0.0,
+        "sentiment": "triumphant",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_1",
+        "name": "Jordan Patel",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.95,
+        "position": 0.71,
+        "position_history": [
+          0.71
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "chro_1",
+        "name": "Maya Rodriguez",
+        "type": "persona",
+        "description": "Chief Human Resources Officer",
+        "power_level": 0.8,
+        "position": -0.075,
+        "position_history": [
+          -0.075
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "cto_1",
+        "name": "Dr. Lena Novak",
+        "type": "persona",
+        "description": "Chief Technology Officer",
+        "power_level": 0.85,
+        "position": 0.609,
+        "position_history": [
+          0.609
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "union_leader_1",
+        "name": "Marcus Hill",
+        "type": "persona",
+        "description": "Tech Workers Union President",
+        "power_level": 0.82,
+        "position": -0.895,
+        "position_history": [
+          -0.895
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "union_leader"
+      },
+      {
+        "id": "manager_rep_1",
+        "name": "Elena Brooks",
+        "type": "persona",
+        "description": "Displaced Managers Association Spokesperson",
+        "power_level": 0.55,
+        "position": -0.689,
+        "position_history": [
+          -0.689
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "employee_advocate"
+      },
+      {
+        "id": "analyst_1",
+        "name": "Priya Desai",
+        "type": "persona",
+        "description": "Senior Tech Equity Analyst",
+        "power_level": 0.7,
+        "position": 0.358,
+        "position_history": [
+          0.358
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "journalist_1",
+        "name": "Noah Kim",
+        "type": "persona",
+        "description": "Business and Labor Reporter",
+        "power_level": 0.65,
+        "position": -0.287,
+        "position_history": [
+          -0.287
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "industry_voice_1",
+        "name": "Sofia Alvarez",
+        "type": "persona",
+        "description": "Former Big Tech COO and Industry Commentator",
+        "power_level": 0.6,
+        "position": 0.164,
+        "position_history": [
+          0.164
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "industry_expert"
+      },
+      {
+        "id": "influencer_1",
+        "name": "Tariq West",
+        "type": "persona",
+        "description": "Workplace Creator and Tech Commentator",
+        "power_level": 0.58,
+        "position": -0.5,
+        "position_history": [
+          -0.5
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "influencer"
+      },
+      {
+        "id": "company_exec_team",
+        "name": "Executive Leadership Team",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.842,
+        "position_history": [
+          0.842
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "board_directors",
+        "name": "Board of Directors",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.592,
+        "position_history": [
+          0.592
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hr_department",
+        "name": "Human Resources Division",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.075,
+        "position_history": [
+          -0.075
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "engineering_org",
+        "name": "Engineering Organization",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.095,
+        "position_history": [
+          0.095
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "people_ops",
+        "name": "People Operations Council",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.153,
+        "position_history": [
+          -0.153
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "tech_workers_union",
+        "name": "Tech Workers Union",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.895,
+        "position_history": [
+          -0.895
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investors Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.443,
+        "position_history": [
+          0.443
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_outlet",
+        "name": "National Business Press",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.152,
+        "position_history": [
+          -0.152
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regulator_watch",
+        "name": "Labor and Employment Regulators",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.251,
+        "position_history": [
+          -0.251
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "displaced_managers",
+        "name": "Displaced Middle Managers",
+        "type": "cluster",
+        "description": "Cluster: Displaced Middle Managers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 3000
+      },
+      {
+        "id": "individual_contributors",
+        "name": "Individual Contributors",
+        "type": "cluster",
+        "description": "Cluster: Individual Contributors",
+        "power_level": 0.5,
+        "position": -0.02,
+        "position_history": [
+          -0.02
+        ],
+        "delta": 0.0,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 18000
+      },
+      {
+        "id": "high_performers",
+        "name": "High-Performing Staff",
+        "type": "cluster",
+        "description": "Cluster: High-Performing Staff",
+        "power_level": 0.5,
+        "position": 0.28,
+        "position_history": [
+          0.28
+        ],
+        "delta": 0.0,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 7000
+      },
+      {
+        "id": "union_supporters",
+        "name": "Union-Aligned Workers",
+        "type": "cluster",
+        "description": "Cluster: Union-Aligned Workers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000
+      },
+      {
+        "id": "investor_watchers",
+        "name": "Investor-Focused Professionals",
+        "type": "cluster",
+        "description": "Cluster: Investor-Focused Professionals",
+        "power_level": 0.5,
+        "position": 0.62,
+        "position_history": [
+          0.62
+        ],
+        "delta": 0.0,
+        "sentiment": "supportive",
+        "category": "public_opinion",
+        "clusterSize": 12000
+      },
+      {
+        "id": "tech_public",
+        "name": "Tech Industry Public",
+        "type": "cluster",
+        "description": "Cluster: Tech Industry Public",
+        "power_level": 0.5,
+        "position": -0.12,
+        "position_history": [
+          -0.12
+        ],
+        "delta": 0.0,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 25000
+      },
+      {
+        "id": "labor_advocates",
+        "name": "Labor Advocates and Allies",
+        "type": "cluster",
+        "description": "Cluster: Labor Advocates and Allies",
+        "power_level": 0.5,
+        "position": -0.88,
+        "position_history": [
+          -0.88
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 9000
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_1",
+        "target": "cfo_1",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "ceo_1",
+        "target": "cto_1",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "ceo_1",
+        "target": "board_directors",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_1",
+        "target": "cto_1",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_1",
+        "target": "company_exec_team",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "people_ops",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "media_outlet",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "cto_1",
+        "target": "investor_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "union_leader_1",
+        "target": "manager_rep_1",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "union_leader_1",
+        "target": "influencer_1",
+        "weight": 0.61,
+        "type": "influence"
+      },
+      {
+        "source": "union_leader_1",
+        "target": "tech_workers_union",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "analyst_1",
+        "target": "industry_voice_1",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "analyst_1",
+        "target": "investor_group",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "influencer_1",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "hr_department",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "regulator_watch",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "hr_department",
+        "weight": 0.76,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "people_ops",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "media_outlet",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "board_directors",
+        "target": "investor_group",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "regulator_watch",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "union_leader_1",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "tech_workers_union",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "manager_rep_1",
+        "weight": 0.38,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "chro_1",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "hr_department",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "engineering_org",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "media_outlet",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "analyst_1",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "industry_voice_1",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "investor_group",
+        "weight": 0.67,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "engineering_org",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "union_leader_1",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "tech_workers_union",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "manager_rep_1",
+        "weight": 0.38,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "cto_1",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "board_directors",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "cfo_1",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "investor_group",
+        "weight": 0.65,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "media_outlet",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "people_ops",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "chro_1",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "hr_department",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "union_leader_1",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "tech_workers_union",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "manager_rep_1",
+        "weight": 0.62,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "influencer_1",
+        "weight": 0.24,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 49,
+      "avg_position": -0.053
+    }
+  },
+  {
+    "round": 2,
+    "month": "Week 2",
+    "event_label": "Week 2",
+    "nodes": [
+      {
+        "id": "ceo_1",
+        "name": "Avery Chen",
+        "type": "persona",
+        "description": "Chief Executive Officer",
+        "power_level": 1.0,
+        "position": 0.891,
+        "position_history": [
+          0.891
+        ],
+        "delta": -0.001,
+        "sentiment": "satisfied",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_1",
+        "name": "Jordan Patel",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.95,
+        "position": 0.673,
+        "position_history": [
+          0.673
+        ],
+        "delta": -0.037,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "chro_1",
+        "name": "Maya Rodriguez",
+        "type": "persona",
+        "description": "Chief Human Resources Officer",
+        "power_level": 0.8,
+        "position": -0.167,
+        "position_history": [
+          -0.167
+        ],
+        "delta": -0.092,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "cto_1",
+        "name": "Dr. Lena Novak",
+        "type": "persona",
+        "description": "Chief Technology Officer",
+        "power_level": 0.85,
+        "position": 0.571,
+        "position_history": [
+          0.571
+        ],
+        "delta": -0.038,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "union_leader_1",
+        "name": "Marcus Hill",
+        "type": "persona",
+        "description": "Tech Workers Union President",
+        "power_level": 0.82,
+        "position": -0.896,
+        "position_history": [
+          -0.896
+        ],
+        "delta": -0.0,
+        "sentiment": "furious",
+        "category": "union_leader"
+      },
+      {
+        "id": "manager_rep_1",
+        "name": "Elena Brooks",
+        "type": "persona",
+        "description": "Displaced Managers Association Spokesperson",
+        "power_level": 0.55,
+        "position": -0.726,
+        "position_history": [
+          -0.726
+        ],
+        "delta": -0.038,
+        "sentiment": "furious",
+        "category": "employee_advocate"
+      },
+      {
+        "id": "analyst_1",
+        "name": "Priya Desai",
+        "type": "persona",
+        "description": "Senior Tech Equity Analyst",
+        "power_level": 0.7,
+        "position": 0.298,
+        "position_history": [
+          0.298
+        ],
+        "delta": -0.06,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "journalist_1",
+        "name": "Noah Kim",
+        "type": "persona",
+        "description": "Business and Labor Reporter",
+        "power_level": 0.65,
+        "position": -0.276,
+        "position_history": [
+          -0.276
+        ],
+        "delta": 0.011,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "industry_voice_1",
+        "name": "Sofia Alvarez",
+        "type": "persona",
+        "description": "Former Big Tech COO and Industry Commentator",
+        "power_level": 0.6,
+        "position": 0.08,
+        "position_history": [
+          0.08
+        ],
+        "delta": -0.084,
+        "sentiment": "cautious",
+        "category": "industry_expert"
+      },
+      {
+        "id": "influencer_1",
+        "name": "Tariq West",
+        "type": "persona",
+        "description": "Workplace Creator and Tech Commentator",
+        "power_level": 0.58,
+        "position": -0.459,
+        "position_history": [
+          -0.459
+        ],
+        "delta": 0.042,
+        "sentiment": "worried",
+        "category": "influencer"
+      },
+      {
+        "id": "company_exec_team",
+        "name": "Executive Leadership Team",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.834,
+        "position_history": [
+          0.834
+        ],
+        "delta": -0.008,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "board_directors",
+        "name": "Board of Directors",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.583,
+        "position_history": [
+          0.583
+        ],
+        "delta": -0.008,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hr_department",
+        "name": "Human Resources Division",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.083,
+        "position_history": [
+          -0.083
+        ],
+        "delta": -0.008,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "engineering_org",
+        "name": "Engineering Organization",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.058,
+        "position_history": [
+          0.058
+        ],
+        "delta": -0.037,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "people_ops",
+        "name": "People Operations Council",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.149,
+        "position_history": [
+          -0.149
+        ],
+        "delta": 0.003,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "tech_workers_union",
+        "name": "Tech Workers Union",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.891,
+        "position_history": [
+          -0.891
+        ],
+        "delta": 0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investors Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.438,
+        "position_history": [
+          0.438
+        ],
+        "delta": -0.006,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_outlet",
+        "name": "National Business Press",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.148,
+        "position_history": [
+          -0.148
+        ],
+        "delta": 0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regulator_watch",
+        "name": "Labor and Employment Regulators",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.237,
+        "position_history": [
+          -0.237
+        ],
+        "delta": 0.014,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "displaced_managers",
+        "name": "Displaced Middle Managers",
+        "type": "cluster",
+        "description": "Cluster: Displaced Middle Managers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 3000
+      },
+      {
+        "id": "individual_contributors",
+        "name": "Individual Contributors",
+        "type": "cluster",
+        "description": "Cluster: Individual Contributors",
+        "power_level": 0.5,
+        "position": -0.1,
+        "position_history": [
+          -0.1
+        ],
+        "delta": -0.08,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 18000
+      },
+      {
+        "id": "high_performers",
+        "name": "High-Performing Staff",
+        "type": "cluster",
+        "description": "Cluster: High-Performing Staff",
+        "power_level": 0.5,
+        "position": 0.17,
+        "position_history": [
+          0.17
+        ],
+        "delta": -0.11,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 7000
+      },
+      {
+        "id": "union_supporters",
+        "name": "Union-Aligned Workers",
+        "type": "cluster",
+        "description": "Cluster: Union-Aligned Workers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000
+      },
+      {
+        "id": "investor_watchers",
+        "name": "Investor-Focused Professionals",
+        "type": "cluster",
+        "description": "Cluster: Investor-Focused Professionals",
+        "power_level": 0.5,
+        "position": 0.73,
+        "position_history": [
+          0.73
+        ],
+        "delta": 0.11,
+        "sentiment": "supportive",
+        "category": "public_opinion",
+        "clusterSize": 12000
+      },
+      {
+        "id": "tech_public",
+        "name": "Tech Industry Public",
+        "type": "cluster",
+        "description": "Cluster: Tech Industry Public",
+        "power_level": 0.5,
+        "position": -0.2,
+        "position_history": [
+          -0.2
+        ],
+        "delta": -0.08,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 25000
+      },
+      {
+        "id": "labor_advocates",
+        "name": "Labor Advocates and Allies",
+        "type": "cluster",
+        "description": "Cluster: Labor Advocates and Allies",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": -0.12,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 9000
+      }
+    ],
+    "edges": [
+      {
+        "source": "cfo_1",
+        "target": "analyst_1",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_1",
+        "target": "board_directors",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "hr_department",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "regulator_watch",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "cto_1",
+        "target": "company_exec_team",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "cto_1",
+        "target": "board_directors",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "cto_1",
+        "target": "investor_group",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "analyst_1",
+        "target": "industry_voice_1",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "analyst_1",
+        "target": "investor_group",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "influencer_1",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "regulator_watch",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "media_outlet",
+        "weight": 0.77,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "regulator_watch",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "influencer_1",
+        "target": "media_outlet",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "company_exec_team",
+        "target": "board_directors",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "company_exec_team",
+        "target": "investor_group",
+        "weight": 0.6,
+        "type": "influence"
+      },
+      {
+        "source": "board_directors",
+        "target": "investor_group",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "people_ops",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "media_outlet",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "regulator_watch",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "engineering_org",
+        "target": "media_outlet",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "engineering_org",
+        "target": "regulator_watch",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "union_leader_1",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "tech_workers_union",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "manager_rep_1",
+        "weight": 0.45,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "hr_department",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "media_outlet",
+        "weight": 0.9,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "people_ops",
+        "weight": 0.9,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "chro_1",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "industry_voice_1",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "engineering_org",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "analyst_1",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "hr_department",
+        "weight": 0.49,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "union_leader_1",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "tech_workers_union",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "manager_rep_1",
+        "weight": 0.45,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "cfo_1",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "company_exec_team",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "board_directors",
+        "weight": 0.71,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "cto_1",
+        "weight": 0.68,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "chro_1",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "regulator_watch",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "people_ops",
+        "weight": 0.9,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "media_outlet",
+        "weight": 0.9,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "union_leader_1",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "tech_workers_union",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "manager_rep_1",
+        "weight": 0.45,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 50,
+      "avg_position": -0.077
+    }
+  },
+  {
+    "round": 3,
+    "month": "Week 3",
+    "event_label": "Week 3",
+    "nodes": [
+      {
+        "id": "ceo_1",
+        "name": "Avery Chen",
+        "type": "persona",
+        "description": "Chief Executive Officer",
+        "power_level": 1.0,
+        "position": 0.893,
+        "position_history": [
+          0.893
+        ],
+        "delta": 0.002,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_1",
+        "name": "Jordan Patel",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.95,
+        "position": 0.712,
+        "position_history": [
+          0.712
+        ],
+        "delta": 0.039,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "chro_1",
+        "name": "Maya Rodriguez",
+        "type": "persona",
+        "description": "Chief Human Resources Officer",
+        "power_level": 0.8,
+        "position": -0.129,
+        "position_history": [
+          -0.129
+        ],
+        "delta": 0.038,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "cto_1",
+        "name": "Dr. Lena Novak",
+        "type": "persona",
+        "description": "Chief Technology Officer",
+        "power_level": 0.85,
+        "position": 0.648,
+        "position_history": [
+          0.648
+        ],
+        "delta": 0.077,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "union_leader_1",
+        "name": "Marcus Hill",
+        "type": "persona",
+        "description": "Tech Workers Union President",
+        "power_level": 0.82,
+        "position": -0.931,
+        "position_history": [
+          -0.931
+        ],
+        "delta": -0.035,
+        "sentiment": "furious",
+        "category": "union_leader"
+      },
+      {
+        "id": "manager_rep_1",
+        "name": "Elena Brooks",
+        "type": "persona",
+        "description": "Displaced Managers Association Spokesperson",
+        "power_level": 0.55,
+        "position": -0.705,
+        "position_history": [
+          -0.705
+        ],
+        "delta": 0.022,
+        "sentiment": "worried",
+        "category": "employee_advocate"
+      },
+      {
+        "id": "analyst_1",
+        "name": "Priya Desai",
+        "type": "persona",
+        "description": "Senior Tech Equity Analyst",
+        "power_level": 0.7,
+        "position": 0.291,
+        "position_history": [
+          0.291
+        ],
+        "delta": -0.007,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "journalist_1",
+        "name": "Noah Kim",
+        "type": "persona",
+        "description": "Business and Labor Reporter",
+        "power_level": 0.65,
+        "position": -0.21,
+        "position_history": [
+          -0.21
+        ],
+        "delta": 0.067,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "industry_voice_1",
+        "name": "Sofia Alvarez",
+        "type": "persona",
+        "description": "Former Big Tech COO and Industry Commentator",
+        "power_level": 0.6,
+        "position": 0.104,
+        "position_history": [
+          0.104
+        ],
+        "delta": 0.024,
+        "sentiment": "cautious",
+        "category": "industry_expert"
+      },
+      {
+        "id": "influencer_1",
+        "name": "Tariq West",
+        "type": "persona",
+        "description": "Workplace Creator and Tech Commentator",
+        "power_level": 0.58,
+        "position": -0.506,
+        "position_history": [
+          -0.506
+        ],
+        "delta": -0.047,
+        "sentiment": "worried",
+        "category": "influencer"
+      },
+      {
+        "id": "company_exec_team",
+        "name": "Executive Leadership Team",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.829,
+        "position_history": [
+          0.829
+        ],
+        "delta": -0.005,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "board_directors",
+        "name": "Board of Directors",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.579,
+        "position_history": [
+          0.579
+        ],
+        "delta": -0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hr_department",
+        "name": "Human Resources Division",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.058,
+        "position_history": [
+          -0.058
+        ],
+        "delta": 0.025,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "engineering_org",
+        "name": "Engineering Organization",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.065,
+        "position_history": [
+          0.065
+        ],
+        "delta": 0.007,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "people_ops",
+        "name": "People Operations Council",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.109,
+        "position_history": [
+          -0.109
+        ],
+        "delta": 0.041,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "tech_workers_union",
+        "name": "Tech Workers Union",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.886,
+        "position_history": [
+          -0.886
+        ],
+        "delta": 0.005,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investors Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.386,
+        "position_history": [
+          0.386
+        ],
+        "delta": -0.051,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_outlet",
+        "name": "National Business Press",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.107,
+        "position_history": [
+          -0.107
+        ],
+        "delta": 0.041,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regulator_watch",
+        "name": "Labor and Employment Regulators",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.192,
+        "position_history": [
+          -0.192
+        ],
+        "delta": 0.045,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "displaced_managers",
+        "name": "Displaced Middle Managers",
+        "type": "cluster",
+        "description": "Cluster: Displaced Middle Managers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 3000
+      },
+      {
+        "id": "individual_contributors",
+        "name": "Individual Contributors",
+        "type": "cluster",
+        "description": "Cluster: Individual Contributors",
+        "power_level": 0.5,
+        "position": -0.22,
+        "position_history": [
+          -0.22
+        ],
+        "delta": -0.12,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 18000
+      },
+      {
+        "id": "high_performers",
+        "name": "High-Performing Staff",
+        "type": "cluster",
+        "description": "Cluster: High-Performing Staff",
+        "power_level": 0.5,
+        "position": 0.09,
+        "position_history": [
+          0.09
+        ],
+        "delta": -0.08,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 7000
+      },
+      {
+        "id": "union_supporters",
+        "name": "Union-Aligned Workers",
+        "type": "cluster",
+        "description": "Cluster: Union-Aligned Workers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000
+      },
+      {
+        "id": "investor_watchers",
+        "name": "Investor-Focused Professionals",
+        "type": "cluster",
+        "description": "Cluster: Investor-Focused Professionals",
+        "power_level": 0.5,
+        "position": 0.84,
+        "position_history": [
+          0.84
+        ],
+        "delta": 0.11,
+        "sentiment": "supportive",
+        "category": "public_opinion",
+        "clusterSize": 12000
+      },
+      {
+        "id": "tech_public",
+        "name": "Tech Industry Public",
+        "type": "cluster",
+        "description": "Cluster: Tech Industry Public",
+        "power_level": 0.5,
+        "position": -0.28,
+        "position_history": [
+          -0.28
+        ],
+        "delta": -0.08,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 25000
+      },
+      {
+        "id": "labor_advocates",
+        "name": "Labor Advocates and Allies",
+        "type": "cluster",
+        "description": "Cluster: Labor Advocates and Allies",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 9000
+      }
+    ],
+    "edges": [
+      {
+        "source": "cfo_1",
+        "target": "investor_group",
+        "weight": 0.67,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "industry_voice_1",
+        "weight": 0.77,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "hr_department",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "regulator_watch",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "cto_1",
+        "target": "company_exec_team",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "union_leader_1",
+        "target": "tech_workers_union",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "industry_voice_1",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "engineering_org",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "media_outlet",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "engineering_org",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "people_ops",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "regulator_watch",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "influencer_1",
+        "target": "people_ops",
+        "weight": 0.6,
+        "type": "influence"
+      },
+      {
+        "source": "influencer_1",
+        "target": "tech_workers_union",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "influencer_1",
+        "target": "regulator_watch",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "company_exec_team",
+        "target": "board_directors",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "regulator_watch",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "engineering_org",
+        "target": "people_ops",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "engineering_org",
+        "target": "investor_group",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "media_outlet",
+        "target": "regulator_watch",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "union_leader_1",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "manager_rep_1",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "journalist_1",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "regulator_watch",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "chro_1",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "people_ops",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "industry_voice_1",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "engineering_org",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "hr_department",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "media_outlet",
+        "weight": 0.61,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "union_leader_1",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "manager_rep_1",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "company_exec_team",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "ceo_1",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "cfo_1",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "cto_1",
+        "weight": 0.62,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "journalist_1",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "regulator_watch",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "chro_1",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "people_ops",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "union_leader_1",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "manager_rep_1",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 48,
+      "avg_position": -0.073
+    }
+  },
+  {
+    "round": 4,
+    "month": "Week 4",
+    "event_label": "Week 4",
+    "nodes": [
+      {
+        "id": "ceo_1",
+        "name": "Avery Chen",
+        "type": "persona",
+        "description": "Chief Executive Officer",
+        "power_level": 1.0,
+        "position": 0.871,
+        "position_history": [
+          0.871
+        ],
+        "delta": -0.022,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_1",
+        "name": "Jordan Patel",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.95,
+        "position": 0.671,
+        "position_history": [
+          0.671
+        ],
+        "delta": -0.041,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "chro_1",
+        "name": "Maya Rodriguez",
+        "type": "persona",
+        "description": "Chief Human Resources Officer",
+        "power_level": 0.8,
+        "position": -0.18,
+        "position_history": [
+          -0.18
+        ],
+        "delta": -0.051,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "cto_1",
+        "name": "Dr. Lena Novak",
+        "type": "persona",
+        "description": "Chief Technology Officer",
+        "power_level": 0.85,
+        "position": 0.55,
+        "position_history": [
+          0.55
+        ],
+        "delta": -0.099,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "union_leader_1",
+        "name": "Marcus Hill",
+        "type": "persona",
+        "description": "Tech Workers Union President",
+        "power_level": 0.82,
+        "position": -0.942,
+        "position_history": [
+          -0.942
+        ],
+        "delta": -0.011,
+        "sentiment": "furious",
+        "category": "union_leader"
+      },
+      {
+        "id": "manager_rep_1",
+        "name": "Elena Brooks",
+        "type": "persona",
+        "description": "Displaced Managers Association Spokesperson",
+        "power_level": 0.55,
+        "position": -0.738,
+        "position_history": [
+          -0.738
+        ],
+        "delta": -0.033,
+        "sentiment": "worried",
+        "category": "employee_advocate"
+      },
+      {
+        "id": "analyst_1",
+        "name": "Priya Desai",
+        "type": "persona",
+        "description": "Senior Tech Equity Analyst",
+        "power_level": 0.7,
+        "position": 0.223,
+        "position_history": [
+          0.223
+        ],
+        "delta": -0.068,
+        "sentiment": "worried",
+        "category": "analyst"
+      },
+      {
+        "id": "journalist_1",
+        "name": "Noah Kim",
+        "type": "persona",
+        "description": "Business and Labor Reporter",
+        "power_level": 0.65,
+        "position": -0.232,
+        "position_history": [
+          -0.232
+        ],
+        "delta": -0.022,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "industry_voice_1",
+        "name": "Sofia Alvarez",
+        "type": "persona",
+        "description": "Former Big Tech COO and Industry Commentator",
+        "power_level": 0.6,
+        "position": 0.042,
+        "position_history": [
+          0.042
+        ],
+        "delta": -0.062,
+        "sentiment": "worried",
+        "category": "industry_expert"
+      },
+      {
+        "id": "influencer_1",
+        "name": "Tariq West",
+        "type": "persona",
+        "description": "Workplace Creator and Tech Commentator",
+        "power_level": 0.58,
+        "position": -0.487,
+        "position_history": [
+          -0.487
+        ],
+        "delta": 0.019,
+        "sentiment": "worried",
+        "category": "influencer"
+      },
+      {
+        "id": "company_exec_team",
+        "name": "Executive Leadership Team",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.821,
+        "position_history": [
+          0.821
+        ],
+        "delta": -0.008,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "board_directors",
+        "name": "Board of Directors",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.569,
+        "position_history": [
+          0.569
+        ],
+        "delta": -0.01,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hr_department",
+        "name": "Human Resources Division",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.055,
+        "position_history": [
+          -0.055
+        ],
+        "delta": 0.002,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "engineering_org",
+        "name": "Engineering Organization",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.053,
+        "position_history": [
+          0.053
+        ],
+        "delta": -0.012,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "people_ops",
+        "name": "People Operations Council",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.101,
+        "position_history": [
+          -0.101
+        ],
+        "delta": 0.007,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "tech_workers_union",
+        "name": "Tech Workers Union",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.884,
+        "position_history": [
+          -0.884
+        ],
+        "delta": 0.002,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investors Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.324,
+        "position_history": [
+          0.324
+        ],
+        "delta": -0.062,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_outlet",
+        "name": "National Business Press",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.1,
+        "position_history": [
+          -0.1
+        ],
+        "delta": 0.007,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regulator_watch",
+        "name": "Labor and Employment Regulators",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.173,
+        "position_history": [
+          -0.173
+        ],
+        "delta": 0.018,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "displaced_managers",
+        "name": "Displaced Middle Managers",
+        "type": "cluster",
+        "description": "Cluster: Displaced Middle Managers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 3000
+      },
+      {
+        "id": "individual_contributors",
+        "name": "Individual Contributors",
+        "type": "cluster",
+        "description": "Cluster: Individual Contributors",
+        "power_level": 0.5,
+        "position": -0.31,
+        "position_history": [
+          -0.31
+        ],
+        "delta": -0.09,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 18000
+      },
+      {
+        "id": "high_performers",
+        "name": "High-Performing Staff",
+        "type": "cluster",
+        "description": "Cluster: High-Performing Staff",
+        "power_level": 0.5,
+        "position": 0.01,
+        "position_history": [
+          0.01
+        ],
+        "delta": -0.08,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 7000
+      },
+      {
+        "id": "union_supporters",
+        "name": "Union-Aligned Workers",
+        "type": "cluster",
+        "description": "Cluster: Union-Aligned Workers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000
+      },
+      {
+        "id": "investor_watchers",
+        "name": "Investor-Focused Professionals",
+        "type": "cluster",
+        "description": "Cluster: Investor-Focused Professionals",
+        "power_level": 0.5,
+        "position": 0.96,
+        "position_history": [
+          0.96
+        ],
+        "delta": 0.12,
+        "sentiment": "supportive",
+        "category": "public_opinion",
+        "clusterSize": 12000
+      },
+      {
+        "id": "tech_public",
+        "name": "Tech Industry Public",
+        "type": "cluster",
+        "description": "Cluster: Tech Industry Public",
+        "power_level": 0.5,
+        "position": -0.39,
+        "position_history": [
+          -0.39
+        ],
+        "delta": -0.11,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 25000
+      },
+      {
+        "id": "labor_advocates",
+        "name": "Labor Advocates and Allies",
+        "type": "cluster",
+        "description": "Cluster: Labor Advocates and Allies",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 9000
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_1",
+        "target": "board_directors",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_1",
+        "target": "cto_1",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "influencer_1",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "people_ops",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "cto_1",
+        "target": "company_exec_team",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "cto_1",
+        "target": "investor_group",
+        "weight": 0.77,
+        "type": "influence"
+      },
+      {
+        "source": "union_leader_1",
+        "target": "manager_rep_1",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "manager_rep_1",
+        "target": "tech_workers_union",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "analyst_1",
+        "target": "engineering_org",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "analyst_1",
+        "target": "people_ops",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "analyst_1",
+        "target": "investor_group",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "analyst_1",
+        "target": "media_outlet",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "industry_voice_1",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "engineering_org",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "people_ops",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "hr_department",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "board_directors",
+        "target": "investor_group",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "people_ops",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "media_outlet",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "engineering_org",
+        "target": "people_ops",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "engineering_org",
+        "target": "media_outlet",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "union_leader_1",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "manager_rep_1",
+        "weight": 0.48,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "journalist_1",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "chro_1",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "regulator_watch",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "influencer_1",
+        "weight": 0.65,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "industry_voice_1",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "engineering_org",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "hr_department",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "media_outlet",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "union_leader_1",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "manager_rep_1",
+        "weight": 0.48,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "ceo_1",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "company_exec_team",
+        "weight": 0.72,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "cfo_1",
+        "weight": 0.42,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "board_directors",
+        "weight": 0.22,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "influencer_1",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "journalist_1",
+        "weight": 0.68,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "chro_1",
+        "weight": 0.58,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "regulator_watch",
+        "weight": 0.57,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "union_leader_1",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "manager_rep_1",
+        "weight": 0.48,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 49,
+      "avg_position": -0.096
+    }
+  }
+]

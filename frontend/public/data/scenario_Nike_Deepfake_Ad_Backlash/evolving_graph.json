@@ -1,0 +1,2870 @@
+[
+  {
+    "round": 1,
+    "month": "Day 1",
+    "event_label": "Day 1",
+    "nodes": [
+      {
+        "id": "nike_ceo",
+        "name": "Nike Chief Executive Officer",
+        "type": "persona",
+        "description": "Global CEO overseeing brand strategy and crisis response",
+        "power_level": 0.98,
+        "position": 0.295,
+        "position_history": [
+          0.295
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "nike_cmo",
+        "name": "Nike Chief Marketing Officer",
+        "type": "persona",
+        "description": "Head of global marketing and campaign approval",
+        "power_level": 0.9,
+        "position": 0.764,
+        "position_history": [
+          0.764
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "estate_representative",
+        "name": "Athlete Estate Representative",
+        "type": "persona",
+        "description": "Authorized spokesperson for the deceased athlete's family and estate",
+        "power_level": 0.82,
+        "position": -0.976,
+        "position_history": [
+          -0.976
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "ethics_professor",
+        "name": "Media Ethics Professor",
+        "type": "persona",
+        "description": "Academic commentator on synthetic media and consent",
+        "power_level": 0.58,
+        "position": -0.814,
+        "position_history": [
+          -0.814
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Consumer Rights Advocate",
+        "type": "persona",
+        "description": "Public advocate focused on deceptive marketing and consumer trust",
+        "power_level": 0.66,
+        "position": -0.854,
+        "position_history": [
+          -0.854
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "activist"
+      },
+      {
+        "id": "sports_journalist",
+        "name": "Senior Sports Journalist",
+        "type": "persona",
+        "description": "Reporter covering athlete legacy, brand deals, and public reaction",
+        "power_level": 0.7,
+        "position": -0.522,
+        "position_history": [
+          -0.522
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "tech_ethics_influencer",
+        "name": "AI Ethics Influencer",
+        "type": "persona",
+        "description": "Online commentator on deepfakes, consent, and brand responsibility",
+        "power_level": 0.74,
+        "position": -0.945,
+        "position_history": [
+          -0.945
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "brand_strategist",
+        "name": "Independent Brand Strategist",
+        "type": "persona",
+        "description": "Consultant assessing reputation and market impact",
+        "power_level": 0.52,
+        "position": 0.025,
+        "position_history": [
+          0.025
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "athlete_legacy_foundation_head",
+        "name": "Athlete Legacy Foundation Director",
+        "type": "persona",
+        "description": "Leader of a foundation preserving the athlete's image and values",
+        "power_level": 0.6,
+        "position": -0.944,
+        "position_history": [
+          -0.944
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "retail_chain_exec",
+        "name": "Major Retail Chain Executive",
+        "type": "persona",
+        "description": "Executive deciding whether to keep the shoe line on shelves",
+        "power_level": 0.63,
+        "position": -0.094,
+        "position_history": [
+          -0.094
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "investor_analyst",
+        "name": "Equity Research Analyst",
+        "type": "persona",
+        "description": "Market analyst tracking Nike's sales and brand risk",
+        "power_level": 0.57,
+        "position": 0.104,
+        "position_history": [
+          0.104
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "financial_analyst"
+      },
+      {
+        "id": "nike_corporation",
+        "name": "Nike, Inc.",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.772,
+        "position_history": [
+          0.772
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "athlete_estate",
+        "name": "Athlete Estate",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.969,
+        "position_history": [
+          -0.969
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_ethics_org",
+        "name": "Media Ethics Coalition",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.9,
+        "position_history": [
+          -0.9
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "consumer_watchdog",
+        "name": "Consumer Protection Watch",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.774,
+        "position_history": [
+          -0.774
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "major_retailers",
+        "name": "Major Retailers Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.066,
+        "position_history": [
+          0.066
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "sports_media_network",
+        "name": "Sports Media Network",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.18,
+        "position_history": [
+          -0.18
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ad_regulator",
+        "name": "Advertising Standards Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.647,
+        "position_history": [
+          -0.647
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "social_platform",
+        "name": "Major Social Platform",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.023,
+        "position_history": [
+          0.023
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investor Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.144,
+        "position_history": [
+          0.144
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "brand_loyalists",
+        "name": "Nike Brand Loyalists",
+        "type": "cluster",
+        "description": "Cluster: Nike Brand Loyalists",
+        "power_level": 0.5,
+        "position": 0.63,
+        "position_history": [
+          0.63
+        ],
+        "delta": 0.0,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 12000000
+      },
+      {
+        "id": "sports_fans",
+        "name": "Sports Memorabilia and Legacy Fans",
+        "type": "cluster",
+        "description": "Cluster: Sports Memorabilia and Legacy Fans",
+        "power_level": 0.5,
+        "position": -0.92,
+        "position_history": [
+          -0.92
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 8000000
+      },
+      {
+        "id": "gen_z_digital_natives",
+        "name": "Gen Z Digital Natives",
+        "type": "cluster",
+        "description": "Cluster: Gen Z Digital Natives",
+        "power_level": 0.5,
+        "position": -0.09,
+        "position_history": [
+          -0.09
+        ],
+        "delta": 0.0,
+        "sentiment": "anti_adoption",
+        "category": "public_opinion",
+        "clusterSize": 15000000
+      },
+      {
+        "id": "ethics_minded_professionals",
+        "name": "Ethics-Minded Professionals",
+        "type": "cluster",
+        "description": "Cluster: Ethics-Minded Professionals",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 7000000
+      },
+      {
+        "id": "price_sensitive_shoppers",
+        "name": "Price-Sensitive Shoppers",
+        "type": "cluster",
+        "description": "Cluster: Price-Sensitive Shoppers",
+        "power_level": 0.5,
+        "position": 0.09,
+        "position_history": [
+          0.09
+        ],
+        "delta": 0.0,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 10000000
+      },
+      {
+        "id": "activist_consumers",
+        "name": "Activist Consumers",
+        "type": "cluster",
+        "description": "Cluster: Activist Consumers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000000
+      },
+      {
+        "id": "aspirational_athletes",
+        "name": "Aspirational Athletes",
+        "type": "cluster",
+        "description": "Cluster: Aspirational Athletes",
+        "power_level": 0.5,
+        "position": 0.58,
+        "position_history": [
+          0.58
+        ],
+        "delta": 0.0,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 9000000
+      }
+    ],
+    "edges": [
+      {
+        "source": "nike_ceo",
+        "target": "major_retailers",
+        "weight": 0.77,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "ethics_professor",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "consumer_advocate",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "athlete_estate",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "consumer_watchdog",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "ad_regulator",
+        "weight": 0.67,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "tech_ethics_influencer",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "athlete_estate",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "media_ethics_org",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "athlete_estate",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "consumer_watchdog",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "tech_ethics_influencer",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "tech_ethics_influencer",
+        "target": "consumer_watchdog",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "investor_analyst",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_legacy_foundation_head",
+        "target": "media_ethics_org",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_legacy_foundation_head",
+        "target": "consumer_watchdog",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "investor_analyst",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "major_retailers",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "sports_media_network",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "social_platform",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "sports_media_network",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "social_platform",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "investor_group",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_estate",
+        "target": "ad_regulator",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "media_ethics_org",
+        "target": "consumer_watchdog",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "media_ethics_org",
+        "target": "ad_regulator",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "major_retailers",
+        "target": "sports_media_network",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "sports_media_network",
+        "target": "social_platform",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "social_platform",
+        "target": "investor_group",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_cmo",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_corporation",
+        "weight": 0.72,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_ceo",
+        "weight": 0.33,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "investor_group",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "media_ethics_org",
+        "weight": 0.96,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "tech_ethics_influencer",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_estate",
+        "weight": 0.9,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "retail_chain_exec",
+        "weight": 0.99,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "sports_media_network",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "social_platform",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "brand_strategist",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "estate_representative",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_estate",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "tech_ethics_influencer",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "investor_analyst",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "major_retailers",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "investor_group",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "brand_strategist",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "estate_representative",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_estate",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "tech_ethics_influencer",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "nike_cmo",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "nike_corporation",
+        "weight": 0.62,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "nike_ceo",
+        "weight": 0.43,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "investor_group",
+        "weight": 0.13,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 27,
+      "total_edges": 58,
+      "avg_position": -0.301
+    }
+  },
+  {
+    "round": 2,
+    "month": "Day 2",
+    "event_label": "Day 2",
+    "nodes": [
+      {
+        "id": "nike_ceo",
+        "name": "Nike Chief Executive Officer",
+        "type": "persona",
+        "description": "Global CEO overseeing brand strategy and crisis response",
+        "power_level": 0.98,
+        "position": 0.165,
+        "position_history": [
+          0.165
+        ],
+        "delta": -0.131,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "nike_cmo",
+        "name": "Nike Chief Marketing Officer",
+        "type": "persona",
+        "description": "Head of global marketing and campaign approval",
+        "power_level": 0.9,
+        "position": 0.613,
+        "position_history": [
+          0.613
+        ],
+        "delta": -0.151,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "estate_representative",
+        "name": "Athlete Estate Representative",
+        "type": "persona",
+        "description": "Authorized spokesperson for the deceased athlete's family and estate",
+        "power_level": 0.82,
+        "position": -0.957,
+        "position_history": [
+          -0.957
+        ],
+        "delta": 0.019,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "ethics_professor",
+        "name": "Media Ethics Professor",
+        "type": "persona",
+        "description": "Academic commentator on synthetic media and consent",
+        "power_level": 0.58,
+        "position": -0.798,
+        "position_history": [
+          -0.798
+        ],
+        "delta": 0.016,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Consumer Rights Advocate",
+        "type": "persona",
+        "description": "Public advocate focused on deceptive marketing and consumer trust",
+        "power_level": 0.66,
+        "position": -0.776,
+        "position_history": [
+          -0.776
+        ],
+        "delta": 0.078,
+        "sentiment": "furious",
+        "category": "activist"
+      },
+      {
+        "id": "sports_journalist",
+        "name": "Senior Sports Journalist",
+        "type": "persona",
+        "description": "Reporter covering athlete legacy, brand deals, and public reaction",
+        "power_level": 0.7,
+        "position": -0.586,
+        "position_history": [
+          -0.586
+        ],
+        "delta": -0.064,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "tech_ethics_influencer",
+        "name": "AI Ethics Influencer",
+        "type": "persona",
+        "description": "Online commentator on deepfakes, consent, and brand responsibility",
+        "power_level": 0.74,
+        "position": -0.905,
+        "position_history": [
+          -0.905
+        ],
+        "delta": 0.041,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "brand_strategist",
+        "name": "Independent Brand Strategist",
+        "type": "persona",
+        "description": "Consultant assessing reputation and market impact",
+        "power_level": 0.52,
+        "position": 0.023,
+        "position_history": [
+          0.023
+        ],
+        "delta": -0.002,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "athlete_legacy_foundation_head",
+        "name": "Athlete Legacy Foundation Director",
+        "type": "persona",
+        "description": "Leader of a foundation preserving the athlete's image and values",
+        "power_level": 0.6,
+        "position": -0.903,
+        "position_history": [
+          -0.903
+        ],
+        "delta": 0.041,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "retail_chain_exec",
+        "name": "Major Retail Chain Executive",
+        "type": "persona",
+        "description": "Executive deciding whether to keep the shoe line on shelves",
+        "power_level": 0.63,
+        "position": -0.134,
+        "position_history": [
+          -0.134
+        ],
+        "delta": -0.04,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "investor_analyst",
+        "name": "Equity Research Analyst",
+        "type": "persona",
+        "description": "Market analyst tracking Nike's sales and brand risk",
+        "power_level": 0.57,
+        "position": 0.023,
+        "position_history": [
+          0.023
+        ],
+        "delta": -0.081,
+        "sentiment": "cautious",
+        "category": "financial_analyst"
+      },
+      {
+        "id": "nike_corporation",
+        "name": "Nike, Inc.",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.74,
+        "position_history": [
+          0.74
+        ],
+        "delta": -0.032,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "athlete_estate",
+        "name": "Athlete Estate",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.942,
+        "position_history": [
+          -0.942
+        ],
+        "delta": 0.027,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_ethics_org",
+        "name": "Media Ethics Coalition",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.882,
+        "position_history": [
+          -0.882
+        ],
+        "delta": 0.018,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "consumer_watchdog",
+        "name": "Consumer Protection Watch",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.774,
+        "position_history": [
+          -0.774
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "major_retailers",
+        "name": "Major Retailers Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.039,
+        "position_history": [
+          0.039
+        ],
+        "delta": -0.027,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "sports_media_network",
+        "name": "Sports Media Network",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.164,
+        "position_history": [
+          -0.164
+        ],
+        "delta": 0.016,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ad_regulator",
+        "name": "Advertising Standards Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.665,
+        "position_history": [
+          -0.665
+        ],
+        "delta": -0.018,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "social_platform",
+        "name": "Major Social Platform",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.001,
+        "position_history": [
+          0.001
+        ],
+        "delta": -0.022,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investor Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.098,
+        "position_history": [
+          0.098
+        ],
+        "delta": -0.046,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "brand_loyalists",
+        "name": "Nike Brand Loyalists",
+        "type": "cluster",
+        "description": "Cluster: Nike Brand Loyalists",
+        "power_level": 0.5,
+        "position": 0.45,
+        "position_history": [
+          0.45
+        ],
+        "delta": -0.18,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 12000000
+      },
+      {
+        "id": "sports_fans",
+        "name": "Sports Memorabilia and Legacy Fans",
+        "type": "cluster",
+        "description": "Cluster: Sports Memorabilia and Legacy Fans",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": -0.08,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 8000000
+      },
+      {
+        "id": "gen_z_digital_natives",
+        "name": "Gen Z Digital Natives",
+        "type": "cluster",
+        "description": "Cluster: Gen Z Digital Natives",
+        "power_level": 0.5,
+        "position": -0.27,
+        "position_history": [
+          -0.27
+        ],
+        "delta": -0.18,
+        "sentiment": "anti_adoption",
+        "category": "public_opinion",
+        "clusterSize": 15000000
+      },
+      {
+        "id": "ethics_minded_professionals",
+        "name": "Ethics-Minded Professionals",
+        "type": "cluster",
+        "description": "Cluster: Ethics-Minded Professionals",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 7000000
+      },
+      {
+        "id": "price_sensitive_shoppers",
+        "name": "Price-Sensitive Shoppers",
+        "type": "cluster",
+        "description": "Cluster: Price-Sensitive Shoppers",
+        "power_level": 0.5,
+        "position": 0.04,
+        "position_history": [
+          0.04
+        ],
+        "delta": -0.05,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 10000000
+      },
+      {
+        "id": "activist_consumers",
+        "name": "Activist Consumers",
+        "type": "cluster",
+        "description": "Cluster: Activist Consumers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000000
+      },
+      {
+        "id": "aspirational_athletes",
+        "name": "Aspirational Athletes",
+        "type": "cluster",
+        "description": "Cluster: Aspirational Athletes",
+        "power_level": 0.5,
+        "position": 0.44,
+        "position_history": [
+          0.44
+        ],
+        "delta": -0.14,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 9000000
+      }
+    ],
+    "edges": [
+      {
+        "source": "nike_ceo",
+        "target": "brand_strategist",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "nike_ceo",
+        "target": "major_retailers",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "ethics_professor",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "sports_journalist",
+        "weight": 0.63,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "tech_ethics_influencer",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "athlete_estate",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "consumer_watchdog",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "sports_journalist",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "athlete_estate",
+        "weight": 0.64,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "media_ethics_org",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "tech_ethics_influencer",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "investor_analyst",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "social_platform",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_legacy_foundation_head",
+        "target": "media_ethics_org",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "sports_media_network",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "major_retailers",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "sports_media_network",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_estate",
+        "target": "ad_regulator",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "major_retailers",
+        "target": "sports_media_network",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "major_retailers",
+        "target": "investor_group",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "sports_media_network",
+        "target": "social_platform",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_cmo",
+        "weight": 0.67,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_ceo",
+        "weight": 0.43,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_corporation",
+        "weight": 0.42,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "investor_group",
+        "weight": 0.3,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "estate_representative",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_estate",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "tech_ethics_influencer",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "sports_media_network",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "retail_chain_exec",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "social_platform",
+        "weight": 0.46,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "brand_strategist",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "estate_representative",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_estate",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "tech_ethics_influencer",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "major_retailers",
+        "weight": 1.0,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "investor_analyst",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "brand_strategist",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "social_platform",
+        "weight": 0.92,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "estate_representative",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_estate",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "tech_ethics_influencer",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "nike_cmo",
+        "weight": 0.65,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "nike_ceo",
+        "weight": 0.45,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "nike_corporation",
+        "weight": 0.4,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "investor_group",
+        "weight": 0.32,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 27,
+      "total_edges": 51,
+      "avg_position": -0.338
+    }
+  },
+  {
+    "round": 3,
+    "month": "Day 3",
+    "event_label": "Day 3",
+    "nodes": [
+      {
+        "id": "nike_ceo",
+        "name": "Nike Chief Executive Officer",
+        "type": "persona",
+        "description": "Global CEO overseeing brand strategy and crisis response",
+        "power_level": 0.98,
+        "position": -0.315,
+        "position_history": [
+          -0.315
+        ],
+        "delta": -0.48,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "nike_cmo",
+        "name": "Nike Chief Marketing Officer",
+        "type": "persona",
+        "description": "Head of global marketing and campaign approval",
+        "power_level": 0.9,
+        "position": 0.323,
+        "position_history": [
+          0.323
+        ],
+        "delta": -0.291,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "estate_representative",
+        "name": "Athlete Estate Representative",
+        "type": "persona",
+        "description": "Authorized spokesperson for the deceased athlete's family and estate",
+        "power_level": 0.82,
+        "position": -0.969,
+        "position_history": [
+          -0.969
+        ],
+        "delta": -0.012,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "ethics_professor",
+        "name": "Media Ethics Professor",
+        "type": "persona",
+        "description": "Academic commentator on synthetic media and consent",
+        "power_level": 0.58,
+        "position": -0.813,
+        "position_history": [
+          -0.813
+        ],
+        "delta": -0.015,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Consumer Rights Advocate",
+        "type": "persona",
+        "description": "Public advocate focused on deceptive marketing and consumer trust",
+        "power_level": 0.66,
+        "position": -0.821,
+        "position_history": [
+          -0.821
+        ],
+        "delta": -0.045,
+        "sentiment": "furious",
+        "category": "activist"
+      },
+      {
+        "id": "sports_journalist",
+        "name": "Senior Sports Journalist",
+        "type": "persona",
+        "description": "Reporter covering athlete legacy, brand deals, and public reaction",
+        "power_level": 0.7,
+        "position": -0.616,
+        "position_history": [
+          -0.616
+        ],
+        "delta": -0.03,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "tech_ethics_influencer",
+        "name": "AI Ethics Influencer",
+        "type": "persona",
+        "description": "Online commentator on deepfakes, consent, and brand responsibility",
+        "power_level": 0.74,
+        "position": -0.895,
+        "position_history": [
+          -0.895
+        ],
+        "delta": 0.009,
+        "sentiment": "combative",
+        "category": "influencer"
+      },
+      {
+        "id": "brand_strategist",
+        "name": "Independent Brand Strategist",
+        "type": "persona",
+        "description": "Consultant assessing reputation and market impact",
+        "power_level": 0.52,
+        "position": 0.054,
+        "position_history": [
+          0.054
+        ],
+        "delta": 0.031,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "athlete_legacy_foundation_head",
+        "name": "Athlete Legacy Foundation Director",
+        "type": "persona",
+        "description": "Leader of a foundation preserving the athlete's image and values",
+        "power_level": 0.6,
+        "position": -0.878,
+        "position_history": [
+          -0.878
+        ],
+        "delta": 0.025,
+        "sentiment": "cautious",
+        "category": "advocate"
+      },
+      {
+        "id": "retail_chain_exec",
+        "name": "Major Retail Chain Executive",
+        "type": "persona",
+        "description": "Executive deciding whether to keep the shoe line on shelves",
+        "power_level": 0.63,
+        "position": -0.299,
+        "position_history": [
+          -0.299
+        ],
+        "delta": -0.165,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "investor_analyst",
+        "name": "Equity Research Analyst",
+        "type": "persona",
+        "description": "Market analyst tracking Nike's sales and brand risk",
+        "power_level": 0.57,
+        "position": 0.006,
+        "position_history": [
+          0.006
+        ],
+        "delta": -0.017,
+        "sentiment": "cautious",
+        "category": "financial_analyst"
+      },
+      {
+        "id": "nike_corporation",
+        "name": "Nike, Inc.",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.702,
+        "position_history": [
+          0.702
+        ],
+        "delta": -0.039,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "athlete_estate",
+        "name": "Athlete Estate",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.932,
+        "position_history": [
+          -0.932
+        ],
+        "delta": 0.009,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_ethics_org",
+        "name": "Media Ethics Coalition",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.881,
+        "position_history": [
+          -0.881
+        ],
+        "delta": 0.001,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "consumer_watchdog",
+        "name": "Consumer Protection Watch",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.788,
+        "position_history": [
+          -0.788
+        ],
+        "delta": -0.014,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "major_retailers",
+        "name": "Major Retailers Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.003,
+        "position_history": [
+          0.003
+        ],
+        "delta": -0.036,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "sports_media_network",
+        "name": "Sports Media Network",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.196,
+        "position_history": [
+          -0.196
+        ],
+        "delta": -0.032,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ad_regulator",
+        "name": "Advertising Standards Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.69,
+        "position_history": [
+          -0.69
+        ],
+        "delta": -0.025,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "social_platform",
+        "name": "Major Social Platform",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.038,
+        "position_history": [
+          -0.038
+        ],
+        "delta": -0.039,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investor Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.054,
+        "position_history": [
+          0.054
+        ],
+        "delta": -0.044,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "brand_loyalists",
+        "name": "Nike Brand Loyalists",
+        "type": "cluster",
+        "description": "Cluster: Nike Brand Loyalists",
+        "power_level": 0.5,
+        "position": 0.33,
+        "position_history": [
+          0.33
+        ],
+        "delta": -0.12,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 12000000
+      },
+      {
+        "id": "sports_fans",
+        "name": "Sports Memorabilia and Legacy Fans",
+        "type": "cluster",
+        "description": "Cluster: Sports Memorabilia and Legacy Fans",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 8000000
+      },
+      {
+        "id": "gen_z_digital_natives",
+        "name": "Gen Z Digital Natives",
+        "type": "cluster",
+        "description": "Cluster: Gen Z Digital Natives",
+        "power_level": 0.5,
+        "position": -0.51,
+        "position_history": [
+          -0.51
+        ],
+        "delta": -0.24,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 15000000
+      },
+      {
+        "id": "ethics_minded_professionals",
+        "name": "Ethics-Minded Professionals",
+        "type": "cluster",
+        "description": "Cluster: Ethics-Minded Professionals",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 7000000
+      },
+      {
+        "id": "price_sensitive_shoppers",
+        "name": "Price-Sensitive Shoppers",
+        "type": "cluster",
+        "description": "Cluster: Price-Sensitive Shoppers",
+        "power_level": 0.5,
+        "position": -0.0,
+        "position_history": [
+          -0.0
+        ],
+        "delta": -0.04,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 10000000
+      },
+      {
+        "id": "activist_consumers",
+        "name": "Activist Consumers",
+        "type": "cluster",
+        "description": "Cluster: Activist Consumers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000000
+      },
+      {
+        "id": "aspirational_athletes",
+        "name": "Aspirational Athletes",
+        "type": "cluster",
+        "description": "Cluster: Aspirational Athletes",
+        "power_level": 0.5,
+        "position": 0.22,
+        "position_history": [
+          0.22
+        ],
+        "delta": -0.22,
+        "sentiment": "anti_adoption",
+        "category": "public_opinion",
+        "clusterSize": 9000000
+      }
+    ],
+    "edges": [
+      {
+        "source": "nike_ceo",
+        "target": "sports_journalist",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "nike_ceo",
+        "target": "retail_chain_exec",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "nike_ceo",
+        "target": "ad_regulator",
+        "weight": 0.63,
+        "type": "influence"
+      },
+      {
+        "source": "nike_cmo",
+        "target": "nike_corporation",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "nike_cmo",
+        "target": "major_retailers",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "nike_cmo",
+        "target": "investor_group",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "media_ethics_org",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "consumer_watchdog",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "sports_journalist",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "sports_journalist",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "athlete_estate",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "media_ethics_org",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "tech_ethics_influencer",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "media_ethics_org",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "consumer_watchdog",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "retail_chain_exec",
+        "weight": 0.65,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "investor_analyst",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_legacy_foundation_head",
+        "target": "ad_regulator",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "investor_analyst",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "investor_group",
+        "weight": 0.65,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "sports_media_network",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "social_platform",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_estate",
+        "target": "media_ethics_org",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "major_retailers",
+        "target": "sports_media_network",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "major_retailers",
+        "target": "investor_group",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_cmo",
+        "weight": 0.99,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "investor_group",
+        "weight": 0.45,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "brand_strategist",
+        "weight": 0.45,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "investor_analyst",
+        "weight": 0.35,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "estate_representative",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "tech_ethics_influencer",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "media_ethics_org",
+        "weight": 0.76,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "sports_journalist",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "ad_regulator",
+        "weight": 0.64,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "nike_ceo",
+        "weight": 0.61,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "retail_chain_exec",
+        "weight": 0.58,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "estate_representative",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "tech_ethics_influencer",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "media_ethics_org",
+        "weight": 0.76,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "major_retailers",
+        "weight": 0.99,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "investor_analyst",
+        "weight": 0.99,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "social_platform",
+        "weight": 0.92,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "brand_strategist",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "estate_representative",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "tech_ethics_influencer",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "media_ethics_org",
+        "weight": 0.76,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "nike_cmo",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "investor_group",
+        "weight": 0.67,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "brand_strategist",
+        "weight": 0.67,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "investor_analyst",
+        "weight": 0.57,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 27,
+      "total_edges": 53,
+      "avg_position": -0.406
+    }
+  },
+  {
+    "round": 4,
+    "month": "Day 4",
+    "event_label": "Day 4",
+    "nodes": [
+      {
+        "id": "nike_ceo",
+        "name": "Nike Chief Executive Officer",
+        "type": "persona",
+        "description": "Global CEO overseeing brand strategy and crisis response",
+        "power_level": 0.98,
+        "position": -0.627,
+        "position_history": [
+          -0.627
+        ],
+        "delta": -0.311,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "nike_cmo",
+        "name": "Nike Chief Marketing Officer",
+        "type": "persona",
+        "description": "Head of global marketing and campaign approval",
+        "power_level": 0.9,
+        "position": 0.294,
+        "position_history": [
+          0.294
+        ],
+        "delta": -0.028,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "estate_representative",
+        "name": "Athlete Estate Representative",
+        "type": "persona",
+        "description": "Authorized spokesperson for the deceased athlete's family and estate",
+        "power_level": 0.82,
+        "position": -0.973,
+        "position_history": [
+          -0.973
+        ],
+        "delta": -0.004,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "ethics_professor",
+        "name": "Media Ethics Professor",
+        "type": "persona",
+        "description": "Academic commentator on synthetic media and consent",
+        "power_level": 0.58,
+        "position": -0.817,
+        "position_history": [
+          -0.817
+        ],
+        "delta": -0.004,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Consumer Rights Advocate",
+        "type": "persona",
+        "description": "Public advocate focused on deceptive marketing and consumer trust",
+        "power_level": 0.66,
+        "position": -0.872,
+        "position_history": [
+          -0.872
+        ],
+        "delta": -0.05,
+        "sentiment": "furious",
+        "category": "activist"
+      },
+      {
+        "id": "sports_journalist",
+        "name": "Senior Sports Journalist",
+        "type": "persona",
+        "description": "Reporter covering athlete legacy, brand deals, and public reaction",
+        "power_level": 0.7,
+        "position": -0.548,
+        "position_history": [
+          -0.548
+        ],
+        "delta": 0.068,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "tech_ethics_influencer",
+        "name": "AI Ethics Influencer",
+        "type": "persona",
+        "description": "Online commentator on deepfakes, consent, and brand responsibility",
+        "power_level": 0.74,
+        "position": -0.915,
+        "position_history": [
+          -0.915
+        ],
+        "delta": -0.019,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "brand_strategist",
+        "name": "Independent Brand Strategist",
+        "type": "persona",
+        "description": "Consultant assessing reputation and market impact",
+        "power_level": 0.52,
+        "position": 0.006,
+        "position_history": [
+          0.006
+        ],
+        "delta": -0.048,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "athlete_legacy_foundation_head",
+        "name": "Athlete Legacy Foundation Director",
+        "type": "persona",
+        "description": "Leader of a foundation preserving the athlete's image and values",
+        "power_level": 0.6,
+        "position": -0.897,
+        "position_history": [
+          -0.897
+        ],
+        "delta": -0.019,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "retail_chain_exec",
+        "name": "Major Retail Chain Executive",
+        "type": "persona",
+        "description": "Executive deciding whether to keep the shoe line on shelves",
+        "power_level": 0.63,
+        "position": -0.245,
+        "position_history": [
+          -0.245
+        ],
+        "delta": 0.054,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "investor_analyst",
+        "name": "Equity Research Analyst",
+        "type": "persona",
+        "description": "Market analyst tracking Nike's sales and brand risk",
+        "power_level": 0.57,
+        "position": -0.136,
+        "position_history": [
+          -0.136
+        ],
+        "delta": -0.142,
+        "sentiment": "cautious",
+        "category": "financial_analyst"
+      },
+      {
+        "id": "nike_corporation",
+        "name": "Nike, Inc.",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.665,
+        "position_history": [
+          0.665
+        ],
+        "delta": -0.037,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "athlete_estate",
+        "name": "Athlete Estate",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.929,
+        "position_history": [
+          -0.929
+        ],
+        "delta": 0.003,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_ethics_org",
+        "name": "Media Ethics Coalition",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.884,
+        "position_history": [
+          -0.884
+        ],
+        "delta": -0.003,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "consumer_watchdog",
+        "name": "Consumer Protection Watch",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.802,
+        "position_history": [
+          -0.802
+        ],
+        "delta": -0.015,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "major_retailers",
+        "name": "Major Retailers Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.032,
+        "position_history": [
+          -0.032
+        ],
+        "delta": -0.035,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "sports_media_network",
+        "name": "Sports Media Network",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.227,
+        "position_history": [
+          -0.227
+        ],
+        "delta": -0.031,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ad_regulator",
+        "name": "Advertising Standards Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.713,
+        "position_history": [
+          -0.713
+        ],
+        "delta": -0.023,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "social_platform",
+        "name": "Major Social Platform",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.076,
+        "position_history": [
+          -0.076
+        ],
+        "delta": -0.038,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investor Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.011,
+        "position_history": [
+          0.011
+        ],
+        "delta": -0.043,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "brand_loyalists",
+        "name": "Nike Brand Loyalists",
+        "type": "cluster",
+        "description": "Cluster: Nike Brand Loyalists",
+        "power_level": 0.5,
+        "position": 0.19,
+        "position_history": [
+          0.19
+        ],
+        "delta": -0.14,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 12000000
+      },
+      {
+        "id": "sports_fans",
+        "name": "Sports Memorabilia and Legacy Fans",
+        "type": "cluster",
+        "description": "Cluster: Sports Memorabilia and Legacy Fans",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 8000000
+      },
+      {
+        "id": "gen_z_digital_natives",
+        "name": "Gen Z Digital Natives",
+        "type": "cluster",
+        "description": "Cluster: Gen Z Digital Natives",
+        "power_level": 0.5,
+        "position": -0.73,
+        "position_history": [
+          -0.73
+        ],
+        "delta": -0.22,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 15000000
+      },
+      {
+        "id": "ethics_minded_professionals",
+        "name": "Ethics-Minded Professionals",
+        "type": "cluster",
+        "description": "Cluster: Ethics-Minded Professionals",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 7000000
+      },
+      {
+        "id": "price_sensitive_shoppers",
+        "name": "Price-Sensitive Shoppers",
+        "type": "cluster",
+        "description": "Cluster: Price-Sensitive Shoppers",
+        "power_level": 0.5,
+        "position": -0.05,
+        "position_history": [
+          -0.05
+        ],
+        "delta": -0.05,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 10000000
+      },
+      {
+        "id": "activist_consumers",
+        "name": "Activist Consumers",
+        "type": "cluster",
+        "description": "Cluster: Activist Consumers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000000
+      },
+      {
+        "id": "aspirational_athletes",
+        "name": "Aspirational Athletes",
+        "type": "cluster",
+        "description": "Cluster: Aspirational Athletes",
+        "power_level": 0.5,
+        "position": 0.04,
+        "position_history": [
+          0.04
+        ],
+        "delta": -0.18,
+        "sentiment": "anti_adoption",
+        "category": "public_opinion",
+        "clusterSize": 9000000
+      }
+    ],
+    "edges": [
+      {
+        "source": "nike_ceo",
+        "target": "estate_representative",
+        "weight": 0.65,
+        "type": "influence"
+      },
+      {
+        "source": "nike_ceo",
+        "target": "sports_journalist",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "nike_cmo",
+        "target": "major_retailers",
+        "weight": 0.67,
+        "type": "influence"
+      },
+      {
+        "source": "nike_cmo",
+        "target": "social_platform",
+        "weight": 0.63,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "tech_ethics_influencer",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "ad_regulator",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "consumer_watchdog",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "ad_regulator",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "tech_ethics_influencer",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "media_ethics_org",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "ad_regulator",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "ad_regulator",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "tech_ethics_influencer",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "tech_ethics_influencer",
+        "target": "consumer_watchdog",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "major_retailers",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "social_platform",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_legacy_foundation_head",
+        "target": "athlete_estate",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "investor_analyst",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "social_platform",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "major_retailers",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_estate",
+        "target": "consumer_watchdog",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_estate",
+        "target": "ad_regulator",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_cmo",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "investor_group",
+        "weight": 0.64,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "brand_strategist",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "major_retailers",
+        "weight": 0.56,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "estate_representative",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "tech_ethics_influencer",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "ad_regulator",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "consumer_watchdog",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "ethics_professor",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "nike_ceo",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "estate_representative",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "tech_ethics_influencer",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "major_retailers",
+        "weight": 0.96,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "social_platform",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "brand_strategist",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "investor_group",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "estate_representative",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "tech_ethics_influencer",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "investor_group",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "brand_strategist",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "major_retailers",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "social_platform",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 27,
+      "total_edges": 50,
+      "avg_position": -0.454
+    }
+  }
+]

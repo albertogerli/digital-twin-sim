@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Paris Climate Agreement Public Opinion 2015-2017",
+  "description": "Evolution of public opinion on the Paris Climate Agreement from COP21 adoption (Dec 2015) through US withdrawal announcement (June 2017). Global support was strong (~70%+ across nations) but US opinion polarized sharply after Trump withdrawal. Tests geopolitical event impact on domestic opinion polarization.",
+  "domain": "environmental",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 61, "against_pct": 17, "undecided_pct": 22},
+    {"round_equivalent": 2, "pro_pct": 64, "against_pct": 16, "undecided_pct": 20},
+    {"round_equivalent": 3, "pro_pct": 69, "against_pct": 14, "undecided_pct": 17},
+    {"round_equivalent": 4, "pro_pct": 71, "against_pct": 13, "undecided_pct": 16},
+    {"round_equivalent": 5, "pro_pct": 68, "against_pct": 15, "undecided_pct": 17},
+    {"round_equivalent": 6, "pro_pct": 64, "against_pct": 20, "undecided_pct": 16},
+    {"round_equivalent": 7, "pro_pct": 62, "against_pct": 24, "undecided_pct": 14},
+    {"round_equivalent": 8, "pro_pct": 62, "against_pct": 28, "undecided_pct": 10},
+    {"round_equivalent": 9, "pro_pct": 62, "against_pct": 38, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "COP21 in Paris concludes with historic agreement. 195 nations commit to limit warming to 1.5-2°C. Global media celebrates diplomatic achievement."},
+    {"round_equivalent": 3, "description": "Earth Day 2016: 175 countries sign Paris Agreement at UN ceremony, largest single-day signing of an international agreement. Public awareness peaks."},
+    {"round_equivalent": 5, "description": "Trump wins 2016 US presidential election on platform including Paris withdrawal. Climate becomes partisan identity marker in US."},
+    {"round_equivalent": 6, "description": "Trump announces US withdrawal from Paris Agreement (June 1, 2017). Republican support for agreement drops from ~40% to ~25% within weeks."},
+    {"round_equivalent": 8, "description": "Yale/George Mason survey shows 69% of US adults support Paris participation, but partisan gap reaches 50+ points (Dem 86% vs Rep 31%). Global support remains above 70%."}
+  ],
+  "calibration_notes": "Tests opinion polarization driven by elite cue-taking and partisan identity. US opinion on Paris went from modest bipartisan support to extreme partisan polarization after Trump's withdrawal. Key dynamics: elite signaling driving mass opinion shifts (Republican voters following Trump cue), rally-around-the-flag effect for withdrawal supporters, counter-mobilization by cities/states (#WeAreStillIn), global vs domestic opinion divergence, climate becoming tribal identity issue rather than policy question, and the asymmetry where opposition crystallized faster than support grew. The US-focused trajectory shown here tracks the country where opinion shifted most dramatically."
+}

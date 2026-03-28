@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Nestlé California Water Bottling Controversy 2015",
+  "description": "Nestlé faced backlash for bottling water from California's San Bernardino National Forest during the worst drought in 1,200 years, using a permit expired since 1988. Public favorability dropped from ~25% to ~12%. Tests corporate-environmental conflict during crisis.",
+  "domain": "corporate",
+  "final_outcome_pro_pct": 12.0,
+  "final_outcome_against_pct": 88.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 25, "against_pct": 42, "undecided_pct": 33},
+    {"round_equivalent": 2, "pro_pct": 23, "against_pct": 45, "undecided_pct": 32},
+    {"round_equivalent": 3, "pro_pct": 20, "against_pct": 50, "undecided_pct": 30},
+    {"round_equivalent": 4, "pro_pct": 17, "against_pct": 55, "undecided_pct": 28},
+    {"round_equivalent": 5, "pro_pct": 14, "against_pct": 60, "undecided_pct": 26},
+    {"round_equivalent": 6, "pro_pct": 13, "against_pct": 62, "undecided_pct": 25},
+    {"round_equivalent": 7, "pro_pct": 12, "against_pct": 64, "undecided_pct": 24},
+    {"round_equivalent": 8, "pro_pct": 13, "against_pct": 63, "undecided_pct": 24},
+    {"round_equivalent": 9, "pro_pct": 12, "against_pct": 88, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "California enters 4th year of historic drought. Governor Brown orders mandatory 25% water use reduction for residents and businesses."},
+    {"round_equivalent": 3, "description": "Revelations that Nestlé's water extraction permit from San Bernardino National Forest expired in 1988. Company extracting 36 million gallons annually on expired permit."},
+    {"round_equivalent": 4, "description": "Online petition to stop Nestlé bottling gains over 500,000 signatures. #BoycottNestle trends nationally on social media."},
+    {"round_equivalent": 5, "description": "Nestlé CEO Tim Brown states 'If I could increase water extraction, I would' in interview, further inflaming public anger."},
+    {"round_equivalent": 7, "description": "Former Nestlé CEO Peter Brabeck's 2005 comments calling water access 'not a human right' resurface and go viral, compounding outrage."}
+  ],
+  "calibration_notes": "Tests corporate controversy amplified by environmental crisis context. Nestlé already had low baseline favorability (~25% in US) due to prior controversies (baby formula, child labor). Key dynamics: drought context making water extraction feel morally outrageous, expired permit as proof of regulatory capture, viral old quotes resurfacing to compound current controversy, petition-driven activism, brand already weakened by cumulative controversies, and the difficulty of corporate defense when the visual narrative (bottling water during drought) is so compelling."
+}

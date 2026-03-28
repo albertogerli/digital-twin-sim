@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ceo_1",
+    "name": "Avery Chen",
+    "role": "Chief Executive Officer",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.9,
+    "final_position": 0.871,
+    "position_delta": -0.029,
+    "influence": 1.0,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "cfo_1",
+    "name": "Jordan Patel",
+    "role": "Chief Financial Officer",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.7,
+    "final_position": 0.671,
+    "position_delta": -0.029,
+    "influence": 0.95,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "chro_1",
+    "name": "Maya Rodriguez",
+    "role": "Chief Human Resources Officer",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": -0.1,
+    "final_position": -0.18,
+    "position_delta": -0.08,
+    "influence": 0.8,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "cto_1",
+    "name": "Dr. Lena Novak",
+    "role": "Chief Technology Officer",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.6,
+    "final_position": 0.55,
+    "position_delta": -0.05,
+    "influence": 0.85,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "union_leader_1",
+    "name": "Marcus Hill",
+    "role": "Tech Workers Union President",
+    "archetype": "union_leader",
+    "tier": 1,
+    "initial_position": -0.9,
+    "final_position": -0.942,
+    "position_delta": -0.042,
+    "influence": 0.82,
+    "emotional_state": "furious"
+  },
+  {
+    "id": "manager_rep_1",
+    "name": "Elena Brooks",
+    "role": "Displaced Managers Association Spokesperson",
+    "archetype": "employee_advocate",
+    "tier": 1,
+    "initial_position": -0.7,
+    "final_position": -0.738,
+    "position_delta": -0.038,
+    "influence": 0.55,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "analyst_1",
+    "name": "Priya Desai",
+    "role": "Senior Tech Equity Analyst",
+    "archetype": "analyst",
+    "tier": 1,
+    "initial_position": 0.4,
+    "final_position": 0.223,
+    "position_delta": -0.177,
+    "influence": 0.7,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "journalist_1",
+    "name": "Noah Kim",
+    "role": "Business and Labor Reporter",
+    "archetype": "journalist",
+    "tier": 1,
+    "initial_position": -0.2,
+    "final_position": -0.232,
+    "position_delta": -0.032,
+    "influence": 0.65,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "industry_voice_1",
+    "name": "Sofia Alvarez",
+    "role": "Former Big Tech COO and Industry Commentator",
+    "archetype": "industry_expert",
+    "tier": 1,
+    "initial_position": 0.2,
+    "final_position": 0.042,
+    "position_delta": -0.158,
+    "influence": 0.6,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "influencer_1",
+    "name": "Tariq West",
+    "role": "Workplace Creator and Tech Commentator",
+    "archetype": "influencer",
+    "tier": 1,
+    "initial_position": -0.4,
+    "final_position": -0.487,
+    "position_delta": -0.087,
+    "influence": 0.58,
+    "emotional_state": "worried"
+  }
+]

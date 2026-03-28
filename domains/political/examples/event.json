@@ -1,0 +1,9 @@
+{
+  "_description": "Golden example: realistic event generation for Italian political referendum simulation.",
+  "event": "Il Consiglio Superiore della Magistratura approva a maggioranza un documento in cui definisce la riforma Nordio 'lesiva dell'indipendenza della magistratura e dell'equilibrio tra i poteri dello Stato'. Il vice-presidente del CSM, laico di nomina centrodestra, si dissocia e dichiara che il documento è 'un atto politico improprio'. Meloni risponde in conferenza stampa accusando il CSM di 'fare politica attiva' e annuncia un tour di comizi pro-SÌ nelle regioni del Sud. Sondaggi flash mostrano il SÌ in leggero vantaggio (48% vs 44%, 8% indecisi).",
+  "shock_magnitude": 0.45,
+  "shock_direction": 0.15,
+  "key_actors_affected": ["meloni", "anm_president", "schlein", "nordio"],
+  "institutional_impact": "Il documento del CSM alimenta lo scontro istituzionale tra magistratura e governo, ma la dissociazione del vice-presidente mostra le fratture interne al consiglio. Si rafforza il framing del governo: 'magistratura vs cittadini'.",
+  "public_perception": "L'opinione pubblica si divide: i sostenitori del SÌ vedono la conferma che la magistratura difende privilegi corporativi, i sostenitori del NO vedono un allarme democratico legittimo. Gli indecisi percepiscono uno scontro di potere."
+}

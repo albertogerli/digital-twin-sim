@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Scottish Independence Referendum 2014",
+  "description": "Should Scotland be independent? No won 55.3% with record 84.6% turnout. Tests narrowing race with late reversion to status quo after establishment counter-mobilization.",
+  "domain": "political",
+  "final_outcome_pro_pct": 44.70,
+  "final_outcome_against_pct": 55.30,
+  "final_turnout_pct": 84.59,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 37, "against_pct": 47, "undecided_pct": 16},
+    {"round_equivalent": 2, "pro_pct": 38, "against_pct": 46, "undecided_pct": 16},
+    {"round_equivalent": 3, "pro_pct": 39, "against_pct": 46, "undecided_pct": 15},
+    {"round_equivalent": 4, "pro_pct": 40, "against_pct": 45, "undecided_pct": 15},
+    {"round_equivalent": 5, "pro_pct": 41, "against_pct": 45, "undecided_pct": 14},
+    {"round_equivalent": 6, "pro_pct": 43, "against_pct": 44, "undecided_pct": 13},
+    {"round_equivalent": 7, "pro_pct": 44, "against_pct": 43, "undecided_pct": 13},
+    {"round_equivalent": 8, "pro_pct": 47, "against_pct": 42, "undecided_pct": 11},
+    {"round_equivalent": 9, "pro_pct": 44.7, "against_pct": 55.3, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 3, "description": "European Parliament elections: UKIP wins across England. Reinforces 'Scotland is different' narrative."},
+    {"round_equivalent": 5, "description": "Commonwealth Games in Glasgow. Boosts Scottish national pride."},
+    {"round_equivalent": 6, "description": "First TV debate: Salmond vs Darling. Darling wins on currency question."},
+    {"round_equivalent": 7, "description": "Second TV debate: Salmond wins audience vote. Yes surges 3-4 points."},
+    {"round_equivalent": 8, "description": "YouGov poll shows Yes ahead 51-49. Triggers panic in Westminster. 'The Vow' and Gordon Brown speech."}
+  ],
+  "calibration_notes": "Tests narrowing race with late reversion. Yes gained steadily through grassroots mobilization and identity-based campaigning, briefly taking the lead. Establishment counter-mobilization (The Vow, Gordon Brown) pulled undecideds back to No. Tests: status quo bias reasserting under pressure, elite intervention at critical moment, gap between online enthusiasm and final vote, very high turnout bringing disengaged voters who broke for No."
+}

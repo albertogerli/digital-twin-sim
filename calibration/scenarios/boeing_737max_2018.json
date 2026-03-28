@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Boeing 737 MAX Crisis (2018-2019)",
+  "description": "Two fatal crashes (Lion Air Oct 2018, Ethiopian Airlines Mar 2019) caused by flawed MCAS system. Fleet grounded March 2019. Tests institutional trust erosion when safety failure is initially deflected with blame-shifting.",
+  "domain": "corporate",
+  "final_outcome_pro_pct": 12,
+  "final_outcome_against_pct": 68,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 65, "against_pct": 10, "undecided_pct": 25},
+    {"round_equivalent": 2, "pro_pct": 45, "against_pct": 30, "undecided_pct": 25},
+    {"round_equivalent": 3, "pro_pct": 42, "against_pct": 28, "undecided_pct": 30},
+    {"round_equivalent": 4, "pro_pct": 40, "against_pct": 28, "undecided_pct": 32},
+    {"round_equivalent": 5, "pro_pct": 15, "against_pct": 65, "undecided_pct": 20},
+    {"round_equivalent": 6, "pro_pct": 10, "against_pct": 72, "undecided_pct": 18},
+    {"round_equivalent": 7, "pro_pct": 8, "against_pct": 75, "undecided_pct": 17},
+    {"round_equivalent": 8, "pro_pct": 10, "against_pct": 70, "undecided_pct": 20},
+    {"round_equivalent": 9, "pro_pct": 12, "against_pct": 68, "undecided_pct": 20}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Lion Air Flight 610 crash (Oct 29, 2018). 189 killed. Boeing blames pilot error."},
+    {"round_equivalent": 5, "description": "Ethiopian Airlines Flight 302 crash (Mar 10, 2019). 157 killed. Same MCAS failure pattern. Global fleet grounded Mar 13."},
+    {"round_equivalent": 6, "description": "Boeing acknowledges MCAS software role. Preliminary crash reports published. Airlines cancel orders."},
+    {"round_equivalent": 7, "description": "Internal Boeing communications leaked — engineers called MCAS 'designed by clowns supervised by monkeys'."},
+    {"round_equivalent": 8, "description": "Congressional hearings. CEO Muilenburg testifies. Zero new MAX orders at Paris Air Show."}
+  ],
+  "calibration_notes": "Tests trust erosion when a second identical safety failure destroys the defender's credibility. Initial blame-shifting (pilot error) works temporarily but collapses catastrophically on repeat. The second crash is the tipping point — sentiment drops 25+ points in one round. Recovery is extremely slow because the product is life-or-death. Also tests regulatory trust contagion (FAA damaged alongside Boeing). Total costs exceeded $20B."
+}

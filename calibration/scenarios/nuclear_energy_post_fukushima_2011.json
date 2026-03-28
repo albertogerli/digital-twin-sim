@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Nuclear Energy Support Post-Fukushima 2011",
+  "description": "Fukushima Daiichi nuclear disaster (March 11, 2011) caused a sharp global decline in nuclear energy support. Pre-disaster support ~50% dropped to ~30-35% in weeks. Germany accelerated nuclear phase-out. Tests exogenous shock and fear-driven opinion collapse.",
+  "domain": "energy/environmental",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 53.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 49, "against_pct": 38, "undecided_pct": 13},
+    {"round_equivalent": 2, "pro_pct": 46, "against_pct": 40, "undecided_pct": 14},
+    {"round_equivalent": 3, "pro_pct": 35, "against_pct": 52, "undecided_pct": 13},
+    {"round_equivalent": 4, "pro_pct": 30, "against_pct": 55, "undecided_pct": 15},
+    {"round_equivalent": 5, "pro_pct": 28, "against_pct": 57, "undecided_pct": 15},
+    {"round_equivalent": 6, "pro_pct": 30, "against_pct": 56, "undecided_pct": 14},
+    {"round_equivalent": 7, "pro_pct": 32, "against_pct": 55, "undecided_pct": 13},
+    {"round_equivalent": 8, "pro_pct": 33, "against_pct": 54, "undecided_pct": 13},
+    {"round_equivalent": 9, "pro_pct": 35, "against_pct": 53, "undecided_pct": 12}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "March 11, 2011: Tohoku earthquake and tsunami trigger Fukushima Daiichi meltdowns. 24/7 media coverage begins."},
+    {"round_equivalent": 3, "description": "Hydrogen explosions at reactors 1, 3, and 4 broadcast globally. INES Level 7 (maximum severity). Public fear peaks."},
+    {"round_equivalent": 4, "description": "Germany announces moratorium on nuclear plants, begins accelerated phase-out (Energiewende). Anti-nuclear protests surge across Europe."},
+    {"round_equivalent": 6, "description": "Japan shuts down all 54 nuclear reactors for safety reviews. Switzerland and Italy also abandon nuclear plans."},
+    {"round_equivalent": 8, "description": "Partial stabilization of opinion as energy cost concerns emerge. Pro-nuclear voices cite climate benefits but recovery is slow."}
+  ],
+  "calibration_notes": "Tests catastrophic exogenous shock dynamics. Key patterns: sudden ~15pt opinion collapse in 1-2 weeks, availability heuristic dominating risk perception, geographic proximity effect (stronger in Europe/Asia than US), policy cascade across countries, slow partial recovery driven by energy security and climate arguments. Gallup, Pew, and Eurobarometer data used. Recovery took 5+ years to reach pre-Fukushima levels in some countries."
+}

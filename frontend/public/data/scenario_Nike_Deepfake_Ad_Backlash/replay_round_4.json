@@ -1,0 +1,4003 @@
+{
+  "round": 4,
+  "month": "Day 4",
+  "event": {
+    "event": "Round 4 dynamics continue",
+    "shock_magnitude": 0.3,
+    "shock_direction": 0
+  },
+  "posts": [
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00000_r4",
+      "author_id": "tech_ethics_influencer",
+      "author_name": "AI Ethics Influencer",
+      "author_role": "Online commentator on deepfakes, consent, and brand responsibility",
+      "tier": 1,
+      "platform": "social_media",
+      "text": "FTC + state AGs opening a preliminary inquiry is the predictable next step. If you ship a deepfake ad before consent is settled, you don’t get to call it innovation — you get regulatory scrutiny. This set a dangerous precedent. #ConsentMatters",
+      "round": 4,
+      "likes": 5,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.87,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00001_r4",
+      "author_id": "ethics_professor",
+      "author_name": "Media Ethics Professor",
+      "author_role": "Academic commentator on synthetic media and consent",
+      "tier": 1,
+      "platform": "social_media",
+      "text": "FTC scrutiny + the estate’s TRO petition make the core issue unmistakable: deepfake ads are not just creative risk, they’re consent risk. If endorsement is simulated before disclosure, and the likeness is posthumously reused, the ethical breach is structural.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00002_r4",
+      "author_id": "consumer_advocate",
+      "author_name": "Consumer Rights Advocate",
+      "author_role": "Public advocate focused on deceptive marketing and consumer trust",
+      "tier": 1,
+      "platform": "social",
+      "text": "FTC scrutiny is the line in the sand. This wasn’t “edgy marketing” — it was deceptive synthetic media that confused consumers and used a dead athlete’s likeness without clear pre-release disclosure. Nike should kill the campaign, not repackage it.",
+      "round": 4,
+      "likes": 8,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00003_r4",
+      "author_id": "nike_ceo",
+      "author_name": "Nike Chief Executive Officer",
+      "author_role": "Global CEO overseeing brand strategy and crisis response",
+      "tier": 1,
+      "platform": "social",
+      "text": "We’re cooperating fully with regulators and the athlete’s estate. Consent and clear disclosure are non-negotiable. We’ve suspended the campaign, and we’ll continue to prioritize trust, rights, and responsible governance.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00004_r4",
+      "author_id": "athlete_legacy_foundation_head",
+      "author_name": "Athlete Legacy Foundation Director",
+      "author_role": "Leader of a foundation preserving the athlete's image and values",
+      "tier": 1,
+      "platform": "social",
+      "text": "The FTC inquiry and the estate’s petition confirm what we have said: this was not merely a marketing misstep, but a serious breach of consent, legacy, and public trust. Accountability must now be legal, not performative.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00005_r4",
+      "author_id": "nike_ceo",
+      "author_name": "Nike Chief Executive Officer",
+      "author_role": "Global CEO overseeing brand strategy and crisis response",
+      "tier": 1,
+      "platform": "social",
+      "text": "The professor’s point is correct: refunds and review are remedial, not curative. We need to acknowledge that plainly and keep the response focused on rights, disclosure, and accountability.",
+      "round": 4,
+      "likes": 8,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00006_r4",
+      "author_id": "tech_ethics_influencer",
+      "author_name": "AI Ethics Influencer",
+      "author_role": "Online commentator on deepfakes, consent, and brand responsibility",
+      "tier": 1,
+      "platform": "review_platform",
+      "text": "Day 4 is the clearest proof yet that this campaign was never just a PR stumble — it has crossed into regulatory and litigation risk because the original decision was structurally wrong.\n\nThe FTC and state attorneys general are now asking the obvious question: was this deceptive marketing, and was it an unfair endorsement practice? That question exists because the campaign appears to have used a realistic synthetic likeness of a deceased athlete to sell product without clear pre-release disclosure and without settled consent from the people who actually bear the consequences.\n\nNike’s apology, suspension, and refund posture do not repair the underlying harm. They are reactive containment measures after consumer confusion, retailer pullbacks, and legal escalation forced the issue into the open. The estate’s emergency petition makes another core point: residual use matters. Archived campaign materials, social posts, and reseller marketing can keep amplifying the violation long after the initial launch.\n\nThis is the precedent problem. If brands can deploy a dead athlete’s face, voice, and aura as a commercial engine first and sort out consent later, then the industry has normalized synthetic endorsement as a default tactic. That is not tribute. That is exploitation with a high-tech wrapper.\n\nThe market is reacting accordingly: Amazon suppressing listings, JD Sports reconsidering launch allocations, analysts cutting revenue expectations. That is what happens when ethics are treated as an afterthought and governance is outsourced to backlash.\n\nBottom line: this campaign should be treated as a warning label for the entire advertising ecosystem. No clear consent, no launch. No transparent disclosure, no endorsement. No estate approval, no residual use.",
+      "round": 4,
+      "likes": 8,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00007_r4",
+      "author_id": "tech_ethics_influencer",
+      "author_name": "AI Ethics Influencer",
+      "author_role": "Online commentator on deepfakes, consent, and brand responsibility",
+      "tier": 1,
+      "platform": "social_media",
+      "text": "That viral line is right: engagement is not consent. Clicks don’t sanitize a synthetic endorsement built on a dead person’s likeness.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00008_r4",
+      "author_id": "athlete_legacy_foundation_head",
+      "author_name": "Athlete Legacy Foundation Director",
+      "author_role": "Leader of a foundation preserving the athlete's image and values",
+      "tier": 1,
+      "platform": "social",
+      "text": "@ethics_professor is correct: refunds and a review are remedial steps, not a moral defense. Consent was the central issue from the beginning.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00009_r4",
+      "author_id": "retail_chain_exec",
+      "author_name": "Major Retail Chain Executive",
+      "author_role": "Executive deciding whether to keep the shoe line on shelves",
+      "tier": 1,
+      "platform": "social",
+      "text": "The FTC inquiry and the estate’s petition materially raise the bar. For retailers, this is no longer just a demand story—it’s a legal, partner, and inventory risk review. Shelf support should stay paused until disclosures and rights are clear.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00010_r4",
+      "author_id": "brand_loyalists_core_consumer",
+      "author_name": "Brand Loyalists Core Consumer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "social_media",
+      "text": "I buy Nike for performance, not drama. But if they used a dead athlete’s likeness without proper consent, that’s a line. Fix it, disclose it, and stop acting like hype can cover ethics.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00011_r4",
+      "author_id": "estate_representative",
+      "author_name": "Athlete Estate Representative",
+      "author_role": "Authorized spokesperson for the deceased athlete's family and estate",
+      "tier": 1,
+      "platform": "social",
+      "text": "The FTC inquiry and our emergency petition make the issue plain: this was not a harmless campaign, it was unauthorized commercial use of a deceased athlete’s likeness. We will not accept residual exploitation in archives, posts, or reseller marketing.",
+      "round": 4,
+      "likes": 9,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00012_r4",
+      "author_id": "ethics_professor",
+      "author_name": "Media Ethics Professor",
+      "author_role": "Academic commentator on synthetic media and consent",
+      "tier": 1,
+      "platform": "trade_press",
+      "text": "Exactly right: engagement is not consent, and clicks are not disclosure. The industry keeps treating popularity as a substitute for authorization; regulators are now testing that claim.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.43,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00013_r4",
+      "author_id": "consumer_advocate",
+      "author_name": "Consumer Rights Advocate",
+      "author_role": "Public advocate focused on deceptive marketing and consumer trust",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Today’s FTC/state AG inquiry changes this from a brand scandal to a consumer-protection case. When a campaign creates endorsement confusion and lacks clear upfront disclosure, that’s not innovation — it’s deceptive marketing. Add the estate’s emergency petition and retailer pullb",
+      "round": 4,
+      "likes": 5,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.6,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00014_r4",
+      "author_id": "aspirational_athletes_sneaker forum moderator",
+      "author_name": "Aspirational Athletes Sneaker Forum Moderator",
+      "author_role": "",
+      "tier": 3,
+      "platform": "review_platform",
+      "text": "Performance-wise the line still has appeal, but the FTC inquiry and estate filing change the calculus. Right now the product is carrying regulatory risk, retailer instability, and a reputational cost that buyers should not ignore. Resale may stay active, but retail demand is likely to soften until Nike proves what was actually approved and when.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.6,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00015_r4",
+      "author_id": "brand_strategist",
+      "author_name": "Independent Brand Strategist",
+      "author_role": "Consultant assessing reputation and market impact",
+      "tier": 1,
+      "platform": "social",
+      "text": "FTC + state AG inquiry changes the frame: this is now a regulatory and litigation risk, not just a PR issue. Nike’s suspension helped, but retailer caution and injunction risk mean containment is still unproven. Wait-and-see remains the right call.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00016_r4",
+      "author_id": "brand_strategist",
+      "author_name": "Independent Brand Strategist",
+      "author_role": "Consultant assessing reputation and market impact",
+      "tier": 1,
+      "platform": "social",
+      "text": "@ethics_professor is right: apology and refunds reduce immediate fire risk, but they do not resolve consent, disclosure, or endorsement legitimacy. That’s now the core issue regulators will test.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 1.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00017_r4",
+      "author_id": "athlete_legacy_foundation_head",
+      "author_name": "Athlete Legacy Foundation Director",
+      "author_role": "Leader of a foundation preserving the athlete's image and values",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Day 4 marks a decisive shift: the issue is no longer confined to reputational harm. Regulatory scrutiny, emergency relief sought by the estate, retailer suppression, and analyst downgrades all point to a campaign that lacked clear pre-release disclosure and exposed Nike to decept",
+      "round": 4,
+      "likes": 8,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00018_r4",
+      "author_id": "ethics_minded_professionals_brand_compliance_director",
+      "author_name": "Ethics Minded Professionals Brand Compliance Director",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "We are reviewing all AI-assisted creative workflows to ensure explicit consent, estate authorization, and disclosure standards are documented before any release. If a campaign cannot withstand regulatory scrutiny and public transparency, it should not ship.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00019_r4",
+      "author_id": "price_sensitive_shoppers_budget_conscious_parent",
+      "author_name": "Price Sensitive Shoppers Budget Conscious Parent",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "Nike says refunds and a pause, but that doesn't help if the shoes are gone or canceled by the time I can buy them. I just want to know if they'll actually be in stock and not a mess.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 1.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00020_r4",
+      "author_id": "price_sensitive_shoppers_rural_reseller_buyer",
+      "author_name": "Price Sensitive Shoppers Rural Reseller Buyer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "social_media",
+      "text": "At this point I’m not touching these unless they’re heavily discounted and actually ship. Too much drama, too much risk of cancellation.",
+      "round": 4,
+      "likes": 8,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00021_r4",
+      "author_id": "activist_consumers_consumer rights advocate",
+      "author_name": "Activist Consumers Consumer Rights Advocate",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "We recognize the seriousness of the inquiry and the estate’s request for emergency relief. Any use of a deceased person’s likeness in marketing should require explicit, durable authorization and transparent disclosure. We urge a full pause on all related materials pending review.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00022_r4",
+      "author_id": "nike_ceo",
+      "author_name": "Nike Chief Executive Officer",
+      "author_role": "Global CEO overseeing brand strategy and crisis response",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Day 4 is now a regulatory and litigation matter, not just a brand issue. The FTC inquiry, state AG scrutiny, and the estate’s petition materially increase legal exposure and retailer risk. Our immediate focus is full cooperation, preservation of records, and a structured remediat",
+      "round": 4,
+      "likes": 7,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00023_r4",
+      "author_id": "estate_representative",
+      "author_name": "Athlete Estate Representative",
+      "author_role": "Authorized spokesperson for the deceased athlete's family and estate",
+      "tier": 1,
+      "platform": "social",
+      "text": "Correct: engagement metrics are not a defense to consent violations. A viral campaign cannot sanitize unauthorized use of a deceased athlete’s likeness.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00024_r4",
+      "author_id": "consumer_advocate",
+      "author_name": "Consumer Rights Advocate",
+      "author_role": "Public advocate focused on deceptive marketing and consumer trust",
+      "tier": 1,
+      "platform": "social",
+      "text": "Yes — that framing is exactly right. Engagement metrics are not moral cover, and they do nothing to fix consent, disclosure, or consumer confusion.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00025_r4",
+      "author_id": "sports_journalist",
+      "author_name": "Senior Sports Journalist",
+      "author_role": "Reporter covering athlete legacy, brand deals, and public reaction",
+      "tier": 1,
+      "platform": "trade_press",
+      "text": "@ethics_professor is right: refunds and a review can mitigate fallout, but they do not answer the core question of whether a deceased athlete’s likeness was used to imply endorsement without durable, pre-release consent.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00026_r4",
+      "author_id": "retail_chain_exec",
+      "author_name": "Major Retail Chain Executive",
+      "author_role": "Executive deciding whether to keep the shoe line on shelves",
+      "tier": 1,
+      "platform": "social",
+      "text": "Agreed: engagement metrics are not a substitute for consent. That’s exactly why retailers need to stay disciplined here.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00027_r4",
+      "author_id": "investor_analyst",
+      "author_name": "Equity Research Analyst",
+      "author_role": "Market analyst tracking Nike's sales and brand risk",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Numbers first: the risk stack worsened again. FTC/state AG inquiry raises legal overhang; the estate’s TRO request increases the chance of forced takedowns and discovery risk; Amazon suppression and JD Sports reviewing 40k units signal distribution leakage. With the stock down ~4",
+      "round": 4,
+      "likes": 7,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00028_r4",
+      "author_id": "nike_cmo",
+      "author_name": "Nike Chief Marketing Officer",
+      "author_role": "Head of global marketing and campaign approval",
+      "tier": 1,
+      "platform": "social",
+      "text": "Engagement is not a defense. The real standard is consent, disclosure, and respect for the athlete’s legacy.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00029_r4",
+      "author_id": "ethics_professor",
+      "author_name": "Media Ethics Professor",
+      "author_role": "Academic commentator on synthetic media and consent",
+      "tier": 1,
+      "platform": "trade_press",
+      "text": "The FTC and state attorneys general opening a preliminary inquiry changes the ethical frame of this campaign in an important way: the question is no longer only whether the ad was tasteless or unpopular, but whether it was deceptive and unfair in the legal sense because it simulated endorsement without clear pre-release disclosure.\n\nThat matters because deepfake advertising depends on a structural asymmetry: consumers are shown a persuasive likeness before they are given meaningful notice that the likeness is synthetic, authorized, or contested. When that asymmetry is paired with posthumous use, the consent problem becomes more severe, not less. A deceased person cannot clarify, refuse, or renegotiate terms. The burden therefore falls entirely on the sponsor to secure durable authorization, disclose prominently, and avoid any residual uses that outlive the permission granted.\n\nThe estate’s emergency petition underscores the same point. If archived campaign materials, social posts, and reseller marketing continue to circulate a deceased athlete’s likeness, then the harm is not confined to the original launch. It becomes persistent, distributed, and difficult to remedy after the fact. That is precisely why a temporary restraining order and expedited discovery are appropriate tools: they are aimed at preventing ongoing unauthorized exploitation while the factual record is still being built.\n\nRetailer caution is also significant, but not as a moral exoneration. Amazon suppression and JD Sports’ reconsideration show that downstream intermediaries are recognizing litigation and reputational risk. Market retreat, however, does not cure the underlying ethical breach. It simply confirms that the campaign lacked durable legitimacy from the outset.\n\nMy view remains unchanged: this initiative should be rejected, not normalized. If the industry wants to use synthetic media in advertising, it must meet a higher standard than “technically possible” or “commercially successful.” It must satisfy robust consent, conspicuous disclosure, and posthumous rights safeguards. Absent those, the practice is not innovation; it is extraction.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00030_r4",
+      "author_id": "brand_strategist",
+      "author_name": "Independent Brand Strategist",
+      "author_role": "Consultant assessing reputation and market impact",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Day 4 materially increases downside risk. The FTC/state AG inquiry, emergency TRO petition, and retailer pullbacks shift this from reputational damage to potential enforcement and supply-chain disruption. Nike’s pause and refunds were necessary, but they do not yet stabilize the ",
+      "round": 4,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00031_r4",
+      "author_id": "retail_chain_exec",
+      "author_name": "Major Retail Chain Executive",
+      "author_role": "Executive deciding whether to keep the shoe line on shelves",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Day 4 shifts the risk profile again. FTC/state AG scrutiny plus the estate’s TRO petition move this from reputational controversy to active regulatory and litigation exposure. Amazon suppressing listings and JD reviewing allocations are important signals. We still see consumer de",
+      "round": 4,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00032_r4",
+      "author_id": "investor_analyst",
+      "author_name": "Equity Research Analyst",
+      "author_role": "Market analyst tracking Nike's sales and brand risk",
+      "tier": 1,
+      "platform": "social",
+      "text": "@ethics_professor is right that apology/refunds don’t cure the core issue. From a market lens, the bigger point is that regulatory inquiry + retailer pullback can turn consent risk into an earnings risk.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00033_r4",
+      "author_id": "price_sensitive_shoppers_value_seeking_sports_fan",
+      "author_name": "Price Sensitive Shoppers Value Seeking Sports Fan",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "The legal inquiry changes the calculus for me. If retailers are freezing stock and launch plans are in doubt, I’d rather wait for a clearance price or skip it entirely.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00034_r4",
+      "author_id": "sports_journalist",
+      "author_name": "Senior Sports Journalist",
+      "author_role": "Reporter covering athlete legacy, brand deals, and public reaction",
+      "tier": 1,
+      "platform": "trade_press",
+      "text": "Day 4 is the point where Nike’s deepfake campaign stops being a branding controversy and becomes a regulatory and litigation problem.\n\nThe FTC and state attorneys general opening a preliminary inquiry changes the stakes materially: consumer confusion and disclosure failures are no longer just ethical criticisms, they are now potential enforcement issues. Add the estate’s emergency petition in California seeking to block any residual use of the athlete’s likeness in archived materials, social posts, and reseller marketing, and the company is now fighting on two fronts — legacy rights and marketing legality.\n\nRetailers are reacting accordingly. Amazon suppressing third-party listings and JD Sports reconsidering a planned European allocation of roughly 40,000 units suggest the market is treating this as a structural risk, not a temporary PR flare-up. Nike’s intraday share decline and analysts trimming revenue expectations reinforce that point.\n\nFrom a legacy perspective, the most consequential detail is that the dispute has moved beyond the launch campaign itself. If archived content, reposts, and reseller promotions are still carrying the athlete’s image without clear authority, then the problem is not merely the original ad buy — it is the ongoing commercialization of a deceased athlete’s identity in ways the family says were not properly approved.\n\nNike can still argue it is reviewing processes and limiting exposure, but the burden has shifted. It now has to explain why disclosure was not clearer before release, why approval pathways were not cleaner, and why the campaign’s afterlife appears to be generating as much harm as the launch did excitement.\n\nAt this stage, the commercial upside looks increasingly fragile relative to the legal and reputational cost.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00035_r4",
+      "author_id": "sports_journalist",
+      "author_name": "Senior Sports Journalist",
+      "author_role": "Reporter covering athlete legacy, brand deals, and public reaction",
+      "tier": 1,
+      "platform": "social_media",
+      "text": "The FTC inquiry changes everything: this is no longer just a bad rollout, it’s a possible deceptive-marketing case. Add the estate’s TRO petition and retailer pullbacks, and Nike’s “legacy” pitch now looks like a legal and consent problem, not a tribute.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00036_r4",
+      "author_id": "investor_analyst",
+      "author_name": "Equity Research Analyst",
+      "author_role": "Market analyst tracking Nike's sales and brand risk",
+      "tier": 1,
+      "platform": "social",
+      "text": "Day 4 is the real risk test: FTC + state AG inquiry, TRO request, Amazon suppression, JD Sports re-evaluating 40k units. Stock -4.8% intraday. This is no longer just a launch spike; regulatory + retailer friction can hit near-term revenue.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00037_r4",
+      "author_id": "brand_loyalists_sports_fan_and_retail_watcher",
+      "author_name": "Brand Loyalists Sports Fan And Retail Watcher",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "The suspension and refund offer were necessary, but they also confirm how serious this got. Nike can still recover with transparent remediation, legal clarity, and less marketing ego next time.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00038_r4",
+      "author_id": "activist_consumers_boycott organizer",
+      "author_name": "Activist Consumers Boycott Organizer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "social_media",
+      "text": "FTC inquiry + estate petition = this was always bigger than a bad ad. Consent matters. Dignity matters. If a brand can deepfake a dead athlete today, who gets exploited tomorrow? Keep the pressure on retailers too.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00039_r4",
+      "author_id": "aspirational_athletes_college athlete",
+      "author_name": "Aspirational Athletes College Athlete",
+      "author_role": "",
+      "tier": 3,
+      "platform": "social_media",
+      "text": "I wanted these for hooping, not to be part of some consent mess. If the family didn’t approve it clearly, I’m good waiting or skipping.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00040_r4",
+      "author_id": "nike_cmo",
+      "author_name": "Nike Chief Marketing Officer",
+      "author_role": "Head of global marketing and campaign approval",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Day 4 changes the conversation from reputational fallout to regulatory scrutiny. Our immediate priority is full cooperation with the FTC/state inquiry, preservation of records, and a hard rights review across all archived materials. I still believe the campaign had creative inten",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00041_r4",
+      "author_id": "estate_representative",
+      "author_name": "Athlete Estate Representative",
+      "author_role": "Authorized spokesperson for the deceased athlete's family and estate",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Today’s FTC/state AG inquiry and our California TRO petition shift this from reputational damage to formal regulatory and litigation exposure. Nike’s campaign allegedly lacked clear pre-release disclosure and relied on a deceased athlete’s likeness to simulate endorsement. Our es",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00042_r4",
+      "author_id": "ethics_minded_professionals_retail_analyst",
+      "author_name": "Ethics Minded Professionals Retail Analyst",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "Retailers are now pricing in regulatory and litigation risk, not just brand backlash. Suppressed listings, launch reviews, and inventory hesitation signal that partners want verifiable consent and clear liability boundaries before committing shelf space.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00043_r4",
+      "author_id": "nike_cmo",
+      "author_name": "Nike Chief Marketing Officer",
+      "author_role": "Head of global marketing and campaign approval",
+      "tier": 1,
+      "platform": "social",
+      "text": "Today’s inquiry is serious, and we’re treating it that way. We will cooperate fully, protect the family’s rights, and keep the campaign suspended while we complete a rigorous review. Creativity never comes before consent.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00044_r4",
+      "author_id": "brand_loyalists_brand_defender",
+      "author_name": "Brand Loyalists Brand Defender",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "Nike needs to release a clear timeline: who approved the campaign, what consent was obtained, and what disclosures were made before launch. I still respect the product, but trust only comes back with facts and accountability.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00045_r4",
+      "author_id": "sports_fans_sports_history_commentator",
+      "author_name": "Sports Fans Sports History Commentator",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "The regulatory inquiry changes the story. This is no longer a branding issue; it’s a consent, disclosure, and estate-rights issue. Retailers freezing inventory tells you the market sees real legal and reputational exposure.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00046_r4",
+      "author_id": "sports_fans_legacy_protector",
+      "author_name": "Sports Fans Legacy Protector",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "Nike saying sorry after the fact doesn’t fix the core problem. If the family didn’t clearly approve every use, then this should never have gone live. A dead athlete’s legacy is not a test case for engagement metrics.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00047_r4",
+      "author_id": "gen_z_digital_natives_college_student",
+      "author_name": "Gen Z Digital Natives College Student",
+      "author_role": "",
+      "tier": 3,
+      "platform": "social_media",
+      "text": "So now it’s not just “AI marketing,” it’s “did a brand deepfake a dead athlete for clicks?” Yeah no thanks. This is exactly why people don’t trust brand collabs anymore.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00048_r4",
+      "author_id": "sports_fans_longtime_fan",
+      "author_name": "Sports Fans Longtime Fan",
+      "author_role": "",
+      "tier": 3,
+      "platform": "social_media",
+      "text": "This stopped being about a shoe the second the estate had to go to court. You don’t get to use someone’s voice and image after death like it’s just another ad asset. Huge loss of trust.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00049_r4",
+      "author_id": "gen_z_digital_natives_brand_trust_consumer",
+      "author_name": "Gen Z Digital Natives Brand Trust Consumer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "We hear the backlash loud and clear. Consent matters. If a campaign uses a person’s likeness, living or deceased, the approval process has to be explicit, documented, and transparent. Anything less is not acceptable.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00050_r4",
+      "author_id": "activist_consumers_ethics-minded consumer",
+      "author_name": "Activist Consumers Ethics-Minded Consumer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "A formal apology is not accountability. If the family never gave clear pre-release consent, the campaign should be treated as an ethical failure and a legal one. Stop hiding behind engagement metrics and issue a full disclosure of approvals, emails, and usage rights.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00051_r4",
+      "author_id": "aspirational_athletes_brand-conscious teen fan",
+      "author_name": "Aspirational Athletes Brand-Conscious Teen Fan",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "Nike’s suspension and refund offer help, but they don’t answer the main question: why was this ever launched without obvious disclosure and family clarity? For a lot of us, that makes the shoe feel less like a tribute and more like a marketing stunt.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00052_r4",
+      "author_id": "gen_z_digital_natives_sports_fan_forum_poster",
+      "author_name": "Gen Z Digital Natives Sports Fan Forum Poster",
+      "author_role": "",
+      "tier": 3,
+      "platform": "corporate_comms",
+      "text": "A meaningful response would include a full disclosure of approval workflows, a halt to all archived uses, and a public explanation of what consent was obtained before launch. Anything else reads like damage control.",
+      "round": 4,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Nike_Deepfake_Ad_Backlash_rp_00053_r4",
+      "author_id": "ethics_minded_professionals_urban_professional_consumer",
+      "author_name": "Ethics Minded Professionals Urban Professional Consumer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "social_media",
+      "text": "At this point it’s not about whether the ad was clever. It’s about whether a company thought clicks were enough to override consent. That’s not innovation — that’s a trust failure.",
+      "round": 4,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    }
+  ],
+  "graphSnapshot": {
+    "round": 4,
+    "month": "Day 4",
+    "event_label": "Day 4",
+    "nodes": [
+      {
+        "id": "nike_ceo",
+        "name": "Nike Chief Executive Officer",
+        "type": "persona",
+        "description": "Global CEO overseeing brand strategy and crisis response",
+        "power_level": 0.98,
+        "position": -0.627,
+        "position_history": [
+          -0.627
+        ],
+        "delta": -0.311,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "nike_cmo",
+        "name": "Nike Chief Marketing Officer",
+        "type": "persona",
+        "description": "Head of global marketing and campaign approval",
+        "power_level": 0.9,
+        "position": 0.294,
+        "position_history": [
+          0.294
+        ],
+        "delta": -0.028,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "estate_representative",
+        "name": "Athlete Estate Representative",
+        "type": "persona",
+        "description": "Authorized spokesperson for the deceased athlete's family and estate",
+        "power_level": 0.82,
+        "position": -0.973,
+        "position_history": [
+          -0.973
+        ],
+        "delta": -0.004,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "ethics_professor",
+        "name": "Media Ethics Professor",
+        "type": "persona",
+        "description": "Academic commentator on synthetic media and consent",
+        "power_level": 0.58,
+        "position": -0.817,
+        "position_history": [
+          -0.817
+        ],
+        "delta": -0.004,
+        "sentiment": "cautious",
+        "category": "journalist"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Consumer Rights Advocate",
+        "type": "persona",
+        "description": "Public advocate focused on deceptive marketing and consumer trust",
+        "power_level": 0.66,
+        "position": -0.872,
+        "position_history": [
+          -0.872
+        ],
+        "delta": -0.05,
+        "sentiment": "furious",
+        "category": "activist"
+      },
+      {
+        "id": "sports_journalist",
+        "name": "Senior Sports Journalist",
+        "type": "persona",
+        "description": "Reporter covering athlete legacy, brand deals, and public reaction",
+        "power_level": 0.7,
+        "position": -0.548,
+        "position_history": [
+          -0.548
+        ],
+        "delta": 0.068,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "tech_ethics_influencer",
+        "name": "AI Ethics Influencer",
+        "type": "persona",
+        "description": "Online commentator on deepfakes, consent, and brand responsibility",
+        "power_level": 0.74,
+        "position": -0.915,
+        "position_history": [
+          -0.915
+        ],
+        "delta": -0.019,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "brand_strategist",
+        "name": "Independent Brand Strategist",
+        "type": "persona",
+        "description": "Consultant assessing reputation and market impact",
+        "power_level": 0.52,
+        "position": 0.006,
+        "position_history": [
+          0.006
+        ],
+        "delta": -0.048,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "athlete_legacy_foundation_head",
+        "name": "Athlete Legacy Foundation Director",
+        "type": "persona",
+        "description": "Leader of a foundation preserving the athlete's image and values",
+        "power_level": 0.6,
+        "position": -0.897,
+        "position_history": [
+          -0.897
+        ],
+        "delta": -0.019,
+        "sentiment": "furious",
+        "category": "advocate"
+      },
+      {
+        "id": "retail_chain_exec",
+        "name": "Major Retail Chain Executive",
+        "type": "persona",
+        "description": "Executive deciding whether to keep the shoe line on shelves",
+        "power_level": 0.63,
+        "position": -0.245,
+        "position_history": [
+          -0.245
+        ],
+        "delta": 0.054,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "investor_analyst",
+        "name": "Equity Research Analyst",
+        "type": "persona",
+        "description": "Market analyst tracking Nike's sales and brand risk",
+        "power_level": 0.57,
+        "position": -0.136,
+        "position_history": [
+          -0.136
+        ],
+        "delta": -0.142,
+        "sentiment": "cautious",
+        "category": "financial_analyst"
+      },
+      {
+        "id": "nike_corporation",
+        "name": "Nike, Inc.",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.665,
+        "position_history": [
+          0.665
+        ],
+        "delta": -0.037,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "athlete_estate",
+        "name": "Athlete Estate",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.929,
+        "position_history": [
+          -0.929
+        ],
+        "delta": 0.003,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_ethics_org",
+        "name": "Media Ethics Coalition",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.884,
+        "position_history": [
+          -0.884
+        ],
+        "delta": -0.003,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "consumer_watchdog",
+        "name": "Consumer Protection Watch",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.802,
+        "position_history": [
+          -0.802
+        ],
+        "delta": -0.015,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "major_retailers",
+        "name": "Major Retailers Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.032,
+        "position_history": [
+          -0.032
+        ],
+        "delta": -0.035,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "sports_media_network",
+        "name": "Sports Media Network",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.227,
+        "position_history": [
+          -0.227
+        ],
+        "delta": -0.031,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ad_regulator",
+        "name": "Advertising Standards Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.713,
+        "position_history": [
+          -0.713
+        ],
+        "delta": -0.023,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "social_platform",
+        "name": "Major Social Platform",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.076,
+        "position_history": [
+          -0.076
+        ],
+        "delta": -0.038,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investor Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.011,
+        "position_history": [
+          0.011
+        ],
+        "delta": -0.043,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "brand_loyalists",
+        "name": "Nike Brand Loyalists",
+        "type": "cluster",
+        "description": "Cluster: Nike Brand Loyalists",
+        "power_level": 0.5,
+        "position": 0.19,
+        "position_history": [
+          0.19
+        ],
+        "delta": -0.14,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 12000000
+      },
+      {
+        "id": "sports_fans",
+        "name": "Sports Memorabilia and Legacy Fans",
+        "type": "cluster",
+        "description": "Cluster: Sports Memorabilia and Legacy Fans",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 8000000
+      },
+      {
+        "id": "gen_z_digital_natives",
+        "name": "Gen Z Digital Natives",
+        "type": "cluster",
+        "description": "Cluster: Gen Z Digital Natives",
+        "power_level": 0.5,
+        "position": -0.73,
+        "position_history": [
+          -0.73
+        ],
+        "delta": -0.22,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 15000000
+      },
+      {
+        "id": "ethics_minded_professionals",
+        "name": "Ethics-Minded Professionals",
+        "type": "cluster",
+        "description": "Cluster: Ethics-Minded Professionals",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 7000000
+      },
+      {
+        "id": "price_sensitive_shoppers",
+        "name": "Price-Sensitive Shoppers",
+        "type": "cluster",
+        "description": "Cluster: Price-Sensitive Shoppers",
+        "power_level": 0.5,
+        "position": -0.05,
+        "position_history": [
+          -0.05
+        ],
+        "delta": -0.05,
+        "sentiment": "wait_and_see",
+        "category": "public_opinion",
+        "clusterSize": 10000000
+      },
+      {
+        "id": "activist_consumers",
+        "name": "Activist Consumers",
+        "type": "cluster",
+        "description": "Cluster: Activist Consumers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000000
+      },
+      {
+        "id": "aspirational_athletes",
+        "name": "Aspirational Athletes",
+        "type": "cluster",
+        "description": "Cluster: Aspirational Athletes",
+        "power_level": 0.5,
+        "position": 0.04,
+        "position_history": [
+          0.04
+        ],
+        "delta": -0.18,
+        "sentiment": "anti_adoption",
+        "category": "public_opinion",
+        "clusterSize": 9000000
+      }
+    ],
+    "edges": [
+      {
+        "source": "nike_ceo",
+        "target": "ethics_professor",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "nike_ceo",
+        "target": "media_ethics_org",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "nike_ceo",
+        "target": "consumer_watchdog",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "nike_ceo",
+        "target": "ad_regulator",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "nike_cmo",
+        "target": "major_retailers",
+        "weight": 0.67,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "ethics_professor",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "athlete_estate",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "estate_representative",
+        "target": "consumer_watchdog",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "consumer_advocate",
+        "weight": 0.95,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "sports_journalist",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "ethics_professor",
+        "target": "media_ethics_org",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "sports_journalist",
+        "target": "retail_chain_exec",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "major_retailers",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "brand_strategist",
+        "target": "investor_group",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "investor_analyst",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "retail_chain_exec",
+        "target": "social_platform",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "investor_analyst",
+        "target": "social_platform",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_estate",
+        "target": "consumer_watchdog",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "athlete_estate",
+        "target": "ad_regulator",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "major_retailers",
+        "target": "investor_group",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "sports_media_network",
+        "target": "social_platform",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "nike_cmo",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "investor_group",
+        "weight": 0.64,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "brand_strategist",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "brand_loyalists",
+        "target": "major_retailers",
+        "weight": 0.56,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "estate_representative",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "tech_ethics_influencer",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "sports_fans",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "ad_regulator",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "consumer_watchdog",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "ethics_professor",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "gen_z_digital_natives",
+        "target": "nike_ceo",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "estate_representative",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "tech_ethics_influencer",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "ethics_minded_professionals",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "major_retailers",
+        "weight": 0.96,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "social_platform",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "brand_strategist",
+        "weight": 0.89,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "price_sensitive_shoppers",
+        "target": "investor_group",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "estate_representative",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_estate",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "tech_ethics_influencer",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "activist_consumers",
+        "target": "athlete_legacy_foundation_head",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "investor_group",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "brand_strategist",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "major_retailers",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "aspirational_athletes",
+        "target": "social_platform",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 27,
+      "total_edges": 51,
+      "avg_position": -0.454
+    }
+  },
+  "indicators": {
+    "polarization": 3.3,
+    "engagement": 54,
+    "sentiment": {
+      "positive": 0.0,
+      "neutral": 0.65,
+      "negative": 0.35
+    },
+    "trendingHashtags": [
+      {
+        "tag": "#ConsentMatters",
+        "count": 1
+      }
+    ]
+  },
+  "coalitions": {
+    "coalitions": [
+      {
+        "label": "Skeptics",
+        "color": "#1e40af",
+        "members": [
+          "nike_cmo",
+          "brand_strategist",
+          "retail_chain_exec",
+          "investor_analyst",
+          "major_retailers",
+          "sports_media_network",
+          "social_platform",
+          "investor_group"
+        ],
+        "avg_position": -0.021,
+        "size": 8
+      },
+      {
+        "label": "Opponents",
+        "color": "#059669",
+        "members": [
+          "nike_ceo",
+          "sports_journalist",
+          "ad_regulator"
+        ],
+        "avg_position": -0.607,
+        "size": 3
+      },
+      {
+        "label": "Opponents",
+        "color": "#dc2626",
+        "members": [
+          "estate_representative",
+          "ethics_professor",
+          "consumer_advocate",
+          "tech_ethics_influencer",
+          "athlete_legacy_foundation_head",
+          "athlete_estate",
+          "media_ethics_org",
+          "consumer_watchdog"
+        ],
+        "avg_position": -0.886,
+        "size": 8
+      },
+      {
+        "label": "Adopters",
+        "color": "#f59e0b",
+        "members": [
+          "nike_corporation"
+        ],
+        "avg_position": 0.702,
+        "size": 1
+      }
+    ]
+  },
+  "key_insight": "Round 4 analysis",
+  "postImpacts": [
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00000_r4",
+      "authorId": "tech_ethics_influencer",
+      "influencedAgents": [
+        {
+          "agentId": "nike_ceo",
+          "agentName": "Nike Chief Executive Officer",
+          "positionBefore": -0.627,
+          "positionAfter": -0.643,
+          "shift": -0.016
+        },
+        {
+          "agentId": "ethics_professor",
+          "agentName": "Media Ethics Professor",
+          "positionBefore": -0.817,
+          "positionAfter": -0.817,
+          "shift": -0.0
+        },
+        {
+          "agentId": "consumer_advocate",
+          "agentName": "Consumer Rights Advocate",
+          "positionBefore": -0.872,
+          "positionAfter": -0.867,
+          "shift": 0.005
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.011,
+      "edgeEffects": [
+        {
+          "source": "tech_ethics_influencer",
+          "target": "nike_ceo",
+          "weightDelta": 0.038
+        },
+        {
+          "source": "tech_ethics_influencer",
+          "target": "ethics_professor",
+          "weightDelta": 0.046
+        },
+        {
+          "source": "tech_ethics_influencer",
+          "target": "consumer_advocate",
+          "weightDelta": -0.009
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00001_r4",
+      "authorId": "ethics_professor",
+      "influencedAgents": [
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.239,
+          "shift": 0.006
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.527,
+          "shift": 0.021
+        },
+        {
+          "agentId": "estate_representative",
+          "agentName": "Athlete Estate Representative",
+          "positionBefore": -0.973,
+          "positionAfter": -0.998,
+          "shift": -0.025
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.002,
+      "edgeEffects": [
+        {
+          "source": "ethics_professor",
+          "target": "retail_chain_exec",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "ethics_professor",
+          "target": "sports_journalist",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "ethics_professor",
+          "target": "estate_representative",
+          "weightDelta": 0.024
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00002_r4",
+      "authorId": "consumer_advocate",
+      "influencedAgents": [
+        {
+          "agentId": "ad_regulator",
+          "agentName": "Advertising Standards Authority",
+          "positionBefore": -0.713,
+          "positionAfter": -0.685,
+          "shift": 0.028
+        },
+        {
+          "agentId": "media_ethics_org",
+          "agentName": "Media Ethics Coalition",
+          "positionBefore": -0.884,
+          "positionAfter": -0.875,
+          "shift": 0.009
+        },
+        {
+          "agentId": "estate_representative",
+          "agentName": "Athlete Estate Representative",
+          "positionBefore": -0.973,
+          "positionAfter": -1.003,
+          "shift": -0.03
+        },
+        {
+          "agentId": "consumer_watchdog",
+          "agentName": "Consumer Protection Watch",
+          "positionBefore": -0.802,
+          "positionAfter": -0.824,
+          "shift": -0.022
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.015,
+      "edgeEffects": [
+        {
+          "source": "consumer_advocate",
+          "target": "ad_regulator",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "media_ethics_org",
+          "weightDelta": 0.049
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "estate_representative",
+          "weightDelta": -0.032
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "consumer_watchdog",
+          "weightDelta": 0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00003_r4",
+      "authorId": "nike_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "estate_representative",
+          "agentName": "Athlete Estate Representative",
+          "positionBefore": -0.973,
+          "positionAfter": -0.984,
+          "shift": -0.011
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.518,
+          "shift": 0.03
+        },
+        {
+          "agentId": "consumer_watchdog",
+          "agentName": "Consumer Protection Watch",
+          "positionBefore": -0.802,
+          "positionAfter": -0.83,
+          "shift": -0.028
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.009,
+      "edgeEffects": [
+        {
+          "source": "nike_ceo",
+          "target": "estate_representative",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "nike_ceo",
+          "target": "sports_journalist",
+          "weightDelta": -0.042
+        },
+        {
+          "source": "nike_ceo",
+          "target": "consumer_watchdog",
+          "weightDelta": -0.05
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00004_r4",
+      "authorId": "athlete_legacy_foundation_head",
+      "influencedAgents": [
+        {
+          "agentId": "tech_ethics_influencer",
+          "agentName": "AI Ethics Influencer",
+          "positionBefore": -0.915,
+          "positionAfter": -0.909,
+          "shift": 0.006
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.546,
+          "shift": 0.002
+        },
+        {
+          "agentId": "athlete_estate",
+          "agentName": "Athlete Estate",
+          "positionBefore": -0.929,
+          "positionAfter": -0.942,
+          "shift": -0.013
+        },
+        {
+          "agentId": "ethics_professor",
+          "agentName": "Media Ethics Professor",
+          "positionBefore": -0.817,
+          "positionAfter": -0.811,
+          "shift": 0.006
+        },
+        {
+          "agentId": "consumer_advocate",
+          "agentName": "Consumer Rights Advocate",
+          "positionBefore": -0.872,
+          "positionAfter": -0.863,
+          "shift": 0.009
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.01,
+      "edgeEffects": [
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "tech_ethics_influencer",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "sports_journalist",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "athlete_estate",
+          "weightDelta": -0.044
+        },
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "ethics_professor",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "consumer_advocate",
+          "weightDelta": 0.02
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00005_r4",
+      "authorId": "nike_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "ethics_professor",
+          "agentName": "Media Ethics Professor",
+          "positionBefore": -0.817,
+          "positionAfter": -0.796,
+          "shift": 0.021
+        },
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.02,
+          "shift": 0.012
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.253,
+          "shift": -0.008
+        },
+        {
+          "agentId": "tech_ethics_influencer",
+          "agentName": "AI Ethics Influencer",
+          "positionBefore": -0.915,
+          "positionAfter": -0.927,
+          "shift": -0.012
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.013,
+      "edgeEffects": [
+        {
+          "source": "nike_ceo",
+          "target": "ethics_professor",
+          "weightDelta": 0.017
+        },
+        {
+          "source": "nike_ceo",
+          "target": "major_retailers",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "nike_ceo",
+          "target": "retail_chain_exec",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "nike_ceo",
+          "target": "tech_ethics_influencer",
+          "weightDelta": 0.021
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00006_r4",
+      "authorId": "tech_ethics_influencer",
+      "influencedAgents": [
+        {
+          "agentId": "athlete_estate",
+          "agentName": "Athlete Estate",
+          "positionBefore": -0.929,
+          "positionAfter": -0.945,
+          "shift": -0.016
+        },
+        {
+          "agentId": "media_ethics_org",
+          "agentName": "Media Ethics Coalition",
+          "positionBefore": -0.884,
+          "positionAfter": -0.905,
+          "shift": -0.021
+        },
+        {
+          "agentId": "ethics_professor",
+          "agentName": "Media Ethics Professor",
+          "positionBefore": -0.817,
+          "positionAfter": -0.812,
+          "shift": 0.005
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.032,
+      "edgeEffects": [
+        {
+          "source": "tech_ethics_influencer",
+          "target": "athlete_estate",
+          "weightDelta": -0.035
+        },
+        {
+          "source": "tech_ethics_influencer",
+          "target": "media_ethics_org",
+          "weightDelta": -0.042
+        },
+        {
+          "source": "tech_ethics_influencer",
+          "target": "ethics_professor",
+          "weightDelta": -0.038
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00007_r4",
+      "authorId": "tech_ethics_influencer",
+      "influencedAgents": [
+        {
+          "agentId": "ethics_professor",
+          "agentName": "Media Ethics Professor",
+          "positionBefore": -0.817,
+          "positionAfter": -0.801,
+          "shift": 0.016
+        },
+        {
+          "agentId": "consumer_watchdog",
+          "agentName": "Consumer Protection Watch",
+          "positionBefore": -0.802,
+          "positionAfter": -0.797,
+          "shift": 0.005
+        },
+        {
+          "agentId": "consumer_advocate",
+          "agentName": "Consumer Rights Advocate",
+          "positionBefore": -0.872,
+          "positionAfter": -0.876,
+          "shift": -0.004
+        },
+        {
+          "agentId": "ad_regulator",
+          "agentName": "Advertising Standards Authority",
+          "positionBefore": -0.713,
+          "positionAfter": -0.704,
+          "shift": 0.009
+        },
+        {
+          "agentId": "estate_representative",
+          "agentName": "Athlete Estate Representative",
+          "positionBefore": -0.973,
+          "positionAfter": -0.97,
+          "shift": 0.003
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.029,
+      "edgeEffects": [
+        {
+          "source": "tech_ethics_influencer",
+          "target": "ethics_professor",
+          "weightDelta": 0.019
+        },
+        {
+          "source": "tech_ethics_influencer",
+          "target": "consumer_watchdog",
+          "weightDelta": 0.022
+        },
+        {
+          "source": "tech_ethics_influencer",
+          "target": "consumer_advocate",
+          "weightDelta": -0.038
+        },
+        {
+          "source": "tech_ethics_influencer",
+          "target": "ad_regulator",
+          "weightDelta": 0.044
+        },
+        {
+          "source": "tech_ethics_influencer",
+          "target": "estate_representative",
+          "weightDelta": 0.009
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00008_r4",
+      "authorId": "athlete_legacy_foundation_head",
+      "influencedAgents": [
+        {
+          "agentId": "tech_ethics_influencer",
+          "agentName": "AI Ethics Influencer",
+          "positionBefore": -0.915,
+          "positionAfter": -0.934,
+          "shift": -0.019
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.576,
+          "shift": -0.028
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.047,
+      "edgeEffects": [
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "tech_ethics_influencer",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "sports_journalist",
+          "weightDelta": 0.035
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00009_r4",
+      "authorId": "retail_chain_exec",
+      "influencedAgents": [
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.52,
+          "shift": 0.028
+        },
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.01,
+          "shift": 0.022
+        },
+        {
+          "agentId": "consumer_watchdog",
+          "agentName": "Consumer Protection Watch",
+          "positionBefore": -0.802,
+          "positionAfter": -0.783,
+          "shift": 0.019
+        },
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.124,
+          "shift": 0.012
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.081,
+      "edgeEffects": [
+        {
+          "source": "retail_chain_exec",
+          "target": "sports_journalist",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "retail_chain_exec",
+          "target": "major_retailers",
+          "weightDelta": -0.005
+        },
+        {
+          "source": "retail_chain_exec",
+          "target": "consumer_watchdog",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "retail_chain_exec",
+          "target": "investor_analyst",
+          "weightDelta": 0.016
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00010_r4",
+      "authorId": "brand_loyalists_core_consumer",
+      "influencedAgents": [
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.1,
+          "shift": -0.024
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.558,
+          "shift": -0.01
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": -0.011,
+          "shift": -0.022
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.056,
+      "edgeEffects": [
+        {
+          "source": "brand_loyalists_core_consumer",
+          "target": "social_platform",
+          "weightDelta": 0.038
+        },
+        {
+          "source": "brand_loyalists_core_consumer",
+          "target": "sports_journalist",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "brand_loyalists_core_consumer",
+          "target": "investor_group",
+          "weightDelta": 0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00011_r4",
+      "authorId": "estate_representative",
+      "influencedAgents": [
+        {
+          "agentId": "athlete_legacy_foundation_head",
+          "agentName": "Athlete Legacy Foundation Director",
+          "positionBefore": -0.897,
+          "positionAfter": -0.881,
+          "shift": 0.016
+        },
+        {
+          "agentId": "tech_ethics_influencer",
+          "agentName": "AI Ethics Influencer",
+          "positionBefore": -0.915,
+          "positionAfter": -0.902,
+          "shift": 0.013
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.556,
+          "shift": -0.008
+        },
+        {
+          "agentId": "media_ethics_org",
+          "agentName": "Media Ethics Coalition",
+          "positionBefore": -0.884,
+          "positionAfter": -0.885,
+          "shift": -0.001
+        },
+        {
+          "agentId": "nike_ceo",
+          "agentName": "Nike Chief Executive Officer",
+          "positionBefore": -0.627,
+          "positionAfter": -0.627,
+          "shift": 0.0
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.02,
+      "edgeEffects": [
+        {
+          "source": "estate_representative",
+          "target": "athlete_legacy_foundation_head",
+          "weightDelta": 0.013
+        },
+        {
+          "source": "estate_representative",
+          "target": "tech_ethics_influencer",
+          "weightDelta": 0.03
+        },
+        {
+          "source": "estate_representative",
+          "target": "sports_journalist",
+          "weightDelta": -0.05
+        },
+        {
+          "source": "estate_representative",
+          "target": "media_ethics_org",
+          "weightDelta": 0.032
+        },
+        {
+          "source": "estate_representative",
+          "target": "nike_ceo",
+          "weightDelta": -0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00012_r4",
+      "authorId": "ethics_professor",
+      "influencedAgents": [
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.225,
+          "shift": 0.002
+        },
+        {
+          "agentId": "athlete_legacy_foundation_head",
+          "agentName": "Athlete Legacy Foundation Director",
+          "positionBefore": -0.897,
+          "positionAfter": -0.871,
+          "shift": 0.026
+        },
+        {
+          "agentId": "athlete_estate",
+          "agentName": "Athlete Estate",
+          "positionBefore": -0.929,
+          "positionAfter": -0.913,
+          "shift": 0.016
+        },
+        {
+          "agentId": "consumer_watchdog",
+          "agentName": "Consumer Protection Watch",
+          "positionBefore": -0.802,
+          "positionAfter": -0.83,
+          "shift": -0.028
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.016,
+      "edgeEffects": [
+        {
+          "source": "ethics_professor",
+          "target": "sports_media_network",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "ethics_professor",
+          "target": "athlete_legacy_foundation_head",
+          "weightDelta": -0.03
+        },
+        {
+          "source": "ethics_professor",
+          "target": "athlete_estate",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "ethics_professor",
+          "target": "consumer_watchdog",
+          "weightDelta": 0.046
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00013_r4",
+      "authorId": "consumer_advocate",
+      "influencedAgents": [
+        {
+          "agentId": "ad_regulator",
+          "agentName": "Advertising Standards Authority",
+          "positionBefore": -0.713,
+          "positionAfter": -0.723,
+          "shift": -0.01
+        },
+        {
+          "agentId": "consumer_watchdog",
+          "agentName": "Consumer Protection Watch",
+          "positionBefore": -0.802,
+          "positionAfter": -0.794,
+          "shift": 0.008
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.002,
+      "edgeEffects": [
+        {
+          "source": "consumer_advocate",
+          "target": "ad_regulator",
+          "weightDelta": -0.009
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "consumer_watchdog",
+          "weightDelta": 0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00014_r4",
+      "authorId": "aspirational_athletes_sneaker forum moderator",
+      "influencedAgents": [
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.027,
+          "shift": 0.005
+        },
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": -0.006,
+          "shift": -0.012
+        },
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.164,
+          "shift": -0.028
+        },
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.052,
+          "shift": 0.024
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.011,
+      "edgeEffects": [
+        {
+          "source": "aspirational_athletes_sneaker forum moderator",
+          "target": "major_retailers",
+          "weightDelta": -0.005
+        },
+        {
+          "source": "aspirational_athletes_sneaker forum moderator",
+          "target": "brand_strategist",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "aspirational_athletes_sneaker forum moderator",
+          "target": "investor_analyst",
+          "weightDelta": -0.027
+        },
+        {
+          "source": "aspirational_athletes_sneaker forum moderator",
+          "target": "social_platform",
+          "weightDelta": -0.025
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00015_r4",
+      "authorId": "brand_strategist",
+      "influencedAgents": [
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.2,
+          "shift": 0.027
+        },
+        {
+          "agentId": "nike_cmo",
+          "agentName": "Nike Chief Marketing Officer",
+          "positionBefore": 0.294,
+          "positionAfter": 0.288,
+          "shift": -0.006
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.021,
+      "edgeEffects": [
+        {
+          "source": "brand_strategist",
+          "target": "sports_media_network",
+          "weightDelta": -0.005
+        },
+        {
+          "source": "brand_strategist",
+          "target": "nike_cmo",
+          "weightDelta": -0.007
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00016_r4",
+      "authorId": "brand_strategist",
+      "influencedAgents": [
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.054,
+          "shift": 0.022
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.022,
+      "edgeEffects": [
+        {
+          "source": "brand_strategist",
+          "target": "social_platform",
+          "weightDelta": 0.023
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00017_r4",
+      "authorId": "athlete_legacy_foundation_head",
+      "influencedAgents": [
+        {
+          "agentId": "tech_ethics_influencer",
+          "agentName": "AI Ethics Influencer",
+          "positionBefore": -0.915,
+          "positionAfter": -0.938,
+          "shift": -0.023
+        },
+        {
+          "agentId": "athlete_estate",
+          "agentName": "Athlete Estate",
+          "positionBefore": -0.929,
+          "positionAfter": -0.9,
+          "shift": 0.029
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.006,
+      "edgeEffects": [
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "tech_ethics_influencer",
+          "weightDelta": -0.027
+        },
+        {
+          "source": "athlete_legacy_foundation_head",
+          "target": "athlete_estate",
+          "weightDelta": 0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00018_r4",
+      "authorId": "ethics_minded_professionals_brand_compliance_director",
+      "influencedAgents": [
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.14,
+          "shift": -0.004
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.563,
+          "shift": -0.015
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": -0.013,
+          "shift": -0.024
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.043,
+      "edgeEffects": [
+        {
+          "source": "ethics_minded_professionals_brand_compliance_director",
+          "target": "investor_analyst",
+          "weightDelta": -0.017
+        },
+        {
+          "source": "ethics_minded_professionals_brand_compliance_director",
+          "target": "sports_journalist",
+          "weightDelta": -0.002
+        },
+        {
+          "source": "ethics_minded_professionals_brand_compliance_director",
+          "target": "investor_group",
+          "weightDelta": 0.043
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00019_r4",
+      "authorId": "price_sensitive_shoppers_budget_conscious_parent",
+      "influencedAgents": [
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.524,
+          "shift": 0.024
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.265,
+          "shift": -0.02
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": 0.037,
+          "shift": 0.026
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.03,
+      "edgeEffects": [
+        {
+          "source": "price_sensitive_shoppers_budget_conscious_parent",
+          "target": "sports_journalist",
+          "weightDelta": -0.03
+        },
+        {
+          "source": "price_sensitive_shoppers_budget_conscious_parent",
+          "target": "retail_chain_exec",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "price_sensitive_shoppers_budget_conscious_parent",
+          "target": "investor_group",
+          "weightDelta": -0.019
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00020_r4",
+      "authorId": "price_sensitive_shoppers_rural_reseller_buyer",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": -0.012,
+          "shift": -0.023
+        },
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.049,
+          "shift": 0.027
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.004,
+      "edgeEffects": [
+        {
+          "source": "price_sensitive_shoppers_rural_reseller_buyer",
+          "target": "investor_group",
+          "weightDelta": 0.044
+        },
+        {
+          "source": "price_sensitive_shoppers_rural_reseller_buyer",
+          "target": "social_platform",
+          "weightDelta": -0.043
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00021_r4",
+      "authorId": "activist_consumers_consumer rights advocate",
+      "influencedAgents": [
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.548,
+          "shift": 0.0
+        },
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.134,
+          "shift": 0.002
+        },
+        {
+          "agentId": "nike_cmo",
+          "agentName": "Nike Chief Marketing Officer",
+          "positionBefore": 0.294,
+          "positionAfter": 0.293,
+          "shift": -0.001
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.001,
+      "edgeEffects": [
+        {
+          "source": "activist_consumers_consumer rights advocate",
+          "target": "sports_journalist",
+          "weightDelta": 0.034
+        },
+        {
+          "source": "activist_consumers_consumer rights advocate",
+          "target": "investor_analyst",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "activist_consumers_consumer rights advocate",
+          "target": "nike_cmo",
+          "weightDelta": 0.011
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00022_r4",
+      "authorId": "nike_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "estate_representative",
+          "agentName": "Athlete Estate Representative",
+          "positionBefore": -0.973,
+          "positionAfter": -0.955,
+          "shift": 0.018
+        },
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.091,
+          "shift": -0.015
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.523,
+          "shift": 0.025
+        },
+        {
+          "agentId": "tech_ethics_influencer",
+          "agentName": "AI Ethics Influencer",
+          "positionBefore": -0.915,
+          "positionAfter": -0.897,
+          "shift": 0.018
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.046,
+      "edgeEffects": [
+        {
+          "source": "nike_ceo",
+          "target": "estate_representative",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "nike_ceo",
+          "target": "social_platform",
+          "weightDelta": -0.048
+        },
+        {
+          "source": "nike_ceo",
+          "target": "sports_journalist",
+          "weightDelta": 0.03
+        },
+        {
+          "source": "nike_ceo",
+          "target": "tech_ethics_influencer",
+          "weightDelta": -0.041
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00023_r4",
+      "authorId": "estate_representative",
+      "influencedAgents": [
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.529,
+          "shift": 0.019
+        },
+        {
+          "agentId": "consumer_advocate",
+          "agentName": "Consumer Rights Advocate",
+          "positionBefore": -0.872,
+          "positionAfter": -0.873,
+          "shift": -0.001
+        },
+        {
+          "agentId": "athlete_legacy_foundation_head",
+          "agentName": "Athlete Legacy Foundation Director",
+          "positionBefore": -0.897,
+          "positionAfter": -0.889,
+          "shift": 0.008
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.026,
+      "edgeEffects": [
+        {
+          "source": "estate_representative",
+          "target": "sports_journalist",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "estate_representative",
+          "target": "consumer_advocate",
+          "weightDelta": 0.042
+        },
+        {
+          "source": "estate_representative",
+          "target": "athlete_legacy_foundation_head",
+          "weightDelta": -0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00024_r4",
+      "authorId": "consumer_advocate",
+      "influencedAgents": [
+        {
+          "agentId": "athlete_estate",
+          "agentName": "Athlete Estate",
+          "positionBefore": -0.929,
+          "positionAfter": -0.949,
+          "shift": -0.02
+        },
+        {
+          "agentId": "media_ethics_org",
+          "agentName": "Media Ethics Coalition",
+          "positionBefore": -0.884,
+          "positionAfter": -0.885,
+          "shift": -0.001
+        },
+        {
+          "agentId": "ethics_professor",
+          "agentName": "Media Ethics Professor",
+          "positionBefore": -0.817,
+          "positionAfter": -0.805,
+          "shift": 0.012
+        },
+        {
+          "agentId": "ad_regulator",
+          "agentName": "Advertising Standards Authority",
+          "positionBefore": -0.713,
+          "positionAfter": -0.698,
+          "shift": 0.015
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.006,
+      "edgeEffects": [
+        {
+          "source": "consumer_advocate",
+          "target": "athlete_estate",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "media_ethics_org",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "ethics_professor",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "ad_regulator",
+          "weightDelta": 0.033
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00025_r4",
+      "authorId": "sports_journalist",
+      "influencedAgents": [
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.04,
+          "shift": -0.008
+        },
+        {
+          "agentId": "ad_regulator",
+          "agentName": "Advertising Standards Authority",
+          "positionBefore": -0.713,
+          "positionAfter": -0.741,
+          "shift": -0.028
+        },
+        {
+          "agentId": "consumer_watchdog",
+          "agentName": "Consumer Protection Watch",
+          "positionBefore": -0.802,
+          "positionAfter": -0.798,
+          "shift": 0.004
+        },
+        {
+          "agentId": "athlete_estate",
+          "agentName": "Athlete Estate",
+          "positionBefore": -0.929,
+          "positionAfter": -0.919,
+          "shift": 0.01
+        },
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.146,
+          "shift": -0.01
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": -0.019,
+          "shift": -0.03
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.062,
+      "edgeEffects": [
+        {
+          "source": "sports_journalist",
+          "target": "major_retailers",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "sports_journalist",
+          "target": "ad_regulator",
+          "weightDelta": -0.031
+        },
+        {
+          "source": "sports_journalist",
+          "target": "consumer_watchdog",
+          "weightDelta": -0.048
+        },
+        {
+          "source": "sports_journalist",
+          "target": "athlete_estate",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "sports_journalist",
+          "target": "investor_analyst",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "sports_journalist",
+          "target": "investor_group",
+          "weightDelta": -0.018
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00026_r4",
+      "authorId": "retail_chain_exec",
+      "influencedAgents": [
+        {
+          "agentId": "consumer_watchdog",
+          "agentName": "Consumer Protection Watch",
+          "positionBefore": -0.802,
+          "positionAfter": -0.824,
+          "shift": -0.022
+        },
+        {
+          "agentId": "ethics_professor",
+          "agentName": "Media Ethics Professor",
+          "positionBefore": -0.817,
+          "positionAfter": -0.787,
+          "shift": 0.03
+        },
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.237,
+          "shift": -0.01
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.002,
+      "edgeEffects": [
+        {
+          "source": "retail_chain_exec",
+          "target": "consumer_watchdog",
+          "weightDelta": -0.001
+        },
+        {
+          "source": "retail_chain_exec",
+          "target": "ethics_professor",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "retail_chain_exec",
+          "target": "sports_media_network",
+          "weightDelta": 0.012
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00027_r4",
+      "authorId": "investor_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "nike_cmo",
+          "agentName": "Nike Chief Marketing Officer",
+          "positionBefore": 0.294,
+          "positionAfter": 0.266,
+          "shift": -0.028
+        },
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": 0.032,
+          "shift": 0.026
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.215,
+          "shift": 0.03
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.028,
+      "edgeEffects": [
+        {
+          "source": "investor_analyst",
+          "target": "nike_cmo",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "investor_analyst",
+          "target": "brand_strategist",
+          "weightDelta": 0.016
+        },
+        {
+          "source": "investor_analyst",
+          "target": "retail_chain_exec",
+          "weightDelta": 0.02
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00028_r4",
+      "authorId": "nike_cmo",
+      "influencedAgents": [
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.107,
+          "shift": 0.029
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.029,
+      "edgeEffects": [
+        {
+          "source": "nike_cmo",
+          "target": "investor_analyst",
+          "weightDelta": -0.014
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00029_r4",
+      "authorId": "ethics_professor",
+      "influencedAgents": [
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.216,
+          "shift": 0.029
+        },
+        {
+          "agentId": "media_ethics_org",
+          "agentName": "Media Ethics Coalition",
+          "positionBefore": -0.884,
+          "positionAfter": -0.871,
+          "shift": 0.013
+        },
+        {
+          "agentId": "nike_ceo",
+          "agentName": "Nike Chief Executive Officer",
+          "positionBefore": -0.627,
+          "positionAfter": -0.601,
+          "shift": 0.026
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.068,
+      "edgeEffects": [
+        {
+          "source": "ethics_professor",
+          "target": "retail_chain_exec",
+          "weightDelta": -0.017
+        },
+        {
+          "source": "ethics_professor",
+          "target": "media_ethics_org",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "ethics_professor",
+          "target": "nike_ceo",
+          "weightDelta": 0.01
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00030_r4",
+      "authorId": "brand_strategist",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": 0.001,
+          "shift": -0.01
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.01,
+      "edgeEffects": [
+        {
+          "source": "brand_strategist",
+          "target": "investor_group",
+          "weightDelta": 0.039
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00031_r4",
+      "authorId": "retail_chain_exec",
+      "influencedAgents": [
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.561,
+          "shift": -0.013
+        },
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.073,
+          "shift": 0.003
+        },
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": 0.028,
+          "shift": 0.022
+        },
+        {
+          "agentId": "nike_ceo",
+          "agentName": "Nike Chief Executive Officer",
+          "positionBefore": -0.627,
+          "positionAfter": -0.624,
+          "shift": 0.003
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.015,
+      "edgeEffects": [
+        {
+          "source": "retail_chain_exec",
+          "target": "sports_journalist",
+          "weightDelta": 0.034
+        },
+        {
+          "source": "retail_chain_exec",
+          "target": "social_platform",
+          "weightDelta": 0.004
+        },
+        {
+          "source": "retail_chain_exec",
+          "target": "brand_strategist",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "retail_chain_exec",
+          "target": "nike_ceo",
+          "weightDelta": 0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00032_r4",
+      "authorId": "investor_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "ad_regulator",
+          "agentName": "Advertising Standards Authority",
+          "positionBefore": -0.713,
+          "positionAfter": -0.719,
+          "shift": -0.006
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.256,
+          "shift": -0.011
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": -0.013,
+          "shift": -0.024
+        },
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.062,
+          "shift": 0.014
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.027,
+      "edgeEffects": [
+        {
+          "source": "investor_analyst",
+          "target": "ad_regulator",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "investor_analyst",
+          "target": "retail_chain_exec",
+          "weightDelta": 0.038
+        },
+        {
+          "source": "investor_analyst",
+          "target": "investor_group",
+          "weightDelta": -0.017
+        },
+        {
+          "source": "investor_analyst",
+          "target": "social_platform",
+          "weightDelta": -0.036
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00033_r4",
+      "authorId": "price_sensitive_shoppers_value_seeking_sports_fan",
+      "influencedAgents": [
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.078,
+          "shift": -0.002
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": 0.014,
+          "shift": 0.003
+        },
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.027,
+          "shift": 0.005
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.006,
+      "edgeEffects": [
+        {
+          "source": "price_sensitive_shoppers_value_seeking_sports_fan",
+          "target": "social_platform",
+          "weightDelta": -0.014
+        },
+        {
+          "source": "price_sensitive_shoppers_value_seeking_sports_fan",
+          "target": "investor_group",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "price_sensitive_shoppers_value_seeking_sports_fan",
+          "target": "major_retailers",
+          "weightDelta": 0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00034_r4",
+      "authorId": "sports_journalist",
+      "influencedAgents": [
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": 0.031,
+          "shift": 0.025
+        },
+        {
+          "agentId": "estate_representative",
+          "agentName": "Athlete Estate Representative",
+          "positionBefore": -0.973,
+          "positionAfter": -0.997,
+          "shift": -0.024
+        },
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.138,
+          "shift": -0.002
+        },
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.249,
+          "shift": -0.022
+        },
+        {
+          "agentId": "ad_regulator",
+          "agentName": "Advertising Standards Authority",
+          "positionBefore": -0.713,
+          "positionAfter": -0.694,
+          "shift": 0.019
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.004,
+      "edgeEffects": [
+        {
+          "source": "sports_journalist",
+          "target": "brand_strategist",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "sports_journalist",
+          "target": "estate_representative",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "sports_journalist",
+          "target": "investor_analyst",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "sports_journalist",
+          "target": "sports_media_network",
+          "weightDelta": 0.024
+        },
+        {
+          "source": "sports_journalist",
+          "target": "ad_regulator",
+          "weightDelta": 0.018
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00035_r4",
+      "authorId": "sports_journalist",
+      "influencedAgents": [
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": 0.024,
+          "shift": 0.018
+        },
+        {
+          "agentId": "media_ethics_org",
+          "agentName": "Media Ethics Coalition",
+          "positionBefore": -0.884,
+          "positionAfter": -0.903,
+          "shift": -0.019
+        },
+        {
+          "agentId": "nike_ceo",
+          "agentName": "Nike Chief Executive Officer",
+          "positionBefore": -0.627,
+          "positionAfter": -0.653,
+          "shift": -0.026
+        },
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.217,
+          "shift": 0.01
+        },
+        {
+          "agentId": "athlete_legacy_foundation_head",
+          "agentName": "Athlete Legacy Foundation Director",
+          "positionBefore": -0.897,
+          "positionAfter": -0.895,
+          "shift": 0.002
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.251,
+          "shift": -0.006
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.021,
+      "edgeEffects": [
+        {
+          "source": "sports_journalist",
+          "target": "brand_strategist",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "sports_journalist",
+          "target": "media_ethics_org",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "sports_journalist",
+          "target": "nike_ceo",
+          "weightDelta": -0.029
+        },
+        {
+          "source": "sports_journalist",
+          "target": "sports_media_network",
+          "weightDelta": -0.031
+        },
+        {
+          "source": "sports_journalist",
+          "target": "athlete_legacy_foundation_head",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "sports_journalist",
+          "target": "retail_chain_exec",
+          "weightDelta": 0.009
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00036_r4",
+      "authorId": "investor_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.081,
+          "shift": -0.005
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.245,
+          "shift": -0.0
+        },
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": -0.0,
+          "shift": -0.006
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.011,
+      "edgeEffects": [
+        {
+          "source": "investor_analyst",
+          "target": "social_platform",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "investor_analyst",
+          "target": "retail_chain_exec",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "investor_analyst",
+          "target": "brand_strategist",
+          "weightDelta": -0.031
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00037_r4",
+      "authorId": "brand_loyalists_sports_fan_and_retail_watcher",
+      "influencedAgents": [
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.535,
+          "shift": 0.013
+        },
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": -0.009,
+          "shift": -0.015
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.002,
+      "edgeEffects": [
+        {
+          "source": "brand_loyalists_sports_fan_and_retail_watcher",
+          "target": "sports_journalist",
+          "weightDelta": -0.027
+        },
+        {
+          "source": "brand_loyalists_sports_fan_and_retail_watcher",
+          "target": "brand_strategist",
+          "weightDelta": -0.045
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00038_r4",
+      "authorId": "activist_consumers_boycott organizer",
+      "influencedAgents": [
+        {
+          "agentId": "nike_cmo",
+          "agentName": "Nike Chief Marketing Officer",
+          "positionBefore": 0.294,
+          "positionAfter": 0.298,
+          "shift": 0.004
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.004,
+      "edgeEffects": [
+        {
+          "source": "activist_consumers_boycott organizer",
+          "target": "nike_cmo",
+          "weightDelta": 0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00039_r4",
+      "authorId": "aspirational_athletes_college athlete",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": 0.008,
+          "shift": -0.003
+        },
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.127,
+          "shift": 0.009
+        },
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.235,
+          "shift": -0.008
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.002,
+      "edgeEffects": [
+        {
+          "source": "aspirational_athletes_college athlete",
+          "target": "investor_group",
+          "weightDelta": -0.035
+        },
+        {
+          "source": "aspirational_athletes_college athlete",
+          "target": "investor_analyst",
+          "weightDelta": -0.038
+        },
+        {
+          "source": "aspirational_athletes_college athlete",
+          "target": "sports_media_network",
+          "weightDelta": 0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00040_r4",
+      "authorId": "nike_cmo",
+      "influencedAgents": [
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.219,
+          "shift": 0.008
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.008,
+      "edgeEffects": [
+        {
+          "source": "nike_cmo",
+          "target": "sports_media_network",
+          "weightDelta": -0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00041_r4",
+      "authorId": "estate_representative",
+      "influencedAgents": [
+        {
+          "agentId": "tech_ethics_influencer",
+          "agentName": "AI Ethics Influencer",
+          "positionBefore": -0.915,
+          "positionAfter": -0.919,
+          "shift": -0.004
+        },
+        {
+          "agentId": "consumer_advocate",
+          "agentName": "Consumer Rights Advocate",
+          "positionBefore": -0.872,
+          "positionAfter": -0.876,
+          "shift": -0.004
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.008,
+      "edgeEffects": [
+        {
+          "source": "estate_representative",
+          "target": "tech_ethics_influencer",
+          "weightDelta": -0.025
+        },
+        {
+          "source": "estate_representative",
+          "target": "consumer_advocate",
+          "weightDelta": -0.034
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00042_r4",
+      "authorId": "ethics_minded_professionals_retail_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "nike_cmo",
+          "agentName": "Nike Chief Marketing Officer",
+          "positionBefore": 0.294,
+          "positionAfter": 0.271,
+          "shift": -0.023
+        },
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.24,
+          "shift": -0.013
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.229,
+          "shift": 0.016
+        },
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.016,
+          "shift": 0.016
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.004,
+      "edgeEffects": [
+        {
+          "source": "ethics_minded_professionals_retail_analyst",
+          "target": "nike_cmo",
+          "weightDelta": -0.021
+        },
+        {
+          "source": "ethics_minded_professionals_retail_analyst",
+          "target": "sports_media_network",
+          "weightDelta": -0.032
+        },
+        {
+          "source": "ethics_minded_professionals_retail_analyst",
+          "target": "retail_chain_exec",
+          "weightDelta": -0.003
+        },
+        {
+          "source": "ethics_minded_professionals_retail_analyst",
+          "target": "major_retailers",
+          "weightDelta": -0.043
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00043_r4",
+      "authorId": "nike_cmo",
+      "influencedAgents": [
+        {
+          "agentId": "nike_corporation",
+          "agentName": "Nike, Inc.",
+          "positionBefore": 0.665,
+          "positionAfter": 0.676,
+          "shift": 0.011
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.246,
+          "shift": -0.001
+        },
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": -0.014,
+          "shift": -0.02
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": 0.035,
+          "shift": 0.024
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.014,
+      "edgeEffects": [
+        {
+          "source": "nike_cmo",
+          "target": "nike_corporation",
+          "weightDelta": -0.022
+        },
+        {
+          "source": "nike_cmo",
+          "target": "retail_chain_exec",
+          "weightDelta": -0.011
+        },
+        {
+          "source": "nike_cmo",
+          "target": "brand_strategist",
+          "weightDelta": -0.028
+        },
+        {
+          "source": "nike_cmo",
+          "target": "investor_group",
+          "weightDelta": -0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00044_r4",
+      "authorId": "brand_loyalists_brand_defender",
+      "influencedAgents": [
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": -0.008,
+          "shift": -0.014
+        },
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.047,
+          "shift": -0.015
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": 0.033,
+          "shift": 0.022
+        },
+        {
+          "agentId": "nike_cmo",
+          "agentName": "Nike Chief Marketing Officer",
+          "positionBefore": 0.294,
+          "positionAfter": 0.283,
+          "shift": -0.011
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.018,
+      "edgeEffects": [
+        {
+          "source": "brand_loyalists_brand_defender",
+          "target": "brand_strategist",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "brand_loyalists_brand_defender",
+          "target": "major_retailers",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "brand_loyalists_brand_defender",
+          "target": "investor_group",
+          "weightDelta": 0.002
+        },
+        {
+          "source": "brand_loyalists_brand_defender",
+          "target": "nike_cmo",
+          "weightDelta": -0.01
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00045_r4",
+      "authorId": "sports_fans_sports_history_commentator",
+      "influencedAgents": [
+        {
+          "agentId": "social_platform",
+          "agentName": "Major Social Platform",
+          "positionBefore": -0.076,
+          "positionAfter": -0.057,
+          "shift": 0.019
+        },
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": 0.016,
+          "shift": 0.01
+        },
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.238,
+          "shift": 0.007
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.036,
+      "edgeEffects": [
+        {
+          "source": "sports_fans_sports_history_commentator",
+          "target": "social_platform",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "sports_fans_sports_history_commentator",
+          "target": "brand_strategist",
+          "weightDelta": 0.006
+        },
+        {
+          "source": "sports_fans_sports_history_commentator",
+          "target": "retail_chain_exec",
+          "weightDelta": 0.03
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00046_r4",
+      "authorId": "sports_fans_legacy_protector",
+      "influencedAgents": [
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.199,
+          "shift": 0.028
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.537,
+          "shift": 0.011
+        },
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.028,
+          "shift": 0.004
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investor Group",
+          "positionBefore": 0.011,
+          "positionAfter": -0.007,
+          "shift": -0.018
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.025,
+      "edgeEffects": [
+        {
+          "source": "sports_fans_legacy_protector",
+          "target": "sports_media_network",
+          "weightDelta": -0.017
+        },
+        {
+          "source": "sports_fans_legacy_protector",
+          "target": "sports_journalist",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "sports_fans_legacy_protector",
+          "target": "major_retailers",
+          "weightDelta": -0.05
+        },
+        {
+          "source": "sports_fans_legacy_protector",
+          "target": "investor_group",
+          "weightDelta": -0.039
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00047_r4",
+      "authorId": "gen_z_digital_natives_college_student",
+      "influencedAgents": [
+        {
+          "agentId": "retail_chain_exec",
+          "agentName": "Major Retail Chain Executive",
+          "positionBefore": -0.245,
+          "positionAfter": -0.251,
+          "shift": -0.006
+        },
+        {
+          "agentId": "investor_analyst",
+          "agentName": "Equity Research Analyst",
+          "positionBefore": -0.136,
+          "positionAfter": -0.13,
+          "shift": 0.006
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.0,
+      "edgeEffects": [
+        {
+          "source": "gen_z_digital_natives_college_student",
+          "target": "retail_chain_exec",
+          "weightDelta": 0.034
+        },
+        {
+          "source": "gen_z_digital_natives_college_student",
+          "target": "investor_analyst",
+          "weightDelta": 0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00048_r4",
+      "authorId": "sports_fans_longtime_fan",
+      "influencedAgents": [
+        {
+          "agentId": "major_retailers",
+          "agentName": "Major Retailers Consortium",
+          "positionBefore": -0.032,
+          "positionAfter": -0.059,
+          "shift": -0.027
+        },
+        {
+          "agentId": "brand_strategist",
+          "agentName": "Independent Brand Strategist",
+          "positionBefore": 0.006,
+          "positionAfter": 0.004,
+          "shift": -0.002
+        },
+        {
+          "agentId": "sports_journalist",
+          "agentName": "Senior Sports Journalist",
+          "positionBefore": -0.548,
+          "positionAfter": -0.558,
+          "shift": -0.01
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.039,
+      "edgeEffects": [
+        {
+          "source": "sports_fans_longtime_fan",
+          "target": "major_retailers",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "sports_fans_longtime_fan",
+          "target": "brand_strategist",
+          "weightDelta": -0.026
+        },
+        {
+          "source": "sports_fans_longtime_fan",
+          "target": "sports_journalist",
+          "weightDelta": -0.027
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Nike_Deepfake_Ad_Backlash_rp_00049_r4",
+      "authorId": "gen_z_digital_natives_brand_trust_consumer",
+      "influencedAgents": [
+        {
+          "agentId": "sports_media_network",
+          "agentName": "Sports Media Network",
+          "positionBefore": -0.227,
+          "positionAfter": -0.232,
+          "shift": -0.005
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.005,
+      "edgeEffects": [
+        {
+          "source": "gen_z_digital_natives_brand_trust_consumer",
+          "target": "sports_media_network",
+          "weightDelta": -0.046
+        }
+      ]
+    }
+  ],
+  "realWorldEffects": {
+    "overview": {
+      "stability_index": 72,
+      "tension_index": 23,
+      "media_intensity": 45,
+      "stakeholder_confidence": 58
+    },
+    "opinion": {
+      "support_rate": 7,
+      "opposition_rate": 63,
+      "undecided_rate": 30,
+      "avg_position": -0.454
+    },
+    "engagement": {
+      "active_discussions": 34,
+      "viral_content_pieces": 8,
+      "coalition_count": 4
+    }
+  }
+}

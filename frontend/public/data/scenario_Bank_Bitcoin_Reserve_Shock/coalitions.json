@@ -1,0 +1,167 @@
+[
+  {
+    "round": 1,
+    "coalitions": [
+      {
+        "label": "Bulls",
+        "color": "#1e40af",
+        "members": [
+          "ceo_bank",
+          "crypto_ceo",
+          "fintech_founder",
+          "announcing_bank",
+          "crypto_industry_group"
+        ],
+        "avg_position": 0.786,
+        "size": 5
+      },
+      {
+        "label": "Bears",
+        "color": "#059669",
+        "members": [
+          "ecb_official",
+          "consumer_advocate",
+          "ecb",
+          "national_banking_regulator",
+          "deposit_insurance_fund"
+        ],
+        "avg_position": -0.792,
+        "size": 5
+      },
+      {
+        "label": "Risk-averse",
+        "color": "#dc2626",
+        "members": [
+          "risk_head",
+          "finance_minister",
+          "european_commission",
+          "investor_association"
+        ],
+        "avg_position": -0.278,
+        "size": 4
+      },
+      {
+        "label": "Cautious optimists",
+        "color": "#f59e0b",
+        "members": [
+          "cfo_bank",
+          "board_chair",
+          "macro_analyst",
+          "competitor_bank"
+        ],
+        "avg_position": 0.212,
+        "size": 4
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "coalitions": [
+      {
+        "label": "Bulls",
+        "color": "#1e40af",
+        "members": [
+          "ceo_bank",
+          "crypto_ceo",
+          "fintech_founder",
+          "announcing_bank",
+          "crypto_industry_group"
+        ],
+        "avg_position": 0.697,
+        "size": 5
+      },
+      {
+        "label": "Bears",
+        "color": "#059669",
+        "members": [
+          "ecb_official",
+          "consumer_advocate",
+          "ecb",
+          "national_banking_regulator",
+          "deposit_insurance_fund"
+        ],
+        "avg_position": -0.794,
+        "size": 5
+      },
+      {
+        "label": "Cautious optimists",
+        "color": "#dc2626",
+        "members": [
+          "cfo_bank",
+          "board_chair",
+          "macro_analyst",
+          "competitor_bank"
+        ],
+        "avg_position": 0.128,
+        "size": 4
+      },
+      {
+        "label": "Risk-averse",
+        "color": "#f59e0b",
+        "members": [
+          "risk_head",
+          "finance_minister",
+          "european_commission",
+          "investor_association"
+        ],
+        "avg_position": -0.3,
+        "size": 4
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "coalitions": [
+      {
+        "label": "Bulls",
+        "color": "#1e40af",
+        "members": [
+          "ceo_bank",
+          "crypto_ceo",
+          "fintech_founder",
+          "announcing_bank",
+          "crypto_industry_group"
+        ],
+        "avg_position": 0.676,
+        "size": 5
+      },
+      {
+        "label": "Bears",
+        "color": "#059669",
+        "members": [
+          "ecb_official",
+          "consumer_advocate",
+          "ecb",
+          "national_banking_regulator",
+          "deposit_insurance_fund"
+        ],
+        "avg_position": -0.778,
+        "size": 5
+      },
+      {
+        "label": "Cautious optimists",
+        "color": "#dc2626",
+        "members": [
+          "cfo_bank",
+          "board_chair",
+          "macro_analyst",
+          "competitor_bank"
+        ],
+        "avg_position": 0.12,
+        "size": 4
+      },
+      {
+        "label": "Risk-averse",
+        "color": "#f59e0b",
+        "members": [
+          "risk_head",
+          "finance_minister",
+          "european_commission",
+          "investor_association"
+        ],
+        "avg_position": -0.294,
+        "size": 4
+      }
+    ]
+  }
+]

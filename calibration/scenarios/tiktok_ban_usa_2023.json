@@ -1,0 +1,27 @@
+{
+  "scenario_name": "TikTok Ban Support USA 2023-2024",
+  "description": "Bipartisan support for banning or forcing sale of TikTok grew from ~45% in early 2023 to 60%+ by early 2024, driven by national security concerns and Congressional hearings. Tests bipartisan consensus formation and generational opinion divide.",
+  "domain": "technology/political",
+  "final_outcome_pro_pct": 61.0,
+  "final_outcome_against_pct": 27.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 45, "against_pct": 28, "undecided_pct": 27},
+    {"round_equivalent": 2, "pro_pct": 47, "against_pct": 28, "undecided_pct": 25},
+    {"round_equivalent": 3, "pro_pct": 50, "against_pct": 28, "undecided_pct": 22},
+    {"round_equivalent": 4, "pro_pct": 53, "against_pct": 28, "undecided_pct": 19},
+    {"round_equivalent": 5, "pro_pct": 55, "against_pct": 28, "undecided_pct": 17},
+    {"round_equivalent": 6, "pro_pct": 57, "against_pct": 27, "undecided_pct": 16},
+    {"round_equivalent": 7, "pro_pct": 59, "against_pct": 27, "undecided_pct": 14},
+    {"round_equivalent": 8, "pro_pct": 60, "against_pct": 27, "undecided_pct": 13},
+    {"round_equivalent": 9, "pro_pct": 61, "against_pct": 27, "undecided_pct": 12}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "FBI Director Wray testifies TikTok poses national security threat. Bipartisan concern crystallizes around Chinese government data access."},
+    {"round_equivalent": 4, "description": "TikTok CEO Shou Zi Chew testifies before Congress (March 2023). Combative hearing boosts ban support across party lines."},
+    {"round_equivalent": 5, "description": "Montana becomes first state to pass TikTok ban (later blocked by courts). Policy momentum builds."},
+    {"round_equivalent": 7, "description": "House passes bipartisan RESTRICT Act forcing ByteDance divestiture. Senate consideration begins."},
+    {"round_equivalent": 9, "description": "Biden signs TikTok divest-or-ban bill into law (April 2024). Supreme Court challenge anticipated. Support solidifies at ~60%."}
+  ],
+  "calibration_notes": "Tests bipartisan consensus formation on tech regulation. Key patterns: rare bipartisan agreement (both parties >55% support), stark generational divide (18-29 only ~35% support vs 65+ at ~80%), national security framing overcoming free speech objections, steady monotonic growth rather than shock-driven shift, opposition remained stable (~28%) while undecideds converted to support. Pew Research, Reuters/Ipsos polling data used."
+}

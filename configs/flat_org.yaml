@@ -1,0 +1,512 @@
+budget_usd: 2.0
+channels:
+- channel_type: official
+  description: Official executive announcements and leadership messaging
+  id: exec_statement
+  max_length: 280
+- channel_type: short_form
+  description: Internal employee discussion and rumor circulation
+  id: employee_chat
+  max_length: 280
+- channel_type: short_form
+  description: Middle-manager peer discussion about reassignment, severance, and role
+    loss
+  id: manager_forum
+  max_length: 280
+- channel_type: official
+  description: Union statements, organizing updates, and worker mobilization messages
+  id: union_bulletin
+  max_length: 280
+- channel_type: long_form
+  description: Journalistic reporting, commentary, and breaking news analysis
+  id: press_coverage
+  max_length: 280
+- channel_type: official
+  description: Earnings-call style reactions from analysts and shareholders
+  id: investor_call
+  max_length: 280
+- channel_type: short_form
+  description: Public social media reactions from employees, tech observers, and the
+    general public
+  id: social_feed
+  max_length: 280
+citizen_clusters:
+- demographic_attributes:
+    age_range: 30-55
+    education: Bachelor's to MBA
+    income: Upper-middle to high
+    location: Global metro hubs
+  description: Managers across functions facing reassignment, demotion, or severance.
+  engagement_base: 0.9
+  id: displaced_managers
+  info_channel: manager_forum
+  name: Displaced Middle Managers
+  position: -0.85
+  size: 3000
+- demographic_attributes:
+    age_range: 24-45
+    education: Bachelor's to PhD
+    income: Middle to upper-middle
+    location: Urban and suburban tech centers
+  description: Engineers, designers, and specialists who may gain autonomy but fear
+    coordination breakdowns.
+  engagement_base: 0.6
+  id: individual_contributors
+  info_channel: employee_chat
+  name: Individual Contributors
+  position: 0.1
+  size: 18000
+- demographic_attributes:
+    age_range: 25-40
+    education: Bachelor's to Master's
+    income: Middle to upper-middle
+    location: Global offices
+  description: Ambitious employees who may welcome flatter decision-making and faster
+    advancement.
+  engagement_base: 0.55
+  id: high_performers
+  info_channel: employee_chat
+  name: High-Performing Staff
+  position: 0.4
+  size: 7000
+- demographic_attributes:
+    age_range: 28-60
+    education: High school to Master's
+    income: Lower-middle to middle
+    location: Mixed urban labor markets
+  description: Employees sympathetic to collective action and skeptical of AI-led
+    restructuring.
+  engagement_base: 0.85
+  id: union_supporters
+  info_channel: union_bulletin
+  name: Union-Aligned Workers
+  position: -0.8
+  size: 5000
+- demographic_attributes:
+    age_range: 30-65
+    education: Bachelor's to MBA
+    income: Middle to high
+    location: Financial centers and remote
+  description: Employees and outsiders who interpret the move through valuation, efficiency,
+    and growth metrics.
+  engagement_base: 0.45
+  id: investor_watchers
+  info_channel: investor_call
+  name: Investor-Focused Professionals
+  position: 0.5
+  size: 12000
+- demographic_attributes:
+    age_range: 18-60
+    education: Mixed
+    income: Mixed
+    location: National and global
+  description: General tech observers, founders, and professionals debating whether
+    the model is the future of work.
+  engagement_base: 0.5
+  id: tech_public
+  info_channel: social_feed
+  name: Tech Industry Public
+  position: 0.0
+  size: 25000
+- demographic_attributes:
+    age_range: 22-65
+    education: Mixed
+    income: Lower-middle to middle
+    location: Urban and industrial regions
+  description: Workers, activists, and policy-minded observers concerned about job
+    loss and weakened protections.
+  engagement_base: 0.75
+  id: labor_advocates
+  info_channel: social_feed
+  name: Labor Advocates and Allies
+  position: -0.7
+  size: 9000
+description: A Fortune 500 tech company announces a sweeping restructuring that removes
+  all middle management and replaces coordination layers with AI-enabled workflows.
+  The simulation tracks stakeholder reactions, internal morale, labor response, investor
+  sentiment, and the operational consequences of rapidly flattening the organization.
+domain: corporate
+elite_agents:
+- archetype: business_leader
+  bio: The CEO is a high-profile operator who believes AI-driven flattening will unlock
+    speed, accountability, and margin expansion.
+  category: ''
+  communication_style: visionary, polished, and metrics-driven
+  domain_attributes: {}
+  id: ceo_1
+  influence: 1.0
+  key_trait: ''
+  key_traits:
+  - decisive
+  - ambitious
+  name: Avery Chen
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.9
+  rigidity: 0.8
+  role: Chief Executive Officer
+  tier: 1
+- archetype: business_leader
+  bio: The CFO supports the restructuring as a cost discipline move that can improve
+    operating leverage and investor confidence.
+  category: ''
+  communication_style: precise, cautious, and financially framed
+  domain_attributes: {}
+  id: cfo_1
+  influence: 0.95
+  key_trait: ''
+  key_traits:
+  - analytical
+  - risk-aware
+  name: Jordan Patel
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.7
+  rigidity: 0.75
+  role: Chief Financial Officer
+  tier: 1
+- archetype: business_leader
+  bio: The CHRO is focused on retention, severance fairness, and preserving trust
+    during a disruptive transition.
+  category: ''
+  communication_style: empathetic, diplomatic, and policy-oriented
+  domain_attributes: {}
+  id: chro_1
+  influence: 0.8
+  key_trait: ''
+  key_traits:
+  - empathetic
+  - pragmatic
+  name: Maya Rodriguez
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.1
+  rigidity: 0.5
+  role: Chief Human Resources Officer
+  tier: 1
+- archetype: business_leader
+  bio: The CTO argues that AI coordination can replace managerial bottlenecks if implementation
+    is disciplined and well-governed.
+  category: ''
+  communication_style: technical, confident, and explanatory
+  domain_attributes: {}
+  id: cto_1
+  influence: 0.85
+  key_trait: ''
+  key_traits:
+  - innovative
+  - systems_thinking
+  name: Dr. Lena Novak
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.6
+  rigidity: 0.65
+  role: Chief Technology Officer
+  tier: 1
+- archetype: union_leader
+  bio: The union leader frames the restructuring as a power grab that offloads risk
+    onto workers and weakens collective voice.
+  category: ''
+  communication_style: combative, direct, and mobilizing
+  domain_attributes: {}
+  id: union_leader_1
+  influence: 0.82
+  key_trait: ''
+  key_traits:
+  - militant
+  - organized
+  name: Marcus Hill
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.9
+  rigidity: 0.9
+  role: Tech Workers Union President
+  tier: 1
+- archetype: employee_advocate
+  bio: A representative for affected managers, she argues the company is discarding
+    institutional knowledge and career pathways.
+  category: ''
+  communication_style: measured, personal, and grievance-focused
+  domain_attributes: {}
+  id: manager_rep_1
+  influence: 0.55
+  key_trait: ''
+  key_traits:
+  - credible
+  - resilient
+  name: Elena Brooks
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.7
+  rigidity: 0.7
+  role: Displaced Managers Association Spokesperson
+  tier: 1
+- archetype: analyst
+  bio: The analyst is cautiously supportive, emphasizing that execution quality will
+    determine whether the move creates value or chaos.
+  category: ''
+  communication_style: balanced, data-heavy, and skeptical
+  domain_attributes: {}
+  id: analyst_1
+  influence: 0.7
+  key_trait: ''
+  key_traits:
+  - evaluative
+  - balanced
+  name: Priya Desai
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.4
+  rigidity: 0.45
+  role: Senior Tech Equity Analyst
+  tier: 1
+- archetype: journalist
+  bio: The reporter covers the human impact, labor implications, and operational risks
+    of the restructuring with a critical eye.
+  category: ''
+  communication_style: investigative, concise, and evidence-based
+  domain_attributes: {}
+  id: journalist_1
+  influence: 0.65
+  key_trait: ''
+  key_traits:
+  - curious
+  - skeptical
+  name: Noah Kim
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.2
+  rigidity: 0.4
+  role: Business and Labor Reporter
+  tier: 1
+- archetype: industry_expert
+  bio: A veteran operator, she sees the model as plausible but warns that culture
+    and execution can easily unravel it.
+  category: ''
+  communication_style: practical, reflective, and experience-based
+  domain_attributes: {}
+  id: industry_voice_1
+  influence: 0.6
+  key_trait: ''
+  key_traits:
+  - experienced
+  - nuanced
+  name: Sofia Alvarez
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.2
+  rigidity: 0.35
+  role: Former Big Tech COO and Industry Commentator
+  tier: 1
+- archetype: influencer
+  bio: The commentator amplifies employee anxiety and public skepticism while also
+    highlighting the appeal of flatter, faster organizations.
+  category: ''
+  communication_style: punchy, reactive, and audience-driven
+  domain_attributes: {}
+  id: influencer_1
+  influence: 0.58
+  key_trait: ''
+  key_traits:
+  - engaging
+  - polarizing
+  name: Tariq West
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.4
+  rigidity: 0.55
+  role: Workplace Creator and Tech Commentator
+  tier: 1
+initial_event: The CEO of a Fortune 500 technology company announces a complete organizational
+  restructuring that eliminates all middle management layers and shifts coordination
+  to AI-powered systems. Roughly 3,000 managers are told they will be reassigned,
+  offered severance, or exit through a rapid transition process. Leadership frames
+  the move as a bold step toward the future of work, while employees, unions, analysts,
+  and industry observers immediately debate whether the change is innovative, destabilizing,
+  or a pretext for cost-cutting.
+institutional_agents:
+- archetype: corporate
+  bio: ''
+  category: corporate
+  communication_style: ''
+  domain_attributes: {}
+  id: company_exec_team
+  influence: 1.0
+  key_trait: strategic control
+  key_traits: []
+  name: Executive Leadership Team
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.85
+  rigidity: 0.8
+  role: Sets strategy and oversees the restructuring
+  tier: 2
+- archetype: corporate
+  bio: ''
+  category: corporate
+  communication_style: ''
+  domain_attributes: {}
+  id: board_directors
+  influence: 0.95
+  key_trait: fiduciary oversight
+  key_traits: []
+  name: Board of Directors
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.6
+  rigidity: 0.7
+  role: Approves major organizational and capital decisions
+  tier: 2
+- archetype: corporate
+  bio: ''
+  category: corporate
+  communication_style: ''
+  domain_attributes: {}
+  id: hr_department
+  influence: 0.72
+  key_trait: process consistency
+  key_traits: []
+  name: Human Resources Division
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.1
+  rigidity: 0.55
+  role: Manages severance, reassignment, and employee communications
+  tier: 2
+- archetype: corporate
+  bio: ''
+  category: corporate
+  communication_style: ''
+  domain_attributes: {}
+  id: engineering_org
+  influence: 0.78
+  key_trait: execution dependent
+  key_traits: []
+  name: Engineering Organization
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.1
+  rigidity: 0.5
+  role: Core product and platform delivery function
+  tier: 2
+- archetype: corporate
+  bio: ''
+  category: corporate
+  communication_style: ''
+  domain_attributes: {}
+  id: people_ops
+  influence: 0.5
+  key_trait: employee advocacy
+  key_traits: []
+  name: People Operations Council
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.2
+  rigidity: 0.45
+  role: Internal employee support and culture stewardship group
+  tier: 2
+- archetype: labor
+  bio: ''
+  category: labor
+  communication_style: ''
+  domain_attributes: {}
+  id: tech_workers_union
+  influence: 0.88
+  key_trait: collective bargaining
+  key_traits: []
+  name: Tech Workers Union
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.9
+  rigidity: 0.9
+  role: Represents affected employees and organizes collective response
+  tier: 2
+- archetype: financial
+  bio: ''
+  category: financial
+  communication_style: ''
+  domain_attributes: {}
+  id: investor_group
+  influence: 0.9
+  key_trait: returns focus
+  key_traits: []
+  name: Institutional Investors Consortium
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.5
+  rigidity: 0.6
+  role: Major shareholders and capital market stakeholders
+  tier: 2
+- archetype: media
+  bio: ''
+  category: media
+  communication_style: ''
+  domain_attributes: {}
+  id: media_outlet
+  influence: 0.8
+  key_trait: agenda setting
+  key_traits: []
+  name: National Business Press
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.2
+  rigidity: 0.4
+  role: Shapes public narrative and external interpretation
+  tier: 2
+- archetype: government
+  bio: ''
+  category: government
+  communication_style: ''
+  domain_attributes: {}
+  id: regulator_watch
+  influence: 0.7
+  key_trait: compliance enforcement
+  key_traits: []
+  name: Labor and Employment Regulators
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.3
+  rigidity: 0.8
+  role: Monitors compliance with labor law and severance obligations
+  tier: 2
+language: en
+metrics_to_track:
+- employee morale
+- manager attrition
+- voluntary departures
+- severance uptake
+- productivity
+- project delivery speed
+- AI workflow adoption
+- internal trust in leadership
+- union activity
+- media sentiment
+- investor confidence
+- customer confidence
+- legal/regulatory scrutiny
+- operational disruption
+name: Flat Org AI Restructuring
+num_rounds: 4
+position_axis:
+  negative_label: Opposes the restructuring; sees it as harmful, reckless, or exploitative
+  neutral_label: Mixed, pragmatic, or undecided
+  positive_label: Supports the restructuring; sees it as necessary, efficient, or
+    visionary
+round_events: {}
+scenario_context: The company is under pressure to improve margins, accelerate product
+  delivery, and demonstrate leadership in AI adoption amid intense competition. Internally,
+  the firm has a large global workforce with established management hierarchies, active
+  employee advocacy networks, and high dependence on cross-functional coordination.
+  Externally, investors are watching for efficiency gains, labor groups are preparing
+  responses, and the broader tech sector is evaluating whether this becomes a template
+  for other firms.
+timeline_labels:
+- Week 1
+- Week 2
+- Week 3
+- Week 4
+- Week 5
+- Week 6
+- Week 7
+- Week 8
+timeline_unit: week

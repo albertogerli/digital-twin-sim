@@ -1,0 +1,461 @@
+budget_usd: 3.0
+channels:
+- channel_type: official
+  description: Official announcements and clarifications from the fashion house
+  id: brand_statement
+  max_length: 280
+- channel_type: short_form
+  description: Short-form consumer reactions, praise, backlash, and debate
+  id: consumer_social
+  max_length: 280
+- channel_type: long_form
+  description: Trade media, analyst commentary, and competitor responses
+  id: industry_press
+  max_length: 280
+- channel_type: short_form
+  description: Animal rights and environmental advocacy messaging
+  id: activist_campaigns
+  max_length: 280
+- channel_type: long_form
+  description: High-end consumer and collector discussion about craftsmanship and
+    status
+  id: luxury_forum
+  max_length: 280
+citizen_clusters:
+- demographic_attributes:
+    age_range: 18-30
+    education: mixed to university
+    income: low to mid
+    location: major cities
+  description: Young city consumers who prioritize ethics, climate, and trend alignment.
+  engagement_base: 0.78
+  id: eco_young_urban
+  info_channel: consumer_social
+  name: Eco-conscious Urban Youth
+  position: 0.85
+  size: 1200000
+- demographic_attributes:
+    age_range: 35-65
+    education: university
+    income: high
+    location: urban and suburban
+  description: Affluent buyers who value craftsmanship, exclusivity, and classic materials.
+  engagement_base: 0.62
+  id: luxury_traditionalists
+  info_channel: luxury_forum
+  name: Heritage Luxury Traditionalists
+  position: -0.75
+  size: 650000
+- demographic_attributes:
+    age_range: 25-55
+    education: mixed
+    income: mid
+    location: national
+  description: Mainstream consumers who care about price, durability, and brand reputation.
+  engagement_base: 0.45
+  id: pragmatic_middle_class
+  info_channel: consumer_social
+  name: Pragmatic Middle-Class Shoppers
+  position: 0.05
+  size: 2400000
+- demographic_attributes:
+    age_range: 18-50
+    education: mixed to university
+    income: low to high
+    location: urban and national
+  description: Highly motivated consumers who strongly oppose animal-derived materials.
+  engagement_base: 0.82
+  id: ethical_vegans
+  info_channel: activist_campaigns
+  name: Ethical Vegans and Animal Welfare Supporters
+  position: 0.98
+  size: 900000
+- demographic_attributes:
+    age_range: 30-60
+    education: university to postgraduate
+    income: high
+    location: global cities
+  description: High-income consumers open to paying more for verified low-impact materials.
+  engagement_base: 0.6
+  id: sustainability_elites
+  info_channel: industry_press
+  name: Sustainability-Focused Affluent Buyers
+  position: 0.7
+  size: 420000
+- demographic_attributes:
+    age_range: 28-58
+    education: mixed
+    income: mid to high
+    location: urban
+  description: Consumers who are curious about innovation but doubt alternatives can
+    match leather quality.
+  engagement_base: 0.5
+  id: skeptical_craft_buyers
+  info_channel: luxury_forum
+  name: Skeptical Craft Buyers
+  position: -0.35
+  size: 780000
+description: A leading Italian luxury fashion brand announces a full transition away
+  from animal leather toward lab-grown and plant-based materials. The simulation tracks
+  how consumers, competitors, activists, analysts, and regulators react as the brand
+  tries to protect its prestige while redefining sustainability and product quality.
+domain: political
+elite_agents:
+- archetype: business_leader
+  bio: A strategic executive focused on brand reinvention, sustainability, and global
+    growth.
+  category: ''
+  communication_style: polished, visionary, brand-safe
+  domain_attributes: {}
+  id: ceo_brand
+  influence: 0.95
+  key_trait: ''
+  key_traits:
+  - strategic
+  - media-savvy
+  name: Elena Rinaldi
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.8
+  rigidity: 0.55
+  role: CEO of the luxury fashion house
+  tier: 1
+- archetype: designer
+  bio: A celebrated designer balancing heritage aesthetics with material innovation.
+  category: ''
+  communication_style: artistic, nuanced, persuasive
+  domain_attributes: {}
+  id: creative_director
+  influence: 0.82
+  key_trait: ''
+  key_traits:
+  - aesthetic-driven
+  - innovative
+  name: Marco Bellini
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.4
+  rigidity: 0.45
+  role: Creative Director
+  tier: 1
+- archetype: analyst
+  bio: An industry analyst evaluating how material changes affect pricing, demand,
+    and brand equity.
+  category: ''
+  communication_style: data-driven, measured, comparative
+  domain_attributes: {}
+  id: luxury_analyst
+  influence: 0.72
+  key_trait: ''
+  key_traits:
+  - skeptical
+  - evidence-based
+  name: Sofia Conti
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.1
+  rigidity: 0.35
+  role: Luxury market analyst
+  tier: 1
+- archetype: activist
+  bio: A prominent advocate pushing luxury brands to end all animal-derived materials.
+  category: ''
+  communication_style: urgent, moral, confrontational
+  domain_attributes: {}
+  id: animal_rights_leader
+  influence: 0.78
+  key_trait: ''
+  key_traits:
+  - principled
+  - mobilizing
+  name: Giulia Ferraro
+  platform_primary: ''
+  platform_secondary: ''
+  position: 1.0
+  rigidity: 0.9
+  role: Animal rights campaigner
+  tier: 1
+- archetype: expert
+  bio: A researcher assessing the lifecycle impacts of alternative materials and supply
+    chains.
+  category: ''
+  communication_style: technical, balanced, explanatory
+  domain_attributes: {}
+  id: environmental_scientist
+  influence: 0.68
+  key_trait: ''
+  key_traits:
+  - analytical
+  - credible
+  name: Dr. Luca Moretti
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.7
+  rigidity: 0.4
+  role: Sustainability scientist
+  tier: 1
+- archetype: industry_representative
+  bio: A defender of traditional leather craftsmanship and artisanal supply networks.
+  category: ''
+  communication_style: defensive, heritage-focused, authoritative
+  domain_attributes: {}
+  id: heritage_crafts_spokesperson
+  influence: 0.7
+  key_trait: ''
+  key_traits:
+  - traditionalist
+  - protective
+  name: Paolo Vitale
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.8
+  rigidity: 0.8
+  role: Leather craftsmanship association spokesperson
+  tier: 1
+- archetype: business_leader
+  bio: A rival executive watching whether the move creates market advantage or consumer
+    backlash.
+  category: ''
+  communication_style: careful, competitive, diplomatic
+  domain_attributes: {}
+  id: competitor_ceo
+  influence: 0.77
+  key_trait: ''
+  key_traits:
+  - opportunistic
+  - risk-aware
+  name: Chiara De Santis
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.2
+  rigidity: 0.5
+  role: CEO of a competing luxury brand
+  tier: 1
+- archetype: influencer
+  bio: A trend-focused creator shaping younger consumers' views on luxury and ethics.
+  category: ''
+  communication_style: fast-paced, opinionated, visual
+  domain_attributes: {}
+  id: consumer_influencer
+  influence: 0.74
+  key_trait: ''
+  key_traits:
+  - trendsetting
+  - responsive
+  name: Nadia Rossi
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.3
+  rigidity: 0.25
+  role: Fashion and lifestyle influencer
+  tier: 1
+- archetype: business_leader
+  bio: An operator focused on store performance, customer objections, and product
+    rollout logistics.
+  category: ''
+  communication_style: pragmatic, operational, concise
+  domain_attributes: {}
+  id: retail_director
+  influence: 0.63
+  key_trait: ''
+  key_traits:
+  - practical
+  - customer-focused
+  name: Alessandro Greco
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.2
+  rigidity: 0.3
+  role: Global retail and merchandising director
+  tier: 1
+- archetype: journalist
+  bio: A reporter translating the debate into mainstream luxury and business coverage.
+  category: ''
+  communication_style: balanced, inquisitive, headline-oriented
+  domain_attributes: {}
+  id: fashion_journalist
+  influence: 0.66
+  key_trait: ''
+  key_traits:
+  - neutral
+  - agenda-setting
+  name: Francesca Lombardi
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.0
+  rigidity: 0.2
+  role: Fashion editor at a major business publication
+  tier: 1
+initial_event: A major Italian luxury fashion house announces it will eliminate animal
+  leather from all future collections and replace it with lab-grown and plant-based
+  alternatives. The company frames the move as a long-term sustainability and innovation
+  strategy, promising premium quality and traceability. The announcement immediately
+  sparks debate over whether the shift enhances or undermines luxury identity, craftsmanship,
+  durability, and price justification. Industry rivals, consumer groups, animal rights
+  advocates, and environmental organizations begin issuing public statements and social
+  media campaigns.
+institutional_agents:
+- archetype: company
+  bio: ''
+  category: company
+  communication_style: ''
+  domain_attributes: {}
+  id: brand_house
+  influence: 0.98
+  key_trait: brand-defining innovator
+  key_traits: []
+  name: Maison Aurelia
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.8
+  rigidity: 0.6
+  role: Luxury fashion brand making the transition
+  tier: 2
+- archetype: industry_association
+  bio: ''
+  category: industry_association
+  communication_style: ''
+  domain_attributes: {}
+  id: competitor_group
+  influence: 0.74
+  key_trait: protective of sector norms
+  key_traits: []
+  name: Italian Luxury Consortium
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.1
+  rigidity: 0.55
+  role: Industry association of rival fashion houses
+  tier: 2
+- archetype: ngo
+  bio: ''
+  category: ngo
+  communication_style: ''
+  domain_attributes: {}
+  id: animal_rights_ngo
+  influence: 0.83
+  key_trait: highly mobilized
+  key_traits: []
+  name: No Leather Now Europe
+  platform_primary: ''
+  platform_secondary: ''
+  position: 1.0
+  rigidity: 0.92
+  role: Animal welfare advocacy organization
+  tier: 2
+- archetype: ngo
+  bio: ''
+  category: ngo
+  communication_style: ''
+  domain_attributes: {}
+  id: environmental_ngo
+  influence: 0.7
+  key_trait: science-backed advocacy
+  key_traits: []
+  name: Green Materials Alliance
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.75
+  rigidity: 0.5
+  role: Environmental advocacy and research group
+  tier: 2
+- archetype: consumer_group
+  bio: ''
+  category: consumer_group
+  communication_style: ''
+  domain_attributes: {}
+  id: consumer_watchdog
+  influence: 0.58
+  key_trait: value and transparency focused
+  key_traits: []
+  name: Italian Consumer Forum
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.15
+  rigidity: 0.35
+  role: Consumer protection organization
+  tier: 2
+- archetype: regulator
+  bio: ''
+  category: regulator
+  communication_style: ''
+  domain_attributes: {}
+  id: trade_regulator
+  influence: 0.81
+  key_trait: claims verification authority
+  key_traits: []
+  name: EU Fashion Materials Observatory
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.2
+  rigidity: 0.7
+  role: Materials and claims oversight body
+  tier: 2
+- archetype: labor_union
+  bio: ''
+  category: labor_union
+  communication_style: ''
+  domain_attributes: {}
+  id: labor_union
+  influence: 0.62
+  key_trait: job security advocate
+  key_traits: []
+  name: Italian Leather Workers Federation
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.85
+  rigidity: 0.88
+  role: Labor organization representing leather artisans
+  tier: 2
+- archetype: distribution_network
+  bio: ''
+  category: distribution_network
+  communication_style: ''
+  domain_attributes: {}
+  id: retail_platform
+  influence: 0.64
+  key_trait: sales continuity focused
+  key_traits: []
+  name: Global Luxury Retail Network
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.05
+  rigidity: 0.4
+  role: Wholesale and retail distribution partner network
+  tier: 2
+language: en
+metrics_to_track:
+- public_support_for_transition
+- brand_reputation_score
+- consumer_purchase_intent
+- perceived_product_quality
+- perceived_luxury_authenticity
+- media_sentiment
+- competitor_adoption_pressure
+- activist_mobilization_level
+- environmental_credibility
+- supply_chain_confidence
+- price_sensitivity
+- regulatory_attention
+name: Luxury Leather Transition Debate
+num_rounds: 6
+position_axis:
+  negative_label: Opposes the leather ban and favors traditional animal leather
+  neutral_label: Mixed or pragmatic stance focused on tradeoffs
+  positive_label: Supports the leather ban and favors lab-grown/plant-based alternatives
+round_events: {}
+scenario_context: Italy's luxury fashion sector is a global symbol of craftsmanship,
+  heritage, and premium branding, making material choices highly visible and politically
+  salient. The transition away from animal leather intersects with broader European
+  debates on sustainability regulation, ethical consumption, industrial innovation,
+  and the future of luxury manufacturing.
+timeline_labels:
+- Week 1
+- Week 2
+- Week 3
+- Week 4
+- Week 5
+- Week 6
+- Week 7
+- Week 8
+timeline_unit: week

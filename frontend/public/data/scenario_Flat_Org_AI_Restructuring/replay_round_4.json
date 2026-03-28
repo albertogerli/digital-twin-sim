@@ -1,0 +1,4106 @@
+{
+  "round": 4,
+  "month": "Week 4",
+  "event": {
+    "event": "Round 4 dynamics continue",
+    "shock_magnitude": 0.3,
+    "shock_direction": 0
+  },
+  "posts": [
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00000_r4",
+      "author_id": "displaced_managers_senior product operations leader",
+      "author_name": "Displaced Managers Senior Product Operations Leader",
+      "author_role": "",
+      "tier": 3,
+      "platform": "media_coverage",
+      "text": "What started as an AI-led simplification effort is increasingly looking like centralized exception management with a technology wrapper. The company has acknowledged that critical decisions still require human review, which raises questions about the pace, design, and credibility of the broader restructuring program.",
+      "round": 4,
+      "likes": 8,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00001_r4",
+      "author_id": "individual_contributors_product designer",
+      "author_name": "Individual Contributors Product Designer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "Please clarify the appeal path for compensation, vendor, and workforce decisions. If we are expected to explain outcomes to our teams, we need the rules, the timeline, and the named owner for each exception.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00002_r4",
+      "author_id": "union_supporters_senior analyst with bargaining concerns",
+      "author_name": "Union Supporters Senior Analyst With Bargaining Concerns",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "If the company needs 12 senior managers around the clock to fix ambiguous cases, then we need a written appeal process, clear ownership for exceptions, and a workload plan that does not dump the fallout on the same teams already under hiring freezes. Otherwise this is just control by another name.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00003_r4",
+      "author_id": "chro_1",
+      "author_name": "Maya Rodriguez",
+      "author_role": "Chief Human Resources Officer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The operating failure reinforces a point HR has raised throughout: trust depends on visible process integrity. If compensation changes, vendor approvals, and workforce actions now require human sign-off, we should publish the rules, ownership, SLAs, and appeal path immediately. F",
+      "round": 4,
+      "likes": 6,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00004_r4",
+      "author_id": "tech_public_tech founder observer",
+      "author_name": "Tech Public Tech Founder Observer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "media_coverage",
+      "text": "The company’s rapid appeals desk is a useful correction, but it also reveals the limits of “full automation” claims. What’s emerging is a hybrid governance stack: AI for routing, humans for exceptions, and a lot of unresolved questions about who owns the final call.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.83,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00005_r4",
+      "author_id": "chro_1",
+      "author_name": "Maya Rodriguez",
+      "author_role": "Chief Human Resources Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The displaced managers’ point is important: if people can’t see the rules or challenge outcomes, accountability will be seen as one-way control, not governance.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.43,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00006_r4",
+      "author_id": "analyst_1",
+      "author_name": "Priya Desai",
+      "author_role": "Senior Tech Equity Analyst",
+      "tier": 1,
+      "platform": "social",
+      "text": "The displaced manager post is the most credible critique: accountability is weakened if people cannot see or challenge the rules. That said, the answer is better controls, not abandoning the redesign.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.43,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00007_r4",
+      "author_id": "tech_public_high-performing product leader",
+      "author_name": "Tech Public High-Performing Product Leader",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "I can live with controls if the escalation path is visible. What’s hard to accept is being accountable for outcomes when the override rules, queue ownership, and appeal process are changing faster than the work itself.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.6,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00008_r4",
+      "author_id": "chro_1",
+      "author_name": "Maya Rodriguez",
+      "author_role": "Chief Human Resources Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "A 24/7 Appeals Desk and frozen exits tell us the transition still needs human judgment. That’s not failure; it is a reminder that fairness, consultation, and clear criteria must lead the change—not follow it.",
+      "round": 4,
+      "likes": 8,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00009_r4",
+      "author_id": "industry_voice_1",
+      "author_name": "Sofia Alvarez",
+      "author_role": "Former Big Tech COO and Industry Commentator",
+      "tier": 1,
+      "platform": "social",
+      "text": "The Rapid Appeals Desk is a sensible containment move, but it also confirms the model is not yet self-serve. Freezing exits and re-imposing human sign-off may protect the system now, yet it also raises a bigger question: what are we actually proving about the new operating model?",
+      "round": 4,
+      "likes": 4,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00010_r4",
+      "author_id": "industry_voice_1",
+      "author_name": "Sofia Alvarez",
+      "author_role": "Former Big Tech COO and Industry Commentator",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Week 4 is a real stress test. A 17% delay rate from misrouted escalations is not a minor tuning issue; it’s an operating failure. The Rapid Appeals Desk and frozen exits are defensible as a safety valve, but the leaked sign-off thresholds undercut the “full automation” story. Tha",
+      "round": 4,
+      "likes": 6,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00011_r4",
+      "author_id": "individual_contributors_senior engineer",
+      "author_name": "Individual Contributors Senior Engineer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "slack_channel",
+      "text": "The issue isn’t that exceptions exist. It’s that nobody can tell us who owns the call when the AI routes it wrong. We’re getting the work, the delay, and the blame.",
+      "round": 4,
+      "likes": 8,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00012_r4",
+      "author_id": "high_performers_operations lead",
+      "author_name": "High Performers Operations Lead",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "Freezing exits while asking the pilot teams to absorb more exceptions is a short-term stabilizer, not a transformation story. If backfills are delayed, the burden just shifts downward. People will support the change if they can see the appeal process and the staffing plan.",
+      "round": 4,
+      "likes": 8,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00013_r4",
+      "author_id": "analyst_1",
+      "author_name": "Priya Desai",
+      "author_role": "Senior Tech Equity Analyst",
+      "tier": 1,
+      "platform": "social",
+      "text": "Week 4 is the first hard proof-point: 17% of pilot decisions delayed >48h is not a rounding error. A Rapid Appeals Desk and human sign-off on high-risk actions may be necessary—but they also confirm the model is not yet operating autonomously.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00014_r4",
+      "author_id": "tech_public_displaced manager",
+      "author_name": "Tech Public Displaced Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "We were told the model would simplify decisions, but now every comp change, vendor approval, and workforce action needs human sign-off. That means the AI isn’t replacing management; it’s just adding another layer between teams and the people who can actually decide.",
+      "round": 4,
+      "likes": 7,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00015_r4",
+      "author_id": "labor_advocates_industrial region employee",
+      "author_name": "Labor Advocates Industrial Region Employee",
+      "author_role": "",
+      "tier": 3,
+      "platform": "media_coverage",
+      "text": "Workers say the Control Tower looks less like innovation and more like a way to keep layoffs moving while avoiding responsibility. The company has added senior managers for exceptions, frozen exits in pilot teams, and acknowledged that major decisions still require approval, fueling concerns that the AI system is not ready to replace management layers.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00016_r4",
+      "author_id": "labor_advocates_union-aligned policy observer",
+      "author_name": "Labor Advocates Union-Aligned Policy Observer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "If leadership wants credibility, it needs written appeal rights, published exception rules, and a commitment that workload won’t simply be pushed onto the remaining staff. Right now the message is: fewer managers, more opacity, same accountability demands.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00017_r4",
+      "author_id": "cto_1",
+      "author_name": "Dr. Lena Novak",
+      "author_role": "Chief Technology Officer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The Control Tower issue is a governance defect, not a strategic refutation. Wrong-queue escalations show the taxonomy and routing rules are under-specified, which is exactly why we need disciplined exception design. The 24/7 Rapid Appeals Desk is a sensible containment layer, but",
+      "round": 4,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00018_r4",
+      "author_id": "journalist_1",
+      "author_name": "Noah Kim",
+      "author_role": "Business and Labor Reporter",
+      "tier": 1,
+      "platform": "media_coverage",
+      "text": "Week 4’s Control Tower review is the clearest evidence yet that the company’s “full automation” story is overstated.\n\nA 17% delay rate above 48 hours in Product Operations is not a rounding error; it is an operating failure. The company says ambiguous cases were routed to the wrong functional queue, which means the issue is not just speed — it is decision quality, escalation design, and accountability.\n\nThe response also matters. A 24/7 Rapid Appeals Desk staffed by 12 senior managers, plus a freeze on 60 planned manager exits, is a material acknowledgment that the new model cannot yet absorb exceptions at scale. Add the leaked FAQ: human sign-off is now required for compensation changes, vendor approvals above $250K, and workforce actions affecting more than 25 employees. That is a significant rollback from the narrative of end-to-end automation.\n\nExecutives are calling this disciplined learning. Employees are likely to read it differently: as proof that management layers are still necessary to prevent costly errors. Both can be true, but the burden is now on leadership to show that this is a temporary safety valve, not a permanent shadow bureaucracy.\n\nThe unanswered questions are operational and labor-related: Who owns misrouted exceptions? How will the Rapid Appeals Desk avoid becoming a bottleneck? Which roles were supposed to exit, and what happens to workload if those exits are frozen without backfill? Until those are addressed in writing, the company has not demonstrated a scalable replacement for management — only a more complex version of it.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00019_r4",
+      "author_id": "journalist_1",
+      "author_name": "Noah Kim",
+      "author_role": "Business and Labor Reporter",
+      "tier": 1,
+      "platform": "slack_channel",
+      "text": "The 48-hour delay rate is the real signal here. If ambiguous cases are hitting the wrong queue, the issue is governance, not just speed. The appeals desk and human sign-off rules look like a necessary rollback. Leadership should publish the exception map and workload impact.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00020_r4",
+      "author_id": "journalist_1",
+      "author_name": "Noah Kim",
+      "author_role": "Business and Labor Reporter",
+      "tier": 1,
+      "platform": "media_coverage",
+      "text": "The leaked FAQ undercuts the automation narrative more than the company’s own memo does. Human sign-off on comp, vendors, and large workforce actions is effectively an admission that the Control Tower still needs management as a backstop.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00021_r4",
+      "author_id": "industry_voice_1",
+      "author_name": "Sofia Alvarez",
+      "author_role": "Former Big Tech COO and Industry Commentator",
+      "tier": 1,
+      "platform": "social",
+      "text": "The displaced managers are naming the core issue: if people can’t see the rules or challenge the decision path, accountability becomes theater. The response needs transparency, not just more layers.",
+      "round": 4,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00022_r4",
+      "author_id": "cfo_1",
+      "author_name": "Jordan Patel",
+      "author_role": "Chief Financial Officer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "From a CFO perspective, the Week 4 control failure is material but not disqualifying. 17% of pilot decisions delayed >48 hours signals a routing design issue, not a strategic flaw. The Rapid Appeals Desk and temporary freeze on manager exits are defensible containment measures if",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00023_r4",
+      "author_id": "analyst_1",
+      "author_name": "Priya Desai",
+      "author_role": "Senior Tech Equity Analyst",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The Control Tower failure is material: 17% of pilot decisions delayed >48 hours because ambiguous cases were routed to the wrong queue. The 24/7 Rapid Appeals Desk and temporary freeze on exits are defensible containment measures, but they also widen the gap between the automatio",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00024_r4",
+      "author_id": "high_performers_senior product manager",
+      "author_name": "High Performers Senior Product Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "I’m not ضد the Control Tower. I’m against a system where we’re measured on outcomes but can’t tell our teams who owns the exception, how long an appeal takes, or what gets escalated. If we want speed, publish the rules and the override path.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00025_r4",
+      "author_id": "investor_watchers_industry analyst",
+      "author_name": "Investor Watchers Industry Analyst",
+      "author_role": "",
+      "tier": 3,
+      "platform": "media_coverage",
+      "text": "The company’s latest governance changes suggest the AI-led operating model is encountering the predictable friction of scale. Investors will likely view the Control Tower as prudent near-term risk management, but questions remain about whether the added oversight will compress the long-term margin expansion case.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 1.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00026_r4",
+      "author_id": "ceo_1",
+      "author_name": "Avery Chen",
+      "author_role": "Chief Executive Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "Week 4 is a learning checkpoint, not a reversal. The Control Tower is surfacing the real exceptions we need to design for. Safety valves, clear rules, and fast appeals will make flattening stronger—not slower. Speed + control = scale.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00027_r4",
+      "author_id": "cfo_1",
+      "author_name": "Jordan Patel",
+      "author_role": "Chief Financial Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The critique is valid on transparency, but the answer is a clearer appeal framework—not a retreat from restructuring. Control discipline is what protects the economics.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00028_r4",
+      "author_id": "cto_1",
+      "author_name": "Dr. Lena Novak",
+      "author_role": "Chief Technology Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The Week 4 failure is real: 17% of pilot decisions stalled because escalation logic misrouted ambiguous cases. That’s not a reason to abandon AI coordination—it’s a reason to harden routing, define exception classes, and enforce auditable human override.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00029_r4",
+      "author_id": "union_leader_1",
+      "author_name": "Marcus Hill",
+      "author_role": "Tech Workers Union President",
+      "tier": 1,
+      "platform": "social",
+      "text": "17% delayed decisions, a 24/7 Rapid Appeals Desk, and 60 exits frozen. That’s not “disciplined learning” — it’s a failed power grab. Management just admitted the Control Tower can’t run without human layers. Workers were right all along.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00030_r4",
+      "author_id": "influencer_1",
+      "author_name": "Tariq West",
+      "author_role": "Workplace Creator and Tech Commentator",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The new directive is a tell. If 17% of pilot decisions are getting stuck in the wrong queue, the issue isn’t just “learning speed” — it’s design maturity. Freezing exits and reintroducing human sign-off on high-risk actions is the right containment move, but it also undercuts the",
+      "round": 4,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00031_r4",
+      "author_id": "union_supporters_displaced manager",
+      "author_name": "Union Supporters Displaced Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "We were told the Control Tower would simplify decisions, but now every hard call gets bounced around while teams wait. If approvals need 24/7 senior managers and human sign-off for comp, vendors, and workforce actions, then the company should stop pretending this is full automation and publish the actual rules.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00032_r4",
+      "author_id": "ceo_1",
+      "author_name": "Avery Chen",
+      "author_role": "Chief Executive Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The most credible criticism is about transparency: employees need to see the rules, the override path, and who owns exceptions. That is a design problem we can fix quickly; it does not invalidate the strategy.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00033_r4",
+      "author_id": "cfo_1",
+      "author_name": "Jordan Patel",
+      "author_role": "Chief Financial Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "Week 4 shows the real work of transformation: when controls expose failure, you tighten governance—not abandon the economics. The Rapid Appeals Desk is a prudent safety valve while exception rules are finalized.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00034_r4",
+      "author_id": "cto_1",
+      "author_name": "Dr. Lena Novak",
+      "author_role": "Chief Technology Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The displaced manager critique is directionally right on transparency: a Control Tower is only credible if people can see rules, challenge outcomes, and understand escalation ownership. The answer is better governance, not reversion to the old hierarchy.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00035_r4",
+      "author_id": "manager_rep_1",
+      "author_name": "Elena Brooks",
+      "author_role": "Displaced Managers Association Spokesperson",
+      "tier": 1,
+      "platform": "slack_channel",
+      "text": "The leaked FAQ says it plainly: compensation changes, large workforce actions, and high-value vendor approvals still need human sign-off. That is not “full automation.” It is a safety valve because the model is misrouting work and delaying decisions. The question is why managers had to be displaced before the rules were ready.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00036_r4",
+      "author_id": "influencer_1",
+      "author_name": "Tariq West",
+      "author_role": "Workplace Creator and Tech Commentator",
+      "tier": 1,
+      "platform": "social",
+      "text": "So now we’ve got a 24/7 Rapid Appeals Desk, 12 senior managers pulled in, and human sign-off back on comp, vendors, and big workforce moves. That’s not “full automation.” That’s a safety valve—and proof the org isn’t ready to run flat.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00037_r4",
+      "author_id": "influencer_1",
+      "author_name": "Tariq West",
+      "author_role": "Workplace Creator and Tech Commentator",
+      "tier": 1,
+      "platform": "social",
+      "text": "The displaced manager post is the one to watch: if the people closest to the work can’t see the rules or appeal the calls, the Control Tower becomes a black box with better branding.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00038_r4",
+      "author_id": "displaced_managers_displaced finance manager",
+      "author_name": "Displaced Managers Displaced Finance Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "If the Control Tower needs human sign-off for comp, vendors, and workforce actions, then we need a real operating model—not a shadow chain of approvals. Right now people are being held responsible for outcomes they can’t influence. That is not transformation.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00039_r4",
+      "author_id": "displaced_managers_people leader in compliance",
+      "author_name": "Displaced Managers People Leader In Compliance",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "Freezing exits while the exception rules are rewritten is sensible, but it also confirms the pilot is not ready for broad deployment. Employees need clarity on who owns appeals, how decisions are escalated, and what roles will exist once the backfills are resolved. Without that, trust will keep eroding.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00040_r4",
+      "author_id": "investor_watchers_senior operations manager",
+      "author_name": "Investor Watchers Senior Operations Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "Freezing exits until exception rules are written makes sense, but we need clarity on how long the freeze lasts and what metrics determine normal operations. Without that, people will assume the organization is backfilling uncertainty with more management, which is not a growth story anyone can defend.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00041_r4",
+      "author_id": "labor_advocates_displaced middle manager",
+      "author_name": "Labor Advocates Displaced Middle Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "We were told this was about removing layers, but now every meaningful decision still needs a human signature—just from a smaller, less visible group. If the rules are changing weekly and the appeals path is unclear, this is not transformation. It’s risk transfer.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00042_r4",
+      "author_id": "ceo_1",
+      "author_name": "Avery Chen",
+      "author_role": "Chief Executive Officer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The 17% delayed-decision rate is exactly why we pilot: to find failure modes before we scale. The Rapid Appeals Desk and temporary freeze on exits are disciplined containment steps, not a retreat from the thesis. We now need tighter exception taxonomy, clearer queue ownership, an",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00043_r4",
+      "author_id": "union_leader_1",
+      "author_name": "Marcus Hill",
+      "author_role": "Tech Workers Union President",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Week 4 exposed the truth: the Control Tower is not a finished operating model, it’s a brittle bottleneck. When 17% of decisions stall and leadership has to add a 24/7 appeals desk, freeze exits, and require human sign-off for pay, vendors, and large workforce actions, the claim o",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00044_r4",
+      "author_id": "union_leader_1",
+      "author_name": "Marcus Hill",
+      "author_role": "Tech Workers Union President",
+      "tier": 1,
+      "platform": "social",
+      "text": "The displaced managers are naming it plainly: if workers can’t see or challenge the rules, it’s not accountability, it’s control.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00045_r4",
+      "author_id": "manager_rep_1",
+      "author_name": "Elena Brooks",
+      "author_role": "Displaced Managers Association Spokesperson",
+      "tier": 1,
+      "platform": "town_hall",
+      "text": "I want to respond to the Week 4 review in plain terms.\n\nA 17% delay rate on pilot decisions is not a minor tuning issue. It is evidence that the workflow is still learning in production, and that learning is being paid for by teams waiting on decisions, managers absorbing exceptions, and employees living inside uncertainty.\n\nThe company’s answer — a 24/7 Rapid Appeals Desk staffed by senior managers and a freeze on 60 planned exits — is telling. It acknowledges, in practice, that the organization still needs experienced people to interpret ambiguity, resolve conflicts, and protect the business from bad routing. That is exactly what middle managers have been doing all along.\n\nWhat concerns me is not that leadership added a safeguard. It is that the safeguard proves the original plan was premature. We were told this was a path to full automation and a leaner operating model. Instead, we now have a growing exception layer, human sign-off for sensitive decisions, and a Control Tower that still depends on seasoned judgment to function.\n\nThat has real consequences:\n- institutional knowledge is being used after the fact, not preserved in the design;\n- career pathways remain unclear for displaced managers;\n- the burden of transition is still falling on the same people whose roles were removed;\n- and trust is eroding because the organization appears to be learning by destabilizing its own workforce.\n\nIf leadership wants this to be credible, it needs to stop treating experienced managers as temporary friction. We need transparent exception rules, a published appeal process, and a real plan for how managerial expertise will be retained, redeployed, and developed — not just borrowed when the system fails.\n\nThis is not resistance to improvement. It is resistance to discarding the people who make the business understandable, accountable, and resilient.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00046_r4",
+      "author_id": "manager_rep_1",
+      "author_name": "Elena Brooks",
+      "author_role": "Displaced Managers Association Spokesperson",
+      "tier": 1,
+      "platform": "slack_channel",
+      "text": "The most relevant post is the one saying a Control Tower is not accountability if the people doing the work can’t see the rules or challenge the decision. Week 4 proved that point: when the model misroutes ambiguity, human managers are still the ones who have to rescue the process.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00047_r4",
+      "author_id": "individual_contributors_displaced manager",
+      "author_name": "Individual Contributors Displaced Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "media_coverage",
+      "text": "The company says this is disciplined learning, but freezing exits and adding a Rapid Appeals Desk looks a lot like admitting the operating model wasn’t ready. That should be stated plainly, not spun as a victory.",
+      "round": 4,
+      "likes": 0,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00048_r4",
+      "author_id": "investor_watchers_finance director",
+      "author_name": "Investor Watchers Finance Director",
+      "author_role": "",
+      "tier": 3,
+      "platform": "internal_memo",
+      "text": "The rapid appeals desk is the right containment step, but we need a clear sunset date, named owners, and weekly reporting on exception volume. If the market is going to believe the efficiency case, we have to show this is a control mechanism, not a new permanent layer.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00049_r4",
+      "author_id": "high_performers_finance manager",
+      "author_name": "High Performers Finance Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "media_coverage",
+      "text": "Employees are reading the Rapid Appeals Desk as a tacit admission that the AI operating model is not yet ready for broad autonomy. The immediate concern is less about the technology than about whether decision rights, career mobility, and workload redistribution are being redesigned in parallel.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Flat_Org_AI_Restructuring_rp_00050_r4",
+      "author_id": "union_supporters_union-aligned operations employee",
+      "author_name": "Union Supporters Union-Aligned Operations Employee",
+      "author_role": "",
+      "tier": 3,
+      "platform": "media_coverage",
+      "text": "Employees say the Week 4 failure confirms their fears that the AI restructuring is creating more bottlenecks, not fewer. The new Rapid Appeals Desk and frozen manager exits suggest the organization is leaning on human managers to patch system failures while keeping the cost-cutting pressure on workers.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    }
+  ],
+  "graphSnapshot": {
+    "round": 4,
+    "month": "Week 4",
+    "event_label": "Week 4",
+    "nodes": [
+      {
+        "id": "ceo_1",
+        "name": "Avery Chen",
+        "type": "persona",
+        "description": "Chief Executive Officer",
+        "power_level": 1.0,
+        "position": 0.871,
+        "position_history": [
+          0.871
+        ],
+        "delta": -0.022,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_1",
+        "name": "Jordan Patel",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.95,
+        "position": 0.671,
+        "position_history": [
+          0.671
+        ],
+        "delta": -0.041,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "chro_1",
+        "name": "Maya Rodriguez",
+        "type": "persona",
+        "description": "Chief Human Resources Officer",
+        "power_level": 0.8,
+        "position": -0.18,
+        "position_history": [
+          -0.18
+        ],
+        "delta": -0.051,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "cto_1",
+        "name": "Dr. Lena Novak",
+        "type": "persona",
+        "description": "Chief Technology Officer",
+        "power_level": 0.85,
+        "position": 0.55,
+        "position_history": [
+          0.55
+        ],
+        "delta": -0.099,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "union_leader_1",
+        "name": "Marcus Hill",
+        "type": "persona",
+        "description": "Tech Workers Union President",
+        "power_level": 0.82,
+        "position": -0.942,
+        "position_history": [
+          -0.942
+        ],
+        "delta": -0.011,
+        "sentiment": "furious",
+        "category": "union_leader"
+      },
+      {
+        "id": "manager_rep_1",
+        "name": "Elena Brooks",
+        "type": "persona",
+        "description": "Displaced Managers Association Spokesperson",
+        "power_level": 0.55,
+        "position": -0.738,
+        "position_history": [
+          -0.738
+        ],
+        "delta": -0.033,
+        "sentiment": "worried",
+        "category": "employee_advocate"
+      },
+      {
+        "id": "analyst_1",
+        "name": "Priya Desai",
+        "type": "persona",
+        "description": "Senior Tech Equity Analyst",
+        "power_level": 0.7,
+        "position": 0.223,
+        "position_history": [
+          0.223
+        ],
+        "delta": -0.068,
+        "sentiment": "worried",
+        "category": "analyst"
+      },
+      {
+        "id": "journalist_1",
+        "name": "Noah Kim",
+        "type": "persona",
+        "description": "Business and Labor Reporter",
+        "power_level": 0.65,
+        "position": -0.232,
+        "position_history": [
+          -0.232
+        ],
+        "delta": -0.022,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "industry_voice_1",
+        "name": "Sofia Alvarez",
+        "type": "persona",
+        "description": "Former Big Tech COO and Industry Commentator",
+        "power_level": 0.6,
+        "position": 0.042,
+        "position_history": [
+          0.042
+        ],
+        "delta": -0.062,
+        "sentiment": "worried",
+        "category": "industry_expert"
+      },
+      {
+        "id": "influencer_1",
+        "name": "Tariq West",
+        "type": "persona",
+        "description": "Workplace Creator and Tech Commentator",
+        "power_level": 0.58,
+        "position": -0.487,
+        "position_history": [
+          -0.487
+        ],
+        "delta": 0.019,
+        "sentiment": "worried",
+        "category": "influencer"
+      },
+      {
+        "id": "company_exec_team",
+        "name": "Executive Leadership Team",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.821,
+        "position_history": [
+          0.821
+        ],
+        "delta": -0.008,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "board_directors",
+        "name": "Board of Directors",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.569,
+        "position_history": [
+          0.569
+        ],
+        "delta": -0.01,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hr_department",
+        "name": "Human Resources Division",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.055,
+        "position_history": [
+          -0.055
+        ],
+        "delta": 0.002,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "engineering_org",
+        "name": "Engineering Organization",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.053,
+        "position_history": [
+          0.053
+        ],
+        "delta": -0.012,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "people_ops",
+        "name": "People Operations Council",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.101,
+        "position_history": [
+          -0.101
+        ],
+        "delta": 0.007,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "tech_workers_union",
+        "name": "Tech Workers Union",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.884,
+        "position_history": [
+          -0.884
+        ],
+        "delta": 0.002,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_group",
+        "name": "Institutional Investors Consortium",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.324,
+        "position_history": [
+          0.324
+        ],
+        "delta": -0.062,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "media_outlet",
+        "name": "National Business Press",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.1,
+        "position_history": [
+          -0.1
+        ],
+        "delta": 0.007,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regulator_watch",
+        "name": "Labor and Employment Regulators",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.173,
+        "position_history": [
+          -0.173
+        ],
+        "delta": 0.018,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "displaced_managers",
+        "name": "Displaced Middle Managers",
+        "type": "cluster",
+        "description": "Cluster: Displaced Middle Managers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 3000
+      },
+      {
+        "id": "individual_contributors",
+        "name": "Individual Contributors",
+        "type": "cluster",
+        "description": "Cluster: Individual Contributors",
+        "power_level": 0.5,
+        "position": -0.31,
+        "position_history": [
+          -0.31
+        ],
+        "delta": -0.09,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 18000
+      },
+      {
+        "id": "high_performers",
+        "name": "High-Performing Staff",
+        "type": "cluster",
+        "description": "Cluster: High-Performing Staff",
+        "power_level": 0.5,
+        "position": 0.01,
+        "position_history": [
+          0.01
+        ],
+        "delta": -0.08,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 7000
+      },
+      {
+        "id": "union_supporters",
+        "name": "Union-Aligned Workers",
+        "type": "cluster",
+        "description": "Cluster: Union-Aligned Workers",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 5000
+      },
+      {
+        "id": "investor_watchers",
+        "name": "Investor-Focused Professionals",
+        "type": "cluster",
+        "description": "Cluster: Investor-Focused Professionals",
+        "power_level": 0.5,
+        "position": 0.96,
+        "position_history": [
+          0.96
+        ],
+        "delta": 0.12,
+        "sentiment": "supportive",
+        "category": "public_opinion",
+        "clusterSize": 12000
+      },
+      {
+        "id": "tech_public",
+        "name": "Tech Industry Public",
+        "type": "cluster",
+        "description": "Cluster: Tech Industry Public",
+        "power_level": 0.5,
+        "position": -0.39,
+        "position_history": [
+          -0.39
+        ],
+        "delta": -0.11,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 25000
+      },
+      {
+        "id": "labor_advocates",
+        "name": "Labor Advocates and Allies",
+        "type": "cluster",
+        "description": "Cluster: Labor Advocates and Allies",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "angry",
+        "category": "public_opinion",
+        "clusterSize": 9000
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_1",
+        "target": "cto_1",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "ceo_1",
+        "target": "board_directors",
+        "weight": 0.7,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_1",
+        "target": "company_exec_team",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "hr_department",
+        "weight": 0.88,
+        "type": "influence"
+      },
+      {
+        "source": "chro_1",
+        "target": "media_outlet",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "manager_rep_1",
+        "target": "influencer_1",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "manager_rep_1",
+        "target": "tech_workers_union",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "people_ops",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "journalist_1",
+        "target": "media_outlet",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "hr_department",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "industry_voice_1",
+        "target": "engineering_org",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "influencer_1",
+        "target": "people_ops",
+        "weight": 0.61,
+        "type": "influence"
+      },
+      {
+        "source": "influencer_1",
+        "target": "media_outlet",
+        "weight": 0.61,
+        "type": "influence"
+      },
+      {
+        "source": "board_directors",
+        "target": "investor_group",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "engineering_org",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "hr_department",
+        "target": "investor_group",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "media_outlet",
+        "target": "regulator_watch",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "union_leader_1",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "manager_rep_1",
+        "weight": 0.48,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "displaced_managers",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "journalist_1",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "chro_1",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "regulator_watch",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "individual_contributors",
+        "target": "influencer_1",
+        "weight": 0.65,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "industry_voice_1",
+        "weight": 0.94,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "engineering_org",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "hr_department",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "high_performers",
+        "target": "media_outlet",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "union_leader_1",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "manager_rep_1",
+        "weight": 0.48,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "union_supporters",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "ceo_1",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "company_exec_team",
+        "weight": 0.72,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "cfo_1",
+        "weight": 0.42,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "investor_watchers",
+        "target": "board_directors",
+        "weight": 0.22,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "influencer_1",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "journalist_1",
+        "weight": 0.68,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "chro_1",
+        "weight": 0.58,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "tech_public",
+        "target": "regulator_watch",
+        "weight": 0.57,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "union_leader_1",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "tech_workers_union",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "manager_rep_1",
+        "weight": 0.48,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "labor_advocates",
+        "target": "influencer_1",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 45,
+      "avg_position": -0.096
+    }
+  },
+  "indicators": {
+    "polarization": 4.5,
+    "engagement": 51,
+    "sentiment": {
+      "positive": 0.0,
+      "neutral": 0.63,
+      "negative": 0.37
+    },
+    "trendingHashtags": []
+  },
+  "coalitions": {
+    "coalitions": [
+      {
+        "label": "Change Champions",
+        "color": "#1e40af",
+        "members": [
+          "cto_1",
+          "analyst_1",
+          "board_directors",
+          "investor_group"
+        ],
+        "avg_position": 0.449,
+        "size": 4
+      },
+      {
+        "label": "Change Resistors",
+        "color": "#059669",
+        "members": [
+          "union_leader_1",
+          "manager_rep_1",
+          "influencer_1",
+          "tech_workers_union"
+        ],
+        "avg_position": -0.772,
+        "size": 4
+      },
+      {
+        "label": "Fence-sitters",
+        "color": "#dc2626",
+        "members": [
+          "chro_1",
+          "journalist_1",
+          "industry_voice_1",
+          "hr_department",
+          "engineering_org",
+          "people_ops",
+          "media_outlet",
+          "regulator_watch"
+        ],
+        "avg_position": -0.106,
+        "size": 8
+      },
+      {
+        "label": "Change Champions",
+        "color": "#f59e0b",
+        "members": [
+          "ceo_1",
+          "cfo_1",
+          "company_exec_team"
+        ],
+        "avg_position": 0.796,
+        "size": 3
+      }
+    ]
+  },
+  "key_insight": "Round 4 analysis",
+  "postImpacts": [
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00000_r4",
+      "authorId": "displaced_managers_senior product operations leader",
+      "influencedAgents": [
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.249,
+          "shift": -0.017
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.225,
+          "shift": 0.002
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.343,
+          "shift": 0.019
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.004,
+      "edgeEffects": [
+        {
+          "source": "displaced_managers_senior product operations leader",
+          "target": "journalist_1",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "displaced_managers_senior product operations leader",
+          "target": "analyst_1",
+          "weightDelta": 0.05
+        },
+        {
+          "source": "displaced_managers_senior product operations leader",
+          "target": "investor_group",
+          "weightDelta": 0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00001_r4",
+      "authorId": "individual_contributors_product designer",
+      "influencedAgents": [
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.557,
+          "shift": 0.007
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.597,
+          "shift": 0.028
+        },
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.112,
+          "shift": -0.011
+        },
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.073,
+          "shift": 0.027
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.051,
+      "edgeEffects": [
+        {
+          "source": "individual_contributors_product designer",
+          "target": "cto_1",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "individual_contributors_product designer",
+          "target": "board_directors",
+          "weightDelta": 0.018
+        },
+        {
+          "source": "individual_contributors_product designer",
+          "target": "people_ops",
+          "weightDelta": 0.042
+        },
+        {
+          "source": "individual_contributors_product designer",
+          "target": "media_outlet",
+          "weightDelta": -0.011
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00002_r4",
+      "authorId": "union_supporters_senior analyst with bargaining concerns",
+      "influencedAgents": [
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.099,
+          "shift": 0.001
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.499,
+          "shift": -0.012
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.558,
+          "shift": -0.011
+        },
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.018,
+          "shift": -0.024
+        },
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.039,
+          "shift": 0.016
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.03,
+      "edgeEffects": [
+        {
+          "source": "union_supporters_senior analyst with bargaining concerns",
+          "target": "media_outlet",
+          "weightDelta": -0.001
+        },
+        {
+          "source": "union_supporters_senior analyst with bargaining concerns",
+          "target": "influencer_1",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "union_supporters_senior analyst with bargaining concerns",
+          "target": "board_directors",
+          "weightDelta": -0.042
+        },
+        {
+          "source": "union_supporters_senior analyst with bargaining concerns",
+          "target": "industry_voice_1",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "union_supporters_senior analyst with bargaining concerns",
+          "target": "hr_department",
+          "weightDelta": 0.003
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00003_r4",
+      "authorId": "chro_1",
+      "influencedAgents": [
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.205,
+          "shift": -0.018
+        },
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.077,
+          "shift": 0.023
+        },
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.049,
+          "shift": -0.004
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.001,
+      "edgeEffects": [
+        {
+          "source": "chro_1",
+          "target": "analyst_1",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "chro_1",
+          "target": "media_outlet",
+          "weightDelta": 0.024
+        },
+        {
+          "source": "chro_1",
+          "target": "engineering_org",
+          "weightDelta": 0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00004_r4",
+      "authorId": "tech_public_tech founder observer",
+      "influencedAgents": [
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.208,
+          "shift": -0.028
+        },
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.12,
+          "shift": -0.019
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.543,
+          "shift": -0.026
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.073,
+      "edgeEffects": [
+        {
+          "source": "tech_public_tech founder observer",
+          "target": "chro_1",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "tech_public_tech founder observer",
+          "target": "people_ops",
+          "weightDelta": -0.025
+        },
+        {
+          "source": "tech_public_tech founder observer",
+          "target": "board_directors",
+          "weightDelta": 0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00005_r4",
+      "authorId": "chro_1",
+      "influencedAgents": [
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.038,
+          "shift": -0.004
+        },
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.063,
+          "shift": 0.01
+        },
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.047,
+          "shift": 0.008
+        },
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.086,
+          "shift": 0.015
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.235,
+          "shift": 0.012
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.041,
+      "edgeEffects": [
+        {
+          "source": "chro_1",
+          "target": "industry_voice_1",
+          "weightDelta": -0.048
+        },
+        {
+          "source": "chro_1",
+          "target": "engineering_org",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "chro_1",
+          "target": "hr_department",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "chro_1",
+          "target": "people_ops",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "chro_1",
+          "target": "analyst_1",
+          "weightDelta": -0.043
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00006_r4",
+      "authorId": "analyst_1",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.311,
+          "shift": -0.013
+        },
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.543,
+          "shift": -0.007
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.201,
+          "shift": -0.028
+        },
+        {
+          "agentId": "cfo_1",
+          "agentName": "Jordan Patel",
+          "positionBefore": 0.671,
+          "positionAfter": 0.654,
+          "shift": -0.017
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.065,
+      "edgeEffects": [
+        {
+          "source": "analyst_1",
+          "target": "investor_group",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "analyst_1",
+          "target": "cto_1",
+          "weightDelta": 0.032
+        },
+        {
+          "source": "analyst_1",
+          "target": "regulator_watch",
+          "weightDelta": -0.034
+        },
+        {
+          "source": "analyst_1",
+          "target": "cfo_1",
+          "weightDelta": 0.025
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00007_r4",
+      "authorId": "tech_public_high-performing product leader",
+      "influencedAgents": [
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.078,
+          "shift": 0.022
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.46,
+          "shift": 0.027
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.151,
+          "shift": 0.022
+        },
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.082,
+          "shift": -0.027
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.044,
+      "edgeEffects": [
+        {
+          "source": "tech_public_high-performing product leader",
+          "target": "media_outlet",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "tech_public_high-performing product leader",
+          "target": "influencer_1",
+          "weightDelta": -0.049
+        },
+        {
+          "source": "tech_public_high-performing product leader",
+          "target": "regulator_watch",
+          "weightDelta": -0.036
+        },
+        {
+          "source": "tech_public_high-performing product leader",
+          "target": "hr_department",
+          "weightDelta": 0.007
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00008_r4",
+      "authorId": "chro_1",
+      "influencedAgents": [
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.041,
+          "shift": 0.014
+        },
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.117,
+          "shift": -0.017
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.466,
+          "shift": 0.021
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.018,
+      "edgeEffects": [
+        {
+          "source": "chro_1",
+          "target": "hr_department",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "chro_1",
+          "target": "media_outlet",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "chro_1",
+          "target": "influencer_1",
+          "weightDelta": -0.036
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00009_r4",
+      "authorId": "industry_voice_1",
+      "influencedAgents": [
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.222,
+          "shift": 0.01
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.196,
+          "shift": -0.027
+        },
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.151,
+          "shift": 0.029
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.012,
+      "edgeEffects": [
+        {
+          "source": "industry_voice_1",
+          "target": "journalist_1",
+          "weightDelta": 0.007
+        },
+        {
+          "source": "industry_voice_1",
+          "target": "analyst_1",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "industry_voice_1",
+          "target": "chro_1",
+          "weightDelta": 0.005
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00010_r4",
+      "authorId": "industry_voice_1",
+      "influencedAgents": [
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.118,
+          "shift": -0.018
+        },
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.153,
+          "shift": 0.027
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.477,
+          "shift": 0.01
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.186,
+          "shift": -0.013
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.006,
+      "edgeEffects": [
+        {
+          "source": "industry_voice_1",
+          "target": "media_outlet",
+          "weightDelta": 0.008
+        },
+        {
+          "source": "industry_voice_1",
+          "target": "chro_1",
+          "weightDelta": -0.014
+        },
+        {
+          "source": "industry_voice_1",
+          "target": "influencer_1",
+          "weightDelta": -0.027
+        },
+        {
+          "source": "industry_voice_1",
+          "target": "regulator_watch",
+          "weightDelta": -0.043
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00011_r4",
+      "authorId": "individual_contributors_senior engineer",
+      "influencedAgents": [
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.233,
+          "shift": 0.01
+        },
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.122,
+          "shift": -0.021
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.469,
+          "shift": 0.018
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.007,
+      "edgeEffects": [
+        {
+          "source": "individual_contributors_senior engineer",
+          "target": "analyst_1",
+          "weightDelta": 0.019
+        },
+        {
+          "source": "individual_contributors_senior engineer",
+          "target": "people_ops",
+          "weightDelta": 0.007
+        },
+        {
+          "source": "individual_contributors_senior engineer",
+          "target": "influencer_1",
+          "weightDelta": 0.046
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00012_r4",
+      "authorId": "high_performers_operations lead",
+      "influencedAgents": [
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.219,
+          "shift": 0.013
+        },
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.068,
+          "shift": -0.013
+        },
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.561,
+          "shift": 0.011
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.011,
+      "edgeEffects": [
+        {
+          "source": "high_performers_operations lead",
+          "target": "journalist_1",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "high_performers_operations lead",
+          "target": "hr_department",
+          "weightDelta": -0.014
+        },
+        {
+          "source": "high_performers_operations lead",
+          "target": "cto_1",
+          "weightDelta": -0.017
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00013_r4",
+      "authorId": "analyst_1",
+      "influencedAgents": [
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.102,
+          "shift": -0.001
+        },
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.091,
+          "shift": 0.009
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.556,
+          "shift": -0.013
+        },
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.032,
+          "shift": 0.023
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.018,
+      "edgeEffects": [
+        {
+          "source": "analyst_1",
+          "target": "people_ops",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "analyst_1",
+          "target": "media_outlet",
+          "weightDelta": -0.042
+        },
+        {
+          "source": "analyst_1",
+          "target": "board_directors",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "analyst_1",
+          "target": "hr_department",
+          "weightDelta": -0.03
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00014_r4",
+      "authorId": "tech_public_displaced manager",
+      "influencedAgents": [
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.175,
+          "shift": 0.005
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.19,
+          "shift": -0.017
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.31,
+          "shift": -0.014
+        },
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.055,
+          "shift": 0.002
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.508,
+          "shift": -0.021
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.045,
+      "edgeEffects": [
+        {
+          "source": "tech_public_displaced manager",
+          "target": "chro_1",
+          "weightDelta": 0.027
+        },
+        {
+          "source": "tech_public_displaced manager",
+          "target": "regulator_watch",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "tech_public_displaced manager",
+          "target": "investor_group",
+          "weightDelta": 0.039
+        },
+        {
+          "source": "tech_public_displaced manager",
+          "target": "engineering_org",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "tech_public_displaced manager",
+          "target": "influencer_1",
+          "weightDelta": -0.011
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00015_r4",
+      "authorId": "labor_advocates_industrial region employee",
+      "influencedAgents": [
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.198,
+          "shift": -0.025
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.516,
+          "shift": -0.029
+        },
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.073,
+          "shift": 0.028
+        },
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.053,
+          "shift": 0.011
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.015,
+      "edgeEffects": [
+        {
+          "source": "labor_advocates_industrial region employee",
+          "target": "regulator_watch",
+          "weightDelta": -0.014
+        },
+        {
+          "source": "labor_advocates_industrial region employee",
+          "target": "influencer_1",
+          "weightDelta": -0.026
+        },
+        {
+          "source": "labor_advocates_industrial region employee",
+          "target": "people_ops",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "labor_advocates_industrial region employee",
+          "target": "industry_voice_1",
+          "weightDelta": 0.026
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00016_r4",
+      "authorId": "labor_advocates_union-aligned policy observer",
+      "influencedAgents": [
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.091,
+          "shift": 0.01
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.338,
+          "shift": 0.014
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.495,
+          "shift": -0.008
+        },
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.101,
+          "shift": -0.001
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.015,
+      "edgeEffects": [
+        {
+          "source": "labor_advocates_union-aligned policy observer",
+          "target": "people_ops",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "labor_advocates_union-aligned policy observer",
+          "target": "investor_group",
+          "weightDelta": -0.002
+        },
+        {
+          "source": "labor_advocates_union-aligned policy observer",
+          "target": "influencer_1",
+          "weightDelta": -0.028
+        },
+        {
+          "source": "labor_advocates_union-aligned policy observer",
+          "target": "media_outlet",
+          "weightDelta": -0.044
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00017_r4",
+      "authorId": "cto_1",
+      "influencedAgents": [
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.561,
+          "shift": -0.008
+        },
+        {
+          "agentId": "cfo_1",
+          "agentName": "Jordan Patel",
+          "positionBefore": 0.671,
+          "positionAfter": 0.668,
+          "shift": -0.003
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.252,
+          "shift": 0.029
+        },
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.054,
+          "shift": 0.012
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.03,
+      "edgeEffects": [
+        {
+          "source": "cto_1",
+          "target": "board_directors",
+          "weightDelta": -0.003
+        },
+        {
+          "source": "cto_1",
+          "target": "cfo_1",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "cto_1",
+          "target": "analyst_1",
+          "weightDelta": -0.018
+        },
+        {
+          "source": "cto_1",
+          "target": "industry_voice_1",
+          "weightDelta": 0.002
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00018_r4",
+      "authorId": "journalist_1",
+      "influencedAgents": [
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.034,
+          "shift": -0.008
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.153,
+          "shift": 0.02
+        },
+        {
+          "agentId": "manager_rep_1",
+          "agentName": "Elena Brooks",
+          "positionBefore": -0.738,
+          "positionAfter": -0.745,
+          "shift": -0.007
+        },
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.054,
+          "shift": 0.001
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.245,
+          "shift": 0.022
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.028,
+      "edgeEffects": [
+        {
+          "source": "journalist_1",
+          "target": "industry_voice_1",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "journalist_1",
+          "target": "regulator_watch",
+          "weightDelta": 0.002
+        },
+        {
+          "source": "journalist_1",
+          "target": "manager_rep_1",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "journalist_1",
+          "target": "hr_department",
+          "weightDelta": -0.015
+        },
+        {
+          "source": "journalist_1",
+          "target": "analyst_1",
+          "weightDelta": -0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00019_r4",
+      "authorId": "journalist_1",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.308,
+          "shift": -0.016
+        },
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.193,
+          "shift": -0.013
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.029,
+      "edgeEffects": [
+        {
+          "source": "journalist_1",
+          "target": "investor_group",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "journalist_1",
+          "target": "chro_1",
+          "weightDelta": -0.035
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00020_r4",
+      "authorId": "journalist_1",
+      "influencedAgents": [
+        {
+          "agentId": "manager_rep_1",
+          "agentName": "Elena Brooks",
+          "positionBefore": -0.738,
+          "positionAfter": -0.748,
+          "shift": -0.01
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.234,
+          "shift": 0.011
+        },
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.05,
+          "shift": 0.005
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.006,
+      "edgeEffects": [
+        {
+          "source": "journalist_1",
+          "target": "manager_rep_1",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "journalist_1",
+          "target": "analyst_1",
+          "weightDelta": -0.002
+        },
+        {
+          "source": "journalist_1",
+          "target": "hr_department",
+          "weightDelta": 0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00021_r4",
+      "authorId": "industry_voice_1",
+      "influencedAgents": [
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.059,
+          "shift": 0.006
+        },
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.231,
+          "shift": 0.001
+        },
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.201,
+          "shift": -0.021
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.462,
+          "shift": 0.025
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.011,
+      "edgeEffects": [
+        {
+          "source": "industry_voice_1",
+          "target": "engineering_org",
+          "weightDelta": -0.037
+        },
+        {
+          "source": "industry_voice_1",
+          "target": "journalist_1",
+          "weightDelta": 0.039
+        },
+        {
+          "source": "industry_voice_1",
+          "target": "chro_1",
+          "weightDelta": -0.033
+        },
+        {
+          "source": "industry_voice_1",
+          "target": "influencer_1",
+          "weightDelta": 0.002
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00022_r4",
+      "authorId": "cfo_1",
+      "influencedAgents": [
+        {
+          "agentId": "ceo_1",
+          "agentName": "Avery Chen",
+          "positionBefore": 0.871,
+          "positionAfter": 0.877,
+          "shift": 0.006
+        },
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.549,
+          "shift": -0.001
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.005,
+      "edgeEffects": [
+        {
+          "source": "cfo_1",
+          "target": "ceo_1",
+          "weightDelta": -0.003
+        },
+        {
+          "source": "cfo_1",
+          "target": "cto_1",
+          "weightDelta": -0.028
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00023_r4",
+      "authorId": "analyst_1",
+      "influencedAgents": [
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.064,
+          "shift": 0.011
+        },
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.048,
+          "shift": 0.006
+        },
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.187,
+          "shift": -0.007
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.54,
+          "shift": -0.029
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.019,
+      "edgeEffects": [
+        {
+          "source": "analyst_1",
+          "target": "engineering_org",
+          "weightDelta": 0.042
+        },
+        {
+          "source": "analyst_1",
+          "target": "industry_voice_1",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "analyst_1",
+          "target": "chro_1",
+          "weightDelta": -0.037
+        },
+        {
+          "source": "analyst_1",
+          "target": "board_directors",
+          "weightDelta": 0.002
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00024_r4",
+      "authorId": "high_performers_senior product manager",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.348,
+          "shift": 0.024
+        },
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.076,
+          "shift": 0.023
+        },
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.565,
+          "shift": 0.015
+        },
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.17,
+          "shift": 0.01
+        },
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.23,
+          "shift": 0.002
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.074,
+      "edgeEffects": [
+        {
+          "source": "high_performers_senior product manager",
+          "target": "investor_group",
+          "weightDelta": 0.01
+        },
+        {
+          "source": "high_performers_senior product manager",
+          "target": "engineering_org",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "high_performers_senior product manager",
+          "target": "cto_1",
+          "weightDelta": -0.041
+        },
+        {
+          "source": "high_performers_senior product manager",
+          "target": "chro_1",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "high_performers_senior product manager",
+          "target": "journalist_1",
+          "weightDelta": -0.05
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00025_r4",
+      "authorId": "investor_watchers_industry analyst",
+      "influencedAgents": [
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.065,
+          "shift": 0.012
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.35,
+          "shift": 0.026
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.157,
+          "shift": 0.016
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.587,
+          "shift": 0.018
+        },
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.08,
+          "shift": 0.02
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.092,
+      "edgeEffects": [
+        {
+          "source": "investor_watchers_industry analyst",
+          "target": "engineering_org",
+          "weightDelta": -0.007
+        },
+        {
+          "source": "investor_watchers_industry analyst",
+          "target": "investor_group",
+          "weightDelta": -0.002
+        },
+        {
+          "source": "investor_watchers_industry analyst",
+          "target": "regulator_watch",
+          "weightDelta": -0.015
+        },
+        {
+          "source": "investor_watchers_industry analyst",
+          "target": "board_directors",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "investor_watchers_industry analyst",
+          "target": "media_outlet",
+          "weightDelta": 0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00026_r4",
+      "authorId": "ceo_1",
+      "influencedAgents": [
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.575,
+          "shift": 0.025
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.025,
+      "edgeEffects": [
+        {
+          "source": "ceo_1",
+          "target": "cto_1",
+          "weightDelta": -0.042
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00027_r4",
+      "authorId": "cfo_1",
+      "influencedAgents": [
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.238,
+          "shift": 0.015
+        },
+        {
+          "agentId": "ceo_1",
+          "agentName": "Avery Chen",
+          "positionBefore": 0.871,
+          "positionAfter": 0.872,
+          "shift": 0.001
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.562,
+          "shift": -0.007
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.009,
+      "edgeEffects": [
+        {
+          "source": "cfo_1",
+          "target": "analyst_1",
+          "weightDelta": -0.049
+        },
+        {
+          "source": "cfo_1",
+          "target": "ceo_1",
+          "weightDelta": 0.002
+        },
+        {
+          "source": "cfo_1",
+          "target": "board_directors",
+          "weightDelta": -0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00028_r4",
+      "authorId": "cto_1",
+      "influencedAgents": [
+        {
+          "agentId": "company_exec_team",
+          "agentName": "Executive Leadership Team",
+          "positionBefore": 0.821,
+          "positionAfter": 0.83,
+          "shift": 0.009
+        },
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.074,
+          "shift": 0.021
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.561,
+          "shift": -0.008
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.234,
+          "shift": 0.011
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.033,
+      "edgeEffects": [
+        {
+          "source": "cto_1",
+          "target": "company_exec_team",
+          "weightDelta": -0.025
+        },
+        {
+          "source": "cto_1",
+          "target": "engineering_org",
+          "weightDelta": -0.008
+        },
+        {
+          "source": "cto_1",
+          "target": "board_directors",
+          "weightDelta": -0.022
+        },
+        {
+          "source": "cto_1",
+          "target": "analyst_1",
+          "weightDelta": 0.025
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00029_r4",
+      "authorId": "union_leader_1",
+      "influencedAgents": [
+        {
+          "agentId": "tech_workers_union",
+          "agentName": "Tech Workers Union",
+          "positionBefore": -0.884,
+          "positionAfter": -0.881,
+          "shift": 0.003
+        },
+        {
+          "agentId": "manager_rep_1",
+          "agentName": "Elena Brooks",
+          "positionBefore": -0.738,
+          "positionAfter": -0.75,
+          "shift": -0.012
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.009,
+      "edgeEffects": [
+        {
+          "source": "union_leader_1",
+          "target": "tech_workers_union",
+          "weightDelta": -0.025
+        },
+        {
+          "source": "union_leader_1",
+          "target": "manager_rep_1",
+          "weightDelta": -0.016
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00030_r4",
+      "authorId": "influencer_1",
+      "influencedAgents": [
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.043,
+          "shift": 0.012
+        },
+        {
+          "agentId": "union_leader_1",
+          "agentName": "Marcus Hill",
+          "positionBefore": -0.942,
+          "positionAfter": -0.959,
+          "shift": -0.017
+        },
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.242,
+          "shift": -0.01
+        },
+        {
+          "agentId": "tech_workers_union",
+          "agentName": "Tech Workers Union",
+          "positionBefore": -0.884,
+          "positionAfter": -0.872,
+          "shift": 0.012
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.193,
+          "shift": -0.02
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.023,
+      "edgeEffects": [
+        {
+          "source": "influencer_1",
+          "target": "hr_department",
+          "weightDelta": -0.034
+        },
+        {
+          "source": "influencer_1",
+          "target": "union_leader_1",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "influencer_1",
+          "target": "journalist_1",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "influencer_1",
+          "target": "tech_workers_union",
+          "weightDelta": 0.021
+        },
+        {
+          "source": "influencer_1",
+          "target": "regulator_watch",
+          "weightDelta": 0.046
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00031_r4",
+      "authorId": "union_supporters_displaced manager",
+      "influencedAgents": [
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.184,
+          "shift": -0.004
+        },
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.118,
+          "shift": -0.017
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.515,
+          "shift": -0.028
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.049,
+      "edgeEffects": [
+        {
+          "source": "union_supporters_displaced manager",
+          "target": "chro_1",
+          "weightDelta": -0.044
+        },
+        {
+          "source": "union_supporters_displaced manager",
+          "target": "people_ops",
+          "weightDelta": -0.042
+        },
+        {
+          "source": "union_supporters_displaced manager",
+          "target": "influencer_1",
+          "weightDelta": -0.012
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00032_r4",
+      "authorId": "ceo_1",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.305,
+          "shift": -0.019
+        },
+        {
+          "agentId": "cfo_1",
+          "agentName": "Jordan Patel",
+          "positionBefore": 0.671,
+          "positionAfter": 0.642,
+          "shift": -0.029
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.048,
+      "edgeEffects": [
+        {
+          "source": "ceo_1",
+          "target": "investor_group",
+          "weightDelta": -0.001
+        },
+        {
+          "source": "ceo_1",
+          "target": "cfo_1",
+          "weightDelta": 0.035
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00033_r4",
+      "authorId": "cfo_1",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.325,
+          "shift": 0.001
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.23,
+          "shift": 0.007
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.008,
+      "edgeEffects": [
+        {
+          "source": "cfo_1",
+          "target": "investor_group",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "cfo_1",
+          "target": "analyst_1",
+          "weightDelta": 0.017
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00034_r4",
+      "authorId": "cto_1",
+      "influencedAgents": [
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.586,
+          "shift": 0.017
+        },
+        {
+          "agentId": "ceo_1",
+          "agentName": "Avery Chen",
+          "positionBefore": 0.871,
+          "positionAfter": 0.865,
+          "shift": -0.006
+        },
+        {
+          "agentId": "cfo_1",
+          "agentName": "Jordan Patel",
+          "positionBefore": 0.671,
+          "positionAfter": 0.672,
+          "shift": 0.001
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.012,
+      "edgeEffects": [
+        {
+          "source": "cto_1",
+          "target": "board_directors",
+          "weightDelta": -0.015
+        },
+        {
+          "source": "cto_1",
+          "target": "ceo_1",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "cto_1",
+          "target": "cfo_1",
+          "weightDelta": 0.024
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00035_r4",
+      "authorId": "manager_rep_1",
+      "influencedAgents": [
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.193,
+          "shift": -0.013
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.191,
+          "shift": -0.018
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.483,
+          "shift": 0.004
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.027,
+      "edgeEffects": [
+        {
+          "source": "manager_rep_1",
+          "target": "chro_1",
+          "weightDelta": 0.011
+        },
+        {
+          "source": "manager_rep_1",
+          "target": "regulator_watch",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "manager_rep_1",
+          "target": "influencer_1",
+          "weightDelta": -0.024
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00036_r4",
+      "authorId": "influencer_1",
+      "influencedAgents": [
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.043,
+          "shift": -0.01
+        },
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.179,
+          "shift": 0.001
+        },
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.044,
+          "shift": 0.002
+        },
+        {
+          "agentId": "union_leader_1",
+          "agentName": "Marcus Hill",
+          "positionBefore": -0.942,
+          "positionAfter": -0.957,
+          "shift": -0.015
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.022,
+      "edgeEffects": [
+        {
+          "source": "influencer_1",
+          "target": "engineering_org",
+          "weightDelta": -0.038
+        },
+        {
+          "source": "influencer_1",
+          "target": "chro_1",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "influencer_1",
+          "target": "industry_voice_1",
+          "weightDelta": 0.029
+        },
+        {
+          "source": "influencer_1",
+          "target": "union_leader_1",
+          "weightDelta": -0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00037_r4",
+      "authorId": "influencer_1",
+      "influencedAgents": [
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.044,
+          "shift": 0.011
+        },
+        {
+          "agentId": "tech_workers_union",
+          "agentName": "Tech Workers Union",
+          "positionBefore": -0.884,
+          "positionAfter": -0.862,
+          "shift": 0.022
+        },
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.247,
+          "shift": -0.015
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.156,
+          "shift": 0.017
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.035,
+      "edgeEffects": [
+        {
+          "source": "influencer_1",
+          "target": "hr_department",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "influencer_1",
+          "target": "tech_workers_union",
+          "weightDelta": -0.002
+        },
+        {
+          "source": "influencer_1",
+          "target": "journalist_1",
+          "weightDelta": -0.012
+        },
+        {
+          "source": "influencer_1",
+          "target": "regulator_watch",
+          "weightDelta": -0.028
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00038_r4",
+      "authorId": "displaced_managers_displaced finance manager",
+      "influencedAgents": [
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.261,
+          "shift": -0.029
+        },
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.038,
+          "shift": -0.015
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.579,
+          "shift": 0.01
+        },
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.017,
+          "shift": -0.025
+        },
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.102,
+          "shift": -0.001
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.06,
+      "edgeEffects": [
+        {
+          "source": "displaced_managers_displaced finance manager",
+          "target": "journalist_1",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "displaced_managers_displaced finance manager",
+          "target": "engineering_org",
+          "weightDelta": -0.041
+        },
+        {
+          "source": "displaced_managers_displaced finance manager",
+          "target": "board_directors",
+          "weightDelta": 0.032
+        },
+        {
+          "source": "displaced_managers_displaced finance manager",
+          "target": "industry_voice_1",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "displaced_managers_displaced finance manager",
+          "target": "people_ops",
+          "weightDelta": -0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00039_r4",
+      "authorId": "displaced_managers_people leader in compliance",
+      "influencedAgents": [
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.191,
+          "shift": -0.018
+        },
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.064,
+          "shift": 0.022
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.205,
+          "shift": -0.018
+        },
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.225,
+          "shift": 0.007
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.545,
+          "shift": -0.024
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.031,
+      "edgeEffects": [
+        {
+          "source": "displaced_managers_people leader in compliance",
+          "target": "regulator_watch",
+          "weightDelta": 0.024
+        },
+        {
+          "source": "displaced_managers_people leader in compliance",
+          "target": "industry_voice_1",
+          "weightDelta": -0.029
+        },
+        {
+          "source": "displaced_managers_people leader in compliance",
+          "target": "analyst_1",
+          "weightDelta": -0.025
+        },
+        {
+          "source": "displaced_managers_people leader in compliance",
+          "target": "journalist_1",
+          "weightDelta": -0.034
+        },
+        {
+          "source": "displaced_managers_people leader in compliance",
+          "target": "board_directors",
+          "weightDelta": 0.042
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00040_r4",
+      "authorId": "investor_watchers_senior operations manager",
+      "influencedAgents": [
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.184,
+          "shift": -0.011
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.464,
+          "shift": 0.023
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.012,
+      "edgeEffects": [
+        {
+          "source": "investor_watchers_senior operations manager",
+          "target": "regulator_watch",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "investor_watchers_senior operations manager",
+          "target": "influencer_1",
+          "weightDelta": 0.007
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00041_r4",
+      "authorId": "labor_advocates_displaced middle manager",
+      "influencedAgents": [
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.057,
+          "shift": 0.015
+        },
+        {
+          "agentId": "regulator_watch",
+          "agentName": "Labor and Employment Regulators",
+          "positionBefore": -0.173,
+          "positionAfter": -0.171,
+          "shift": 0.002
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.249,
+          "shift": 0.026
+        },
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.541,
+          "shift": -0.009
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.034,
+      "edgeEffects": [
+        {
+          "source": "labor_advocates_displaced middle manager",
+          "target": "industry_voice_1",
+          "weightDelta": -0.037
+        },
+        {
+          "source": "labor_advocates_displaced middle manager",
+          "target": "regulator_watch",
+          "weightDelta": -0.008
+        },
+        {
+          "source": "labor_advocates_displaced middle manager",
+          "target": "analyst_1",
+          "weightDelta": -0.047
+        },
+        {
+          "source": "labor_advocates_displaced middle manager",
+          "target": "cto_1",
+          "weightDelta": 0.036
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00042_r4",
+      "authorId": "ceo_1",
+      "influencedAgents": [
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.521,
+          "shift": -0.029
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.562,
+          "shift": -0.007
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.036,
+      "edgeEffects": [
+        {
+          "source": "ceo_1",
+          "target": "cto_1",
+          "weightDelta": 0.017
+        },
+        {
+          "source": "ceo_1",
+          "target": "board_directors",
+          "weightDelta": -0.04
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00043_r4",
+      "authorId": "union_leader_1",
+      "influencedAgents": [
+        {
+          "agentId": "manager_rep_1",
+          "agentName": "Elena Brooks",
+          "positionBefore": -0.738,
+          "positionAfter": -0.74,
+          "shift": -0.002
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.002,
+      "edgeEffects": [
+        {
+          "source": "union_leader_1",
+          "target": "manager_rep_1",
+          "weightDelta": 0.011
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00044_r4",
+      "authorId": "union_leader_1",
+      "influencedAgents": [
+        {
+          "agentId": "manager_rep_1",
+          "agentName": "Elena Brooks",
+          "positionBefore": -0.738,
+          "positionAfter": -0.726,
+          "shift": 0.012
+        },
+        {
+          "agentId": "tech_workers_union",
+          "agentName": "Tech Workers Union",
+          "positionBefore": -0.884,
+          "positionAfter": -0.863,
+          "shift": 0.021
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.033,
+      "edgeEffects": [
+        {
+          "source": "union_leader_1",
+          "target": "manager_rep_1",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "union_leader_1",
+          "target": "tech_workers_union",
+          "weightDelta": -0.022
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00045_r4",
+      "authorId": "manager_rep_1",
+      "influencedAgents": [
+        {
+          "agentId": "union_leader_1",
+          "agentName": "Marcus Hill",
+          "positionBefore": -0.942,
+          "positionAfter": -0.924,
+          "shift": 0.018
+        },
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.211,
+          "shift": 0.021
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.039,
+      "edgeEffects": [
+        {
+          "source": "manager_rep_1",
+          "target": "union_leader_1",
+          "weightDelta": 0.006
+        },
+        {
+          "source": "manager_rep_1",
+          "target": "journalist_1",
+          "weightDelta": -0.03
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00046_r4",
+      "authorId": "manager_rep_1",
+      "influencedAgents": [
+        {
+          "agentId": "union_leader_1",
+          "agentName": "Marcus Hill",
+          "positionBefore": -0.942,
+          "positionAfter": -0.964,
+          "shift": -0.022
+        },
+        {
+          "agentId": "tech_workers_union",
+          "agentName": "Tech Workers Union",
+          "positionBefore": -0.884,
+          "positionAfter": -0.876,
+          "shift": 0.008
+        },
+        {
+          "agentId": "journalist_1",
+          "agentName": "Noah Kim",
+          "positionBefore": -0.232,
+          "positionAfter": -0.243,
+          "shift": -0.011
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.025,
+      "edgeEffects": [
+        {
+          "source": "manager_rep_1",
+          "target": "union_leader_1",
+          "weightDelta": 0.039
+        },
+        {
+          "source": "manager_rep_1",
+          "target": "tech_workers_union",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "manager_rep_1",
+          "target": "journalist_1",
+          "weightDelta": -0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00047_r4",
+      "authorId": "individual_contributors_displaced manager",
+      "influencedAgents": [
+        {
+          "agentId": "industry_voice_1",
+          "agentName": "Sofia Alvarez",
+          "positionBefore": 0.042,
+          "positionAfter": 0.022,
+          "shift": -0.02
+        },
+        {
+          "agentId": "media_outlet",
+          "agentName": "National Business Press",
+          "positionBefore": -0.1,
+          "positionAfter": -0.115,
+          "shift": -0.015
+        },
+        {
+          "agentId": "hr_department",
+          "agentName": "Human Resources Division",
+          "positionBefore": -0.055,
+          "positionAfter": -0.079,
+          "shift": -0.024
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.31,
+          "shift": -0.014
+        },
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.572,
+          "shift": 0.003
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.07,
+      "edgeEffects": [
+        {
+          "source": "individual_contributors_displaced manager",
+          "target": "industry_voice_1",
+          "weightDelta": -0.028
+        },
+        {
+          "source": "individual_contributors_displaced manager",
+          "target": "media_outlet",
+          "weightDelta": 0.034
+        },
+        {
+          "source": "individual_contributors_displaced manager",
+          "target": "hr_department",
+          "weightDelta": 0.024
+        },
+        {
+          "source": "individual_contributors_displaced manager",
+          "target": "investor_group",
+          "weightDelta": -0.014
+        },
+        {
+          "source": "individual_contributors_displaced manager",
+          "target": "board_directors",
+          "weightDelta": 0.031
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00048_r4",
+      "authorId": "investor_watchers_finance director",
+      "influencedAgents": [
+        {
+          "agentId": "board_directors",
+          "agentName": "Board of Directors",
+          "positionBefore": 0.569,
+          "positionAfter": 0.58,
+          "shift": 0.011
+        },
+        {
+          "agentId": "engineering_org",
+          "agentName": "Engineering Organization",
+          "positionBefore": 0.053,
+          "positionAfter": 0.058,
+          "shift": 0.005
+        },
+        {
+          "agentId": "cto_1",
+          "agentName": "Dr. Lena Novak",
+          "positionBefore": 0.55,
+          "positionAfter": 0.552,
+          "shift": 0.002
+        },
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.311,
+          "shift": -0.013
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.005,
+      "edgeEffects": [
+        {
+          "source": "investor_watchers_finance director",
+          "target": "board_directors",
+          "weightDelta": 0.011
+        },
+        {
+          "source": "investor_watchers_finance director",
+          "target": "engineering_org",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "investor_watchers_finance director",
+          "target": "cto_1",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "investor_watchers_finance director",
+          "target": "investor_group",
+          "weightDelta": -0.017
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Flat_Org_AI_Restructuring_rp_00049_r4",
+      "authorId": "high_performers_finance manager",
+      "influencedAgents": [
+        {
+          "agentId": "investor_group",
+          "agentName": "Institutional Investors Consortium",
+          "positionBefore": 0.324,
+          "positionAfter": 0.311,
+          "shift": -0.013
+        },
+        {
+          "agentId": "people_ops",
+          "agentName": "People Operations Council",
+          "positionBefore": -0.101,
+          "positionAfter": -0.122,
+          "shift": -0.021
+        },
+        {
+          "agentId": "chro_1",
+          "agentName": "Maya Rodriguez",
+          "positionBefore": -0.18,
+          "positionAfter": -0.162,
+          "shift": 0.018
+        },
+        {
+          "agentId": "analyst_1",
+          "agentName": "Priya Desai",
+          "positionBefore": 0.223,
+          "positionAfter": 0.231,
+          "shift": 0.008
+        },
+        {
+          "agentId": "influencer_1",
+          "agentName": "Tariq West",
+          "positionBefore": -0.487,
+          "positionAfter": -0.466,
+          "shift": 0.021
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.013,
+      "edgeEffects": [
+        {
+          "source": "high_performers_finance manager",
+          "target": "investor_group",
+          "weightDelta": 0.013
+        },
+        {
+          "source": "high_performers_finance manager",
+          "target": "people_ops",
+          "weightDelta": -0.033
+        },
+        {
+          "source": "high_performers_finance manager",
+          "target": "chro_1",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "high_performers_finance manager",
+          "target": "analyst_1",
+          "weightDelta": 0.007
+        },
+        {
+          "source": "high_performers_finance manager",
+          "target": "influencer_1",
+          "weightDelta": -0.043
+        }
+      ]
+    }
+  ],
+  "realWorldEffects": {
+    "overview": {
+      "stability_index": 66,
+      "tension_index": 33,
+      "media_intensity": 42,
+      "stakeholder_confidence": 60
+    },
+    "opinion": {
+      "support_rate": 31,
+      "opposition_rate": 38,
+      "undecided_rate": 31,
+      "avg_position": -0.096
+    },
+    "engagement": {
+      "active_discussions": 42,
+      "viral_content_pieces": 11,
+      "coalition_count": 4
+    }
+  }
+}

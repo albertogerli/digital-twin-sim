@@ -1,0 +1,2174 @@
+{
+  "round": 4,
+  "month": "Week 4",
+  "event": {
+    "event": "Round 4 dynamics continue",
+    "shock_magnitude": 0.3,
+    "shock_direction": 0
+  },
+  "posts": [
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00000_r4",
+      "author_id": "lucas_martin",
+      "author_name": "Lucas Martin",
+      "author_role": "Apple CFO",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The week’s data indicates this is now more than headline sensitivity: cancellations are rising, and competitor subsidies are changing the effective price gap. From a financial standpoint, the objective remains margin protection and disciplined capital allocation. But if credits e",
+      "round": 4,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00001_r4",
+      "author_id": "lucas_martin",
+      "author_name": "Lucas Martin",
+      "author_role": "Apple CFO",
+      "tier": 1,
+      "platform": "social",
+      "text": "The comparison thread is directionally concerning because it highlights effective-price gaps, not list prices. If consumers can’t access the full credit, then the economic intent is being lost in execution.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00002_r4",
+      "author_id": "david_ross",
+      "author_name": "David Ross",
+      "author_role": "Senior Tech Analyst",
+      "tier": 1,
+      "platform": "trade_press",
+      "text": "The Week 4 data is more concerning than the headline backlash alone.\n\nApple’s loyalty-credit rollout is no longer just a messaging problem; it appears to be creating a measurable price-discrimination problem in the wild. If eligible buyers are being denied the full value because of base-model upgrades, unlocked purchases, or carrier exclusions, the effective discount is too inconsistent to meaningfully offset the price increase.\n\nTwo developments matter most for demand: first, the viral comparisons now show that the post-trade-in gap versus Galaxy and Pixel remains large in several markets; second, retail partners are reporting canceled preorders and more Android transfer assistance requests. That combination suggests the issue is shifting from sentiment to behavior.\n\nThat said, I would still be careful about declaring a full demand collapse. Apple retains real advantages in financing, ecosystem lock-in, and brand preference, and those factors can delay churn even when consumers are frustrated. But the burden of proof is now on Apple to show that unit demand is holding up, not on critics to prove elasticity exists.\n\nBottom line: this looks less like a clean margin-preservation strategy and more like a stress test of pricing power that may be running into the limits of consumer tolerance.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00003_r4",
+      "author_id": "kevin_zhou",
+      "author_name": "Kevin Zhou",
+      "author_role": "Supply Chain Consultant",
+      "tier": 1,
+      "platform": "social",
+      "text": "From a supply-chain lens, the cost case is still real—component inflation, logistics volatility, and AI-chip capex don’t disappear. But when credits are fragmented and net prices stay above rivals, execution risk starts to look like demand destruction.",
+      "round": 4,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00004_r4",
+      "author_id": "kevin_zhou",
+      "author_name": "Kevin Zhou",
+      "author_role": "Supply Chain Consultant",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Week 4 materially weakens the pricing thesis. The underlying cost stack is still credible: semis, freight, FX, and AI investment all pressure margins. But the loyalty-credit exclusions are now visible to consumers, and the market response—cancellations plus Android transfer deman",
+      "round": 4,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00005_r4",
+      "author_id": "kevin_zhou",
+      "author_name": "Kevin Zhou",
+      "author_role": "Supply Chain Consultant",
+      "tier": 1,
+      "platform": "social",
+      "text": "@sara_chen is right that premium value has to be felt, not just stated. The issue here is not the existence of credits, but the exclusion-heavy structure that leaves effective pricing materially above Android alternatives.",
+      "round": 4,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00006_r4",
+      "author_id": "tim_cook",
+      "author_name": "Tim Cook",
+      "author_role": "Apple CEO",
+      "tier": 1,
+      "platform": "forum",
+      "text": "This week’s data is more than a messaging issue: when eligibility rules create a wide gap between intended and realized value, the program stops supporting retention. We should simplify the credit structure, extend parity where feasible across base-model upgrades and major carrie",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00007_r4",
+      "author_id": "tim_cook",
+      "author_name": "Tim Cook",
+      "author_role": "Apple CEO",
+      "tier": 1,
+      "platform": "social",
+      "text": "The comparison thread is directionally important: if customers cannot see the full value of the credit at checkout, the program is not doing its job. We need simpler, more consistent access.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00008_r4",
+      "author_id": "lucas_martin",
+      "author_name": "Lucas Martin",
+      "author_role": "Apple CFO",
+      "tier": 1,
+      "platform": "social",
+      "text": "The issue is not whether pricing must reflect cost and capital intensity—it must. The issue is whether our incentives are clear enough to preserve demand. We should protect margins, but not through complexity that weakens the price signal.",
+      "round": 4,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00009_r4",
+      "author_id": "james_park",
+      "author_name": "James Park",
+      "author_role": "Samsung Global Marketing Chief",
+      "tier": 1,
+      "platform": "social",
+      "text": "Apple’s loyalty-credit rollout is backfiring because customers can see the real math: restrictions, exclusions, and a higher net price. Samsung’s Trade Up, Pay Less is the clearer premium play—more value, more flexibility, less pain.",
+      "round": 4,
+      "likes": 0,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 1.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00010_r4",
+      "author_id": "sara_chen",
+      "author_name": "Sara Chen",
+      "author_role": "Apple VP of Marketing",
+      "tier": 1,
+      "platform": "social",
+      "text": "Premium only works when customers can actually feel the value. This week’s feedback is clear: simplicity matters. Apple should make loyalty credits easier to understand, easier to access, and more consistent across channels.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00011_r4",
+      "author_id": "sara_chen",
+      "author_name": "Sara Chen",
+      "author_role": "Apple VP of Marketing",
+      "tier": 1,
+      "platform": "social",
+      "text": "@tim_cook is right that fragmented credits are undermining the message. We need to simplify the experience before the market reads this as price over value.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00012_r4",
+      "author_id": "david_ross",
+      "author_name": "David Ross",
+      "author_role": "Senior Tech Analyst",
+      "tier": 1,
+      "platform": "trade_press",
+      "text": "@lucas_martin is right that the issue is no longer theoretical: once incentives are fragmented and the effective discount stays high, you start seeing behavior change, not just complaints.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00013_r4",
+      "author_id": "nina_patel",
+      "author_name": "Nina Patel",
+      "author_role": "Consumer Rights Advocate",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Week 4 confirms the price hike is moving from aggressive to destructive. Consumers are finding out the “$250 loyalty credit” is not universal: model exclusions, carrier exclusions, and regional friction leave many still paying far more than Samsung or Pixel buyers. When preorder ",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00014_r4",
+      "author_id": "oliver_bennett",
+      "author_name": "Oliver Bennett",
+      "author_role": "Luxury Brand Strategist",
+      "tier": 1,
+      "platform": "social",
+      "text": "Luxury pricing only works when the experience stays premium. Apple should keep the price architecture intact, but simplify eligibility, remove friction, and make the value unmistakable. Prestige survives scarcity; it does not survive confusion.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00015_r4",
+      "author_id": "oliver_bennett",
+      "author_name": "Oliver Bennett",
+      "author_role": "Luxury Brand Strategist",
+      "tier": 1,
+      "platform": "social",
+      "text": "@sara_chen is right: premium only works when the experience is premium too. The viral comparison thread is damaging because it turns an elite brand into a spreadsheet debate.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00016_r4",
+      "author_id": "sara_chen",
+      "author_name": "Sara Chen",
+      "author_role": "Apple VP of Marketing",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The strategic case for disciplined pricing remains intact: Apple must protect margin to fund innovation, reliability, and the ecosystem experience customers value. But this week also shows that fragmented credits and carrier complexity can turn a premium narrative into friction. ",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00017_r4",
+      "author_id": "james_park",
+      "author_name": "James Park",
+      "author_role": "Samsung Global Marketing Chief",
+      "tier": 1,
+      "platform": "social",
+      "text": "The New York comparison thread is the clearest proof point this week: once buyers compare net price after trade-in, Apple’s premium looks expensive, not aspirational.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00018_r4",
+      "author_id": "mei_lin",
+      "author_name": "Mei Lin",
+      "author_role": "Google Pixel Product Lead",
+      "tier": 1,
+      "platform": "forum",
+      "text": "This week is less about a single promo and more about consumer trust. The denial of full credits for base-model upgrades, unlocked devices, and common carrier plans confirms the offer is fragmented. That’s exactly where Pixel wins: transparent pricing, a cleaner upgrade path, and",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00019_r4",
+      "author_id": "david_ross",
+      "author_name": "David Ross",
+      "author_role": "Senior Tech Analyst",
+      "tier": 1,
+      "platform": "investor_call",
+      "text": "Week 4 raises the probability that Apple’s price move is becoming demand-destructive in at least some premium segments.\n\nThe key issue is not the size of the nominal loyalty credit, but its accessibility and consistency. If a meaningful share of buyers cannot receive the full benefit because of product configuration or carrier restrictions, then the effective net price remains too high to prevent share leakage.\n\nThe evidence that matters now is behavioral: canceled preorders, increasing requests for Android transfer support, and competitive response from Samsung and Pixel. That suggests pricing power is being tested in a way that could affect unit demand, not just headline sentiment.\n\nMy current read remains cautious rather than bearish. Apple still has offsets—ecosystem lock-in, financing, and premium brand equity—but those are not infinite. If the next data points show continued cancellation trends or weaker channel sell-through, I would move closer to a negative stance.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00020_r4",
+      "author_id": "nina_patel",
+      "author_name": "Nina Patel",
+      "author_role": "Consumer Rights Advocate",
+      "tier": 1,
+      "platform": "social",
+      "text": "Apple’s “loyalty credit” is exposed: exclude base upgrades, exclude carriers, exclude reality. If the full $250 can’t be used by ordinary buyers, it’s not loyalty—it’s a trap. Premium brands are asking consumers to pay more for less. Reject it.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00021_r4",
+      "author_id": "nina_patel",
+      "author_name": "Nina Patel",
+      "author_role": "Consumer Rights Advocate",
+      "tier": 1,
+      "platform": "social",
+      "text": "Exactly. The comparison thread strips away the branding: if a New York buyer still pays far more than a Galaxy S24 Ultra after “credits,” the program is failing consumers, not helping them.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00022_r4",
+      "author_id": "oliver_bennett",
+      "author_name": "Oliver Bennett",
+      "author_role": "Luxury Brand Strategist",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Week 4 is a warning, not a verdict. The issue is not that Apple raised price; it’s that the loyalty-credit mechanism diluted the premium signal through exclusions, carrier complexity, and uneven global value. In luxury, scarcity can preserve demand, but only if it feels coherent ",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00023_r4",
+      "author_id": "elena_garcia",
+      "author_name": "Elena Garcia",
+      "author_role": "Retail Channel Executive",
+      "tier": 1,
+      "platform": "social",
+      "text": "@lucas_martin is right that the signal is now showing up in upgrade behavior. The bigger issue is that fragmented credits are turning a pricing challenge into a retail conversion problem.",
+      "round": 4,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00024_r4",
+      "author_id": "tim_cook",
+      "author_name": "Tim Cook",
+      "author_role": "Apple CEO",
+      "tier": 1,
+      "platform": "social",
+      "text": "We’re listening. The goal is simple: make Apple’s upgrade path clear, fair, and durable. We will keep improving the program so it reflects real customer value and supports the investments behind product quality and AI.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00025_r4",
+      "author_id": "james_park",
+      "author_name": "James Park",
+      "author_role": "Samsung Global Marketing Chief",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Week 4 confirms the issue has shifted from perception to behavior: canceled preorders, Android transfer requests, and retail placement changes all point to demand destruction. A selective credit that excludes base-model upgrades and common carrier paths doesn’t restore competitiv",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00026_r4",
+      "author_id": "mei_lin",
+      "author_name": "Mei Lin",
+      "author_role": "Google Pixel Product Lead",
+      "tier": 1,
+      "platform": "social",
+      "text": "When a “loyalty credit” still leaves buyers paying more—and makes them hunt through carrier rules—it’s not value, it’s friction. Pixel stays simple: helpful AI, clean software, and pricing that makes sense. #TeamPixel",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00027_r4",
+      "author_id": "mei_lin",
+      "author_name": "Mei Lin",
+      "author_role": "Google Pixel Product Lead",
+      "tier": 1,
+      "platform": "social",
+      "text": "@lucas_martin is pointing at the real issue: the effective price is what consumers feel, and when the discount is gated by exclusions, the backlash gets worse—not better.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00028_r4",
+      "author_id": "elena_garcia",
+      "author_name": "Elena Garcia",
+      "author_role": "Retail Channel Executive",
+      "tier": 1,
+      "platform": "social",
+      "text": "Week 4 is the clearest sign yet: if eligible customers are still being denied the full credit, the promo isn’t a demand fix. Retail needs simpler carrier funding, cleaner eligibility, and sharper Android trade-in offers to keep conversion from slipping.",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Global_iPhone_Price_Shock_rp_00029_r4",
+      "author_id": "elena_garcia",
+      "author_name": "Elena Garcia",
+      "author_role": "Retail Channel Executive",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The rollout is now creating operational drag: canceled preorders, more Android transfer requests, and store teams spending time explaining exclusions instead of closing sales. From a channel view, the issue isn’t just price—it’s confusion plus uneven support. Apple needs to simpl",
+      "round": 4,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    }
+  ],
+  "graphSnapshot": {
+    "round": 4,
+    "month": "Week 4",
+    "event_label": "Week 4",
+    "nodes": [
+      {
+        "id": "tim_cook",
+        "name": "Tim Cook",
+        "type": "persona",
+        "description": "Apple CEO",
+        "power_level": 0.98,
+        "position": 0.363,
+        "position_history": [
+          0.363
+        ],
+        "delta": -0.022,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "lucas_martin",
+        "name": "Lucas Martin",
+        "type": "persona",
+        "description": "Apple CFO",
+        "power_level": 0.82,
+        "position": 0.272,
+        "position_history": [
+          0.272
+        ],
+        "delta": -0.061,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "sara_chen",
+        "name": "Sara Chen",
+        "type": "persona",
+        "description": "Apple VP of Marketing",
+        "power_level": 0.78,
+        "position": 0.233,
+        "position_history": [
+          0.233
+        ],
+        "delta": 0.015,
+        "sentiment": "cautious",
+        "category": "marketing_executive"
+      },
+      {
+        "id": "james_park",
+        "name": "James Park",
+        "type": "persona",
+        "description": "Samsung Global Marketing Chief",
+        "power_level": 0.86,
+        "position": -0.809,
+        "position_history": [
+          -0.809
+        ],
+        "delta": -0.003,
+        "sentiment": "triumphant",
+        "category": "business_leader"
+      },
+      {
+        "id": "mei_lin",
+        "name": "Mei Lin",
+        "type": "persona",
+        "description": "Google Pixel Product Lead",
+        "power_level": 0.74,
+        "position": -0.645,
+        "position_history": [
+          -0.645
+        ],
+        "delta": -0.004,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "david_ross",
+        "name": "David Ross",
+        "type": "persona",
+        "description": "Senior Tech Analyst",
+        "power_level": 0.7,
+        "position": -0.045,
+        "position_history": [
+          -0.045
+        ],
+        "delta": -0.084,
+        "sentiment": "worried",
+        "category": "analyst"
+      },
+      {
+        "id": "nina_patel",
+        "name": "Nina Patel",
+        "type": "persona",
+        "description": "Consumer Rights Advocate",
+        "power_level": 0.66,
+        "position": -0.942,
+        "position_history": [
+          -0.942
+        ],
+        "delta": -0.019,
+        "sentiment": "furious",
+        "category": "activist"
+      },
+      {
+        "id": "oliver_bennett",
+        "name": "Oliver Bennett",
+        "type": "persona",
+        "description": "Luxury Brand Strategist",
+        "power_level": 0.58,
+        "position": 0.494,
+        "position_history": [
+          0.494
+        ],
+        "delta": 0.002,
+        "sentiment": "worried",
+        "category": "consultant"
+      },
+      {
+        "id": "elena_garcia",
+        "name": "Elena Garcia",
+        "type": "persona",
+        "description": "Retail Channel Executive",
+        "power_level": 0.52,
+        "position": -0.296,
+        "position_history": [
+          -0.296
+        ],
+        "delta": -0.074,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "kevin_zhou",
+        "name": "Kevin Zhou",
+        "type": "persona",
+        "description": "Supply Chain Consultant",
+        "power_level": 0.49,
+        "position": 0.084,
+        "position_history": [
+          0.084
+        ],
+        "delta": -0.026,
+        "sentiment": "cautious",
+        "category": "consultant"
+      }
+    ],
+    "edges": [
+      {
+        "source": "sara_chen",
+        "target": "david_ross",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "james_park",
+        "target": "mei_lin",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "david_ross",
+        "target": "elena_garcia",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "david_ross",
+        "target": "kevin_zhou",
+        "weight": 0.87,
+        "type": "influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 10,
+      "total_edges": 4,
+      "avg_position": -0.129
+    }
+  },
+  "indicators": {
+    "polarization": 3.4,
+    "engagement": 30,
+    "sentiment": {
+      "positive": 0.1,
+      "neutral": 0.3,
+      "negative": 0.6
+    },
+    "trendingHashtags": [
+      {
+        "tag": "#TeamPixel",
+        "count": 1
+      }
+    ]
+  },
+  "coalitions": {
+    "coalitions": [
+      {
+        "label": "Opponents",
+        "color": "#1e40af",
+        "members": [
+          "james_park",
+          "mei_lin",
+          "nina_patel"
+        ],
+        "avg_position": -0.807,
+        "size": 3
+      },
+      {
+        "label": "Skeptics",
+        "color": "#059669",
+        "members": [
+          "david_ross",
+          "kevin_zhou"
+        ],
+        "avg_position": 0.0,
+        "size": 2
+      },
+      {
+        "label": "Adopters",
+        "color": "#dc2626",
+        "members": [
+          "tim_cook",
+          "lucas_martin",
+          "sara_chen",
+          "oliver_bennett"
+        ],
+        "avg_position": 0.365,
+        "size": 4
+      },
+      {
+        "label": "Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "elena_garcia"
+        ],
+        "avg_position": -0.34,
+        "size": 1
+      }
+    ]
+  },
+  "key_insight": "Round 4 analysis",
+  "postImpacts": [
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00000_r4",
+      "authorId": "lucas_martin",
+      "influencedAgents": [
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.507,
+          "shift": 0.013
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.232,
+          "shift": -0.001
+        },
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.365,
+          "shift": 0.002
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.014,
+      "edgeEffects": [
+        {
+          "source": "lucas_martin",
+          "target": "oliver_bennett",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "lucas_martin",
+          "target": "sara_chen",
+          "weightDelta": -0.044
+        },
+        {
+          "source": "lucas_martin",
+          "target": "tim_cook",
+          "weightDelta": -0.019
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00001_r4",
+      "authorId": "lucas_martin",
+      "influencedAgents": [
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.306,
+          "shift": -0.01
+        },
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.488,
+          "shift": -0.006
+        },
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.372,
+          "shift": 0.009
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.11,
+          "shift": 0.026
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.235,
+          "shift": 0.002
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.021,
+      "edgeEffects": [
+        {
+          "source": "lucas_martin",
+          "target": "elena_garcia",
+          "weightDelta": 0.022
+        },
+        {
+          "source": "lucas_martin",
+          "target": "oliver_bennett",
+          "weightDelta": -0.029
+        },
+        {
+          "source": "lucas_martin",
+          "target": "tim_cook",
+          "weightDelta": 0.002
+        },
+        {
+          "source": "lucas_martin",
+          "target": "kevin_zhou",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "lucas_martin",
+          "target": "sara_chen",
+          "weightDelta": 0.024
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00002_r4",
+      "authorId": "david_ross",
+      "influencedAgents": [
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.281,
+          "shift": 0.009
+        },
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.388,
+          "shift": 0.025
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.284,
+          "shift": 0.012
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.064,
+          "shift": -0.02
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.026,
+      "edgeEffects": [
+        {
+          "source": "david_ross",
+          "target": "lucas_martin",
+          "weightDelta": -0.003
+        },
+        {
+          "source": "david_ross",
+          "target": "tim_cook",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "david_ross",
+          "target": "elena_garcia",
+          "weightDelta": -0.037
+        },
+        {
+          "source": "david_ross",
+          "target": "kevin_zhou",
+          "weightDelta": -0.045
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00003_r4",
+      "authorId": "kevin_zhou",
+      "influencedAgents": [
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.246,
+          "shift": -0.026
+        },
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.471,
+          "shift": -0.023
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.289,
+          "shift": 0.007
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.042,
+      "edgeEffects": [
+        {
+          "source": "kevin_zhou",
+          "target": "lucas_martin",
+          "weightDelta": 0.032
+        },
+        {
+          "source": "kevin_zhou",
+          "target": "oliver_bennett",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "kevin_zhou",
+          "target": "elena_garcia",
+          "weightDelta": -0.044
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00004_r4",
+      "authorId": "kevin_zhou",
+      "influencedAgents": [
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.056,
+          "shift": -0.011
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.291,
+          "shift": 0.005
+        },
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.514,
+          "shift": 0.02
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.014,
+      "edgeEffects": [
+        {
+          "source": "kevin_zhou",
+          "target": "david_ross",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "kevin_zhou",
+          "target": "elena_garcia",
+          "weightDelta": -0.036
+        },
+        {
+          "source": "kevin_zhou",
+          "target": "oliver_bennett",
+          "weightDelta": 0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00005_r4",
+      "authorId": "kevin_zhou",
+      "influencedAgents": [
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.341,
+          "shift": -0.022
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.245,
+          "shift": 0.012
+        },
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.049,
+          "shift": -0.004
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.324,
+          "shift": -0.028
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.042,
+      "edgeEffects": [
+        {
+          "source": "kevin_zhou",
+          "target": "tim_cook",
+          "weightDelta": -0.008
+        },
+        {
+          "source": "kevin_zhou",
+          "target": "sara_chen",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "kevin_zhou",
+          "target": "david_ross",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "kevin_zhou",
+          "target": "elena_garcia",
+          "weightDelta": -0.04
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00006_r4",
+      "authorId": "tim_cook",
+      "influencedAgents": [
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.054,
+          "shift": -0.03
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.208,
+          "shift": -0.025
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.055,
+      "edgeEffects": [
+        {
+          "source": "tim_cook",
+          "target": "kevin_zhou",
+          "weightDelta": -0.032
+        },
+        {
+          "source": "tim_cook",
+          "target": "sara_chen",
+          "weightDelta": 0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00007_r4",
+      "authorId": "tim_cook",
+      "influencedAgents": [
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.473,
+          "shift": -0.021
+        },
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.048,
+          "shift": -0.003
+        },
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.252,
+          "shift": -0.02
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.044,
+      "edgeEffects": [
+        {
+          "source": "tim_cook",
+          "target": "oliver_bennett",
+          "weightDelta": -0.023
+        },
+        {
+          "source": "tim_cook",
+          "target": "david_ross",
+          "weightDelta": -0.026
+        },
+        {
+          "source": "tim_cook",
+          "target": "lucas_martin",
+          "weightDelta": 0.019
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00008_r4",
+      "authorId": "lucas_martin",
+      "influencedAgents": [
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.075,
+          "shift": -0.009
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.217,
+          "shift": -0.016
+        },
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.496,
+          "shift": 0.002
+        },
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.355,
+          "shift": -0.008
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.294,
+          "shift": 0.002
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.029,
+      "edgeEffects": [
+        {
+          "source": "lucas_martin",
+          "target": "kevin_zhou",
+          "weightDelta": -0.05
+        },
+        {
+          "source": "lucas_martin",
+          "target": "sara_chen",
+          "weightDelta": -0.038
+        },
+        {
+          "source": "lucas_martin",
+          "target": "oliver_bennett",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "lucas_martin",
+          "target": "tim_cook",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "lucas_martin",
+          "target": "elena_garcia",
+          "weightDelta": -0.028
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00009_r4",
+      "authorId": "james_park",
+      "influencedAgents": [
+        {
+          "agentId": "mei_lin",
+          "agentName": "Mei Lin",
+          "positionBefore": -0.645,
+          "positionAfter": -0.634,
+          "shift": 0.011
+        },
+        {
+          "agentId": "nina_patel",
+          "agentName": "Nina Patel",
+          "positionBefore": -0.942,
+          "positionAfter": -0.944,
+          "shift": -0.002
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.009,
+      "edgeEffects": [
+        {
+          "source": "james_park",
+          "target": "mei_lin",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "james_park",
+          "target": "nina_patel",
+          "weightDelta": -0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00010_r4",
+      "authorId": "sara_chen",
+      "influencedAgents": [
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.348,
+          "shift": -0.015
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.107,
+          "shift": 0.023
+        },
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.069,
+          "shift": -0.024
+        },
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.274,
+          "shift": 0.002
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.014,
+      "edgeEffects": [
+        {
+          "source": "sara_chen",
+          "target": "tim_cook",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "sara_chen",
+          "target": "kevin_zhou",
+          "weightDelta": -0.005
+        },
+        {
+          "source": "sara_chen",
+          "target": "david_ross",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "sara_chen",
+          "target": "lucas_martin",
+          "weightDelta": -0.034
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00011_r4",
+      "authorId": "sara_chen",
+      "influencedAgents": [
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.369,
+          "shift": 0.006
+        },
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.476,
+          "shift": -0.018
+        },
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.262,
+          "shift": -0.01
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.074,
+          "shift": -0.01
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.282,
+          "shift": 0.014
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.018,
+      "edgeEffects": [
+        {
+          "source": "sara_chen",
+          "target": "tim_cook",
+          "weightDelta": -0.017
+        },
+        {
+          "source": "sara_chen",
+          "target": "oliver_bennett",
+          "weightDelta": 0.018
+        },
+        {
+          "source": "sara_chen",
+          "target": "lucas_martin",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "sara_chen",
+          "target": "kevin_zhou",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "sara_chen",
+          "target": "elena_garcia",
+          "weightDelta": 0.037
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00012_r4",
+      "authorId": "david_ross",
+      "influencedAgents": [
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.245,
+          "shift": -0.027
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.313,
+          "shift": -0.017
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.065,
+          "shift": -0.019
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.063,
+      "edgeEffects": [
+        {
+          "source": "david_ross",
+          "target": "lucas_martin",
+          "weightDelta": -0.006
+        },
+        {
+          "source": "david_ross",
+          "target": "elena_garcia",
+          "weightDelta": 0.011
+        },
+        {
+          "source": "david_ross",
+          "target": "kevin_zhou",
+          "weightDelta": -0.013
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00013_r4",
+      "authorId": "nina_patel",
+      "influencedAgents": [
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.831,
+          "shift": -0.022
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.022,
+      "edgeEffects": [
+        {
+          "source": "nina_patel",
+          "target": "james_park",
+          "weightDelta": 0.019
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00014_r4",
+      "authorId": "oliver_bennett",
+      "influencedAgents": [
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.358,
+          "shift": -0.005
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.216,
+          "shift": -0.017
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.063,
+          "shift": -0.021
+        },
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.018,
+          "shift": 0.027
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.016,
+      "edgeEffects": [
+        {
+          "source": "oliver_bennett",
+          "target": "tim_cook",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "oliver_bennett",
+          "target": "sara_chen",
+          "weightDelta": -0.02
+        },
+        {
+          "source": "oliver_bennett",
+          "target": "kevin_zhou",
+          "weightDelta": 0.029
+        },
+        {
+          "source": "oliver_bennett",
+          "target": "david_ross",
+          "weightDelta": 0.041
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00015_r4",
+      "authorId": "oliver_bennett",
+      "influencedAgents": [
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.083,
+          "shift": -0.001
+        },
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.368,
+          "shift": 0.005
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.004,
+      "edgeEffects": [
+        {
+          "source": "oliver_bennett",
+          "target": "kevin_zhou",
+          "weightDelta": 0.05
+        },
+        {
+          "source": "oliver_bennett",
+          "target": "tim_cook",
+          "weightDelta": 0.034
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00016_r4",
+      "authorId": "sara_chen",
+      "influencedAgents": [
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.353,
+          "shift": -0.01
+        },
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.021,
+          "shift": 0.024
+        },
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.251,
+          "shift": -0.021
+        },
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.464,
+          "shift": -0.03
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.037,
+      "edgeEffects": [
+        {
+          "source": "sara_chen",
+          "target": "tim_cook",
+          "weightDelta": 0.008
+        },
+        {
+          "source": "sara_chen",
+          "target": "david_ross",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "sara_chen",
+          "target": "lucas_martin",
+          "weightDelta": 0.007
+        },
+        {
+          "source": "sara_chen",
+          "target": "oliver_bennett",
+          "weightDelta": 0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00017_r4",
+      "authorId": "james_park",
+      "influencedAgents": [
+        {
+          "agentId": "mei_lin",
+          "agentName": "Mei Lin",
+          "positionBefore": -0.645,
+          "positionAfter": -0.646,
+          "shift": -0.001
+        },
+        {
+          "agentId": "nina_patel",
+          "agentName": "Nina Patel",
+          "positionBefore": -0.942,
+          "positionAfter": -0.923,
+          "shift": 0.019
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.018,
+      "edgeEffects": [
+        {
+          "source": "james_park",
+          "target": "mei_lin",
+          "weightDelta": 0.03
+        },
+        {
+          "source": "james_park",
+          "target": "nina_patel",
+          "weightDelta": -0.005
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00018_r4",
+      "authorId": "mei_lin",
+      "influencedAgents": [
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.782,
+          "shift": 0.027
+        },
+        {
+          "agentId": "nina_patel",
+          "agentName": "Nina Patel",
+          "positionBefore": -0.942,
+          "positionAfter": -0.954,
+          "shift": -0.012
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.015,
+      "edgeEffects": [
+        {
+          "source": "mei_lin",
+          "target": "james_park",
+          "weightDelta": -0.037
+        },
+        {
+          "source": "mei_lin",
+          "target": "nina_patel",
+          "weightDelta": 0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00019_r4",
+      "authorId": "david_ross",
+      "influencedAgents": [
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.284,
+          "shift": 0.012
+        },
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.378,
+          "shift": 0.015
+        },
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.491,
+          "shift": -0.003
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.255,
+          "shift": 0.022
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.101,
+          "shift": 0.017
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.063,
+      "edgeEffects": [
+        {
+          "source": "david_ross",
+          "target": "lucas_martin",
+          "weightDelta": 0.036
+        },
+        {
+          "source": "david_ross",
+          "target": "tim_cook",
+          "weightDelta": -0.048
+        },
+        {
+          "source": "david_ross",
+          "target": "oliver_bennett",
+          "weightDelta": 0.027
+        },
+        {
+          "source": "david_ross",
+          "target": "sara_chen",
+          "weightDelta": -0.009
+        },
+        {
+          "source": "david_ross",
+          "target": "kevin_zhou",
+          "weightDelta": -0.013
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00020_r4",
+      "authorId": "nina_patel",
+      "influencedAgents": [
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.807,
+          "shift": 0.002
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.002,
+      "edgeEffects": [
+        {
+          "source": "nina_patel",
+          "target": "james_park",
+          "weightDelta": -0.02
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00021_r4",
+      "authorId": "nina_patel",
+      "influencedAgents": [
+        {
+          "agentId": "mei_lin",
+          "agentName": "Mei Lin",
+          "positionBefore": -0.645,
+          "positionAfter": -0.638,
+          "shift": 0.007
+        },
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.783,
+          "shift": 0.026
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.033,
+      "edgeEffects": [
+        {
+          "source": "nina_patel",
+          "target": "mei_lin",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "nina_patel",
+          "target": "james_park",
+          "weightDelta": 0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00022_r4",
+      "authorId": "oliver_bennett",
+      "influencedAgents": [
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.038,
+          "shift": 0.007
+        },
+        {
+          "agentId": "tim_cook",
+          "agentName": "Tim Cook",
+          "positionBefore": 0.363,
+          "positionAfter": 0.344,
+          "shift": -0.019
+        },
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.246,
+          "shift": -0.026
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.215,
+          "shift": -0.018
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.056,
+      "edgeEffects": [
+        {
+          "source": "oliver_bennett",
+          "target": "david_ross",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "oliver_bennett",
+          "target": "tim_cook",
+          "weightDelta": 0.006
+        },
+        {
+          "source": "oliver_bennett",
+          "target": "lucas_martin",
+          "weightDelta": 0.021
+        },
+        {
+          "source": "oliver_bennett",
+          "target": "sara_chen",
+          "weightDelta": 0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00023_r4",
+      "authorId": "elena_garcia",
+      "influencedAgents": [
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.787,
+          "shift": 0.022
+        },
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.287,
+          "shift": 0.015
+        },
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.056,
+          "shift": -0.011
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.084,
+          "shift": 0.0
+        },
+        {
+          "agentId": "mei_lin",
+          "agentName": "Mei Lin",
+          "positionBefore": -0.645,
+          "positionAfter": -0.672,
+          "shift": -0.027
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.001,
+      "edgeEffects": [
+        {
+          "source": "elena_garcia",
+          "target": "james_park",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "elena_garcia",
+          "target": "lucas_martin",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "elena_garcia",
+          "target": "david_ross",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "elena_garcia",
+          "target": "kevin_zhou",
+          "weightDelta": -0.008
+        },
+        {
+          "source": "elena_garcia",
+          "target": "mei_lin",
+          "weightDelta": -0.013
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00024_r4",
+      "authorId": "tim_cook",
+      "influencedAgents": [
+        {
+          "agentId": "oliver_bennett",
+          "agentName": "Oliver Bennett",
+          "positionBefore": 0.494,
+          "positionAfter": 0.505,
+          "shift": 0.011
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.072,
+          "shift": -0.012
+        },
+        {
+          "agentId": "lucas_martin",
+          "agentName": "Lucas Martin",
+          "positionBefore": 0.272,
+          "positionAfter": 0.29,
+          "shift": 0.018
+        },
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.026,
+          "shift": 0.019
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.036,
+      "edgeEffects": [
+        {
+          "source": "tim_cook",
+          "target": "oliver_bennett",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "tim_cook",
+          "target": "kevin_zhou",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "tim_cook",
+          "target": "lucas_martin",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "tim_cook",
+          "target": "david_ross",
+          "weightDelta": 0.044
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00025_r4",
+      "authorId": "james_park",
+      "influencedAgents": [
+        {
+          "agentId": "nina_patel",
+          "agentName": "Nina Patel",
+          "positionBefore": -0.942,
+          "positionAfter": -0.918,
+          "shift": 0.024
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.269,
+          "shift": 0.027
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.051,
+      "edgeEffects": [
+        {
+          "source": "james_park",
+          "target": "nina_patel",
+          "weightDelta": -0.021
+        },
+        {
+          "source": "james_park",
+          "target": "elena_garcia",
+          "weightDelta": -0.039
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00026_r4",
+      "authorId": "mei_lin",
+      "influencedAgents": [
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.808,
+          "shift": 0.001
+        },
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.308,
+          "shift": -0.012
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.011,
+      "edgeEffects": [
+        {
+          "source": "mei_lin",
+          "target": "james_park",
+          "weightDelta": 0.013
+        },
+        {
+          "source": "mei_lin",
+          "target": "elena_garcia",
+          "weightDelta": 0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00027_r4",
+      "authorId": "mei_lin",
+      "influencedAgents": [
+        {
+          "agentId": "elena_garcia",
+          "agentName": "Elena Garcia",
+          "positionBefore": -0.296,
+          "positionAfter": -0.282,
+          "shift": 0.014
+        },
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.828,
+          "shift": -0.019
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.005,
+      "edgeEffects": [
+        {
+          "source": "mei_lin",
+          "target": "elena_garcia",
+          "weightDelta": -0.048
+        },
+        {
+          "source": "mei_lin",
+          "target": "james_park",
+          "weightDelta": -0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00028_r4",
+      "authorId": "elena_garcia",
+      "influencedAgents": [
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.8,
+          "shift": 0.009
+        },
+        {
+          "agentId": "david_ross",
+          "agentName": "David Ross",
+          "positionBefore": -0.045,
+          "positionAfter": -0.046,
+          "shift": -0.001
+        },
+        {
+          "agentId": "kevin_zhou",
+          "agentName": "Kevin Zhou",
+          "positionBefore": 0.084,
+          "positionAfter": 0.086,
+          "shift": 0.002
+        },
+        {
+          "agentId": "mei_lin",
+          "agentName": "Mei Lin",
+          "positionBefore": -0.645,
+          "positionAfter": -0.648,
+          "shift": -0.003
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.257,
+          "shift": 0.024
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.031,
+      "edgeEffects": [
+        {
+          "source": "elena_garcia",
+          "target": "james_park",
+          "weightDelta": 0.029
+        },
+        {
+          "source": "elena_garcia",
+          "target": "david_ross",
+          "weightDelta": 0.017
+        },
+        {
+          "source": "elena_garcia",
+          "target": "kevin_zhou",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "elena_garcia",
+          "target": "mei_lin",
+          "weightDelta": 0.007
+        },
+        {
+          "source": "elena_garcia",
+          "target": "sara_chen",
+          "weightDelta": -0.019
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Global_iPhone_Price_Shock_rp_00029_r4",
+      "authorId": "elena_garcia",
+      "influencedAgents": [
+        {
+          "agentId": "mei_lin",
+          "agentName": "Mei Lin",
+          "positionBefore": -0.645,
+          "positionAfter": -0.666,
+          "shift": -0.021
+        },
+        {
+          "agentId": "james_park",
+          "agentName": "James Park",
+          "positionBefore": -0.809,
+          "positionAfter": -0.782,
+          "shift": 0.027
+        },
+        {
+          "agentId": "sara_chen",
+          "agentName": "Sara Chen",
+          "positionBefore": 0.233,
+          "positionAfter": 0.213,
+          "shift": -0.02
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.014,
+      "edgeEffects": [
+        {
+          "source": "elena_garcia",
+          "target": "mei_lin",
+          "weightDelta": -0.022
+        },
+        {
+          "source": "elena_garcia",
+          "target": "james_park",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "elena_garcia",
+          "target": "sara_chen",
+          "weightDelta": 0.004
+        }
+      ]
+    }
+  ],
+  "realWorldEffects": {
+    "overview": {
+      "stability_index": 72,
+      "tension_index": 27,
+      "media_intensity": 47,
+      "stakeholder_confidence": 60
+    },
+    "opinion": {
+      "support_rate": 40,
+      "opposition_rate": 40,
+      "undecided_rate": 20,
+      "avg_position": -0.129
+    },
+    "engagement": {
+      "active_discussions": 32,
+      "viral_content_pieces": 10,
+      "coalition_count": 4
+    }
+  }
+}

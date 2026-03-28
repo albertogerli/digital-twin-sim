@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Marijuana Legalization USA (2018-2020)",
+  "description": "US public support for marijuana legalization continued its decades-long climb from ~60% (2018) to ~68% (2020), crossing the two-thirds threshold. State-level legalization votes (Michigan 2018, Illinois 2019, multiple states 2020) reinforced the trend. Support was broad-based across demographics except 65+.",
+  "domain": "political/social",
+  "final_outcome_pro_pct": 68,
+  "final_outcome_against_pct": 28,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 60, "against_pct": 34, "undecided_pct": 6},
+    {"round_equivalent": 2, "pro_pct": 61, "against_pct": 33, "undecided_pct": 6},
+    {"round_equivalent": 3, "pro_pct": 62, "against_pct": 32, "undecided_pct": 6},
+    {"round_equivalent": 4, "pro_pct": 63, "against_pct": 32, "undecided_pct": 5},
+    {"round_equivalent": 5, "pro_pct": 64, "against_pct": 31, "undecided_pct": 5},
+    {"round_equivalent": 6, "pro_pct": 65, "against_pct": 30, "undecided_pct": 5},
+    {"round_equivalent": 7, "pro_pct": 66, "against_pct": 29, "undecided_pct": 5},
+    {"round_equivalent": 8, "pro_pct": 67, "against_pct": 29, "undecided_pct": 4},
+    {"round_equivalent": 9, "pro_pct": 68, "against_pct": 28, "undecided_pct": 4}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Gallup 2018: 66% support legalization, highest ever at that point. Canada fully legalizes marijuana (October 2018), providing international demonstration effect."},
+    {"round_equivalent": 3, "description": "Michigan legalizes recreational use via ballot (November 2018, 56%). Illinois becomes first state to legalize via legislature (June 2019). Normalization accelerates."},
+    {"round_equivalent": 5, "description": "House passes MORE Act (December 2020) to decriminalize federally. First time either chamber passes such legislation. Bipartisan shift visible."},
+    {"round_equivalent": 7, "description": "November 2020: Arizona, Montana, New Jersey, South Dakota all pass legalization ballot measures. Red-state victories (Montana, South Dakota) signal broad cultural shift."},
+    {"round_equivalent": 9, "description": "Gallup 2020: 68% support. Pew: 91% support at least medical use. 15 states + DC fully legal. Tax revenue data ($10B+ nationally) provides economic argument. Support plateaus at supermajority."}
+  ],
+  "calibration_notes": "Slow, steady, monotonic increase reflecting generational replacement and normalization. Gallup tracked this from 25% (1995) to 68% (2020). The 2018-2020 window shows the mature phase of this S-curve. Very few undecideds — most Americans had formed opinions. Remaining opposition concentrated in 65+ demographic and evangelical Christians. Tests: glacial opinion shift, generational replacement, demonstration effects from state labs, normalization dynamics, ceiling effects."
+}

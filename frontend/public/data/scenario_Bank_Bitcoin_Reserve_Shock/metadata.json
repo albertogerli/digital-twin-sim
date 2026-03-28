@@ -1,0 +1,7 @@
+{
+  "scenario_id": "Bank_Bitcoin_Reserve_Shock",
+  "scenario_name": "Bank Bitcoin Reserve Shock",
+  "num_rounds": 3,
+  "domain": "financial",
+  "description": "A major European bank publicly announces that it will hold Bitcoin as part of its reserve assets, triggering immediate market volatility and intense scrutiny from regulators, investors, and the media. The simulation explores how the bank, policymakers, competitors, and the public respond as the decision ripples through financial markets and institutional trust."
+}

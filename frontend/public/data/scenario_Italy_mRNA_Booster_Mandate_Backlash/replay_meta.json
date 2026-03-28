@@ -1,0 +1,217 @@
+{
+  "scenario": "Italy_mRNA_Booster_Mandate_Backlash",
+  "title": "Italy mRNA Booster Mandate Backlash",
+  "totalRounds": 5,
+  "totalAgents": 19,
+  "agents": [
+    {
+      "id": "pm_italy",
+      "name": "Prime Minister",
+      "role": "Head of government driving the mandate",
+      "handle": "@PMinister",
+      "avatarColor": "#22c55e",
+      "position": 0.703,
+      "influence": 0.95,
+      "archetype": "politician",
+      "tier": 1
+    },
+    {
+      "id": "health_minister",
+      "name": "Minister of Health",
+      "role": "Public face of the vaccination policy",
+      "handle": "@MHealth",
+      "avatarColor": "#3b82f6",
+      "position": 0.831,
+      "influence": 0.9,
+      "archetype": "politician",
+      "tier": 1
+    },
+    {
+      "id": "regional_governor_lombardy",
+      "name": "Lombardy Regional Governor",
+      "role": "Regional executive managing local implementation",
+      "handle": "@LGovernor",
+      "avatarColor": "#ef4444",
+      "position": 0.576,
+      "influence": 0.75,
+      "archetype": "politician",
+      "tier": 1
+    },
+    {
+      "id": "public_health_director",
+      "name": "National Public Health Director",
+      "role": "Top epidemiological advisor",
+      "handle": "@NDirector",
+      "avatarColor": "#f59e0b",
+      "position": 0.873,
+      "influence": 0.88,
+      "archetype": "scientist",
+      "tier": 1
+    },
+    {
+      "id": "hospital_ceo",
+      "name": "Hospital Network CEO",
+      "role": "Leader of a major public hospital system",
+      "handle": "@HCEO",
+      "avatarColor": "#8b5cf6",
+      "position": 0.788,
+      "influence": 0.7,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "medical_association_president",
+      "name": "President, Italian Medical Association",
+      "role": "Representative of physicians",
+      "handle": "@PAssociation",
+      "avatarColor": "#ec4899",
+      "position": 0.746,
+      "influence": 0.78,
+      "archetype": "professional_leader",
+      "tier": 1
+    },
+    {
+      "id": "anti_vax_leader",
+      "name": "Anti-Vaccine Movement Spokesperson",
+      "role": "Organizes protests and online opposition",
+      "handle": "@ASpokesperson",
+      "avatarColor": "#06b6d4",
+      "position": -0.946,
+      "influence": 0.72,
+      "archetype": "influencer",
+      "tier": 1
+    },
+    {
+      "id": "civil_liberties_lawyer",
+      "name": "Civil Liberties Lawyer",
+      "role": "Legal critic of the mandate",
+      "handle": "@CLawyer",
+      "avatarColor": "#84cc16",
+      "position": -0.635,
+      "influence": 0.62,
+      "archetype": "legal_expert",
+      "tier": 1
+    },
+    {
+      "id": "tv_anchor",
+      "name": "National TV News Anchor",
+      "role": "Mainstream media presenter shaping public framing",
+      "handle": "@NAnchor",
+      "avatarColor": "#f97316",
+      "position": 0.1,
+      "influence": 0.8,
+      "archetype": "journalist",
+      "tier": 1
+    },
+    {
+      "id": "social_media_influencer",
+      "name": "Health Skeptic Influencer",
+      "role": "Popular online commentator amplifying doubts",
+      "handle": "@HInfluencer",
+      "avatarColor": "#6366f1",
+      "position": -0.789,
+      "influence": 0.66,
+      "archetype": "influencer",
+      "tier": 1
+    },
+    {
+      "id": "pharma_exec",
+      "name": "Biotech Company Executive",
+      "role": "Representative of the vaccine manufacturer",
+      "handle": "@BExecutive",
+      "avatarColor": "#14b8a6",
+      "position": 0.409,
+      "influence": 0.58,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "italian_government",
+      "name": "Italian Council of Ministers",
+      "role": "",
+      "handle": "@IMinisters",
+      "avatarColor": "#e11d48",
+      "position": 0.788,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "ministry_health",
+      "name": "Ministry of Health",
+      "role": "",
+      "handle": "@MHealth",
+      "avatarColor": "#0ea5e9",
+      "position": 0.873,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "iss",
+      "name": "Istituto Superiore di Sanità",
+      "role": "",
+      "handle": "@ISanità",
+      "avatarColor": "#a855f7",
+      "position": 0.856,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "regional_health_service",
+      "name": "Regional Health Services",
+      "role": "",
+      "handle": "@RServices",
+      "avatarColor": "#10b981",
+      "position": 0.661,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "national_medical_association",
+      "name": "Italian Medical Association",
+      "role": "",
+      "handle": "@IAssociation",
+      "avatarColor": "#22c55e",
+      "position": 0.703,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "hospital_networks",
+      "name": "Public Hospital Networks",
+      "role": "",
+      "handle": "@PNetworks",
+      "avatarColor": "#3b82f6",
+      "position": 0.746,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "constitutional_court",
+      "name": "Constitutional Court",
+      "role": "",
+      "handle": "@CCourt",
+      "avatarColor": "#ef4444",
+      "position": 0.004,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "national_broadcaster",
+      "name": "RAI Public Broadcaster",
+      "role": "",
+      "handle": "@RBroadcaster",
+      "avatarColor": "#f59e0b",
+      "position": 0.167,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    }
+  ]
+}

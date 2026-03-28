@@ -1,0 +1,228 @@
+{
+  "scenario": "Nike_Deepfake_Ad_Backlash",
+  "title": "Nike Deepfake Ad Backlash",
+  "totalRounds": 4,
+  "totalAgents": 20,
+  "agents": [
+    {
+      "id": "nike_ceo",
+      "name": "Nike Chief Executive Officer",
+      "role": "Global CEO overseeing brand strategy and crisis response",
+      "handle": "@NOfficer",
+      "avatarColor": "#22c55e",
+      "position": 0.295,
+      "influence": 0.98,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "nike_cmo",
+      "name": "Nike Chief Marketing Officer",
+      "role": "Head of global marketing and campaign approval",
+      "handle": "@NOfficer",
+      "avatarColor": "#3b82f6",
+      "position": 0.764,
+      "influence": 0.9,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "estate_representative",
+      "name": "Athlete Estate Representative",
+      "role": "Authorized spokesperson for the deceased athlete's family and estate",
+      "handle": "@ARepresentative",
+      "avatarColor": "#ef4444",
+      "position": -0.976,
+      "influence": 0.82,
+      "archetype": "advocate",
+      "tier": 1
+    },
+    {
+      "id": "ethics_professor",
+      "name": "Media Ethics Professor",
+      "role": "Academic commentator on synthetic media and consent",
+      "handle": "@MProfessor",
+      "avatarColor": "#f59e0b",
+      "position": -0.814,
+      "influence": 0.58,
+      "archetype": "journalist",
+      "tier": 1
+    },
+    {
+      "id": "consumer_advocate",
+      "name": "Consumer Rights Advocate",
+      "role": "Public advocate focused on deceptive marketing and consumer trust",
+      "handle": "@CAdvocate",
+      "avatarColor": "#8b5cf6",
+      "position": -0.854,
+      "influence": 0.66,
+      "archetype": "activist",
+      "tier": 1
+    },
+    {
+      "id": "sports_journalist",
+      "name": "Senior Sports Journalist",
+      "role": "Reporter covering athlete legacy, brand deals, and public reaction",
+      "handle": "@SJournalist",
+      "avatarColor": "#ec4899",
+      "position": -0.522,
+      "influence": 0.7,
+      "archetype": "journalist",
+      "tier": 1
+    },
+    {
+      "id": "tech_ethics_influencer",
+      "name": "AI Ethics Influencer",
+      "role": "Online commentator on deepfakes, consent, and brand responsibility",
+      "handle": "@AInfluencer",
+      "avatarColor": "#06b6d4",
+      "position": -0.945,
+      "influence": 0.74,
+      "archetype": "influencer",
+      "tier": 1
+    },
+    {
+      "id": "brand_strategist",
+      "name": "Independent Brand Strategist",
+      "role": "Consultant assessing reputation and market impact",
+      "handle": "@IStrategist",
+      "avatarColor": "#84cc16",
+      "position": 0.025,
+      "influence": 0.52,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "athlete_legacy_foundation_head",
+      "name": "Athlete Legacy Foundation Director",
+      "role": "Leader of a foundation preserving the athlete's image and values",
+      "handle": "@ADirector",
+      "avatarColor": "#f97316",
+      "position": -0.944,
+      "influence": 0.6,
+      "archetype": "advocate",
+      "tier": 1
+    },
+    {
+      "id": "retail_chain_exec",
+      "name": "Major Retail Chain Executive",
+      "role": "Executive deciding whether to keep the shoe line on shelves",
+      "handle": "@MExecutive",
+      "avatarColor": "#6366f1",
+      "position": -0.094,
+      "influence": 0.63,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "investor_analyst",
+      "name": "Equity Research Analyst",
+      "role": "Market analyst tracking Nike's sales and brand risk",
+      "handle": "@EAnalyst",
+      "avatarColor": "#14b8a6",
+      "position": 0.104,
+      "influence": 0.57,
+      "archetype": "financial_analyst",
+      "tier": 1
+    },
+    {
+      "id": "nike_corporation",
+      "name": "Nike, Inc.",
+      "role": "",
+      "handle": "@NInc.",
+      "avatarColor": "#e11d48",
+      "position": 0.772,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "athlete_estate",
+      "name": "Athlete Estate",
+      "role": "",
+      "handle": "@AEstate",
+      "avatarColor": "#0ea5e9",
+      "position": -0.969,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "media_ethics_org",
+      "name": "Media Ethics Coalition",
+      "role": "",
+      "handle": "@MCoalition",
+      "avatarColor": "#a855f7",
+      "position": -0.9,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "consumer_watchdog",
+      "name": "Consumer Protection Watch",
+      "role": "",
+      "handle": "@CWatch",
+      "avatarColor": "#10b981",
+      "position": -0.774,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "major_retailers",
+      "name": "Major Retailers Consortium",
+      "role": "",
+      "handle": "@MConsortium",
+      "avatarColor": "#22c55e",
+      "position": 0.066,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "sports_media_network",
+      "name": "Sports Media Network",
+      "role": "",
+      "handle": "@SNetwork",
+      "avatarColor": "#3b82f6",
+      "position": -0.18,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "ad_regulator",
+      "name": "Advertising Standards Authority",
+      "role": "",
+      "handle": "@AAuthority",
+      "avatarColor": "#ef4444",
+      "position": -0.647,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "social_platform",
+      "name": "Major Social Platform",
+      "role": "",
+      "handle": "@MPlatform",
+      "avatarColor": "#f59e0b",
+      "position": 0.023,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "investor_group",
+      "name": "Institutional Investor Group",
+      "role": "",
+      "handle": "@IGroup",
+      "avatarColor": "#8b5cf6",
+      "position": 0.144,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    }
+  ]
+}

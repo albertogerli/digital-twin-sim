@@ -1,0 +1,28 @@
+{
+  "scenario_name": "Brexit Referendum 2016",
+  "description": "UK referendum on EU membership. Leave vs Remain. Leave won 51.9% with turnout 72.2%. Tests late-surge dynamics, shy voter effects, immigration salience, and elite endorsement impact.",
+  "domain": "political",
+  "final_outcome_pro_pct": 51.89,
+  "final_outcome_against_pct": 48.11,
+  "final_turnout_pct": 72.21,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 41, "against_pct": 42, "undecided_pct": 17},
+    {"round_equivalent": 2, "pro_pct": 40, "against_pct": 44, "undecided_pct": 16},
+    {"round_equivalent": 3, "pro_pct": 42, "against_pct": 44, "undecided_pct": 14},
+    {"round_equivalent": 4, "pro_pct": 42, "against_pct": 43, "undecided_pct": 15},
+    {"round_equivalent": 5, "pro_pct": 43, "against_pct": 43, "undecided_pct": 14},
+    {"round_equivalent": 6, "pro_pct": 45, "against_pct": 42, "undecided_pct": 13},
+    {"round_equivalent": 7, "pro_pct": 46, "against_pct": 42, "undecided_pct": 12},
+    {"round_equivalent": 8, "pro_pct": 44, "against_pct": 44, "undecided_pct": 12},
+    {"round_equivalent": 9, "pro_pct": 52, "against_pct": 48, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Cameron announces EU deal and sets referendum date. Slight Remain boost."},
+    {"round_equivalent": 3, "description": "Boris Johnson declares for Leave. Major credibility boost, polls narrow ~2pts."},
+    {"round_equivalent": 4, "description": "Obama visits London, warns UK would be 'back of the queue' for trade deal."},
+    {"round_equivalent": 6, "description": "ONS releases net migration figure of 333,000 (near record). Leave surges on immigration."},
+    {"round_equivalent": 7, "description": "ITV EU referendum debate. Farage's 'breaking point' poster. Leave consolidation."},
+    {"round_equivalent": 8, "description": "Murder of Jo Cox MP by far-right extremist. Polls swing ~3-4pts toward Remain temporarily."}
+  ],
+  "calibration_notes": "Tests late-surge dynamics and shy voter effects. Polls underestimated Leave by 2-4pts. Key: immigration salience driving shifts, elite endorsement effects (Johnson), exogenous shock (Cox murder) causing temporary reversal, undecideds breaking for change option, diminishing returns on fear-based messaging."
+}

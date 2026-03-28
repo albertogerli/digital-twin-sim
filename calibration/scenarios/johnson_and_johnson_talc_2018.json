@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Johnson & Johnson Talcum Powder Cancer Lawsuits 2018",
+  "description": "Reuters investigation revealed J&J knew for decades that asbestos lurked in its baby powder. Stock dropped $40B, tens of thousands of lawsuits filed. Trust in the iconic brand dropped sharply. Tests legacy brand trust destruction via concealment revelation.",
+  "domain": "corporate",
+  "final_outcome_pro_pct": 22.0,
+  "final_outcome_against_pct": 78.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 55, "against_pct": 18, "undecided_pct": 27},
+    {"round_equivalent": 2, "pro_pct": 50, "against_pct": 22, "undecided_pct": 28},
+    {"round_equivalent": 3, "pro_pct": 42, "against_pct": 30, "undecided_pct": 28},
+    {"round_equivalent": 4, "pro_pct": 38, "against_pct": 35, "undecided_pct": 27},
+    {"round_equivalent": 5, "pro_pct": 32, "against_pct": 42, "undecided_pct": 26},
+    {"round_equivalent": 6, "pro_pct": 28, "against_pct": 48, "undecided_pct": 24},
+    {"round_equivalent": 7, "pro_pct": 26, "against_pct": 52, "undecided_pct": 22},
+    {"round_equivalent": 8, "pro_pct": 24, "against_pct": 56, "undecided_pct": 20},
+    {"round_equivalent": 9, "pro_pct": 22, "against_pct": 78, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "St. Louis jury awards $4.69 billion to 22 women who claimed J&J baby powder caused ovarian cancer. Largest talc verdict to date."},
+    {"round_equivalent": 3, "description": "Reuters publishes bombshell investigation showing J&J knew about asbestos in baby powder since 1971 but concealed findings from regulators and public."},
+    {"round_equivalent": 5, "description": "J&J issues voluntary recall of 33,000 bottles of baby powder after FDA finds asbestos in samples. First public admission of contamination."},
+    {"round_equivalent": 6, "description": "Number of lawsuits against J&J exceeds 19,000. Company proposes controversial 'Texas Two-Step' bankruptcy maneuver for talc liabilities."},
+    {"round_equivalent": 8, "description": "J&J announces it will discontinue talc-based baby powder globally, switching to cornstarch formula. Widely seen as implicit admission."}
+  ],
+  "calibration_notes": "Tests trust destruction in a legacy 'trusted brand' via concealment revelation. J&J was consistently ranked among America's most trusted companies (top 5 in Harris Poll). Key dynamics: the betrayal amplifier (trusted baby product containing carcinogens), investigative journalism as catalyst, multi-decade concealment making the cover-up worse than the crime, legal strategy (bankruptcy maneuver) backfiring reputationally, product discontinuation as implicit guilt admission, and the special vulnerability of health/baby product brands to safety revelations."
+}

@@ -1,0 +1,27 @@
+{
+  "scenario_name": "EU Right to Repair Directive 2022-2024",
+  "description": "EU legislative push for Right to Repair, requiring manufacturers to make products repairable and provide spare parts. Public support grew from ~70% to ~85%+ across member states. Eventually adopted in April 2024. Tests consensus-building policy with broad popular support against industry resistance.",
+  "domain": "political",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 15.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 70, "against_pct": 12, "undecided_pct": 18},
+    {"round_equivalent": 2, "pro_pct": 72, "against_pct": 12, "undecided_pct": 16},
+    {"round_equivalent": 3, "pro_pct": 74, "against_pct": 11, "undecided_pct": 15},
+    {"round_equivalent": 4, "pro_pct": 76, "against_pct": 11, "undecided_pct": 13},
+    {"round_equivalent": 5, "pro_pct": 77, "against_pct": 10, "undecided_pct": 13},
+    {"round_equivalent": 6, "pro_pct": 79, "against_pct": 10, "undecided_pct": 11},
+    {"round_equivalent": 7, "pro_pct": 81, "against_pct": 9, "undecided_pct": 10},
+    {"round_equivalent": 8, "pro_pct": 83, "against_pct": 9, "undecided_pct": 8},
+    {"round_equivalent": 9, "pro_pct": 85, "against_pct": 15, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "European Commission launches Right to Repair initiative as part of Circular Economy Action Plan. Eurobarometer shows 77% of EU citizens prefer repairing to replacing."},
+    {"round_equivalent": 3, "description": "France implements pioneering Repairability Index (indice de réparabilité) requiring manufacturers to score products 0-10 on repairability. Other countries take notice."},
+    {"round_equivalent": 5, "description": "Apple's self-service repair program launch (2022) seen as industry concession to regulatory pressure. iFixit partnership signals shift."},
+    {"round_equivalent": 7, "description": "European Parliament votes overwhelmingly (509-3) in favor of Right to Repair directive. Cross-party consensus reflects public demand."},
+    {"round_equivalent": 8, "description": "Council of the EU adopts directive (April 2024). Manufacturers must repair products even after warranty; spare parts available for 5-10 years."}
+  ],
+  "calibration_notes": "Tests gradual consensus building with steady support growth rather than dramatic swings. Unusual case where public opinion starts strong and only grows stronger, with minimal organized opposition. Key dynamics: environmental framing resonating across political spectrum, cost-of-living crisis making repair economics salient, industry initially opposing then capitulating (Apple), France as first-mover demonstrating feasibility, near-unanimous parliamentary support reflecting genuine popular consensus, and the rarity of a policy issue with 85%+ support in polarized era."
+}

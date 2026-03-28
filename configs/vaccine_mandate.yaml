@@ -1,0 +1,511 @@
+budget_usd: 3.0
+channels:
+- channel_type: official
+  description: Official government announcements, decrees, and press conferences
+  id: gov_briefing
+  max_length: 280
+- channel_type: official
+  description: Public health agency updates, risk assessments, and guidance
+  id: health_update
+  max_length: 280
+- channel_type: long_form
+  description: Mainstream news reporting, interviews, and editorial framing
+  id: news_media
+  max_length: 280
+- channel_type: short_form
+  description: Fast-moving social media debate, reactions, and viral claims
+  id: social_feed
+  max_length: 280
+- channel_type: long_form
+  description: Professional discussion among doctors, scientists, and hospital leaders
+  id: medical_forum
+  max_length: 280
+- channel_type: short_form
+  description: Rallies, demonstrations, and street-level citizen mobilization
+  id: public_protest
+  max_length: 280
+citizen_clusters:
+- demographic_attributes:
+    age_range: 50-69
+    education: mixed
+    income: mixed
+    location: urban and suburban
+  description: Citizens over 50 who generally trust doctors and comply with public
+    health guidance.
+  engagement_base: 0.55
+  id: older_compliant
+  info_channel: health_update
+  name: Older Compliant Adults
+  position: 0.7
+  size: 4200000
+- demographic_attributes:
+    age_range: 50-74
+    education: mixed
+    income: mixed
+    location: mixed
+  description: Citizens over 50 who are hesitant, politically mixed, and worried about
+    side effects or coercion.
+  engagement_base: 0.6
+  id: older_skeptical
+  info_channel: news_media
+  name: Older Skeptical Adults
+  position: -0.25
+  size: 3100000
+- demographic_attributes:
+    age_range: 35-70
+    education: secondary
+    income: lower-middle
+    location: rural
+  description: Residents in smaller towns and rural areas with lower institutional
+    trust and strong local networks.
+  engagement_base: 0.45
+  id: rural_traditionalists
+  info_channel: social_feed
+  name: Rural Traditionalist Families
+  position: -0.45
+  size: 2500000
+- demographic_attributes:
+    age_range: 30-60
+    education: university
+    income: middle to high
+    location: urban
+  description: Educated city residents who favor expert guidance and are likely to
+    comply early.
+  engagement_base: 0.7
+  id: urban_professionals
+  info_channel: news_media
+  name: Urban Health-Conscious Professionals
+  position: 0.8
+  size: 3600000
+- demographic_attributes:
+    age_range: 25-65
+    education: secondary
+    income: lower-middle
+    location: urban periphery and provincial towns
+  description: Households balancing health concerns with distrust of elites and practical
+    access barriers.
+  engagement_base: 0.5
+  id: working_class_families
+  info_channel: social_feed
+  name: Working-Class Families
+  position: -0.05
+  size: 5200000
+- demographic_attributes:
+    age_range: 60-85
+    education: mixed
+    income: fixed income
+    location: mixed
+  description: Older adults with underlying conditions who are highly sensitive to
+    risk messaging and access issues.
+  engagement_base: 0.65
+  id: retired_patients
+  info_channel: health_update
+  name: Retired Chronic-Condition Patients
+  position: 0.6
+  size: 2800000
+- demographic_attributes:
+    age_range: 18-34
+    education: mixed
+    income: mixed
+    location: mixed
+  description: Younger citizens not directly targeted by the mandate but active in
+    online debate and family discussions.
+  engagement_base: 0.4
+  id: young_adult_observers
+  info_channel: social_feed
+  name: Young Adult Observers
+  position: 0.05
+  size: 4800000
+description: This simulation models the rollout of a mandatory mRNA booster vaccine
+  for Italians over 50 after a surge in a novel respiratory virus variant. It explores
+  how public health authorities, political leaders, medical professionals, media,
+  anti-vaccine activists, and citizens respond to the mandate amid debates over safety,
+  liberty, trust, and compliance.
+domain: public_health
+elite_agents:
+- archetype: politician
+  bio: Leads the emergency response and must balance public health urgency with political
+    backlash.
+  category: ''
+  communication_style: formal, decisive, crisis-oriented
+  domain_attributes: {}
+  id: pm_italy
+  influence: 0.95
+  key_trait: ''
+  key_traits:
+  - strategic
+  - pragmatic
+  name: Prime Minister
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.7
+  rigidity: 0.6
+  role: Head of government driving the mandate
+  tier: 1
+- archetype: politician
+  bio: Champions the booster mandate as a necessary intervention to protect older
+    adults and preserve hospital capacity.
+  category: ''
+  communication_style: technical, reassuring, policy-focused
+  domain_attributes: {}
+  id: health_minister
+  influence: 0.9
+  key_trait: ''
+  key_traits:
+  - evidence-driven
+  - composed
+  name: Minister of Health
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.85
+  rigidity: 0.7
+  role: Public face of the vaccination policy
+  tier: 1
+- archetype: politician
+  bio: Supports the mandate in principle but worries about enforcement and regional
+    political fallout.
+  category: ''
+  communication_style: administrative, cautious, locally grounded
+  domain_attributes: {}
+  id: regional_governor_lombardy
+  influence: 0.75
+  key_trait: ''
+  key_traits:
+  - pragmatic
+  - risk-aware
+  name: Lombardy Regional Governor
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.55
+  rigidity: 0.5
+  role: Regional executive managing local implementation
+  tier: 1
+- archetype: scientist
+  bio: Argues that rapid booster coverage is essential to reduce severe outcomes and
+    protect the health system.
+  category: ''
+  communication_style: data-heavy, precise, authoritative
+  domain_attributes: {}
+  id: public_health_director
+  influence: 0.88
+  key_trait: ''
+  key_traits:
+  - analytical
+  - methodical
+  name: National Public Health Director
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.9
+  rigidity: 0.8
+  role: Top epidemiological advisor
+  tier: 1
+- archetype: business_leader
+  bio: Supports the mandate because staffing pressure and bed shortages are worsening
+    quickly.
+  category: ''
+  communication_style: operational, urgent, outcome-focused
+  domain_attributes: {}
+  id: hospital_ceo
+  influence: 0.7
+  key_trait: ''
+  key_traits:
+  - results-oriented
+  - concerned
+  name: Hospital Network CEO
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.8
+  rigidity: 0.55
+  role: Leader of a major public hospital system
+  tier: 1
+- archetype: professional_leader
+  bio: Publicly backs the booster policy while calling for clear communication and
+    respect for patient concerns.
+  category: ''
+  communication_style: balanced, professional, persuasive
+  domain_attributes: {}
+  id: medical_association_president
+  influence: 0.78
+  key_trait: ''
+  key_traits:
+  - credible
+  - moderating
+  name: President, Italian Medical Association
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.75
+  rigidity: 0.65
+  role: Representative of physicians
+  tier: 1
+- archetype: influencer
+  bio: Frames the mandate as coercive overreach and a threat to bodily autonomy and
+    democratic rights.
+  category: ''
+  communication_style: emotive, confrontational, viral
+  domain_attributes: {}
+  id: anti_vax_leader
+  influence: 0.72
+  key_trait: ''
+  key_traits:
+  - combative
+  - highly skeptical
+  name: Anti-Vaccine Movement Spokesperson
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.95
+  rigidity: 0.95
+  role: Organizes protests and online opposition
+  tier: 1
+- archetype: legal_expert
+  bio: Challenges the mandate on proportionality, consent, and constitutional grounds
+    without rejecting vaccination outright.
+  category: ''
+  communication_style: measured, legalistic, argumentative
+  domain_attributes: {}
+  id: civil_liberties_lawyer
+  influence: 0.62
+  key_trait: ''
+  key_traits:
+  - principled
+  - analytical
+  name: Civil Liberties Lawyer
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.6
+  rigidity: 0.7
+  role: Legal critic of the mandate
+  tier: 1
+- archetype: journalist
+  bio: Moderates debate on air by hosting officials, doctors, critics, and affected
+    citizens.
+  category: ''
+  communication_style: polished, inquisitive, agenda-setting
+  domain_attributes: {}
+  id: tv_anchor
+  influence: 0.8
+  key_trait: ''
+  key_traits:
+  - balanced
+  - high-reach
+  name: National TV News Anchor
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.1
+  rigidity: 0.4
+  role: Mainstream media presenter shaping public framing
+  tier: 1
+- archetype: influencer
+  bio: Uses personal anecdotes and distrustful framing to question the mandate and
+    vaccine safety.
+  category: ''
+  communication_style: casual, provocative, highly shareable
+  domain_attributes: {}
+  id: social_media_influencer
+  influence: 0.66
+  key_trait: ''
+  key_traits:
+  - persuasive
+  - polarizing
+  name: Health Skeptic Influencer
+  platform_primary: ''
+  platform_secondary: ''
+  position: -0.8
+  rigidity: 0.85
+  role: Popular online commentator amplifying doubts
+  tier: 1
+- archetype: business_leader
+  bio: Defends the booster as scientifically validated while trying to avoid appearing
+    overly profit-driven.
+  category: ''
+  communication_style: careful, corporate, evidence-reliant
+  domain_attributes: {}
+  id: pharma_exec
+  influence: 0.58
+  key_trait: ''
+  key_traits:
+  - reputationally cautious
+  - data-conscious
+  name: Biotech Company Executive
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.35
+  rigidity: 0.5
+  role: Representative of the vaccine manufacturer
+  tier: 1
+initial_event: The Italian government announces an emergency mandate requiring all
+  citizens over 50 to receive a new mRNA booster vaccine after health agencies report
+  a sharp rise in hospitalizations linked to a novel respiratory virus variant. The
+  decree is framed as a temporary measure to protect vulnerable populations and prevent
+  strain on the health system, but it immediately sparks protests, legal threats,
+  and intense media coverage. Medical associations largely support the policy, while
+  anti-vaccine groups and civil-liberties advocates denounce it as coercive and politically
+  motivated. Public trust becomes the central battleground as citizens weigh safety,
+  freedom, and confidence in institutions.
+institutional_agents:
+- archetype: government
+  bio: ''
+  category: government
+  communication_style: ''
+  domain_attributes: {}
+  id: italian_government
+  influence: 0.98
+  key_trait: decisive crisis management
+  key_traits: []
+  name: Italian Council of Ministers
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.8
+  rigidity: 0.7
+  role: National executive authority issuing the mandate
+  tier: 2
+- archetype: government
+  bio: ''
+  category: government
+  communication_style: ''
+  domain_attributes: {}
+  id: ministry_health
+  influence: 0.96
+  key_trait: evidence-based policy enforcement
+  key_traits: []
+  name: Ministry of Health
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.9
+  rigidity: 0.85
+  role: Public health policymaking and communication body
+  tier: 2
+- archetype: public_health
+  bio: ''
+  category: public_health
+  communication_style: ''
+  domain_attributes: {}
+  id: iss
+  influence: 0.9
+  key_trait: scientific authority
+  key_traits: []
+  name: Istituto Superiore di Sanità
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.88
+  rigidity: 0.8
+  role: National public health and research institute
+  tier: 2
+- archetype: public_health
+  bio: ''
+  category: public_health
+  communication_style: ''
+  domain_attributes: {}
+  id: regional_health_service
+  influence: 0.78
+  key_trait: operational variability
+  key_traits: []
+  name: Regional Health Services
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.65
+  rigidity: 0.6
+  role: Regional implementation and vaccination delivery network
+  tier: 2
+- archetype: public_health
+  bio: ''
+  category: public_health
+  communication_style: ''
+  domain_attributes: {}
+  id: national_medical_association
+  influence: 0.8
+  key_trait: clinical credibility
+  key_traits: []
+  name: Italian Medical Association
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.7
+  rigidity: 0.55
+  role: Professional body representing physicians
+  tier: 2
+- archetype: public_health
+  bio: ''
+  category: public_health
+  communication_style: ''
+  domain_attributes: {}
+  id: hospital_networks
+  influence: 0.74
+  key_trait: capacity pressure
+  key_traits: []
+  name: Public Hospital Networks
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.75
+  rigidity: 0.45
+  role: Healthcare delivery institutions under strain
+  tier: 2
+- archetype: government
+  bio: ''
+  category: government
+  communication_style: ''
+  domain_attributes: {}
+  id: constitutional_court
+  influence: 0.82
+  key_trait: procedural neutrality
+  key_traits: []
+  name: Constitutional Court
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.0
+  rigidity: 0.9
+  role: Judicial body reviewing legality of the mandate
+  tier: 2
+- archetype: media
+  bio: ''
+  category: media
+  communication_style: ''
+  domain_attributes: {}
+  id: national_broadcaster
+  influence: 0.76
+  key_trait: agenda-setting reach
+  key_traits: []
+  name: RAI Public Broadcaster
+  platform_primary: ''
+  platform_secondary: ''
+  position: 0.15
+  rigidity: 0.4
+  role: State-linked media institution shaping public discourse
+  tier: 2
+language: en
+metrics_to_track:
+- booster uptake rate among citizens over 50
+- public approval of the mandate
+- trust in government health institutions
+- trust in medical experts
+- protest participation
+- media sentiment toward the mandate
+- misinformation spread index
+- hospitalization rate
+- legal/political resistance intensity
+- regional compliance disparity
+name: Italy mRNA Booster Mandate Backlash
+num_rounds: 5
+position_axis:
+  negative_label: strong opposition to the mandate; prioritizes personal freedom,
+    skepticism of evidence, or resistance to institutional authority
+  neutral_label: mixed, conditional, or undecided stance balancing public health and
+    civil liberties
+  positive_label: strong support for the mandate; prioritizes collective protection,
+    evidence-based public health, and compliance
+round_events: {}
+scenario_context: Italy is entering a high-pressure public health moment with rising
+  case counts, overloaded hospitals in several regions, and a government seeking to
+  act decisively before winter. The country has a history of polarized debate over
+  vaccination policy, with regional differences in trust, healthcare access, and political
+  alignment shaping public response. Media ecosystems, social platforms, and professional
+  medical voices will influence whether the mandate is normalized, contested, or partially
+  reversed.
+timeline_labels:
+- Week 1
+- Week 2
+- Week 3
+- Week 4
+- Week 5
+- Week 6
+- Week 7
+- Week 8
+timeline_unit: week

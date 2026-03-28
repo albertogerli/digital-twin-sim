@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Biden Student Loan Forgiveness (2022)",
+  "description": "President Biden announced up to $20,000 in student loan forgiveness in August 2022. Overall support hovered around 55% but was deeply polarized along partisan lines (~80% Dem support, ~25% GOP support). Supreme Court struck it down in June 2023, but alternative relief programs continued.",
+  "domain": "political/economic",
+  "final_outcome_pro_pct": 55,
+  "final_outcome_against_pct": 40,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 52, "against_pct": 35, "undecided_pct": 13},
+    {"round_equivalent": 2, "pro_pct": 55, "against_pct": 36, "undecided_pct": 9},
+    {"round_equivalent": 3, "pro_pct": 57, "against_pct": 37, "undecided_pct": 6},
+    {"round_equivalent": 4, "pro_pct": 56, "against_pct": 38, "undecided_pct": 6},
+    {"round_equivalent": 5, "pro_pct": 55, "against_pct": 39, "undecided_pct": 6},
+    {"round_equivalent": 6, "pro_pct": 54, "against_pct": 40, "undecided_pct": 6},
+    {"round_equivalent": 7, "pro_pct": 54, "against_pct": 40, "undecided_pct": 6},
+    {"round_equivalent": 8, "pro_pct": 55, "against_pct": 40, "undecided_pct": 5},
+    {"round_equivalent": 9, "pro_pct": 55, "against_pct": 40, "undecided_pct": 5}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Biden announces $10-20K student loan forgiveness plan (August 24, 2022). 43 million borrowers potentially eligible. Progressive wing wanted more; Republicans call it unfair."},
+    {"round_equivalent": 3, "description": "26 million applications filed within weeks. Enthusiasm high among beneficiaries. Republican AGs from 6 states file lawsuits. GOP frames as transfer from non-college workers to graduates."},
+    {"round_equivalent": 5, "description": "Federal courts block the program. 8th Circuit issues injunction. Political battle intensifies. Biden extends payment pause while fighting in courts."},
+    {"round_equivalent": 7, "description": "Supreme Court hears oral arguments (February 2023). Conservative majority skeptical. Media coverage amplifies both sides. Opinion crystallizes along partisan lines."},
+    {"round_equivalent": 9, "description": "Supreme Court strikes down plan 6-3 (June 2023). Biden announces alternative SAVE plan. NPR/Marist poll: 55% still support some form of forgiveness. Issue becomes 2024 campaign topic."}
+  ],
+  "calibration_notes": "Highly polarized issue with remarkably stable aggregate opinion despite intense debate. NPR/Marist and Pew polls consistently showed 55-60% support for some form of student loan relief. But the aggregate masked extreme partisan polarization (~80% D vs ~25% R). Very few undecideds — this was a pre-sorted issue. Tests: partisan pre-sorting limiting persuasion, aggregate stability masking polarization, legal/institutional intervention effects, motivated reasoning."
+}

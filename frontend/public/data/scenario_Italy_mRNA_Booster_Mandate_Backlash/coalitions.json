@@ -1,0 +1,282 @@
+[
+  {
+    "round": 1,
+    "coalitions": [
+      {
+        "label": "Anti-measure",
+        "color": "#1e40af",
+        "members": [
+          "anti_vax_leader",
+          "civil_liberties_lawyer",
+          "social_media_influencer"
+        ],
+        "avg_position": -0.803,
+        "size": 3
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#059669",
+        "members": [
+          "pm_italy",
+          "health_minister",
+          "public_health_director",
+          "hospital_ceo",
+          "medical_association_president",
+          "italian_government",
+          "ministry_health",
+          "iss",
+          "regional_health_service",
+          "national_medical_association",
+          "hospital_networks"
+        ],
+        "avg_position": 0.789,
+        "size": 11
+      },
+      {
+        "label": "Hesitant",
+        "color": "#dc2626",
+        "members": [
+          "tv_anchor",
+          "constitutional_court",
+          "national_broadcaster"
+        ],
+        "avg_position": 0.077,
+        "size": 3
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#f59e0b",
+        "members": [
+          "regional_governor_lombardy",
+          "pharma_exec"
+        ],
+        "avg_position": 0.455,
+        "size": 2
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "coalitions": [
+      {
+        "label": "Pro-measure",
+        "color": "#1e40af",
+        "members": [
+          "pm_italy",
+          "regional_governor_lombardy",
+          "regional_health_service",
+          "national_medical_association",
+          "hospital_networks"
+        ],
+        "avg_position": 0.682,
+        "size": 5
+      },
+      {
+        "label": "Anti-measure",
+        "color": "#059669",
+        "members": [
+          "anti_vax_leader",
+          "civil_liberties_lawyer",
+          "social_media_influencer"
+        ],
+        "avg_position": -0.777,
+        "size": 3
+      },
+      {
+        "label": "Science-aligned moderates",
+        "color": "#dc2626",
+        "members": [
+          "tv_anchor",
+          "pharma_exec",
+          "constitutional_court",
+          "national_broadcaster"
+        ],
+        "avg_position": 0.193,
+        "size": 4
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#f59e0b",
+        "members": [
+          "health_minister",
+          "public_health_director",
+          "hospital_ceo",
+          "medical_association_president",
+          "italian_government",
+          "ministry_health",
+          "iss"
+        ],
+        "avg_position": 0.84,
+        "size": 7
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "coalitions": [
+      {
+        "label": "Pro-measure",
+        "color": "#1e40af",
+        "members": [
+          "regional_governor_lombardy",
+          "pharma_exec"
+        ],
+        "avg_position": 0.465,
+        "size": 2
+      },
+      {
+        "label": "Anti-measure",
+        "color": "#059669",
+        "members": [
+          "anti_vax_leader",
+          "civil_liberties_lawyer",
+          "social_media_influencer"
+        ],
+        "avg_position": -0.783,
+        "size": 3
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#dc2626",
+        "members": [
+          "pm_italy",
+          "health_minister",
+          "public_health_director",
+          "hospital_ceo",
+          "medical_association_president",
+          "italian_government",
+          "ministry_health",
+          "iss",
+          "regional_health_service",
+          "national_medical_association",
+          "hospital_networks"
+        ],
+        "avg_position": 0.79,
+        "size": 11
+      },
+      {
+        "label": "Hesitant",
+        "color": "#f59e0b",
+        "members": [
+          "tv_anchor",
+          "constitutional_court",
+          "national_broadcaster"
+        ],
+        "avg_position": 0.119,
+        "size": 3
+      }
+    ]
+  },
+  {
+    "round": 4,
+    "coalitions": [
+      {
+        "label": "Anti-measure",
+        "color": "#1e40af",
+        "members": [
+          "anti_vax_leader",
+          "civil_liberties_lawyer",
+          "social_media_influencer"
+        ],
+        "avg_position": -0.787,
+        "size": 3
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#059669",
+        "members": [
+          "pm_italy",
+          "health_minister",
+          "public_health_director",
+          "hospital_ceo",
+          "medical_association_president",
+          "italian_government",
+          "ministry_health",
+          "iss",
+          "regional_health_service",
+          "national_medical_association",
+          "hospital_networks"
+        ],
+        "avg_position": 0.786,
+        "size": 11
+      },
+      {
+        "label": "Hesitant",
+        "color": "#dc2626",
+        "members": [
+          "tv_anchor",
+          "constitutional_court",
+          "national_broadcaster"
+        ],
+        "avg_position": 0.135,
+        "size": 3
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#f59e0b",
+        "members": [
+          "regional_governor_lombardy",
+          "pharma_exec"
+        ],
+        "avg_position": 0.46,
+        "size": 2
+      }
+    ]
+  },
+  {
+    "round": 5,
+    "coalitions": [
+      {
+        "label": "Pro-measure",
+        "color": "#1e40af",
+        "members": [
+          "regional_governor_lombardy",
+          "pharma_exec"
+        ],
+        "avg_position": 0.47,
+        "size": 2
+      },
+      {
+        "label": "Anti-measure",
+        "color": "#059669",
+        "members": [
+          "anti_vax_leader",
+          "civil_liberties_lawyer",
+          "social_media_influencer"
+        ],
+        "avg_position": -0.793,
+        "size": 3
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#dc2626",
+        "members": [
+          "pm_italy",
+          "health_minister",
+          "public_health_director",
+          "hospital_ceo",
+          "medical_association_president",
+          "italian_government",
+          "ministry_health",
+          "iss",
+          "regional_health_service",
+          "national_medical_association",
+          "hospital_networks"
+        ],
+        "avg_position": 0.781,
+        "size": 11
+      },
+      {
+        "label": "Science-aligned moderates",
+        "color": "#f59e0b",
+        "members": [
+          "tv_anchor",
+          "constitutional_court",
+          "national_broadcaster"
+        ],
+        "avg_position": 0.157,
+        "size": 3
+      }
+    ]
+  }
+]

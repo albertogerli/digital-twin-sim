@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Depp vs Heard Trial Public Opinion 2022",
+  "description": "Johnny Depp's defamation trial against Amber Heard (April-June 2022) became a massive social media spectacle. Pro-Depp sentiment surged from roughly even to ~85% as trial evidence and social media dynamics overwhelmingly favored Depp. Tests social media amplification and bandwagon effects.",
+  "domain": "legal/cultural",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 10.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 50, "against_pct": 25, "undecided_pct": 25},
+    {"round_equivalent": 2, "pro_pct": 55, "against_pct": 22, "undecided_pct": 23},
+    {"round_equivalent": 3, "pro_pct": 62, "against_pct": 18, "undecided_pct": 20},
+    {"round_equivalent": 4, "pro_pct": 70, "against_pct": 15, "undecided_pct": 15},
+    {"round_equivalent": 5, "pro_pct": 75, "against_pct": 13, "undecided_pct": 12},
+    {"round_equivalent": 6, "pro_pct": 78, "against_pct": 12, "undecided_pct": 10},
+    {"round_equivalent": 7, "pro_pct": 82, "against_pct": 11, "undecided_pct": 7},
+    {"round_equivalent": 8, "pro_pct": 84, "against_pct": 10, "undecided_pct": 6},
+    {"round_equivalent": 9, "pro_pct": 85, "against_pct": 10, "undecided_pct": 5}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Trial begins live-streamed on April 11. Depp's testimony about abuse allegations generates massive social media engagement and sympathy."},
+    {"round_equivalent": 3, "description": "Audio recordings of Heard admitting to hitting Depp go viral. TikTok pro-Depp content dominates algorithm. #JusticeForJohnnyDepp trends globally."},
+    {"round_equivalent": 5, "description": "Heard's testimony widely mocked on social media. Credibility-damaging moments (dog stepping on a bee, donation vs pledge) become viral memes."},
+    {"round_equivalent": 7, "description": "Closing arguments. Overwhelming social media consensus pro-Depp. Bot analysis suggests some amplification but organic support is dominant."},
+    {"round_equivalent": 9, "description": "Jury awards Depp $10.35M in damages, Heard $2M. Verdict aligns with public opinion. YouGov poll shows 85% siding with Depp."}
+  ],
+  "calibration_notes": "Tests extreme social media bandwagon and platform amplification effects. Key patterns: one of the most lopsided public opinion outcomes in modern trial history, TikTok algorithm creating echo chamber and meme cascade, live-streaming enabling parasocial engagement, pre-existing celebrity affection advantage for Depp, gender politics counter-narrative (Heard supporters framed it as #MeToo backlash) failed to gain traction, ~35pt swing over 6 weeks. YouGov, Morning Consult polling data used."
+}

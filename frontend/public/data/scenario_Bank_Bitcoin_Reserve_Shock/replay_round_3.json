@@ -1,0 +1,3540 @@
+{
+  "round": 3,
+  "month": "Week 3",
+  "event": {
+    "event": "Round 3 dynamics continue",
+    "shock_magnitude": 0.3,
+    "shock_direction": 0
+  },
+  "posts": [
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00000_r3",
+      "author_id": "board_chair",
+      "author_name": "Jacques Moreau",
+      "author_role": "Board Chair",
+      "tier": 1,
+      "platform": "social",
+      "text": "Agree with @cfo_bank: the capital treatment and ring-fencing are the story, not the symbolism. This is a governance case, not a marketing one.",
+      "round": 3,
+      "likes": 6,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00001_r3",
+      "author_id": "finance_minister",
+      "author_name": "Paolo Ricci",
+      "author_role": "National finance minister",
+      "tier": 1,
+      "platform": "social",
+      "text": "The latest supervisory filing confirms the core point: crypto on bank balance sheets is not costless. Segregated custody, added buffers and board approval are prudent safeguards. Innovation is welcome, but prudence remains non-negotiable.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00002_r3",
+      "author_id": "macro_analyst",
+      "author_name": "Thomas Adler",
+      "author_role": "Independent macro strategist",
+      "tier": 1,
+      "platform": "analyst_report",
+      "text": "@cfo_bank is directionally right: the capital treatment, not the symbolism, is what will determine whether this remains a one-off or becomes a repeatable model.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00003_r3",
+      "author_id": "crypto_enthusiasts_crypto_educated_retail",
+      "author_name": "Crypto Enthusiasts Crypto Educated Retail",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "The move to segregated tri-party custody and the explicit cap indicate the asset is being treated as a controlled reserve exposure rather than a speculative trading book position. The market should interpret this as institutional maturation, not repudiation.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00004_r3",
+      "author_id": "institutional_clients_corporate_treasurer",
+      "author_name": "Institutional Clients Corporate Treasurer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "The filing changes the economics materially. A capped 0.5% allocation with segregated custody and incremental capital charges is not a template for treasury diversification; it is a supervised exception with a high compliance burden. We are not seeing a scalable reserve model here.",
+      "round": 3,
+      "likes": 6,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00005_r3",
+      "author_id": "retail_savers_retired_professional",
+      "author_name": "Retail Savers Retired Professional",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "The joint notice from BaFin and ACPR reads like a line in the sand. That makes me less worried about immediate contagion, but more skeptical that banks should be holding reserve assets that require this much supervision just to stay on the books.",
+      "round": 3,
+      "likes": 3,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.78,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00006_r3",
+      "author_id": "small_business_owners_regional_cafe_owner",
+      "author_name": "Small Business Owners Regional Cafe Owner",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "Filed note: the bank has capped BTC at 0.5% and moved it into segregated custody, but the real takeaway is the EUR 180m charge and 18 bps CET1 hit. If that’s the price of keeping crypto on book, expect tighter lending appetite elsewhere.",
+      "round": 3,
+      "likes": 5,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00007_r3",
+      "author_id": "ceo_bank",
+      "author_name": "Elena Varga",
+      "author_role": "Chief Executive Officer of the announcing bank",
+      "tier": 1,
+      "platform": "social",
+      "text": "We have now moved the Bitcoin position into segregated tri-party custody with Clearstream and a regulated Swiss custodian, and we have capped exposure at 0.5%. The charge is real; so is the discipline. Capital comes first.",
+      "round": 3,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00008_r3",
+      "author_id": "cfo_bank",
+      "author_name": "Martin Keller",
+      "author_role": "Chief Financial Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "Supportive of @finance_minister: the joint BaFin/ACPR notice appropriately limits copycat risk and makes the capital/liquidity consequences explicit.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00009_r3",
+      "author_id": "board_chair",
+      "author_name": "Jacques Moreau",
+      "author_role": "Board Chair",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The pan-European supervisory response materially raises the bar for any reserve-class crypto allocation by systemically important lenders. The combination of capital add-ons, custody constraints, and board-level approval requirements means the debate has shifted from ‘can this be",
+      "round": 3,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00010_r3",
+      "author_id": "finance_minister",
+      "author_name": "Paolo Ricci",
+      "author_role": "National finance minister",
+      "tier": 1,
+      "platform": "social",
+      "text": "The CEO is right that discipline matters. But this should not be framed as “durable innovation” until the full capital, custody and liquidity burden is transparently absorbed.",
+      "round": 3,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00011_r3",
+      "author_id": "consumer_advocate",
+      "author_name": "Marta Silva",
+      "author_role": "Financial consumer rights advocate",
+      "tier": 1,
+      "platform": "forum",
+      "text": "This week confirms the pattern: the bank had to cap exposure, move coins into tri-party custody, and eat a €180m pre-tax charge just to keep the position on book. That is not a stable reserve strategy; it is a supervisory workaround with real capital cost. BaFin/ACPR now signalin",
+      "round": 3,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00012_r3",
+      "author_id": "fintech_founder",
+      "author_name": "Leo Novak",
+      "author_role": "Founder of a digital banking startup",
+      "tier": 1,
+      "platform": "social",
+      "text": "The market is missing the bigger signal: this is how traditional finance actually converges with digital assets—via custody, capital, and governance, not hype. The path is getting narrower, but it’s now real infrastructure.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00013_r3",
+      "author_id": "retail_savers_retail_saver",
+      "author_name": "Retail Savers Retail Saver",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "I read the filing and what stands out is not the 0.5% cap, it’s the extra capital charge and the new custody setup. If the ECB didn’t want self-custody on balance sheet, that tells me this is still an exception, not normal banking.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00014_r3",
+      "author_id": "retail_savers_personal_finance_columnist",
+      "author_name": "Retail Savers Personal Finance Columnist",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "For ordinary depositors, the key question is simple: does this Bitcoin experiment affect the safety of my savings? The bank says no, but the supervisory response, capital hit, and board-level controls suggest regulators are treating it as a material risk, not a marketing story.",
+      "round": 3,
+      "likes": 6,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00015_r3",
+      "author_id": "institutional_clients_asset_manager",
+      "author_name": "Institutional Clients Asset Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "Markets are reading the ECB and joint supervisory notice as a signal that institutional crypto adoption will proceed, if at all, through narrow and highly encumbered channels. The capital treatment, not the price action, is now the binding constraint for bank balance sheets.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00016_r3",
+      "author_id": "risk_averse_pensioners_former_banker",
+      "author_name": "Risk Averse Pensioners Former Banker",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "The supervisory treatment is now the message: capped exposure, segregated custody, liquidity add-ons, and enhanced review. That combination suggests Bitcoin remains a non-core, highly encumbered position rather than a reserve asset suitable for capital preservation mandates.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00017_r3",
+      "author_id": "risk_head",
+      "author_name": "Sofia Lindholm",
+      "author_role": "Chief Risk Officer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The supervisory template is now clear: higher capital, stricter custody, board-level approval, and likely liquidity add-ons for any systemic bank holding reserve-class crypto. The €180m pre-tax charge and 18 bps CET1 impact confirm the economic burden. This does not validate Bitc",
+      "round": 3,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00018_r3",
+      "author_id": "board_chair",
+      "author_name": "Jacques Moreau",
+      "author_role": "Board Chair",
+      "tier": 1,
+      "platform": "social",
+      "text": "The latest supervisory filing is the real signal: capped exposure, segregated custody, and a €180m charge to keep the position on book. This is governance-led experimentation, not a template for broad adoption.",
+      "round": 3,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00019_r3",
+      "author_id": "finance_minister",
+      "author_name": "Paolo Ricci",
+      "author_role": "National finance minister",
+      "tier": 1,
+      "platform": "forum",
+      "text": "This week’s developments strengthen, rather than weaken, the prudential case. The capital charge, CET1 impact and supervisory template show that any reserve-class crypto exposure carries material governance and liquidity costs. That does not ban innovation, but it does mean syste",
+      "round": 3,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00020_r3",
+      "author_id": "consumer_advocate",
+      "author_name": "Marta Silva",
+      "author_role": "Financial consumer rights advocate",
+      "tier": 1,
+      "platform": "social",
+      "text": "To @ceo_bank: calling this “discipline” doesn’t change the fact that ordinary depositors are left with the downside while the bank pays to contain the damage. A cap and custody ring-fence are damage control, not a case for expansion.",
+      "round": 3,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00021_r3",
+      "author_id": "fintech_founder",
+      "author_name": "Leo Novak",
+      "author_role": "Founder of a digital banking startup",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Week 3 confirms the trajectory: reserve-grade BTC can exist on-bank balance sheets, but only inside a heavily supervised architecture. The transfer to segregated tri-party custody is exactly what I expected once the ECB pushed back on self-custody. The charge and CET1 hit are the",
+      "round": 3,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00022_r3",
+      "author_id": "ceo_bank",
+      "author_name": "Elena Varga",
+      "author_role": "Chief Executive Officer of the announcing bank",
+      "tier": 1,
+      "platform": "social",
+      "text": "The market is right to focus on capital treatment. The lesson is not that adoption fails; it is that only well-governed, well-capitalized institutions will be allowed to participate.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00023_r3",
+      "author_id": "cfo_bank",
+      "author_name": "Martin Keller",
+      "author_role": "Chief Financial Officer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The supervisory template is now clearer: capped exposure, segregated tri-party custody, additional capital buffers, and explicit board-level approval. The EUR 180m pre-tax charge and 18 bps CET1 impact are not incidental—they define the economic cost of keeping BTC on book. For s",
+      "round": 3,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00024_r3",
+      "author_id": "risk_head",
+      "author_name": "Sofia Lindholm",
+      "author_role": "Chief Risk Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The @finance_minister post is the most balanced: it recognizes the prudence of the cap and the joint supervisory signal. However, the implication should be stated more plainly—this is a containment framework, not an endorsement of reserve suitability.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00025_r3",
+      "author_id": "ecb_official",
+      "author_name": "Dr. Anika Weber",
+      "author_role": "European Central Bank supervisory official",
+      "tier": 1,
+      "platform": "regulatory_filing",
+      "text": "The latest supervisory filing is material for prudential assessment because it confirms, first, that the institution has capped the Bitcoin exposure at 0.5%; second, that the assets have been moved to a segregated tri-party custody structure with Clearstream and a regulated Swiss custodian; and third, that the balance-sheet decision has imposed a further EUR 180 million pre-tax charge for capital buffers, legal work, and operational controls.\n\nFrom a supervisory perspective, this sequence is instructive rather than reassuring. The need to prohibit self-custody for balance-sheet treatment underscores that custody, governance, and enforceability concerns are not incidental but central to the prudential case. The associated 18 basis point reduction in CET1 ratio confirms that the exposure is not free in capital terms and that the operational perimeter required to hold it is already burdensome.\n\nThe joint notice issued by BaFin and the ACPR is equally significant. Enhanced review, liquidity add-ons, and mandatory board-level approval for any further reserve-class crypto accumulation by systemically important lenders should be understood as a minimum supervisory floor, not an aspirational framework.\n\nInstitutions should not misread the market’s initial fascination with novelty as a relaxation of prudential discipline. Reserve portfolios are intended to preserve liquidity, capital resilience, and confidence under stress. Bitcoin remains a volatile, operationally complex asset whose treatment on balance sheet will require exceptional justification, robust governance, and continuing supervisory scrutiny. Absent those conditions, further accumulation would be inconsistent with conservative reserve management.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00026_r3",
+      "author_id": "ecb_official",
+      "author_name": "Dr. Anika Weber",
+      "author_role": "European Central Bank supervisory official",
+      "tier": 1,
+      "platform": "financial_news",
+      "text": "The week’s developments materially weaken the argument that institutional Bitcoin adoption will proceed in a simple or frictionless manner. The market should focus less on the symbolic fact of a capped allocation and more on the price paid to keep it on balance sheet: a segregated custody arrangement, additional capital buffers, legal structuring, operational controls, and a measurable hit to CET1.\n\nThat is the practical lesson. Supervisory tolerance is not equivalent to supervisory endorsement. The joint BaFin/ACPR notice now makes clear that any further reserve-class crypto accumulation by systemically important lenders will face enhanced review and liquidity add-ons, with board-level approval required. This is not a pathway to rapid normalization; it is a framework for constraint.\n\nThe sharp move lower in Bitcoin in euro terms is therefore understandable. The market appears to be repricing the probability that institutional adoption will be slower, more costly, and more tightly supervised than many advocates assumed. Rival banks pausing internal pilots is a rational response, not a sign of missed opportunity. It is an acknowledgment that reserve management is judged by resilience, not narrative.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00027_r3",
+      "author_id": "crypto_ceo",
+      "author_name": "Nadia Petrova",
+      "author_role": "CEO of a major crypto exchange",
+      "tier": 1,
+      "platform": "social",
+      "text": "The real headline isn’t a charge or a cap — it’s that a major European bank has put Bitcoin through institutional-grade custody, capital, and governance. That’s not retreat. That’s adoption becoming durable. Bullish long-term.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00028_r3",
+      "author_id": "macro_analyst",
+      "author_name": "Thomas Adler",
+      "author_role": "Independent macro strategist",
+      "tier": 1,
+      "platform": "financial_news",
+      "text": "European regulators have now converted a symbolic bank Bitcoin allocation into a supervisory case study.\n\nThe latest disclosure is important for two reasons. First, it shows that the exposure is being boxed into a segregated, tri-party custody model after the ECB made clear that self-custody would not be acceptable for balance-sheet treatment. Second, it quantifies the cost of staying on book: a EUR 180 million pre-tax charge, an 18 bps CET1 drag, and a modest hit to bank equity performance.\n\nThat combination changes the market narrative. The issue is no longer whether a major European lender can buy Bitcoin. It can. The issue is whether the capital, governance, and operational burden makes the position attractive enough to replicate across the sector.\n\nThe BaFin/ACPR notice reinforces the same point. Enhanced review, liquidity add-ons, and mandatory board approval effectively turn this into a pan-European template for systemically important institutions. In practice, that means adoption is likely to be slower, smaller, and more encumbered than crypto bulls had hoped.\n\nBitcoin’s decline in euro terms is therefore understandable. The market is not only pricing the bank’s charge; it is also pricing the probability that other lenders will pause internal pilots until supervisors give more explicit guidance.\n\nMy read: the reserve-diversification thesis has not been invalidated, but the easy version of the thesis has been. Institutional participation is still possible — just far more conditional on capital strength, custody architecture, and supervisory tolerance than the headline originally suggested.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00029_r3",
+      "author_id": "crypto_enthusiasts_buy_side_analyst",
+      "author_name": "Crypto Enthusiasts Buy Side Analyst",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "The bank’s supervisory filing materially changes the economics of reserve-class crypto adoption. While the capital charge and CET1 drag make the strategy less attractive near term, the position remaining on book suggests a regulated template may emerge for institutions willing to absorb compliance costs.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00030_r3",
+      "author_id": "risk_averse_pensioners_retired_saver",
+      "author_name": "Risk Averse Pensioners Retired Saver",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "The latest supervisory notice makes the issue plain: if a bank needs special buffers, ring-fencing, and board approval just to hold a tiny Bitcoin allocation, that is not prudence. It is a sign the asset does not fit conservative banking.",
+      "round": 3,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00031_r3",
+      "author_id": "young_finance_optimists_young fintech analyst",
+      "author_name": "Young Finance Optimists Young Fintech Analyst",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "The filing is the real signal here: capped at 0.5%, segregated custody, and a CET1 hit just to keep the position on book. That’s not mainstream adoption, that’s a supervised pilot with a very expensive wrapper.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00032_r3",
+      "author_id": "ceo_bank",
+      "author_name": "Elena Varga",
+      "author_role": "Chief Executive Officer of the announcing bank",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The supervisory message is clear: reserve-class crypto can only remain on balance sheet if governance, custody, liquidity, and capital treatment are all demonstrably robust. We have accepted that framework—tri-party custody, board oversight, and a strict 0.5% cap. The EUR 180m ch",
+      "round": 3,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00033_r3",
+      "author_id": "ecb_official",
+      "author_name": "Dr. Anika Weber",
+      "author_role": "European Central Bank supervisory official",
+      "tier": 1,
+      "platform": "regulatory_filing",
+      "text": "The capital treatment is indeed the story, but that should not be used to obscure the core point: if a reserve asset requires ring-fencing, liquidity add-ons, and board-level escalation merely to remain on book, then prudence has already been compromised.",
+      "round": 3,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00034_r3",
+      "author_id": "consumer_advocate",
+      "author_name": "Marta Silva",
+      "author_role": "Financial consumer rights advocate",
+      "tier": 1,
+      "platform": "social",
+      "text": "Segregated custody doesn’t fix the core issue: depositors are still being asked to absorb crypto volatility, legal cost, and capital drag. A €180m charge and lower CET1 are not signs of prudence—they’re the bill for a bad idea.",
+      "round": 3,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00035_r3",
+      "author_id": "fintech_founder",
+      "author_name": "Leo Novak",
+      "author_role": "Founder of a digital banking startup",
+      "tier": 1,
+      "platform": "social",
+      "text": "[@ceo_bank] is right to frame discipline as durable innovation. The cap and custody shift don’t weaken the thesis—they make it bankable.",
+      "round": 3,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00036_r3",
+      "author_id": "crypto_enthusiasts_retail_bitcoin_maxi",
+      "author_name": "Crypto Enthusiasts Retail Bitcoin Maxi",
+      "author_role": "",
+      "tier": 3,
+      "platform": "fintwit",
+      "text": "ECB basically just confirmed BTC is systemically relevant. 0.5% cap, tri-party custody, board approval, 1250% RW — that’s not a ban, that’s institutional onboarding with training wheels.",
+      "round": 3,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00037_r3",
+      "author_id": "institutional_clients_bank_risk_officer",
+      "author_name": "Institutional Clients Bank Risk Officer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "Any further reserve-class crypto exposure would require explicit board approval, enhanced liquidity assessment, and documented operational controls. Until the ECB clarifies the prudential perimeter, internal pilots should remain paused pending supervisory guidance.",
+      "round": 3,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00038_r3",
+      "author_id": "young_finance_optimists_swing trader",
+      "author_name": "Young Finance Optimists Swing Trader",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "Markets are finally pricing the difference between 'bank bought BTC' and 'bank can actually hold BTC without blowing up capital.' The first was a narrative trade; the second is a regulatory grind.",
+      "round": 3,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00039_r3",
+      "author_id": "cfo_bank",
+      "author_name": "Martin Keller",
+      "author_role": "Chief Financial Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The latest filing confirms the operative issue is not adoption, but balance-sheet friction: segregation, board approval, liquidity add-ons and CET1 drag. That is a much slower institutional path than the market narrative implied.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00040_r3",
+      "author_id": "risk_head",
+      "author_name": "Sofia Lindholm",
+      "author_role": "Chief Risk Officer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The new filing is more revealing than the headline: a 0.5% cap, segregated tri-party custody, and €180m of incremental costs. That is not scalable reserve management; it is a supervised exception with material capital drag.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00041_r3",
+      "author_id": "crypto_ceo",
+      "author_name": "Nadia Petrova",
+      "author_role": "CEO of a major crypto exchange",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Week 3 confirms the pattern: supervisors are not rejecting Bitcoin, they’re formalizing the rulebook around it. A segregated tri-party custody setup, board-level oversight, and explicit capital treatment are exactly how reserve assets become bankable. The EUR 180m charge is the p",
+      "round": 3,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00042_r3",
+      "author_id": "crypto_ceo",
+      "author_name": "Nadia Petrova",
+      "author_role": "CEO of a major crypto exchange",
+      "tier": 1,
+      "platform": "social",
+      "text": "@ceo_bank is right to emphasize discipline — but the market should read this as institutionalization, not hesitation. Once the framework exists, more banks will follow. The template is being written now.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00043_r3",
+      "author_id": "risk_averse_pensioners_pension_contributor",
+      "author_name": "Risk Averse Pensioners Pension Contributor",
+      "author_role": "",
+      "tier": 3,
+      "platform": "investor_forum",
+      "text": "I don’t see this as institutional adoption. I see a bank taking a reputational hit, a capital hit, and a regulatory warning all at once. For savers my age, that is the opposite of a reason to buy BTC.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00044_r3",
+      "author_id": "young_finance_optimists_product manager in fintech",
+      "author_name": "Young Finance Optimists Product Manager In Fintech",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "Joint BaFin/ACPR notice effectively sets the template: enhanced review, liquidity add-ons, board approval. That makes institutional crypto look more durable, but also much less scalable in the near term.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00045_r3",
+      "author_id": "small_business_owners_small_business_accountant",
+      "author_name": "Small Business Owners Small Business Accountant",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "Markets are treating the latest supervisory response as a signal that reserve-class crypto will remain expensive to hold and harder to justify. For local businesses, the question is whether banks will recover those costs through fees, lower deposit returns, or more selective credit underwriting.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00046_r3",
+      "author_id": "small_business_owners_manufacturing_owner",
+      "author_name": "Small Business Owners Manufacturing Owner",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "The joint notice from BaFin and ACPR effectively sets a template: enhanced review, liquidity add-ons, and board approval for any further crypto accumulation by systemically important lenders. That sounds like fewer surprises, but also less room for banks to take risks with our deposits.",
+      "round": 3,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    }
+  ],
+  "graphSnapshot": {
+    "round": 3,
+    "month": "Week 3",
+    "event_label": "Week 3",
+    "nodes": [
+      {
+        "id": "ceo_bank",
+        "name": "Elena Varga",
+        "type": "persona",
+        "description": "Chief Executive Officer of the announcing bank",
+        "power_level": 0.95,
+        "position": 0.559,
+        "position_history": [
+          0.559
+        ],
+        "delta": 0.007,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_bank",
+        "name": "Martin Keller",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.82,
+        "position": 0.2,
+        "position_history": [
+          0.2
+        ],
+        "delta": -0.116,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "risk_head",
+        "name": "Sofia Lindholm",
+        "type": "persona",
+        "description": "Chief Risk Officer",
+        "power_level": 0.8,
+        "position": -0.282,
+        "position_history": [
+          -0.282
+        ],
+        "delta": 0.024,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "board_chair",
+        "name": "Jacques Moreau",
+        "type": "persona",
+        "description": "Board Chair",
+        "power_level": 0.88,
+        "position": 0.079,
+        "position_history": [
+          0.079
+        ],
+        "delta": -0.038,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "ecb_official",
+        "name": "Dr. Anika Weber",
+        "type": "persona",
+        "description": "European Central Bank supervisory official",
+        "power_level": 0.98,
+        "position": -0.875,
+        "position_history": [
+          -0.875
+        ],
+        "delta": 0.025,
+        "sentiment": "cautious",
+        "category": "regulator"
+      },
+      {
+        "id": "finance_minister",
+        "name": "Paolo Ricci",
+        "type": "persona",
+        "description": "National finance minister",
+        "power_level": 0.9,
+        "position": -0.415,
+        "position_history": [
+          -0.415
+        ],
+        "delta": -0.009,
+        "sentiment": "worried",
+        "category": "politician"
+      },
+      {
+        "id": "crypto_ceo",
+        "name": "Nadia Petrova",
+        "type": "persona",
+        "description": "CEO of a major crypto exchange",
+        "power_level": 0.76,
+        "position": 0.891,
+        "position_history": [
+          0.891
+        ],
+        "delta": 0.037,
+        "sentiment": "triumphant",
+        "category": "business_leader"
+      },
+      {
+        "id": "macro_analyst",
+        "name": "Thomas Adler",
+        "type": "persona",
+        "description": "Independent macro strategist",
+        "power_level": 0.7,
+        "position": 0.113,
+        "position_history": [
+          0.113
+        ],
+        "delta": -0.038,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Marta Silva",
+        "type": "persona",
+        "description": "Financial consumer rights advocate",
+        "power_level": 0.68,
+        "position": -0.631,
+        "position_history": [
+          -0.631
+        ],
+        "delta": 0.068,
+        "sentiment": "worried",
+        "category": "activist"
+      },
+      {
+        "id": "fintech_founder",
+        "name": "Leo Novak",
+        "type": "persona",
+        "description": "Founder of a digital banking startup",
+        "power_level": 0.62,
+        "position": 0.397,
+        "position_history": [
+          0.397
+        ],
+        "delta": -0.065,
+        "sentiment": "cautious",
+        "category": "entrepreneur"
+      },
+      {
+        "id": "announcing_bank",
+        "name": "EuroCapital Bank",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.562,
+        "position_history": [
+          0.562
+        ],
+        "delta": -0.021,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ecb",
+        "name": "European Central Bank",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.892,
+        "position_history": [
+          -0.892
+        ],
+        "delta": 0.001,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_banking_regulator",
+        "name": "National Prudential Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.734,
+        "position_history": [
+          -0.734
+        ],
+        "delta": 0.057,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "european_commission",
+        "name": "European Commission",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.273,
+        "position_history": [
+          -0.273
+        ],
+        "delta": 0.015,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "competitor_bank",
+        "name": "Continental Trust Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.058,
+        "position_history": [
+          0.058
+        ],
+        "delta": -0.001,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_association",
+        "name": "European Bank Investors Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.155,
+        "position_history": [
+          -0.155
+        ],
+        "delta": 0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "deposit_insurance_fund",
+        "name": "National Deposit Guarantee Scheme",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.612,
+        "position_history": [
+          -0.612
+        ],
+        "delta": 0.032,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "crypto_industry_group",
+        "name": "European Crypto Alliance",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.778,
+        "position_history": [
+          0.778
+        ],
+        "delta": -0.029,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "retail_savers",
+        "name": "Retail Savers",
+        "type": "cluster",
+        "description": "Cluster: Retail Savers",
+        "power_level": 0.5,
+        "position": -0.97,
+        "position_history": [
+          -0.97
+        ],
+        "delta": -0.12,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 8500000
+      },
+      {
+        "id": "crypto_enthusiasts",
+        "name": "Crypto Enthusiasts",
+        "type": "cluster",
+        "description": "Cluster: Crypto Enthusiasts",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "bullish",
+        "category": "public_opinion",
+        "clusterSize": 1200000
+      },
+      {
+        "id": "institutional_clients",
+        "name": "Institutional Clients",
+        "type": "cluster",
+        "description": "Cluster: Institutional Clients",
+        "power_level": 0.5,
+        "position": -0.11,
+        "position_history": [
+          -0.11
+        ],
+        "delta": -0.19,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 240000
+      },
+      {
+        "id": "risk_averse_pensioners",
+        "name": "Risk-Averse Pensioners",
+        "type": "cluster",
+        "description": "Cluster: Risk-Averse Pensioners",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "bearish",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "young_finance_optimists",
+        "name": "Young Finance Optimists",
+        "type": "cluster",
+        "description": "Cluster: Young Finance Optimists",
+        "power_level": 0.5,
+        "position": 0.48,
+        "position_history": [
+          0.48
+        ],
+        "delta": -0.14,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "small_business_owners",
+        "name": "Small Business Owners",
+        "type": "cluster",
+        "description": "Cluster: Small Business Owners",
+        "power_level": 0.5,
+        "position": -0.46,
+        "position_history": [
+          -0.46
+        ],
+        "delta": -0.18,
+        "sentiment": "bearish",
+        "category": "public_opinion",
+        "clusterSize": 1900000
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_bank",
+        "target": "cfo_bank",
+        "weight": 0.64,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_bank",
+        "target": "macro_analyst",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_bank",
+        "target": "fintech_founder",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_bank",
+        "target": "competitor_bank",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_bank",
+        "target": "investor_association",
+        "weight": 0.64,
+        "type": "influence"
+      },
+      {
+        "source": "risk_head",
+        "target": "deposit_insurance_fund",
+        "weight": 0.67,
+        "type": "influence"
+      },
+      {
+        "source": "ecb_official",
+        "target": "consumer_advocate",
+        "weight": 0.76,
+        "type": "influence"
+      },
+      {
+        "source": "ecb_official",
+        "target": "national_banking_regulator",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "finance_minister",
+        "target": "european_commission",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "crypto_ceo",
+        "target": "crypto_industry_group",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "macro_analyst",
+        "target": "european_commission",
+        "weight": 0.61,
+        "type": "influence"
+      },
+      {
+        "source": "macro_analyst",
+        "target": "investor_association",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "ecb",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "announcing_bank",
+        "target": "crypto_industry_group",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "ecb",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "ecb_official",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "national_banking_regulator",
+        "weight": 0.53,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "consumer_advocate",
+        "weight": 0.32,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "crypto_ceo",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "crypto_industry_group",
+        "weight": 0.56,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "announcing_bank",
+        "weight": 0.12,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "ceo_bank",
+        "weight": 0.12,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "investor_association",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "european_commission",
+        "weight": 0.67,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "competitor_bank",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "risk_head",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "ecb",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "ecb_official",
+        "weight": 0.75,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "national_banking_regulator",
+        "weight": 0.47,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "consumer_advocate",
+        "weight": 0.26,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "ceo_bank",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "announcing_bank",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "fintech_founder",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "cfo_bank",
+        "weight": 0.44,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "finance_minister",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "deposit_insurance_fund",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "consumer_advocate",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "risk_head",
+        "weight": 0.64,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 24,
+      "total_edges": 38,
+      "avg_position": -0.095
+    }
+  },
+  "indicators": {
+    "polarization": 4.6,
+    "engagement": 47,
+    "sentiment": {
+      "positive": 0.06,
+      "neutral": 0.83,
+      "negative": 0.11
+    },
+    "trendingHashtags": []
+  },
+  "coalitions": {
+    "coalitions": [
+      {
+        "label": "Bulls",
+        "color": "#1e40af",
+        "members": [
+          "ceo_bank",
+          "crypto_ceo",
+          "fintech_founder",
+          "announcing_bank",
+          "crypto_industry_group"
+        ],
+        "avg_position": 0.676,
+        "size": 5
+      },
+      {
+        "label": "Bears",
+        "color": "#059669",
+        "members": [
+          "ecb_official",
+          "consumer_advocate",
+          "ecb",
+          "national_banking_regulator",
+          "deposit_insurance_fund"
+        ],
+        "avg_position": -0.778,
+        "size": 5
+      },
+      {
+        "label": "Cautious optimists",
+        "color": "#dc2626",
+        "members": [
+          "cfo_bank",
+          "board_chair",
+          "macro_analyst",
+          "competitor_bank"
+        ],
+        "avg_position": 0.12,
+        "size": 4
+      },
+      {
+        "label": "Risk-averse",
+        "color": "#f59e0b",
+        "members": [
+          "risk_head",
+          "finance_minister",
+          "european_commission",
+          "investor_association"
+        ],
+        "avg_position": -0.294,
+        "size": 4
+      }
+    ]
+  },
+  "key_insight": "Round 3 analysis",
+  "postImpacts": [
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00000_r3",
+      "authorId": "board_chair",
+      "influencedAgents": [
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.381,
+          "shift": -0.016
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.016,
+      "edgeEffects": [
+        {
+          "source": "board_chair",
+          "target": "fintech_founder",
+          "weightDelta": -0.007
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00001_r3",
+      "authorId": "finance_minister",
+      "influencedAgents": [
+        {
+          "agentId": "consumer_advocate",
+          "agentName": "Marta Silva",
+          "positionBefore": -0.631,
+          "positionAfter": -0.619,
+          "shift": 0.012
+        },
+        {
+          "agentId": "deposit_insurance_fund",
+          "agentName": "National Deposit Guarantee Scheme",
+          "positionBefore": -0.612,
+          "positionAfter": -0.622,
+          "shift": -0.01
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.26,
+          "shift": 0.022
+        },
+        {
+          "agentId": "ecb_official",
+          "agentName": "Dr. Anika Weber",
+          "positionBefore": -0.875,
+          "positionAfter": -0.881,
+          "shift": -0.006
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.018,
+      "edgeEffects": [
+        {
+          "source": "finance_minister",
+          "target": "consumer_advocate",
+          "weightDelta": -0.019
+        },
+        {
+          "source": "finance_minister",
+          "target": "deposit_insurance_fund",
+          "weightDelta": -0.049
+        },
+        {
+          "source": "finance_minister",
+          "target": "risk_head",
+          "weightDelta": 0.007
+        },
+        {
+          "source": "finance_minister",
+          "target": "ecb_official",
+          "weightDelta": -0.036
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00002_r3",
+      "authorId": "macro_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "ceo_bank",
+          "agentName": "Elena Varga",
+          "positionBefore": 0.559,
+          "positionAfter": 0.549,
+          "shift": -0.01
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.269,
+          "shift": 0.013
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.151,
+          "shift": 0.004
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.031,
+          "shift": -0.027
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.02,
+      "edgeEffects": [
+        {
+          "source": "macro_analyst",
+          "target": "ceo_bank",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "macro_analyst",
+          "target": "risk_head",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "macro_analyst",
+          "target": "investor_association",
+          "weightDelta": -0.042
+        },
+        {
+          "source": "macro_analyst",
+          "target": "competitor_bank",
+          "weightDelta": -0.034
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00003_r3",
+      "authorId": "crypto_enthusiasts_crypto_educated_retail",
+      "influencedAgents": [
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.199,
+          "shift": -0.001
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.296,
+          "shift": -0.014
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.09,
+          "shift": -0.023
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.549,
+          "shift": -0.013
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.051,
+      "edgeEffects": [
+        {
+          "source": "crypto_enthusiasts_crypto_educated_retail",
+          "target": "cfo_bank",
+          "weightDelta": -0.006
+        },
+        {
+          "source": "crypto_enthusiasts_crypto_educated_retail",
+          "target": "risk_head",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "crypto_enthusiasts_crypto_educated_retail",
+          "target": "macro_analyst",
+          "weightDelta": -0.007
+        },
+        {
+          "source": "crypto_enthusiasts_crypto_educated_retail",
+          "target": "announcing_bank",
+          "weightDelta": 0.018
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00004_r3",
+      "authorId": "institutional_clients_corporate_treasurer",
+      "influencedAgents": [
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.126,
+          "shift": 0.029
+        },
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.379,
+          "shift": -0.018
+        },
+        {
+          "agentId": "ceo_bank",
+          "agentName": "Elena Varga",
+          "positionBefore": 0.559,
+          "positionAfter": 0.575,
+          "shift": 0.016
+        },
+        {
+          "agentId": "board_chair",
+          "agentName": "Jacques Moreau",
+          "positionBefore": 0.079,
+          "positionAfter": 0.066,
+          "shift": -0.013
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.014,
+      "edgeEffects": [
+        {
+          "source": "institutional_clients_corporate_treasurer",
+          "target": "investor_association",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "institutional_clients_corporate_treasurer",
+          "target": "fintech_founder",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "institutional_clients_corporate_treasurer",
+          "target": "ceo_bank",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "institutional_clients_corporate_treasurer",
+          "target": "board_chair",
+          "weightDelta": -0.038
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00005_r3",
+      "authorId": "retail_savers_retired_professional",
+      "influencedAgents": [
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.143,
+          "shift": 0.012
+        },
+        {
+          "agentId": "european_commission",
+          "agentName": "European Commission",
+          "positionBefore": -0.273,
+          "positionAfter": -0.253,
+          "shift": 0.02
+        },
+        {
+          "agentId": "finance_minister",
+          "agentName": "Paolo Ricci",
+          "positionBefore": -0.415,
+          "positionAfter": -0.441,
+          "shift": -0.026
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.309,
+          "shift": -0.027
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.021,
+      "edgeEffects": [
+        {
+          "source": "retail_savers_retired_professional",
+          "target": "investor_association",
+          "weightDelta": 0.0
+        },
+        {
+          "source": "retail_savers_retired_professional",
+          "target": "european_commission",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "retail_savers_retired_professional",
+          "target": "finance_minister",
+          "weightDelta": 0.036
+        },
+        {
+          "source": "retail_savers_retired_professional",
+          "target": "risk_head",
+          "weightDelta": -0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00006_r3",
+      "authorId": "small_business_owners_regional_cafe_owner",
+      "influencedAgents": [
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.274,
+          "shift": 0.008
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.556,
+          "shift": -0.006
+        },
+        {
+          "agentId": "european_commission",
+          "agentName": "European Commission",
+          "positionBefore": -0.273,
+          "positionAfter": -0.293,
+          "shift": -0.02
+        },
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.395,
+          "shift": -0.002
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.02,
+      "edgeEffects": [
+        {
+          "source": "small_business_owners_regional_cafe_owner",
+          "target": "risk_head",
+          "weightDelta": -0.021
+        },
+        {
+          "source": "small_business_owners_regional_cafe_owner",
+          "target": "announcing_bank",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "small_business_owners_regional_cafe_owner",
+          "target": "european_commission",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "small_business_owners_regional_cafe_owner",
+          "target": "fintech_founder",
+          "weightDelta": 0.019
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00007_r3",
+      "authorId": "ceo_bank",
+      "influencedAgents": [
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.196,
+          "shift": -0.004
+        },
+        {
+          "agentId": "board_chair",
+          "agentName": "Jacques Moreau",
+          "positionBefore": 0.079,
+          "positionAfter": 0.054,
+          "shift": -0.025
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.029,
+      "edgeEffects": [
+        {
+          "source": "ceo_bank",
+          "target": "cfo_bank",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "ceo_bank",
+          "target": "board_chair",
+          "weightDelta": 0.037
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00008_r3",
+      "authorId": "cfo_bank",
+      "influencedAgents": [
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.563,
+          "shift": 0.001
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.114,
+          "shift": 0.001
+        },
+        {
+          "agentId": "crypto_industry_group",
+          "agentName": "European Crypto Alliance",
+          "positionBefore": 0.778,
+          "positionAfter": 0.769,
+          "shift": -0.009
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.263,
+          "shift": 0.019
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.012,
+      "edgeEffects": [
+        {
+          "source": "cfo_bank",
+          "target": "announcing_bank",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "cfo_bank",
+          "target": "macro_analyst",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "cfo_bank",
+          "target": "crypto_industry_group",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "cfo_bank",
+          "target": "risk_head",
+          "weightDelta": 0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00009_r3",
+      "authorId": "board_chair",
+      "influencedAgents": [
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.119,
+          "shift": 0.006
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.146,
+          "shift": 0.009
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.266,
+          "shift": 0.016
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.031,
+      "edgeEffects": [
+        {
+          "source": "board_chair",
+          "target": "macro_analyst",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "board_chair",
+          "target": "investor_association",
+          "weightDelta": -0.032
+        },
+        {
+          "source": "board_chair",
+          "target": "risk_head",
+          "weightDelta": -0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00010_r3",
+      "authorId": "finance_minister",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.056,
+          "shift": -0.002
+        },
+        {
+          "agentId": "deposit_insurance_fund",
+          "agentName": "National Deposit Guarantee Scheme",
+          "positionBefore": -0.612,
+          "positionAfter": -0.594,
+          "shift": 0.018
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.291,
+          "shift": -0.009
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.111,
+          "shift": -0.002
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.005,
+      "edgeEffects": [
+        {
+          "source": "finance_minister",
+          "target": "competitor_bank",
+          "weightDelta": 0.013
+        },
+        {
+          "source": "finance_minister",
+          "target": "deposit_insurance_fund",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "finance_minister",
+          "target": "risk_head",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "finance_minister",
+          "target": "macro_analyst",
+          "weightDelta": -0.046
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00011_r3",
+      "authorId": "consumer_advocate",
+      "influencedAgents": [
+        {
+          "agentId": "ecb",
+          "agentName": "European Central Bank",
+          "positionBefore": -0.892,
+          "positionAfter": -0.885,
+          "shift": 0.007
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.284,
+          "shift": -0.002
+        },
+        {
+          "agentId": "european_commission",
+          "agentName": "European Commission",
+          "positionBefore": -0.273,
+          "positionAfter": -0.255,
+          "shift": 0.018
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.023,
+      "edgeEffects": [
+        {
+          "source": "consumer_advocate",
+          "target": "ecb",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "risk_head",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "european_commission",
+          "weightDelta": 0.04
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00012_r3",
+      "authorId": "fintech_founder",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.037,
+          "shift": -0.021
+        },
+        {
+          "agentId": "crypto_ceo",
+          "agentName": "Nadia Petrova",
+          "positionBefore": 0.891,
+          "positionAfter": 0.867,
+          "shift": -0.024
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.553,
+          "shift": -0.009
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.113,
+          "shift": 0.0
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.054,
+      "edgeEffects": [
+        {
+          "source": "fintech_founder",
+          "target": "competitor_bank",
+          "weightDelta": -0.044
+        },
+        {
+          "source": "fintech_founder",
+          "target": "crypto_ceo",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "fintech_founder",
+          "target": "announcing_bank",
+          "weightDelta": 0.021
+        },
+        {
+          "source": "fintech_founder",
+          "target": "macro_analyst",
+          "weightDelta": -0.033
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00013_r3",
+      "authorId": "retail_savers_retail_saver",
+      "influencedAgents": [
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.093,
+          "shift": -0.02
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.045,
+          "shift": -0.013
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.165,
+          "shift": -0.01
+        },
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.414,
+          "shift": 0.017
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.026,
+      "edgeEffects": [
+        {
+          "source": "retail_savers_retail_saver",
+          "target": "macro_analyst",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "retail_savers_retail_saver",
+          "target": "competitor_bank",
+          "weightDelta": -0.009
+        },
+        {
+          "source": "retail_savers_retail_saver",
+          "target": "investor_association",
+          "weightDelta": 0.01
+        },
+        {
+          "source": "retail_savers_retail_saver",
+          "target": "fintech_founder",
+          "weightDelta": 0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00014_r3",
+      "authorId": "retail_savers_personal_finance_columnist",
+      "influencedAgents": [
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.295,
+          "shift": -0.013
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.571,
+          "shift": 0.009
+        },
+        {
+          "agentId": "board_chair",
+          "agentName": "Jacques Moreau",
+          "positionBefore": 0.079,
+          "positionAfter": 0.101,
+          "shift": 0.022
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.018,
+      "edgeEffects": [
+        {
+          "source": "retail_savers_personal_finance_columnist",
+          "target": "risk_head",
+          "weightDelta": 0.022
+        },
+        {
+          "source": "retail_savers_personal_finance_columnist",
+          "target": "announcing_bank",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "retail_savers_personal_finance_columnist",
+          "target": "board_chair",
+          "weightDelta": -0.017
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00015_r3",
+      "authorId": "institutional_clients_asset_manager",
+      "influencedAgents": [
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.391,
+          "shift": -0.006
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.588,
+          "shift": 0.026
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.051,
+          "shift": -0.007
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.013,
+      "edgeEffects": [
+        {
+          "source": "institutional_clients_asset_manager",
+          "target": "fintech_founder",
+          "weightDelta": 0.01
+        },
+        {
+          "source": "institutional_clients_asset_manager",
+          "target": "announcing_bank",
+          "weightDelta": -0.019
+        },
+        {
+          "source": "institutional_clients_asset_manager",
+          "target": "competitor_bank",
+          "weightDelta": 0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00016_r3",
+      "authorId": "risk_averse_pensioners_former_banker",
+      "influencedAgents": [
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.281,
+          "shift": 0.001
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.551,
+          "shift": -0.011
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.049,
+          "shift": -0.009
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.019,
+      "edgeEffects": [
+        {
+          "source": "risk_averse_pensioners_former_banker",
+          "target": "risk_head",
+          "weightDelta": -0.048
+        },
+        {
+          "source": "risk_averse_pensioners_former_banker",
+          "target": "announcing_bank",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "risk_averse_pensioners_former_banker",
+          "target": "competitor_bank",
+          "weightDelta": 0.027
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00017_r3",
+      "authorId": "risk_head",
+      "influencedAgents": [
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.134,
+          "shift": 0.021
+        },
+        {
+          "agentId": "ecb_official",
+          "agentName": "Dr. Anika Weber",
+          "positionBefore": -0.875,
+          "positionAfter": -0.859,
+          "shift": 0.016
+        },
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.223,
+          "shift": 0.023
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.165,
+          "shift": -0.01
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.05,
+      "edgeEffects": [
+        {
+          "source": "risk_head",
+          "target": "macro_analyst",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "risk_head",
+          "target": "ecb_official",
+          "weightDelta": 0.034
+        },
+        {
+          "source": "risk_head",
+          "target": "cfo_bank",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "risk_head",
+          "target": "investor_association",
+          "weightDelta": 0.027
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00018_r3",
+      "authorId": "board_chair",
+      "influencedAgents": [
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.266,
+          "shift": 0.016
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.038,
+          "shift": -0.02
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.004,
+      "edgeEffects": [
+        {
+          "source": "board_chair",
+          "target": "risk_head",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "board_chair",
+          "target": "competitor_bank",
+          "weightDelta": -0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00019_r3",
+      "authorId": "finance_minister",
+      "influencedAgents": [
+        {
+          "agentId": "european_commission",
+          "agentName": "European Commission",
+          "positionBefore": -0.273,
+          "positionAfter": -0.258,
+          "shift": 0.015
+        },
+        {
+          "agentId": "ecb",
+          "agentName": "European Central Bank",
+          "positionBefore": -0.892,
+          "positionAfter": -0.908,
+          "shift": -0.016
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.141,
+          "shift": 0.028
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.131,
+          "shift": 0.024
+        },
+        {
+          "agentId": "ecb_official",
+          "agentName": "Dr. Anika Weber",
+          "positionBefore": -0.875,
+          "positionAfter": -0.864,
+          "shift": 0.011
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.062,
+      "edgeEffects": [
+        {
+          "source": "finance_minister",
+          "target": "european_commission",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "finance_minister",
+          "target": "ecb",
+          "weightDelta": -0.026
+        },
+        {
+          "source": "finance_minister",
+          "target": "macro_analyst",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "finance_minister",
+          "target": "investor_association",
+          "weightDelta": -0.031
+        },
+        {
+          "source": "finance_minister",
+          "target": "ecb_official",
+          "weightDelta": 0.007
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00020_r3",
+      "authorId": "consumer_advocate",
+      "influencedAgents": [
+        {
+          "agentId": "national_banking_regulator",
+          "agentName": "National Prudential Authority",
+          "positionBefore": -0.734,
+          "positionAfter": -0.732,
+          "shift": 0.002
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.002,
+      "edgeEffects": [
+        {
+          "source": "consumer_advocate",
+          "target": "national_banking_regulator",
+          "weightDelta": 0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00021_r3",
+      "authorId": "fintech_founder",
+      "influencedAgents": [
+        {
+          "agentId": "crypto_ceo",
+          "agentName": "Nadia Petrova",
+          "positionBefore": 0.891,
+          "positionAfter": 0.913,
+          "shift": 0.022
+        },
+        {
+          "agentId": "ceo_bank",
+          "agentName": "Elena Varga",
+          "positionBefore": 0.559,
+          "positionAfter": 0.535,
+          "shift": -0.024
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.583,
+          "shift": 0.021
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.129,
+          "shift": 0.016
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.035,
+      "edgeEffects": [
+        {
+          "source": "fintech_founder",
+          "target": "crypto_ceo",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "fintech_founder",
+          "target": "ceo_bank",
+          "weightDelta": 0.035
+        },
+        {
+          "source": "fintech_founder",
+          "target": "announcing_bank",
+          "weightDelta": -0.021
+        },
+        {
+          "source": "fintech_founder",
+          "target": "macro_analyst",
+          "weightDelta": -0.023
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00022_r3",
+      "authorId": "ceo_bank",
+      "influencedAgents": [
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.223,
+          "shift": 0.023
+        },
+        {
+          "agentId": "board_chair",
+          "agentName": "Jacques Moreau",
+          "positionBefore": 0.079,
+          "positionAfter": 0.074,
+          "shift": -0.005
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.105,
+          "shift": -0.008
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.01,
+      "edgeEffects": [
+        {
+          "source": "ceo_bank",
+          "target": "cfo_bank",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "ceo_bank",
+          "target": "board_chair",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "ceo_bank",
+          "target": "macro_analyst",
+          "weightDelta": -0.011
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00023_r3",
+      "authorId": "cfo_bank",
+      "influencedAgents": [
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.262,
+          "shift": 0.02
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.13,
+          "shift": 0.017
+        },
+        {
+          "agentId": "ceo_bank",
+          "agentName": "Elena Varga",
+          "positionBefore": 0.559,
+          "positionAfter": 0.546,
+          "shift": -0.013
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.024,
+      "edgeEffects": [
+        {
+          "source": "cfo_bank",
+          "target": "risk_head",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "cfo_bank",
+          "target": "macro_analyst",
+          "weightDelta": -0.036
+        },
+        {
+          "source": "cfo_bank",
+          "target": "ceo_bank",
+          "weightDelta": 0.033
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00024_r3",
+      "authorId": "risk_head",
+      "influencedAgents": [
+        {
+          "agentId": "ecb_official",
+          "agentName": "Dr. Anika Weber",
+          "positionBefore": -0.875,
+          "positionAfter": -0.904,
+          "shift": -0.029
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.176,
+          "shift": -0.021
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.065,
+          "shift": 0.007
+        },
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.217,
+          "shift": 0.017
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.026,
+      "edgeEffects": [
+        {
+          "source": "risk_head",
+          "target": "ecb_official",
+          "weightDelta": -0.028
+        },
+        {
+          "source": "risk_head",
+          "target": "investor_association",
+          "weightDelta": 0.044
+        },
+        {
+          "source": "risk_head",
+          "target": "competitor_bank",
+          "weightDelta": -0.008
+        },
+        {
+          "source": "risk_head",
+          "target": "cfo_bank",
+          "weightDelta": -0.026
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00025_r3",
+      "authorId": "ecb_official",
+      "influencedAgents": [
+        {
+          "agentId": "national_banking_regulator",
+          "agentName": "National Prudential Authority",
+          "positionBefore": -0.734,
+          "positionAfter": -0.727,
+          "shift": 0.007
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.007,
+      "edgeEffects": [
+        {
+          "source": "ecb_official",
+          "target": "national_banking_regulator",
+          "weightDelta": -0.044
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00026_r3",
+      "authorId": "ecb_official",
+      "influencedAgents": [
+        {
+          "agentId": "ecb",
+          "agentName": "European Central Bank",
+          "positionBefore": -0.892,
+          "positionAfter": -0.896,
+          "shift": -0.004
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.298,
+          "shift": -0.016
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.02,
+      "edgeEffects": [
+        {
+          "source": "ecb_official",
+          "target": "ecb",
+          "weightDelta": 0.011
+        },
+        {
+          "source": "ecb_official",
+          "target": "risk_head",
+          "weightDelta": -0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00028_r3",
+      "authorId": "macro_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "ceo_bank",
+          "agentName": "Elena Varga",
+          "positionBefore": 0.559,
+          "positionAfter": 0.532,
+          "shift": -0.027
+        },
+        {
+          "agentId": "european_commission",
+          "agentName": "European Commission",
+          "positionBefore": -0.273,
+          "positionAfter": -0.281,
+          "shift": -0.008
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.035,
+      "edgeEffects": [
+        {
+          "source": "macro_analyst",
+          "target": "ceo_bank",
+          "weightDelta": -0.011
+        },
+        {
+          "source": "macro_analyst",
+          "target": "european_commission",
+          "weightDelta": 0.025
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00029_r3",
+      "authorId": "crypto_enthusiasts_buy_side_analyst",
+      "influencedAgents": [
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.274,
+          "shift": 0.008
+        },
+        {
+          "agentId": "board_chair",
+          "agentName": "Jacques Moreau",
+          "positionBefore": 0.079,
+          "positionAfter": 0.093,
+          "shift": 0.014
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.182,
+          "shift": -0.027
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.581,
+          "shift": 0.019
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.014,
+      "edgeEffects": [
+        {
+          "source": "crypto_enthusiasts_buy_side_analyst",
+          "target": "risk_head",
+          "weightDelta": 0.027
+        },
+        {
+          "source": "crypto_enthusiasts_buy_side_analyst",
+          "target": "board_chair",
+          "weightDelta": -0.017
+        },
+        {
+          "source": "crypto_enthusiasts_buy_side_analyst",
+          "target": "investor_association",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "crypto_enthusiasts_buy_side_analyst",
+          "target": "announcing_bank",
+          "weightDelta": -0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00030_r3",
+      "authorId": "risk_averse_pensioners_retired_saver",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.071,
+          "shift": 0.013
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.183,
+          "shift": -0.028
+        },
+        {
+          "agentId": "finance_minister",
+          "agentName": "Paolo Ricci",
+          "positionBefore": -0.415,
+          "positionAfter": -0.398,
+          "shift": 0.017
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.293,
+          "shift": -0.011
+        },
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.194,
+          "shift": -0.006
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.015,
+      "edgeEffects": [
+        {
+          "source": "risk_averse_pensioners_retired_saver",
+          "target": "competitor_bank",
+          "weightDelta": 0.044
+        },
+        {
+          "source": "risk_averse_pensioners_retired_saver",
+          "target": "investor_association",
+          "weightDelta": -0.03
+        },
+        {
+          "source": "risk_averse_pensioners_retired_saver",
+          "target": "finance_minister",
+          "weightDelta": 0.039
+        },
+        {
+          "source": "risk_averse_pensioners_retired_saver",
+          "target": "risk_head",
+          "weightDelta": -0.019
+        },
+        {
+          "source": "risk_averse_pensioners_retired_saver",
+          "target": "cfo_bank",
+          "weightDelta": 0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00031_r3",
+      "authorId": "young_finance_optimists_young fintech analyst",
+      "influencedAgents": [
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.168,
+          "shift": -0.013
+        },
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.173,
+          "shift": -0.027
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.548,
+          "shift": -0.014
+        },
+        {
+          "agentId": "board_chair",
+          "agentName": "Jacques Moreau",
+          "positionBefore": 0.079,
+          "positionAfter": 0.075,
+          "shift": -0.004
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.058,
+      "edgeEffects": [
+        {
+          "source": "young_finance_optimists_young fintech analyst",
+          "target": "investor_association",
+          "weightDelta": 0.036
+        },
+        {
+          "source": "young_finance_optimists_young fintech analyst",
+          "target": "cfo_bank",
+          "weightDelta": 0.016
+        },
+        {
+          "source": "young_finance_optimists_young fintech analyst",
+          "target": "announcing_bank",
+          "weightDelta": 0.03
+        },
+        {
+          "source": "young_finance_optimists_young fintech analyst",
+          "target": "board_chair",
+          "weightDelta": -0.01
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00032_r3",
+      "authorId": "ceo_bank",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.058,
+          "shift": -0.0
+        },
+        {
+          "agentId": "announcing_bank",
+          "agentName": "EuroCapital Bank",
+          "positionBefore": 0.562,
+          "positionAfter": 0.563,
+          "shift": 0.001
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.127,
+          "shift": 0.014
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.015,
+      "edgeEffects": [
+        {
+          "source": "ceo_bank",
+          "target": "competitor_bank",
+          "weightDelta": 0.042
+        },
+        {
+          "source": "ceo_bank",
+          "target": "announcing_bank",
+          "weightDelta": 0.03
+        },
+        {
+          "source": "ceo_bank",
+          "target": "macro_analyst",
+          "weightDelta": -0.042
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00033_r3",
+      "authorId": "ecb_official",
+      "influencedAgents": [
+        {
+          "agentId": "finance_minister",
+          "agentName": "Paolo Ricci",
+          "positionBefore": -0.415,
+          "positionAfter": -0.405,
+          "shift": 0.01
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.01,
+      "edgeEffects": [
+        {
+          "source": "ecb_official",
+          "target": "finance_minister",
+          "weightDelta": -0.019
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00034_r3",
+      "authorId": "consumer_advocate",
+      "influencedAgents": [
+        {
+          "agentId": "european_commission",
+          "agentName": "European Commission",
+          "positionBefore": -0.273,
+          "positionAfter": -0.259,
+          "shift": 0.014
+        },
+        {
+          "agentId": "finance_minister",
+          "agentName": "Paolo Ricci",
+          "positionBefore": -0.415,
+          "positionAfter": -0.408,
+          "shift": 0.007
+        },
+        {
+          "agentId": "deposit_insurance_fund",
+          "agentName": "National Deposit Guarantee Scheme",
+          "positionBefore": -0.612,
+          "positionAfter": -0.604,
+          "shift": 0.008
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.029,
+      "edgeEffects": [
+        {
+          "source": "consumer_advocate",
+          "target": "european_commission",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "finance_minister",
+          "weightDelta": -0.007
+        },
+        {
+          "source": "consumer_advocate",
+          "target": "deposit_insurance_fund",
+          "weightDelta": 0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00035_r3",
+      "authorId": "fintech_founder",
+      "influencedAgents": [
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.215,
+          "shift": 0.015
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.183,
+          "shift": -0.028
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.013,
+      "edgeEffects": [
+        {
+          "source": "fintech_founder",
+          "target": "cfo_bank",
+          "weightDelta": -0.034
+        },
+        {
+          "source": "fintech_founder",
+          "target": "investor_association",
+          "weightDelta": 0.035
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00036_r3",
+      "authorId": "crypto_enthusiasts_retail_bitcoin_maxi",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.067,
+          "shift": 0.009
+        },
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.227,
+          "shift": 0.027
+        },
+        {
+          "agentId": "board_chair",
+          "agentName": "Jacques Moreau",
+          "positionBefore": 0.079,
+          "positionAfter": 0.058,
+          "shift": -0.021
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.015,
+      "edgeEffects": [
+        {
+          "source": "crypto_enthusiasts_retail_bitcoin_maxi",
+          "target": "competitor_bank",
+          "weightDelta": -0.014
+        },
+        {
+          "source": "crypto_enthusiasts_retail_bitcoin_maxi",
+          "target": "cfo_bank",
+          "weightDelta": -0.047
+        },
+        {
+          "source": "crypto_enthusiasts_retail_bitcoin_maxi",
+          "target": "board_chair",
+          "weightDelta": -0.005
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00037_r3",
+      "authorId": "institutional_clients_bank_risk_officer",
+      "influencedAgents": [
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.036,
+          "shift": -0.022
+        },
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.189,
+          "shift": -0.011
+        },
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.425,
+          "shift": 0.028
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.005,
+      "edgeEffects": [
+        {
+          "source": "institutional_clients_bank_risk_officer",
+          "target": "competitor_bank",
+          "weightDelta": -0.013
+        },
+        {
+          "source": "institutional_clients_bank_risk_officer",
+          "target": "cfo_bank",
+          "weightDelta": -0.022
+        },
+        {
+          "source": "institutional_clients_bank_risk_officer",
+          "target": "fintech_founder",
+          "weightDelta": -0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00038_r3",
+      "authorId": "young_finance_optimists_swing trader",
+      "influencedAgents": [
+        {
+          "agentId": "finance_minister",
+          "agentName": "Paolo Ricci",
+          "positionBefore": -0.415,
+          "positionAfter": -0.429,
+          "shift": -0.014
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.158,
+          "shift": -0.003
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.045,
+          "shift": -0.013
+        },
+        {
+          "agentId": "cfo_bank",
+          "agentName": "Martin Keller",
+          "positionBefore": 0.2,
+          "positionAfter": 0.199,
+          "shift": -0.001
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.031,
+      "edgeEffects": [
+        {
+          "source": "young_finance_optimists_swing trader",
+          "target": "finance_minister",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "young_finance_optimists_swing trader",
+          "target": "investor_association",
+          "weightDelta": 0.05
+        },
+        {
+          "source": "young_finance_optimists_swing trader",
+          "target": "competitor_bank",
+          "weightDelta": 0.042
+        },
+        {
+          "source": "young_finance_optimists_swing trader",
+          "target": "cfo_bank",
+          "weightDelta": -0.038
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00039_r3",
+      "authorId": "cfo_bank",
+      "influencedAgents": [
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.252,
+          "shift": 0.03
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.086,
+          "shift": 0.028
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.123,
+          "shift": 0.01
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.068,
+      "edgeEffects": [
+        {
+          "source": "cfo_bank",
+          "target": "risk_head",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "cfo_bank",
+          "target": "competitor_bank",
+          "weightDelta": 0.049
+        },
+        {
+          "source": "cfo_bank",
+          "target": "macro_analyst",
+          "weightDelta": 0.021
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00040_r3",
+      "authorId": "risk_head",
+      "influencedAgents": [
+        {
+          "agentId": "deposit_insurance_fund",
+          "agentName": "National Deposit Guarantee Scheme",
+          "positionBefore": -0.612,
+          "positionAfter": -0.599,
+          "shift": 0.013
+        },
+        {
+          "agentId": "european_commission",
+          "agentName": "European Commission",
+          "positionBefore": -0.273,
+          "positionAfter": -0.293,
+          "shift": -0.02
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.007,
+      "edgeEffects": [
+        {
+          "source": "risk_head",
+          "target": "deposit_insurance_fund",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "risk_head",
+          "target": "european_commission",
+          "weightDelta": -0.014
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00042_r3",
+      "authorId": "crypto_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "ceo_bank",
+          "agentName": "Elena Varga",
+          "positionBefore": 0.559,
+          "positionAfter": 0.557,
+          "shift": -0.002
+        },
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.375,
+          "shift": -0.022
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.024,
+      "edgeEffects": [
+        {
+          "source": "crypto_ceo",
+          "target": "ceo_bank",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "crypto_ceo",
+          "target": "fintech_founder",
+          "weightDelta": 0.038
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00043_r3",
+      "authorId": "risk_averse_pensioners_pension_contributor",
+      "influencedAgents": [
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.28,
+          "shift": 0.002
+        },
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.416,
+          "shift": 0.019
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.086,
+          "shift": 0.028
+        },
+        {
+          "agentId": "macro_analyst",
+          "agentName": "Thomas Adler",
+          "positionBefore": 0.113,
+          "positionAfter": 0.11,
+          "shift": -0.003
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.046,
+      "edgeEffects": [
+        {
+          "source": "risk_averse_pensioners_pension_contributor",
+          "target": "risk_head",
+          "weightDelta": 0.027
+        },
+        {
+          "source": "risk_averse_pensioners_pension_contributor",
+          "target": "fintech_founder",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "risk_averse_pensioners_pension_contributor",
+          "target": "competitor_bank",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "risk_averse_pensioners_pension_contributor",
+          "target": "macro_analyst",
+          "weightDelta": 0.018
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00044_r3",
+      "authorId": "young_finance_optimists_product manager in fintech",
+      "influencedAgents": [
+        {
+          "agentId": "finance_minister",
+          "agentName": "Paolo Ricci",
+          "positionBefore": -0.415,
+          "positionAfter": -0.415,
+          "shift": 0.0
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.262,
+          "shift": 0.02
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.02,
+      "edgeEffects": [
+        {
+          "source": "young_finance_optimists_product manager in fintech",
+          "target": "finance_minister",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "young_finance_optimists_product manager in fintech",
+          "target": "risk_head",
+          "weightDelta": 0.002
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00045_r3",
+      "authorId": "small_business_owners_small_business_accountant",
+      "influencedAgents": [
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.388,
+          "shift": -0.009
+        },
+        {
+          "agentId": "finance_minister",
+          "agentName": "Paolo Ricci",
+          "positionBefore": -0.415,
+          "positionAfter": -0.391,
+          "shift": 0.024
+        },
+        {
+          "agentId": "investor_association",
+          "agentName": "European Bank Investors Association",
+          "positionBefore": -0.155,
+          "positionAfter": -0.17,
+          "shift": -0.015
+        },
+        {
+          "agentId": "board_chair",
+          "agentName": "Jacques Moreau",
+          "positionBefore": 0.079,
+          "positionAfter": 0.082,
+          "shift": 0.003
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.003,
+      "edgeEffects": [
+        {
+          "source": "small_business_owners_small_business_accountant",
+          "target": "fintech_founder",
+          "weightDelta": 0.044
+        },
+        {
+          "source": "small_business_owners_small_business_accountant",
+          "target": "finance_minister",
+          "weightDelta": 0.035
+        },
+        {
+          "source": "small_business_owners_small_business_accountant",
+          "target": "investor_association",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "small_business_owners_small_business_accountant",
+          "target": "board_chair",
+          "weightDelta": -0.037
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Bank_Bitcoin_Reserve_Shock_rp_00046_r3",
+      "authorId": "small_business_owners_manufacturing_owner",
+      "influencedAgents": [
+        {
+          "agentId": "fintech_founder",
+          "agentName": "Leo Novak",
+          "positionBefore": 0.397,
+          "positionAfter": 0.377,
+          "shift": -0.02
+        },
+        {
+          "agentId": "risk_head",
+          "agentName": "Sofia Lindholm",
+          "positionBefore": -0.282,
+          "positionAfter": -0.258,
+          "shift": 0.024
+        },
+        {
+          "agentId": "finance_minister",
+          "agentName": "Paolo Ricci",
+          "positionBefore": -0.415,
+          "positionAfter": -0.39,
+          "shift": 0.025
+        },
+        {
+          "agentId": "competitor_bank",
+          "agentName": "Continental Trust Group",
+          "positionBefore": 0.058,
+          "positionAfter": 0.08,
+          "shift": 0.022
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.051,
+      "edgeEffects": [
+        {
+          "source": "small_business_owners_manufacturing_owner",
+          "target": "fintech_founder",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "small_business_owners_manufacturing_owner",
+          "target": "risk_head",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "small_business_owners_manufacturing_owner",
+          "target": "finance_minister",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "small_business_owners_manufacturing_owner",
+          "target": "competitor_bank",
+          "weightDelta": -0.042
+        }
+      ]
+    }
+  ],
+  "realWorldEffects": {
+    "overview": {
+      "stability_index": 66,
+      "tension_index": 34,
+      "media_intensity": 49,
+      "stakeholder_confidence": 64
+    },
+    "opinion": {
+      "support_rate": 33,
+      "opposition_rate": 46,
+      "undecided_rate": 21,
+      "avg_position": -0.096
+    },
+    "engagement": {
+      "active_discussions": 46,
+      "viral_content_pieces": 12,
+      "coalition_count": 4
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "domain": "public_health",
+  "calibrated_params": {
+    "anchor_weight": 0.1473,
+    "social_weight": 0.1203,
+    "event_weight": 0.12,
+    "herd_weight": 0.0411,
+    "herd_threshold": 0.15
+  },
+  "calibration_metrics": {
+    "avg_composite_score": 8.92,
+    "avg_outcome_error": 9.07,
+    "n_scenarios": 2
+  }
+}

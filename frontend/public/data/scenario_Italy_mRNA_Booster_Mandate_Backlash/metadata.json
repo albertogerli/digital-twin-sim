@@ -1,0 +1,7 @@
+{
+  "scenario_id": "Italy_mRNA_Booster_Mandate_Backlash",
+  "scenario_name": "Italy mRNA Booster Mandate Backlash",
+  "num_rounds": 5,
+  "domain": "public_health",
+  "description": "This simulation models the rollout of a mandatory mRNA booster vaccine for Italians over 50 after a surge in a novel respiratory virus variant. It explores how public health authorities, political leaders, medical professionals, media, anti-vaccine activists, and citizens respond to the mandate amid debates over safety, liberty, trust, and compliance."
+}

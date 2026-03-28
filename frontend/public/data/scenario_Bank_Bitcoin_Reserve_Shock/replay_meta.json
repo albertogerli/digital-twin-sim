@@ -1,0 +1,206 @@
+{
+  "scenario": "Bank_Bitcoin_Reserve_Shock",
+  "title": "Bank Bitcoin Reserve Shock",
+  "totalRounds": 3,
+  "totalAgents": 18,
+  "agents": [
+    {
+      "id": "ceo_bank",
+      "name": "Elena Varga",
+      "role": "Chief Executive Officer of the announcing bank",
+      "handle": "@EVarga",
+      "avatarColor": "#22c55e",
+      "position": 0.703,
+      "influence": 0.95,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "cfo_bank",
+      "name": "Martin Keller",
+      "role": "Chief Financial Officer",
+      "handle": "@MKeller",
+      "avatarColor": "#3b82f6",
+      "position": 0.406,
+      "influence": 0.82,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "risk_head",
+      "name": "Sofia Lindholm",
+      "role": "Chief Risk Officer",
+      "handle": "@SLindholm",
+      "avatarColor": "#ef4444",
+      "position": -0.27,
+      "influence": 0.8,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "board_chair",
+      "name": "Jacques Moreau",
+      "role": "Board Chair",
+      "handle": "@JMoreau",
+      "avatarColor": "#f59e0b",
+      "position": 0.055,
+      "influence": 0.88,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "ecb_official",
+      "name": "Dr. Anika Weber",
+      "role": "European Central Bank supervisory official",
+      "handle": "@DWeber",
+      "avatarColor": "#8b5cf6",
+      "position": -0.892,
+      "influence": 0.98,
+      "archetype": "regulator",
+      "tier": 1
+    },
+    {
+      "id": "finance_minister",
+      "name": "Paolo Ricci",
+      "role": "National finance minister",
+      "handle": "@PRicci",
+      "avatarColor": "#ec4899",
+      "position": -0.36,
+      "influence": 0.9,
+      "archetype": "politician",
+      "tier": 1
+    },
+    {
+      "id": "crypto_ceo",
+      "name": "Nadia Petrova",
+      "role": "CEO of a major crypto exchange",
+      "handle": "@NPetrova",
+      "avatarColor": "#06b6d4",
+      "position": 0.933,
+      "influence": 0.76,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "macro_analyst",
+      "name": "Thomas Adler",
+      "role": "Independent macro strategist",
+      "handle": "@TAdler",
+      "avatarColor": "#84cc16",
+      "position": 0.222,
+      "influence": 0.7,
+      "archetype": "analyst",
+      "tier": 1
+    },
+    {
+      "id": "consumer_advocate",
+      "name": "Marta Silva",
+      "role": "Financial consumer rights advocate",
+      "handle": "@MSilva",
+      "avatarColor": "#f97316",
+      "position": -0.6,
+      "influence": 0.68,
+      "archetype": "activist",
+      "tier": 1
+    },
+    {
+      "id": "fintech_founder",
+      "name": "Leo Novak",
+      "role": "Founder of a digital banking startup",
+      "handle": "@LNovak",
+      "avatarColor": "#6366f1",
+      "position": 0.646,
+      "influence": 0.62,
+      "archetype": "entrepreneur",
+      "tier": 1
+    },
+    {
+      "id": "announcing_bank",
+      "name": "EuroCapital Bank",
+      "role": "",
+      "handle": "@EBank",
+      "avatarColor": "#14b8a6",
+      "position": 0.628,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "ecb",
+      "name": "European Central Bank",
+      "role": "",
+      "handle": "@EBank",
+      "avatarColor": "#e11d48",
+      "position": -0.897,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "national_banking_regulator",
+      "name": "National Prudential Authority",
+      "role": "",
+      "handle": "@NAuthority",
+      "avatarColor": "#0ea5e9",
+      "position": -0.797,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "european_commission",
+      "name": "European Commission",
+      "role": "",
+      "handle": "@ECommission",
+      "avatarColor": "#a855f7",
+      "position": -0.294,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "competitor_bank",
+      "name": "Continental Trust Group",
+      "role": "",
+      "handle": "@CGroup",
+      "avatarColor": "#10b981",
+      "position": 0.012,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "investor_association",
+      "name": "European Bank Investors Association",
+      "role": "",
+      "handle": "@EAssociation",
+      "avatarColor": "#22c55e",
+      "position": -0.166,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "deposit_insurance_fund",
+      "name": "National Deposit Guarantee Scheme",
+      "role": "",
+      "handle": "@NScheme",
+      "avatarColor": "#3b82f6",
+      "position": -0.647,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "crypto_industry_group",
+      "name": "European Crypto Alliance",
+      "role": "",
+      "handle": "@EAlliance",
+      "avatarColor": "#ef4444",
+      "position": 0.869,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    }
+  ]
+}

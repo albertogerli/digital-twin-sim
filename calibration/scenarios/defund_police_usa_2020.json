@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Defund the Police Movement USA (June-December 2020)",
+  "description": "The 'Defund the Police' slogan emerged during George Floyd protests in June 2020. Initial surge of support peaked at ~25-30% then declined to ~15-18% by year's end as violent crime rose, moderate Democrats distanced themselves, and the slogan proved politically toxic despite broader support for police reform.",
+  "domain": "political/social",
+  "final_outcome_pro_pct": 18,
+  "final_outcome_against_pct": 65,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 15, "against_pct": 60, "undecided_pct": 25},
+    {"round_equivalent": 2, "pro_pct": 22, "against_pct": 52, "undecided_pct": 26},
+    {"round_equivalent": 3, "pro_pct": 28, "against_pct": 50, "undecided_pct": 22},
+    {"round_equivalent": 4, "pro_pct": 30, "against_pct": 50, "undecided_pct": 20},
+    {"round_equivalent": 5, "pro_pct": 27, "against_pct": 55, "undecided_pct": 18},
+    {"round_equivalent": 6, "pro_pct": 24, "against_pct": 58, "undecided_pct": 18},
+    {"round_equivalent": 7, "pro_pct": 22, "against_pct": 60, "undecided_pct": 18},
+    {"round_equivalent": 8, "pro_pct": 20, "against_pct": 63, "undecided_pct": 17},
+    {"round_equivalent": 9, "pro_pct": 18, "against_pct": 65, "undecided_pct": 17}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "George Floyd protests peak. Minneapolis City Council pledges to disband police department (June 7). 'Defund' enters mainstream discourse. Support surges among progressives."},
+    {"round_equivalent": 3, "description": "Peak support ~28-30%. Black Lives Matter protests in 2,000+ cities. Some cities announce police budget cuts. Progressive activists push for full defunding."},
+    {"round_equivalent": 4, "description": "Joe Biden explicitly rejects 'Defund the Police.' Jim Clyburn: 'worst slogan ever.' Democratic establishment distances itself. Police unions launch counter-campaign."},
+    {"round_equivalent": 6, "description": "Summer crime surge in major cities. Homicides up 30%+ in Chicago, NYC, Philadelphia. Republicans weaponize 'defund' in campaign ads. Minneapolis council backtracks."},
+    {"round_equivalent": 8, "description": "Post-election analysis: Democrats blame 'defund' for House seat losses. Abigail Spanberger: 'we need to not ever use the word socialist or defund.' Movement retreats to activist circles."}
+  ],
+  "calibration_notes": "Classic slogan overreach pattern: peaked rapidly then declined as political backlash mounted. USA Today/Ipsos (June 2020): 25% support 'defund,' but 60%+ support police reform. The gap between slogan support and policy support was the key dynamic. Gallup showed desire for police presence in Black communities remained at 61%. Tests: framing effects (slogan vs. policy), elite counter-mobilization, crime as counter-narrative, social desirability bias decay."
+}

@@ -1,0 +1,27 @@
+{
+  "scenario_name": "#MeToo Movement Public Opinion (Oct 2017 - mid 2018)",
+  "description": "The #MeToo movement exploded after the Harvey Weinstein revelations in October 2017. Initial near-universal support (~70%+ saying it was a good thing) gradually fractured as the movement expanded, with concerns about due process and 'going too far' creating a partial backlash by mid-2018.",
+  "domain": "social/cultural",
+  "final_outcome_pro_pct": 55,
+  "final_outcome_against_pct": 28,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 55, "against_pct": 15, "undecided_pct": 30},
+    {"round_equivalent": 2, "pro_pct": 65, "against_pct": 12, "undecided_pct": 23},
+    {"round_equivalent": 3, "pro_pct": 70, "against_pct": 13, "undecided_pct": 17},
+    {"round_equivalent": 4, "pro_pct": 68, "against_pct": 16, "undecided_pct": 16},
+    {"round_equivalent": 5, "pro_pct": 65, "against_pct": 19, "undecided_pct": 16},
+    {"round_equivalent": 6, "pro_pct": 62, "against_pct": 22, "undecided_pct": 16},
+    {"round_equivalent": 7, "pro_pct": 60, "against_pct": 24, "undecided_pct": 16},
+    {"round_equivalent": 8, "pro_pct": 57, "against_pct": 26, "undecided_pct": 17},
+    {"round_equivalent": 9, "pro_pct": 55, "against_pct": 28, "undecided_pct": 17}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Harvey Weinstein allegations break (NYT/New Yorker, October 2017). Alyssa Milano's #MeToo tweet goes viral (12M posts in 24 hours). Rapid cascade of accusations across industries."},
+    {"round_equivalent": 3, "description": "Time Magazine names 'The Silence Breakers' as Person of the Year. Golden Globes 'Time's Up' campaign. Senate seats lost (Al Franken resignation). Peak support and cultural impact."},
+    {"round_equivalent": 5, "description": "Aziz Ansari story (January 2018) sparks debate over 'where to draw the line.' Atlantic's 'The Humiliation of Aziz Ansari' divides feminists. Due process concerns surface."},
+    {"round_equivalent": 7, "description": "Brett Kavanaugh confirmation hearings (September 2018). #MeToo becomes overtly partisan. 'Believe all women' vs. due process framing. Gender gap in support widens."},
+    {"round_equivalent": 9, "description": "Pew (September 2018): 51% say #MeToo has been good, down from 58% six months prior. Among Republicans, 'gone too far' rises to 54%. Movement matures into institutional reforms (HR policies, legal changes)."}
+  ],
+  "calibration_notes": "Initial surge then partial backlash pattern. Pew tracked: Feb 2018 — 58% said increased focus on harassment was positive; Sept 2018 — 51%. NPR/Marist found similar decline. Key dynamic: broad consensus on egregious cases (Weinstein) fractured as movement expanded to ambiguous situations and became politically coded. Gender and partisan gaps widened over time. Tests: consensus fracturing under scope expansion, partisan capture of social movements, 'too far' backlash dynamics, elite defection effects."
+}

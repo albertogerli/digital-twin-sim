@@ -1,0 +1,122 @@
+[
+  {
+    "id": "tim_cook",
+    "name": "Tim Cook",
+    "role": "Apple CEO",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.5,
+    "final_position": 0.35,
+    "position_delta": -0.15,
+    "influence": 0.98,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "lucas_martin",
+    "name": "Lucas Martin",
+    "role": "Apple CFO",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.45,
+    "final_position": 0.203,
+    "position_delta": -0.247,
+    "influence": 0.82,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "sara_chen",
+    "name": "Sara Chen",
+    "role": "Apple VP of Marketing",
+    "archetype": "marketing_executive",
+    "tier": 1,
+    "initial_position": 0.35,
+    "final_position": 0.186,
+    "position_delta": -0.164,
+    "influence": 0.78,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "james_park",
+    "name": "James Park",
+    "role": "Samsung Global Marketing Chief",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": -0.75,
+    "final_position": -0.809,
+    "position_delta": -0.059,
+    "influence": 0.86,
+    "emotional_state": "triumphant"
+  },
+  {
+    "id": "mei_lin",
+    "name": "Mei Lin",
+    "role": "Google Pixel Product Lead",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": -0.65,
+    "final_position": -0.738,
+    "position_delta": -0.088,
+    "influence": 0.74,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "david_ross",
+    "name": "David Ross",
+    "role": "Senior Tech Analyst",
+    "archetype": "analyst",
+    "tier": 1,
+    "initial_position": 0.1,
+    "final_position": -0.035,
+    "position_delta": -0.135,
+    "influence": 0.7,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "nina_patel",
+    "name": "Nina Patel",
+    "role": "Consumer Rights Advocate",
+    "archetype": "activist",
+    "tier": 1,
+    "initial_position": -0.9,
+    "final_position": -0.943,
+    "position_delta": -0.043,
+    "influence": 0.66,
+    "emotional_state": "furious"
+  },
+  {
+    "id": "oliver_bennett",
+    "name": "Oliver Bennett",
+    "role": "Luxury Brand Strategist",
+    "archetype": "consultant",
+    "tier": 1,
+    "initial_position": 0.65,
+    "final_position": 0.504,
+    "position_delta": -0.146,
+    "influence": 0.58,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "elena_garcia",
+    "name": "Elena Garcia",
+    "role": "Retail Channel Executive",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": -0.2,
+    "final_position": -0.277,
+    "position_delta": -0.077,
+    "influence": 0.52,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "kevin_zhou",
+    "name": "Kevin Zhou",
+    "role": "Supply Chain Consultant",
+    "archetype": "consultant",
+    "tier": 1,
+    "initial_position": 0.2,
+    "final_position": 0.077,
+    "position_delta": -0.123,
+    "influence": 0.49,
+    "emotional_state": "cautious"
+  }
+]

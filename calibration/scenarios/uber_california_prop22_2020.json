@@ -1,0 +1,27 @@
+{
+  "scenario_name": "California Proposition 22 (Gig Worker Classification) 2020",
+  "description": "California ballot proposition to classify app-based drivers as independent contractors rather than employees, exempting them from AB5. YES (keep independent) won 58.6% vs NO (make employees) 41.4%. Most expensive ballot measure in US history at $224M+. Domain: political/labor.",
+  "domain": "political",
+  "final_outcome_pro_pct": 58.63,
+  "final_outcome_against_pct": 41.37,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 40, "against_pct": 36, "undecided_pct": 24},
+    {"round_equivalent": 2, "pro_pct": 39, "against_pct": 37, "undecided_pct": 24},
+    {"round_equivalent": 3, "pro_pct": 41, "against_pct": 36, "undecided_pct": 23},
+    {"round_equivalent": 4, "pro_pct": 42, "against_pct": 36, "undecided_pct": 22},
+    {"round_equivalent": 5, "pro_pct": 46, "against_pct": 36, "undecided_pct": 18},
+    {"round_equivalent": 6, "pro_pct": 46, "against_pct": 38, "undecided_pct": 16},
+    {"round_equivalent": 7, "pro_pct": 48, "against_pct": 38, "undecided_pct": 14},
+    {"round_equivalent": 8, "pro_pct": 52, "against_pct": 38, "undecided_pct": 10},
+    {"round_equivalent": 9, "pro_pct": 59, "against_pct": 41, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Uber, Lyft, DoorDash, Instacart, and Postmates commit $200M+ to YES campaign, making it the most expensive ballot measure in US history."},
+    {"round_equivalent": 4, "description": "YES campaign saturates California media with ads featuring drivers saying they prefer flexibility. In-app messaging reaches millions of users."},
+    {"round_equivalent": 5, "description": "COVID-19 pandemic increases public reliance on delivery apps, shifting framing from labor rights to essential service continuity."},
+    {"round_equivalent": 7, "description": "Labor unions and NO campaign struggle to match spending. Message complexity (AB5 law, contractor vs employee distinction) disadvantages NO."},
+    {"round_equivalent": 8, "description": "Late polls show YES pulling away. Undecided voters break toward YES amid fear of losing ride-hail/delivery services."}
+  ],
+  "calibration_notes": "Tests asymmetric spending effect and corporate narrative dominance. YES outspent NO roughly 10:1 ($200M vs $20M). Key dynamics: massive advertising saturation moving undecideds, framing flexibility vs exploitation, in-app messaging as novel voter contact channel, COVID context boosting gig economy legitimacy, complexity of issue favoring status quo framing (YES = keep things as they are), and corporate campaign sophistication vs grassroots labor opposition."
+}

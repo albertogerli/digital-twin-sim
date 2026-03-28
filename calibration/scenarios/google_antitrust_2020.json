@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Google Antitrust Case (US DOJ, 2020-2024)",
+  "description": "DOJ antitrust suit against Google for search monopoly. 4-year case, Google found to be monopolist Aug 2024. Tests slow-burn institutional dynamics where opinion is remarkably stable over years.",
+  "domain": "corporate",
+  "final_outcome_pro_pct": 56,
+  "final_outcome_against_pct": 28,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 55, "against_pct": 25, "undecided_pct": 20},
+    {"round_equivalent": 2, "pro_pct": 58, "against_pct": 24, "undecided_pct": 18},
+    {"round_equivalent": 3, "pro_pct": 59, "against_pct": 24, "undecided_pct": 17},
+    {"round_equivalent": 4, "pro_pct": 57, "against_pct": 26, "undecided_pct": 17},
+    {"round_equivalent": 5, "pro_pct": 56, "against_pct": 27, "undecided_pct": 17},
+    {"round_equivalent": 6, "pro_pct": 56, "against_pct": 27, "undecided_pct": 17},
+    {"round_equivalent": 7, "pro_pct": 57, "against_pct": 26, "undecided_pct": 17},
+    {"round_equivalent": 8, "pro_pct": 55, "against_pct": 28, "undecided_pct": 17},
+    {"round_equivalent": 9, "pro_pct": 56, "against_pct": 28, "undecided_pct": 16}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "DOJ files antitrust lawsuit against Google (Oct 20, 2020). Bipartisan support."},
+    {"round_equivalent": 2, "description": "Congressional antitrust bills introduced (American Innovation and Choice Online Act). Peak legislative momentum."},
+    {"round_equivalent": 4, "description": "Congressional antitrust bills stall without floor votes despite bipartisan support. Tech lobbying succeeds."},
+    {"round_equivalent": 7, "description": "Trial testimony reveals Apple's $26B/year default search payment from Google. Gets significant media attention."},
+    {"round_equivalent": 9, "description": "Judge Mehta rules Google is a monopolist (Aug 5, 2024). Landmark ruling but public opinion barely moves."}
+  ],
+  "calibration_notes": "Tests slow-burn institutional dynamics. Remarkably stable opinion (~55-59%) over 4 years. Opinion barely moves despite major events. Antitrust has natural ceiling of public engagement — most people have weak priors and don't update. Large persistent undecided block (~16-20%) because issue is technically complex. Even a landmark ruling validates existing positions rather than converting opponents. Sources: Pew Research, Gallup, Morning Consult tech regulation tracking."
+}

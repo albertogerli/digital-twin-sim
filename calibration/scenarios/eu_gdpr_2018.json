@@ -1,0 +1,27 @@
+{
+  "scenario_name": "EU GDPR Implementation (2016-2018)",
+  "description": "The General Data Protection Regulation was adopted in 2016 and enforced from May 25, 2018. Public awareness grew slowly, then spiked at enforcement. Support was consistently high among those aware (~70-80%), though 'cookie consent fatigue' created a nuanced picture of frustration with implementation despite supporting the principle.",
+  "domain": "technology/legal",
+  "final_outcome_pro_pct": 69,
+  "final_outcome_against_pct": 12,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 72, "against_pct": 8, "undecided_pct": 20},
+    {"round_equivalent": 2, "pro_pct": 73, "against_pct": 9, "undecided_pct": 18},
+    {"round_equivalent": 3, "pro_pct": 75, "against_pct": 9, "undecided_pct": 16},
+    {"round_equivalent": 4, "pro_pct": 74, "against_pct": 10, "undecided_pct": 16},
+    {"round_equivalent": 5, "pro_pct": 75, "against_pct": 10, "undecided_pct": 15},
+    {"round_equivalent": 6, "pro_pct": 73, "against_pct": 11, "undecided_pct": 16},
+    {"round_equivalent": 7, "pro_pct": 71, "against_pct": 12, "undecided_pct": 17},
+    {"round_equivalent": 8, "pro_pct": 70, "against_pct": 12, "undecided_pct": 18},
+    {"round_equivalent": 9, "pro_pct": 69, "against_pct": 12, "undecided_pct": 19}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "GDPR adopted April 2016. Two-year transition period begins. Low public awareness (~30% of EU citizens). Tech industry begins compliance preparation."},
+    {"round_equivalent": 3, "description": "Cambridge Analytica scandal breaks (March 2018). Public awareness of data privacy surges. GDPR framed as timely and necessary. Support reinforced."},
+    {"round_equivalent": 5, "description": "GDPR enforcement begins May 25, 2018. Flood of consent emails and cookie pop-ups. Initial novelty — users exercise new rights (data access requests surge). Eurobarometer shows 67% EU citizens aware."},
+    {"round_equivalent": 7, "description": "Cookie consent fatigue sets in. Users report clicking 'accept all' without reading. Critics argue GDPR created compliance theater while real data practices unchanged. Some US sites block EU access."},
+    {"round_equivalent": 9, "description": "First major fines: Google fined €50M by French CNIL. Principle remains supported but implementation criticized. Eurobarometer 2019: 69% consider data protection rules important."}
+  ],
+  "calibration_notes": "High baseline support for privacy principle with slight erosion due to implementation friction. Eurobarometer 2019 showed 69% of EU citizens felt national data protection rules were important. Unique dynamic: people supported GDPR's goals but were annoyed by its daily manifestation (cookie pop-ups). Tests: principle vs. implementation gap, awareness-driven support curves, regulatory fatigue, Cambridge Analytica as exogenous shock reinforcing support."
+}

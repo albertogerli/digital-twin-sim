@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-light: #ffffff;
+  --bg-warm: #f5f0eb;
+  --accent-pro: #22c55e;
+  --accent-con: #ef4444;
+  --accent-gold: #d4a574;
+  --accent-blue: #3b82f6;
+  --accent-cyan: #0891b2;
+  --accent-amber: #f59e0b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: var(--bg-light);
+  color: #1a1a1a;
+}
+
+::selection {
+  background: rgba(8, 145, 178, 0.2);
+  color: #000;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Section backgrounds */
+.section-warm { background: var(--bg-warm); color: #1a1a1a; }
+.section-light { background: var(--bg-light); color: #1a1a1a; }
+.section-gray { background: #f8fafc; color: #1a1a1a; }
+
+/* Position bar */
+.position-bar {
+  background: linear-gradient(90deg, #ef4444 0%, #fbbf24 25%, #94a3b8 50%, #86efac 75%, #22c55e 100%);
+  height: 6px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.position-marker {
+  position: absolute;
+  top: -5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #0891b2;
+  transform: translateX(-50%);
+  transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+/* Post card */
+.post-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+.post-card:hover { border-color: #9ca3af; }
+
+/* Stat card glow */
+.stat-glow { box-shadow: 0 0 30px rgba(8, 145, 178, 0.08); }
+
+/* Markdown report styling */
+.report-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+  color: #1a1a1a;
+}
+
+.report-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem;
+  color: #1a1a1a;
+  border-bottom: 1px solid #d4d4d4;
+  padding-bottom: 0.5rem;
+}
+
+.report-content h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+
+.report-content p {
+  font-family: "Source Serif 4", serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0.75rem 0;
+  color: #374151;
+}
+
+.report-content ul, .report-content ol {
+  font-family: "Source Serif 4", serif;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.report-content li { margin: 0.3rem 0; line-height: 1.7; }
+.report-content strong { color: #111827; }
+.report-content em { font-style: italic; color: #4b5563; }
+.report-content blockquote {
+  border-left: 3px solid var(--accent-gold);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #6b7280;
+  font-style: italic;
+}

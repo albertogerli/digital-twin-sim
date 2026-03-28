@@ -1,0 +1,27 @@
+{
+  "scenario_name": "NBA Load Management Controversy (2018-2019)",
+  "description": "Kawhi Leonard's strategic rest games during the 2018-19 season sparked a league-wide debate on load management. Fans initially opposed star players sitting out, but Leonard's championship run with the Raptors shifted opinion. Pro-load management support grew from ~20% to ~35% as evidence of its effectiveness accumulated.",
+  "domain": "sport",
+  "final_outcome_pro_pct": 35,
+  "final_outcome_against_pct": 48,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 20, "against_pct": 58, "undecided_pct": 22},
+    {"round_equivalent": 2, "pro_pct": 18, "against_pct": 62, "undecided_pct": 20},
+    {"round_equivalent": 3, "pro_pct": 22, "against_pct": 58, "undecided_pct": 20},
+    {"round_equivalent": 4, "pro_pct": 24, "against_pct": 55, "undecided_pct": 21},
+    {"round_equivalent": 5, "pro_pct": 25, "against_pct": 54, "undecided_pct": 21},
+    {"round_equivalent": 6, "pro_pct": 28, "against_pct": 52, "undecided_pct": 20},
+    {"round_equivalent": 7, "pro_pct": 30, "against_pct": 50, "undecided_pct": 20},
+    {"round_equivalent": 8, "pro_pct": 33, "against_pct": 49, "undecided_pct": 18},
+    {"round_equivalent": 9, "pro_pct": 35, "against_pct": 48, "undecided_pct": 17}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Kawhi Leonard sits out 22 regular season games. Fans boo in arenas. TNT's Charles Barkley calls it 'disrespectful to paying fans'."},
+    {"round_equivalent": 4, "description": "Adam Silver publicly criticizes load management. NBA sends memo to teams warning about healthy players sitting out nationally televised games."},
+    {"round_equivalent": 6, "description": "Raptors reach NBA Finals. Narrative shifts — Leonard looks fresh while opponents show fatigue. Sports medicine professionals defend the practice."},
+    {"round_equivalent": 8, "description": "Leonard wins Finals MVP and championship. 'Load management works' becomes mainstream take. Other teams adopt similar strategies."},
+    {"round_equivalent": 9, "description": "2019-20 preseason: multiple stars adopt load management. Debate normalizes. NBA introduces new rules limiting back-to-back rest but accepts the concept."}
+  ],
+  "calibration_notes": "Gradual opinion shift driven by results-based evidence. Initial strong opposition (~60%) rooted in 'fans pay to see stars play' sentiment. Shift accelerated by Kawhi's championship — concrete proof that rest strategies work. Opposition remained majority but softened significantly. Tests: slow persuasion through demonstrated outcomes, expert vs. fan opinion divergence, sports culture change."
+}

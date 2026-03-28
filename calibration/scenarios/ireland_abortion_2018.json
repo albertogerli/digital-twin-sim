@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Irish Abortion Referendum 2018",
+  "description": "Irish referendum to repeal the Eighth Amendment (abortion ban) from the constitution. YES (Repeal) won 66.4% vs NO (Retain) 33.6% with 64.1% turnout. Tests social liberalization trend with decisive outcome despite initial uncertainty.",
+  "domain": "political",
+  "final_outcome_pro_pct": 66.40,
+  "final_outcome_against_pct": 33.60,
+  "final_turnout_pct": 64.13,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 52, "against_pct": 28, "undecided_pct": 20},
+    {"round_equivalent": 2, "pro_pct": 53, "against_pct": 29, "undecided_pct": 18},
+    {"round_equivalent": 3, "pro_pct": 52, "against_pct": 30, "undecided_pct": 18},
+    {"round_equivalent": 4, "pro_pct": 51, "against_pct": 32, "undecided_pct": 17},
+    {"round_equivalent": 5, "pro_pct": 47, "against_pct": 35, "undecided_pct": 18},
+    {"round_equivalent": 6, "pro_pct": 44, "against_pct": 36, "undecided_pct": 20},
+    {"round_equivalent": 7, "pro_pct": 52, "against_pct": 34, "undecided_pct": 14},
+    {"round_equivalent": 8, "pro_pct": 56, "against_pct": 34, "undecided_pct": 10},
+    {"round_equivalent": 9, "pro_pct": 66, "against_pct": 34, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Citizens' Assembly recommends repeal with no gestational limits. Government announces referendum for May 2018."},
+    {"round_equivalent": 4, "description": "Campaign intensifies. Save the 8th uses graphic imagery; Together for Yes focuses on compassionate personal stories (Savita Halappanavar)."},
+    {"round_equivalent": 5, "description": "Polls narrow significantly in mid-campaign. NO side gains momentum with 'hard cases' arguments and claims of UK-style abortion-on-demand."},
+    {"round_equivalent": 7, "description": "Final weeks see strong YES rebound. Personal testimonials from Irish women under #InHerShoes campaign go viral on social media."},
+    {"round_equivalent": 8, "description": "Home to Vote movement: Irish diaspora flies home to vote. Social media amplifies emotional urgency. Final polls show clear YES lead."}
+  ],
+  "calibration_notes": "Tests social liberalization referendum with mid-campaign volatility. Polls initially showed solid YES lead, then narrowed dramatically in weeks 3-4 of campaign (echoing 2015 marriage equality pattern), before YES surged to a much larger final margin than polls predicted. Key dynamics: shy YES voters in conservative Ireland, personal narrative campaign effectiveness vs graphic shock tactics, diaspora mobilization, generational divide, and the 'Savita effect' as sustained emotional anchor for the YES campaign."
+}

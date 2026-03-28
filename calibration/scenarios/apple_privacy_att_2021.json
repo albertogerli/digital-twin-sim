@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Apple App Tracking Transparency (iOS 14.5, 2021)",
+  "description": "Apple's ATT framework required apps to ask users' permission before tracking them across other apps and websites. Consumers overwhelmingly supported it (~80%), while advertisers and Facebook/Meta strongly opposed. Only ~25% of users opted in to tracking when prompted.",
+  "domain": "technology",
+  "final_outcome_pro_pct": 80,
+  "final_outcome_against_pct": 12,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 68, "against_pct": 10, "undecided_pct": 22},
+    {"round_equivalent": 2, "pro_pct": 72, "against_pct": 10, "undecided_pct": 18},
+    {"round_equivalent": 3, "pro_pct": 75, "against_pct": 10, "undecided_pct": 15},
+    {"round_equivalent": 4, "pro_pct": 76, "against_pct": 11, "undecided_pct": 13},
+    {"round_equivalent": 5, "pro_pct": 78, "against_pct": 11, "undecided_pct": 11},
+    {"round_equivalent": 6, "pro_pct": 79, "against_pct": 11, "undecided_pct": 10},
+    {"round_equivalent": 7, "pro_pct": 80, "against_pct": 11, "undecided_pct": 9},
+    {"round_equivalent": 8, "pro_pct": 80, "against_pct": 12, "undecided_pct": 8},
+    {"round_equivalent": 9, "pro_pct": 80, "against_pct": 12, "undecided_pct": 8}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Apple announces ATT at WWDC 2020. Privacy advocates celebrate. Facebook begins lobbying campaign with full-page newspaper ads claiming ATT will hurt small businesses."},
+    {"round_equivalent": 3, "description": "Facebook launches 'Good Ideas Deserve to Be Found' campaign. Mark Zuckerberg calls Apple anti-competitive. Small business testimonials deployed."},
+    {"round_equivalent": 5, "description": "iOS 14.5 launches April 2021. Only 4% of US users opt in to tracking in first week (Flurry Analytics). Consumer behavior overwhelmingly validates pro-privacy stance."},
+    {"round_equivalent": 7, "description": "Facebook reports $10B revenue loss from ATT. Advertisers shift strategies. Meta shares drop. Consumer satisfaction with ATT remains high."},
+    {"round_equivalent": 9, "description": "ATT becomes normalized. Opt-in rates stabilize at ~25%. Other platforms (Google) announce similar privacy frameworks. Industry standard shifts."}
+  ],
+  "calibration_notes": "Near-consensus consumer support (~80%) with strong elite opposition from ad industry. Unusual case where corporate vs. corporate battle (Apple vs. Facebook) aligned with overwhelming public preference. Consumer behavior (96% opt-out initially) even exceeded stated support. Tests: privacy as valence issue, corporate framing battles, revealed vs. stated preferences, industry disruption with public support."
+}

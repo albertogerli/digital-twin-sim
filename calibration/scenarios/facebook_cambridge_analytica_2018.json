@@ -1,0 +1,28 @@
+{
+  "scenario_name": "Facebook/Cambridge Analytica Scandal (2018)",
+  "description": "Cambridge Analytica harvested data from 87M Facebook users. Tests 'too big to fail' platform dynamics — trust eroded permanently but user base barely declined due to network lock-in.",
+  "domain": "corporate",
+  "final_outcome_pro_pct": 18,
+  "final_outcome_against_pct": 55,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 50, "against_pct": 25, "undecided_pct": 25},
+    {"round_equivalent": 2, "pro_pct": 30, "against_pct": 50, "undecided_pct": 20},
+    {"round_equivalent": 3, "pro_pct": 25, "against_pct": 55, "undecided_pct": 20},
+    {"round_equivalent": 4, "pro_pct": 28, "against_pct": 48, "undecided_pct": 24},
+    {"round_equivalent": 5, "pro_pct": 30, "against_pct": 45, "undecided_pct": 25},
+    {"round_equivalent": 6, "pro_pct": 25, "against_pct": 50, "undecided_pct": 25},
+    {"round_equivalent": 7, "pro_pct": 22, "against_pct": 52, "undecided_pct": 26},
+    {"round_equivalent": 8, "pro_pct": 20, "against_pct": 53, "undecided_pct": 27},
+    {"round_equivalent": 9, "pro_pct": 18, "against_pct": 55, "undecided_pct": 27}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "NYT/Guardian expose. #DeleteFacebook trends globally. Stock drops 7%, losing $50B market cap. Zuckerberg silent 5 days."},
+    {"round_equivalent": 3, "description": "Zuckerberg CNN interview and newspaper apology ads. Scope revised to 87M users. FTC confirms investigation."},
+    {"round_equivalent": 4, "description": "Zuckerberg Congressional testimony — seen as a 'win' due to senators' poor tech literacy. Stock rises 4.5%."},
+    {"round_equivalent": 6, "description": "NYT reports data-sharing partnerships with 60+ device makers including Huawei. Reignites concerns."},
+    {"round_equivalent": 7, "description": "Q2 earnings: stock drops 19% in single day — $119B market cap loss, largest in US history at the time."},
+    {"round_equivalent": 9, "description": "NYT 'Delay, Deny, Deflect' investigation reveals aggressive lobbying and opposition research against critics."}
+  ],
+  "calibration_notes": "Tests unique 'too big to fail' platform dynamics. User base barely declined despite massive trust erosion (network lock-in). Congressional testimony can actually improve stock if executives perform well (Round 4 reversal). Crisis re-escalation: sentiment stabilizes then gets hit by new revelations (Rounds 6, 8, 9). Pew: trust dropped from 79% to 53% for data handling. $5B FTC fine. Eventually rebranded to Meta (Oct 2021)."
+}

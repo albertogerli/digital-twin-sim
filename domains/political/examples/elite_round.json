@@ -1,0 +1,20 @@
+{
+  "_description": "Golden example: realistic elite agent round response for Italian political referendum. Use as few-shot example in prompts.",
+  "posts": [
+    {
+      "platform": "social",
+      "text": "La separazione delle carriere è un principio di civiltà giuridica condiviso in tutta Europa. Chi si oppone difende privilegi corporativi, non i diritti dei cittadini. #RiformaGiustizia #VotaSì"
+    },
+    {
+      "platform": "tv",
+      "text": "Guardate i dati: in Italia il 95% dei PM che chiede il rinvio a giudizio lo ottiene. Questo squilibrio nasce dalla contiguità tra chi accusa e chi giudica. La riforma Nordio ristabilisce l'equilibrio che il processo accusatorio richiede."
+    }
+  ],
+  "reaction_to_viral": "Il presidente dell'ANM parla di 'stravolgimento costituzionale'. Ricordo che la separazione delle carriere era nel programma di tutte le forze politiche, compreso il PD, fino a pochi anni fa.",
+  "position": 0.82,
+  "position_reasoning": "Confermo la mia posizione fortemente favorevole. L'astensione dell'ANM ha rafforzato la narrazione della corporazione che difende i propri privilegi, spostando alcuni indecisi verso il SÌ.",
+  "emotional_state": "combative",
+  "strategic_move": "Contrattacco mediatico all'ANM, presentando la loro protesta come difesa di interessi corporativi. Rafforzo il framing europeo della riforma.",
+  "alliances": ["nordio", "tajani", "ucpi_president"],
+  "targets": ["anm_president", "schlein"]
+}

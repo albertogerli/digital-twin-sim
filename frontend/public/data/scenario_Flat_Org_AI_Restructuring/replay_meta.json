@@ -1,0 +1,217 @@
+{
+  "scenario": "Flat_Org_AI_Restructuring",
+  "title": "Flat Org AI Restructuring",
+  "totalRounds": 4,
+  "totalAgents": 19,
+  "agents": [
+    {
+      "id": "ceo_1",
+      "name": "Avery Chen",
+      "role": "Chief Executive Officer",
+      "handle": "@AChen",
+      "avatarColor": "#22c55e",
+      "position": 0.892,
+      "influence": 1.0,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "cfo_1",
+      "name": "Jordan Patel",
+      "role": "Chief Financial Officer",
+      "handle": "@JPatel",
+      "avatarColor": "#3b82f6",
+      "position": 0.71,
+      "influence": 0.95,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "chro_1",
+      "name": "Maya Rodriguez",
+      "role": "Chief Human Resources Officer",
+      "handle": "@MRodriguez",
+      "avatarColor": "#ef4444",
+      "position": -0.075,
+      "influence": 0.8,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "cto_1",
+      "name": "Dr. Lena Novak",
+      "role": "Chief Technology Officer",
+      "handle": "@DNovak",
+      "avatarColor": "#f59e0b",
+      "position": 0.609,
+      "influence": 0.85,
+      "archetype": "business_leader",
+      "tier": 1
+    },
+    {
+      "id": "union_leader_1",
+      "name": "Marcus Hill",
+      "role": "Tech Workers Union President",
+      "handle": "@MHill",
+      "avatarColor": "#8b5cf6",
+      "position": -0.895,
+      "influence": 0.82,
+      "archetype": "union_leader",
+      "tier": 1
+    },
+    {
+      "id": "manager_rep_1",
+      "name": "Elena Brooks",
+      "role": "Displaced Managers Association Spokesperson",
+      "handle": "@EBrooks",
+      "avatarColor": "#ec4899",
+      "position": -0.689,
+      "influence": 0.55,
+      "archetype": "employee_advocate",
+      "tier": 1
+    },
+    {
+      "id": "analyst_1",
+      "name": "Priya Desai",
+      "role": "Senior Tech Equity Analyst",
+      "handle": "@PDesai",
+      "avatarColor": "#06b6d4",
+      "position": 0.358,
+      "influence": 0.7,
+      "archetype": "analyst",
+      "tier": 1
+    },
+    {
+      "id": "journalist_1",
+      "name": "Noah Kim",
+      "role": "Business and Labor Reporter",
+      "handle": "@NKim",
+      "avatarColor": "#84cc16",
+      "position": -0.287,
+      "influence": 0.65,
+      "archetype": "journalist",
+      "tier": 1
+    },
+    {
+      "id": "industry_voice_1",
+      "name": "Sofia Alvarez",
+      "role": "Former Big Tech COO and Industry Commentator",
+      "handle": "@SAlvarez",
+      "avatarColor": "#f97316",
+      "position": 0.164,
+      "influence": 0.6,
+      "archetype": "industry_expert",
+      "tier": 1
+    },
+    {
+      "id": "influencer_1",
+      "name": "Tariq West",
+      "role": "Workplace Creator and Tech Commentator",
+      "handle": "@TWest",
+      "avatarColor": "#6366f1",
+      "position": -0.5,
+      "influence": 0.58,
+      "archetype": "influencer",
+      "tier": 1
+    },
+    {
+      "id": "company_exec_team",
+      "name": "Executive Leadership Team",
+      "role": "",
+      "handle": "@ETeam",
+      "avatarColor": "#14b8a6",
+      "position": 0.842,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "board_directors",
+      "name": "Board of Directors",
+      "role": "",
+      "handle": "@BDirectors",
+      "avatarColor": "#e11d48",
+      "position": 0.592,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "hr_department",
+      "name": "Human Resources Division",
+      "role": "",
+      "handle": "@HDivision",
+      "avatarColor": "#0ea5e9",
+      "position": -0.075,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "engineering_org",
+      "name": "Engineering Organization",
+      "role": "",
+      "handle": "@EOrganization",
+      "avatarColor": "#a855f7",
+      "position": 0.095,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "people_ops",
+      "name": "People Operations Council",
+      "role": "",
+      "handle": "@PCouncil",
+      "avatarColor": "#10b981",
+      "position": -0.153,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "tech_workers_union",
+      "name": "Tech Workers Union",
+      "role": "",
+      "handle": "@TUnion",
+      "avatarColor": "#22c55e",
+      "position": -0.895,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "investor_group",
+      "name": "Institutional Investors Consortium",
+      "role": "",
+      "handle": "@IConsortium",
+      "avatarColor": "#3b82f6",
+      "position": 0.443,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "media_outlet",
+      "name": "National Business Press",
+      "role": "",
+      "handle": "@NPress",
+      "avatarColor": "#ef4444",
+      "position": -0.152,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    },
+    {
+      "id": "regulator_watch",
+      "name": "Labor and Employment Regulators",
+      "role": "",
+      "handle": "@LRegulators",
+      "avatarColor": "#f59e0b",
+      "position": -0.251,
+      "influence": 0.5,
+      "archetype": "unknown",
+      "tier": 2
+    }
+  ]
+}

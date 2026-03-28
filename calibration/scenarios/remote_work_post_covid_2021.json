@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Remote Work Preference Post-COVID 2020-2022",
+  "description": "COVID-19 forced mass remote work adoption in March 2020. Pro-remote preference surged from ~30% pre-pandemic to ~60%+ at peak, then settled around 55% as hybrid models emerged. Tests forced behavioral change driving opinion shift and norm recalibration.",
+  "domain": "labor/corporate",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 30, "against_pct": 45, "undecided_pct": 25},
+    {"round_equivalent": 2, "pro_pct": 42, "against_pct": 35, "undecided_pct": 23},
+    {"round_equivalent": 3, "pro_pct": 55, "against_pct": 28, "undecided_pct": 17},
+    {"round_equivalent": 4, "pro_pct": 60, "against_pct": 24, "undecided_pct": 16},
+    {"round_equivalent": 5, "pro_pct": 62, "against_pct": 23, "undecided_pct": 15},
+    {"round_equivalent": 6, "pro_pct": 60, "against_pct": 25, "undecided_pct": 15},
+    {"round_equivalent": 7, "pro_pct": 58, "against_pct": 26, "undecided_pct": 16},
+    {"round_equivalent": 8, "pro_pct": 56, "against_pct": 27, "undecided_pct": 17},
+    {"round_equivalent": 9, "pro_pct": 55, "against_pct": 28, "undecided_pct": 17}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "COVID-19 lockdowns force millions into remote work (March 2020). Forced experience rapidly shifts preferences among knowledge workers."},
+    {"round_equivalent": 3, "description": "Tech companies (Twitter, Facebook) announce permanent remote work options. Corporate legitimization of remote work model."},
+    {"round_equivalent": 5, "description": "Gallup finds 9 in 10 remote workers want to maintain remote work. Peak pro-remote sentiment as productivity data emerges."},
+    {"round_equivalent": 7, "description": "Return-to-office mandates from Apple, Google, Goldman Sachs. Hybrid model emerges as compromise. Some backlash and attrition."},
+    {"round_equivalent": 9, "description": "Remote/hybrid stabilizes as new normal. Stanford WFH Research shows ~55% of workers prefer hybrid or fully remote arrangements."}
+  ],
+  "calibration_notes": "Tests forced behavioral change as opinion driver. Key patterns: experiential persuasion (doing remote work changed minds faster than arguments), rapid ~30pt swing in 3-4 months, partial regression toward mean as novelty faded and isolation costs emerged, employer-employee power dynamics shaping the settled equilibrium, demographic splits (younger/tech more pro-remote). Gallup, Pew, Stanford WFH Research data used."
+}

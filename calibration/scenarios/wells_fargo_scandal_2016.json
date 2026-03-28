@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Wells Fargo Fake Accounts Scandal 2016",
+  "description": "Wells Fargo employees opened millions of unauthorized accounts to meet sales targets. Public trust collapsed from ~35% favorable to ~15%. CEO John Stumpf resigned. $185M initial fine, eventually $3B+ in settlements. Tests corporate trust destruction cascade.",
+  "domain": "corporate",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 35, "against_pct": 30, "undecided_pct": 35},
+    {"round_equivalent": 2, "pro_pct": 32, "against_pct": 35, "undecided_pct": 33},
+    {"round_equivalent": 3, "pro_pct": 22, "against_pct": 50, "undecided_pct": 28},
+    {"round_equivalent": 4, "pro_pct": 18, "against_pct": 58, "undecided_pct": 24},
+    {"round_equivalent": 5, "pro_pct": 16, "against_pct": 62, "undecided_pct": 22},
+    {"round_equivalent": 6, "pro_pct": 15, "against_pct": 63, "undecided_pct": 22},
+    {"round_equivalent": 7, "pro_pct": 16, "against_pct": 60, "undecided_pct": 24},
+    {"round_equivalent": 8, "pro_pct": 17, "against_pct": 58, "undecided_pct": 25},
+    {"round_equivalent": 9, "pro_pct": 15, "against_pct": 85, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "CFPB announces $185M fine. News breaks that 5,300 employees fired for opening 2+ million unauthorized accounts since 2011."},
+    {"round_equivalent": 3, "description": "CEO John Stumpf testifies before Senate Banking Committee. Elizabeth Warren tells him he should resign and face criminal investigation. Viral moment."},
+    {"round_equivalent": 4, "description": "Stumpf resigns as CEO and chairman. Clawback of $41M in compensation. Board investigation launched."},
+    {"round_equivalent": 5, "description": "Scope widens: investigation reveals 3.5M fake accounts (up from 2M), fake insurance policies, and unauthorized mortgage modifications."},
+    {"round_equivalent": 7, "description": "Fed imposes unprecedented asset cap on Wells Fargo (Feb 2018), capping growth at $1.95 trillion until compliance improvements."}
+  ],
+  "calibration_notes": "Tests corporate crisis with cascading revelations and institutional punishment. Unlike a single-event crisis, Wells Fargo suffered waves of expanding scope (2M to 3.5M accounts, then insurance fraud, then mortgage fraud). Key dynamics: each revelation preventing trust recovery, Congressional testimony as amplification event, regulatory escalation (fine to asset cap), leadership change failing to restore confidence, systemic vs individual framing of blame, and long-tail reputational damage persisting years after initial event."
+}

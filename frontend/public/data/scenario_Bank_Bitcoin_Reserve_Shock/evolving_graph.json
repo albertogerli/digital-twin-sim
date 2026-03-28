@@ -1,0 +1,1742 @@
+[
+  {
+    "round": 1,
+    "month": "Week 1",
+    "event_label": "Week 1",
+    "nodes": [
+      {
+        "id": "ceo_bank",
+        "name": "Elena Varga",
+        "type": "persona",
+        "description": "Chief Executive Officer of the announcing bank",
+        "power_level": 0.95,
+        "position": 0.703,
+        "position_history": [
+          0.703
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_bank",
+        "name": "Martin Keller",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.82,
+        "position": 0.406,
+        "position_history": [
+          0.406
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "risk_head",
+        "name": "Sofia Lindholm",
+        "type": "persona",
+        "description": "Chief Risk Officer",
+        "power_level": 0.8,
+        "position": -0.27,
+        "position_history": [
+          -0.27
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "board_chair",
+        "name": "Jacques Moreau",
+        "type": "persona",
+        "description": "Board Chair",
+        "power_level": 0.88,
+        "position": 0.055,
+        "position_history": [
+          0.055
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "ecb_official",
+        "name": "Dr. Anika Weber",
+        "type": "persona",
+        "description": "European Central Bank supervisory official",
+        "power_level": 0.98,
+        "position": -0.892,
+        "position_history": [
+          -0.892
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "regulator"
+      },
+      {
+        "id": "finance_minister",
+        "name": "Paolo Ricci",
+        "type": "persona",
+        "description": "National finance minister",
+        "power_level": 0.9,
+        "position": -0.36,
+        "position_history": [
+          -0.36
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "crypto_ceo",
+        "name": "Nadia Petrova",
+        "type": "persona",
+        "description": "CEO of a major crypto exchange",
+        "power_level": 0.76,
+        "position": 0.933,
+        "position_history": [
+          0.933
+        ],
+        "delta": 0.0,
+        "sentiment": "triumphant",
+        "category": "business_leader"
+      },
+      {
+        "id": "macro_analyst",
+        "name": "Thomas Adler",
+        "type": "persona",
+        "description": "Independent macro strategist",
+        "power_level": 0.7,
+        "position": 0.222,
+        "position_history": [
+          0.222
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Marta Silva",
+        "type": "persona",
+        "description": "Financial consumer rights advocate",
+        "power_level": 0.68,
+        "position": -0.6,
+        "position_history": [
+          -0.6
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "activist"
+      },
+      {
+        "id": "fintech_founder",
+        "name": "Leo Novak",
+        "type": "persona",
+        "description": "Founder of a digital banking startup",
+        "power_level": 0.62,
+        "position": 0.646,
+        "position_history": [
+          0.646
+        ],
+        "delta": 0.0,
+        "sentiment": "triumphant",
+        "category": "entrepreneur"
+      },
+      {
+        "id": "announcing_bank",
+        "name": "EuroCapital Bank",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.628,
+        "position_history": [
+          0.628
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ecb",
+        "name": "European Central Bank",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.897,
+        "position_history": [
+          -0.897
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_banking_regulator",
+        "name": "National Prudential Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.797,
+        "position_history": [
+          -0.797
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "european_commission",
+        "name": "European Commission",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.294,
+        "position_history": [
+          -0.294
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "competitor_bank",
+        "name": "Continental Trust Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.012,
+        "position_history": [
+          0.012
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_association",
+        "name": "European Bank Investors Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.166,
+        "position_history": [
+          -0.166
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "deposit_insurance_fund",
+        "name": "National Deposit Guarantee Scheme",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.647,
+        "position_history": [
+          -0.647
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "crypto_industry_group",
+        "name": "European Crypto Alliance",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.869,
+        "position_history": [
+          0.869
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "retail_savers",
+        "name": "Retail Savers",
+        "type": "cluster",
+        "description": "Cluster: Retail Savers",
+        "power_level": 0.5,
+        "position": -0.73,
+        "position_history": [
+          -0.73
+        ],
+        "delta": 0.0,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 8500000
+      },
+      {
+        "id": "crypto_enthusiasts",
+        "name": "Crypto Enthusiasts",
+        "type": "cluster",
+        "description": "Cluster: Crypto Enthusiasts",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "bullish",
+        "category": "public_opinion",
+        "clusterSize": 1200000
+      },
+      {
+        "id": "institutional_clients",
+        "name": "Institutional Clients",
+        "type": "cluster",
+        "description": "Cluster: Institutional Clients",
+        "power_level": 0.5,
+        "position": 0.16,
+        "position_history": [
+          0.16
+        ],
+        "delta": 0.0,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 240000
+      },
+      {
+        "id": "risk_averse_pensioners",
+        "name": "Risk-Averse Pensioners",
+        "type": "cluster",
+        "description": "Cluster: Risk-Averse Pensioners",
+        "power_level": 0.5,
+        "position": -0.94,
+        "position_history": [
+          -0.94
+        ],
+        "delta": 0.0,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "young_finance_optimists",
+        "name": "Young Finance Optimists",
+        "type": "cluster",
+        "description": "Cluster: Young Finance Optimists",
+        "power_level": 0.5,
+        "position": 0.53,
+        "position_history": [
+          0.53
+        ],
+        "delta": 0.0,
+        "sentiment": "bullish",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "small_business_owners",
+        "name": "Small Business Owners",
+        "type": "cluster",
+        "description": "Cluster: Small Business Owners",
+        "power_level": 0.5,
+        "position": -0.17,
+        "position_history": [
+          -0.17
+        ],
+        "delta": 0.0,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 1900000
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_bank",
+        "target": "fintech_founder",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "ceo_bank",
+        "target": "announcing_bank",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_bank",
+        "target": "macro_analyst",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "risk_head",
+        "target": "finance_minister",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "risk_head",
+        "target": "deposit_insurance_fund",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "board_chair",
+        "target": "investor_association",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "finance_minister",
+        "target": "investor_association",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "finance_minister",
+        "target": "deposit_insurance_fund",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "crypto_ceo",
+        "target": "fintech_founder",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "crypto_ceo",
+        "target": "crypto_industry_group",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "macro_analyst",
+        "target": "competitor_bank",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "ecb",
+        "target": "national_banking_regulator",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "ecb",
+        "target": "deposit_insurance_fund",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "competitor_bank",
+        "target": "investor_association",
+        "weight": 0.82,
+        "type": "influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "national_banking_regulator",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "deposit_insurance_fund",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "consumer_advocate",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "ecb_official",
+        "weight": 0.68,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "crypto_ceo",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "crypto_industry_group",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "ceo_bank",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "fintech_founder",
+        "weight": 0.29,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "macro_analyst",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "board_chair",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "competitor_bank",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "cfo_bank",
+        "weight": 0.51,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "ecb",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "ecb_official",
+        "weight": 0.9,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "national_banking_regulator",
+        "weight": 0.71,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "deposit_insurance_fund",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "announcing_bank",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "fintech_founder",
+        "weight": 0.77,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "cfo_bank",
+        "weight": 0.75,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "ceo_bank",
+        "weight": 0.65,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "investor_association",
+        "weight": 0.99,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "risk_head",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "european_commission",
+        "weight": 0.75,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "competitor_bank",
+        "weight": 0.64,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 24,
+      "total_edges": 38,
+      "avg_position": -0.025
+    }
+  },
+  {
+    "round": 2,
+    "month": "Week 2",
+    "event_label": "Week 2",
+    "nodes": [
+      {
+        "id": "ceo_bank",
+        "name": "Elena Varga",
+        "type": "persona",
+        "description": "Chief Executive Officer of the announcing bank",
+        "power_level": 0.95,
+        "position": 0.551,
+        "position_history": [
+          0.551
+        ],
+        "delta": -0.151,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_bank",
+        "name": "Martin Keller",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.82,
+        "position": 0.316,
+        "position_history": [
+          0.316
+        ],
+        "delta": -0.09,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "risk_head",
+        "name": "Sofia Lindholm",
+        "type": "persona",
+        "description": "Chief Risk Officer",
+        "power_level": 0.8,
+        "position": -0.306,
+        "position_history": [
+          -0.306
+        ],
+        "delta": -0.035,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "board_chair",
+        "name": "Jacques Moreau",
+        "type": "persona",
+        "description": "Board Chair",
+        "power_level": 0.88,
+        "position": 0.118,
+        "position_history": [
+          0.118
+        ],
+        "delta": 0.063,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "ecb_official",
+        "name": "Dr. Anika Weber",
+        "type": "persona",
+        "description": "European Central Bank supervisory official",
+        "power_level": 0.98,
+        "position": -0.899,
+        "position_history": [
+          -0.899
+        ],
+        "delta": -0.007,
+        "sentiment": "cautious",
+        "category": "regulator"
+      },
+      {
+        "id": "finance_minister",
+        "name": "Paolo Ricci",
+        "type": "persona",
+        "description": "National finance minister",
+        "power_level": 0.9,
+        "position": -0.406,
+        "position_history": [
+          -0.406
+        ],
+        "delta": -0.046,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "crypto_ceo",
+        "name": "Nadia Petrova",
+        "type": "persona",
+        "description": "CEO of a major crypto exchange",
+        "power_level": 0.76,
+        "position": 0.854,
+        "position_history": [
+          0.854
+        ],
+        "delta": -0.08,
+        "sentiment": "combative",
+        "category": "business_leader"
+      },
+      {
+        "id": "macro_analyst",
+        "name": "Thomas Adler",
+        "type": "persona",
+        "description": "Independent macro strategist",
+        "power_level": 0.7,
+        "position": 0.151,
+        "position_history": [
+          0.151
+        ],
+        "delta": -0.071,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Marta Silva",
+        "type": "persona",
+        "description": "Financial consumer rights advocate",
+        "power_level": 0.68,
+        "position": -0.7,
+        "position_history": [
+          -0.7
+        ],
+        "delta": -0.099,
+        "sentiment": "worried",
+        "category": "activist"
+      },
+      {
+        "id": "fintech_founder",
+        "name": "Leo Novak",
+        "type": "persona",
+        "description": "Founder of a digital banking startup",
+        "power_level": 0.62,
+        "position": 0.462,
+        "position_history": [
+          0.462
+        ],
+        "delta": -0.184,
+        "sentiment": "cautious",
+        "category": "entrepreneur"
+      },
+      {
+        "id": "announcing_bank",
+        "name": "EuroCapital Bank",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.583,
+        "position_history": [
+          0.583
+        ],
+        "delta": -0.046,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ecb",
+        "name": "European Central Bank",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.893,
+        "position_history": [
+          -0.893
+        ],
+        "delta": 0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_banking_regulator",
+        "name": "National Prudential Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.791,
+        "position_history": [
+          -0.791
+        ],
+        "delta": 0.005,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "european_commission",
+        "name": "European Commission",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.288,
+        "position_history": [
+          -0.288
+        ],
+        "delta": 0.006,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "competitor_bank",
+        "name": "Continental Trust Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.059,
+        "position_history": [
+          0.059
+        ],
+        "delta": 0.048,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_association",
+        "name": "European Bank Investors Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.159,
+        "position_history": [
+          -0.159
+        ],
+        "delta": 0.007,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "deposit_insurance_fund",
+        "name": "National Deposit Guarantee Scheme",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.644,
+        "position_history": [
+          -0.644
+        ],
+        "delta": 0.003,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "crypto_industry_group",
+        "name": "European Crypto Alliance",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.806,
+        "position_history": [
+          0.806
+        ],
+        "delta": -0.063,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "retail_savers",
+        "name": "Retail Savers",
+        "type": "cluster",
+        "description": "Cluster: Retail Savers",
+        "power_level": 0.5,
+        "position": -0.85,
+        "position_history": [
+          -0.85
+        ],
+        "delta": -0.12,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 8500000
+      },
+      {
+        "id": "crypto_enthusiasts",
+        "name": "Crypto Enthusiasts",
+        "type": "cluster",
+        "description": "Cluster: Crypto Enthusiasts",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "bullish",
+        "category": "public_opinion",
+        "clusterSize": 1200000
+      },
+      {
+        "id": "institutional_clients",
+        "name": "Institutional Clients",
+        "type": "cluster",
+        "description": "Cluster: Institutional Clients",
+        "power_level": 0.5,
+        "position": 0.08,
+        "position_history": [
+          0.08
+        ],
+        "delta": -0.08,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 240000
+      },
+      {
+        "id": "risk_averse_pensioners",
+        "name": "Risk-Averse Pensioners",
+        "type": "cluster",
+        "description": "Cluster: Risk-Averse Pensioners",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": -0.06,
+        "sentiment": "bearish",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "young_finance_optimists",
+        "name": "Young Finance Optimists",
+        "type": "cluster",
+        "description": "Cluster: Young Finance Optimists",
+        "power_level": 0.5,
+        "position": 0.62,
+        "position_history": [
+          0.62
+        ],
+        "delta": 0.09,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "small_business_owners",
+        "name": "Small Business Owners",
+        "type": "cluster",
+        "description": "Cluster: Small Business Owners",
+        "power_level": 0.5,
+        "position": -0.28,
+        "position_history": [
+          -0.28
+        ],
+        "delta": -0.11,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 1900000
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_bank",
+        "target": "fintech_founder",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "ceo_bank",
+        "target": "crypto_industry_group",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_bank",
+        "target": "board_chair",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_bank",
+        "target": "competitor_bank",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "risk_head",
+        "target": "finance_minister",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "risk_head",
+        "target": "consumer_advocate",
+        "weight": 0.61,
+        "type": "influence"
+      },
+      {
+        "source": "risk_head",
+        "target": "european_commission",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "risk_head",
+        "target": "competitor_bank",
+        "weight": 0.63,
+        "type": "influence"
+      },
+      {
+        "source": "board_chair",
+        "target": "macro_analyst",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "board_chair",
+        "target": "fintech_founder",
+        "weight": 0.66,
+        "type": "influence"
+      },
+      {
+        "source": "ecb_official",
+        "target": "consumer_advocate",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "finance_minister",
+        "target": "investor_association",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "finance_minister",
+        "target": "deposit_insurance_fund",
+        "weight": 0.76,
+        "type": "influence"
+      },
+      {
+        "source": "macro_analyst",
+        "target": "competitor_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "national_banking_regulator",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_advocate",
+        "target": "deposit_insurance_fund",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "ecb",
+        "target": "national_banking_regulator",
+        "weight": 0.9,
+        "type": "influence"
+      },
+      {
+        "source": "national_banking_regulator",
+        "target": "deposit_insurance_fund",
+        "weight": 0.85,
+        "type": "influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "ecb",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "ecb_official",
+        "weight": 0.9,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "national_banking_regulator",
+        "weight": 0.88,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "consumer_advocate",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "crypto_ceo",
+        "weight": 0.71,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "crypto_industry_group",
+        "weight": 0.61,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "announcing_bank",
+        "weight": 0.17,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "ceo_bank",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "competitor_bank",
+        "weight": 0.96,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "board_chair",
+        "weight": 0.92,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "macro_analyst",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "cfo_bank",
+        "weight": 0.53,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "ecb_official",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "ecb",
+        "weight": 0.79,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "national_banking_regulator",
+        "weight": 0.58,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "consumer_advocate",
+        "weight": 0.4,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "announcing_bank",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "ceo_bank",
+        "weight": 0.86,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "fintech_founder",
+        "weight": 0.68,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "crypto_industry_group",
+        "weight": 0.63,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "european_commission",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "risk_head",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "investor_association",
+        "weight": 0.76,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "finance_minister",
+        "weight": 0.75,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 24,
+      "total_edges": 42,
+      "avg_position": -0.067
+    }
+  },
+  {
+    "round": 3,
+    "month": "Week 3",
+    "event_label": "Week 3",
+    "nodes": [
+      {
+        "id": "ceo_bank",
+        "name": "Elena Varga",
+        "type": "persona",
+        "description": "Chief Executive Officer of the announcing bank",
+        "power_level": 0.95,
+        "position": 0.559,
+        "position_history": [
+          0.559
+        ],
+        "delta": 0.007,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "cfo_bank",
+        "name": "Martin Keller",
+        "type": "persona",
+        "description": "Chief Financial Officer",
+        "power_level": 0.82,
+        "position": 0.2,
+        "position_history": [
+          0.2
+        ],
+        "delta": -0.116,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "risk_head",
+        "name": "Sofia Lindholm",
+        "type": "persona",
+        "description": "Chief Risk Officer",
+        "power_level": 0.8,
+        "position": -0.282,
+        "position_history": [
+          -0.282
+        ],
+        "delta": 0.024,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "board_chair",
+        "name": "Jacques Moreau",
+        "type": "persona",
+        "description": "Board Chair",
+        "power_level": 0.88,
+        "position": 0.079,
+        "position_history": [
+          0.079
+        ],
+        "delta": -0.038,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "ecb_official",
+        "name": "Dr. Anika Weber",
+        "type": "persona",
+        "description": "European Central Bank supervisory official",
+        "power_level": 0.98,
+        "position": -0.875,
+        "position_history": [
+          -0.875
+        ],
+        "delta": 0.025,
+        "sentiment": "cautious",
+        "category": "regulator"
+      },
+      {
+        "id": "finance_minister",
+        "name": "Paolo Ricci",
+        "type": "persona",
+        "description": "National finance minister",
+        "power_level": 0.9,
+        "position": -0.415,
+        "position_history": [
+          -0.415
+        ],
+        "delta": -0.009,
+        "sentiment": "worried",
+        "category": "politician"
+      },
+      {
+        "id": "crypto_ceo",
+        "name": "Nadia Petrova",
+        "type": "persona",
+        "description": "CEO of a major crypto exchange",
+        "power_level": 0.76,
+        "position": 0.891,
+        "position_history": [
+          0.891
+        ],
+        "delta": 0.037,
+        "sentiment": "triumphant",
+        "category": "business_leader"
+      },
+      {
+        "id": "macro_analyst",
+        "name": "Thomas Adler",
+        "type": "persona",
+        "description": "Independent macro strategist",
+        "power_level": 0.7,
+        "position": 0.113,
+        "position_history": [
+          0.113
+        ],
+        "delta": -0.038,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "consumer_advocate",
+        "name": "Marta Silva",
+        "type": "persona",
+        "description": "Financial consumer rights advocate",
+        "power_level": 0.68,
+        "position": -0.631,
+        "position_history": [
+          -0.631
+        ],
+        "delta": 0.068,
+        "sentiment": "worried",
+        "category": "activist"
+      },
+      {
+        "id": "fintech_founder",
+        "name": "Leo Novak",
+        "type": "persona",
+        "description": "Founder of a digital banking startup",
+        "power_level": 0.62,
+        "position": 0.397,
+        "position_history": [
+          0.397
+        ],
+        "delta": -0.065,
+        "sentiment": "cautious",
+        "category": "entrepreneur"
+      },
+      {
+        "id": "announcing_bank",
+        "name": "EuroCapital Bank",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.562,
+        "position_history": [
+          0.562
+        ],
+        "delta": -0.021,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ecb",
+        "name": "European Central Bank",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.892,
+        "position_history": [
+          -0.892
+        ],
+        "delta": 0.001,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_banking_regulator",
+        "name": "National Prudential Authority",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.734,
+        "position_history": [
+          -0.734
+        ],
+        "delta": 0.057,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "european_commission",
+        "name": "European Commission",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.273,
+        "position_history": [
+          -0.273
+        ],
+        "delta": 0.015,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "competitor_bank",
+        "name": "Continental Trust Group",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.058,
+        "position_history": [
+          0.058
+        ],
+        "delta": -0.001,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "investor_association",
+        "name": "European Bank Investors Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.155,
+        "position_history": [
+          -0.155
+        ],
+        "delta": 0.004,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "deposit_insurance_fund",
+        "name": "National Deposit Guarantee Scheme",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": -0.612,
+        "position_history": [
+          -0.612
+        ],
+        "delta": 0.032,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "crypto_industry_group",
+        "name": "European Crypto Alliance",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.778,
+        "position_history": [
+          0.778
+        ],
+        "delta": -0.029,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "retail_savers",
+        "name": "Retail Savers",
+        "type": "cluster",
+        "description": "Cluster: Retail Savers",
+        "power_level": 0.5,
+        "position": -0.97,
+        "position_history": [
+          -0.97
+        ],
+        "delta": -0.12,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 8500000
+      },
+      {
+        "id": "crypto_enthusiasts",
+        "name": "Crypto Enthusiasts",
+        "type": "cluster",
+        "description": "Cluster: Crypto Enthusiasts",
+        "power_level": 0.5,
+        "position": 1.0,
+        "position_history": [
+          1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "bullish",
+        "category": "public_opinion",
+        "clusterSize": 1200000
+      },
+      {
+        "id": "institutional_clients",
+        "name": "Institutional Clients",
+        "type": "cluster",
+        "description": "Cluster: Institutional Clients",
+        "power_level": 0.5,
+        "position": -0.11,
+        "position_history": [
+          -0.11
+        ],
+        "delta": -0.19,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 240000
+      },
+      {
+        "id": "risk_averse_pensioners",
+        "name": "Risk-Averse Pensioners",
+        "type": "cluster",
+        "description": "Cluster: Risk-Averse Pensioners",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "bearish",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "young_finance_optimists",
+        "name": "Young Finance Optimists",
+        "type": "cluster",
+        "description": "Cluster: Young Finance Optimists",
+        "power_level": 0.5,
+        "position": 0.48,
+        "position_history": [
+          0.48
+        ],
+        "delta": -0.14,
+        "sentiment": "confused",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "small_business_owners",
+        "name": "Small Business Owners",
+        "type": "cluster",
+        "description": "Cluster: Small Business Owners",
+        "power_level": 0.5,
+        "position": -0.46,
+        "position_history": [
+          -0.46
+        ],
+        "delta": -0.18,
+        "sentiment": "bearish",
+        "category": "public_opinion",
+        "clusterSize": 1900000
+      }
+    ],
+    "edges": [
+      {
+        "source": "cfo_bank",
+        "target": "fintech_founder",
+        "weight": 0.8,
+        "type": "influence"
+      },
+      {
+        "source": "cfo_bank",
+        "target": "competitor_bank",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "risk_head",
+        "target": "competitor_bank",
+        "weight": 0.66,
+        "type": "influence"
+      },
+      {
+        "source": "board_chair",
+        "target": "fintech_founder",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "board_chair",
+        "target": "european_commission",
+        "weight": 0.65,
+        "type": "influence"
+      },
+      {
+        "source": "finance_minister",
+        "target": "consumer_advocate",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "finance_minister",
+        "target": "investor_association",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "macro_analyst",
+        "target": "fintech_founder",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "ecb",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "ecb_official",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "national_banking_regulator",
+        "weight": 0.53,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retail_savers",
+        "target": "consumer_advocate",
+        "weight": 0.32,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "crypto_ceo",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "crypto_industry_group",
+        "weight": 0.56,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "announcing_bank",
+        "weight": 0.12,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "crypto_enthusiasts",
+        "target": "ceo_bank",
+        "weight": 0.12,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "investor_association",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "european_commission",
+        "weight": 0.67,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "competitor_bank",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "institutional_clients",
+        "target": "risk_head",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "ecb",
+        "weight": 0.78,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "ecb_official",
+        "weight": 0.75,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "national_banking_regulator",
+        "weight": 0.47,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "risk_averse_pensioners",
+        "target": "consumer_advocate",
+        "weight": 0.26,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "ceo_bank",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "announcing_bank",
+        "weight": 0.84,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "fintech_founder",
+        "weight": 0.83,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_finance_optimists",
+        "target": "cfo_bank",
+        "weight": 0.44,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "finance_minister",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "deposit_insurance_fund",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "consumer_advocate",
+        "weight": 0.66,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "small_business_owners",
+        "target": "risk_head",
+        "weight": 0.64,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 24,
+      "total_edges": 32,
+      "avg_position": -0.095
+    }
+  }
+]

@@ -1,0 +1,3510 @@
+{
+  "round": 1,
+  "month": "Week 1",
+  "event": {
+    "event": "Round 1 dynamics continue",
+    "shock_magnitude": 0.3,
+    "shock_direction": 0
+  },
+  "posts": [
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00000_r1",
+      "author_id": "regional_governor_lombardy",
+      "author_name": "Lombardy Regional Governor",
+      "author_role": "Regional executive managing local implementation",
+      "tier": 1,
+      "platform": "social",
+      "text": "In Lombardia we will implement the national booster mandate with rigor and common sense. Our priority is protecting the over-50s, keeping hospitals functioning, and ensuring clear, accessible vaccination paths in every province. Enforcement must be fair and workable.",
+      "round": 1,
+      "likes": 9,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.48,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00001_r1",
+      "author_id": "pm_italy",
+      "author_name": "Prime Minister",
+      "author_role": "Head of government driving the mandate",
+      "tier": 1,
+      "platform": "social",
+      "text": "The mandate is a temporary emergency measure to protect those most at risk and prevent our hospitals from being overwhelmed. We will enforce it with seriousness, transparency, and respect for the law. Public health and national stability are not optional.",
+      "round": 1,
+      "likes": 10,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.4,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00002_r1",
+      "author_id": "public_health_director",
+      "author_name": "National Public Health Director",
+      "author_role": "Top epidemiological advisor",
+      "tier": 1,
+      "platform": "social",
+      "text": "If the viral post is framing this as purely coercive, it misses the central epidemiological fact: emergency measures are justified when hospitalization growth threatens system capacity. The burden of proof is on us to explain the data and the sunset conditions clearly.",
+      "round": 1,
+      "likes": 6,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00003_r1",
+      "author_id": "hospital_ceo",
+      "author_name": "Hospital Network CEO",
+      "author_role": "Leader of a major public hospital system",
+      "tier": 1,
+      "platform": "forum",
+      "text": "From an operational standpoint, the signal is clear: admissions are rising, staffing is thin, and bed availability is tightening. A temporary booster requirement for those 50+ is justified if it reduces severe disease and preserves system capacity. The key is execution: rapid acc",
+      "round": 1,
+      "likes": 8,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00004_r1",
+      "author_id": "medical_association_president",
+      "author_name": "President, Italian Medical Association",
+      "author_role": "Representative of physicians",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The emergency decree is a strong measure, but the current rise in hospitalizations justifies decisive action. Our position is to support it while insisting on proportionality, time limits, and clear communication. Citizens deserve plain-language evidence on benefit, risks, eligib",
+      "round": 1,
+      "likes": 10,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.4,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00005_r1",
+      "author_id": "public_health_director",
+      "author_name": "National Public Health Director",
+      "author_role": "Top epidemiological advisor",
+      "tier": 1,
+      "platform": "social",
+      "text": "Hospitalizations are rising sharply. For adults 50+, rapid booster coverage is the fastest way to reduce severe disease, preserve ICU capacity, and protect essential care. This is a time-limited emergency measure grounded in epidemiology, not ideology.",
+      "round": 1,
+      "likes": 9,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.41,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00006_r1",
+      "author_id": "hospital_ceo",
+      "author_name": "Hospital Network CEO",
+      "author_role": "Leader of a major public hospital system",
+      "tier": 1,
+      "platform": "social",
+      "text": "The most relevant debate is about trust. I understand the concern, but when wards are filling and elective care is being displaced, public health has to act on the evidence we have now.",
+      "round": 1,
+      "likes": 9,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.41,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00007_r1",
+      "author_id": "medical_association_president",
+      "author_name": "President, Italian Medical Association",
+      "author_role": "Representative of physicians",
+      "tier": 1,
+      "platform": "social",
+      "text": "We should not reduce this to a freedom-versus-health slogan. The priority is preventing avoidable hospital strain, while communicating clearly and listening to legitimate concerns.",
+      "round": 1,
+      "likes": 9,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.41,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00008_r1",
+      "author_id": "pm_italy",
+      "author_name": "Prime Minister",
+      "author_role": "Head of government driving the mandate",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The data are clear: hospitalizations are rising sharply, and the burden will fall first on older citizens and then on the entire system. A temporary booster mandate for over-50s is a proportionate response to an acute emergency, not an ideological choice. We will pair enforcement",
+      "round": 1,
+      "likes": 10,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00009_r1",
+      "author_id": "pm_italy",
+      "author_name": "Prime Minister",
+      "author_role": "Head of government driving the mandate",
+      "tier": 1,
+      "platform": "social",
+      "text": "No single viral post changes the core facts: when hospitals are under pressure, delay costs lives. Debate is legitimate; paralysis is not.",
+      "round": 1,
+      "likes": 8,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00010_r1",
+      "author_id": "health_minister",
+      "author_name": "Minister of Health",
+      "author_role": "Public face of the vaccination policy",
+      "tier": 1,
+      "platform": "social",
+      "text": "The booster mandate for over-50s is a temporary, evidence-based measure to protect older adults and keep hospitals functioning. We will monitor data daily, ensure access, and review the decree as soon as risk declines.",
+      "round": 1,
+      "likes": 10,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00011_r1",
+      "author_id": "health_minister",
+      "author_name": "Minister of Health",
+      "author_role": "Public face of the vaccination policy",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The current hospitalization curve is the decisive variable. When a novel variant drives rapid admissions, the state has a duty to reduce preventable severe disease and preserve ICU capacity. The mandate is time-limited, targeted to a higher-risk group, and paired with broad acces",
+      "round": 1,
+      "likes": 8,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00012_r1",
+      "author_id": "regional_governor_lombardy",
+      "author_name": "Lombardy Regional Governor",
+      "author_role": "Regional executive managing local implementation",
+      "tier": 1,
+      "platform": "social",
+      "text": "The strongest point is not slogans but implementation: if the mandate is to succeed, it must be enforceable, transparent, and paired with reliable local access. That is where regional administrations matter most.",
+      "round": 1,
+      "likes": 6,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00013_r1",
+      "author_id": "medical_association_president",
+      "author_name": "President, Italian Medical Association",
+      "author_role": "Representative of physicians",
+      "tier": 1,
+      "platform": "social",
+      "text": "As physicians, we support the booster mandate for over-50s because the data show urgent need. But trust is essential: clear explanations, transparent safety monitoring, and respect for patient concerns must guide implementation. Public health works best with public confidence.",
+      "round": 1,
+      "likes": 6,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00014_r1",
+      "author_id": "health_minister",
+      "author_name": "Minister of Health",
+      "author_role": "Public face of the vaccination policy",
+      "tier": 1,
+      "platform": "social",
+      "text": "The strongest concern is not the existence of the mandate, but whether we communicate its temporary, data-triggered nature clearly enough to sustain trust.",
+      "round": 1,
+      "likes": 9,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00015_r1",
+      "author_id": "regional_governor_lombardy",
+      "author_name": "Lombardy Regional Governor",
+      "author_role": "Regional executive managing local implementation",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The emergency decree is justified by the current hospitalization trend, and I support the objective. That said, implementation must be practical: clear deadlines, adequate vaccine supply, transparent exemptions, and coordination with GPs, pharmacies, and local health units. If en",
+      "round": 1,
+      "likes": 9,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00016_r1",
+      "author_id": "hospital_ceo",
+      "author_name": "Hospital Network CEO",
+      "author_role": "Leader of a major public hospital system",
+      "tier": 1,
+      "platform": "social",
+      "text": "Our hospitals are already under pressure. This temporary booster mandate for 50+ is an emergency measure to prevent avoidable admissions, protect vulnerable patients, and keep beds open for everyone. The cost of delay is measured in lives and capacity.",
+      "round": 1,
+      "likes": 9,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00017_r1",
+      "author_id": "pharma_exec",
+      "author_name": "Biotech Company Executive",
+      "author_role": "Representative of the vaccine manufacturer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "From a manufacturer’s perspective, the priority is not rhetoric but evidence. The mandate appears to be a temporary public-health response to a documented hospitalization surge. We support robust pharmacovigilance, clear eligibility criteria, and regular review of effectiveness a",
+      "round": 1,
+      "likes": 7,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.43,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00018_r1",
+      "author_id": "pharma_exec",
+      "author_name": "Biotech Company Executive",
+      "author_role": "Representative of the vaccine manufacturer",
+      "tier": 1,
+      "platform": "social",
+      "text": "If the viral post is framing this as purely political, that misses the central issue: whether the booster reduces severe disease and hospital strain in the over-50 population. The debate should stay anchored to outcomes and safety monitoring.",
+      "round": 1,
+      "likes": 5,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.6,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00019_r1",
+      "author_id": "public_health_director",
+      "author_name": "National Public Health Director",
+      "author_role": "Top epidemiological advisor",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The current data justify urgent action: a novel variant is driving a marked increase in admissions, with the steepest risk in older adults and those with comorbidities. Booster deployment in the >50 cohort should be prioritized because it is the most efficient lever to reduce sev",
+      "round": 1,
+      "likes": 6,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00020_r1",
+      "author_id": "pharma_exec",
+      "author_name": "Biotech Company Executive",
+      "author_role": "Representative of the vaccine manufacturer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The new booster is being deployed because hospital data show a clear rise in severe outcomes in older adults. As always, the key is transparency: monitor safety, publish effectiveness data, and ensure access is orderly and equitable.",
+      "round": 1,
+      "likes": 4,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00021_r1",
+      "author_id": "tv_anchor",
+      "author_name": "National TV News Anchor",
+      "author_role": "Mainstream media presenter shaping public framing",
+      "tier": 1,
+      "platform": "social_media",
+      "text": "Italy’s booster mandate for over-50s raises the right question: not just is it legal, but is it proportionate, time-limited, and clearly justified by the data? Public health needs trust as much as it needs compliance.",
+      "round": 1,
+      "likes": 3,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00022_r1",
+      "author_id": "tv_anchor",
+      "author_name": "National TV News Anchor",
+      "author_role": "Mainstream media presenter shaping public framing",
+      "tier": 1,
+      "platform": "news_media",
+      "text": "The strongest viral reactions seem to be coming from the civil-liberties angle. I’d note: skepticism about coercive tools is legitimate, but the public also deserves a full accounting of hospitalization trends and the expected benefit of the booster before the debate hardens into slogans.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00023_r1",
+      "author_id": "older_compliant_suburban_commuter",
+      "author_name": "Older Compliant Suburban Commuter",
+      "author_role": "",
+      "tier": 3,
+      "platform": "news_media",
+      "text": "The coverage is pushing two stories at once: public health necessity versus civil-liberties overreach. In my circle, most people over 50 are leaning toward getting the shot, but they want reassurance that this is truly temporary and based on data, not politics.",
+      "round": 1,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00024_r1",
+      "author_id": "young_adult_observers_university_student",
+      "author_name": "Young Adult Observers University Student",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "The decree is being presented as temporary and tied to hospital capacity, but the government needs to publish clear data: who is filling the wards, what the booster reduces, and when the mandate ends. If they want compliance from younger families, transparency has to be immediate, not after the protests.",
+      "round": 1,
+      "likes": 4,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00025_r1",
+      "author_id": "young_adult_observers_gig_worker",
+      "author_name": "Young Adult Observers Gig Worker",
+      "author_role": "",
+      "tier": 3,
+      "platform": "community_chat",
+      "text": "Honestly I’m not ضد the vaccine, I’m ضد the way this was announced. One day it’s 'temporary emergency,' next day everyone is yelling on TV. If they want people on board, stop the drama and explain why this is needed now and for how long.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00026_r1",
+      "author_id": "tv_anchor",
+      "author_name": "National TV News Anchor",
+      "author_role": "Mainstream media presenter shaping public framing",
+      "tier": 1,
+      "platform": "news_media",
+      "text": "Italy’s emergency booster mandate for citizens over 50 is now at the center of a familiar but no less consequential public test: can the state act quickly enough to protect hospitals without losing the trust of the people it seeks to protect?\n\nHealth authorities argue the answer is yes, pointing to a sharp rise in hospitalizations tied to a novel respiratory variant and warning that delays could translate into preventable deaths and renewed pressure on already strained wards. Medical associations, by and large, are backing the measure as a temporary, targeted intervention aimed at the most vulnerable age group.\n\nBut the political and civic backlash is equally real. Civil-liberties advocates are asking whether an emergency decree is the right instrument, whether the scope is proportionate, and whether the government has done enough to explain the evidence, the timeline, and the exit criteria. Anti-vaccine groups are framing the policy as coercive; some citizens, meanwhile, are not rejecting vaccination outright so much as expressing fatigue, skepticism, and confusion about why this intervention is necessary now.\n\nThat distinction matters. Public health succeeds not only when a policy is scientifically defensible, but when it is communicated with enough clarity and humility to survive scrutiny. If officials want compliance, they will need to answer a basic set of questions plainly: How severe is the new variant? What is the expected benefit of the booster for over-50s? How long will the mandate remain in force? What safeguards exist for exemptions and due process?\n\nThis is not a debate between freedom and science in the abstract. It is a debate about proportionality, transparency, and institutional credibility under pressure. The coming days will show whether the government can make its case on the merits—or whether the mandate becomes another symbol in a wider crisis of trust.",
+      "round": 1,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00027_r1",
+      "author_id": "urban_professionals_university-educated parent",
+      "author_name": "Urban Professionals University-Educated Parent",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "I’m not thrilled about another mandate, but if the data are solid and this helps keep hospitals from being overwhelmed, I can live with it. What would help is a simple explanation of who benefits most, how long it lasts, and what metrics will trigger its removal. People can accept hard choices when they feel the rules are transparent.",
+      "round": 1,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00028_r1",
+      "author_id": "working_class_families_retired_bus_driver",
+      "author_name": "Working Class Families Retired Bus Driver",
+      "author_role": "",
+      "tier": 3,
+      "platform": "community_chat",
+      "text": "Honestly I’m torn. The hospitals are full again and I don’t want to end up there, but every time they announce something like this it feels rushed and political. Why no clear info on side effects, who needs it most, and where to get it without losing a day’s pay?",
+      "round": 1,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00029_r1",
+      "author_id": "anti_vax_leader",
+      "author_name": "Anti-Vaccine Movement Spokesperson",
+      "author_role": "Organizes protests and online opposition",
+      "tier": 1,
+      "platform": "social_media",
+      "text": "This is exactly how rights get chipped away: call it “temporary,” call it “protective,” then make dissent sound irresponsible. A mandate is not trust-building—it’s trust-destroying.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00030_r1",
+      "author_id": "civil_liberties_lawyer",
+      "author_name": "Civil Liberties Lawyer",
+      "author_role": "Legal critic of the mandate",
+      "tier": 1,
+      "platform": "social",
+      "text": "Support for hospitals is not a blank check. If the state wants compliance, it must show why narrower measures cannot work and why this mandate is the least intrusive option.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00031_r1",
+      "author_id": "rural_traditionalists_retired farmer",
+      "author_name": "Rural Traditionalists Retired Farmer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "news_media",
+      "text": "I’m not ضد vaccines, but this decree feels rushed. In the village we know each other, and people want straight answers: how dangerous is this variant, who is most at risk, and why make it mandatory now? Until that is explained clearly, many will see it as politics, not health.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00032_r1",
+      "author_id": "rural_traditionalists_community_volunteer",
+      "author_name": "Rural Traditionalists Community Volunteer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "Local doctors report that older adults with chronic conditions are seeing more severe outcomes from the new variant. The booster is intended as a temporary protection measure while hospital admissions are rising. Residents are encouraged to speak with trusted healthcare professionals and verify information through official channels.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00033_r1",
+      "author_id": "urban_professionals_hospital physician",
+      "author_name": "Urban Professionals Hospital Physician",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "Given the documented increase in admissions and the burden on acute care, the booster mandate for over-50s should be understood as a temporary risk-reduction measure. The priority remains preventing avoidable severe disease and preserving hospital capacity. Clear communication on duration, eligibility, and monitoring will be essential to maintain public confidence.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00034_r1",
+      "author_id": "working_class_families_municipal_clerk",
+      "author_name": "Working Class Families Municipal Clerk",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "The emergency booster mandate for citizens over 50 is a temporary public health measure introduced in response to increased hospital admissions. Appointment booking will open through local health services and pharmacies. Exemptions and implementation details will be published shortly. We ask residents to rely on verified sources and avoid misinformation.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00035_r1",
+      "author_id": "working_class_families_warehouse_worker",
+      "author_name": "Working Class Families Warehouse Worker",
+      "author_role": "",
+      "tier": 3,
+      "platform": "news_media",
+      "text": "I’m not ضد vaccines, but this came down like a hammer. They say it’s for our safety, yet half the people I know can’t get a slot after work and the nearest clinic is across town. If the state wants trust, it needs to make access easy and explain why now.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00036_r1",
+      "author_id": "retired_patients_retired nurse",
+      "author_name": "Retired Patients Retired Nurse",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "Given the increase in hospital admissions among over-60s, the booster recommendation is medically justified. However, implementation must include easy booking, home visits for the frail, clear contraindication guidance, and rapid reporting of adverse effects so older citizens are protected without being left behind.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00037_r1",
+      "author_id": "retired_patients_community doctor",
+      "author_name": "Retired Patients Community Doctor",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "Patients over 50 with chronic conditions remain at elevated risk of severe respiratory disease. The booster is a preventive tool, not a punishment. We urge citizens to consult their physicians, verify appointment information through official channels, and avoid misinformation circulating online.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00038_r1",
+      "author_id": "anti_vax_leader",
+      "author_name": "Anti-Vaccine Movement Spokesperson",
+      "author_role": "Organizes protests and online opposition",
+      "tier": 1,
+      "platform": "community_chat",
+      "text": "I get why people are scared seeing hospital numbers rise, but a blanket mandate is the wrong answer. Temporary or not, once the state starts forcing medical products on healthy adults, that line is crossed. We should be asking: who benefits, what’s the evidence, what are the risks, and why not targeted protection for the vulnerable instead of mass coercion?",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00039_r1",
+      "author_id": "civil_liberties_lawyer",
+      "author_name": "Civil Liberties Lawyer",
+      "author_role": "Legal critic of the mandate",
+      "tier": 1,
+      "platform": "social",
+      "text": "A mandate may be lawful only if it is necessary, proportionate, time-limited, and accompanied by genuine exemptions and informed consent. Vaccination is a public good; coercion is not a constitutional shortcut.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00040_r1",
+      "author_id": "civil_liberties_lawyer",
+      "author_name": "Civil Liberties Lawyer",
+      "author_role": "Legal critic of the mandate",
+      "tier": 1,
+      "platform": "forum",
+      "text": "I do not dispute the state’s duty to protect public health, nor the value of vaccination. But an emergency booster mandate for all over-50s must clear a high legal bar: necessity, suitability, proportionality stricto sensu, and minimal impairment. The decree, as announced, appear",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00041_r1",
+      "author_id": "social_media_influencer",
+      "author_name": "Health Skeptic Influencer",
+      "author_role": "Popular online commentator amplifying doubts",
+      "tier": 1,
+      "platform": "community_chat",
+      "text": "I’m not buying the ‘temporary emergency’ framing. Once governments normalize blanket mandates, they rarely walk them back cleanly. I’m seeing a lot of people over 50 who already had COVID, are healthy, and now feel bullied into another shot with very little transparent data on how much this booster actually reduces hospitalization in their age group. If they want compliance, they need real numbers, clear risk comparisons, and no coercion.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00042_r1",
+      "author_id": "older_compliant_retired_teacher",
+      "author_name": "Older Compliant Retired Teacher",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "I read the decree and the Ministry notes. I’m not thrilled about mandates, but if the hospitals are under strain and the medical societies are backing it, I’ll book the booster. What matters is clear information and an end date.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00043_r1",
+      "author_id": "older_skeptical_retired_teacher",
+      "author_name": "Older Skeptical Retired Teacher",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "The Ministry reiterates that the booster requirement for citizens over 50 is temporary and based on current hospitalization trends. Medical exemptions remain in place, and appointments are being expanded to reduce inconvenience. The objective is to protect the health system and the most vulnerable while the new variant is assessed.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00044_r1",
+      "author_id": "older_skeptical_small_business_owner",
+      "author_name": "Older Skeptical Small Business Owner",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "I’m not ضد vaccines, but this decree feels like it was dropped on us overnight. If the booster is safe and needed, explain it clearly and give people time. When the message is threats, fines, and pressure, people stop listening and start arguing.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00045_r1",
+      "author_id": "urban_professionals_policy analyst",
+      "author_name": "Urban Professionals Policy Analyst",
+      "author_role": "",
+      "tier": 3,
+      "platform": "news_media",
+      "text": "Italy’s emergency booster decree has reopened a familiar fault line between public health authority and individual liberty. Yet unlike earlier debates dominated by abstract principle, this one is unfolding against a concrete backdrop of rising hospitalizations and strong backing from the medical community. For many urban professionals, the decisive question is not whether mandates are ideal, but whether the government can prove the measure is proportionate, time-limited, and grounded in evidence rather than politics.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00046_r1",
+      "author_id": "young_adult_observers_young_parent",
+      "author_name": "Young Adult Observers Young Parent",
+      "author_role": "",
+      "tier": 3,
+      "platform": "news_media",
+      "text": "Doctors say the booster can help protect older relatives and reduce pressure on hospitals, and that matters. But forcing only one age group while the rest of us watch the debate online feels like a political shortcut unless the evidence is made plain and the rules are applied fairly.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00047_r1",
+      "author_id": "anti_vax_leader",
+      "author_name": "Anti-Vaccine Movement Spokesperson",
+      "author_role": "Organizes protests and online opposition",
+      "tier": 1,
+      "platform": "social_media",
+      "text": "Emergency mandate = emergency overreach. Forcing every Italian over 50 into a new mRNA booster is not “public health,” it’s coercion dressed up as care. Bodily autonomy doesn’t expire at 50. Demand evidence, demand consent, demand limits.",
+      "round": 1,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00048_r1",
+      "author_id": "social_media_influencer",
+      "author_name": "Health Skeptic Influencer",
+      "author_role": "Popular online commentator amplifying doubts",
+      "tier": 1,
+      "platform": "social_media",
+      "text": "So let me get this straight: the answer to a new virus variant is an emergency mandate for EVERYONE over 50? 🙃 Same playbook, new label. If the booster works, why the threats? If it doesn’t, why force it? Trust is not built by decree.",
+      "round": 1,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00049_r1",
+      "author_id": "older_compliant_small_business_owner",
+      "author_name": "Older Compliant Small Business Owner",
+      "author_role": "",
+      "tier": 3,
+      "platform": "community_chat",
+      "text": "Honestly, I trust my doctor more than the shouting on TV. If this booster helps keep me out of the hospital and avoids another winter mess, I’ll do it. But they need to explain why now and how long this mandate lasts.",
+      "round": 1,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00050_r1",
+      "author_id": "older_skeptical_regional_newspaper_editor",
+      "author_name": "Older Skeptical Regional Newspaper Editor",
+      "author_role": "",
+      "tier": 3,
+      "platform": "news_media",
+      "text": "Italy’s emergency booster mandate has split public opinion along familiar fault lines: public health necessity versus civil liberty. For older citizens who remember previous pandemic reversals, the issue is not only the science but the state’s credibility. Supporters point to rising admissions; critics ask why coercion is again the first tool chosen.",
+      "round": 1,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00051_r1",
+      "author_id": "rural_traditionalists_municipal_clerk",
+      "author_name": "Rural Traditionalists Municipal Clerk",
+      "author_role": "",
+      "tier": 3,
+      "platform": "official_bulletin",
+      "text": "The Regional Health Authority reminds residents over 50 that the booster is recommended under the emergency decree to reduce severe disease and protect hospital capacity. Vaccination remains available at local clinics and mobile units. Citizens may consult their family physician for medical guidance.",
+      "round": 1,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00052_r1",
+      "author_id": "retired_patients_pensioner columnist",
+      "author_name": "Retired Patients Pensioner Columnist",
+      "author_role": "",
+      "tier": 3,
+      "platform": "news_media",
+      "text": "The state is right to worry about overflowing hospitals, but trust cannot be commanded. A mandate for millions of older adults will only work if officials explain the evidence plainly, acknowledge uncertainty, and make access simple for those living on fixed incomes or with mobility limits.",
+      "round": 1,
+      "likes": 0,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.0,
+      "virality_tier": 1
+    }
+  ],
+  "graphSnapshot": {
+    "round": 1,
+    "month": "Week 1",
+    "event_label": "Week 1",
+    "nodes": [
+      {
+        "id": "pm_italy",
+        "name": "Prime Minister",
+        "type": "persona",
+        "description": "Head of government driving the mandate",
+        "power_level": 0.95,
+        "position": 0.703,
+        "position_history": [
+          0.703
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "health_minister",
+        "name": "Minister of Health",
+        "type": "persona",
+        "description": "Public face of the vaccination policy",
+        "power_level": 0.9,
+        "position": 0.831,
+        "position_history": [
+          0.831
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "regional_governor_lombardy",
+        "name": "Lombardy Regional Governor",
+        "type": "persona",
+        "description": "Regional executive managing local implementation",
+        "power_level": 0.75,
+        "position": 0.576,
+        "position_history": [
+          0.576
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "public_health_director",
+        "name": "National Public Health Director",
+        "type": "persona",
+        "description": "Top epidemiological advisor",
+        "power_level": 0.88,
+        "position": 0.873,
+        "position_history": [
+          0.873
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "scientist"
+      },
+      {
+        "id": "hospital_ceo",
+        "name": "Hospital Network CEO",
+        "type": "persona",
+        "description": "Leader of a major public hospital system",
+        "power_level": 0.7,
+        "position": 0.788,
+        "position_history": [
+          0.788
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "business_leader"
+      },
+      {
+        "id": "medical_association_president",
+        "name": "President, Italian Medical Association",
+        "type": "persona",
+        "description": "Representative of physicians",
+        "power_level": 0.78,
+        "position": 0.746,
+        "position_history": [
+          0.746
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "professional_leader"
+      },
+      {
+        "id": "anti_vax_leader",
+        "name": "Anti-Vaccine Movement Spokesperson",
+        "type": "persona",
+        "description": "Organizes protests and online opposition",
+        "power_level": 0.72,
+        "position": -0.946,
+        "position_history": [
+          -0.946
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "civil_liberties_lawyer",
+        "name": "Civil Liberties Lawyer",
+        "type": "persona",
+        "description": "Legal critic of the mandate",
+        "power_level": 0.62,
+        "position": -0.635,
+        "position_history": [
+          -0.635
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "legal_expert"
+      },
+      {
+        "id": "tv_anchor",
+        "name": "National TV News Anchor",
+        "type": "persona",
+        "description": "Mainstream media presenter shaping public framing",
+        "power_level": 0.8,
+        "position": 0.1,
+        "position_history": [
+          0.1
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "journalist"
+      },
+      {
+        "id": "social_media_influencer",
+        "name": "Health Skeptic Influencer",
+        "type": "persona",
+        "description": "Popular online commentator amplifying doubts",
+        "power_level": 0.66,
+        "position": -0.789,
+        "position_history": [
+          -0.789
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "influencer"
+      },
+      {
+        "id": "pharma_exec",
+        "name": "Biotech Company Executive",
+        "type": "persona",
+        "description": "Representative of the vaccine manufacturer",
+        "power_level": 0.58,
+        "position": 0.409,
+        "position_history": [
+          0.409
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "italian_government",
+        "name": "Italian Council of Ministers",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.788,
+        "position_history": [
+          0.788
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "ministry_health",
+        "name": "Ministry of Health",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.873,
+        "position_history": [
+          0.873
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "iss",
+        "name": "Istituto Superiore di Sanità",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.856,
+        "position_history": [
+          0.856
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "regional_health_service",
+        "name": "Regional Health Services",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.661,
+        "position_history": [
+          0.661
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_medical_association",
+        "name": "Italian Medical Association",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.703,
+        "position_history": [
+          0.703
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "hospital_networks",
+        "name": "Public Hospital Networks",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.746,
+        "position_history": [
+          0.746
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "constitutional_court",
+        "name": "Constitutional Court",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.004,
+        "position_history": [
+          0.004
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "national_broadcaster",
+        "name": "RAI Public Broadcaster",
+        "type": "persona",
+        "description": "",
+        "power_level": 0.5,
+        "position": 0.167,
+        "position_history": [
+          0.167
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "older_compliant",
+        "name": "Older Compliant Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Compliant Adults",
+        "power_level": 0.5,
+        "position": 0.78,
+        "position_history": [
+          0.78
+        ],
+        "delta": 0.0,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 4200000
+      },
+      {
+        "id": "older_skeptical",
+        "name": "Older Skeptical Adults",
+        "type": "cluster",
+        "description": "Cluster: Older Skeptical Adults",
+        "power_level": 0.5,
+        "position": -0.43,
+        "position_history": [
+          -0.43
+        ],
+        "delta": 0.0,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 3100000
+      },
+      {
+        "id": "rural_traditionalists",
+        "name": "Rural Traditionalist Families",
+        "type": "cluster",
+        "description": "Cluster: Rural Traditionalist Families",
+        "power_level": 0.5,
+        "position": -0.57,
+        "position_history": [
+          -0.57
+        ],
+        "delta": 0.0,
+        "sentiment": "anti_measure",
+        "category": "public_opinion",
+        "clusterSize": 2500000
+      },
+      {
+        "id": "urban_professionals",
+        "name": "Urban Health-Conscious Professionals",
+        "type": "cluster",
+        "description": "Cluster: Urban Health-Conscious Professionals",
+        "power_level": 0.5,
+        "position": 0.92,
+        "position_history": [
+          0.92
+        ],
+        "delta": 0.0,
+        "sentiment": "pro_measure",
+        "category": "public_opinion",
+        "clusterSize": 3600000
+      },
+      {
+        "id": "working_class_families",
+        "name": "Working-Class Families",
+        "type": "cluster",
+        "description": "Cluster: Working-Class Families",
+        "power_level": 0.5,
+        "position": -0.13,
+        "position_history": [
+          -0.13
+        ],
+        "delta": 0.0,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 5200000
+      },
+      {
+        "id": "retired_patients",
+        "name": "Retired Chronic-Condition Patients",
+        "type": "cluster",
+        "description": "Cluster: Retired Chronic-Condition Patients",
+        "power_level": 0.5,
+        "position": 0.72,
+        "position_history": [
+          0.72
+        ],
+        "delta": 0.0,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 2800000
+      },
+      {
+        "id": "young_adult_observers",
+        "name": "Young Adult Observers",
+        "type": "cluster",
+        "description": "Cluster: Young Adult Observers",
+        "power_level": 0.5,
+        "position": -0.03,
+        "position_history": [
+          -0.03
+        ],
+        "delta": 0.0,
+        "sentiment": "hesitant",
+        "category": "public_opinion",
+        "clusterSize": 4800000
+      }
+    ],
+    "edges": [
+      {
+        "source": "pm_italy",
+        "target": "pharma_exec",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "italian_government",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "regional_health_service",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "pm_italy",
+        "target": "hospital_networks",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "public_health_director",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "medical_association_president",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "health_minister",
+        "target": "iss",
+        "weight": 0.97,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "pharma_exec",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "national_medical_association",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "regional_governor_lombardy",
+        "target": "hospital_networks",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "public_health_director",
+        "target": "ministry_health",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "pharma_exec",
+        "weight": 0.66,
+        "type": "influence"
+      },
+      {
+        "source": "medical_association_president",
+        "target": "italian_government",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "anti_vax_leader",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.69,
+        "type": "influence"
+      },
+      {
+        "source": "anti_vax_leader",
+        "target": "social_media_influencer",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "tv_anchor",
+        "target": "national_broadcaster",
+        "weight": 0.93,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "national_medical_association",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "hospital_networks",
+        "weight": 0.66,
+        "type": "influence"
+      },
+      {
+        "source": "pharma_exec",
+        "target": "national_broadcaster",
+        "weight": 0.76,
+        "type": "influence"
+      },
+      {
+        "source": "ministry_health",
+        "target": "iss",
+        "weight": 0.98,
+        "type": "influence"
+      },
+      {
+        "source": "ministry_health",
+        "target": "regional_health_service",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "ministry_health",
+        "target": "national_medical_association",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "ministry_health",
+        "target": "hospital_networks",
+        "weight": 0.87,
+        "type": "influence"
+      },
+      {
+        "source": "iss",
+        "target": "hospital_networks",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "constitutional_court",
+        "target": "national_broadcaster",
+        "weight": 0.84,
+        "type": "influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "hospital_ceo",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "italian_government",
+        "weight": 0.98,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "medical_association_president",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_compliant",
+        "target": "hospital_networks",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.59,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "social_media_influencer",
+        "weight": 0.28,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "constitutional_court",
+        "weight": 0.13,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "older_skeptical",
+        "target": "anti_vax_leader",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "social_media_influencer",
+        "weight": 0.56,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "anti_vax_leader",
+        "weight": 0.25,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "rural_traditionalists",
+        "target": "constitutional_court",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "public_health_director",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "ministry_health",
+        "weight": 0.91,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "iss",
+        "weight": 0.87,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "urban_professionals",
+        "target": "health_minister",
+        "weight": 0.82,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "constitutional_court",
+        "weight": 0.73,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "tv_anchor",
+        "weight": 0.54,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "national_broadcaster",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "working_class_families",
+        "target": "civil_liberties_lawyer",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "pm_italy",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "national_medical_association",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "medical_association_president",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "retired_patients",
+        "target": "hospital_networks",
+        "weight": 0.95,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "constitutional_court",
+        "weight": 0.93,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "tv_anchor",
+        "weight": 0.74,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "national_broadcaster",
+        "weight": 0.61,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "young_adult_observers",
+        "target": "pharma_exec",
+        "weight": 0.12,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 26,
+      "total_edges": 53,
+      "avg_position": 0.335
+    }
+  },
+  "indicators": {
+    "polarization": 4.4,
+    "engagement": 53,
+    "sentiment": {
+      "positive": 0.0,
+      "neutral": 0.79,
+      "negative": 0.21
+    },
+    "trendingHashtags": []
+  },
+  "coalitions": {
+    "coalitions": [
+      {
+        "label": "Anti-measure",
+        "color": "#1e40af",
+        "members": [
+          "anti_vax_leader",
+          "civil_liberties_lawyer",
+          "social_media_influencer"
+        ],
+        "avg_position": -0.803,
+        "size": 3
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#059669",
+        "members": [
+          "pm_italy",
+          "health_minister",
+          "public_health_director",
+          "hospital_ceo",
+          "medical_association_president",
+          "italian_government",
+          "ministry_health",
+          "iss",
+          "regional_health_service",
+          "national_medical_association",
+          "hospital_networks"
+        ],
+        "avg_position": 0.789,
+        "size": 11
+      },
+      {
+        "label": "Hesitant",
+        "color": "#dc2626",
+        "members": [
+          "tv_anchor",
+          "constitutional_court",
+          "national_broadcaster"
+        ],
+        "avg_position": 0.077,
+        "size": 3
+      },
+      {
+        "label": "Pro-measure",
+        "color": "#f59e0b",
+        "members": [
+          "regional_governor_lombardy",
+          "pharma_exec"
+        ],
+        "avg_position": 0.455,
+        "size": 2
+      }
+    ]
+  },
+  "key_insight": "Round 1 analysis",
+  "postImpacts": [
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00000_r1",
+      "authorId": "regional_governor_lombardy",
+      "influencedAgents": [
+        {
+          "agentId": "italian_government",
+          "agentName": "Italian Council of Ministers",
+          "positionBefore": 0.788,
+          "positionAfter": 0.792,
+          "shift": 0.004
+        },
+        {
+          "agentId": "ministry_health",
+          "agentName": "Ministry of Health",
+          "positionBefore": 0.873,
+          "positionAfter": 0.85,
+          "shift": -0.023
+        },
+        {
+          "agentId": "hospital_ceo",
+          "agentName": "Hospital Network CEO",
+          "positionBefore": 0.788,
+          "positionAfter": 0.793,
+          "shift": 0.005
+        },
+        {
+          "agentId": "public_health_director",
+          "agentName": "National Public Health Director",
+          "positionBefore": 0.873,
+          "positionAfter": 0.875,
+          "shift": 0.002
+        },
+        {
+          "agentId": "health_minister",
+          "agentName": "Minister of Health",
+          "positionBefore": 0.831,
+          "positionAfter": 0.806,
+          "shift": -0.025
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.037,
+      "edgeEffects": [
+        {
+          "source": "regional_governor_lombardy",
+          "target": "italian_government",
+          "weightDelta": 0.0
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "ministry_health",
+          "weightDelta": 0.016
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "hospital_ceo",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "public_health_director",
+          "weightDelta": -0.0
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "health_minister",
+          "weightDelta": 0.01
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00001_r1",
+      "authorId": "pm_italy",
+      "influencedAgents": [
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.392,
+          "shift": -0.017
+        },
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.15,
+          "shift": -0.017
+        },
+        {
+          "agentId": "ministry_health",
+          "agentName": "Ministry of Health",
+          "positionBefore": 0.873,
+          "positionAfter": 0.868,
+          "shift": -0.005
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.634,
+          "shift": -0.027
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.066,
+      "edgeEffects": [
+        {
+          "source": "pm_italy",
+          "target": "pharma_exec",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "pm_italy",
+          "target": "national_broadcaster",
+          "weightDelta": -0.023
+        },
+        {
+          "source": "pm_italy",
+          "target": "ministry_health",
+          "weightDelta": 0.036
+        },
+        {
+          "source": "pm_italy",
+          "target": "regional_health_service",
+          "weightDelta": 0.003
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00002_r1",
+      "authorId": "public_health_director",
+      "influencedAgents": [
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.437,
+          "shift": 0.028
+        },
+        {
+          "agentId": "iss",
+          "agentName": "Istituto Superiore di Sanità",
+          "positionBefore": 0.856,
+          "positionAfter": 0.882,
+          "shift": 0.026
+        },
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.716,
+          "shift": 0.013
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.067,
+      "edgeEffects": [
+        {
+          "source": "public_health_director",
+          "target": "pharma_exec",
+          "weightDelta": 0.038
+        },
+        {
+          "source": "public_health_director",
+          "target": "iss",
+          "weightDelta": -0.014
+        },
+        {
+          "source": "public_health_director",
+          "target": "national_medical_association",
+          "weightDelta": 0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00003_r1",
+      "authorId": "hospital_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "pm_italy",
+          "agentName": "Prime Minister",
+          "positionBefore": 0.703,
+          "positionAfter": 0.696,
+          "shift": -0.007
+        },
+        {
+          "agentId": "health_minister",
+          "agentName": "Minister of Health",
+          "positionBefore": 0.831,
+          "positionAfter": 0.843,
+          "shift": 0.012
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.005,
+      "edgeEffects": [
+        {
+          "source": "hospital_ceo",
+          "target": "pm_italy",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "hospital_ceo",
+          "target": "health_minister",
+          "weightDelta": 0.04
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00004_r1",
+      "authorId": "medical_association_president",
+      "influencedAgents": [
+        {
+          "agentId": "public_health_director",
+          "agentName": "National Public Health Director",
+          "positionBefore": 0.873,
+          "positionAfter": 0.898,
+          "shift": 0.025
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.69,
+          "shift": 0.029
+        },
+        {
+          "agentId": "pm_italy",
+          "agentName": "Prime Minister",
+          "positionBefore": 0.703,
+          "positionAfter": 0.678,
+          "shift": -0.025
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.029,
+      "edgeEffects": [
+        {
+          "source": "medical_association_president",
+          "target": "public_health_director",
+          "weightDelta": -0.011
+        },
+        {
+          "source": "medical_association_president",
+          "target": "regional_health_service",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "medical_association_president",
+          "target": "pm_italy",
+          "weightDelta": 0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00005_r1",
+      "authorId": "public_health_director",
+      "influencedAgents": [
+        {
+          "agentId": "medical_association_president",
+          "agentName": "President, Italian Medical Association",
+          "positionBefore": 0.746,
+          "positionAfter": 0.754,
+          "shift": 0.008
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.677,
+          "shift": 0.016
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.024,
+      "edgeEffects": [
+        {
+          "source": "public_health_director",
+          "target": "medical_association_president",
+          "weightDelta": 0.038
+        },
+        {
+          "source": "public_health_director",
+          "target": "regional_health_service",
+          "weightDelta": -0.009
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00006_r1",
+      "authorId": "hospital_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "health_minister",
+          "agentName": "Minister of Health",
+          "positionBefore": 0.831,
+          "positionAfter": 0.826,
+          "shift": -0.005
+        },
+        {
+          "agentId": "regional_governor_lombardy",
+          "agentName": "Lombardy Regional Governor",
+          "positionBefore": 0.576,
+          "positionAfter": 0.589,
+          "shift": 0.013
+        },
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.722,
+          "shift": 0.019
+        },
+        {
+          "agentId": "italian_government",
+          "agentName": "Italian Council of Ministers",
+          "positionBefore": 0.788,
+          "positionAfter": 0.8,
+          "shift": 0.012
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.039,
+      "edgeEffects": [
+        {
+          "source": "hospital_ceo",
+          "target": "health_minister",
+          "weightDelta": 0.034
+        },
+        {
+          "source": "hospital_ceo",
+          "target": "regional_governor_lombardy",
+          "weightDelta": 0.038
+        },
+        {
+          "source": "hospital_ceo",
+          "target": "national_medical_association",
+          "weightDelta": 0.032
+        },
+        {
+          "source": "hospital_ceo",
+          "target": "italian_government",
+          "weightDelta": 0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00007_r1",
+      "authorId": "medical_association_president",
+      "influencedAgents": [
+        {
+          "agentId": "italian_government",
+          "agentName": "Italian Council of Ministers",
+          "positionBefore": 0.788,
+          "positionAfter": 0.804,
+          "shift": 0.016
+        },
+        {
+          "agentId": "iss",
+          "agentName": "Istituto Superiore di Sanità",
+          "positionBefore": 0.856,
+          "positionAfter": 0.837,
+          "shift": -0.019
+        },
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.417,
+          "shift": 0.008
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.643,
+          "shift": -0.018
+        },
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.172,
+          "shift": 0.005
+        },
+        {
+          "agentId": "pm_italy",
+          "agentName": "Prime Minister",
+          "positionBefore": 0.703,
+          "positionAfter": 0.688,
+          "shift": -0.015
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.023,
+      "edgeEffects": [
+        {
+          "source": "medical_association_president",
+          "target": "italian_government",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "medical_association_president",
+          "target": "iss",
+          "weightDelta": -0.006
+        },
+        {
+          "source": "medical_association_president",
+          "target": "pharma_exec",
+          "weightDelta": -0.05
+        },
+        {
+          "source": "medical_association_president",
+          "target": "regional_health_service",
+          "weightDelta": -0.019
+        },
+        {
+          "source": "medical_association_president",
+          "target": "national_broadcaster",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "medical_association_president",
+          "target": "pm_italy",
+          "weightDelta": 0.021
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00008_r1",
+      "authorId": "pm_italy",
+      "influencedAgents": [
+        {
+          "agentId": "hospital_ceo",
+          "agentName": "Hospital Network CEO",
+          "positionBefore": 0.788,
+          "positionAfter": 0.802,
+          "shift": 0.014
+        },
+        {
+          "agentId": "iss",
+          "agentName": "Istituto Superiore di Sanità",
+          "positionBefore": 0.856,
+          "positionAfter": 0.867,
+          "shift": 0.011
+        },
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.427,
+          "shift": 0.018
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.656,
+          "shift": -0.005
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.038,
+      "edgeEffects": [
+        {
+          "source": "pm_italy",
+          "target": "hospital_ceo",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "pm_italy",
+          "target": "iss",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "pm_italy",
+          "target": "pharma_exec",
+          "weightDelta": -0.03
+        },
+        {
+          "source": "pm_italy",
+          "target": "regional_health_service",
+          "weightDelta": -0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00009_r1",
+      "authorId": "pm_italy",
+      "influencedAgents": [
+        {
+          "agentId": "ministry_health",
+          "agentName": "Ministry of Health",
+          "positionBefore": 0.873,
+          "positionAfter": 0.882,
+          "shift": 0.009
+        },
+        {
+          "agentId": "hospital_networks",
+          "agentName": "Public Hospital Networks",
+          "positionBefore": 0.746,
+          "positionAfter": 0.77,
+          "shift": 0.024
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.643,
+          "shift": -0.018
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.015,
+      "edgeEffects": [
+        {
+          "source": "pm_italy",
+          "target": "ministry_health",
+          "weightDelta": 0.013
+        },
+        {
+          "source": "pm_italy",
+          "target": "hospital_networks",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "pm_italy",
+          "target": "regional_health_service",
+          "weightDelta": 0.02
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00010_r1",
+      "authorId": "health_minister",
+      "influencedAgents": [
+        {
+          "agentId": "medical_association_president",
+          "agentName": "President, Italian Medical Association",
+          "positionBefore": 0.746,
+          "positionAfter": 0.725,
+          "shift": -0.021
+        },
+        {
+          "agentId": "ministry_health",
+          "agentName": "Ministry of Health",
+          "positionBefore": 0.873,
+          "positionAfter": 0.853,
+          "shift": -0.02
+        },
+        {
+          "agentId": "iss",
+          "agentName": "Istituto Superiore di Sanità",
+          "positionBefore": 0.856,
+          "positionAfter": 0.827,
+          "shift": -0.029
+        },
+        {
+          "agentId": "hospital_ceo",
+          "agentName": "Hospital Network CEO",
+          "positionBefore": 0.788,
+          "positionAfter": 0.804,
+          "shift": 0.016
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.054,
+      "edgeEffects": [
+        {
+          "source": "health_minister",
+          "target": "medical_association_president",
+          "weightDelta": 0.046
+        },
+        {
+          "source": "health_minister",
+          "target": "ministry_health",
+          "weightDelta": 0.007
+        },
+        {
+          "source": "health_minister",
+          "target": "iss",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "health_minister",
+          "target": "hospital_ceo",
+          "weightDelta": 0.043
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00011_r1",
+      "authorId": "health_minister",
+      "influencedAgents": [
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.722,
+          "shift": 0.019
+        },
+        {
+          "agentId": "public_health_director",
+          "agentName": "National Public Health Director",
+          "positionBefore": 0.873,
+          "positionAfter": 0.888,
+          "shift": 0.015
+        },
+        {
+          "agentId": "iss",
+          "agentName": "Istituto Superiore di Sanità",
+          "positionBefore": 0.856,
+          "positionAfter": 0.852,
+          "shift": -0.004
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.03,
+      "edgeEffects": [
+        {
+          "source": "health_minister",
+          "target": "national_medical_association",
+          "weightDelta": -0.023
+        },
+        {
+          "source": "health_minister",
+          "target": "public_health_director",
+          "weightDelta": -0.012
+        },
+        {
+          "source": "health_minister",
+          "target": "iss",
+          "weightDelta": -0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00012_r1",
+      "authorId": "regional_governor_lombardy",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.185,
+          "shift": 0.018
+        },
+        {
+          "agentId": "iss",
+          "agentName": "Istituto Superiore di Sanità",
+          "positionBefore": 0.856,
+          "positionAfter": 0.885,
+          "shift": 0.029
+        },
+        {
+          "agentId": "hospital_networks",
+          "agentName": "Public Hospital Networks",
+          "positionBefore": 0.746,
+          "positionAfter": 0.743,
+          "shift": -0.003
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.044,
+      "edgeEffects": [
+        {
+          "source": "regional_governor_lombardy",
+          "target": "national_broadcaster",
+          "weightDelta": -0.047
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "iss",
+          "weightDelta": -0.026
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "hospital_networks",
+          "weightDelta": -0.025
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00013_r1",
+      "authorId": "medical_association_president",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.189,
+          "shift": 0.022
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.655,
+          "shift": -0.006
+        },
+        {
+          "agentId": "regional_governor_lombardy",
+          "agentName": "Lombardy Regional Governor",
+          "positionBefore": 0.576,
+          "positionAfter": 0.569,
+          "shift": -0.007
+        },
+        {
+          "agentId": "pm_italy",
+          "agentName": "Prime Minister",
+          "positionBefore": 0.703,
+          "positionAfter": 0.709,
+          "shift": 0.006
+        },
+        {
+          "agentId": "hospital_networks",
+          "agentName": "Public Hospital Networks",
+          "positionBefore": 0.746,
+          "positionAfter": 0.749,
+          "shift": 0.003
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.018,
+      "edgeEffects": [
+        {
+          "source": "medical_association_president",
+          "target": "national_broadcaster",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "medical_association_president",
+          "target": "regional_health_service",
+          "weightDelta": -0.029
+        },
+        {
+          "source": "medical_association_president",
+          "target": "regional_governor_lombardy",
+          "weightDelta": -0.008
+        },
+        {
+          "source": "medical_association_president",
+          "target": "pm_italy",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "medical_association_president",
+          "target": "hospital_networks",
+          "weightDelta": -0.045
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00014_r1",
+      "authorId": "health_minister",
+      "influencedAgents": [
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.703,
+          "shift": 0.0
+        },
+        {
+          "agentId": "italian_government",
+          "agentName": "Italian Council of Ministers",
+          "positionBefore": 0.788,
+          "positionAfter": 0.817,
+          "shift": 0.029
+        },
+        {
+          "agentId": "pm_italy",
+          "agentName": "Prime Minister",
+          "positionBefore": 0.703,
+          "positionAfter": 0.681,
+          "shift": -0.022
+        },
+        {
+          "agentId": "hospital_ceo",
+          "agentName": "Hospital Network CEO",
+          "positionBefore": 0.788,
+          "positionAfter": 0.76,
+          "shift": -0.028
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.021,
+      "edgeEffects": [
+        {
+          "source": "health_minister",
+          "target": "national_medical_association",
+          "weightDelta": -0.012
+        },
+        {
+          "source": "health_minister",
+          "target": "italian_government",
+          "weightDelta": 0.017
+        },
+        {
+          "source": "health_minister",
+          "target": "pm_italy",
+          "weightDelta": 0.039
+        },
+        {
+          "source": "health_minister",
+          "target": "hospital_ceo",
+          "weightDelta": -0.032
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00015_r1",
+      "authorId": "regional_governor_lombardy",
+      "influencedAgents": [
+        {
+          "agentId": "medical_association_president",
+          "agentName": "President, Italian Medical Association",
+          "positionBefore": 0.746,
+          "positionAfter": 0.724,
+          "shift": -0.022
+        },
+        {
+          "agentId": "hospital_networks",
+          "agentName": "Public Hospital Networks",
+          "positionBefore": 0.746,
+          "positionAfter": 0.748,
+          "shift": 0.002
+        },
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.68,
+          "shift": -0.023
+        },
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.387,
+          "shift": -0.022
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.681,
+          "shift": 0.02
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.045,
+      "edgeEffects": [
+        {
+          "source": "regional_governor_lombardy",
+          "target": "medical_association_president",
+          "weightDelta": -0.018
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "hospital_networks",
+          "weightDelta": -0.036
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "national_medical_association",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "pharma_exec",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "regional_governor_lombardy",
+          "target": "regional_health_service",
+          "weightDelta": 0.025
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00016_r1",
+      "authorId": "hospital_ceo",
+      "influencedAgents": [
+        {
+          "agentId": "iss",
+          "agentName": "Istituto Superiore di Sanità",
+          "positionBefore": 0.856,
+          "positionAfter": 0.852,
+          "shift": -0.004
+        },
+        {
+          "agentId": "hospital_networks",
+          "agentName": "Public Hospital Networks",
+          "positionBefore": 0.746,
+          "positionAfter": 0.76,
+          "shift": 0.014
+        },
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.73,
+          "shift": 0.027
+        },
+        {
+          "agentId": "medical_association_president",
+          "agentName": "President, Italian Medical Association",
+          "positionBefore": 0.746,
+          "positionAfter": 0.771,
+          "shift": 0.025
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.062,
+      "edgeEffects": [
+        {
+          "source": "hospital_ceo",
+          "target": "iss",
+          "weightDelta": -0.034
+        },
+        {
+          "source": "hospital_ceo",
+          "target": "hospital_networks",
+          "weightDelta": -0.001
+        },
+        {
+          "source": "hospital_ceo",
+          "target": "national_medical_association",
+          "weightDelta": 0.006
+        },
+        {
+          "source": "hospital_ceo",
+          "target": "medical_association_president",
+          "weightDelta": 0.014
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00017_r1",
+      "authorId": "pharma_exec",
+      "influencedAgents": [
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.642,
+          "shift": -0.019
+        },
+        {
+          "agentId": "health_minister",
+          "agentName": "Minister of Health",
+          "positionBefore": 0.831,
+          "positionAfter": 0.811,
+          "shift": -0.02
+        },
+        {
+          "agentId": "hospital_ceo",
+          "agentName": "Hospital Network CEO",
+          "positionBefore": 0.788,
+          "positionAfter": 0.765,
+          "shift": -0.023
+        },
+        {
+          "agentId": "pm_italy",
+          "agentName": "Prime Minister",
+          "positionBefore": 0.703,
+          "positionAfter": 0.703,
+          "shift": -0.0
+        },
+        {
+          "agentId": "public_health_director",
+          "agentName": "National Public Health Director",
+          "positionBefore": 0.873,
+          "positionAfter": 0.902,
+          "shift": 0.029
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.033,
+      "edgeEffects": [
+        {
+          "source": "pharma_exec",
+          "target": "regional_health_service",
+          "weightDelta": -0.003
+        },
+        {
+          "source": "pharma_exec",
+          "target": "health_minister",
+          "weightDelta": -0.003
+        },
+        {
+          "source": "pharma_exec",
+          "target": "hospital_ceo",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "pharma_exec",
+          "target": "pm_italy",
+          "weightDelta": -0.006
+        },
+        {
+          "source": "pharma_exec",
+          "target": "public_health_director",
+          "weightDelta": 0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00018_r1",
+      "authorId": "pharma_exec",
+      "influencedAgents": [
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.637,
+          "shift": -0.024
+        },
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.684,
+          "shift": -0.019
+        },
+        {
+          "agentId": "public_health_director",
+          "agentName": "National Public Health Director",
+          "positionBefore": 0.873,
+          "positionAfter": 0.874,
+          "shift": 0.001
+        },
+        {
+          "agentId": "hospital_ceo",
+          "agentName": "Hospital Network CEO",
+          "positionBefore": 0.788,
+          "positionAfter": 0.811,
+          "shift": 0.023
+        },
+        {
+          "agentId": "health_minister",
+          "agentName": "Minister of Health",
+          "positionBefore": 0.831,
+          "positionAfter": 0.836,
+          "shift": 0.005
+        },
+        {
+          "agentId": "medical_association_president",
+          "agentName": "President, Italian Medical Association",
+          "positionBefore": 0.746,
+          "positionAfter": 0.748,
+          "shift": 0.002
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.012,
+      "edgeEffects": [
+        {
+          "source": "pharma_exec",
+          "target": "regional_health_service",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "pharma_exec",
+          "target": "national_medical_association",
+          "weightDelta": -0.033
+        },
+        {
+          "source": "pharma_exec",
+          "target": "public_health_director",
+          "weightDelta": -0.023
+        },
+        {
+          "source": "pharma_exec",
+          "target": "hospital_ceo",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "pharma_exec",
+          "target": "health_minister",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "pharma_exec",
+          "target": "medical_association_president",
+          "weightDelta": 0.007
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00019_r1",
+      "authorId": "public_health_director",
+      "influencedAgents": [
+        {
+          "agentId": "iss",
+          "agentName": "Istituto Superiore di Sanità",
+          "positionBefore": 0.856,
+          "positionAfter": 0.879,
+          "shift": 0.023
+        },
+        {
+          "agentId": "regional_governor_lombardy",
+          "agentName": "Lombardy Regional Governor",
+          "positionBefore": 0.576,
+          "positionAfter": 0.587,
+          "shift": 0.011
+        },
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.697,
+          "shift": -0.006
+        },
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.436,
+          "shift": 0.027
+        },
+        {
+          "agentId": "health_minister",
+          "agentName": "Minister of Health",
+          "positionBefore": 0.831,
+          "positionAfter": 0.81,
+          "shift": -0.021
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.034,
+      "edgeEffects": [
+        {
+          "source": "public_health_director",
+          "target": "iss",
+          "weightDelta": -0.047
+        },
+        {
+          "source": "public_health_director",
+          "target": "regional_governor_lombardy",
+          "weightDelta": 0.018
+        },
+        {
+          "source": "public_health_director",
+          "target": "national_medical_association",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "public_health_director",
+          "target": "pharma_exec",
+          "weightDelta": 0.034
+        },
+        {
+          "source": "public_health_director",
+          "target": "health_minister",
+          "weightDelta": -0.042
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00020_r1",
+      "authorId": "pharma_exec",
+      "influencedAgents": [
+        {
+          "agentId": "national_medical_association",
+          "agentName": "Italian Medical Association",
+          "positionBefore": 0.703,
+          "positionAfter": 0.712,
+          "shift": 0.009
+        },
+        {
+          "agentId": "regional_health_service",
+          "agentName": "Regional Health Services",
+          "positionBefore": 0.661,
+          "positionAfter": 0.65,
+          "shift": -0.011
+        },
+        {
+          "agentId": "tv_anchor",
+          "agentName": "National TV News Anchor",
+          "positionBefore": 0.1,
+          "positionAfter": 0.114,
+          "shift": 0.014
+        },
+        {
+          "agentId": "pm_italy",
+          "agentName": "Prime Minister",
+          "positionBefore": 0.703,
+          "positionAfter": 0.707,
+          "shift": 0.004
+        },
+        {
+          "agentId": "medical_association_president",
+          "agentName": "President, Italian Medical Association",
+          "positionBefore": 0.746,
+          "positionAfter": 0.719,
+          "shift": -0.027
+        },
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.156,
+          "shift": -0.011
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.022,
+      "edgeEffects": [
+        {
+          "source": "pharma_exec",
+          "target": "national_medical_association",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "pharma_exec",
+          "target": "regional_health_service",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "pharma_exec",
+          "target": "tv_anchor",
+          "weightDelta": 0.046
+        },
+        {
+          "source": "pharma_exec",
+          "target": "pm_italy",
+          "weightDelta": -0.029
+        },
+        {
+          "source": "pharma_exec",
+          "target": "medical_association_president",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "pharma_exec",
+          "target": "national_broadcaster",
+          "weightDelta": -0.044
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00021_r1",
+      "authorId": "tv_anchor",
+      "influencedAgents": [
+        {
+          "agentId": "regional_governor_lombardy",
+          "agentName": "Lombardy Regional Governor",
+          "positionBefore": 0.576,
+          "positionAfter": 0.557,
+          "shift": -0.019
+        },
+        {
+          "agentId": "constitutional_court",
+          "agentName": "Constitutional Court",
+          "positionBefore": 0.004,
+          "positionAfter": 0.026,
+          "shift": 0.022
+        },
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.188,
+          "shift": 0.021
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": 0.024,
+      "edgeEffects": [
+        {
+          "source": "tv_anchor",
+          "target": "regional_governor_lombardy",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "tv_anchor",
+          "target": "constitutional_court",
+          "weightDelta": -0.041
+        },
+        {
+          "source": "tv_anchor",
+          "target": "national_broadcaster",
+          "weightDelta": -0.034
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00023_r1",
+      "authorId": "older_compliant_suburban_commuter",
+      "influencedAgents": [
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.429,
+          "shift": 0.02
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.02,
+      "edgeEffects": [
+        {
+          "source": "older_compliant_suburban_commuter",
+          "target": "pharma_exec",
+          "weightDelta": 0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00024_r1",
+      "authorId": "young_adult_observers_university_student",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.173,
+          "shift": 0.006
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.006,
+      "edgeEffects": [
+        {
+          "source": "young_adult_observers_university_student",
+          "target": "national_broadcaster",
+          "weightDelta": -0.041
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00025_r1",
+      "authorId": "young_adult_observers_gig_worker",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.143,
+          "shift": -0.024
+        },
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.437,
+          "shift": 0.028
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.004,
+      "edgeEffects": [
+        {
+          "source": "young_adult_observers_gig_worker",
+          "target": "national_broadcaster",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "young_adult_observers_gig_worker",
+          "target": "pharma_exec",
+          "weightDelta": 0.018
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00026_r1",
+      "authorId": "tv_anchor",
+      "influencedAgents": [
+        {
+          "agentId": "regional_governor_lombardy",
+          "agentName": "Lombardy Regional Governor",
+          "positionBefore": 0.576,
+          "positionAfter": 0.572,
+          "shift": -0.004
+        },
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.166,
+          "shift": -0.001
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.005,
+      "edgeEffects": [
+        {
+          "source": "tv_anchor",
+          "target": "regional_governor_lombardy",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "tv_anchor",
+          "target": "national_broadcaster",
+          "weightDelta": -0.035
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00027_r1",
+      "authorId": "urban_professionals_university-educated parent",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.14,
+          "shift": -0.027
+        },
+        {
+          "agentId": "constitutional_court",
+          "agentName": "Constitutional Court",
+          "positionBefore": 0.004,
+          "positionAfter": -0.023,
+          "shift": -0.027
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.054,
+      "edgeEffects": [
+        {
+          "source": "urban_professionals_university-educated parent",
+          "target": "national_broadcaster",
+          "weightDelta": -0.042
+        },
+        {
+          "source": "urban_professionals_university-educated parent",
+          "target": "constitutional_court",
+          "weightDelta": -0.039
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00028_r1",
+      "authorId": "working_class_families_retired_bus_driver",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.171,
+          "shift": 0.004
+        },
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.394,
+          "shift": -0.015
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": -0.011,
+      "edgeEffects": [
+        {
+          "source": "working_class_families_retired_bus_driver",
+          "target": "national_broadcaster",
+          "weightDelta": -0.025
+        },
+        {
+          "source": "working_class_families_retired_bus_driver",
+          "target": "pharma_exec",
+          "weightDelta": -0.042
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00030_r1",
+      "authorId": "civil_liberties_lawyer",
+      "influencedAgents": [
+        {
+          "agentId": "anti_vax_leader",
+          "agentName": "Anti-Vaccine Movement Spokesperson",
+          "positionBefore": -0.946,
+          "positionAfter": -0.958,
+          "shift": -0.012
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.012,
+      "edgeEffects": [
+        {
+          "source": "civil_liberties_lawyer",
+          "target": "anti_vax_leader",
+          "weightDelta": 0.009
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00031_r1",
+      "authorId": "rural_traditionalists_retired farmer",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.186,
+          "shift": 0.019
+        },
+        {
+          "agentId": "tv_anchor",
+          "agentName": "National TV News Anchor",
+          "positionBefore": 0.1,
+          "positionAfter": 0.075,
+          "shift": -0.025
+        },
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.395,
+          "shift": -0.014
+        },
+        {
+          "agentId": "constitutional_court",
+          "agentName": "Constitutional Court",
+          "positionBefore": 0.004,
+          "positionAfter": -0.0,
+          "shift": -0.004
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.024,
+      "edgeEffects": [
+        {
+          "source": "rural_traditionalists_retired farmer",
+          "target": "national_broadcaster",
+          "weightDelta": -0.029
+        },
+        {
+          "source": "rural_traditionalists_retired farmer",
+          "target": "tv_anchor",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "rural_traditionalists_retired farmer",
+          "target": "pharma_exec",
+          "weightDelta": 0.017
+        },
+        {
+          "source": "rural_traditionalists_retired farmer",
+          "target": "constitutional_court",
+          "weightDelta": -0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00032_r1",
+      "authorId": "rural_traditionalists_community_volunteer",
+      "influencedAgents": [
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.407,
+          "shift": -0.002
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.002,
+      "edgeEffects": [
+        {
+          "source": "rural_traditionalists_community_volunteer",
+          "target": "pharma_exec",
+          "weightDelta": -0.009
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00033_r1",
+      "authorId": "urban_professionals_hospital physician",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.142,
+          "shift": -0.025
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.025,
+      "edgeEffects": [
+        {
+          "source": "urban_professionals_hospital physician",
+          "target": "national_broadcaster",
+          "weightDelta": -0.036
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00034_r1",
+      "authorId": "working_class_families_municipal_clerk",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.15,
+          "shift": -0.017
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.017,
+      "edgeEffects": [
+        {
+          "source": "working_class_families_municipal_clerk",
+          "target": "national_broadcaster",
+          "weightDelta": 0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00035_r1",
+      "authorId": "working_class_families_warehouse_worker",
+      "influencedAgents": [
+        {
+          "agentId": "regional_governor_lombardy",
+          "agentName": "Lombardy Regional Governor",
+          "positionBefore": 0.576,
+          "positionAfter": 0.574,
+          "shift": -0.002
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.002,
+      "edgeEffects": [
+        {
+          "source": "working_class_families_warehouse_worker",
+          "target": "regional_governor_lombardy",
+          "weightDelta": -0.003
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00037_r1",
+      "authorId": "retired_patients_community doctor",
+      "influencedAgents": [
+        {
+          "agentId": "constitutional_court",
+          "agentName": "Constitutional Court",
+          "positionBefore": 0.004,
+          "positionAfter": 0.009,
+          "shift": 0.005
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.005,
+      "edgeEffects": [
+        {
+          "source": "retired_patients_community doctor",
+          "target": "constitutional_court",
+          "weightDelta": -0.03
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00039_r1",
+      "authorId": "civil_liberties_lawyer",
+      "influencedAgents": [
+        {
+          "agentId": "social_media_influencer",
+          "agentName": "Health Skeptic Influencer",
+          "positionBefore": -0.789,
+          "positionAfter": -0.795,
+          "shift": -0.006
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.006,
+      "edgeEffects": [
+        {
+          "source": "civil_liberties_lawyer",
+          "target": "social_media_influencer",
+          "weightDelta": 0.001
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00040_r1",
+      "authorId": "civil_liberties_lawyer",
+      "influencedAgents": [
+        {
+          "agentId": "anti_vax_leader",
+          "agentName": "Anti-Vaccine Movement Spokesperson",
+          "positionBefore": -0.946,
+          "positionAfter": -0.957,
+          "shift": -0.011
+        },
+        {
+          "agentId": "social_media_influencer",
+          "agentName": "Health Skeptic Influencer",
+          "positionBefore": -0.789,
+          "positionAfter": -0.765,
+          "shift": 0.024
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.013,
+      "edgeEffects": [
+        {
+          "source": "civil_liberties_lawyer",
+          "target": "anti_vax_leader",
+          "weightDelta": -0.044
+        },
+        {
+          "source": "civil_liberties_lawyer",
+          "target": "social_media_influencer",
+          "weightDelta": -0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00041_r1",
+      "authorId": "social_media_influencer",
+      "influencedAgents": [
+        {
+          "agentId": "civil_liberties_lawyer",
+          "agentName": "Civil Liberties Lawyer",
+          "positionBefore": -0.635,
+          "positionAfter": -0.639,
+          "shift": -0.004
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.004,
+      "edgeEffects": [
+        {
+          "source": "social_media_influencer",
+          "target": "civil_liberties_lawyer",
+          "weightDelta": -0.034
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00042_r1",
+      "authorId": "older_compliant_retired_teacher",
+      "influencedAgents": [
+        {
+          "agentId": "tv_anchor",
+          "agentName": "National TV News Anchor",
+          "positionBefore": 0.1,
+          "positionAfter": 0.083,
+          "shift": -0.017
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.017,
+      "edgeEffects": [
+        {
+          "source": "older_compliant_retired_teacher",
+          "target": "tv_anchor",
+          "weightDelta": 0.041
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00043_r1",
+      "authorId": "older_skeptical_retired_teacher",
+      "influencedAgents": [
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.402,
+          "shift": -0.007
+        },
+        {
+          "agentId": "constitutional_court",
+          "agentName": "Constitutional Court",
+          "positionBefore": 0.004,
+          "positionAfter": 0.03,
+          "shift": 0.026
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.019,
+      "edgeEffects": [
+        {
+          "source": "older_skeptical_retired_teacher",
+          "target": "pharma_exec",
+          "weightDelta": -0.008
+        },
+        {
+          "source": "older_skeptical_retired_teacher",
+          "target": "constitutional_court",
+          "weightDelta": 0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00044_r1",
+      "authorId": "older_skeptical_small_business_owner",
+      "influencedAgents": [
+        {
+          "agentId": "national_broadcaster",
+          "agentName": "RAI Public Broadcaster",
+          "positionBefore": 0.167,
+          "positionAfter": 0.182,
+          "shift": 0.015
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.015,
+      "edgeEffects": [
+        {
+          "source": "older_skeptical_small_business_owner",
+          "target": "national_broadcaster",
+          "weightDelta": 0.017
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00045_r1",
+      "authorId": "urban_professionals_policy analyst",
+      "influencedAgents": [
+        {
+          "agentId": "constitutional_court",
+          "agentName": "Constitutional Court",
+          "positionBefore": 0.004,
+          "positionAfter": -0.02,
+          "shift": -0.024
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": -0.024,
+      "edgeEffects": [
+        {
+          "source": "urban_professionals_policy analyst",
+          "target": "constitutional_court",
+          "weightDelta": -0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00046_r1",
+      "authorId": "young_adult_observers_young_parent",
+      "influencedAgents": [
+        {
+          "agentId": "tv_anchor",
+          "agentName": "National TV News Anchor",
+          "positionBefore": 0.1,
+          "positionAfter": 0.13,
+          "shift": 0.03
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.03,
+      "edgeEffects": [
+        {
+          "source": "young_adult_observers_young_parent",
+          "target": "tv_anchor",
+          "weightDelta": -0.014
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00048_r1",
+      "authorId": "social_media_influencer",
+      "influencedAgents": [
+        {
+          "agentId": "anti_vax_leader",
+          "agentName": "Anti-Vaccine Movement Spokesperson",
+          "positionBefore": -0.946,
+          "positionAfter": -0.939,
+          "shift": 0.007
+        }
+      ],
+      "reach": 1,
+      "aggregateShift": 0.007,
+      "edgeEffects": [
+        {
+          "source": "social_media_influencer",
+          "target": "anti_vax_leader",
+          "weightDelta": -0.038
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Italy_mRNA_Booster_Mandate_Backlash_rp_00049_r1",
+      "authorId": "older_compliant_small_business_owner",
+      "influencedAgents": [
+        {
+          "agentId": "tv_anchor",
+          "agentName": "National TV News Anchor",
+          "positionBefore": 0.1,
+          "positionAfter": 0.116,
+          "shift": 0.016
+        },
+        {
+          "agentId": "pharma_exec",
+          "agentName": "Biotech Company Executive",
+          "positionBefore": 0.409,
+          "positionAfter": 0.412,
+          "shift": 0.003
+        }
+      ],
+      "reach": 2,
+      "aggregateShift": 0.019,
+      "edgeEffects": [
+        {
+          "source": "older_compliant_small_business_owner",
+          "target": "tv_anchor",
+          "weightDelta": 0.027
+        },
+        {
+          "source": "older_compliant_small_business_owner",
+          "target": "pharma_exec",
+          "weightDelta": 0.04
+        }
+      ]
+    }
+  ],
+  "realWorldEffects": {
+    "overview": {
+      "stability_index": 71,
+      "tension_index": 25,
+      "media_intensity": 38,
+      "stakeholder_confidence": 61
+    },
+    "opinion": {
+      "support_rate": 62,
+      "opposition_rate": 19,
+      "undecided_rate": 19,
+      "avg_position": 0.335
+    },
+    "engagement": {
+      "active_discussions": 48,
+      "viral_content_pieces": 10,
+      "coalition_count": 4
+    }
+  }
+}

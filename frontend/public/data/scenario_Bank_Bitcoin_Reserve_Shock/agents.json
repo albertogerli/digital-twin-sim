@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ceo_bank",
+    "name": "Elena Varga",
+    "role": "Chief Executive Officer of the announcing bank",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.7,
+    "final_position": 0.559,
+    "position_delta": -0.141,
+    "influence": 0.95,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "cfo_bank",
+    "name": "Martin Keller",
+    "role": "Chief Financial Officer",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.4,
+    "final_position": 0.2,
+    "position_delta": -0.2,
+    "influence": 0.82,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "risk_head",
+    "name": "Sofia Lindholm",
+    "role": "Chief Risk Officer",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": -0.2,
+    "final_position": -0.282,
+    "position_delta": -0.082,
+    "influence": 0.8,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "board_chair",
+    "name": "Jacques Moreau",
+    "role": "Board Chair",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.15,
+    "final_position": 0.079,
+    "position_delta": -0.071,
+    "influence": 0.88,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "ecb_official",
+    "name": "Dr. Anika Weber",
+    "role": "European Central Bank supervisory official",
+    "archetype": "regulator",
+    "tier": 1,
+    "initial_position": -0.85,
+    "final_position": -0.875,
+    "position_delta": -0.025,
+    "influence": 0.98,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "finance_minister",
+    "name": "Paolo Ricci",
+    "role": "National finance minister",
+    "archetype": "politician",
+    "tier": 1,
+    "initial_position": -0.35,
+    "final_position": -0.415,
+    "position_delta": -0.065,
+    "influence": 0.9,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "crypto_ceo",
+    "name": "Nadia Petrova",
+    "role": "CEO of a major crypto exchange",
+    "archetype": "business_leader",
+    "tier": 1,
+    "initial_position": 0.95,
+    "final_position": 0.891,
+    "position_delta": -0.059,
+    "influence": 0.76,
+    "emotional_state": "triumphant"
+  },
+  {
+    "id": "macro_analyst",
+    "name": "Thomas Adler",
+    "role": "Independent macro strategist",
+    "archetype": "analyst",
+    "tier": 1,
+    "initial_position": 0.2,
+    "final_position": 0.113,
+    "position_delta": -0.087,
+    "influence": 0.7,
+    "emotional_state": "cautious"
+  },
+  {
+    "id": "consumer_advocate",
+    "name": "Marta Silva",
+    "role": "Financial consumer rights advocate",
+    "archetype": "activist",
+    "tier": 1,
+    "initial_position": -0.6,
+    "final_position": -0.631,
+    "position_delta": -0.031,
+    "influence": 0.68,
+    "emotional_state": "worried"
+  },
+  {
+    "id": "fintech_founder",
+    "name": "Leo Novak",
+    "role": "Founder of a digital banking startup",
+    "archetype": "entrepreneur",
+    "tier": 1,
+    "initial_position": 0.55,
+    "final_position": 0.397,
+    "position_delta": -0.153,
+    "influence": 0.62,
+    "emotional_state": "cautious"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Cryptocurrency Regulation Support Post-FTX 2022",
+  "description": "FTX collapse in November 2022 dramatically shifted opinion on crypto regulation. Pro-regulation sentiment jumped from ~45% to ~65% as $8B in customer funds vanished. Sam Bankman-Fried arrested. Tests scandal-driven regulatory opinion shift and trust collapse.",
+  "domain": "financial/technology",
+  "final_outcome_pro_pct": 65.0,
+  "final_outcome_against_pct": 20.0,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 42, "against_pct": 30, "undecided_pct": 28},
+    {"round_equivalent": 2, "pro_pct": 45, "against_pct": 28, "undecided_pct": 27},
+    {"round_equivalent": 3, "pro_pct": 47, "against_pct": 27, "undecided_pct": 26},
+    {"round_equivalent": 4, "pro_pct": 50, "against_pct": 25, "undecided_pct": 25},
+    {"round_equivalent": 5, "pro_pct": 52, "against_pct": 24, "undecided_pct": 24},
+    {"round_equivalent": 6, "pro_pct": 60, "against_pct": 20, "undecided_pct": 20},
+    {"round_equivalent": 7, "pro_pct": 64, "against_pct": 19, "undecided_pct": 17},
+    {"round_equivalent": 8, "pro_pct": 65, "against_pct": 20, "undecided_pct": 15},
+    {"round_equivalent": 9, "pro_pct": 65, "against_pct": 20, "undecided_pct": 15}
+  ],
+  "key_events": [
+    {"round_equivalent": 3, "description": "Terra/Luna stablecoin collapse (May 2022) wipes out $40B. First major crack in crypto confidence. Regulation talk increases."},
+    {"round_equivalent": 5, "description": "Celsius, Voyager, and Three Arrows Capital collapse in cascade. 'Crypto winter' deepens. Congressional hearings begin."},
+    {"round_equivalent": 6, "description": "FTX files bankruptcy (Nov 11, 2022). $8B customer funds missing. Sam Bankman-Fried's fraud exposed. Massive shock to remaining crypto trust."},
+    {"round_equivalent": 7, "description": "SBF arrested in Bahamas, extradited to US. SEC Chair Gensler calls crypto 'rife with fraud'. Bipartisan regulation momentum surges."},
+    {"round_equivalent": 8, "description": "Congressional bills for crypto regulation multiply. Even crypto-friendly politicians shift toward oversight. Industry pivots to welcoming 'smart regulation'."}
+  ],
+  "calibration_notes": "Tests scandal-driven regulatory consensus formation. Key patterns: gradual pre-crisis drift toward regulation, cascade of failures (Luna, Celsius, FTX) each adding ~5-8pts, FTX as definitive shock event (+10pts in two weeks), anti-regulation position collapsed rather than pro-regulation growing (opposition dropped from 30% to 20%), industry itself pivoted from opposing to embracing regulation. Morning Consult, Pew Research, YouGov polling data used."
+}

@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Australian Same-Sex Marriage Postal Survey (2017)",
+  "description": "Voluntary postal survey on same-sex marriage. Yes won 61.6% with 79.5% participation. Tests social issue dynamics where campaigns mobilize rather than convert — remarkably stable opinion throughout.",
+  "domain": "political",
+  "final_outcome_pro_pct": 61.6,
+  "final_outcome_against_pct": 38.4,
+  "final_turnout_pct": 79.5,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 63, "against_pct": 30, "undecided_pct": 7},
+    {"round_equivalent": 2, "pro_pct": 62, "against_pct": 31, "undecided_pct": 7},
+    {"round_equivalent": 3, "pro_pct": 60, "against_pct": 33, "undecided_pct": 7},
+    {"round_equivalent": 4, "pro_pct": 59, "against_pct": 34, "undecided_pct": 7},
+    {"round_equivalent": 5, "pro_pct": 59, "against_pct": 35, "undecided_pct": 6},
+    {"round_equivalent": 6, "pro_pct": 60, "against_pct": 35, "undecided_pct": 5},
+    {"round_equivalent": 7, "pro_pct": 60, "against_pct": 36, "undecided_pct": 4},
+    {"round_equivalent": 8, "pro_pct": 61, "against_pct": 37, "undecided_pct": 2},
+    {"round_equivalent": 9, "pro_pct": 61.6, "against_pct": 38.4, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Government announces postal survey after Senate blocks plebiscite bill (Aug 8)."},
+    {"round_equivalent": 2, "description": "High Court upholds legality of postal survey (Aug 24). Both campaigns formally launch."},
+    {"round_equivalent": 4, "description": "Coalition for Marriage 'No' TV ad (mothers worried about school programs) generates backlash."},
+    {"round_equivalent": 5, "description": "Hate speech incidents reported. Media covers psychological toll on LGBTQ community. Sympathy effect."},
+    {"round_equivalent": 8, "description": "Result announced: 61.6% Yes, 79.5% participation. Parliament passes Marriage Amendment Act Dec 7."}
+  ],
+  "calibration_notes": "Tests social issue dynamics with real polling. Opinion moved only ~3-4 points despite intense campaigning. On mature social issues, most people have firm priors — campaigns mobilize rather than convert. Shy-No effect was small (~2-3pts). Negative campaigning tightened race temporarily but backlash roughly cancelled gains. Post-decision acceptance effect: support increases after implementation. High participation (79.5%) for voluntary postal survey shows salience drives turnout. Sources: Newspoll, Essential Research, Ipsos, Galaxy."
+}

@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Barilla Pasta Anti-Gay Controversy (2013-2015)",
+  "description": "CEO made anti-gay comments on radio. Global boycott, then complete corporate reversal to LGBTQ+ champion (perfect HRC score by 2015). Gold standard of crisis recovery through authentic transformation.",
+  "domain": "commercial",
+  "final_outcome_pro_pct": 62,
+  "final_outcome_against_pct": 12,
+  "final_turnout_pct": 0,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 20, "against_pct": 55, "undecided_pct": 25},
+    {"round_equivalent": 2, "pro_pct": 22, "against_pct": 50, "undecided_pct": 28},
+    {"round_equivalent": 3, "pro_pct": 25, "against_pct": 45, "undecided_pct": 30},
+    {"round_equivalent": 4, "pro_pct": 28, "against_pct": 38, "undecided_pct": 34},
+    {"round_equivalent": 5, "pro_pct": 35, "against_pct": 30, "undecided_pct": 35},
+    {"round_equivalent": 6, "pro_pct": 42, "against_pct": 25, "undecided_pct": 33},
+    {"round_equivalent": 7, "pro_pct": 48, "against_pct": 20, "undecided_pct": 32},
+    {"round_equivalent": 8, "pro_pct": 58, "against_pct": 15, "undecided_pct": 27},
+    {"round_equivalent": 9, "pro_pct": 62, "against_pct": 12, "undecided_pct": 26}
+  ],
+  "key_events": [
+    {"round_equivalent": 1, "description": "Guido Barilla makes anti-gay family comments on La Zanzara radio. #BoycottBarilla trends globally."},
+    {"round_equivalent": 2, "description": "Guido Barilla issues video apology and meets Italian LGBTQ+ groups. Skepticism remains high."},
+    {"round_equivalent": 4, "description": "Barilla creates external Diversity & Inclusion Board. Hires David Mixner (prominent LGBTQ+ activist) as advisor."},
+    {"round_equivalent": 6, "description": "Barilla sponsors Pride events, extends same-sex partner benefits. Former critics acknowledge genuine change."},
+    {"round_equivalent": 8, "description": "Barilla achieves perfect 100% score on HRC Corporate Equality Index. Complete transformation validated."}
+  ],
+  "calibration_notes": "Longest timeline (2+ years in 9 rounds). Recovery required sustained authentic action over months/years, not just weathering a news cycle. The company went far beyond damage control — became a genuine LGBTQ+ leader. 'Pro' in early rounds includes some conservative supporters who agreed with original comments. HRC score is objective, auditable metric. Harvard Business School case study. Tests: crisis-to-rehabilitation arc, position reversal dynamics, authentic vs performative response, and how sustained action outweighs apologies."
+}

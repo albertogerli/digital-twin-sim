@@ -1,0 +1,15 @@
+{
+  "domain": "labor",
+  "calibrated_params": {
+    "anchor_weight": 0.05,
+    "social_weight": 0.2,
+    "event_weight": 0.12,
+    "herd_weight": 0.0701,
+    "herd_threshold": 0.15
+  },
+  "calibration_metrics": {
+    "avg_composite_score": 10.99,
+    "avg_outcome_error": 5.17,
+    "n_scenarios": 2
+  }
+}

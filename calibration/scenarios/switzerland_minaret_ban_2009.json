@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Swiss Minaret Ban Referendum 2009",
+  "description": "Swiss popular initiative to ban construction of minarets. YES (ban) won 57.5% vs NO 42.5% with 53.8% turnout. Major upset as polls predicted comfortable NO. Tests hidden anti-immigration sentiment and social desirability bias.",
+  "domain": "political",
+  "final_outcome_pro_pct": 57.50,
+  "final_outcome_against_pct": 42.50,
+  "final_turnout_pct": 53.76,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 34, "against_pct": 50, "undecided_pct": 16},
+    {"round_equivalent": 2, "pro_pct": 36, "against_pct": 49, "undecided_pct": 15},
+    {"round_equivalent": 3, "pro_pct": 37, "against_pct": 47, "undecided_pct": 16},
+    {"round_equivalent": 4, "pro_pct": 38, "against_pct": 46, "undecided_pct": 16},
+    {"round_equivalent": 5, "pro_pct": 40, "against_pct": 44, "undecided_pct": 16},
+    {"round_equivalent": 6, "pro_pct": 37, "against_pct": 46, "undecided_pct": 17},
+    {"round_equivalent": 7, "pro_pct": 37, "against_pct": 46, "undecided_pct": 17},
+    {"round_equivalent": 8, "pro_pct": 40, "against_pct": 44, "undecided_pct": 16},
+    {"round_equivalent": 9, "pro_pct": 58, "against_pct": 42, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "SVP launches controversial campaign poster showing black minarets piercing a Swiss flag like missiles, worn by a woman in niqab."},
+    {"round_equivalent": 4, "description": "Government, all major parties, churches, and business groups publicly oppose the initiative. Media consensus forms against ban."},
+    {"round_equivalent": 5, "description": "Libyan diplomatic crisis (Gaddafi hostage row with Switzerland) heightens anti-Muslim sentiment in public discourse."},
+    {"round_equivalent": 7, "description": "Final GfS Bern poll shows 37% YES, 46% NO. All pollsters and analysts predict comfortable rejection."},
+    {"round_equivalent": 8, "description": "Intense last-week SVP ground campaign in rural and suburban areas. Voters mobilized through direct mail and local networks."}
+  ],
+  "calibration_notes": "Tests extreme social desirability bias and polling failure. The largest Swiss polling miss in modern history: polls showed ~37% YES but result was 57.5%, a 20+ point error. All elite institutions opposed the ban but voters broke sharply in favor. Key dynamics: shy voter effect on culturally sensitive questions, rural-urban divide, SVP's emotionally charged visual campaign bypassing rational debate, elite-public disconnect, and the limits of establishment consensus in direct democracy."
+}

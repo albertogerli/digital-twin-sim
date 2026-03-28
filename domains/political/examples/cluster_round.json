@@ -1,0 +1,33 @@
+{
+  "_description": "Golden example: realistic citizen cluster round response for Italian political referendum.",
+  "cluster_id": "ceto_medio_indeciso",
+  "dominant_sentiment": "confused",
+  "sentiment_distribution": {"pro": 25, "against": 30, "indifferent": 25, "confused": 20},
+  "shift_from_last_month": -0.05,
+  "engagement_level": 0.4,
+  "viral_content_reaction": "Il video dell'ex magistrato Nordio che spiega la riforma in termini semplici ha avuto impatto, ma la contro-narrazione dell'ANM sulla 'difesa della Costituzione' ha seminato dubbi. Molti non riescono a distinguere gli argomenti tecnici.",
+  "emergent_narrative": "Cresce la percezione che il referendum sia l'ennesimo scontro politico tra governo e opposizione, più che una questione di merito sulla giustizia. Stanchezza referendaria dopo premierato e autonomia.",
+  "sample_posts": [
+    {
+      "author_archetype": "impiegato_40enne",
+      "platform": "social",
+      "text": "Ma qualcuno mi spiega in parole semplici cosa cambia con sta separazione delle carriere? Tutti urlano ma nessuno spiega. #Referendum",
+      "tone": "confused"
+    },
+    {
+      "author_archetype": "commerciante",
+      "platform": "forum",
+      "text": "Ho letto il testo della riforma. In teoria il principio è giusto: chi ti giudica non dovrebbe essere collega di chi ti accusa. Ma mi preoccupa il sorteggio — davvero funziona? E l'Alta Corte chi la controlla? Troppe incognite.",
+      "tone": "skeptical"
+    },
+    {
+      "author_archetype": "mamma_lavoratrice",
+      "platform": "social",
+      "text": "Onestamente ho altre priorità. La scuola dei miei figli cade a pezzi, la sanità ha liste d'attesa di mesi, e mi chiedono di votare sulla magistratura. Boh.",
+      "tone": "disengaged"
+    }
+  ],
+  "key_concerns": ["incomprensibilità della riforma", "stanchezza politica", "priorità economiche", "sfiducia verso tutti gli schieramenti"],
+  "trust_in_institutions": 0.35,
+  "media_consumption": "TG nazionali, social media passivo (scrolling), passaparola familiare"
+}

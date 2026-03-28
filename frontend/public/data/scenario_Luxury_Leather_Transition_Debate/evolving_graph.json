@@ -1,0 +1,1112 @@
+[
+  {
+    "round": 1,
+    "month": "Week 1",
+    "event_label": "Week 1",
+    "nodes": [
+      {
+        "id": "ceo_brand",
+        "name": "Elena Rinaldi",
+        "type": "persona",
+        "description": "CEO of the luxury fashion house",
+        "power_level": 0.95,
+        "position": 0.804,
+        "position_history": [
+          0.804
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "creative_director",
+        "name": "Marco Bellini",
+        "type": "persona",
+        "description": "Creative Director",
+        "power_level": 0.82,
+        "position": 0.486,
+        "position_history": [
+          0.486
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "designer"
+      },
+      {
+        "id": "luxury_analyst",
+        "name": "Sofia Conti",
+        "type": "persona",
+        "description": "Luxury market analyst",
+        "power_level": 0.72,
+        "position": 0.162,
+        "position_history": [
+          0.162
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "animal_rights_leader",
+        "name": "Giulia Ferraro",
+        "type": "persona",
+        "description": "Animal rights campaigner",
+        "power_level": 0.78,
+        "position": 0.968,
+        "position_history": [
+          0.968
+        ],
+        "delta": 0.0,
+        "sentiment": "triumphant",
+        "category": "activist"
+      },
+      {
+        "id": "environmental_scientist",
+        "name": "Dr. Luca Moretti",
+        "type": "persona",
+        "description": "Sustainability scientist",
+        "power_level": 0.68,
+        "position": 0.747,
+        "position_history": [
+          0.747
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "expert"
+      },
+      {
+        "id": "heritage_crafts_spokesperson",
+        "name": "Paolo Vitale",
+        "type": "persona",
+        "description": "Leather craftsmanship association spokesperson",
+        "power_level": 0.7,
+        "position": -0.787,
+        "position_history": [
+          -0.787
+        ],
+        "delta": 0.0,
+        "sentiment": "worried",
+        "category": "industry_representative"
+      },
+      {
+        "id": "competitor_ceo",
+        "name": "Chiara De Santis",
+        "type": "persona",
+        "description": "CEO of a competing luxury brand",
+        "power_level": 0.77,
+        "position": -0.141,
+        "position_history": [
+          -0.141
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "consumer_influencer",
+        "name": "Nadia Rossi",
+        "type": "persona",
+        "description": "Fashion and lifestyle influencer",
+        "power_level": 0.74,
+        "position": 0.381,
+        "position_history": [
+          0.381
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "influencer"
+      },
+      {
+        "id": "retail_director",
+        "name": "Alessandro Greco",
+        "type": "persona",
+        "description": "Global retail and merchandising director",
+        "power_level": 0.63,
+        "position": 0.208,
+        "position_history": [
+          0.208
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "fashion_journalist",
+        "name": "Francesca Lombardi",
+        "type": "persona",
+        "description": "Fashion editor at a major business publication",
+        "power_level": 0.66,
+        "position": 0.127,
+        "position_history": [
+          0.127
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "journalist"
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_brand",
+        "target": "creative_director",
+        "weight": 0.68,
+        "type": "influence"
+      },
+      {
+        "source": "ceo_brand",
+        "target": "environmental_scientist",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "luxury_analyst",
+        "target": "consumer_influencer",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "environmental_scientist",
+        "target": "consumer_influencer",
+        "weight": 0.63,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_influencer",
+        "target": "retail_director",
+        "weight": 0.83,
+        "type": "influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 10,
+      "total_edges": 5,
+      "avg_position": 0.295
+    }
+  },
+  {
+    "round": 2,
+    "month": "Week 2",
+    "event_label": "Week 2",
+    "nodes": [
+      {
+        "id": "ceo_brand",
+        "name": "Elena Rinaldi",
+        "type": "persona",
+        "description": "CEO of the luxury fashion house",
+        "power_level": 0.95,
+        "position": 0.778,
+        "position_history": [
+          0.778
+        ],
+        "delta": -0.026,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "creative_director",
+        "name": "Marco Bellini",
+        "type": "persona",
+        "description": "Creative Director",
+        "power_level": 0.82,
+        "position": 0.457,
+        "position_history": [
+          0.457
+        ],
+        "delta": -0.029,
+        "sentiment": "cautious",
+        "category": "designer"
+      },
+      {
+        "id": "luxury_analyst",
+        "name": "Sofia Conti",
+        "type": "persona",
+        "description": "Luxury market analyst",
+        "power_level": 0.72,
+        "position": 0.188,
+        "position_history": [
+          0.188
+        ],
+        "delta": 0.026,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "animal_rights_leader",
+        "name": "Giulia Ferraro",
+        "type": "persona",
+        "description": "Animal rights campaigner",
+        "power_level": 0.78,
+        "position": 0.966,
+        "position_history": [
+          0.966
+        ],
+        "delta": -0.002,
+        "sentiment": "combative",
+        "category": "activist"
+      },
+      {
+        "id": "environmental_scientist",
+        "name": "Dr. Luca Moretti",
+        "type": "persona",
+        "description": "Sustainability scientist",
+        "power_level": 0.68,
+        "position": 0.702,
+        "position_history": [
+          0.702
+        ],
+        "delta": -0.045,
+        "sentiment": "cautious",
+        "category": "expert"
+      },
+      {
+        "id": "heritage_crafts_spokesperson",
+        "name": "Paolo Vitale",
+        "type": "persona",
+        "description": "Leather craftsmanship association spokesperson",
+        "power_level": 0.7,
+        "position": -0.803,
+        "position_history": [
+          -0.803
+        ],
+        "delta": -0.016,
+        "sentiment": "cautious",
+        "category": "industry_representative"
+      },
+      {
+        "id": "competitor_ceo",
+        "name": "Chiara De Santis",
+        "type": "persona",
+        "description": "CEO of a competing luxury brand",
+        "power_level": 0.77,
+        "position": -0.152,
+        "position_history": [
+          -0.152
+        ],
+        "delta": -0.011,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "consumer_influencer",
+        "name": "Nadia Rossi",
+        "type": "persona",
+        "description": "Fashion and lifestyle influencer",
+        "power_level": 0.74,
+        "position": 0.362,
+        "position_history": [
+          0.362
+        ],
+        "delta": -0.019,
+        "sentiment": "cautious",
+        "category": "influencer"
+      },
+      {
+        "id": "retail_director",
+        "name": "Alessandro Greco",
+        "type": "persona",
+        "description": "Global retail and merchandising director",
+        "power_level": 0.63,
+        "position": 0.266,
+        "position_history": [
+          0.266
+        ],
+        "delta": 0.057,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "fashion_journalist",
+        "name": "Francesca Lombardi",
+        "type": "persona",
+        "description": "Fashion editor at a major business publication",
+        "power_level": 0.66,
+        "position": 0.175,
+        "position_history": [
+          0.175
+        ],
+        "delta": 0.049,
+        "sentiment": "cautious",
+        "category": "journalist"
+      }
+    ],
+    "edges": [
+      {
+        "source": "creative_director",
+        "target": "luxury_analyst",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "luxury_analyst",
+        "target": "competitor_ceo",
+        "weight": 0.66,
+        "type": "influence"
+      },
+      {
+        "source": "luxury_analyst",
+        "target": "consumer_influencer",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "environmental_scientist",
+        "target": "consumer_influencer",
+        "weight": 0.66,
+        "type": "influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 10,
+      "total_edges": 4,
+      "avg_position": 0.294
+    }
+  },
+  {
+    "round": 3,
+    "month": "Week 3",
+    "event_label": "Week 3",
+    "nodes": [
+      {
+        "id": "ceo_brand",
+        "name": "Elena Rinaldi",
+        "type": "persona",
+        "description": "CEO of the luxury fashion house",
+        "power_level": 0.95,
+        "position": 0.765,
+        "position_history": [
+          0.765
+        ],
+        "delta": -0.013,
+        "sentiment": "satisfied",
+        "category": "business_leader"
+      },
+      {
+        "id": "creative_director",
+        "name": "Marco Bellini",
+        "type": "persona",
+        "description": "Creative Director",
+        "power_level": 0.82,
+        "position": 0.45,
+        "position_history": [
+          0.45
+        ],
+        "delta": -0.007,
+        "sentiment": "cautious",
+        "category": "designer"
+      },
+      {
+        "id": "luxury_analyst",
+        "name": "Sofia Conti",
+        "type": "persona",
+        "description": "Luxury market analyst",
+        "power_level": 0.72,
+        "position": 0.217,
+        "position_history": [
+          0.217
+        ],
+        "delta": 0.028,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "animal_rights_leader",
+        "name": "Giulia Ferraro",
+        "type": "persona",
+        "description": "Animal rights campaigner",
+        "power_level": 0.78,
+        "position": 0.972,
+        "position_history": [
+          0.972
+        ],
+        "delta": 0.006,
+        "sentiment": "combative",
+        "category": "activist"
+      },
+      {
+        "id": "environmental_scientist",
+        "name": "Dr. Luca Moretti",
+        "type": "persona",
+        "description": "Sustainability scientist",
+        "power_level": 0.68,
+        "position": 0.721,
+        "position_history": [
+          0.721
+        ],
+        "delta": 0.019,
+        "sentiment": "cautious",
+        "category": "expert"
+      },
+      {
+        "id": "heritage_crafts_spokesperson",
+        "name": "Paolo Vitale",
+        "type": "persona",
+        "description": "Leather craftsmanship association spokesperson",
+        "power_level": 0.7,
+        "position": -0.796,
+        "position_history": [
+          -0.796
+        ],
+        "delta": 0.007,
+        "sentiment": "cautious",
+        "category": "industry_representative"
+      },
+      {
+        "id": "competitor_ceo",
+        "name": "Chiara De Santis",
+        "type": "persona",
+        "description": "CEO of a competing luxury brand",
+        "power_level": 0.77,
+        "position": -0.171,
+        "position_history": [
+          -0.171
+        ],
+        "delta": -0.02,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "consumer_influencer",
+        "name": "Nadia Rossi",
+        "type": "persona",
+        "description": "Fashion and lifestyle influencer",
+        "power_level": 0.74,
+        "position": 0.357,
+        "position_history": [
+          0.357
+        ],
+        "delta": -0.006,
+        "sentiment": "cautious",
+        "category": "influencer"
+      },
+      {
+        "id": "retail_director",
+        "name": "Alessandro Greco",
+        "type": "persona",
+        "description": "Global retail and merchandising director",
+        "power_level": 0.63,
+        "position": 0.29,
+        "position_history": [
+          0.29
+        ],
+        "delta": 0.024,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "fashion_journalist",
+        "name": "Francesca Lombardi",
+        "type": "persona",
+        "description": "Fashion editor at a major business publication",
+        "power_level": 0.66,
+        "position": 0.136,
+        "position_history": [
+          0.136
+        ],
+        "delta": -0.039,
+        "sentiment": "cautious",
+        "category": "journalist"
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_brand",
+        "target": "animal_rights_leader",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "ceo_brand",
+        "target": "environmental_scientist",
+        "weight": 0.96,
+        "type": "influence"
+      },
+      {
+        "source": "luxury_analyst",
+        "target": "fashion_journalist",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "animal_rights_leader",
+        "target": "environmental_scientist",
+        "weight": 0.75,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_influencer",
+        "target": "retail_director",
+        "weight": 0.93,
+        "type": "influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 10,
+      "total_edges": 5,
+      "avg_position": 0.294
+    }
+  },
+  {
+    "round": 4,
+    "month": "Week 4",
+    "event_label": "Week 4",
+    "nodes": [
+      {
+        "id": "ceo_brand",
+        "name": "Elena Rinaldi",
+        "type": "persona",
+        "description": "CEO of the luxury fashion house",
+        "power_level": 0.95,
+        "position": 0.773,
+        "position_history": [
+          0.773
+        ],
+        "delta": 0.008,
+        "sentiment": "satisfied",
+        "category": "business_leader"
+      },
+      {
+        "id": "creative_director",
+        "name": "Marco Bellini",
+        "type": "persona",
+        "description": "Creative Director",
+        "power_level": 0.82,
+        "position": 0.446,
+        "position_history": [
+          0.446
+        ],
+        "delta": -0.004,
+        "sentiment": "satisfied",
+        "category": "designer"
+      },
+      {
+        "id": "luxury_analyst",
+        "name": "Sofia Conti",
+        "type": "persona",
+        "description": "Luxury market analyst",
+        "power_level": 0.72,
+        "position": 0.228,
+        "position_history": [
+          0.228
+        ],
+        "delta": 0.011,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "animal_rights_leader",
+        "name": "Giulia Ferraro",
+        "type": "persona",
+        "description": "Animal rights campaigner",
+        "power_level": 0.78,
+        "position": 0.974,
+        "position_history": [
+          0.974
+        ],
+        "delta": 0.002,
+        "sentiment": "combative",
+        "category": "activist"
+      },
+      {
+        "id": "environmental_scientist",
+        "name": "Dr. Luca Moretti",
+        "type": "persona",
+        "description": "Sustainability scientist",
+        "power_level": 0.68,
+        "position": 0.717,
+        "position_history": [
+          0.717
+        ],
+        "delta": -0.004,
+        "sentiment": "satisfied",
+        "category": "expert"
+      },
+      {
+        "id": "heritage_crafts_spokesperson",
+        "name": "Paolo Vitale",
+        "type": "persona",
+        "description": "Leather craftsmanship association spokesperson",
+        "power_level": 0.7,
+        "position": -0.814,
+        "position_history": [
+          -0.814
+        ],
+        "delta": -0.018,
+        "sentiment": "cautious",
+        "category": "industry_representative"
+      },
+      {
+        "id": "competitor_ceo",
+        "name": "Chiara De Santis",
+        "type": "persona",
+        "description": "CEO of a competing luxury brand",
+        "power_level": 0.77,
+        "position": -0.093,
+        "position_history": [
+          -0.093
+        ],
+        "delta": 0.078,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "consumer_influencer",
+        "name": "Nadia Rossi",
+        "type": "persona",
+        "description": "Fashion and lifestyle influencer",
+        "power_level": 0.74,
+        "position": 0.364,
+        "position_history": [
+          0.364
+        ],
+        "delta": 0.008,
+        "sentiment": "satisfied",
+        "category": "influencer"
+      },
+      {
+        "id": "retail_director",
+        "name": "Alessandro Greco",
+        "type": "persona",
+        "description": "Global retail and merchandising director",
+        "power_level": 0.63,
+        "position": 0.337,
+        "position_history": [
+          0.337
+        ],
+        "delta": 0.046,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "fashion_journalist",
+        "name": "Francesca Lombardi",
+        "type": "persona",
+        "description": "Fashion editor at a major business publication",
+        "power_level": 0.66,
+        "position": 0.171,
+        "position_history": [
+          0.171
+        ],
+        "delta": 0.035,
+        "sentiment": "cautious",
+        "category": "journalist"
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_brand",
+        "target": "creative_director",
+        "weight": 0.67,
+        "type": "influence"
+      },
+      {
+        "source": "ceo_brand",
+        "target": "environmental_scientist",
+        "weight": 0.94,
+        "type": "influence"
+      },
+      {
+        "source": "creative_director",
+        "target": "environmental_scientist",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "luxury_analyst",
+        "target": "consumer_influencer",
+        "weight": 0.86,
+        "type": "influence"
+      },
+      {
+        "source": "animal_rights_leader",
+        "target": "environmental_scientist",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "environmental_scientist",
+        "target": "retail_director",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_influencer",
+        "target": "retail_director",
+        "weight": 0.97,
+        "type": "influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 10,
+      "total_edges": 7,
+      "avg_position": 0.31
+    }
+  },
+  {
+    "round": 5,
+    "month": "Week 5",
+    "event_label": "Week 5",
+    "nodes": [
+      {
+        "id": "ceo_brand",
+        "name": "Elena Rinaldi",
+        "type": "persona",
+        "description": "CEO of the luxury fashion house",
+        "power_level": 0.95,
+        "position": 0.771,
+        "position_history": [
+          0.771
+        ],
+        "delta": -0.002,
+        "sentiment": "satisfied",
+        "category": "business_leader"
+      },
+      {
+        "id": "creative_director",
+        "name": "Marco Bellini",
+        "type": "persona",
+        "description": "Creative Director",
+        "power_level": 0.82,
+        "position": 0.422,
+        "position_history": [
+          0.422
+        ],
+        "delta": -0.023,
+        "sentiment": "cautious",
+        "category": "designer"
+      },
+      {
+        "id": "luxury_analyst",
+        "name": "Sofia Conti",
+        "type": "persona",
+        "description": "Luxury market analyst",
+        "power_level": 0.72,
+        "position": 0.199,
+        "position_history": [
+          0.199
+        ],
+        "delta": -0.029,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "animal_rights_leader",
+        "name": "Giulia Ferraro",
+        "type": "persona",
+        "description": "Animal rights campaigner",
+        "power_level": 0.78,
+        "position": 0.967,
+        "position_history": [
+          0.967
+        ],
+        "delta": -0.007,
+        "sentiment": "combative",
+        "category": "activist"
+      },
+      {
+        "id": "environmental_scientist",
+        "name": "Dr. Luca Moretti",
+        "type": "persona",
+        "description": "Sustainability scientist",
+        "power_level": 0.68,
+        "position": 0.693,
+        "position_history": [
+          0.693
+        ],
+        "delta": -0.025,
+        "sentiment": "satisfied",
+        "category": "expert"
+      },
+      {
+        "id": "heritage_crafts_spokesperson",
+        "name": "Paolo Vitale",
+        "type": "persona",
+        "description": "Leather craftsmanship association spokesperson",
+        "power_level": 0.7,
+        "position": -0.823,
+        "position_history": [
+          -0.823
+        ],
+        "delta": -0.009,
+        "sentiment": "combative",
+        "category": "industry_representative"
+      },
+      {
+        "id": "competitor_ceo",
+        "name": "Chiara De Santis",
+        "type": "persona",
+        "description": "CEO of a competing luxury brand",
+        "power_level": 0.77,
+        "position": -0.218,
+        "position_history": [
+          -0.218
+        ],
+        "delta": -0.126,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "consumer_influencer",
+        "name": "Nadia Rossi",
+        "type": "persona",
+        "description": "Fashion and lifestyle influencer",
+        "power_level": 0.74,
+        "position": 0.343,
+        "position_history": [
+          0.343
+        ],
+        "delta": -0.022,
+        "sentiment": "cautious",
+        "category": "influencer"
+      },
+      {
+        "id": "retail_director",
+        "name": "Alessandro Greco",
+        "type": "persona",
+        "description": "Global retail and merchandising director",
+        "power_level": 0.63,
+        "position": 0.288,
+        "position_history": [
+          0.288
+        ],
+        "delta": -0.048,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "fashion_journalist",
+        "name": "Francesca Lombardi",
+        "type": "persona",
+        "description": "Fashion editor at a major business publication",
+        "power_level": 0.66,
+        "position": 0.129,
+        "position_history": [
+          0.129
+        ],
+        "delta": -0.042,
+        "sentiment": "cautious",
+        "category": "journalist"
+      }
+    ],
+    "edges": [
+      {
+        "source": "ceo_brand",
+        "target": "environmental_scientist",
+        "weight": 0.92,
+        "type": "influence"
+      },
+      {
+        "source": "creative_director",
+        "target": "luxury_analyst",
+        "weight": 0.78,
+        "type": "influence"
+      },
+      {
+        "source": "creative_director",
+        "target": "environmental_scientist",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "animal_rights_leader",
+        "target": "environmental_scientist",
+        "weight": 0.73,
+        "type": "influence"
+      },
+      {
+        "source": "retail_director",
+        "target": "fashion_journalist",
+        "weight": 0.84,
+        "type": "influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 10,
+      "total_edges": 5,
+      "avg_position": 0.277
+    }
+  },
+  {
+    "round": 6,
+    "month": "Week 6",
+    "event_label": "Week 6",
+    "nodes": [
+      {
+        "id": "ceo_brand",
+        "name": "Elena Rinaldi",
+        "type": "persona",
+        "description": "CEO of the luxury fashion house",
+        "power_level": 0.95,
+        "position": 0.806,
+        "position_history": [
+          0.806
+        ],
+        "delta": 0.035,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "creative_director",
+        "name": "Marco Bellini",
+        "type": "persona",
+        "description": "Creative Director",
+        "power_level": 0.82,
+        "position": 0.354,
+        "position_history": [
+          0.354
+        ],
+        "delta": -0.069,
+        "sentiment": "cautious",
+        "category": "designer"
+      },
+      {
+        "id": "luxury_analyst",
+        "name": "Sofia Conti",
+        "type": "persona",
+        "description": "Luxury market analyst",
+        "power_level": 0.72,
+        "position": 0.141,
+        "position_history": [
+          0.141
+        ],
+        "delta": -0.058,
+        "sentiment": "cautious",
+        "category": "analyst"
+      },
+      {
+        "id": "animal_rights_leader",
+        "name": "Giulia Ferraro",
+        "type": "persona",
+        "description": "Animal rights campaigner",
+        "power_level": 0.78,
+        "position": 0.996,
+        "position_history": [
+          0.996
+        ],
+        "delta": 0.03,
+        "sentiment": "furious",
+        "category": "activist"
+      },
+      {
+        "id": "environmental_scientist",
+        "name": "Dr. Luca Moretti",
+        "type": "persona",
+        "description": "Sustainability scientist",
+        "power_level": 0.68,
+        "position": 0.647,
+        "position_history": [
+          0.647
+        ],
+        "delta": -0.046,
+        "sentiment": "cautious",
+        "category": "expert"
+      },
+      {
+        "id": "heritage_crafts_spokesperson",
+        "name": "Paolo Vitale",
+        "type": "persona",
+        "description": "Leather craftsmanship association spokesperson",
+        "power_level": 0.7,
+        "position": -0.826,
+        "position_history": [
+          -0.826
+        ],
+        "delta": -0.003,
+        "sentiment": "furious",
+        "category": "industry_representative"
+      },
+      {
+        "id": "competitor_ceo",
+        "name": "Chiara De Santis",
+        "type": "persona",
+        "description": "CEO of a competing luxury brand",
+        "power_level": 0.77,
+        "position": -0.138,
+        "position_history": [
+          -0.138
+        ],
+        "delta": 0.08,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "consumer_influencer",
+        "name": "Nadia Rossi",
+        "type": "persona",
+        "description": "Fashion and lifestyle influencer",
+        "power_level": 0.74,
+        "position": 0.306,
+        "position_history": [
+          0.306
+        ],
+        "delta": -0.036,
+        "sentiment": "cautious",
+        "category": "influencer"
+      },
+      {
+        "id": "retail_director",
+        "name": "Alessandro Greco",
+        "type": "persona",
+        "description": "Global retail and merchandising director",
+        "power_level": 0.63,
+        "position": 0.243,
+        "position_history": [
+          0.243
+        ],
+        "delta": -0.045,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "fashion_journalist",
+        "name": "Francesca Lombardi",
+        "type": "persona",
+        "description": "Fashion editor at a major business publication",
+        "power_level": 0.66,
+        "position": 0.053,
+        "position_history": [
+          0.053
+        ],
+        "delta": -0.076,
+        "sentiment": "cautious",
+        "category": "journalist"
+      }
+    ],
+    "edges": [
+      {
+        "source": "creative_director",
+        "target": "retail_director",
+        "weight": 0.89,
+        "type": "influence"
+      },
+      {
+        "source": "luxury_analyst",
+        "target": "competitor_ceo",
+        "weight": 0.72,
+        "type": "influence"
+      },
+      {
+        "source": "luxury_analyst",
+        "target": "fashion_journalist",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "competitor_ceo",
+        "target": "fashion_journalist",
+        "weight": 0.81,
+        "type": "influence"
+      },
+      {
+        "source": "consumer_influencer",
+        "target": "fashion_journalist",
+        "weight": 0.75,
+        "type": "influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 10,
+      "total_edges": 5,
+      "avg_position": 0.258
+    }
+  }
+]

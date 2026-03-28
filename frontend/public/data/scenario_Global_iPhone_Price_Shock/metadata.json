@@ -1,0 +1,7 @@
+{
+  "scenario_id": "Global_iPhone_Price_Shock",
+  "scenario_name": "Global iPhone Price Shock",
+  "num_rounds": 5,
+  "domain": "commercial",
+  "description": "This simulation models the market, reputational, and consumer-response effects of Apple raising iPhone prices by 40% worldwide. It tracks competitor counter-campaigns, media framing, analyst sentiment, and how brand loyalty, affordability concerns, and social backlash shape demand over time."
+}

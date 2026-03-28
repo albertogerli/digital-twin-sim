@@ -1,0 +1,668 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import BriefingProgress from "@/components/sim/BriefingProgress";
+import RoundPhaseIndicator from "@/components/sim/RoundPhaseIndicator";
+import PolarizationChart from "@/components/sim/PolarizationChart";
+import SentimentEvolution from "@/components/sim/SentimentEvolution";
+import AgentPositionStrip from "@/components/sim/AgentPositionStrip";
+import CoalitionEvolution from "@/components/sim/CoalitionEvolution";
+import ShockBadge from "@/components/sim/ShockBadge";
+import MonteCarloPanel from "@/components/sim/MonteCarloPanel";
+
+// --- Types ---
+
+interface SimStatus {
+  id: string;
+  status: string;
+  brief: string;
+  scenario_name?: string;
+  scenario_id?: string;
+  domain?: string;
+  current_round: number;
+  total_rounds: number;
+  cost: number;
+  created_at: string;
+  completed_at?: string;
+  error?: string;
+  agents_count: number;
+}
+
+interface ProgressEvent {
+  type: string;
+  message: string;
+  round?: number;
+  phase?: string;
+  data: Record<string, any>;
+}
+
+interface LiveRound {
+  round: number;
+  timeline_label: string;
+  event: string;
+  polarization: number;
+  posts_count: number;
+  reactions_count: number;
+  top_posts: any[];
+  agents: any[];
+  sentiment: { positive: number; neutral: number; negative: number };
+  coalitions: any[];
+  custom_metrics: Record<string, number>;
+  cost: number;
+  shock_magnitude: number;
+  shock_direction: number;
+}
+
+interface BriefingStep {
+  phase: string;
+  message: string;
+  done: boolean;
+}
+
+interface CurrentPhase {
+  index: number;
+  total: number;
+  message: string;
+}
+
+interface PositionAxis {
+  negative_label: string;
+  positive_label: string;
+}
+
+// --- Helpers ---
+
+function formatEngagement(n: number): string {
+  if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
+  if (n >= 1_000) return (n / 1_000).toFixed(1) + "K";
+  return n.toString();
+}
+
+// --- Component ---
+
+export default function SimulationLiveDashboard({ params }: { params: { id: string } }) {
+  const { id } = params;
+  const [status, setStatus] = useState<SimStatus | null>(null);
+  const [events, setEvents] = useState<ProgressEvent[]>([]);
+  const [rounds, setRounds] = useState<LiveRound[]>([]);
+  const [connected, setConnected] = useState(false);
+  const [scenarioId, setScenarioId] = useState<string | null>(null);
+  const [showLog, setShowLog] = useState(false);
+  const logRef = useRef<HTMLDivElement>(null);
+  const bottomRef = useRef<HTMLDivElement>(null);
+
+  // New state for enriched dashboard
+  const [briefingSteps, setBriefingSteps] = useState<BriefingStep[]>([]);
+  const [currentPhase, setCurrentPhase] = useState<CurrentPhase>({ index: 0, total: 7, message: "" });
+  const [positionAxis, setPositionAxis] = useState<PositionAxis | null>(null);
+  const [monteCarloData, setMonteCarloData] = useState<any>(null);
+
+  // Load initial status
+  useEffect(() => {
+    fetch(`/api/simulations/${id}`)
+      .then((r) => r.json())
+      .then((data: SimStatus) => {
+        setStatus(data);
+        if (data.scenario_id) setScenarioId(data.scenario_id);
+      })
+      .catch(() => {});
+  }, [id]);
+
+  // SSE connection
+  useEffect(() => {
+    const es = new EventSource(`/api/simulations/${id}/stream`);
+
+    es.onopen = () => setConnected(true);
+    es.onerror = () => setConnected(false);
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const handleEvent = (_type: string) => (e: MessageEvent) => {
+      try {
+        const data: ProgressEvent = JSON.parse(e.data);
+        setEvents((prev) => [...prev, data]);
+
+        if (data.type === "brief_analyzed" && data.data) {
+          setStatus((prev) => prev ? {
+            ...prev,
+            status: "configuring",
+            scenario_name: data.data.scenario_name,
+            domain: data.data.domain,
+            total_rounds: data.data.num_rounds,
+            agents_count: (data.data.elite_agents || 0) + (data.data.institutional_agents || 0) + (data.data.citizen_clusters || 0),
+          } : prev);
+          // Store position axis
+          if (data.data.position_axis) {
+            setPositionAxis({
+              negative_label: data.data.position_axis.negative_label,
+              positive_label: data.data.position_axis.positive_label,
+            });
+          }
+          // Mark all briefing steps as done
+          setBriefingSteps((prev) => prev.map((s) => ({ ...s, done: true })));
+        }
+
+        // Briefing phase events (pre-round: web_research, entity_research, agent_generation)
+        if (data.type === "round_phase" && data.phase && !data.round) {
+          const briefingPhases = ["web_research", "documents", "entity_research", "agent_generation", "brief_analysis"];
+          if (briefingPhases.includes(data.phase)) {
+            setBriefingSteps((prev) => {
+              // Mark previous steps as done, add new one
+              const updated = prev.map((s) => ({ ...s, done: true }));
+              // Only add if different phase or new message
+              const existing = updated.find((s) => s.phase === data.phase && !s.done);
+              if (!existing) {
+                updated.push({ phase: data.phase!, message: data.message, done: false });
+              }
+              return updated;
+            });
+          }
+        }
+
+        // Round phase events (during round execution)
+        if (data.type === "round_phase" && data.data?.phase_index) {
+          setCurrentPhase({
+            index: data.data.phase_index,
+            total: data.data.total_phases || 7,
+            message: data.message,
+          });
+        }
+
+        if (data.type === "round_start") {
+          setStatus((prev) => prev ? {
+            ...prev,
+            status: "running",
+            current_round: data.round || prev.current_round,
+          } : prev);
+          // Reset phase indicator for new round
+          setCurrentPhase({ index: 0, total: 7, message: "" });
+        }
+
+        // Accumulate round data for live dashboard
+        if (data.type === "round_complete" && data.data) {
+          const d = data.data;
+          const liveRound: LiveRound = {
+            round: d.round || data.round || 0,
+            timeline_label: d.timeline_label || `Round ${d.round}`,
+            event: d.event || "",
+            polarization: d.polarization || 0,
+            posts_count: d.posts_count || 0,
+            reactions_count: d.reactions_count || 0,
+            top_posts: d.top_posts || [],
+            agents: d.agents || [],
+            sentiment: d.sentiment || { positive: 0, neutral: 0, negative: 0 },
+            coalitions: d.coalitions || [],
+            custom_metrics: d.custom_metrics || {},
+            cost: d.cost || 0,
+            shock_magnitude: d.shock_magnitude ?? 0,
+            shock_direction: d.shock_direction ?? 0,
+          };
+          setRounds((prev) => [...prev, liveRound]);
+          setStatus((prev) => prev ? {
+            ...prev,
+            status: "running",
+            current_round: liveRound.round,
+            cost: liveRound.cost,
+          } : prev);
+          // Reset phase indicator
+          setCurrentPhase({ index: 7, total: 7, message: "Round completato" });
+        }
+
+        if (data.type === "completed") {
+          setStatus((prev) => prev ? { ...prev, status: "completed", cost: data.data?.cost || prev.cost } : prev);
+          setScenarioId(data.data?.scenario_id || null);
+          if (data.data?.monte_carlo) {
+            setMonteCarloData(data.data.monte_carlo);
+          }
+          es.close();
+        }
+
+        if (data.type === "error") {
+          setStatus((prev) => prev ? { ...prev, status: "failed", error: data.message } : prev);
+          es.close();
+        }
+
+        if (data.type === "cancelled") {
+          setStatus((prev) => prev ? { ...prev, status: "cancelled" } : prev);
+          es.close();
+        }
+      } catch {}
+    };
+
+    for (const type of [
+      "status", "brief_analyzed", "round_start", "round_phase",
+      "round_complete", "completed", "error", "cancelled", "heartbeat"
+    ]) {
+      es.addEventListener(type, handleEvent(type));
+    }
+
+    return () => es.close();
+  }, [id]);
+
+  // Auto-scroll to new rounds
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [rounds]);
+
+  // Auto-scroll log
+  useEffect(() => {
+    if (logRef.current) logRef.current.scrollTop = logRef.current.scrollHeight;
+  }, [events]);
+
+  async function handleCancel() {
+    await fetch(`/api/simulations/${id}`, { method: "DELETE" });
+  }
+
+  const isActive = status && ["queued", "analyzing", "configuring", "running", "exporting"].includes(status.status);
+  const isBriefing = status && ["queued", "analyzing", "configuring"].includes(status.status);
+  const progressPct = status && status.total_rounds > 0
+    ? (status.current_round / status.total_rounds) * 100
+    : 0;
+
+  // Collect all custom metric keys across rounds
+  const allMetricKeys = [...new Set(rounds.flatMap((r) => Object.keys(r.custom_metrics)))];
+
+  // Chart data
+  const polarizationData = rounds.map((r) => ({ round: r.round, polarization: r.polarization }));
+  const sentimentData = rounds.map((r) => ({ round: r.round, ...r.sentiment }));
+  const coalitionData = rounds.map((r) => ({ round: r.round, coalitions: r.coalitions }));
+  const latestRound = rounds.length > 0 ? rounds[rounds.length - 1] : null;
+
+  return (
+    <main className="min-h-screen text-gray-900">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        {/* Back */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-gray-500 hover:text-blue-600 transition-colors mb-6 text-sm"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Home
+        </Link>
+
+        {/* Header */}
+        <div className="mb-6">
+          <div className="flex items-center gap-3 mb-1">
+            <h1 className="text-2xl font-display font-bold">
+              {status?.scenario_name || "Simulazione in avvio..."}
+            </h1>
+            {status?.domain && (
+              <span className="px-3 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wide bg-cyan-50 border border-cyan-200 text-cyan-700">
+                {status.domain.replace("_", " ")}
+              </span>
+            )}
+            {connected && isActive && (
+              <span className="flex items-center gap-1.5 text-xs text-emerald-600 font-medium">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                Live
+              </span>
+            )}
+          </div>
+          <p className="text-gray-500 text-sm">{status?.brief}</p>
+        </div>
+
+        {/* Progress bar + RoundPhaseIndicator */}
+        <div className="bg-white border border-gray-200 rounded-xl p-4 mb-6">
+          <div className="flex items-center justify-between mb-2 text-sm">
+            <span className="font-semibold">
+              {status?.status === "completed" ? "Completata!" :
+               status?.status === "failed" ? "Errore" :
+               status?.status === "running" ? `Round ${status.current_round} di ${status.total_rounds}` :
+               status?.status?.replace("_", " ") || "..."}
+            </span>
+            <div className="flex items-center gap-4 text-gray-500 font-mono text-xs">
+              <span>{status?.agents_count || "..."} agenti</span>
+              <span>${(status?.cost || 0).toFixed(3)}</span>
+            </div>
+          </div>
+          <div className="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
+            <div
+              className={`h-full rounded-full transition-all duration-700 ${
+                status?.status === "completed" ? "bg-emerald-500" :
+                status?.status === "failed" ? "bg-red-500" : "bg-blue-500"
+              }`}
+              style={{ width: `${status?.status === "completed" ? 100 : progressPct}%` }}
+            />
+          </div>
+          {/* Round Phase Indicator (only during round execution) */}
+          {status?.status === "running" && currentPhase.index > 0 && (
+            <RoundPhaseIndicator
+              phaseIndex={currentPhase.index}
+              totalPhases={currentPhase.total}
+              message={currentPhase.message}
+            />
+          )}
+        </div>
+
+        {/* Briefing Progress (pre-round phase) */}
+        <BriefingProgress steps={briefingSteps} visible={!!isBriefing && briefingSteps.length > 0} />
+
+        {/* Main content: 2-column layout on desktop */}
+        {rounds.length > 0 && (
+          <div className="flex flex-col md:flex-row gap-6 mb-6">
+            {/* LEFT: Round cards + Custom metrics */}
+            <div className="flex-1 min-w-0 md:w-2/3">
+              {/* Custom Metrics Chart (if any) */}
+              {allMetricKeys.length > 0 && (
+                <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
+                  <h2 className="text-sm font-semibold text-gray-700 mb-4">Metriche Scenario</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {allMetricKeys.map((key) => {
+                      const latest = rounds[rounds.length - 1]?.custom_metrics[key] ?? 0;
+                      const prev = rounds.length > 1 ? rounds[rounds.length - 2]?.custom_metrics[key] ?? 0 : null;
+                      const delta = prev !== null ? latest - prev : null;
+                      return (
+                        <div key={key} className="bg-gray-50 rounded-lg p-3">
+                          <div className="text-[10px] font-mono uppercase text-gray-400 mb-1 truncate" title={key}>
+                            {key}
+                          </div>
+                          <div className="flex items-end gap-2">
+                            <span className="text-2xl font-bold text-gray-900">{latest}</span>
+                            <span className="text-xs text-gray-400">/100</span>
+                            {delta !== null && delta !== 0 && (
+                              <span className={`text-xs font-semibold ${delta > 0 ? "text-emerald-600" : "text-red-600"}`}>
+                                {delta > 0 ? "+" : ""}{delta}
+                              </span>
+                            )}
+                          </div>
+                          {rounds.length > 1 && (
+                            <div className="flex items-end gap-px mt-2 h-6">
+                              {rounds.map((r, i) => {
+                                const val = r.custom_metrics[key] ?? 0;
+                                return (
+                                  <div
+                                    key={i}
+                                    className="flex-1 bg-blue-400 rounded-t-sm min-w-[3px] transition-all duration-300"
+                                    style={{ height: `${Math.max(val, 2)}%` }}
+                                  />
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Round Cards */}
+              <div className="space-y-4">
+                {rounds.map((round) => (
+                  <LiveRoundCard
+                    key={round.round}
+                    round={round}
+                    positionAxis={positionAxis}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT: Sidebar charts */}
+            <div className="md:w-1/3 space-y-4">
+              <PolarizationChart rounds={polarizationData} />
+              <SentimentEvolution rounds={sentimentData} />
+              {latestRound && (
+                <AgentPositionStrip
+                  agents={latestRound.agents}
+                  negativeLabel={positionAxis?.negative_label}
+                  positiveLabel={positionAxis?.positive_label}
+                />
+              )}
+              <CoalitionEvolution rounds={coalitionData} />
+            </div>
+          </div>
+        )}
+
+        {/* Waiting animation when no rounds yet */}
+        {rounds.length === 0 && isActive && !isBriefing && (
+          <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6 text-center">
+            <div className="animate-pulse space-y-3">
+              <div className="h-4 w-48 bg-gray-200 rounded mx-auto" />
+              <div className="h-3 w-64 bg-gray-100 rounded mx-auto" />
+              <p className="text-sm text-gray-400 mt-4">
+                In attesa del primo round...
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Monte Carlo Results */}
+        {monteCarloData && (
+          <div className="mb-6">
+            <MonteCarloPanel
+              data={monteCarloData}
+              positiveLabel={positionAxis?.positive_label}
+              negativeLabel={positionAxis?.negative_label}
+            />
+          </div>
+        )}
+
+        {/* Error */}
+        {status?.status === "failed" && status.error && (
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
+            <h3 className="text-sm font-semibold text-red-600 mb-1">Errore</h3>
+            <p className="text-red-600 text-sm font-mono">{status.error}</p>
+          </div>
+        )}
+
+        {/* Event Log (collapsible) */}
+        <div className="mb-6">
+          <button
+            onClick={() => setShowLog(!showLog)}
+            className="flex items-center gap-2 text-xs text-gray-400 hover:text-gray-600 transition-colors mb-2"
+          >
+            <svg className={`w-3 h-3 transition-transform ${showLog ? "rotate-90" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+            Log eventi ({events.filter(e => e.type !== "heartbeat").length})
+          </button>
+          {showLog && (
+            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+              <div
+                ref={logRef}
+                className="h-48 overflow-y-auto p-3 space-y-1 font-mono text-xs"
+              >
+                {events.filter(e => e.type !== "heartbeat").map((ev, i) => (
+                  <div
+                    key={i}
+                    className={`${
+                      ev.type === "error" ? "text-red-600" :
+                      ev.type === "completed" ? "text-emerald-600" :
+                      ev.type === "round_start" ? "text-blue-600" :
+                      ev.type === "round_complete" ? "text-blue-500" :
+                      ev.type === "brief_analyzed" ? "text-amber-600" :
+                      "text-gray-400"
+                    }`}
+                  >
+                    <span className="text-gray-300 select-none">[{ev.type}]</span> {ev.message}
+                  </div>
+                ))}
+                {events.length === 0 && (
+                  <div className="text-gray-300 animate-pulse">In attesa...</div>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Actions */}
+        <div className="flex gap-3">
+          {isActive && (
+            <button
+              onClick={handleCancel}
+              className="px-5 py-2.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 font-medium transition-colors text-sm"
+            >
+              Annulla
+            </button>
+          )}
+          {status?.status === "completed" && scenarioId && (
+            <Link
+              href={`/scenario/${scenarioId}`}
+              className="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors text-sm"
+            >
+              Vedi Dashboard Completa
+            </Link>
+          )}
+          <Link
+            href="/new"
+            className="px-5 py-2.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium transition-colors text-sm"
+          >
+            Nuova Simulazione
+          </Link>
+        </div>
+
+        <div ref={bottomRef} />
+      </div>
+    </main>
+  );
+}
+
+// --- Live Round Card ---
+
+function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis: PositionAxis | null }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+      {/* Round header */}
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="w-full px-5 py-4 flex items-center gap-4 hover:bg-gray-50 transition-colors cursor-pointer"
+      >
+        <div className="w-10 h-10 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center flex-shrink-0">
+          <span className="font-mono text-sm font-bold text-blue-600">{round.round}</span>
+        </div>
+        <div className="flex-1 min-w-0 text-left">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="font-display font-semibold text-gray-900">{round.timeline_label}</span>
+            <span className="px-2 py-0.5 rounded-full bg-gray-100 font-mono text-[10px] text-gray-400">
+              {round.posts_count} posts
+            </span>
+            <span className="px-2 py-0.5 rounded-full bg-gray-100 font-mono text-[10px] text-gray-400">
+              pol. {round.polarization.toFixed(1)}
+            </span>
+            {round.shock_magnitude > 0 && (
+              <ShockBadge magnitude={round.shock_magnitude} direction={round.shock_direction} />
+            )}
+          </div>
+          <p className="text-sm text-gray-500 truncate mt-0.5">{round.event}</p>
+        </div>
+
+        {/* Sentiment mini-bar */}
+        <div className="flex h-6 w-16 rounded overflow-hidden flex-shrink-0">
+          <div className="bg-emerald-400" style={{ width: `${round.sentiment.positive * 100}%` }} />
+          <div className="bg-gray-300" style={{ width: `${round.sentiment.neutral * 100}%` }} />
+          <div className="bg-red-400" style={{ width: `${round.sentiment.negative * 100}%` }} />
+        </div>
+
+        {/* Custom metrics badges */}
+        {Object.entries(round.custom_metrics).slice(0, 2).map(([k, v]) => (
+          <span key={k} className="hidden md:inline-block px-2 py-0.5 rounded bg-blue-50 font-mono text-[10px] text-blue-600 flex-shrink-0">
+            {k.slice(0, 15)}: {v}
+          </span>
+        ))}
+
+        <svg className={`w-4 h-4 text-gray-400 transition-transform flex-shrink-0 ${expanded ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+
+      {/* Expanded content */}
+      {expanded && (
+        <div className="px-5 pb-5 border-t border-gray-100 pt-4">
+          {/* Agent Position Strip in expanded view */}
+          {round.agents.length > 0 && (
+            <div className="mb-4">
+              <AgentPositionStrip
+                agents={round.agents}
+                negativeLabel={positionAxis?.negative_label}
+                positiveLabel={positionAxis?.positive_label}
+              />
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {/* Top posts */}
+            <div className="lg:col-span-2 space-y-2">
+              <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">Top Posts</p>
+              {round.top_posts.slice(0, 5).map((post, i) => (
+                <div key={post.id || i} className="bg-gray-50 border border-gray-100 rounded-lg p-3">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-5 h-5 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-mono text-[9px] font-bold">
+                      {(post.author_name || "?").charAt(0).toUpperCase()}
+                    </div>
+                    <span className="text-xs font-semibold text-gray-700">{post.author_name}</span>
+                    <span className="px-1.5 py-0.5 rounded bg-gray-100 font-mono text-[9px] text-gray-400 uppercase">
+                      {post.platform}
+                    </span>
+                    <span className="ml-auto font-mono text-[10px] text-cyan-600">
+                      {formatEngagement(post.total_engagement || 0)}
+                    </span>
+                  </div>
+                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">{post.text}</p>
+                </div>
+              ))}
+              {round.top_posts.length === 0 && (
+                <p className="text-xs text-gray-400 italic">Nessun post in questo round</p>
+              )}
+            </div>
+
+            {/* Sidebar: coalitions + metrics + agents */}
+            <div className="space-y-5">
+              {/* Custom metrics */}
+              {Object.keys(round.custom_metrics).length > 0 && (
+                <div>
+                  <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">Metriche</p>
+                  <div className="space-y-2">
+                    {Object.entries(round.custom_metrics).map(([k, v]) => (
+                      <div key={k}>
+                        <div className="flex justify-between text-xs mb-0.5">
+                          <span className="text-gray-600 truncate">{k}</span>
+                          <span className="font-mono text-gray-800 font-semibold">{v}/100</span>
+                        </div>
+                        <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-blue-500 transition-all duration-500"
+                            style={{ width: `${v}%` }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Coalitions */}
+              {round.coalitions.length > 0 && (
+                <div>
+                  <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">Coalizioni</p>
+                  <div className="space-y-1">
+                    {round.coalitions.map((c: any, i: number) => (
+                      <div key={i} className="flex items-center gap-2 text-xs">
+                        <span className="text-gray-600 truncate flex-1">{c.label || `Coalition ${i + 1}`}</span>
+                        <span className="font-mono text-gray-800">{c.size || c.members?.length || "?"}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Agent mood */}
+              <div>
+                <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">Sentiment</p>
+                <div className="flex items-center gap-3 text-xs">
+                  <span className="text-emerald-600">{(round.sentiment.positive * 100).toFixed(0)}% pos</span>
+                  <span className="text-gray-500">{(round.sentiment.neutral * 100).toFixed(0)}% neu</span>
+                  <span className="text-red-600">{(round.sentiment.negative * 100).toFixed(0)}% neg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,763 @@
+{
+  "calibration_date": "2026-03-27 20:34",
+  "n_scenarios": 52,
+  "grid_type": "default",
+  "n_combinations": 720,
+  "n_agents": 100,
+  "domains": {
+    "commercial": {
+      "calibrated_params": {
+        "anchor_weight": 0.05,
+        "social_weight": 0.2,
+        "event_weight": 0.12,
+        "herd_weight": 0.07,
+        "herd_threshold": 0.2334
+      },
+      "n_scenarios": 2,
+      "avg_composite_score": 25.305,
+      "scenarios": {
+        "barilla_lgbtq_2013": {
+          "outcome_error": 14.87,
+          "composite_score": 16.91,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.2
+          }
+        },
+        "super_league_2021": {
+          "outcome_error": 20.88,
+          "composite_score": 33.7,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.3
+          }
+        }
+      }
+    },
+    "corporate": {
+      "calibrated_params": {
+        "anchor_weight": 0.06,
+        "social_weight": 0.1243,
+        "event_weight": 0.1001,
+        "herd_weight": 0.0486,
+        "herd_threshold": 0.2205
+      },
+      "n_scenarios": 10,
+      "avg_composite_score": 27.432,
+      "scenarios": {
+        "amazon_hq2_2018": {
+          "outcome_error": 19.84,
+          "composite_score": 13.34,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.3
+          }
+        },
+        "boeing_737max_2018": {
+          "outcome_error": 63.0,
+          "composite_score": 54.9,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.15
+          }
+        },
+        "facebook_cambridge_analytica_2018": {
+          "outcome_error": 37.0,
+          "composite_score": 32.88,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.1,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        },
+        "google_antitrust_2020": {
+          "outcome_error": 12.42,
+          "composite_score": 10.42,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.25,
+            "event_weight": 0.02,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        },
+        "johnson_and_johnson_talc_2018": {
+          "outcome_error": 34.47,
+          "composite_score": 27.32,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.1,
+            "event_weight": 0.12,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.3
+          }
+        },
+        "nestle_water_controversy_2015": {
+          "outcome_error": 17.11,
+          "composite_score": 21.05,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        },
+        "spotify_joe_rogan_2022": {
+          "outcome_error": 22.24,
+          "composite_score": 15.97,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.15
+          }
+        },
+        "tesla_twitter_acquisition_2022": {
+          "outcome_error": 21.19,
+          "composite_score": 16.83,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.15
+          }
+        },
+        "volkswagen_dieselgate_2015": {
+          "outcome_error": 56.16,
+          "composite_score": 54.65,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.2
+          }
+        },
+        "wells_fargo_scandal_2016": {
+          "outcome_error": 25.26,
+          "composite_score": 26.96,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.15,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.2
+          }
+        }
+      }
+    },
+    "economic": {
+      "calibrated_params": {
+        "anchor_weight": 0.05,
+        "social_weight": 0.2,
+        "event_weight": 0.12,
+        "herd_weight": 0.08,
+        "herd_threshold": 0.15
+      },
+      "n_scenarios": 1,
+      "avg_composite_score": 3.77,
+      "scenarios": {
+        "universal_basic_income_2020": {
+          "outcome_error": 0.13,
+          "composite_score": 3.77,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        }
+      }
+    },
+    "energy": {
+      "calibrated_params": {
+        "anchor_weight": 0.05,
+        "social_weight": 0.05,
+        "event_weight": 0.12,
+        "herd_weight": 0.02,
+        "herd_threshold": 0.15
+      },
+      "n_scenarios": 1,
+      "avg_composite_score": 17.9,
+      "scenarios": {
+        "nuclear_energy_post_fukushima_2011": {
+          "outcome_error": 19.84,
+          "composite_score": 17.9,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.15
+          }
+        }
+      }
+    },
+    "environmental": {
+      "calibrated_params": {
+        "anchor_weight": 0.09,
+        "social_weight": 0.05,
+        "event_weight": 0.078,
+        "herd_weight": 0.05,
+        "herd_threshold": 0.2
+      },
+      "n_scenarios": 2,
+      "avg_composite_score": 10.88,
+      "scenarios": {
+        "paris_climate_agreement_2015": {
+          "outcome_error": 15.53,
+          "composite_score": 13.05,
+          "best_params": {
+            "anchor_weight": 0.15,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.2
+          }
+        },
+        "plastic_straw_ban_2018": {
+          "outcome_error": 0.95,
+          "composite_score": 8.71,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.05,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.2
+          }
+        }
+      }
+    },
+    "financial": {
+      "calibrated_params": {
+        "anchor_weight": 0.2,
+        "social_weight": 0.2202,
+        "event_weight": 0.12,
+        "herd_weight": 0.0442,
+        "herd_threshold": 0.2105
+      },
+      "n_scenarios": 2,
+      "avg_composite_score": 6.62,
+      "scenarios": {
+        "cryptocurrency_regulation_2022": {
+          "outcome_error": 2.39,
+          "composite_score": 7.9,
+          "best_params": {
+            "anchor_weight": 0.2,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        },
+        "gamestop_wsb_2021": {
+          "outcome_error": 2.78,
+          "composite_score": 5.34,
+          "best_params": {
+            "anchor_weight": 0.2,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.15
+          }
+        }
+      }
+    },
+    "labor": {
+      "calibrated_params": {
+        "anchor_weight": 0.05,
+        "social_weight": 0.2,
+        "event_weight": 0.12,
+        "herd_weight": 0.0701,
+        "herd_threshold": 0.15
+      },
+      "n_scenarios": 2,
+      "avg_composite_score": 10.99,
+      "scenarios": {
+        "minimum_wage_15_usa_2019": {
+          "outcome_error": 4.76,
+          "composite_score": 7.26,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        },
+        "remote_work_post_covid_2021": {
+          "outcome_error": 5.57,
+          "composite_score": 14.72,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.15
+          }
+        }
+      }
+    },
+    "legal": {
+      "calibrated_params": {
+        "anchor_weight": 0.05,
+        "social_weight": 0.25,
+        "event_weight": 0.12,
+        "herd_weight": 0.08,
+        "herd_threshold": 0.15
+      },
+      "n_scenarios": 1,
+      "avg_composite_score": 13.98,
+      "scenarios": {
+        "depp_heard_trial_2022": {
+          "outcome_error": 5.0,
+          "composite_score": 13.98,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        }
+      }
+    },
+    "marketing": {
+      "calibrated_params": {
+        "anchor_weight": 0.0887,
+        "social_weight": 0.2049,
+        "event_weight": 0.12,
+        "herd_weight": 0.0665,
+        "herd_threshold": 0.3
+      },
+      "n_scenarios": 2,
+      "avg_composite_score": 13.5,
+      "scenarios": {
+        "bud_light_dylan_mulvaney_2023": {
+          "outcome_error": 24.2,
+          "composite_score": 20.91,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.3
+          }
+        },
+        "nike_kaepernick_2018": {
+          "outcome_error": 4.44,
+          "composite_score": 6.09,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        }
+      }
+    },
+    "political": {
+      "calibrated_params": {
+        "anchor_weight": 0.0967,
+        "social_weight": 0.1658,
+        "event_weight": 0.0848,
+        "herd_weight": 0.0756,
+        "herd_threshold": 0.2344
+      },
+      "n_scenarios": 17,
+      "avg_composite_score": 7.7024,
+      "scenarios": {
+        "australia_ssm_2017": {
+          "outcome_error": 6.77,
+          "composite_score": 4.8,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.2,
+            "event_weight": 0.02,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        },
+        "brexit_2016": {
+          "outcome_error": 0.2,
+          "composite_score": 0.84,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.05,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.2
+          }
+        },
+        "chile_constitution_2022": {
+          "outcome_error": 23.49,
+          "composite_score": 17.7,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.15
+          }
+        },
+        "colombia_peace_deal_2016": {
+          "outcome_error": 19.37,
+          "composite_score": 12.12,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.2
+          }
+        },
+        "defund_police_usa_2020": {
+          "outcome_error": 0.35,
+          "composite_score": 4.2,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.25,
+            "event_weight": 0.02,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.2
+          }
+        },
+        "eu_right_to_repair_2022": {
+          "outcome_error": 2.1,
+          "composite_score": 12.22,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.1,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        },
+        "greece_bailout_2015": {
+          "outcome_error": 1.74,
+          "composite_score": 2.07,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        },
+        "ireland_abortion_2018": {
+          "outcome_error": 0.97,
+          "composite_score": 2.52,
+          "best_params": {
+            "anchor_weight": 0.15,
+            "social_weight": 0.25,
+            "event_weight": 0.08,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.2
+          }
+        },
+        "italy_constitutional_2006": {
+          "outcome_error": 9.6,
+          "composite_score": 9.22,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        },
+        "italy_referendum_2016": {
+          "outcome_error": 14.66,
+          "composite_score": 11.36,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.1,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.2
+          }
+        },
+        "marijuana_legalization_usa_2020": {
+          "outcome_error": 2.34,
+          "composite_score": 7.37,
+          "best_params": {
+            "anchor_weight": 0.2,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.2
+          }
+        },
+        "new_zealand_gun_reform_2019": {
+          "outcome_error": 8.11,
+          "composite_score": 20.35,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.2
+          }
+        },
+        "occupy_wall_street_2011": {
+          "outcome_error": 17.46,
+          "composite_score": 11.93,
+          "best_params": {
+            "anchor_weight": 0.2,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.15
+          }
+        },
+        "scotland_independence_2014": {
+          "outcome_error": 0.86,
+          "composite_score": 1.94,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.1,
+            "event_weight": 0.02,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.2
+          }
+        },
+        "student_loan_forgiveness_usa_2022": {
+          "outcome_error": 6.29,
+          "composite_score": 4.09,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.15,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        },
+        "switzerland_minaret_ban_2009": {
+          "outcome_error": 11.18,
+          "composite_score": 7.52,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.15,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        },
+        "uber_california_prop22_2020": {
+          "outcome_error": 0.51,
+          "composite_score": 0.69,
+          "best_params": {
+            "anchor_weight": 0.15,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        }
+      }
+    },
+    "public_health": {
+      "calibrated_params": {
+        "anchor_weight": 0.1473,
+        "social_weight": 0.1203,
+        "event_weight": 0.12,
+        "herd_weight": 0.0411,
+        "herd_threshold": 0.15
+      },
+      "n_scenarios": 2,
+      "avg_composite_score": 8.92,
+      "scenarios": {
+        "covid_vaccine_mandate_usa_2021": {
+          "outcome_error": 8.32,
+          "composite_score": 6.27,
+          "best_params": {
+            "anchor_weight": 0.2,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.15
+          }
+        },
+        "uk_smoking_ban_2006": {
+          "outcome_error": 9.82,
+          "composite_score": 11.57,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        }
+      }
+    },
+    "social": {
+      "calibrated_params": {
+        "anchor_weight": 0.15,
+        "social_weight": 0.05,
+        "event_weight": 0.12,
+        "herd_weight": 0.08,
+        "herd_threshold": 0.3
+      },
+      "n_scenarios": 1,
+      "avg_composite_score": 15.59,
+      "scenarios": {
+        "metoo_movement_2017": {
+          "outcome_error": 20.61,
+          "composite_score": 15.59,
+          "best_params": {
+            "anchor_weight": 0.15,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        }
+      }
+    },
+    "sport": {
+      "calibrated_params": {
+        "anchor_weight": 0.1396,
+        "social_weight": 0.1537,
+        "event_weight": 0.1009,
+        "herd_weight": 0.0709,
+        "herd_threshold": 0.2194
+      },
+      "n_scenarios": 5,
+      "avg_composite_score": 8.092,
+      "scenarios": {
+        "formula1_budget_cap_2021": {
+          "outcome_error": 0.63,
+          "composite_score": 8.31,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        },
+        "nba_load_management_2019": {
+          "outcome_error": 0.16,
+          "composite_score": 2.76,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.3
+          }
+        },
+        "nfl_anthem_protest_2017": {
+          "outcome_error": 0.22,
+          "composite_score": 1.75,
+          "best_params": {
+            "anchor_weight": 0.2,
+            "social_weight": 0.2,
+            "event_weight": 0.08,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        },
+        "qatar_world_cup_2022": {
+          "outcome_error": 17.31,
+          "composite_score": 13.73,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.15
+          }
+        },
+        "var_video_review_football_2018": {
+          "outcome_error": 19.84,
+          "composite_score": 13.91,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        }
+      }
+    },
+    "technology": {
+      "calibrated_params": {
+        "anchor_weight": 0.0966,
+        "social_weight": 0.1502,
+        "event_weight": 0.12,
+        "herd_weight": 0.0631,
+        "herd_threshold": 0.3
+      },
+      "n_scenarios": 4,
+      "avg_composite_score": 13.3325,
+      "scenarios": {
+        "apple_privacy_att_2021": {
+          "outcome_error": 9.01,
+          "composite_score": 14.84,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.25,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        },
+        "chatgpt_ai_regulation_2023": {
+          "outcome_error": 8.22,
+          "composite_score": 12.81,
+          "best_params": {
+            "anchor_weight": 0.05,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.05,
+            "herd_threshold": 0.3
+          }
+        },
+        "eu_gdpr_2018": {
+          "outcome_error": 18.78,
+          "composite_score": 18.15,
+          "best_params": {
+            "anchor_weight": 0.15,
+            "social_weight": 0.05,
+            "event_weight": 0.12,
+            "herd_weight": 0.02,
+            "herd_threshold": 0.3
+          }
+        },
+        "tiktok_ban_usa_2023": {
+          "outcome_error": 7.48,
+          "composite_score": 7.53,
+          "best_params": {
+            "anchor_weight": 0.1,
+            "social_weight": 0.2,
+            "event_weight": 0.12,
+            "herd_weight": 0.08,
+            "herd_threshold": 0.3
+          }
+        }
+      }
+    }
+  }
+}

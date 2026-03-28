@@ -1,0 +1,27 @@
+{
+  "scenario_name": "Colombian Peace Deal Referendum 2016",
+  "description": "Colombian plebiscite on the FARC peace agreement signed in Cartagena. NO won by razor-thin margin 50.2% vs YES 49.8% with extremely low turnout of 37.4%. Tests narrow upset with low engagement and regional polarization.",
+  "domain": "political",
+  "final_outcome_pro_pct": 49.78,
+  "final_outcome_against_pct": 50.21,
+  "final_turnout_pct": 37.43,
+  "polling_trajectory": [
+    {"round_equivalent": 1, "pro_pct": 62, "against_pct": 26, "undecided_pct": 12},
+    {"round_equivalent": 2, "pro_pct": 60, "against_pct": 28, "undecided_pct": 12},
+    {"round_equivalent": 3, "pro_pct": 58, "against_pct": 30, "undecided_pct": 12},
+    {"round_equivalent": 4, "pro_pct": 55, "against_pct": 32, "undecided_pct": 13},
+    {"round_equivalent": 5, "pro_pct": 55, "against_pct": 34, "undecided_pct": 11},
+    {"round_equivalent": 6, "pro_pct": 54, "against_pct": 36, "undecided_pct": 10},
+    {"round_equivalent": 7, "pro_pct": 53, "against_pct": 38, "undecided_pct": 9},
+    {"round_equivalent": 8, "pro_pct": 55, "against_pct": 39, "undecided_pct": 6},
+    {"round_equivalent": 9, "pro_pct": 50, "against_pct": 50, "undecided_pct": 0}
+  ],
+  "key_events": [
+    {"round_equivalent": 2, "description": "Santos and FARC leader Timochenko sign peace deal in Cartagena ceremony. Massive international praise but domestic skepticism lingers."},
+    {"round_equivalent": 4, "description": "Uribe's Centro Democrático launches aggressive NO campaign. Frames deal as impunity for FARC crimes and threat to traditional values."},
+    {"round_equivalent": 6, "description": "Evangelical churches mobilize against deal, linking it to 'gender ideology' provisions in the agreement text."},
+    {"round_equivalent": 7, "description": "Polls consistently show YES ahead by 10-20 points. YES campaign becomes complacent, NO intensifies ground game."},
+    {"round_equivalent": 8, "description": "Hurricane Matthew hits Caribbean coast (pro-YES regions), depressing turnout in Barranquilla, Cartagena, and Santa Marta on vote day."}
+  ],
+  "calibration_notes": "Tests massive polling failure and upset result. Polls showed YES leading by 10-20+ points but NO won by 0.4%. Key dynamics: extremely low turnout (37.4%) with differential mobilization favoring NO, hurricane suppressing YES-leaning coastal vote, complacency effect on YES supporters, emotional NO campaign (justice for victims, anti-impunity) vs rational YES campaign (peace dividend), evangelical mobilization as unexpected force multiplier for NO. Ultimate stress test for models handling shy/hidden opposition and turnout asymmetry."
+}

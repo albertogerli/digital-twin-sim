@@ -1,0 +1,237 @@
+[
+  {
+    "round": 1,
+    "coalitions": [
+      {
+        "label": "Opponents",
+        "color": "#1e40af",
+        "members": [
+          "james_park",
+          "mei_lin",
+          "nina_patel"
+        ],
+        "avg_position": -0.79,
+        "size": 3
+      },
+      {
+        "label": "Wait-and-see",
+        "color": "#059669",
+        "members": [
+          "sara_chen",
+          "david_ross",
+          "kevin_zhou"
+        ],
+        "avg_position": 0.147,
+        "size": 3
+      },
+      {
+        "label": "Adopters",
+        "color": "#dc2626",
+        "members": [
+          "tim_cook",
+          "lucas_martin",
+          "oliver_bennett"
+        ],
+        "avg_position": 0.54,
+        "size": 3
+      },
+      {
+        "label": "Skeptics",
+        "color": "#f59e0b",
+        "members": [
+          "elena_garcia"
+        ],
+        "avg_position": -0.22,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "coalitions": [
+      {
+        "label": "Opponents",
+        "color": "#1e40af",
+        "members": [
+          "james_park",
+          "mei_lin",
+          "nina_patel"
+        ],
+        "avg_position": -0.797,
+        "size": 3
+      },
+      {
+        "label": "Wait-and-see",
+        "color": "#059669",
+        "members": [
+          "david_ross",
+          "kevin_zhou"
+        ],
+        "avg_position": 0.035,
+        "size": 2
+      },
+      {
+        "label": "Adopters",
+        "color": "#dc2626",
+        "members": [
+          "tim_cook",
+          "lucas_martin",
+          "sara_chen",
+          "oliver_bennett"
+        ],
+        "avg_position": 0.43,
+        "size": 4
+      },
+      {
+        "label": "Skeptics",
+        "color": "#f59e0b",
+        "members": [
+          "elena_garcia"
+        ],
+        "avg_position": -0.3,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "coalitions": [
+      {
+        "label": "Opponents",
+        "color": "#1e40af",
+        "members": [
+          "james_park",
+          "mei_lin",
+          "nina_patel"
+        ],
+        "avg_position": -0.8,
+        "size": 3
+      },
+      {
+        "label": "Wait-and-see",
+        "color": "#059669",
+        "members": [
+          "sara_chen",
+          "david_ross",
+          "kevin_zhou"
+        ],
+        "avg_position": 0.113,
+        "size": 3
+      },
+      {
+        "label": "Adopters",
+        "color": "#dc2626",
+        "members": [
+          "tim_cook",
+          "lucas_martin",
+          "oliver_bennett"
+        ],
+        "avg_position": 0.437,
+        "size": 3
+      },
+      {
+        "label": "Skeptics",
+        "color": "#f59e0b",
+        "members": [
+          "elena_garcia"
+        ],
+        "avg_position": -0.27,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 4,
+    "coalitions": [
+      {
+        "label": "Opponents",
+        "color": "#1e40af",
+        "members": [
+          "james_park",
+          "mei_lin",
+          "nina_patel"
+        ],
+        "avg_position": -0.807,
+        "size": 3
+      },
+      {
+        "label": "Skeptics",
+        "color": "#059669",
+        "members": [
+          "david_ross",
+          "kevin_zhou"
+        ],
+        "avg_position": 0.0,
+        "size": 2
+      },
+      {
+        "label": "Adopters",
+        "color": "#dc2626",
+        "members": [
+          "tim_cook",
+          "lucas_martin",
+          "sara_chen",
+          "oliver_bennett"
+        ],
+        "avg_position": 0.365,
+        "size": 4
+      },
+      {
+        "label": "Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "elena_garcia"
+        ],
+        "avg_position": -0.34,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 5,
+    "coalitions": [
+      {
+        "label": "Opponents",
+        "color": "#1e40af",
+        "members": [
+          "james_park",
+          "mei_lin",
+          "nina_patel"
+        ],
+        "avg_position": -0.84,
+        "size": 3
+      },
+      {
+        "label": "Wait-and-see",
+        "color": "#059669",
+        "members": [
+          "lucas_martin",
+          "sara_chen",
+          "david_ross",
+          "kevin_zhou"
+        ],
+        "avg_position": 0.108,
+        "size": 4
+      },
+      {
+        "label": "Adopters",
+        "color": "#dc2626",
+        "members": [
+          "tim_cook",
+          "oliver_bennett"
+        ],
+        "avg_position": 0.48,
+        "size": 2
+      },
+      {
+        "label": "Opponents",
+        "color": "#f59e0b",
+        "members": [
+          "elena_garcia"
+        ],
+        "avg_position": -0.32,
+        "size": 1
+      }
+    ]
+  }
+]

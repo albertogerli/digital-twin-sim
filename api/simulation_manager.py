@@ -403,10 +403,8 @@ class SimulationManager:
         the opinion dynamics N times with perturbed parameters to produce
         confidence intervals.
         """
-        from core.simulation.monte_carlo import MonteCarloEngine, perturb_params
-        from calibration.synthetic_sim import (
-            SyntheticAgent, run_synthetic_simulation, _agents_to_pro_pct
-        )
+        from core.simulation.monte_carlo import MonteCarloEngine
+        from calibration.synthetic_sim import run_synthetic_simulation
         from calibration.historical_scenario import GroundTruth, PollingDataPoint
 
         mc_engine = MonteCarloEngine(n_runs=n_runs, perturbation_pct=perturbation)
@@ -429,22 +427,17 @@ class SimulationManager:
                 cal = data.get("calibrated_params", {})
                 base_params.update(cal)
 
-        # Build a GroundTruth-like structure from the completed simulation
-        # We use the actual sim results as a "reference trajectory"
-        rm = engine.round_manager
-        polling = []
-        for i in range(config.num_rounds):
-            ch = rm.coalition_history[i] if i < len(rm.coalition_history) else {}
-            positions = rm._all_positions() if i == config.num_rounds - 1 else []
-            # Use checkpoint data for per-round positions (approximation)
-            pro = 50.0
-            against = 50.0
-            polling.append(PollingDataPoint(
+        # Build a GroundTruth-like structure for Monte Carlo
+        # Start from a balanced 50/50 split — the synthetic sim will evolve it
+        polling = [
+            PollingDataPoint(
                 round_equivalent=i + 1,
-                pro_pct=pro,
-                against_pct=against,
-                undecided_pct=0,
-            ))
+                pro_pct=50.0,
+                against_pct=40.0,
+                undecided_pct=10.0,
+            )
+            for i in range(config.num_rounds)
+        ]
 
         # For Monte Carlo, we don't need ground truth — we just run N synthetic sims
         # and aggregate the results

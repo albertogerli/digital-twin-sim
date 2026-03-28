@@ -72,11 +72,11 @@ export default function CoalitionEvolution({ rounds }: CoalitionEvolutionProps) 
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 mt-2 text-[9px]">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-[10px]">
         {legendLabels.map((l) => (
-          <span key={l} className="flex items-center gap-1 text-gray-500">
+          <span key={l} className="flex items-center gap-1 text-gray-500" title={l}>
             <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ background: labelColor[l] }} />
-            <span className="truncate max-w-[80px]">{l}</span>
+            <span className="truncate max-w-[120px]">{l}</span>
           </span>
         ))}
       </div>

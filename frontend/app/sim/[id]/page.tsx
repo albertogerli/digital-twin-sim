@@ -341,9 +341,9 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
 
         {/* Main content: 2-column layout on desktop */}
         {rounds.length > 0 && (
-          <div className="flex flex-col md:flex-row gap-6 mb-6">
+          <div className="flex flex-col lg:flex-row gap-6 mb-6">
             {/* LEFT: Round cards + Custom metrics */}
-            <div className="flex-1 min-w-0 md:w-2/3">
+            <div className="flex-1 min-w-0 lg:w-[60%]">
               {/* Custom Metrics Chart (if any) */}
               {allMetricKeys.length > 0 && (
                 <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
@@ -401,7 +401,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             </div>
 
             {/* RIGHT: Sidebar charts */}
-            <div className="md:w-1/3 space-y-4">
+            <div className="lg:w-[40%] space-y-4">
               <PolarizationChart rounds={polarizationData} />
               <SentimentEvolution rounds={sentimentData} />
               {latestRound && (
@@ -561,7 +561,7 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
         {/* Custom metrics badges */}
         {Object.entries(round.custom_metrics).slice(0, 2).map(([k, v]) => (
           <span key={k} className="hidden md:inline-block px-2 py-0.5 rounded bg-blue-50 font-mono text-[10px] text-blue-600 flex-shrink-0">
-            {k.slice(0, 15)}: {v}
+            {k.slice(0, 20)}: {v}
           </span>
         ))}
 

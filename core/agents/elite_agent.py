@@ -68,6 +68,10 @@ class EliteAgent(BaseAgent):
                 component=f"elite_{self.id}",
             )
 
+            # Guard: unwrap list if LLM returned array
+            if isinstance(result, list):
+                result = result[0] if result and isinstance(result[0], dict) else {}
+
             # Update agent state with delta cap
             from ..simulation.validators import clamp_position_delta, ELITE_DELTA_CAP
             new_position = float(result.get("position", self.position))
@@ -137,6 +141,7 @@ class EliteAgent(BaseAgent):
 
         except (JSONParseError, Exception) as e:
             logger.error(f"Elite agent {self.id} failed in round {round_number}: {e}")
+            print(f"    ⚠ Elite {self.name}: {type(e).__name__}: {str(e)[:100]}")
             return None
 
     @classmethod

@@ -10,6 +10,9 @@ import AgentPositionStrip from "@/components/sim/AgentPositionStrip";
 import CoalitionEvolution from "@/components/sim/CoalitionEvolution";
 import ShockBadge from "@/components/sim/ShockBadge";
 import MonteCarloPanel from "@/components/sim/MonteCarloPanel";
+import ConfidenceBand from "@/components/sim/ConfidenceBand";
+import RegimeIndicator from "@/components/sim/RegimeIndicator";
+import CalibrationBadge from "@/components/sim/CalibrationBadge";
 
 // --- Types ---
 
@@ -52,6 +55,14 @@ interface LiveRound {
   cost: number;
   shock_magnitude: number;
   shock_direction: number;
+  confidence_interval?: {
+    pro_pct_mean: number;
+    pro_pct_ci95_lo: number;
+    pro_pct_ci95_hi: number;
+    sigma_pp: number;
+  } | null;
+  regime_info?: { regime_prob: number; regime_label: string } | null;
+  calibration_source?: string;
 }
 
 interface BriefingStep {
@@ -98,15 +109,78 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
   const [positionAxis, setPositionAxis] = useState<PositionAxis | null>(null);
   const [monteCarloData, setMonteCarloData] = useState<any>(null);
 
-  // Load initial status
+  // Load initial status — if already completed, hydrate rounds from exports
   useEffect(() => {
     fetch(`/api/simulations/${id}`)
       .then((r) => r.json())
-      .then((data: SimStatus) => {
+      .then(async (data: SimStatus) => {
         setStatus(data);
         if (data.scenario_id) setScenarioId(data.scenario_id);
+
+        // If sim is already completed and we have no rounds, load from exports
+        if (data.status === "completed" && data.scenario_id && rounds.length === 0) {
+          try {
+            const totalRounds = data.total_rounds || 9;
+            const loadedRounds: LiveRound[] = [];
+            for (let r = 1; r <= totalRounds; r++) {
+              const res = await fetch(`/api/scenarios/${data.scenario_id}/replay_round_${r}.json`);
+              if (!res.ok) break;
+              const raw = await res.json();
+              const ind = raw.indicators || {};
+              const sent = ind.sentiment || { positive: 0, neutral: 1, negative: 0 };
+              const coalitions = raw.coalitions?.coalitions || [];
+              const topPosts = [...(raw.posts || [])]
+                .sort((a: any, b: any) => (b.engagement_score ?? 0) - (a.engagement_score ?? 0))
+                .slice(0, 10)
+                .map((p: any) => ({
+                  id: p.id,
+                  author_id: p.author_id,
+                  author_name: p.author_name || p.author_id,
+                  platform: p.platform,
+                  text: p.text,
+                  likes: p.likes || 0,
+                  reposts: p.reposts || 0,
+                  replies: p.replies || 0,
+                  total_engagement: (p.likes || 0) + (p.reposts || 0) * 2 + (p.replies || 0) * 3,
+                }));
+              const agents = (raw.graphSnapshot?.nodes || []).map((n: any) => ({
+                id: n.id,
+                name: n.label || n.name || n.id,
+                role: n.role || "",
+                position: n.position ?? 0,
+                emotional_state: n.emotional_state || "neutral",
+                tier: n.tier ?? 1,
+                cluster_size: n.cluster_size,
+              }));
+              loadedRounds.push({
+                round: raw.round || r,
+                timeline_label: raw.month || `Round ${r}`,
+                event: raw.event?.event || "",
+                polarization: ind.polarization ?? 0,
+                posts_count: (raw.posts || []).length,
+                reactions_count: 0,
+                top_posts: topPosts,
+                agents,
+                sentiment: { positive: sent.positive ?? 0, neutral: sent.neutral ?? 0, negative: sent.negative ?? 0 },
+                coalitions,
+                custom_metrics: {},
+                cost: data.cost || 0,
+                shock_magnitude: raw.event?.shock_magnitude ?? 0,
+                shock_direction: raw.event?.shock_direction ?? 0,
+                confidence_interval: raw.confidence_interval || null,
+                regime_info: raw.regime_info || null,
+              });
+            }
+            if (loadedRounds.length > 0) {
+              setRounds(loadedRounds);
+            }
+          } catch (err) {
+            console.warn("Could not load replay rounds for completed sim:", err);
+          }
+        }
       })
       .catch(() => {});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   // SSE connection
@@ -196,6 +270,9 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             cost: d.cost || 0,
             shock_magnitude: d.shock_magnitude ?? 0,
             shock_direction: d.shock_direction ?? 0,
+            confidence_interval: d.confidence_interval || null,
+            regime_info: d.regime_info || null,
+            calibration_source: d.calibration_source || "",
           };
           setRounds((prev) => [...prev, liveRound]);
           setStatus((prev) => prev ? {
@@ -298,6 +375,14 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
                 <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                 Live
               </span>
+            )}
+            {/* Calibration badge */}
+            {latestRound?.calibration_source && (
+              <CalibrationBadge source={latestRound.calibration_source} showDetails />
+            )}
+            {/* Regime indicator */}
+            {latestRound?.regime_info && latestRound.regime_info.regime_prob > 0.05 && (
+              <RegimeIndicator regimeInfo={latestRound.regime_info} />
             )}
           </div>
           <p className="text-gray-500 text-sm">{status?.brief}</p>
@@ -412,6 +497,13 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
                 />
               )}
               <CoalitionEvolution rounds={coalitionData} />
+              {/* Confidence Band (v2 calibration) */}
+              {rounds.some((r) => r.confidence_interval) && (
+                <ConfidenceBand
+                  rounds={rounds.map((r) => ({ round: r.round, confidence_interval: r.confidence_interval }))}
+                  positionAxis={positionAxis}
+                />
+              )}
             </div>
           </div>
         )}
@@ -548,7 +640,7 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
               <ShockBadge magnitude={round.shock_magnitude} direction={round.shock_direction} />
             )}
           </div>
-          <p className="text-sm text-gray-500 truncate mt-0.5">{round.event}</p>
+          <p className="text-sm text-gray-500 mt-0.5">{round.event}</p>
         </div>
 
         {/* Sentiment mini-bar */}

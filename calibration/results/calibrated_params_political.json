@@ -1,15 +1,17 @@
 {
   "domain": "political",
   "calibrated_params": {
-    "anchor_weight": 0.0967,
-    "social_weight": 0.1658,
-    "event_weight": 0.0848,
-    "herd_weight": 0.0756,
-    "herd_threshold": 0.2344
+    "anchor_weight": 0.1301,
+    "social_weight": 0.1251,
+    "event_weight": 0.0688,
+    "herd_weight": 0.0352,
+    "herd_threshold": 0.21,
+    "direct_shift_weight": 0.5263,
+    "anchor_drift_rate": 0.2551
   },
   "calibration_metrics": {
-    "avg_composite_score": 7.7024,
-    "avg_outcome_error": 7.41,
-    "n_scenarios": 17
+    "avg_composite_score": 11.5494,
+    "avg_outcome_error": 13.5,
+    "n_scenarios": 188
   }
 }

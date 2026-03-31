@@ -14,7 +14,7 @@ from uuid import uuid4
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
-from api.models import SimulationRequest, SimulationStatus, ProgressEvent
+from api.models import SimulationRequest, SimulationStatus, ProgressEvent, BranchRequest
 from core.simulation.engine import SimulationEngine
 from core.config.schema import ScenarioConfig
 from domains.domain_registry import DomainRegistry
@@ -141,6 +141,267 @@ class SimulationManager:
         self._persist()
         state.task = asyncio.create_task(self._run_pipeline(sim_id))
         return sim_id
+
+    async def launch_branch(self, request: BranchRequest) -> str:
+        """Launch a What-If branch from an existing scenario."""
+        sim_id = str(uuid4())[:8]
+
+        # Create a dummy SimulationRequest for state tracking
+        sim_request = SimulationRequest(
+            brief=f"What-If branch from {request.parent_scenario_id} @ round {request.branch_round}: {request.what_if}",
+            provider=request.provider,
+            model=request.model,
+            budget=request.budget,
+        )
+        state = SimulationState(sim_id, sim_request)
+        state.document_context = None
+        self.simulations[sim_id] = state
+        self._persist()
+
+        # Store branch info on state
+        state._branch_request = request
+        state.task = asyncio.create_task(self._run_branch_pipeline(sim_id))
+        return sim_id
+
+    async def _run_branch_pipeline(self, sim_id: str):
+        """Run a What-If branch simulation."""
+        state = self.simulations[sim_id]
+        branch: BranchRequest = state._branch_request
+
+        async with self._semaphore:
+            try:
+                state.status = "analyzing"
+                self._persist()
+                await self._emit(sim_id, ProgressEvent(
+                    type="status",
+                    message=f"Caricamento checkpoint round {branch.branch_round}...",
+                    phase="init",
+                ))
+
+                # 1. Load parent checkpoint
+                from core.simulation.checkpoint import load_checkpoint, find_checkpoint
+                outputs_dir = os.path.join(PROJECT_ROOT, "outputs")
+
+                # Find parent scenario name from exports
+                export_dir = os.path.join(outputs_dir, "exports")
+                parent_meta_path = os.path.join(
+                    export_dir, f"scenario_{branch.parent_scenario_id}", "metadata.json"
+                )
+                if not os.path.exists(parent_meta_path):
+                    raise FileNotFoundError(f"Parent scenario not found: {branch.parent_scenario_id}")
+
+                with open(parent_meta_path) as f:
+                    parent_meta = json.load(f)
+
+                scenario_name = parent_meta["scenario_name"]
+                cp_path = find_checkpoint(outputs_dir, scenario_name, branch.branch_round)
+                checkpoint = load_checkpoint(cp_path)
+
+                await self._emit(sim_id, ProgressEvent(
+                    type="status",
+                    message=f"Checkpoint caricato: {scenario_name} round {branch.branch_round}",
+                    phase="checkpoint_loaded",
+                ))
+
+                # 2. Create LLM
+                llm = self._create_llm(branch.provider, branch.model, branch.budget)
+
+                # 3. Load parent config
+                parent_config_path = os.path.join(
+                    export_dir, f"scenario_{branch.parent_scenario_id}", "metadata.json"
+                )
+                # Rebuild config from metadata
+                from briefing.scenario_builder import ScenarioBuilder
+                builder = ScenarioBuilder()
+                # Load the YAML config if exists, otherwise build minimal config
+                config_yaml_path = os.path.join(outputs_dir, f"{branch.parent_scenario_id}_config.yaml")
+                if os.path.exists(config_yaml_path):
+                    config = builder.build_from_file(config_yaml_path)
+                else:
+                    # Build minimal config from metadata
+                    config = self._config_from_metadata(parent_meta)
+
+                # Apply branch overrides
+                total_rounds = config.num_rounds
+                if branch.rounds_to_run:
+                    total_rounds = branch.branch_round + branch.rounds_to_run
+                config.num_rounds = total_rounds
+
+                # Update scenario name for branch
+                branch_label = branch.what_if[:50] if branch.what_if else f"branch_r{branch.branch_round}"
+                safe_label = "".join(c if c.isalnum() or c in "-_ " else "_" for c in branch_label).strip()
+                config.name = f"{scenario_name} [What-If: {safe_label}]"
+
+                # Inject what-if context into scenario context
+                if branch.what_if:
+                    config.scenario_context = (
+                        f"{config.scenario_context}\n\n"
+                        f"WHAT-IF SCENARIO: Starting from round {branch.branch_round}, "
+                        f"the following change occurs: {branch.what_if}"
+                    )
+
+                state.scenario_name = config.name
+                state.domain = config.domain
+                state.total_rounds = config.num_rounds - branch.branch_round
+                state.agents_count = (
+                    len(checkpoint.get("elite_agents", [])) +
+                    len(checkpoint.get("institutional_agents", [])) +
+                    len(checkpoint.get("citizen_clusters", []))
+                )
+                state.status = "configuring"
+                self._persist()
+
+                await self._emit(sim_id, ProgressEvent(
+                    type="brief_analyzed",
+                    message=f"What-If: {config.name}",
+                    data={
+                        "scenario_name": config.name,
+                        "domain": config.domain,
+                        "num_rounds": state.total_rounds,
+                        "elite_agents": len(checkpoint.get("elite_agents", [])),
+                        "institutional_agents": len(checkpoint.get("institutional_agents", [])),
+                        "citizen_clusters": len(checkpoint.get("citizen_clusters", [])),
+                        "branch_from": branch.parent_scenario_id,
+                        "branch_round": branch.branch_round,
+                        "position_axis": {
+                            "negative_label": config.position_axis.negative_label,
+                            "positive_label": config.position_axis.positive_label,
+                            "neutral_label": config.position_axis.neutral_label,
+                        } if config.position_axis else None,
+                    }
+                ))
+
+                # 4. Define progress callback
+                async def on_progress(event_type: str, data: dict):
+                    if event_type == "round_start":
+                        state.current_round = data.get("round", 0) - branch.branch_round
+                        state.cost = data.get("cost", state.cost)
+                        self._persist()
+                        await self._emit(sim_id, ProgressEvent(
+                            type="round_start",
+                            message=f"Round {data['round']} (branch +{state.current_round})",
+                            round=data["round"],
+                            data=data,
+                        ))
+                    elif event_type == "round_phase":
+                        await self._emit(sim_id, ProgressEvent(
+                            type="round_phase",
+                            message=data.get("message", ""),
+                            round=data.get("round"),
+                            phase=data.get("phase", ""),
+                            data=data,
+                        ))
+                    elif event_type == "round_complete":
+                        state.current_round = data.get("round", 0) - branch.branch_round
+                        state.cost = data.get("cost", state.cost)
+                        self._persist()
+                        await self._emit(sim_id, ProgressEvent(
+                            type="round_complete",
+                            message=f"Round {data['round']} completato (branch +{state.current_round})",
+                            round=data["round"],
+                            data=data,
+                        ))
+
+                # 5. Run simulation from checkpoint
+                DomainRegistry.discover()
+                domain = DomainRegistry.get(config.domain)
+
+                state.status = "running"
+                self._persist()
+
+                engine = SimulationEngine(
+                    llm=llm,
+                    config=config,
+                    domain=domain,
+                    output_dir=outputs_dir,
+                    elite_only=False,
+                    verbose=False,
+                    progress_callback=on_progress,
+                    resume_checkpoint=checkpoint,
+                    resume_round=branch.branch_round,
+                    event_override=branch.event_override,
+                    agent_overrides=branch.agent_overrides,
+                )
+
+                await engine.run()
+                state.cost = llm.stats.total_cost
+
+                # 6. Export
+                state.status = "exporting"
+                self._persist()
+                await self._emit(sim_id, ProgressEvent(
+                    type="status", message="Esportazione branch...",
+                    phase="exporting"
+                ))
+
+                safe_name = "".join(
+                    c if c.isalnum() or c in "-_" else "_" for c in config.name
+                )
+                export_scenario(safe_name, outputs_dir, export_dir)
+                state.scenario_id = safe_name
+
+                self._rebuild_scenarios_manifest(export_dir)
+
+                state.status = "completed"
+                state.completed_at = datetime.utcnow().isoformat()
+                self._persist()
+
+                await self._emit(sim_id, ProgressEvent(
+                    type="completed",
+                    message="Branch What-If completato!",
+                    data={
+                        "scenario_name": config.name,
+                        "scenario_id": safe_name,
+                        "cost": state.cost,
+                        "total_rounds": state.total_rounds,
+                        "branch_from": branch.parent_scenario_id,
+                        "branch_round": branch.branch_round,
+                    }
+                ))
+
+            except asyncio.CancelledError:
+                state.status = "cancelled"
+                state.completed_at = datetime.utcnow().isoformat()
+                self._persist()
+                await self._emit(sim_id, ProgressEvent(
+                    type="cancelled", message="Branch cancellato"
+                ))
+            except Exception as e:
+                logger.error(f"Branch {sim_id} failed: {traceback.format_exc()}")
+                state.status = "failed"
+                state.error = str(e)
+                state.completed_at = datetime.utcnow().isoformat()
+                self._persist()
+                await self._emit(sim_id, ProgressEvent(
+                    type="error", message=f"Errore: {str(e)}",
+                    data={"traceback": traceback.format_exc()[-500:]}
+                ))
+
+    def _config_from_metadata(self, meta: dict) -> ScenarioConfig:
+        """Build a minimal ScenarioConfig from exported metadata."""
+        from core.config.schema import AxisConfig
+        axis = meta.get("position_axis", {})
+        return ScenarioConfig(
+            name=meta.get("scenario_name", "Unknown"),
+            description=meta.get("description", ""),
+            domain=meta.get("domain", "political"),
+            language=meta.get("language", "en"),
+            num_rounds=meta.get("num_rounds", 9),
+            timeline_unit=meta.get("timeline_unit", "month"),
+            timeline_labels=meta.get("timeline_labels", []),
+            position_axis=AxisConfig(
+                negative_label=axis.get("negative_label", "Against"),
+                positive_label=axis.get("positive_label", "In favor"),
+                neutral_label=axis.get("neutral_label", "Neutral"),
+            ),
+            channels=meta.get("channels", []),
+            elite_agents=[],
+            institutional_agents=[],
+            citizen_clusters=[],
+            initial_event=meta.get("initial_event", ""),
+            scenario_context=meta.get("scenario_context", ""),
+            metrics_to_track=meta.get("metrics_to_track", []),
+        )
 
     async def cancel(self, sim_id: str) -> bool:
         state = self.simulations.get(sim_id)

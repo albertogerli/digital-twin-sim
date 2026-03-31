@@ -1,15 +1,17 @@
 {
   "domain": "environmental",
   "calibrated_params": {
-    "anchor_weight": 0.09,
-    "social_weight": 0.05,
-    "event_weight": 0.078,
-    "herd_weight": 0.05,
-    "herd_threshold": 0.2
+    "anchor_weight": 0.109,
+    "social_weight": 0.0976,
+    "event_weight": 0.0836,
+    "herd_weight": 0.0365,
+    "herd_threshold": 0.2188,
+    "direct_shift_weight": 0.546,
+    "anchor_drift_rate": 0.2969
   },
   "calibration_metrics": {
-    "avg_composite_score": 10.88,
-    "avg_outcome_error": 8.24,
-    "n_scenarios": 2
+    "avg_composite_score": 11.3375,
+    "avg_outcome_error": 14.35,
+    "n_scenarios": 60
   }
 }

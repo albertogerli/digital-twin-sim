@@ -46,6 +46,28 @@ def extract_hashtags(text: str) -> list[str]:
     return re.findall(r"#\w+", text)
 
 
+# Common stop words to filter when generating synthetic hashtags
+_STOP_WORDS = frozenset(
+    "il lo la le gli i un una uno di da in con su per tra fra del dello della "
+    "dei degli delle al allo alla ai agli alle che è e o non si ma ho ha come "
+    "se ci più anche già molto questo quella questi quelle sono nel nella nei "
+    "the a an and or but is are was were to of for in on at by with from its "
+    "it be as this that which who what not can do does did".split()
+)
+
+
+def extract_keywords_as_hashtags(text: str, top_n: int = 3) -> list[str]:
+    """Extract significant words from text and convert to hashtags."""
+    words = re.findall(r"[A-Za-zÀ-ÿ]{4,}", text)
+    filtered = [w for w in words if w.lower() not in _STOP_WORDS and not w.isupper()]
+    # Prefer capitalized words (proper nouns, concepts)
+    capitalized = [w for w in filtered if w[0].isupper()]
+    if capitalized:
+        filtered = capitalized
+    counts = Counter(filtered)
+    return [f"#{w}" for w, _ in counts.most_common(top_n)]
+
+
 # ── Data loading ──────────────────────────────────────────────
 
 def discover_checkpoints(outputs_dir: str, scenario: str) -> list[str]:
@@ -304,15 +326,39 @@ def build_graph_snapshot(round_num: int, checkpoint: dict,
 
 # ── Indicators ────────────────────────────────────────────────
 
+_prev_hashtag_counts: dict[str, int] = {}  # module-level for trend tracking
+
+
 def compute_indicators(conn: sqlite3.Connection, round_num: int,
                        checkpoint: dict) -> dict:
+    global _prev_hashtag_counts
     posts = get_posts_for_round(conn, round_num)
 
-    # Hashtags
-    all_tags = []
+    # Hashtags — extract explicit #tags first, fall back to keyword extraction
+    all_tags: list[str] = []
     for p in posts:
-        all_tags.extend(extract_hashtags(p["content"]))
+        explicit = extract_hashtags(p["content"])
+        if explicit:
+            all_tags.extend(explicit)
+        else:
+            all_tags.extend(extract_keywords_as_hashtags(p["content"], top_n=2))
+
     tag_counts = Counter(all_tags).most_common(10)
+
+    # Compute trend for each hashtag
+    hashtags_with_trend = []
+    for tag, count in tag_counts:
+        prev = _prev_hashtag_counts.get(tag, 0)
+        if prev == 0:
+            trend = "new"
+        elif count > prev:
+            trend = "up"
+        else:
+            trend = "down"
+        hashtags_with_trend.append({"tag": tag, "count": count, "trend": trend})
+
+    # Store for next round comparison
+    _prev_hashtag_counts = dict(tag_counts)
 
     # Polarization
     all_positions = []
@@ -350,7 +396,7 @@ def compute_indicators(conn: sqlite3.Connection, round_num: int,
             "neutral": round(neu_ratio, 2),
             "negative": round(neg_ratio, 2),
         },
-        "trendingHashtags": [{"tag": t, "count": c} for t, c in tag_counts],
+        "trendingHashtags": hashtags_with_trend,
     }
 
 
@@ -543,7 +589,7 @@ def build_round_data(scenario: str, round_num: int, conn: sqlite3.Connection,
     posts_for_impact = [{"frontend_id": p["id"], "author_id": p["author_id"]} for p in posts[:50]]
     post_impacts = compute_post_impacts(posts_for_impact, checkpoint, name_map)
 
-    return {
+    result = {
         "round": round_num,
         "month": timeline_label,
         "event": event_obj,
@@ -555,6 +601,14 @@ def build_round_data(scenario: str, round_num: int, conn: sqlite3.Connection,
         "postImpacts": post_impacts,
         "realWorldEffects": real_world,
     }
+
+    # v2/v3 calibration data (backward-compatible — only present if checkpoint has it)
+    if checkpoint.get("confidence_interval"):
+        result["confidence_interval"] = checkpoint["confidence_interval"]
+    if checkpoint.get("regime_info"):
+        result["regime_info"] = checkpoint["regime_info"]
+
+    return result
 
 
 # ── Editorial export (agents, polarization, etc.) ─────────────
@@ -569,6 +623,21 @@ def build_editorial_data(scenario: str, checkpoints: list[dict],
         title = config.get("name", title)
 
     # metadata.json
+    # Extract calibration info from last checkpoint (v2+ data, backward-compatible)
+    last_cp = checkpoints[-1]
+    calibration_meta = {}
+    if last_cp.get("params_used"):
+        pu = last_cp["params_used"]
+        calibration_meta["model_version"] = pu.get("_model_version", "v1")
+        calibration_meta["params_source"] = pu.get("_source", "unknown")
+        calibration_meta["params"] = {
+            k: v for k, v in pu.items() if not k.startswith("_")
+        }
+    if last_cp.get("confidence_interval"):
+        calibration_meta["final_confidence_interval"] = last_cp["confidence_interval"]
+    if last_cp.get("regime_info"):
+        calibration_meta["final_regime_info"] = last_cp["regime_info"]
+
     metadata = {
         "scenario_id": scenario,
         "scenario_name": title,
@@ -576,6 +645,8 @@ def build_editorial_data(scenario: str, checkpoints: list[dict],
         "domain": config.get("domain") if config and config.get("domain") else _infer_domain(checkpoints, scenario),
         "description": config.get("description", "") if config else "",
     }
+    if calibration_meta:
+        metadata["calibration"] = calibration_meta
 
     # agents.json
     agents = []

@@ -1,0 +1,443 @@
+{
+  "m_full": {
+    "n": 8.0,
+    "mae": 19.1751498037725,
+    "rmse": 26.603744546038318,
+    "cov90": 0.75,
+    "cov50": 0.375,
+    "crps": 15.44500503969596,
+    "med_ae": 11.870162583669927
+  },
+  "m_no_nv": {
+    "n": 7.0,
+    "mae": 12.62943013883191,
+    "rmse": 14.331281461095577,
+    "cov90": 0.8571428571428571,
+    "cov50": 0.42857142857142855,
+    "crps": 8.567295193276228,
+    "med_ae": 9.242989408128608
+  },
+  "m_no_arch": {
+    "n": 7.0,
+    "mae": 12.62943013883191,
+    "rmse": 14.331281461095577,
+    "cov90": 0.8571428571428571,
+    "cov50": 0.42857142857142855,
+    "crps": 8.567295193276228,
+    "med_ae": 9.242989408128608
+  },
+  "delta_rows": [
+    {
+      "id": "FIN-2019-WEWORK_IPO_COLLAPSE_AND_PUBLIC",
+      "domain": "financial",
+      "delta": -1.3778256177902222,
+      "abs_delta": 1.3778256177902222,
+      "gt": 18.0,
+      "pred": 66.48152300690714,
+      "error": 48.48152300690714
+    },
+    {
+      "id": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG",
+      "domain": "corporate",
+      "delta": -0.85996013879776,
+      "abs_delta": 0.85996013879776,
+      "gt": 28.0,
+      "pred": 43.3493242362149,
+      "error": 15.349324236214898
+    },
+    {
+      "id": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI",
+      "domain": "financial",
+      "delta": -0.8354988098144531,
+      "abs_delta": 0.8354988098144531,
+      "gt": 38.0,
+      "pred": 76.06100094774114,
+      "error": 38.061000947741135
+    },
+    {
+      "id": "POL-2020-CHILE_CONSTITUTIONAL_REFERENDU",
+      "domain": "political",
+      "delta": 0.8163761496543884,
+      "abs_delta": 0.8163761496543884,
+      "gt": 78.3,
+      "pred": 36.755717946193315,
+      "error": -41.54428205380668
+    },
+    {
+      "id": "FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202",
+      "domain": "financial",
+      "delta": -0.7266606092453003,
+      "abs_delta": 0.7266606092453003,
+      "gt": 22.0,
+      "pred": 32.97544206891036,
+      "error": 10.975442068910361
+    },
+    {
+      "id": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2",
+      "domain": "public_health",
+      "delta": -0.714900553226471,
+      "abs_delta": 0.714900553226471,
+      "gt": 47.0,
+      "pred": 78.46363335628331,
+      "error": 31.46363335628331
+    },
+    {
+      "id": "ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER",
+      "domain": "energy",
+      "delta": -0.7085670828819275,
+      "abs_delta": 0.7085670828819275,
+      "gt": 35.0,
+      "pred": 41.222734711328975,
+      "error": 6.222734711328975
+    },
+    {
+      "id": "PH-2021-MASKING_MANDATE_DEBATE_USA_202",
+      "domain": "public_health",
+      "delta": 0.6370218396186829,
+      "abs_delta": 0.6370218396186829,
+      "gt": 63.0,
+      "pred": 55.860948090711894,
+      "error": -7.139051909288106
+    },
+    {
+      "id": "FIN-2021-GAMESTOP",
+      "domain": "financial",
+      "delta": 0.6083831191062927,
+      "abs_delta": 0.6083831191062927,
+      "gt": 72.0,
+      "pred": 43.47122175194749,
+      "error": -28.52877824805251
+    },
+    {
+      "id": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL",
+      "domain": "financial",
+      "delta": 0.6004505753517151,
+      "abs_delta": 0.6004505753517151,
+      "gt": 62.0,
+      "pred": 33.80386708788808,
+      "error": -28.19613291211192
+    },
+    {
+      "id": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER",
+      "domain": "corporate",
+      "delta": -0.5693041682243347,
+      "abs_delta": 0.5693041682243347,
+      "gt": 26.0,
+      "pred": 45.79932955290523,
+      "error": 19.799329552905228
+    },
+    {
+      "id": "CORP-2017-UBER_LONDON_LICENSE_BATTLE_201",
+      "domain": "corporate",
+      "delta": 0.5447100400924683,
+      "abs_delta": 0.5447100400924683,
+      "gt": 65.0,
+      "pred": 48.14291809399807,
+      "error": -16.85708190600193
+    },
+    {
+      "id": "PH-2021-ASTRAZENECA_VACCINE_HESITANCY",
+      "domain": "public_health",
+      "delta": -0.5315387845039368,
+      "abs_delta": 0.5315387845039368,
+      "gt": 62.0,
+      "pred": 82.46232671349625,
+      "error": 20.462326713496253
+    },
+    {
+      "id": "LAB-2015-UBER_VS_TAXI_PROTESTS_FRANCE_2",
+      "domain": "labor",
+      "delta": -0.43992212414741516,
+      "abs_delta": 0.43992212414741516,
+      "gt": 45.0,
+      "pred": 61.580080066685625,
+      "error": 16.580080066685625
+    },
+    {
+      "id": "POL-2014-SCOTTISH_INDEPENDENCE_REFEREND",
+      "domain": "political",
+      "delta": -0.3182750642299652,
+      "abs_delta": 0.3182750642299652,
+      "gt": 44.7,
+      "pred": 49.38332972110172,
+      "error": 4.683329721101714
+    },
+    {
+      "id": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020",
+      "domain": "financial",
+      "delta": 0.3173666298389435,
+      "abs_delta": 0.3173666298389435,
+      "gt": 72.0,
+      "pred": 80.91421722258099,
+      "error": 8.914217222580987
+    },
+    {
+      "id": "ENV-2018-GRETA_THUNBERG_CLIMATE_STRIKES",
+      "domain": "environmental",
+      "delta": 0.3031744658946991,
+      "abs_delta": 0.3031744658946991,
+      "gt": 71.0,
+      "pred": 63.45402151097701,
+      "error": -7.545978489022993
+    },
+    {
+      "id": "COM-2017-IPHONE_X",
+      "domain": "commercial",
+      "delta": -0.28599217534065247,
+      "abs_delta": 0.28599217534065247,
+      "gt": 65.0,
+      "pred": 71.28803924700944,
+      "error": 6.288039247009436
+    },
+    {
+      "id": "CORP-2015-DIESELGATE_PUBLIC_TRUST_IN_VW",
+      "domain": "corporate",
+      "delta": -0.2643681466579437,
+      "abs_delta": 0.2643681466579437,
+      "gt": 32.0,
+      "pred": 59.166614259128835,
+      "error": 27.166614259128835
+    },
+    {
+      "id": "POL-2017-REFERENDUM_INDIPENDENZA_CATALU",
+      "domain": "political",
+      "delta": -0.2626670300960541,
+      "abs_delta": 0.2626670300960541,
+      "gt": 48.0,
+      "pred": 50.66222068704805,
+      "error": 2.6622206870480483
+    },
+    {
+      "id": "PH-2021-VACCINE_HESITANCY_USA_2021_CO",
+      "domain": "public_health",
+      "delta": -0.25290533900260925,
+      "abs_delta": 0.25290533900260925,
+      "gt": 67.0,
+      "pred": 80.54832605033866,
+      "error": 13.548326050338659
+    },
+    {
+      "id": "CORP-2022-TWITTER_X_ACQUISITION_BY_ELON",
+      "domain": "corporate",
+      "delta": -0.22033639252185822,
+      "abs_delta": 0.22033639252185822,
+      "gt": 41.0,
+      "pred": 45.8605872165314,
+      "error": 4.8605872165314
+    },
+    {
+      "id": "POL-2016-REFERENDUM_COSTITUZIONALE_ITAL",
+      "domain": "political",
+      "delta": -0.1794448047876358,
+      "abs_delta": 0.1794448047876358,
+      "gt": 40.9,
+      "pred": 50.15152529381119,
+      "error": 9.251525293811191
+    },
+    {
+      "id": "POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU",
+      "domain": "political",
+      "delta": 0.17132864892482758,
+      "abs_delta": 0.17132864892482758,
+      "gt": 53.4,
+      "pred": 48.72360870183832,
+      "error": -4.6763912981616755
+    },
+    {
+      "id": "POL-2020-ELEZIONI_PRESIDENZIALI_USA_202",
+      "domain": "political",
+      "delta": 0.14293311536312103,
+      "abs_delta": 0.14293311536312103,
+      "gt": 51.3,
+      "pred": 48.82434450745853,
+      "error": -2.4756554925414704
+    },
+    {
+      "id": "CORP-2019-BOEING_MAX",
+      "domain": "corporate",
+      "delta": 0.13441459834575653,
+      "abs_delta": 0.13441459834575653,
+      "gt": 40.0,
+      "pred": 41.871550994902684,
+      "error": 1.8715509949026838
+    },
+    {
+      "id": "POL-2019-ELEZIONI_EUROPEE_2019_ITALIA",
+      "domain": "political",
+      "delta": -0.10751453787088394,
+      "abs_delta": 0.10751453787088394,
+      "gt": 40.0,
+      "pred": 33.80350053950556,
+      "error": -6.196499460494437
+    },
+    {
+      "id": "TECH-2020-TIKTOK_US_BAN_DEBATE_2020",
+      "domain": "technology",
+      "delta": 0.09515517950057983,
+      "abs_delta": 0.09515517950057983,
+      "gt": 60.0,
+      "pred": 45.11875127877816,
+      "error": -14.881248721221837
+    },
+    {
+      "id": "POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE",
+      "domain": "political",
+      "delta": 0.07161736488342285,
+      "abs_delta": 0.07161736488342285,
+      "gt": 50.9,
+      "pred": 36.660105974084445,
+      "error": -14.239894025915554
+    },
+    {
+      "id": "POL-2011-REFERENDUM_DIVORZIO_MALTA_2011",
+      "domain": "political",
+      "delta": 0.0688876137137413,
+      "abs_delta": 0.0688876137137413,
+      "gt": 53.2,
+      "pred": 51.884076296900005,
+      "error": -1.3159237030999975
+    },
+    {
+      "id": "TECH-2018-GDPR_ADOPTION_AND_ACCEPTANCE_E",
+      "domain": "technology",
+      "delta": 0.03600689023733139,
+      "abs_delta": 0.03600689023733139,
+      "gt": 67.0,
+      "pred": 66.13236571853263,
+      "error": -0.8676342814673745
+    },
+    {
+      "id": "POL-2018-REFERENDUM_ABORTO_IRLANDA_2018",
+      "domain": "political",
+      "delta": 0.032073233276605606,
+      "abs_delta": 0.032073233276605606,
+      "gt": 66.4,
+      "pred": 50.13254147750389,
+      "error": -16.267458522496113
+    },
+    {
+      "id": "SOC-2017-AUSTRALIA_SAME_SEX_MARRIAGE_PO",
+      "domain": "social",
+      "delta": -0.029049819335341454,
+      "abs_delta": 0.029049819335341454,
+      "gt": 61.6,
+      "pred": 67.41165142403506,
+      "error": 5.811651424035055
+    },
+    {
+      "id": "POL-2016-BREXIT",
+      "domain": "political",
+      "delta": -0.007526969537138939,
+      "abs_delta": 0.007526969537138939,
+      "gt": 51.89,
+      "pred": 54.65542495805683,
+      "error": 2.765424958056826
+    }
+  ],
+  "domain_deltas": {
+    "financial": {
+      "n": 6,
+      "mean_abs": 0.7443642268578211,
+      "mean_d": -0.23563078542550406
+    },
+    "corporate": {
+      "n": 6,
+      "mean_abs": 0.43218224744002026,
+      "mean_d": -0.20580736796061197
+    },
+    "political": {
+      "n": 11,
+      "mean_abs": 0.19805859384888952,
+      "mean_d": 0.03888979266312989
+    },
+    "public_health": {
+      "n": 4,
+      "mean_abs": 0.534091629087925,
+      "mean_d": -0.21558070927858353
+    },
+    "energy": {
+      "n": 1,
+      "mean_abs": 0.7085670828819275,
+      "mean_d": -0.7085670828819275
+    },
+    "labor": {
+      "n": 1,
+      "mean_abs": 0.43992212414741516,
+      "mean_d": -0.43992212414741516
+    },
+    "environmental": {
+      "n": 1,
+      "mean_abs": 0.3031744658946991,
+      "mean_d": 0.3031744658946991
+    },
+    "commercial": {
+      "n": 1,
+      "mean_abs": 0.28599217534065247,
+      "mean_d": -0.28599217534065247
+    },
+    "technology": {
+      "n": 2,
+      "mean_abs": 0.06558103486895561,
+      "mean_d": 0.06558103486895561
+    },
+    "social": {
+      "n": 1,
+      "mean_abs": 0.029049819335341454,
+      "mean_d": -0.029049819335341454
+    }
+  },
+  "domain_split": {
+    "commercial": {
+      "train": 1,
+      "test": 1
+    },
+    "corporate": {
+      "train": 6,
+      "test": 1
+    },
+    "energy": {
+      "train": 1,
+      "test": 0
+    },
+    "environmental": {
+      "train": 1,
+      "test": 0
+    },
+    "financial": {
+      "train": 6,
+      "test": 1
+    },
+    "labor": {
+      "train": 1,
+      "test": 0
+    },
+    "political": {
+      "train": 11,
+      "test": 3
+    },
+    "public_health": {
+      "train": 4,
+      "test": 1
+    },
+    "social": {
+      "train": 1,
+      "test": 0
+    },
+    "technology": {
+      "train": 2,
+      "test": 1
+    }
+  },
+  "test_nv_ids": [
+    "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC"
+  ],
+  "test_verified_ids": [
+    "COM-2019-TESLA_CYBERTRUCK_REVEAL_REACTI",
+    "CORP-2018-AMAZON_HQ2_NYC_BACKLASH_2018_2",
+    "POL-2015-GREEK_BAILOUT_REFERENDUM_GREF",
+    "POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA",
+    "POL-2017-TURKISH_CONSTITUTIONAL_REFEREN",
+    "PH-2021-COVID_VAX_IT",
+    "TECH-2017-NET_NEUTRALITY_REPEAL_US_2017"
+  ]
+}

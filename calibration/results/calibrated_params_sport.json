@@ -1,15 +1,17 @@
 {
   "domain": "sport",
   "calibrated_params": {
-    "anchor_weight": 0.1396,
-    "social_weight": 0.1537,
-    "event_weight": 0.1009,
-    "herd_weight": 0.0709,
-    "herd_threshold": 0.2194
+    "anchor_weight": 0.165,
+    "social_weight": 0.08,
+    "event_weight": 0.0728,
+    "herd_weight": 0.03,
+    "herd_threshold": 0.1783,
+    "direct_shift_weight": 0.4751,
+    "anchor_drift_rate": 0.1769
   },
   "calibration_metrics": {
-    "avg_composite_score": 8.092,
-    "avg_outcome_error": 7.63,
+    "avg_composite_score": 15.71,
+    "avg_outcome_error": 19.93,
     "n_scenarios": 5
   }
 }

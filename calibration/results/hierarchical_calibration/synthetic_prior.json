@@ -1,0 +1,30 @@
+{
+  "mu_global": [
+    -0.3202442228794098,
+    0.6390095949172974,
+    -0.21868924796581268,
+    -0.5698334574699402
+  ],
+  "sigma_global": [
+    0.10783754289150238,
+    0.11232715100049973,
+    0.12083937227725983,
+    0.11901106685400009
+  ],
+  "n_synthetic_scenarios": 50,
+  "n_domains": 11,
+  "domain_names": [
+    "commercial",
+    "corporate",
+    "corporate/political",
+    "environmental",
+    "financial",
+    "labor",
+    "marketing",
+    "political",
+    "public_health",
+    "social",
+    "technology"
+  ],
+  "elapsed_s": 1624.7156031131744
+}

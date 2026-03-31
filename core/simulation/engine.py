@@ -45,6 +45,11 @@ class SimulationEngine:
         elite_only: bool = False,
         verbose: bool = False,
         progress_callback=None,
+        # What-If branching
+        resume_checkpoint: dict = None,
+        resume_round: int = 0,
+        event_override: str = None,
+        agent_overrides: dict = None,
     ):
         self.llm = llm
         self.config = config
@@ -53,6 +58,12 @@ class SimulationEngine:
         self.elite_only = elite_only
         self.verbose = verbose
         self.progress_callback = progress_callback
+
+        # Branching state
+        self.resume_checkpoint = resume_checkpoint
+        self.resume_round = resume_round
+        self.event_override = event_override
+        self.agent_overrides = agent_overrides or {}
 
         os.makedirs(self.output_dir, exist_ok=True)
 
@@ -75,7 +86,10 @@ class SimulationEngine:
         self._print_header()
 
         # Step 1: Setup agents and platform
-        self._setup()
+        if self.resume_checkpoint:
+            self._restore_from_checkpoint()
+        else:
+            self._setup()
 
         # Step 2: Run simulation rounds
         await self._simulate()
@@ -93,10 +107,20 @@ class SimulationEngine:
         n_inst = len(self.config.institutional_agents)
         n_clusters = len(self.config.citizen_clusters)
         n_rounds = self.config.num_rounds
+
+        # Log calibration parameters source
+        from .param_loader import CalibratedParamLoader
+        loader = CalibratedParamLoader()
+        domain_id = getattr(self.domain, "domain_id", "") if self.domain else ""
+        cal_info = loader.get_calibration_info()
+        params = loader.get_params(domain=domain_id)
+        source_label = f"{cal_info['model_version']}/{params.get('_source', 'unknown')}"
+
         print(f"""
 ╔══════════════════════════════════════════════════════════╗
 ║  DigitalTwinSim — {self.domain.domain_label:<38} ║
 ║  {n_elite} elite | {n_inst} institutional | {n_clusters} clusters | {n_rounds} rounds{' ' * max(0, 10 - len(str(n_rounds)))}║
+║  Params: {source_label:<47} ║
 ╚══════════════════════════════════════════════════════════╝
 
 [{self.config.name}] Initializing...""")
@@ -213,8 +237,83 @@ class SimulationEngine:
                         elite.id, other.id, default_channel, 0
                     )
 
+    def _restore_from_checkpoint(self):
+        """Restore agents from a checkpoint dict (for What-If branching)."""
+        from .checkpoint import restore_agents
+
+        cp = self.resume_checkpoint
+        elite_agents, inst_agents, clusters = restore_agents(cp)
+
+        # Apply agent overrides (position changes, etc.)
+        if self.agent_overrides:
+            agent_map = {a.id: a for a in elite_agents}
+            agent_map.update({a.id: a for a in inst_agents})
+            for agent_id, overrides in self.agent_overrides.items():
+                agent = agent_map.get(agent_id)
+                if agent:
+                    for key, value in overrides.items():
+                        if hasattr(agent, key):
+                            setattr(agent, key, value)
+                    logger.info(f"Applied overrides to {agent_id}: {overrides}")
+
+        self.elite_agents = elite_agents
+        self.institutional_agents = inst_agents
+        self.citizen_swarm = CitizenSwarm(clusters)
+
+        # Initialize platform (fresh DB for the branch)
+        safe_name = "".join(
+            c if c.isalnum() or c in "-_" else "_" for c in self.config.name
+        )
+        db_path = os.path.join(self.output_dir, f"social_{safe_name}.db")
+        if os.path.exists(db_path):
+            os.remove(db_path)
+        self.platform = PlatformEngine(db_path)
+        self._init_follow_graph()
+
+        # Event injector
+        historical_context = ""
+        if self.seed_data:
+            historical_context = self.seed_data.format_historical_context()
+
+        self.event_injector = EventInjector(
+            llm=self.llm,
+            scenario_context=self.config.scenario_context,
+            initial_event=self.config.initial_event,
+            event_prompt_template=self.domain.get_event_generation_prompt_template(),
+            timeline_labels=self.config.timeline_labels,
+            fallback_strings=self.domain.get_fallback_strings(),
+            language=self.config.language,
+            historical_context=historical_context,
+            few_shot_example=self.domain.get_event_few_shot(),
+        )
+
+        # Reconstruct event history from parent checkpoint's coalition_history
+        # to give the event injector context of prior rounds
+        for prev_round in range(1, self.resume_round + 1):
+            self.event_injector.event_history.append({
+                "round": prev_round,
+                "timeline_label": self.config.timeline_labels[prev_round - 1]
+                    if prev_round <= len(self.config.timeline_labels)
+                    else f"Round {prev_round}",
+                "event": f"[inherited from parent scenario round {prev_round}]",
+                "shock_magnitude": 0.3,
+                "shock_direction": 0.0,
+            })
+
+        n_elite = len(self.elite_agents)
+        n_inst = len(self.institutional_agents)
+        n_clusters = len(self.citizen_swarm.clusters)
+        print(f"  ├─ Restored {n_elite} Elite agents from checkpoint ✓")
+        print(f"  ├─ Restored {n_inst} Institutional agents ✓")
+        print(f"  ├─ Restored {n_clusters} Citizen clusters ✓")
+        if self.agent_overrides:
+            print(f"  ├─ Applied {len(self.agent_overrides)} agent overrides ✓")
+        print(f"  └─ Branching from round {self.resume_round} ✓\n")
+
     async def _simulate(self):
         """Run the simulation for all rounds."""
+        start_round = self.resume_round + 1 if self.resume_round else 1
+
         round_manager = RoundManager(
             llm=self.llm,
             platform=self.platform,
@@ -233,7 +332,11 @@ class SimulationEngine:
             metrics_to_track=self.config.metrics_to_track,
         )
 
-        for round_num in range(1, self.config.num_rounds + 1):
+        # Inject event override for the first branched round
+        if self.event_override and start_round > 1:
+            round_manager._branch_event_override = self.event_override
+
+        for round_num in range(start_round, self.config.num_rounds + 1):
             result = await round_manager.execute_round(round_num)
             self.round_results.append(result)
 
@@ -335,12 +438,14 @@ class SimulationEngine:
             cluster_summary=cluster_summary,
         )
 
-        # Inject language instruction
+        # Inject language instruction into BOTH system prompt and user prompt
         lang = getattr(self.config, "language", "en")
         if lang and lang != "en":
             lang_map = {"it": "Italian", "es": "Spanish", "fr": "French", "de": "German", "pt": "Portuguese"}
             lang_name = lang_map.get(lang, lang)
-            report_system += f"\n\nIMPORTANT: Write the ENTIRE report in {lang_name}. All headings, analysis, and narrative must be in {lang_name}."
+            lang_instruction = f"\n\nCRITICAL LANGUAGE REQUIREMENT: Write the ENTIRE report in {lang_name}. Every heading, paragraph, analysis, conclusion, and narrative MUST be in {lang_name}. Do NOT use English for any part of the report content."
+            report_system += lang_instruction
+            prompt = lang_instruction + "\n\n" + prompt
 
         try:
             report_text = await self.llm.generate_text(

@@ -14,6 +14,7 @@ from ..platform.metrics import EngagementMetrics
 from .event_injector import EventInjector
 from .interaction_resolver import InteractionResolver
 from .opinion_dynamics import OpinionDynamics
+from .param_loader import CalibratedParamLoader
 from .checkpoint import save_checkpoint
 
 logger = logging.getLogger(__name__)
@@ -57,10 +58,28 @@ class RoundManager:
         self.metrics_to_track = metrics_to_track or []
         self.interaction_resolver = InteractionResolver(platform, domain_plugin)
 
-        # Look for domain-specific calibrated params
-        calibrated_path = os.path.join(checkpoint_dir, "calibrated_params.json")
-        self.opinion_dynamics = OpinionDynamics(calibrated_params_path=calibrated_path)
+        # Load calibrated params from v2 posterior (with v1 fallback)
+        self.param_loader = CalibratedParamLoader()
+        domain_id = getattr(domain_plugin, "domain_id", "") if domain_plugin else ""
+        params = self.param_loader.get_params(domain=domain_id, include_uncertainty=True)
+        # Log param source
+        source = params.get("_source", "unknown")
+        model_ver = params.get("_model_version", "?")
+        logger.info(f"OpinionDynamics params: source={source}, model={model_ver}")
+        if params.get("_ci95"):
+            for k, (lo, hi) in params["_ci95"].items():
+                logger.info(f"  {k}: {params.get(k, '?'):.4f} [{lo:.3f}, {hi:.3f}]")
+        # Print comparison for debugging
+        self.param_loader.print_comparison(domain=domain_id)
+        # Create OpinionDynamics with v1-compatible params (strip metadata keys)
+        od_params = {k: v for k, v in params.items() if not k.startswith("_")}
+        self.opinion_dynamics = OpinionDynamics(**od_params)
+        self._params_info = params  # Keep for CI propagation
         self.metrics = EngagementMetrics(platform)
+
+        # Regime switching: activate for financial/corporate domains
+        self._use_regime_switching = domain_id in ("financial", "corporate")
+        self._regime_prob = 0.0  # Track current regime probability
         self.coalition_history = []
         self.custom_metrics_history = []
 
@@ -120,18 +139,37 @@ class RoundManager:
 
         # === Phase 1: Event Generation ===
         print(f"  ├─ Phase 1: Event generation   ", end="", flush=True)
-        event = await self.event_injector.generate_event(
-            round_num=round_num,
-            elite_agents=self.elite_agents,
-            polarization=polarization,
-            dominant_sentiment=avg_sentiment,
-            top_narratives=top_narratives or "No emerging narrative.",
-            coalition_info=coalition_info,
-            viral_posts=viral_posts_text,
-        )
-        timeline_label = event["timeline_label"]
+
+        # What-If: use event override for the first branched round
+        branch_override = getattr(self, "_branch_event_override", None)
+        if branch_override:
+            timeline_label = self.event_injector._get_timeline_label(round_num)
+            event = {
+                "round": round_num,
+                "timeline_label": timeline_label,
+                "event": branch_override,
+                "shock_magnitude": 0.5,
+                "shock_direction": 0.0,
+                "key_actors": [],
+                "institutional_impact": "",
+                "public_perception": "",
+            }
+            self.event_injector.event_history.append(event)
+            self._branch_event_override = None  # only override once
+            print(f"✓ ({timeline_label}) [WHAT-IF OVERRIDE]")
+        else:
+            event = await self.event_injector.generate_event(
+                round_num=round_num,
+                elite_agents=self.elite_agents,
+                polarization=polarization,
+                dominant_sentiment=avg_sentiment,
+                top_narratives=top_narratives or "No emerging narrative.",
+                coalition_info=coalition_info,
+                viral_posts=viral_posts_text,
+            )
+            timeline_label = event["timeline_label"]
+            print(f"✓ ({timeline_label})")
         round_event = event["event"]
-        print(f"✓ ({timeline_label})")
         await self._notify("round_phase", {"round": round_num, "phase": "event_generation", "message": f"Evento: {timeline_label}", "phase_index": 1, "total_phases": 7})
         if self.verbose:
             print(f"     Event: {round_event[:120]}...")
@@ -245,6 +283,12 @@ class RoundManager:
             self.citizen_swarm, self.coalition_history,
             self.llm.stats.total_cost, self.elite_only,
             domain=getattr(self.domain, "domain_id", ""),
+            confidence_interval=getattr(self, "_last_ci", None),
+            regime_info=getattr(self, "_last_regime", None),
+            params_used={
+                k: v for k, v in self._params_info.items()
+                if not k.startswith("_") or k in ("_source", "_model_version")
+            } if hasattr(self, "_params_info") else None,
         )
         print(f"  ├─ Phase 7: Checkpoint [saved: {checkpoint}]")
 
@@ -278,18 +322,6 @@ class RoundManager:
             print(f"  ├─ Metrics: {metrics_str}")
         print(f"  └─ Running cost: ${self.llm.stats.total_cost:.2f}")
 
-        result = {
-            "round": round_num,
-            "timeline_label": timeline_label,
-            "event": round_event,
-            "posts": round_stats["posts"],
-            "reactions": round_stats["reactions"],
-            "polarization": polarization,
-            "coalitions": coalitions,
-            "domain_metrics": domain_metrics,
-            "custom_metrics": custom_metrics,
-            "cost": self.llm.stats.total_cost,
-        }
         # Build enriched round data for live dashboard
         top_posts_raw = self.platform.get_top_posts(round_num, top_n=10)
         top_posts_data = []
@@ -350,6 +382,60 @@ class RoundManager:
         elif isinstance(coalitions, dict):
             coalitions_data = coalitions.get("coalitions", [])
 
+        # Build confidence interval from posterior uncertainty
+        ci95 = self._params_info.get("_ci95", {}) if hasattr(self, "_params_info") else {}
+        confidence_interval = None
+        if ci95:
+            # Approximate pro_pct CI from parameter uncertainty
+            # Use sigma_delta (model discrepancy) as primary uncertainty source
+            disc = self.param_loader.get_discrepancy(
+                domain=getattr(self.domain, "domain_id", None)
+            )
+            sigma_pp = disc["sigma_delta"] * 25  # logit → pp rough conversion
+            avg_pos = sum(p for p in all_positions) / max(len(all_positions), 1) if all_positions else 0
+            pro_est = (1 + avg_pos) / 2 * 100  # rough position → pro% mapping
+            confidence_interval = {
+                "pro_pct_mean": round(pro_est, 1),
+                "pro_pct_ci95_lo": round(max(0, pro_est - 1.96 * sigma_pp), 1),
+                "pro_pct_ci95_hi": round(min(100, pro_est + 1.96 * sigma_pp), 1),
+                "sigma_pp": round(sigma_pp, 1),
+            }
+
+        # Regime info (defaults to normal)
+        regime_info = {
+            "regime_prob": round(self._regime_prob, 3),
+            "regime_label": "crisis" if self._regime_prob > 0.5 else "normal",
+        }
+
+        # Estimate regime probability from shock magnitude
+        shock_mag = event.get("shock_magnitude", 0)
+        if self._use_regime_switching and shock_mag > 0.4:
+            # Simple heuristic: large shocks push toward crisis
+            self._regime_prob = min(1.0, self._regime_prob * 0.9 + 0.6 * (shock_mag - 0.3))
+        else:
+            self._regime_prob = max(0.0, self._regime_prob * 0.7)
+        regime_info["regime_prob"] = round(self._regime_prob, 3)
+        regime_info["regime_label"] = "crisis" if self._regime_prob > 0.5 else "normal"
+
+        # Store for checkpoint (will be saved in next round's checkpoint)
+        self._last_ci = confidence_interval
+        self._last_regime = regime_info
+
+        result = {
+            "round": round_num,
+            "timeline_label": timeline_label,
+            "event": round_event,
+            "posts": round_stats["posts"],
+            "reactions": round_stats["reactions"],
+            "polarization": polarization,
+            "coalitions": coalitions,
+            "domain_metrics": domain_metrics,
+            "custom_metrics": custom_metrics,
+            "cost": self.llm.stats.total_cost,
+            "confidence_interval": confidence_interval,
+            "regime_info": regime_info,
+        }
+
         await self._notify("round_complete", {
             "round": round_num,
             "cost": self.llm.stats.total_cost,
@@ -366,6 +452,9 @@ class RoundManager:
             "custom_metrics": custom_metrics,
             "shock_magnitude": event.get("shock_magnitude", 0),
             "shock_direction": event.get("shock_direction", 0),
+            "confidence_interval": confidence_interval,
+            "regime_info": regime_info,
+            "calibration_source": self._params_info.get("_model_version", "v1") + "_" + self._params_info.get("_source", "unknown") if hasattr(self, "_params_info") else "v1_default",
         })
         return result
 
@@ -462,12 +551,20 @@ Respond with JSON only:
         ]
         results = await asyncio.gather(*tasks, return_exceptions=True)
         processed = []
+        errors = 0
         for i, r in enumerate(results):
             if isinstance(r, Exception):
+                errors += 1
+                print(f"    ⚠ Elite agent {self.elite_agents[i].name} failed: {r}")
                 logger.error(f"Elite agent {self.elite_agents[i].id} error: {r}")
                 processed.append(None)
             else:
+                posts_count = len(r.get("posts", [])) if r else 0
+                if r and posts_count == 0:
+                    print(f"    ⚠ Elite agent {self.elite_agents[i].name} returned 0 posts")
                 processed.append(r)
+        if errors:
+            print(f"    ⚠ {errors}/{len(self.elite_agents)} elite agents failed!")
         return processed
 
     async def _run_institutional_agents(self, round_num, timeline_label,

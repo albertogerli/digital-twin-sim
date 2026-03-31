@@ -1,15 +1,17 @@
 {
   "domain": "commercial",
   "calibrated_params": {
-    "anchor_weight": 0.05,
-    "social_weight": 0.2,
-    "event_weight": 0.12,
-    "herd_weight": 0.07,
-    "herd_threshold": 0.2334
+    "anchor_weight": 0.0848,
+    "social_weight": 0.1016,
+    "event_weight": 0.0871,
+    "herd_weight": 0.0337,
+    "herd_threshold": 0.204,
+    "direct_shift_weight": 0.5974,
+    "anchor_drift_rate": 0.3369
   },
   "calibration_metrics": {
-    "avg_composite_score": 25.305,
-    "avg_outcome_error": 17.88,
-    "n_scenarios": 2
+    "avg_composite_score": 14.9015,
+    "avg_outcome_error": 14.25,
+    "n_scenarios": 142
   }
 }

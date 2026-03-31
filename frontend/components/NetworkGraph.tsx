@@ -156,7 +156,7 @@ export default function NetworkGraph({ snapshots }: Props) {
       .force("charge", d3.forceManyBody().strength(-200))
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius((d: any) =>
-        d.type === "cluster" ? 8 + (d.clusterSize || 20) / 10 : 10
+        d.type === "cluster" ? Math.min(30, 8 + Math.log2(Math.max(1, d.clusterSize || 20)) * 2.5) : 12
       ))
       .force("x", d3.forceX(width / 2).strength(0.04))
       .force("y", d3.forceY(height / 2).strength(0.04));
@@ -210,7 +210,8 @@ export default function NetworkGraph({ snapshots }: Props) {
     nodes.each(function (d: any) {
       const el = d3.select(this);
       const isCluster = d.type === "cluster";
-      const radius = isCluster ? 6 + (d.clusterSize || 20) / 8 : 5 + d.power_level * 8;
+      const clusterR = Math.min(25, 6 + Math.log2(Math.max(1, d.clusterSize || 20)) * 2.5);
+      const radius = isCluster ? clusterR : Math.min(20, 5 + d.power_level * 8);
       const hasDelta = Math.abs(d.delta) > 0.05;
 
       if (isCluster) {

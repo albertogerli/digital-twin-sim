@@ -1,15 +1,17 @@
 {
   "domain": "labor",
   "calibrated_params": {
-    "anchor_weight": 0.05,
-    "social_weight": 0.2,
-    "event_weight": 0.12,
-    "herd_weight": 0.0701,
-    "herd_threshold": 0.15
+    "anchor_weight": 0.1219,
+    "social_weight": 0.08,
+    "event_weight": 0.0635,
+    "herd_weight": 0.03,
+    "herd_threshold": 0.2171,
+    "direct_shift_weight": 0.5005,
+    "anchor_drift_rate": 0.2749
   },
   "calibration_metrics": {
-    "avg_composite_score": 10.99,
-    "avg_outcome_error": 5.17,
-    "n_scenarios": 2
+    "avg_composite_score": 17.5355,
+    "avg_outcome_error": 22.36,
+    "n_scenarios": 42
   }
 }

@@ -241,9 +241,13 @@ async def generate_agents_multistep(
             archetype_guidance=guidance_text,
         ),
         temperature=0.5,
-        max_output_tokens=2500,
+        max_output_tokens=4000,
         component="agent_gen_scaffold",
     )
+
+    # Guard: unwrap list if LLM returned array
+    if isinstance(scaffold, list):
+        scaffold = scaffold[0] if scaffold and isinstance(scaffold[0], dict) else {}
 
     logger.info(f"Scaffold: domain={scaffold.get('domain')}, name={scaffold.get('scenario_name')}")
 
@@ -290,6 +294,8 @@ async def generate_agents_multistep(
         component="agent_gen_elite",
     )
 
+    if isinstance(elite_result, list):
+        elite_result = elite_result[0] if elite_result and isinstance(elite_result[0], dict) else {}
     elite_agents = elite_result.get("elite_agents", [])
     logger.info(f"Elite agents generated: {len(elite_agents)}")
 
@@ -323,6 +329,8 @@ async def generate_agents_multistep(
         component="agent_gen_institutional",
     )
 
+    if isinstance(inst_result, list):
+        inst_result = inst_result[0] if inst_result and isinstance(inst_result[0], dict) else {}
     inst_agents = inst_result.get("institutional_agents", [])
     logger.info(f"Institutional agents generated: {len(inst_agents)}")
 
@@ -354,6 +362,8 @@ async def generate_agents_multistep(
         component="agent_gen_clusters",
     )
 
+    if isinstance(cluster_result, list):
+        cluster_result = cluster_result[0] if cluster_result and isinstance(cluster_result[0], dict) else {}
     clusters = cluster_result.get("citizen_clusters", [])
     logger.info(f"Citizen clusters generated: {len(clusters)}")
 

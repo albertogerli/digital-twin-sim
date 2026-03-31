@@ -1,15 +1,17 @@
 {
   "domain": "social",
   "calibrated_params": {
-    "anchor_weight": 0.15,
-    "social_weight": 0.05,
-    "event_weight": 0.12,
-    "herd_weight": 0.08,
-    "herd_threshold": 0.3
+    "anchor_weight": 0.1109,
+    "social_weight": 0.103,
+    "event_weight": 0.0868,
+    "herd_weight": 0.0348,
+    "herd_threshold": 0.1971,
+    "direct_shift_weight": 0.536,
+    "anchor_drift_rate": 0.2193
   },
   "calibration_metrics": {
-    "avg_composite_score": 15.59,
-    "avg_outcome_error": 20.61,
-    "n_scenarios": 1
+    "avg_composite_score": 9.6529,
+    "avg_outcome_error": 12.14,
+    "n_scenarios": 31
   }
 }

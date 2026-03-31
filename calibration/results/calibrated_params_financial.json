@@ -1,15 +1,17 @@
 {
   "domain": "financial",
   "calibrated_params": {
-    "anchor_weight": 0.2,
-    "social_weight": 0.2202,
-    "event_weight": 0.12,
-    "herd_weight": 0.0442,
-    "herd_threshold": 0.2105
+    "anchor_weight": 0.0937,
+    "social_weight": 0.1067,
+    "event_weight": 0.0827,
+    "herd_weight": 0.0317,
+    "herd_threshold": 0.2127,
+    "direct_shift_weight": 0.5525,
+    "anchor_drift_rate": 0.3229
   },
   "calibration_metrics": {
-    "avg_composite_score": 6.62,
-    "avg_outcome_error": 2.58,
-    "n_scenarios": 2
+    "avg_composite_score": 12.0555,
+    "avg_outcome_error": 11.8,
+    "n_scenarios": 96
   }
 }

@@ -92,17 +92,43 @@ class BaseLLMClient(ABC):
         temperature: float = 0.7,
         max_output_tokens: int = 4000,
         component: str = "unknown",
+        unwrap_list: bool = True,
+        parse_retries: int = 2,
     ) -> dict | list:
-        """Generate and parse JSON response."""
-        text = await self.generate(
-            prompt=prompt,
-            system_prompt=system_prompt,
-            temperature=temperature,
-            max_output_tokens=max_output_tokens,
-            component=component,
-            response_json=True,
-        )
-        return parse_json_response(text)
+        """Generate and parse JSON response.
+
+        If unwrap_list=True (default), a single-element list is unwrapped to
+        its contained dict.  This prevents 'list' object has no attribute 'get'
+        errors when the LLM wraps its JSON object in an array.
+
+        Retries on JSON parse failure (e.g. truncated output) up to
+        parse_retries times with increased max_output_tokens.
+        """
+        tokens = max_output_tokens
+        last_error = None
+        for attempt in range(1 + parse_retries):
+            text = await self.generate(
+                prompt=prompt,
+                system_prompt=system_prompt,
+                temperature=temperature,
+                max_output_tokens=tokens,
+                component=component,
+                response_json=True,
+            )
+            try:
+                parsed = parse_json_response(text)
+                if unwrap_list and isinstance(parsed, list) and len(parsed) == 1 and isinstance(parsed[0], dict):
+                    logger.debug(f"[{component}] Unwrapped single-element list to dict")
+                    return parsed[0]
+                return parsed
+            except Exception as e:
+                last_error = e
+                tokens = int(tokens * 1.5)  # increase token budget for retry
+                logger.warning(
+                    f"[{component}] JSON parse failed (attempt {attempt+1}), "
+                    f"retrying with max_output_tokens={tokens}: {e}"
+                )
+        raise last_error
 
     async def generate_text(
         self,

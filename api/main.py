@@ -13,7 +13,7 @@ from sse_starlette.sse import EventSourceResponse
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
-from api.models import SimulationRequest
+from api.models import SimulationRequest, BranchRequest, ObservationInput
 from api.simulation_manager import SimulationManager
 from api.document_processor import save_uploaded_file, process_uploads
 
@@ -131,6 +131,19 @@ async def stream_simulation(sim_id: str):
     return EventSourceResponse(event_generator())
 
 
+@app.post("/api/scenarios/{scenario_id}/branch")
+async def branch_scenario(scenario_id: str, request: BranchRequest):
+    """Create a What-If branch from a completed scenario."""
+    # Validate parent exists
+    export_dir = os.path.join(EXPORTS_DIR, f"scenario_{scenario_id}")
+    if not os.path.exists(export_dir):
+        raise HTTPException(404, f"Scenario not found: {scenario_id}")
+    # Force parent_scenario_id to match URL
+    request.parent_scenario_id = scenario_id
+    sim_id = await manager.launch_branch(request)
+    return {"id": sim_id, "status": "queued", "branch_from": scenario_id}
+
+
 @app.delete("/api/simulations/{sim_id}")
 async def cancel_simulation(sim_id: str):
     ok = await manager.cancel(sim_id)
@@ -167,6 +180,66 @@ async def get_scenario_file(scenario_id: str, filename: str):
             return json.load(f)
     else:
         return FileResponse(path, media_type="text/markdown")
+
+
+# ── Online observations (EnKF) ───────────────────────────────
+
+@app.post("/api/simulations/{sim_id}/observe")
+async def submit_observation(sim_id: str, observation: ObservationInput):
+    """Submit a real-world observation for EnKF data assimilation.
+
+    Only works for simulations launched with online_mode=True.
+    Returns updated prediction with confidence interval and ensemble health.
+    """
+    state = manager.simulations.get(sim_id)
+    if not state:
+        raise HTTPException(404, "Simulation not found")
+    if state.status not in ("running",):
+        raise HTTPException(400, f"Cannot observe simulation in status '{state.status}'")
+
+    # Check if simulation has EnKF enabled
+    enkf = getattr(state, "_enkf_filter", None)
+    if enkf is None:
+        raise HTTPException(
+            400,
+            "This simulation was not launched with online_mode=True. "
+            "EnKF data assimilation is not available.",
+        )
+
+    try:
+        # Run assimilation step
+        obs_value = observation.pro_pct / 100.0  # Convert pct to [0,1]
+        obs_noise = 1.0 / max(observation.sample_size or 1000, 100) * 10  # Rough noise from sample size
+
+        enkf.assimilate(obs_value, obs_noise)
+
+        # Get updated ensemble stats
+        ensemble_mean = float(enkf.ensemble_mean()) * 100
+        ensemble_std = float(enkf.ensemble_std()) * 100
+        effective_size = getattr(enkf, "effective_sample_size", lambda: len(enkf.ensemble))()
+
+        # Compute CI reduction vs prior
+        prior_ci_width = getattr(state, "_prior_ci_width", ensemble_std * 3.92)
+        post_ci_width = ensemble_std * 3.92
+        ci_reduction = max(0, (1 - post_ci_width / max(prior_ci_width, 0.01)) * 100)
+        state._prior_ci_width = post_ci_width
+
+        return {
+            "updated_prediction": {
+                "pro_pct_mean": round(ensemble_mean, 1),
+                "pro_pct_ci95": [
+                    round(max(0, ensemble_mean - 1.96 * ensemble_std), 1),
+                    round(min(100, ensemble_mean + 1.96 * ensemble_std), 1),
+                ],
+                "ci_reduction_pct": round(ci_reduction, 1),
+            },
+            "ensemble_health": {
+                "spread": round(ensemble_std / 100, 4),
+                "effective_size": int(effective_size),
+            },
+        }
+    except Exception as e:
+        raise HTTPException(500, f"Assimilation failed: {str(e)}")
 
 
 # ── Health ───────────────────────────────────────────────────

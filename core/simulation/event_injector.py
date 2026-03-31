@@ -110,6 +110,10 @@ class EventInjector:
                 component="event_generation",
             )
 
+            # Guard: if LLM returned a list, take the first dict
+            if isinstance(result, list):
+                result = result[0] if result and isinstance(result[0], dict) else {}
+
             event_text = result.get("event", self.fallbacks.get("default_event", ""))
             shock_mag = clamp_shock_magnitude(float(result.get("shock_magnitude", 0.3)))
 
@@ -136,6 +140,8 @@ class EventInjector:
                     max_output_tokens=1000,
                     component="event_generation_retry",
                 )
+                if isinstance(retry, list):
+                    retry = retry[0] if retry and isinstance(retry[0], dict) else {}
                 event["event"] = retry.get("event", event_text)
                 event["shock_magnitude"] = clamp_shock_magnitude(float(retry.get("shock_magnitude", shock_mag)))
                 event["shock_direction"] = max(-1.0, min(1.0, float(retry.get("shock_direction", event["shock_direction"]))))

@@ -9,6 +9,7 @@ from google import genai
 from google.genai import types
 
 from .base_client import BaseLLMClient
+from .json_parser import LLMError
 
 logger = logging.getLogger(__name__)
 
@@ -45,6 +46,29 @@ class GeminiClient(BaseLLMClient):
         config_kwargs = {
             "temperature": temperature,
             "max_output_tokens": max_output_tokens,
+            # Relax safety filters for simulation content (political, corporate scenarios)
+            "safety_settings": [
+                types.SafetySetting(
+                    category="HARM_CATEGORY_HARASSMENT",
+                    threshold="BLOCK_ONLY_HIGH",
+                ),
+                types.SafetySetting(
+                    category="HARM_CATEGORY_HATE_SPEECH",
+                    threshold="BLOCK_ONLY_HIGH",
+                ),
+                types.SafetySetting(
+                    category="HARM_CATEGORY_SEXUALLY_EXPLICIT",
+                    threshold="BLOCK_ONLY_HIGH",
+                ),
+                types.SafetySetting(
+                    category="HARM_CATEGORY_DANGEROUS_CONTENT",
+                    threshold="BLOCK_ONLY_HIGH",
+                ),
+                types.SafetySetting(
+                    category="HARM_CATEGORY_CIVIC_INTEGRITY",
+                    threshold="BLOCK_ONLY_HIGH",
+                ),
+            ],
         }
         if system_prompt:
             config_kwargs["system_instruction"] = system_prompt
@@ -63,9 +87,23 @@ class GeminiClient(BaseLLMClient):
         # Extract text
         text = ""
         if response.candidates:
-            for part in response.candidates[0].content.parts:
-                if part.text:
-                    text += part.text
+            candidate = response.candidates[0]
+            if hasattr(candidate, 'content') and candidate.content and candidate.content.parts:
+                for part in candidate.content.parts:
+                    if part.text:
+                        text += part.text
+            # Check for blocked content
+            finish_reason = getattr(candidate, 'finish_reason', None)
+            if not text and finish_reason:
+                logger.warning(f"[{component}] Empty response, finish_reason={finish_reason}")
+        else:
+            # No candidates at all — likely safety filter
+            block_reason = getattr(response, 'prompt_feedback', None)
+            logger.warning(f"[{component}] No candidates returned. prompt_feedback={block_reason}")
+
+        if not text:
+            logger.warning(f"[{component}] Empty text from API (prompt length={len(prompt)})")
+            raise LLMError(f"Empty response from Gemini for {component}")
 
         # Track usage
         input_tokens = getattr(

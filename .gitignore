@@ -31,3 +31,4 @@ frontend/out/
 frontend/.vercel/
 frontend/*.tsbuildinfo
 frontend/next-env.d.ts
+.venv_cal/

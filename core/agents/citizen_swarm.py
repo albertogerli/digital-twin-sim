@@ -90,6 +90,10 @@ class CitizenSwarm:
                 component=f"citizen_{cluster.id}",
             )
 
+            # Guard: unwrap list if LLM returned array
+            if isinstance(result, list):
+                result = result[0] if result and isinstance(result[0], dict) else {}
+
             # Update cluster state with delta cap
             from ..simulation.validators import clamp_position_delta, CLUSTER_DELTA_CAP, normalize_sentiment_distribution
             shift = float(result.get("shift_from_last_month", 0))
@@ -150,6 +154,7 @@ class CitizenSwarm:
 
         except (JSONParseError, Exception) as e:
             logger.error(f"Cluster {cluster.id} failed in round {round_number}: {e}")
+            print(f"    ⚠ Cluster {cluster.name}: {type(e).__name__}: {str(e)[:100]}")
             return None
 
     def get_all_positions(self) -> dict[str, float]:

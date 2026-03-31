@@ -1,27 +1,83 @@
 {
-  "scenario_name": "Volkswagen Dieselgate (2015-2016)",
-  "description": "EPA revealed VW installed defeat devices in 11M diesel vehicles. CEO resigned, stock crashed 35%. Tests dynamics of deliberate corporate fraud exposure — sharpest initial drop because deception was intentional.",
-  "domain": "corporate",
-  "final_outcome_pro_pct": 22,
-  "final_outcome_against_pct": 48,
-  "final_turnout_pct": 0,
+  "scenario_name": "volkswagen_dieselgate_2015",
+  "domain": "commercial",
+  "description": "Volkswagen admitted to using defeat devices in diesel engines to cheat emissions tests, leading to a massive global recall and loss of trust. The brand had to pivot to an aggressive electric vehicle (EV) strategy to survive.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 90.0,
   "polling_trajectory": [
-    {"round_equivalent": 1, "pro_pct": 62, "against_pct": 12, "undecided_pct": 26},
-    {"round_equivalent": 2, "pro_pct": 25, "against_pct": 55, "undecided_pct": 20},
-    {"round_equivalent": 3, "pro_pct": 18, "against_pct": 62, "undecided_pct": 20},
-    {"round_equivalent": 4, "pro_pct": 14, "against_pct": 68, "undecided_pct": 18},
-    {"round_equivalent": 5, "pro_pct": 12, "against_pct": 65, "undecided_pct": 23},
-    {"round_equivalent": 6, "pro_pct": 15, "against_pct": 60, "undecided_pct": 25},
-    {"round_equivalent": 7, "pro_pct": 17, "against_pct": 55, "undecided_pct": 28},
-    {"round_equivalent": 8, "pro_pct": 20, "against_pct": 50, "undecided_pct": 30},
-    {"round_equivalent": 9, "pro_pct": 22, "against_pct": 48, "undecided_pct": 30}
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 70,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 15,
+      "against_pct": 80,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 12,
+      "against_pct": 85,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 14,
+      "against_pct": 84,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 16,
+      "against_pct": 83,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 18,
+      "against_pct": 81,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
   ],
   "key_events": [
-    {"round_equivalent": 2, "description": "EPA Notice of Violation reveals defeat devices in ~482,000 US diesel vehicles. Stock drops 20% in single day."},
-    {"round_equivalent": 3, "description": "CEO Winterkorn resigns (Sep 23). Admits 'we have totally screwed up'. Stock lost ~35% in first week."},
-    {"round_equivalent": 4, "description": "Scandal expands to 11 million vehicles globally across multiple brands."},
-    {"round_equivalent": 6, "description": "DOJ files civil suit seeking up to $48B under Clean Air Act."},
-    {"round_equivalent": 9, "description": "$14.7B US settlement announced — largest auto-industry settlement in history."}
+    {
+      "round_equivalent": 2,
+      "description": "EPA issues notice of violation regarding emissions software."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "VW CEO Martin Winterkorn resigns."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "VW announces massive buyback and compensation program for owners."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Company shifts corporate strategy toward electrification (ID series)."
+    }
   ],
-  "calibration_notes": "Tests intentional corporate fraud exposure dynamics. Sharpest initial drop of corporate crises because 'defeat device' narrative was simple, visceral, and unambiguous. CEO resignation and scope expansion compound the fall. Partial recovery enabled by concrete remediation (large settlement, EV pivot). European vs American sentiment diverged (stronger brand loyalty in Europe). Total costs exceeded EUR 30B."
+  "calibration_notes": "Models the 'trust collapse' curve after systemic corporate deception."
 }

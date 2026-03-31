@@ -270,7 +270,7 @@ async def generate_all_scenarios(
     if provider == "gemini":
         from core.llm.gemini_client import GeminiClient
         api_key = os.environ.get("GOOGLE_API_KEY", "")
-        llm = GeminiClient(api_key=api_key, model=model or "gemini-2.5-flash-preview-05-20")
+        llm = GeminiClient(api_key=api_key, model=model or "gemini-3.1-flash-lite-preview")
     else:
         from core.llm.openai_client import OpenAIClient
         api_key = os.environ.get("OPENAI_API_KEY", "")

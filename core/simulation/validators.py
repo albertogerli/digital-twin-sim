@@ -94,6 +94,8 @@ async def check_event_plausibility(
             max_output_tokens=200,
             component="plausibility_check",
         )
+        if isinstance(result, list):
+            result = result[0] if result and isinstance(result[0], dict) else {}
         score = int(result.get("score", 5))
         reason = result.get("reason", "")
         is_plausible = score >= min_score

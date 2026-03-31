@@ -1,15 +1,17 @@
 {
   "domain": "corporate",
   "calibrated_params": {
-    "anchor_weight": 0.06,
-    "social_weight": 0.1243,
-    "event_weight": 0.1001,
-    "herd_weight": 0.0486,
-    "herd_threshold": 0.2205
+    "anchor_weight": 0.1122,
+    "social_weight": 0.1027,
+    "event_weight": 0.0781,
+    "herd_weight": 0.0354,
+    "herd_threshold": 0.2188,
+    "direct_shift_weight": 0.5363,
+    "anchor_drift_rate": 0.3037
   },
   "calibration_metrics": {
-    "avg_composite_score": 27.432,
-    "avg_outcome_error": 30.87,
-    "n_scenarios": 10
+    "avg_composite_score": 14.0162,
+    "avg_outcome_error": 15.26,
+    "n_scenarios": 130
   }
 }

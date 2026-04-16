@@ -411,7 +411,8 @@ class SimulationManager:
                 ))
 
                 safe_name = self._make_safe_name(config.name, sim_id)
-                export_scenario(safe_name, outputs_dir, export_dir)
+                checkpoint_name = self._sanitize_name(config.name)
+                export_scenario(safe_name, outputs_dir, export_dir, source_name=checkpoint_name)
                 state.scenario_id = safe_name
 
                 await self._rebuild_scenarios_manifest(export_dir)
@@ -913,7 +914,8 @@ class SimulationManager:
                 outputs_dir = os.path.join(PROJECT_ROOT, "outputs")
                 export_dir = os.path.join(outputs_dir, "exports")
                 safe_name = self._make_safe_name(config.name, sim_id)
-                export_scenario(safe_name, outputs_dir, export_dir)
+                checkpoint_name = self._sanitize_name(config.name)
+                export_scenario(safe_name, outputs_dir, export_dir, source_name=checkpoint_name)
                 state.scenario_id = safe_name
 
                 # Save Monte Carlo results alongside scenario

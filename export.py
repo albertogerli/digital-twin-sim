@@ -765,13 +765,24 @@ def build_editorial_data(scenario: str, checkpoints: list[dict],
 
 # ── Main export function ──────────────────────────────────────
 
-def export_scenario(scenario: str, outputs_dir: str, export_dir: str):
-    print(f"\n[{scenario}] Exporting...")
+def export_scenario(scenario: str, outputs_dir: str, export_dir: str, source_name: str | None = None):
+    """Export a scenario's outputs to the frontend.
+
+    Args:
+        scenario: Target name for the export directory (``scenario_<scenario>/``).
+        outputs_dir: Where raw simulation artifacts live.
+        export_dir: Where to write the per-scenario export folder.
+        source_name: Optional override for reading checkpoints/report/config/DB from
+            ``outputs_dir``. Defaults to ``scenario``. Use this when the export dir
+            name differs from the filename stem the engine used on disk.
+    """
+    src = source_name or scenario
+    print(f"\n[{scenario}] Exporting..." + (f" (source={src})" if src != scenario else ""))
 
     # Discover rounds
-    cp_files = discover_checkpoints(outputs_dir, scenario)
+    cp_files = discover_checkpoints(outputs_dir, src)
     if not cp_files:
-        print(f"  ERROR: No checkpoints found for scenario '{scenario}' in {outputs_dir}")
+        print(f"  ERROR: No checkpoints found for scenario '{src}' in {outputs_dir}")
         return
 
     num_rounds = len(cp_files)
@@ -780,13 +791,13 @@ def export_scenario(scenario: str, outputs_dir: str, export_dir: str):
     # Load checkpoints
     checkpoints = []
     for r in range(1, num_rounds + 1):
-        checkpoints.append(load_checkpoint(outputs_dir, scenario, r))
+        checkpoints.append(load_checkpoint(outputs_dir, src, r))
 
     # Load DB
-    conn = load_db(outputs_dir, scenario)
+    conn = load_db(outputs_dir, src)
 
     # Load config if available
-    config = load_config(outputs_dir, scenario)
+    config = load_config(outputs_dir, src)
 
     # Build name map
     name_map = build_agent_name_map(checkpoints)
@@ -841,7 +852,7 @@ def export_scenario(scenario: str, outputs_dir: str, export_dir: str):
             print(f"  Written: {key}.json")
 
     # Copy report if exists
-    report_path = os.path.join(outputs_dir, f"{scenario}_report.md")
+    report_path = os.path.join(outputs_dir, f"{src}_report.md")
     if os.path.exists(report_path):
         import shutil
         dest = os.path.join(scenario_dir, "report.md")
@@ -849,7 +860,7 @@ def export_scenario(scenario: str, outputs_dir: str, export_dir: str):
         print(f"  Written: report.md")
 
     # Financial impact (backend-simulated) — frontend bridge
-    fin_src = os.path.join(outputs_dir, f"{scenario}_financial_impact.json")
+    fin_src = os.path.join(outputs_dir, f"{src}_financial_impact.json")
     if os.path.exists(fin_src):
         import shutil
         fin_dest = os.path.join(scenario_dir, "financial_impact.json")
@@ -859,7 +870,7 @@ def export_scenario(scenario: str, outputs_dir: str, export_dir: str):
         n_rounds = len(fin_payload.get("rounds", []))
         print(f"  Written: financial_impact.json ({n_rounds} rounds, backend-simulated)")
     else:
-        print(f"  [skipped] {scenario}_financial_impact.json not found — frontend will fall back")
+        print(f"  [skipped] {src}_financial_impact.json not found — frontend will fall back")
 
     conn.close()
     print(f"[{scenario}] Export complete! → {scenario_dir}")

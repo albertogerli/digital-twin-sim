@@ -1,0 +1,79 @@
+{
+  "scenario_name": "japan_consumption_tax_hike_2014",
+  "domain": "financial",
+  "description": "In April 2014, the Japanese government under Shinzo Abe increased the consumption tax from 5% to 8% to curb national debt. The move was highly controversial and widely blamed for pushing the Japanese economy into a recession, leading to a long-term delay in subsequent planned tax increases.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 52,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 57,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Government confirms the tax hike despite widespread public skepticism."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "GDP data release confirms economic contraction following the tax implementation."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Abe announces the delay of the second phase of the tax hike due to poor consumer sentiment."
+    }
+  ],
+  "calibration_notes": "Captures the dynamic between fiscal policy objectives and the electoral cost of immediate financial pain."
+}

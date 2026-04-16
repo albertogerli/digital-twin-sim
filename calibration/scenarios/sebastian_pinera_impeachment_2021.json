@@ -1,0 +1,83 @@
+{
+  "scenario_name": "sebastian_pinera_impeachment_2021",
+  "domain": "political",
+  "description": "Efforts to impeach Chilean President Sebastián Piñera following revelations from the Pandora Papers regarding the sale of a mining project.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 44,
+      "against_pct": 51,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 46,
+      "against_pct": 53,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 54,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Pandora Papers leak released."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Chamber of Deputies debates impeachment."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Senate vote on impeachment."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Impeachment rejected by Senate."
+    }
+  ],
+  "calibration_notes": "Focuses on the impact of international financial leaks on domestic political standing."
+}

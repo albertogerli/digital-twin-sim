@@ -1,0 +1,26 @@
+[
+  {
+    "id": "frances_haugen",
+    "name": "Frances Haugen",
+    "role": "Former Facebook Product Manager / Whistleblower",
+    "archetype": "activist",
+    "position": -0.9,
+    "influence": 0.85,
+    "rigidity": 0.85,
+    "bio": "Frances Haugen is a data scientist and whistleblower who leaked thousands of internal documents revealing Facebook's knowledge of its platforms' negative impacts.",
+    "communication_style": "articulate, evidence-based, urgent",
+    "key_traits": [
+      "courageous",
+      "analytical",
+      "principled"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "activist",
+    "_evidence": [
+      "Her testimony regarding internal documents directly fueled the public narrative that the rebranding was a distraction from systemic safety and privacy failures."
+    ],
+    "_grounded": true
+  }
+]

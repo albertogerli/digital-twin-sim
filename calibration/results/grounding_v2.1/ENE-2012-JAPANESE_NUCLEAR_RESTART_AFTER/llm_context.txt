@@ -1,0 +1,33 @@
+# VERIFIED FACTS — ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER
+Domain: energy | Country: JP
+Period: 2012-05-05 to 2012-07-02
+
+## TIMELINE (verified events, chronological order):
+1. [2012-05-05] The Tomari 3 reactor in Hokkaido was taken offline for inspection, leaving Japan with zero operational nuclear reactors for the first time since 1970.
+   Detail: 0 reactors operational
+   Source: world-nuclear-news.org
+2. [2012-06-16] Prime Minister Yoshihiko Noda officially approved the restart of Ohi units 3 and 4, citing the need to prevent power shortages in the Kansai region. [confidence: 80%]
+   Detail: 2 units approved for restart
+   Source: world-nuclear-news.org
+3. [2012-07-02] The Ohi 3 reactor reached criticality, marking the first time a nuclear reactor resumed operations in Japan following the Fukushima disaster.
+   Detail: 1 reactor resumed
+   Source: pv-magazine.com
+
+## KEY FIGURES:
+- total_commercial_reactors: 54
+- shutdown_date: May 2012
+- nuclear_power_hiatus_precedent: First time since 1970
+
+## KEY STAKEHOLDER POSITIONS:
+- Yoshihiko Noda (Prime Minister of Japan): He advocated for the restart of the Ohi nuclear reactors, arguing that they were necessary to prevent power shortages and support the national economy. He emphasized that the reactors met new safety standards established after the Fukushima disaster.
+- Yukio Edano (Minister of Economy, Trade and Industry): He supported the government's decision to restart the Ohi reactors, maintaining that the safety checks were sufficient to ensure the plants could operate without risk to the public.
+- Shinzo Abe (Leader of the Liberal Democratic Party (Opposition)): He criticized the government's handling of the energy crisis and supported the restart of nuclear power, arguing that the shutdown was damaging Japan's industrial competitiveness and economic stability.
+
+## FINAL OUTCOME:
+Following the total shutdown of Japan's nuclear fleet after the Fukushima disaster, the government authorized the restart of Ohi units 3 and 4 in mid-2012 to prevent summer power shortages, despite significant public opposition.
+Pro %: 30.0% — Source: Asahi Shimbun (June 2012 poll indicating approximately 30% support for the restart of Ohi reactors)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

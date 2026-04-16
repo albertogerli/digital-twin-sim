@@ -1,0 +1,165 @@
+{
+  "id": "SOC-2017-AUSTRALIA_SAME_SEX_MARRIAGE_PO",
+  "domain": "social",
+  "title": "Australian Marriage Law Postal Survey 2017 regarding the legalization of same-sex marriage",
+  "country": "AU",
+  "date_start": "2017-08-08",
+  "date_end": "2017-11-15",
+  "n_rounds": 7,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 61.6,
+    "source": "https://www.abs.gov.au/ausstats/abs@.nsf/mf/1800.0",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2017-08-08",
+      "pro_pct": 59.0,
+      "against_pct": 33.0,
+      "undecided_pct": 8.0,
+      "sample_size": 1000,
+      "source": "https://www.essentialvision.com.au/same-sex-marriage-11",
+      "pollster": "Essential Research"
+    },
+    {
+      "round": 2,
+      "date": "2017-08-22",
+      "pro_pct": 59.0,
+      "against_pct": 33.0,
+      "undecided_pct": 8.0,
+      "sample_size": 1000,
+      "source": "Estimated: Based on stability of polling in August 2017",
+      "pollster": "Essential Research"
+    },
+    {
+      "round": 3,
+      "date": "2017-09-05",
+      "pro_pct": 58.0,
+      "against_pct": 34.0,
+      "undecided_pct": 8.0,
+      "sample_size": 1000,
+      "source": "https://www.essentialvision.com.au/same-sex-marriage-13",
+      "pollster": "Essential Research"
+    },
+    {
+      "round": 4,
+      "date": "2017-09-19",
+      "pro_pct": 59.0,
+      "against_pct": 33.0,
+      "undecided_pct": 8.0,
+      "sample_size": 1000,
+      "source": "Estimated: Interpolated between September and October polls",
+      "pollster": "Essential Research"
+    },
+    {
+      "round": 5,
+      "date": "2017-10-03",
+      "pro_pct": 60.0,
+      "against_pct": 32.0,
+      "undecided_pct": 8.0,
+      "sample_size": 1000,
+      "source": "https://www.essentialvision.com.au/same-sex-marriage-16",
+      "pollster": "Essential Research"
+    },
+    {
+      "round": 6,
+      "date": "2017-10-17",
+      "pro_pct": 60.0,
+      "against_pct": 32.0,
+      "undecided_pct": 8.0,
+      "sample_size": 1000,
+      "source": "Estimated: Trend stabilization prior to final results",
+      "pollster": "Essential Research"
+    },
+    {
+      "round": 7,
+      "date": "2017-10-31",
+      "pro_pct": 61.6,
+      "against_pct": 38.4,
+      "undecided_pct": 0.0,
+      "sample_size": 12700000,
+      "source": "https://www.abs.gov.au/ausstats/abs@.nsf/mf/1800.0",
+      "pollster": "Australian Bureau of Statistics"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2017-08-08",
+      "description": "Government announces the postal survey mechanism",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.2,
+      "source": "https://www.bbc.com/news/world-australia-40863836"
+    },
+    {
+      "round": 3,
+      "date": "2017-09-12",
+      "description": "Postal survey forms begin arriving in mailboxes",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.1,
+      "source": "https://www.theguardian.com/australia-news/2017/sep/12/same-sex-marriage-survey-forms-start-arriving-in-australian-letterboxes"
+    },
+    {
+      "round": 5,
+      "date": "2017-10-07",
+      "description": "Large pro-marriage equality rallies held across major cities",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.3,
+      "source": "https://www.reuters.com/article/us-australia-gaymarriage/thousands-rally-in-australia-for-same-sex-marriage-idUSKBN1CC067"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Malcolm Turnbull",
+      "type": "elite",
+      "initial_position": 0.5,
+      "influence": 0.9,
+      "description": "Prime Minister of Australia, supported the survey process"
+    },
+    {
+      "name": "Australian Christian Lobby",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.7,
+      "description": "Primary organization campaigning for the No vote"
+    },
+    {
+      "name": "Marriage Equality Australia",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "Primary organization campaigning for the Yes vote"
+    },
+    {
+      "name": "Bill Shorten",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.7,
+      "description": "Leader of the Opposition, vocal supporter of Yes"
+    },
+    {
+      "name": "Urban Youth Cluster",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.4,
+      "description": "High-density urban demographic, strongly pro-Yes"
+    },
+    {
+      "name": "Rural Conservative Cluster",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.4,
+      "description": "Rural demographic, strongly pro-No"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.829,
+    "event_volatility": 0.3,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.08
+  },
+  "notes": "Pro-side = 'Yes' vote (support for same-sex marriage legalization). Against-side = 'No' vote (opposition to same-sex marriage legalization). Data quality: Polling data is based on Essential Research surveys; final round reflects the official ABS census-style postal survey result."
+}

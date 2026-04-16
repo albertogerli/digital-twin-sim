@@ -1,0 +1,83 @@
+{
+  "scenario_name": "british_research_ship_name_boaty_mcboatface_2016",
+  "domain": "marketing",
+  "description": "The UK's Natural Environment Research Council invited the public to name a new polar research ship. 'Boaty McBoatface' won the vote by a landslide, creating a branding dilemma for the government.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 15,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 35,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 61,
+      "against_pct": 38,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 39,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Poll goes viral on social media."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Boaty McBoatface becomes the runaway favorite."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Government hesitates to accept the name."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Official name 'RRS Sir David Attenborough' chosen, causing public ire."
+    }
+  ],
+  "calibration_notes": "Tests the 'democracy vs authority' friction in UGC."
+}

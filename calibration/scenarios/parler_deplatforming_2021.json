@@ -1,0 +1,79 @@
+{
+  "scenario_name": "parler_deplatforming_2021",
+  "domain": "technology",
+  "description": "Following the Jan 6 US Capitol riot, Apple, Google, and Amazon Web Services removed the Parler app from their platforms and hosting services, citing a failure to moderate violent content.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 53,
+      "against_pct": 47,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Amazon Web Services pulls hosting."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Apple and Google remove apps from stores."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Conservative outcry over 'Big Tech censorship' peaks."
+    }
+  ],
+  "calibration_notes": "Measures support for platform moderation vs. free speech absolutism."
+}

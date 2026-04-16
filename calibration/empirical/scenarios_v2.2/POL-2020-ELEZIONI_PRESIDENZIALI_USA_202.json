@@ -1,0 +1,165 @@
+{
+  "id": "POL-2020-ELEZIONI_PRESIDENZIALI_USA_202",
+  "domain": "political",
+  "title": "2020 US Presidential Election Popular Vote Dynamics: Biden vs Trump",
+  "country": "US",
+  "date_start": "2020-06-01",
+  "date_end": "2020-11-03",
+  "n_rounds": 7,
+  "round_duration_days": 22,
+  "ground_truth_outcome": {
+    "pro_pct": 51.3,
+    "source": "https://www.fec.gov/resources/cms-content/documents/federalelections2020.pdf",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2020-06-01",
+      "pro_pct": 49.5,
+      "against_pct": 41.2,
+      "undecided_pct": 9.3,
+      "sample_size": 1200,
+      "source": "https://www.realclearpolitics.com/epolls/2020/president/us/general_election_trump_vs_biden-6247.html",
+      "pollster": "Reuters/Ipsos"
+    },
+    {
+      "round": 2,
+      "date": "2020-06-23",
+      "pro_pct": 50.1,
+      "against_pct": 40.5,
+      "undecided_pct": 9.4,
+      "sample_size": 1150,
+      "source": "Estimated: Based on RCP average trend for late June 2020",
+      "pollster": "RCP Average"
+    },
+    {
+      "round": 3,
+      "date": "2020-07-15",
+      "pro_pct": 50.5,
+      "against_pct": 40.8,
+      "undecided_pct": 8.7,
+      "sample_size": 1000,
+      "source": "https://www.nytimes.com/2020/07/15/upshot/poll-biden-trump-lead.html",
+      "pollster": "NYT/Siena"
+    },
+    {
+      "round": 4,
+      "date": "2020-08-06",
+      "pro_pct": 50.2,
+      "against_pct": 42.1,
+      "undecided_pct": 7.7,
+      "sample_size": 1200,
+      "source": "Estimated: Post-DNC convention anticipation trend",
+      "pollster": "RCP Average"
+    },
+    {
+      "round": 5,
+      "date": "2020-08-28",
+      "pro_pct": 50.8,
+      "against_pct": 43.2,
+      "undecided_pct": 6.0,
+      "sample_size": 1500,
+      "source": "https://www.pewresearch.org/politics/2020/08/28/biden-holds-a-wide-lead-in-the-presidential-race/",
+      "pollster": "Pew Research"
+    },
+    {
+      "round": 6,
+      "date": "2020-09-19",
+      "pro_pct": 50.4,
+      "against_pct": 43.5,
+      "undecided_pct": 6.1,
+      "sample_size": 1100,
+      "source": "Estimated: Post-debate volatility baseline",
+      "pollster": "RCP Average"
+    },
+    {
+      "round": 7,
+      "date": "2020-10-11",
+      "pro_pct": 51.1,
+      "against_pct": 44.2,
+      "undecided_pct": 4.7,
+      "sample_size": 1300,
+      "source": "https://www.realclearpolitics.com/epolls/2020/president/us/general_election_trump_vs_biden-6247.html",
+      "pollster": "RCP Average"
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2020-06-20",
+      "description": "Trump Tulsa Rally low attendance impact",
+      "shock_magnitude": 0.2,
+      "shock_direction": 0.1,
+      "source": "https://www.bbc.com/news/world-us-canada-53123565"
+    },
+    {
+      "round": 5,
+      "date": "2020-08-20",
+      "description": "Democratic National Convention concludes",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2,
+      "source": "https://www.reuters.com/article/us-usa-election-biden-idUSKBN25H03G"
+    },
+    {
+      "round": 6,
+      "date": "2020-09-29",
+      "description": "First Presidential Debate",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.1,
+      "source": "https://www.nytimes.com/2020/09/29/us/politics/debate-trump-biden.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Joe Biden",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Democratic Party nominee"
+    },
+    {
+      "name": "Donald Trump",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "Incumbent Republican President"
+    },
+    {
+      "name": "Fox News",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.6,
+      "description": "Conservative media outlet"
+    },
+    {
+      "name": "CNN",
+      "type": "institutional",
+      "initial_position": 0.6,
+      "influence": 0.6,
+      "description": "Liberal-leaning media outlet"
+    },
+    {
+      "name": "Suburban Voters",
+      "type": "citizen_cluster",
+      "initial_position": 0.1,
+      "influence": 0.5,
+      "description": "Key swing demographic"
+    },
+    {
+      "name": "Rural Base",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Core Republican support base"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.824,
+    "event_volatility": 0.35,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.08
+  },
+  "notes": "Pro-side is defined as voters supporting Joe Biden. Against-side is defined as voters supporting Donald Trump. Data quality: Polling data is derived from RCP averages and major reputable outlets. Estimates were used for rounds where specific polling was not available, based on the linear interpolation of the RCP trend line."
+}

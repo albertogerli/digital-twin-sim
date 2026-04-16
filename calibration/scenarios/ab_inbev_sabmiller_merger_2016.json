@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ab_inbev_sabmiller_merger_2016",
+  "domain": "corporate",
+  "description": "Anheuser-Busch InBev acquired SABMiller to consolidate global beer production, leading to massive divestment requirements to prevent monopoly in major markets.",
+  "final_outcome_pro_pct": 65.0,
+  "final_outcome_against_pct": 35.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 33,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 63,
+      "against_pct": 34,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 64,
+      "against_pct": 35,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Mega-merger announced."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Divestment of Miller brand in US mandated."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "European regulators express concerns over competition."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Deal completes with significant market restructuring."
+    }
+  ],
+  "calibration_notes": "Useful for measuring how concessions (divestments) can stabilize support."
+}

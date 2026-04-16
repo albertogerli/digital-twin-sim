@@ -1,0 +1,83 @@
+{
+  "scenario_name": "netflix_vs_blockbuster_pivot",
+  "domain": "commercial",
+  "description": "This scenario tracks the public and market sentiment shift from the incumbent Blockbuster to the disruptive newcomer Netflix during 2004-2005. As Netflix's DVD-by-mail model gained traction and Blockbuster struggled with its late-fee-heavy revenue model, consumers transitioned from skeptical about digital/mail-order convenience to favoring the new subscription paradigm.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 60,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 55,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 28,
+      "against_pct": 52,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 40,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 30,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 64,
+      "against_pct": 28,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Netflix reaches 1 million subscribers, signaling critical mass."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Blockbuster announces the removal of late fees in a desperate attempt to stem user churn."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Netflix stock hits a new high while Blockbuster's store count begins its first major decline."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Wall Street analysts officially downgrade Blockbuster in favor of Netflix's growth model."
+    }
+  ],
+  "calibration_notes": "Useful for modeling how high switching costs and established brand loyalty (incumbent) erode under the pressure of a more efficient, customer-centric business model."
+}

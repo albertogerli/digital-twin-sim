@@ -1,0 +1,79 @@
+{
+  "scenario_name": "netherlands_ukraine_eu_association_2016",
+  "domain": "political",
+  "description": "A Dutch consultative referendum on the EU-Ukraine Association Agreement resulted in a 61% rejection, challenging European foreign policy unity.",
+  "final_outcome_pro_pct": 39.0,
+  "final_outcome_against_pct": 61.0,
+  "final_turnout_pct": 32.2,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 43,
+      "against_pct": 44,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 41,
+      "against_pct": 52,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 57,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 39,
+      "against_pct": 59,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 39,
+      "against_pct": 60,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 39,
+      "against_pct": 61,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "GeenPeil campaign gathers signatures for the referendum."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Skepticism grows regarding the agreement being a 'backdoor' to EU membership."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Low turnout fears dominate the final stretch of the campaign."
+    }
+  ],
+  "calibration_notes": "Highlights the use of specific trade agreements as proxies for general anti-EU sentiment."
+}

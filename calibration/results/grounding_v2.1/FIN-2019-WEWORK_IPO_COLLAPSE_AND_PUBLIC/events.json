@@ -1,0 +1,53 @@
+[
+  {
+    "round": 1,
+    "description": "WeWork, rebranded as The We Company, raised $1 billion in a Series H funding round led by SoftBank, pushing its private valuation to a peak of $47 billion.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "WeWork publicly filed its S-1 registration statement for an initial public offering, revealing significant financial losses and complex corporate governance issues.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Following intense public and investor scrutiny regarding its business model and leadership, WeWork officially postponed its planned IPO.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0E7yYk6549SwMBhFxDG5MgS0_Dl1LAekDGrTNgyuAcoZnRg3Ldc2wcxLH9Rv3vGGNX6K2gk1zVfMiaF3HzAQ2cfK-PhmNHinwS9-oQ0perQKbf_-y8thdUlBvI-n6stmPRbwT5_BYPEr-C8Oyb3RvHRwwd8HzSzE6bzmDzwN3T7Y1OFSggvLQknyeO9qV_n-ziDLAyipgo_gJ",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0E7yYk6549SwMBhFxDG5MgS0_Dl1LAekDGrTNgyuAcoZnRg3Ldc2wcxLH9Rv3vGGNX6K2gk1zVfMiaF3HzAQ2cfK-PhmNHinwS9-oQ0perQKbf_-y8thdUlBvI-n6stmPRbwT5_BYPEr-C8Oyb3RvHRwwd8HzSzE6bzmDzwN3T7Y1OFSggvLQknyeO9qV_n-ziDLAyipgo_gJ"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "Adam Neumann resigned as CEO of WeWork under pressure from investors and the board of directors following the failed IPO attempt.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH33DAbqi84uLd1m31HDqGPPKxIc7AsVkLsXnf1jGzKBezn4h7iOFlInqLMLp-h6s3_dLop_UC19kEtwFqmc-K4ad_TXoLUFNtNq9Md5AkWA-12tkWiBlbYP5AKEQdvxnX8TvGNqEu7CcVexIwO4YF324O7WObtPar29gGdqwkLnGtrbVCQdaK7JZxcBgIs5NATxCyTSjADBlzhU5zxEgQDTg==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH33DAbqi84uLd1m31HDqGPPKxIc7AsVkLsXnf1jGzKBezn4h7iOFlInqLMLp-h6s3_dLop_UC19kEtwFqmc-K4ad_TXoLUFNtNq9Md5AkWA-12tkWiBlbYP5AKEQdvxnX8TvGNqEu7CcVexIwO4YF324O7WObtPar29gGdqwkLnGtrbVCQdaK7JZxcBgIs5NATxCyTSjADBlzhU5zxEgQDTg=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "SoftBank announced a massive bailout package to take control of WeWork, effectively valuing the company at approximately $8 billion, a sharp decline from its previous $47 billion valuation.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELKwMhZyxNV8q-0U7LQp-oRF11g0MHsqLhJNGUneh02TjqJldRLXFNMIUeA8g52GrihHxkhwS_EWpBRsHLkH9MJXeD1ileJJNc94g3sKjkwiUyGqzWxjBJD9nZyoW_k1i0W11p4F_LgbHZQCgDwvXvB1lQ918fAUNTS0F-OeVM_dh53ZbPXrsXpGu0LpZPk06vgCzA05W4LueOVP4Df2sh_r0gS6qJahQvA1A=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELKwMhZyxNV8q-0U7LQp-oRF11g0MHsqLhJNGUneh02TjqJldRLXFNMIUeA8g52GrihHxkhwS_EWpBRsHLkH9MJXeD1ileJJNc94g3sKjkwiUyGqzWxjBJD9nZyoW_k1i0W11p4F_LgbHZQCgDwvXvB1lQ918fAUNTS0F-OeVM_dh53ZbPXrsXpGu0LpZPk06vgCzA05W4LueOVP4Df2sh_r0gS6qJahQvA1A="
+    ],
+    "_verified": true
+  }
+]

@@ -1,0 +1,25 @@
+[
+  {
+    "id": "zachary_kirkhorn",
+    "name": "Zachary Kirkhorn",
+    "role": "CFO of Tesla",
+    "archetype": "business_leader",
+    "position": 0.9,
+    "influence": 0.7,
+    "rigidity": 0.75,
+    "bio": "Zachary Kirkhorn served as the Chief Financial Officer of Tesla during the 2020 stock split, managing the company's capital structure.",
+    "communication_style": "formal, analytical",
+    "key_traits": [
+      "pragmatic",
+      "methodical"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.9,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CFO, he was responsible for the financial execution and communication of the stock split strategy to the market."
+    ],
+    "_grounded": true
+  }
+]

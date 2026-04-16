@@ -1,0 +1,83 @@
+{
+  "scenario_name": "alipay_ant_group_ipo_halt_2020",
+  "domain": "corporate",
+  "description": "The planned $37 billion dual-listing IPO of Ant Group (parent of Alipay) in Shanghai and Hong Kong, abruptly halted by Chinese regulators in November 2020 after Jack Ma's critique of the financial system.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 10,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 15,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 62,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 44,
+      "against_pct": 56,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ant Group sets record-breaking IPO valuation."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Jack Ma criticizes regulatory constraints at a summit."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Regulators suspend the IPO 48 hours before listing."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Ant Group forced into major corporate restructuring."
+    }
+  ],
+  "calibration_notes": "Captures the impact of external regulatory intervention on corporate market sentiment."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "qantas_mass_layoff_2011",
+  "domain": "corporate",
+  "description": "In October 2011, Qantas CEO Alan Joyce grounded the entire global fleet to force a resolution in industrial disputes, subsequently announcing massive restructuring and job losses. The event triggered a firestorm of debate in Australia over the power of corporate leadership to hold national infrastructure hostage.",
+  "final_outcome_pro_pct": 28.0,
+  "final_outcome_against_pct": 72.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 60,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 22,
+      "against_pct": 68,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 26,
+      "against_pct": 71,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 27,
+      "against_pct": 72,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 28,
+      "against_pct": 72,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 28,
+      "against_pct": 72,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Sudden grounding of the entire Qantas fleet."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Government intervenes via Fair Work Australia."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public criticism of CEO Alan Joyce peaks."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Structural changes finalized amid low public approval."
+    }
+  ],
+  "calibration_notes": "Measures the impact of extreme corporate brinkmanship on public perception."
+}

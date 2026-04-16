@@ -1,0 +1,163 @@
+[
+  {
+    "id": "francesco_roberti",
+    "name": "Francesco Roberti",
+    "role": "Presidente Regione Molise",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.20,
+    "rigidity": 0.50,
+    "bio": "Presidente del Molise dal 2023, ex sindaco di Termoli. Eletto con il centrodestra, amministratore di lungo corso nel territorio molisano.",
+    "communication_style": "Sobrio, territoriale, toni da amministratore locale, basso profilo mediatico",
+    "key_traits": ["amministratore", "territoriale", "moderato"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.30, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.45, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "renzo_testolin",
+    "name": "Renzo Testolin",
+    "role": "Presidente Regione Valle d'Aosta",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Union Valdôtaine",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.20,
+    "rigidity": 0.45,
+    "bio": "Presidente della Valle d'Aosta, esponente dell'Union Valdôtaine. Autonomista valdostano, difensore delle specificità linguistiche e culturali della regione a statuto speciale.",
+    "communication_style": "Discreto, autonomista, bilingue franco-italiano, toni istituzionali",
+    "key_traits": ["autonomista", "francofono", "istituzionale"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.60, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.00, "source": "voting_record", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "maurizio_fugatti",
+    "name": "Maurizio Fugatti",
+    "role": "Presidente Provincia Autonoma di Trento",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.55,
+    "bio": "Presidente della Provincia Autonoma di Trento dal 2018, rieletto nel 2023. Leghista, difensore dell'autonomia trentina, noto per la gestione della questione orsi e grandi carnivori.",
+    "communication_style": "Diretto, pragmatico, toni da amministratore montano, linguaggio semplice",
+    "key_traits": ["pragmatico", "autonomista", "leghista"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.75, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": 0.50, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "arno_kompatscher",
+    "name": "Arno Kompatscher",
+    "role": "Presidente Provincia Autonoma di Bolzano",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Südtiroler Volkspartei",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.30,
+    "rigidity": 0.50,
+    "bio": "Presidente della Provincia Autonoma di Bolzano, leader della SVP. Europeista e autonomista, rappresenta la minoranza linguistica tedesca in Italia. Interlocutore chiave nei rapporti Roma-Bolzano.",
+    "communication_style": "Misurato, trilingue, europeista, toni diplomatici e istituzionali",
+    "key_traits": ["europeista", "autonomista", "diplomatico"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.80, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": 0.15, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "giovanni_toti",
+    "name": "Giovanni Toti",
+    "role": "Ex Presidente Regione Liguria",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Italia al Centro",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.45,
+    "bio": "Ex presidente della Liguria (2015-2024), dimessosi dopo l'arresto per corruzione nell'inchiesta sulla portualità genovese. Ex giornalista Mediaset, in attesa di processo. Figura controversa del centrodestra.",
+    "communication_style": "Mediatico, combattivo, toni da ex giornalista, comunicazione social aggressiva",
+    "key_traits": ["mediatico", "controverso", "combattivo"],
+    "platform_primary": "social_media",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.40, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.55, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "stefano_caldoro",
+    "name": "Stefano Caldoro",
+    "role": "Ex Presidente Regione Campania",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.22,
+    "rigidity": 0.50,
+    "bio": "Ex presidente della Campania (2010-2015), storico oppositore di Vincenzo De Luca. Economista di formazione, esponente moderato di Forza Italia, più volte candidato alla presidenza regionale.",
+    "communication_style": "Tecnico, pacato, toni da economista, opposizione costruttiva",
+    "key_traits": ["tecnico", "moderato", "oppositore"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.35, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.40, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "francesco_rocca",
+    "name": "Francesco Rocca",
+    "role": "Presidente Regione Lazio",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.50,
+    "bio": "Presidente del Lazio dal 2023, eletto con il centrodestra. Ex presidente della Croce Rossa Italiana e della Federazione Internazionale delle Società di Croce Rossa e Mezzaluna Rossa. Profilo civico-istituzionale vicino a Fratelli d'Italia.",
+    "communication_style": "Istituzionale, sobrio, toni da dirigente umanitario, comunicazione misurata",
+    "key_traits": ["istituzionale", "umanitario", "civico"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.25, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.45, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  }
+]

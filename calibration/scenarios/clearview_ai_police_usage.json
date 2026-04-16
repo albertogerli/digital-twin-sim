@@ -1,0 +1,83 @@
+{
+  "scenario_name": "clearview_ai_police_usage",
+  "domain": "technology",
+  "description": "The debate surrounding Clearview AI's facial recognition software sold to law enforcement agencies globally. Opinion tracked between 2020 and 2021 as controversies grew over biometric data scraping.",
+  "final_outcome_pro_pct": 25.0,
+  "final_outcome_against_pct": 75.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 32,
+      "against_pct": 58,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 62,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 28,
+      "against_pct": 66,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 27,
+      "against_pct": 69,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 26,
+      "against_pct": 71,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 73,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 24,
+      "against_pct": 72,
+      "undecided_pct": 4
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "NYT exposes Clearview AI database"
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Multiple states open investigations into data harvesting"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "ACLU files lawsuits against Clearview"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Clearview banned from selling to private companies in US"
+    }
+  ],
+  "calibration_notes": "Highlights the ethics of AI training data and corporate-police partnerships."
+}

@@ -31,11 +31,11 @@ export default function BriefingProgress({ steps, visible }: BriefingProgressPro
   if (!visible || steps.length === 0) return null;
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-      <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-4">
+    <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-3 mb-4">
+      <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-3">
         Preparazione Scenario
       </p>
-      <div className="space-y-3">
+      <div className="space-y-2">
         {steps.map((step, i) => {
           const icon = PHASE_ICONS[step.phase] || "\u2699\uFE0F";
           const label = PHASE_LABELS[step.phase] || step.phase;
@@ -43,28 +43,28 @@ export default function BriefingProgress({ steps, visible }: BriefingProgressPro
           const isActive = isLast && !step.done;
 
           return (
-            <div key={`${step.phase}-${i}`} className="flex items-start gap-3">
+            <div key={`${step.phase}-${i}`} className="flex items-start gap-2">
               {/* Stepper dot */}
               <div className="flex flex-col items-center">
-                <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs flex-shrink-0 ${
+                <div className={`w-5 h-5 rounded-sm flex items-center justify-center text-xs flex-shrink-0 ${
                   step.done
-                    ? "bg-emerald-100 text-emerald-600"
+                    ? "bg-ki-success/15 text-ki-success"
                     : isActive
-                    ? "bg-blue-100 text-blue-600 animate-pulse"
-                    : "bg-gray-100 text-gray-400"
+                    ? "bg-ki-primary/15 text-ki-primary animate-pulse"
+                    : "bg-ki-surface-sunken text-ki-on-surface-muted"
                 }`}>
                   {step.done ? "\u2713" : icon}
                 </div>
                 {i < steps.length - 1 && (
-                  <div className={`w-px h-4 ${step.done ? "bg-emerald-200" : "bg-gray-200"}`} />
+                  <div className={`w-px h-3 ${step.done ? "bg-ki-success/30" : "bg-ki-border"}`} />
                 )}
               </div>
               {/* Text */}
               <div className="pt-0.5">
-                <p className={`text-xs font-semibold ${step.done ? "text-gray-700" : isActive ? "text-blue-700" : "text-gray-400"}`}>
+                <p className={`text-xs font-semibold ${step.done ? "text-ki-on-surface-secondary" : isActive ? "text-ki-primary" : "text-ki-on-surface-muted"}`}>
                   {label}
                 </p>
-                <p className="text-[11px] text-gray-400 mt-0.5">{step.message}</p>
+                <p className="text-[11px] text-ki-on-surface-muted mt-0.5">{step.message}</p>
               </div>
             </div>
           );

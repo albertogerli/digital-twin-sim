@@ -1,0 +1,182 @@
+{
+  "id": "COM-2017-IPHONE_X",
+  "domain": "commercial",
+  "title": "iPhone X pricing controversy: $999 price point and consumer acceptance",
+  "country": "US",
+  "date_start": "2017-09-01",
+  "date_end": "2017-12-31",
+  "n_rounds": 5,
+  "round_duration_days": 25,
+  "ground_truth_outcome": {
+    "pro_pct": 65.0,
+    "source": "https://www.macrumors.com/2018/04/23/iphone-x-siri-survey-creative-strategies/ — Creative Strategies survey (N=1746 iPhone X owners): 97% satisfaction, 85% 'very satisfied'; Piper Jaffray: 31% of non-upgraders cited price (69% neutral-positive)",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2017-09-15",
+      "pro_pct": 33.0,
+      "against_pct": 67.0,
+      "undecided_pct": null,
+      "sample_size": 2117,
+      "source": "https://9to5mac.com/2017/08/24/iphone-loyalty/ — Fluent survey (N=2117): 67% said $999 is 'too expensive', only 12% said rightly priced; Barclays survey: only 18% of iPhone owners willing to pay >$1000",
+      "pollster": "Fluent / Barclays"
+    },
+    {
+      "round": 2,
+      "date": "2017-10-23",
+      "pro_pct": 69.0,
+      "against_pct": 31.0,
+      "undecided_pct": null,
+      "sample_size": null,
+      "source": "https://appleinsider.com/articles/17/10/23/survey-finds-iphone-x-8-purchase-intent-at-highest-level-since-apple-launched-the-iphone-6 — 69% of North American consumers planning to buy new iPhone within 3 months; highest since iPhone 6",
+      "pollster": "AppleInsider / unnamed survey"
+    },
+    {
+      "round": 3,
+      "date": "2017-11-06",
+      "pro_pct": 55.0,
+      "against_pct": 30.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "https://www.macrumors.com/2017/11/06/iphone-x-adoption-localytics/ — Localytics: iPhone X captured 0.93% of total iPhone share in first weekend (highest since iPhone 5s vs. 0.3% for iPhone 8); pre-orders sold out in <10 minutes",
+      "pollster": "Localytics"
+    },
+    {
+      "round": 4,
+      "date": "2017-11-28",
+      "pro_pct": 60.0,
+      "against_pct": 27.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Strategy Analytics: camera #1 driver of positive sentiment, display and battery ~80% positive (https://www.prnewswire.com/news-releases/iphone-xs-camera-drives-consumer-sentiment-finds-strategy-analytics-300573259.html); The Verge 9/10 review",
+      "pollster": "Strategy Analytics"
+    },
+    {
+      "round": 5,
+      "date": "2017-12-25",
+      "pro_pct": 69.0,
+      "against_pct": 31.0,
+      "undecided_pct": null,
+      "sample_size": 1500,
+      "source": "https://www.macrumors.com/2018/03/05/iphone-x-no-upgrade-survey/ — Piper Jaffray (N=1500 iPhone owners): 31% cited 'too expensive' as reason not to upgrade (inverse: 69% did not find price prohibitive); CIRP: iPhone X ~20% of Q4 sales, top seller every week",
+      "pollster": "Piper Jaffray / CIRP"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2017-09-12",
+      "description": "Apple announces iPhone X at $999 — first mainstream smartphone to break $1000; immediate media sticker shock",
+      "shock_magnitude": 0.7,
+      "shock_direction": -0.6,
+      "source": "https://www.apple.com/newsroom/2017/09/the-future-is-here-iphone-x/"
+    },
+    {
+      "round": 2,
+      "date": "2017-09-22",
+      "description": "iPhone 8/8 Plus launch — lukewarm reception, below-trend upgrade rates. Market interprets as 'everyone waiting for X'",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.3,
+      "source": "https://www.reuters.com/article/us-apple-iphone-idUSKCN1BX2K2"
+    },
+    {
+      "round": 3,
+      "date": "2017-10-27",
+      "description": "iPhone X pre-orders open and sell out within minutes; 5-6 week shipping delays across all carriers",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.7,
+      "source": "https://www.apple.com/newsroom/2017/10/iphone-x-available-for-pre-order-on-friday-october-27/"
+    },
+    {
+      "round": 3,
+      "date": "2017-11-03",
+      "description": "iPhone X launch day: lines at Apple Stores worldwide; first reviews praise Face ID and OLED display",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.6,
+      "source": "https://www.theverge.com/2017/11/1/16593414/apple-iphone-x-review"
+    },
+    {
+      "round": 5,
+      "date": "2017-12-15",
+      "description": "Analyst reports indicate iPhone X drove Apple to record Q1 FY2018 revenue ($88.3B); ASP highest ever at $796",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.5,
+      "source": "https://www.apple.com/newsroom/2018/02/apple-reports-first-quarter-results/"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Tim Cook",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "Apple CEO, framed $999 as 'value of the future'"
+    },
+    {
+      "name": "Phil Schiller",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.5,
+      "description": "SVP Marketing, presented iPhone X at Keynote"
+    },
+    {
+      "name": "Marques Brownlee (MKBHD)",
+      "type": "elite",
+      "initial_position": 0.3,
+      "influence": 0.6,
+      "description": "Top tech YouTuber; initially cautious, then positive review"
+    },
+    {
+      "name": "Wall Street analysts",
+      "type": "institutional",
+      "initial_position": 0.4,
+      "influence": 0.5,
+      "description": "Mixed: supply concerns vs. ASP uplift optimism"
+    },
+    {
+      "name": "Consumer Reports",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Independent reviewer; eventually recommended iPhone X"
+    },
+    {
+      "name": "Tech media (The Verge, Wired)",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.6,
+      "description": "Initial sticker shock coverage shifted to positive reviews post-launch"
+    },
+    {
+      "name": "Apple loyalists / early adopters",
+      "type": "citizen_cluster",
+      "initial_position": 0.7,
+      "influence": 0.3,
+      "description": "Would buy regardless; drove pre-order sellout"
+    },
+    {
+      "name": "Budget-conscious consumers",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.3,
+      "description": "Sticker shock: $999 seen as excessive; considered Android alternatives"
+    },
+    {
+      "name": "Android users / skeptics",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.2,
+      "description": "Mocked notch design and price; Samsung Galaxy S8 comparisons"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.60,
+    "event_volatility": 0.16,
+    "elite_concentration": 0.25,
+    "institutional_trust": 0.55,
+    "undecided_share": 0.20
+  },
+  "notes": "Pro = positive about iPhone X / willing to buy at $999, Against = too expensive / negative reaction. This is a classic commercial backlash-to-acceptance arc. Initial sticker shock (round 1) was overcome by supply scarcity signaling, overwhelmingly positive reviews, and Apple's brand power. Rounds 2-4 polling data are estimates from analyst reports and media sentiment; rounds 1 and 5 have survey citations. AAPL stock rose ~18% from Sep to Dec 2017."
+}

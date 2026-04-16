@@ -1,0 +1,243 @@
+{
+  "id": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER",
+  "domain": "corporate",
+  "title": "Public sentiment shift following Facebook's corporate rebrand to Meta and the strategic pivot toward the Metaverse",
+  "country": "US",
+  "date_start": "2021-09-01",
+  "date_end": "2022-01-31",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 26.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-09-01",
+      "pro_pct": 32.0,
+      "against_pct": 45.0,
+      "undecided_pct": 23.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline sentiment prior to rebrand announcement",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2021-09-22",
+      "pro_pct": 30.0,
+      "against_pct": 48.0,
+      "undecided_pct": 22.0,
+      "sample_size": null,
+      "source": "Estimated: Pre-announcement speculation impact",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2021-10-13",
+      "pro_pct": 28.0,
+      "against_pct": 52.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Increased skepticism following Facebook Papers leaks",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2021-11-03",
+      "pro_pct": 26.0,
+      "against_pct": 58.0,
+      "undecided_pct": 16.0,
+      "sample_size": 2200,
+      "source": "https://morningconsult.com/2021/11/04/meta-metaverse-rebrand-poll/",
+      "pollster": "Morning Consult"
+    },
+    {
+      "round": 5,
+      "date": "2021-11-24",
+      "pro_pct": 25.0,
+      "against_pct": 60.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Post-rebrand stabilization",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2021-12-15",
+      "pro_pct": 24.0,
+      "against_pct": 62.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Continued negative sentiment trend",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2022-01-05",
+      "pro_pct": 24.0,
+      "against_pct": 63.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Long-term sentiment plateau",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 3,
+      "date": "2021-10-04",
+      "description": "The Facebook Papers leak reveals internal documents regarding platform safety and negative societal impacts.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1.0,
+      "source": "https://www.nytimes.com/2021/10/04/technology/facebook-whistleblower-frances-haugen.html"
+    },
+    {
+      "round": 4,
+      "date": "2021-10-28",
+      "description": "Facebook officially announces rebranding to Meta at Connect 2021.",
+      "shock_magnitude": 0.6,
+      "shock_direction": -0.4,
+      "source": "https://about.fb.com/news/2021/10/facebook-company-is-now-meta/"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Mark Zuckerberg",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "CEO of Meta, primary driver of the metaverse pivot."
+    },
+    {
+      "name": "Frances Haugen",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.8,
+      "description": "Whistleblower whose testimony significantly damaged public trust."
+    },
+    {
+      "name": "Tech Journalists",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.6,
+      "description": "Media outlets covering the rebrand as a distraction from regulatory scrutiny."
+    },
+    {
+      "name": "Early Adopters",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.3,
+      "description": "Tech enthusiasts interested in VR/AR and virtual worlds."
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": -0.1,
+      "influence": 0.1,
+      "description": "Average social media users skeptical of Facebook's privacy record."
+    },
+    {
+      "name": "US Congress",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.7,
+      "description": "Legislators focused on antitrust and data privacy regulation."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.717,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.2
+  },
+  "notes": "Pro-side is defined as positive sentiment toward Meta's pivot to the metaverse and the corporate rebrand. Against-side is defined as negative sentiment, often linked to skepticism regarding Facebook's privacy practices and the perceived distraction of the rebrand. Data quality note: Early rounds are estimated based on pre-rebrand sentiment trends; Round 4 is anchored to actual polling data.",
+  "market_observations": {
+    "primary_ticker": "META",
+    "primary_sector": "tech",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": -6.431,
+        "volume_ratio": 0.57
+      },
+      {
+        "round": 2,
+        "return_pct": -5.664,
+        "volume_ratio": 1.03
+      },
+      {
+        "round": 3,
+        "return_pct": 1.091,
+        "volume_ratio": 1.25
+      },
+      {
+        "round": 4,
+        "return_pct": 1.698,
+        "volume_ratio": 0.88
+      },
+      {
+        "round": 5,
+        "return_pct": -2.146,
+        "volume_ratio": 0.88
+      },
+      {
+        "round": 6,
+        "return_pct": -1.502,
+        "volume_ratio": 0.77
+      },
+      {
+        "round": 7,
+        "return_pct": -7.41,
+        "volume_ratio": 0.92
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": -3.714,
+        "volume_ratio": 0.9
+      },
+      {
+        "round": 2,
+        "return_pct": -0.968,
+        "volume_ratio": 1.08
+      },
+      {
+        "round": 3,
+        "return_pct": 6.14,
+        "volume_ratio": 0.67
+      },
+      {
+        "round": 4,
+        "return_pct": 0.747,
+        "volume_ratio": 0.64
+      },
+      {
+        "round": 5,
+        "return_pct": -1.295,
+        "volume_ratio": 1.16
+      },
+      {
+        "round": 6,
+        "return_pct": 1.833,
+        "volume_ratio": 0.9
+      },
+      {
+        "round": 7,
+        "return_pct": -7.24,
+        "volume_ratio": 1.4
+      }
+    ],
+    "cumulative_return_pct": -19.015,
+    "benchmark_return_pct": -4.931,
+    "excess_return_pct": -14.084,
+    "volatility_realized": 14.0975,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

@@ -1,0 +1,632 @@
+[
+  {
+    "id": "oscar_farinetti",
+    "name": "Oscar Farinetti",
+    "role": "Fondatore Eataly",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Eataly",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.42,
+    "bio": "Imprenditore piemontese, fondatore di Eataly, catena internazionale dedicata alla valorizzazione dell'enogastronomia italiana di qualità. Ex proprietario di Unieuro, è figura di riferimento nel marketing territoriale e nella promozione del Made in Italy alimentare.",
+    "communication_style": "Narratore entusiasta, usa storytelling legato al territorio e alla tradizione italiana, toni divulgativi e ottimisti",
+    "key_traits": [
+      "visionario_food",
+      "marketing_territoriale",
+      "ottimista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.5,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "made_in_italy",
+        "value": 0.9,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "sustainability",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "flavio_briatore",
+    "name": "Flavio Briatore",
+    "role": "Imprenditore, CEO Billionaire Group",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Billionaire Group",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.38,
+    "rigidity": 0.5,
+    "bio": "Imprenditore piemontese attivo nella ristorazione di lusso, nell'intrattenimento e nel mondo della Formula 1. Figura polarizzante e mediatica, è noto per i suoi interventi pubblici su economia, fisco e meritocrazia. Proprietario di locali iconici come il Billionaire e Crazy Pizza.",
+    "communication_style": "Diretto e provocatorio, linguaggio semplice e populista, toni da self-made man, frequente presenza televisiva",
+    "key_traits": [
+      "provocatore",
+      "self_made_man",
+      "lusso"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "taxation",
+        "value": -0.8,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.3,
+        "source": "inferred",
+        "confidence": "low"
+      },
+      {
+        "topic_tag": "meritocracy",
+        "value": 0.9,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "luca_garavoglia",
+    "name": "Luca Garavoglia",
+    "role": "Presidente Campari Group",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Campari Group",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.5,
+    "bio": "Presidente di Campari Group, multinazionale italiana degli spirits con marchi iconici come Aperol, Campari e Skyy Vodka. Sotto la sua guida la società è diventata un player globale con acquisizioni strategiche e quotazione internazionale. Riservatissimo, raramente appare in pubblico.",
+    "communication_style": "Estremamente riservato, quasi assente dal dibattito pubblico, comunicazione esclusivamente tramite canali aziendali",
+    "key_traits": [
+      "riservato",
+      "internazionalizzazione",
+      "acquisizioni_strategiche"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.3,
+        "source": "inferred",
+        "confidence": "low"
+      },
+      {
+        "topic_tag": "globalization",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "made_in_italy",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "massimo_moratti",
+    "name": "Massimo Moratti",
+    "role": "Presidente Saras S.p.A., Ex presidente FC Internazionale",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Saras",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.32,
+    "rigidity": 0.45,
+    "bio": "Imprenditore milanese, presidente della Saras, società di raffinazione petrolifera fondata dal padre Angelo. Noto al grande pubblico come storico presidente dell'Inter, con cui ha vinto il Triplete nel 2010. Figura moderata e riservata nel panorama industriale italiano.",
+    "communication_style": "Pacato e signorile, toni sobri e istituzionali, raramente polemico, apprezzato trasversalmente",
+    "key_traits": [
+      "moderato",
+      "dinastia_industriale",
+      "mecenate_sportivo"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "energy_policy",
+        "value": 0.2,
+        "source": "inferred",
+        "confidence": "low"
+      },
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.3,
+        "source": "inferred",
+        "confidence": "low"
+      },
+      {
+        "topic_tag": "sports_culture",
+        "value": 0.5,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "andrea_pontremoli",
+    "name": "Andrea Pontremoli",
+    "role": "CEO Dallara Automobili",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Dallara Automobili",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.45,
+    "bio": "CEO di Dallara Automobili, eccellenza parmense nella progettazione e costruzione di vetture da competizione e stradali ad alte prestazioni. Ex IBM Italia, ha trasformato Dallara in un riferimento mondiale per l'ingegneria motorsport e l'innovazione nella Motor Valley emiliana.",
+    "communication_style": "Tecnico e appassionato, enfatizza innovazione e territorio, linguaggio da ingegnere-imprenditore",
+    "key_traits": [
+      "innovazione_motorsport",
+      "eccellenza_ingegneristica",
+      "motor_valley"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "innovation",
+        "value": 0.8,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "made_in_italy",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "renato_brunetta",
+    "name": "Renato Brunetta",
+    "role": "Presidente CNEL",
+    "country": "IT",
+    "category": "institutional",
+    "party_or_org": "CNEL",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.52,
+    "bio": "Economista e politico veneziano, già Ministro della Pubblica Amministrazione nei governi Berlusconi e Draghi. Dal 2023 presidente del CNEL (Consiglio Nazionale dell'Economia e del Lavoro), organo consultivo su economia e lavoro. Noto per le battaglie contro l'assenteismo nella PA.",
+    "communication_style": "Polemico e assertivo, linguaggio tecnico-politico, toni da riformatore decisionista",
+    "key_traits": [
+      "riformista_pa",
+      "economista",
+      "decisionista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "public_administration",
+        "value": 0.8,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "labor_market",
+        "value": 0.5,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.4,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "piero_ferrari",
+    "name": "Piero Ferrari",
+    "role": "Vicepresidente Ferrari N.V.",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Ferrari",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.5,
+    "bio": "Figlio di Enzo Ferrari, vicepresidente di Ferrari N.V. e azionista di riferimento con il 10% del capitale. Ingegnere meccanico modenese, custode dell'eredità del fondatore, è anche imprenditore nel settore componentistica con HPE Coxa. Cavaliere del Lavoro dal 2006.",
+    "communication_style": "Molto riservato, interviene raramente in pubblico, toni sobri e legati alla tradizione Ferrari",
+    "key_traits": [
+      "eredità_ferrari",
+      "riservato",
+      "cavaliere_del_lavoro"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.4,
+        "source": "inferred",
+        "confidence": "low"
+      },
+      {
+        "topic_tag": "made_in_italy",
+        "value": 0.8,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "innovation",
+        "value": 0.5,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "giuseppe_bono",
+    "name": "Giuseppe Bono",
+    "role": "Ex CEO Fincantieri",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Fincantieri",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.33,
+    "rigidity": 0.55,
+    "bio": "Manager calabrese, ha guidato Fincantieri come amministratore delegato per oltre vent'anni (2002-2022), trasformandola nel primo costruttore navale occidentale. Sotto la sua guida, il gruppo ha diversificato in navi da crociera, militari e infrastrutture offshore.",
+    "communication_style": "Autoritario e pragmatico, linguaggio industriale diretto, forte senso del comando e della strategia di lungo periodo",
+    "key_traits": [
+      "manager_industriale",
+      "cantieristica_navale",
+      "strategia_lungo_termine"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "defense",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "infrastructure",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "emma_marcegaglia",
+    "name": "Emma Marcegaglia",
+    "role": "Presidente Marcegaglia Steel, Ex presidente Confindustria",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Marcegaglia Steel",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.38,
+    "rigidity": 0.48,
+    "bio": "Imprenditrice mantovana dell'acciaio, presidente e AD del Gruppo Marcegaglia, leader mondiale nella trasformazione dell'acciaio. Già presidente di Confindustria (2008-2012) e di Eni, è una delle donne più influenti dell'industria italiana.",
+    "communication_style": "Autorevole e istituzionale, linguaggio da leader confindustriale, equilibrata tra impresa e politica industriale",
+    "key_traits": [
+      "leader_confindustriale",
+      "acciaio",
+      "donna_industria"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "european_integration",
+        "value": 0.5,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "labor_market",
+        "value": 0.4,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "andrea_guerra",
+    "name": "Andrea Guerra",
+    "role": "CEO LVMH Hospitality, Ex CEO Luxottica",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "LVMH Hospitality",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.32,
+    "rigidity": 0.45,
+    "bio": "Manager padovano, già CEO di Luxottica per un decennio e consigliere economico del governo Renzi. Attualmente alla guida della divisione Hospitality di LVMH. Considerato tra i manager italiani più stimati a livello internazionale nel settore lusso.",
+    "communication_style": "Sobrio e internazionale, linguaggio manageriale sofisticato, orientato ai risultati e alla visione strategica",
+    "key_traits": [
+      "lusso_internazionale",
+      "manager_globale",
+      "ex_luxottica"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.4,
+        "source": "inferred",
+        "confidence": "low"
+      },
+      {
+        "topic_tag": "globalization",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "made_in_italy",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "giovanni_arvedi",
+    "name": "Giovanni Arvedi",
+    "role": "Fondatore e Presidente Acciaierie Arvedi",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Acciaierie Arvedi",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.28,
+    "rigidity": 0.52,
+    "bio": "Imprenditore cremonese, fondatore del Gruppo Arvedi, tra i principali produttori siderurgici italiani. Cavaliere del Lavoro, è noto per l'innovazione tecnologica nella produzione di acciaio e per il legame profondo con il territorio cremonese, di cui è mecenate culturale.",
+    "communication_style": "Riservato e legato al territorio, toni da imprenditore di vecchia scuola, enfasi su lavoro e innovazione industriale",
+    "key_traits": [
+      "siderurgia",
+      "mecenate_culturale",
+      "innovazione_industriale"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "sustainability",
+        "value": 0.4,
+        "source": "inferred",
+        "confidence": "low"
+      },
+      {
+        "topic_tag": "made_in_italy",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "pietro_salini",
+    "name": "Pietro Salini",
+    "role": "CEO Webuild S.p.A.",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Webuild",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.5,
+    "bio": "CEO di Webuild (ex Salini Impregilo), primo general contractor italiano e tra i leader mondiali nelle grandi infrastrutture. Sotto la sua guida il gruppo ha realizzato opere come dighe, metropolitane e ponti in oltre 50 Paesi. Protagonista del risanamento del settore costruzioni italiano.",
+    "communication_style": "Assertivo e tecnico, linguaggio da grande impresa infrastrutturale, enfasi su competitività e grandi opere",
+    "key_traits": [
+      "grandi_opere",
+      "internazionalizzazione",
+      "infrastrutture"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "infrastructure",
+        "value": 0.9,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "globalization",
+        "value": 0.5,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "tommaso_trussardi",
+    "name": "Tommaso Trussardi",
+    "role": "Presidente Trussardi",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Trussardi",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.22,
+    "rigidity": 0.42,
+    "bio": "Imprenditore bergamasco, presidente della maison Trussardi, storico marchio della moda italiana fondato nel 1911. Ha assunto la guida del brand dopo la tragica scomparsa del padre Nicola, cercando di rilanciare il marchio tra heritage e contemporaneità.",
+    "communication_style": "Giovane e moderno, comunicazione orientata al lifestyle, toni da imprenditore millennial della moda",
+    "key_traits": [
+      "moda_heritage",
+      "rilancio_brand",
+      "imprenditore_giovane"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "made_in_italy",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.2,
+        "source": "inferred",
+        "confidence": "low"
+      },
+      {
+        "topic_tag": "innovation",
+        "value": 0.4,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "matteo_lunelli",
+    "name": "Matteo Lunelli",
+    "role": "Presidente Ferrari Trento, Presidente Altagamma",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Ferrari Trento",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.44,
+    "bio": "Presidente e CEO delle Cantine Ferrari, eccellenza trentina dello spumante metodo classico, e presidente di Altagamma, la fondazione che riunisce i marchi dell'alta gamma italiana. Sotto la sua guida Ferrari Trento è diventato il brindisi ufficiale della Formula 1.",
+    "communication_style": "Elegante e colto, linguaggio da ambasciatore del lusso italiano, enfasi su qualità, territorio e sostenibilità",
+    "key_traits": [
+      "eccellenza_vinicola",
+      "lusso_italiano",
+      "altagamma"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "made_in_italy",
+        "value": 0.9,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "sustainability",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.4,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  }
+]

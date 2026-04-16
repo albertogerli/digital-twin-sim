@@ -1,0 +1,83 @@
+{
+  "scenario_name": "disney_dont_say_gay_protests_2022",
+  "domain": "corporate",
+  "description": "In 2022, Disney employees staged protests against CEO Bob Chapek’s delayed response to Florida's 'Parental Rights in Education' bill. The controversy pitted internal diversity advocacy against external political pressures, leading to executive leadership changes.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 49,
+      "against_pct": 50,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "CEO Bob Chapek apologizes for not taking a stance."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Employee walkout protesting corporate neutrality."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Disney publicly opposes the Florida legislation."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Chapek replaced as CEO following political backlash."
+    }
+  ],
+  "calibration_notes": "Models the volatility of 'corporate neutrality' when companies are caught between opposing political and employee factions."
+}

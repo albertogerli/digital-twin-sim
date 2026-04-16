@@ -1,0 +1,83 @@
+{
+  "scenario_name": "prop_187_california_legacy_analysis",
+  "domain": "social",
+  "description": "A retrospective public opinion assessment of California's 1994 Proposition 187, which sought to deny social services to undocumented immigrants. The scenario tracks opinion shifts from 1994 through the 1998 repeal efforts, highlighting the polarization between immigrant advocacy groups and proponents of restrictive state welfare policies.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 59,
+      "against_pct": 31,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 59,
+      "against_pct": 35,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 54,
+      "against_pct": 40,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 46,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 46,
+      "against_pct": 49,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 43,
+      "against_pct": 55,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "High-profile TV ads featuring images of border crossings influence base sentiment."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Federal courts issue preliminary injunctions blocking implementation."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Governor Gray Davis shifts state policy, signaling potential settlement."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Proposition 187 is effectively declared unconstitutional and non-enforceable."
+    }
+  ],
+  "calibration_notes": "Useful for modeling long-term sentiment decay regarding nativist policies and the influence of judicial intervention on public opinion."
+}

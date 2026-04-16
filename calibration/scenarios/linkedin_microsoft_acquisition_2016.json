@@ -1,0 +1,83 @@
+{
+  "scenario_name": "linkedin_microsoft_acquisition_2016",
+  "domain": "corporate",
+  "description": "Microsoft announced the acquisition of LinkedIn for $26.2 billion in 2016. The market was initially skeptical due to the high premium paid, but sentiment shifted as strategic benefits became clear.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 59,
+      "against_pct": 39,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Microsoft stock dips 3 percent on news."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Analysts highlight the potential for 'LinkedIn Learning' integration."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Regulatory approval received in key jurisdictions."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Deal closes with positive investor outlook."
+    }
+  ],
+  "calibration_notes": "Shows how early skepticism toward acquisition premiums can be overcome by long-term value narrative."
+}

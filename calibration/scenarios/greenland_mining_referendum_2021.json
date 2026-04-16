@@ -1,0 +1,79 @@
+{
+  "scenario_name": "greenland_mining_referendum_2021",
+  "domain": "environmental",
+  "description": "The 2021 Greenlandic election was dominated by the controversy surrounding the Kuannersuit (Kvanefjeld) mining project, which involved rare earth elements but also radioactive uranium. The pro-mining coalition was defeated by the Inuit Ataqatigiit party, effectively halting the project.",
+  "final_outcome_pro_pct": 37.0,
+  "final_outcome_against_pct": 63.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 39,
+      "against_pct": 35,
+      "undecided_pct": 26
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 40,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 45,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 37,
+      "against_pct": 50,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 37,
+      "against_pct": 55,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 37,
+      "against_pct": 58,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 37,
+      "against_pct": 60,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 37,
+      "against_pct": 63,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Public fears grow over environmental contamination in the fragile Arctic ecosystem."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "The Inuit Ataqatigiit party pivots the election focus toward preserving traditional fishing and hunting lifestyles."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Election results confirm a mandate to ban uranium mining in Greenland."
+    }
+  ],
+  "calibration_notes": "Demonstrates the tension between economic resource exploitation and cultural/environmental preservation."
+}

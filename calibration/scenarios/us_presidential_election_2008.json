@@ -1,0 +1,79 @@
+{
+  "scenario_name": "us_presidential_election_2008",
+  "domain": "political",
+  "description": "Barack Obama defeated John McCain in the 2008 US presidential election. Occurring during the global financial crisis, the race moved significantly toward Obama following the collapse of Lehman Brothers in September 2008.",
+  "final_outcome_pro_pct": 52.9,
+  "final_outcome_against_pct": 45.7,
+  "final_turnout_pct": 61.6,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 46,
+      "against_pct": 45,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 46,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 47,
+      "against_pct": 45,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 44,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 43,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 51,
+      "against_pct": 42,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 43,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 44,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 53,
+      "against_pct": 47,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Lehman Brothers collapse triggers financial market instability."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Obama's handling of the debate response regarding the bailout package."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final week of campaigning in key 'Rust Belt' swing states."
+    }
+  ],
+  "calibration_notes": "Best case for modeling external 'shock' events influencing election trajectory."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "starbucks_white_cup_contest_2014",
+  "domain": "marketing",
+  "description": "Starbucks invited customers to draw on their cups and post photos on Twitter. While many were artistic, some users posted drawings of drugs or offensive themes, forcing a PR pivot.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 46,
+      "against_pct": 50,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 53,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Creative entries flood Twitter."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "First wave of controversial/inappropriate cup designs reported."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Mainstream media picks up on the 'troll' aspect."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Starbucks moves to curated moderation to save the campaign."
+    }
+  ],
+  "calibration_notes": "Tests the ability to handle mixed outcomes in UGC campaigns."
+}

@@ -1,0 +1,165 @@
+{
+  "id": "TECH-2018-GDPR_ADOPTION_AND_ACCEPTANCE_E",
+  "domain": "technology",
+  "title": "Public awareness and support for the General Data Protection Regulation (GDPR) implementation in the EU",
+  "country": "EU",
+  "date_start": "2018-01-01",
+  "date_end": "2018-05-25",
+  "n_rounds": 7,
+  "round_duration_days": 20,
+  "ground_truth_outcome": {
+    "pro_pct": 67.0,
+    "source": "https://ec.europa.eu/commission/presscorner/detail/en/IP_19_2956",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2018-01-01",
+      "pro_pct": 52.0,
+      "against_pct": 15.0,
+      "undecided_pct": 33.0,
+      "sample_size": null,
+      "source": "Estimated: Based on Eurobarometer 447 trend analysis",
+      "pollster": "Eurobarometer"
+    },
+    {
+      "round": 2,
+      "date": "2018-01-21",
+      "pro_pct": 54.5,
+      "against_pct": 14.5,
+      "undecided_pct": 31.0,
+      "sample_size": null,
+      "source": "Estimated: Linear growth trend following initial awareness campaigns",
+      "pollster": "Eurobarometer"
+    },
+    {
+      "round": 3,
+      "date": "2018-02-10",
+      "pro_pct": 57.0,
+      "against_pct": 14.0,
+      "undecided_pct": 29.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated growth",
+      "pollster": "Eurobarometer"
+    },
+    {
+      "round": 4,
+      "date": "2018-03-02",
+      "pro_pct": 59.5,
+      "against_pct": 13.5,
+      "undecided_pct": 27.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated growth",
+      "pollster": "Eurobarometer"
+    },
+    {
+      "round": 5,
+      "date": "2018-03-22",
+      "pro_pct": 62.0,
+      "against_pct": 13.0,
+      "undecided_pct": 25.0,
+      "sample_size": null,
+      "source": "Estimated: Increased media coverage of Cambridge Analytica scandal",
+      "pollster": "Eurobarometer"
+    },
+    {
+      "round": 6,
+      "date": "2018-04-11",
+      "pro_pct": 64.5,
+      "against_pct": 12.5,
+      "undecided_pct": 23.0,
+      "sample_size": null,
+      "source": "Estimated: Pre-launch awareness surge",
+      "pollster": "Eurobarometer"
+    },
+    {
+      "round": 7,
+      "date": "2018-05-01",
+      "pro_pct": 67.0,
+      "against_pct": 12.0,
+      "undecided_pct": 21.0,
+      "sample_size": null,
+      "source": "https://ec.europa.eu/commission/presscorner/detail/en/IP_19_2956",
+      "pollster": "Eurobarometer"
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2018-01-25",
+      "description": "European Commission launches major public awareness campaign for GDPR",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.5,
+      "source": "https://ec.europa.eu/info/law/law-topic/data-protection_en"
+    },
+    {
+      "round": 5,
+      "date": "2018-03-17",
+      "description": "Cambridge Analytica scandal breaks, driving public concern for data privacy",
+      "shock_magnitude": 0.7,
+      "shock_direction": 0.8,
+      "source": "https://www.nytimes.com/2018/03/17/us/politics/cambridge-analytica-facebook-privacy-scandal.html"
+    },
+    {
+      "round": 6,
+      "date": "2018-04-20",
+      "description": "Major tech companies begin sending mandatory GDPR compliance update emails",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.3,
+      "source": "https://www.bbc.com/news/technology-44177439"
+    }
+  ],
+  "agents": [
+    {
+      "name": "European Commission",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Primary architect and regulator of the GDPR."
+    },
+    {
+      "name": "Věra Jourová",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.8,
+      "description": "EU Commissioner for Justice, Consumers and Gender Equality."
+    },
+    {
+      "name": "Tech Lobby Groups",
+      "type": "elite",
+      "initial_position": -0.4,
+      "influence": 0.6,
+      "description": "Industry groups concerned about compliance costs and operational friction."
+    },
+    {
+      "name": "Privacy Advocacy NGOs",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.5,
+      "description": "Organizations like EDRi advocating for stronger data rights."
+    },
+    {
+      "name": "General Public (Urban)",
+      "type": "citizen_cluster",
+      "initial_position": 0.3,
+      "influence": 0.2,
+      "description": "Tech-savvy citizens generally supportive of privacy protections."
+    },
+    {
+      "name": "General Public (Rural/Skeptical)",
+      "type": "citizen_cluster",
+      "initial_position": -0.2,
+      "influence": 0.2,
+      "description": "Citizens concerned about bureaucratic overreach and digital complexity."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.628,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.55,
+    "undecided_share": 0.33
+  },
+  "notes": "Pro-side defined as support for the GDPR framework and increased data protection rights. Against-side defined as opposition due to concerns over compliance burden, complexity, or skepticism of EU regulation. Data quality: Polling trajectory is interpolated based on known start and end points and major exogenous shocks."
+}

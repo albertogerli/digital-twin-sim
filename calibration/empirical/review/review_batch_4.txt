@@ -1,0 +1,240 @@
+ISTRUZIONI PER IL REVIEWER: per ogni scenario, verifica:
+1. Ground truth outcome: il numero è corretto? La fonte esiste?
+2. Polling trajectory: i trend sono coerenti con dati pubblici noti?
+3. Events: le date sono corrette? Mancano eventi critici?
+4. Agents: i key stakeholder sono quelli giusti? Posizioni iniziali plausibili?
+5. Shock magnitudes: le scale sono ragionevoli?
+Rispondi con: PASS / CORRECTIONS [dettaglio] / REJECT [motivo]
+
+BATCH 4 — 5 scenarios: PH-2021-MASKING_MANDATE_DEBATE_USA_202, CORP-2020-BOEING_737_MAX_RETURN_TO_SERVI, CORP-2022-TWITTER_X_ACQUISITION_BY_ELON, POL-2017-REFERENDUM_INDIPENDENZA_CATALU, TECH-2017-NET_NEUTRALITY_REPEAL_US_2017
+======================================================================
+
+----------------------------------------------------------------------
+SCENARIO: PH-2021-MASKING_MANDATE_DEBATE_USA_202
+Domain: public_health | Country: US
+Period: 2021-03-01 -> 2021-09-30 | Rounds: 5
+
+OUTCOME: 63.0% pro | Source: https://www.pewresearch.org/short-reads/2021/09/15/more-americans-say-they-are-regularly-wearing-masks-in-stores-and-other-businesses/
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2021-03-01]: 78.0% vs 20.0% undec 2.0% (n=12055) [VERIFIED URL]
+     src: https://www.pewresearch.org/politics/2021/03/05/growing-share-of-americans-say-they-are-regularly-we
+  R2 [2021-04-12]: 75.0% vs 22.0% undec 3.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Interpolated based on CDC guidance shifts in April 2021
+  R3 [2021-05-24]: 70.0% vs 26.0% undec 4.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Reflects post-CDC May 13th guidance update allowing vaccinated people to go maskless
+  R4 [2021-07-05]: 66.0% vs 30.0% undec 4.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Reflects Delta variant emergence and early local mandate re-impositions
+  R5 [2021-08-16]: 63.0% vs 34.0% undec 3.0% (n=10348) [VERIFIED URL]
+     src: https://www.pewresearch.org/short-reads/2021/09/15/more-americans-say-they-are-regularly-wearing-mas
+
+KEY EVENTS:
+  R3 [2021-05-13]: CDC announces fully vaccinated people can resume activities without wearing masks
+     shock: 0.8 x -1.0 | https://www.cdc.gov/media/releases/2021/s0513-cdc-statement-mask-guidance.html [VERIFIED URL]
+  R4 [2021-07-27]: CDC updates guidance recommending masks for vaccinated people in areas of high transmissio
+     shock: 0.5 x +0.5 | https://www.cdc.gov/media/releases/2021/s0727-mask-guidance.html [VERIFIED URL]
+  R5 [2021-09-09]: President Biden announces federal vaccine and masking requirements for large employers
+     shock: 0.7 x -0.3 | https://www.whitehouse.gov/briefing-room/speeches-remarks/2021/09/09/remarks-by- [VERIFIED URL]
+
+AGENTS (top 5 of 7 by influence):
+  CDC (institutional): pos=+0.9 inf=0.90
+  Joe Biden (elite): pos=+0.8 inf=0.80
+  Republican Party (institutional): pos=-0.7 inf=0.80
+  Democratic Party (institutional): pos=+0.7 inf=0.80
+  Ron DeSantis (elite): pos=-0.9 inf=0.70
+
+COVARIATES:
+  polarization=0.873, event_vol=0.6, elite_conc=0.7, trust=0.5, undecided=0.05
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 14/19 (74%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 40.0% | Events verified: 100.0%
+
+NOTES: Pro-side defined as supporting government-mandated mask requirements in public spaces. Against-side defined as opposing such mandates, favoring individual choice. Data quality: Early 2021 data is robu
+
+----------------------------------------------------------------------
+SCENARIO: CORP-2020-BOEING_737_MAX_RETURN_TO_SERVI
+Domain: corporate | Country: US
+Period: 2020-01-01 -> 2020-11-18 | Rounds: 5
+
+OUTCOME: 41.0% pro | Source: https://www.atmosphere-research.com
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2020-01-01]: 25.0% vs 60.0% undec 15.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Based on post-crash sentiment nadir in early 2020
+  R2 [2020-03-05]: 28.0% vs 58.0% undec 14.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Gradual recovery as grounding extended
+  R3 [2020-05-08]: 32.0% vs 52.0% undec 16.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Impact of initial recertification flight testing news
+  R4 [2020-07-11]: 36.0% vs 48.0% undec 16.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Increased confidence following FAA flight tests
+  R5 [2020-09-13]: 41.0% vs 42.0% undec 17.0% (n=?) [VERIFIED URL]
+     src: https://www.atmosphere-research.com
+
+KEY EVENTS:
+  R3 [2020-06-29]: FAA and Boeing begin formal certification flight tests
+     shock: 0.4 x +0.3 | https://www.reuters.com/article/us-boeing-737max-idUSKBN24017Q [VERIFIED URL]
+  R4 [2020-09-30]: FAA Administrator Steve Dickson conducts his own evaluation flight
+     shock: 0.5 x +0.4 | https://www.nytimes.com/2020/09/30/business/boeing-737-max-faa.html [VERIFIED URL]
+  R5 [2020-11-18]: FAA officially clears the Boeing 737 MAX to return to commercial service
+     shock: 0.8 x +0.5 | https://www.bbc.com/news/business-54988775 [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  FAA (institutional): pos=+0.2 inf=1.00
+  Boeing Corporate (elite): pos=+1.0 inf=0.90
+  Airline Pilots Association (institutional): pos=+0.0 inf=0.70
+  Aviation Safety Advocates (elite): pos=-0.9 inf=0.60
+  Frequent Flyers (citizen_cluster): pos=-0.3 inf=0.40
+
+COVARIATES:
+  polarization=0.703, event_vol=0.6, elite_conc=0.8, trust=0.4, undecided=0.15
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 20.0% | Events verified: 100.0%
+
+NOTES: Pro-side defined as passengers willing to book a flight on a 737 MAX. Against-side defined as passengers who would avoid the aircraft or are unsure/unwilling. Data quality is high for the final round 
+
+----------------------------------------------------------------------
+SCENARIO: CORP-2022-TWITTER_X_ACQUISITION_BY_ELON
+Domain: corporate | Country: US
+Period: 2022-04-01 -> 2022-11-30 | Rounds: 5
+
+OUTCOME: 41.0% pro | Source: NEEDS_VERIFICATION
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2022-04-01]: 35.0% vs 30.0% undec 35.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Baseline sentiment prior to formal bid announcement
+  R2 [2022-05-19]: 38.0% vs 35.0% undec 27.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Post-bid announcement volatility
+  R3 [2022-07-06]: 36.0% vs 42.0% undec 22.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Reaction to Musk's attempt to terminate the deal
+  R4 [2022-08-23]: 39.0% vs 40.0% undec 21.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Legal battle phase
+  R5 [2022-10-10]: 41.0% vs 44.0% undec 15.0% (n=1500) [VERIFIED URL]
+     src: https://today.yougov.com/topics/politics/articles-reports/2022/10/27/americans-views-elon-musk-twitt
+
+KEY EVENTS:
+  R1 [2022-04-14]: Elon Musk makes an unsolicited offer to buy Twitter for $43 billion.
+     shock: 0.6 x +0.3 | https://www.reuters.com/technology/elon-musk-offers-buy-twitter-5420-per-share-2 [VERIFIED URL]
+  R3 [2022-07-08]: Musk announces intent to terminate the merger agreement citing spam bot concerns.
+     shock: 0.8 x -0.5 | https://www.nytimes.com/2022/07/08/technology/elon-musk-twitter-deal.html [VERIFIED URL]
+  R5 [2022-10-27]: Musk officially completes the acquisition and takes Twitter private.
+     shock: 0.9 x +0.2 | https://www.bbc.com/news/business-63412538 [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Elon Musk (elite): pos=+1.0 inf=0.95
+  Advertisers (institutional): pos=-0.3 inf=0.80
+  Twitter Board of Directors (institutional): pos=-0.8 inf=0.70
+  Tech Investors (elite): pos=+0.4 inf=0.60
+  Twitter Power Users (citizen_cluster): pos=-0.6 inf=0.50
+
+COVARIATES:
+  polarization=0.669, event_vol=0.8, elite_conc=0.75, trust=0.4, undecided=0.35
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 20.0% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as support for Elon Musk's acquisition of Twitter. Against-side is defined as opposition to the acquisition or negative sentiment toward the deal. Data quality is mixed; early roun
+
+----------------------------------------------------------------------
+SCENARIO: POL-2017-REFERENDUM_INDIPENDENZA_CATALU
+Domain: political | Country: ES
+Period: 2017-09-01 -> 2017-10-01 | Rounds: 5
+
+OUTCOME: 92.0% pro | Source: https://www.govern.cat/govern/docs/2017/10/06/15/20/c4810c41-1e4e-43e1-a5e4-2d8bcfa8d9ba.pdf
+  Type: referendum
+
+POLLING TRAJECTORY:
+  R1 [2017-09-01]: 41.0% vs 49.0% undec 10.0% (n=1500) [VERIFIED URL]
+     src: https://ceo.gencat.cat/ca/barometre/detall/index.html?p_codi=756
+  R2 [2017-09-07]: 42.5% vs 48.5% undec 9.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Interpolation based on CEO trends and parliamentary escalation
+  R3 [2017-09-13]: 44.0% vs 47.0% undec 9.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Shift due to Guardia Civil raids on government offices
+  R4 [2017-09-19]: 46.0% vs 46.0% undec 8.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Polarization spike following arrests of Catalan officials
+  R5 [2017-09-25]: 48.0% vs 45.0% undec 7.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Final pre-referendum mobilization phase
+
+KEY EVENTS:
+  R2 [2017-09-06]: Catalan Parliament passes the Law of the Referendum
+     shock: 0.6 x +0.5 | https://www.reuters.com/article/us-spain-politics-catalonia-idUSKCN1BI17D [VERIFIED URL]
+  R3 [2017-09-15]: Spanish Constitutional Court suspends the referendum law
+     shock: 0.7 x -0.4 | https://www.bbc.com/news/world-europe-41267677 [VERIFIED URL]
+  R4 [2017-09-20]: Operation Anubis: Guardia Civil raids Catalan government offices
+     shock: 0.9 x +0.8 | https://www.nytimes.com/2017/09/20/world/europe/spain-catalonia-referendum-arres [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Carles Puigdemont (elite): pos=+0.9 inf=0.90
+  Mariano Rajoy (elite): pos=-0.9 inf=0.90
+  Spanish Constitutional Court (institutional): pos=-0.9 inf=0.80
+  Generalitat de Catalunya (institutional): pos=+0.8 inf=0.70
+  Pro-Independence Voters (citizen_cluster): pos=+0.7 inf=0.40
+
+COVARIATES:
+  polarization=0.9, event_vol=0.75, elite_conc=0.8, trust=0.3, undecided=0.1
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 14/19 (74%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 20.0% | Events verified: 100.0%
+
+NOTES: Pro-side (+1) is defined as supporting Catalan independence (SI). Against-side (-1) is defined as supporting Spanish unity and opposing the referendum. The 92% figure is the result of the referendum i
+
+----------------------------------------------------------------------
+SCENARIO: TECH-2017-NET_NEUTRALITY_REPEAL_US_2017
+Domain: technology | Country: US
+Period: 2017-04-26 -> 2017-12-14 | Rounds: 5
+
+OUTCOME: 83.0% pro | Source: https://www.publicknowledge.org/blog/net-neutrality-poll/
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2017-04-26]: 75.0% vs 15.0% undec 10.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Based on baseline support levels prior to Pai's formal proposal announcement.
+  R2 [2017-06-11]: 77.0% vs 14.0% undec 9.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Reflects initial public reaction to the FCC's Notice of Proposed Rulemaking.
+  R3 [2017-07-27]: 79.0% vs 13.0% undec 8.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Following the 'Day of Action' protest event.
+  R4 [2017-09-11]: 81.0% vs 12.0% undec 7.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Trend line interpolation toward final UMD survey result.
+  R5 [2017-10-27]: 83.0% vs 11.0% undec 6.0% (n=1077) [VERIFIED URL]
+     src: https://www.publicknowledge.org/blog/net-neutrality-poll/
+
+KEY EVENTS:
+  R1 [2017-04-26]: FCC Chairman Ajit Pai announces plans to roll back net neutrality rules.
+     shock: 0.6 x +0.5 | https://www.reuters.com/article/us-usa-fcc-netneutrality/fcc-chief-unveils-plan- [VERIFIED URL]
+  R3 [2017-07-12]: Net Neutrality Day of Action: Major websites and activists protest the repeal.
+     shock: 0.8 x +0.9 | https://www.theverge.com/2017/7/12/15959730/net-neutrality-day-of-action-protest [VERIFIED URL]
+  R5 [2017-12-14]: FCC votes 3-2 to repeal the 2015 Open Internet Order.
+     shock: 0.9 x -0.4 | https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Ajit Pai (elite): pos=-1.0 inf=0.90
+  Internet Service Providers (ISPs) (institutional): pos=-0.8 inf=0.80
+  Tech Giants (Google, Netflix) (institutional): pos=+0.9 inf=0.70
+  Digital Rights Activists (citizen_cluster): pos=+1.0 inf=0.60
+  Congressional Democrats (elite): pos=+0.7 inf=0.50
+
+COVARIATES:
+  polarization=0.884, event_vol=0.7, elite_conc=0.8, trust=0.3, undecided=0.1
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 20.0% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as supporting the maintenance of 2015 net neutrality rules (opposing the repeal). Against-side is defined as supporting the FCC's repeal of those rules. Data quality is high for th

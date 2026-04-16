@@ -1,0 +1,182 @@
+[
+  {
+    "id": "massimiliano_fedriga",
+    "name": "Massimiliano Fedriga",
+    "role": "Presidente Regione Friuli Venezia Giulia",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.40,
+    "rigidity": 0.55,
+    "bio": "Presidente del FVG, presidente della Conferenza Stato-Regioni. Moderato nella Lega, punto di riferimento per le Regioni.",
+    "communication_style": "Istituzionale, mediatore, toni da presidente delle Regioni",
+    "key_traits": ["mediatore", "istituzionale", "moderato"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.70, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": 0.45, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "alberto_cirio",
+    "name": "Alberto Cirio",
+    "role": "Presidente Regione Piemonte",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.50,
+    "bio": "Presidente del Piemonte, Forza Italia. Europarlamentare, governatore moderato del centrodestra.",
+    "communication_style": "Moderato, europeo, toni da governatore di centrodestra",
+    "key_traits": ["moderato", "europeo", "amministratore"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.40, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "autonomia_differenziata", "value": 0.30, "source": "inferred", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "alessandra_todde",
+    "name": "Alessandra Todde",
+    "role": "Presidente Regione Sardegna",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Movimento 5 Stelle",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.40,
+    "rigidity": 0.55,
+    "bio": "Prima presidente donna della Sardegna, M5S. Ex viceministra dello Sviluppo Economico. Ha battuto il centrodestra nel 2024.",
+    "communication_style": "Pragmatica, imprenditoriale, toni da ex manager prestata alla politica",
+    "key_traits": ["pragmatica", "innovatrice", "determinata"],
+    "platform_primary": "social_media",
+    "positions": [
+      {"topic_tag": "environment", "value": -0.60, "source": "public_statement", "confidence": "high", "notes": "Contraria a speculazione eolica/fotovoltaica in Sardegna"},
+      {"topic_tag": "general_left_right", "value": -0.35, "source": "voting_record", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "francesco_acquaroli",
+    "name": "Francesco Acquaroli",
+    "role": "Presidente Regione Marche",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.30,
+    "rigidity": 0.60,
+    "bio": "Presidente delle Marche, FdI. Ha strappato la regione al centrosinistra nel 2020.",
+    "communication_style": "Istituzionale, toni da governatore di provincia",
+    "key_traits": ["istituzionale", "locale", "fedele"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.55, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "michele_de_pascale",
+    "name": "Michele de Pascale",
+    "role": "Presidente Regione Emilia-Romagna",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.50,
+    "bio": "Presidente dell'Emilia-Romagna dal 2024, ex sindaco di Ravenna. Successore di Bonaccini, giovane dirigente PD.",
+    "communication_style": "Pragmatico, amministrativo, nuova generazione PD",
+    "key_traits": ["giovane", "pragmatico", "amministratore"],
+    "platform_primary": "social_media",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.40, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "environment", "value": -0.55, "source": "public_statement", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "vito_bardi",
+    "name": "Vito Bardi",
+    "role": "Presidente Regione Basilicata",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.50,
+    "bio": "Presidente della Basilicata, ex generale della Guardia di Finanza. Governatore di centrodestra, basso profilo.",
+    "communication_style": "Militare-istituzionale, poche dichiarazioni, basso profilo",
+    "key_traits": ["riservato", "militare", "istituzionale"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.40, "source": "voting_record", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "marco_marsilio",
+    "name": "Marco Marsilio",
+    "role": "Presidente Regione Abruzzo",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.30,
+    "rigidity": 0.60,
+    "bio": "Presidente dell'Abruzzo, FdI. Ex senatore, primo governatore FdI in Italia (2019).",
+    "communication_style": "Istituzionale, locale, toni da governatore di FdI",
+    "key_traits": ["pioniere_FdI", "istituzionale", "locale"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.60, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "stefania_proietti",
+    "name": "Stefania Proietti",
+    "role": "Presidente Regione Umbria",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Centrosinistra civico",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.30,
+    "rigidity": 0.50,
+    "bio": "Presidente dell'Umbria dal 2024, ex sindaca di Assisi. Ha strappato la regione al centrodestra con una coalizione campo largo.",
+    "communication_style": "Civica, locale, toni da sindaca di provincia",
+    "key_traits": ["civica", "locale", "moderata"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.30, "source": "voting_record", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  }
+]

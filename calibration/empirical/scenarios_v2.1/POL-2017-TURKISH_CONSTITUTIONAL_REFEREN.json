@@ -1,0 +1,162 @@
+{
+  "id": "POL-2017-TURKISH_CONSTITUTIONAL_REFEREN",
+  "domain": "political",
+  "title": "2017 Turkish Constitutional Referendum on the transition to an executive presidential system",
+  "country": "TR",
+  "date_start": "2017-02-01",
+  "date_end": "2017-04-16",
+  "n_rounds": 6,
+  "round_duration_days": 12,
+  "ground_truth_outcome": {
+    "pro_pct": 51.4,
+    "source": "https://www.ysk.gov.tr",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2017-02-01",
+      "pro_pct": 44.0,
+      "against_pct": 41.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Based on Gezici and Metropoll early 2017 trends",
+      "pollster": "Various"
+    },
+    {
+      "round": 2,
+      "date": "2017-02-13",
+      "pro_pct": 45.2,
+      "against_pct": 42.5,
+      "undecided_pct": 12.3,
+      "sample_size": null,
+      "source": "Estimated: Interpolated trend from Konda and ORC",
+      "pollster": "Various"
+    },
+    {
+      "round": 3,
+      "date": "2017-02-25",
+      "pro_pct": 46.5,
+      "against_pct": 43.8,
+      "undecided_pct": 9.7,
+      "sample_size": null,
+      "source": "Estimated: Reflects post-campaign launch momentum",
+      "pollster": "Various"
+    },
+    {
+      "round": 4,
+      "date": "2017-03-09",
+      "pro_pct": 47.8,
+      "against_pct": 45.1,
+      "undecided_pct": 7.1,
+      "sample_size": null,
+      "source": "Estimated: Reflects diplomatic tensions with EU",
+      "pollster": "Various"
+    },
+    {
+      "round": 5,
+      "date": "2017-03-21",
+      "pro_pct": 49.1,
+      "against_pct": 46.4,
+      "undecided_pct": 4.5,
+      "sample_size": null,
+      "source": "Estimated: Consolidation of base voters",
+      "pollster": "Various"
+    },
+    {
+      "round": 6,
+      "date": "2017-04-02",
+      "pro_pct": 50.5,
+      "against_pct": 48.0,
+      "undecided_pct": 1.5,
+      "sample_size": null,
+      "source": "Estimated: Final pre-election polling average",
+      "pollster": "Various"
+    }
+  ],
+  "events": [
+    {
+      "round": 4,
+      "date": "2017-03-11",
+      "description": "Dutch government blocks Turkish ministers from holding rallies, sparking diplomatic crisis",
+      "shock_magnitude": 0.6,
+      "shock_direction": 1.0,
+      "source": "https://www.bbc.com/news/world-europe-39237640"
+    },
+    {
+      "round": 5,
+      "date": "2017-03-25",
+      "description": "President Erdogan intensifies rhetoric against European 'Nazism' to mobilize nationalist base",
+      "shock_magnitude": 0.4,
+      "shock_direction": 1.0,
+      "source": "https://www.reuters.com/article/us-turkey-referendum-erdogan-idUSKBN16W09M"
+    },
+    {
+      "round": 6,
+      "date": "2017-04-16",
+      "description": "Supreme Election Council (YSK) decides to accept unstamped ballots as valid",
+      "shock_magnitude": 0.9,
+      "shock_direction": 1.0,
+      "source": "https://www.nytimes.com/2017/04/16/world/europe/turkey-referendum-erdogan.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Recep Tayyip Erdogan",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 1.0,
+      "description": "President of Turkey, primary proponent of the executive system"
+    },
+    {
+      "name": "AKP (Justice and Development Party)",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Ruling party supporting the constitutional changes"
+    },
+    {
+      "name": "CHP (Republican People's Party)",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "Main opposition party campaigning against the changes"
+    },
+    {
+      "name": "MHP (Nationalist Movement Party)",
+      "type": "institutional",
+      "initial_position": 0.6,
+      "influence": 0.5,
+      "description": "Nationalist party leadership supporting the changes"
+    },
+    {
+      "name": "HDP (Peoples' Democratic Party)",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.4,
+      "description": "Pro-Kurdish opposition party campaigning against the changes"
+    },
+    {
+      "name": "Conservative Anatolian Voters",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.3,
+      "description": "Core electoral base for the pro-referendum side"
+    },
+    {
+      "name": "Urban Secular Voters",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.3,
+      "description": "Core electoral base for the anti-referendum side"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.981,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.9,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side (Yes) refers to supporting the constitutional amendments to transition to an executive presidential system. Against-side (No) refers to opposing these changes. Data quality is subject to the highly polarized media environment and the contested nature of the YSK's final ballot counting procedures."
+}

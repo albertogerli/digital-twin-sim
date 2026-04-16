@@ -1,0 +1,83 @@
+{
+  "scenario_name": "volkswagen_martin_winterkorn_ouster_2015",
+  "domain": "corporate",
+  "description": "Following the discovery of the 'Dieselgate' scandal in September 2015, CEO Martin Winterkorn faced immense public and board pressure to resign. The shift in consensus was rapid as evidence of the fraud surfaced.",
+  "final_outcome_pro_pct": 5.0,
+  "final_outcome_against_pct": 95.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 15,
+      "against_pct": 75,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 10,
+      "against_pct": 85,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 8,
+      "against_pct": 88,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 6,
+      "against_pct": 92,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 5,
+      "against_pct": 94,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "EPA reveals Volkswagen's use of defeat devices."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "German government calls for full transparency and investigation."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Winterkorn resigns from the CEO position."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Internal inquiry reveals the scale of the deliberate deception."
+    }
+  ],
+  "calibration_notes": "Useful for modeling sudden collapse of confidence in leadership due to ethical failure."
+}

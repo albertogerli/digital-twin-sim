@@ -1,0 +1,83 @@
+{
+  "scenario_name": "taiwan_sunflower_movement_2014",
+  "domain": "social",
+  "description": "Student-led protests in Taiwan during March and April 2014, occupying the Legislative Yuan to protest the Cross-Strait Service Trade Agreement. Public opinion shifted significantly as concerns about mainland China's influence grew.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 42,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 62,
+      "against_pct": 30,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 68,
+      "against_pct": 25,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 69,
+      "against_pct": 28,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Legislative Yuan is occupied by protesters following a procedural dispute."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Massive peaceful rally of 500,000 protesters outside the Presidential Office Building."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Legislative Speaker Wang Jin-pyng pledges not to conduct further negotiations until a review mechanism is established."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Protesters vacate the Legislative Yuan after government concessions."
+    }
+  ],
+  "calibration_notes": "Example of a high-stakes geopolitical protest where moderate public sentiment shifts rapidly toward the protest movement."
+}

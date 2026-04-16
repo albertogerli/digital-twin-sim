@@ -1,0 +1,79 @@
+{
+  "scenario_name": "scottish_independence_polling_2014",
+  "domain": "political",
+  "description": "The final months leading up to the 2014 Scottish Independence referendum, showing the surge in Yes support.",
+  "final_outcome_pro_pct": 44.7,
+  "final_outcome_against_pct": 55.3,
+  "final_turnout_pct": 84.6,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 32,
+      "against_pct": 48,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 42,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 38,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 44.7,
+      "against_pct": 55.3,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Alex Salmond debate success"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "YouGov poll shows 'Yes' lead"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The Vow by UK party leaders"
+    }
+  ],
+  "calibration_notes": "Best-in-class example of a 'late surge' and subsequent voter consolidation."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "australian_carbon_tax_repeal_2013",
+  "domain": "environmental",
+  "description": "Tony Abbott's 2013 election campaign centered on the 'Axe the Tax' pledge to repeal the Clean Energy Act. The repeal passed the Senate in 2014, marking a rare reversal of climate legislation in a major economy.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 48,
+      "against_pct": 40,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 43,
+      "against_pct": 50,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 44,
+      "against_pct": 51,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 54,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 41,
+      "against_pct": 56,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 59,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Tony Abbott launches 'Axe the Tax' campaign."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Coalition wins 2013 federal election."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Bill passes Senate with Palmer United Party support."
+    }
+  ],
+  "calibration_notes": "Demonstrates the efficacy of single-issue political branding on climate repeal."
+}

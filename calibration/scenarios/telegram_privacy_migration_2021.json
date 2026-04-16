@@ -1,0 +1,79 @@
+{
+  "scenario_name": "telegram_privacy_migration_2021",
+  "domain": "technology",
+  "description": "The spike in migrations to Telegram and Signal in January 2021 following WhatsApp's controversial privacy policy update. This highlights how perceived changes to data ownership drive user behavior.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 30,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 25,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 62,
+      "against_pct": 25,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 35,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 61,
+      "against_pct": 39,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "WhatsApp announces updated Terms of Service, triggering a massive public backlash."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Signal and Telegram see tens of millions of new downloads in one week."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "WhatsApp delays the policy implementation and clarifies that private chats remain encrypted."
+    }
+  ],
+  "calibration_notes": "Models how fear of data misuse can trigger temporary mass migration even if the policy change is misunderstood."
+}

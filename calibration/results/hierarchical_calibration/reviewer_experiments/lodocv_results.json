@@ -1,0 +1,259 @@
+{
+  "overall_mae": 15.928164024353027,
+  "overall_coverage_90": 0.0,
+  "n_total": 20,
+  "per_domain": {
+    "corporate": {
+      "n_scenarios": 3,
+      "mae": 4.914652506510417,
+      "coverage_90": 0.0,
+      "elapsed_s": 880.9805679321289,
+      "per_scenario": [
+        {
+          "id": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG",
+          "gt": 28.0,
+          "sim_mean": 28.673397064208984,
+          "abs_error": 0.6733970642089844,
+          "ci90": [
+            28.57427406311035,
+            28.97797966003418
+          ],
+          "in_90": false
+        },
+        {
+          "id": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER",
+          "gt": 26.0,
+          "sim_mean": 36.47257614135742,
+          "abs_error": 10.472576141357422,
+          "ci90": [
+            32.321292877197266,
+            44.48392868041992
+          ],
+          "in_90": false
+        },
+        {
+          "id": "CORP-2022-TWITTER_X_ACQUISITION_BY_ELON",
+          "gt": 41.0,
+          "sim_mean": 37.402015686035156,
+          "abs_error": 3.5979843139648438,
+          "ci90": [
+            34.67926025390625,
+            40.34856033325195
+          ],
+          "in_90": false
+        }
+      ]
+    },
+    "financial": {
+      "n_scenarios": 5,
+      "mae": 32.27222671508789,
+      "coverage_90": 0.0,
+      "elapsed_s": 964.7619140148163,
+      "per_scenario": [
+        {
+          "id": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020",
+          "gt": 72.0,
+          "sim_mean": 85.71332550048828,
+          "abs_error": 13.713325500488281,
+          "ci90": [
+            85.71136474609375,
+            85.71417999267578
+          ],
+          "in_90": false
+        },
+        {
+          "id": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL",
+          "gt": 62.0,
+          "sim_mean": 28.640018463134766,
+          "abs_error": 33.359981536865234,
+          "ci90": [
+            28.574939727783203,
+            28.84107780456543
+          ],
+          "in_90": false
+        },
+        {
+          "id": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC",
+          "gt": 35.0,
+          "sim_mean": 99.99671936035156,
+          "abs_error": 64.99671936035156,
+          "ci90": [
+            99.98785400390625,
+            99.99989318847656
+          ],
+          "in_90": false
+        },
+        {
+          "id": "FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202",
+          "gt": 22.0,
+          "sim_mean": 29.557395935058594,
+          "abs_error": 7.557395935058594,
+          "ci90": [
+            28.65802001953125,
+            31.247995376586914
+          ],
+          "in_90": false
+        },
+        {
+          "id": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI",
+          "gt": 38.0,
+          "sim_mean": 79.73371124267578,
+          "abs_error": 41.73371124267578,
+          "ci90": [
+            78.7668685913086,
+            81.16239929199219
+          ],
+          "in_90": false
+        }
+      ]
+    },
+    "political": {
+      "n_scenarios": 9,
+      "mae": 12.566028849283855,
+      "coverage_90": 0.0,
+      "elapsed_s": 933.9687781333923,
+      "per_scenario": [
+        {
+          "id": "POL-2011-REFERENDUM_DIVORZIO_MALTA_2011",
+          "gt": 53.2,
+          "sim_mean": 42.86640167236328,
+          "abs_error": 10.333598327636722,
+          "ci90": [
+            42.86236572265625,
+            42.872352600097656
+          ],
+          "in_90": false
+        },
+        {
+          "id": "POL-2016-REFERENDUM_COSTITUZIONALE_ITAL",
+          "gt": 40.9,
+          "sim_mean": 43.208885192871094,
+          "abs_error": 2.308885192871095,
+          "ci90": [
+            42.74239730834961,
+            44.72810363769531
+          ],
+          "in_90": false
+        },
+        {
+          "id": "POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA",
+          "gt": 66.1,
+          "sim_mean": 57.219749450683594,
+          "abs_error": 8.8802505493164,
+          "ci90": [
+            57.14753723144531,
+            57.33821487426758
+          ],
+          "in_90": false
+        },
+        {
+          "id": "POL-2017-REFERENDUM_INDIPENDENZA_CATALU",
+          "gt": 48.0,
+          "sim_mean": 42.862918853759766,
+          "abs_error": 5.137081146240234,
+          "ci90": [
+            42.85714340209961,
+            42.87376403808594
+          ],
+          "in_90": false
+        },
+        {
+          "id": "POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU",
+          "gt": 53.4,
+          "sim_mean": 29.957000732421875,
+          "abs_error": 23.442999267578124,
+          "ci90": [
+            28.588855743408203,
+            33.99223327636719
+          ],
+          "in_90": false
+        },
+        {
+          "id": "POL-2018-REFERENDUM_ABORTO_IRLANDA_2018",
+          "gt": 66.4,
+          "sim_mean": 56.856727600097656,
+          "abs_error": 9.54327239990235,
+          "ci90": [
+            55.686668395996094,
+            57.14200973510742
+          ],
+          "in_90": false
+        },
+        {
+          "id": "POL-2019-ELEZIONI_EUROPEE_2019_ITALIA",
+          "gt": 40.0,
+          "sim_mean": 26.933773040771484,
+          "abs_error": 13.066226959228516,
+          "ci90": [
+            25.088497161865234,
+            28.37185287475586
+          ],
+          "in_90": false
+        },
+        {
+          "id": "POL-2020-ELEZIONI_PRESIDENZIALI_USA_202",
+          "gt": 51.3,
+          "sim_mean": 29.557655334472656,
+          "abs_error": 21.74234466552734,
+          "ci90": [
+            28.759878158569336,
+            31.609880447387695
+          ],
+          "in_90": false
+        },
+        {
+          "id": "POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE",
+          "gt": 50.9,
+          "sim_mean": 32.260398864746094,
+          "abs_error": 18.639601135253905,
+          "ci90": [
+            31.399763107299805,
+            33.07975769042969
+          ],
+          "in_90": false
+        }
+      ]
+    },
+    "public_health": {
+      "n_scenarios": 3,
+      "mae": 9.787976582845053,
+      "coverage_90": 0.0,
+      "elapsed_s": 925.2981400489807,
+      "per_scenario": [
+        {
+          "id": "PH-2021-MASKING_MANDATE_DEBATE_USA_202",
+          "gt": 63.0,
+          "sim_mean": 62.5,
+          "abs_error": 0.5,
+          "ci90": [
+            62.5,
+            62.5
+          ],
+          "in_90": false
+        },
+        {
+          "id": "PH-2021-VACCINE_HESITANCY_USA_2021_CO",
+          "gt": 67.0,
+          "sim_mean": 82.15284729003906,
+          "abs_error": 15.152847290039062,
+          "ci90": [
+            80.816650390625,
+            83.0215835571289
+          ],
+          "in_90": false
+        },
+        {
+          "id": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2",
+          "gt": 47.0,
+          "sim_mean": 60.711082458496094,
+          "abs_error": 13.711082458496094,
+          "ci90": [
+            57.189876556396484,
+            68.44602966308594
+          ],
+          "in_90": false
+        }
+      ]
+    }
+  }
+}

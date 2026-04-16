@@ -1,0 +1,83 @@
+{
+  "scenario_name": "catalan_independence_referendum_2017",
+  "domain": "political",
+  "description": "A disputed referendum held by the Catalan government on October 1, 2017. Despite the Spanish Constitutional Court declaring it illegal and police intervention, 92% of participants voted for independence.",
+  "final_outcome_pro_pct": 92.0,
+  "final_outcome_against_pct": 8.0,
+  "final_turnout_pct": 43.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 46,
+      "against_pct": 44,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 47,
+      "against_pct": 43,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 49,
+      "against_pct": 41,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 47,
+      "against_pct": 43,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 46,
+      "against_pct": 44,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 92,
+      "against_pct": 8,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Spanish government declares the referendum unconstitutional."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Police raids seize ballot papers and arrest regional officials."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Unionist boycott of the vote becomes the dominant strategy."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Voting occurs amid intense police presence and civil unrest."
+    }
+  ],
+  "calibration_notes": "Useful for modeling scenarios with high boycott impact and low turnout, resulting in skewed outcomes."
+}

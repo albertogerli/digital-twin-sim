@@ -1,0 +1,83 @@
+{
+  "scenario_name": "sony_psn_crossplay_2018",
+  "domain": "technology",
+  "description": "In 2018, Sony faced a massive consumer backlash for refusing to enable cross-platform play for Fortnite between the PlayStation 4 and other consoles (Xbox/Switch). The company eventually relented after prolonged negative PR, marking a pivotal moment in gaming industry open-platform policy shifts.",
+  "final_outcome_pro_pct": 80.0,
+  "final_outcome_against_pct": 20.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 55,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 75,
+      "against_pct": 22,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 80,
+      "against_pct": 20,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Fortnite launches on Switch; Sony blocks account cross-progression."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Gaming influencers and media outlets lead widespread social media campaign against Sony."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Sony issues public statement citing 'protecting the ecosystem' (widely ridiculed)."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Sony announces 'Beta' test for cross-play, capitulating to demand."
+    }
+  ],
+  "calibration_notes": "Highlights how consumer pressure can force a monopoly to change restrictive policy."
+}

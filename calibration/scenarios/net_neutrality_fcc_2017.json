@@ -1,0 +1,79 @@
+{
+  "scenario_name": "net_neutrality_fcc_2017",
+  "domain": "technology",
+  "description": "Public and political reaction to the FCC's decision to repeal 2015 net neutrality rules under Chairman Ajit Pai. The debate centered on ISP authority versus an open internet.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 52,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "FCC announces intention to roll back regulations."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Massive internet-wide 'Day of Action' campaign."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "FCC formally votes to repeal the regulations."
+    }
+  ],
+  "calibration_notes": "Tracks public opinion on regulatory rollback vs. perceived user freedom."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "myspace_to_facebook_2008",
+  "domain": "technology",
+  "description": "The decline of MySpace in favor of Facebook was a pivotal moment in internet history. It highlighted the move from customizable 'profile' pages to the standardized, real-identity model promoted by Facebook.",
+  "final_outcome_pro_pct": 75.0,
+  "final_outcome_against_pct": 25.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 70,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 27,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 73,
+      "against_pct": 26,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 75,
+      "against_pct": 25,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Facebook opens registration to everyone, not just students."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "MySpace's site speed and ad-clutter become major user complaints."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Facebook's News Feed feature gains mass adoption."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "MySpace's unique visitor traffic drops below Facebook's for the first time."
+    }
+  ],
+  "calibration_notes": "Baseline for platform migration; demonstrates how UX simplicity eventually defeats creative customization."
+}

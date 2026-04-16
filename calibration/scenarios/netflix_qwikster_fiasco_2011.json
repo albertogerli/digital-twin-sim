@@ -1,0 +1,83 @@
+{
+  "scenario_name": "netflix_qwikster_fiasco_2011",
+  "domain": "commercial",
+  "description": "Netflix attempted to split its DVD-by-mail and streaming services in 2011, rebranding the former as 'Qwikster'. The resulting price increase and confusion led to massive subscriber attrition.",
+  "final_outcome_pro_pct": 10.0,
+  "final_outcome_against_pct": 90.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 15,
+      "against_pct": 75,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 12,
+      "against_pct": 83,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 11,
+      "against_pct": 87,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 10,
+      "against_pct": 89,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 10,
+      "against_pct": 90,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 10,
+      "against_pct": 90,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Netflix announces the price hike."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Company announces the 'Qwikster' rebranding plan."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Stock price crashes as subscriber count declines."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Netflix officially scraps the Qwikster separation."
+    }
+  ],
+  "calibration_notes": "Useful for measuring the impact of poor strategic communication and service degradation on loyal customers."
+}

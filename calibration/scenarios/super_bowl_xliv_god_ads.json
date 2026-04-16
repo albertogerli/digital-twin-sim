@@ -1,0 +1,83 @@
+{
+  "scenario_name": "super_bowl_xliv_god_ads",
+  "domain": "marketing",
+  "description": "During Super Bowl XLIV in 2010, the organization Focus on the Family aired a controversial ad featuring Tim Tebow and his mother, which sparked a national debate over religious advocacy in high-profile marketing. The ad triggered a binary reaction between those supporting the inclusion of such messages in entertainment media and those fiercely opposing the mixing of religion and professional sports marketing.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 35,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 48,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 46,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 47,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Announcement of the ad's purchase causes initial media backlash from NOW and other advocacy groups."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Super Bowl XLIV airs; CBS receives record-breaking complaints and praise simultaneously."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "National news outlets publish op-eds debating the 'commercialization of faith' on television."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Follow-up marketing research indicates a deep cultural divide in brand sentiment for future religious ads."
+    }
+  ],
+  "calibration_notes": "Useful for measuring how polarized audiences react to non-traditional advertising content during peak secular cultural events."
+}

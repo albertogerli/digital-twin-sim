@@ -1,0 +1,79 @@
+{
+  "scenario_name": "japan_eu_epa_ratification_2018",
+  "domain": "political",
+  "description": "The Japan-EU Economic Partnership Agreement (EPA) was designed to reduce trade barriers between two of the world's largest economies. It was seen as a bulwark against rising global protectionism.",
+  "final_outcome_pro_pct": 80.0,
+  "final_outcome_against_pct": 20.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 12,
+      "undecided_pct": 33
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 18,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 72,
+      "against_pct": 19,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 75,
+      "against_pct": 20,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 78,
+      "against_pct": 20,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 80,
+      "against_pct": 20,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Both parties sign the agreement in Tokyo"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "European Parliament approves the treaty with a wide margin"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Japanese Diet completes ratification process"
+    }
+  ],
+  "calibration_notes": "Models a 'high-consensus' policy environment where geopolitical alignment reinforces economic benefits."
+}

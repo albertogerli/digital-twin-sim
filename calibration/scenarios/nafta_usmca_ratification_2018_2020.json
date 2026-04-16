@@ -1,0 +1,79 @@
+{
+  "scenario_name": "nafta_usmca_ratification_2018_2020",
+  "domain": "political",
+  "description": "The renegotiation of NAFTA into the USMCA was a highly contentious trade process between the US, Mexico, and Canada. Ratification faced significant hurdles in the US Congress due to labor and environmental standards before final passage in 2020.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 98.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 25,
+      "undecided_pct": 33
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 62,
+      "against_pct": 28,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 27,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Announcement of USMCA framework deal by Trump and Trudeau"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Labor unions announce conditional support after new enforcement provisions"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "US House of Representatives passes USMCA with bipartisan majority"
+    }
+  ],
+  "calibration_notes": "Useful for tracking how partisan skepticism shifts toward consensus when labor groups are brought into the fold."
+}

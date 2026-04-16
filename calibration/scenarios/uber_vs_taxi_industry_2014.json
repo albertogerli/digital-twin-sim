@@ -1,0 +1,79 @@
+{
+  "scenario_name": "uber_vs_taxi_industry_2014",
+  "domain": "commercial",
+  "description": "The rapid expansion of Uber into major cities globally, sparking intense legal and political opposition from traditional taxi cartels.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 30,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 40,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 55,
+      "against_pct": 43,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 53,
+      "against_pct": 46,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Large-scale protests by taxi unions block city centers."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Public convenience and surge pricing controversy hits national news."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Cities enact municipal regulations to allow ridesharing."
+    }
+  ],
+  "calibration_notes": "Excellent for measuring the friction between 'disruptive tech' and 'protected industry incumbents'."
+}

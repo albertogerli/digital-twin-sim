@@ -1,0 +1,83 @@
+{
+  "scenario_name": "jamaica_measles_campaign_2019",
+  "domain": "public_health",
+  "description": "In 2019, Jamaica launched an aggressive 'Get Vaccinated' campaign in response to regional measles outbreaks. The campaign faced moderate hesitancy due to online misinformation imported from the US.",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 15.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 72,
+      "against_pct": 12,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 75,
+      "against_pct": 12,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 78,
+      "against_pct": 13,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 80,
+      "against_pct": 14,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 82,
+      "against_pct": 14,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 83,
+      "against_pct": 15,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 84,
+      "against_pct": 15,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 85,
+      "against_pct": 15,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Government initiates country-wide vaccination drive."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Ministry of Health publicly combats anti-vax myths on social media."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "High-profile cultural figures endorse the vaccine campaign."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "National coverage target successfully reached."
+    }
+  ],
+  "calibration_notes": "Models a successful, proactive public health campaign with minor resistance."
+}

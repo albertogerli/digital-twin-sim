@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nestle_formula_boycott_2000s",
+  "domain": "commercial",
+  "description": "The ongoing boycott of Nestlé (dating back to the 1970s but re-ignited in the 2000s) concerns the company's aggressive marketing of infant formula in developing countries, which critics argue discouraged breastfeeding and caused infant mortality.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 38,
+      "against_pct": 45,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 52,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 33,
+      "against_pct": 58,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 62,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 31,
+      "against_pct": 65,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 30,
+      "against_pct": 67,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 30,
+      "against_pct": 69,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Renewed advocacy campaigns link Nestlé to infant health issues."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "International boycotts gain traction in European university campuses."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "WHO calls for stricter regulation on infant milk substitutes."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Nestlé announces revised marketing standards for developing nations."
+    }
+  ],
+  "calibration_notes": "A long-tail scenario measuring corporate social responsibility (CSR) versus profit-driven marketing."
+}

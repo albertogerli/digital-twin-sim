@@ -1,0 +1,79 @@
+{
+  "scenario_name": "svb_depositor_protection_2023",
+  "domain": "financial",
+  "description": "Following the collapse of Silicon Valley Bank (SVB) in 2023, the U.S. government stepped in to guarantee all deposits, including those over the $250k limit. Debate emerged over whether this constituted a 'bailout' of wealthy tech venture capitalists.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 42,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 53,
+      "against_pct": 45,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Federal Reserve invokes 'systemic risk exception' to protect deposits."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Treasury Secretary Yellen insists this is not a taxpayer-funded bailout."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Public criticism mounts regarding the bailout of tech sector accounts."
+    }
+  ],
+  "calibration_notes": "Excellent for measuring the semantic framing of 'bailout' in social media eras."
+}

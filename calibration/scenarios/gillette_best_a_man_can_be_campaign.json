@@ -1,0 +1,83 @@
+{
+  "scenario_name": "gillette_best_a_man_can_be_campaign",
+  "domain": "marketing",
+  "description": "In January 2019, Gillette released a Super Bowl-adjacent commercial titled 'We Believe: The Best Men Can Be,' which addressed toxic masculinity and #MeToo. The ad triggered a massive polarization of the brand's customer base, leading to widespread boycott calls and intense social media discourse regarding the company's shift in corporate messaging.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 20,
+      "undecided_pct": 55
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 35,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 53,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 47,
+      "against_pct": 51,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Gillette releases the ad on YouTube and social channels, triggering immediate backlash on Twitter and Reddit."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Mainstream media outlets begin coverage, framing the debate as a culture war, which fuels the negative sentiment among core demographics."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "P&G leadership defends the campaign, citing long-term brand equity goals over short-term sales dips."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Competitors observe slight market share fluctuations, leading to a stabilization of the brand's position as the controversy wanes."
+    }
+  ],
+  "calibration_notes": "This scenario is ideal for calibrating models on 'values-based marketing' and the risk-reward ratio of corporate activism in highly polarized political climates."
+}

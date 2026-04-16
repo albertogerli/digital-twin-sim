@@ -1,0 +1,145 @@
+{
+  "id": "POL-2017-REFERENDUM_INDIPENDENZA_CATALU",
+  "domain": "political",
+  "title": "Catalan Independence Referendum 2017: Public Opinion and Institutional Conflict",
+  "country": "ES",
+  "date_start": "2017-09-01",
+  "date_end": "2017-10-01",
+  "n_rounds": 5,
+  "round_duration_days": 6,
+  "ground_truth_outcome": {
+    "pro_pct": 48.0,
+    "source": "https://ceo.gencat.cat/ca/barometre/detall/index.html?p_codi=756",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2017-09-01",
+      "pro_pct": 41.0,
+      "against_pct": 49.0,
+      "undecided_pct": 10.0,
+      "sample_size": 1500,
+      "source": "https://ceo.gencat.cat/ca/barometre/detall/index.html?p_codi=756",
+      "pollster": "CEO"
+    },
+    {
+      "round": 2,
+      "date": "2017-09-07",
+      "pro_pct": 42.5,
+      "against_pct": 48.5,
+      "undecided_pct": 9.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolation based on CEO trends and parliamentary escalation",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2017-09-13",
+      "pro_pct": 44.0,
+      "against_pct": 47.0,
+      "undecided_pct": 9.0,
+      "sample_size": null,
+      "source": "Estimated: Shift due to Guardia Civil raids on government offices",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2017-09-19",
+      "pro_pct": 46.0,
+      "against_pct": 46.0,
+      "undecided_pct": 8.0,
+      "sample_size": null,
+      "source": "Estimated: Polarization spike following arrests of Catalan officials",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2017-09-25",
+      "pro_pct": 48.0,
+      "against_pct": 45.0,
+      "undecided_pct": 7.0,
+      "sample_size": null,
+      "source": "Estimated: Final pre-referendum mobilization phase",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2017-09-06",
+      "description": "Catalan Parliament passes the Law of the Referendum",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5,
+      "source": "https://www.reuters.com/article/us-spain-politics-catalonia-idUSKCN1BI17D"
+    },
+    {
+      "round": 3,
+      "date": "2017-09-15",
+      "description": "Spanish Constitutional Court suspends the referendum law",
+      "shock_magnitude": 0.7,
+      "shock_direction": -0.4,
+      "source": "https://www.bbc.com/news/world-europe-41267677"
+    },
+    {
+      "round": 4,
+      "date": "2017-09-20",
+      "description": "Operation Anubis: Guardia Civil raids Catalan government offices",
+      "shock_magnitude": 0.9,
+      "shock_direction": 0.8,
+      "source": "https://www.nytimes.com/2017/09/20/world/europe/spain-catalonia-referendum-arrests.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Carles Puigdemont",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "President of the Generalitat of Catalonia, lead pro-independence figure."
+    },
+    {
+      "name": "Mariano Rajoy",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "Prime Minister of Spain, staunch defender of constitutional unity."
+    },
+    {
+      "name": "Generalitat de Catalunya",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.7,
+      "description": "The regional government of Catalonia."
+    },
+    {
+      "name": "Spanish Constitutional Court",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.8,
+      "description": "Judicial body declaring the referendum unconstitutional."
+    },
+    {
+      "name": "Pro-Independence Voters",
+      "type": "citizen_cluster",
+      "initial_position": 0.7,
+      "influence": 0.4,
+      "description": "Citizens supporting secession."
+    },
+    {
+      "name": "Unionist Voters",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.4,
+      "description": "Citizens opposing secession and supporting the Spanish state."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.9,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.1
+  },
+  "notes": "Outcome ridefinito: 48% pro-indipendenza da sondaggi CEO (Centre d'Estudis d'Opinió) pre-referendum, non dal risultato del voto boicottato (92% su 43% turnout). Fonte: CEO Barometer Oct 2017. Pro-side (+1) = supporting Catalan independence (SI). Against-side (-1) = supporting Spanish unity."
+}

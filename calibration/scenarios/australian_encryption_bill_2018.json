@@ -1,0 +1,79 @@
+{
+  "scenario_name": "australian_encryption_bill_2018",
+  "domain": "technology",
+  "description": "The Telecommunications and Other Legislation Amendment (Assistance and Access) Act of 2018 required tech companies to provide law enforcement with access to encrypted communications, sparking intense debates between security agencies and tech privacy advocates.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 58,
+      "against_pct": 20,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 28,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Government introduces the bill citing national security."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Tech giants and privacy groups mount coordinated public opposition."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Security agencies lobby for backdoors citing child protection."
+    }
+  ],
+  "calibration_notes": "Shows polarization between state security and civil liberties; useful for mapping how 'undecided' shifts in high-stakes privacy cases."
+}

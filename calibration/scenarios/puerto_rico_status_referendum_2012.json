@@ -1,0 +1,83 @@
+{
+  "scenario_name": "puerto_rico_status_referendum_2012",
+  "domain": "political",
+  "description": "A November 6, 2012, referendum in Puerto Rico asking voters about their current political status and preference for change. 54% of voters opted to change the current relationship, and of those, 61.2% favored statehood.",
+  "final_outcome_pro_pct": 61.2,
+  "final_outcome_against_pct": 38.8,
+  "final_turnout_pct": 78.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 32,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 53,
+      "against_pct": 35,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 56,
+      "against_pct": 36,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 59,
+      "against_pct": 38,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 61.2,
+      "against_pct": 38.8,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Local political parties clarify their positions on the two-part ballot."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Campaigning intensifies between 'statehood' and 'commonwealth' advocates."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Pro-statehood advocates show strong mobilization efforts."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The result is interpreted as a historic shift toward statehood support."
+    }
+  ],
+  "calibration_notes": "Useful for modeling multi-part referendums where the outcome requires conditional logic interpretation."
+}

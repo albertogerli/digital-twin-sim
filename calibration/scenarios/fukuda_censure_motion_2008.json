@@ -1,0 +1,83 @@
+{
+  "scenario_name": "fukuda_censure_motion_2008",
+  "domain": "political",
+  "description": "The Japanese House of Councillors passed a rare censure motion against Prime Minister Yasuo Fukuda in 2008. While non-binding, it signaled deep legislative paralysis during a period of Japanese political instability.",
+  "final_outcome_pro_pct": 51.0,
+  "final_outcome_against_pct": 49.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 38,
+      "against_pct": 45,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 46,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 47,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 48,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Opposition parties unite to challenge the government's policy direction."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Public polling shows frustration with economic stagnation."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "The House of Councillors passes the censure motion."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "PM Fukuda ignores the motion, resulting in legislative stalemate."
+    }
+  ],
+  "calibration_notes": "Highlights scenarios where symbolic legislative actions (censure) function as political theater rather than removal."
+}

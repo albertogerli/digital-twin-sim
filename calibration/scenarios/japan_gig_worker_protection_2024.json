@@ -1,0 +1,79 @@
+{
+  "scenario_name": "japan_gig_worker_protection_2024",
+  "domain": "labor",
+  "description": "In 2024, Japan introduced new legal protections for freelancers and gig workers to ensure they receive fair treatment and compensation amid the nation's shifting demographic labor crisis.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 45.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 28,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 32,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 64,
+      "against_pct": 32,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 67,
+      "against_pct": 31,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 69,
+      "against_pct": 30,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Government launches inquiry into exploitation of gig workers."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Public outcry over low wages for delivery personnel."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Draft law for freelancer protection approved by cabinet."
+    }
+  ],
+  "calibration_notes": "Examines how national labor shortages influence the political appetite for gig economy regulation."
+}

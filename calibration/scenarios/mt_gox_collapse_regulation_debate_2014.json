@@ -1,0 +1,83 @@
+{
+  "scenario_name": "mt_gox_collapse_regulation_debate_2014",
+  "domain": "technology",
+  "description": "Following the February 2014 collapse of the Tokyo-based Bitcoin exchange Mt. Gox, which lost 850,000 BTC, global financial regulators entered a heated debate regarding whether to treat cryptocurrency exchanges as traditional financial institutions. The event polarized public opinion between libertarian crypto-enthusiasts advocating for autonomy and mainstream investors demanding strict oversight.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 25,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 38,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 50,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 39,
+      "against_pct": 52,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 56,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Mt. Gox suspends all trading and declares bankruptcy after revealing the loss of customer funds."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Japanese government officials state that Bitcoin is not a currency and regulators lack the mandate to protect users."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "US Senate Committee on Homeland Security holds hearings on the dangers of illicit activities on crypto platforms."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The New York Department of Financial Services announces plans for the 'BitLicense' framework."
+    }
+  ],
+  "calibration_notes": "This scenario provides a baseline for how a single catastrophic failure of a market-leading entity shifts public opinion from 'techno-optimism' to 'regulatory necessity' during the early adoption phase of an asset class."
+}

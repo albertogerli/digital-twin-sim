@@ -1,0 +1,79 @@
+{
+  "scenario_name": "chile_pension_privatization_protest_2016",
+  "domain": "financial",
+  "description": "The 'No + AFP' movement emerged in 2016 to challenge the Chilean private pension system (AFP), which was criticized for low payouts. This led to massive protests that fundamentally altered the political debate on structural financial reform.",
+  "final_outcome_pro_pct": 25.0,
+  "final_outcome_against_pct": 75.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 25,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 28,
+      "against_pct": 67,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 26,
+      "against_pct": 70,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 73,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "First major 'No + AFP' mass mobilization in Santiago."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Media exposes systemic low returns for average retirees."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "President Michelle Bachelet announces partial pension reform proposal."
+    }
+  ],
+  "calibration_notes": "Useful for modeling bottom-up movements that successfully delegitimize established financial institutions."
+}

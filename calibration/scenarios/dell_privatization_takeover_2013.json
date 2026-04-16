@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dell_privatization_takeover_2013",
+  "domain": "corporate",
+  "description": "Michael Dell and Silver Lake Partners launched a $24.9 billion bid to take Dell private in 2013. The process was defined by a brutal proxy battle with activist investor Carl Icahn who opposed the deal price.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 10,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 20,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 45,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 49,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 48,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Announcement of the privatization bid."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Carl Icahn launches public campaign against the offer."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Shareholders vote on the controversial deal."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Deal confirmed after counting of contested votes."
+    }
+  ],
+  "calibration_notes": "Excellent for studying the influence of activist investors in corporate strategy."
+}

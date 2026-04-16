@@ -1,0 +1,83 @@
+{
+  "scenario_name": "olympus_whistleblower_revelation_2011",
+  "domain": "corporate",
+  "description": "In 2011, British executive Michael Woodford was fired as CEO of Japan's Olympus Corporation after questioning $1.7 billion in unexplained payments. The case exposed deep-seated Japanese corporate governance failures and nepotism.",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 15.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 12,
+      "undecided_pct": 63
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 15,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 18,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 16,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 17,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 80,
+      "against_pct": 16,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 83,
+      "against_pct": 15,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 85,
+      "against_pct": 15,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Michael Woodford is abruptly dismissed as CEO by the board."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Woodford leaks documents to the Financial Times exposing the cover-up."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Olympus stock price collapses by 80% as the scandal is confirmed."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Company admits to decades of accounting cover-ups involving 'tobashi' schemes."
+    }
+  ],
+  "calibration_notes": "Highlights the 'hero whistleblower' dynamic where a single individual against a board creates an asymmetric narrative of institutional corruption."
+}

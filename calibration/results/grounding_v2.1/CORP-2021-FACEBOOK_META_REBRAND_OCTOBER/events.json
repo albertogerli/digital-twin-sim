@@ -1,0 +1,40 @@
+[
+  {
+    "round": 1,
+    "description": "Media reports began circulating regarding Facebook's internal plans to rebrand the company and change its corporate name.",
+    "shock_magnitude": 0.3,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "CEO Mark Zuckerberg addressed public criticism of the company's social services during the Q3 2021 earnings call while emphasizing a strategic pivot toward the metaverse.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "Mark Zuckerberg officially announced at the Facebook Connect conference that the parent company would be renamed Meta Platforms, Inc.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9UjipLXuAxrh3ZTLTddxmFCVFreolmoMfA3kPXjpHoX5v8ZczxU4mrSvepgC59T2HNLeYGwmWBOi4UyHt7QGQQouWqKBIe6VobCidU-i1fe1LVlw-bsG0AOz9TdKfDV02HVwmfioG",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9UjipLXuAxrh3ZTLTddxmFCVFreolmoMfA3kPXjpHoX5v8ZczxU4mrSvepgC59T2HNLeYGwmWBOi4UyHt7QGQQouWqKBIe6VobCidU-i1fe1LVlw-bsG0AOz9TdKfDV02HVwmfioG"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "The company formally outlined its 'metaverse-first' strategy, aiming to build an interconnected digital ecosystem using VR and AR technologies.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

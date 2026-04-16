@@ -1,0 +1,79 @@
+{
+  "scenario_name": "german_platform_work_act_2024",
+  "domain": "labor",
+  "description": "Germany moved in 2024 to implement stricter EU-wide standards for platform workers, creating a 'rebuttable presumption' of employment status for gig workers.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 30,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 35,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 38,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 39,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 59,
+      "against_pct": 40,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "EU Council reaches consensus on the Platform Work Directive."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "German Federal Labor Ministry starts implementation drafting."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Tech lobbying intensifies against the classification criteria."
+    }
+  ],
+  "calibration_notes": "Allows tracking how top-down, multi-national regional policy impacts local domestic labor support trajectories."
+}

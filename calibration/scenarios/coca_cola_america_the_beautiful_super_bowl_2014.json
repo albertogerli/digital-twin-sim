@@ -1,0 +1,83 @@
+{
+  "scenario_name": "coca_cola_america_the_beautiful_super_bowl_2014",
+  "domain": "marketing",
+  "description": "During the 2014 Super Bowl, Coca-Cola aired an ad featuring 'America the Beautiful' sung in multiple languages. The ad sparked intense national debate over patriotism and cultural assimilation in the United States, leading to a polarized public reaction on social media.",
+  "final_outcome_pro_pct": 58.0,
+  "final_outcome_against_pct": 42.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 35,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 43,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 42,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 55,
+      "against_pct": 42,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ad airs during Super Bowl XLVIII; immediate Twitter backlash from conservative commentators."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Major news outlets like Fox News and CNN feature segments debating the 'un-American' nature of the ad."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Coca-Cola issues a statement standing by the ad; celebrity support trends increase positive sentiment."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Data analysis shows strong sales resilience and long-term brand equity gain among younger demographics."
+    }
+  ],
+  "calibration_notes": "Useful for modeling cultural polarization in marketing and the speed at which corporate brand messaging triggers ideological conflict."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "argentina_milei_shock_therapy_2023",
+  "domain": "financial",
+  "description": "Public opinion regarding Javier Milei's 'shock therapy' economic reforms aimed at dismantling the central bank and dollarizing the economy to solve hyperinflation.",
+  "final_outcome_pro_pct": 54.0,
+  "final_outcome_against_pct": 46.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 50,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 49,
+      "against_pct": 51,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 50,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 53,
+      "against_pct": 47,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 54,
+      "against_pct": 46,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Devaluation of the peso."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "General strikes organized by unions."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Monthly inflation rate begins to trend downward."
+    }
+  ],
+  "calibration_notes": "Shows high-volatility, binary political shifts common in emerging economies."
+}

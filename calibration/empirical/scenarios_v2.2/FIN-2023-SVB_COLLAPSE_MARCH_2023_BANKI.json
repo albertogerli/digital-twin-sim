@@ -1,0 +1,198 @@
+{
+  "id": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI",
+  "domain": "financial",
+  "title": "Public confidence in the US banking sector following the collapse of Silicon Valley Bank in March 2023",
+  "country": "US",
+  "date_start": "2023-02-01",
+  "date_end": "2023-04-30",
+  "n_rounds": 6,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 38.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2023-02-01",
+      "pro_pct": 48.0,
+      "against_pct": 35.0,
+      "undecided_pct": 17.0,
+      "sample_size": 1011,
+      "source": "Estimated: Based on historical Gallup trends prior to the March 2023 crisis.",
+      "pollster": "Gallup"
+    },
+    {
+      "round": 2,
+      "date": "2023-02-15",
+      "pro_pct": 47.5,
+      "against_pct": 35.5,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "Estimated: Linear interpolation between pre-crisis levels.",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2023-03-01",
+      "pro_pct": 47.0,
+      "against_pct": 36.0,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "Estimated: Stable period before SVB liquidity issues surfaced.",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2023-03-15",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Immediate market reaction to SVB failure.",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2023-03-29",
+      "pro_pct": 38.5,
+      "against_pct": 48.0,
+      "undecided_pct": 13.5,
+      "sample_size": null,
+      "source": "Estimated: Continued volatility following Signature Bank and Credit Suisse concerns.",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2023-04-12",
+      "pro_pct": 38.0,
+      "against_pct": 49.0,
+      "undecided_pct": 13.0,
+      "sample_size": 1013,
+      "source": "Gallup: https://news.gallup.com/poll/504552/public-confidence-banking-system-remains-low.aspx",
+      "pollster": "Gallup"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Silvergate Bank announced it would wind down operations and liquidate, which significantly heightened market anxiety regarding the banking sector.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "SVB Financial Group announced a $1.8 billion loss from selling securities and a plan to raise $2.25 billion in capital, triggering investor panic.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiLWYVID4aFD_NwDB3ZEt4eNMStWi48G_4OJEoAbMST5wnjTZ_XZWTvHZOutlq72SMtJNK2jv1t-JRSiMf8Ow6dUDkmZciXV4Uu0g8M4sTE3viKaVaHLl_2K0NDAevXFOqTScXf48lrT5zSVrWsgD3fcLjzSbO2LE09EhpaSpmdRzk0LDIhhF_eZU=",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiLWYVID4aFD_NwDB3ZEt4eNMStWi48G_4OJEoAbMST5wnjTZ_XZWTvHZOutlq72SMtJNK2jv1t-JRSiMf8Ow6dUDkmZciXV4Uu0g8M4sTE3viKaVaHLl_2K0NDAevXFOqTScXf48lrT5zSVrWsgD3fcLjzSbO2LE09EhpaSpmdRzk0LDIhhF_eZU="
+      ],
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "Moody\u2019s Investors Service notified Silicon Valley Bank of a potential credit rating downgrade, further eroding market confidence.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "Venture capital firms advised portfolio companies to withdraw their funds from SVB, leading to a massive bank run.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUf1OvGfBPN7q8VQJUtyCTn6yiR_W18Gbb5ip1r92HTnIdNriUcKifnsdFeAHhFEN4N7_qzh-q5BIh7P4Exx-9VCqj8N493NkMXu33eDM7f8uhorO1BqdxNZSep9JnJD7o3s2LBT50UWy2QkoAK3CVM4ZzqK9BzFUnk-sbcEvxTh_vCGsVBYtPNDzFDOjXakKyzZJSTVgZ9-shm8p7Zmxak9lPEvjmQMBgyy2jbqcXuV3dR3VC1m31IhHl81x-kcc=",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUf1OvGfBPN7q8VQJUtyCTn6yiR_W18Gbb5ip1r92HTnIdNriUcKifnsdFeAHhFEN4N7_qzh-q5BIh7P4Exx-9VCqj8N493NkMXu33eDM7f8uhorO1BqdxNZSep9JnJD7o3s2LBT50UWy2QkoAK3CVM4ZzqK9BzFUnk-sbcEvxTh_vCGsVBYtPNDzFDOjXakKyzZJSTVgZ9-shm8p7Zmxak9lPEvjmQMBgyy2jbqcXuV3dR3VC1m31IhHl81x-kcc="
+      ],
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "The California Department of Financial Protection and Innovation closed Silicon Valley Bank and appointed the FDIC as receiver.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE-nwuncTrrRqXgXA8aC1ZTvmPT7iwCn01p5cCN9pzIWLQZ_ndJtWXCHlCJ0FrL-bOKHxpJ7u3hhwC5lu34HqylLWi2GGL4CL1xfoSnm-9gFNcPXEjNmKTICo4fRaBn-KqWxMZgDPrcAVzMGy98JEkfYC5UoGK-UpW8l2qAYzsfkQq028Qtbze6gYRY4W5ieaYCM3uK8z0yA==",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE-nwuncTrrRqXgXA8aC1ZTvmPT7iwCn01p5cCN9pzIWLQZ_ndJtWXCHlCJ0FrL-bOKHxpJ7u3hhwC5lu34HqylLWi2GGL4CL1xfoSnm-9gFNcPXEjNmKTICo4fRaBn-KqWxMZgDPrcAVzMGy98JEkfYC5UoGK-UpW8l2qAYzsfkQq028Qtbze6gYRY4W5ieaYCM3uK8z0yA=="
+      ],
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "U.S. regulators announced that all depositors at SVB would be fully protected and have access to their money, aiming to stem systemic panic.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "name": "Federal Reserve",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.95,
+      "description": "Central bank aiming to maintain financial stability."
+    },
+    {
+      "name": "Janet Yellen",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "US Treasury Secretary providing public assurances."
+    },
+    {
+      "name": "Wall Street Analysts",
+      "type": "elite",
+      "initial_position": 0.5,
+      "influence": 0.7,
+      "description": "Financial experts providing market commentary."
+    },
+    {
+      "name": "Mainstream Media",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.6,
+      "description": "Reporting on bank runs and systemic risk."
+    },
+    {
+      "name": "Retail Depositors",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.3,
+      "description": "General public concerned about savings safety."
+    },
+    {
+      "name": "Social Media Influencers",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.5,
+      "description": "Viral spreaders of bank run panic."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.559,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.17
+  },
+  "notes": "Pro-side is defined as having confidence in the stability of the US banking system. Against-side is defined as lacking confidence in the stability of the US banking system. Data for rounds 1-5 are estimates based on the trajectory between the pre-crisis baseline and the April 2023 Gallup survey results.",
+  "_grounding_v2.2": {
+    "strategy": "hybrid_events_only",
+    "agents": "original",
+    "events": "grounded_v2.1",
+    "n_grounded_events": 6,
+    "n_original_events": 3
+  }
+}

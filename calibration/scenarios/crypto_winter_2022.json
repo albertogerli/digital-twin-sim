@@ -1,0 +1,83 @@
+{
+  "scenario_name": "crypto_winter_2022",
+  "domain": "financial",
+  "description": "Public sentiment shift regarding cryptocurrency legitimacy following the bankruptcy of FTX and the subsequent industry-wide collapse of token valuations.",
+  "final_outcome_pro_pct": 28.0,
+  "final_outcome_against_pct": 72.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 62,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 28,
+      "against_pct": 67,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 29,
+      "against_pct": 69,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 27,
+      "against_pct": 71,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 28,
+      "against_pct": 72,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "TerraUSD/LUNA ecosystem collapses."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "FTX files for bankruptcy amid fraud allegations."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Bitcoin falls below $16,000 for the first time in two years."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Major regulatory scrutiny begins in the US Congress."
+    }
+  ],
+  "calibration_notes": "Measures the impact of large-scale fraud on the general public's trust in decentralized financial systems."
+}

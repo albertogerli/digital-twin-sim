@@ -1,0 +1,75 @@
+{
+  "scenario_id": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020",
+  "topic": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020",
+  "domain": "financial",
+  "country": "US",
+  "timeframe_start": "2020-08-11",
+  "timeframe_end": "2020-08-31",
+  "events": [
+    {
+      "date": "2020-08-11",
+      "description": "Tesla officially announced a 5-for-1 stock split in the form of a stock dividend to make shares more accessible to employees and retail investors.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8AvxG2L3aKx8o1mCbaGIFudyvZoqG2kZtO-U_gpX9sNttFG0IxxIdJ2q75PginHTEbhZPU6LF5cuczI39ccnOigkxS7LRF_68ZLD5g9zucG4cwXVjmfZn85g9gUCbrq8SvUdXjJ1S_ciCwt-14OjD4Q==",
+      "source_name": "globenewswire.com",
+      "confidence": 1.0,
+      "quantitative_detail": "5-for-1 split"
+    },
+    {
+      "date": "2020-08-21",
+      "description": "The record date was reached, establishing which shareholders were entitled to receive four additional shares for every one share held.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "teslarati.com",
+      "confidence": 0.8,
+      "quantitative_detail": "4 additional shares for every 1 share held"
+    },
+    {
+      "date": "2020-08-28",
+      "description": "The distribution date occurred, with the additional shares being issued to shareholders after the close of trading.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "teslarati.com",
+      "confidence": 0.8,
+      "quantitative_detail": "5-for-1 split completion"
+    },
+    {
+      "date": "2020-08-31",
+      "description": "Tesla stock began trading on a split-adjusted basis, significantly lowering the per-share price for market participants.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "businessinsider.com",
+      "confidence": 0.8,
+      "quantitative_detail": "5-for-1 split"
+    }
+  ],
+  "polls": [],
+  "stakeholders": [
+    {
+      "name": "Tesla Board of Directors",
+      "role": "Governing Body of Tesla, Inc.",
+      "position": "The Board declared the 5-for-1 stock split with the explicit purpose of making stock ownership more accessible to employees and investors.",
+      "date": "2020-08-11",
+      "source": "electrek.co"
+    }
+  ],
+  "outcome_description": "The 5-for-1 stock split was met with overwhelming market enthusiasm, resulting in a significant surge in Tesla's share price as retail investors gained easier access to the stock. The move was widely viewed as a successful strategic effort to increase liquidity and broaden the company's shareholder base.",
+  "outcome_pro_pct": 85.0,
+  "outcome_source": "Market sentiment analysis and trading volume data reported by Business Insider and financial news outlets during the August 2020 period (Confidence < 0.5)",
+  "key_figures": {
+    "stock_split_ratio": "5-for-1",
+    "announcement_date": "August 11, 2020",
+    "distribution_date": "August 28, 2020",
+    "split_adjusted_trading_start": "August 31, 2020",
+    "after_hours_jump": "up to 8%",
+    "two_day_price_increase": "17.94%",
+    "market_value_added": "nearly $50 billion"
+  },
+  "n_sources_consulted": 4,
+  "research_timestamp": "2026-04-01T02:53:15.630404",
+  "quality_score": 55
+}

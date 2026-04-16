@@ -1,0 +1,83 @@
+{
+  "scenario_name": "viox_recall_public_outcry",
+  "domain": "public_health",
+  "description": "The 2004 voluntary recall of Merck’s Vioxx (painkiller) after studies showed it significantly increased the risk of heart attacks and strokes. The event led to massive litigation and a shift in how long-term safety data is monitored.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 18,
+      "against_pct": 80,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Data from the APPROVe trial shows clear cardiovascular dangers."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Merck publicly announces a worldwide withdrawal of the drug."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "The Lancet publishes an editorial criticizing Merck for suppression of earlier warnings."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Initial class-action lawsuits are filed by thousands of former users."
+    }
+  ],
+  "calibration_notes": "Tests the speed and severity of public opinion collapse following a major industry failure."
+}

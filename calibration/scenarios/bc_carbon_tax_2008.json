@@ -1,0 +1,83 @@
+{
+  "scenario_name": "bc_carbon_tax_2008",
+  "domain": "environmental",
+  "description": "British Columbia introduced Canada's first revenue-neutral carbon tax in 2008, facing initial intense political backlash that subsided as dividends were issued. The policy was eventually accepted by both major parties by 2013.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 32,
+      "against_pct": 60,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 52,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 46,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 46,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Gordon Campbell government introduces the tax under intense criticism."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "First round of personal tax cuts tied to the carbon tax implementation."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Public polling shifts as citizens see dividend rebates on income taxes."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "NDP drops 'axe the tax' campaign slogan in provincial election."
+    }
+  ],
+  "calibration_notes": "Useful for understanding opinion shifts when direct financial rebates are provided to voters."
+}

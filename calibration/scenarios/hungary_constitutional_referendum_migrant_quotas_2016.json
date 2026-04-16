@@ -1,0 +1,83 @@
+{
+  "scenario_name": "hungary_constitutional_referendum_migrant_quotas_2016",
+  "domain": "political",
+  "description": "The 2016 Hungarian national referendum asked citizens if they rejected the EU's mandatory migrant quotas. While 98% of those who voted said 'No' to the quotas, the referendum was invalidated due to low turnout.",
+  "final_outcome_pro_pct": 98.0,
+  "final_outcome_against_pct": 2.0,
+  "final_turnout_pct": 44.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 10,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 70,
+      "against_pct": 8,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 75,
+      "against_pct": 7,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 80,
+      "against_pct": 6,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 85,
+      "against_pct": 5,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 90,
+      "against_pct": 4,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 95,
+      "against_pct": 3,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 98,
+      "against_pct": 2,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Viktor Orban announces referendum date"
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Government launches 'Stay at Home' propaganda campaign"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Opposition parties call for a boycott to force low turnout"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Referendum fails to meet 50% quorum threshold"
+    }
+  ],
+  "calibration_notes": "Useful for measuring how models handle high-intensity, low-turnout election strategies."
+}

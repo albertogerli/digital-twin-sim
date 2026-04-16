@@ -1,0 +1,293 @@
+{
+  "id": "FIN-2021-GAMESTOP",
+  "domain": "financial",
+  "title": "GameStop short squeeze and retail investor revolt (January 2021)",
+  "country": "US",
+  "date_start": "2020-12-21",
+  "date_end": "2021-02-05",
+  "n_rounds": 7,
+  "round_duration_days": 7,
+  "ground_truth_outcome": {
+    "pro_pct": 72.0,
+    "source": "https://morningconsult.com/2021/02/02/gamestop-stock-trading-poll/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2020-12-27",
+      "pro_pct": 15.0,
+      "against_pct": 55.0,
+      "undecided_pct": 30.0,
+      "sample_size": null,
+      "source": "Estimated from r/WallStreetBets activity baseline (~1.8M subscribers, niche bullish sentiment)",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2021-01-03",
+      "pro_pct": 20.0,
+      "against_pct": 50.0,
+      "undecided_pct": 30.0,
+      "sample_size": null,
+      "source": "Estimated from Reddit activity — Ryan Cohen news driving increased interest in GME thesis",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2021-01-11",
+      "pro_pct": 35.0,
+      "against_pct": 40.0,
+      "undecided_pct": 25.0,
+      "sample_size": null,
+      "source": "Estimated: Cohen officially joins board, GME volume surges 5x, r/WSB posts go viral on Twitter",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2021-01-19",
+      "pro_pct": 55.0,
+      "against_pct": 30.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated from Citron Research short report backlash and explosive r/WSB subscriber growth",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2021-01-27",
+      "pro_pct": 80.0,
+      "against_pct": 12.0,
+      "undecided_pct": 8.0,
+      "sample_size": null,
+      "source": "Peak mania: GME reaches $347, mainstream coverage on CNN/CNBC/BBC, r/WSB at 6M+ subscribers",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2021-01-29",
+      "pro_pct": 72.0,
+      "against_pct": 15.0,
+      "undecided_pct": 13.0,
+      "sample_size": 2200,
+      "source": "https://morningconsult.com/2021/02/02/gamestop-stock-trading-poll/ — 72% viewed retail investors favorably; YouGov (Jan 28-29): 30% called Redditors 'heroes', 15% 'villains', 29% neither, 26% unsure; 77% of Americans had heard about the surge",
+      "pollster": "Morning Consult / YouGov"
+    },
+    {
+      "round": 7,
+      "date": "2021-02-05",
+      "pro_pct": 55.0,
+      "against_pct": 30.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Post-squeeze decline: GME at ~$63 (from $483 peak); retail enthusiasm waning but narrative persists",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "GameStop announced an agreement with activist investor Ryan Cohen and his firm, RC Ventures, to add him and two other e-commerce specialists to the board of directors.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "Following the board announcement, GameStop stock experienced a significant surge, reaching an intraday high.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "Citron Research publicly criticized retail investors on Twitter, labeling them 'suckers' and predicting a sharp decline in the stock price.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "Trading platforms, most notably Robinhood, restricted the purchase of GameStop shares, sparking widespread public outrage and accusations of market manipulation.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "The U.S. House Committee on Financial Services held a hearing to investigate the GameStop short squeeze, bringing the conflict between retail investors and hedge funds into the federal spotlight.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Ryan Cohen",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "rigidity": 0.8,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Activist Investor / Board Member"
+    },
+    {
+      "type": "elite",
+      "name": "Keith Gill",
+      "initial_position": 1.0,
+      "influence": 0.85,
+      "rigidity": 0.9,
+      "_grounded": true,
+      "_stake": "activist",
+      "_role": "Retail Investor / Financial Analyst"
+    },
+    {
+      "type": "elite",
+      "name": "George Sherman",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "CEO of GameStop"
+    },
+    {
+      "name": "SEC",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.6,
+      "description": "Regulator monitoring the situation; issued statements about market integrity"
+    },
+    {
+      "name": "Financial media (CNBC, Bloomberg)",
+      "type": "institutional",
+      "initial_position": -0.5,
+      "influence": 0.7,
+      "description": "Legacy financial media largely skeptical of retail squeeze, some anchors dismissive"
+    },
+    {
+      "name": "r/WallStreetBets community",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "Core Reddit community: 1.8M to 9.8M members during the squeeze"
+    },
+    {
+      "name": "Retail investors (non-Reddit)",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.3,
+      "description": "General public drawn in by media coverage and FOMO"
+    },
+    {
+      "name": "Institutional investors / hedge funds",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.4,
+      "description": "Wall Street firms; Melvin Capital and others heavily short"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.7,
+    "event_volatility": 0.3,
+    "elite_concentration": 0.35,
+    "institutional_trust": 0.25,
+    "undecided_share": 0.3
+  },
+  "notes": "Pro = bullish on GME / supportive of retail investors, Against = bearish / skeptical. Rounds 1-5 and 7 use estimated sentiment from Reddit activity and stock price action. Round 6 has Morning Consult (N=2200, 72% favorable) and YouGov (30% 'heroes' vs 15% 'villains'). Key price points: $4.71 (Dec 31), $65.01 (Jan 22), $347.51 close / $483 intraday high (Jan 27-28), $81.25 (Jan 29), ~$25 (Feb 26). Harris Poll: 28% of Americans bought a viral stock in Jan 2021, 9% bought GME specifically. Short interest peaked at ~140% of float. Melvin Capital lost 53% ($6.8B) in January alone. REVIEWER NOTE: The 72% ground truth figure is approximate; Morning Consult polls from this period show high but variable support for retail investors depending on question wording. Treat as +/-5pp uncertainty.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 68,
+    "n_grounded_agents": 3,
+    "n_grounded_events": 5
+  },
+  "market_observations": {
+    "primary_ticker": "GME",
+    "primary_sector": "banking",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [
+      "XRT"
+    ],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": 29.749,
+        "volume_ratio": 0.38
+      },
+      {
+        "round": 2,
+        "return_pct": -10.243,
+        "volume_ratio": 0.16
+      },
+      {
+        "round": 3,
+        "return_pct": 2.551,
+        "volume_ratio": 0.14
+      },
+      {
+        "round": 4,
+        "return_pct": 78.034,
+        "volume_ratio": 1.3
+      },
+      {
+        "round": 5,
+        "return_pct": 83.127,
+        "volume_ratio": 1.91
+      },
+      {
+        "round": 6,
+        "return_pct": 323.232,
+        "volume_ratio": 2.36
+      },
+      {
+        "round": 7,
+        "return_pct": -71.658,
+        "volume_ratio": 1.28
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": 0.31,
+        "volume_ratio": 0.82
+      },
+      {
+        "round": 2,
+        "return_pct": 0.459,
+        "volume_ratio": 0.83
+      },
+      {
+        "round": 3,
+        "return_pct": 3.381,
+        "volume_ratio": 1.28
+      },
+      {
+        "round": 4,
+        "return_pct": -0.79,
+        "volume_ratio": 0.92
+      },
+      {
+        "round": 5,
+        "return_pct": 1.911,
+        "volume_ratio": 0.8
+      },
+      {
+        "round": 6,
+        "return_pct": -3.725,
+        "volume_ratio": 1.38
+      },
+      {
+        "round": 7,
+        "return_pct": 3.051,
+        "volume_ratio": 0.87
+      }
+    ],
+    "cumulative_return_pct": 367.064,
+    "benchmark_return_pct": 4.5,
+    "excess_return_pct": 362.564,
+    "volatility_realized": 848.2902,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

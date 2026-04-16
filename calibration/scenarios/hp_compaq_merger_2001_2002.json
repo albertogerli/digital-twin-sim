@@ -1,0 +1,87 @@
+{
+  "scenario_name": "hp_compaq_merger_2001_2002",
+  "domain": "corporate",
+  "description": "In September 2001, Hewlett-Packard announced a $25 billion acquisition of Compaq, sparking a fierce proxy battle led by Walter Hewlett. The merger was presented as a strategy to compete with IBM and Dell, but faced significant shareholder resistance regarding cultural misalignment and execution risks.",
+  "final_outcome_pro_pct": 51.4,
+  "final_outcome_against_pct": 48.6,
+  "final_turnout_pct": 87.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42.0,
+      "against_pct": 30.0,
+      "undecided_pct": 28.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40.0,
+      "against_pct": 35.0,
+      "undecided_pct": 25.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38.0,
+      "against_pct": 42.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 41.0,
+      "against_pct": 45.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44.0,
+      "against_pct": 46.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 46.0,
+      "against_pct": 48.0,
+      "undecided_pct": 6.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48.5,
+      "against_pct": 47.5,
+      "undecided_pct": 4.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50.0,
+      "against_pct": 48.0,
+      "undecided_pct": 2.0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51.4,
+      "against_pct": 48.6,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "HP and Compaq announce the merger agreement, immediately criticized by the Hewlett and Packard families."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Walter Hewlett officially announces his opposition, causing a sharp drop in support from institutional investors."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Glass Lewis and ISS (Institutional Shareholder Services) release conflicting proxy advice, intensifying the debate."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "HP CEO Carly Fiorina launches an aggressive final push to convince undecided shareholders of long-term synergies."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Shareholders vote in favor of the merger by a razor-thin margin, finalizing the integration."
+    }
+  ],
+  "calibration_notes": "This scenario is ideal for calibrating models on high-stakes corporate governance, demonstrating how proxy advisory firms and family-held blocks can shift momentum in late-stage voting cycles."
+}

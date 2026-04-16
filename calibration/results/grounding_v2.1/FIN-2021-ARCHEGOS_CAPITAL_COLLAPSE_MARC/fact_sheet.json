@@ -1,0 +1,94 @@
+{
+  "scenario_id": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC",
+  "topic": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC",
+  "domain": "financial",
+  "country": "US",
+  "timeframe_start": "2021-03-24",
+  "timeframe_end": "2021-04-approx",
+  "events": [
+    {
+      "date": "2021-03-24",
+      "description": "ViacomCBS announced a secondary stock offering, which caused a sharp decline in its share price and acted as the catalyst for the collapse.",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "amro-asia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-03-25",
+      "description": "Archegos Capital Management failed to meet massive margin calls from its prime brokers as the value of its concentrated portfolio plummeted.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "inceptone.com",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-03-26",
+      "description": "Prime brokers began a massive fire sale of Archegos-linked stocks, leading to significant market volatility and public realization of the firm's hidden leverage.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiAhVrKI8PBeM0sqpBtLkEA60Ztd43zaQgEVDqfwufrrkt4qs2qppbNhiqI8jlxQBofTndjHka-K5_SJwPMNNyWyhl_O8EU-ueQz49E-lfzTJcTx0PQ8BYP2P4BR4w0-_tCZxUcKYnNCi_4ihxrINr648fXvXcp5cAOfrYz2IP0ZTldGo=",
+      "source_name": "medium.com",
+      "confidence": 1.0,
+      "quantitative_detail": "5:1 to 6:1 leverage ratio"
+    },
+    {
+      "date": "2021-03-29",
+      "description": "Major global investment banks began disclosing their exposure to Archegos, revealing the extent of the financial damage caused by the firm's collapse.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH05Hkk5qTHkIM-rP7Lb5xHQ-oiPmax-TdDaJ2Or_SIEmF5scmh0McCkN-_nCkoXKLS4rUIuDSzM_9GhBHb1cItjHtF2tHj4OF84Xx9xfAbD6s--jKjjmA_1pfzJC_XtyNEBBwC8AWWpYinCU6hkthpAKriGD-yjUnA1DBRD_aEFmoTR9HMF6aYR6pUJ82aTLvU5t6IzGgT6uXKjwPd",
+      "source_name": "medium.com",
+      "confidence": 1.0,
+      "quantitative_detail": "$10 billion in total losses"
+    },
+    {
+      "date": "2021-04-approx",
+      "description": "Regulatory scrutiny intensified as questions arose regarding the 'family office' exemption that allowed Archegos to operate with minimal oversight.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "europa.eu",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    }
+  ],
+  "polls": [],
+  "stakeholders": [
+    {
+      "name": "Bill Hwang",
+      "role": "Founder of Archegos Capital Management",
+      "position": "Following his arrest, Hwang maintained his innocence regarding charges of racketeering and fraud, arguing that his trading strategies were legal.",
+      "date": "2022-04-27",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Damian Williams",
+      "role": "U.S. Attorney for the Southern District of New York",
+      "position": "He characterized the collapse as a massive fraud scheme, stating that Hwang lied to banks to obtain billions of dollars in credit to manipulate stock prices.",
+      "date": "2022-04-27",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Gary Gensler",
+      "role": "Chair of the U.S. Securities and Exchange Commission (SEC)",
+      "position": "He used the Archegos collapse as a catalyst to call for increased transparency and stricter regulation regarding family offices and total return swaps.",
+      "date": "2021-06-17",
+      "source": "Politico Pro"
+    }
+  ],
+  "outcome_description": "The collapse of Archegos Capital Management resulted in over $10 billion in losses for global investment banks and prompted increased regulatory scrutiny regarding the transparency of family offices and total return swaps. Public and institutional sentiment was overwhelmingly negative, characterized by criticism of the firm's excessive leverage and the risk management failures of its prime brokers.",
+  "outcome_pro_pct": 0.0,
+  "outcome_source": "N/A (No quantitative public support data exists; confidence < 0.5)",
+  "key_figures": {
+    "forced_liquidation_value": "over $20 billion",
+    "collapse_date": "March 2021"
+  },
+  "n_sources_consulted": 5,
+  "research_timestamp": "2026-04-01T03:07:16.134074",
+  "quality_score": 56
+}

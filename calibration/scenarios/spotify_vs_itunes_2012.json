@@ -1,0 +1,79 @@
+{
+  "scenario_name": "spotify_vs_itunes_2012",
+  "domain": "commercial",
+  "description": "The shift from the 'download and own' model of iTunes to the 'stream and access' model of Spotify, which disrupted the music industry's primary revenue stream.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 5,
+      "against_pct": 70,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 10,
+      "against_pct": 65,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 18,
+      "against_pct": 60,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 62,
+      "against_pct": 35,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 66,
+      "against_pct": 33,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Spotify launches in the United States, rapidly gaining users."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Record labels sign licensing deals accepting streaming royalties."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Streaming becomes the primary way users consume music, surpassing downloads."
+    }
+  ],
+  "calibration_notes": "Captures the psychological transition from 'ownership' to 'access' as a value proposition."
+}

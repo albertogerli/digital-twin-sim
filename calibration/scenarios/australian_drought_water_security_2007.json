@@ -1,0 +1,79 @@
+{
+  "scenario_name": "australian_drought_water_security_2007",
+  "domain": "public_health",
+  "description": "Public debate in Australia over recycled wastewater projects (Toowoomba) to combat the 'Millennium Drought', weighing public health perceptions against water security needs.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 68.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 35,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 44,
+      "against_pct": 53,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 43,
+      "against_pct": 55,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 42,
+      "against_pct": 57,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Council announces potable reuse proposal"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Community 'No to Potable' campaign gains traction"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Referendum rejects the water recycling project"
+    }
+  ],
+  "calibration_notes": "Models the 'yuck factor' in public health initiatives."
+}

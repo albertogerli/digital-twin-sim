@@ -1,0 +1,83 @@
+{
+  "scenario_name": "australia_gst_introduction_2000",
+  "domain": "financial",
+  "description": "The Australian government introduced a 10% Goods and Services Tax (GST) to replace a myriad of state and federal indirect taxes, causing significant political friction.",
+  "final_outcome_pro_pct": 51.0,
+  "final_outcome_against_pct": 49.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 52,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 48,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 47,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 46,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 48,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "National campaign launched against the GST."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Compensatory tax cuts announced by the Treasurer."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Implementation date approaches, anxiety rises."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The tax goes live across Australia."
+    }
+  ],
+  "calibration_notes": "Good for tracking the 'stabilization' of public opinion after an unpopular reform is integrated."
+}

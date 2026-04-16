@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sam_bankman_fried",
+    "name": "Sam Bankman-Fried",
+    "role": "Founder and Chief Executive Officer of FTX",
+    "archetype": "business_leader",
+    "position": -1.0,
+    "influence": 0.95,
+    "rigidity": 0.9,
+    "bio": "Sam Bankman-Fried is an American entrepreneur and investor who founded the cryptocurrency exchange FTX and the trading firm Alameda Research. He resigned as CEO in November 2022 following the company's liquidity crisis.",
+    "communication_style": "informal, intellectual, evasive",
+    "key_traits": [
+      "charismatic",
+      "manipulative",
+      "risk-taking"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the founder and CEO, he was the primary architect of the platform's operations and was subsequently convicted of massive financial fraud involving the misappropriation of customer funds."
+    ],
+    "_grounded": true
+  }
+]

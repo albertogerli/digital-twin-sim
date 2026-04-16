@@ -1,0 +1,79 @@
+{
+  "scenario_name": "ubs_tax_evasion_scandal_2008",
+  "domain": "corporate",
+  "description": "In 2008, investigations into UBS revealed the bank helped wealthy Americans evade taxes. This incident fundamentally changed Swiss banking secrecy laws and created a global shift in public perception regarding offshore financial havens.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 65.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 45,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 55,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 18,
+      "against_pct": 72,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 19,
+      "against_pct": 76,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 20,
+      "against_pct": 78,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 20,
+      "against_pct": 79,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Bradley Birkenfeld turns whistleblower."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "US Department of Justice sues UBS."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "UBS agrees to pay $780M fine."
+    }
+  ],
+  "calibration_notes": "Useful for measuring the erosion of institutional trust during systemic legal violations."
+}

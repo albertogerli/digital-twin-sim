@@ -1,0 +1,79 @@
+{
+  "scenario_name": "airbnb_nyc_ban_2023",
+  "domain": "commercial",
+  "description": "New York City implemented Local Law 18 in September 2023, effectively banning short-term rentals for entire apartments. This was a massive blow to Airbnb's model in one of its largest global markets, forcing a dramatic pivot in operations.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 30,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 40,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 57,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 59,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "City council passes legislation requiring registration for hosts."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Airbnb files lawsuit to block the regulation."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Law goes into effect, causing 80% drop in active listings."
+    }
+  ],
+  "calibration_notes": "Highlights the binary conflict between platform business models and municipal housing supply regulations."
+}

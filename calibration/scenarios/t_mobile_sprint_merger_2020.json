@@ -1,0 +1,83 @@
+{
+  "scenario_name": "t_mobile_sprint_merger_2020",
+  "domain": "corporate",
+  "description": "The merger between T-Mobile and Sprint was heavily contested by consumer advocates concerned about reduced competition in the US wireless market.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 43,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 54,
+      "against_pct": 44,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 54.5,
+      "against_pct": 44.5,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Announcement of intent to merge."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "State Attorneys General file lawsuit to block."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Commitment to 5G deployment speeds wins some public support."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Federal court rules in favor of merger."
+    }
+  ],
+  "calibration_notes": "Models the shift from 'anti-monopoly' sentiment to 'technological progress' justification."
+}

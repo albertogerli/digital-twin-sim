@@ -1,0 +1,145 @@
+{
+  "id": "TECH-2017-NET_NEUTRALITY_REPEAL_US_2017",
+  "domain": "technology",
+  "title": "Public Opinion Dynamics during the 2017 FCC Net Neutrality Repeal Process",
+  "country": "US",
+  "date_start": "2017-04-26",
+  "date_end": "2017-12-14",
+  "n_rounds": 5,
+  "round_duration_days": 46,
+  "ground_truth_outcome": {
+    "pro_pct": 83.0,
+    "source": "https://www.publicknowledge.org/blog/net-neutrality-poll/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2017-04-26",
+      "pro_pct": 75.0,
+      "against_pct": 15.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Based on baseline support levels prior to Pai's formal proposal announcement.",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2017-06-11",
+      "pro_pct": 77.0,
+      "against_pct": 14.0,
+      "undecided_pct": 9.0,
+      "sample_size": null,
+      "source": "Estimated: Reflects initial public reaction to the FCC's Notice of Proposed Rulemaking.",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2017-07-27",
+      "pro_pct": 79.0,
+      "against_pct": 13.0,
+      "undecided_pct": 8.0,
+      "sample_size": null,
+      "source": "Estimated: Following the 'Day of Action' protest event.",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2017-09-11",
+      "pro_pct": 81.0,
+      "against_pct": 12.0,
+      "undecided_pct": 7.0,
+      "sample_size": null,
+      "source": "Estimated: Trend line interpolation toward final UMD survey result.",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2017-10-27",
+      "pro_pct": 83.0,
+      "against_pct": 11.0,
+      "undecided_pct": 6.0,
+      "sample_size": 1077,
+      "source": "https://www.publicknowledge.org/blog/net-neutrality-poll/",
+      "pollster": "University of Maryland"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2017-04-26",
+      "description": "FCC Chairman Ajit Pai announces plans to roll back net neutrality rules.",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5,
+      "source": "https://www.reuters.com/article/us-usa-fcc-netneutrality/fcc-chief-unveils-plan-to-repeal-net-neutrality-rules-idUSKBN17S25K"
+    },
+    {
+      "round": 3,
+      "date": "2017-07-12",
+      "description": "Net Neutrality Day of Action: Major websites and activists protest the repeal.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.9,
+      "source": "https://www.theverge.com/2017/7/12/15959730/net-neutrality-day-of-action-protest-fcc"
+    },
+    {
+      "round": 5,
+      "date": "2017-12-14",
+      "description": "FCC votes 3-2 to repeal the 2015 Open Internet Order.",
+      "shock_magnitude": 0.9,
+      "shock_direction": -0.4,
+      "source": "https://www.nytimes.com/2017/12/14/technology/net-neutrality-repeal-vote.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Ajit Pai",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "FCC Chairman leading the repeal effort."
+    },
+    {
+      "name": "Internet Service Providers (ISPs)",
+      "type": "institutional",
+      "initial_position": -0.8,
+      "influence": 0.8,
+      "description": "Corporate entities lobbying for deregulation."
+    },
+    {
+      "name": "Tech Giants (Google, Netflix)",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "Companies advocating for strict net neutrality rules."
+    },
+    {
+      "name": "Digital Rights Activists",
+      "type": "citizen_cluster",
+      "initial_position": 1.0,
+      "influence": 0.6,
+      "description": "Grassroots organizations like Fight for the Future."
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.2,
+      "description": "The broader US population surveyed."
+    },
+    {
+      "name": "Congressional Democrats",
+      "type": "elite",
+      "initial_position": 0.7,
+      "influence": 0.5,
+      "description": "Legislators opposing the FCC repeal."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.884,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.1
+  },
+  "notes": "Pro-side is defined as supporting the maintenance of 2015 net neutrality rules (opposing the repeal). Against-side is defined as supporting the FCC's repeal of those rules. Data quality is high for the final round (UMD poll), while intermediate rounds are estimated based on observed public sentiment trends during the protest cycle."
+}

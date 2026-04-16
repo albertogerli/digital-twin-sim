@@ -1,0 +1,83 @@
+{
+  "scenario_name": "brazil_disarmament_statute_referendum_2005",
+  "domain": "political",
+  "description": "A 2005 referendum in Brazil asked voters if they would support a ban on the commercial sale of firearms in the country. Despite early polling indicating support, the final outcome was a decisive rejection.",
+  "final_outcome_pro_pct": 36.0,
+  "final_outcome_against_pct": 64.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 38,
+      "against_pct": 60,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 36,
+      "against_pct": 64,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Referendum is approved by Congress with high expectations"
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Public safety concerns rise as crime rates dominate headlines"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Gun rights groups launch effective 'Yes to Self-Defense' campaign"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Debate shifts toward personal liberty vs state control"
+    }
+  ],
+  "calibration_notes": "Excellent for tracking a massive reversal of public opinion in a short timeframe."
+}

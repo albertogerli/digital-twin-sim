@@ -1,0 +1,83 @@
+{
+  "scenario_name": "kanye_west_adidas_breakup_2022",
+  "domain": "marketing",
+  "description": "In October 2022, Adidas faced massive public pressure to cut ties with Ye (Kanye West) following a series of antisemitic remarks. The financial stakes were high, involving the highly profitable Yeezy product line.",
+  "final_outcome_pro_pct": 8.0,
+  "final_outcome_against_pct": 92.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 15,
+      "against_pct": 80,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 10,
+      "against_pct": 88,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 9,
+      "against_pct": 90,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 8,
+      "against_pct": 92,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 8,
+      "against_pct": 92,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 8,
+      "against_pct": 92,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 8,
+      "against_pct": 92,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Ye makes antisemitic remarks on social media."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Widespread boycott threats from consumer groups."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Adidas formally ends the partnership, citing hate speech."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Adidas shares drop as revenue loss is calculated."
+    }
+  ],
+  "calibration_notes": "Models the intersection of corporate profitability and ethical social responsibility."
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "round": 1,
+    "polarization": 2.11,
+    "avg_position": -0.024,
+    "num_agents": 40
+  },
+  {
+    "round": 2,
+    "polarization": 2.05,
+    "avg_position": -0.114,
+    "num_agents": 40
+  },
+  {
+    "round": 3,
+    "polarization": 2.0,
+    "avg_position": -0.166,
+    "num_agents": 40
+  },
+  {
+    "round": 4,
+    "polarization": 1.97,
+    "avg_position": -0.209,
+    "num_agents": 40
+  },
+  {
+    "round": 5,
+    "polarization": 1.95,
+    "avg_position": -0.253,
+    "num_agents": 40
+  }
+]

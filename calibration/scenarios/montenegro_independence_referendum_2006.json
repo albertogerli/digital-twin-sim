@@ -1,0 +1,79 @@
+{
+  "scenario_name": "montenegro_independence_referendum_2006",
+  "domain": "political",
+  "description": "The 2006 referendum where Montenegro voted to separate from the state union of Serbia and Montenegro.",
+  "final_outcome_pro_pct": 55.5,
+  "final_outcome_against_pct": 44.5,
+  "final_turnout_pct": 86.5,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 51,
+      "against_pct": 39,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 51,
+      "against_pct": 42,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 43,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 53,
+      "against_pct": 44,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 54,
+      "against_pct": 45,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55.5,
+      "against_pct": 44.5,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "EU sets 55% threshold for independence"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Campaigning intensifies in rural areas"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Election day success"
+    }
+  ],
+  "calibration_notes": "Excellent for calibration around 'threshold-based' voting scenarios."
+}

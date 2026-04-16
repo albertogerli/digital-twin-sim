@@ -1,0 +1,83 @@
+{
+  "scenario_name": "twitter_verified_blue_check_policy_change_2022",
+  "domain": "technology",
+  "description": "Following Elon Musk's acquisition of Twitter in late 2022, the platform transitioned from a legacy verification system for public figures to a paid subscription model for blue checkmarks. The change sparked intense debate regarding platform credibility, impersonation risks, and the democratization of digital status symbols.",
+  "final_outcome_pro_pct": 32.0,
+  "final_outcome_against_pct": 68.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 25,
+      "against_pct": 30,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 28,
+      "against_pct": 40,
+      "undecided_pct": 32
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 58,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 33,
+      "against_pct": 62,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 67,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 31,
+      "against_pct": 66,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 31,
+      "against_pct": 68,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 32,
+      "against_pct": 68,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Announcement of the $8 subscription plan for legacy verified status."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Widespread impersonation of corporations like Eli Lilly causing stock market volatility."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Twitter temporarily pauses sign-ups for Twitter Blue due to massive abuse of the system."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final removal of legacy blue checkmarks, cementing the pay-to-play model."
+    }
+  ],
+  "calibration_notes": "This scenario highlights the tension between monetization goals and platform integrity, providing a model for how rapid policy shifts in social media can lead to immediate public backlash and volatility in user trust."
+}

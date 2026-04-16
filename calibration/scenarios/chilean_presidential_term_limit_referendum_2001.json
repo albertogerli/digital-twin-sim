@@ -1,0 +1,79 @@
+{
+  "scenario_name": "chilean_presidential_term_limit_referendum_2001",
+  "domain": "political",
+  "description": "Public debate and eventual vote on constitutional reforms in Chile during 2001, focusing on reducing presidential term lengths and abolishing the senate seats for life. This marked a major shift in the transition from Pinochet-era constitutional norms.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 38,
+      "against_pct": 28,
+      "undecided_pct": 34
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 30,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 35,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 36,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "President Ricardo Lagos introduces the legislative reform package."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Conservative opposition blocks initial vote in the Senate."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public protests increase pressure for reform passage."
+    }
+  ],
+  "calibration_notes": "Provides a baseline for constitutional reform within a transition-democracy framework."
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "ryan_cohen",
+    "name": "Ryan Cohen",
+    "role": "Activist Investor / Board Member",
+    "archetype": "business_leader",
+    "position": 0.9,
+    "influence": 0.9,
+    "rigidity": 0.8,
+    "bio": "An entrepreneur and co-founder of Chewy, Ryan Cohen joined the GameStop board in 2021 to lead the company's transition toward e-commerce.",
+    "communication_style": "visionary, direct",
+    "key_traits": [
+      "strategic",
+      "disruptive"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the primary catalyst for GameStop's digital transformation, his involvement drove the retail investor movement and the company's strategic pivot."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "keith_gill",
+    "name": "Keith Gill",
+    "role": "Retail Investor / Financial Analyst",
+    "archetype": "activist",
+    "position": 1.0,
+    "influence": 0.85,
+    "rigidity": 0.9,
+    "bio": "A former financial educator and analyst who became the face of the GameStop retail investor movement through his social media presence.",
+    "communication_style": "informal, charismatic",
+    "key_traits": [
+      "persuasive",
+      "tenacious"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "activist",
+    "_evidence": [
+      "Known as 'Roaring Kitty,' his public analysis and investment thesis on Reddit were the primary drivers of the retail-led short squeeze."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "george_sherman",
+    "name": "George Sherman",
+    "role": "CEO of GameStop",
+    "archetype": "business_leader",
+    "position": 0.0,
+    "influence": 0.7,
+    "rigidity": 0.75,
+    "bio": "Served as the CEO of GameStop from 2019 to 2021, overseeing the company during the height of the meme stock phenomenon.",
+    "communication_style": "formal, corporate",
+    "key_traits": [
+      "pragmatic",
+      "cautious"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CEO during the squeeze, he navigated the company through extreme volatility and the subsequent leadership transition."
+    ],
+    "_grounded": true
+  }
+]

@@ -1,0 +1,812 @@
+[
+  {
+    "id": "nicola_zingaretti",
+    "name": "Nicola Zingaretti",
+    "role": "Europarlamentare PD, ex presidente Regione Lazio",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico / S&D",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.4,
+    "rigidity": 0.5,
+    "bio": "Eurodeputato PD, ex presidente della Regione Lazio e segretario nazionale del PD (2019-2021). Figura di raccordo tra ala riformista e sinistra interna.",
+    "communication_style": "Istituzionale, mediatore, toni da amministratore navigato",
+    "key_traits": [
+      "mediatore",
+      "amministratore",
+      "europeista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.7,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.4,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "welfare",
+        "value": -0.5,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "irene_tinagli",
+    "name": "Irene Tinagli",
+    "role": "Europarlamentare PD, economista",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico / S&D",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.45,
+    "bio": "Eurodeputata PD, economista. Ex presidente della commissione ECON del Parlamento Europeo. Esperta di politiche economiche e mercato del lavoro.",
+    "communication_style": "Tecnica, competente, toni da economista con visione europea",
+    "key_traits": [
+      "competente",
+      "tecnica",
+      "europeista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.75,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.35,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "economia",
+        "value": -0.4,
+        "source": "voting_record",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "patrizia_toia",
+    "name": "Patrizia Toia",
+    "role": "Europarlamentare PD, veterana del PE",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico / S&D",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.5,
+    "bio": "Eurodeputata PD di lungo corso, tra le più esperte del parlamento europeo. Impegnata su industria, ricerca ed energia. Ex sottosegretaria agli Esteri.",
+    "communication_style": "Competente, moderata, toni da parlamentare esperta con profilo tecnico",
+    "key_traits": [
+      "esperta",
+      "moderata",
+      "europeista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.75,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.35,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "industria",
+        "value": -0.3,
+        "source": "voting_record",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "brando_benifei",
+    "name": "Brando Benifei",
+    "role": "Europarlamentare PD, capodelegazione S&D Italia",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico / S&D",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.5,
+    "bio": "Eurodeputato PD, capodelegazione degli eurodeputati PD. Relatore dell'AI Act, tra i più giovani parlamentari europei italiani. Esperto di digitale e diritti.",
+    "communication_style": "Giovane, digitale, competente su temi tecnologici, toni da nuovo europeismo",
+    "key_traits": [
+      "digitale",
+      "giovane",
+      "competente"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.8,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.4,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "digital_rights",
+        "value": -0.7,
+        "source": "voting_record",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "elisabetta_gualmini",
+    "name": "Elisabetta Gualmini",
+    "role": "Europarlamentare PD, politologa",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico / S&D",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.45,
+    "bio": "Eurodeputata PD, politologa e docente universitaria. Ex vicepresidente della Regione Emilia-Romagna. Impegnata su lavoro, affari sociali e migrazioni.",
+    "communication_style": "Accademica, analitica, toni da studiosa prestata alla politica",
+    "key_traits": [
+      "accademica",
+      "analitica",
+      "progressista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.7,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.4,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "immigration",
+        "value": -0.6,
+        "source": "voting_record",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "denis_nesci",
+    "name": "Denis Nesci",
+    "role": "Europarlamentare FdI",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia / ECR",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.6,
+    "bio": "Eurodeputato FdI, calabrese, eletto alle europee 2024. Imprenditore e politico locale prima dell'ingresso al PE. Linea conservatrice fedele a Meloni.",
+    "communication_style": "Conservatore, territoriale, toni da nuovo eletto fedele alla linea di partito",
+    "key_traits": [
+      "conservatore",
+      "territoriale",
+      "fedele"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.15,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.6,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "immigration",
+        "value": 0.7,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "sandro_gozi",
+    "name": "Sandro Gozi",
+    "role": "Europarlamentare Renew Europe, eletto in Francia",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Renew Europe",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.45,
+    "bio": "Eurodeputato italiano eletto nella lista Renaissance in Francia. Ex sottosegretario agli Affari Europei. Federalista europeo convinto, segretario del Partito Democratico Europeo.",
+    "communication_style": "Federalista, cosmopolita, toni da europeista convinto con doppia identità franco-italiana",
+    "key_traits": [
+      "federalista",
+      "cosmopolita",
+      "europeista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.9,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.1,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "federalismo_europeo",
+        "value": 0.9,
+        "source": "public_statement",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "susanna_ceccardi",
+    "name": "Susanna Ceccardi",
+    "role": "Europarlamentare Lega",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega / ID",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.6,
+    "bio": "Eurodeputata Lega, ex sindaca di Cascina (PI). Candidata sconfitta alla presidenza della Toscana nel 2020. Linea dura su immigrazione e sicurezza.",
+    "communication_style": "Combattiva, populista, toni da sindaca del territorio trasferita a Bruxelles",
+    "key_traits": [
+      "combattiva",
+      "territoriale",
+      "securitaria"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": -0.2,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.55,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "immigration",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "marco_campomenosi",
+    "name": "Marco Campomenosi",
+    "role": "Europarlamentare Lega, capodelegazione",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega / ID",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.55,
+    "bio": "Eurodeputato Lega, capodelegazione del partito al PE. Genovese, esperto di trasporti e politiche europee. Profilo più tecnico rispetto ad altri leghisti.",
+    "communication_style": "Tecnico, misurato per gli standard Lega, toni da capodelegazione che media tra partito e istituzioni UE",
+    "key_traits": [
+      "tecnico",
+      "mediatore",
+      "euroscettico"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": -0.15,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.5,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "trasporti",
+        "value": 0.3,
+        "source": "voting_record",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "paolo_borchia",
+    "name": "Paolo Borchia",
+    "role": "Europarlamentare Lega",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega / ID",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.55,
+    "bio": "Eurodeputato Lega, veronese. Impegnato su energia, industria e PMI in commissione ITRE. Profilo tecnico-economico nel gruppo leghista al PE.",
+    "communication_style": "Tecnico, concentrato su energia e industria, toni da parlamentare di commissione",
+    "key_traits": [
+      "tecnico",
+      "industrialista",
+      "euroscettico"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": -0.1,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.45,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "energia",
+        "value": 0.3,
+        "source": "voting_record",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "massimiliano_salini",
+    "name": "Massimiliano Salini",
+    "role": "Europarlamentare Forza Italia / PPE",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia / PPE",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.5,
+    "bio": "Eurodeputato Forza Italia, lombardo. Ex consigliere regionale. Impegnato su trasporti, industria e infrastrutture. Moderato, linea PPE classica.",
+    "communication_style": "Moderato, tecnico, toni da eurodeputato di centro-destra europeo",
+    "key_traits": [
+      "moderato",
+      "tecnico",
+      "infrastrutturalista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.55,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.35,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "infrastrutture",
+        "value": 0.4,
+        "source": "voting_record",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "fulvio_martusciello",
+    "name": "Fulvio Martusciello",
+    "role": "Europarlamentare Forza Italia / PPE, capodelegazione",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia / PPE",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.5,
+    "bio": "Eurodeputato FI, capodelegazione di Forza Italia al PE. Napoletano, impegnato su energia e ambiente. Uomo di fiducia di Tajani a Bruxelles.",
+    "communication_style": "Partitico, moderato, toni da capodelegazione che rappresenta la linea Tajani in Europa",
+    "key_traits": [
+      "partitico",
+      "moderato",
+      "energetico"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.6,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.4,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "energia",
+        "value": 0.35,
+        "source": "voting_record",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "salvatore_de_meo",
+    "name": "Salvatore De Meo",
+    "role": "Europarlamentare Forza Italia / PPE",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia / PPE",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.45,
+    "bio": "Eurodeputato FI, ex sindaco di Fondi (LT). Presidente della commissione Affari Costituzionali del PE. Impegnato su riforme istituzionali europee.",
+    "communication_style": "Istituzionale, moderato, toni da presidente di commissione con competenza costituzionale",
+    "key_traits": [
+      "istituzionale",
+      "moderato",
+      "costituzionalista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.65,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.35,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "riforme_ue",
+        "value": 0.55,
+        "source": "voting_record",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "sabrina_pignedoli",
+    "name": "Sabrina Pignedoli",
+    "role": "Europarlamentare M5S",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Movimento 5 Stelle",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.55,
+    "bio": "Eurodeputata M5S, giornalista investigativa emiliana. Impegnata su criminalità organizzata, antimafia e giustizia. Voce critica dal basso nel PE.",
+    "communication_style": "Investigativa, diretta, toni da giornalista-attivista contro mafie e corruzione",
+    "key_traits": [
+      "investigativa",
+      "antimafia",
+      "diretta"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.3,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.3,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "legalita",
+        "value": -0.8,
+        "source": "public_statement",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "daniela_rondinelli",
+    "name": "Daniela Rondinelli",
+    "role": "Europarlamentare, ex M5S",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "ex M5S / Non Iscritti",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.5,
+    "bio": "Eurodeputata, eletta con M5S nel 2019 poi uscita dal gruppo. Esperta di lavoro e politiche sociali. Percorso politico travagliato tra M5S e altri gruppi.",
+    "communication_style": "Tecnica, attenta al sociale, toni da esperta di welfare europeo",
+    "key_traits": [
+      "sociale",
+      "tecnica",
+      "indipendente"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.35,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.25,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "labor_reform",
+        "value": -0.6,
+        "source": "voting_record",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "ignazio_corrao",
+    "name": "Ignazio Corrao",
+    "role": "Europarlamentare Verdi / Greens-EFA",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Europa Verde / Greens-EFA",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.6,
+    "bio": "Eurodeputato dei Verdi, ex M5S. Siciliano, impegnato su ambiente, fondi europei e lotta alla corruzione. Passato dal M5S ai Verdi nel 2021.",
+    "communication_style": "Ambientalista, battagliero, toni da attivista verde con esperienza parlamentare",
+    "key_traits": [
+      "ambientalista",
+      "battagliero",
+      "anticorruzione"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.6,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.55,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "ambiente",
+        "value": -0.85,
+        "source": "voting_record",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "rosa_damato",
+    "name": "Rosa D'Amato",
+    "role": "Europarlamentare Verdi / Greens-EFA",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Europa Verde / Greens-EFA",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.6,
+    "bio": "Eurodeputata dei Verdi, ex M5S. Pugliese, impegnata su pesca sostenibile, agricoltura e politiche ambientali. Passata ai Verdi insieme a Corrao.",
+    "communication_style": "Verde, concreta, toni da eurodeputata del Mezzogiorno attenta a ambiente e territorio",
+    "key_traits": [
+      "ambientalista",
+      "concreta",
+      "meridionale"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.55,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.5,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "ambiente",
+        "value": -0.8,
+        "source": "voting_record",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "herbert_dorfmann",
+    "name": "Herbert Dorfmann",
+    "role": "Europarlamentare SVP / PPE, Alto Adige",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Südtiroler Volkspartei / PPE",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.45,
+    "bio": "Eurodeputato altoatesino della SVP (PPE), il più longevo eurodeputato italiano in carica. Esperto di agricoltura, autonomie e minoranze linguistiche. Ponte tra Italia e mondo germanofono.",
+    "communication_style": "Moderato, bilingue, toni da rappresentante delle autonomie con forte competenza agricola",
+    "key_traits": [
+      "autonomista",
+      "moderato",
+      "agricoltura"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.7,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.3,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "agricoltura",
+        "value": 0.4,
+        "source": "voting_record",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  }
+]

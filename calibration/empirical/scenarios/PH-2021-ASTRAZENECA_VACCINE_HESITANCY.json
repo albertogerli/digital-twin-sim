@@ -1,0 +1,165 @@
+{
+  "id": "PH-2021-ASTRAZENECA_VACCINE_HESITANCY",
+  "domain": "public_health",
+  "title": "Public willingness to receive the AstraZeneca COVID-19 vaccine in Germany during the first half of 2021",
+  "country": "DE",
+  "date_start": "2021-01-29",
+  "date_end": "2021-06-30",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 62.0,
+    "source": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Projekte_RKI/covimo_ergebnisse.html",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-01-29",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Based on early COVIMO baseline trends for AZ acceptance",
+      "pollster": "RKI COVIMO"
+    },
+    {
+      "round": 2,
+      "date": "2021-02-19",
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Reflects negative media coverage of side effects",
+      "pollster": "RKI COVIMO"
+    },
+    {
+      "round": 3,
+      "date": "2021-03-12",
+      "pro_pct": 32.0,
+      "against_pct": 55.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Post-suspension of AZ rollout in Germany",
+      "pollster": "RKI COVIMO"
+    },
+    {
+      "round": 4,
+      "date": "2021-04-02",
+      "pro_pct": 45.0,
+      "against_pct": 40.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Recovery following EMA safety reassurance",
+      "pollster": "RKI COVIMO"
+    },
+    {
+      "round": 5,
+      "date": "2021-04-23",
+      "pro_pct": 52.0,
+      "against_pct": 35.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Gradual normalization of vaccine perception",
+      "pollster": "RKI COVIMO"
+    },
+    {
+      "round": 6,
+      "date": "2021-05-14",
+      "pro_pct": 58.0,
+      "against_pct": 30.0,
+      "undecided_pct": 12.0,
+      "sample_size": null,
+      "source": "Estimated: Lifting of priority groups for AZ",
+      "pollster": "RKI COVIMO"
+    },
+    {
+      "round": 7,
+      "date": "2021-06-04",
+      "pro_pct": 62.0,
+      "against_pct": 28.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Projekte_RKI/covimo_ergebnisse.html",
+      "pollster": "RKI COVIMO"
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2021-02-22",
+      "description": "Media reports highlight lower efficacy and side effects compared to mRNA vaccines",
+      "shock_magnitude": 0.4,
+      "shock_direction": -1.0,
+      "source": "https://www.bbc.com/news/world-europe-56152369"
+    },
+    {
+      "round": 3,
+      "date": "2021-03-15",
+      "description": "Germany suspends use of AstraZeneca vaccine due to blood clot concerns",
+      "shock_magnitude": 0.9,
+      "shock_direction": -1.0,
+      "source": "https://www.reuters.com/article/us-health-coronavirus-germany-astrazenec/germany-suspends-astrazeneca-covid-19-vaccine-idUSKBN2B7163"
+    },
+    {
+      "round": 4,
+      "date": "2021-03-31",
+      "description": "STIKO recommends AZ only for people over 60 years old",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5,
+      "source": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Stellungnahme_AstraZeneca.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Robert Koch Institute (RKI)",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Primary public health authority in Germany"
+    },
+    {
+      "name": "STIKO (Standing Committee on Vaccination)",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.95,
+      "description": "Expert committee providing vaccination recommendations"
+    },
+    {
+      "name": "German Mainstream Media",
+      "type": "elite",
+      "initial_position": 0.2,
+      "influence": 0.7,
+      "description": "Broadcasting and print media reporting on vaccine safety"
+    },
+    {
+      "name": "Skeptical Citizen Cluster",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Population segment concerned about vaccine side effects"
+    },
+    {
+      "name": "Pro-Vaccination Citizen Cluster",
+      "type": "citizen_cluster",
+      "initial_position": 0.7,
+      "influence": 0.5,
+      "description": "Population segment eager for any available vaccine"
+    },
+    {
+      "name": "Jens Spahn (Health Minister)",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "Federal Minister of Health advocating for vaccination"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.666,
+    "event_volatility": 0.8,
+    "elite_concentration": 0.75,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side defined as individuals willing to receive the AstraZeneca vaccine. Against-side defined as individuals unwilling or hesitant to receive the AstraZeneca vaccine. Data quality: Early rounds are estimates based on COVIMO trend reports; final round aligns with official RKI survey data."
+}

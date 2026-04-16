@@ -1,0 +1,79 @@
+{
+  "scenario_name": "california_mental_health_care_act_prop_1_2024",
+  "domain": "public_health",
+  "description": "The 2024 California ballot measure (Proposition 1) aimed at restructuring mental health funding by shifting billions from existing county programs toward state-run housing and treatment facilities. The debate polarized local county agencies against the Governor's statewide centralization approach.",
+  "final_outcome_pro_pct": 50.2,
+  "final_outcome_against_pct": 49.8,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 58,
+      "against_pct": 28,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 32,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 53,
+      "against_pct": 37,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 51,
+      "against_pct": 42,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 49,
+      "against_pct": 46,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 50.2,
+      "against_pct": 49.8,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Governor Newsom launches a massive advertising blitz linking Prop 1 to homelessness reduction."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "County mental health directors publish formal opposition regarding funding diversion."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Late-breaking concerns regarding budget transparency narrow the margin significantly."
+    }
+  ],
+  "calibration_notes": "Excellent for studying 'close-call' scenarios where initial popularity erodes due to implementation concerns."
+}

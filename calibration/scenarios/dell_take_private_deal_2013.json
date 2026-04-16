@@ -1,0 +1,87 @@
+{
+  "scenario_name": "dell_take_private_deal_2013",
+  "domain": "corporate",
+  "description": "In 2013, Michael Dell and Silver Lake Partners initiated a $24.9 billion buyout to take Dell Inc. private to restructure away from the public markets' focus on quarterly results. The proposal faced fierce opposition from activist investor Carl Icahn, leading to a contentious shareholder battle over the company's valuation and long-term viability.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 30,
+      "undecided_pct": 32
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 35,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 44,
+      "against_pct": 44,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 46,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 46,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Announcement of the $13.65 per share buyout offer by Michael Dell and Silver Lake."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Carl Icahn launches a public proxy fight claiming the offer significantly undervalues the company."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Institutional Shareholder Services (ISS) recommends shareholders vote against the deal."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Dell board increases the dividend payout and amends voting rules to count abstentions as 'no' votes."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Shareholders approve the deal in a narrow vote after the company raises the offer slightly."
+    }
+  ],
+  "calibration_notes": "This scenario captures the dynamics of an activist-led proxy battle against a founder-led buyout, highlighting the impact of voting rule changes and institutional advisor influence on final outcomes."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "digital_camera_vs_film_2003",
+  "domain": "commercial",
+  "description": "The rapid adoption of consumer digital cameras by Canon and Sony, leading to the collapse of Kodak and the film industry.",
+  "final_outcome_pro_pct": 78.0,
+  "final_outcome_against_pct": 22.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 60,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 55,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 72,
+      "against_pct": 25,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 76,
+      "against_pct": 23,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Digital camera prices fall below $300 for decent resolution."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Kodak announces it will stop marketing film cameras."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Film processing shops begin closing across major urban centers."
+    }
+  ],
+  "calibration_notes": "Illustrates the 'point of no return' for an entire supply chain (film development)."
+}

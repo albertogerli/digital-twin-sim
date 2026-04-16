@@ -1,0 +1,79 @@
+{
+  "scenario_name": "boj_yield_curve_control_exit_2024",
+  "domain": "financial",
+  "description": "After years of ultra-loose monetary policy, the Bank of Japan moved to end negative interest rates in March 2024. This scenario tracks economist and public sentiment regarding the timing of this shift.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 50.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 28,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Spring wage negotiations show signs of inflation."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Yen hits historic lows, pressuring import costs."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "BOJ officially scraps negative rate policy."
+    }
+  ],
+  "calibration_notes": "Focuses on the slow normalization of sentiment after long-term policy stagnation."
+}

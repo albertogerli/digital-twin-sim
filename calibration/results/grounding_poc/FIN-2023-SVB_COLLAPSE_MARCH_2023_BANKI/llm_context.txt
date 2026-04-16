@@ -1,0 +1,36 @@
+# VERIFIED FACTS — Silicon Valley Bank collapse — public confidence in US banking
+Domain: financial | Country: USA
+Period: 2023-03-08 to 2023-03-12
+
+## TIMELINE (verified events, chronological order):
+1. [2023-03-08] Silicon Valley Bank announced a $1.8 billion loss from the sale of its bond portfolio and a plan to raise $2.25 billion in capital. This disclosure triggered immediate concern among venture capital clients regarding the bank's solvency. [confidence: 80%]
+   Detail: $1.8 billion loss, $2.25 billion capital raise
+   Source: Wikipedia
+2. [2023-03-09] Following warnings from prominent venture capitalists, customers initiated a massive bank run, attempting to withdraw $42 billion in a single day. This event signaled a rapid collapse of public confidence in the institution.
+   Detail: $42 billion withdrawal
+   Source: Wikipedia / Lowenstein
+3. [2023-03-10] The California Department of Financial Protection and Innovation officially closed Silicon Valley Bank and appointed the FDIC as receiver. This marked the second-largest bank failure in U.S. history at the time.
+   Detail: Second-largest bank failure
+   Source: Economics Observatory
+4. [2023-03-12] Federal regulators announced that all depositors at SVB would be fully protected and have access to their money, aiming to prevent systemic contagion. This intervention was intended to stabilize broader public confidence in the banking system.
+   Detail: Full protection of all deposits
+   Source: PBS
+
+## KEY FIGURES:
+- svb_collapse_date: March 10, 2023
+- signature_bank_closure_date: March 12, 2023
+- svb_failure_scale: Largest U.S. bank failure since the 2008 financial crisis
+
+## KEY STAKEHOLDER POSITIONS:
+- Joe Biden (President of the United States): He assured the American public that the banking system is safe and that depositors' money would be protected following the SVB collapse.
+- Janet Yellen (U.S. Treasury Secretary): She emphasized that the government would not bail out SVB shareholders but would take necessary steps to protect depositors and ensure financial stability.
+- Rob Nichols (President and CEO of the American Bankers Association): He publicly reaffirmed the strength and resilience of the U.S. banking system, urging customers to remain confident in their local institutions.
+
+## FINAL OUTCOME:
+The collapse of Silicon Valley Bank triggered a temporary period of heightened anxiety and a decline in public confidence regarding the stability of regional banks. However, swift government intervention to guarantee deposits effectively stabilized the broader financial system and prevented a widespread loss of trust in the U.S. banking sector.
+Pro %: 48.0% — Source: Gallup (April 2023 survey: 48% of Americans expressed 'a great deal' or 'a fair amount' of confidence in the U.S. banking system following the bank failures)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "hpv_vaccine_mandate_texas_2007",
+  "domain": "public_health",
+  "description": "Governor Rick Perry's 2007 executive order mandating HPV vaccination for school-age girls in Texas. The policy faced intense backlash from religious groups and parental rights advocates.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 55,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 28,
+      "against_pct": 67,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 68,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32,
+      "against_pct": 66,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 34,
+      "against_pct": 65,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Conservative lawmakers protest executive order."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Merck lobbying disclosures surface."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Texas legislature votes to overturn the order."
+    }
+  ],
+  "calibration_notes": "Measures the impact of moral/cultural values on public health mandates."
+}

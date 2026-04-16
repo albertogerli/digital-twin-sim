@@ -1,0 +1,83 @@
+{
+  "scenario_name": "iceland_ice_save_dispute_2008",
+  "domain": "financial",
+  "description": "Following the 2008 collapse of Iceland's major banks, the 'Icesave' dispute arose over the government's obligation to reimburse foreign depositors in the UK and Netherlands. The Icelandic public faced intense pressure to approve a bailout repayment plan, which was twice rejected in national referendums held in 2010 and 2011.",
+  "final_outcome_pro_pct": 41.0,
+  "final_outcome_against_pct": 59.0,
+  "final_turnout_pct": 74.8,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 38,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 45,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 52,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 58,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 36,
+      "against_pct": 56,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 39,
+      "against_pct": 54,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 57,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Collapse of Landsbanki and freezing of Icesave accounts in the UK and Netherlands."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "President Ólafur Ragnar Grímsson refuses to sign the first Icesave bill, triggering a referendum."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Icelandic voters overwhelmingly reject the first repayment proposal in March 2010."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final referendum in April 2011 results in a second rejection of the government-backed bailout deal."
+    }
+  ],
+  "calibration_notes": "This scenario tests the 'sovereign defiance' model, where nationalist sentiment and perceived unfairness of international debt obligations override economic stability concerns, providing a data point for how crises influence voter behavior against technocratic solutions."
+}

@@ -1,0 +1,186 @@
+{
+  "id": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER",
+  "domain": "corporate",
+  "title": "Public sentiment shift following Facebook's corporate rebrand to Meta and the strategic pivot toward the Metaverse",
+  "country": "US",
+  "date_start": "2021-09-01",
+  "date_end": "2022-01-31",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 26.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-09-01",
+      "pro_pct": 32.0,
+      "against_pct": 45.0,
+      "undecided_pct": 23.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline sentiment prior to rebrand announcement",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2021-09-22",
+      "pro_pct": 30.0,
+      "against_pct": 48.0,
+      "undecided_pct": 22.0,
+      "sample_size": null,
+      "source": "Estimated: Pre-announcement speculation impact",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2021-10-13",
+      "pro_pct": 28.0,
+      "against_pct": 52.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Increased skepticism following Facebook Papers leaks",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2021-11-03",
+      "pro_pct": 26.0,
+      "against_pct": 58.0,
+      "undecided_pct": 16.0,
+      "sample_size": 2200,
+      "source": "https://morningconsult.com/2021/11/04/meta-metaverse-rebrand-poll/",
+      "pollster": "Morning Consult"
+    },
+    {
+      "round": 5,
+      "date": "2021-11-24",
+      "pro_pct": 25.0,
+      "against_pct": 60.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Post-rebrand stabilization",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2021-12-15",
+      "pro_pct": 24.0,
+      "against_pct": 62.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Continued negative sentiment trend",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2022-01-05",
+      "pro_pct": 24.0,
+      "against_pct": 63.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Long-term sentiment plateau",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Media reports began circulating regarding Facebook's internal plans to rebrand the company and change its corporate name.",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "CEO Mark Zuckerberg addressed public criticism of the company's social services during the Q3 2021 earnings call while emphasizing a strategic pivot toward the metaverse.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "Mark Zuckerberg officially announced at the Facebook Connect conference that the parent company would be renamed Meta Platforms, Inc.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9UjipLXuAxrh3ZTLTddxmFCVFreolmoMfA3kPXjpHoX5v8ZczxU4mrSvepgC59T2HNLeYGwmWBOi4UyHt7QGQQouWqKBIe6VobCidU-i1fe1LVlw-bsG0AOz9TdKfDV02HVwmfioG",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9UjipLXuAxrh3ZTLTddxmFCVFreolmoMfA3kPXjpHoX5v8ZczxU4mrSvepgC59T2HNLeYGwmWBOi4UyHt7QGQQouWqKBIe6VobCidU-i1fe1LVlw-bsG0AOz9TdKfDV02HVwmfioG"
+      ],
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "The company formally outlined its 'metaverse-first' strategy, aiming to build an interconnected digital ecosystem using VR and AR technologies.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "name": "Mark Zuckerberg",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "CEO of Meta, primary driver of the metaverse pivot."
+    },
+    {
+      "name": "Frances Haugen",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.8,
+      "description": "Whistleblower whose testimony significantly damaged public trust."
+    },
+    {
+      "name": "Tech Journalists",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.6,
+      "description": "Media outlets covering the rebrand as a distraction from regulatory scrutiny."
+    },
+    {
+      "name": "Early Adopters",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.3,
+      "description": "Tech enthusiasts interested in VR/AR and virtual worlds."
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": -0.1,
+      "influence": 0.1,
+      "description": "Average social media users skeptical of Facebook's privacy record."
+    },
+    {
+      "name": "US Congress",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.7,
+      "description": "Legislators focused on antitrust and data privacy regulation."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.717,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.2
+  },
+  "notes": "Pro-side is defined as positive sentiment toward Meta's pivot to the metaverse and the corporate rebrand. Against-side is defined as negative sentiment, often linked to skepticism regarding Facebook's privacy practices and the perceived distraction of the rebrand. Data quality note: Early rounds are estimated based on pre-rebrand sentiment trends; Round 4 is anchored to actual polling data.",
+  "_grounding_v2.2": {
+    "strategy": "hybrid_events_only",
+    "agents": "original",
+    "events": "grounded_v2.1",
+    "n_grounded_events": 4,
+    "n_original_events": 2
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "eu_single_use_plastics_directive_2019",
+  "domain": "environmental",
+  "description": "The European Parliament voted in 2019 to ban a variety of single-use plastic items like cutlery and straws across the EU. This was a centralized legislative effort focused on circular economy goals rather than a grassroots push.",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 15.0,
+  "final_turnout_pct": 51.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 12,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 68,
+      "against_pct": 15,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 70,
+      "against_pct": 15,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 75,
+      "against_pct": 15,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 78,
+      "against_pct": 16,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 80,
+      "against_pct": 15,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 83,
+      "against_pct": 15,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 85,
+      "against_pct": 15,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "European Commission formalizes the proposal under the Circular Economy Action Plan."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Protests by some hospitality associations regarding implementation timelines."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Parliament votes overwhelmingly in favor of the directive."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Member states begin individual legislative transposition processes."
+    }
+  ],
+  "calibration_notes": "Useful for modeling bureaucratic policy adoption where public opinion is largely aligned with expert/political consensus."
+}

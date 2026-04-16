@@ -1,0 +1,83 @@
+{
+  "scenario_name": "peleton_sex_and_city_2021",
+  "domain": "marketing",
+  "description": "In a 2021 reboot episode of Sex and the City, a character suffered a heart attack after using a Peloton bike. The company's stock dropped, and they were forced to scramble for a reactive marketing campaign to distance themselves from the event.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 40,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "SATC episode airs featuring heart attack."
+    },
+    {
+      "round_equivalent": 2,
+      "description": "Stock price falls as rumors spread."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Peloton launches parody ad featuring the actor."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Market sentiment stabilizes."
+    }
+  ],
+  "calibration_notes": "Measures the effectiveness of rapid, humorous crisis communication in marketing."
+}

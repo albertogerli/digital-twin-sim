@@ -1,0 +1,94 @@
+[
+  {
+    "id": "martin_winterkorn",
+    "name": "Martin Winterkorn",
+    "role": "CEO of Volkswagen Group",
+    "archetype": "business_leader",
+    "position": -0.8,
+    "influence": 0.95,
+    "rigidity": 0.9,
+    "bio": "Martin Winterkorn served as the CEO of Volkswagen AG from 2007 until his resignation in September 2015 following the emissions scandal.",
+    "communication_style": "formal, authoritative",
+    "key_traits": [
+      "authoritarian",
+      "technocratic"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CEO during the onset of the scandal, he was the primary figure responsible for the company's initial denial and subsequent resignation, representing the failure of leadership that caused the crisis."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "matthias_m_ller",
+    "name": "Matthias M\u00fcller",
+    "role": "CEO of Volkswagen Group (succeeded Winterkorn)",
+    "archetype": "business_leader",
+    "position": 0.8,
+    "influence": 0.9,
+    "rigidity": 0.75,
+    "bio": "Matthias M\u00fcller was the CEO of Volkswagen Group from 2015 to 2018, tasked with navigating the company through the post-Dieselgate recovery phase.",
+    "communication_style": "pragmatic, strategic",
+    "key_traits": [
+      "pragmatic",
+      "restructuring-focused"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.9,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He was the architect of the 'TOGETHER - Strategy 2025' plan, which pivoted the company toward electric vehicles and aggressive financial settlements to restore market position."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "herbert_diess",
+    "name": "Herbert Diess",
+    "role": "CEO of Volkswagen Brand (later Group CEO)",
+    "archetype": "business_leader",
+    "position": 0.9,
+    "influence": 0.9,
+    "rigidity": 0.8,
+    "bio": "Herbert Diess joined Volkswagen in 2015 to lead the VW brand and later became the CEO of the Volkswagen Group, focusing heavily on electrification.",
+    "communication_style": "direct, visionary",
+    "key_traits": [
+      "visionary",
+      "disruptive"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.8,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He aggressively pushed the company's massive transition to electric mobility as the primary strategy to move past the emissions scandal and rebuild consumer trust."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "gina_mccarthy",
+    "name": "Gina McCarthy",
+    "role": "Administrator of the U.S. Environmental Protection Agency (EPA)",
+    "archetype": "regulator",
+    "position": -0.5,
+    "influence": 0.8,
+    "rigidity": 0.8,
+    "bio": "Gina McCarthy served as the Administrator of the EPA from 2013 to 2017, overseeing the agency's investigation into Volkswagen's emissions cheating.",
+    "communication_style": "decisive, firm",
+    "key_traits": [
+      "principled",
+      "regulatory-focused"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "regulator",
+    "_evidence": [
+      "As the head of the EPA, she led the regulatory enforcement action that exposed the defeat device, forcing VW into the settlements that defined the recovery process."
+    ],
+    "_grounded": true
+  }
+]

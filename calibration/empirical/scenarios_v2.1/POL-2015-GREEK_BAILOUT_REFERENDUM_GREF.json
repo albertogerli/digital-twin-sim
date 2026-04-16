@@ -1,0 +1,145 @@
+{
+  "id": "POL-2015-GREEK_BAILOUT_REFERENDUM_GREF",
+  "domain": "political",
+  "title": "Greek Bailout Referendum 2015: Public opinion on accepting the terms of the EU/IMF bailout package",
+  "country": "GR",
+  "date_start": "2015-06-20",
+  "date_end": "2015-07-05",
+  "n_rounds": 5,
+  "round_duration_days": 3,
+  "ground_truth_outcome": {
+    "pro_pct": 38.7,
+    "source": "https://www.ypes.gr/en/Elections/NationalElections/DeploymentElections/",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2015-06-20",
+      "pro_pct": 45.0,
+      "against_pct": 42.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Based on pre-referendum announcement polling trends from Alco/Kapa Research",
+      "pollster": "Various"
+    },
+    {
+      "round": 2,
+      "date": "2015-06-23",
+      "pro_pct": 43.0,
+      "against_pct": 45.0,
+      "undecided_pct": 12.0,
+      "sample_size": null,
+      "source": "Estimated: Shift following the breakdown of negotiations in Brussels",
+      "pollster": "Various"
+    },
+    {
+      "round": 3,
+      "date": "2015-06-26",
+      "pro_pct": 41.0,
+      "against_pct": 48.0,
+      "undecided_pct": 11.0,
+      "sample_size": null,
+      "source": "Estimated: Impact of capital controls announcement",
+      "pollster": "Various"
+    },
+    {
+      "round": 4,
+      "date": "2015-06-29",
+      "pro_pct": 39.0,
+      "against_pct": 52.0,
+      "undecided_pct": 9.0,
+      "sample_size": null,
+      "source": "Estimated: Post-bank closure panic and government 'No' campaign momentum",
+      "pollster": "Various"
+    },
+    {
+      "round": 5,
+      "date": "2015-07-02",
+      "pro_pct": 37.5,
+      "against_pct": 55.0,
+      "undecided_pct": 7.5,
+      "sample_size": null,
+      "source": "Estimated: Final polling convergence toward referendum result",
+      "pollster": "Various"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2015-06-27",
+      "description": "Prime Minister Alexis Tsipras announces a surprise referendum on bailout terms.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1.0,
+      "source": "https://www.bbc.com/news/world-europe-33292434"
+    },
+    {
+      "round": 3,
+      "date": "2015-06-28",
+      "description": "Greek government announces bank holidays and capital controls.",
+      "shock_magnitude": 0.9,
+      "shock_direction": -0.5,
+      "source": "https://www.reuters.com/article/us-eurozone-greece-idUSKBN0P801U20150628"
+    },
+    {
+      "round": 4,
+      "date": "2015-06-30",
+      "description": "Greece misses IMF debt repayment deadline, officially defaulting.",
+      "shock_magnitude": 0.7,
+      "shock_direction": -0.3,
+      "source": "https://www.nytimes.com/2015/07/01/business/international/greece-debt-imf.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Syriza Party",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "Governing party advocating for a 'No' vote to strengthen bargaining position."
+    },
+    {
+      "name": "New Democracy",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "Main opposition party advocating for a 'Yes' vote to keep Greece in the Eurozone."
+    },
+    {
+      "name": "European Central Bank",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "Restricted liquidity to Greek banks, pressuring the 'Yes' outcome."
+    },
+    {
+      "name": "Urban Professional Cluster",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.3,
+      "description": "Demographic concerned with financial stability and Eurozone membership."
+    },
+    {
+      "name": "Public Sector Workers",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.4,
+      "description": "Demographic heavily impacted by austerity measures."
+    },
+    {
+      "name": "Greek Orthodox Church",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Remained largely neutral, calling for national unity."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.778,
+    "event_volatility": 0.9,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.2,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side = 'Yes' (accept bailout terms, keep Euro); Against-side = 'No' (reject bailout terms, anti-austerity). Polling data is estimated based on historical trends as high-frequency polling during this 10-day period was volatile and often contradictory."
+}

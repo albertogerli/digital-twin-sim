@@ -140,8 +140,16 @@ class EliteAgent(BaseAgent):
             }
 
         except (JSONParseError, Exception) as e:
-            logger.error(f"Elite agent {self.id} failed in round {round_number}: {e}")
-            print(f"    ⚠ Elite {self.name}: {type(e).__name__}: {str(e)[:100]}")
+            logger.error(
+                f"Elite agent {self.id} failed in round {round_number}: "
+                f"{type(e).__name__}: {e}"
+            )
+            budget_info = ""
+            try:
+                budget_info = f" [budget ${llm.stats.total_cost:.2f}/${llm.budget:.2f}]"
+            except Exception:
+                pass
+            print(f"    ⚠ Elite {self.name}: {type(e).__name__}: {str(e)[:150]}{budget_info}")
             return None
 
     @classmethod

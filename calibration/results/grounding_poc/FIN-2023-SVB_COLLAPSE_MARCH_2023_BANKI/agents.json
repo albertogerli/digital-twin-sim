@@ -1,0 +1,25 @@
+[
+  {
+    "id": "greg_becker",
+    "name": "Greg Becker",
+    "role": "President and CEO of SVB Financial Group and Silicon Valley Bank",
+    "archetype": "business_leader",
+    "position": -0.8,
+    "influence": 0.9,
+    "rigidity": 0.8,
+    "bio": "Greg Becker served as the President and CEO of SVB Financial Group from 2011 until the bank's collapse in March 2023, having been with the firm since 1993.",
+    "communication_style": "formal, corporate",
+    "key_traits": [
+      "strategic",
+      "risk-tolerant"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the CEO during the collapse, his management and risk-taking decisions were the primary catalyst for the bank's failure and the subsequent loss of public confidence."
+    ],
+    "_grounded": true
+  }
+]

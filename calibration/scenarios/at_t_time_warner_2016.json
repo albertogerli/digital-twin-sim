@@ -1,0 +1,83 @@
+{
+  "scenario_name": "at_t_time_warner_2016",
+  "domain": "commercial",
+  "description": "AT&T announced its $85 billion acquisition of Time Warner in 2016, aiming to combine content and distribution. The deal was heavily opposed by the Trump Administration, leading to a long legal battle eventually won by AT&T in 2018.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 78.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 30,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 38,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 47,
+      "against_pct": 44,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 48,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 50,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 51,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "DOJ sues to block the merger."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Political rhetoric targets CNN as part of the merger."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Federal judge rules in favor of AT&T."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Appeals process confirms the merger."
+    }
+  ],
+  "calibration_notes": "Excellent for measuring the impact of partisan political rhetoric on commercial sentiment."
+}

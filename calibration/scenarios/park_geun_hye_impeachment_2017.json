@@ -1,0 +1,83 @@
+{
+  "scenario_name": "park_geun_hye_impeachment_2017",
+  "domain": "political",
+  "description": "The impeachment of South Korean President Park Geun-hye following a massive influence-peddling scandal involving her confidante Choi Soon-sil. The Constitutional Court of Korea unanimously upheld the impeachment in March 2017, leading to her immediate removal from office and subsequent criminal conviction.",
+  "final_outcome_pro_pct": 78.0,
+  "final_outcome_against_pct": 22.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 32,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 68,
+      "against_pct": 28,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 72,
+      "against_pct": 25,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 75,
+      "against_pct": 23,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 76,
+      "against_pct": 23,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 77,
+      "against_pct": 22,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "News reports reveal the influence of 'shadow president' Choi Soon-sil."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Millions participate in 'Candlelight Vigils' demanding resignation."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "National Assembly votes to impeach Park Geun-hye."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Constitutional Court upholds the impeachment motion."
+    }
+  ],
+  "calibration_notes": "Useful for modeling extreme public consensus where civil society mobilization force-multiplies legislative outcomes."
+}

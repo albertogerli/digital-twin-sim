@@ -1,0 +1,256 @@
+ISTRUZIONI PER IL REVIEWER: per ogni scenario, verifica:
+1. Ground truth outcome: il numero è corretto? La fonte esiste?
+2. Polling trajectory: i trend sono coerenti con dati pubblici noti?
+3. Events: le date sono corrette? Mancano eventi critici?
+4. Agents: i key stakeholder sono quelli giusti? Posizioni iniziali plausibili?
+5. Shock magnitudes: le scale sono ragionevoli?
+Rispondi con: PASS / CORRECTIONS [dettaglio] / REJECT [motivo]
+
+BATCH 8 — 5 scenarios: FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI, CORP-2021-FACEBOOK_META_REBRAND_OCTOBER, FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020, FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL, FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC
+======================================================================
+
+----------------------------------------------------------------------
+SCENARIO: FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI
+Domain: financial | Country: US
+Period: 2023-02-01 -> 2023-04-30 | Rounds: 6
+
+OUTCOME: 38.0% pro | Source: NEEDS_VERIFICATION
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2023-02-01]: 48.0% vs 35.0% undec 17.0% (n=1011) [LLM ESTIMATED]
+     src: Estimated: Based on historical Gallup trends prior to the March 2023 crisis.
+  R2 [2023-02-15]: 47.5% vs 35.5% undec 17.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Linear interpolation between pre-crisis levels.
+  R3 [2023-03-01]: 47.0% vs 36.0% undec 17.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Stable period before SVB liquidity issues surfaced.
+  R4 [2023-03-15]: 40.0% vs 45.0% undec 15.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Immediate market reaction to SVB failure.
+  R5 [2023-03-29]: 38.5% vs 48.0% undec 13.5% (n=?) [LLM ESTIMATED]
+     src: Estimated: Continued volatility following Signature Bank and Credit Suisse concerns.
+  R6 [2023-04-12]: 38.0% vs 49.0% undec 13.0% (n=1013) [VERIFIED URL]
+     src: Gallup: https://news.gallup.com/poll/504552/public-confidence-banking-system-remains-low.aspx
+
+KEY EVENTS:
+  R4 [2023-03-10]: Silicon Valley Bank is closed by California regulators.
+     shock: 0.8 x -1.0 | https://www.reuters.com/business/finance/us-regulators-close-silicon-valley-bank [VERIFIED URL]
+  R4 [2023-03-12]: Federal Reserve and Treasury announce emergency measures to guarantee deposits.
+     shock: 0.4 x +0.5 | https://www.federalreserve.gov/newsevents/pressreleases/monetary20230312a.htm [VERIFIED URL]
+  R5 [2023-03-19]: UBS agrees to acquire Credit Suisse in a government-brokered deal.
+     shock: 0.6 x -0.7 | https://www.nytimes.com/2023/03/19/business/ubs-credit-suisse-takeover.html [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Federal Reserve (institutional): pos=+0.9 inf=0.95
+  Janet Yellen (elite): pos=+0.8 inf=0.90
+  Wall Street Analysts (elite): pos=+0.5 inf=0.70
+  Mainstream Media (institutional): pos=+0.0 inf=0.60
+  Social Media Influencers (citizen_cluster): pos=-0.6 inf=0.50
+
+COVARIATES:
+  polarization=0.559, event_vol=0.75, elite_conc=0.8, trust=0.5, undecided=0.17
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 16.7% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as having confidence in the stability of the US banking system. Against-side is defined as lacking confidence in the stability of the US banking system. Data for rounds 1-5 are est
+
+----------------------------------------------------------------------
+SCENARIO: CORP-2021-FACEBOOK_META_REBRAND_OCTOBER
+Domain: corporate | Country: US
+Period: 2021-09-01 -> 2022-01-31 | Rounds: 7
+
+OUTCOME: 26.0% pro | Source: NEEDS_VERIFICATION
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2021-09-01]: 32.0% vs 45.0% undec 23.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Baseline sentiment prior to rebrand announcement
+  R2 [2021-09-22]: 30.0% vs 48.0% undec 22.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Pre-announcement speculation impact
+  R3 [2021-10-13]: 28.0% vs 52.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Increased skepticism following Facebook Papers leaks
+  R4 [2021-11-03]: 26.0% vs 58.0% undec 16.0% (n=2200) [VERIFIED URL]
+     src: https://morningconsult.com/2021/11/04/meta-metaverse-rebrand-poll/
+  R5 [2021-11-24]: 25.0% vs 60.0% undec 15.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Post-rebrand stabilization
+  R6 [2021-12-15]: 24.0% vs 62.0% undec 14.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Continued negative sentiment trend
+  R7 [2022-01-05]: 24.0% vs 63.0% undec 13.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Long-term sentiment plateau
+
+KEY EVENTS:
+  R3 [2021-10-04]: The Facebook Papers leak reveals internal documents regarding platform safety and negative
+     shock: 0.8 x -1.0 | https://www.nytimes.com/2021/10/04/technology/facebook-whistleblower-frances-hau [VERIFIED URL]
+  R4 [2021-10-28]: Facebook officially announces rebranding to Meta at Connect 2021.
+     shock: 0.6 x -0.4 | https://about.fb.com/news/2021/10/facebook-company-is-now-meta/ [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Mark Zuckerberg (elite): pos=+1.0 inf=0.90
+  Frances Haugen (elite): pos=-0.9 inf=0.80
+  US Congress (institutional): pos=-0.7 inf=0.70
+  Tech Journalists (institutional): pos=-0.2 inf=0.60
+  Early Adopters (citizen_cluster): pos=+0.5 inf=0.30
+
+COVARIATES:
+  polarization=0.717, event_vol=0.75, elite_conc=0.8, trust=0.3, undecided=0.2
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 12/17 (71%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 14.3% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as positive sentiment toward Meta's pivot to the metaverse and the corporate rebrand. Against-side is defined as negative sentiment, often linked to skepticism regarding Facebook's
+
+----------------------------------------------------------------------
+SCENARIO: FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020
+Domain: financial | Country: US
+Period: 2020-07-01 -> 2020-09-30 | Rounds: 7
+
+OUTCOME: 72.0% pro | Source: NEEDS_VERIFICATION
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2020-07-01]: 64.0% vs 20.0% undec 16.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Pre-announcement baseline sentiment.
+  R2 [2020-07-14]: 65.5% vs 19.5% undec 15.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Market anticipation of Q2 earnings.
+  R3 [2020-07-27]: 68.0% vs 18.0% undec 14.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Post-earnings momentum.
+  R4 [2020-08-09]: 70.0% vs 17.0% undec 13.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Reaction to August 11 stock split announcement.
+  R5 [2020-08-22]: 72.5% vs 16.5% undec 11.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Retail investor hype leading to split date.
+  R6 [2020-09-04]: 71.0% vs 18.0% undec 11.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Post-split profit taking.
+  R7 [2020-09-17]: 72.0% vs 17.5% undec 10.5% (n=?) [LLM ESTIMATED]
+     src: Estimated: Stabilization of sentiment.
+
+KEY EVENTS:
+  R4 [2020-08-11]: Tesla announces 5-for-1 stock split
+     shock: 0.8 x +1.0 | https://www.reuters.com/article/us-tesla-stock-split-idUSKCN2571P2 [VERIFIED URL]
+  R5 [2020-08-31]: Stock split effective date
+     shock: 0.6 x +0.5 | https://www.nytimes.com/2020/08/31/business/tesla-apple-stock-splits.html [VERIFIED URL]
+  R6 [2020-09-08]: Tesla shares drop 21% after S&P 500 exclusion
+     shock: 0.9 x -1.0 | https://www.bbc.com/news/business-54065660 [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Elon Musk (elite): pos=+1.0 inf=0.95
+  Retail Investors (citizen_cluster): pos=+0.6 inf=0.70
+  Institutional Short Sellers (institutional): pos=-0.8 inf=0.60
+  Financial Media (elite): pos=+0.2 inf=0.50
+  Passive Index Funds (institutional): pos=+0.1 inf=0.40
+
+COVARIATES:
+  polarization=0.662, event_vol=0.75, elite_conc=0.65, trust=0.4, undecided=0.15
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 0.0% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as investors holding a bullish sentiment toward Tesla stock (expecting growth/value). Against-side is defined as investors holding a bearish sentiment (expecting decline/overvaluat
+
+----------------------------------------------------------------------
+SCENARIO: FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL
+Domain: financial | Country: US
+Period: 2021-01-01 -> 2021-06-30 | Rounds: 7
+
+OUTCOME: 62.0% pro | Source: NEEDS_VERIFICATION
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2021-01-01]: 35.0% vs 20.0% undec 45.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Baseline retail interest in meme stocks pre-squeeze
+  R2 [2021-01-26]: 55.0% vs 15.0% undec 30.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Surge in retail participation following GME/AMC volatility
+  R3 [2021-02-20]: 60.0% vs 20.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Sustained momentum post-Robinhood trading restrictions
+  R4 [2021-03-17]: 58.0% vs 25.0% undec 17.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Market correction and profit-taking phase
+  R5 [2021-04-11]: 56.0% vs 28.0% undec 16.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Consolidation period
+  R6 [2021-05-06]: 60.0% vs 25.0% undec 15.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Renewed retail interest in AMC specifically
+  R7 [2021-05-31]: 62.0% vs 25.0% undec 13.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Peak retail sentiment during June 2021 rally
+
+KEY EVENTS:
+  R2 [2021-01-27]: Robinhood and other brokers restrict buying of AMC and GME
+     shock: 0.9 x +1.0 | https://www.reuters.com/article/us-retail-trading-robinhood-idUSKBN29W27V [VERIFIED URL]
+  R3 [2021-02-18]: Congressional hearing on GameStop and retail trading
+     shock: 0.4 x +0.2 | https://www.nytimes.com/2021/02/18/business/dealbook/gamestop-hearing-takeaways. [VERIFIED URL]
+  R6 [2021-05-13]: AMC announces retail shareholder base exceeds 3 million
+     shock: 0.7 x +1.0 | https://investor.amctheatres.com/newsroom/news-details/2021/AMC-Entertainment-Ho [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  r/WallStreetBets (citizen_cluster): pos=+1.0 inf=0.90
+  Citadel Securities (institutional): pos=-1.0 inf=0.80
+  Robinhood (institutional): pos=-0.5 inf=0.70
+  Adam Aron (CEO of AMC) (elite): pos=+0.8 inf=0.60
+  Mainstream Financial Media (elite): pos=-0.4 inf=0.60
+
+COVARIATES:
+  polarization=0.781, event_vol=0.85, elite_conc=0.4, trust=0.2, undecided=0.45
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 0.0% | Events verified: 100.0%
+
+NOTES: Pro-side defined as support for retail investor activism, 'diamond hands' mentality, and the belief that retail can influence market outcomes. Against-side defined as belief in efficient market hypoth
+
+----------------------------------------------------------------------
+SCENARIO: FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC
+Domain: financial | Country: US
+Period: 2021-02-01 -> 2021-05-31 | Rounds: 7
+
+OUTCOME: 35.0% pro | Source: NEEDS_VERIFICATION
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2021-02-01]: 65.0% vs 15.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Baseline market confidence in prime brokerage risk controls prior to Archegos exposure di
+  R2 [2021-02-18]: 62.0% vs 18.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Slight decline due to early rumors of margin pressure in family offices.
+  R3 [2021-03-07]: 60.0% vs 20.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Market sentiment stable but cautious.
+  R4 [2021-03-24]: 40.0% vs 45.0% undec 15.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Immediate reaction to the Archegos fire sale and multi-billion dollar bank losses.
+  R5 [2021-04-10]: 38.0% vs 48.0% undec 14.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Continued scrutiny of Credit Suisse and Nomura risk management failures.
+  R6 [2021-04-27]: 36.0% vs 50.0% undec 14.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Regulatory bodies begin formal inquiries into family office transparency.
+  R7 [2021-05-14]: 35.0% vs 52.0% undec 13.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Post-event equilibrium reached with permanent loss of confidence in prime brokerage risk 
+
+KEY EVENTS:
+  R4 [2021-03-26]: Archegos Capital Management triggers a massive fire sale of stocks, causing significant lo
+     shock: 0.9 x -1.0 | https://www.reuters.com/article/us-archegos-stocks-idUSKBN2BJ044 [VERIFIED URL]
+  R5 [2021-04-06]: Credit Suisse announces a $4.7 billion loss related to the Archegos collapse, sparking int
+     shock: 0.7 x -1.0 | https://www.bloomberg.com/news/articles/2021-04-06/credit-suisse-posts-4-7-billi [VERIFIED URL]
+  R6 [2021-04-29]: SEC Chair Gary Gensler signals increased regulatory scrutiny on family offices and derivat
+     shock: 0.4 x -0.5 | https://www.ft.com/content/13840e66-6466-455b-867c-941328c86241 [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Goldman Sachs (institutional): pos=+0.8 inf=0.90
+  Credit Suisse (institutional): pos=+0.5 inf=0.80
+  SEC (elite): pos=+0.0 inf=0.70
+  Financial Media (elite): pos=+0.0 inf=0.60
+  Institutional Investors (citizen_cluster): pos=+0.2 inf=0.50
+
+COVARIATES:
+  polarization=0.422, event_vol=0.85, elite_conc=0.7, trust=0.6, undecided=0.2
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 0.0% | Events verified: 100.0%
+
+NOTES: Pro-side: Confidence in existing prime brokerage risk management and transparency. Against-side: Lack of confidence, favoring stricter regulation and oversight of family offices. Data is estimated bas

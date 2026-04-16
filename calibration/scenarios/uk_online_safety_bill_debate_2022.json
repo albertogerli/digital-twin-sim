@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_online_safety_bill_debate_2022",
+  "domain": "technology",
+  "description": "The UK's proposed Online Safety Bill sparked a heated debate regarding where to draw the line between protecting users from harmful content and preserving freedom of speech on social media platforms.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 35,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 38,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 56,
+      "against_pct": 40,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 54,
+      "against_pct": 43,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 53,
+      "against_pct": 46,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Government introduces bill to Parliament"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Civil liberty groups protest 'censorship' clauses"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Tech companies push back on encryption mandates"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final compromise text agreed in Parliament"
+    }
+  ],
+  "calibration_notes": "Captures the tension between safety regulation and free expression in European legislative contexts."
+}

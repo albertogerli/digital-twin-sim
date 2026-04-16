@@ -1,0 +1,79 @@
+{
+  "scenario_name": "ticketmaster_dynamic_pricing_oasis_2024",
+  "domain": "commercial",
+  "description": "During the Oasis reunion tour ticket sale in 2024, Ticketmaster implemented 'dynamic pricing' which saw ticket prices soar based on demand. The controversy drew the attention of UK regulators and widespread fan anger.",
+  "final_outcome_pro_pct": 25.0,
+  "final_outcome_against_pct": 75.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 22,
+      "against_pct": 75,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 24,
+      "against_pct": 74,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 25,
+      "against_pct": 73,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 74,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ticket prices for Oasis concerts rise over 300% during queue."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "UK Government announces investigation into 'dynamic pricing' models."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Ticketmaster defends dynamic pricing as a tool to combat scalpers."
+    }
+  ],
+  "calibration_notes": "Illustrates the conflict between market demand-based pricing and consumer expectations of fair access to entertainment."
+}

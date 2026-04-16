@@ -1,0 +1,79 @@
+{
+  "scenario_name": "germany_federal_election_2021",
+  "domain": "political",
+  "description": "The 2021 German federal election led to the formation of a 'traffic light' coalition. The SPD emerged as the largest party with 25.7% support, defeating the CDU/CSU alliance.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 76.6,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 35,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 16,
+      "against_pct": 34,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 18,
+      "against_pct": 32,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 20,
+      "against_pct": 30,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 22,
+      "against_pct": 28,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 24,
+      "against_pct": 26,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 25,
+      "against_pct": 25,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 26,
+      "against_pct": 24,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 25.7,
+      "against_pct": 24.3,
+      "undecided_pct": 50
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "CDU candidate Laschet laughs during flood crisis."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "SPD candidate Scholz gains reputation as stable successor."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Final televised debate favors Scholz."
+    }
+  ],
+  "calibration_notes": "Tests modeling of multi-party systems and the impact of 'character' events on undecided voters."
+}

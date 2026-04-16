@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tide_its_a_tide_ad",
+  "domain": "marketing",
+  "description": "Tide's 2018 Super Bowl campaign, 'It's a Tide Ad,' utilized meta-humor to dominate the entire event. It set a new standard for self-aware brand messaging.",
+  "final_outcome_pro_pct": 88.0,
+  "final_outcome_against_pct": 12.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 5,
+      "undecided_pct": 75
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 8,
+      "undecided_pct": 47
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 80,
+      "against_pct": 11,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 84,
+      "against_pct": 12,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 86,
+      "against_pct": 12,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 87,
+      "against_pct": 12,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 87,
+      "against_pct": 12,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 88,
+      "against_pct": 12,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Super Bowl LII broadcast; the 'meta' joke lands perfectly with the audience."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Viewers begin questioning if every subsequent ad is a 'Tide Ad' on social media."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Media outlets laud the creativity of the execution."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Brand recall metrics for Tide reach unprecedented levels compared to competitors."
+    }
+  ],
+  "calibration_notes": "Tests the efficacy of meta-humor in high-saturation environments."
+}

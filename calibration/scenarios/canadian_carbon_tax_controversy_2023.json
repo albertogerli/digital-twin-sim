@@ -1,0 +1,79 @@
+{
+  "scenario_name": "canadian_carbon_tax_controversy_2023",
+  "domain": "political",
+  "description": "Public sentiment in Canada regarding the federal carbon pricing scheme (the 'carbon tax'). As inflation and cost-of-living issues peaked, support for the tax, even among urban voters, began to erode significantly.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 44,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 46,
+      "against_pct": 47,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 49,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 44,
+      "against_pct": 51,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 43,
+      "against_pct": 54,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 42,
+      "against_pct": 56,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Annual April increase in carbon tax coincides with record food inflation."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Conservative Party launches 'Axe the Tax' messaging campaign."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Federal government provides targeted exemption for home heating oil."
+    }
+  ],
+  "calibration_notes": "Models the decay of support for climate policy during economic hardship and high inflation."
+}

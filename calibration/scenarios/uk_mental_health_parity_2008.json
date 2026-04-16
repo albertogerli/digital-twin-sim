@@ -1,0 +1,79 @@
+{
+  "scenario_name": "uk_mental_health_parity_2008",
+  "domain": "public_health",
+  "description": "The debate over the 'Equality Act 2010' provisions which sought to mandate legal parity between mental and physical health services in the NHS. Advocates pushed for mandatory resource allocation, while fiscal conservatives expressed concern over the budgetary impact on the broader health service.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 38,
+      "against_pct": 28,
+      "undecided_pct": 34
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 30,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 36,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 55,
+      "against_pct": 37,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 58,
+      "against_pct": 38,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Mind and other mental health charities launch the 'Time to Change' campaign."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Department of Health publishes the 'New Horizons' strategy document."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Royal College of Psychiatrists presents evidence of systematic underfunding in mental health wards."
+    }
+  ],
+  "calibration_notes": "Useful for calibrating shifting public sentiment from indifference to institutional reform support."
+}

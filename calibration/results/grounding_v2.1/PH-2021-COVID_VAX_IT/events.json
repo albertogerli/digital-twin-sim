@@ -1,0 +1,49 @@
+[
+  {
+    "round": 1,
+    "description": "Italy officially launched its national COVID-19 vaccination campaign in coordination with other European Union member states.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "The European Medicines Agency (EMA) granted authorization for the Moderna COVID-19 vaccine, expanding the available supply.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Pfizer-BioNTech announced delivery delays to Italy, causing a temporary slowdown in the national vaccination rate due to limited stock.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "The first shipment of the AstraZeneca vaccine arrived in Italy, providing a new supply source for the vaccination campaign.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "General Francesco Paolo Figliuolo was appointed as the new Special Commissioner for the COVID-19 emergency to oversee the acceleration of the vaccination campaign.",
+    "shock_magnitude": 0.8,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBw0WxOIcp7yM1N9-9G1IZdWddnEGJQ48X-0LZStAHb1eZonKhBm_4zeuRrOFOBdOtFHdSkn1E1lr92Pc-QZmGzGrl39pGApiJIKygnMiTH5175_O13IovVdpRlJ6FAmgNxfBn8wBh3dAUYx5b7g_z7jQ=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBw0WxOIcp7yM1N9-9G1IZdWddnEGJQ48X-0LZStAHb1eZonKhBm_4zeuRrOFOBdOtFHdSkn1E1lr92Pc-QZmGzGrl39pGApiJIKygnMiTH5175_O13IovVdpRlJ6FAmgNxfBn8wBh3dAUYx5b7g_z7jQ="
+    ],
+    "_verified": true
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "vw_the_force_super_bowl_ad",
+  "domain": "marketing",
+  "description": "Volkswagen's 2011 Super Bowl ad featuring a child dressed as Darth Vader became an instant classic. It shifted the perception of the Passat in the US market.",
+  "final_outcome_pro_pct": 95.0,
+  "final_outcome_against_pct": 5.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 5,
+      "against_pct": 0,
+      "undecided_pct": 95
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 2,
+      "undecided_pct": 58
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 70,
+      "against_pct": 5,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 85,
+      "against_pct": 5,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 90,
+      "against_pct": 5,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 92,
+      "against_pct": 5,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 93,
+      "against_pct": 5,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 94,
+      "against_pct": 5,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 95,
+      "against_pct": 5,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ad is pre-released online, becoming the first 'viral' Super Bowl commercial."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Super Bowl XLV airing cements record-breaking YouTube views."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Brand perception scores for VW increase sharply among younger US buyers."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Sales data shows a 10% increase in Passat inquiries post-campaign."
+    }
+  ],
+  "calibration_notes": "Models the 'viral threshold' where an ad transcends its target audience."
+}

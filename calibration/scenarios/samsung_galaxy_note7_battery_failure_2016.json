@@ -1,0 +1,83 @@
+{
+  "scenario_name": "samsung_galaxy_note7_battery_failure_2016",
+  "domain": "commercial",
+  "description": "The rapid global recall of the Samsung Galaxy Note 7 due to spontaneous combustion batteries. The poll measures consumer confidence in Samsung's ability to remain a premium smartphone leader.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 85,
+      "against_pct": 5,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 70,
+      "against_pct": 15,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50,
+      "against_pct": 47,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Samsung announces the first recall of 2.5 million phones."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "A replacement phone catches fire on a Southwest Airlines flight."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Samsung permanently discontinues the Note 7 product line."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Samsung releases findings of investigation confirming battery design flaws."
+    }
+  ],
+  "calibration_notes": "Measures resilience of brand equity following a catastrophic product failure."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "afcfta_ratification_2020",
+  "domain": "political",
+  "description": "The African Continental Free Trade Area (AfCFTA) aimed to create the world's largest free trade area by population, requiring complex ratification across 54 nations.",
+  "final_outcome_pro_pct": 92.0,
+  "final_outcome_against_pct": 8.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 5,
+      "undecided_pct": 75
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 10,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 10,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 10,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 82,
+      "against_pct": 8,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 88,
+      "against_pct": 7,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 92,
+      "against_pct": 8,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Nigeria signs the agreement, clearing a major hurdle"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "African Union summit announces formal ratification success"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Border protocols finalized for 2021 start date"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Trading commences under AfCFTA rules"
+    }
+  ],
+  "calibration_notes": "Excellent for studying the momentum of long-term, multi-state consensus building."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dao_hack_2016",
+  "domain": "financial",
+  "description": "The Decentralized Autonomous Organization (DAO) hack in June 2016 resulted in the theft of 3.6 million ETH. The community had to vote on whether to perform a 'hard fork' to restore funds, creating a deep ideological rift in the Ethereum community.",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 15.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 18,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 80,
+      "against_pct": 16,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 83,
+      "against_pct": 15,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 85,
+      "against_pct": 15,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Attacker drains 3.6 million ETH from the DAO contract"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Vitalik Buterin proposes a hard fork to recover funds"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Debate intensifies on 'code is law' vs 'community governance'"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Ethereum hard fork executed successfully"
+    }
+  ],
+  "calibration_notes": "Useful for measuring the shift toward pragmatism over ideological purity in decentralized governance."
+}

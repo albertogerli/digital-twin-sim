@@ -1,0 +1,51 @@
+# VERIFIED FACTS — CORP-2018-AMAZON_HQ2_NYC_BACKLASH_2018_2
+Domain: corporate | Country: US
+Period: 2018-11-13 to 2019-02-14
+
+## TIMELINE (verified events, chronological order):
+1. [2018-11-13] Amazon officially announced Long Island City, Queens, as one of the two locations for its new headquarters, sparking immediate local debate.
+   Detail: 50,000 jobs; $5 billion investment
+   Source: Business Insider
+2. [2018-11-13] Public reports revealed that New York City and State officials offered Amazon approximately $3 billion in tax incentives to secure the deal.
+   Detail: $3 billion in incentives
+   Source: The Guardian
+3. [2018-11-27] Local residents and activists held a town hall meeting in Queens to protest the lack of transparency and the potential impact on housing affordability. [confidence: 80%]
+   Detail: N/A
+   Source: CBS News
+4. [2018-12-12] Amazon executives testified before the New York City Council, facing intense questioning regarding labor practices and the use of public subsidies.
+   Detail: N/A
+   Source: Washington Post
+5. [2019-01-30] New York State Senate Majority Leader Andrea Stewart-Cousins appointed vocal Amazon critic Senator Michael Gianaris to the Public Authorities Control Board, giving him potential veto power over the deal. [confidence: 80%]
+   Detail: N/A
+   Source: City & State NY
+6. [2019-02-14] Amazon officially canceled its plans to build the Long Island City headquarters, citing opposition from local politicians and community members. [confidence: 80%]
+   Detail: 25,000 jobs (projected for NYC site)
+   Source: PBS
+
+## KEY FIGURES:
+- voter_survey_sample_size: 1,075 New York City voters
+- nyc_voter_approval_rate: 57%
+- nyc_voter_opposition_rate: 26%
+- queens_voter_approval_rate: 60%
+- queens_voter_opposition_rate: 26%
+- proposed_tax_incentives: $3 billion
+
+## POLLING/SENTIMENT DATA:
+- [2018-12-01] 57.0% pro (N=1075) — Siena College Research Institute
+- [2018-12-01] 60.0% pro (N=1075) — Siena College Research Institute
+
+## KEY STAKEHOLDER POSITIONS:
+- Bill de Blasio (Mayor of New York City): He was a primary proponent of the deal, arguing that the headquarters would bring 25,000 jobs and significant economic growth to the city.
+- Andrew Cuomo (Governor of New York): He strongly championed the Amazon project, framing it as a major victory for New York's economy and a testament to the state's competitiveness.
+- Alexandria Ocasio-Cortez (U.S. Representative): She emerged as a vocal critic, arguing that the $3 billion in public subsidies should have been invested in local infrastructure and education rather than a wealthy corporation.
+- Jimmy Van Bramer (New York City Council Member): He opposed the deal, citing concerns over the lack of transparency in the negotiations and the negative impact of tax breaks on the local community.
+- Michael Gianaris (New York State Senator): He was a leading opponent who criticized the use of public funds for Amazon and questioned the company's labor practices and impact on housing affordability.
+
+## FINAL OUTCOME:
+Following intense public and political backlash regarding the $3 billion in tax incentives and concerns over gentrification, Amazon officially canceled its plans to build an HQ2 campus in Long Island City, Queens, in February 2019.
+Pro %: 57.0% — Source: Siena College Research Institute (February 2019 poll showing 57% of New York voters supported the project, despite the vocal opposition that led to its cancellation)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

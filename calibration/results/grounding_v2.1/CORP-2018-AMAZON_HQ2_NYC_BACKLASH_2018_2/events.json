@@ -1,0 +1,62 @@
+[
+  {
+    "round": 1,
+    "description": "Amazon officially announced Long Island City, Queens, as one of the two locations for its new headquarters, sparking immediate local debate.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe9vFhpL4jZ7TmwuU7dR_mPWypAGtJL3qYxoUKAZo0VkFcXu3E3MrfYiMPapg1yj0a1ORKpvNwsObjTt6Ai7z1kCYVLB6O7MUNunD2k5tGXdCVV8jEOtfe7bB5PX-Pjygx2Iqjj0gvQA==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe9vFhpL4jZ7TmwuU7dR_mPWypAGtJL3qYxoUKAZo0VkFcXu3E3MrfYiMPapg1yj0a1ORKpvNwsObjTt6Ai7z1kCYVLB6O7MUNunD2k5tGXdCVV8jEOtfe7bB5PX-Pjygx2Iqjj0gvQA=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Public reports revealed that New York City and State officials offered Amazon approximately $3 billion in tax incentives to secure the deal.",
+    "shock_magnitude": 0.9,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPHLsCjm76o7sPoNVCR-CYDlIyvRUAJOh04v-NjXO7zUaB0ocaFzb4iGSZ0gTsQ75lOqA5GJha1CitDPmKlPNBEtwoWxiaMh9fAJoyJ4QleBA4UZP0SeE9T0O8_8LesQuk_Q==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPHLsCjm76o7sPoNVCR-CYDlIyvRUAJOh04v-NjXO7zUaB0ocaFzb4iGSZ0gTsQ75lOqA5GJha1CitDPmKlPNBEtwoWxiaMh9fAJoyJ4QleBA4UZP0SeE9T0O8_8LesQuk_Q=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Local residents and activists held a town hall meeting in Queens to protest the lack of transparency and the potential impact on housing affordability.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "Amazon executives testified before the New York City Council, facing intense questioning regarding labor practices and the use of public subsidies.",
+    "shock_magnitude": 0.6,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5aAFAEvaItPCSjkJZimCepJWiRvFYeByiJ5y_IrPgdg22fgUk4k-I-sHyAk-Af9r_HuASImiqTt4wJtOoH3rUAuatPK-NZW-wu-ZmOUPDwH0-NlDsptEZTYBNTlemY-RWLvxWfoQVHOsc367XYBoAZeJMuo8HYEtDaNAUwNJNMnq69fz7Yi9MBbhdIJl-Nvi3BImnYYwfxaxxIbmEhaOmdXbOnSPcikhv",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5aAFAEvaItPCSjkJZimCepJWiRvFYeByiJ5y_IrPgdg22fgUk4k-I-sHyAk-Af9r_HuASImiqTt4wJtOoH3rUAuatPK-NZW-wu-ZmOUPDwH0-NlDsptEZTYBNTlemY-RWLvxWfoQVHOsc367XYBoAZeJMuo8HYEtDaNAUwNJNMnq69fz7Yi9MBbhdIJl-Nvi3BImnYYwfxaxxIbmEhaOmdXbOnSPcikhv"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "New York State Senate Majority Leader Andrea Stewart-Cousins appointed vocal Amazon critic Senator Michael Gianaris to the Public Authorities Control Board, giving him potential veto power over the deal.",
+    "shock_magnitude": 0.7,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "Amazon officially canceled its plans to build the Long Island City headquarters, citing opposition from local politicians and community members.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

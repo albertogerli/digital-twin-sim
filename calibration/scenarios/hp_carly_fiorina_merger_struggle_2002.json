@@ -1,0 +1,79 @@
+{
+  "scenario_name": "hp_carly_fiorina_merger_struggle_2002",
+  "domain": "corporate",
+  "description": "Carly Fiorina led a contentious proxy battle to acquire Compaq, facing strong opposition from the Hewlett and Packard families. The merger was narrowly approved by shareholders in March 2002 despite intense public and internal scrutiny.",
+  "final_outcome_pro_pct": 51.4,
+  "final_outcome_against_pct": 48.6,
+  "final_turnout_pct": 87.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 32,
+      "against_pct": 25,
+      "undecided_pct": 43
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 30,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 45,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 46,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 49,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Walter Hewlett announces opposition to the merger."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Institutional Shareholder Services recommends voting against."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "HP launches aggressive last-minute campaign to flip retail investors."
+    }
+  ],
+  "calibration_notes": "Measures the impact of institutional proxy advisors versus aggressive CEO lobbying."
+}

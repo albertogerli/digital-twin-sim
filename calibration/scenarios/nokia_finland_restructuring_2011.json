@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nokia_finland_restructuring_2011",
+  "domain": "corporate",
+  "description": "In 2011, Nokia announced massive global layoffs affecting 7,000 employees following its shift from Symbian to Windows Phone. This led to significant public discourse in Finland regarding the decline of national industrial pride versus the necessity of corporate adaptation.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 40,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 45,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 57,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 37,
+      "against_pct": 58,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 58,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "CEO Stephen Elop issues the 'Burning Platform' memo."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Formal announcement of 7,000 job cuts worldwide."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Protests erupt in Oulu and Salo, Finland."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final consolidation of public sentiment toward corporate betrayal."
+    }
+  ],
+  "calibration_notes": "Models the transition from a 'wait and see' phase to entrenched opposition due to nationalistic sentiment."
+}

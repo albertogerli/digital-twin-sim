@@ -1,0 +1,79 @@
+{
+  "scenario_name": "croatia_eu_accession_referendum_2012",
+  "domain": "political",
+  "description": "A referendum to determine if Croatia should join the European Union. Voters approved the measure with 66% in favor on January 22, 2012.",
+  "final_outcome_pro_pct": 66.2,
+  "final_outcome_against_pct": 33.8,
+  "final_turnout_pct": 43.5,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50.0,
+      "against_pct": 30.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52.0,
+      "against_pct": 30.0,
+      "undecided_pct": 18.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55.0,
+      "against_pct": 31.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58.0,
+      "against_pct": 32.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60.0,
+      "against_pct": 32.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62.0,
+      "against_pct": 33.0,
+      "undecided_pct": 5.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 63.0,
+      "against_pct": 34.0,
+      "undecided_pct": 3.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 65.0,
+      "against_pct": 34.0,
+      "undecided_pct": 1.0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 66.2,
+      "against_pct": 33.8,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Official government campaign begins."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Concerns over national sovereignty raised by nationalists."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Low voter turnout, but high support ratio among voters."
+    }
+  ],
+  "calibration_notes": "Models steady growth in support despite low enthusiasm/turnout."
+}

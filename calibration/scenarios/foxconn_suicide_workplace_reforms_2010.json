@@ -1,0 +1,83 @@
+{
+  "scenario_name": "foxconn_suicide_workplace_reforms_2010",
+  "domain": "corporate",
+  "description": "Following a series of worker suicides at the Foxconn Longhua plant in 2010, international pressure forced the company to implement major wage hikes and labor reforms. The debate centered on whether these corporate concessions were sufficient to address systemic exploitation or were merely performative PR.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 20,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 35,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 50,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 62,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 57,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 57,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "10th suicide recorded at Foxconn plant; international media scrutiny begins."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Foxconn announces 20% wage increase for assembly line workers."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "NGOs and labor rights groups reject the wage hike as insufficient."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Formal report concludes structural labor abuse persists despite policy changes."
+    }
+  ],
+  "calibration_notes": "Useful for measuring the shift from shock to skepticism regarding corporate crisis management and 'too little, too late' concessions."
+}

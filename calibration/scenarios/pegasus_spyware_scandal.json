@@ -1,0 +1,83 @@
+{
+  "scenario_name": "pegasus_spyware_scandal",
+  "domain": "technology",
+  "description": "Public reaction to the 2021 revelations by the Pegasus Project regarding NSO Group's software used to target journalists, activists, and world leaders.",
+  "final_outcome_pro_pct": 10.0,
+  "final_outcome_against_pct": 90.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 40,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 18,
+      "against_pct": 55,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 15,
+      "against_pct": 70,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 14,
+      "against_pct": 75,
+      "undecided_pct": 11
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 13,
+      "against_pct": 78,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 12,
+      "against_pct": 81,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 11,
+      "against_pct": 84,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 10,
+      "against_pct": 87,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 9,
+      "against_pct": 89,
+      "undecided_pct": 2
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Amnesty International and Forbidden Stories publish report"
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Global outcry as heads of state are identified as targets"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "NSO Group blacklisted by US Commerce Department"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Legal challenges launched in multiple jurisdictions"
+    }
+  ],
+  "calibration_notes": "Illustrates extreme negative sentiment when private tech enables state-sponsored oppression."
+}

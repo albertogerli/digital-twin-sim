@@ -1,0 +1,83 @@
+{
+  "scenario_name": "verizon_strike_2016",
+  "domain": "labor",
+  "description": "In April 2016, 39,000 workers represented by the CWA and IBEW unions went on strike against Verizon over outsourcing and healthcare benefits. The strike, which lasted 45 days, saw significant public support for the workers as they framed the fight as one against corporate greed.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 58,
+      "against_pct": 26,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 61,
+      "against_pct": 26,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 64,
+      "against_pct": 27,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 68,
+      "against_pct": 27,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 27,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 71,
+      "against_pct": 28,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Strike begins with high media visibility."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Democratic presidential candidates express public support for strikers."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Workers reject final offer, increasing solidarity."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Verizon agrees to a contract that limits outsourcing."
+    }
+  ],
+  "calibration_notes": "Useful for modeling scenarios where the 'David vs. Goliath' narrative strongly reinforces public backing for a union."
+}

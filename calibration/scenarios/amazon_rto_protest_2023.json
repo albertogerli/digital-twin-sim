@@ -1,0 +1,83 @@
+{
+  "scenario_name": "amazon_rto_protest_2023",
+  "domain": "labor",
+  "description": "In May 2023, Amazon corporate employees staged a walkout to protest the company's mandated 3-day office presence, marking a significant escalation in organized labor dissent within Big Tech.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 20,
+      "undecided_pct": 65
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 30,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 45,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 28,
+      "against_pct": 60,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 63,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 31,
+      "against_pct": 67,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Amazon announces mandatory 3-day in-office policy."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Thousands of employees sign petition and plan a global walkout."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Amazon leadership threatens termination for employees failing to comply."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Walkout concludes with widespread media coverage but no policy change."
+    }
+  ],
+  "calibration_notes": "Highlights the limitation of employee collective action against powerful executive mandates."
+}

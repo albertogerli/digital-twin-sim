@@ -1,0 +1,79 @@
+{
+  "scenario_name": "london_stock_exchange_deutsche_boerse_failed_2017",
+  "domain": "commercial",
+  "description": "The London Stock Exchange (LSE) and Deutsche Börse attempted a massive merger in 2016-2017. The deal was heavily influenced by the geopolitical shock of Brexit, eventually failing due to regulatory demands to relocate the combined entity's headquarters.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 30,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 41,
+      "against_pct": 54,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Brexit referendum occurs, casting doubt on the deal's viability."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "EU regulators demand the clearing operations move to Frankfurt."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "LSE board refuses to move the HQ, signaling the end of the deal."
+    }
+  ],
+  "calibration_notes": "Demonstrates how external 'macro-geopolitical' events completely reframe commercial mergers."
+}

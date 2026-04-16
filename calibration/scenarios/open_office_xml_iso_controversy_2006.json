@@ -1,0 +1,83 @@
+{
+  "scenario_name": "open_office_xml_iso_controversy_2006",
+  "domain": "technology",
+  "description": "Microsoft pushed its OpenXML format through ISO to compete with the ODF open-source format. The event tracks the global pushback from open-source advocates against Microsoft's attempt to 'standardize' proprietary formats.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 20,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 30,
+      "undecided_pct": 55
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 40,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 45,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 46,
+      "against_pct": 54,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Microsoft announces plan to make Office XML an ISO standard."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Open source community launches 'No-XML' protests across European bodies."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "ISO votes in favor of OpenXML adoption despite heavy complaints."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final standard ratification seen by many as a victory of corporate power over open processes."
+    }
+  ],
+  "calibration_notes": "Useful for understanding bureaucratic capture and how proprietary firms utilize standards bodies to cement influence."
+}

@@ -1,0 +1,126 @@
+{
+  "parameters": [
+    "lambda_elite",
+    "lambda_citizen",
+    "alpha_social",
+    "alpha_event",
+    "alpha_herd",
+    "alpha_anchor",
+    "herd_threshold",
+    "anchor_drift_rate"
+  ],
+  "bounds": [
+    [
+      0.05,
+      0.3
+    ],
+    [
+      0.1,
+      0.4
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      0.1,
+      0.4
+    ],
+    [
+      0.1,
+      0.4
+    ]
+  ],
+  "N": 1024,
+  "total_evaluations": 18432,
+  "n_agents": 30,
+  "n_rounds": 7,
+  "output_stats": {
+    "mean": 26.353916648180125,
+    "std": 21.169073003946583,
+    "min": 0.0,
+    "max": 69.23076923076923
+  },
+  "S1": {
+    "lambda_elite": 0.00698399458762704,
+    "lambda_citizen": 0.0020832871706698798,
+    "alpha_social": 0.08565330988837258,
+    "alpha_event": 0.025605913297930542,
+    "alpha_herd": 0.36385311316688124,
+    "alpha_anchor": 0.20684172412981236,
+    "herd_threshold": 0.0031679726051923557,
+    "anchor_drift_rate": 0.002912679327349147
+  },
+  "S1_conf": {
+    "lambda_elite": 0.009486946100600383,
+    "lambda_citizen": 0.0326275398959618,
+    "alpha_social": 0.0398330216554707,
+    "alpha_event": 0.033109964266621134,
+    "alpha_herd": 0.0585764855120837,
+    "alpha_anchor": 0.059983814523551365,
+    "herd_threshold": 0.01323203792344438,
+    "anchor_drift_rate": 0.01016632798303823
+  },
+  "ST": {
+    "lambda_elite": 0.015754816867237353,
+    "lambda_citizen": 0.12063929938312264,
+    "alpha_social": 0.21248696643195433,
+    "alpha_event": 0.11515031036036905,
+    "alpha_herd": 0.5546107072690991,
+    "alpha_anchor": 0.4523274142882532,
+    "herd_threshold": 0.024290177380073642,
+    "anchor_drift_rate": 0.01270584296811999
+  },
+  "ST_conf": {
+    "lambda_elite": 0.005573859677171918,
+    "lambda_citizen": 0.025030807294352368,
+    "alpha_social": 0.0344436146118834,
+    "alpha_event": 0.022985572117746638,
+    "alpha_herd": 0.05531675422195028,
+    "alpha_anchor": 0.04708742421564019,
+    "herd_threshold": 0.005546555782955653,
+    "anchor_drift_rate": 0.0027882757073994634
+  },
+  "S2": {
+    "lambda_elite:lambda_citizen": 0.00064979350133057,
+    "lambda_elite:alpha_social": -0.0002889378200044007,
+    "lambda_elite:alpha_event": 0.0036316942460963113,
+    "lambda_elite:alpha_herd": -0.0005986304770365103,
+    "lambda_elite:alpha_anchor": -0.00482548611012712,
+    "lambda_elite:herd_threshold": 0.0003475542675994438,
+    "lambda_elite:anchor_drift_rate": 0.0003526748655282171,
+    "lambda_citizen:alpha_social": -0.0173106577653786,
+    "lambda_citizen:alpha_event": -0.004849957066968988,
+    "lambda_citizen:alpha_herd": -0.005458613243290167,
+    "lambda_citizen:alpha_anchor": 8.124447863214201e-05,
+    "lambda_citizen:herd_threshold": -0.009115696292097181,
+    "lambda_citizen:anchor_drift_rate": -0.014644208362204038,
+    "alpha_social:alpha_event": -0.04796898304881051,
+    "alpha_social:alpha_herd": -0.034987201174778215,
+    "alpha_social:alpha_anchor": -0.027656901055541472,
+    "alpha_social:herd_threshold": -0.04444872137477194,
+    "alpha_social:anchor_drift_rate": -0.04767660203044319,
+    "alpha_event:alpha_herd": -0.020752411084667077,
+    "alpha_event:alpha_anchor": 0.0006169735340503801,
+    "alpha_event:herd_threshold": -0.005286167495334448,
+    "alpha_event:anchor_drift_rate": -0.008263865277152128,
+    "alpha_herd:alpha_anchor": 0.09401907057746248,
+    "alpha_herd:herd_threshold": -0.013165540531456073,
+    "alpha_herd:anchor_drift_rate": -0.010267279944795841,
+    "alpha_anchor:herd_threshold": 0.04326702002602343,
+    "alpha_anchor:anchor_drift_rate": 0.04111614408435926,
+    "herd_threshold:anchor_drift_rate": 0.001250286363227143
+  }
+}

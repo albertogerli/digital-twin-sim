@@ -1,0 +1,425 @@
+[
+  {
+    "id": "luigi_brugnaro",
+    "name": "Luigi Brugnaro",
+    "role": "Sindaco di Venezia",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Coraggio Italia / Centrodestra civico",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.38,
+    "rigidity": 0.55,
+    "bio": "Sindaco di Venezia dal 2015, imprenditore e fondatore di Coraggio Italia. Ha gestito il MOSE e l'acqua granda, profilo manageriale e moderato di centrodestra.",
+    "communication_style": "Imprenditoriale, pragmatico, toni da manager prestato alla politica",
+    "key_traits": [
+      "imprenditore",
+      "pragmatico",
+      "moderato"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.4,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "turismo_sostenibile",
+        "value": 0.2,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "damiano_tommasi",
+    "name": "Damiano Tommasi",
+    "role": "Sindaco di Verona",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Centrosinistra civico",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.45,
+    "bio": "Sindaco di Verona dal 2022, ex calciatore professionista e presidente dell'AIC. Ha strappato Verona al centrodestra con una lista civica di centrosinistra.",
+    "communication_style": "Sobrio, sportivo, toni da outsider della politica",
+    "key_traits": [
+      "civico",
+      "outsider",
+      "moderato"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.3,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "diritti_civili",
+        "value": -0.55,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "matteo_biffoni",
+    "name": "Matteo Biffoni",
+    "role": "Ex sindaco di Prato, presidente ANCI",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.5,
+    "bio": "Ex sindaco di Prato e presidente dell'ANCI. Voce autorevole dei Comuni italiani, esperto di immigrazione e integrazione nel distretto tessile pratese.",
+    "communication_style": "Istituzionale, concreto, toni da rappresentante dei sindaci",
+    "key_traits": [
+      "istituzionale",
+      "concreto",
+      "municipalista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.35,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "immigration",
+        "value": -0.45,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "vito_leccese",
+    "name": "Vito Leccese",
+    "role": "Sindaco di Bari",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Centrosinistra",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.5,
+    "bio": "Sindaco di Bari dal 2024, successore di Antonio Decaro. Avvocato ambientalista, ex assessore, ha continuato il percorso di rinascita della città.",
+    "communication_style": "Pacato, ambientalista, toni da amministratore di continuità",
+    "key_traits": [
+      "ambientalista",
+      "continuità",
+      "pragmatico"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.4,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "ambiente",
+        "value": -0.65,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "roberto_lagalla",
+    "name": "Roberto Lagalla",
+    "role": "Sindaco di Palermo",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Centrodestra / UDC",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.32,
+    "rigidity": 0.5,
+    "bio": "Sindaco di Palermo dal 2022, ex rettore dell'Università di Palermo e assessore regionale all'Istruzione. Profilo tecnico-moderato di centrodestra.",
+    "communication_style": "Accademico, istituzionale, toni da ex rettore",
+    "key_traits": [
+      "accademico",
+      "moderato",
+      "istituzionale"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.3,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "sicurezza",
+        "value": 0.35,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "enrico_trantino",
+    "name": "Enrico Trantino",
+    "role": "Sindaco di Catania",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.28,
+    "rigidity": 0.55,
+    "bio": "Sindaco di Catania dal 2023, avvocato, eletto con il centrodestra a guida FdI. Figlio dell'ex sindaco Enzo Trantino, gestione post-dissesto finanziario della città.",
+    "communication_style": "Formale, giuridico, toni da avvocato conservatore",
+    "key_traits": [
+      "conservatore",
+      "giurista",
+      "dinastico"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.55,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "sicurezza",
+        "value": 0.5,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "federico_pizzarotti",
+    "name": "Federico Pizzarotti",
+    "role": "Ex sindaco di Parma",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Civico / ex Movimento 5 Stelle",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.22,
+    "rigidity": 0.45,
+    "bio": "Ex sindaco di Parma (2012-2022), primo sindaco M5S di una grande città, poi espulso e rieletto come civico. Simbolo della parabola del grillismo amministrativo.",
+    "communication_style": "Civico, pragmatico, toni da ex grillino moderato",
+    "key_traits": [
+      "civico",
+      "pragmatico",
+      "ex-grillino"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.15,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "trasparenza",
+        "value": -0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "dario_allevi",
+    "name": "Dario Allevi",
+    "role": "Ex sindaco di Monza",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia / Centrodestra",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.22,
+    "rigidity": 0.5,
+    "bio": "Ex sindaco di Monza (2017-2022), centrodestra moderato. Ha gestito la città durante la pandemia e la promozione del Monza in Serie A targata Berlusconi.",
+    "communication_style": "Moderato, istituzionale, toni da amministratore lombardo",
+    "key_traits": [
+      "moderato",
+      "lombardo",
+      "istituzionale"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.35,
+        "source": "voting_record",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "michele_guerra",
+    "name": "Michele Guerra",
+    "role": "Sindaco di Parma",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Centrosinistra civico",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.45,
+    "bio": "Sindaco di Parma dal 2022, ex assessore alla Cultura. Professore universitario di cinema, profilo culturale e progressista, Parma Capitale della Cultura.",
+    "communication_style": "Colto, culturale, toni da intellettuale amministratore",
+    "key_traits": [
+      "culturale",
+      "progressista",
+      "accademico"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.4,
+        "source": "voting_record",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "cultura",
+        "value": -0.65,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "andrea_crisanti",
+    "name": "Andrea Crisanti",
+    "role": "Senatore PD, ex microbiologo",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.55,
+    "bio": "Senatore PD, microbiologo e virologo, protagonista della gestione Covid in Veneto con lo screening di massa a Vo' Euganeo. Eletto nel 2022 come figura della società civile.",
+    "communication_style": "Scientifico, diretto, toni da scienziato prestato alla politica",
+    "key_traits": [
+      "scientifico",
+      "diretto",
+      "anti-conformista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": -0.35,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "sanità",
+        "value": -0.7,
+        "source": "public_statement",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "mario_conte",
+    "name": "Mario Conte",
+    "role": "Sindaco di Treviso",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.55,
+    "bio": "Sindaco di Treviso dal 2018, Lega. Ex giornalista, profilo identitario e securitario, rappresentante del Veneto leghista nelle città di medie dimensioni.",
+    "communication_style": "Diretto, securitario, toni da sindaco leghista veneto",
+    "key_traits": [
+      "securitario",
+      "identitario",
+      "leghista"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.55,
+        "source": "voting_record",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "immigration",
+        "value": 0.7,
+        "source": "public_statement",
+        "confidence": "high"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "hungarian_eu_quota_referendum_2016",
+  "domain": "political",
+  "description": "Hungary held a referendum on October 2, 2016, asking voters if they supported the EU's mandatory migrant quotas. While 98% of those who voted chose 'No', the referendum was declared invalid due to low turnout failing to reach the 50% threshold required for validity.",
+  "final_outcome_pro_pct": 2.0,
+  "final_outcome_against_pct": 98.0,
+  "final_turnout_pct": 44.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10.0,
+      "against_pct": 70.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 8.0,
+      "against_pct": 75.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 6.0,
+      "against_pct": 80.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 5.0,
+      "against_pct": 82.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 4.0,
+      "against_pct": 85.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 3.0,
+      "against_pct": 88.0,
+      "undecided_pct": 9.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 2.5,
+      "against_pct": 90.0,
+      "undecided_pct": 7.5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 2.2,
+      "against_pct": 95.0,
+      "undecided_pct": 2.8
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 2.0,
+      "against_pct": 98.0,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Prime Minister Viktor Orbán announces the referendum."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Opposition parties call for a boycott of the referendum."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Aggressive government media campaign reaches its peak intensity."
+    }
+  ],
+  "calibration_notes": "Vital for understanding scenarios where the outcome is not just about the vote choice, but the legitimacy of the threshold."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "kansas_tax_experiment_2012",
+  "domain": "financial",
+  "description": "Governor Sam Brownback implemented aggressive income tax cuts in Kansas, intended to serve as a 'shot of adrenaline' for the economy. The failure to meet revenue projections eventually turned public support sharply against the policy by 2017.",
+  "final_outcome_pro_pct": 32.0,
+  "final_outcome_against_pct": 68.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 52,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 58,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 35,
+      "against_pct": 62,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 33,
+      "against_pct": 65,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 32,
+      "against_pct": 68,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Legislation passed by the Kansas State Legislature."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Bond rating agencies downgrade state credit outlook due to revenue shortfall."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public schools face budget cuts, triggering protests."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Kansas Legislature overrides the Governor's veto to repeal the tax cuts."
+    }
+  ],
+  "calibration_notes": "Highlights the difference between initial theoretical support and the reality of failed fiscal outcomes."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "france_gilets_jaunes_2018",
+  "domain": "environmental",
+  "description": "The French government's attempt to increase the carbon tax on motor fuels in 2018 triggered the 'Yellow Vest' protest movement, forcing a total policy retreat.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 22,
+      "against_pct": 75,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 20,
+      "against_pct": 78,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "First mass demonstrations erupt in rural and suburban France."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Protests turn violent in Paris; international media coverage peaks."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "President Macron announces a moratorium on the fuel tax hike."
+    }
+  ],
+  "calibration_notes": "Essential for understanding how regressive-perceived environmental taxes can trigger immediate populist revolt."
+}

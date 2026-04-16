@@ -1,0 +1,6479 @@
+{
+  "round": 1,
+  "month": "Round 1",
+  "event": {
+    "event": "Round 1 dynamics continue",
+    "shock_magnitude": 0.3,
+    "shock_direction": 0
+  },
+  "posts": [
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00000_r1",
+      "author_id": "friedrich_merz",
+      "author_name": "Friedrich Merz",
+      "author_role": "Bundeskanzler",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The 75bps move is a necessary, albeit painful, response to core inflation. While the widening BTP-Bund spread raises concerns regarding debt sustainability, we cannot allow the ECB to abandon its price stability mandate. Italy must understand that market confidence is earned thro",
+      "round": 1,
+      "likes": 19,
+      "reposts": 9,
+      "replies": 0,
+      "engagement_score": 0.65,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00001_r1",
+      "author_id": "herbert_diess",
+      "author_name": "Herbert Diess",
+      "author_role": "Ex-CEO Volkswagen, Advisor",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The 75bps hike is a blunt instrument that ignores the structural weakness of the European industrial base. We are in the middle of the most capital-intensive transition in automotive history. By tightening aggressively, the ECB risks choking off the very investment needed to rema",
+      "round": 1,
+      "likes": 18,
+      "reposts": 9,
+      "replies": 0,
+      "engagement_score": 0.67,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00002_r1",
+      "author_id": "ignazio_visco_successor",
+      "author_name": "Fabio Panetta",
+      "author_role": "Governatore della Banca d'Italia",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'aumento di 75pb riflette un'urgenza nel contrastare l'inflazione core. Tuttavia, l'allargamento dello spread BTP-Bund e la volatilità sui mercati riflettono preoccupazioni sulla frammentazione finanziaria. Come banchieri centrali, dobbiamo monitorare attentamente che l'irrigidi",
+      "round": 1,
+      "likes": 19,
+      "reposts": 8,
+      "replies": 0,
+      "engagement_score": 0.61,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00003_r1",
+      "author_id": "omid_nouripour",
+      "author_name": "Omid Nouripour",
+      "author_role": "Ex-Grüne co-Vorsitzender, Bundestagsabgeordneter",
+      "tier": 1,
+      "platform": "social",
+      "text": "Die heutige Entscheidung der EZB erfordert Besonnenheit. Wir müssen die Preisstabilität wahren, aber die Stabilität der Eurozone als Ganzes darf nicht gefährdet werden. Dialog zwischen den Mitgliedstaaten ist jetzt wichtiger denn je, um wirtschaftliche Spaltung zu verhindern.",
+      "round": 1,
+      "likes": 19,
+      "reposts": 8,
+      "replies": 0,
+      "engagement_score": 0.61,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00004_r1",
+      "author_id": "sergio_mattarella",
+      "author_name": "Sergio Mattarella",
+      "author_role": "Presidente della Repubblica Italiana",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Le recenti determinazioni di politica monetaria pongono sfide di non lieve entità per il quadro macroeconomico europeo e nazionale. È necessario un attento monitoraggio degli effetti sui titoli di debito sovrano, preservando la coesione dell'Unione. L'equilibrio tra stabilità dei",
+      "round": 1,
+      "likes": 22,
+      "reposts": 6,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00005_r1",
+      "author_id": "omid_nouripour",
+      "author_name": "Omid Nouripour",
+      "author_role": "Ex-Grüne co-Vorsitzender, Bundestagsabgeordneter",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Die 75-Basispunkte-Anhebung schafft ein Spannungsfeld zwischen Inflationsbekämpfung und fiskalischer Solidarität. Während die EZB ihr Mandat verfolgt, sehen wir eine gefährliche Ausweitung der BTP-Bund-Spreads. Wir brauchen jetzt eine engere politische Abstimmung in Europa, statt",
+      "round": 1,
+      "likes": 24,
+      "reposts": 5,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00006_r1",
+      "author_id": "herbert_diess",
+      "author_name": "Herbert Diess",
+      "author_role": "Ex-CEO Volkswagen, Advisor",
+      "tier": 1,
+      "platform": "social",
+      "text": "75bps hike? ECB is playing with fire. While they obsess over inflation, the real crisis is the transition gap. European industry needs capital to electrify, not higher borrowing costs that kill our competitive edge. Stop the panic, start the transformation! #EV #ECB",
+      "round": 1,
+      "likes": 22,
+      "reposts": 6,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00007_r1",
+      "author_id": "giorgia_meloni",
+      "author_name": "Giorgia Meloni",
+      "author_role": "Presidente del Consiglio dei Ministri",
+      "tier": 1,
+      "platform": "social",
+      "text": "La decisione della BCE di alzare i tassi di 75 punti è uno schiaffo alle famiglie e alle imprese italiane. Non si combatte l'inflazione mettendo in ginocchio le economie più fragili. L'Italia non accetterà misure che puniscono il nostro debito. Serve buonsenso, non cecità.",
+      "round": 1,
+      "likes": 26,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00008_r1",
+      "author_id": "keir_starmer",
+      "author_name": "Keir Starmer",
+      "author_role": "Prime Minister",
+      "tier": 1,
+      "platform": "social",
+      "text": "The ECB’s 75bps hike introduces significant volatility into European markets. My focus remains on maintaining domestic economic stability and monitoring the implications for the wider Eurozone. We must prioritize a calm, evidence-based approach during this period.",
+      "round": 1,
+      "likes": 19,
+      "reposts": 7,
+      "replies": 0,
+      "engagement_score": 0.58,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00009_r1",
+      "author_id": "bernard_arnault",
+      "author_name": "Bernard Arnault",
+      "author_role": "PDG de LVMH",
+      "tier": 1,
+      "platform": "social",
+      "text": "L’excellence et la résilience restent nos seuls véritables indicateurs. Dans un environnement macroéconomique complexe, la discipline et la vision à long terme demeurent les piliers de la croissance durable.",
+      "round": 1,
+      "likes": 21,
+      "reposts": 6,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00010_r1",
+      "author_id": "bernard_arnault",
+      "author_name": "Bernard Arnault",
+      "author_role": "PDG de LVMH",
+      "tier": 1,
+      "platform": "forum",
+      "text": "La décision de la BCE impose une volatilité immédiate, mais elle ne modifie pas les fondamentaux des maisons que nous construisons. Pour le luxe, la qualité et la désirabilité transcendent les cycles monétaires. Nous observons avec attention l'écartement des spreads, mais notre s",
+      "round": 1,
+      "likes": 19,
+      "reposts": 7,
+      "replies": 0,
+      "engagement_score": 0.58,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00011_r1",
+      "author_id": "del_re",
+      "author_name": "Emanuela Del Re",
+      "author_role": "Ex viceministra Esteri, rappresentante UE Sahel",
+      "tier": 1,
+      "platform": "social",
+      "text": "La decisione della BCE richiede prudenza. In un contesto di incertezza, il dialogo multilaterale e la stabilità sono essenziali per proteggere la coesione europea e i percorsi di sviluppo sostenibile. Monitoriamo con attenzione gli impatti sui mercati e sulle economie.",
+      "round": 1,
+      "likes": 23,
+      "reposts": 5,
+      "replies": 0,
+      "engagement_score": 0.48,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00012_r1",
+      "author_id": "pedro_sanchez",
+      "author_name": "Pedro Sánchez",
+      "author_role": "Presidente del Gobierno",
+      "tier": 1,
+      "platform": "forum",
+      "text": "La reciente subida de tipos de 75 puntos básicos plantea desafíos significativos para la estabilidad financiera de la Eurozona. Observamos con preocupación el incremento en las primas de riesgo periféricas. Es imperativo que la política monetaria no desatienda la cohesión económi",
+      "round": 1,
+      "likes": 21,
+      "reposts": 6,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00013_r1",
+      "author_id": "antonio_tajani",
+      "author_name": "Antonio Tajani",
+      "author_role": "Vicepresidente del Consiglio e Ministro degli Esteri",
+      "tier": 1,
+      "platform": "social",
+      "text": "La decisione della BCE richiede prudenza. Dobbiamo proteggere il potere d'acquisto, ma la stabilità dei mercati è fondamentale per l'Italia. Il dialogo a Bruxelles resta la nostra priorità: serietà e responsabilità per tutelare i risparmi degli italiani. #Tajani",
+      "round": 1,
+      "likes": 21,
+      "reposts": 6,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00014_r1",
+      "author_id": "stephane_richard",
+      "author_name": "Stéphane Richard",
+      "author_role": "Ancien PDG d'Orange",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Le resserrement monétaire brutal annoncé par la BCE soulève des interrogations légitimes sur la résilience des marchés souverains et la valorisation des actifs bancaires. Pour les grands acteurs des télécoms, cette hausse des taux impose une gestion rigoureuse du coût de la dette",
+      "round": 1,
+      "likes": 22,
+      "reposts": 5,
+      "replies": 0,
+      "engagement_score": 0.48,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00015_r1",
+      "author_id": "camporini",
+      "author_name": "Vincenzo Camporini",
+      "author_role": "Ex capo di Stato Maggiore della Difesa, analista IAI",
+      "tier": 1,
+      "platform": "social",
+      "text": "La decisione BCE impone una riflessione: la stabilità macroeconomica è pilastro della sicurezza nazionale. L'aumento dello spread BTP-Bund richiede cautela strategica. Difendere il Paese significa anche garantire solidità al debito in un contesto di alta tensione.",
+      "round": 1,
+      "likes": 18,
+      "reposts": 7,
+      "replies": 0,
+      "engagement_score": 0.59,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00016_r1",
+      "author_id": "silvestri",
+      "author_name": "Stefano Silvestri",
+      "author_role": "Presidente emerito IAI, analista difesa",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'innalzamento dei tassi di 75bps rappresenta una sfida non solo economica, ma di tenuta politica per l'Unione. Il balzo dello spread BTP-Bund riflette una fragilità sistemica che non può essere ignorata in un momento in cui il fianco Sud necessita di stabilità. La retorica dello",
+      "round": 1,
+      "likes": 22,
+      "reposts": 5,
+      "replies": 0,
+      "engagement_score": 0.48,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00017_r1",
+      "author_id": "dario_nardella",
+      "author_name": "Dario Nardella",
+      "author_role": "Europarlamentare PD, ex sindaco di Firenze",
+      "tier": 1,
+      "platform": "social",
+      "text": "La decisione della BCE di alzare i tassi di 75pb è una mossa brusca che richiede prudenza. L'Europa ha bisogno di combattere l'inflazione, ma senza soffocare la crescita dei territori. Serve equilibrio, non scontri ideologici. Firenze e l'Italia chiedono stabilità.",
+      "round": 1,
+      "likes": 22,
+      "reposts": 5,
+      "replies": 0,
+      "engagement_score": 0.48,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00018_r1",
+      "author_id": "giorgia_meloni",
+      "author_name": "Giorgia Meloni",
+      "author_role": "Presidente del Consiglio dei Ministri",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'aumento di 75bps è una manovra miope che ignora la realtà eterogenea dell'Eurozona. Invece di stabilizzare, si rischia la recessione indotta. Il balzo dello spread BTP-Bund a 260bps non riflette i fondamentali del Paese, ma una speculazione alimentata dall'incertezza monetaria.",
+      "round": 1,
+      "likes": 24,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00019_r1",
+      "author_id": "giuseppe_conte",
+      "author_name": "Giuseppe Conte",
+      "author_role": "Presidente del Movimento 5 Stelle",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'intervento della BCE è un atto che ignora le asimmetrie strutturali dell'Eurozona. Un rialzo così drastico non contrasta l'inflazione da costi, ma comprime la domanda aggregata, penalizzando i Paesi più indebitati. Lo spread a 260bps è un segnale d'allarme che il governo non pu",
+      "round": 1,
+      "likes": 26,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.41,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00020_r1",
+      "author_id": "manuel_valls",
+      "author_name": "Manuel Valls",
+      "author_role": "Ancien Premier ministre",
+      "tier": 1,
+      "platform": "forum",
+      "text": "La décision de la BCE est un rappel brutal : l'époque de l'argent facile est révolue. Si l'écartement des spreads italiens inquiète, il souligne surtout nos fragilités structurelles passées. Il ne s'agit pas d'un 'acte de guerre', mais d'une réponse nécessaire à une inflation dev",
+      "round": 1,
+      "likes": 21,
+      "reposts": 5,
+      "replies": 0,
+      "engagement_score": 0.49,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00021_r1",
+      "author_id": "silvestri",
+      "author_name": "Stefano Silvestri",
+      "author_role": "Presidente emerito IAI, analista difesa",
+      "tier": 1,
+      "platform": "social",
+      "text": "La mossa della BCE di 75bps scuote i mercati e solleva interrogativi sulla tenuta dell'architettura europea. In una fase di incertezza geopolitica, la stabilità finanziaria è pilastro della sicurezza. Serve equilibrio tra lotta all'inflazione e coesione dell'Eurozona.",
+      "round": 1,
+      "likes": 17,
+      "reposts": 7,
+      "replies": 0,
+      "engagement_score": 0.61,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00022_r1",
+      "author_id": "del_re",
+      "author_name": "Emanuela Del Re",
+      "author_role": "Ex viceministra Esteri, rappresentante UE Sahel",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'aumento dei tassi di 75bps solleva interrogativi complessi sulla tenuta dei mercati sovrani e sulla convergenza economica nell'UE. Come accademica ed esperta di cooperazione, ritengo che la stabilità finanziaria sia un prerequisito per l'efficacia delle politiche di sviluppo. È",
+      "round": 1,
+      "likes": 23,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.45,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00023_r1",
+      "author_id": "dario_nardella",
+      "author_name": "Dario Nardella",
+      "author_role": "Europarlamentare PD, ex sindaco di Firenze",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'aumento di 75pb pone sfide complesse per la sostenibilità del debito italiano. Come europeista, credo nell'indipendenza della BCE, ma la politica monetaria non può essere slegata dalla realtà economica dei singoli Stati membri. Lo spread a 260pb è un segnale di allerta che moni",
+      "round": 1,
+      "likes": 23,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.45,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00024_r1",
+      "author_id": "antonio_tajani",
+      "author_name": "Antonio Tajani",
+      "author_role": "Vicepresidente del Consiglio e Ministro degli Esteri",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'aumento dei tassi di 75 punti base pone sfide significative. Se da un lato il contrasto all'inflazione è necessario, dall'altro la tenuta del debito sovrano non può essere ignorata. Come europeisti convinti, chiediamo che la politica monetaria sia accompagnata da una visione di",
+      "round": 1,
+      "likes": 23,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.45,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00025_r1",
+      "author_id": "isabel_diaz_ayuso",
+      "author_name": "Isabel Díaz Ayuso",
+      "author_role": "Presidenta de la Comunidad de Madrid",
+      "tier": 1,
+      "platform": "social",
+      "text": "Otra vez Madrid dando ejemplo de sensatez mientras en Bruselas juegan con el dinero de todos. Subir tipos al tuntún, sin medir el daño a las familias y empresas, es la receta del desastre. Menos intervencionismo y más libertad. ¡Que dejen trabajar a los españoles!",
+      "round": 1,
+      "likes": 17,
+      "reposts": 7,
+      "replies": 0,
+      "engagement_score": 0.61,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00026_r1",
+      "author_id": "rachel_reeves",
+      "author_name": "Rachel Reeves",
+      "author_role": "Chancellor of the Exchequer",
+      "tier": 1,
+      "platform": "social",
+      "text": "The ECB’s 75bps move underscores the global challenge of balancing inflation control with financial stability. Vigilance is essential. We remain focused on the UK’s fiscal framework, ensuring discipline and stability as we navigate this period of heightened market volatility.",
+      "round": 1,
+      "likes": 19,
+      "reposts": 6,
+      "replies": 0,
+      "engagement_score": 0.54,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00027_r1",
+      "author_id": "carlo_messina",
+      "author_name": "Carlo Messina",
+      "author_role": "CEO Intesa Sanpaolo",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L’aumento di 75bps rappresenta una fase di transizione complessa. Sebbene la priorità sia il controllo dell'inflazione, la volatilità sui BTP impone prudenza. Intesa Sanpaolo mantiene una posizione neutrale: il nostro modello di business, diversificato e solido, è progettato per ",
+      "round": 1,
+      "likes": 18,
+      "reposts": 6,
+      "replies": 0,
+      "engagement_score": 0.56,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00028_r1",
+      "author_id": "sergio_mattarella",
+      "author_name": "Sergio Mattarella",
+      "author_role": "Presidente della Repubblica Italiana",
+      "tier": 1,
+      "platform": "social",
+      "text": "L'attuale fase richiede sobrietà e senso di responsabilità. La stabilità del Paese è un valore supremo che impone coesione nelle istituzioni e fiducia nelle nostre solide fondamenta economiche. Il dialogo resta la via maestra per affrontare ogni complessità.",
+      "round": 1,
+      "likes": 22,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.45,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00029_r1",
+      "author_id": "andrea_orcel",
+      "author_name": "Andrea Orcel",
+      "author_role": "CEO UniCredit",
+      "tier": 1,
+      "platform": "social",
+      "text": "75bps is a blunt instrument for a nuanced problem. Markets are overreacting to the volatility, but the structural weakness remains. Banks are not the enemy; they are the engine of recovery. Time to focus on balance sheet resilience, not political theater.",
+      "round": 1,
+      "likes": 24,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00030_r1",
+      "author_id": "mario_draghi",
+      "author_name": "Mario Draghi",
+      "author_role": "Ex Presidente del Consiglio, ex Presidente BCE",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'attuale divergenza nei rendimenti sovrani riflette una tensione strutturale che va oltre la decisione sui tassi. Un rialzo di 75bps è una scelta tecnica volta a contenere l'inflazione, ma l'integrazione del mercato unico richiede strumenti di difesa comuni contro la frammentazi",
+      "round": 1,
+      "likes": 24,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00031_r1",
+      "author_id": "friedrich_merz",
+      "author_name": "Friedrich Merz",
+      "author_role": "Bundeskanzler",
+      "tier": 1,
+      "platform": "social",
+      "text": "The ECB’s 75bps hike is a stark reminder: inflation is the enemy of prosperity. We must remain calm, but fiscal discipline is now non-negotiable. Stability in the Eurozone depends on structural reforms, not just monetary maneuvering. Germany stands for sound money.",
+      "round": 1,
+      "likes": 20,
+      "reposts": 5,
+      "replies": 0,
+      "engagement_score": 0.5,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00032_r1",
+      "author_id": "emmanuel_macron",
+      "author_name": "Emmanuel Macron",
+      "author_role": "Président de la République",
+      "tier": 1,
+      "platform": "social",
+      "text": "La lutte contre l'inflation est une nécessité pour protéger le pouvoir d'achat des Européens. Néanmoins, la solidarité et la stabilité de la zone euro restent notre boussole. Nous devons agir avec détermination mais aussi avec une coordination européenne renforcée.",
+      "round": 1,
+      "likes": 23,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00033_r1",
+      "author_id": "marine_le_pen",
+      "author_name": "Marine Le Pen",
+      "author_role": "Présidente du Rassemblement National",
+      "tier": 1,
+      "platform": "forum",
+      "text": "Cette hausse de 75 points de base confirme l'incapacité des institutions européennes à gérer la diversité des économies de la zone euro. En cherchant à stopper l'inflation par la contrainte monétaire, la BCE fragilise les États les plus exposés et menace la stabilité de notre sys",
+      "round": 1,
+      "likes": 21,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.46,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00034_r1",
+      "author_id": "stephane_richard",
+      "author_name": "Stéphane Richard",
+      "author_role": "Ancien PDG d'Orange",
+      "tier": 1,
+      "platform": "social",
+      "text": "La décision de la BCE marque un tournant significatif. Dans ce contexte de volatilité accrue, la prudence et la stabilité restent les maîtres-mots pour nos industries. Il est essentiel de privilégier le dialogue pour préserver la confiance des investisseurs.",
+      "round": 1,
+      "likes": 17,
+      "reposts": 6,
+      "replies": 0,
+      "engagement_score": 0.57,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00035_r1",
+      "author_id": "walter_veltroni",
+      "author_name": "Walter Veltroni",
+      "author_role": "Ex segretario PD, ex sindaco di Roma, scrittore e regista",
+      "tier": 1,
+      "platform": "social",
+      "text": "La complessità di questo momento richiede equilibrio. L'inflazione va governata con saggezza, ma senza dimenticare che il cuore dell'Europa batte nel benessere delle persone. Cerchiamo il dialogo, non lo scontro, per costruire un futuro di stabilità condivisa.",
+      "round": 1,
+      "likes": 23,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00036_r1",
+      "author_id": "giuseppe_conte",
+      "author_name": "Giuseppe Conte",
+      "author_role": "Presidente del Movimento 5 Stelle",
+      "tier": 1,
+      "platform": "social",
+      "text": "L’aumento dei tassi BCE di 75bps è una manovra miope che rischia di strangolare famiglie e imprese. Il governo Meloni, invece di gridare all' 'economia di guerra', spieghi perché non ha tutelato il nostro debito in Europa. Serve protezione, non propaganda.",
+      "round": 1,
+      "likes": 21,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.46,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00037_r1",
+      "author_id": "carlo_messina",
+      "author_name": "Carlo Messina",
+      "author_role": "CEO Intesa Sanpaolo",
+      "tier": 1,
+      "platform": "social",
+      "text": "La decisione odierna della BCE richiede lucidità. La stabilità del sistema bancario italiano resta solida, fondata su bilanci patrimoniali resilienti. Monitoriamo con attenzione l’evoluzione dello spread, certi che la disciplina sia la bussola per il Paese.",
+      "round": 1,
+      "likes": 20,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00038_r1",
+      "author_id": "keir_starmer",
+      "author_name": "Keir Starmer",
+      "author_role": "Prime Minister",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The sharp widening of the BTP-Bund spread reflects a fundamental tension between inflation containment and fiscal sustainability in the Eurozone. While the ECB’s mandate is clear, the transmission mechanism is under strain. From a policy perspective, we are closely observing the ",
+      "round": 1,
+      "likes": 24,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.39,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00039_r1",
+      "author_id": "marine_le_pen",
+      "author_name": "Marine Le Pen",
+      "author_role": "Présidente du Rassemblement National",
+      "tier": 1,
+      "platform": "social",
+      "text": "La décision brutale de la BCE sacrifie nos entreprises et nos ménages sur l'autel d'une technocratie déconnectée. Pendant que Bruxelles joue avec le feu, ce sont les Français qui paient la facture. La souveraineté économique n'est plus une option, c'est une urgence.",
+      "round": 1,
+      "likes": 26,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.36,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00040_r1",
+      "author_id": "manuel_valls",
+      "author_name": "Manuel Valls",
+      "author_role": "Ancien Premier ministre",
+      "tier": 1,
+      "platform": "social",
+      "text": "La rigueur est une exigence, non une option. Face à l'inflation, l'autorité monétaire agit. La spéculation sur les dettes souveraines ne doit pas masquer la nécessité de réformes structurelles. La France et l'Europe doivent rester debout, lucides et fermes.",
+      "round": 1,
+      "likes": 22,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.42,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00041_r1",
+      "author_id": "pedro_sanchez",
+      "author_name": "Pedro Sánchez",
+      "author_role": "Presidente del Gobierno",
+      "tier": 1,
+      "platform": "social",
+      "text": "Ante las recientes decisiones del BCE, es fundamental mantener la serenidad y la responsabilidad. La estabilidad de la zona euro requiere unidad y coordinación. Seguiremos trabajando para proteger el poder adquisitivo de las familias y la solvencia de nuestra economía.",
+      "round": 1,
+      "likes": 24,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.39,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00042_r1",
+      "author_id": "emmanuel_macron",
+      "author_name": "Emmanuel Macron",
+      "author_role": "Président de la République",
+      "tier": 1,
+      "platform": "forum",
+      "text": "La décision de la BCE souligne l'impératif de maintenir la crédibilité monétaire face à une inflation persistante. Toutefois, la volatilité actuelle sur les spreads souverains impose une vigilance accrue. La réponse ne peut être purement monétaire : elle doit s'articuler autour d",
+      "round": 1,
+      "likes": 19,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00043_r1",
+      "author_id": "andrea_orcel",
+      "author_name": "Andrea Orcel",
+      "author_role": "CEO UniCredit",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The ECB’s move is a clear signal that the era of liquidity-driven complacency is over. The BTP-Bund spike to 260bps reflects a temporary disconnect between fiscal reality and monetary hawkishness. While the street panics over bond portfolios, the real opportunity lies in capital ",
+      "round": 1,
+      "likes": 19,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00044_r1",
+      "author_id": "pontecorvo",
+      "author_name": "Stefano Pontecorvo",
+      "author_role": "Ex rappresentante civile NATO in Afghanistan",
+      "tier": 1,
+      "platform": "social",
+      "text": "La stabilità richiede equilibrio, non shock improvvisi. L'aumento dei tassi ECB mette sotto pressione il debito sovrano in una fase già delicata. Necessario pragmatismo: la sicurezza economica è parte integrante della sicurezza nazionale e della tenuta atlantica.",
+      "round": 1,
+      "likes": 19,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00045_r1",
+      "author_id": "walter_veltroni",
+      "author_name": "Walter Veltroni",
+      "author_role": "Ex segretario PD, ex sindaco di Roma, scrittore e regista",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'aumento dei tassi da parte della BCE solleva interrogativi profondi sulla tenuta del nostro sistema. Non è tempo di toni bellicosi né di populismi, ma di un riformismo lucido che sappia coniugare rigore finanziario e coesione sociale. Il rischio spread è un segnale che ci invit",
+      "round": 1,
+      "likes": 22,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.39,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00046_r1",
+      "author_id": "isabel_diaz_ayuso",
+      "author_name": "Isabel Díaz Ayuso",
+      "author_role": "Presidenta de la Comunidad de Madrid",
+      "tier": 1,
+      "platform": "forum",
+      "text": "La decisión del BCE es una huida hacia adelante que ignora la realidad de las economías productivas. Mientras Madrid sigue atrayendo inversión con bajos impuestos, el BCE impone un castigo indiscriminado que pone en riesgo la estabilidad de la Eurozona. No podemos permitir que la",
+      "round": 1,
+      "likes": 20,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.43,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00047_r1",
+      "author_id": "ignazio_visco_successor",
+      "author_name": "Fabio Panetta",
+      "author_role": "Governatore della Banca d'Italia",
+      "tier": 1,
+      "platform": "social",
+      "text": "La stabilità dei prezzi rimane l'ancora della nostra politica monetaria. Tuttavia, l'attuale contesto richiede estrema vigilanza sulle dinamiche di trasmissione. È necessario un equilibrio oculato per preservare la coesione dell'Eurozona in questa fase di transizione.",
+      "round": 1,
+      "likes": 21,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.4,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00048_r1",
+      "author_id": "pontecorvo",
+      "author_name": "Stefano Pontecorvo",
+      "author_role": "Ex rappresentante civile NATO in Afghanistan",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'attuale manovra della BCE ricorda la gestione di crisi complesse dove l'azione isolata rischia di compromettere il teatro operativo nel suo complesso. Uno spread BTP-Bund a 260 punti non è solo un dato finanziario, ma un fattore di destabilizzazione politica. In contesti di cri",
+      "round": 1,
+      "likes": 19,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.44,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00049_r1",
+      "author_id": "mario_draghi",
+      "author_name": "Mario Draghi",
+      "author_role": "Ex Presidente del Consiglio, ex Presidente BCE",
+      "tier": 1,
+      "platform": "social",
+      "text": "La stabilità dei prezzi è il mandato primario. Tuttavia, l'efficacia della politica monetaria richiede coesione e una trasmissione armoniosa in tutta l'Eurozona. È il momento della lucidità, non delle polemiche. La competitività europea resta l'unica via d'uscita.",
+      "round": 1,
+      "likes": 21,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.4,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00050_r1",
+      "author_id": "rachel_reeves",
+      "author_name": "Rachel Reeves",
+      "author_role": "Chancellor of the Exchequer",
+      "tier": 1,
+      "platform": "forum",
+      "text": "The sharp widening of the BTP-Bund spread to 260bps reflects a volatile repricing of sovereign risk. While the ECB’s mandate prioritizes price stability, the transmission mechanism must be monitored closely to avoid disorderly market conditions. For the UK, this serves as a remin",
+      "round": 1,
+      "likes": 21,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.4,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00051_r1",
+      "author_id": "camporini",
+      "author_name": "Vincenzo Camporini",
+      "author_role": "Ex capo di Stato Maggiore della Difesa, analista IAI",
+      "tier": 1,
+      "platform": "forum",
+      "text": "L'innalzamento dei tassi di 75 punti base introduce una variabile di instabilità non trascurabile. Da analista, osservo che la sostenibilità del debito pubblico è strettamente connessa alla nostra autonomia strategica. Il picco dello spread a 260 punti segnala una tensione sistem",
+      "round": 1,
+      "likes": 22,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.36,
+      "virality_tier": 3
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00052_r1",
+      "author_id": "c4_euro_skeptic_populists_local_business_owner",
+      "author_name": "C4 Euro Skeptic Populists Local Business Owner",
+      "author_role": "",
+      "tier": 3,
+      "platform": "fintwit",
+      "text": "ECB just killed our recovery. 75bps hike = bankruptcy for small firms. They don't care about our jobs, only about keeping the Bunds happy. Sovereignty is dead. #NoMoreAusterity #ECB",
+      "round": 1,
+      "likes": 9,
+      "reposts": 4,
+      "replies": 0,
+      "engagement_score": 0.63,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00053_r1",
+      "author_id": "c3_global_investors_Macro Hedge Fund PM",
+      "author_name": "C3 Global Investors Macro Hedge Fund Pm",
+      "author_role": "",
+      "tier": 3,
+      "platform": "trading_desk",
+      "text": "75bps is a policy error of historic proportions. BTPs bidless. Long USD/EUR via vol. Short EU Banks. Looking for TPI activation or we retest 300bps on the spread. Liquidity is evaporating. Tighten stops.",
+      "round": 1,
+      "likes": 10,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00054_r1",
+      "author_id": "c2_peripheral_industry_Regional Chamber of Commerce Analyst",
+      "author_name": "C2 Peripheral Industry Regional Chamber Of Commerce Analyst",
+      "author_role": "",
+      "tier": 3,
+      "platform": "fintwit",
+      "text": "BTP-Bund at 260bps. ECB is playing with fire. The 'anti-fragmentation' tool is a myth if the transmission mechanism is broken by these rate hikes. Expect a liquidity crunch for Italian industry within weeks. #BTP #ECB #Italy",
+      "round": 1,
+      "likes": 13,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00055_r1",
+      "author_id": "c5_tech_growth_investors_Macro Analyst",
+      "author_name": "C5 Tech Growth Investors Macro Analyst",
+      "author_role": "",
+      "tier": 3,
+      "platform": "investor_forum",
+      "text": "The 75bps hike is a desperate attempt to defend the EUR, but it ignores the fiscal fragility of the periphery. We are looking at a potential breakup scenario. My thesis: the ECB will be forced to pivot or implement a new anti-fragmentation tool within 30 days. Until then, stay defensive.",
+      "round": 1,
+      "likes": 7,
+      "reposts": 3,
+      "replies": 0,
+      "engagement_score": 0.62,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00056_r1",
+      "author_id": "c2_peripheral_industry_Union Representative",
+      "author_name": "C2 Peripheral Industry Union Representative",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "The ECB's 75bps hike is a death sentence for peripheral manufacturing. While German industry enjoys fiscal buffers, our SMEs are being strangled by the sovereign-bank nexus. We need immediate intervention or we risk social unrest.",
+      "round": 1,
+      "likes": 10,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.4,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00057_r1",
+      "author_id": "c1_fiscal_hawks_Retired Economist",
+      "author_name": "C1 Fiscal Hawks Retired Economist",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "The ECB’s aggressive move is long overdue. While the immediate volatility in the BTP-Bund spread is alarming, it is a reflection of structural imbalances that have been ignored for too long. Price stability is the mandate, and it must be protected at all costs to preserve the currency's integrity.",
+      "round": 1,
+      "likes": 7,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 0.52,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00058_r1",
+      "author_id": "c4_euro_skeptic_populists_populist_pundit",
+      "author_name": "C4 Euro Skeptic Populists Populist Pundit",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "Frankfurt has lost the plot. By forcing a one-size-fits-all monetary policy on a fragmented union, the ECB is acting as an existential threat to the Italian economy. We are witnessing the weaponization of the Euro against the very people it was supposed to serve.",
+      "round": 1,
+      "likes": 10,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00059_r1",
+      "author_id": "c1_fiscal_hawks_Wealthy Retiree",
+      "author_name": "C1 Fiscal Hawks Wealthy Retiree",
+      "author_role": "",
+      "tier": 3,
+      "platform": "investor_forum",
+      "text": "Finally, the ECB realizes that inflation is the silent thief of wealth. I don't care about the Italian PM's complaints; he should focus on his own fiscal house. If the spread widens further, it’s just the market pricing in the risk that should have been there years ago.",
+      "round": 1,
+      "likes": 5,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 0.47,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00060_r1",
+      "author_id": "c5_tech_growth_investors_Quant Trader",
+      "author_name": "C5 Tech Growth Investors Quant Trader",
+      "author_role": "",
+      "tier": 3,
+      "platform": "trading_desk",
+      "text": "BTP-Bund spread widening to 260bps. ECB 75bps hike is a policy error of epic proportions. Shorting EUR/USD, long USD/JPY, and trimming all EU-exposed tech. Volatility is the new baseline. Liquidity drying up.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00061_r1",
+      "author_id": "c5_tech_growth_investors_Financial Blogger",
+      "author_name": "C5 Tech Growth Investors Financial Blogger",
+      "author_role": "",
+      "tier": 3,
+      "platform": "fintwit",
+      "text": "The ECB just nuked their own banking sector to fight inflation that is mostly supply-side. If you have exposure to EU banks or Italian debt, you’re holding a burning bag. Time to rotate into US Treasuries and USD cash. #ECB #MarketCrash",
+      "round": 1,
+      "likes": 2,
+      "reposts": 2,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 2
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00062_r1",
+      "author_id": "c2_peripheral_industry_Small Business Owner",
+      "author_name": "C2 Peripheral Industry Small Business Owner",
+      "author_role": "",
+      "tier": 3,
+      "platform": "investor_forum",
+      "text": "My local bank just hiked my overdraft facility rates by 2% overnight. If the BTP-Bund spread keeps blowing out, my credit line is gone by Q3. This isn't inflation control, it's a liquidation of the Italian SME sector. Time to move liquid assets into physical commodities.",
+      "round": 1,
+      "likes": 5,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00063_r1",
+      "author_id": "c3_global_investors_Risk Management Officer",
+      "author_name": "C3 Global Investors Risk Management Officer",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "Internal memorandum regarding current market volatility: We are initiating a mandatory reduction in peripheral European exposure effective immediately. Value-at-Risk (VaR) limits have been breached due to extreme correlation spikes in sovereign and banking credit spreads. Liquidity provision is restricted until volatility stabilizes.",
+      "round": 1,
+      "likes": 3,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00064_r1",
+      "author_id": "c4_euro_skeptic_populists_angry_citizen",
+      "author_name": "C4 Euro Skeptic Populists Angry Citizen",
+      "author_role": "",
+      "tier": 3,
+      "platform": "investor_forum",
+      "text": "They hike rates while our shops close. 75bps is a declaration of war on the working class. The BTP spread is just the start—they want to see our sovereign debt implode so they can buy up our infrastructure for pennies. Time to pull savings out of the banks before the next 'bail-in'.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 1,
+      "replies": 0,
+      "engagement_score": 1.0,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00065_r1",
+      "author_id": "c1_fiscal_hawks_Pension Fund Manager",
+      "author_name": "C1 Fiscal Hawks Pension Fund Manager",
+      "author_role": "",
+      "tier": 3,
+      "platform": "regulatory_filing",
+      "text": "In light of the 75bps adjustment, we are rebalancing our fixed income allocation, shifting away from peripheral sovereign debt to prioritize high-grade Bunds. We remain concerned about the ECB's ability to maintain a hawkish stance amid potential political backlash from the South.",
+      "round": 1,
+      "likes": 2,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    },
+    {
+      "id": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00066_r1",
+      "author_id": "c3_global_investors_Senior Sell-Side Strategist",
+      "author_name": "C3 Global Investors Senior Sell-Side Strategist",
+      "author_role": "",
+      "tier": 3,
+      "platform": "financial_news",
+      "text": "The ECB’s aggressive hike marks the end of the 'whatever it takes' era. By prioritizing core inflation over sovereign stability, Lagarde has signaled a willingness to tolerate fragmentation. Investors must now price in a permanent risk premium for Italian debt. The political rhetoric from Rome only exacerbates the tail risk of a Eurozone breakup narrative.",
+      "round": 1,
+      "likes": 1,
+      "reposts": 0,
+      "replies": 0,
+      "engagement_score": 0.33,
+      "virality_tier": 1
+    }
+  ],
+  "graphSnapshot": {
+    "round": 1,
+    "month": "Round 1",
+    "event_label": "Round 1",
+    "nodes": [
+      {
+        "id": "emmanuel_macron",
+        "name": "Emmanuel Macron",
+        "type": "persona",
+        "description": "Président de la République",
+        "power_level": 0.9,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "carlo_messina",
+        "name": "Carlo Messina",
+        "type": "persona",
+        "description": "CEO Intesa Sanpaolo",
+        "power_level": 0.75,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "ignazio_visco_successor",
+        "name": "Fabio Panetta",
+        "type": "persona",
+        "description": "Governatore della Banca d'Italia",
+        "power_level": 0.75,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "institutional"
+      },
+      {
+        "id": "sergio_mattarella",
+        "name": "Sergio Mattarella",
+        "type": "persona",
+        "description": "Presidente della Repubblica Italiana",
+        "power_level": 0.85,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "institutional"
+      },
+      {
+        "id": "keir_starmer",
+        "name": "Keir Starmer",
+        "type": "persona",
+        "description": "Prime Minister",
+        "power_level": 0.85,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "andrea_orcel",
+        "name": "Andrea Orcel",
+        "type": "persona",
+        "description": "CEO UniCredit",
+        "power_level": 0.7,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "marine_le_pen",
+        "name": "Marine Le Pen",
+        "type": "persona",
+        "description": "Présidente du Rassemblement National",
+        "power_level": 0.8,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "bernard_arnault",
+        "name": "Bernard Arnault",
+        "type": "persona",
+        "description": "PDG de LVMH",
+        "power_level": 0.8,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "manuel_valls",
+        "name": "Manuel Valls",
+        "type": "persona",
+        "description": "Ancien Premier ministre",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "stephane_richard",
+        "name": "Stéphane Richard",
+        "type": "persona",
+        "description": "Ancien PDG d'Orange",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "omid_nouripour",
+        "name": "Omid Nouripour",
+        "type": "persona",
+        "description": "Ex-Grüne co-Vorsitzender, Bundestagsabgeordneter",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "herbert_diess",
+        "name": "Herbert Diess",
+        "type": "persona",
+        "description": "Ex-CEO Volkswagen, Advisor",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "business_leader"
+      },
+      {
+        "id": "pontecorvo",
+        "name": "Stefano Pontecorvo",
+        "type": "persona",
+        "description": "Ex rappresentante civile NATO in Afghanistan",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "institutional"
+      },
+      {
+        "id": "camporini",
+        "name": "Vincenzo Camporini",
+        "type": "persona",
+        "description": "Ex capo di Stato Maggiore della Difesa, analista IAI",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "institutional"
+      },
+      {
+        "id": "silvestri",
+        "name": "Stefano Silvestri",
+        "type": "persona",
+        "description": "Presidente emerito IAI, analista difesa",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "academic"
+      },
+      {
+        "id": "del_re",
+        "name": "Emanuela Del Re",
+        "type": "persona",
+        "description": "Ex viceministra Esteri, rappresentante UE Sahel",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "institutional"
+      },
+      {
+        "id": "walter_veltroni",
+        "name": "Walter Veltroni",
+        "type": "persona",
+        "description": "Ex segretario PD, ex sindaco di Roma, scrittore e regista",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "dario_nardella",
+        "name": "Dario Nardella",
+        "type": "persona",
+        "description": "Europarlamentare PD, ex sindaco di Firenze",
+        "power_level": 0.35,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "giorgia_meloni",
+        "name": "Giorgia Meloni",
+        "type": "persona",
+        "description": "Presidente del Consiglio dei Ministri",
+        "power_level": 0.95,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "furious",
+        "category": "politician"
+      },
+      {
+        "id": "mario_draghi",
+        "name": "Mario Draghi",
+        "type": "persona",
+        "description": "Ex Presidente del Consiglio, ex Presidente BCE",
+        "power_level": 0.75,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "institutional"
+      },
+      {
+        "id": "friedrich_merz",
+        "name": "Friedrich Merz",
+        "type": "persona",
+        "description": "Bundeskanzler",
+        "power_level": 0.85,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "pedro_sanchez",
+        "name": "Pedro Sánchez",
+        "type": "persona",
+        "description": "Presidente del Gobierno",
+        "power_level": 0.85,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "antonio_tajani",
+        "name": "Antonio Tajani",
+        "type": "persona",
+        "description": "Vicepresidente del Consiglio e Ministro degli Esteri",
+        "power_level": 0.75,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "isabel_diaz_ayuso",
+        "name": "Isabel Díaz Ayuso",
+        "type": "persona",
+        "description": "Presidenta de la Comunidad de Madrid",
+        "power_level": 0.75,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "combative",
+        "category": "politician"
+      },
+      {
+        "id": "rachel_reeves",
+        "name": "Rachel Reeves",
+        "type": "persona",
+        "description": "Chancellor of the Exchequer",
+        "power_level": 0.75,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "giuseppe_conte",
+        "name": "Giuseppe Conte",
+        "type": "persona",
+        "description": "Presidente del Movimento 5 Stelle",
+        "power_level": 0.7,
+        "position": 0.0,
+        "position_history": [
+          0.0
+        ],
+        "delta": 0.0,
+        "sentiment": "cautious",
+        "category": "politician"
+      },
+      {
+        "id": "european_central_bank",
+        "name": "European Central Bank (ECB)",
+        "type": "persona",
+        "description": "Monetary policy authority for the Eurozone",
+        "power_level": 1.0,
+        "position": 0.086,
+        "position_history": [
+          0.086
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "banca_ditalia",
+        "name": "Banca d'Italia",
+        "type": "persona",
+        "description": "National central bank of Italy",
+        "power_level": 0.7,
+        "position": -0.604,
+        "position_history": [
+          -0.604
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "bundesbank",
+        "name": "Deutsche Bundesbank",
+        "type": "persona",
+        "description": "Central bank of Germany",
+        "power_level": 0.9,
+        "position": 0.927,
+        "position_history": [
+          0.927
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "intesa_sanpaolo_group",
+        "name": "Intesa Sanpaolo",
+        "type": "persona",
+        "description": "Leading Italian banking group",
+        "power_level": 0.8,
+        "position": -0.173,
+        "position_history": [
+          -0.173
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "european_stability_mechanism",
+        "name": "European Stability Mechanism (ESM)",
+        "type": "persona",
+        "description": "Eurozone crisis resolution mechanism",
+        "power_level": 0.6,
+        "position": 0.381,
+        "position_history": [
+          0.381
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "financial_times",
+        "name": "Financial Times",
+        "type": "persona",
+        "description": "Global financial media outlet",
+        "power_level": 0.7,
+        "position": 0.086,
+        "position_history": [
+          0.086
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "confindustria",
+        "name": "Confindustria",
+        "type": "persona",
+        "description": "General Confederation of Italian Industry",
+        "power_level": 0.7,
+        "position": -0.752,
+        "position_history": [
+          -0.752
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "bruegel_think_tank",
+        "name": "Bruegel",
+        "type": "persona",
+        "description": "European economic policy think tank",
+        "power_level": 0.5,
+        "position": 0.173,
+        "position_history": [
+          0.173
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "public_opinion",
+        "name": "Public Opinion",
+        "type": "persona",
+        "description": "aggregate citizen sentiment",
+        "power_level": 0.7,
+        "position": 0.007,
+        "position_history": [
+          0.007
+        ],
+        "delta": 0.0,
+        "sentiment": "neutral",
+        "category": "unknown"
+      },
+      {
+        "id": "c1_fiscal_hawks",
+        "name": "Northern European Savers",
+        "type": "cluster",
+        "description": "Cluster: Northern European Savers",
+        "power_level": 0.5,
+        "position": 0.8,
+        "position_history": [
+          0.8
+        ],
+        "delta": 0.0,
+        "sentiment": "bearish",
+        "category": "public_opinion",
+        "clusterSize": 12000
+      },
+      {
+        "id": "c2_peripheral_industry",
+        "name": "Southern European SMEs",
+        "type": "cluster",
+        "description": "Cluster: Southern European SMEs",
+        "power_level": 0.5,
+        "position": -0.9,
+        "position_history": [
+          -0.9
+        ],
+        "delta": 0.0,
+        "sentiment": "panicking",
+        "category": "public_opinion",
+        "clusterSize": 15000
+      },
+      {
+        "id": "c3_global_investors",
+        "name": "Institutional Asset Managers",
+        "type": "cluster",
+        "description": "Cluster: Institutional Asset Managers",
+        "power_level": 0.5,
+        "position": 0.1,
+        "position_history": [
+          0.1
+        ],
+        "delta": 0.0,
+        "sentiment": "panicking",
+        "category": "public_opinion",
+        "clusterSize": 3000
+      },
+      {
+        "id": "c4_euro_skeptic_populists",
+        "name": "Peripheral Working Class",
+        "type": "cluster",
+        "description": "Cluster: Peripheral Working Class",
+        "power_level": 0.5,
+        "position": -1.0,
+        "position_history": [
+          -1.0
+        ],
+        "delta": 0.0,
+        "sentiment": "panicking",
+        "category": "public_opinion",
+        "clusterSize": 10000
+      },
+      {
+        "id": "c5_tech_growth_investors",
+        "name": "US-Exposed Tech Retail Investors",
+        "type": "cluster",
+        "description": "Cluster: US-Exposed Tech Retail Investors",
+        "power_level": 0.5,
+        "position": -0.1,
+        "position_history": [
+          -0.1
+        ],
+        "delta": 0.0,
+        "sentiment": "panicking",
+        "category": "public_opinion",
+        "clusterSize": 5000
+      }
+    ],
+    "edges": [
+      {
+        "source": "emmanuel_macron",
+        "target": "ignazio_visco_successor",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "sergio_mattarella",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "keir_starmer",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "manuel_valls",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "omid_nouripour",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "herbert_diess",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "camporini",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "silvestri",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "dario_nardella",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "emmanuel_macron",
+        "target": "european_stability_mechanism",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "pontecorvo",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "camporini",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "silvestri",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "del_re",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "walter_veltroni",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "dario_nardella",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "giorgia_meloni",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "antonio_tajani",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "carlo_messina",
+        "target": "financial_times",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "manuel_valls",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "stephane_richard",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "herbert_diess",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "pontecorvo",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "pedro_sanchez",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "ignazio_visco_successor",
+        "target": "public_opinion",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "sergio_mattarella",
+        "target": "keir_starmer",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "sergio_mattarella",
+        "target": "manuel_valls",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "sergio_mattarella",
+        "target": "silvestri",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "sergio_mattarella",
+        "target": "giorgia_meloni",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "sergio_mattarella",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "sergio_mattarella",
+        "target": "giuseppe_conte",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "sergio_mattarella",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "sergio_mattarella",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "keir_starmer",
+        "target": "marine_le_pen",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "keir_starmer",
+        "target": "herbert_diess",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "keir_starmer",
+        "target": "camporini",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "keir_starmer",
+        "target": "giorgia_meloni",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "keir_starmer",
+        "target": "pedro_sanchez",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "keir_starmer",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "keir_starmer",
+        "target": "european_central_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "keir_starmer",
+        "target": "financial_times",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "marine_le_pen",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "stephane_richard",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "del_re",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "walter_veltroni",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "pedro_sanchez",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "european_central_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "financial_times",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "andrea_orcel",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "marine_le_pen",
+        "target": "herbert_diess",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "marine_le_pen",
+        "target": "pontecorvo",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "marine_le_pen",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "marine_le_pen",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "marine_le_pen",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "marine_le_pen",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "marine_le_pen",
+        "target": "european_stability_mechanism",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "bernard_arnault",
+        "target": "stephane_richard",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "bernard_arnault",
+        "target": "del_re",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "bernard_arnault",
+        "target": "dario_nardella",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "bernard_arnault",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "bernard_arnault",
+        "target": "antonio_tajani",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "bernard_arnault",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "bernard_arnault",
+        "target": "public_opinion",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "manuel_valls",
+        "target": "camporini",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "manuel_valls",
+        "target": "dario_nardella",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "manuel_valls",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "manuel_valls",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "manuel_valls",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "manuel_valls",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "manuel_valls",
+        "target": "european_central_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "stephane_richard",
+        "target": "herbert_diess",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "stephane_richard",
+        "target": "camporini",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "stephane_richard",
+        "target": "walter_veltroni",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "stephane_richard",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "stephane_richard",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "stephane_richard",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "stephane_richard",
+        "target": "giuseppe_conte",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "stephane_richard",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "omid_nouripour",
+        "target": "del_re",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "omid_nouripour",
+        "target": "dario_nardella",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "omid_nouripour",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "omid_nouripour",
+        "target": "pedro_sanchez",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "omid_nouripour",
+        "target": "antonio_tajani",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "omid_nouripour",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "omid_nouripour",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "omid_nouripour",
+        "target": "financial_times",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "herbert_diess",
+        "target": "camporini",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "herbert_diess",
+        "target": "del_re",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "herbert_diess",
+        "target": "walter_veltroni",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "herbert_diess",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "herbert_diess",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "herbert_diess",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "herbert_diess",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "herbert_diess",
+        "target": "public_opinion",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "pontecorvo",
+        "target": "giorgia_meloni",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "pontecorvo",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "pontecorvo",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "pontecorvo",
+        "target": "giuseppe_conte",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "pontecorvo",
+        "target": "public_opinion",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "camporini",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "camporini",
+        "target": "antonio_tajani",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "camporini",
+        "target": "giuseppe_conte",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "camporini",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "camporini",
+        "target": "public_opinion",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "silvestri",
+        "target": "del_re",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "silvestri",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "silvestri",
+        "target": "giuseppe_conte",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "silvestri",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "silvestri",
+        "target": "financial_times",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "silvestri",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "del_re",
+        "target": "antonio_tajani",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "del_re",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "del_re",
+        "target": "public_opinion",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "walter_veltroni",
+        "target": "european_central_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "walter_veltroni",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "dario_nardella",
+        "target": "pedro_sanchez",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "dario_nardella",
+        "target": "antonio_tajani",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "dario_nardella",
+        "target": "european_stability_mechanism",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "giorgia_meloni",
+        "target": "mario_draghi",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "giorgia_meloni",
+        "target": "friedrich_merz",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "giorgia_meloni",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "giorgia_meloni",
+        "target": "european_stability_mechanism",
+        "weight": 0.62,
+        "type": "influence"
+      },
+      {
+        "source": "giorgia_meloni",
+        "target": "financial_times",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "giorgia_meloni",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "mario_draghi",
+        "target": "pedro_sanchez",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "mario_draghi",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "mario_draghi",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "mario_draghi",
+        "target": "financial_times",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "friedrich_merz",
+        "target": "pedro_sanchez",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "friedrich_merz",
+        "target": "isabel_diaz_ayuso",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "friedrich_merz",
+        "target": "european_central_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "friedrich_merz",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "antonio_tajani",
+        "target": "giuseppe_conte",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "antonio_tajani",
+        "target": "european_central_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "antonio_tajani",
+        "target": "public_opinion",
+        "weight": 0.99,
+        "type": "influence"
+      },
+      {
+        "source": "isabel_diaz_ayuso",
+        "target": "rachel_reeves",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "isabel_diaz_ayuso",
+        "target": "giuseppe_conte",
+        "weight": 1.0,
+        "type": "influence"
+      },
+      {
+        "source": "isabel_diaz_ayuso",
+        "target": "european_central_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "isabel_diaz_ayuso",
+        "target": "financial_times",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "isabel_diaz_ayuso",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "rachel_reeves",
+        "target": "european_central_bank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "rachel_reeves",
+        "target": "bruegel_think_tank",
+        "weight": 0.83,
+        "type": "influence"
+      },
+      {
+        "source": "european_central_bank",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.74,
+        "type": "influence"
+      },
+      {
+        "source": "european_stability_mechanism",
+        "target": "financial_times",
+        "weight": 0.71,
+        "type": "influence"
+      },
+      {
+        "source": "european_stability_mechanism",
+        "target": "bruegel_think_tank",
+        "weight": 0.79,
+        "type": "influence"
+      },
+      {
+        "source": "financial_times",
+        "target": "bruegel_think_tank",
+        "weight": 0.91,
+        "type": "influence"
+      },
+      {
+        "source": "c1_fiscal_hawks",
+        "target": "bundesbank",
+        "weight": 0.75,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c1_fiscal_hawks",
+        "target": "european_stability_mechanism",
+        "weight": 0.16,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c1_fiscal_hawks",
+        "target": "bruegel_think_tank",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c1_fiscal_hawks",
+        "target": "european_central_bank",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c2_peripheral_industry",
+        "target": "confindustria",
+        "weight": 0.7,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c2_peripheral_industry",
+        "target": "banca_ditalia",
+        "weight": 0.41,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c2_peripheral_industry",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c2_peripheral_industry",
+        "target": "emmanuel_macron",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c3_global_investors",
+        "target": "european_central_bank",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c3_global_investors",
+        "target": "financial_times",
+        "weight": 0.97,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c3_global_investors",
+        "target": "bruegel_think_tank",
+        "weight": 0.85,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c3_global_investors",
+        "target": "public_opinion",
+        "weight": 0.81,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c4_euro_skeptic_populists",
+        "target": "confindustria",
+        "weight": 0.5,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c4_euro_skeptic_populists",
+        "target": "banca_ditalia",
+        "weight": 0.21,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c4_euro_skeptic_populists",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c4_euro_skeptic_populists",
+        "target": "emmanuel_macron",
+        "weight": 0.1,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c5_tech_growth_investors",
+        "target": "intesa_sanpaolo_group",
+        "weight": 0.85,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c5_tech_growth_investors",
+        "target": "emmanuel_macron",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c5_tech_growth_investors",
+        "target": "carlo_messina",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      },
+      {
+        "source": "c5_tech_growth_investors",
+        "target": "ignazio_visco_successor",
+        "weight": 0.8,
+        "type": "cluster_influence"
+      }
+    ],
+    "stats": {
+      "total_nodes": 40,
+      "total_edges": 179,
+      "avg_position": -0.024
+    }
+  },
+  "indicators": {
+    "polarization": 2.1,
+    "engagement": 67,
+    "sentiment": {
+      "positive": 0.0,
+      "neutral": 0.94,
+      "negative": 0.06
+    },
+    "trendingHashtags": [
+      {
+        "tag": "#Bund",
+        "count": 11,
+        "trend": "new"
+      },
+      {
+        "tag": "#Eurozona",
+        "count": 6,
+        "trend": "new"
+      },
+      {
+        "tag": "#While",
+        "count": 5,
+        "trend": "new"
+      },
+      {
+        "tag": "#ECB",
+        "count": 4,
+        "trend": "new"
+      },
+      {
+        "tag": "#Tuttavia",
+        "count": 3,
+        "trend": "new"
+      },
+      {
+        "tag": "#European",
+        "count": 3,
+        "trend": "new"
+      },
+      {
+        "tag": "#Eurozone",
+        "count": 3,
+        "trend": "new"
+      },
+      {
+        "tag": "#Serve",
+        "count": 3,
+        "trend": "new"
+      },
+      {
+        "tag": "#aumento",
+        "count": 3,
+        "trend": "new"
+      },
+      {
+        "tag": "#Europa",
+        "count": 3,
+        "trend": "new"
+      }
+    ]
+  },
+  "coalitions": {
+    "coalitions": [
+      {
+        "label": "Cautious optimists",
+        "color": "#1e40af",
+        "members": [
+          "emmanuel_macron",
+          "carlo_messina",
+          "ignazio_visco_successor",
+          "sergio_mattarella",
+          "keir_starmer",
+          "andrea_orcel",
+          "marine_le_pen",
+          "bernard_arnault",
+          "manuel_valls",
+          "stephane_richard",
+          "omid_nouripour",
+          "herbert_diess",
+          "pontecorvo",
+          "camporini",
+          "silvestri",
+          "del_re",
+          "walter_veltroni",
+          "dario_nardella",
+          "giorgia_meloni",
+          "mario_draghi",
+          "friedrich_merz",
+          "pedro_sanchez",
+          "antonio_tajani",
+          "isabel_diaz_ayuso",
+          "rachel_reeves",
+          "giuseppe_conte",
+          "european_central_bank",
+          "intesa_sanpaolo_group",
+          "financial_times",
+          "public_opinion"
+        ],
+        "avg_position": 0.0,
+        "size": 30
+      },
+      {
+        "label": "Bears",
+        "color": "#059669",
+        "members": [
+          "banca_ditalia",
+          "confindustria"
+        ],
+        "avg_position": -0.725,
+        "size": 2
+      },
+      {
+        "label": "Bulls",
+        "color": "#dc2626",
+        "members": [
+          "bundesbank"
+        ],
+        "avg_position": 0.95,
+        "size": 1
+      },
+      {
+        "label": "Bulls (Pro)",
+        "color": "#f59e0b",
+        "members": [
+          "european_stability_mechanism",
+          "bruegel_think_tank"
+        ],
+        "avg_position": 0.3,
+        "size": 2
+      }
+    ]
+  },
+  "key_insight": "Round 1 analysis",
+  "postImpacts": [
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00000_r1",
+      "authorId": "friedrich_merz",
+      "influencedAgents": [
+        {
+          "agentId": "giuseppe_conte",
+          "agentName": "Giuseppe Conte",
+          "positionBefore": 0.0,
+          "positionAfter": -0.002,
+          "shift": -0.002
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": -0.007,
+          "shift": -0.007
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": -0.01,
+          "shift": -0.01
+        },
+        {
+          "agentId": "keir_starmer",
+          "agentName": "Keir Starmer",
+          "positionBefore": 0.0,
+          "positionAfter": -0.007,
+          "shift": -0.007
+        },
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.106,
+          "shift": 0.02
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.006,
+      "edgeEffects": [
+        {
+          "source": "friedrich_merz",
+          "target": "giuseppe_conte",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "friedrich_merz",
+          "target": "carlo_messina",
+          "weightDelta": -0.029
+        },
+        {
+          "source": "friedrich_merz",
+          "target": "andrea_orcel",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "friedrich_merz",
+          "target": "keir_starmer",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "friedrich_merz",
+          "target": "financial_times",
+          "weightDelta": -0.025
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00001_r1",
+      "authorId": "herbert_diess",
+      "influencedAgents": [
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": -0.017,
+          "shift": -0.017
+        },
+        {
+          "agentId": "european_stability_mechanism",
+          "agentName": "European Stability Mechanism (ESM)",
+          "positionBefore": 0.381,
+          "positionAfter": 0.408,
+          "shift": 0.027
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": -0.028,
+          "shift": -0.028
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.02,
+          "shift": 0.02
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.157,
+          "shift": -0.016
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.014,
+      "edgeEffects": [
+        {
+          "source": "herbert_diess",
+          "target": "andrea_orcel",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "herbert_diess",
+          "target": "european_stability_mechanism",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "herbert_diess",
+          "target": "carlo_messina",
+          "weightDelta": -0.025
+        },
+        {
+          "source": "herbert_diess",
+          "target": "sergio_mattarella",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "herbert_diess",
+          "target": "bruegel_think_tank",
+          "weightDelta": -0.003
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00002_r1",
+      "authorId": "ignazio_visco_successor",
+      "influencedAgents": [
+        {
+          "agentId": "bernard_arnault",
+          "agentName": "Bernard Arnault",
+          "positionBefore": 0.0,
+          "positionAfter": -0.02,
+          "shift": -0.02
+        },
+        {
+          "agentId": "camporini",
+          "agentName": "Vincenzo Camporini",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.154,
+          "shift": 0.019
+        },
+        {
+          "agentId": "walter_veltroni",
+          "agentName": "Walter Veltroni",
+          "positionBefore": 0.0,
+          "positionAfter": -0.024,
+          "shift": -0.024
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.011,
+          "shift": -0.011
+        },
+        {
+          "agentId": "herbert_diess",
+          "agentName": "Herbert Diess",
+          "positionBefore": 0.0,
+          "positionAfter": 0.027,
+          "shift": 0.027
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.006,
+      "edgeEffects": [
+        {
+          "source": "ignazio_visco_successor",
+          "target": "bernard_arnault",
+          "weightDelta": 0.011
+        },
+        {
+          "source": "ignazio_visco_successor",
+          "target": "camporini",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "ignazio_visco_successor",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": 0.046
+        },
+        {
+          "source": "ignazio_visco_successor",
+          "target": "walter_veltroni",
+          "weightDelta": -0.047
+        },
+        {
+          "source": "ignazio_visco_successor",
+          "target": "rachel_reeves",
+          "weightDelta": 0.018
+        },
+        {
+          "source": "ignazio_visco_successor",
+          "target": "herbert_diess",
+          "weightDelta": -0.01
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00003_r1",
+      "authorId": "omid_nouripour",
+      "influencedAgents": [
+        {
+          "agentId": "pontecorvo",
+          "agentName": "Stefano Pontecorvo",
+          "positionBefore": 0.0,
+          "positionAfter": -0.012,
+          "shift": -0.012
+        },
+        {
+          "agentId": "keir_starmer",
+          "agentName": "Keir Starmer",
+          "positionBefore": 0.0,
+          "positionAfter": 0.018,
+          "shift": 0.018
+        },
+        {
+          "agentId": "del_re",
+          "agentName": "Emanuela Del Re",
+          "positionBefore": 0.0,
+          "positionAfter": 0.004,
+          "shift": 0.004
+        },
+        {
+          "agentId": "marine_le_pen",
+          "agentName": "Marine Le Pen",
+          "positionBefore": 0.0,
+          "positionAfter": 0.002,
+          "shift": 0.002
+        },
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": -0.026,
+          "shift": -0.026
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.029,
+          "shift": -0.029
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.043,
+      "edgeEffects": [
+        {
+          "source": "omid_nouripour",
+          "target": "pontecorvo",
+          "weightDelta": 0.018
+        },
+        {
+          "source": "omid_nouripour",
+          "target": "keir_starmer",
+          "weightDelta": 0.03
+        },
+        {
+          "source": "omid_nouripour",
+          "target": "del_re",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "omid_nouripour",
+          "target": "marine_le_pen",
+          "weightDelta": 0.016
+        },
+        {
+          "source": "omid_nouripour",
+          "target": "antonio_tajani",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "omid_nouripour",
+          "target": "rachel_reeves",
+          "weightDelta": -0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00004_r1",
+      "authorId": "sergio_mattarella",
+      "influencedAgents": [
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.106,
+          "shift": 0.02
+        },
+        {
+          "agentId": "marine_le_pen",
+          "agentName": "Marine Le Pen",
+          "positionBefore": 0.0,
+          "positionAfter": -0.004,
+          "shift": -0.004
+        },
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": 0.028,
+          "shift": 0.028
+        },
+        {
+          "agentId": "friedrich_merz",
+          "agentName": "Friedrich Merz",
+          "positionBefore": 0.0,
+          "positionAfter": 0.018,
+          "shift": 0.018
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.062,
+      "edgeEffects": [
+        {
+          "source": "sergio_mattarella",
+          "target": "financial_times",
+          "weightDelta": 0.021
+        },
+        {
+          "source": "sergio_mattarella",
+          "target": "marine_le_pen",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "sergio_mattarella",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": -0.023
+        },
+        {
+          "source": "sergio_mattarella",
+          "target": "friedrich_merz",
+          "weightDelta": 0.004
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00005_r1",
+      "authorId": "omid_nouripour",
+      "influencedAgents": [
+        {
+          "agentId": "european_stability_mechanism",
+          "agentName": "European Stability Mechanism (ESM)",
+          "positionBefore": 0.381,
+          "positionAfter": 0.366,
+          "shift": -0.015
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.186,
+          "shift": -0.013
+        },
+        {
+          "agentId": "dario_nardella",
+          "agentName": "Dario Nardella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        }
+      ],
+      "reach": 3,
+      "aggregateShift": -0.013,
+      "edgeEffects": [
+        {
+          "source": "omid_nouripour",
+          "target": "european_stability_mechanism",
+          "weightDelta": 0.043
+        },
+        {
+          "source": "omid_nouripour",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": -0.005
+        },
+        {
+          "source": "omid_nouripour",
+          "target": "dario_nardella",
+          "weightDelta": 0.007
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00006_r1",
+      "authorId": "herbert_diess",
+      "influencedAgents": [
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.019,
+          "shift": -0.019
+        },
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": 0.018,
+          "shift": 0.018
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": 0.023,
+          "shift": 0.023
+        },
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.073,
+          "shift": -0.013
+        },
+        {
+          "agentId": "omid_nouripour",
+          "agentName": "Omid Nouripour",
+          "positionBefore": 0.0,
+          "positionAfter": 0.027,
+          "shift": 0.027
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.036,
+      "edgeEffects": [
+        {
+          "source": "herbert_diess",
+          "target": "rachel_reeves",
+          "weightDelta": -0.029
+        },
+        {
+          "source": "herbert_diess",
+          "target": "pedro_sanchez",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "herbert_diess",
+          "target": "carlo_messina",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "herbert_diess",
+          "target": "financial_times",
+          "weightDelta": -0.049
+        },
+        {
+          "source": "herbert_diess",
+          "target": "omid_nouripour",
+          "weightDelta": -0.041
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00007_r1",
+      "authorId": "giorgia_meloni",
+      "influencedAgents": [
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.085,
+          "shift": -0.001
+        },
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.062,
+          "shift": -0.024
+        },
+        {
+          "agentId": "del_re",
+          "agentName": "Emanuela Del Re",
+          "positionBefore": 0.0,
+          "positionAfter": 0.012,
+          "shift": 0.012
+        },
+        {
+          "agentId": "european_stability_mechanism",
+          "agentName": "European Stability Mechanism (ESM)",
+          "positionBefore": 0.381,
+          "positionAfter": 0.386,
+          "shift": 0.005
+        },
+        {
+          "agentId": "friedrich_merz",
+          "agentName": "Friedrich Merz",
+          "positionBefore": 0.0,
+          "positionAfter": 0.002,
+          "shift": 0.002
+        },
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.009,
+      "edgeEffects": [
+        {
+          "source": "giorgia_meloni",
+          "target": "european_central_bank",
+          "weightDelta": 0.029
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "financial_times",
+          "weightDelta": -0.028
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "del_re",
+          "weightDelta": -0.019
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "european_stability_mechanism",
+          "weightDelta": -0.003
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "friedrich_merz",
+          "weightDelta": -0.007
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "antonio_tajani",
+          "weightDelta": -0.017
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00008_r1",
+      "authorId": "keir_starmer",
+      "influencedAgents": [
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.16,
+          "shift": 0.013
+        },
+        {
+          "agentId": "dario_nardella",
+          "agentName": "Dario Nardella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        },
+        {
+          "agentId": "mario_draghi",
+          "agentName": "Mario Draghi",
+          "positionBefore": 0.0,
+          "positionAfter": 0.011,
+          "shift": 0.011
+        },
+        {
+          "agentId": "walter_veltroni",
+          "agentName": "Walter Veltroni",
+          "positionBefore": 0.0,
+          "positionAfter": 0.014,
+          "shift": 0.014
+        },
+        {
+          "agentId": "bernard_arnault",
+          "agentName": "Bernard Arnault",
+          "positionBefore": 0.0,
+          "positionAfter": 0.005,
+          "shift": 0.005
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.006,
+          "shift": 0.006
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.064,
+      "edgeEffects": [
+        {
+          "source": "keir_starmer",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": -0.018
+        },
+        {
+          "source": "keir_starmer",
+          "target": "dario_nardella",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "keir_starmer",
+          "target": "mario_draghi",
+          "weightDelta": -0.031
+        },
+        {
+          "source": "keir_starmer",
+          "target": "walter_veltroni",
+          "weightDelta": -0.022
+        },
+        {
+          "source": "keir_starmer",
+          "target": "bernard_arnault",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "keir_starmer",
+          "target": "sergio_mattarella",
+          "weightDelta": 0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00009_r1",
+      "authorId": "bernard_arnault",
+      "influencedAgents": [
+        {
+          "agentId": "pontecorvo",
+          "agentName": "Stefano Pontecorvo",
+          "positionBefore": 0.0,
+          "positionAfter": -0.029,
+          "shift": -0.029
+        },
+        {
+          "agentId": "giorgia_meloni",
+          "agentName": "Giorgia Meloni",
+          "positionBefore": 0.0,
+          "positionAfter": -0.014,
+          "shift": -0.014
+        },
+        {
+          "agentId": "silvestri",
+          "agentName": "Stefano Silvestri",
+          "positionBefore": 0.0,
+          "positionAfter": 0.003,
+          "shift": 0.003
+        },
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": -0.022,
+          "shift": -0.022
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": -0.001,
+          "shift": -0.001
+        },
+        {
+          "agentId": "stephane_richard",
+          "agentName": "Stéphane Richard",
+          "positionBefore": 0.0,
+          "positionAfter": 0.004,
+          "shift": 0.004
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.059,
+      "edgeEffects": [
+        {
+          "source": "bernard_arnault",
+          "target": "pontecorvo",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "bernard_arnault",
+          "target": "giorgia_meloni",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "bernard_arnault",
+          "target": "silvestri",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "bernard_arnault",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "bernard_arnault",
+          "target": "andrea_orcel",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "bernard_arnault",
+          "target": "stephane_richard",
+          "weightDelta": -0.003
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00010_r1",
+      "authorId": "bernard_arnault",
+      "influencedAgents": [
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": -0.001,
+          "shift": -0.001
+        },
+        {
+          "agentId": "herbert_diess",
+          "agentName": "Herbert Diess",
+          "positionBefore": 0.0,
+          "positionAfter": -0.006,
+          "shift": -0.006
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.008,
+          "shift": 0.008
+        },
+        {
+          "agentId": "manuel_valls",
+          "agentName": "Manuel Valls",
+          "positionBefore": 0.0,
+          "positionAfter": -0.021,
+          "shift": -0.021
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.02,
+      "edgeEffects": [
+        {
+          "source": "bernard_arnault",
+          "target": "pedro_sanchez",
+          "weightDelta": 0.032
+        },
+        {
+          "source": "bernard_arnault",
+          "target": "herbert_diess",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "bernard_arnault",
+          "target": "sergio_mattarella",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "bernard_arnault",
+          "target": "manuel_valls",
+          "weightDelta": 0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00011_r1",
+      "authorId": "del_re",
+      "influencedAgents": [
+        {
+          "agentId": "mario_draghi",
+          "agentName": "Mario Draghi",
+          "positionBefore": 0.0,
+          "positionAfter": -0.005,
+          "shift": -0.005
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": 0.007,
+          "shift": 0.007
+        },
+        {
+          "agentId": "bernard_arnault",
+          "agentName": "Bernard Arnault",
+          "positionBefore": 0.0,
+          "positionAfter": -0.007,
+          "shift": -0.007
+        },
+        {
+          "agentId": "dario_nardella",
+          "agentName": "Dario Nardella",
+          "positionBefore": 0.0,
+          "positionAfter": -0.012,
+          "shift": -0.012
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.004,
+          "shift": -0.004
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.021,
+      "edgeEffects": [
+        {
+          "source": "del_re",
+          "target": "mario_draghi",
+          "weightDelta": 0.01
+        },
+        {
+          "source": "del_re",
+          "target": "andrea_orcel",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "del_re",
+          "target": "bernard_arnault",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "del_re",
+          "target": "dario_nardella",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "del_re",
+          "target": "rachel_reeves",
+          "weightDelta": 0.007
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00012_r1",
+      "authorId": "pedro_sanchez",
+      "influencedAgents": [
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": -0.025,
+          "shift": -0.025
+        },
+        {
+          "agentId": "marine_le_pen",
+          "agentName": "Marine Le Pen",
+          "positionBefore": 0.0,
+          "positionAfter": 0.003,
+          "shift": 0.003
+        },
+        {
+          "agentId": "camporini",
+          "agentName": "Vincenzo Camporini",
+          "positionBefore": 0.0,
+          "positionAfter": -0.005,
+          "shift": -0.005
+        },
+        {
+          "agentId": "manuel_valls",
+          "agentName": "Manuel Valls",
+          "positionBefore": 0.0,
+          "positionAfter": -0.002,
+          "shift": -0.002
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.029,
+      "edgeEffects": [
+        {
+          "source": "pedro_sanchez",
+          "target": "sergio_mattarella",
+          "weightDelta": -0.026
+        },
+        {
+          "source": "pedro_sanchez",
+          "target": "marine_le_pen",
+          "weightDelta": -0.034
+        },
+        {
+          "source": "pedro_sanchez",
+          "target": "camporini",
+          "weightDelta": 0.019
+        },
+        {
+          "source": "pedro_sanchez",
+          "target": "manuel_valls",
+          "weightDelta": -0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00013_r1",
+      "authorId": "antonio_tajani",
+      "influencedAgents": [
+        {
+          "agentId": "giorgia_meloni",
+          "agentName": "Giorgia Meloni",
+          "positionBefore": 0.0,
+          "positionAfter": 0.025,
+          "shift": 0.025
+        },
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": 0.015,
+          "shift": 0.008
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.147,
+          "shift": 0.026
+        },
+        {
+          "agentId": "keir_starmer",
+          "agentName": "Keir Starmer",
+          "positionBefore": 0.0,
+          "positionAfter": 0.003,
+          "shift": 0.003
+        },
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": 0.025,
+          "shift": 0.025
+        },
+        {
+          "agentId": "bernard_arnault",
+          "agentName": "Bernard Arnault",
+          "positionBefore": 0.0,
+          "positionAfter": -0.026,
+          "shift": -0.026
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.061,
+      "edgeEffects": [
+        {
+          "source": "antonio_tajani",
+          "target": "giorgia_meloni",
+          "weightDelta": 0.029
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "public_opinion",
+          "weightDelta": 0.016
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": -0.007
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "keir_starmer",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "pedro_sanchez",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "bernard_arnault",
+          "weightDelta": -0.033
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00014_r1",
+      "authorId": "stephane_richard",
+      "influencedAgents": [
+        {
+          "agentId": "mario_draghi",
+          "agentName": "Mario Draghi",
+          "positionBefore": 0.0,
+          "positionAfter": -0.012,
+          "shift": -0.012
+        },
+        {
+          "agentId": "giorgia_meloni",
+          "agentName": "Giorgia Meloni",
+          "positionBefore": 0.0,
+          "positionAfter": -0.014,
+          "shift": -0.014
+        },
+        {
+          "agentId": "bernard_arnault",
+          "agentName": "Bernard Arnault",
+          "positionBefore": 0.0,
+          "positionAfter": -0.004,
+          "shift": -0.004
+        },
+        {
+          "agentId": "silvestri",
+          "agentName": "Stefano Silvestri",
+          "positionBefore": 0.0,
+          "positionAfter": 0.023,
+          "shift": 0.023
+        },
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": 0.006,
+          "shift": 0.006
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.001,
+      "edgeEffects": [
+        {
+          "source": "stephane_richard",
+          "target": "mario_draghi",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "stephane_richard",
+          "target": "giorgia_meloni",
+          "weightDelta": 0.004
+        },
+        {
+          "source": "stephane_richard",
+          "target": "bernard_arnault",
+          "weightDelta": 0.01
+        },
+        {
+          "source": "stephane_richard",
+          "target": "silvestri",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "stephane_richard",
+          "target": "antonio_tajani",
+          "weightDelta": -0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00015_r1",
+      "authorId": "camporini",
+      "influencedAgents": [
+        {
+          "agentId": "silvestri",
+          "agentName": "Stefano Silvestri",
+          "positionBefore": 0.0,
+          "positionAfter": -0.019,
+          "shift": -0.019
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": -0.003,
+          "shift": -0.003
+        },
+        {
+          "agentId": "dario_nardella",
+          "agentName": "Dario Nardella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.03,
+          "shift": 0.03
+        },
+        {
+          "agentId": "ignazio_visco_successor",
+          "agentName": "Fabio Panetta",
+          "positionBefore": 0.0,
+          "positionAfter": 0.019,
+          "shift": 0.019
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.002,
+          "shift": -0.002
+        },
+        {
+          "agentId": "european_stability_mechanism",
+          "agentName": "European Stability Mechanism (ESM)",
+          "positionBefore": 0.381,
+          "positionAfter": 0.37,
+          "shift": -0.011
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.014,
+      "edgeEffects": [
+        {
+          "source": "camporini",
+          "target": "silvestri",
+          "weightDelta": 0.002
+        },
+        {
+          "source": "camporini",
+          "target": "carlo_messina",
+          "weightDelta": -0.022
+        },
+        {
+          "source": "camporini",
+          "target": "dario_nardella",
+          "weightDelta": -0.006
+        },
+        {
+          "source": "camporini",
+          "target": "ignazio_visco_successor",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "camporini",
+          "target": "rachel_reeves",
+          "weightDelta": -0.009
+        },
+        {
+          "source": "camporini",
+          "target": "european_stability_mechanism",
+          "weightDelta": -0.04
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00016_r1",
+      "authorId": "silvestri",
+      "influencedAgents": [
+        {
+          "agentId": "omid_nouripour",
+          "agentName": "Omid Nouripour",
+          "positionBefore": 0.0,
+          "positionAfter": 0.027,
+          "shift": 0.027
+        },
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": 0.003,
+          "shift": 0.003
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.075,
+          "shift": -0.011
+        },
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.114,
+          "shift": 0.028
+        },
+        {
+          "agentId": "stephane_richard",
+          "agentName": "Stéphane Richard",
+          "positionBefore": 0.0,
+          "positionAfter": 0.001,
+          "shift": 0.001
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.182,
+          "shift": 0.009
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.057,
+      "edgeEffects": [
+        {
+          "source": "silvestri",
+          "target": "omid_nouripour",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "silvestri",
+          "target": "pedro_sanchez",
+          "weightDelta": -0.005
+        },
+        {
+          "source": "silvestri",
+          "target": "european_central_bank",
+          "weightDelta": -0.018
+        },
+        {
+          "source": "silvestri",
+          "target": "financial_times",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "silvestri",
+          "target": "stephane_richard",
+          "weightDelta": 0.049
+        },
+        {
+          "source": "silvestri",
+          "target": "bruegel_think_tank",
+          "weightDelta": 0.004
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00017_r1",
+      "authorId": "dario_nardella",
+      "influencedAgents": [
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.086,
+          "shift": -0.0
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": -0.027,
+          "shift": -0.027
+        },
+        {
+          "agentId": "pontecorvo",
+          "agentName": "Stefano Pontecorvo",
+          "positionBefore": 0.0,
+          "positionAfter": -0.022,
+          "shift": -0.022
+        },
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": 0.023,
+          "shift": 0.023
+        },
+        {
+          "agentId": "mario_draghi",
+          "agentName": "Mario Draghi",
+          "positionBefore": 0.0,
+          "positionAfter": -0.028,
+          "shift": -0.028
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": 0.018,
+          "shift": 0.018
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.036,
+      "edgeEffects": [
+        {
+          "source": "dario_nardella",
+          "target": "european_central_bank",
+          "weightDelta": -0.006
+        },
+        {
+          "source": "dario_nardella",
+          "target": "sergio_mattarella",
+          "weightDelta": -0.023
+        },
+        {
+          "source": "dario_nardella",
+          "target": "pontecorvo",
+          "weightDelta": -0.021
+        },
+        {
+          "source": "dario_nardella",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": -0.002
+        },
+        {
+          "source": "dario_nardella",
+          "target": "mario_draghi",
+          "weightDelta": 0.013
+        },
+        {
+          "source": "dario_nardella",
+          "target": "rachel_reeves",
+          "weightDelta": 0.021
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00018_r1",
+      "authorId": "giorgia_meloni",
+      "influencedAgents": [
+        {
+          "agentId": "mario_draghi",
+          "agentName": "Mario Draghi",
+          "positionBefore": 0.0,
+          "positionAfter": 0.025,
+          "shift": 0.025
+        },
+        {
+          "agentId": "emmanuel_macron",
+          "agentName": "Emmanuel Macron",
+          "positionBefore": 0.0,
+          "positionAfter": -0.023,
+          "shift": -0.023
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.086,
+          "shift": -0.0
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": 0.001,
+          "shift": 0.001
+        },
+        {
+          "agentId": "bernard_arnault",
+          "agentName": "Bernard Arnault",
+          "positionBefore": 0.0,
+          "positionAfter": 0.02,
+          "shift": 0.02
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.023,
+      "edgeEffects": [
+        {
+          "source": "giorgia_meloni",
+          "target": "mario_draghi",
+          "weightDelta": -0.004
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "emmanuel_macron",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "european_central_bank",
+          "weightDelta": 0.022
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "andrea_orcel",
+          "weightDelta": -0.023
+        },
+        {
+          "source": "giorgia_meloni",
+          "target": "bernard_arnault",
+          "weightDelta": 0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00019_r1",
+      "authorId": "giuseppe_conte",
+      "influencedAgents": [
+        {
+          "agentId": "del_re",
+          "agentName": "Emanuela Del Re",
+          "positionBefore": 0.0,
+          "positionAfter": 0.006,
+          "shift": 0.006
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.195,
+          "shift": -0.022
+        },
+        {
+          "agentId": "stephane_richard",
+          "agentName": "Stéphane Richard",
+          "positionBefore": 0.0,
+          "positionAfter": 0.016,
+          "shift": 0.016
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.01,
+          "shift": -0.01
+        },
+        {
+          "agentId": "marine_le_pen",
+          "agentName": "Marine Le Pen",
+          "positionBefore": 0.0,
+          "positionAfter": -0.014,
+          "shift": -0.014
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.187,
+          "shift": 0.014
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.01,
+      "edgeEffects": [
+        {
+          "source": "giuseppe_conte",
+          "target": "del_re",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "stephane_richard",
+          "weightDelta": 0.035
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "rachel_reeves",
+          "weightDelta": 0.029
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "marine_le_pen",
+          "weightDelta": -0.05
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "bruegel_think_tank",
+          "weightDelta": 0.034
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00020_r1",
+      "authorId": "manuel_valls",
+      "influencedAgents": [
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.089,
+          "shift": 0.003
+        },
+        {
+          "agentId": "stephane_richard",
+          "agentName": "Stéphane Richard",
+          "positionBefore": 0.0,
+          "positionAfter": -0.003,
+          "shift": -0.003
+        },
+        {
+          "agentId": "european_stability_mechanism",
+          "agentName": "European Stability Mechanism (ESM)",
+          "positionBefore": 0.381,
+          "positionAfter": 0.362,
+          "shift": -0.019
+        },
+        {
+          "agentId": "herbert_diess",
+          "agentName": "Herbert Diess",
+          "positionBefore": 0.0,
+          "positionAfter": 0.004,
+          "shift": 0.004
+        },
+        {
+          "agentId": "omid_nouripour",
+          "agentName": "Omid Nouripour",
+          "positionBefore": 0.0,
+          "positionAfter": 0.017,
+          "shift": 0.017
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.002,
+      "edgeEffects": [
+        {
+          "source": "manuel_valls",
+          "target": "financial_times",
+          "weightDelta": 0.004
+        },
+        {
+          "source": "manuel_valls",
+          "target": "stephane_richard",
+          "weightDelta": -0.018
+        },
+        {
+          "source": "manuel_valls",
+          "target": "european_stability_mechanism",
+          "weightDelta": 0.02
+        },
+        {
+          "source": "manuel_valls",
+          "target": "herbert_diess",
+          "weightDelta": -0.027
+        },
+        {
+          "source": "manuel_valls",
+          "target": "omid_nouripour",
+          "weightDelta": -0.046
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00021_r1",
+      "authorId": "silvestri",
+      "influencedAgents": [
+        {
+          "agentId": "european_stability_mechanism",
+          "agentName": "European Stability Mechanism (ESM)",
+          "positionBefore": 0.381,
+          "positionAfter": 0.359,
+          "shift": -0.022
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.01,
+          "shift": -0.01
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.194,
+          "shift": 0.021
+        },
+        {
+          "agentId": "stephane_richard",
+          "agentName": "Stéphane Richard",
+          "positionBefore": 0.0,
+          "positionAfter": 0.025,
+          "shift": 0.025
+        },
+        {
+          "agentId": "del_re",
+          "agentName": "Emanuela Del Re",
+          "positionBefore": 0.0,
+          "positionAfter": -0.021,
+          "shift": -0.021
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": 0.028,
+          "shift": 0.028
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.021,
+      "edgeEffects": [
+        {
+          "source": "silvestri",
+          "target": "european_stability_mechanism",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "silvestri",
+          "target": "rachel_reeves",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "silvestri",
+          "target": "bruegel_think_tank",
+          "weightDelta": -0.04
+        },
+        {
+          "source": "silvestri",
+          "target": "stephane_richard",
+          "weightDelta": -0.048
+        },
+        {
+          "source": "silvestri",
+          "target": "del_re",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "silvestri",
+          "target": "carlo_messina",
+          "weightDelta": -0.043
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00022_r1",
+      "authorId": "del_re",
+      "influencedAgents": [
+        {
+          "agentId": "walter_veltroni",
+          "agentName": "Walter Veltroni",
+          "positionBefore": 0.0,
+          "positionAfter": 0.021,
+          "shift": 0.021
+        },
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": -0.007,
+          "shift": -0.007
+        },
+        {
+          "agentId": "giuseppe_conte",
+          "agentName": "Giuseppe Conte",
+          "positionBefore": 0.0,
+          "positionAfter": 0.013,
+          "shift": 0.013
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": 0.022,
+          "shift": 0.022
+        },
+        {
+          "agentId": "omid_nouripour",
+          "agentName": "Omid Nouripour",
+          "positionBefore": 0.0,
+          "positionAfter": -0.026,
+          "shift": -0.026
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.023,
+      "edgeEffects": [
+        {
+          "source": "del_re",
+          "target": "walter_veltroni",
+          "weightDelta": 0.036
+        },
+        {
+          "source": "del_re",
+          "target": "pedro_sanchez",
+          "weightDelta": -0.018
+        },
+        {
+          "source": "del_re",
+          "target": "giuseppe_conte",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "del_re",
+          "target": "andrea_orcel",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "del_re",
+          "target": "omid_nouripour",
+          "weightDelta": 0.013
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00023_r1",
+      "authorId": "dario_nardella",
+      "influencedAgents": [
+        {
+          "agentId": "giorgia_meloni",
+          "agentName": "Giorgia Meloni",
+          "positionBefore": 0.0,
+          "positionAfter": 0.008,
+          "shift": 0.008
+        },
+        {
+          "agentId": "silvestri",
+          "agentName": "Stefano Silvestri",
+          "positionBefore": 0.0,
+          "positionAfter": -0.003,
+          "shift": -0.003
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": 0.024,
+          "shift": 0.024
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.018,
+          "shift": 0.018
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.008,
+          "shift": -0.008
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.039,
+      "edgeEffects": [
+        {
+          "source": "dario_nardella",
+          "target": "giorgia_meloni",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "dario_nardella",
+          "target": "silvestri",
+          "weightDelta": 0.019
+        },
+        {
+          "source": "dario_nardella",
+          "target": "andrea_orcel",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "dario_nardella",
+          "target": "sergio_mattarella",
+          "weightDelta": -0.021
+        },
+        {
+          "source": "dario_nardella",
+          "target": "rachel_reeves",
+          "weightDelta": -0.035
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00024_r1",
+      "authorId": "antonio_tajani",
+      "influencedAgents": [
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.18,
+          "shift": 0.007
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.097,
+          "shift": 0.011
+        },
+        {
+          "agentId": "herbert_diess",
+          "agentName": "Herbert Diess",
+          "positionBefore": 0.0,
+          "positionAfter": 0.005,
+          "shift": 0.005
+        },
+        {
+          "agentId": "omid_nouripour",
+          "agentName": "Omid Nouripour",
+          "positionBefore": 0.0,
+          "positionAfter": 0.008,
+          "shift": 0.008
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": 0.01,
+          "shift": 0.01
+        },
+        {
+          "agentId": "ignazio_visco_successor",
+          "agentName": "Fabio Panetta",
+          "positionBefore": 0.0,
+          "positionAfter": -0.002,
+          "shift": -0.002
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.039,
+      "edgeEffects": [
+        {
+          "source": "antonio_tajani",
+          "target": "bruegel_think_tank",
+          "weightDelta": -0.012
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "european_central_bank",
+          "weightDelta": -0.0
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "herbert_diess",
+          "weightDelta": -0.027
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "omid_nouripour",
+          "weightDelta": -0.004
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "andrea_orcel",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "antonio_tajani",
+          "target": "ignazio_visco_successor",
+          "weightDelta": -0.021
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00025_r1",
+      "authorId": "isabel_diaz_ayuso",
+      "influencedAgents": [
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": 0.036,
+          "shift": 0.029
+        },
+        {
+          "agentId": "omid_nouripour",
+          "agentName": "Omid Nouripour",
+          "positionBefore": 0.0,
+          "positionAfter": 0.028,
+          "shift": 0.028
+        },
+        {
+          "agentId": "keir_starmer",
+          "agentName": "Keir Starmer",
+          "positionBefore": 0.0,
+          "positionAfter": -0.003,
+          "shift": -0.003
+        },
+        {
+          "agentId": "european_stability_mechanism",
+          "agentName": "European Stability Mechanism (ESM)",
+          "positionBefore": 0.381,
+          "positionAfter": 0.411,
+          "shift": 0.03
+        },
+        {
+          "agentId": "herbert_diess",
+          "agentName": "Herbert Diess",
+          "positionBefore": 0.0,
+          "positionAfter": -0.024,
+          "shift": -0.024
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.06,
+      "edgeEffects": [
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "public_opinion",
+          "weightDelta": -0.02
+        },
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "omid_nouripour",
+          "weightDelta": 0.019
+        },
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "keir_starmer",
+          "weightDelta": -0.02
+        },
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "european_stability_mechanism",
+          "weightDelta": 0.035
+        },
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "herbert_diess",
+          "weightDelta": -0.012
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00026_r1",
+      "authorId": "rachel_reeves",
+      "influencedAgents": [
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": -0.006,
+          "shift": -0.006
+        },
+        {
+          "agentId": "giorgia_meloni",
+          "agentName": "Giorgia Meloni",
+          "positionBefore": 0.0,
+          "positionAfter": 0.022,
+          "shift": 0.022
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.201,
+          "shift": 0.028
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.11,
+          "shift": 0.024
+        },
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": -0.016,
+          "shift": -0.016
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.067,
+      "edgeEffects": [
+        {
+          "source": "rachel_reeves",
+          "target": "antonio_tajani",
+          "weightDelta": -0.049
+        },
+        {
+          "source": "rachel_reeves",
+          "target": "giorgia_meloni",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "rachel_reeves",
+          "target": "bruegel_think_tank",
+          "weightDelta": 0.041
+        },
+        {
+          "source": "rachel_reeves",
+          "target": "carlo_messina",
+          "weightDelta": 0.033
+        },
+        {
+          "source": "rachel_reeves",
+          "target": "european_central_bank",
+          "weightDelta": 0.028
+        },
+        {
+          "source": "rachel_reeves",
+          "target": "pedro_sanchez",
+          "weightDelta": 0.03
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00027_r1",
+      "authorId": "carlo_messina",
+      "influencedAgents": [
+        {
+          "agentId": "silvestri",
+          "agentName": "Stefano Silvestri",
+          "positionBefore": 0.0,
+          "positionAfter": 0.024,
+          "shift": 0.024
+        },
+        {
+          "agentId": "pontecorvo",
+          "agentName": "Stefano Pontecorvo",
+          "positionBefore": 0.0,
+          "positionAfter": -0.011,
+          "shift": -0.011
+        },
+        {
+          "agentId": "walter_veltroni",
+          "agentName": "Walter Veltroni",
+          "positionBefore": 0.0,
+          "positionAfter": 0.005,
+          "shift": 0.005
+        },
+        {
+          "agentId": "manuel_valls",
+          "agentName": "Manuel Valls",
+          "positionBefore": 0.0,
+          "positionAfter": -0.025,
+          "shift": -0.025
+        },
+        {
+          "agentId": "friedrich_merz",
+          "agentName": "Friedrich Merz",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": -0.022,
+          "shift": -0.022
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.014,
+      "edgeEffects": [
+        {
+          "source": "carlo_messina",
+          "target": "silvestri",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "carlo_messina",
+          "target": "pontecorvo",
+          "weightDelta": -0.006
+        },
+        {
+          "source": "carlo_messina",
+          "target": "walter_veltroni",
+          "weightDelta": 0.023
+        },
+        {
+          "source": "carlo_messina",
+          "target": "manuel_valls",
+          "weightDelta": -0.02
+        },
+        {
+          "source": "carlo_messina",
+          "target": "friedrich_merz",
+          "weightDelta": -0.032
+        },
+        {
+          "source": "carlo_messina",
+          "target": "sergio_mattarella",
+          "weightDelta": 0.004
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00028_r1",
+      "authorId": "sergio_mattarella",
+      "influencedAgents": [
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": -0.015,
+          "shift": -0.015
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.172,
+          "shift": -0.001
+        },
+        {
+          "agentId": "dario_nardella",
+          "agentName": "Dario Nardella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.063,
+          "shift": -0.023
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": -0.022,
+          "shift": -0.022
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.046,
+      "edgeEffects": [
+        {
+          "source": "sergio_mattarella",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": 0.032
+        },
+        {
+          "source": "sergio_mattarella",
+          "target": "bruegel_think_tank",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "sergio_mattarella",
+          "target": "dario_nardella",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "sergio_mattarella",
+          "target": "european_central_bank",
+          "weightDelta": 0.046
+        },
+        {
+          "source": "sergio_mattarella",
+          "target": "andrea_orcel",
+          "weightDelta": 0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00029_r1",
+      "authorId": "andrea_orcel",
+      "influencedAgents": [
+        {
+          "agentId": "giuseppe_conte",
+          "agentName": "Giuseppe Conte",
+          "positionBefore": 0.0,
+          "positionAfter": 0.002,
+          "shift": 0.002
+        },
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": 0.01,
+          "shift": 0.01
+        },
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": 0.012,
+          "shift": 0.005
+        },
+        {
+          "agentId": "emmanuel_macron",
+          "agentName": "Emmanuel Macron",
+          "positionBefore": 0.0,
+          "positionAfter": 0.026,
+          "shift": 0.026
+        },
+        {
+          "agentId": "manuel_valls",
+          "agentName": "Manuel Valls",
+          "positionBefore": 0.0,
+          "positionAfter": -0.016,
+          "shift": -0.016
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.027,
+      "edgeEffects": [
+        {
+          "source": "andrea_orcel",
+          "target": "giuseppe_conte",
+          "weightDelta": -0.005
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": 0.017
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "public_opinion",
+          "weightDelta": 0.032
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "emmanuel_macron",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "manuel_valls",
+          "weightDelta": -0.047
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00030_r1",
+      "authorId": "mario_draghi",
+      "influencedAgents": [
+        {
+          "agentId": "friedrich_merz",
+          "agentName": "Friedrich Merz",
+          "positionBefore": 0.0,
+          "positionAfter": -0.012,
+          "shift": -0.012
+        },
+        {
+          "agentId": "silvestri",
+          "agentName": "Stefano Silvestri",
+          "positionBefore": 0.0,
+          "positionAfter": -0.022,
+          "shift": -0.022
+        },
+        {
+          "agentId": "keir_starmer",
+          "agentName": "Keir Starmer",
+          "positionBefore": 0.0,
+          "positionAfter": -0.012,
+          "shift": -0.012
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.197,
+          "shift": -0.024
+        },
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.064,
+          "shift": -0.022
+        },
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": 0.01,
+          "shift": 0.01
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.082,
+      "edgeEffects": [
+        {
+          "source": "mario_draghi",
+          "target": "friedrich_merz",
+          "weightDelta": -0.009
+        },
+        {
+          "source": "mario_draghi",
+          "target": "silvestri",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "mario_draghi",
+          "target": "keir_starmer",
+          "weightDelta": -0.001
+        },
+        {
+          "source": "mario_draghi",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": 0.039
+        },
+        {
+          "source": "mario_draghi",
+          "target": "financial_times",
+          "weightDelta": -0.005
+        },
+        {
+          "source": "mario_draghi",
+          "target": "antonio_tajani",
+          "weightDelta": 0.024
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00031_r1",
+      "authorId": "friedrich_merz",
+      "influencedAgents": [
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": 0.027,
+          "shift": 0.02
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.112,
+          "shift": 0.026
+        },
+        {
+          "agentId": "stephane_richard",
+          "agentName": "Stéphane Richard",
+          "positionBefore": 0.0,
+          "positionAfter": 0.011,
+          "shift": 0.011
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.17,
+          "shift": -0.003
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": -0.008,
+          "shift": -0.008
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.046,
+      "edgeEffects": [
+        {
+          "source": "friedrich_merz",
+          "target": "public_opinion",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "friedrich_merz",
+          "target": "european_central_bank",
+          "weightDelta": -0.022
+        },
+        {
+          "source": "friedrich_merz",
+          "target": "stephane_richard",
+          "weightDelta": -0.028
+        },
+        {
+          "source": "friedrich_merz",
+          "target": "bruegel_think_tank",
+          "weightDelta": -0.026
+        },
+        {
+          "source": "friedrich_merz",
+          "target": "sergio_mattarella",
+          "weightDelta": 0.048
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00032_r1",
+      "authorId": "emmanuel_macron",
+      "influencedAgents": [
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": 0.028,
+          "shift": 0.028
+        },
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": 0.019,
+          "shift": 0.019
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": -0.017,
+          "shift": -0.017
+        },
+        {
+          "agentId": "giuseppe_conte",
+          "agentName": "Giuseppe Conte",
+          "positionBefore": 0.0,
+          "positionAfter": 0.028,
+          "shift": 0.028
+        },
+        {
+          "agentId": "manuel_valls",
+          "agentName": "Manuel Valls",
+          "positionBefore": 0.0,
+          "positionAfter": -0.01,
+          "shift": -0.01
+        },
+        {
+          "agentId": "marine_le_pen",
+          "agentName": "Marine Le Pen",
+          "positionBefore": 0.0,
+          "positionAfter": 0.017,
+          "shift": 0.017
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.065,
+      "edgeEffects": [
+        {
+          "source": "emmanuel_macron",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "emmanuel_macron",
+          "target": "antonio_tajani",
+          "weightDelta": -0.041
+        },
+        {
+          "source": "emmanuel_macron",
+          "target": "sergio_mattarella",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "emmanuel_macron",
+          "target": "giuseppe_conte",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "emmanuel_macron",
+          "target": "manuel_valls",
+          "weightDelta": 0.049
+        },
+        {
+          "source": "emmanuel_macron",
+          "target": "marine_le_pen",
+          "weightDelta": -0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00033_r1",
+      "authorId": "marine_le_pen",
+      "influencedAgents": [
+        {
+          "agentId": "camporini",
+          "agentName": "Vincenzo Camporini",
+          "positionBefore": 0.0,
+          "positionAfter": 0.017,
+          "shift": 0.017
+        },
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": -0.006,
+          "shift": -0.013
+        },
+        {
+          "agentId": "silvestri",
+          "agentName": "Stefano Silvestri",
+          "positionBefore": 0.0,
+          "positionAfter": 0.029,
+          "shift": 0.029
+        },
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": 0.018,
+          "shift": 0.018
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": 0.022,
+          "shift": 0.022
+        },
+        {
+          "agentId": "keir_starmer",
+          "agentName": "Keir Starmer",
+          "positionBefore": 0.0,
+          "positionAfter": -0.009,
+          "shift": -0.009
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.064,
+      "edgeEffects": [
+        {
+          "source": "marine_le_pen",
+          "target": "camporini",
+          "weightDelta": 0.01
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "public_opinion",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "silvestri",
+          "weightDelta": 0.004
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "pedro_sanchez",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "rachel_reeves",
+          "weightDelta": -0.037
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "keir_starmer",
+          "weightDelta": 0.029
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00034_r1",
+      "authorId": "stephane_richard",
+      "influencedAgents": [
+        {
+          "agentId": "friedrich_merz",
+          "agentName": "Friedrich Merz",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": 0.015,
+          "shift": 0.015
+        },
+        {
+          "agentId": "herbert_diess",
+          "agentName": "Herbert Diess",
+          "positionBefore": 0.0,
+          "positionAfter": 0.017,
+          "shift": 0.017
+        },
+        {
+          "agentId": "walter_veltroni",
+          "agentName": "Walter Veltroni",
+          "positionBefore": 0.0,
+          "positionAfter": -0.023,
+          "shift": -0.023
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.2,
+          "shift": 0.027
+        },
+        {
+          "agentId": "keir_starmer",
+          "agentName": "Keir Starmer",
+          "positionBefore": 0.0,
+          "positionAfter": 0.017,
+          "shift": 0.017
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.068,
+      "edgeEffects": [
+        {
+          "source": "stephane_richard",
+          "target": "friedrich_merz",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "stephane_richard",
+          "target": "carlo_messina",
+          "weightDelta": -0.002
+        },
+        {
+          "source": "stephane_richard",
+          "target": "herbert_diess",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "stephane_richard",
+          "target": "walter_veltroni",
+          "weightDelta": 0.0
+        },
+        {
+          "source": "stephane_richard",
+          "target": "bruegel_think_tank",
+          "weightDelta": -0.046
+        },
+        {
+          "source": "stephane_richard",
+          "target": "keir_starmer",
+          "weightDelta": 0.037
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00035_r1",
+      "authorId": "walter_veltroni",
+      "influencedAgents": [
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.194,
+          "shift": 0.021
+        },
+        {
+          "agentId": "mario_draghi",
+          "agentName": "Mario Draghi",
+          "positionBefore": 0.0,
+          "positionAfter": -0.024,
+          "shift": -0.024
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.176,
+          "shift": -0.003
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": -0.011,
+          "shift": -0.011
+        },
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.064,
+          "shift": -0.022
+        },
+        {
+          "agentId": "del_re",
+          "agentName": "Emanuela Del Re",
+          "positionBefore": 0.0,
+          "positionAfter": 0.005,
+          "shift": 0.005
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.034,
+      "edgeEffects": [
+        {
+          "source": "walter_veltroni",
+          "target": "bruegel_think_tank",
+          "weightDelta": -0.007
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "mario_draghi",
+          "weightDelta": 0.021
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": 0.04
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "carlo_messina",
+          "weightDelta": -0.035
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "financial_times",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "del_re",
+          "weightDelta": 0.021
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00036_r1",
+      "authorId": "giuseppe_conte",
+      "influencedAgents": [
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.004,
+          "shift": -0.004
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.15,
+          "shift": -0.023
+        },
+        {
+          "agentId": "giorgia_meloni",
+          "agentName": "Giorgia Meloni",
+          "positionBefore": 0.0,
+          "positionAfter": 0.023,
+          "shift": 0.023
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.151,
+          "shift": 0.022
+        },
+        {
+          "agentId": "walter_veltroni",
+          "agentName": "Walter Veltroni",
+          "positionBefore": 0.0,
+          "positionAfter": 0.023,
+          "shift": 0.023
+        },
+        {
+          "agentId": "mario_draghi",
+          "agentName": "Mario Draghi",
+          "positionBefore": 0.0,
+          "positionAfter": 0.02,
+          "shift": 0.02
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": 0.061,
+      "edgeEffects": [
+        {
+          "source": "giuseppe_conte",
+          "target": "rachel_reeves",
+          "weightDelta": 0.029
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "bruegel_think_tank",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "giorgia_meloni",
+          "weightDelta": 0.005
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": -0.007
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "walter_veltroni",
+          "weightDelta": -0.009
+        },
+        {
+          "source": "giuseppe_conte",
+          "target": "mario_draghi",
+          "weightDelta": -0.01
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00037_r1",
+      "authorId": "carlo_messina",
+      "influencedAgents": [
+        {
+          "agentId": "marine_le_pen",
+          "agentName": "Marine Le Pen",
+          "positionBefore": 0.0,
+          "positionAfter": -0.008,
+          "shift": -0.008
+        },
+        {
+          "agentId": "friedrich_merz",
+          "agentName": "Friedrich Merz",
+          "positionBefore": 0.0,
+          "positionAfter": 0.025,
+          "shift": 0.025
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.193,
+          "shift": 0.02
+        },
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": -0.024,
+          "shift": -0.024
+        },
+        {
+          "agentId": "manuel_valls",
+          "agentName": "Manuel Valls",
+          "positionBefore": 0.0,
+          "positionAfter": 0.019,
+          "shift": 0.019
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.032,
+      "edgeEffects": [
+        {
+          "source": "carlo_messina",
+          "target": "marine_le_pen",
+          "weightDelta": -0.035
+        },
+        {
+          "source": "carlo_messina",
+          "target": "friedrich_merz",
+          "weightDelta": -0.043
+        },
+        {
+          "source": "carlo_messina",
+          "target": "bruegel_think_tank",
+          "weightDelta": -0.041
+        },
+        {
+          "source": "carlo_messina",
+          "target": "pedro_sanchez",
+          "weightDelta": 0.024
+        },
+        {
+          "source": "carlo_messina",
+          "target": "manuel_valls",
+          "weightDelta": 0.006
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00038_r1",
+      "authorId": "keir_starmer",
+      "influencedAgents": [
+        {
+          "agentId": "pedro_sanchez",
+          "agentName": "Pedro Sánchez",
+          "positionBefore": 0.0,
+          "positionAfter": 0.026,
+          "shift": 0.026
+        },
+        {
+          "agentId": "bernard_arnault",
+          "agentName": "Bernard Arnault",
+          "positionBefore": 0.0,
+          "positionAfter": 0.025,
+          "shift": 0.025
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.073,
+          "shift": -0.013
+        },
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": -0.024,
+          "shift": -0.024
+        },
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": -0.014,
+          "shift": -0.021
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.007,
+      "edgeEffects": [
+        {
+          "source": "keir_starmer",
+          "target": "pedro_sanchez",
+          "weightDelta": -0.008
+        },
+        {
+          "source": "keir_starmer",
+          "target": "bernard_arnault",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "keir_starmer",
+          "target": "european_central_bank",
+          "weightDelta": -0.019
+        },
+        {
+          "source": "keir_starmer",
+          "target": "antonio_tajani",
+          "weightDelta": 0.001
+        },
+        {
+          "source": "keir_starmer",
+          "target": "public_opinion",
+          "weightDelta": -0.002
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00039_r1",
+      "authorId": "marine_le_pen",
+      "influencedAgents": [
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": 0.004,
+          "shift": 0.004
+        },
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": 0.021,
+          "shift": 0.021
+        },
+        {
+          "agentId": "bernard_arnault",
+          "agentName": "Bernard Arnault",
+          "positionBefore": 0.0,
+          "positionAfter": 0.019,
+          "shift": 0.019
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": 0.009,
+          "shift": 0.009
+        },
+        {
+          "agentId": "manuel_valls",
+          "agentName": "Manuel Valls",
+          "positionBefore": 0.0,
+          "positionAfter": 0.026,
+          "shift": 0.026
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.079,
+      "edgeEffects": [
+        {
+          "source": "marine_le_pen",
+          "target": "antonio_tajani",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "bernard_arnault",
+          "weightDelta": 0.011
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "rachel_reeves",
+          "weightDelta": -0.047
+        },
+        {
+          "source": "marine_le_pen",
+          "target": "manuel_valls",
+          "weightDelta": 0.033
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00040_r1",
+      "authorId": "manuel_valls",
+      "influencedAgents": [
+        {
+          "agentId": "dario_nardella",
+          "agentName": "Dario Nardella",
+          "positionBefore": 0.0,
+          "positionAfter": -0.011,
+          "shift": -0.011
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": -0.03,
+          "shift": -0.03
+        },
+        {
+          "agentId": "herbert_diess",
+          "agentName": "Herbert Diess",
+          "positionBefore": 0.0,
+          "positionAfter": 0.004,
+          "shift": 0.004
+        },
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": -0.014,
+          "shift": -0.021
+        },
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": -0.028,
+          "shift": -0.028
+        },
+        {
+          "agentId": "rachel_reeves",
+          "agentName": "Rachel Reeves",
+          "positionBefore": 0.0,
+          "positionAfter": -0.017,
+          "shift": -0.017
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.103,
+      "edgeEffects": [
+        {
+          "source": "manuel_valls",
+          "target": "dario_nardella",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "manuel_valls",
+          "target": "carlo_messina",
+          "weightDelta": 0.037
+        },
+        {
+          "source": "manuel_valls",
+          "target": "herbert_diess",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "manuel_valls",
+          "target": "public_opinion",
+          "weightDelta": 0.013
+        },
+        {
+          "source": "manuel_valls",
+          "target": "antonio_tajani",
+          "weightDelta": 0.025
+        },
+        {
+          "source": "manuel_valls",
+          "target": "rachel_reeves",
+          "weightDelta": -0.008
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00041_r1",
+      "authorId": "pedro_sanchez",
+      "influencedAgents": [
+        {
+          "agentId": "omid_nouripour",
+          "agentName": "Omid Nouripour",
+          "positionBefore": 0.0,
+          "positionAfter": 0.017,
+          "shift": 0.017
+        },
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": -0.025,
+          "shift": -0.025
+        },
+        {
+          "agentId": "mario_draghi",
+          "agentName": "Mario Draghi",
+          "positionBefore": 0.0,
+          "positionAfter": -0.021,
+          "shift": -0.021
+        },
+        {
+          "agentId": "bruegel_think_tank",
+          "agentName": "Bruegel",
+          "positionBefore": 0.173,
+          "positionAfter": 0.183,
+          "shift": 0.01
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.019,
+      "edgeEffects": [
+        {
+          "source": "pedro_sanchez",
+          "target": "omid_nouripour",
+          "weightDelta": 0.007
+        },
+        {
+          "source": "pedro_sanchez",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": -0.045
+        },
+        {
+          "source": "pedro_sanchez",
+          "target": "mario_draghi",
+          "weightDelta": 0.012
+        },
+        {
+          "source": "pedro_sanchez",
+          "target": "bruegel_think_tank",
+          "weightDelta": -0.023
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00042_r1",
+      "authorId": "emmanuel_macron",
+      "influencedAgents": [
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.101,
+          "shift": 0.015
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.082,
+          "shift": -0.004
+        },
+        {
+          "agentId": "manuel_valls",
+          "agentName": "Manuel Valls",
+          "positionBefore": 0.0,
+          "positionAfter": 0.011,
+          "shift": 0.011
+        },
+        {
+          "agentId": "marine_le_pen",
+          "agentName": "Marine Le Pen",
+          "positionBefore": 0.0,
+          "positionAfter": 0.01,
+          "shift": 0.01
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": 0.032,
+      "edgeEffects": [
+        {
+          "source": "emmanuel_macron",
+          "target": "financial_times",
+          "weightDelta": -0.039
+        },
+        {
+          "source": "emmanuel_macron",
+          "target": "european_central_bank",
+          "weightDelta": -0.022
+        },
+        {
+          "source": "emmanuel_macron",
+          "target": "manuel_valls",
+          "weightDelta": -0.001
+        },
+        {
+          "source": "emmanuel_macron",
+          "target": "marine_le_pen",
+          "weightDelta": -0.045
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00043_r1",
+      "authorId": "andrea_orcel",
+      "influencedAgents": [
+        {
+          "agentId": "giuseppe_conte",
+          "agentName": "Giuseppe Conte",
+          "positionBefore": 0.0,
+          "positionAfter": 0.016,
+          "shift": 0.016
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": -0.013,
+          "shift": -0.013
+        },
+        {
+          "agentId": "emmanuel_macron",
+          "agentName": "Emmanuel Macron",
+          "positionBefore": 0.0,
+          "positionAfter": 0.0,
+          "shift": -0.0
+        },
+        {
+          "agentId": "camporini",
+          "agentName": "Vincenzo Camporini",
+          "positionBefore": 0.0,
+          "positionAfter": -0.022,
+          "shift": -0.022
+        },
+        {
+          "agentId": "stephane_richard",
+          "agentName": "Stéphane Richard",
+          "positionBefore": 0.0,
+          "positionAfter": -0.016,
+          "shift": -0.016
+        },
+        {
+          "agentId": "marine_le_pen",
+          "agentName": "Marine Le Pen",
+          "positionBefore": 0.0,
+          "positionAfter": 0.01,
+          "shift": 0.01
+        }
+      ],
+      "reach": 6,
+      "aggregateShift": -0.025,
+      "edgeEffects": [
+        {
+          "source": "andrea_orcel",
+          "target": "giuseppe_conte",
+          "weightDelta": 0.026
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "sergio_mattarella",
+          "weightDelta": -0.038
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "emmanuel_macron",
+          "weightDelta": -0.007
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "camporini",
+          "weightDelta": 0.003
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "stephane_richard",
+          "weightDelta": 0.006
+        },
+        {
+          "source": "andrea_orcel",
+          "target": "marine_le_pen",
+          "weightDelta": -0.015
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00044_r1",
+      "authorId": "pontecorvo",
+      "influencedAgents": [
+        {
+          "agentId": "giuseppe_conte",
+          "agentName": "Giuseppe Conte",
+          "positionBefore": 0.0,
+          "positionAfter": -0.025,
+          "shift": -0.025
+        },
+        {
+          "agentId": "ignazio_visco_successor",
+          "agentName": "Fabio Panetta",
+          "positionBefore": 0.0,
+          "positionAfter": -0.004,
+          "shift": -0.004
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": 0.008,
+          "shift": 0.008
+        },
+        {
+          "agentId": "silvestri",
+          "agentName": "Stefano Silvestri",
+          "positionBefore": 0.0,
+          "positionAfter": -0.006,
+          "shift": -0.006
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.193,
+          "shift": -0.02
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.047,
+      "edgeEffects": [
+        {
+          "source": "pontecorvo",
+          "target": "giuseppe_conte",
+          "weightDelta": -0.019
+        },
+        {
+          "source": "pontecorvo",
+          "target": "ignazio_visco_successor",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "pontecorvo",
+          "target": "carlo_messina",
+          "weightDelta": -0.021
+        },
+        {
+          "source": "pontecorvo",
+          "target": "silvestri",
+          "weightDelta": 0.047
+        },
+        {
+          "source": "pontecorvo",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": 0.045
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00045_r1",
+      "authorId": "walter_veltroni",
+      "influencedAgents": [
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.188,
+          "shift": -0.015
+        },
+        {
+          "agentId": "isabel_diaz_ayuso",
+          "agentName": "Isabel Díaz Ayuso",
+          "positionBefore": 0.0,
+          "positionAfter": 0.001,
+          "shift": 0.001
+        },
+        {
+          "agentId": "andrea_orcel",
+          "agentName": "Andrea Orcel",
+          "positionBefore": 0.0,
+          "positionAfter": -0.011,
+          "shift": -0.011
+        },
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.076,
+          "shift": -0.01
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.001,
+          "shift": 0.001
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.034,
+      "edgeEffects": [
+        {
+          "source": "walter_veltroni",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "isabel_diaz_ayuso",
+          "weightDelta": -0.01
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "andrea_orcel",
+          "weightDelta": -0.016
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "financial_times",
+          "weightDelta": -0.033
+        },
+        {
+          "source": "walter_veltroni",
+          "target": "sergio_mattarella",
+          "weightDelta": -0.039
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00046_r1",
+      "authorId": "isabel_diaz_ayuso",
+      "influencedAgents": [
+        {
+          "agentId": "pontecorvo",
+          "agentName": "Stefano Pontecorvo",
+          "positionBefore": 0.0,
+          "positionAfter": 0.009,
+          "shift": 0.009
+        },
+        {
+          "agentId": "antonio_tajani",
+          "agentName": "Antonio Tajani",
+          "positionBefore": 0.0,
+          "positionAfter": -0.024,
+          "shift": -0.024
+        },
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": -0.013,
+          "shift": -0.02
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.102,
+          "shift": 0.016
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.019,
+      "edgeEffects": [
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "pontecorvo",
+          "weightDelta": -0.035
+        },
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "antonio_tajani",
+          "weightDelta": -0.024
+        },
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "public_opinion",
+          "weightDelta": -0.035
+        },
+        {
+          "source": "isabel_diaz_ayuso",
+          "target": "european_central_bank",
+          "weightDelta": -0.042
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00047_r1",
+      "authorId": "ignazio_visco_successor",
+      "influencedAgents": [
+        {
+          "agentId": "financial_times",
+          "agentName": "Financial Times",
+          "positionBefore": 0.086,
+          "positionAfter": 0.075,
+          "shift": -0.011
+        },
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.175,
+          "shift": -0.002
+        },
+        {
+          "agentId": "friedrich_merz",
+          "agentName": "Friedrich Merz",
+          "positionBefore": 0.0,
+          "positionAfter": 0.018,
+          "shift": 0.018
+        },
+        {
+          "agentId": "public_opinion",
+          "agentName": "Public Opinion",
+          "positionBefore": 0.007,
+          "positionAfter": -0.002,
+          "shift": -0.009
+        }
+      ],
+      "reach": 4,
+      "aggregateShift": -0.004,
+      "edgeEffects": [
+        {
+          "source": "ignazio_visco_successor",
+          "target": "financial_times",
+          "weightDelta": -0.006
+        },
+        {
+          "source": "ignazio_visco_successor",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": 0.013
+        },
+        {
+          "source": "ignazio_visco_successor",
+          "target": "friedrich_merz",
+          "weightDelta": 0.009
+        },
+        {
+          "source": "ignazio_visco_successor",
+          "target": "public_opinion",
+          "weightDelta": -0.043
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00048_r1",
+      "authorId": "pontecorvo",
+      "influencedAgents": [
+        {
+          "agentId": "intesa_sanpaolo_group",
+          "agentName": "Intesa Sanpaolo",
+          "positionBefore": -0.173,
+          "positionAfter": -0.186,
+          "shift": -0.013
+        },
+        {
+          "agentId": "ignazio_visco_successor",
+          "agentName": "Fabio Panetta",
+          "positionBefore": 0.0,
+          "positionAfter": 0.029,
+          "shift": 0.029
+        },
+        {
+          "agentId": "sergio_mattarella",
+          "agentName": "Sergio Mattarella",
+          "positionBefore": 0.0,
+          "positionAfter": 0.006,
+          "shift": 0.006
+        },
+        {
+          "agentId": "herbert_diess",
+          "agentName": "Herbert Diess",
+          "positionBefore": 0.0,
+          "positionAfter": 0.005,
+          "shift": 0.005
+        },
+        {
+          "agentId": "european_central_bank",
+          "agentName": "European Central Bank (ECB)",
+          "positionBefore": 0.086,
+          "positionAfter": 0.1,
+          "shift": 0.014
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": 0.041,
+      "edgeEffects": [
+        {
+          "source": "pontecorvo",
+          "target": "intesa_sanpaolo_group",
+          "weightDelta": 0.014
+        },
+        {
+          "source": "pontecorvo",
+          "target": "ignazio_visco_successor",
+          "weightDelta": -0.041
+        },
+        {
+          "source": "pontecorvo",
+          "target": "sergio_mattarella",
+          "weightDelta": -0.012
+        },
+        {
+          "source": "pontecorvo",
+          "target": "herbert_diess",
+          "weightDelta": 0.045
+        },
+        {
+          "source": "pontecorvo",
+          "target": "european_central_bank",
+          "weightDelta": -0.046
+        }
+      ]
+    },
+    {
+      "postId": "scenario_Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis_rp_00049_r1",
+      "authorId": "mario_draghi",
+      "influencedAgents": [
+        {
+          "agentId": "pontecorvo",
+          "agentName": "Stefano Pontecorvo",
+          "positionBefore": 0.0,
+          "positionAfter": -0.003,
+          "shift": -0.003
+        },
+        {
+          "agentId": "friedrich_merz",
+          "agentName": "Friedrich Merz",
+          "positionBefore": 0.0,
+          "positionAfter": 0.02,
+          "shift": 0.02
+        },
+        {
+          "agentId": "european_stability_mechanism",
+          "agentName": "European Stability Mechanism (ESM)",
+          "positionBefore": 0.381,
+          "positionAfter": 0.356,
+          "shift": -0.025
+        },
+        {
+          "agentId": "stephane_richard",
+          "agentName": "Stéphane Richard",
+          "positionBefore": 0.0,
+          "positionAfter": -0.028,
+          "shift": -0.028
+        },
+        {
+          "agentId": "carlo_messina",
+          "agentName": "Carlo Messina",
+          "positionBefore": 0.0,
+          "positionAfter": 0.029,
+          "shift": 0.029
+        }
+      ],
+      "reach": 5,
+      "aggregateShift": -0.007,
+      "edgeEffects": [
+        {
+          "source": "mario_draghi",
+          "target": "pontecorvo",
+          "weightDelta": 0.031
+        },
+        {
+          "source": "mario_draghi",
+          "target": "friedrich_merz",
+          "weightDelta": 0.048
+        },
+        {
+          "source": "mario_draghi",
+          "target": "european_stability_mechanism",
+          "weightDelta": 0.015
+        },
+        {
+          "source": "mario_draghi",
+          "target": "stephane_richard",
+          "weightDelta": 0.021
+        },
+        {
+          "source": "mario_draghi",
+          "target": "carlo_messina",
+          "weightDelta": 0.002
+        }
+      ]
+    }
+  ],
+  "realWorldEffects": {
+    "overview": {
+      "stability_index": 79,
+      "tension_index": 10,
+      "media_intensity": 32,
+      "stakeholder_confidence": 68
+    },
+    "opinion": {
+      "support_rate": 8,
+      "opposition_rate": 10,
+      "undecided_rate": 82,
+      "avg_position": -0.024
+    },
+    "engagement": {
+      "active_discussions": 20,
+      "viral_content_pieces": 7,
+      "coalition_count": 4
+    }
+  }
+}

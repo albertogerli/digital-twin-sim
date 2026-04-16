@@ -1,0 +1,79 @@
+{
+  "scenario_name": "germany_debt_brake_suspension_2022",
+  "domain": "financial",
+  "description": "Public opinion on Germany's temporary suspension of the 'debt brake' (Schuldenbremse) constitutional constraint to fund energy subsidies following the Russian invasion of Ukraine.",
+  "final_outcome_pro_pct": 65.0,
+  "final_outcome_against_pct": 35.0,
+  "final_turnout_pct": 62.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 68,
+      "against_pct": 25,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 64,
+      "against_pct": 33,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 63,
+      "against_pct": 35,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 64,
+      "against_pct": 36,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Announcement of the €100bn special fund."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Opposition party challenges constitutionality."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Energy price cap implementation."
+    }
+  ],
+  "calibration_notes": "Models crisis-driven consensus that gradually faces fiscal hawks."
+}

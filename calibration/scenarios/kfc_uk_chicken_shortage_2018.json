@@ -1,0 +1,83 @@
+{
+  "scenario_name": "kfc_uk_chicken_shortage_2018",
+  "domain": "commercial",
+  "description": "In February 2018, KFC UK faced a logistical failure that caused hundreds of stores to close due to a lack of chicken. The company responded with a self-deprecating 'FCK' ad campaign, which is now considered a masterclass in crisis PR.",
+  "final_outcome_pro_pct": 82.0,
+  "final_outcome_against_pct": 18.0,
+  "final_turnout_pct": 68.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 70,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 28,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 80,
+      "against_pct": 20,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 82,
+      "against_pct": 18,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Nationwide store closures begin."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Public confusion and mockery on social media."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "KFC runs the 'FCK' print advertisement."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public sentiment shifts to amusement and forgiveness."
+    }
+  ],
+  "calibration_notes": "Measures the power of humor and humility in diffusing operational failure."
+}

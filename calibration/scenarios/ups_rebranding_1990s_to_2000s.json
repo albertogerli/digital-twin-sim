@@ -1,0 +1,79 @@
+{
+  "scenario_name": "ups_rebranding_1990s_to_2000s",
+  "domain": "marketing",
+  "description": "UPS shifted from a 'Brown' logistics company to a 'What can Brown do for you?' campaign in 2002. This solidified the color brown as a powerful brand asset, moving away from being just a functional service.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 25,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 28,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 69,
+      "against_pct": 31,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "New brand campaign launch."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "High consumer recognition of 'Brown' as a brand symbol."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Long-term brand equity studies show positive impact."
+    }
+  ],
+  "calibration_notes": "A benchmark for long-term successful brand identity expansion."
+}

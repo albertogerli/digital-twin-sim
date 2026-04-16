@@ -1,0 +1,179 @@
+{
+  "id": "POL-2014-SCOTTISH_INDEPENDENCE_REFEREND",
+  "domain": "political",
+  "title": "Scottish Independence Referendum 2014: Public Opinion Trajectory",
+  "country": "GB",
+  "date_start": "2014-06-01",
+  "date_end": "2014-09-18",
+  "n_rounds": 7,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 44.7,
+    "source": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/scottish-independence-referendum",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2014-06-01",
+      "pro_pct": 37.0,
+      "against_pct": 52.0,
+      "undecided_pct": 11.0,
+      "sample_size": 1000,
+      "source": "https://whatscotlandthinks.org/questions/voting-intention-in-the-scottish-independence-referendum-2012-2014/",
+      "pollster": "YouGov"
+    },
+    {
+      "round": 2,
+      "date": "2014-06-16",
+      "pro_pct": 36.0,
+      "against_pct": 53.0,
+      "undecided_pct": 11.0,
+      "sample_size": 1000,
+      "source": "Estimated: Interpolated from WhatScotlandThinks historical trend data",
+      "pollster": "Panelbase"
+    },
+    {
+      "round": 3,
+      "date": "2014-07-01",
+      "pro_pct": 38.0,
+      "against_pct": 51.0,
+      "undecided_pct": 11.0,
+      "sample_size": 1000,
+      "source": "https://whatscotlandthinks.org/questions/voting-intention-in-the-scottish-independence-referendum-2012-2014/",
+      "pollster": "YouGov"
+    },
+    {
+      "round": 4,
+      "date": "2014-07-16",
+      "pro_pct": 39.0,
+      "against_pct": 50.0,
+      "undecided_pct": 11.0,
+      "sample_size": 1000,
+      "source": "Estimated: Based on steady narrowing trend observed in July 2014",
+      "pollster": "Survation"
+    },
+    {
+      "round": 5,
+      "date": "2014-07-31",
+      "pro_pct": 40.0,
+      "against_pct": 49.0,
+      "undecided_pct": 11.0,
+      "sample_size": 1000,
+      "source": "Estimated: Trend line projection",
+      "pollster": "Ipsos MORI"
+    },
+    {
+      "round": 6,
+      "date": "2014-08-15",
+      "pro_pct": 42.0,
+      "against_pct": 48.0,
+      "undecided_pct": 10.0,
+      "sample_size": 1000,
+      "source": "https://whatscotlandthinks.org/questions/voting-intention-in-the-scottish-independence-referendum-2012-2014/",
+      "pollster": "YouGov"
+    },
+    {
+      "round": 7,
+      "date": "2014-08-30",
+      "pro_pct": 44.0,
+      "against_pct": 47.0,
+      "undecided_pct": 9.0,
+      "sample_size": 1000,
+      "source": "https://whatscotlandthinks.org/questions/voting-intention-in-the-scottish-independence-referendum-2012-2014/",
+      "pollster": "YouGov"
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2014-06-18",
+      "description": "Second televised debate between Alex Salmond and Alistair Darling",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2,
+      "source": "https://www.bbc.com/news/uk-scotland-scotland-politics-27909386"
+    },
+    {
+      "round": 7,
+      "date": "2014-09-06",
+      "description": "YouGov poll shows Yes at 47%, narrowing the gap significantly",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5,
+      "source": "https://www.theguardian.com/politics/2014/sep/07/scottish-independence-poll-yes-campaign-narrow-gap"
+    },
+    {
+      "round": 7,
+      "date": "2014-09-09",
+      "description": "The Vow: UK party leaders promise more powers for Scotland",
+      "shock_magnitude": 0.8,
+      "shock_direction": -0.4,
+      "source": "https://www.bbc.com/news/uk-scotland-scotland-politics-29143610"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Alex Salmond",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "First Minister of Scotland and leader of the Yes campaign"
+    },
+    {
+      "name": "Alistair Darling",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "Leader of the Better Together campaign"
+    },
+    {
+      "name": "Scottish National Party",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.8,
+      "description": "Primary political vehicle for independence"
+    },
+    {
+      "name": "Conservative Party",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.7,
+      "description": "UK government party opposing independence"
+    },
+    {
+      "name": "Yes Scotland",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": "Official pro-independence campaign organization"
+    },
+    {
+      "name": "Better Together",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.7,
+      "description": "Official anti-independence campaign organization"
+    },
+    {
+      "name": "Urban Working Class",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.4,
+      "description": "Key demographic group targeted by Yes campaign"
+    },
+    {
+      "name": "Rural Older Voters",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Key demographic group targeted by Better Together"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.991,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.12
+  },
+  "notes": "Pro-side = Yes (Independence). Against-side = No (Union). Pro-side ended at 44.7%. Data quality: Polling data is based on historical archives from WhatScotlandThinks.org; some mid-period rounds are interpolated based on known trends."
+}

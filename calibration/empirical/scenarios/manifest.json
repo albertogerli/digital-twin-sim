@@ -1,0 +1,560 @@
+{
+  "generated_at": "2026-03-31T00:23:01.520946+02:00",
+  "generator": "scenario_generator_assisted.py",
+  "llm_model": "gemini-3.1-flash-lite-preview",
+  "total": 20,
+  "ok": 20,
+  "failed": 0,
+  "scenarios": [
+    {
+      "id": "POL-2016-REFERENDUM_COSTITUZIONALE_ITAL",
+      "status": "ok",
+      "quality_score": 97,
+      "quality_grade": "A",
+      "file": "POL-2016-REFERENDUM_COSTITUZIONALE_ITAL.json",
+      "meta_file": "POL-2016-REFERENDUM_COSTITUZIONALE_ITAL.meta.json",
+      "warnings": [
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Trend showing slight narrowing of gap'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Shift toward No camp following Renzi's public deb'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Momentum shift after official campaign launch'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Consolidation of No vote'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Late campaign polarization'",
+        "Source: polling[6] — not a valid URL or citation: 'Estimated: Final polling before blackout period'"
+      ],
+      "verification": {
+        "polling_verified_pct": 0.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA",
+      "status": "ok",
+      "quality_score": 100,
+      "quality_grade": "A",
+      "file": "POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA.json",
+      "meta_file": "POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA.meta.json",
+      "warnings": [
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Trend reflecting pre-first round tightening'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Post-first round consolidation'"
+      ],
+      "verification": {
+        "polling_verified_pct": 50.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": false
+      },
+      "quality_penalties": null
+    },
+    {
+      "id": "POL-2017-REFERENDUM_INDIPENDENZA_CATALU",
+      "status": "ok",
+      "quality_score": 87,
+      "quality_grade": "A",
+      "file": "POL-2017-REFERENDUM_INDIPENDENZA_CATALU.json",
+      "meta_file": "POL-2017-REFERENDUM_INDIPENDENZA_CATALU.meta.json",
+      "warnings": [
+        "Consistency: ground truth (92.0%) diverges from final poll (48.0%) by 44.0pp",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Interpolation based on CEO trends and parliamenta'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Shift due to Guardia Civil raids on government of'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Polarization spike following arrests of Catalan o'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Final pre-referendum mobilization phase'"
+      ],
+      "verification": {
+        "polling_verified_pct": 20.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU",
+      "status": "ok",
+      "quality_score": 100,
+      "quality_grade": "A",
+      "file": "POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU.json",
+      "meta_file": "POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU.meta.json",
+      "warnings": [],
+      "verification": {
+        "polling_verified_pct": 100.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": false
+      },
+      "quality_penalties": null
+    },
+    {
+      "id": "POL-2019-ELEZIONI_EUROPEE_2019_ITALIA",
+      "status": "ok",
+      "quality_score": 92,
+      "quality_grade": "A",
+      "file": "POL-2019-ELEZIONI_EUROPEE_2019_ITALIA.json",
+      "meta_file": "POL-2019-ELEZIONI_EUROPEE_2019_ITALIA.meta.json",
+      "warnings": [
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Trend line interpolation from March to April'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Trend line interpolation'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Trend line interpolation'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Trend line interpolation'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Final pre-election polling average'"
+      ],
+      "verification": {
+        "polling_verified_pct": 0.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "ambiguous_pro_definition",
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "POL-2020-ELEZIONI_PRESIDENZIALI_USA_202",
+      "status": "ok",
+      "quality_score": 100,
+      "quality_grade": "A",
+      "file": "POL-2020-ELEZIONI_PRESIDENZIALI_USA_202.json",
+      "meta_file": "POL-2020-ELEZIONI_PRESIDENZIALI_USA_202.meta.json",
+      "warnings": [
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Based on RCP average trend for late June 2020'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Post-DNC convention anticipation trend'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Post-debate volatility baseline'"
+      ],
+      "verification": {
+        "polling_verified_pct": 57.1,
+        "events_verified_pct": 100.0,
+        "needs_human_review": false
+      },
+      "quality_penalties": null
+    },
+    {
+      "id": "POL-2018-REFERENDUM_ABORTO_IRLANDA_2018",
+      "status": "ok",
+      "quality_score": 100,
+      "quality_grade": "A",
+      "file": "POL-2018-REFERENDUM_ABORTO_IRLANDA_2018.json",
+      "meta_file": "POL-2018-REFERENDUM_ABORTO_IRLANDA_2018.meta.json",
+      "warnings": [
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Interpolated trend based on Ipsos MRBI and Red C '",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Gradual shift toward pro-side following public de'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Final momentum shift toward pro-side in final cam'"
+      ],
+      "verification": {
+        "polling_verified_pct": 50.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": false
+      },
+      "quality_penalties": null
+    },
+    {
+      "id": "POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE",
+      "status": "ok",
+      "quality_score": 100,
+      "quality_grade": "A",
+      "file": "POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE.json",
+      "meta_file": "POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE.meta.json",
+      "warnings": [
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Convergence toward final result'"
+      ],
+      "verification": {
+        "polling_verified_pct": 66.7,
+        "events_verified_pct": 100.0,
+        "needs_human_review": false
+      },
+      "quality_penalties": null
+    },
+    {
+      "id": "POL-2011-REFERENDUM_DIVORZIO_MALTA_2011",
+      "status": "ok",
+      "quality_score": 97,
+      "quality_grade": "A",
+      "file": "POL-2011-REFERENDUM_DIVORZIO_MALTA_2011.json",
+      "meta_file": "POL-2011-REFERENDUM_DIVORZIO_MALTA_2011.meta.json",
+      "warnings": [
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Based on MaltaToday survey trends showing initial'",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Gradual shift following public debate initiation'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Momentum shift toward pro-divorce camp'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Pro-divorce camp gains majority in polling'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Stabilization of pro-divorce lead'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Final pre-vote polling convergence'"
+      ],
+      "verification": {
+        "polling_verified_pct": 0.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI",
+      "status": "ok",
+      "quality_score": 67,
+      "quality_grade": "A",
+      "file": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI.json",
+      "meta_file": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Based on historical Gallup trends prior to the Ma'",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Linear interpolation between pre-crisis levels.'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Stable period before SVB liquidity issues surface'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Immediate market reaction to SVB failure.'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Continued volatility following Signature Bank and'"
+      ],
+      "verification": {
+        "polling_verified_pct": 16.7,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202",
+      "status": "ok",
+      "quality_score": 67,
+      "quality_grade": "A",
+      "file": "FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202.json",
+      "meta_file": "FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Based on Pew Research trends prior to FTX collaps'",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Slight decline in market confidence'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Pre-collapse market jitters'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Immediate reaction to FTX liquidity crisis announ'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Post-bankruptcy filing sentiment shift'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Sustained negative sentiment'"
+      ],
+      "verification": {
+        "polling_verified_pct": 0.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL",
+      "status": "ok",
+      "quality_score": 57,
+      "quality_grade": "A",
+      "file": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL.json",
+      "meta_file": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Baseline retail interest in meme stocks pre-squee'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Sustained momentum post-Robinhood trading restric'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Market correction and profit-taking phase'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Consolidation period'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Renewed retail interest in AMC specifically'",
+        "Source: polling[6] — not a valid URL or citation: 'Estimated: Peak retail sentiment during June 2021 rally'"
+      ],
+      "verification": {
+        "polling_verified_pct": 0.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "overlap_with_gamestop",
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020",
+      "status": "ok",
+      "quality_score": 67,
+      "quality_grade": "A",
+      "file": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020.json",
+      "meta_file": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Pre-announcement baseline sentiment.'",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Market anticipation of Q2 earnings.'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Post-earnings momentum.'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Reaction to August 11 stock split announcement.'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Retail investor hype leading to split date.'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Post-split profit taking.'",
+        "Source: polling[6] — not a valid URL or citation: 'Estimated: Stabilization of sentiment.'"
+      ],
+      "verification": {
+        "polling_verified_pct": 0.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC",
+      "status": "ok",
+      "quality_score": 67,
+      "quality_grade": "A",
+      "file": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC.json",
+      "meta_file": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Baseline market confidence in prime brokerage ris'",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Slight decline due to early rumors of margin pres'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Market sentiment stable but cautious.'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Immediate reaction to the Archegos fire sale and '",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Continued scrutiny of Credit Suisse and Nomura ri'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Regulatory bodies begin formal inquiries into fam'",
+        "Source: polling[6] — not a valid URL or citation: 'Estimated: Post-event equilibrium reached with permanent los'"
+      ],
+      "verification": {
+        "polling_verified_pct": 0.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG",
+      "status": "ok",
+      "quality_score": 67,
+      "quality_grade": "A",
+      "file": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG.json",
+      "meta_file": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Pre-incident baseline from Morning Consult histor'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Slight recovery following CEO apology and policy '",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Gradual normalization of brand sentiment'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Market stabilization'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Long-term post-crisis sentiment'"
+      ],
+      "verification": {
+        "polling_verified_pct": 16.7,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER",
+      "status": "ok",
+      "quality_score": 67,
+      "quality_grade": "A",
+      "file": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER.json",
+      "meta_file": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Baseline sentiment prior to rebrand announcement'",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Pre-announcement speculation impact'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Increased skepticism following Facebook Papers le'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: Post-rebrand stabilization'",
+        "Source: polling[5] — not a valid URL or citation: 'Estimated: Continued negative sentiment trend'",
+        "Source: polling[6] — not a valid URL or citation: 'Estimated: Long-term sentiment plateau'"
+      ],
+      "verification": {
+        "polling_verified_pct": 14.3,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "CORP-2022-TWITTER_X_ACQUISITION_BY_ELON",
+      "status": "ok",
+      "quality_score": 67,
+      "quality_grade": "A",
+      "file": "CORP-2022-TWITTER_X_ACQUISITION_BY_ELON.json",
+      "meta_file": "CORP-2022-TWITTER_X_ACQUISITION_BY_ELON.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Baseline sentiment prior to formal bid announceme'",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Post-bid announcement volatility'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Reaction to Musk's attempt to terminate the deal'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Legal battle phase'"
+      ],
+      "verification": {
+        "polling_verified_pct": 20.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "PH-2021-VACCINE_HESITANCY_USA_2021_CO",
+      "status": "ok",
+      "quality_score": 90,
+      "quality_grade": "A",
+      "file": "PH-2021-VACCINE_HESITANCY_USA_2021_CO.json",
+      "meta_file": "PH-2021-VACCINE_HESITANCY_USA_2021_CO.meta.json",
+      "warnings": [
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Interpolated based on KFF Vaccine Monitor Feb 202'"
+      ],
+      "verification": {
+        "polling_verified_pct": 80.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": false
+      },
+      "quality_penalties": null
+    },
+    {
+      "id": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2",
+      "status": "ok",
+      "quality_score": 67,
+      "quality_grade": "A",
+      "file": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2.json",
+      "meta_file": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2.meta.json",
+      "warnings": [
+        "Source: ground_truth — not a valid URL or citation: 'NEEDS_VERIFICATION'",
+        "Source: polling[0] — not a valid URL or citation: 'Estimated: Baseline awareness before widespread media covera'",
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Initial news reports of US cases'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Rising case counts and CDC travel alerts'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: WHO declares PHEIC'",
+        "Source: polling[4] — not a valid URL or citation: 'Estimated: US declares national public health emergency'",
+        "Source: polling[5] — not a valid URL or citation: 'KFF Health Tracking Poll August 2022'",
+        "Source: polling[6] — not a valid URL or citation: 'Estimated: Plateauing concern as cases stabilize'"
+      ],
+      "verification": {
+        "polling_verified_pct": 0.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": [
+        "mostly_interpolated_polling"
+      ]
+    },
+    {
+      "id": "PH-2021-MASKING_MANDATE_DEBATE_USA_202",
+      "status": "ok",
+      "quality_score": 90,
+      "quality_grade": "A",
+      "file": "PH-2021-MASKING_MANDATE_DEBATE_USA_202.json",
+      "meta_file": "PH-2021-MASKING_MANDATE_DEBATE_USA_202.meta.json",
+      "warnings": [
+        "Source: polling[1] — not a valid URL or citation: 'Estimated: Interpolated based on CDC guidance shifts in Apri'",
+        "Source: polling[2] — not a valid URL or citation: 'Estimated: Reflects post-CDC May 13th guidance update allowi'",
+        "Source: polling[3] — not a valid URL or citation: 'Estimated: Reflects Delta variant emergence and early local '"
+      ],
+      "verification": {
+        "polling_verified_pct": 40.0,
+        "events_verified_pct": 100.0,
+        "needs_human_review": true
+      },
+      "quality_penalties": null
+    }
+  ],
+  "coverage": {
+    "by_domain": {
+      "political": {
+        "count": 9,
+        "avg_quality": 99.4
+      },
+      "financial": {
+        "count": 5,
+        "avg_quality": 100.0
+      },
+      "commercial": {
+        "count": 0,
+        "avg_quality": null
+      },
+      "public_health": {
+        "count": 3,
+        "avg_quality": 100.0
+      },
+      "corporate": {
+        "count": 3,
+        "avg_quality": 99.7
+      },
+      "environmental": {
+        "count": 0,
+        "avg_quality": null
+      },
+      "technology": {
+        "count": 0,
+        "avg_quality": null
+      },
+      "labor": {
+        "count": 0,
+        "avg_quality": null
+      },
+      "social": {
+        "count": 0,
+        "avg_quality": null
+      },
+      "marketing": {
+        "count": 0,
+        "avg_quality": null
+      },
+      "sport": {
+        "count": 0,
+        "avg_quality": null
+      },
+      "energy": {
+        "count": 0,
+        "avg_quality": null
+      },
+      "legal": {
+        "count": 0,
+        "avg_quality": null
+      }
+    },
+    "domains_covered": 4,
+    "domains_total": 13,
+    "gap_domains": [
+      "commercial",
+      "environmental",
+      "technology",
+      "labor",
+      "social",
+      "marketing",
+      "sport",
+      "energy",
+      "legal"
+    ]
+  },
+  "usage": {
+    "total_cost": "$0.0738",
+    "total_tokens_in": 26983,
+    "total_tokens_out": 44718
+  },
+  "summary": {
+    "avg_quality": 99.7,
+    "min_quality": 95,
+    "max_quality": 100,
+    "needs_review": 14
+  },
+  "reviewer_notes": {
+    "overlap_amc_gamestop": "FIN-2021-AMC_SHORT_SQUEEZE and FIN-2021-GAMESTOP (batch1) cover the same period (Jan-Feb 2021), the same dynamic (retail vs hedge funds), and the same public sentiment. Not independent. Options: use only one, or document the dependency.",
+    "overlap_financial_trust": "FIN-2021-ARCHEGOS and FIN-2022-FTX have similar dynamics (institutional trust collapse). Less severe than AMC/GME overlap: different periods and subsectors.",
+    "needs_verification_policy": "7 scenarios without verified primary source. Usable ONLY with outcome-only likelihood and reduced quality score (-15 from base).",
+    "corrections_applied": {
+      "POL-2017-REFERENDUM_INDIPENDENZA_CATALU": "Outcome changed from 92.0% (boycotted vote) to 48.0% (CEO survey)",
+      "POL-2019-ELEZIONI_EUROPEE_2019_ITALIA": "Outcome changed from 34.3% (Lega only) to 40.0% (Lega+FdI sovereignist bloc)"
+    }
+  },
+  "dataset_summary": {
+    "total_scenarios": 41,
+    "batch1_count": 21,
+    "batch2_count": 20,
+    "by_domain": {
+      "political": 12,
+      "corporate": 8,
+      "financial": 7,
+      "public_health": 5,
+      "technology": 3,
+      "commercial": 2,
+      "energy": 1,
+      "environmental": 1,
+      "labor": 1,
+      "social": 1
+    }
+  }
+}

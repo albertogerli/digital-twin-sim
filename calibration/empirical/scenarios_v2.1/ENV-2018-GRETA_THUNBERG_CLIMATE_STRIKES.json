@@ -1,0 +1,155 @@
+{
+  "id": "ENV-2018-GRETA_THUNBERG_CLIMATE_STRIKES",
+  "domain": "environmental",
+  "title": "Public opinion shift in Sweden regarding climate action during the rise of the Fridays for Future movement",
+  "country": "SE",
+  "date_start": "2018-08-20",
+  "date_end": "2019-09-20",
+  "n_rounds": 6,
+  "round_duration_days": 66,
+  "ground_truth_outcome": {
+    "pro_pct": 71.0,
+    "source": "https://www.pewresearch.org/global/2020/09/09/concern-over-climate-and-environment/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2018-08-20",
+      "pro_pct": 58.0,
+      "against_pct": 25.0,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "Estimated: Based on historical SOM Institute trends prior to movement peak",
+      "pollster": "SOM Institute"
+    },
+    {
+      "round": 2,
+      "date": "2018-10-25",
+      "pro_pct": 60.5,
+      "against_pct": 23.5,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated growth following initial COP24 momentum",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2018-12-30",
+      "pro_pct": 63.0,
+      "against_pct": 22.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Post-Katowice climate conference sentiment",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2019-03-06",
+      "pro_pct": 66.5,
+      "against_pct": 20.5,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Surge following March 15 global climate strike",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2019-05-11",
+      "pro_pct": 69.0,
+      "against_pct": 19.0,
+      "undecided_pct": 12.0,
+      "sample_size": null,
+      "source": "Estimated: Sustained media coverage in Swedish press",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2019-07-16",
+      "pro_pct": 71.0,
+      "against_pct": 18.0,
+      "undecided_pct": 11.0,
+      "sample_size": null,
+      "source": "Estimated: Alignment with 2019 Pew Research findings",
+      "pollster": "Pew Research Center"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2018-08-20",
+      "description": "Greta Thunberg begins her school strike for climate outside the Swedish Parliament",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.4,
+      "source": "https://www.bbc.com/news/world-europe-49918719"
+    },
+    {
+      "round": 3,
+      "date": "2018-12-15",
+      "description": "Greta Thunberg addresses the COP24 UN Climate Change Conference in Poland",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.3,
+      "source": "https://www.theguardian.com/environment/2018/dec/15/greta-thunberg-speech-cop24-poland"
+    },
+    {
+      "round": 4,
+      "date": "2019-03-15",
+      "description": "Global Climate Strike sees millions of participants worldwide",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.5,
+      "source": "https://www.reuters.com/article/us-climate-change-strike-idUSKCN1QV06S"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Greta Thunberg",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Primary activist and initiator of the school strike movement"
+    },
+    {
+      "name": "Swedish Green Party",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "Political party advocating for aggressive climate policy"
+    },
+    {
+      "name": "Swedish Industrial Lobby",
+      "type": "institutional",
+      "initial_position": -0.4,
+      "influence": 0.7,
+      "description": "Represents manufacturing and energy interests concerned about rapid transition costs"
+    },
+    {
+      "name": "Fridays for Future Youth",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.5,
+      "description": "Core group of student activists organizing local strikes"
+    },
+    {
+      "name": "Rural Conservative Voters",
+      "type": "citizen_cluster",
+      "initial_position": -0.5,
+      "influence": 0.4,
+      "description": "Demographic concerned about fuel prices and urban-centric policy"
+    },
+    {
+      "name": "Swedish Media Outlets",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.8,
+      "description": "Mainstream press providing significant coverage of the movement"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.668,
+    "event_volatility": 0.65,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.17
+  },
+  "notes": "Pro-side is defined as individuals who support urgent government action to mitigate climate change. Against-side is defined as those who oppose such measures or prioritize economic stability over climate policy. Data quality is high for the endpoint (Pew Research), while intermediate rounds are estimates based on the trajectory of media coverage and movement growth."
+}

@@ -1,0 +1,40 @@
+{
+  "generation_timestamp": "2026-03-29T15:32:10.584048+02:00",
+  "generator": "scenario_generator_assisted.py",
+  "llm_model": "gemini-3.1-flash-lite-preview",
+  "field_provenance": {
+    "id": "verified_csv",
+    "domain": "verified_csv",
+    "country": "verified_csv",
+    "date_start": "verified_csv",
+    "date_end": "verified_csv",
+    "n_rounds": "verified_csv",
+    "round_duration_days": "verified_csv",
+    "ground_truth_outcome.pro_pct": "verified_csv",
+    "ground_truth_outcome.source": "verified_csv",
+    "ground_truth_outcome.type": "verified_csv",
+    "title": "llm_refined",
+    "polling_trajectory": [
+      "llm_estimated",
+      "llm_estimated",
+      "llm_estimated",
+      "llm_estimated",
+      "llm_estimated",
+      "llm_estimated",
+      "verified_url"
+    ],
+    "events": [
+      "verified_url",
+      "verified_url",
+      "verified_url"
+    ],
+    "agents": "llm_estimated",
+    "covariates": "llm_estimated",
+    "notes": "llm_generated"
+  },
+  "verification_summary": {
+    "polling_verified_pct": 14.3,
+    "events_verified_pct": 100.0,
+    "needs_human_review": true
+  }
+}

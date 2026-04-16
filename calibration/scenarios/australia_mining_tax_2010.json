@@ -1,0 +1,79 @@
+{
+  "scenario_name": "australia_mining_tax_2010",
+  "domain": "environmental",
+  "description": "The Rudd government's attempt to implement a Resource Super Profits Tax (2010) led to an intense advertising war by mining conglomerates, ultimately costing the Prime Minister his job.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 62,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 28,
+      "against_pct": 68,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 28,
+      "against_pct": 70,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 29,
+      "against_pct": 70,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Mining industry launches the 'Keep Mining Strong' advertising blitz."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Kevin Rudd replaced by Julia Gillard as Labor party leader."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Compromise 'Minerals Resource Rent Tax' announced, softening the original proposal."
+    }
+  ],
+  "calibration_notes": "Shows the extreme impact of industry-funded public relations campaigns on policy support."
+}

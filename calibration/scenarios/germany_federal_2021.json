@@ -1,0 +1,79 @@
+{
+  "scenario_name": "germany_federal_2021",
+  "domain": "political",
+  "description": "The 2021 German federal election saw the SPD become the largest party, leading to the formation of the 'traffic light' coalition. Olaf Scholz emerged as the leading candidate in the final stretch.",
+  "final_outcome_pro_pct": 25.7,
+  "final_outcome_against_pct": 74.3,
+  "final_turnout_pct": 76.6,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 17,
+      "against_pct": 83,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 16,
+      "against_pct": 84,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 18,
+      "against_pct": 82,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 22,
+      "against_pct": 78,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 24,
+      "against_pct": 76,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 25.7,
+      "against_pct": 74.3,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 4,
+      "description": "Green party candidate stumbles on resume issues."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Olaf Scholz gains trust as the 'status quo' candidate."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Conservative party (CDU) fails to maintain base momentum."
+    }
+  ],
+  "calibration_notes": "Good for modeling parliamentary multi-party systems where the winning threshold is well below 50%."
+}

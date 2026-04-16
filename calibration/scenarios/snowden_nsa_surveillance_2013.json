@@ -1,0 +1,83 @@
+{
+  "scenario_name": "snowden_nsa_surveillance_2013",
+  "domain": "technology",
+  "description": "Edward Snowden leaks classified information in June 2013 revealing mass surveillance programs like PRISM. The public reaction shifted from initial support for national security measures toward concerns over digital privacy and government overreach.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 43,
+      "against_pct": 54,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 56,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 42,
+      "against_pct": 57,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "The Guardian releases first documents on PRISM"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Snowden identified as the source of the leaks"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Obama defends NSA programs in press conference"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "US federal judge rules NSA phone metadata program likely unconstitutional"
+    }
+  ],
+  "calibration_notes": "Measures the erosion of institutional trust following a massive privacy-centric whistleblower event."
+}

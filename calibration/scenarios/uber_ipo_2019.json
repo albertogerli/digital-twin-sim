@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uber_ipo_2019",
+  "domain": "corporate",
+  "description": "Uber's 2019 IPO was one of the most anticipated and controversial tech offerings in history, marred by concerns over persistent losses, labor lawsuits, and toxic corporate culture under Travis Kalanick.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 52,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 43,
+      "against_pct": 53,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 46,
+      "against_pct": 54,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Scandals surrounding culture leak to media."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Financial reports reveal $1B quarterly loss."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "IPO pricing falls below initial targeted range."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Disappointing first-day market performance."
+    }
+  ],
+  "calibration_notes": "Captures the interaction between corporate governance failures and public investor trust."
+}

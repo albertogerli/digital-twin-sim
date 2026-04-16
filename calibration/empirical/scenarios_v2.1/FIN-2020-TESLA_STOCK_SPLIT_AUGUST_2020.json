@@ -1,0 +1,257 @@
+{
+  "id": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020",
+  "domain": "financial",
+  "title": "Investor sentiment dynamics surrounding the Tesla 5-for-1 stock split in August 2020",
+  "country": "US",
+  "date_start": "2020-07-01",
+  "date_end": "2020-09-30",
+  "n_rounds": 7,
+  "round_duration_days": 13,
+  "ground_truth_outcome": {
+    "pro_pct": 72.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2020-07-01",
+      "pro_pct": 64.0,
+      "against_pct": 20.0,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Pre-announcement baseline sentiment.",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2020-07-14",
+      "pro_pct": 65.5,
+      "against_pct": 19.5,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Market anticipation of Q2 earnings.",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2020-07-27",
+      "pro_pct": 68.0,
+      "against_pct": 18.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Post-earnings momentum.",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2020-08-09",
+      "pro_pct": 70.0,
+      "against_pct": 17.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Reaction to August 11 stock split announcement.",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2020-08-22",
+      "pro_pct": 72.5,
+      "against_pct": 16.5,
+      "undecided_pct": 11.0,
+      "sample_size": null,
+      "source": "Estimated: Retail investor hype leading to split date.",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2020-09-04",
+      "pro_pct": 71.0,
+      "against_pct": 18.0,
+      "undecided_pct": 11.0,
+      "sample_size": null,
+      "source": "Estimated: Post-split profit taking.",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2020-09-17",
+      "pro_pct": 72.0,
+      "against_pct": 17.5,
+      "undecided_pct": 10.5,
+      "sample_size": null,
+      "source": "Estimated: Stabilization of sentiment.",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Tesla officially announced a 5-for-1 stock split in the form of a stock dividend to make shares more accessible to employees and retail investors.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "The record date was reached, establishing which shareholders were entitled to receive four additional shares for every one share held.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "The distribution date occurred, with the additional shares being issued to shareholders after the close of trading.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "Tesla stock began trading on a split-adjusted basis, significantly lowering the per-share price for market participants.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Zachary Kirkhorn",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "CFO of Tesla"
+    },
+    {
+      "name": "Retail Investors",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.7,
+      "description": "High-frequency traders and individual Tesla enthusiasts."
+    },
+    {
+      "name": "Institutional Short Sellers",
+      "type": "institutional",
+      "initial_position": -0.8,
+      "influence": 0.6,
+      "description": "Hedge funds betting against Tesla valuation."
+    },
+    {
+      "name": "Passive Index Funds",
+      "type": "institutional",
+      "initial_position": 0.1,
+      "influence": 0.4,
+      "description": "Large funds forced to rebalance based on index inclusion."
+    },
+    {
+      "name": "Tech Enthusiasts",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.3,
+      "description": "Social media users promoting Tesla's long-term vision."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.662,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.65,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side is defined as investors holding a bullish sentiment toward Tesla stock (expecting growth/value). Against-side is defined as investors holding a bearish sentiment (expecting decline/overvaluation). Data is estimated based on market trends and news sentiment analysis during the Q3 2020 period.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 55,
+    "n_grounded_agents": 1,
+    "n_grounded_events": 4
+  },
+  "market_observations": {
+    "primary_ticker": "TSLA",
+    "primary_sector": "automotive",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": 33.71,
+        "volume_ratio": 1.28
+      },
+      {
+        "round": 2,
+        "return_pct": -6.58,
+        "volume_ratio": 1.08
+      },
+      {
+        "round": 3,
+        "return_pct": -5.644,
+        "volume_ratio": 0.62
+      },
+      {
+        "round": 4,
+        "return_pct": 41.114,
+        "volume_ratio": 1.02
+      },
+      {
+        "round": 5,
+        "return_pct": -0.731,
+        "volume_ratio": 1.17
+      },
+      {
+        "round": 6,
+        "return_pct": 5.603,
+        "volume_ratio": 1.11
+      },
+      {
+        "round": 7,
+        "return_pct": -1.03,
+        "volume_ratio": 0.99
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": 1.391,
+        "volume_ratio": 1.04
+      },
+      {
+        "round": 2,
+        "return_pct": 0.615,
+        "volume_ratio": 0.98
+      },
+      {
+        "round": 3,
+        "return_pct": 3.512,
+        "volume_ratio": 0.77
+      },
+      {
+        "round": 4,
+        "return_pct": 1.468,
+        "volume_ratio": 0.7
+      },
+      {
+        "round": 5,
+        "return_pct": 1.741,
+        "volume_ratio": 0.92
+      },
+      {
+        "round": 6,
+        "return_pct": -1.095,
+        "volume_ratio": 1.28
+      },
+      {
+        "round": 7,
+        "return_pct": -0.637,
+        "volume_ratio": 1.13
+      }
+    ],
+    "cumulative_return_pct": 72.559,
+    "benchmark_return_pct": 7.132,
+    "excess_return_pct": 65.426,
+    "volatility_realized": 96.1363,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

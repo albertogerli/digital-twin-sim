@@ -1,0 +1,79 @@
+{
+  "scenario_name": "mi_ca_regulation_eu_2023",
+  "domain": "technology",
+  "description": "The EU's Markets in Crypto-Assets (MiCA) regulation set the first comprehensive legal framework for crypto, passing in 2023 to harmonize rules across member states and provide consumer protection.",
+  "final_outcome_pro_pct": 75.0,
+  "final_outcome_against_pct": 25.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 25,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 22,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 22,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 23,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 72,
+      "against_pct": 24,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 73,
+      "against_pct": 25,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 74,
+      "against_pct": 26,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 75,
+      "against_pct": 25,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "European Parliament votes overwhelmingly in favor of MiCA."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "ESMA begins drafting technical standards for implementation."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Industry giants announce compliance readiness in Europe."
+    }
+  ],
+  "calibration_notes": "Monitors the success of institutional, multi-national standard setting."
+}

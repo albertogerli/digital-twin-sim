@@ -1,0 +1,79 @@
+{
+  "scenario_name": "iceland_banking_collapse_referendum_2010",
+  "domain": "financial",
+  "description": "The Icesave dispute led to two referendums in Iceland (2010 and 2011) regarding the repayment of foreign depositors. Voters overwhelmingly rejected government guarantees for the debts of failed private banks (Landsbanki).",
+  "final_outcome_pro_pct": 2.0,
+  "final_outcome_against_pct": 98.0,
+  "final_turnout_pct": 93.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 70,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 12,
+      "against_pct": 75,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 10,
+      "against_pct": 80,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 8,
+      "against_pct": 85,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 6,
+      "against_pct": 90,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 5,
+      "against_pct": 93,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 4,
+      "against_pct": 95,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 3,
+      "against_pct": 97,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 2,
+      "against_pct": 98,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "President Olafur Grimsson refuses to sign the Icesave bill."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "International rating agencies warn of severe consequences for a 'No' vote."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Referendum day sees massive turnout against the bail-in terms."
+    }
+  ],
+  "calibration_notes": "Demonstrates extreme populist backlash against international financial pressure."
+}

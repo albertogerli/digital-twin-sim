@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tesla_model_3_production_ramp_2018",
+  "domain": "commercial",
+  "description": "Tesla faced severe scrutiny in 2018 regarding its ability to mass-produce the Model 3. Concerns over 'production hell' led to divided public and investor opinion.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 42,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 55,
+      "against_pct": 41,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 58,
+      "against_pct": 40,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Musk admits to production bottlenecks."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Tesla builds a massive tent for surge production."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Tesla reaches 5,000 unit weekly goal."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Profitability reports silence most critics."
+    }
+  ],
+  "calibration_notes": "Models a high-stakes scenario where operational execution shifts public opinion from skepticism to support."
+}

@@ -267,37 +267,99 @@ async def generate_agents_multistep(
     cluster_range = guidance.get("cluster_count_range", (5, 8))
 
     # ── Step 3b: Elite Agents ──────────────────────────────────────────────
-    if progress_callback:
-        await progress_callback("round_phase", {
-            "phase": "agent_generation", "message": "Generating elite agents..."
-        })
+    # Try Semantic Retriever first (zero LLM cost, wave-based activation)
+    elite_agents = []
+    graph_used = False
+    activation_plan = None
+    try:
+        from stakeholder_graph.db import StakeholderDB
+        from core.orchestrator.retriever import SemanticRetriever
+        db = StakeholderDB()
+        retriever = SemanticRetriever(db)
 
-    elite_result = await llm.generate_json(
-        prompt=ELITE_AGENTS_PROMPT.format(
-            scenario_name=scaffold.get("scenario_name", ""),
-            domain=scaffold.get("domain", ""),
-            neg_label=neg_label,
-            pos_label=pos_label,
-            scenario_context=scaffold.get("scenario_context", "")[:2000],
-            initial_event=scaffold.get("initial_event", "")[:500],
-            web_context=web_section[:4000],
-            entity_context=entity_section,
-            seed_context=seed_section,
-            required_archetypes=", ".join(guidance.get("required_archetypes", [])),
-            optional_archetypes=", ".join(guidance.get("optional_archetypes", [])),
-            distribution_hint=guidance.get("position_distribution_hint", ""),
-            elite_min=elite_range[0],
-            elite_max=elite_range[1],
-        ),
-        temperature=0.5,
-        max_output_tokens=6000,
-        component="agent_gen_elite",
-    )
+        # Extract topic tags from scaffold for richer retrieval
+        llm_topics = None
+        scaffold_context = scaffold.get("scenario_context", "")
+        if scaffold_context:
+            from stakeholder_graph.integration import infer_topic_tags
+            llm_topics = infer_topic_tags(scaffold_context, scaffold.get("domain", ""))
 
-    if isinstance(elite_result, list):
-        elite_result = elite_result[0] if elite_result and isinstance(elite_result[0], dict) else {}
-    elite_agents = elite_result.get("elite_agents", [])
-    logger.info(f"Elite agents generated: {len(elite_agents)}")
+        activation_plan = retriever.retrieve(
+            brief=brief,
+            country="",  # auto-detect from brief
+            max_total=elite_range[1] + 15,  # extra for waves 2-3
+            llm_topics=llm_topics,
+        )
+
+        # Convert all wave agents to agent spec format
+        all_wave_agents = []
+        for wave in activation_plan.all_waves:
+            for score in wave:
+                stakeholder = db.get(score.stakeholder_id)
+                if stakeholder:
+                    spec = stakeholder.to_agent_spec()
+                    spec["_activation_tier"] = score.activation_tier
+                    spec["_relevance_score"] = score.total
+                    spec["_activation_reason"] = score.activation_reason
+                    all_wave_agents.append(spec)
+
+        if len(all_wave_agents) >= elite_range[0]:
+            elite_agents = all_wave_agents
+            graph_used = True
+            n_w1 = len(activation_plan.wave_1)
+            n_w2 = len(activation_plan.wave_2)
+            n_w3 = len(activation_plan.wave_3)
+            logger.info(
+                f"Semantic retriever: {len(elite_agents)} agents "
+                f"(wave1={n_w1}, wave2={n_w2}, wave3={n_w3})"
+            )
+            if progress_callback:
+                await progress_callback("round_phase", {
+                    "phase": "agent_generation",
+                    "message": f"Orchestrator: {n_w1} immediate + {n_w2} secondary + {n_w3} tertiary agents",
+                })
+        else:
+            logger.info(f"Semantic retriever: only {len(all_wave_agents)} agents, falling back to LLM")
+            activation_plan = None
+    except ImportError:
+        logger.debug("orchestrator not available — using LLM generation")
+    except Exception as e:
+        logger.warning(f"Semantic retriever failed: {e}")
+        activation_plan = None
+
+    # Fall back to LLM generation if graph didn't provide enough
+    if not graph_used:
+        if progress_callback:
+            await progress_callback("round_phase", {
+                "phase": "agent_generation", "message": "Generating elite agents..."
+            })
+
+        elite_result = await llm.generate_json(
+            prompt=ELITE_AGENTS_PROMPT.format(
+                scenario_name=scaffold.get("scenario_name", ""),
+                domain=scaffold.get("domain", ""),
+                neg_label=neg_label,
+                pos_label=pos_label,
+                scenario_context=scaffold.get("scenario_context", "")[:2000],
+                initial_event=scaffold.get("initial_event", "")[:500],
+                web_context=web_section[:4000],
+                entity_context=entity_section,
+                seed_context=seed_section,
+                required_archetypes=", ".join(guidance.get("required_archetypes", [])),
+                optional_archetypes=", ".join(guidance.get("optional_archetypes", [])),
+                distribution_hint=guidance.get("position_distribution_hint", ""),
+                elite_min=elite_range[0],
+                elite_max=elite_range[1],
+            ),
+            temperature=0.5,
+            max_output_tokens=6000,
+            component="agent_gen_elite",
+        )
+
+        if isinstance(elite_result, list):
+            elite_result = elite_result[0] if elite_result and isinstance(elite_result[0], dict) else {}
+        elite_agents = elite_result.get("elite_agents", [])
+        logger.info(f"Elite agents from LLM: {len(elite_agents)}")
 
     # Build summary for institutional cross-referencing
     elite_summary = "\n".join(
@@ -372,5 +434,9 @@ async def generate_agents_multistep(
     result["suggested_elite_agents"] = elite_agents
     result["suggested_institutional_agents"] = inst_agents
     result["suggested_citizen_clusters"] = clusters
+
+    # Pass activation plan through for engine integration
+    if activation_plan:
+        result["_activation_plan"] = activation_plan
 
     return result

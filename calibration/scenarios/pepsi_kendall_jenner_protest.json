@@ -1,0 +1,83 @@
+{
+  "scenario_name": "pepsi_kendall_jenner_protest",
+  "domain": "marketing",
+  "description": "Pepsi's 2017 'Live for Now' ad featuring Kendall Jenner was widely criticized for co-opting imagery from the Black Lives Matter movement, leading to a swift retraction.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 18,
+      "against_pct": 80,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 17,
+      "against_pct": 81,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 16,
+      "against_pct": 82,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 83,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ad release triggers immediate social media backlash regarding tone-deafness."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Mainstream news outlets and activists categorize the ad as trivializing social justice."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Pepsi officially pulls the advertisement and issues a formal apology."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "The campaign is cited in academic studies as a failure of 'woke-washing'."
+    }
+  ],
+  "calibration_notes": "Tracks speed of sentiment collapse in response to social controversy."
+}

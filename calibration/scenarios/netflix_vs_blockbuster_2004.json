@@ -1,0 +1,79 @@
+{
+  "scenario_name": "netflix_vs_blockbuster_2004",
+  "domain": "commercial",
+  "description": "The transition of the video rental market from physical stores to subscription-based DVD-by-mail. Blockbuster attempted a late pivot to online services, but consumer sentiment leaned heavily toward Netflix's innovative model.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 70,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 28,
+      "against_pct": 60,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 39,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Netflix eliminates late fees, drawing massive consumer goodwill."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Blockbuster Online launches to compete directly."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Market penetration of high-speed internet reaches critical mass."
+    }
+  ],
+  "calibration_notes": "Useful for mapping the tipping point where a legacy service model is seen as obsolete by the mainstream."
+}

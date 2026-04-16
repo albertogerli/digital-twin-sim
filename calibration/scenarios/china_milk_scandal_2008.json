@@ -1,0 +1,83 @@
+{
+  "scenario_name": "china_milk_scandal_2008",
+  "domain": "public_health",
+  "description": "In 2008, nearly 300,000 infants in China were sickened by milk powder tainted with melamine, resulting in several deaths. The event caused a collapse in trust for domestic dairy brands and led to a massive government crackdown on food production standards.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 15,
+      "against_pct": 75,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 12,
+      "against_pct": 82,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 14,
+      "against_pct": 83,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 13,
+      "against_pct": 85,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 14,
+      "against_pct": 86,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Sanlu Group recalls tainted formula after initial denial."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Official government admission of systemic melamine contamination."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Public protests against dairy conglomerates erupt."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Execution of individuals responsible for adulteration."
+    }
+  ],
+  "calibration_notes": "Models extreme erosion of public trust in corporate/government oversight when high-severity safety failures occur."
+}

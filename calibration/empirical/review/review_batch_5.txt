@@ -1,0 +1,252 @@
+ISTRUZIONI PER IL REVIEWER: per ogni scenario, verifica:
+1. Ground truth outcome: il numero è corretto? La fonte esiste?
+2. Polling trajectory: i trend sono coerenti con dati pubblici noti?
+3. Events: le date sono corrette? Mancano eventi critici?
+4. Agents: i key stakeholder sono quelli giusti? Posizioni iniziali plausibili?
+5. Shock magnitudes: le scale sono ragionevoli?
+Rispondi con: PASS / CORRECTIONS [dettaglio] / REJECT [motivo]
+
+BATCH 5 — 5 scenarios: CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG, ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER, FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI, TECH-2020-TIKTOK_US_BAN_DEBATE_2020, COM-2019-TESLA_CYBERTRUCK_REVEAL_REACTI
+======================================================================
+
+----------------------------------------------------------------------
+SCENARIO: CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG
+Domain: corporate | Country: US
+Period: 2017-04-01 -> 2017-06-30 | Rounds: 6
+
+OUTCOME: 28.0% pro | Source: NEEDS_VERIFICATION
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2017-04-01]: 36.0% vs 20.0% undec 44.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Pre-incident baseline from Morning Consult historical data
+  R2 [2017-04-16]: 28.0% vs 52.0% undec 20.0% (n=2200) [VERIFIED URL]
+     src: https://morningconsult.com/2017/04/12/united-airlines-favorability-drops-following-passenger-removal
+  R3 [2017-05-01]: 30.0% vs 48.0% undec 22.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Slight recovery following CEO apology and policy changes
+  R4 [2017-05-16]: 31.5% vs 45.0% undec 23.5% (n=?) [LLM ESTIMATED]
+     src: Estimated: Gradual normalization of brand sentiment
+  R5 [2017-05-31]: 32.0% vs 42.0% undec 26.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Market stabilization
+  R6 [2017-06-15]: 32.5% vs 40.0% undec 27.5% (n=?) [LLM ESTIMATED]
+     src: Estimated: Long-term post-crisis sentiment
+
+KEY EVENTS:
+  R2 [2017-04-09]: Video of David Dao being forcibly dragged off United Flight 3411 goes viral
+     shock: 0.9 x -1.0 | https://www.nytimes.com/2017/04/10/business/united-airlines-passenger-dragged.ht [VERIFIED URL]
+  R2 [2017-04-11]: CEO Oscar Munoz issues a second, more contrite public apology after initial backlash
+     shock: 0.4 x +0.5 | https://www.reuters.com/article/us-united-airlines-passenger-idUSKBN17D16Y [VERIFIED URL]
+  R3 [2017-04-27]: United Airlines reaches an undisclosed settlement with David Dao
+     shock: 0.3 x +0.3 | https://www.bbc.com/news/business-39733475 [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Oscar Munoz (elite): pos=+1.0 inf=0.90
+  David Dao (citizen_cluster): pos=-1.0 inf=0.80
+  Social Media Activists (citizen_cluster): pos=-0.9 inf=0.70
+  US Department of Transportation (institutional): pos=+0.0 inf=0.60
+  Frequent Flyer Community (citizen_cluster): pos=+0.2 inf=0.50
+
+COVARIATES:
+  polarization=0.835, event_vol=0.85, elite_conc=0.7, trust=0.4, undecided=0.44
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 16.7% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as favorable view of United Airlines brand. Against-side is defined as unfavorable view. Data reflects a sharp drop in sentiment following the viral video event, followed by a slow
+
+----------------------------------------------------------------------
+SCENARIO: ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER
+Domain: energy | Country: JP
+Period: 2012-06-01 -> 2013-07-08 | Rounds: 6
+
+OUTCOME: 35.0% pro | Source: https://www.japantimes.co.jp/news/2013/07/15/national/poll-shows-most-oppose-nuclear-restarts/
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2012-06-01]: 28.0% vs 60.0% undec 12.0% (n=1500) [LLM ESTIMATED]
+     src: Estimated: Based on Asahi Shimbun June 2012 polling trends post-Ohi restart announcement
+  R2 [2012-08-07]: 30.0% vs 58.0% undec 12.0% (n=1200) [LLM ESTIMATED]
+     src: Estimated: NHK polling data following Ohi reactor restart
+  R3 [2012-10-13]: 32.0% vs 55.0% undec 13.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Interpolated trend between summer and winter 2012
+  R4 [2012-12-19]: 31.0% vs 56.0% undec 13.0% (n=1800) [LLM ESTIMATED]
+     src: Estimated: Post-general election sentiment shift
+  R5 [2013-02-24]: 33.0% vs 54.0% undec 13.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Gradual stabilization of energy policy discourse
+  R6 [2013-05-02]: 35.0% vs 52.0% undec 13.0% (n=2000) [VERIFIED URL]
+     src: https://www.japantimes.co.jp/news/2013/07/15/national/poll-shows-most-oppose-nuclear-restarts/
+
+KEY EVENTS:
+  R1 [2012-06-16]: Prime Minister Yoshihiko Noda announces the restart of Ohi nuclear reactors 3 and 4.
+     shock: 0.6 x +0.4 | https://www.reuters.com/article/us-japan-nuclear-noda-idUSBRE85F01H20120616 [VERIFIED URL]
+  R2 [2012-07-01]: Ohi reactor 3 becomes the first to restart since the Fukushima disaster.
+     shock: 0.8 x +0.5 | https://www.bbc.com/news/world-asia-18661623 [VERIFIED URL]
+  R4 [2012-12-16]: LDP wins landslide victory in general election, signaling a shift toward pro-restart polic
+     shock: 0.7 x +0.3 | https://www.nytimes.com/2012/12/17/world/asia/abe-wins-landslide-victory-in-japa [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Liberal Democratic Party (LDP) (elite): pos=+0.8 inf=0.90
+  METI (Ministry of Economy, Trade and Industry) (institutional): pos=+0.9 inf=0.80
+  Nuclear Regulation Authority (NRA) (institutional): pos=+0.0 inf=0.70
+  Democratic Party of Japan (DPJ) (elite): pos=+0.2 inf=0.60
+  Anti-Nuclear Protest Movement (citizen_cluster): pos=-0.9 inf=0.50
+
+COVARIATES:
+  polarization=0.693, event_vol=0.65, elite_conc=0.8, trust=0.3, undecided=0.13
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 16.7% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as respondents who support the restart of nuclear power plants. Against-side is defined as respondents who oppose the restart. Data quality: Early rounds are estimated based on his
+
+----------------------------------------------------------------------
+SCENARIO: FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI
+Domain: financial | Country: US
+Period: 2023-02-01 -> 2023-04-30 | Rounds: 6
+
+OUTCOME: 38.0% pro | Source: NEEDS_VERIFICATION
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2023-02-01]: 48.0% vs 35.0% undec 17.0% (n=1011) [LLM ESTIMATED]
+     src: Estimated: Based on historical Gallup trends prior to the March 2023 crisis.
+  R2 [2023-02-15]: 47.5% vs 35.5% undec 17.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Linear interpolation between pre-crisis levels.
+  R3 [2023-03-01]: 47.0% vs 36.0% undec 17.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Stable period before SVB liquidity issues surfaced.
+  R4 [2023-03-15]: 40.0% vs 45.0% undec 15.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Immediate market reaction to SVB failure.
+  R5 [2023-03-29]: 38.5% vs 48.0% undec 13.5% (n=?) [LLM ESTIMATED]
+     src: Estimated: Continued volatility following Signature Bank and Credit Suisse concerns.
+  R6 [2023-04-12]: 38.0% vs 49.0% undec 13.0% (n=1013) [VERIFIED URL]
+     src: Gallup: https://news.gallup.com/poll/504552/public-confidence-banking-system-remains-low.aspx
+
+KEY EVENTS:
+  R4 [2023-03-10]: Silicon Valley Bank is closed by California regulators.
+     shock: 0.8 x -1.0 | https://www.reuters.com/business/finance/us-regulators-close-silicon-valley-bank [VERIFIED URL]
+  R4 [2023-03-12]: Federal Reserve and Treasury announce emergency measures to guarantee deposits.
+     shock: 0.4 x +0.5 | https://www.federalreserve.gov/newsevents/pressreleases/monetary20230312a.htm [VERIFIED URL]
+  R5 [2023-03-19]: UBS agrees to acquire Credit Suisse in a government-brokered deal.
+     shock: 0.6 x -0.7 | https://www.nytimes.com/2023/03/19/business/ubs-credit-suisse-takeover.html [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Federal Reserve (institutional): pos=+0.9 inf=0.95
+  Janet Yellen (elite): pos=+0.8 inf=0.90
+  Wall Street Analysts (elite): pos=+0.5 inf=0.70
+  Mainstream Media (institutional): pos=+0.0 inf=0.60
+  Social Media Influencers (citizen_cluster): pos=-0.6 inf=0.50
+
+COVARIATES:
+  polarization=0.559, event_vol=0.75, elite_conc=0.8, trust=0.5, undecided=0.17
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 16.7% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as having confidence in the stability of the US banking system. Against-side is defined as lacking confidence in the stability of the US banking system. Data for rounds 1-5 are est
+
+----------------------------------------------------------------------
+SCENARIO: TECH-2020-TIKTOK_US_BAN_DEBATE_2020
+Domain: technology | Country: US
+Period: 2020-06-29 -> 2020-09-27 | Rounds: 6
+
+OUTCOME: 60.0% pro | Source: https://www.pewresearch.org/internet/2020/08/26/46-of-us-adults-have-concerns-about-tiktok/
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2020-06-29]: 45.0% vs 30.0% undec 25.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Baseline sentiment prior to Secretary Pompeo's public comments
+  R2 [2020-07-14]: 52.0% vs 28.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Post-Pompeo announcement of potential ban
+  R3 [2020-07-29]: 55.0% vs 25.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Following Trump's executive order threats
+  R4 [2020-08-13]: 58.0% vs 22.0% undec 20.0% (n=2549) [VERIFIED URL]
+     src: https://www.pewresearch.org/internet/2020/08/26/46-of-us-adults-have-concerns-about-tiktok/
+  R5 [2020-08-28]: 60.0% vs 20.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Reflecting peak media coverage of Oracle/Microsoft acquisition bids
+  R6 [2020-09-12]: 60.0% vs 20.0% undec 20.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Stabilization after court injunctions delayed the ban
+
+KEY EVENTS:
+  R1 [2020-07-06]: Secretary of State Mike Pompeo states the US is looking at banning TikTok over data privac
+     shock: 0.6 x +0.5 | https://www.reuters.com/article/us-usa-tiktok-pompeo-idUSKBN24705X [VERIFIED URL]
+  R3 [2020-08-06]: President Trump signs executive order prohibiting transactions with ByteDance after 45 day
+     shock: 0.8 x +0.7 | https://www.nytimes.com/2020/08/06/technology/trump-tiktok-wechat-ban.html [VERIFIED URL]
+  R5 [2020-09-14]: Oracle selected as TikTok's US technology partner, complicating the ban narrative.
+     shock: 0.4 x -0.3 | https://www.bbc.com/news/business-54151745 [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Donald Trump (elite): pos=+1.0 inf=0.90
+  Mike Pompeo (elite): pos=+1.0 inf=0.70
+  ByteDance (institutional): pos=-1.0 inf=0.60
+  Tech Policy Analysts (elite): pos=+0.0 inf=0.50
+  TikTok Creators (citizen_cluster): pos=-0.8 inf=0.40
+
+COVARIATES:
+  polarization=0.852, event_vol=0.7, elite_conc=0.8, trust=0.3, undecided=0.25
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 13/18 (72%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 16.7% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as supporting a ban or strict government restrictions on TikTok; Against-side is defined as opposing a ban or favoring continued operation. Data quality is high for the mid-point (
+
+----------------------------------------------------------------------
+SCENARIO: COM-2019-TESLA_CYBERTRUCK_REVEAL_REACTI
+Domain: commercial | Country: US
+Period: 2019-11-21 -> 2020-02-28 | Rounds: 7
+
+OUTCOME: 62.0% pro | Source: https://morningconsult.com/2019/11/25/teslas-cybertruck-launch-event-dented-brand-perception/
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2019-11-21]: 36.0% vs 48.0% undec 16.0% (n=2200) [VERIFIED URL]
+     src: https://morningconsult.com/2019/11/25/teslas-cybertruck-launch-event-dented-brand-perception/
+  R2 [2019-12-05]: 42.0% vs 40.0% undec 18.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Recovery trend based on social media sentiment analysis following initial shock
+  R3 [2019-12-19]: 48.0% vs 35.0% undec 17.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Normalization of brand perception as novelty settles
+  R4 [2020-01-02]: 52.0% vs 32.0% undec 16.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Continued positive momentum from pre-order volume reports
+  R5 [2020-01-16]: 56.0% vs 29.0% undec 15.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Stabilization of brand sentiment
+  R6 [2020-01-30]: 59.0% vs 27.0% undec 14.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Incremental growth in pro-side sentiment
+  R7 [2020-02-13]: 62.0% vs 25.0% undec 13.0% (n=?) [LLM ESTIMATED]
+     src: Estimated: Final convergence toward long-term brand affinity
+
+KEY EVENTS:
+  R1 [2019-11-21]: Official Cybertruck reveal event featuring broken window demo
+     shock: 0.8 x -0.6 | https://www.bbc.com/news/technology-50513220 [VERIFIED URL]
+  R3 [2019-12-15]: Elon Musk tweets about 200,000 pre-orders, boosting confidence
+     shock: 0.4 x +0.5 | https://www.reuters.com/article/us-tesla-cybertruck/musk-says-tesla-has-received [VERIFIED URL]
+  R6 [2020-02-05]: Tesla stock price surge increases public interest and perceived viability
+     shock: 0.3 x +0.4 | https://www.nytimes.com/2020/02/04/business/tesla-stock.html [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Elon Musk (elite): pos=+1.0 inf=0.90
+  Wall Street Analysts (institutional): pos=-0.2 inf=0.70
+  Mainstream Automotive Media (institutional): pos=-0.4 inf=0.60
+  Tesla Loyalists (citizen_cluster): pos=+0.9 inf=0.50
+  Tech Enthusiasts (citizen_cluster): pos=+0.6 inf=0.40
+
+COVARIATES:
+  polarization=0.595, event_vol=0.8, elite_conc=0.8, trust=0.5, undecided=0.16
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 14/19 (74%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 14.3% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as individuals expressing positive sentiment, purchase intent, or admiration for the Cybertruck design/innovation. Against-side is defined as individuals expressing negative sentim

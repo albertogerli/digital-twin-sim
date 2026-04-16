@@ -1,0 +1,79 @@
+{
+  "scenario_name": "boris_johnson_no_confidence_2022",
+  "domain": "political",
+  "description": "The Conservative Party motion of no confidence in UK Prime Minister Boris Johnson. He won the vote but resigned shortly thereafter.",
+  "final_outcome_pro_pct": 41.0,
+  "final_outcome_against_pct": 59.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 50,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Partygate scandal intensifies."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "1922 Committee triggers leadership vote."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Johnson survives with 211 votes to 148."
+    }
+  ],
+  "calibration_notes": "Reflects the instability of surviving a vote with significant opposition."
+}

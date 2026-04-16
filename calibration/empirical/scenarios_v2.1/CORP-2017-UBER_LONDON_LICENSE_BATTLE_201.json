@@ -1,0 +1,331 @@
+{
+  "id": "CORP-2017-UBER_LONDON_LICENSE_BATTLE_201",
+  "domain": "corporate",
+  "title": "Public and Regulatory Conflict over Uber's Operating License in London 2017-2019",
+  "country": "GB",
+  "date_start": "2017-09-22",
+  "date_end": "2019-09-24",
+  "n_rounds": 9,
+  "round_duration_days": 81,
+  "ground_truth_outcome": {
+    "pro_pct": 65.0,
+    "source": "https://yougov.co.uk/topics/transport/articles-reports/2017/09/25/majority-londoners-support-uber",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2017-09-22",
+      "pro_pct": 65.0,
+      "against_pct": 25.0,
+      "undecided_pct": 10.0,
+      "sample_size": 1600,
+      "source": "https://yougov.co.uk/topics/transport/articles-reports/2017/09/25/majority-londoners-support-uber",
+      "pollster": "YouGov"
+    },
+    {
+      "round": 2,
+      "date": "2017-12-12",
+      "pro_pct": 62.0,
+      "against_pct": 28.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Based on cooling of initial public outcry after Uber's appeal",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2018-03-03",
+      "pro_pct": 60.0,
+      "against_pct": 30.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Trend reflecting ongoing legal uncertainty",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2018-05-23",
+      "pro_pct": 58.0,
+      "against_pct": 32.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Reflecting pressure from black cab union litigation",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2018-08-12",
+      "pro_pct": 60.0,
+      "against_pct": 30.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Slight recovery following temporary license grant",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2018-11-01",
+      "pro_pct": 61.0,
+      "against_pct": 29.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Stability in public sentiment",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2019-01-21",
+      "pro_pct": 62.0,
+      "against_pct": 28.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Normalization of service usage",
+      "pollster": null
+    },
+    {
+      "round": 8,
+      "date": "2019-04-12",
+      "pro_pct": 63.0,
+      "against_pct": 27.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Continued public reliance on platform",
+      "pollster": null
+    },
+    {
+      "round": 9,
+      "date": "2019-07-02",
+      "pro_pct": 65.0,
+      "against_pct": 25.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Convergence toward baseline support levels",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Transport for London (TfL) announced it would not renew Uber's private hire operator license, citing a lack of corporate responsibility regarding public safety.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "Over 500,000 people signed an online petition calling for the decision to ban Uber from London to be overturned.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "Uber's newly appointed CEO, Dara Khosrowshahi, issued a public apology for the company's past mistakes and committed to changing the business culture.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "Uber's CEO met with the TfL commissioner to initiate discussions regarding the license renewal and address regulatory concerns.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 8,
+      "description": "A London judge granted Uber a probationary 15-month license, overturning the initial ban while imposing strict oversight conditions.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Sadiq Khan",
+      "initial_position": 0.2,
+      "influence": 0.95,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Mayor of London"
+    },
+    {
+      "type": "elite",
+      "name": "Tom Elvidge",
+      "initial_position": 1.0,
+      "influence": 0.8,
+      "rigidity": 0.7,
+      "_grounded": true,
+      "_stake": "affected_party",
+      "_role": "General Manager of Uber London"
+    },
+    {
+      "type": "elite",
+      "name": "Mike Brown",
+      "initial_position": -0.8,
+      "influence": 0.85,
+      "rigidity": 0.8,
+      "_grounded": true,
+      "_stake": "regulator",
+      "_role": "Commissioner of Transport for London (TfL)"
+    },
+    {
+      "name": "Transport for London (TfL)",
+      "type": "institutional",
+      "initial_position": -0.8,
+      "influence": 0.9,
+      "description": "Regulatory body responsible for transport licensing in London"
+    },
+    {
+      "name": "Uber UK",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "The corporate entity seeking to maintain market access"
+    },
+    {
+      "name": "London Black Cab Drivers",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.5,
+      "description": "Traditional taxi drivers opposing Uber's market entry"
+    },
+    {
+      "name": "London Commuters",
+      "type": "citizen_cluster",
+      "initial_position": 0.7,
+      "influence": 0.4,
+      "description": "General public relying on Uber for affordable transport"
+    },
+    {
+      "name": "UK Government",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.6,
+      "description": "Central government balancing economic growth and regulation"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.788,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.1
+  },
+  "notes": "Pro-side: Individuals who support Uber retaining its license to operate in London. Against-side: Individuals who support the revocation of Uber's license. Data quality: Early rounds are based on high-quality YouGov polling; later rounds are interpolated estimates based on the trajectory of regulatory decisions.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 58,
+    "n_grounded_agents": 3,
+    "n_grounded_events": 5
+  },
+  "market_observations": {
+    "primary_ticker": "^GSPC",
+    "primary_sector": "tech",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": 6.305,
+        "volume_ratio": 0.94
+      },
+      {
+        "round": 2,
+        "return_pct": 1.019,
+        "volume_ratio": 1.05
+      },
+      {
+        "round": 3,
+        "return_pct": 1.233,
+        "volume_ratio": 0.97
+      },
+      {
+        "round": 4,
+        "return_pct": 3.658,
+        "volume_ratio": 0.95
+      },
+      {
+        "round": 5,
+        "return_pct": -4.29,
+        "volume_ratio": 0.98
+      },
+      {
+        "round": 6,
+        "return_pct": -2.542,
+        "volume_ratio": 1.14
+      },
+      {
+        "round": 7,
+        "return_pct": 8.148,
+        "volume_ratio": 1.03
+      },
+      {
+        "round": 8,
+        "return_pct": 1.958,
+        "volume_ratio": 0.98
+      },
+      {
+        "round": 9,
+        "return_pct": 0.641,
+        "volume_ratio": 0.99
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": 6.763,
+        "volume_ratio": 0.78
+      },
+      {
+        "round": 2,
+        "return_pct": 1.378,
+        "volume_ratio": 1.35
+      },
+      {
+        "round": 3,
+        "return_pct": 1.718,
+        "volume_ratio": 1.08
+      },
+      {
+        "round": 4,
+        "return_pct": 4.05,
+        "volume_ratio": 0.79
+      },
+      {
+        "round": 5,
+        "return_pct": -3.992,
+        "volume_ratio": 1.07
+      },
+      {
+        "round": 6,
+        "return_pct": -2.009,
+        "volume_ratio": 1.44
+      },
+      {
+        "round": 7,
+        "return_pct": 8.639,
+        "volume_ratio": 0.89
+      },
+      {
+        "round": 8,
+        "return_pct": 2.391,
+        "volume_ratio": 0.85
+      },
+      {
+        "round": 9,
+        "return_pct": 1.089,
+        "volume_ratio": 0.82
+      }
+    ],
+    "cumulative_return_pct": 16.646,
+    "benchmark_return_pct": 21.185,
+    "excess_return_pct": -4.539,
+    "volatility_realized": 7.8247,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "id": "PH-2021-COVID_VAX_IT",
+  "domain": "public_health",
+  "title": "COVID-19 vaccine acceptance trajectory in Italy (Dec 2020 \u2013 Jun 2021)",
+  "country": "IT",
+  "date_start": "2020-12-21",
+  "date_end": "2021-06-30",
+  "n_rounds": 7,
+  "round_duration_days": 28,
+  "ground_truth_outcome": {
+    "pro_pct": 80.0,
+    "source": "https://ourworldindata.org/covid-vaccinations \u2014 Italy: 54% with at least one dose by June 30, 2021; IPSOS Global Attitudes June 2021: ~80% willing",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2020-12-31",
+      "pro_pct": 67.0,
+      "against_pct": 20.0,
+      "undecided_pct": 13.0,
+      "sample_size": 1000,
+      "source": "IPSOS Global Attitudes on COVID-19 Vaccines, December 2020",
+      "pollster": "IPSOS / World Economic Forum"
+    },
+    {
+      "round": 2,
+      "date": "2021-01-31",
+      "pro_pct": 64.0,
+      "against_pct": 22.0,
+      "undecided_pct": 14.0,
+      "sample_size": 1000,
+      "source": "IPSOS Global Attitudes, January 2021 \u2014 Italy dipped due to slow rollout concerns",
+      "pollster": "IPSOS / World Economic Forum"
+    },
+    {
+      "round": 3,
+      "date": "2021-02-28",
+      "pro_pct": 62.0,
+      "against_pct": 23.0,
+      "undecided_pct": 15.0,
+      "sample_size": 1000,
+      "source": "IPSOS Global Attitudes, February 2021 \u2014 AstraZeneca concerns emerging",
+      "pollster": "IPSOS / World Economic Forum"
+    },
+    {
+      "round": 4,
+      "date": "2021-03-31",
+      "pro_pct": 58.0,
+      "against_pct": 27.0,
+      "undecided_pct": 15.0,
+      "sample_size": 1000,
+      "source": "IPSOS Global Attitudes, March 2021 \u2014 AstraZeneca suspended March 15, lifted March 18; lowest point",
+      "pollster": "IPSOS / World Economic Forum"
+    },
+    {
+      "round": 5,
+      "date": "2021-04-30",
+      "pro_pct": 68.0,
+      "against_pct": 20.0,
+      "undecided_pct": 12.0,
+      "sample_size": 1000,
+      "source": "IPSOS Global Attitudes, April 2021 \u2014 recovery after Draghi vaccine mandate for healthcare workers",
+      "pollster": "IPSOS / World Economic Forum"
+    },
+    {
+      "round": 6,
+      "date": "2021-05-31",
+      "pro_pct": 74.0,
+      "against_pct": 16.0,
+      "undecided_pct": 10.0,
+      "sample_size": 1000,
+      "source": "IPSOS Global Attitudes, May 2021 \u2014 vaccination campaign accelerating, Green Pass announced",
+      "pollster": "IPSOS / World Economic Forum"
+    },
+    {
+      "round": 7,
+      "date": "2021-06-30",
+      "pro_pct": 80.0,
+      "against_pct": 13.0,
+      "undecided_pct": 7.0,
+      "sample_size": 1000,
+      "source": "IPSOS Global Attitudes, June 2021; Eurobarometer 494 (April\u2013May) Italy ~78-80%",
+      "pollster": "IPSOS / Eurobarometer"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Italy officially launched its national COVID-19 vaccination campaign in coordination with other European Union member states.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "The European Medicines Agency (EMA) granted authorization for the Moderna COVID-19 vaccine, expanding the available supply.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "Pfizer-BioNTech announced delivery delays to Italy, causing a temporary slowdown in the national vaccination rate due to limited stock.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "The first shipment of the AstraZeneca vaccine arrived in Italy, providing a new supply source for the vaccination campaign.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "General Francesco Paolo Figliuolo was appointed as the new Special Commissioner for the COVID-19 emergency to oversee the acceleration of the vaccination campaign.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Francesco Paolo Figliuolo",
+      "initial_position": 1.0,
+      "influence": 0.95,
+      "rigidity": 0.8,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Extraordinary Commissioner for the COVID-19 Emergency"
+    },
+    {
+      "type": "elite",
+      "name": "Mario Draghi",
+      "initial_position": 0.9,
+      "influence": 0.95,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Prime Minister of Italy"
+    },
+    {
+      "type": "elite",
+      "name": "Domenico Arcuri",
+      "initial_position": 0.7,
+      "influence": 0.5,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Former Extraordinary Commissioner for the COVID-19 Emergency"
+    },
+    {
+      "name": "ISS (Istituto Superiore di Sanit\u00e0)",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "National health institute \u2014 provided scientific guidance"
+    },
+    {
+      "name": "AIFA",
+      "type": "institutional",
+      "initial_position": 0.7,
+      "influence": 0.7,
+      "description": "Drug regulator \u2014 suspended/resumed AstraZeneca"
+    },
+    {
+      "name": "RAI / mainstream media",
+      "type": "institutional",
+      "initial_position": 0.6,
+      "influence": 0.7,
+      "description": "Public broadcaster and mainstream media \u2014 pro-vaccination messaging"
+    },
+    {
+      "name": "Healthcare workers",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "First vaccinated group; high acceptance but some resistance"
+    },
+    {
+      "name": "Elderly (65+)",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.3,
+      "description": "Priority group; high acceptance driven by mortality risk"
+    },
+    {
+      "name": "Young adults (18-30)",
+      "type": "citizen_cluster",
+      "initial_position": 0.1,
+      "influence": 0.25,
+      "description": "Higher hesitancy, lower perceived risk; influenced by social media"
+    },
+    {
+      "name": "No-vax / vaccine hesitant",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.2,
+      "description": "~15-20% of population; active on social media, Telegram groups"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.52,
+    "event_volatility": 0.15,
+    "elite_concentration": 0.3,
+    "institutional_trust": 0.42,
+    "undecided_share": 0.13
+  },
+  "notes": "Pro = willing to get vaccinated, Against = vaccine hesitant/refuser. Polling data from IPSOS Global Advisor monthly tracker for Italy. The AstraZeneca suspension (round 4) caused the sharpest dip. Recovery was driven by Draghi's institutional authority, accelerating supply, and the Green Pass incentive structure. Italy reached ~80% full vaccination among adults by late 2021.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 72,
+    "n_grounded_agents": 3,
+    "n_grounded_events": 5
+  }
+}

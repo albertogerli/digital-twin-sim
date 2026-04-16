@@ -525,16 +525,40 @@ def build_round_data(scenario: str, round_num: int, conn: sqlite3.Connection,
                      checkpoint: dict, prev_checkpoint: dict | None,
                      name_map: dict, timeline_label: str,
                      event_data: dict | None = None) -> dict:
+    # Derive shock_direction from agent position shifts between rounds
+    def _infer_shock(ckpt: dict, prev_ckpt: dict | None) -> tuple[float, float]:
+        """Return (shock_magnitude, shock_direction) inferred from agent position delta."""
+        if not prev_ckpt:
+            return 0.3, 0  # first round: no delta available
+        curr_pos = [a["position"] for a in ckpt.get("elite_agents", []) if isinstance(a, dict)]
+        prev_pos = [a["position"] for a in prev_ckpt.get("elite_agents", []) if isinstance(a, dict)]
+        if not curr_pos or not prev_pos or len(curr_pos) != len(prev_pos):
+            return 0.3, 0
+        deltas = [c - p for c, p in zip(curr_pos, prev_pos)]
+        avg_delta = sum(deltas) / len(deltas)
+        magnitude = min(1.0, max(0.1, sum(abs(d) for d in deltas) / len(deltas) * 5))
+        direction = -1 if avg_delta < -0.02 else (1 if avg_delta > 0.02 else 0)
+        # Boost direction signal: use polarization spread
+        spread = max(curr_pos) - min(curr_pos) if curr_pos else 0
+        prev_spread = max(prev_pos) - min(prev_pos) if prev_pos else 0
+        if spread > prev_spread + 0.05:
+            magnitude = min(1.0, magnitude * 1.5)
+            if direction == 0:
+                direction = -1  # widening polarization = market stress
+        return magnitude, direction
+
+    inferred_mag, inferred_dir = _infer_shock(checkpoint, prev_checkpoint)
+
     # Event
     if event_data:
         event_obj = {
             "event": event_data.get("event", event_data.get("description", "")),
-            "shock_magnitude": event_data.get("shock_magnitude", 0.3),
-            "shock_direction": event_data.get("shock_direction", 0),
+            "shock_magnitude": event_data.get("shock_magnitude", inferred_mag),
+            "shock_direction": event_data.get("shock_direction", inferred_dir),
         }
         key_insight = event_data.get("institutional_impact", event_data.get("public_perception", ""))
     else:
-        event_obj = {"event": f"Round {round_num} dynamics continue", "shock_magnitude": 0.3, "shock_direction": 0}
+        event_obj = {"event": f"Round {round_num} dynamics continue", "shock_magnitude": inferred_mag, "shock_direction": inferred_dir}
         key_insight = ""
 
     # Posts from DB
@@ -823,6 +847,19 @@ def export_scenario(scenario: str, outputs_dir: str, export_dir: str):
         dest = os.path.join(scenario_dir, "report.md")
         shutil.copy2(report_path, dest)
         print(f"  Written: report.md")
+
+    # Financial impact (backend-simulated) — frontend bridge
+    fin_src = os.path.join(outputs_dir, f"{scenario}_financial_impact.json")
+    if os.path.exists(fin_src):
+        import shutil
+        fin_dest = os.path.join(scenario_dir, "financial_impact.json")
+        shutil.copy2(fin_src, fin_dest)
+        with open(fin_src) as fh:
+            fin_payload = json.load(fh)
+        n_rounds = len(fin_payload.get("rounds", []))
+        print(f"  Written: financial_impact.json ({n_rounds} rounds, backend-simulated)")
+    else:
+        print(f"  [skipped] {scenario}_financial_impact.json not found — frontend will fall back")
 
     conn.close()
     print(f"[{scenario}] Export complete! → {scenario_dir}")

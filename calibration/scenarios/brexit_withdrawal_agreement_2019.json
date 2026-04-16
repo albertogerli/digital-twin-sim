@@ -1,0 +1,83 @@
+{
+  "scenario_name": "brexit_withdrawal_agreement_2019",
+  "domain": "political",
+  "description": "Public opinion in the UK regarding Theresa May's Withdrawal Agreement with the EU in early 2019. The policy faced immense parliamentary deadlock, ultimately leading to May's resignation.",
+  "final_outcome_pro_pct": 32.0,
+  "final_outcome_against_pct": 68.0,
+  "final_turnout_pct": 0.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 25,
+      "against_pct": 45,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 27,
+      "against_pct": 48,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 26,
+      "against_pct": 55,
+      "undecided_pct": 19
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 24,
+      "against_pct": 60,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 22,
+      "against_pct": 65,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 25,
+      "against_pct": 67,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 28,
+      "against_pct": 66,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 30,
+      "against_pct": 67,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 32,
+      "against_pct": 68,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "May survives initial no-confidence vote."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Parliament rejects the deal by a record 230-vote margin."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Brussels refuses to reopen the backstop negotiations."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Theresa May announces her resignation as Conservative leader."
+    }
+  ],
+  "calibration_notes": "Useful for calibrating high-stakes policy stagnation and the collapse of public support for compromise."
+}

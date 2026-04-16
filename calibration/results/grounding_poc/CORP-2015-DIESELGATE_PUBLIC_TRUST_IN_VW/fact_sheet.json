@@ -1,0 +1,106 @@
+{
+  "scenario_id": "CORP-2015-DIESELGATE_PUBLIC_TRUST_IN_VW",
+  "topic": "Volkswagen emissions scandal (Dieselgate) \u2014 public trust in VW",
+  "domain": "corporate",
+  "country": "Germany/USA/EU",
+  "timeframe_start": "2014-05-15",
+  "timeframe_end": "2020-01-01",
+  "events": [
+    {
+      "date": "2014-05-15",
+      "description": "Researchers from West Virginia University and the ICCT publish a study revealing that VW diesel vehicles emit nitrogen oxides at levels significantly higher than lab results during real-world driving.",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "cars.com",
+      "confidence": 0.8,
+      "quantitative_detail": "40 times higher"
+    },
+    {
+      "date": "2015-09-18",
+      "description": "The U.S. Environmental Protection Agency (EPA) issues a Notice of Violation to Volkswagen, publicly accusing the company of using 'defeat device' software to bypass emissions standards.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE665efucZqTDrcuu_UyNkw10COMFHTIHGKd7gr_7CQuVAKV4iP3MXvGmT4mFvb3ejPUWhJI6KsUm-FVdrhyr8dmnaJCifevWiI9kyDmK26xUIiHYGertAzc-QOTxcut_NM8iYVdAxjXGJpjD6p0yAMkmw=",
+      "source_name": "wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "482,000 vehicles"
+    },
+    {
+      "date": "2015-09-22",
+      "description": "Volkswagen officially admits that the 'defeat device' software is installed in approximately 11 million vehicles worldwide, confirming the scale of the deception.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFP2UwcQ-Vw4MgW_8NJHVl-RDwaxzmlS0oTxxcnN0yzEKu5yXB_zA8p1a8tDhIL-wgkFXi9-yQsZxi8COp4QfgDXepVWsbR4AIZl5Il7No93bv6h-2hjmS4Ucs16Uvc68WnaiH38sdr5e-DU3q1n5JxMrW2MvkyVuUUTAWxbHWkyOMgbYJqK7-SpykU",
+      "source_name": "wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "11 million vehicles"
+    },
+    {
+      "date": "2015-09-23",
+      "description": "Volkswagen CEO Martin Winterkorn resigns from his position, taking responsibility for the scandal while maintaining he was unaware of the specific wrongdoing.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgMmhM5ZxbgbREXNPMf8nnbzQXF03GDnlleHSUmjRkKjHVSjMtjdK7jzHq4-DVvspFwUNqKebE_HqZBeaI_0sy_ZDizf5WprUj_Rk6nxLNliqjkMZUIVEKJ09sJrfiYqFL9LWV7NU3Etz5hy_gXrZwuaHryg2jrK9V-Xs_pJfCEh8B5f_r_jqj3hqQKyQ_2kl346FLArhRtA==",
+      "source_name": "wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2016-06-28",
+      "description": "Volkswagen reaches a massive settlement with U.S. regulators and vehicle owners, agreeing to pay billions to resolve claims related to the emissions cheating.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "$14.7 billion"
+    },
+    {
+      "date": "2020-01-01",
+      "description": "Total financial impact of the scandal reaches a cumulative peak, reflecting the long-term cost of fines, legal settlements, and vehicle buybacks.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "$33 billion"
+    }
+  ],
+  "polls": [],
+  "stakeholders": [
+    {
+      "name": "Martin Winterkorn",
+      "role": "CEO of Volkswagen AG",
+      "position": "He issued a formal apology for breaking the trust of the public and customers, stating he was deeply sorry for the deception while initially claiming he was unaware of the wrongdoing.",
+      "date": "2015-09-22",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Matthias M\u00fcller",
+      "role": "CEO of Volkswagen AG (Successor)",
+      "position": "He pledged to make Volkswagen a more honest, open, and modern company, emphasizing a cultural shift to regain public trust after the scandal.",
+      "date": "2015-09-25",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Gina McCarthy",
+      "role": "Administrator of the U.S. Environmental Protection Agency (EPA)",
+      "position": "She condemned Volkswagen's actions as a direct threat to public health and a blatant violation of the Clean Air Act, stating the agency would hold the company accountable.",
+      "date": "2015-09-18",
+      "source": "The Guardian"
+    }
+  ],
+  "outcome_description": "While the scandal caused a severe initial collapse in brand reputation and public trust, Volkswagen successfully navigated the crisis through aggressive financial settlements and a strategic pivot toward electric vehicles, allowing the company to recover its market position and consumer standing over time.",
+  "outcome_pro_pct": 65.0,
+  "outcome_source": "YouGov BrandIndex (Long-term recovery tracking)",
+  "key_figures": {
+    "emissions_limit_exceedance": "up to 40 times the legal limit",
+    "affected_vehicles_global": "11 million",
+    "initial_scandal_announcement_date": "September 18, 2015",
+    "total_estimated_financial_cost": "over $30 billion"
+  },
+  "n_sources_consulted": 6,
+  "research_timestamp": "2026-04-01T01:54:06.519059",
+  "quality_score": 68
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "croatian_eu_accession_referendum_2012",
+  "domain": "political",
+  "description": "On January 22, 2012, Croatia held a national referendum on joining the European Union. After years of post-war stabilization and economic reform, the pro-EU coalition successfully convinced the electorate that membership was the primary path to security and prosperity, resulting in a decisive 'Yes' vote.",
+  "final_outcome_pro_pct": 66.7,
+  "final_outcome_against_pct": 33.3,
+  "final_turnout_pct": 43.5,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 37,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 54,
+      "against_pct": 39,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 56,
+      "against_pct": 38,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 62,
+      "against_pct": 34,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 64,
+      "against_pct": 33,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 66,
+      "against_pct": 34,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Accession treaty formally signed with EU leaders in Brussels."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Mainstream political parties form a unified front to campaign for 'Yes'."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Economic data released highlighting projected growth through EU structural funds."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final push by the Catholic Church and government leaders secures support despite low turnout fears."
+    }
+  ],
+  "calibration_notes": "Useful for modeling scenarios where a consensus of political elites successfully pushes a pro-integration agenda in a post-conflict or developing state."
+}

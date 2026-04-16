@@ -1,0 +1,179 @@
+{
+  "id": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL",
+  "domain": "financial",
+  "title": "Retail Investor Sentiment and Market Activism during the 2021 AMC Short Squeeze",
+  "country": "US",
+  "date_start": "2021-01-01",
+  "date_end": "2021-06-30",
+  "n_rounds": 7,
+  "round_duration_days": 25,
+  "ground_truth_outcome": {
+    "pro_pct": 62.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-01-01",
+      "pro_pct": 35.0,
+      "against_pct": 20.0,
+      "undecided_pct": 45.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline retail interest in meme stocks pre-squeeze",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2021-01-26",
+      "pro_pct": 55.0,
+      "against_pct": 15.0,
+      "undecided_pct": 30.0,
+      "sample_size": null,
+      "source": "Estimated: Surge in retail participation following GME/AMC volatility",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2021-02-20",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Sustained momentum post-Robinhood trading restrictions",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2021-03-17",
+      "pro_pct": 58.0,
+      "against_pct": 25.0,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "Estimated: Market correction and profit-taking phase",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2021-04-11",
+      "pro_pct": 56.0,
+      "against_pct": 28.0,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Consolidation period",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2021-05-06",
+      "pro_pct": 60.0,
+      "against_pct": 25.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Renewed retail interest in AMC specifically",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2021-05-31",
+      "pro_pct": 62.0,
+      "against_pct": 25.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Peak retail sentiment during June 2021 rally",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Retail investor activity surged, causing AMC shares to increase by over 300% in a single day. This rapid price movement forced institutional short sellers to cover their positions.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy81cpIHGs3nWgBxDtFqWSw9ynGbXJsF38SE_T38qMeBMYx6zJKT2A-9EPuFvgG-p86u0CD5nonkRTF30cSDhDotSxBKgUFLzkUvJcQJLlaugAJ25Sj75M5MowDX8M_z1cmQ4DKMk2InbrHrf5tshwi0-tjJpYgYqz7_7adwjvJGXfFVXvqFkOYn2tLCaIQbuHy8A7sLNL",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy81cpIHGs3nWgBxDtFqWSw9ynGbXJsF38SE_T38qMeBMYx6zJKT2A-9EPuFvgG-p86u0CD5nonkRTF30cSDhDotSxBKgUFLzkUvJcQJLlaugAJ25Sj75M5MowDX8M_z1cmQ4DKMk2InbrHrf5tshwi0-tjJpYgYqz7_7adwjvJGXfFVXvqFkOYn2tLCaIQbuHy8A7sLNL"
+      ],
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "AMC stock began a rapid ascent from its previous price level, marking the start of a second major wave of retail-driven momentum. This event reignited public interest in the 'meme stock' phenomenon.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "Retail interest intensified significantly, building on the momentum from earlier in the week. This period saw the stock price reach extreme intraday highs, drawing widespread media attention.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source": "gemini-grounded-search",
+      "_sources": [
+        "gemini-grounded-search"
+      ],
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "name": "r/WallStreetBets",
+      "type": "citizen_cluster",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Primary hub for retail investor coordination"
+    },
+    {
+      "name": "Citadel Securities",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "Market maker and hedge fund target of retail sentiment"
+    },
+    {
+      "name": "Robinhood",
+      "type": "institutional",
+      "initial_position": -0.5,
+      "influence": 0.7,
+      "description": "Retail brokerage platform involved in trading restrictions"
+    },
+    {
+      "name": "Adam Aron (CEO of AMC)",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "AMC leadership engaging directly with retail investors"
+    },
+    {
+      "name": "SEC",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Regulatory body monitoring market volatility"
+    },
+    {
+      "name": "Mainstream Financial Media",
+      "type": "elite",
+      "initial_position": -0.4,
+      "influence": 0.6,
+      "description": "Traditional outlets skeptical of meme stock viability"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.781,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.4,
+    "institutional_trust": 0.2,
+    "undecided_share": 0.45
+  },
+  "notes": "Pro-side defined as support for retail investor activism, 'diamond hands' mentality, and the belief that retail can influence market outcomes. Against-side defined as belief in efficient market hypothesis, skepticism of retail activism, or support for traditional institutional market structures. Data is largely estimated based on social media sentiment trends and retail trading volume spikes.",
+  "_grounding_v2.2": {
+    "strategy": "hybrid_events_only",
+    "agents": "original",
+    "events": "grounded_v2.1",
+    "n_grounded_events": 3,
+    "n_original_events": 3
+  }
+}

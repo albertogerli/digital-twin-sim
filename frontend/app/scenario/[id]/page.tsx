@@ -27,6 +27,14 @@ import PolarizationSection from "../../../components/polarization/PolarizationSe
 import Timeline from "../../../components/timeline/Timeline";
 import type { RoundData } from "../../../components/timeline/Timeline";
 import ViralShowcase from "../../../components/viral-posts/ViralShowcase";
+import FinancialImpactPanel from "../../../components/scenario/FinancialImpactPanel";
+import { generateFinancialImpact } from "../../../lib/generate-financial-impact";
+import {
+  FIN_SCHEMA_VERSION,
+  isCompatible,
+  type Provenance,
+  type RoundFinancial,
+} from "../../../lib/types/financial-impact";
 
 // ============================================================
 // Types
@@ -248,6 +256,9 @@ export default function ScenarioDashboard({
   const [reportMarkdown, setReportMarkdown] = useState<string>("");
   const [roundsData, setRoundsData] = useState<RoundData[]>([]);
   const [roundGraphSnapshots, setRoundGraphSnapshots] = useState<any[]>([]);
+  const [financialImpact, setFinancialImpact] = useState<RoundFinancial[]>([]);
+  const [finProvenance, setFinProvenance] = useState<Provenance>("client-fallback");
+  const [finSchemaVersion, setFinSchemaVersion] = useState<string>(FIN_SCHEMA_VERSION);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -268,13 +279,14 @@ export default function ScenarioDashboard({
           (_, i) => i + 1
         );
 
-        const [ag, pol, posts, graph, report, ...replayRounds] =
+        const [ag, pol, posts, graph, report, finImpact, ...replayRounds] =
           await Promise.all([
             fetchWithFallback(id, "agents.json").catch(() => []),
             fetchWithFallback(id, "polarization.json").catch(() => []),
             fetchWithFallback(id, "top_posts.json").catch(() => []),
             fetchWithFallback(id, "evolving_graph.json").catch(() => []),
             fetchWithFallback(id, "report.md", true).catch(() => ""),
+            fetchWithFallback(id, "financial_impact.json").catch(() => []),
             ...roundIndices.map((n) =>
               fetchWithFallback(id, `replay_round_${n}.json`).catch(() => null)
             ),
@@ -287,7 +299,6 @@ export default function ScenarioDashboard({
         setTopPosts(posts);
         setGraphSnapshots(Array.isArray(graph) ? graph : []);
         setReportMarkdown(typeof report === "string" ? report : "");
-
         // Process replay rounds into Timeline-compatible data
         const validRounds = replayRounds.filter(
           (r): r is ReplayRoundRaw => r != null
@@ -296,6 +307,33 @@ export default function ScenarioDashboard({
           .sort((a, b) => a.round - b.round)
           .map(replayToRoundData);
         setRoundsData(converted);
+
+        // Financial impact: prefer backend-simulated payload (schema-validated),
+        // fall back to client-side heuristic generator with provenance marker.
+        let finRounds: RoundFinancial[] = [];
+        let provenance: Provenance = "client-fallback";
+        let schemaVersion = FIN_SCHEMA_VERSION;
+
+        if (isCompatible(finImpact)) {
+          finRounds = finImpact.rounds;
+          provenance = finImpact.provenance ?? "backend-simulated";
+          schemaVersion = finImpact.schema_version;
+        } else if (Array.isArray(finImpact) && finImpact.length > 0) {
+          // Legacy: bare round array — accept but mark as unknown schema
+          finRounds = finImpact as RoundFinancial[];
+          provenance = (finImpact[0] as any)?.provenance ?? "client-fallback";
+          schemaVersion = (finImpact[0] as any)?.schema_version ?? "legacy";
+        } else {
+          finRounds = generateFinancialImpact(
+            meta.domain,
+            validRounds.sort((a, b) => a.round - b.round),
+            pol,
+          );
+          provenance = "client-fallback";
+        }
+        setFinancialImpact(finRounds);
+        setFinProvenance(provenance);
+        setFinSchemaVersion(schemaVersion);
 
         // Extract graph snapshots from replay rounds for Timeline mini-networks
         const snapshots = validRounds
@@ -423,6 +461,17 @@ export default function ScenarioDashboard({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <PolarizationSection polarization={polarization} />
       </div>
+
+      {/* Financial Impact Section */}
+      {financialImpact.length > 0 && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <FinancialImpactPanel
+            data={financialImpact}
+            provenance={finProvenance}
+            schemaVersion={finSchemaVersion}
+          />
+        </div>
+      )}
 
       {/* Timeline Section (with replay round data) */}
       {roundsData.length > 0 && (

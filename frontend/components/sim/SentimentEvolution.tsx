@@ -17,40 +17,40 @@ export default function SentimentEvolution({ rounds }: SentimentEvolutionProps) 
   }));
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4">
-      <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-3">
+    <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-2" role="img" aria-label={`Grafico sentiment: ${data.length} round`}>
+      <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-2">
         Sentiment
       </p>
-      <div className="h-32">
+      <div className="h-28">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={data} margin={{ top: 4, right: 4, bottom: 0, left: -20 }} stackOffset="expand">
             <XAxis
               dataKey="round"
-              tick={{ fontSize: 10 }}
+              tick={{ fontSize: 10, fill: "#8a8a8a" }}
               tickLine={false}
               axisLine={false}
             />
             <YAxis
-              tick={{ fontSize: 10 }}
+              tick={{ fontSize: 10, fill: "#8a8a8a" }}
               tickLine={false}
               axisLine={false}
               tickFormatter={(v) => `${Math.round(v * 100)}%`}
             />
             <Tooltip
-              contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e5e7eb" }}
+              contentStyle={{ fontSize: 11, borderRadius: 4, border: "1px solid #d4d4d4" }}
               formatter={(v) => [`${v}%`]}
               labelFormatter={(l) => `Round ${l}`}
             />
-            <Area type="monotone" dataKey="positive" stackId="1" stroke="#22c55e" fill="#22c55e" fillOpacity={0.6} animationDuration={600} />
-            <Area type="monotone" dataKey="neutral" stackId="1" stroke="#94a3b8" fill="#94a3b8" fillOpacity={0.4} animationDuration={600} />
-            <Area type="monotone" dataKey="negative" stackId="1" stroke="#ef4444" fill="#ef4444" fillOpacity={0.6} animationDuration={600} />
+            <Area type="monotone" dataKey="positive" stackId="1" stroke="#16a34a" fill="#16a34a" fillOpacity={0.6} animationDuration={600} />
+            <Area type="monotone" dataKey="neutral" stackId="1" stroke="#8a8a8a" fill="#8a8a8a" fillOpacity={0.4} animationDuration={600} />
+            <Area type="monotone" dataKey="negative" stackId="1" stroke="#dc2626" fill="#dc2626" fillOpacity={0.6} animationDuration={600} />
           </AreaChart>
         </ResponsiveContainer>
       </div>
-      <div className="flex items-center justify-center gap-4 mt-2 text-[10px]">
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-500" />Positivo</span>
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-slate-400" />Neutrale</span>
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-500" />Negativo</span>
+      <div className="flex items-center justify-center gap-4 mt-1.5 text-[10px]">
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-ki-success" />Positivo</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-ki-on-surface-muted" />Neutrale</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-ki-error" />Negativo</span>
       </div>
     </div>
   );

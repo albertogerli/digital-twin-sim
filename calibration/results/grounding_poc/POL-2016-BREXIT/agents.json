@@ -1,0 +1,117 @@
+[
+  {
+    "id": "david_cameron",
+    "name": "David Cameron",
+    "role": "Prime Minister of the United Kingdom",
+    "archetype": "politician",
+    "position": -1.0,
+    "influence": 0.95,
+    "rigidity": 0.8,
+    "bio": "British politician who served as Prime Minister of the United Kingdom from 2010 to 2016 and Leader of the Conservative Party.",
+    "communication_style": "formal, persuasive",
+    "key_traits": [
+      "strategic",
+      "establishment-oriented"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As Prime Minister, he called the referendum and led the official 'Remain' campaign, staking his political career on the outcome."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "boris_johnson",
+    "name": "Boris Johnson",
+    "role": "Member of Parliament / Former Mayor of London",
+    "archetype": "politician",
+    "position": 1.0,
+    "influence": 0.9,
+    "rigidity": 0.85,
+    "bio": "A prominent British politician who served as Mayor of London and later became a central figure in the Vote Leave campaign.",
+    "communication_style": "charismatic, populist",
+    "key_traits": [
+      "charismatic",
+      "ambitious"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.9,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He was the most prominent high-profile figure to join the 'Leave' campaign, significantly shifting public opinion toward Brexit."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "michael_gove",
+    "name": "Michael Gove",
+    "role": "Secretary of State for Justice",
+    "archetype": "politician",
+    "position": 1.0,
+    "influence": 0.75,
+    "rigidity": 0.8,
+    "bio": "A senior British Conservative politician who served in various cabinet roles, including Secretary of State for Justice during the referendum.",
+    "communication_style": "intellectual, sharp",
+    "key_traits": [
+      "ideological",
+      "determined"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.8,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He was a leading cabinet minister who broke with the Prime Minister to co-chair the Vote Leave campaign."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "nigel_farage",
+    "name": "Nigel Farage",
+    "role": "Leader of the UK Independence Party (UKIP)",
+    "archetype": "politician",
+    "position": 1.0,
+    "influence": 0.8,
+    "rigidity": 0.9,
+    "bio": "British politician and broadcaster who served as the leader of the UK Independence Party and was a key campaigner for Brexit.",
+    "communication_style": "direct, confrontational",
+    "key_traits": [
+      "persuasive",
+      "dogmatic"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "activist",
+    "_evidence": [
+      "He was the primary driver of the anti-EU sentiment in British politics for years, forcing the referendum to happen."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "jeremy_corbyn",
+    "name": "Jeremy Corbyn",
+    "role": "Leader of the Labour Party",
+    "archetype": "politician",
+    "position": -0.2,
+    "influence": 0.75,
+    "rigidity": 0.75,
+    "bio": "British politician who served as Leader of the Labour Party and Leader of the Opposition from 2015 to 2020.",
+    "communication_style": "earnest, cautious",
+    "key_traits": [
+      "ideological",
+      "reserved"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As Leader of the Opposition, he officially supported 'Remain' but was criticized for a perceived lack of enthusiasm in his campaigning."
+    ],
+    "_grounded": true
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "new_coke_launch_1985",
+  "domain": "commercial",
+  "description": "Coca-Cola replaced its flagship formula with 'New Coke' in April 1985, sparking massive consumer backlash. The product was widely considered a failure, leading to the reintroduction of the original formula as 'Coca-Cola Classic' just three months later.",
+  "final_outcome_pro_pct": 12.0,
+  "final_outcome_against_pct": 88.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 72,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 18,
+      "against_pct": 78,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 15,
+      "against_pct": 82,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 13,
+      "against_pct": 85,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 12,
+      "against_pct": 88,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Coca-Cola announces the formula change publicly."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "National media reports on consumer protest groups forming."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Retailers report plummeting sales of the new beverage."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Coca-Cola announces the return of the original formula."
+    }
+  ],
+  "calibration_notes": "Ideal for measuring extreme negative brand sentiment shifts and the speed of product failure."
+}

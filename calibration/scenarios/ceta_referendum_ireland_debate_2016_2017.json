@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ceta_referendum_ireland_debate_2016_2017",
+  "domain": "political",
+  "description": "The Comprehensive Economic and Trade Agreement (CETA) between the EU and Canada faced stiff opposition in Ireland from NGOs and local activist groups concerned about investor-state dispute settlement (ISDS) mechanisms. While Ireland ratified the deal, public sentiment fluctuated significantly as the debate mirrored the growing anti-globalization sentiment of the era.",
+  "final_outcome_pro_pct": 58.0,
+  "final_outcome_against_pct": 42.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 28,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 35,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 42,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 39,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Wallonia (Belgium) regional parliament temporarily blocks CETA signature, triggering widespread European anxiety."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Irish grassroots movements (e.g., People Before Profit) launch a coordinated campaign against ISDS clauses."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "The European Court of Justice issues an opinion clarifying the legality of the agreement's investment court system."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Dáil Éireann ratifies CETA, finalizing the state's official commitment to the agreement."
+    }
+  ],
+  "calibration_notes": "Useful for modeling scenarios where external international events (like the Wallonia blockade) create volatility in local public opinion against trade agreements."
+}

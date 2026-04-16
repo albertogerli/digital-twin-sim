@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tata_sons_mistry_removal_2016",
+  "domain": "corporate",
+  "description": "In October 2016, the board of Tata Sons suddenly removed Cyrus Mistry as chairman, sparking a public and legal battle for control of the $100 billion Indian conglomerate. The incident divided the Indian business establishment between supporters of the traditional Tata family values and supporters of Mistry's modernization efforts.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 59,
+      "against_pct": 39,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Cyrus Mistry is unceremoniously removed by the Tata Sons board."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Mistry sends a letter to the board alleging governance failures."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "The Tata group initiates removal of Mistry from individual group company boards."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Shareholder meetings confirm the removal of Mistry from key subsidiaries."
+    }
+  ],
+  "calibration_notes": "Models the dynamics of long-term internal corporate power struggles and governance disputes."
+}

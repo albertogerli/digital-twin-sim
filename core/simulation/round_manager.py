@@ -40,6 +40,9 @@ class RoundManager:
         language: str = "en",
         scenario_context: str = "",
         metrics_to_track: list[str] = None,
+        escalation_engine=None,
+        contagion_scorer=None,
+        financial_scorer=None,
     ):
         self.llm = llm
         self.platform = platform
@@ -56,6 +59,7 @@ class RoundManager:
         self.language = language
         self.scenario_context = scenario_context
         self.metrics_to_track = metrics_to_track or []
+        self._phase_labels = self._build_phase_labels(language)
         self.interaction_resolver = InteractionResolver(platform, domain_plugin)
 
         # Load calibrated params from v2 posterior (with v1 fallback)
@@ -83,6 +87,152 @@ class RoundManager:
         self.coalition_history = []
         self.custom_metrics_history = []
 
+        # Orchestrator: dynamic agent activation
+        self.escalation_engine = escalation_engine
+        self.contagion_scorer = contagion_scorer
+        self.financial_scorer = financial_scorer
+        self._active_elite_ids: set[str] = set()  # IDs of currently active elite agents
+        self._active_inst_ids: set[str] = set()    # IDs of currently active institutional agents
+
+    def _get_active_elite_agents(self, round_num: int) -> list[EliteAgent]:
+        """Get elite agents active in this round (filtered by orchestrator)."""
+        if not self.escalation_engine:
+            return self.elite_agents  # No orchestrator → all active
+
+        active_scores = self.escalation_engine.get_active_agents(round_num)
+        active_ids = {s.stakeholder_id for s in active_scores}
+        self._active_elite_ids = active_ids
+
+        active = [a for a in self.elite_agents if a.id in active_ids]
+        skipped = len(self.elite_agents) - len(active)
+        if skipped > 0:
+            logger.info(f"Orchestrator: {len(active)}/{len(self.elite_agents)} elite agents active (round {round_num})")
+        return active
+
+    def _get_active_institutional_agents(self, round_num: int) -> list[InstitutionalAgent]:
+        """Get institutional agents active in this round."""
+        if not self.escalation_engine:
+            return self.institutional_agents
+
+        active_scores = self.escalation_engine.get_active_agents(round_num)
+        active_ids = {s.stakeholder_id for s in active_scores}
+        self._active_inst_ids = active_ids
+
+        # Always keep public_opinion agent active
+        active = [a for a in self.institutional_agents
+                  if a.id in active_ids or a.category == "public_opinion"]
+        return active
+
+    async def _feed_orchestrator(self, round_num: int, round_stats: dict,
+                           polarization: float, sentiment_pcts: dict,
+                           event: dict, coalitions) -> dict:
+        """Feed round results to escalation engine and contagion scorer.
+
+        Returns orchestrator data dict for inclusion in round_complete event.
+        """
+        if not self.escalation_engine:
+            return {}
+
+        # Feed escalation engine
+        escalation_result = self.escalation_engine.process_round(
+            round_num=round_num,
+            post_count=round_stats.get("posts", 0),
+            reaction_count=round_stats.get("reactions", 0),
+            polarization=polarization,
+            sentiment_pcts=sentiment_pcts,
+            shock_magnitude=event.get("shock_magnitude", 0),
+            top_post_engagement=round_stats.get("max_engagement", 0),
+        )
+
+        # Feed contagion scorer
+        contagion_cri = 0.0
+        contagion_report = None
+        if self.contagion_scorer:
+            # Detect institutional activation
+            active_categories = set()
+            for a in self.institutional_agents:
+                if a.id in self._active_inst_ids or a.category == "public_opinion":
+                    active_categories.add(a.category)
+
+            contagion_cri = self.contagion_scorer.score_round(
+                round_num=round_num,
+                post_count=round_stats.get("posts", 0),
+                reaction_count=round_stats.get("reactions", 0),
+                repost_count=int(round_stats.get("reactions", 0) * 0.3),
+                top_post_engagement=round_stats.get("max_engagement", 0),
+                institutional_actors_active=len(self._active_inst_ids),
+                union_activated="union" in active_categories or "union_leader" in active_categories,
+                party_activated="politician" in active_categories or "government" in active_categories,
+            )
+            contagion_report = self.contagion_scorer.generate_report()
+
+        # Feed financial impact scorer
+        financial_data = {}
+        if self.financial_scorer:
+            # Count negative institutional agents
+            neg_inst = sum(1 for a in self.institutional_agents
+                          if a.position < -0.3 and a.category != "public_opinion")
+            total_inst = max(1, sum(1 for a in self.institutional_agents
+                                    if a.category != "public_opinion"))
+            neg_ceo = sum(1 for a in self.elite_agents
+                          if a.position < -0.3 and getattr(a, "archetype", "") in ("ceo", "business_leader"))
+
+            # Polarization velocity
+            polar_vel = 0.0
+            if self.escalation_engine and len(self.escalation_engine.state.round_metrics) >= 2:
+                prev_pol = self.escalation_engine.state.round_metrics[-2].polarization
+                polar_vel = polarization - prev_pol
+
+            # Collect active agents for dynamic ticker extraction
+            active_agents = list(self.elite_agents) + [
+                a for a in self.institutional_agents if a.category != "public_opinion"
+            ]
+
+            financial_report = self.financial_scorer.score_round(
+                round_num=round_num,
+                engagement_score=escalation_result.get("engagement_score", 0),
+                contagion_risk=contagion_cri,
+                active_wave=escalation_result.get("active_wave", 1),
+                polarization=polarization,
+                polarization_velocity=polar_vel,
+                negative_institutional_pct=neg_inst / total_inst,
+                negative_ceo_count=neg_ceo,
+                active_agents=active_agents,
+            )
+
+            # Generate LLM Flash Note (async)
+            try:
+                flash_note = await self.financial_scorer.generate_flash_note(
+                    report=financial_report,
+                    crisis_brief=self.scenario_context,
+                    round_num=round_num,
+                )
+                financial_report.headline = flash_note
+            except Exception as e:
+                logger.debug(f"Flash Note generation skipped: {e}")
+
+            financial_data = financial_report.to_dict()
+
+        orchestrator_data = {
+            "engagement_score": escalation_result.get("engagement_score", 0),
+            "active_wave": escalation_result.get("active_wave", 1),
+            "escalated": escalation_result.get("escalated", False),
+            "contagion_risk_index": contagion_cri,
+            "contagion_risk_label": contagion_report.risk_label if contagion_report else "unknown",
+            "containment_window": contagion_report.containment_window if contagion_report else None,
+            "financial_impact": financial_data,
+        }
+
+        if escalation_result.get("escalated"):
+            wave = escalation_result["active_wave"]
+            print(f"  ├─ ⚡ ESCALATION → Wave {wave} activated (engagement={escalation_result['engagement_score']:.3f})")
+        if contagion_report and contagion_cri > 0.5:
+            print(f"  ├─ ⚠ Contagion Risk: {contagion_cri:.3f} ({contagion_report.risk_label.upper()})")
+        if financial_data.get("market_volatility_warning") in ("HIGH", "CRITICAL"):
+            print(f"  ├─ 💰 {financial_data['market_volatility_warning']}: {financial_data.get('headline', '')[:80]}")
+
+        return orchestrator_data
+
     def _all_agents_flat(self) -> list:
         agents = list(self.elite_agents)
         if not self.elite_only:
@@ -95,6 +245,59 @@ class RoundManager:
             positions.extend(a.position for a in self.institutional_agents)
             positions.extend(c.position for c in self.citizen_swarm.clusters.values())
         return positions
+
+    @staticmethod
+    def _build_phase_labels(language: str) -> dict:
+        """Return localised phase labels keyed by phase id."""
+        if language == "it":
+            return {
+                "event": "Evento",
+                "elite": "Reazioni Elite",
+                "institutional": "Agenti Istituzionali",
+                "citizens": "Cittadini",
+                "platform": "Dinamiche piattaforma",
+                "opinion": "Aggiornamento posizioni",
+                "checkpoint": "Salvataggio checkpoint",
+                # simulation_manager phases
+                "round_of": "Round {r} di {t}",
+                "round_done": "Round {r} completato",
+                "web_research": "Ricerca contesto online...",
+                "entity_research": "Analisi entità...",
+                "agent_generation": "Generazione agenti...",
+                "validation": "Validazione agenti...",
+            }
+        if language == "es":
+            return {
+                "event": "Evento",
+                "elite": "Reacciones Elite",
+                "institutional": "Agentes Institucionales",
+                "citizens": "Ciudadanos",
+                "platform": "Dinámica de plataforma",
+                "opinion": "Actualización de posiciones",
+                "checkpoint": "Guardando checkpoint",
+                "round_of": "Ronda {r} de {t}",
+                "round_done": "Ronda {r} completada",
+                "web_research": "Investigación de contexto...",
+                "entity_research": "Análisis de entidades...",
+                "agent_generation": "Generación de agentes...",
+                "validation": "Validación de agentes...",
+            }
+        # Default: English
+        return {
+            "event": "Event",
+            "elite": "Elite Reactions",
+            "institutional": "Institutional Agents",
+            "citizens": "Citizens",
+            "platform": "Platform Dynamics",
+            "opinion": "Updating Positions",
+            "checkpoint": "Saving Checkpoint",
+            "round_of": "Round {r} of {t}",
+            "round_done": "Round {r} completed",
+            "web_research": "Researching context...",
+            "entity_research": "Analyzing entities...",
+            "agent_generation": "Generating agents...",
+            "validation": "Validating agents...",
+        }
 
     async def _notify(self, event_type: str, data: dict):
         if self.progress_callback:
@@ -144,11 +347,12 @@ class RoundManager:
         branch_override = getattr(self, "_branch_event_override", None)
         if branch_override:
             timeline_label = self.event_injector._get_timeline_label(round_num)
+            shock_mag = getattr(self, "_wargame_shock_override", 0.5) or 0.5
             event = {
                 "round": round_num,
                 "timeline_label": timeline_label,
                 "event": branch_override,
-                "shock_magnitude": 0.5,
+                "shock_magnitude": shock_mag,
                 "shock_direction": 0.0,
                 "key_actors": [],
                 "institutional_impact": "",
@@ -156,7 +360,9 @@ class RoundManager:
             }
             self.event_injector.event_history.append(event)
             self._branch_event_override = None  # only override once
-            print(f"✓ ({timeline_label}) [WHAT-IF OVERRIDE]")
+            self._wargame_shock_override = None
+            is_wargame = "PLAYER ACTION" if "rilascia un" in branch_override else "WHAT-IF OVERRIDE"
+            print(f"✓ ({timeline_label}) [{is_wargame}]")
         else:
             event = await self.event_injector.generate_event(
                 round_num=round_num,
@@ -170,7 +376,7 @@ class RoundManager:
             timeline_label = event["timeline_label"]
             print(f"✓ ({timeline_label})")
         round_event = event["event"]
-        await self._notify("round_phase", {"round": round_num, "phase": "event_generation", "message": f"Evento: {timeline_label}", "phase_index": 1, "total_phases": 7})
+        await self._notify("round_phase", {"round": round_num, "phase": "event_generation", "message": f"{self._phase_labels['event']}: {timeline_label}", "phase_index": 1, "total_phases": 7})
         if self.verbose:
             print(f"     Event: {round_event[:120]}...")
 
@@ -203,8 +409,12 @@ class RoundManager:
             cluster_prompt = lang_instruction + cluster_prompt
 
         # === Phase 2: Elite Agent Generation ===
-        print(f"  ├─ Phase 2: Elite reactions     ", end="", flush=True)
-        elite_results = await self._run_elite_agents(
+        # Filter active elite agents via orchestrator
+        active_elite = self._get_active_elite_agents(round_num)
+        wave_label = f" [wave {self.escalation_engine.state.current_wave}]" if self.escalation_engine else ""
+        print(f"  ├─ Phase 2: Elite reactions{wave_label}  ", end="", flush=True)
+        elite_results = await self._run_elite_agents_filtered(
+            active_elite,
             round_num, timeline_label, round_event, viral_posts_text,
             polarization, avg_sentiment, top_narratives,
             elite_prompt, channel_descs, channel_max_lens,
@@ -214,13 +424,15 @@ class RoundManager:
                 for p in r.get("posts", []):
                     self.platform.add_post(p, round_num)
         cost_str = f"${self.llm.stats.total_cost:.2f}"
-        print(f"✓ {len([r for r in elite_results if r])}/{len(self.elite_agents)}  ({cost_str})")
-        await self._notify("round_phase", {"round": round_num, "phase": "elite_reactions", "message": f"Elite: {len([r for r in elite_results if r])}/{len(self.elite_agents)}", "phase_index": 2, "total_phases": 7})
+        print(f"✓ {len([r for r in elite_results if r])}/{len(active_elite)}  ({cost_str})")
+        await self._notify("round_phase", {"round": round_num, "phase": "elite_reactions", "message": f"{self._phase_labels['elite']}: {len([r for r in elite_results if r])}/{len(active_elite)}", "phase_index": 2, "total_phases": 7})
 
         # === Phase 3: Institutional Agent Batch ===
         if not self.elite_only:
+            active_inst = self._get_active_institutional_agents(round_num)
             print(f"  ├─ Phase 3: Institutional batch ", end="", flush=True)
-            inst_results = await self._run_institutional_agents(
+            inst_results = await self._run_institutional_agents_filtered(
+                active_inst,
                 round_num, timeline_label, round_event, viral_posts_text,
                 inst_prompt, channel_max_lens, profile_template,
             )
@@ -230,7 +442,7 @@ class RoundManager:
                         for p in r.get("posts", []):
                             self.platform.add_post(p, round_num)
             print(f"✓ ({cost_str})")
-            await self._notify("round_phase", {"round": round_num, "phase": "institutional_batch", "message": f"Institutional: {len(self.institutional_agents)} agents", "phase_index": 3, "total_phases": 7})
+            await self._notify("round_phase", {"round": round_num, "phase": "institutional_batch", "message": f"{self._phase_labels['institutional']}: {len(active_inst)}", "phase_index": 3, "total_phases": 7})
 
             # === Phase 4: Citizen Swarm ===
             print(f"  ├─ Phase 4: Citizen swarm       ", end="", flush=True)
@@ -243,12 +455,12 @@ class RoundManager:
                 for p in cr.get("posts", []):
                     self.platform.add_post(p, round_num)
             print(f"✓ {len(cluster_results)} clusters ({cost_str})")
-            await self._notify("round_phase", {"round": round_num, "phase": "citizen_swarm", "message": f"Citizens: {len(cluster_results)} clusters", "phase_index": 4, "total_phases": 7})
+            await self._notify("round_phase", {"round": round_num, "phase": "citizen_swarm", "message": f"{self._phase_labels['citizens']}: {len(cluster_results)} clusters", "phase_index": 4, "total_phases": 7})
         else:
             print(f"  ├─ Phase 3-4: Skipped (elite-only mode)")
 
         # === Phase 5: Platform Dynamics ===
-        await self._notify("round_phase", {"round": round_num, "phase": "platform_dynamics", "message": "Resolving engagement, feeds, follows", "phase_index": 5, "total_phases": 7})
+        await self._notify("round_phase", {"round": round_num, "phase": "platform_dynamics", "message": self._phase_labels["platform"], "phase_index": 5, "total_phases": 7})
         print(f"  ├─ Phase 5: Platform dynamics   [resolving engagement, feeds, follows]")
         all_agents = self._all_agents_flat()
         all_round_posts = self.platform.get_posts_by_round(round_num)
@@ -258,7 +470,7 @@ class RoundManager:
         self.coalition_history.append({"round": round_num, "coalitions": coalitions})
 
         # === Phase 6: Opinion Dynamics ===
-        await self._notify("round_phase", {"round": round_num, "phase": "opinion_dynamics", "message": f"Updating {len(all_agents)} positions", "phase_index": 6, "total_phases": 7})
+        await self._notify("round_phase", {"round": round_num, "phase": "opinion_dynamics", "message": f"{self._phase_labels['opinion']}: {len(all_agents)}", "phase_index": 6, "total_phases": 7})
         print(f"  ├─ Phase 6: Opinion dynamics    [updating {len(all_agents)} positions]")
         self.opinion_dynamics.update_all_agents(all_agents, self.platform, event)
 
@@ -276,7 +488,29 @@ class RoundManager:
                 )
 
         # === Phase 7: Checkpoint ===
-        await self._notify("round_phase", {"round": round_num, "phase": "checkpoint", "message": "Saving checkpoint", "phase_index": 7, "total_phases": 7})
+        await self._notify("round_phase", {"round": round_num, "phase": "checkpoint", "message": self._phase_labels["checkpoint"], "phase_index": 7, "total_phases": 7})
+        # Collect orchestrator state for wargame rollback
+        orch_state = None
+        if self.escalation_engine:
+            orch_state = {
+                "escalation": {
+                    "current_wave": self.escalation_engine.state.current_wave,
+                    "round_metrics": [
+                        {"round": m.round_num, "engagement": m.avg_engagement_per_post,
+                         "polarization": m.polarization, "volume": m.post_count}
+                        for m in self.escalation_engine.state.round_metrics
+                    ],
+                },
+            }
+            if self.contagion_scorer:
+                orch_state["contagion"] = {
+                    "cri_history": list(self.contagion_scorer.cri_history),
+                }
+            if self.financial_scorer:
+                orch_state["financial"] = {
+                    "impact_history": list(self.financial_scorer.impact_history),
+                }
+
         checkpoint = save_checkpoint(
             self.checkpoint_dir, self.scenario_name, round_num,
             self.elite_agents, self.institutional_agents,
@@ -289,6 +523,7 @@ class RoundManager:
                 k: v for k, v in self._params_info.items()
                 if not k.startswith("_") or k in ("_source", "_model_version")
             } if hasattr(self, "_params_info") else None,
+            orchestrator_state=orch_state,
         )
         print(f"  ├─ Phase 7: Checkpoint [saved: {checkpoint}]")
 
@@ -320,6 +555,7 @@ class RoundManager:
         if custom_metrics:
             metrics_str = ", ".join(f"{k}: {v}" for k, v in custom_metrics.items())
             print(f"  ├─ Metrics: {metrics_str}")
+
         print(f"  └─ Running cost: ${self.llm.stats.total_cost:.2f}")
 
         # Build enriched round data for live dashboard
@@ -341,14 +577,17 @@ class RoundManager:
         # Agent snapshot
         agents_snapshot = []
         for a in all_agents:
-            agents_snapshot.append({
+            snap = {
                 "id": a.id,
                 "name": a.name,
                 "role": getattr(a, "role", ""),
                 "position": round(a.position, 3),
                 "emotional_state": getattr(a, "emotional_state", "neutral"),
                 "tier": getattr(a, "tier", 1),
-            })
+            }
+            if getattr(a, "category", "") == "public_opinion":
+                snap["is_synthetic"] = True
+            agents_snapshot.append(snap)
         # Add citizen clusters
         if not self.elite_only:
             for c in self.citizen_swarm.clusters.values():
@@ -374,6 +613,18 @@ class RoundManager:
                 sentiments["neutral"] += 1
         total_s = max(sum(sentiments.values()), 1)
         sentiment_pcts = {k: round(v / total_s, 2) for k, v in sentiments.items()}
+
+        # Feed orchestrator (escalation engine + contagion scorer)
+        orchestrator_data = await self._feed_orchestrator(
+            round_num, round_stats, polarization, sentiment_pcts, event, coalitions
+        )
+        if orchestrator_data:
+            orch_str = (
+                f"engagement={orchestrator_data.get('engagement_score', 0):.3f} "
+                f"wave={orchestrator_data.get('active_wave', 1)} "
+                f"CRI={orchestrator_data.get('contagion_risk_index', 0):.3f}"
+            )
+            print(f"  ├─ Orchestrator: {orch_str}")
 
         # Coalition data for frontend
         coalitions_data = []
@@ -434,7 +685,16 @@ class RoundManager:
             "cost": self.llm.stats.total_cost,
             "confidence_interval": confidence_interval,
             "regime_info": regime_info,
+            "orchestrator": orchestrator_data,
         }
+
+        # Flush any pending SQLite writes before reporting round complete so
+        # subsequent readers (e.g. export) see a consistent snapshot.
+        if self.platform is not None:
+            try:
+                await self.platform.aflush()
+            except Exception:
+                pass
 
         await self._notify("round_complete", {
             "round": round_num,
@@ -454,6 +714,7 @@ class RoundManager:
             "shock_direction": event.get("shock_direction", 0),
             "confidence_interval": confidence_interval,
             "regime_info": regime_info,
+            "orchestrator": orchestrator_data,
             "calibration_source": self._params_info.get("_model_version", "v1") + "_" + self._params_info.get("_source", "unknown") if hasattr(self, "_params_info") else "v1_default",
         })
         return result
@@ -537,17 +798,19 @@ Respond with JSON only:
             logger.warning(f"Custom metrics evaluation failed: {e}")
             return {m: 50 for m in self.metrics_to_track}
 
-    async def _run_elite_agents(self, round_num, timeline_label, round_event,
-                                 viral_posts, polarization, avg_sentiment,
-                                 top_narratives, prompt_template,
-                                 channel_descs, channel_max_lens):
+    async def _run_elite_agents_filtered(self, agents: list, round_num,
+                                          timeline_label, round_event,
+                                          viral_posts, polarization, avg_sentiment,
+                                          top_narratives, prompt_template,
+                                          channel_descs, channel_max_lens):
+        """Run elite agents — accepts filtered agent list from orchestrator."""
         tasks = [
             agent.generate_round(
                 self.llm, round_num, timeline_label, round_event,
                 viral_posts, polarization, avg_sentiment, top_narratives,
                 prompt_template, channel_descs, channel_max_lens,
             )
-            for agent in self.elite_agents
+            for agent in agents
         ]
         results = await asyncio.gather(*tasks, return_exceptions=True)
         processed = []
@@ -555,26 +818,63 @@ Respond with JSON only:
         for i, r in enumerate(results):
             if isinstance(r, Exception):
                 errors += 1
-                print(f"    ⚠ Elite agent {self.elite_agents[i].name} failed: {r}")
-                logger.error(f"Elite agent {self.elite_agents[i].id} error: {r}")
+                print(f"    ⚠ Elite agent {agents[i].name} failed: {r}")
+                logger.error(f"Elite agent {agents[i].id} error: {r}")
                 processed.append(None)
             else:
                 posts_count = len(r.get("posts", [])) if r else 0
                 if r and posts_count == 0:
-                    print(f"    ⚠ Elite agent {self.elite_agents[i].name} returned 0 posts")
+                    print(f"    ⚠ Elite agent {agents[i].name} returned 0 posts")
                 processed.append(r)
         if errors:
-            print(f"    ⚠ {errors}/{len(self.elite_agents)} elite agents failed!")
+            print(f"    ⚠ {errors}/{len(agents)} elite agents failed!")
+            if errors == len(agents):
+                await self._notify("round_phase", {
+                    "round": round_num,
+                    "phase": "warning",
+                    "message": f"Tutti gli agenti elite hanno fallito ({errors}/{len(agents)}). Possibile problema LLM.",
+                    "phase_index": 2,
+                    "total_phases": 7,
+                })
+                # Generate minimal fallback results to prevent downstream corruption
+                # (0 posts → abnormal engagement → math overflow in financial scoring)
+                for idx, agent in enumerate(agents):
+                    if processed[idx] is None:
+                        processed[idx] = {
+                            "agent_id": agent.id,
+                            "posts": [],
+                            "position": agent.position,
+                            "emotional_state": agent.emotional_state,
+                            "strategic_move": "",
+                            "alliances": [],
+                            "targets": [],
+                            "position_reasoning": "[LLM failure — position unchanged]",
+                        }
         return processed
 
-    async def _run_institutional_agents(self, round_num, timeline_label,
-                                         round_event, viral_posts,
-                                         prompt_template, channel_max_lens,
-                                         profile_template):
+    # Keep old method for backward compatibility
+    async def _run_elite_agents(self, round_num, timeline_label, round_event,
+                                 viral_posts, polarization, avg_sentiment,
+                                 top_narratives, prompt_template,
+                                 channel_descs, channel_max_lens):
+        return await self._run_elite_agents_filtered(
+            self.elite_agents, round_num, timeline_label, round_event,
+            viral_posts, polarization, avg_sentiment, top_narratives,
+            prompt_template, channel_descs, channel_max_lens,
+        )
+
+    async def _run_institutional_agents_filtered(self, agents: list,
+                                                  round_num, timeline_label,
+                                                  round_event, viral_posts,
+                                                  prompt_template, channel_max_lens,
+                                                  profile_template):
+        """Run institutional agents — accepts filtered agent list from orchestrator."""
+        # Exclude passive agents (e.g., Public Opinion) from LLM batch
+        active_agents = [a for a in agents if a.category != "public_opinion"]
         batches = []
         batch_size = 10
-        for i in range(0, len(self.institutional_agents), batch_size):
-            batch = self.institutional_agents[i:i + batch_size]
+        for i in range(0, len(active_agents), batch_size):
+            batch = active_agents[i:i + batch_size]
             batches.append(batch)
 
         tasks = [
@@ -585,3 +885,14 @@ Respond with JSON only:
             for batch in batches
         ]
         return await asyncio.gather(*tasks, return_exceptions=True)
+
+    # Keep old method for backward compatibility
+    async def _run_institutional_agents(self, round_num, timeline_label,
+                                         round_event, viral_posts,
+                                         prompt_template, channel_max_lens,
+                                         profile_template):
+        return await self._run_institutional_agents_filtered(
+            self.institutional_agents, round_num, timeline_label,
+            round_event, viral_posts, prompt_template, channel_max_lens,
+            profile_template,
+        )

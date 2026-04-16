@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import type { ReplayMeta, RoundData } from "@/lib/types";
 import type { ReplayRoundData } from "@/lib/replay/types";
 import { useSimulationReplay } from "@/lib/replay/useSimulationReplay";
+import ErrorBoundary from "@/components/ui/ErrorBoundary";
 import TopBar from "./TopBar";
 import BottomBar from "./BottomBar";
 import LiveFeed from "./feed/LiveFeed";
@@ -84,34 +85,40 @@ export default function CommandCenter({ scenarioId, meta, rounds }: Props) {
       <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-[1fr_400px_260px] overflow-auto md:overflow-hidden">
         {/* Left — Network Graph */}
         <div className="border-b md:border-b-0 md:border-r border-gray-200 overflow-hidden bg-gray-50 min-h-[300px] md:min-h-0">
-          <LiveNetworkGraph
-            snapshot={graphSnapshot}
-            activeAgentIds={indicators.activeAgents.map((a) => a.id)}
-            activeImpact={activeImpact}
-            selectedPostId={selectedPostId}
-            selectedPostImpact={selectedPostImpact}
-          />
+          <ErrorBoundary>
+            <LiveNetworkGraph
+              snapshot={graphSnapshot}
+              activeAgentIds={indicators.activeAgents.map((a) => a.id)}
+              activeImpact={activeImpact}
+              selectedPostId={selectedPostId}
+              selectedPostImpact={selectedPostImpact}
+            />
+          </ErrorBoundary>
         </div>
 
         {/* Center — Post Feed */}
         <div className="overflow-hidden border-b md:border-b-0 md:border-r border-gray-200 bg-gray-50 min-h-[400px] md:min-h-0">
-          <LiveFeed
-            posts={visiblePosts}
-            keyInsight={keyInsight}
-            status={state.status}
-            onPlay={controls.play}
-            selectedPostId={selectedPostId}
-            onSelectPost={controls.selectPost}
-          />
+          <ErrorBoundary>
+            <LiveFeed
+              posts={visiblePosts}
+              keyInsight={keyInsight}
+              status={state.status}
+              onPlay={controls.play}
+              selectedPostId={selectedPostId}
+              onSelectPost={controls.selectPost}
+            />
+          </ErrorBoundary>
         </div>
 
         {/* Right — Indicators */}
         <div className="overflow-y-auto scrollbar-thin bg-gray-50">
-          <IndicatorPanel
-            indicators={indicators}
-            coalitions={coalitions}
-            realWorldEffects={realWorldEffects}
-          />
+          <ErrorBoundary>
+            <IndicatorPanel
+              indicators={indicators}
+              coalitions={coalitions}
+              realWorldEffects={realWorldEffects}
+            />
+          </ErrorBoundary>
         </div>
       </div>
 

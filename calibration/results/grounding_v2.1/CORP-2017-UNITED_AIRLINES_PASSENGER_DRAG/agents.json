@@ -1,0 +1,49 @@
+[
+  {
+    "id": "oscar_munoz",
+    "name": "Oscar Munoz",
+    "role": "CEO of United Airlines",
+    "archetype": "business_leader",
+    "position": 0.2,
+    "influence": 0.95,
+    "rigidity": 0.75,
+    "bio": "Oscar Munoz served as the CEO of United Airlines from 2015 to 2020, overseeing the company during the 2017 passenger removal crisis.",
+    "communication_style": "formal, initially defensive, later conciliatory",
+    "key_traits": [
+      "strategic",
+      "corporate",
+      "crisis-oriented"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CEO, he was directly responsible for the airline's initial response, which was widely criticized as defensive, before he later issued a formal apology and committed to policy changes."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "david_dao",
+    "name": "David Dao",
+    "role": "Passenger / Physician",
+    "archetype": "activist",
+    "position": -1.0,
+    "influence": 0.7,
+    "rigidity": 0.7,
+    "bio": "Dr. David Dao is a Vietnamese-American physician who became the central figure in the 2017 United Airlines incident after being forcibly removed from a flight.",
+    "communication_style": "direct, legalistic",
+    "key_traits": [
+      "resilient",
+      "principled"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "affected_party",
+    "_evidence": [
+      "He was the victim of the violent removal, and his subsequent legal action and public stance forced a massive shift in airline passenger handling policies."
+    ],
+    "_grounded": true
+  }
+]

@@ -1,0 +1,48 @@
+# VERIFIED FACTS — CORP-2015-DIESELGATE_PUBLIC_TRUST_IN_VW
+Domain: corporate | Country: DE
+Period: 2014-05-01 to 2015-09-20
+
+## TIMELINE (verified events, chronological order):
+1. [2014-05-01] Researchers from West Virginia University publish findings showing that certain Volkswagen diesel models emit significantly higher levels of pollutants during real-world driving than in laboratory tests. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+2. [2014-12-01] Volkswagen initiates a voluntary recall to recalibrate its EA189 diesel engines in an attempt to address the emissions discrepancies identified by researchers. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+3. [2015-09-03] Volkswagen officially admits to regulators that it intentionally installed 'defeat device' software in its vehicles to bypass emissions control systems.
+   Detail: N/A
+   Source: wikipedia.org
+4. [2015-09-18] The U.S. Environmental Protection Agency (EPA) issues a formal Notice of Violation to Volkswagen, publicly accusing the company of violating the Clean Air Act.
+   Detail: 482,000 vehicles
+   Source: wikipedia.org
+5. [2015-09-20] Following the public EPA announcement, the scale of the deception is revealed, noting that vehicles emitted up to 40 times the legal limit of nitrogen oxides during real-world driving.
+   Detail: 40 times the legal limit
+   Source: ebsco.com
+
+## KEY FIGURES:
+- affected_vehicles: 11 million
+- scandal_start_date: September 18, 2015
+- affected_model_years: 2009–2015
+- buzz_score_decline: over 70 points in one week
+- impression_score_decline: more than 60 points
+- reputation_score_decline: nearly 40 points
+- perceived_exaggeration: 65%
+- brand_quality_belief: 65%
+
+## POLLING/SENTIMENT DATA:
+- [2015-09-25] 65.0% pro — YouGov
+- [2015-09-25] 65.0% pro — YouGov
+- [2015-09-25] 63.0% pro — YouGov
+
+## KEY STAKEHOLDER POSITIONS:
+- Martin Winterkorn (CEO of Volkswagen Group): He issued a public apology for breaking the trust of the public and customers, stating he was deeply sorry for the deception. He subsequently resigned from his position as CEO in the wake of the scandal.
+- Cynthia Giles (Assistant Administrator for the EPA's Office of Enforcement and Compliance Assurance): She publicly condemned Volkswagen's actions, stating that the company's use of defeat devices was a clear violation of the Clean Air Act and a threat to public health. She emphasized that the EPA would hold the company accountable for the deception.
+
+## FINAL OUTCOME:
+Following the 2015 Dieselgate scandal, public trust in Volkswagen suffered a significant, immediate decline, though the company eventually recovered its market position and sales volume through aggressive rebranding and a pivot toward electric vehicles. There is no single global percentage of 'trust,' as sentiment varied by region and fluctuated over time as the company settled legal claims.
+Pro %: 35.0% — Source: YouGov BrandIndex (2015-2016 data showing VW's 'Buzz' score dropping from positive territory to deep negative following the scandal)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

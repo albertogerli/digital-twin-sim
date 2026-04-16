@@ -1,0 +1,83 @@
+{
+  "scenario_name": "hong_kong_umbrella_movement_2014",
+  "domain": "social",
+  "description": "79-day occupation of major city thoroughfares in Hong Kong demanding electoral reforms for the 2017 Chief Executive election. Protesters faced police tear gas and organized via social media platforms.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 68.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 40,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 46,
+      "against_pct": 48,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Police fire 87 canisters of tear gas at protesters, cementing the 'Umbrella' symbol."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Protests grow to occupy three major districts (Central, Causeway Bay, Mong Kok)."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public fatigue sets in due to significant disruption of daily commute and logistics."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Protest sites are cleared by court injunctions and police enforcement."
+    }
+  ],
+  "calibration_notes": "Useful for modeling long-duration protests that lose public support due to 'protest fatigue' and economic disruption."
+}

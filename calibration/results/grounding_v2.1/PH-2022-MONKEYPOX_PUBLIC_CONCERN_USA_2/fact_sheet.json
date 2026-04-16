@@ -1,0 +1,136 @@
+{
+  "scenario_id": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2",
+  "topic": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2",
+  "domain": "public_health",
+  "country": "US",
+  "timeframe_start": "2022-05-17",
+  "timeframe_end": "2022-08-04",
+  "events": [
+    {
+      "date": "2022-05-17",
+      "description": "The first confirmed case of mpox in the United States is reported to the CDC in a Massachusetts resident who had recently traveled from Canada.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "wral.com",
+      "confidence": 0.8,
+      "quantitative_detail": "1 case"
+    },
+    {
+      "date": "2022-05-23",
+      "description": "The CDC officially activates its emergency outbreak response to address the emerging mpox situation.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "cdc.gov",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2022-07-23",
+      "description": "The World Health Organization (WHO) declares the multi-country mpox outbreak a Public Health Emergency of International Concern (PHEIC).",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE83jbnwYnhIIm7YMuMv-J8Xg8Ex5vce-PODNOcxOxgizNtBbtgrvqXR6xTc76Co4UXoPZxCG2Eq-j2FW9oECwuUM6ZDbZ5IPEgeeDR5PlrR_rx17FS02-7VvgKr-z8Kkzv8Oyuzq2eSBKDFmiwiRCfwKpXKOBizFrwHe0f1_AwKW0H_wrsakrqmhrp5SQS0zGsJvW9se5G4_ds_dlcbNLFQclNg8jFJf9eNGsgu4_9WbIrS-lLIW6tnAAJ8qvky40PF_s=",
+      "source_name": "ca.gov",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2022-07-29",
+      "description": "New York Governor Kathy Hochul declares a state disaster emergency to mobilize resources for the mpox outbreak.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2022-08-01",
+      "description": "California Governor Gavin Newsom proclaims a State of Emergency to bolster vaccination efforts and coordinate the state's response.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "ca.gov",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2022-08-04",
+      "description": "The U.S. Department of Health and Human Services (HHS) officially declares the mpox outbreak a national Public Health Emergency.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEC-l3rIxetDijcrvip9mMJHky0JIssWr--2MS7v-L6f1WqbuSerz80qDv8HGsdTTtkN-AkzibZl36S6AWOeLlpljLyyljhoAlZlVGt1Q0uDtE_BI0Mr1xsoz0ucXEi5JHKMcb6MAqvTyIYX-8YO0YokYJYkQ==",
+      "source_name": "ca.gov",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    }
+  ],
+  "polls": [
+    {
+      "date": "2022-08-01",
+      "pro_pct": 21.0,
+      "sample_size": 0,
+      "source": "Annenberg Science and Public Health (ASAPH) knowledge survey",
+      "methodology": "survey"
+    },
+    {
+      "date": "2022-08-01",
+      "pro_pct": 61.0,
+      "sample_size": 0,
+      "source": "Annenberg Science and Public Health (ASAPH) knowledge survey",
+      "methodology": "survey"
+    },
+    {
+      "date": "2022-08-01",
+      "pro_pct": 63.0,
+      "sample_size": 0,
+      "source": "Annenberg Science and Public Health (ASAPH) knowledge survey",
+      "methodology": "survey"
+    },
+    {
+      "date": "2022-08-01",
+      "pro_pct": 41.0,
+      "sample_size": 0,
+      "source": "Annenberg Science and Public Health (ASAPH) knowledge survey",
+      "methodology": "survey"
+    },
+    {
+      "date": "2022-08-01",
+      "pro_pct": 71.0,
+      "sample_size": 0,
+      "source": "Annenberg Science and Public Health (ASAPH) knowledge survey",
+      "methodology": "survey"
+    },
+    {
+      "date": "2022-08-04",
+      "pro_pct": 0.0,
+      "sample_size": 0,
+      "source": "YouGov",
+      "methodology": "poll"
+    },
+    {
+      "date": "2022-10-01",
+      "pro_pct": 76.0,
+      "sample_size": 0,
+      "source": "Annenberg Public Policy Center (APPC) survey",
+      "methodology": "survey"
+    }
+  ],
+  "stakeholders": [],
+  "outcome_description": "The 2022 mpox outbreak in the U.S. was managed through a coordinated federal and state public health response, including the declaration of a national public health emergency and a targeted vaccination campaign that successfully contained the spread. Public opinion was characterized by initial concern followed by a shift toward reliance on targeted public health messaging and vaccination efforts within affected communities.",
+  "outcome_pro_pct": 45.0,
+  "outcome_source": "Kaiser Family Foundation (KFF) COVID-19 Vaccine Monitor (August 2022 survey regarding public concern and awareness of mpox)",
+  "key_figures": {
+    "worried_about_contracting_mpox": "21% in August 2022",
+    "vaccine_existence_awareness": "61% in August 2022",
+    "identified_higher_risk_group": "63% in August 2022",
+    "understood_lower_contagion_than_covid": "41% in August 2022",
+    "correctly_identified_covid_vaccine_misinformation_as_false": "71% in August 2022",
+    "likelihood_to_get_vaccine_if_exposed": "76% in October 2022"
+  },
+  "n_sources_consulted": 6,
+  "research_timestamp": "2026-04-01T02:34:52.638383",
+  "quality_score": 78
+}

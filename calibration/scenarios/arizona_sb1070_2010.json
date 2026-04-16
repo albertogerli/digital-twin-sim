@@ -1,0 +1,83 @@
+{
+  "scenario_name": "arizona_sb1070_2010",
+  "domain": "social",
+  "description": "In April 2010, Arizona Governor Jan Brewer signed SB 1070 into law, the strictest anti-illegal immigration measure in the U.S. at the time, which required police to determine the immigration status of anyone stopped if there was 'reasonable suspicion' they were undocumented. The law triggered massive national protests and legal challenges, culminating in the 2012 Supreme Court ruling that struck down several of its core provisions.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42,
+      "against_pct": 38,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 51,
+      "against_pct": 45,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 46,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 49,
+      "against_pct": 47,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 47,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Governor Jan Brewer signs SB 1070 into law on April 23, 2010, sparking immediate national outrage."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "The Obama administration files a lawsuit against Arizona, arguing the state law interferes with federal immigration authority."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Civil rights groups and religious organizations hold nationwide 'Boycott Arizona' demonstrations."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The U.S. Supreme Court issues its ruling in Arizona v. United States, striking down most provisions of the law."
+    }
+  ],
+  "calibration_notes": "This scenario captures the rapid polarization of public opinion when a localized social policy becomes a national flashpoint, demonstrating how early support spikes before settling into a stable, deeply divided partisan stalemate."
+}

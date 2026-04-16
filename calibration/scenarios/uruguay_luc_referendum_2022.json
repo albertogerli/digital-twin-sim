@@ -1,0 +1,79 @@
+{
+  "scenario_name": "uruguay_luc_referendum_2022",
+  "domain": "political",
+  "description": "A referendum to repeal 135 articles of the Law of Urgent Consideration (LUC). The effort to repeal failed, with 49.9% in favor of repeal (No to maintaining the law) and 50.1% against repealing it on March 27, 2022.",
+  "final_outcome_pro_pct": 49.9,
+  "final_outcome_against_pct": 50.1,
+  "final_turnout_pct": 84.3,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42.0,
+      "against_pct": 46.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 44.0,
+      "against_pct": 47.0,
+      "undecided_pct": 9.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 46.0,
+      "against_pct": 48.0,
+      "undecided_pct": 6.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 47.0,
+      "against_pct": 49.0,
+      "undecided_pct": 4.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48.0,
+      "against_pct": 50.0,
+      "undecided_pct": 2.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48.5,
+      "against_pct": 50.5,
+      "undecided_pct": 1.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 49.0,
+      "against_pct": 50.5,
+      "undecided_pct": 0.5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 49.9,
+      "against_pct": 50.1,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Union-led campaign gains traction in urban areas."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Government defends economic record to hold onto supporters."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final vote count shows razor-thin victory for the government."
+    }
+  ],
+  "calibration_notes": "Models extreme closeness and the difficulty of repealing established laws via referendum."
+}

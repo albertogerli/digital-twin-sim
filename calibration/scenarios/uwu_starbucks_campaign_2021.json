@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uwu_starbucks_campaign_2021",
+  "domain": "labor",
+  "description": "Starting in late 2021, Starbucks workers in Buffalo, NY, successfully voted to unionize, sparking a wave of organization across the US. The campaign became a focal point of the 'Gen Z labor movement,' with intense public interest and debate regarding corporate anti-union tactics.",
+  "final_outcome_pro_pct": 63.0,
+  "final_outcome_against_pct": 37.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 33,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 36,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 36,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 61,
+      "against_pct": 37,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 62,
+      "against_pct": 37,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 63,
+      "against_pct": 37,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "First Starbucks store successfully unionizes in Buffalo."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Reports of Starbucks firing union organizers surface."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "NLRB files complaints against Starbucks for anti-union activity."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public support peaks as the movement spreads nationwide."
+    }
+  ],
+  "calibration_notes": "Models how exposure to 'union-busting' narratives can harden public support for a fledgling labor movement."
+}

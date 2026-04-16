@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tylenol_tampering_crisis_1982",
+  "domain": "commercial",
+  "description": "After seven people died in the Chicago area due to cyanide-laced Tylenol, Johnson & Johnson faced a critical choice: defend the product or recall all inventory. They chose a historic full-market withdrawal that became the gold standard for corporate crisis management.",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 15.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 90,
+      "against_pct": 5,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 55,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 78,
+      "against_pct": 17,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 82,
+      "against_pct": 16,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 85,
+      "against_pct": 15,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "News breaks about poisoned Tylenol; public panic ensues."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "J&J announces a total national recall of 31 million bottles."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "J&J introduces industry-first triple-sealed tamper-evident packaging."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Market share recovers nearly to pre-crisis levels."
+    }
+  ],
+  "calibration_notes": "Useful for assessing the 'recovery phase' of public opinion after decisive corporate action."
+}

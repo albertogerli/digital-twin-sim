@@ -1,0 +1,413 @@
+[
+  {
+    "id": "claudio_descalzi",
+    "name": "Claudio Descalzi",
+    "role": "Amministratore Delegato ENI",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "ENI",
+    "archetype": "business_leader",
+    "tier": 1,
+    "influence": 0.75,
+    "rigidity": 0.6,
+    "bio": "CEO di ENI, la più grande azienda italiana per fatturato. Ruolo chiave nella politica energetica italiana e nei rapporti con l'Africa.",
+    "communication_style": "Tecnico, diplomatico, toni da CEO internazionale, evita prese di posizione politiche dirette",
+    "key_traits": [
+      "diplomatico",
+      "strategico",
+      "potente"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "energy_policy",
+        "value": 0.4,
+        "source": "institutional_statement",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "environment",
+        "value": 0.2,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia",
+      "eni.com"
+    ],
+    "wikidata_qid": "Q3680575"
+  },
+  {
+    "id": "matteo_del_fante",
+    "name": "Matteo Del Fante",
+    "role": "Amministratore Delegato Poste Italiane",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Poste Italiane",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.5,
+    "rigidity": 0.5,
+    "bio": "CEO di Poste Italiane, la più grande azienda italiana per dipendenti. Ha trasformato Poste in operatore finanziario e logistico.",
+    "communication_style": "Manageriale, risultati, toni sobri",
+    "key_traits": [
+      "manageriale",
+      "trasformatore",
+      "pragmatico"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.3,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "carlo_messina",
+    "name": "Carlo Messina",
+    "role": "CEO Intesa Sanpaolo",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Intesa Sanpaolo",
+    "archetype": "business_leader",
+    "tier": 1,
+    "influence": 0.75,
+    "rigidity": 0.55,
+    "bio": "CEO della prima banca italiana per capitalizzazione. Considerato il banchiere più potente d'Italia.",
+    "communication_style": "Elegante, misurato, toni da grande banchiere, focus su risultati e stabilità",
+    "key_traits": [
+      "potente",
+      "misurato",
+      "visionario"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "fiscal_policy",
+        "value": 0.4,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.65,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ],
+    "wikidata_qid": "Q28002058"
+  },
+  {
+    "id": "andrea_orcel",
+    "name": "Andrea Orcel",
+    "role": "CEO UniCredit",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "UniCredit",
+    "archetype": "business_leader",
+    "tier": 1,
+    "influence": 0.7,
+    "rigidity": 0.5,
+    "bio": "CEO UniCredit, ex banchiere d'investimento. Ha lanciato l'OPS su Banco BPM, sfidando il governo.",
+    "communication_style": "Aggressivo, M&A-oriented, toni da investment banker, sfida il consenso",
+    "key_traits": [
+      "aggressivo",
+      "dealmaker",
+      "indipendente"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "fiscal_policy",
+        "value": 0.5,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ],
+    "wikidata_qid": "Q41759279"
+  },
+  {
+    "id": "john_elkann",
+    "name": "John Elkann",
+    "role": "Presidente Stellantis e EXOR",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Stellantis / EXOR",
+    "archetype": "business_leader",
+    "tier": 1,
+    "influence": 0.7,
+    "rigidity": 0.45,
+    "bio": "Erede della famiglia Agnelli, presidente di Stellantis e del gruppo EXOR. Editore de la Repubblica e La Stampa.",
+    "communication_style": "Riservato, internazionale, rare dichiarazioni pubbliche, agisce dietro le quinte",
+    "key_traits": [
+      "riservato",
+      "cosmopolita",
+      "potente"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "eu_integration",
+        "value": 0.6,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "industrial_policy",
+        "value": 0.3,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ],
+    "wikidata_qid": "Q316857"
+  },
+  {
+    "id": "pier_silvio_berlusconi",
+    "name": "Pier Silvio Berlusconi",
+    "role": "CEO Mediaset (MFE - MediaForEurope)",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Mediaset / MFE",
+    "archetype": "business_leader",
+    "tier": 1,
+    "influence": 0.6,
+    "rigidity": 0.4,
+    "bio": "Figlio di Silvio Berlusconi, CEO di Mediaset. Controlla il più grande gruppo TV privato in Italia. Peso indiretto su Forza Italia.",
+    "communication_style": "Riservato, manageriale, rare dichiarazioni politiche, agisce tramite il palinsesto",
+    "key_traits": [
+      "riservato",
+      "influente",
+      "mediatico"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "general_left_right",
+        "value": 0.35,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "media_freedom",
+        "value": 0.4,
+        "source": "inferred",
+        "confidence": "low"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ],
+    "wikidata_qid": "Q529698"
+  },
+  {
+    "id": "leonardo_del_vecchio_jr",
+    "name": "Leonardo Maria Del Vecchio",
+    "role": "Vicepresidente EssilorLuxottica, azionista Mediobanca",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Delfin / EssilorLuxottica",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.5,
+    "rigidity": 0.4,
+    "bio": "Figlio di Leonardo Del Vecchio, ereditiere del gruppo Luxottica/Delfin. Azionista rilevante in Mediobanca e Generali.",
+    "communication_style": "Riservato, finanziario, poche dichiarazioni pubbliche",
+    "key_traits": [
+      "riservato",
+      "finanziario",
+      "ereditiere"
+    ],
+    "platform_primary": "press",
+    "positions": [],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "urbano_cairo",
+    "name": "Urbano Cairo",
+    "role": "Presidente RCS MediaGroup e Torino FC",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "RCS MediaGroup / Cairo Communication",
+    "archetype": "business_leader",
+    "tier": 1,
+    "influence": 0.6,
+    "rigidity": 0.45,
+    "bio": "Editore del Corriere della Sera e della Gazzetta dello Sport, proprietario di La7. Uno dei più influenti editori italiani.",
+    "communication_style": "Imprenditoriale, pragmatico, evita schieramenti netti",
+    "key_traits": [
+      "imprenditore",
+      "influente",
+      "pragmatico"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "media_freedom",
+        "value": -0.4,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ],
+    "wikidata_qid": "Q1372143"
+  },
+  {
+    "id": "filippo_grandi_cda_eni",
+    "name": "Giuseppe Zafarana",
+    "role": "Presidente ENI",
+    "country": "IT",
+    "category": "institutional",
+    "party_or_org": "ENI",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.6,
+    "bio": "Presidente ENI dal 2023, ex Comandante Generale della Guardia di Finanza. Figura di raccordo governo-industria energetica.",
+    "communication_style": "Istituzionale, militare, toni sobri e formali",
+    "key_traits": [
+      "istituzionale",
+      "disciplinato",
+      "riservato"
+    ],
+    "platform_primary": "press",
+    "positions": [],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "roberto_cingolani",
+    "name": "Roberto Cingolani",
+    "role": "CEO Leonardo SpA",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Leonardo",
+    "archetype": "business_leader",
+    "tier": 1,
+    "influence": 0.55,
+    "rigidity": 0.5,
+    "bio": "CEO di Leonardo (ex Finmeccanica), colosso della difesa. Ex Ministro della Transizione Ecologica nel governo Draghi. Fisico di formazione.",
+    "communication_style": "Scientifico-manageriale, pragmatico, toni da tecnologo",
+    "key_traits": [
+      "tecnologo",
+      "pragmatico",
+      "innovatore"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "defense_spending",
+        "value": 0.75,
+        "source": "institutional_statement",
+        "confidence": "high"
+      },
+      {
+        "topic_tag": "environment",
+        "value": -0.3,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "luigi_ferraris",
+    "name": "Luigi Ferraris",
+    "role": "CEO Ferrovie dello Stato",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Ferrovie dello Stato",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.5,
+    "bio": "CEO di FS Italiane, gestisce la rete ferroviaria nazionale. Dossier critico: PNRR, alta velocità, pendolari.",
+    "communication_style": "Manageriale, focus su investimenti e infrastrutture",
+    "key_traits": [
+      "manageriale",
+      "operativo",
+      "cauto"
+    ],
+    "platform_primary": "press",
+    "positions": [],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "giuseppe_castagna",
+    "name": "Giuseppe Castagna",
+    "role": "CEO Banco BPM",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Banco BPM",
+    "archetype": "business_leader",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.55,
+    "bio": "CEO di Banco BPM, terza banca italiana. Al centro dell'OPS UniCredit, ha cercato di resistere all'acquisizione.",
+    "communication_style": "Difensivo, locale, toni da banchiere territoriale",
+    "key_traits": [
+      "difensivo",
+      "territoriale",
+      "resiliente"
+    ],
+    "platform_primary": "press",
+    "positions": [],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  }
+]

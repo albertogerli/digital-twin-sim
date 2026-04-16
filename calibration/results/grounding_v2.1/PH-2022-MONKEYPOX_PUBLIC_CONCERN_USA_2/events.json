@@ -1,0 +1,60 @@
+[
+  {
+    "round": 1,
+    "description": "The first confirmed case of mpox in the United States is reported to the CDC in a Massachusetts resident who had recently traveled from Canada.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "The CDC officially activates its emergency outbreak response to address the emerging mpox situation.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "The World Health Organization (WHO) declares the multi-country mpox outbreak a Public Health Emergency of International Concern (PHEIC).",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE83jbnwYnhIIm7YMuMv-J8Xg8Ex5vce-PODNOcxOxgizNtBbtgrvqXR6xTc76Co4UXoPZxCG2Eq-j2FW9oECwuUM6ZDbZ5IPEgeeDR5PlrR_rx17FS02-7VvgKr-z8Kkzv8Oyuzq2eSBKDFmiwiRCfwKpXKOBizFrwHe0f1_AwKW0H_wrsakrqmhrp5SQS0zGsJvW9se5G4_ds_dlcbNLFQclNg8jFJf9eNGsgu4_9WbIrS-lLIW6tnAAJ8qvky40PF_s=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE83jbnwYnhIIm7YMuMv-J8Xg8Ex5vce-PODNOcxOxgizNtBbtgrvqXR6xTc76Co4UXoPZxCG2Eq-j2FW9oECwuUM6ZDbZ5IPEgeeDR5PlrR_rx17FS02-7VvgKr-z8Kkzv8Oyuzq2eSBKDFmiwiRCfwKpXKOBizFrwHe0f1_AwKW0H_wrsakrqmhrp5SQS0zGsJvW9se5G4_ds_dlcbNLFQclNg8jFJf9eNGsgu4_9WbIrS-lLIW6tnAAJ8qvky40PF_s="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "New York Governor Kathy Hochul declares a state disaster emergency to mobilize resources for the mpox outbreak.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "California Governor Gavin Newsom proclaims a State of Emergency to bolster vaccination efforts and coordinate the state's response.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "The U.S. Department of Health and Human Services (HHS) officially declares the mpox outbreak a national Public Health Emergency.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEC-l3rIxetDijcrvip9mMJHky0JIssWr--2MS7v-L6f1WqbuSerz80qDv8HGsdTTtkN-AkzibZl36S6AWOeLlpljLyyljhoAlZlVGt1Q0uDtE_BI0Mr1xsoz0ucXEi5JHKMcb6MAqvTyIYX-8YO0YokYJYkQ==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEC-l3rIxetDijcrvip9mMJHky0JIssWr--2MS7v-L6f1WqbuSerz80qDv8HGsdTTtkN-AkzibZl36S6AWOeLlpljLyyljhoAlZlVGt1Q0uDtE_BI0Mr1xsoz0ucXEi5JHKMcb6MAqvTyIYX-8YO0YokYJYkQ=="
+    ],
+    "_verified": true
+  }
+]

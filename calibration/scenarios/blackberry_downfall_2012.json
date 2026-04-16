@@ -1,0 +1,83 @@
+{
+  "scenario_name": "blackberry_downfall_2012",
+  "domain": "commercial",
+  "description": "BlackBerry, once the gold standard for enterprise phones, suffered a rapid loss of market share after the rise of iPhone and Android in the late 2000s/early 2010s.",
+  "final_outcome_pro_pct": 5.0,
+  "final_outcome_against_pct": 95.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 35,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 15,
+      "against_pct": 75,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 10,
+      "against_pct": 85,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 7,
+      "against_pct": 91,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "iPhone market share overtakes BlackBerry in the US."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "BlackBerry Storm release receives poor critical reviews."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Enterprise clients begin switching to BYOD policies."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "BlackBerry records massive annual loss and layoffs."
+    }
+  ],
+  "calibration_notes": "Models the slow, then sudden decline of a market leader failing to innovate."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "iceland_banking_collapse_2008",
+  "domain": "financial",
+  "description": "Following the collapse of Iceland's three largest commercial banks in October 2008, the public debated whether to accept the 'Icesave' bill to repay foreign depositors. The debate centered on national sovereignty versus international financial obligations, culminating in a 2010 referendum where the public overwhelmingly rejected the repayment deal.",
+  "final_outcome_pro_pct": 1.0,
+  "final_outcome_against_pct": 99.0,
+  "final_turnout_pct": 93.2,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 25,
+      "against_pct": 40,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 45,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 28,
+      "against_pct": 52,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 15,
+      "against_pct": 65,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 10,
+      "against_pct": 75,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 8,
+      "against_pct": 82,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 5,
+      "against_pct": 90,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 1,
+      "against_pct": 99,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Collapse of Glitnir, Landsbanki, and Kaupthing"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "UK uses anti-terror laws to freeze Icelandic assets"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "President Olafur Grimsson refuses to sign the Icesave bill"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "National referendum confirms rejection of bailout terms"
+    }
+  ],
+  "calibration_notes": "Useful for testing extreme consensus shifts in the face of national economic crisis and perceived external coercion."
+}

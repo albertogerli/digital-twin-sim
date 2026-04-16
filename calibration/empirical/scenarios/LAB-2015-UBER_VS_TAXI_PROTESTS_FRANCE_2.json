@@ -1,0 +1,165 @@
+{
+  "id": "LAB-2015-UBER_VS_TAXI_PROTESTS_FRANCE_2",
+  "domain": "labor",
+  "title": "Public opinion dynamics regarding the Uber vs traditional taxi industry conflict in France during 2015",
+  "country": "FR",
+  "date_start": "2015-01-25",
+  "date_end": "2015-06-25",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 45.0,
+    "source": "https://www.ifop.com/wp-content/uploads/2018/03/3349-1-study_file.pdf",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2015-01-25",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0,
+      "sample_size": 1000,
+      "source": "Estimated: Based on pre-protest baseline sentiment in IFOP archives",
+      "pollster": "IFOP"
+    },
+    {
+      "round": 2,
+      "date": "2015-02-15",
+      "pro_pct": 41.5,
+      "against_pct": 44.0,
+      "undecided_pct": 14.5,
+      "sample_size": null,
+      "source": "Estimated: Gradual shift following initial market entry awareness",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2015-03-08",
+      "pro_pct": 42.0,
+      "against_pct": 43.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Stabilization period",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2015-03-29",
+      "pro_pct": 43.5,
+      "against_pct": 42.0,
+      "undecided_pct": 14.5,
+      "sample_size": null,
+      "source": "Estimated: Impact of digital platform convenience narrative",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2015-04-19",
+      "pro_pct": 44.0,
+      "against_pct": 41.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Continued growth in ride-sharing adoption",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2015-05-10",
+      "pro_pct": 44.5,
+      "against_pct": 40.5,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Pre-protest peak sentiment",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2015-05-31",
+      "pro_pct": 45.0,
+      "against_pct": 40.0,
+      "undecided_pct": 15.0,
+      "sample_size": 1000,
+      "source": "https://www.ifop.com/wp-content/uploads/2018/03/3349-1-study_file.pdf",
+      "pollster": "IFOP"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2015-01-26",
+      "description": "Massive taxi driver strikes across France blocking major airports and roads",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.3,
+      "source": "https://www.reuters.com/article/us-france-taxi-strike-idUSKBN0KZ0T120150126"
+    },
+    {
+      "round": 4,
+      "date": "2015-03-31",
+      "description": "French court rules against UberPop, fueling public debate on innovation vs regulation",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.2,
+      "source": "https://www.bbc.com/news/technology-32135697"
+    },
+    {
+      "round": 6,
+      "date": "2015-05-20",
+      "description": "Government announces new regulations for ride-sharing apps",
+      "shock_magnitude": 0.7,
+      "shock_direction": 0.1,
+      "source": "https://www.nytimes.com/2015/05/21/business/international/france-to-tighten-rules-on-ride-sharing-services.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Uber France",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "The ride-sharing platform advocating for market liberalization"
+    },
+    {
+      "name": "Taxi Unions (CGT/FO)",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "Traditional taxi drivers' organizations protecting existing licenses"
+    },
+    {
+      "name": "French Government",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "Regulators attempting to balance innovation and labor protection"
+    },
+    {
+      "name": "Urban Commuters",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "Consumers favoring cheaper and more accessible transport"
+    },
+    {
+      "name": "Rural/Provincial Residents",
+      "type": "citizen_cluster",
+      "initial_position": -0.2,
+      "influence": 0.3,
+      "description": "Less impacted by ride-sharing, generally indifferent or skeptical"
+    },
+    {
+      "name": "Tech Industry Lobbyists",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.5,
+      "description": "Advocates for digital economy and deregulation"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.696,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.6,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side (+1) is defined as support for Uber and ride-sharing services. Against-side (-1) is defined as support for traditional taxi industry protections. Data quality: IFOP survey provides the anchor for the final round; intermediate rounds are interpolated based on major news events and protest intensity."
+}

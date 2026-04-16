@@ -1,0 +1,87 @@
+{
+  "scenario_id": "PH-2021-VACCINE_HESITANCY_USA_2021_CO",
+  "topic": "PH-2021-VACCINE_HESITANCY_USA_2021_CO",
+  "domain": "public_health",
+  "country": "US",
+  "timeframe_start": "2021-01-20",
+  "timeframe_end": "2021-03-01",
+  "events": [
+    {
+      "date": "2021-01-20",
+      "description": "President Joe Biden was inaugurated and established a federal goal of administering 100 million vaccine doses within his first 100 days in office.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "100 million doses, 100 days"
+    },
+    {
+      "date": "2021-02-27",
+      "description": "The FDA granted Emergency Use Authorization (EUA) for the Johnson & Johnson (Janssen) single-dose COVID-19 vaccine, expanding access options.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "1 dose"
+    },
+    {
+      "date": "2021-03-01",
+      "description": "Public health data indicated a significant decline in vaccine hesitancy across most demographic groups, particularly among young adults and Black Americans.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "hhs.gov",
+      "confidence": 0.8,
+      "quantitative_detail": "18-24 age group"
+    }
+  ],
+  "polls": [
+    {
+      "date": "2021-03-01",
+      "pro_pct": 62.0,
+      "sample_size": 0,
+      "source": "Denver Gazette",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-01-01",
+      "pro_pct": 56.0,
+      "sample_size": 0,
+      "source": "OnSight Public Affairs",
+      "methodology": "poll"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "Jared Polis",
+      "role": "Governor of Colorado",
+      "position": "Advocated for widespread vaccination efforts and emphasized the importance of reaching rural and hesitant populations to achieve state health goals.",
+      "date": "2021-05-01",
+      "source": "onsightpublicaffairs.com"
+    },
+    {
+      "name": "Jill Hunsaker Ryan",
+      "role": "Executive Director, Colorado Department of Public Health and Environment",
+      "position": "Publicly addressed the need to overcome vaccine hesitancy by focusing on community-based outreach and addressing specific safety concerns among skeptical residents.",
+      "date": "2021-04-15",
+      "source": "denvergazette.com"
+    }
+  ],
+  "outcome_description": "Throughout 2021, vaccine hesitancy in the United States generally declined across most demographic groups, though it remained persistent in specific populations despite increased availability and public health outreach.",
+  "outcome_pro_pct": 75.0,
+  "outcome_source": "Kaiser Family Foundation (KFF) COVID-19 Vaccine Monitor",
+  "key_figures": {
+    "vaccinated_or_planning_march_2021": "62% of Colorado residents",
+    "unvaccinated_population_segment": "15% of respondents",
+    "reason_threat_overstated": "50% of unvaccinated respondents",
+    "reason_safety_concerns": "49% of unvaccinated respondents",
+    "reason_developed_too_quickly": "47% of unvaccinated respondents",
+    "republican_vaccination_intent": "56% had received or planned to receive the vaccine",
+    "rural_county_vaccination_rate": "64%"
+  },
+  "n_sources_consulted": 3,
+  "research_timestamp": "2026-04-01T02:57:34.502264",
+  "quality_score": 61
+}

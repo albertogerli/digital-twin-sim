@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tiger_woods_scandal_2009",
+  "domain": "marketing",
+  "description": "Following revelations of multiple extramarital affairs in November 2009, major sponsors including Accenture, AT&T, and Gatorade faced public pressure to drop Tiger Woods. This case captures the rapid erosion of brand affinity when a primary celebrity endorser's private conduct conflicts with their 'wholesome' brand marketing image.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 85,
+      "against_pct": 5,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 55,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 28,
+      "against_pct": 62,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 29,
+      "against_pct": 66,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "National Enquirer breaks the story of infidelity."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Accenture becomes the first major sponsor to terminate their endorsement contract."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Woods announces an 'indefinite break' from professional golf."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Woods issues a televised apology confirming full departure from public spotlight."
+    }
+  ],
+  "calibration_notes": "Excellent for modeling the 'rapid collapse' trajectory where initial brand trust buffers the decline before shifting to permanent reputational loss."
+}

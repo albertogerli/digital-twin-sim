@@ -1,0 +1,79 @@
+{
+  "scenario_name": "patagonia_donates_earth_2022",
+  "domain": "marketing",
+  "description": "In 2022, Yvon Chouinard transferred ownership of Patagonia to a trust and non-profit organization to ensure profits combat climate change. This was widely viewed as the pinnacle of 'walk the walk' cause marketing.",
+  "final_outcome_pro_pct": 92.0,
+  "final_outcome_against_pct": 8.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 75,
+      "against_pct": 5,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 80,
+      "against_pct": 5,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 85,
+      "against_pct": 7,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 88,
+      "against_pct": 7,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 90,
+      "against_pct": 8,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 91,
+      "against_pct": 8,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 92,
+      "against_pct": 8,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 92,
+      "against_pct": 8,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Official announcement of Earth as the company's only shareholder."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Tax experts analyze the move, sparking minor discourse on corporate tax sheltering."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Widespread praise from environmental NGOs reinforces brand authority."
+    }
+  ],
+  "calibration_notes": "Serves as a benchmark for high-trust, authentic cause marketing that succeeds in minimizing skepticism."
+}

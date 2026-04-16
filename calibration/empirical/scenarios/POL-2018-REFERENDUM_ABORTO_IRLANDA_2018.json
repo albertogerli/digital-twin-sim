@@ -1,0 +1,155 @@
+{
+  "id": "POL-2018-REFERENDUM_ABORTO_IRLANDA_2018",
+  "domain": "political",
+  "title": "Thirty-sixth Amendment of the Constitution of Ireland (Abortion) Referendum 2018",
+  "country": "IE",
+  "date_start": "2018-03-01",
+  "date_end": "2018-05-25",
+  "n_rounds": 6,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 66.4,
+    "source": "https://www.refcom.ie/previous-referendums/thirty-sixth-amendment/",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2018-03-01",
+      "pro_pct": 47.0,
+      "against_pct": 28.0,
+      "undecided_pct": 25.0,
+      "sample_size": 1000,
+      "source": "https://www.irishtimes.com/news/politics/poll-majority-support-repeal-of-eighth-amendment-1.3411425",
+      "pollster": "Ipsos MRBI"
+    },
+    {
+      "round": 2,
+      "date": "2018-03-15",
+      "pro_pct": 48.0,
+      "against_pct": 27.0,
+      "undecided_pct": 25.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated trend based on Ipsos MRBI and Red C trajectory",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2018-03-29",
+      "pro_pct": 50.0,
+      "against_pct": 26.0,
+      "undecided_pct": 24.0,
+      "sample_size": 1000,
+      "source": "https://www.redcresearch.ie/wp-content/uploads/2018/04/Business-Post-Red-C-Poll-April-2018.pdf",
+      "pollster": "Red C"
+    },
+    {
+      "round": 4,
+      "date": "2018-04-12",
+      "pro_pct": 53.0,
+      "against_pct": 24.0,
+      "undecided_pct": 23.0,
+      "sample_size": null,
+      "source": "Estimated: Gradual shift toward pro-side following public debate intensification",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2018-04-26",
+      "pro_pct": 56.0,
+      "against_pct": 22.0,
+      "undecided_pct": 22.0,
+      "sample_size": 1000,
+      "source": "https://www.irishtimes.com/news/politics/poll-support-for-repeal-of-eighth-amendment-rises-to-56-1.3475878",
+      "pollster": "Ipsos MRBI"
+    },
+    {
+      "round": 6,
+      "date": "2018-05-10",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Final momentum shift toward pro-side in final campaign weeks",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2018-03-09",
+      "description": "Government publishes the Thirty-sixth Amendment of the Constitution Bill 2018",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2,
+      "source": "https://www.oireachtas.ie/en/bills/bill/2018/30/"
+    },
+    {
+      "round": 3,
+      "date": "2018-03-27",
+      "description": "Official launch of the Together for Yes campaign",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.3,
+      "source": "https://www.thejournal.ie/together-for-yes-launch-3933519-Mar2018/"
+    },
+    {
+      "round": 5,
+      "date": "2018-04-24",
+      "description": "The Save the 8th campaign intensifies billboard and media advertising",
+      "shock_magnitude": 0.2,
+      "shock_direction": -0.1,
+      "source": "https://www.irishtimes.com/news/politics/abortion-referendum-campaign-intensifies-1.3472097"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Together for Yes",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Main umbrella organization advocating for repeal"
+    },
+    {
+      "name": "Save the 8th",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "Main organization advocating for retention of the 8th amendment"
+    },
+    {
+      "name": "Leo Varadkar",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "Taoiseach and leader of Fine Gael, supporting repeal"
+    },
+    {
+      "name": "Catholic Church",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.6,
+      "description": "Religious leadership opposing the repeal"
+    },
+    {
+      "name": "Urban Youth Cluster",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.4,
+      "description": "Young voters in Dublin and urban centers, strongly pro-repeal"
+    },
+    {
+      "name": "Rural Conservative Cluster",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Older voters in rural areas, strongly against repeal"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.99,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.25
+  },
+  "notes": "Pro = YES vote (repeal 8th amendment, allow abortion access). Against = NO vote (retain 8th amendment). Data quality: Polling data is a mix of actual survey results and linear interpolation for rounds without specific polling dates. The ground truth outcome of 66.4% reflects the final referendum result."
+}

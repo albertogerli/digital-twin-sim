@@ -1,0 +1,79 @@
+{
+  "scenario_name": "starbucks_race_together_2015",
+  "domain": "marketing",
+  "description": "Starbucks initiated the 'Race Together' campaign in 2015, asking baristas to write the phrase on cups to encourage conversations about race. It was widely panned for being performative and placing the burden of cultural critique on service workers.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 40,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 18,
+      "against_pct": 75,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 16,
+      "against_pct": 80,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 15,
+      "against_pct": 82,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 15,
+      "against_pct": 84,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Social media users ridicule the concept as out-of-touch."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Starbucks SVP deletes Twitter account after intense backlash."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "CEO Howard Schultz pivots, ending the cup-writing initiative."
+    }
+  ],
+  "calibration_notes": "Demonstrates the failure of a top-down cause campaign that disregards the operational reality of the employees."
+}

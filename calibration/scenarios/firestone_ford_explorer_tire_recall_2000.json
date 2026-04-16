@@ -1,0 +1,79 @@
+{
+  "scenario_name": "firestone_ford_explorer_tire_recall_2000",
+  "domain": "commercial",
+  "description": "Public outcry following revelations that Ford Explorer SUVs equipped with Firestone ATX tires were prone to tread separation, leading to fatal rollovers. The debate focused on whether Ford or Firestone was primarily at fault.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 60,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 65,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 30,
+      "against_pct": 68,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 29,
+      "against_pct": 69,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "NHTSA officially launches an investigation into tire failures."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Firestone announces the recall of 6.5 million tires."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Ford and Firestone executives trade blame in congressional hearings."
+    }
+  ],
+  "calibration_notes": "Tests the impact of inter-company blame-shifting on consumer trust."
+}

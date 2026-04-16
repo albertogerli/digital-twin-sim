@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dolce_gabbana_china_scandal_2018",
+  "domain": "marketing",
+  "description": "In 2018, Dolce & Gabbana released ads in China that were widely perceived as culturally insensitive, followed by leaked offensive DMs from Stefano Gabbana. The fallout led to a total boycott by Chinese luxury consumers.",
+  "final_outcome_pro_pct": 5.0,
+  "final_outcome_against_pct": 95.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 10,
+      "against_pct": 80,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 8,
+      "against_pct": 90,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 7,
+      "against_pct": 92,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 6,
+      "against_pct": 93,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Ad campaign launched in China."
+    },
+    {
+      "round_equivalent": 2,
+      "description": "Stefano Gabbana private messages leaked."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Major Chinese e-commerce platforms delist the brand."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Public video apology released by founders."
+    }
+  ],
+  "calibration_notes": "Illustrates the irreversible loss of an entire geographic market due to cultural insensitivity."
+}

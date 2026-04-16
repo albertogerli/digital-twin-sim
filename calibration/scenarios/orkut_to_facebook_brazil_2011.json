@@ -1,0 +1,79 @@
+{
+  "scenario_name": "orkut_to_facebook_brazil_2011",
+  "domain": "technology",
+  "description": "The decline of Orkut, Google's dominant social network in Brazil, and the subsequent takeover by Facebook between 2011 and 2012. This is a classic case study of a platform losing a localized market lead.",
+  "final_outcome_pro_pct": 80.0,
+  "final_outcome_against_pct": 20.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 20,
+      "against_pct": 70,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 80,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 4,
+      "description": "Facebook introduces Portuguese language support and optimizes for lower-bandwidth connections in Brazil."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Facebook exceeds Orkut in monthly unique visitors in Brazil (Dec 2011)."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Google announces it will shut down Orkut entirely, marking the end of the migration."
+    }
+  ],
+  "calibration_notes": "Useful for understanding how global tech giants leverage localization to displace regional incumbents."
+}

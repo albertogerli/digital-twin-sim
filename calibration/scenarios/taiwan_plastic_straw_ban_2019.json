@@ -1,0 +1,83 @@
+{
+  "scenario_name": "taiwan_plastic_straw_ban_2019",
+  "domain": "environmental",
+  "description": "Taiwan introduced a ban on single-use plastic straws in public sector food outlets in 2019, as part of its 'Policy Guidelines for Plastic Reduction', which aimed to eliminate all single-use plastics by 2030.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 30,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 28,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 33,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 32,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 67,
+      "against_pct": 32,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Environmental Protection Administration announces the timeline."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Pushback from the bubble tea industry regarding technical challenges."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Government provides subsidies for paper and reusable straw manufacturers."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Enforcement begins in public agencies and schools."
+    }
+  ],
+  "calibration_notes": "Useful for modeling policies that hit specific cultural industries (bubble tea) and require state-led industrial adaptation."
+}

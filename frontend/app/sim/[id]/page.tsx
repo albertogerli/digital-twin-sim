@@ -13,6 +13,7 @@ import MonteCarloPanel from "@/components/sim/MonteCarloPanel";
 import ConfidenceBand from "@/components/sim/ConfidenceBand";
 import RegimeIndicator from "@/components/sim/RegimeIndicator";
 import CalibrationBadge from "@/components/sim/CalibrationBadge";
+import ChartErrorBoundary from "@/components/sim/ChartErrorBoundary";
 
 // --- Types ---
 
@@ -100,6 +101,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
   const [connected, setConnected] = useState(false);
   const [scenarioId, setScenarioId] = useState<string | null>(null);
   const [showLog, setShowLog] = useState(false);
+  const [warning, setWarning] = useState<string | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
 
@@ -242,6 +244,11 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
           });
         }
 
+        // Warning phase (e.g. all agents failed)
+        if (data.type === "round_phase" && data.data?.phase === "warning") {
+          setWarning(data.message || "Warning durante la simulazione");
+        }
+
         if (data.type === "round_start") {
           setStatus((prev) => prev ? {
             ...prev,
@@ -346,33 +353,22 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
   const latestRound = rounds.length > 0 ? rounds[rounds.length - 1] : null;
 
   return (
-    <main className="min-h-screen text-gray-900">
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        {/* Back */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-gray-500 hover:text-blue-600 transition-colors mb-6 text-sm"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Home
-        </Link>
-
+    <main className="text-ki-on-surface">
+      <div className="max-w-7xl mx-auto px-4 py-4">
         {/* Header */}
-        <div className="mb-6">
-          <div className="flex items-center gap-3 mb-1">
-            <h1 className="text-2xl font-display font-bold">
+        <div className="mb-4">
+          <div className="flex items-center gap-2 mb-0.5">
+            <h1 className="text-base font-headline font-extrabold">
               {status?.scenario_name || "Simulazione in avvio..."}
             </h1>
             {status?.domain && (
-              <span className="px-3 py-0.5 rounded-full text-xs font-semibold uppercase tracking-wide bg-cyan-50 border border-cyan-200 text-cyan-700">
+              <span className="px-2 py-0.5 rounded-sm text-[10px] font-semibold uppercase tracking-wide bg-ki-surface-sunken border border-ki-border text-ki-on-surface-muted">
                 {status.domain.replace("_", " ")}
               </span>
             )}
             {connected && isActive && (
-              <span className="flex items-center gap-1.5 text-xs text-emerald-600 font-medium">
-                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+              <span className="flex items-center gap-1 text-[10px] text-ki-success font-medium">
+                <span className="w-1.5 h-1.5 bg-ki-success rounded-full animate-pulse" />
                 Live
               </span>
             )}
@@ -385,28 +381,28 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
               <RegimeIndicator regimeInfo={latestRound.regime_info} />
             )}
           </div>
-          <p className="text-gray-500 text-sm">{status?.brief}</p>
+          <p className="text-ki-on-surface-muted text-xs">{status?.brief}</p>
         </div>
 
         {/* Progress bar + RoundPhaseIndicator */}
-        <div className="bg-white border border-gray-200 rounded-xl p-4 mb-6">
-          <div className="flex items-center justify-between mb-2 text-sm">
+        <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-2 mb-4">
+          <div className="flex items-center justify-between mb-1.5 text-xs">
             <span className="font-semibold">
               {status?.status === "completed" ? "Completata!" :
                status?.status === "failed" ? "Errore" :
                status?.status === "running" ? `Round ${status.current_round} di ${status.total_rounds}` :
                status?.status?.replace("_", " ") || "..."}
             </span>
-            <div className="flex items-center gap-4 text-gray-500 font-mono text-xs">
+            <div className="flex items-center gap-3 text-ki-on-surface-muted font-data text-[10px]">
               <span>{status?.agents_count || "..."} agenti</span>
               <span>${(status?.cost || 0).toFixed(3)}</span>
             </div>
           </div>
-          <div className="w-full bg-gray-100 rounded-full h-3 overflow-hidden">
+          <div className="w-full bg-ki-surface-sunken rounded-full h-1.5 overflow-hidden">
             <div
               className={`h-full rounded-full transition-all duration-700 ${
-                status?.status === "completed" ? "bg-emerald-500" :
-                status?.status === "failed" ? "bg-red-500" : "bg-blue-500"
+                status?.status === "completed" ? "bg-ki-success" :
+                status?.status === "failed" ? "bg-ki-error" : "bg-ki-primary"
               }`}
               style={{ width: `${status?.status === "completed" ? 100 : progressPct}%` }}
             />
@@ -426,40 +422,40 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
 
         {/* Main content: 2-column layout on desktop */}
         {rounds.length > 0 && (
-          <div className="flex flex-col lg:flex-row gap-6 mb-6">
+          <div className="flex flex-col lg:flex-row gap-4 mb-4">
             {/* LEFT: Round cards + Custom metrics */}
             <div className="flex-1 min-w-0 lg:w-[60%]">
               {/* Custom Metrics Chart (if any) */}
               {allMetricKeys.length > 0 && (
-                <div className="bg-white border border-gray-200 rounded-xl p-5 mb-4">
-                  <h2 className="text-sm font-semibold text-gray-700 mb-4">Metriche Scenario</h2>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-3 mb-3">
+                  <h2 className="text-xs font-semibold text-ki-on-surface-secondary mb-3">Metriche Scenario</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                     {allMetricKeys.map((key) => {
                       const latest = rounds[rounds.length - 1]?.custom_metrics[key] ?? 0;
                       const prev = rounds.length > 1 ? rounds[rounds.length - 2]?.custom_metrics[key] ?? 0 : null;
                       const delta = prev !== null ? latest - prev : null;
                       return (
-                        <div key={key} className="bg-gray-50 rounded-lg p-3">
-                          <div className="text-[10px] font-mono uppercase text-gray-400 mb-1 truncate" title={key}>
+                        <div key={key} className="bg-ki-surface-sunken rounded-sm p-2">
+                          <div className="text-[10px] font-data uppercase text-ki-on-surface-muted mb-1 truncate" title={key}>
                             {key}
                           </div>
-                          <div className="flex items-end gap-2">
-                            <span className="text-2xl font-bold text-gray-900">{latest}</span>
-                            <span className="text-xs text-gray-400">/100</span>
+                          <div className="flex items-end gap-1.5">
+                            <span className="text-xl font-bold text-ki-on-surface">{latest}</span>
+                            <span className="text-[10px] text-ki-on-surface-muted">/100</span>
                             {delta !== null && delta !== 0 && (
-                              <span className={`text-xs font-semibold ${delta > 0 ? "text-emerald-600" : "text-red-600"}`}>
+                              <span className={`text-[10px] font-semibold ${delta > 0 ? "text-ki-success" : "text-ki-error"}`}>
                                 {delta > 0 ? "+" : ""}{delta}
                               </span>
                             )}
                           </div>
                           {rounds.length > 1 && (
-                            <div className="flex items-end gap-px mt-2 h-6">
+                            <div className="flex items-end gap-px mt-1.5 h-5">
                               {rounds.map((r, i) => {
                                 const val = r.custom_metrics[key] ?? 0;
                                 return (
                                   <div
                                     key={i}
-                                    className="flex-1 bg-blue-400 rounded-t-sm min-w-[3px] transition-all duration-300"
+                                    className="flex-1 bg-ki-primary rounded-t-sm min-w-[3px] transition-all duration-300"
                                     style={{ height: `${Math.max(val, 2)}%` }}
                                   />
                                 );
@@ -474,7 +470,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
               )}
 
               {/* Round Cards */}
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {rounds.map((round) => (
                   <LiveRoundCard
                     key={round.round}
@@ -486,23 +482,33 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             </div>
 
             {/* RIGHT: Sidebar charts */}
-            <div className="lg:w-[40%] space-y-4">
-              <PolarizationChart rounds={polarizationData} />
-              <SentimentEvolution rounds={sentimentData} />
+            <div className="lg:w-[40%] space-y-3">
+              <ChartErrorBoundary fallbackLabel="Polarizzazione non disponibile">
+                <PolarizationChart rounds={polarizationData} />
+              </ChartErrorBoundary>
+              <ChartErrorBoundary fallbackLabel="Sentiment non disponibile">
+                <SentimentEvolution rounds={sentimentData} />
+              </ChartErrorBoundary>
               {latestRound && (
-                <AgentPositionStrip
-                  agents={latestRound.agents}
-                  negativeLabel={positionAxis?.negative_label}
-                  positiveLabel={positionAxis?.positive_label}
-                />
+                <ChartErrorBoundary fallbackLabel="Posizioni agenti non disponibili">
+                  <AgentPositionStrip
+                    agents={latestRound.agents}
+                    negativeLabel={positionAxis?.negative_label}
+                    positiveLabel={positionAxis?.positive_label}
+                  />
+                </ChartErrorBoundary>
               )}
-              <CoalitionEvolution rounds={coalitionData} />
+              <ChartErrorBoundary fallbackLabel="Coalizioni non disponibili">
+                <CoalitionEvolution rounds={coalitionData} />
+              </ChartErrorBoundary>
               {/* Confidence Band (v2 calibration) */}
               {rounds.some((r) => r.confidence_interval) && (
-                <ConfidenceBand
-                  rounds={rounds.map((r) => ({ round: r.round, confidence_interval: r.confidence_interval }))}
-                  positionAxis={positionAxis}
-                />
+                <ChartErrorBoundary fallbackLabel="Intervallo di confidenza non disponibile">
+                  <ConfidenceBand
+                    rounds={rounds.map((r) => ({ round: r.round, confidence_interval: r.confidence_interval }))}
+                    positionAxis={positionAxis}
+                  />
+                </ChartErrorBoundary>
               )}
             </div>
           </div>
@@ -510,11 +516,11 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
 
         {/* Waiting animation when no rounds yet */}
         {rounds.length === 0 && isActive && !isBriefing && (
-          <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6 text-center">
-            <div className="animate-pulse space-y-3">
-              <div className="h-4 w-48 bg-gray-200 rounded mx-auto" />
-              <div className="h-3 w-64 bg-gray-100 rounded mx-auto" />
-              <p className="text-sm text-gray-400 mt-4">
+          <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-6 mb-4 text-center">
+            <div className="animate-pulse space-y-2">
+              <div className="h-3 w-48 bg-ki-surface-sunken rounded mx-auto" />
+              <div className="h-2 w-64 bg-ki-surface-sunken rounded mx-auto" />
+              <p className="text-xs text-ki-on-surface-muted mt-3">
                 In attesa del primo round...
               </p>
             </div>
@@ -523,7 +529,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
 
         {/* Monte Carlo Results */}
         {monteCarloData && (
-          <div className="mb-6">
+          <div className="mb-4">
             <MonteCarloPanel
               data={monteCarloData}
               positiveLabel={positionAxis?.positive_label}
@@ -534,17 +540,35 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
 
         {/* Error */}
         {status?.status === "failed" && status.error && (
-          <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6">
-            <h3 className="text-sm font-semibold text-red-600 mb-1">Errore</h3>
-            <p className="text-red-600 text-sm font-mono">{status.error}</p>
+          <div className="bg-ki-error/10 border border-ki-error/25 rounded-sm p-3 mb-4">
+            <h3 className="text-xs font-semibold text-ki-error mb-1">Errore</h3>
+            <p className="text-ki-error text-xs font-data">{status.error}</p>
+          </div>
+        )}
+
+        {/* Warning banner */}
+        {warning && (
+          <div className="mb-3 bg-ki-warning/10 border border-ki-warning/25 rounded-sm p-3 flex items-start gap-2">
+            <svg className="w-4 h-4 text-ki-warning flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            <div className="flex-1">
+              <p className="text-xs font-medium text-ki-warning">{warning}</p>
+              <p className="text-[10px] text-ki-warning/80 mt-0.5">Il parser JSON potrebbe non aver gestito la risposta LLM. I risultati di questo round potrebbero essere incompleti.</p>
+            </div>
+            <button onClick={() => setWarning(null)} className="text-ki-warning/50 hover:text-ki-warning">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
         )}
 
         {/* Event Log (collapsible) */}
-        <div className="mb-6">
+        <div className="mb-4">
           <button
             onClick={() => setShowLog(!showLog)}
-            className="flex items-center gap-2 text-xs text-gray-400 hover:text-gray-600 transition-colors mb-2"
+            className="flex items-center gap-2 text-[10px] text-ki-on-surface-muted hover:text-ki-on-surface-secondary transition-colors mb-1.5"
           >
             <svg className={`w-3 h-3 transition-transform ${showLog ? "rotate-90" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -552,28 +576,29 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             Log eventi ({events.filter(e => e.type !== "heartbeat").length})
           </button>
           {showLog && (
-            <div className="bg-white border border-gray-200 rounded-lg overflow-hidden">
+            <div className="bg-ki-surface-raised border border-ki-border rounded-sm overflow-hidden">
               <div
                 ref={logRef}
-                className="h-48 overflow-y-auto p-3 space-y-1 font-mono text-xs"
+                className="h-40 overflow-y-auto p-2 space-y-0.5 font-data text-[11px]"
               >
                 {events.filter(e => e.type !== "heartbeat").map((ev, i) => (
                   <div
                     key={i}
                     className={`${
-                      ev.type === "error" ? "text-red-600" :
-                      ev.type === "completed" ? "text-emerald-600" :
-                      ev.type === "round_start" ? "text-blue-600" :
-                      ev.type === "round_complete" ? "text-blue-500" :
-                      ev.type === "brief_analyzed" ? "text-amber-600" :
-                      "text-gray-400"
+                      ev.type === "error" ? "text-ki-error" :
+                      ev.type === "completed" ? "text-ki-success" :
+                      ev.type === "round_start" ? "text-ki-primary" :
+                      ev.type === "round_complete" ? "text-ki-primary-muted" :
+                      ev.type === "brief_analyzed" ? "text-ki-warning" :
+                      (ev.phase === "warning" ? "text-ki-warning" :
+                      "text-ki-on-surface-muted")
                     }`}
                   >
-                    <span className="text-gray-300 select-none">[{ev.type}]</span> {ev.message}
+                    <span className="text-ki-border select-none">[{ev.type}]</span> {ev.message}
                   </div>
                 ))}
                 {events.length === 0 && (
-                  <div className="text-gray-300 animate-pulse">In attesa...</div>
+                  <div className="text-ki-border animate-pulse">In attesa...</div>
                 )}
               </div>
             </div>
@@ -581,11 +606,11 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
         </div>
 
         {/* Actions */}
-        <div className="flex gap-3">
+        <div className="flex gap-2">
           {isActive && (
             <button
               onClick={handleCancel}
-              className="px-5 py-2.5 rounded-lg bg-red-50 hover:bg-red-100 text-red-600 font-medium transition-colors text-sm"
+              className="px-4 py-1.5 rounded-sm bg-ki-error/10 hover:bg-ki-error/20 text-ki-error font-medium transition-colors text-xs"
             >
               Annulla
             </button>
@@ -593,14 +618,14 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
           {status?.status === "completed" && scenarioId && (
             <Link
               href={`/scenario/${scenarioId}`}
-              className="px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-colors text-sm"
+              className="px-4 py-1.5 rounded-sm bg-ki-primary hover:bg-ki-primary-muted text-white font-semibold transition-colors text-xs"
             >
               Vedi Dashboard Completa
             </Link>
           )}
           <Link
             href="/new"
-            className="px-5 py-2.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium transition-colors text-sm"
+            className="px-4 py-1.5 rounded-sm bg-ki-surface-sunken hover:bg-ki-surface-hover text-ki-on-surface-secondary font-medium transition-colors text-xs"
           >
             Nuova Simulazione
           </Link>
@@ -618,56 +643,66 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="bg-ki-surface-raised border border-ki-border rounded-sm overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
       {/* Round header */}
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full px-5 py-4 flex items-center gap-4 hover:bg-gray-50 transition-colors cursor-pointer"
+        className="w-full px-3 py-2.5 flex items-center gap-3 hover:bg-ki-surface-hover transition-colors cursor-pointer"
       >
-        <div className="w-10 h-10 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center flex-shrink-0">
-          <span className="font-mono text-sm font-bold text-blue-600">{round.round}</span>
+        <div className="w-8 h-8 rounded-sm bg-ki-primary/10 border border-ki-primary/25 flex items-center justify-center flex-shrink-0">
+          <span className="font-data text-xs font-bold text-ki-primary">{round.round}</span>
         </div>
         <div className="flex-1 min-w-0 text-left">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="font-display font-semibold text-gray-900">{round.timeline_label}</span>
-            <span className="px-2 py-0.5 rounded-full bg-gray-100 font-mono text-[10px] text-gray-400">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <span className="font-headline font-semibold text-sm text-ki-on-surface">{round.timeline_label}</span>
+            <span className="px-1.5 py-0.5 rounded-sm bg-ki-surface-sunken font-data text-[10px] text-ki-on-surface-muted">
               {round.posts_count} posts
             </span>
-            <span className="px-2 py-0.5 rounded-full bg-gray-100 font-mono text-[10px] text-gray-400">
+            {round.reactions_count > 0 && (
+              <span className="px-1.5 py-0.5 rounded-sm bg-ki-surface-sunken font-data text-[10px] text-ki-on-surface-muted">
+                {round.reactions_count} reactions
+              </span>
+            )}
+            <span className="px-1.5 py-0.5 rounded-sm bg-ki-surface-sunken font-data text-[10px] text-ki-on-surface-muted">
               pol. {round.polarization.toFixed(1)}
             </span>
             {round.shock_magnitude > 0 && (
               <ShockBadge magnitude={round.shock_magnitude} direction={round.shock_direction} />
             )}
+            {round.posts_count === 0 && (
+              <span className="px-1.5 py-0.5 rounded-sm bg-ki-warning/10 border border-ki-warning/25 font-data text-[10px] text-ki-warning">
+                no content
+              </span>
+            )}
           </div>
-          <p className="text-sm text-gray-500 mt-0.5">{round.event}</p>
+          <p className="text-xs text-ki-on-surface-muted mt-0.5">{round.event}</p>
         </div>
 
         {/* Sentiment mini-bar */}
-        <div className="flex h-6 w-16 rounded overflow-hidden flex-shrink-0">
-          <div className="bg-emerald-400" style={{ width: `${round.sentiment.positive * 100}%` }} />
-          <div className="bg-gray-300" style={{ width: `${round.sentiment.neutral * 100}%` }} />
-          <div className="bg-red-400" style={{ width: `${round.sentiment.negative * 100}%` }} />
+        <div className="flex h-5 w-14 rounded-sm overflow-hidden flex-shrink-0">
+          <div className="bg-ki-success" style={{ width: `${round.sentiment.positive * 100}%` }} />
+          <div className="bg-ki-border" style={{ width: `${round.sentiment.neutral * 100}%` }} />
+          <div className="bg-ki-error" style={{ width: `${round.sentiment.negative * 100}%` }} />
         </div>
 
         {/* Custom metrics badges */}
         {Object.entries(round.custom_metrics).slice(0, 2).map(([k, v]) => (
-          <span key={k} className="hidden md:inline-block px-2 py-0.5 rounded bg-blue-50 font-mono text-[10px] text-blue-600 flex-shrink-0">
+          <span key={k} className="hidden md:inline-block px-1.5 py-0.5 rounded-sm bg-ki-primary/10 font-data text-[10px] text-ki-primary flex-shrink-0">
             {k.slice(0, 20)}: {v}
           </span>
         ))}
 
-        <svg className={`w-4 h-4 text-gray-400 transition-transform flex-shrink-0 ${expanded ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+        <svg className={`w-3.5 h-3.5 text-ki-on-surface-muted transition-transform flex-shrink-0 ${expanded ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
 
       {/* Expanded content */}
       {expanded && (
-        <div className="px-5 pb-5 border-t border-gray-100 pt-4">
+        <div className="px-3 pb-3 border-t border-ki-border pt-3">
           {/* Agent Position Strip in expanded view */}
           {round.agents.length > 0 && (
-            <div className="mb-4">
+            <div className="mb-3">
               <AgentPositionStrip
                 agents={round.agents}
                 negativeLabel={positionAxis?.negative_label}
@@ -676,48 +711,48 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
             </div>
           )}
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
             {/* Top posts */}
-            <div className="lg:col-span-2 space-y-2">
-              <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">Top Posts</p>
+            <div className="lg:col-span-2 space-y-1.5">
+              <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-1.5">Top Posts</p>
               {round.top_posts.slice(0, 5).map((post, i) => (
-                <div key={post.id || i} className="bg-gray-50 border border-gray-100 rounded-lg p-3">
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-5 h-5 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-mono text-[9px] font-bold">
+                <div key={post.id || i} className="bg-ki-surface-sunken border border-ki-border rounded-sm p-2">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <div className="w-4 h-4 rounded-sm bg-ki-surface-hover flex items-center justify-center text-ki-on-surface-muted font-data text-[8px] font-bold">
                       {(post.author_name || "?").charAt(0).toUpperCase()}
                     </div>
-                    <span className="text-xs font-semibold text-gray-700">{post.author_name}</span>
-                    <span className="px-1.5 py-0.5 rounded bg-gray-100 font-mono text-[9px] text-gray-400 uppercase">
+                    <span className="text-[11px] font-semibold text-ki-on-surface-secondary">{post.author_name}</span>
+                    <span className="px-1 py-0.5 rounded-sm bg-ki-surface-sunken font-data text-[9px] text-ki-on-surface-muted uppercase">
                       {post.platform}
                     </span>
-                    <span className="ml-auto font-mono text-[10px] text-cyan-600">
+                    <span className="ml-auto font-data text-[10px] text-ki-primary">
                       {formatEngagement(post.total_engagement || 0)}
                     </span>
                   </div>
-                  <p className="text-xs text-gray-600 leading-relaxed line-clamp-3">{post.text}</p>
+                  <p className="text-[11px] text-ki-on-surface-secondary leading-relaxed line-clamp-3">{post.text}</p>
                 </div>
               ))}
               {round.top_posts.length === 0 && (
-                <p className="text-xs text-gray-400 italic">Nessun post in questo round</p>
+                <p className="text-[11px] text-ki-on-surface-muted italic">Nessun post in questo round</p>
               )}
             </div>
 
             {/* Sidebar: coalitions + metrics + agents */}
-            <div className="space-y-5">
+            <div className="space-y-3">
               {/* Custom metrics */}
               {Object.keys(round.custom_metrics).length > 0 && (
                 <div>
-                  <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">Metriche</p>
-                  <div className="space-y-2">
+                  <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-1.5">Metriche</p>
+                  <div className="space-y-1.5">
                     {Object.entries(round.custom_metrics).map(([k, v]) => (
                       <div key={k}>
-                        <div className="flex justify-between text-xs mb-0.5">
-                          <span className="text-gray-600 truncate">{k}</span>
-                          <span className="font-mono text-gray-800 font-semibold">{v}/100</span>
+                        <div className="flex justify-between text-[11px] mb-0.5">
+                          <span className="text-ki-on-surface-secondary truncate">{k}</span>
+                          <span className="font-data text-ki-on-surface font-semibold">{v}/100</span>
                         </div>
-                        <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                        <div className="h-1 bg-ki-surface-sunken rounded-full overflow-hidden">
                           <div
-                            className="h-full rounded-full bg-blue-500 transition-all duration-500"
+                            className="h-full rounded-full bg-ki-primary transition-all duration-500"
                             style={{ width: `${v}%` }}
                           />
                         </div>
@@ -730,12 +765,12 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
               {/* Coalitions */}
               {round.coalitions.length > 0 && (
                 <div>
-                  <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">Coalizioni</p>
-                  <div className="space-y-1">
+                  <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-1.5">Coalizioni</p>
+                  <div className="space-y-0.5">
                     {round.coalitions.map((c: any, i: number) => (
-                      <div key={i} className="flex items-center gap-2 text-xs">
-                        <span className="text-gray-600 truncate flex-1">{c.label || `Coalition ${i + 1}`}</span>
-                        <span className="font-mono text-gray-800">{c.size || c.members?.length || "?"}</span>
+                      <div key={i} className="flex items-center gap-2 text-[11px]">
+                        <span className="text-ki-on-surface-secondary truncate flex-1">{c.label || `Coalition ${i + 1}`}</span>
+                        <span className="font-data text-ki-on-surface">{c.size || c.members?.length || "?"}</span>
                       </div>
                     ))}
                   </div>
@@ -744,11 +779,11 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
 
               {/* Agent mood */}
               <div>
-                <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">Sentiment</p>
-                <div className="flex items-center gap-3 text-xs">
-                  <span className="text-emerald-600">{(round.sentiment.positive * 100).toFixed(0)}% pos</span>
-                  <span className="text-gray-500">{(round.sentiment.neutral * 100).toFixed(0)}% neu</span>
-                  <span className="text-red-600">{(round.sentiment.negative * 100).toFixed(0)}% neg</span>
+                <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-1.5">Sentiment</p>
+                <div className="flex items-center gap-3 text-[11px]">
+                  <span className="text-ki-success">{(round.sentiment.positive * 100).toFixed(0)}% pos</span>
+                  <span className="text-ki-on-surface-muted">{(round.sentiment.neutral * 100).toFixed(0)}% neu</span>
+                  <span className="text-ki-error">{(round.sentiment.negative * 100).toFixed(0)}% neg</span>
                 </div>
               </div>
             </div>

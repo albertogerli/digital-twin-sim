@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_uber_worker_classification_2016_2021",
+  "domain": "labor",
+  "description": "This scenario tracks public and legal sentiment regarding the classification of Uber drivers in the UK as 'workers' rather than 'independent contractors.' Following the 2016 employment tribunal ruling and culminating in the 2021 UK Supreme Court victory for drivers, the debate centered on whether gig economy platforms provide flexibility or exploit labor protections.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 30,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 35,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 55,
+      "against_pct": 38,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 58,
+      "against_pct": 40,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "October 2016: Employment Tribunal rules Uber drivers are workers and entitled to minimum wage and holiday pay."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "November 2018: Employment Appeal Tribunal upholds the ruling, rejecting Uber's claim of being a 'booking agent'."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "November 2020: The UK Supreme Court hears the final appeal from Uber, drawing intense national media attention."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "February 2021: UK Supreme Court rules unanimously against Uber, affirming worker status for drivers."
+    }
+  ],
+  "calibration_notes": "This scenario captures the shift from niche labor dispute to mainstream policy consensus. It is useful for calibrating how legal institutional momentum (tribunal to supreme court) influences public opinion against corporate lobby-led narratives."
+}

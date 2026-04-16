@@ -1,0 +1,79 @@
+{
+  "scenario_name": "disney_fox_acquisition_2017",
+  "domain": "commercial",
+  "description": "Disney announced the $71.3 billion acquisition of 21st Century Fox in December 2017. While many fans were excited about Marvel rights returning home, media critics and antitrust advocates were concerned about the reduction in studio competition.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 58,
+      "against_pct": 20,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 59,
+      "against_pct": 30,
+      "undecided_pct": 11
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 61,
+      "against_pct": 32,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 61,
+      "against_pct": 36,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 62,
+      "against_pct": 37,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Marvel fans overwhelmingly support the deal to reunite X-Men and Avengers."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Journalists highlight the potential for mass layoffs at the combined entity."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Regulators demand the sale of regional sports networks as a condition for approval."
+    }
+  ],
+  "calibration_notes": "Shows the tension between 'fan-driven support' and 'structural market concerns'."
+}

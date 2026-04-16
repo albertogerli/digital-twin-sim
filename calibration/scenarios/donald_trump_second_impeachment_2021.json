@@ -1,0 +1,83 @@
+{
+  "scenario_name": "donald_trump_second_impeachment_2021",
+  "domain": "political",
+  "description": "Public reaction following the January 6th Capitol riot leading to the second impeachment of Donald Trump on the charge of 'incitement of insurrection'.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 46,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 53,
+      "against_pct": 45,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 54,
+      "against_pct": 45,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 53,
+      "against_pct": 46,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 48,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "January 6th Capitol attack occurs."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "House impeaches for a second time."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Senate trial commences."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Senate acquittal on technical grounds."
+    }
+  ],
+  "calibration_notes": "Models a high-salience event with a massive, immediate shift in public opinion toward support for impeachment."
+}

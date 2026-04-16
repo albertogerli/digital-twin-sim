@@ -1,0 +1,165 @@
+{
+  "id": "TECH-2018-FACEBOOK_CAMBRIDGE_ANALYTICA_S",
+  "domain": "technology",
+  "title": "Public trust in Facebook following the Cambridge Analytica data privacy scandal",
+  "country": "US",
+  "date_start": "2018-03-17",
+  "date_end": "2018-06-30",
+  "n_rounds": 7,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 51.0,
+    "source": "https://www.pewresearch.org/fact-tank/2018/09/05/americans-are-changing-their-relationship-with-facebook/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2018-03-17",
+      "pro_pct": 68.0,
+      "against_pct": 22.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline trust levels prior to full scandal impact based on 2017 trends",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2018-04-01",
+      "pro_pct": 58.0,
+      "against_pct": 32.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Immediate reaction to initial reporting and Zuckerberg apology",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2018-04-16",
+      "pro_pct": 55.0,
+      "against_pct": 35.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Post-Congressional testimony stabilization",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2018-05-01",
+      "pro_pct": 53.0,
+      "against_pct": 37.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Gradual decline as privacy settings updates were rolled out",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2018-05-16",
+      "pro_pct": 52.0,
+      "against_pct": 38.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Continued market fatigue regarding privacy news",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2018-05-31",
+      "pro_pct": 51.5,
+      "against_pct": 38.5,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Approaching long-term equilibrium",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2018-06-15",
+      "pro_pct": 51.0,
+      "against_pct": 39.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Final survey alignment with Pew Research findings",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2018-03-17",
+      "description": "The New York Times and The Guardian break the Cambridge Analytica story",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1.0,
+      "source": "https://www.nytimes.com/2018/03/17/us/politics/cambridge-analytica-facebook-privacy-data.html"
+    },
+    {
+      "round": 2,
+      "date": "2018-03-21",
+      "description": "Mark Zuckerberg issues formal apology via Facebook post",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.5,
+      "source": "https://www.bbc.com/news/technology-43486339"
+    },
+    {
+      "round": 3,
+      "date": "2018-04-10",
+      "description": "Mark Zuckerberg testifies before the US Congress",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.2,
+      "source": "https://www.reuters.com/article/us-facebook-cambridge-analytica-idUSKBN1HH11L"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Mark Zuckerberg",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "CEO of Facebook, primary defender of the platform's integrity"
+    },
+    {
+      "name": "Christopher Wylie",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.7,
+      "description": "Whistleblower who exposed the data harvesting practices"
+    },
+    {
+      "name": "US Congress",
+      "type": "institutional",
+      "initial_position": -0.5,
+      "influence": 0.6,
+      "description": "Legislative body investigating data privacy and platform regulation"
+    },
+    {
+      "name": "Facebook Shareholders",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.5,
+      "description": "Investors concerned with stock price stability and regulatory risk"
+    },
+    {
+      "name": "Privacy Advocates",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.4,
+      "description": "Groups like EFF pushing for stricter data control"
+    },
+    {
+      "name": "General Facebook Users",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.2,
+      "description": "The average user base experiencing cognitive dissonance between utility and privacy concerns"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.862,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.1
+  },
+  "notes": "Pro-side (+1) is defined as users who continue to trust Facebook or maintain their account without significant changes. Against-side (-1) is defined as users who distrust the platform, deleted their account, or significantly restricted their data sharing. Data quality: Polling trajectory is estimated based on the Pew Research finding that while 51% of users took action to change privacy settings, the overall user base did not abandon the platform en masse."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "sony_kazuo_hirai_turnaround_2012",
+  "domain": "corporate",
+  "description": "Kazuo Hirai became Sony CEO during a period of massive losses in the electronics division. His 'One Sony' initiative aimed to break silos, facing internal resistance but eventually restoring investor confidence.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 65.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 45,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Sony announces record annual losses under Hirai's first months."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Decision to sell off PC business (VAIO)."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "PlayStation 4 success begins to boost overall valuation."
+    }
+  ],
+  "calibration_notes": "Captures the 'U-shaped' recovery curve common in complex organizational restructuring."
+}

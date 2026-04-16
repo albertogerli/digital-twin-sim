@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ireland_blasphemy_referendum_2018",
+  "domain": "political",
+  "description": "Ireland held a referendum in October 2018 to remove the offense of 'blasphemy' from the Constitution. The measure passed with an overwhelming majority.",
+  "final_outcome_pro_pct": 64.9,
+  "final_outcome_against_pct": 35.1,
+  "final_turnout_pct": 44.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 53,
+      "against_pct": 22,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 27,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 29,
+      "undecided_pct": 11
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 61,
+      "against_pct": 30,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 62,
+      "against_pct": 32,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 63,
+      "against_pct": 34,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 64.9,
+      "against_pct": 35.1,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Government confirms simultaneous holding of Presidential election"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Humanist and secular groups launch awareness campaign"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Mainstream religious groups decline to heavily campaign against removal"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Constitutional reform confirmed by referendum vote"
+    }
+  ],
+  "calibration_notes": "Captures social-secular shift in a traditionally religious society."
+}

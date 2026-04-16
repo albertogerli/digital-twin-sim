@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nestle_baby_formula_boycott_1977_to_modern",
+  "domain": "commercial",
+  "description": "The historical boycott against Nestlé for its aggressive marketing of baby formula in developing nations remains one of the longest-running corporate boycotts in history.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 28,
+      "against_pct": 62,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 65,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 29,
+      "against_pct": 68,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 30,
+      "against_pct": 69,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "WHO launches international code on marketing breast-milk substitutes."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Boycott officially endorsed by major health organizations."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Company faces criticism for water bottling practices."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Continued activist pressure on sustainable supply chains."
+    }
+  ],
+  "calibration_notes": "Models long-term, multi-generational reputational damage for a massive conglomerate."
+}

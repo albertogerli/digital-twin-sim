@@ -1,0 +1,38 @@
+# VERIFIED FACTS — FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020
+Domain: financial | Country: US
+Period: 2020-08-11 to 2020-08-31
+
+## TIMELINE (verified events, chronological order):
+1. [2020-08-11] Tesla officially announced a 5-for-1 stock split in the form of a stock dividend to make shares more accessible to employees and retail investors.
+   Detail: 5-for-1 split
+   Source: globenewswire.com
+2. [2020-08-21] The record date was reached, establishing which shareholders were entitled to receive four additional shares for every one share held. [confidence: 80%]
+   Detail: 4 additional shares for every 1 share held
+   Source: teslarati.com
+3. [2020-08-28] The distribution date occurred, with the additional shares being issued to shareholders after the close of trading. [confidence: 80%]
+   Detail: 5-for-1 split completion
+   Source: teslarati.com
+4. [2020-08-31] Tesla stock began trading on a split-adjusted basis, significantly lowering the per-share price for market participants. [confidence: 80%]
+   Detail: 5-for-1 split
+   Source: businessinsider.com
+
+## KEY FIGURES:
+- stock_split_ratio: 5-for-1
+- announcement_date: August 11, 2020
+- distribution_date: August 28, 2020
+- split_adjusted_trading_start: August 31, 2020
+- after_hours_jump: up to 8%
+- two_day_price_increase: 17.94%
+- market_value_added: nearly $50 billion
+
+## KEY STAKEHOLDER POSITIONS:
+- Tesla Board of Directors (Governing Body of Tesla, Inc.): The Board declared the 5-for-1 stock split with the explicit purpose of making stock ownership more accessible to employees and investors.
+
+## FINAL OUTCOME:
+The 5-for-1 stock split was met with overwhelming market enthusiasm, resulting in a significant surge in Tesla's share price as retail investors gained easier access to the stock. The move was widely viewed as a successful strategic effort to increase liquidity and broaden the company's shareholder base.
+Pro %: 85.0% — Source: Market sentiment analysis and trading volume data reported by Business Insider and financial news outlets during the August 2020 period (Confidence < 0.5)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

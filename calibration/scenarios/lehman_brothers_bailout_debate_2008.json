@@ -1,0 +1,83 @@
+{
+  "scenario_name": "lehman_brothers_bailout_debate_2008",
+  "domain": "financial",
+  "description": "The public debate in the US regarding the necessity of a government-funded bank bailout during the 2008 financial crisis. The sentiment centered on whether moral hazard outweighed systemic collapse risks.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 78.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44,
+      "against_pct": 51,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 38,
+      "against_pct": 57,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Lehman Brothers files for Chapter 11 bankruptcy."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Treasury Secretary Paulson presents the TARP proposal to Congress."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "House initially votes down the $700 billion bailout package."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Senate passes revised TARP legislation amid market panic."
+    }
+  ],
+  "calibration_notes": "Tests the impact of systemic risk perception on public willingness to tolerate government intervention."
+}

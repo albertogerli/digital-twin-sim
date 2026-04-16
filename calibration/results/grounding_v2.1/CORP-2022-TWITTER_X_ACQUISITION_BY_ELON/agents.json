@@ -1,0 +1,72 @@
+[
+  {
+    "id": "parag_agrawal",
+    "name": "Parag Agrawal",
+    "role": "CEO of Twitter",
+    "archetype": "business_leader",
+    "position": -0.8,
+    "influence": 0.6,
+    "rigidity": 0.7,
+    "bio": "An engineer and executive who served as the CEO of Twitter from November 2021 until his termination in October 2022.",
+    "communication_style": "formal, measured",
+    "key_traits": [
+      "technical",
+      "reserved",
+      "professional"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "affected_party",
+    "_evidence": [
+      "He was the CEO of Twitter during the acquisition and was summarily fired by Musk immediately upon the deal's closure."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "ned_segal",
+    "name": "Ned Segal",
+    "role": "Chief Financial Officer (CFO) of Twitter",
+    "archetype": "business_leader",
+    "position": -0.7,
+    "influence": 0.4,
+    "rigidity": 0.6,
+    "bio": "Former CFO of Twitter who managed the company's financial operations during the turbulent acquisition process.",
+    "communication_style": "analytical, professional",
+    "key_traits": [
+      "pragmatic",
+      "financial-focused"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "affected_party",
+    "_evidence": [
+      "As a top executive, he was directly involved in the financial transition of the company and was fired by Musk upon the acquisition."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "vijaya_gadde",
+    "name": "Vijaya Gadde",
+    "role": "Chief Legal Officer of Twitter",
+    "archetype": "business_leader",
+    "position": -0.8,
+    "influence": 0.5,
+    "rigidity": 0.7,
+    "bio": "A lawyer and executive who served as Twitter's head of legal, policy, and trust and safety.",
+    "communication_style": "formal, defensive",
+    "key_traits": [
+      "principled",
+      "strategic"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "affected_party",
+    "_evidence": [
+      "She oversaw Twitter's legal and policy departments and was a primary target of Musk's criticism regarding content moderation, leading to her firing."
+    ],
+    "_grounded": true
+  }
+]

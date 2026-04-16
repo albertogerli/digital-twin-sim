@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ibm_workforce_reduction_2016",
+  "domain": "corporate",
+  "description": "In early 2016, IBM initiated a massive workforce reduction program, internally termed 'Project Chrome', as part of a pivot toward cloud and AI services. The move sparked significant public backlash due to reports that long-term employees were being forced to train their offshore replacements before being laid off, leading to a heated debate on corporate loyalty versus digital transformation.",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 35,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 42,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 48,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 55,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 34,
+      "against_pct": 58,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 36,
+      "against_pct": 59,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 37,
+      "against_pct": 60,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 38,
+      "against_pct": 62,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Reports emerge detailing the 'train your replacement' requirement for legacy US staff."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Internal IBM memos leaked to ProPublica detailing the scale of the restructuring."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Tech labor unions and media commentators label the restructuring as 'age discrimination'."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "IBM CEO Ginni Rometty defends the restructuring as necessary for survival in the cloud era."
+    }
+  ],
+  "calibration_notes": "This scenario calibrates public perception of corporate restructuring vs. ethical obligation to legacy employees, providing a clear trajectory from initial corporate support to widespread public moral opposition."
+}

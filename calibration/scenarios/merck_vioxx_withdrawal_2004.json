@@ -1,0 +1,83 @@
+{
+  "scenario_name": "merck_vioxx_withdrawal_2004",
+  "domain": "commercial",
+  "description": "Merck withdrew Vioxx, a popular painkiller, after studies showed an increased risk of heart attack and stroke. The withdrawal was one of the largest in pharmaceutical history and sparked major litigation.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 70,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 18,
+      "against_pct": 75,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 19,
+      "against_pct": 78,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 20,
+      "against_pct": 79,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Merck pulls Vioxx from the global market."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Internal documents show Merck knew of heart risks years earlier."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "First major class-action lawsuits filed."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Merck agrees to multi-billion dollar settlement."
+    }
+  ],
+  "calibration_notes": "Measures long-term damage to trust when consumers perceive that a company knowingly suppressed safety data."
+}

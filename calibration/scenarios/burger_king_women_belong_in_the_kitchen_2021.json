@@ -1,0 +1,79 @@
+{
+  "scenario_name": "burger_king_women_belong_in_the_kitchen_2021",
+  "domain": "marketing",
+  "description": "Burger King UK tweeted 'Women belong in the kitchen' on International Women's Day 2021 as a hook for a scholarship program. The shock-marketing approach failed to land as a joke.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 30,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 18,
+      "against_pct": 60,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 15,
+      "against_pct": 75,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 15,
+      "against_pct": 80,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 15,
+      "against_pct": 82,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 15,
+      "against_pct": 83,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 15,
+      "against_pct": 84,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Twitter erupts in outrage over the headline; the follow-up context is ignored."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Burger King deletes the tweet and issues a formal apology."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Brand reputation experts analyze the risks of 'clickbait' social media strategies."
+    }
+  ],
+  "calibration_notes": "Useful for calibration regarding 'shock marketing' where the intent (charity) is completely overshadowed by the delivery (misogyny)."
+}

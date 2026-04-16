@@ -1,0 +1,51 @@
+[
+  {
+    "round": 1,
+    "description": "ViacomCBS announced a secondary stock offering, which caused a sharp decline in its share price and acted as the catalyst for the collapse.",
+    "shock_magnitude": 0.3,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Archegos Capital Management failed to meet massive margin calls from its prime brokers as the value of its concentrated portfolio plummeted.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Prime brokers began a massive fire sale of Archegos-linked stocks, leading to significant market volatility and public realization of the firm's hidden leverage.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiAhVrKI8PBeM0sqpBtLkEA60Ztd43zaQgEVDqfwufrrkt4qs2qppbNhiqI8jlxQBofTndjHka-K5_SJwPMNNyWyhl_O8EU-ueQz49E-lfzTJcTx0PQ8BYP2P4BR4w0-_tCZxUcKYnNCi_4ihxrINr648fXvXcp5cAOfrYz2IP0ZTldGo=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiAhVrKI8PBeM0sqpBtLkEA60Ztd43zaQgEVDqfwufrrkt4qs2qppbNhiqI8jlxQBofTndjHka-K5_SJwPMNNyWyhl_O8EU-ueQz49E-lfzTJcTx0PQ8BYP2P4BR4w0-_tCZxUcKYnNCi_4ihxrINr648fXvXcp5cAOfrYz2IP0ZTldGo="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "Major global investment banks began disclosing their exposure to Archegos, revealing the extent of the financial damage caused by the firm's collapse.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH05Hkk5qTHkIM-rP7Lb5xHQ-oiPmax-TdDaJ2Or_SIEmF5scmh0McCkN-_nCkoXKLS4rUIuDSzM_9GhBHb1cItjHtF2tHj4OF84Xx9xfAbD6s--jKjjmA_1pfzJC_XtyNEBBwC8AWWpYinCU6hkthpAKriGD-yjUnA1DBRD_aEFmoTR9HMF6aYR6pUJ82aTLvU5t6IzGgT6uXKjwPd",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH05Hkk5qTHkIM-rP7Lb5xHQ-oiPmax-TdDaJ2Or_SIEmF5scmh0McCkN-_nCkoXKLS4rUIuDSzM_9GhBHb1cItjHtF2tHj4OF84Xx9xfAbD6s--jKjjmA_1pfzJC_XtyNEBBwC8AWWpYinCU6hkthpAKriGD-yjUnA1DBRD_aEFmoTR9HMF6aYR6pUJ82aTLvU5t6IzGgT6uXKjwPd"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "Regulatory scrutiny intensified as questions arose regarding the 'family office' exemption that allowed Archegos to operate with minimal oversight.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

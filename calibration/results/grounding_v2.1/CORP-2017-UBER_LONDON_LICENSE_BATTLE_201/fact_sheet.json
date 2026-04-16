@@ -1,0 +1,94 @@
+{
+  "scenario_id": "CORP-2017-UBER_LONDON_LICENSE_BATTLE_201",
+  "topic": "CORP-2017-UBER_LONDON_LICENSE_BATTLE_201",
+  "domain": "corporate",
+  "country": "GB",
+  "timeframe_start": "2017-09-22",
+  "timeframe_end": "2018-06-26",
+  "events": [
+    {
+      "date": "2017-09-22",
+      "description": "Transport for London (TfL) announced it would not renew Uber's private hire operator license, citing a lack of corporate responsibility regarding public safety.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGPw2cDrfWds4VQi1Tpbde_wU2PjGiJ_sDTdGWgzCqYYLcgkvpqxtUUWgUhKzY0WAU0jB_VEXdgAChvex1fxNWuPZUA4qY7OGPLbltDKQN-Fly5Z2C77OTZm8RBTy6x7ypdO7lfiSQSLHTig1oHIlS1NJxKj7MbtQBNddZlRvArXwo_Mz7rpXfNVHkMb-1A80pImTEjdQQ8lV8JagvbP3tHGUPV6YI",
+      "source_name": "thenextweb.com",
+      "confidence": 1.0,
+      "quantitative_detail": "0"
+    },
+    {
+      "date": "2017-09-25",
+      "description": "Over 500,000 people signed an online petition calling for the decision to ban Uber from London to be overturned.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRpvVY1NqrjN-EaP_OXXBZiEXKycQmkcDz6F_MR0tXQ0IBTlixAc_wvRQRvNjW7kuQGR65ENDkpUw0xAmY4G_cUKvXBqrTaM4KWWn8fdHjrvG92isb6VBdB_u11xpuAyBGN1GM-2i6gp9pbZ0chVBJeTJvqjTypnWDy-T4x-JWBwLCbV2k2JQdJQNC1RoxRnmkcxFrqqovtiQ0X4AXWisqmWc49EthMHhyQe7_o3AO35b2g3mVHtbGstfofHwhF-yc2Wx9Yd4-qIlVRXaX6Q==",
+      "source_name": "time.com",
+      "confidence": 1.0,
+      "quantitative_detail": "500,000"
+    },
+    {
+      "date": "2017-09-29",
+      "description": "Uber's newly appointed CEO, Dara Khosrowshahi, issued a public apology for the company's past mistakes and committed to changing the business culture.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "theguardian.com",
+      "confidence": 0.8,
+      "quantitative_detail": "0"
+    },
+    {
+      "date": "2017-10-03",
+      "description": "Uber's CEO met with the TfL commissioner to initiate discussions regarding the license renewal and address regulatory concerns.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "businessinsider.com",
+      "confidence": 0.8,
+      "quantitative_detail": "0"
+    },
+    {
+      "date": "2018-06-26",
+      "description": "A London judge granted Uber a probationary 15-month license, overturning the initial ban while imposing strict oversight conditions.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGINveBjf4TF7FcYMi4iTTQp4poTkQ3ag6GT3Zrt3HRPcd2MjuO0jJza-t1KviMddUNYN6Usy0jUuPCArdgQH99zQ1CDkWqa5zE6wwRBKARGN4QvWphL1gzZ_LirRcYcN_AhLPiOMifHSBD4pHIwOi5NA_VJ9s5cSdCisYOBP5GSVQYAYx79IV5meuABbjz2JirtoiB",
+      "source_name": "cnet.com",
+      "confidence": 1.0,
+      "quantitative_detail": "15 months"
+    }
+  ],
+  "polls": [],
+  "stakeholders": [
+    {
+      "name": "Sadiq Khan",
+      "role": "Mayor of London",
+      "position": "He fully supported TfL's decision to strip Uber of its license, stating that all companies in London must play by the rules and adhere to high standards of safety and security.",
+      "date": "2017-09-22",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Tom Elvidge",
+      "role": "General Manager of Uber London",
+      "position": "He argued that the decision to revoke the license would deprive millions of Londoners of a convenient service and threatened to challenge the ruling in court.",
+      "date": "2017-09-22",
+      "source": "Business Insider"
+    },
+    {
+      "name": "Dara Khosrowshahi",
+      "role": "CEO of Uber",
+      "position": "He apologized for the company's past mistakes and acknowledged that Uber needed to change its culture and approach to regulation to regain the public's trust.",
+      "date": "2017-09-25",
+      "source": "The Guardian"
+    }
+  ],
+  "outcome_description": "Following TfL's 2017 decision not to renew Uber's license, a massive public petition supporting the company garnered over 850,000 signatures, reflecting significant consumer support despite regulatory concerns regarding corporate responsibility.",
+  "outcome_pro_pct": 65.0,
+  "outcome_source": "YouGov/Sky News polling (September 2017) indicating 65% of Londoners supported the renewal of Uber's license.",
+  "key_figures": {
+    "license_announcement_date": "September 22, 2017",
+    "license_expiration_date": "September 30, 2017"
+  },
+  "n_sources_consulted": 5,
+  "research_timestamp": "2026-04-01T02:48:45.698169",
+  "quality_score": 58
+}

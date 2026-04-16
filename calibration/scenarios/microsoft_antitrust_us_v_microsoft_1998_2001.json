@@ -1,0 +1,87 @@
+{
+  "scenario_name": "microsoft_antitrust_us_v_microsoft_1998_2001",
+  "domain": "technology",
+  "description": "This scenario tracks public opinion during the U.S. government's landmark antitrust lawsuit against Microsoft (1998-2001), which alleged that the company illegally bundled Internet Explorer with Windows to maintain a monopoly. The litigation eventually led to a 2001 settlement that required Microsoft to share application programming interfaces with third-party companies.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 30,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 40,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 46,
+      "against_pct": 45,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 42,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 49,
+      "against_pct": 46,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 45,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "DOJ files initial antitrust lawsuit against Microsoft regarding Internet Explorer bundling."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Judge Thomas Penfield Jackson issues findings of fact stating Microsoft holds monopoly power."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Judge Jackson issues conclusions of law, declaring Microsoft violated the Sherman Antitrust Act."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Appeals court overturns the breakup order but upholds the finding that Microsoft is a monopolist."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Microsoft and the Department of Justice reach a final settlement agreement."
+    }
+  ],
+  "calibration_notes": "Useful for calibrating how public support shifts during prolonged high-profile legal battles between government regulators and tech giants, specifically regarding market dominance."
+}

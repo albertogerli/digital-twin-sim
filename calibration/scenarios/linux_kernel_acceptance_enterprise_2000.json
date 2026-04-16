@@ -1,0 +1,79 @@
+{
+  "scenario_name": "linux_kernel_acceptance_enterprise_2000",
+  "domain": "technology",
+  "description": "The transition period (1999-2002) where corporate data centers debated moving from proprietary Unix systems (Solaris, AIX) to open-source Linux, culminating in the IBM 'Linux is ready' $1B investment campaign.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 55,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 32,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "IBM pledges $1 billion to Linux development (2000)."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Red Hat IPO demonstrates commercial viability of open source (1999/2000)."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Release of Linux Kernel 2.4 improves enterprise-grade scalability (2001)."
+    }
+  ],
+  "calibration_notes": "Models the 'tipping point' phenomenon where institutional trust shifts from proprietary legacy to open-source alternatives."
+}

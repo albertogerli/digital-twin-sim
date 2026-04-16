@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dhl_viral_prank_2012",
+  "domain": "marketing",
+  "description": "DHL Express in Europe launched a 'Trojan Horse' marketing campaign in 2012, where they tricked rival delivery drivers into delivering DHL-branded boxes to difficult locations in freezing weather. While the video went viral, the campaign sparked a backlash regarding the ethics and humiliation of the rival employees.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 38,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 42,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 46,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 49,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 49,
+      "against_pct": 51,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "The video is released and immediately goes viral for being 'funny'."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Ethics experts and social media users begin questioning the bullying nature of the prank."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Competitor employees issue public statements condemning the stunt."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public sentiment shifts as the 'mean-spirited' narrative takes hold over the 'creative' narrative."
+    }
+  ],
+  "calibration_notes": "Useful for understanding how a brand's 'humorous' intent can be subverted by an audience's ethical scrutiny over time."
+}

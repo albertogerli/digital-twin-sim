@@ -42,9 +42,9 @@ GRAY = "#6b7280"
 # ═══════════════════════════════════════════════════════
 
 def fig1_architecture():
-    fig, ax = plt.subplots(figsize=(7.5, 5.5))
+    fig, ax = plt.subplots(figsize=(7.5, 8.5))
     ax.set_xlim(0, 10)
-    ax.set_ylim(0, 7.5)
+    ax.set_ylim(0, 11)
     ax.axis("off")
 
     def box(x, y, w, h, text, color="#e0e7ff", edge="#6366f1", fontsize=8, bold=False):
@@ -64,72 +64,88 @@ def fig1_architecture():
                     arrowprops=dict(arrowstyle="-|>", color=color, lw=1.0,
                                     linestyle="dashed"))
 
+    # Layer backgrounds (drawn first, behind everything)
+    # Top layer: LLM (y 8.2 → 10.4, height 2.2)
+    rect = FancyBboxPatch((0.15, 8.2), 9.7, 2.2, boxstyle="round,pad=0.1",
+                          facecolor="#eef2ff", edgecolor="#d1d5db", linewidth=0.8, alpha=0.5)
+    ax.add_patch(rect)
+    # Middle layer: Opinion Dynamics (y 4.0 → 7.6, height 3.6)
+    rect = FancyBboxPatch((0.15, 4.0), 9.7, 3.6, boxstyle="round,pad=0.1",
+                          facecolor="#f0fdf4", edgecolor="#d1d5db", linewidth=0.8, alpha=0.5)
+    ax.add_patch(rect)
+    # Bottom layer: Calibration (y 0.3 → 3.4, height 3.1)
+    rect = FancyBboxPatch((0.15, 0.3), 9.7, 3.1, boxstyle="round,pad=0.1",
+                          facecolor="#fef3c7", edgecolor="#d1d5db", linewidth=0.8, alpha=0.5)
+    ax.add_patch(rect)
+
     # Layer labels
-    ax.text(0.3, 7.0, "LLM Agent Engine", fontsize=10, weight="bold", color="#4338ca")
-    ax.text(0.3, 4.8, "Opinion Dynamics Simulator (JAX)", fontsize=10, weight="bold", color="#4338ca")
-    ax.text(0.3, 2.0, "Calibration & Assimilation", fontsize=10, weight="bold", color="#4338ca")
+    ax.text(0.4, 10.05, "LLM Agent Engine", fontsize=10, weight="bold", color="#4338ca")
+    ax.text(0.4, 7.25, "Opinion Dynamics Simulator (JAX)", fontsize=10, weight="bold", color="#4338ca")
+    ax.text(0.4, 3.05, "Calibration & Assimilation", fontsize=10, weight="bold", color="#4338ca")
 
-    # Layer backgrounds
-    for y, c in [(5.8, "#eef2ff"), (3.2, "#f0fdf4"), (0.3, "#fef3c7")]:
-        rect = FancyBboxPatch((0.15, y), 9.7, 1.6, boxstyle="round,pad=0.1",
-                              facecolor=c, edgecolor="#d1d5db", linewidth=0.8, alpha=0.5)
-        ax.add_patch(rect)
+    # ── TOP LAYER: LLM ──
+    box(3.0, 8.6, 2.4, 1.2, "Gemini / GPT\n(LLM)", "#c7d2fe", "#6366f1", 9, True)
+    ax.text(6.4, 9.5, r"$\Delta_i^{LLM}$ per agent", fontsize=7, color=GRAY, style="italic")
+    ax.text(6.4, 9.0, "Event narratives", fontsize=7, color=GRAY, style="italic")
+    arrow(5.4, 9.3, 6.3, 9.45, color="#6366f1")
+    arrow(5.4, 9.1, 6.3, 9.0, color="#6366f1")
 
-    # TOP: LLM
-    box(3.0, 6.0, 2.2, 1.0, "Gemini / GPT\n(LLM)", "#c7d2fe", "#6366f1", 9, True)
-    ax.text(6.2, 6.8, r"$\Delta_i^{LLM}$ per agent", fontsize=7, color=GRAY, style="italic")
-    ax.text(6.2, 6.3, "Event narratives", fontsize=7, color=GRAY, style="italic")
-    arrow(5.2, 6.5, 6.1, 6.7, color="#6366f1")
-    arrow(5.2, 6.4, 6.1, 6.3, color="#6366f1")
+    # ── MIDDLE LAYER: Five forces + processing ──
+    # Processing row (top of middle layer)
+    box(1.2, 6.2, 1.8, 0.7, r"Softmax $\pi$", "#dbeafe", "#3b82f6", 8, True)
+    box(3.8, 6.2, 2.2, 0.7, r"Position $p_i(t+1)$", "#d1fae5", "#10b981", 8)
+    box(7.0, 6.2, 2.0, 0.7, r"Readout $q(t)$", "#fef3c7", "#f59e0b", 8)
 
-    # MIDDLE: Five forces
+    # Arrows: softmax → position → readout
+    arrow(3.0, 6.55, 3.8, 6.55)
+    arrow(6.0, 6.55, 7.0, 6.55)
+
+    # Five force boxes (bottom of middle layer)
     forces = ["Direct", "Herd", "Anchor", "Social", "Event"]
     colors_f = ["#dbeafe", "#fce7f3", "#d1fae5", "#fef3c7", "#e0e7ff"]
     edges_f = ["#3b82f6", "#ec4899", "#10b981", "#f59e0b", "#6366f1"]
     for i, (name, c, e) in enumerate(zip(forces, colors_f, edges_f)):
-        x = 0.5 + i * 1.7
-        box(x, 3.6, 1.4, 0.7, name, c, e, 8)
+        x = 0.5 + i * 1.8
+        box(x, 4.5, 1.5, 0.8, name, c, e, 8)
 
-    # Softmax + Update + Readout
-    box(1.5, 4.6, 1.6, 0.6, r"Softmax $\pi$", "#dbeafe", "#3b82f6", 8, True)
-    box(4.0, 4.6, 2.0, 0.6, r"Position $p_i(t+1)$", "#d1fae5", "#10b981", 8)
-    box(7.0, 4.6, 1.8, 0.6, r"Readout $q(t)$", "#fef3c7", "#f59e0b", 8)
-
-    # Arrows: forces → softmax → update → readout
+    # Arrows: forces → softmax
     for i in range(5):
-        x = 0.5 + i * 1.7 + 0.7
-        arrow(x, 4.3, 2.3, 4.6, color="#9ca3af", lw=0.8)
-    arrow(3.1, 4.9, 4.0, 4.9)
-    arrow(6.0, 4.9, 7.0, 4.9)
+        x = 0.5 + i * 1.8 + 0.75
+        arrow(x, 5.3, 2.1, 6.2, color="#9ca3af", lw=0.8)
 
-    # LLM → forces
-    arrow(4.1, 6.0, 1.2, 4.3, color="#6366f1", lw=0.8)
-    arrow(4.1, 6.0, 8.3, 4.3, color="#6366f1", lw=0.8)
-
-    ax.text(5.0, 3.35, r"jax.lax.scan over $T$ rounds", fontsize=7,
+    ax.text(5.0, 4.2, r"jax.lax.scan over $T$ rounds", fontsize=7,
             color="#6b7280", style="italic", ha="center")
 
-    # BOTTOM: Calibration
-    box(0.5, 0.5, 3.5, 1.3, "Hierarchical Bayesian\n(SVI)\n" + r"$\theta_s = \mu_d + Bx_s + \varepsilon_s$",
-        "#fef9c3", "#eab308", 8)
-    box(5.5, 0.5, 3.8, 1.3, "EnKF Online\nAssimilation\n(50 ensemble members)",
-        "#fef9c3", "#eab308", 8)
-
-    # Observation model
-    box(3.0, 2.1, 2.8, 0.6, "Obs. Model\n(BetaBinom / Normal)", "#fed7aa", "#f97316", 7)
-
-    # Arrows
-    arrow(4.4, 2.7, 7.9, 4.6, color="#f59e0b", lw=0.8)  # readout → obs
-    arrow(4.4, 2.1, 2.5, 1.8, color="#f59e0b", lw=0.8)  # obs → SVI
-    dasharrow(4.0, 1.15, 5.5, 1.15, color="#9ca3af")  # SVI → EnKF
-    ax.text(4.75, 1.35, "posterior\ninit", fontsize=6, color="#9ca3af", ha="center", style="italic")
+    # LLM → forces (from top layer to force boxes)
+    arrow(4.2, 8.6, 1.25, 5.3, color="#6366f1", lw=0.8)
+    arrow(4.2, 8.6, 8.65, 5.3, color="#6366f1", lw=0.8)
 
     # b_d + b_s annotation
-    ax.text(8.5, 3.1, r"$b_d + b_s$", fontsize=8, color="#dc2626", style="italic")
+    ax.text(9.0, 5.6, r"$b_d + b_s$", fontsize=8, color="#dc2626", style="italic")
+
+    # ── BOTTOM LAYER: Calibration ──
+    # Observation model (bridge between middle and bottom)
+    box(3.2, 3.3, 3.0, 0.65, "Obs. Model\n(BetaBinom / Normal)", "#fed7aa", "#f97316", 7)
+
+    # Readout → Obs model
+    arrow(8.0, 6.2, 5.8, 3.95, color="#f59e0b", lw=0.8)
+
+    # Main calibration boxes
+    box(0.5, 0.7, 3.8, 1.8, "Hierarchical Bayesian\n(SVI)\n" + r"$\theta_s = \mu_d + Bx_s + \varepsilon_s$",
+        "#fef9c3", "#eab308", 8)
+    box(5.5, 0.7, 4.0, 1.8, "EnKF Online\nAssimilation\n(50 ensemble members)",
+        "#fef9c3", "#eab308", 8)
+
+    # Obs → SVI
+    arrow(4.2, 3.3, 2.5, 2.5, color="#f59e0b", lw=0.8)
+
+    # SVI → EnKF (dashed)
+    dasharrow(4.3, 1.6, 5.5, 1.6, color="#9ca3af")
+    ax.text(4.9, 1.9, "posterior\ninit", fontsize=6, color="#9ca3af", ha="center", style="italic")
 
     # Streaming obs
-    ax.text(8.0, 0.15, "Streaming obs\n(polls, sentiment)", fontsize=7, color=GRAY, ha="center")
-    arrow(8.0, 0.35, 8.0, 0.5, color="#eab308", lw=0.8)
+    ax.text(8.2, 0.15, "Streaming obs\n(polls, sentiment)", fontsize=7, color=GRAY, ha="center")
+    arrow(8.2, 0.35, 8.2, 0.7, color="#eab308", lw=0.8)
 
     fig.savefig(os.path.join(OUT, "fig1_architecture.pdf"))
     plt.close()

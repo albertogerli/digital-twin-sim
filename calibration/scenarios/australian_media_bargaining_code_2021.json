@@ -1,0 +1,83 @@
+{
+  "scenario_name": "australian_media_bargaining_code_2021",
+  "domain": "technology",
+  "description": "Australia introduced a mandatory code of conduct requiring platforms like Facebook and Google to pay local news publishers for content. Facebook responded by temporarily blocking news feeds for all Australian users in February 2021.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 42,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 40,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 59,
+      "against_pct": 40,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Australian Parliament introduces the News Media Bargaining Code."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Facebook executes news blackout in Australia."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Government amends law to allow negotiation prior to arbitration."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Facebook restores news service after reaching deals with publishers."
+    }
+  ],
+  "calibration_notes": "Captures the dynamic between sovereign government regulation and the retaliatory power of global tech platforms."
+}

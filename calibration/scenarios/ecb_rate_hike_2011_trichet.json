@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ecb_rate_hike_2011_trichet",
+  "domain": "financial",
+  "description": "In April 2011, the European Central Bank under Jean-Claude Trichet raised interest rates despite the brewing sovereign debt crisis in the Eurozone. This decision was heavily criticized by periphery nations, who argued it worsened their economic contraction during the debt crisis.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 70,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 18,
+      "against_pct": 75,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 17,
+      "against_pct": 78,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 19,
+      "against_pct": 80,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Trichet raises rates, citing inflation risks while debt crisis warnings mount."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Economic data from Greece and Portugal signals severe recession, fueling regional outrage."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Market volatility spikes; the policy is widely viewed as a 'historic mistake' by observers."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "ECB is forced to signal a policy reversal, effectively admitting the 2011 hike was a strategic error."
+    }
+  ],
+  "calibration_notes": "Highlights the impact of 'tone-deaf' monetary policy decisions that ignore concurrent geopolitical or systemic regional crises."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "taiwan_presidential_election_2024",
+  "domain": "political",
+  "description": "The 2024 Taiwan presidential election resulted in Lai Ching-te of the DPP winning with 40.05% of the vote in a three-way race, but the scenario focuses on the support trajectory for the DPP's continuation of power against the KMT-led opposition, reflecting a pivot from the status quo.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 71.8,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 30,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 36,
+      "against_pct": 32,
+      "undecided_pct": 32
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 37,
+      "against_pct": 35,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 38,
+      "undecided_pct": 24
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 41,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 43,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 44,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Failure of potential opposition coalition talks between KMT and TPP."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Increased regional tensions influence voters' focus on security."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Final campaign rallies emphasize national identity."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Official vote count confirms DPP retains presidency."
+    }
+  ],
+  "calibration_notes": "Useful for modeling multi-party dynamics where the primary goal is understanding support for the incumbent party versus a fragmented opposition."
+}

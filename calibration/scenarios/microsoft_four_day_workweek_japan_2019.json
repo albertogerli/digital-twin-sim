@@ -1,0 +1,83 @@
+{
+  "scenario_name": "microsoft_four_day_workweek_japan_2019",
+  "domain": "corporate",
+  "description": "Microsoft Japan implemented a 'Work-Life Choice Challenge' in August 2019, closing offices on Fridays and giving employees paid leave. The experiment reported a 40% boost in productivity, sparking global debate on the viability of the 4-day workweek.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 50,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 67,
+      "against_pct": 32,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Announcement of the Summer 2019 pilot program."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Media reports show 40% productivity increase."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Global debate emerges regarding burnout vs efficiency."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Permanent structural discussion begins in major MNCs."
+    }
+  ],
+  "calibration_notes": "Tests the speed of opinion adoption when quantitative productivity data contradicts traditional working norms."
+}

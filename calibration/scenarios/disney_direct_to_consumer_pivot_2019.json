@@ -1,0 +1,83 @@
+{
+  "scenario_name": "disney_direct_to_consumer_pivot_2019",
+  "domain": "corporate",
+  "description": "In 2019, Disney pivoted its entire corporate strategy toward the launch of Disney+, abandoning traditional licensing to competitors like Netflix to build its own ecosystem. This scenario tracks the investor and public confidence in this massive capex-heavy pivot.",
+  "final_outcome_pro_pct": 82.0,
+  "final_outcome_against_pct": 18.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 25,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 18,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 17,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 78,
+      "against_pct": 17,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 80,
+      "against_pct": 18,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 82,
+      "against_pct": 18,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Disney Investor Day presents Disney+ strategy."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Launch of Disney+ exceeds 10 million subs in one day."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Pandemic accelerates global streaming adoption."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Disney+ hits 100 million subscribers milestone."
+    }
+  ],
+  "calibration_notes": "Models a successful 'bet the company' digital transformation strategy."
+}

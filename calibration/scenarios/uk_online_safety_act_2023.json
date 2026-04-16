@@ -1,0 +1,79 @@
+{
+  "scenario_name": "uk_online_safety_act_2023",
+  "domain": "technology",
+  "description": "The UK's Online Safety Act, aimed at protecting users—especially children—from harmful content, created a complex regulatory environment for social media companies, balancing liability with freedom of expression.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 25,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 58,
+      "against_pct": 28,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 62,
+      "against_pct": 28,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 29,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 69,
+      "against_pct": 30,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Major UK news cycle on social media harms to teens."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Tech industry lobbies parliament regarding encryption impacts."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Act gains broad cross-party support in final readings."
+    }
+  ],
+  "calibration_notes": "Useful for measuring public sentiment when a regulation is framed as 'protecting children' versus 'tech overreach'."
+}

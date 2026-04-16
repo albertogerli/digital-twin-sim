@@ -1,0 +1,139 @@
+{
+  "scenario_id": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI",
+  "topic": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI",
+  "domain": "financial",
+  "country": "US",
+  "timeframe_start": "2023-03-08",
+  "timeframe_end": "2023-03-12",
+  "events": [
+    {
+      "date": "2023-03-08",
+      "description": "Silvergate Bank announced it would wind down operations and liquidate, which significantly heightened market anxiety regarding the banking sector.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "ca.gov",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2023-03-08",
+      "description": "SVB Financial Group announced a $1.8 billion loss from selling securities and a plan to raise $2.25 billion in capital, triggering investor panic.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHiLWYVID4aFD_NwDB3ZEt4eNMStWi48G_4OJEoAbMST5wnjTZ_XZWTvHZOutlq72SMtJNK2jv1t-JRSiMf8Ow6dUDkmZciXV4Uu0g8M4sTE3viKaVaHLl_2K0NDAevXFOqTScXf48lrT5zSVrWsgD3fcLjzSbO2LE09EhpaSpmdRzk0LDIhhF_eZU=",
+      "source_name": "lowenstein.com / wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "$21 billion in securities sold; $1.8 billion loss; $2.25 billion capital raise"
+    },
+    {
+      "date": "2023-03-08",
+      "description": "Moody\u2019s Investors Service notified Silicon Valley Bank of a potential credit rating downgrade, further eroding market confidence.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2023-03-09",
+      "description": "Venture capital firms advised portfolio companies to withdraw their funds from SVB, leading to a massive bank run.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUf1OvGfBPN7q8VQJUtyCTn6yiR_W18Gbb5ip1r92HTnIdNriUcKifnsdFeAHhFEN4N7_qzh-q5BIh7P4Exx-9VCqj8N493NkMXu33eDM7f8uhorO1BqdxNZSep9JnJD7o3s2LBT50UWy2QkoAK3CVM4ZzqK9BzFUnk-sbcEvxTh_vCGsVBYtPNDzFDOjXakKyzZJSTVgZ9-shm8p7Zmxak9lPEvjmQMBgyy2jbqcXuV3dR3VC1m31IhHl81x-kcc=",
+      "source_name": "wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2023-03-10",
+      "description": "The California Department of Financial Protection and Innovation closed Silicon Valley Bank and appointed the FDIC as receiver.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGE-nwuncTrrRqXgXA8aC1ZTvmPT7iwCn01p5cCN9pzIWLQZ_ndJtWXCHlCJ0FrL-bOKHxpJ7u3hhwC5lu34HqylLWi2GGL4CL1xfoSnm-9gFNcPXEjNmKTICo4fRaBn-KqWxMZgDPrcAVzMGy98JEkfYC5UoGK-UpW8l2qAYzsfkQq028Qtbze6gYRY4W5ieaYCM3uK8z0yA==",
+      "source_name": "wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2023-03-12",
+      "description": "U.S. regulators announced that all depositors at SVB would be fully protected and have access to their money, aiming to stem systemic panic.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    }
+  ],
+  "polls": [
+    {
+      "date": "2023-03-13",
+      "pro_pct": 64.0,
+      "sample_size": 10041,
+      "source": "YouGov",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2023-03-13",
+      "pro_pct": 70.0,
+      "sample_size": 10041,
+      "source": "YouGov",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2023-03-13",
+      "pro_pct": 70.0,
+      "sample_size": 0,
+      "source": "Morning Consult",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2023-03-16",
+      "pro_pct": 10.0,
+      "sample_size": 1081,
+      "source": "AP-NORC",
+      "methodology": "survey"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "Joe Biden",
+      "role": "President of the United States",
+      "position": "Stated that the government would ensure depositors have access to their money and that the banking system is safe, emphasizing that taxpayers would not bear the losses.",
+      "date": "2023-03-13",
+      "source": "White House Press Briefing"
+    },
+    {
+      "name": "Janet Yellen",
+      "role": "U.S. Treasury Secretary",
+      "position": "Confirmed that the government would take decisive actions to protect depositors while clarifying that the intervention was not a taxpayer-funded bailout of the bank itself.",
+      "date": "2023-03-12",
+      "source": "CBS Face the Nation"
+    },
+    {
+      "name": "Greg Becker",
+      "role": "CEO of Silicon Valley Bank",
+      "position": "Urged customers to remain calm and stay with the bank during the liquidity crisis, shortly before the institution was seized by regulators.",
+      "date": "2023-03-10",
+      "source": "Video message to employees and investors"
+    }
+  ],
+  "outcome_description": "The collapse of Silicon Valley Bank resulted in a loss of public and investor confidence in the bank's liquidity, leading to a federal intervention where the FDIC took control to protect depositors and prevent systemic contagion. Public opinion was characterized by widespread concern regarding banking sector stability, though the government's subsequent guarantee of all deposits helped stabilize broader market sentiment.",
+  "outcome_pro_pct": 35.0,
+  "outcome_source": "Gallup (Economic Confidence Index, March 2023)",
+  "key_figures": {
+    "bailout_support_total": "64% of Americans",
+    "bailout_support_democrats": "79%",
+    "bailout_support_republicans": "62%",
+    "bailout_support_independents": "54%",
+    "high_confidence_in_banks_2023": "10%",
+    "high_confidence_in_banks_2020": "22%",
+    "trust_in_banks_to_do_right": "70%",
+    "deposit_safety_feeling_safe": "70%"
+  },
+  "n_sources_consulted": 6,
+  "research_timestamp": "2026-04-01T02:29:46.205081",
+  "quality_score": 86
+}

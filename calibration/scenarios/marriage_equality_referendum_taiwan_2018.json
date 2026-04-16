@@ -1,0 +1,83 @@
+{
+  "scenario_name": "marriage_equality_referendum_taiwan_2018",
+  "domain": "social",
+  "description": "In 2018, Taiwan held a series of referendums, including Measure 12, which proposed defining marriage as between a man and a woman in the Civil Code, effectively challenging the 2017 Constitutional Court ruling that mandated marriage equality. This scenario tracks the public opinion shift regarding traditional marriage definitions vs. LGBTQ+ equality leading up to the November 2018 vote.",
+  "final_outcome_pro_pct": 33.0,
+  "final_outcome_against_pct": 67.0,
+  "final_turnout_pct": 54.7,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42.0,
+      "against_pct": 40.0,
+      "undecided_pct": 18.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 36.0,
+      "against_pct": 52.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35.0,
+      "against_pct": 56.0,
+      "undecided_pct": 9.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 33.0,
+      "against_pct": 60.0,
+      "undecided_pct": 7.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32.0,
+      "against_pct": 63.0,
+      "undecided_pct": 5.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 33.0,
+      "against_pct": 65.0,
+      "undecided_pct": 2.0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 33.0,
+      "against_pct": 67.0,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Coalition for the Happiness of Our Next Generation gathers over 500,000 signatures to initiate anti-same-sex marriage referendums."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Conservative religious groups launch high-visibility media campaigns framing traditional family structures as essential to social stability."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public debate intensifies following a high-profile televised session on the impact of marriage equality on education and traditional values."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Referendum results pass, with voters overwhelmingly supporting the definition of marriage as between a man and a woman."
+    }
+  ],
+  "calibration_notes": "Useful for measuring the gap between judicial/elite-driven social progress and grassroots conservative backlash in a democratic Asian context."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "mercosur_eu_talks_2019",
+  "domain": "political",
+  "description": "Negotiations for an EU-Mercosur trade deal reached a breakthrough in 2019 but faced immense pushback from environmental groups concerned about Amazon deforestation.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 55,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 44,
+      "against_pct": 56,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Agreement in principle is reached after 20 years of talks"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Wildfires in the Amazon trigger international outcry"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "France threatens to veto the deal over climate commitments"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Ratification process enters indefinite stalemate"
+    }
+  ],
+  "calibration_notes": "Models how environmental activism can halt mature trade agreements."
+}

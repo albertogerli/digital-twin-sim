@@ -1,0 +1,79 @@
+{
+  "scenario_name": "colombia_panama_trade_normalization_2013",
+  "domain": "political",
+  "description": "After a long-standing trade dispute involving tariffs and financial services, Colombia and Panama reached a normalization agreement to restore trade ties, facing some internal business sector criticism.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 28,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 30,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 31,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 64,
+      "against_pct": 32,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 66,
+      "against_pct": 32,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Bilateral technical committees resolve the tariff dispute"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Chamber of Commerce announces support for normalized trade"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Presidents formally sign the normalization agreement"
+    }
+  ],
+  "calibration_notes": "Tracks how regional trade normalization moves from low-salience to high-consensus support."
+}

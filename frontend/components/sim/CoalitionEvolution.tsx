@@ -14,8 +14,8 @@ interface CoalitionEvolutionProps {
 }
 
 const PALETTE = [
-  "#3b82f6", "#ef4444", "#22c55e", "#f59e0b", "#8b5cf6",
-  "#06b6d4", "#ec4899", "#14b8a6",
+  "#1a6dff", "#dc2626", "#16a34a", "#d97706", "#7c3aed",
+  "#0891b2", "#db2777", "#059669",
 ];
 
 export default function CoalitionEvolution({ rounds }: CoalitionEvolutionProps) {
@@ -38,26 +38,26 @@ export default function CoalitionEvolution({ rounds }: CoalitionEvolutionProps) 
   const legendLabels = allLabels.slice(0, 6);
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4">
-      <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-3">
+    <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-2">
+      <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-2">
         Coalizioni
       </p>
-      <div className="h-32">
+      <div className="h-28">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
             <XAxis
               dataKey="round"
-              tick={{ fontSize: 10 }}
+              tick={{ fontSize: 10, fill: "#8a8a8a" }}
               tickLine={false}
               axisLine={false}
             />
             <YAxis
-              tick={{ fontSize: 10 }}
+              tick={{ fontSize: 10, fill: "#8a8a8a" }}
               tickLine={false}
               axisLine={false}
             />
             <Tooltip
-              contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e5e7eb" }}
+              contentStyle={{ fontSize: 11, borderRadius: 4, border: "1px solid #d4d4d4" }}
               labelFormatter={(l) => `Round ${l}`}
             />
             {allLabels.map((label) => (
@@ -72,9 +72,9 @@ export default function CoalitionEvolution({ rounds }: CoalitionEvolutionProps) 
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-2 text-[10px]">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1.5 text-[10px]">
         {legendLabels.map((l) => (
-          <span key={l} className="flex items-center gap-1 text-gray-500" title={l}>
+          <span key={l} className="flex items-center gap-1 text-ki-on-surface-muted" title={l}>
             <span className="w-2 h-2 rounded-sm flex-shrink-0" style={{ background: labelColor[l] }} />
             <span className="truncate max-w-[120px]">{l}</span>
           </span>

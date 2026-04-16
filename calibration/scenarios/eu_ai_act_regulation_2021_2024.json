@@ -1,0 +1,83 @@
+{
+  "scenario_name": "eu_ai_act_regulation_2021_2024",
+  "domain": "technology",
+  "description": "The European Union's legislative process to establish the world's first comprehensive legal framework for AI, balancing innovation with fundamental rights. The process spanned from the initial proposal in April 2021 to the final adoption in May 2024, involving intense lobbying from both tech giants and civil society.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 25,
+      "undecided_pct": 33
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 35,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 32,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 28,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 64,
+      "against_pct": 30,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "European Commission introduces the AI Act proposal in April 2021 focusing on risk-based classification."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "ChatGPT release in November 2022 sparks public urgency, shifting focus toward generative AI governance."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "European Parliament reaches a provisional agreement in December 2023, solidifying support for strict guardrails."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final adoption of the AI Act by the Council of the EU in May 2024."
+    }
+  ],
+  "calibration_notes": "This scenario demonstrates how public and political opinion shifts when a technical framework encounters a 'black swan' event like the sudden mass-adoption of Generative AI, moving the debate from abstract risk to immediate societal impact."
+}

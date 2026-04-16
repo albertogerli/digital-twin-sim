@@ -1,0 +1,83 @@
+{
+  "scenario_name": "australia_carbon_pricing_repeal_2013_2014",
+  "domain": "environmental",
+  "description": "Following the 2013 federal election, the Abbott government moved to repeal the Carbon Pricing Mechanism (the 'Carbon Tax') introduced by the Gillard government. Despite public concerns regarding climate change, the Coalition's 'Axe the Tax' campaign successfully framed the policy as a cost-of-living burden, leading to its formal repeal in July 2014.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 48,
+      "against_pct": 40,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 46,
+      "against_pct": 42,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 43,
+      "against_pct": 48,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 41,
+      "against_pct": 52,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 54,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 56,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Tony Abbott leads Liberal-National Coalition to victory in September 2013 election with 'Axe the Tax' mandate."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Government introduces the Clean Energy Legislation (Carbon Tax Repeal) Bill into Parliament."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Opposition and minor parties reach a deadlock in the Senate regarding repeal legislation."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The Senate passes the repeal bill in July 2014, effectively ending the carbon pricing mechanism."
+    }
+  ],
+  "calibration_notes": "Useful for modeling how economic messaging ('cost of living') can override environmental policy support during political transitions."
+}

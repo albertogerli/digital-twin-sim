@@ -1,0 +1,155 @@
+{
+  "id": "POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA",
+  "domain": "political",
+  "title": "French Presidential Election 2017 Second Round: Emmanuel Macron vs Marine Le Pen",
+  "country": "FR",
+  "date_start": "2017-04-01",
+  "date_end": "2017-05-07",
+  "n_rounds": 6,
+  "round_duration_days": 6,
+  "ground_truth_outcome": {
+    "pro_pct": 66.1,
+    "source": "https://www.conseil-constitutionnel.fr/decision/2017/20170510resultatsEN.htm",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2017-04-01",
+      "pro_pct": 62.0,
+      "against_pct": 38.0,
+      "undecided_pct": 0.0,
+      "sample_size": 1500,
+      "source": "https://www.ipsos.com/fr-fr/presidentielle-2017-le-barometre-quotidien-ipsos-sopra-steria",
+      "pollster": "Ipsos"
+    },
+    {
+      "round": 2,
+      "date": "2017-04-07",
+      "pro_pct": 61.0,
+      "against_pct": 39.0,
+      "undecided_pct": 0.0,
+      "sample_size": 1500,
+      "source": "Estimated: Interpolated trend from Ipsos/OpinionWay daily tracking",
+      "pollster": "Ipsos"
+    },
+    {
+      "round": 3,
+      "date": "2017-04-13",
+      "pro_pct": 60.0,
+      "against_pct": 40.0,
+      "undecided_pct": 0.0,
+      "sample_size": 1500,
+      "source": "Estimated: Trend reflecting pre-first round tightening",
+      "pollster": "Ipsos"
+    },
+    {
+      "round": 4,
+      "date": "2017-04-19",
+      "pro_pct": 60.5,
+      "against_pct": 39.5,
+      "undecided_pct": 0.0,
+      "sample_size": 1500,
+      "source": "Estimated: Post-first round consolidation",
+      "pollster": "Ipsos"
+    },
+    {
+      "round": 5,
+      "date": "2017-04-25",
+      "pro_pct": 62.0,
+      "against_pct": 38.0,
+      "undecided_pct": 0.0,
+      "sample_size": 1500,
+      "source": "https://www.ipsos.com/fr-fr/presidentielle-2017-le-barometre-quotidien-ipsos-sopra-steria",
+      "pollster": "Ipsos"
+    },
+    {
+      "round": 6,
+      "date": "2017-05-01",
+      "pro_pct": 64.0,
+      "against_pct": 36.0,
+      "undecided_pct": 0.0,
+      "sample_size": 1500,
+      "source": "https://www.ipsos.com/fr-fr/presidentielle-2017-le-barometre-quotidien-ipsos-sopra-steria",
+      "pollster": "Ipsos"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2017-04-23",
+      "description": "First round of presidential elections held; Macron and Le Pen qualify for runoff.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.2,
+      "source": "https://www.reuters.com/article/us-france-election-idUSKBN17P07A"
+    },
+    {
+      "round": 5,
+      "date": "2017-04-27",
+      "description": "Whirlpool factory visit controversy involving Le Pen and Macron.",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.3,
+      "source": "https://www.theguardian.com/world/2017/apr/27/emmanuel-macron-marine-le-pen-whirlpool-factory-france-election"
+    },
+    {
+      "round": 6,
+      "date": "2017-05-03",
+      "description": "Televised presidential debate between Macron and Le Pen.",
+      "shock_magnitude": 0.7,
+      "shock_direction": 0.5,
+      "source": "https://www.bbc.com/news/world-europe-39803565"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Emmanuel Macron",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Candidate for En Marche!, pro-EU, liberal economic platform."
+    },
+    {
+      "name": "Marine Le Pen",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "Candidate for Front National, nationalist, anti-EU platform."
+    },
+    {
+      "name": "Fran\u00e7ois Fillon",
+      "type": "elite",
+      "initial_position": 0.5,
+      "influence": 0.4,
+      "description": "Les R\u00e9publicains candidate, endorsed Macron after first round."
+    },
+    {
+      "name": "Jean-Luc M\u00e9lenchon",
+      "type": "elite",
+      "initial_position": -0.2,
+      "influence": 0.5,
+      "description": "La France Insoumise leader, refused to explicitly endorse Macron."
+    },
+    {
+      "name": "Traditional Media",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.6,
+      "description": "Mainstream press generally critical of Le Pen's platform."
+    },
+    {
+      "name": "Working Class Voters",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.3,
+      "description": "Demographic group heavily leaning towards Le Pen due to economic grievances."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.733,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.45,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side defined as voters for Emmanuel Macron. Against-side defined as voters for Marine Le Pen. Polling data reflects the two-way runoff intention. Estimates for intermediate rounds are based on the linear interpolation of the Ipsos daily tracking poll trend."
+}

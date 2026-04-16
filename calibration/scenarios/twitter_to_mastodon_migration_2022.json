@@ -1,0 +1,83 @@
+{
+  "scenario_name": "twitter_to_mastodon_migration_2022",
+  "domain": "technology",
+  "description": "The migration of tech-literate users to the decentralized Mastodon protocol following Elon Musk's acquisition of Twitter in late 2022. This tracks the viability of fediverse alternatives to centralized platforms.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 50.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 5,
+      "against_pct": 80,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 70,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 57,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Elon Musk officially closes the Twitter acquisition deal in October 2022."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Mastodon records record sign-ups as users explore alternatives."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Growth stalls as technical barriers and discovery issues plague the Fediverse."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Twitter stability remains higher than predicted, slowing migration momentum."
+    }
+  ],
+  "calibration_notes": "Highlights the difference between 'intent to migrate' and 'actual platform switching' due to friction."
+}

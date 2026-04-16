@@ -1,0 +1,79 @@
+{
+  "scenario_name": "turkey_inflation_lira_crisis_support_2021",
+  "domain": "financial",
+  "description": "Public support for the unorthodox low-interest-rate policy enforced by the Turkish Central Bank under presidential pressure, despite soaring inflation.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 40,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 50,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 32,
+      "against_pct": 60,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 30,
+      "against_pct": 65,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 29,
+      "against_pct": 68,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Interest rate cuts despite inflation rising."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Lira loses 40% value against USD."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Implementation of protected lira deposit accounts."
+    }
+  ],
+  "calibration_notes": "Models erosion of public trust during persistent economic mismanagement."
+}

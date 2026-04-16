@@ -1,0 +1,79 @@
+{
+  "scenario_name": "theranos_fraud_exposure_2015",
+  "domain": "corporate",
+  "description": "John Carreyrou's 2015 Wall Street Journal investigation reveals that Elizabeth Holmes and Theranos falsified blood-testing technology claims, leading to the company's downfall.",
+  "final_outcome_pro_pct": 90.0,
+  "final_outcome_against_pct": 10.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 5,
+      "against_pct": 2,
+      "undecided_pct": 93
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 10,
+      "against_pct": 5,
+      "undecided_pct": 85
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 5,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 8,
+      "undecided_pct": 47
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 10,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 82,
+      "against_pct": 10,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 88,
+      "against_pct": 10,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 90,
+      "against_pct": 10,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "WSJ report exposes blood test inaccuracies"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "CMS warns Theranos lab poses danger to patients"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Theranos shuts down all retail operations"
+    }
+  ],
+  "calibration_notes": "Measures the public transition from idolizing a tech visionary to identifying a fraudster."
+}

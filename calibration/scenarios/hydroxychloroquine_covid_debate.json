@@ -1,0 +1,83 @@
+{
+  "scenario_name": "hydroxychloroquine_covid_debate",
+  "domain": "public_health",
+  "description": "The 2020 debate over the use of hydroxychloroquine for COVID-19 treatment. What began as a hopeful potential therapeutic turned into a highly polarized political controversy regarding scientific validity and presidential interference.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 20,
+      "against_pct": 78,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Presidential endorsements lead to widespread initial interest and supply shortages."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Large-scale clinical trials (e.g., RECOVERY) find no benefit and potential safety risks."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "FDA revokes emergency use authorization (EUA) citing lack of efficacy."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Medical boards issue formal guidance advising against its use for COVID."
+    }
+  ],
+  "calibration_notes": "Measures the impact of political polarization on clinical drug acceptance and eventual consensus formation."
+}

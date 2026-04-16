@@ -1,0 +1,145 @@
+{
+  "id": "CORP-2020-BOEING_737_MAX_RETURN_TO_SERVI",
+  "domain": "corporate",
+  "title": "Public sentiment regarding the return to service of the Boeing 737 MAX aircraft following the 2019 grounding",
+  "country": "US",
+  "date_start": "2020-01-01",
+  "date_end": "2020-11-18",
+  "n_rounds": 5,
+  "round_duration_days": 64,
+  "ground_truth_outcome": {
+    "pro_pct": 41.0,
+    "source": "https://www.atmosphere-research.com",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2020-01-01",
+      "pro_pct": 25.0,
+      "against_pct": 60.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Based on post-crash sentiment nadir in early 2020",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2020-03-05",
+      "pro_pct": 28.0,
+      "against_pct": 58.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Gradual recovery as grounding extended",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2020-05-08",
+      "pro_pct": 32.0,
+      "against_pct": 52.0,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Impact of initial recertification flight testing news",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2020-07-11",
+      "pro_pct": 36.0,
+      "against_pct": 48.0,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Increased confidence following FAA flight tests",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2020-09-13",
+      "pro_pct": 41.0,
+      "against_pct": 42.0,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "https://www.atmosphere-research.com",
+      "pollster": "Atmosphere Research"
+    }
+  ],
+  "events": [
+    {
+      "round": 3,
+      "date": "2020-06-29",
+      "description": "FAA and Boeing begin formal certification flight tests",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.3,
+      "source": "https://www.reuters.com/article/us-boeing-737max-idUSKBN24017Q"
+    },
+    {
+      "round": 4,
+      "date": "2020-09-30",
+      "description": "FAA Administrator Steve Dickson conducts his own evaluation flight",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.4,
+      "source": "https://www.nytimes.com/2020/09/30/business/boeing-737-max-faa.html"
+    },
+    {
+      "round": 5,
+      "date": "2020-11-18",
+      "description": "FAA officially clears the Boeing 737 MAX to return to commercial service",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.5,
+      "source": "https://www.bbc.com/news/business-54988775"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Boeing Corporate",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Manufacturer seeking to restore brand reputation and market share"
+    },
+    {
+      "name": "FAA",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 1.0,
+      "description": "Regulatory body responsible for safety certification"
+    },
+    {
+      "name": "Airline Pilots Association",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "Labor union focused on pilot training and safety protocols"
+    },
+    {
+      "name": "Frequent Flyers",
+      "type": "citizen_cluster",
+      "initial_position": -0.3,
+      "influence": 0.4,
+      "description": "Business travelers prioritizing schedule and availability"
+    },
+    {
+      "name": "Casual Travelers",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.3,
+      "description": "Leisure travelers highly sensitive to safety news and media coverage"
+    },
+    {
+      "name": "Aviation Safety Advocates",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.6,
+      "description": "Watchdog groups and families of crash victims"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.703,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side defined as passengers willing to book a flight on a 737 MAX. Against-side defined as passengers who would avoid the aircraft or are unsure/unwilling. Data quality is high for the final round but relies on linear interpolation/estimates for earlier rounds based on the trajectory of regulatory news."
+}

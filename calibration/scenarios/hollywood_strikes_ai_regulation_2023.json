@@ -1,0 +1,83 @@
+{
+  "scenario_name": "hollywood_strikes_ai_regulation_2023",
+  "domain": "labor",
+  "description": "The 2023 SAG-AFTRA and WGA strikes were heavily focused on the protection of human labor against generative AI. The actors and writers secured significant contract protections, marking one of the first successful large-scale labor victories against AI-driven displacement.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 27,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 69,
+      "against_pct": 29,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "WGA officially goes on strike, AI protection listed as key demand."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "SAG-AFTRA joins the picket line citing 'digital replicas'."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public opinion shifts in favor of writers/actors after interviews with studio executives."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Studios concede to contract terms including AI guardrails."
+    }
+  ],
+  "calibration_notes": "Models a successful labor outcome against technological threats where the public aligns with 'creative' human labor."
+}

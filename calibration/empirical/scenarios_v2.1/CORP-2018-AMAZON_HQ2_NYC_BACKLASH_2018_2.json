@@ -1,0 +1,274 @@
+{
+  "id": "CORP-2018-AMAZON_HQ2_NYC_BACKLASH_2018_2",
+  "domain": "corporate",
+  "title": "Public Opinion Dynamics regarding Amazon's HQ2 Proposal in Long Island City, New York",
+  "country": "US",
+  "date_start": "2018-11-13",
+  "date_end": "2019-02-14",
+  "n_rounds": 7,
+  "round_duration_days": 13,
+  "ground_truth_outcome": {
+    "pro_pct": 56.0,
+    "source": "https://poll.qu.edu/poll-release?releaseid=2601",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2018-11-13",
+      "pro_pct": 57.0,
+      "against_pct": 26.0,
+      "undecided_pct": 17.0,
+      "sample_size": 1146,
+      "source": "https://poll.qu.edu/poll-release?releaseid=2601",
+      "pollster": "Quinnipiac University"
+    },
+    {
+      "round": 2,
+      "date": "2018-11-26",
+      "pro_pct": 56.5,
+      "against_pct": 27.5,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated from initial announcement sentiment shift",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2018-12-09",
+      "pro_pct": 55.0,
+      "against_pct": 30.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Gradual erosion due to local activist organizing",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2018-12-22",
+      "pro_pct": 54.0,
+      "against_pct": 32.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Holiday lull with persistent negative local press",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2019-01-04",
+      "pro_pct": 53.0,
+      "against_pct": 35.0,
+      "undecided_pct": 12.0,
+      "sample_size": null,
+      "source": "Estimated: Increased visibility of opposition in City Council hearings",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2019-01-17",
+      "pro_pct": 52.0,
+      "against_pct": 38.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Intensified public debate following AOC's vocal opposition",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2019-01-30",
+      "pro_pct": 51.0,
+      "against_pct": 40.0,
+      "undecided_pct": 9.0,
+      "sample_size": null,
+      "source": "Estimated: Final trend leading to February cancellation",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Amazon officially announced Long Island City, Queens, as one of the two locations for its new headquarters, sparking immediate local debate.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "Public reports revealed that New York City and State officials offered Amazon approximately $3 billion in tax incentives to secure the deal.",
+      "shock_magnitude": 0.9,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "Local residents and activists held a town hall meeting in Queens to protest the lack of transparency and the potential impact on housing affordability.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "Amazon executives testified before the New York City Council, facing intense questioning regarding labor practices and the use of public subsidies.",
+      "shock_magnitude": 0.6,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "New York State Senate Majority Leader Andrea Stewart-Cousins appointed vocal Amazon critic Senator Michael Gianaris to the Public Authorities Control Board, giving him potential veto power over the deal.",
+      "shock_magnitude": 0.7,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "Amazon officially canceled its plans to build the Long Island City headquarters, citing opposition from local politicians and community members.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Holly Sullivan",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Head of Worldwide Economic Development at Amazon"
+    },
+    {
+      "type": "elite",
+      "name": "Jeff Wilke",
+      "initial_position": 0.8,
+      "influence": 0.75,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "CEO of Worldwide Consumer at Amazon"
+    },
+    {
+      "name": "Amazon Corporate",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": "The company seeking to establish the new headquarters."
+    },
+    {
+      "name": "Local Small Business Owners",
+      "type": "citizen_cluster",
+      "initial_position": -0.4,
+      "influence": 0.3,
+      "description": "Concerned about gentrification and rising rents."
+    },
+    {
+      "name": "Tech Industry Workers",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "Generally supportive of job growth and industry expansion."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.802,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.17
+  },
+  "notes": "Pro-side is defined as support for Amazon's HQ2 project in NYC. Against-side is defined as opposition to the project, primarily due to tax incentives and gentrification concerns. Data quality caveat: Only the initial round is based on a high-quality public poll; subsequent rounds are estimates based on the observed trajectory of public discourse leading to the project's cancellation.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 85,
+    "n_grounded_agents": 2,
+    "n_grounded_events": 6
+  },
+  "market_observations": {
+    "primary_ticker": "AMZN",
+    "primary_sector": "tech",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": -7.915,
+        "volume_ratio": 1.0
+      },
+      {
+        "round": 2,
+        "return_pct": 3.023,
+        "volume_ratio": 1.07
+      },
+      {
+        "round": 3,
+        "return_pct": -15.449,
+        "volume_ratio": 1.19
+      },
+      {
+        "round": 4,
+        "return_pct": 8.917,
+        "volume_ratio": 1.24
+      },
+      {
+        "round": 5,
+        "return_pct": 6.88,
+        "volume_ratio": 1.02
+      },
+      {
+        "round": 6,
+        "return_pct": -5.867,
+        "volume_ratio": 0.75
+      },
+      {
+        "round": 7,
+        "return_pct": -4.755,
+        "volume_ratio": 0.91
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": -3.238,
+        "volume_ratio": 0.93
+      },
+      {
+        "round": 2,
+        "return_pct": -1.469,
+        "volume_ratio": 1.09
+      },
+      {
+        "round": 3,
+        "return_pct": -8.144,
+        "volume_ratio": 1.42
+      },
+      {
+        "round": 4,
+        "return_pct": 1.458,
+        "volume_ratio": 1.42
+      },
+      {
+        "round": 5,
+        "return_pct": 3.403,
+        "volume_ratio": 0.83
+      },
+      {
+        "round": 6,
+        "return_pct": 0.171,
+        "volume_ratio": 0.81
+      },
+      {
+        "round": 7,
+        "return_pct": 1.136,
+        "volume_ratio": 0.71
+      }
+    ],
+    "cumulative_return_pct": -16.282,
+    "benchmark_return_pct": -6.921,
+    "excess_return_pct": -9.361,
+    "volatility_realized": 43.0231,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

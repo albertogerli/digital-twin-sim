@@ -1,0 +1,83 @@
+{
+  "scenario_name": "france_presidential_2017",
+  "domain": "political",
+  "description": "The 2017 French presidential election saw Emmanuel Macron face Marine Le Pen in the runoff. Macron won decisively with 66.1% to Le Pen's 33.9% after a campaign marked by the collapse of traditional mainstream parties.",
+  "final_outcome_pro_pct": 66.1,
+  "final_outcome_against_pct": 33.9,
+  "final_turnout_pct": 74.6,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 61,
+      "against_pct": 39,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 63,
+      "against_pct": 37,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 64,
+      "against_pct": 36,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 64,
+      "against_pct": 36,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 66.1,
+      "against_pct": 33.9,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Centrist coalition consolidates around Macron."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Le Pen suffers from a poor performance in the final debate."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Republican endorsement of Macron solidifies the front."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Election Day turnout reflects anti-populist sentiment."
+    }
+  ],
+  "calibration_notes": "Good for modeling 'cordon sanitaire' voting patterns and establishment consolidation."
+}

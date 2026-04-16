@@ -1,0 +1,79 @@
+{
+  "scenario_name": "google_search_monopoly_eu_2017",
+  "domain": "technology",
+  "description": "The European Commission fined Google 2.42 billion euros for abusing its market dominance by favoring its own comparison shopping service in search results.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 65.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 25,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 30,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 35,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 37,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 38,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 59,
+      "against_pct": 39,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Margrethe Vestager announces antitrust probe findings"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Competitors testify against Google's search bias"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Final fine issued by EU"
+    }
+  ],
+  "calibration_notes": "Demonstrates regulatory intervention against perceived search bias."
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "round": 1,
+    "description": "Transport for London (TfL) announced it would not renew Uber's private hire operator license, citing a lack of corporate responsibility regarding public safety.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGPw2cDrfWds4VQi1Tpbde_wU2PjGiJ_sDTdGWgzCqYYLcgkvpqxtUUWgUhKzY0WAU0jB_VEXdgAChvex1fxNWuPZUA4qY7OGPLbltDKQN-Fly5Z2C77OTZm8RBTy6x7ypdO7lfiSQSLHTig1oHIlS1NJxKj7MbtQBNddZlRvArXwo_Mz7rpXfNVHkMb-1A80pImTEjdQQ8lV8JagvbP3tHGUPV6YI",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGGPw2cDrfWds4VQi1Tpbde_wU2PjGiJ_sDTdGWgzCqYYLcgkvpqxtUUWgUhKzY0WAU0jB_VEXdgAChvex1fxNWuPZUA4qY7OGPLbltDKQN-Fly5Z2C77OTZm8RBTy6x7ypdO7lfiSQSLHTig1oHIlS1NJxKj7MbtQBNddZlRvArXwo_Mz7rpXfNVHkMb-1A80pImTEjdQQ8lV8JagvbP3tHGUPV6YI"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Over 500,000 people signed an online petition calling for the decision to ban Uber from London to be overturned.",
+    "shock_magnitude": 0.8,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRpvVY1NqrjN-EaP_OXXBZiEXKycQmkcDz6F_MR0tXQ0IBTlixAc_wvRQRvNjW7kuQGR65ENDkpUw0xAmY4G_cUKvXBqrTaM4KWWn8fdHjrvG92isb6VBdB_u11xpuAyBGN1GM-2i6gp9pbZ0chVBJeTJvqjTypnWDy-T4x-JWBwLCbV2k2JQdJQNC1RoxRnmkcxFrqqovtiQ0X4AXWisqmWc49EthMHhyQe7_o3AO35b2g3mVHtbGstfofHwhF-yc2Wx9Yd4-qIlVRXaX6Q==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRpvVY1NqrjN-EaP_OXXBZiEXKycQmkcDz6F_MR0tXQ0IBTlixAc_wvRQRvNjW7kuQGR65ENDkpUw0xAmY4G_cUKvXBqrTaM4KWWn8fdHjrvG92isb6VBdB_u11xpuAyBGN1GM-2i6gp9pbZ0chVBJeTJvqjTypnWDy-T4x-JWBwLCbV2k2JQdJQNC1RoxRnmkcxFrqqovtiQ0X4AXWisqmWc49EthMHhyQe7_o3AO35b2g3mVHtbGstfofHwhF-yc2Wx9Yd4-qIlVRXaX6Q=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "Uber's newly appointed CEO, Dara Khosrowshahi, issued a public apology for the company's past mistakes and committed to changing the business culture.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "Uber's CEO met with the TfL commissioner to initiate discussions regarding the license renewal and address regulatory concerns.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 8,
+    "description": "A London judge granted Uber a probationary 15-month license, overturning the initial ban while imposing strict oversight conditions.",
+    "shock_magnitude": 0.8,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGINveBjf4TF7FcYMi4iTTQp4poTkQ3ag6GT3Zrt3HRPcd2MjuO0jJza-t1KviMddUNYN6Usy0jUuPCArdgQH99zQ1CDkWqa5zE6wwRBKARGN4QvWphL1gzZ_LirRcYcN_AhLPiOMifHSBD4pHIwOi5NA_VJ9s5cSdCisYOBP5GSVQYAYx79IV5meuABbjz2JirtoiB",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGINveBjf4TF7FcYMi4iTTQp4poTkQ3ag6GT3Zrt3HRPcd2MjuO0jJza-t1KviMddUNYN6Usy0jUuPCArdgQH99zQ1CDkWqa5zE6wwRBKARGN4QvWphL1gzZ_LirRcYcN_AhLPiOMifHSBD4pHIwOi5NA_VJ9s5cSdCisYOBP5GSVQYAYx79IV5meuABbjz2JirtoiB"
+    ],
+    "_verified": true
+  }
+]

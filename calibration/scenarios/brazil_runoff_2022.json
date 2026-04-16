@@ -1,0 +1,79 @@
+{
+  "scenario_name": "brazil_runoff_2022",
+  "domain": "political",
+  "description": "The 2022 Brazilian general election runoff between incumbent Jair Bolsonaro and Luiz Inácio Lula da Silva. The election was characterized by extreme polarization, ending in a narrow victory for Lula with 50.9% of the valid votes.",
+  "final_outcome_pro_pct": 50.9,
+  "final_outcome_against_pct": 49.1,
+  "final_turnout_pct": 79.4,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 44,
+      "against_pct": 35,
+      "undecided_pct": 21
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 36,
+      "undecided_pct": 19
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 47,
+      "against_pct": 38,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 46,
+      "against_pct": 39,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 41,
+      "undecided_pct": 11
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 47,
+      "against_pct": 42,
+      "undecided_pct": 11
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 49,
+      "against_pct": 44,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 49,
+      "against_pct": 46,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 50.9,
+      "against_pct": 49.1,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Lula official campaign launch confirms wide lead."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "First televised debate intensifies negative campaigning."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final TV debate causes marginal shifts in undecided bloc."
+    }
+  ],
+  "calibration_notes": "Useful for measuring late-stage consolidation in binary, highly polarized contests."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "daimler_chrysler_merger_1998_2007",
+  "domain": "corporate",
+  "description": "The 'merger of equals' between Daimler-Benz and Chrysler collapsed over 9 years, ending in 2007 when Daimler sold Chrysler to Cerberus. Cultural dissonance and poor market fit were the primary drivers.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Merger announced with high optimism."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Public complaints regarding German-American corporate culture clash."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Chrysler profitability tanks, fueling investor skepticism."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Formal separation and sale to private equity."
+    }
+  ],
+  "calibration_notes": "Models long-term erosion of trust in 'merger of equals' claims."
+}

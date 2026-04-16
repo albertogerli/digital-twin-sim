@@ -1,0 +1,205 @@
+{
+  "id": "POL-2016-BREXIT",
+  "domain": "political",
+  "title": "2016 United Kingdom European Union membership referendum",
+  "country": "GB",
+  "date_start": "2016-01-15",
+  "date_end": "2016-06-23",
+  "n_rounds": 6,
+  "round_duration_days": 28,
+  "ground_truth_outcome": {
+    "pro_pct": 51.89,
+    "source": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/eu-referendum/results-and-turnout-eu-referendum",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2016-01-31",
+      "pro_pct": 41.0,
+      "against_pct": 42.0,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_referendum",
+      "pollster": "Aggregate (ICM, YouGov, ComRes, ORB, Ipsos MORI)"
+    },
+    {
+      "round": 2,
+      "date": "2016-02-29",
+      "pro_pct": 42.0,
+      "against_pct": 43.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_referendum",
+      "pollster": "Aggregate"
+    },
+    {
+      "round": 3,
+      "date": "2016-03-31",
+      "pro_pct": 43.0,
+      "against_pct": 44.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_referendum",
+      "pollster": "Aggregate"
+    },
+    {
+      "round": 4,
+      "date": "2016-04-30",
+      "pro_pct": 43.0,
+      "against_pct": 44.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_referendum",
+      "pollster": "Aggregate"
+    },
+    {
+      "round": 5,
+      "date": "2016-05-31",
+      "pro_pct": 44.0,
+      "against_pct": 43.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_referendum",
+      "pollster": "Aggregate"
+    },
+    {
+      "round": 6,
+      "date": "2016-06-22",
+      "pro_pct": 44.0,
+      "against_pct": 45.0,
+      "undecided_pct": 11.0,
+      "sample_size": null,
+      "source": "https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_referendum",
+      "pollster": "Aggregate — final polls before vote"
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2016-02-21",
+      "description": "Boris Johnson announces support for Leave campaign, giving it major establishment credibility",
+      "shock_magnitude": 0.35,
+      "shock_direction": 0.5,
+      "source": "https://www.bbc.co.uk/news/uk-politics-eu-referendum-35621621"
+    },
+    {
+      "round": 4,
+      "date": "2016-04-18",
+      "description": "HM Treasury publishes Brexit impact report: GDP 6% lower after 15 years outside EU",
+      "shock_magnitude": 0.25,
+      "shock_direction": -0.3,
+      "source": "https://www.gov.uk/government/publications/hm-treasury-analysis-the-long-term-economic-impact-of-eu-membership-and-the-alternatives"
+    },
+    {
+      "round": 4,
+      "date": "2016-04-22",
+      "description": "President Obama warns UK would be at 'back of the queue' for US trade deal if it leaves EU",
+      "shock_magnitude": 0.20,
+      "shock_direction": -0.2,
+      "source": "https://www.bbc.co.uk/news/uk-36115138"
+    },
+    {
+      "round": 6,
+      "date": "2016-06-16",
+      "description": "Labour MP Jo Cox murdered by far-right extremist; campaigning suspended for 3 days",
+      "shock_magnitude": 0.50,
+      "shock_direction": -0.6,
+      "source": "https://www.bbc.co.uk/news/uk-england-36550304"
+    }
+  ],
+  "agents": [
+    {
+      "name": "David Cameron",
+      "type": "elite",
+      "initial_position": -0.8,
+      "influence": 0.9,
+      "description": "Prime Minister, leading Remain campaign"
+    },
+    {
+      "name": "Boris Johnson",
+      "type": "elite",
+      "initial_position": 0.7,
+      "influence": 0.85,
+      "description": "London Mayor, leading Leave campaign from Feb 21"
+    },
+    {
+      "name": "Nigel Farage",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": "UKIP leader, prominent Leave campaigner"
+    },
+    {
+      "name": "George Osborne",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.6,
+      "description": "Chancellor, Project Fear economic warnings"
+    },
+    {
+      "name": "Michael Gove",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "Justice Secretary, prominent Leave advocate"
+    },
+    {
+      "name": "Bank of England",
+      "type": "institutional",
+      "initial_position": -0.6,
+      "influence": 0.7,
+      "description": "Mark Carney warned of Brexit economic risks"
+    },
+    {
+      "name": "BBC",
+      "type": "institutional",
+      "initial_position": -0.1,
+      "influence": 0.8,
+      "description": "Public broadcaster, statutory impartiality"
+    },
+    {
+      "name": "Daily Mail / Sun",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.7,
+      "description": "Major pro-Leave tabloids with large readership"
+    },
+    {
+      "name": "Urban professionals",
+      "type": "citizen_cluster",
+      "initial_position": -0.5,
+      "influence": 0.3,
+      "description": "London and major city residents, largely pro-Remain"
+    },
+    {
+      "name": "Post-industrial working class",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.3,
+      "description": "Northern England, Midlands, Wales — pro-Leave demographic"
+    },
+    {
+      "name": "Retirees",
+      "type": "citizen_cluster",
+      "initial_position": 0.4,
+      "influence": 0.25,
+      "description": "Over-65s, highest turnout, leaned Leave"
+    },
+    {
+      "name": "Young voters (18-24)",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.15,
+      "description": "Strongly pro-Remain but lowest turnout"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.65,
+    "event_volatility": 0.13,
+    "elite_concentration": 0.22,
+    "institutional_trust": 0.35,
+    "undecided_share": 0.17
+  },
+  "notes": "Polling data are monthly averages blending online and phone polls. Online polls (YouGov, TNS) consistently showed Leave 3-4pp higher than phone polls (ComRes, Ipsos MORI). The 'shy Leaver' effect and late-deciding undecided voters explain the gap between final polls (~44% Leave) and result (51.89%). Pro = Leave, Against = Remain."
+}

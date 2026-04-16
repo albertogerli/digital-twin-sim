@@ -1,0 +1,53 @@
+[
+  {
+    "round": 1,
+    "description": "Lion Air Flight 610 crashed into the Java Sea shortly after takeoff, resulting in the loss of all lives on board. Investigations later revealed that the MCAS system repeatedly forced the nose down due to faulty sensor data.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLJK3uU8LHpyZC_Ub_FpluDukvcnQBEXUnFjIiCycZSiLobmNl-Peusl6c4KN2C-cL4HedTP3KT-WMEZpcGtW64H84xGEHzjGbJdEECdmcowwL2A8UoGmxmpY2mFpRqcHA-c-1YSIUkoaf7Koirzqm85nMj-Mf7ao0es586bBH7EpXbWkxeNEkDDLNuxpPUFbeYSg-dREeI3lZ7FM=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHLJK3uU8LHpyZC_Ub_FpluDukvcnQBEXUnFjIiCycZSiLobmNl-Peusl6c4KN2C-cL4HedTP3KT-WMEZpcGtW64H84xGEHzjGbJdEECdmcowwL2A8UoGmxmpY2mFpRqcHA-c-1YSIUkoaf7Koirzqm85nMj-Mf7ao0es586bBH7EpXbWkxeNEkDDLNuxpPUFbeYSg-dREeI3lZ7FM="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Ethiopian Airlines Flight 302 crashed shortly after takeoff, killing everyone on board. The crash exhibited striking similarities to the Lion Air incident, specifically regarding the activation of the MCAS system.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0SmkTn6NA56E9gmF4CcoqkwudhLylbfK0nEpecuLetNTrWITa7poS1us6cgCcP4O5EbUm76FvphJJzWKx5FlOewD5TA0EN22qYJNGDNoBt8g78YaQg-XLZTvEETYokNBi4s-wv1JgKdYKEnolzs16CYqd--1s04WTn6aMbAMqqFWSZGOd",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG0SmkTn6NA56E9gmF4CcoqkwudhLylbfK0nEpecuLetNTrWITa7poS1us6cgCcP4O5EbUm76FvphJJzWKx5FlOewD5TA0EN22qYJNGDNoBt8g78YaQg-XLZTvEETYokNBi4s-wv1JgKdYKEnolzs16CYqd--1s04WTn6aMbAMqqFWSZGOd"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "The U.S. Federal Aviation Administration (FAA) issued an emergency order grounding all Boeing 737 MAX aircraft in the United States. This followed similar global grounding actions by other aviation authorities.",
+    "shock_magnitude": 0.9,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFChdEiPFzXeRVQ5uKtW8XWQS_5vMOG12NI-7PnORUaSBHCq-O5EFRNYPfbSc3oyPEB71OmnXH--6kSqND_jXlyup_n31a8Jd7Lb3z7qQIFgObQBr8Fa09hmmaWxqIS0qDUWYcJqZh0vEkRpPLVDOC-mMzRqZQ6uGbqhNR45bpzRYqG8BCYcDl3X4xGbqkIvs7NasGTWGN7ebx4bYrDzvYpnA==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFChdEiPFzXeRVQ5uKtW8XWQS_5vMOG12NI-7PnORUaSBHCq-O5EFRNYPfbSc3oyPEB71OmnXH--6kSqND_jXlyup_n31a8Jd7Lb3z7qQIFgObQBr8Fa09hmmaWxqIS0qDUWYcJqZh0vEkRpPLVDOC-mMzRqZQ6uGbqhNR45bpzRYqG8BCYcDl3X4xGbqkIvs7NasGTWGN7ebx4bYrDzvYpnA=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "Boeing CEO Dennis Muilenburg publicly acknowledged that the MCAS system was a factor in both the Lion Air and Ethiopian Airlines crashes. This admission marked a significant shift in the company's public narrative regarding the cause of the accidents.",
+    "shock_magnitude": 0.7,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "Boeing announced it would suspend production of the 737 MAX aircraft starting in January 2020. The decision reflected the ongoing uncertainty regarding the timeline for the aircraft's return to service.",
+    "shock_magnitude": 0.6,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

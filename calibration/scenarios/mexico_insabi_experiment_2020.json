@@ -1,0 +1,79 @@
+{
+  "scenario_name": "mexico_insabi_experiment_2020",
+  "domain": "public_health",
+  "description": "President AMLO replaced the Seguro Popular with INSABI in 2020 to provide free universal health coverage, but the transition faced severe logistical failures and drug shortages.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 58,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32,
+      "against_pct": 63,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 31,
+      "against_pct": 67,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Initial launch generates high public optimism."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Widespread reports of hospitals running out of basic medications."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public protests by cancer patient organizations gain national attention."
+    }
+  ],
+  "calibration_notes": "Models the rapid decline in support for a policy that fails on execution, despite good intent."
+}

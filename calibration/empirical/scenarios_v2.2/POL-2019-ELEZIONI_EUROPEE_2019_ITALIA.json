@@ -1,0 +1,155 @@
+{
+  "id": "POL-2019-ELEZIONI_EUROPEE_2019_ITALIA",
+  "domain": "political",
+  "title": "Italian European Parliament Elections 2019: Sovereignism vs Europeanism",
+  "country": "IT",
+  "date_start": "2019-03-01",
+  "date_end": "2019-05-26",
+  "n_rounds": 6,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 40.0,
+    "source": "https://elezionistorico.interno.gov.it/index.php?tpel=E&dession=1558825200",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2019-03-01",
+      "pro_pct": 35.2,
+      "against_pct": 33.0,
+      "undecided_pct": 31.8,
+      "sample_size": 1000,
+      "source": "Estimated: Based on average of Ipsos/SWG polls for March 2019",
+      "pollster": "Ipsos/SWG"
+    },
+    {
+      "round": 2,
+      "date": "2019-03-15",
+      "pro_pct": 36.0,
+      "against_pct": 33.5,
+      "undecided_pct": 30.5,
+      "sample_size": 1000,
+      "source": "Estimated: Trend line interpolation from March to April",
+      "pollster": "SWG"
+    },
+    {
+      "round": 3,
+      "date": "2019-03-29",
+      "pro_pct": 36.6,
+      "against_pct": 34.0,
+      "undecided_pct": 29.4,
+      "sample_size": 1000,
+      "source": "Estimated: Trend line interpolation",
+      "pollster": "Ipsos"
+    },
+    {
+      "round": 4,
+      "date": "2019-04-12",
+      "pro_pct": 37.5,
+      "against_pct": 34.5,
+      "undecided_pct": 28.0,
+      "sample_size": 1000,
+      "source": "Estimated: Trend line interpolation",
+      "pollster": "SWG"
+    },
+    {
+      "round": 5,
+      "date": "2019-04-26",
+      "pro_pct": 38.5,
+      "against_pct": 35.0,
+      "undecided_pct": 26.5,
+      "sample_size": 1000,
+      "source": "Estimated: Trend line interpolation",
+      "pollster": "Ipsos"
+    },
+    {
+      "round": 6,
+      "date": "2019-05-10",
+      "pro_pct": 39.8,
+      "against_pct": 35.5,
+      "undecided_pct": 24.7,
+      "sample_size": 1000,
+      "source": "Estimated: Final pre-election polling average",
+      "pollster": "SWG"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2019-03-05",
+      "description": "Matteo Salvini intensifies campaign focus on European migration policy and sovereignism.",
+      "shock_magnitude": 0.2,
+      "shock_direction": 0.1,
+      "source": "https://www.reuters.com/article/us-italy-politics-salvini/italys-salvini-says-he-wants-to-lead-new-european-nationalist-alliance-idUSKCN1QM15B"
+    },
+    {
+      "round": 3,
+      "date": "2019-04-08",
+      "description": "Milan rally of European nationalist parties hosted by Lega.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2,
+      "source": "https://www.theguardian.com/world/2019/apr/08/matteo-salvini-hosts-far-right-allies-milan-rally"
+    },
+    {
+      "round": 5,
+      "date": "2019-04-29",
+      "description": "Internal government tensions between Lega and M5S regarding infrastructure projects.",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.1,
+      "source": "https://www.reuters.com/article/us-italy-politics/italy-government-tensions-rise-as-salvini-and-di-maio-clash-idUSKCN1S511D"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Matteo Salvini",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Leader of Lega, primary driver of the pro-Lega sentiment."
+    },
+    {
+      "name": "Luigi Di Maio",
+      "type": "elite",
+      "initial_position": -0.5,
+      "influence": 0.7,
+      "description": "Leader of M5S, coalition partner often in conflict with Lega."
+    },
+    {
+      "name": "Partito Democratico",
+      "type": "elite",
+      "initial_position": -0.8,
+      "influence": 0.6,
+      "description": "Main opposition party, strongly against Lega's platform."
+    },
+    {
+      "name": "Northern Industrialists",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.5,
+      "description": "Traditional Lega support base, focused on economic stability."
+    },
+    {
+      "name": "Southern Voters",
+      "type": "citizen_cluster",
+      "initial_position": -0.3,
+      "influence": 0.4,
+      "description": "Historically skeptical of Lega, targeted by 2019 expansion efforts."
+    },
+    {
+      "name": "Catholic Church Leadership",
+      "type": "institutional",
+      "initial_position": -0.4,
+      "influence": 0.3,
+      "description": "Often critical of Lega's hardline stance on migration."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.609,
+    "event_volatility": 0.35,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side ridefinito come voto a partiti sovranisti (Lega 34.3% + FdI 6.4% = 40.7%, arrotondato a 40.0%). Contro-side = partiti europeisti (PD + FI + +Europa + Verdi). Scelta modellistica: il voto M5S (17.1%) non \u00e8 incluso in nessuno dei due poli per ambiguit\u00e0 di posizionamento. Polling trajectory \u00e8 stimata su base trend Ipsos/SWG."
+}

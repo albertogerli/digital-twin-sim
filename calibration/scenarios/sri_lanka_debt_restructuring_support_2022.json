@@ -1,0 +1,83 @@
+{
+  "scenario_name": "sri_lanka_debt_restructuring_support_2022",
+  "domain": "financial",
+  "description": "Amidst a catastrophic economic collapse in 2022, Sri Lanka sought an IMF bailout requiring harsh austerity measures and public sector cuts. The public reaction was polarized between desperate need for liquidity and anger over the social cost.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 55,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 47,
+      "against_pct": 50,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 49,
+      "against_pct": 51,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Nationwide power cuts and severe food shortages trigger Aragalaya protests."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Government officially declares sovereign default on foreign debt."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "IMF reaches staff-level agreement, promising funds but demanding tax hikes."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public protests escalate against the implementation of austerity, cooling support for the bailout."
+    }
+  ],
+  "calibration_notes": "Tracks how the urgency of a collapsing economy initially drives support for bailouts before social pain erodes it."
+}

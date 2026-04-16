@@ -1,0 +1,79 @@
+{
+  "scenario_name": "covid_zero_policy_shanghai_2022",
+  "domain": "public_health",
+  "description": "The strict COVID-Zero lockdown in Shanghai during Spring 2022. The policy led to unprecedented public frustration due to food supply shortages and confinement.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 98.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 68,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 25,
+      "against_pct": 73,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 22,
+      "against_pct": 77,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 20,
+      "against_pct": 79,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Food distribution failures reported in viral videos."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Protests occur in residential compounds."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Government begins phased reopening."
+    }
+  ],
+  "calibration_notes": "Models the rapid collapse of support for top-down public health mandates."
+}

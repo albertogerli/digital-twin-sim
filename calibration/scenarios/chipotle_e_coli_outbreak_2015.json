@@ -1,0 +1,83 @@
+{
+  "scenario_name": "chipotle_e_coli_outbreak_2015",
+  "domain": "commercial",
+  "description": "Chipotle Mexican Grill faced a series of E. coli and norovirus outbreaks across multiple states, causing stock prices to plummet and public trust to evaporate. The company was forced to close stores and overhaul its food safety protocols.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 85,
+      "against_pct": 5,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 75,
+      "against_pct": 15,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 47,
+      "against_pct": 51,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Initial reports of E. coli outbreaks in Pacific Northwest."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "CDC confirms links to multiple stores; sales drop sharply."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Chipotle shuts down all US locations for a national food safety meeting."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "CDC declares the outbreak over."
+    }
+  ],
+  "calibration_notes": "Focuses on the resilience of a 'fast-casual' brand image during a health crisis."
+}

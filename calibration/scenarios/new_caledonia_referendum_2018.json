@@ -1,0 +1,83 @@
+{
+  "scenario_name": "new_caledonia_referendum_2018",
+  "domain": "political",
+  "description": "The first of three referendums on independence from France, as part of the Nouméa Accord. The pro-independence side was defeated, 56.7% to 43.3%.",
+  "final_outcome_pro_pct": 43.3,
+  "final_outcome_against_pct": 56.7,
+  "final_turnout_pct": 81.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 32,
+      "against_pct": 51,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 52,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 53,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 54,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 41,
+      "against_pct": 55,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 56,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 43,
+      "against_pct": 56,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 43.3,
+      "against_pct": 56.7,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "French President Macron visits to engage both sides."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Campaign debates focus on future nickel industry control."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Last-minute mobilization of urban voters."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Official vote confirms rejection of independence."
+    }
+  ],
+  "calibration_notes": "Ideal for tracking multi-stage referendum processes in colonial contexts."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "nokia_symbian_vs_iphone_2008",
+  "domain": "commercial",
+  "description": "Public and industry perception of the smartphone market during the emergence of the iPhone, which disrupted Nokia's dominance in the mobile handset industry.",
+  "final_outcome_pro_pct": 75.0,
+  "final_outcome_against_pct": 25.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 80,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 12,
+      "against_pct": 78,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 35,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 75,
+      "against_pct": 25,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "App Store launches, shifting value proposition from hardware to ecosystem."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Nokia reports massive earnings decline and fails to iterate on Symbian OS."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Developers begin abandoning the Nokia platform entirely."
+    }
+  ],
+  "calibration_notes": "Exemplifies the collapse of a dominant market leader due to a failure to recognize the 'app-centric' disruption."
+}

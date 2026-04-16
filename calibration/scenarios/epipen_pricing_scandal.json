@@ -1,0 +1,83 @@
+{
+  "scenario_name": "epipen_pricing_scandal",
+  "domain": "public_health",
+  "description": "The 2016 public outcry over Mylan’s price hikes for the EpiPen, which increased costs by over 400%. The backlash forced a public health dialogue on the ethics of pharmaceutical pricing for life-saving emergency medicine.",
+  "final_outcome_pro_pct": 5.0,
+  "final_outcome_against_pct": 95.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 30,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 50,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 10,
+      "against_pct": 70,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 8,
+      "against_pct": 82,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 5,
+      "against_pct": 90,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 5,
+      "against_pct": 92,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 5,
+      "against_pct": 94,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Social media outrage highlights the disparity between production cost and retail price."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "US Congressional committee launches an inquiry into Mylan's pricing strategy."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Mylan announces the launch of a generic version to mitigate the PR disaster."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Settlements reached in multiple consumer class-action lawsuits."
+    }
+  ],
+  "calibration_notes": "Demonstrates the near-unanimous public rejection of corporate profit-taking on essential healthcare commodities."
+}

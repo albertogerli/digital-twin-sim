@@ -1,0 +1,83 @@
+{
+  "scenario_name": "clearview_ai_surveillance_backlash_2020",
+  "domain": "technology",
+  "description": "Clearview AI's facial recognition technology, built from billions of scraped social media photos, faced intense global scrutiny in 2020. This triggered widespread legislative pushback against private surveillance tech.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 28,
+      "against_pct": 50,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 22,
+      "against_pct": 68,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 18,
+      "against_pct": 78,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 17,
+      "against_pct": 80,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 16,
+      "against_pct": 82,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "NYT exposes Clearview AI scraping practices"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Google, Twitter, and Facebook send cease-and-desist"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "European regulators begin GDPR investigations"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "US states introduce facial recognition bans"
+    }
+  ],
+  "calibration_notes": "Demonstrates the rapid negative trajectory of a product perceived as a violation of fundamental digital consent."
+}

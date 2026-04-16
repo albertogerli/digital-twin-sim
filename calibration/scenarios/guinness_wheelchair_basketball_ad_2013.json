@@ -1,0 +1,83 @@
+{
+  "scenario_name": "guinness_wheelchair_basketball_ad_2013",
+  "domain": "marketing",
+  "description": "Guinness aired a commercial titled 'Basketball' in late 2013, showing friends playing wheelchair basketball, with only one player actually using a wheelchair. The ad was widely celebrated for its emotional depth and inclusiveness, becoming a standard for effective 'purpose-driven' beer advertising.",
+  "final_outcome_pro_pct": 88.0,
+  "final_outcome_against_pct": 12.0,
+  "final_turnout_pct": 50.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 2,
+      "undecided_pct": 88
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 5,
+      "undecided_pct": 65
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 8,
+      "undecided_pct": 42
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 9,
+      "undecided_pct": 26
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 75,
+      "against_pct": 10,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 80,
+      "against_pct": 11,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 83,
+      "against_pct": 12,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 86,
+      "against_pct": 12,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 88,
+      "against_pct": 12,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ad premieres; immediate positive reception on social media for its emotional hook."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Disability advocacy groups release public statements praising the ad's authentic portrayal."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Ad wins multiple marketing industry awards for 'creative excellence'."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Guinness brand favorability metrics reach a five-year high in the UK and Ireland."
+    }
+  ],
+  "calibration_notes": "Serves as a benchmark for high-consensus, positive-valence marketing campaigns with minimal controversy."
+}

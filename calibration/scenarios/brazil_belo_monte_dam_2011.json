@@ -1,0 +1,79 @@
+{
+  "scenario_name": "brazil_belo_monte_dam_2011",
+  "domain": "environmental",
+  "description": "The Belo Monte Dam in the Amazon basin became a global symbol for the conflict between industrial growth and indigenous rights/biodiversity protection in Brazil.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 56,
+      "against_pct": 42,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 44,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 54,
+      "against_pct": 46,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 53,
+      "against_pct": 47,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Brazilian government auctioning the construction rights."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Protests erupt in cities across Brazil led by indigenous groups."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Government emphasizes the role of the dam in avoiding national energy rationing."
+    }
+  ],
+  "calibration_notes": "Models energy necessity as a powerful counter-argument to environmental protest."
+}

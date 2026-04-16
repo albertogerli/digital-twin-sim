@@ -1,0 +1,79 @@
+{
+  "scenario_name": "pfas_water_regulation_2024",
+  "domain": "public_health",
+  "description": "Public opinion regarding the EPA’s 2024 final rule establishing legally enforceable levels for PFAS in drinking water, balancing health safety with municipal implementation costs.",
+  "final_outcome_pro_pct": 82.0,
+  "final_outcome_against_pct": 18.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 12,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 68,
+      "against_pct": 15,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 72,
+      "against_pct": 16,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 75,
+      "against_pct": 17,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 78,
+      "against_pct": 18,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 80,
+      "against_pct": 18,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 81,
+      "against_pct": 18,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 82,
+      "against_pct": 18,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "EPA proposes first-ever PFAS limits"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Major chemical companies announce settlement"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Final 2024 enforcement rule announced"
+    }
+  ],
+  "calibration_notes": "Measures support for precautionary health regulation against corporate lobbying."
+}

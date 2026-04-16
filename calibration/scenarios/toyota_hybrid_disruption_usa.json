@@ -1,0 +1,83 @@
+{
+  "scenario_name": "toyota_hybrid_disruption_usa",
+  "domain": "commercial",
+  "description": "Between 2000 and 2004, the entry of the Toyota Prius into the US market disrupted the dominance of American domestic internal combustion engine (ICE) vehicles. This scenario tracks the shift from public skepticism regarding hybrid reliability to the mainstream acceptance of fuel efficiency as a competitive differentiator.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 70,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 12,
+      "against_pct": 68,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 18,
+      "against_pct": 65,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 45,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 40,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Prius sales exceed 15,000 units, exceeding early conservative market forecasts."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Major celebrities begin driving the Prius, shifting it from a niche engineering project to a status symbol."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Rising gasoline prices in 2004 force consumers to reconsider the value proposition of traditional SUVs."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "General Motors and Ford publicly announce plans to fast-track their own hybrid programs."
+    }
+  ],
+  "calibration_notes": "Ideal for modeling the 'niche-to-mainstream' transition where a product overcomes early skepticism through external market shocks (gas prices) and social signaling."
+}

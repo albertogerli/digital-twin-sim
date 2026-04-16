@@ -1,0 +1,83 @@
+{
+  "scenario_name": "amazon_rainforest_protection_fund_brazil_2023",
+  "domain": "environmental",
+  "description": "Following President Lula da Silva's inauguration in January 2023, Brazil engaged in a high-stakes battle to reactivate the Amazon Fund, an international mechanism to finance anti-deforestation efforts. The scenario tracks public support for state-led environmental protection versus the economic interests of the agribusiness sector in the Brazilian Amazon.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 78.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 33,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 51,
+      "against_pct": 35,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 36,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 57,
+      "against_pct": 39,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "President Lula officially reactivates the Amazon Fund via decree on January 1, 2023."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Germany and Norway announce the resumption of financial contributions to the fund."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "High-profile anti-deforestation raids by IBAMA in the Yanomami territory receive broad media coverage."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Government reports a 33% decline in Amazon deforestation rates during the first half of the year."
+    }
+  ],
+  "calibration_notes": "This scenario demonstrates the volatility of environmental policy in emerging economies where economic development (agribusiness) and global ecological preservation agendas are in direct conflict."
+}

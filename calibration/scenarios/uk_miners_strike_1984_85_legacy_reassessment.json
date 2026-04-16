@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_miners_strike_1984_85_legacy_reassessment",
+  "domain": "labor",
+  "description": "A retrospective public opinion analysis of the 1984-1985 UK miners' strike, which pitted the National Union of Mineworkers (NUM) led by Arthur Scargill against Margaret Thatcher's government over pit closures. The event resulted in a decisive defeat for the miners, fundamentally altering the UK industrial landscape and weakening trade union power for decades.",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 42,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 48,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 60,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 34,
+      "against_pct": 58,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 35,
+      "against_pct": 59,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 37,
+      "against_pct": 60,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 38,
+      "against_pct": 62,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Arthur Scargill announces the national strike without a formal ballot of all miners."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "The Battle of Orgreave occurs, leading to violent confrontations and significant negative media coverage for the miners."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "The approach of winter increases public concern regarding potential power outages and coal shortages."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The NUM officially votes to return to work, marking the end of the year-long strike without concessions."
+    }
+  ],
+  "calibration_notes": "This scenario tests the model's ability to handle high-stakes labor disputes where public sentiment shifts from initial sympathy to opposition due to economic inconvenience and aggressive union tactics."
+}

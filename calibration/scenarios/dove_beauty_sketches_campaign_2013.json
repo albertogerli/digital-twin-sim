@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dove_beauty_sketches_campaign_2013",
+  "domain": "marketing",
+  "description": "In 2013, Dove released its 'Real Beauty Sketches' campaign, which went viral globally. The campaign was praised for its emotional resonance and body-positivity message, though it faced criticism regarding the company's dual role in owning beauty brands that promote unrealistic standards.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 5,
+      "undecided_pct": 80
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 10,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 62,
+      "against_pct": 20,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 68,
+      "against_pct": 26,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 27,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 71,
+      "against_pct": 28,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Video reaches 10 million views in 10 days; global media praise begins."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Academic and industry critics publish articles on 'brand hypocrisy' regarding Unilever's portfolio."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "The campaign is parodied by comedy groups, shifting public focus from message to production."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Campaign recognized as one of the most successful viral marketing events in history by industry trade journals."
+    }
+  ],
+  "calibration_notes": "Ideal for measuring the 'halo effect' of purpose-driven marketing and the durability of brand sentiment against logical inconsistencies."
+}

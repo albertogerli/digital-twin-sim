@@ -1,0 +1,83 @@
+{
+  "scenario_name": "croatian_marriage_referendum_2013",
+  "domain": "political",
+  "description": "A constitutional referendum in Croatia held on December 1, 2013, to define marriage as a union between a man and a woman in the Constitution. The initiative was spearheaded by the 'In the Name of the Family' group and passed with 65.87% of the vote.",
+  "final_outcome_pro_pct": 66,
+  "final_outcome_against_pct": 34,
+  "final_turnout_pct": 37.9,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 58,
+      "against_pct": 33,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 59,
+      "against_pct": 32,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 31,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 61,
+      "against_pct": 30,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 63,
+      "against_pct": 32,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 64,
+      "against_pct": 33,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 66,
+      "against_pct": 34,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Petition signatures hit the threshold required for a mandatory referendum."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Croatian Constitutional Court rules the referendum is not unconstitutional."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "The Catholic Church in Croatia formally urges the faithful to support the initiative."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final TV debates show sharp polarization between progressive NGOs and religious groups."
+    }
+  ],
+  "calibration_notes": "Shows influence of religious advocacy and judicial clearance on a social constitutional issue."
+}

@@ -1,7 +1,18 @@
-"""Core social platform engine with SQLite backend — fully domain-agnostic."""
+"""Core social platform engine with SQLite backend — fully domain-agnostic.
 
+Concurrency notes:
+- SQLite is opened in WAL mode with `synchronous = NORMAL` so concurrent readers
+  don't block writers and fsync cost is bounded.
+- `check_same_thread=False` lets us call the sync methods from executor threads
+  (via `asyncio.to_thread`) when running multiple simulations in one process.
+- A per-instance threading lock serializes writes against the single connection —
+  cheaper than opening a new connection per call and avoids "database is locked".
+"""
+
+import asyncio
 import logging
 import sqlite3
+import threading
 import os
 from typing import Optional
 
@@ -63,64 +74,114 @@ class PlatformEngine:
         os.makedirs(os.path.dirname(db_path) if os.path.dirname(db_path) else ".",
                     exist_ok=True)
         self.db_path = db_path
-        self.conn = sqlite3.connect(db_path)
+        # check_same_thread=False allows safe use from asyncio.to_thread / executors
+        # provided all writes go through the shared lock below.
+        self.conn = sqlite3.connect(db_path, check_same_thread=False, timeout=30.0)
         self.conn.row_factory = sqlite3.Row
+        self._write_lock = threading.Lock()
+        self._pending_writes = 0
+        self._commit_every = 50  # batch commits under load; flush() forces a commit
+        self._apply_pragmas()
         self._init_db()
 
+    def _apply_pragmas(self):
+        """Tune SQLite for concurrent simulation workloads."""
+        cur = self.conn.cursor()
+        cur.execute("PRAGMA journal_mode = WAL")
+        cur.execute("PRAGMA synchronous = NORMAL")
+        cur.execute("PRAGMA cache_size = -65536")  # 64 MiB
+        cur.execute("PRAGMA temp_store = MEMORY")
+        cur.execute("PRAGMA busy_timeout = 5000")
+        cur.execute("PRAGMA wal_autocheckpoint = 1000")
+        cur.close()
+
     def _init_db(self):
-        self.conn.executescript(SCHEMA)
-        self.conn.commit()
+        with self._write_lock:
+            self.conn.executescript(SCHEMA)
+            self.conn.commit()
+
+    def _maybe_commit(self, force: bool = False):
+        """Batch commits to reduce fsync pressure under concurrent writes."""
+        self._pending_writes += 1
+        if force or self._pending_writes >= self._commit_every:
+            self.conn.commit()
+            self._pending_writes = 0
+
+    def flush(self):
+        """Force-commit any pending writes. Call at round boundaries."""
+        with self._write_lock:
+            if self._pending_writes:
+                self.conn.commit()
+                self._pending_writes = 0
+
+    async def aflush(self):
+        await asyncio.to_thread(self.flush)
 
     def close(self):
-        self.conn.close()
+        with self._write_lock:
+            if self._pending_writes:
+                self.conn.commit()
+            self.conn.close()
 
     def add_post(self, post_data: dict, round_num: int) -> int:
-        cursor = self.conn.execute(
-            """INSERT INTO posts (author_id, author_tier, platform, content,
-               parent_id, channel, round, timestamp_sim)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
-            (
-                post_data["author_id"],
-                post_data.get("author_tier", 1),
-                post_data.get("platform") or "social",
-                post_data["text"],
-                post_data.get("parent_id"),
-                post_data.get("channel"),
-                round_num,
-                post_data.get("timestamp_sim", ""),
-            ),
-        )
-        self.conn.commit()
-        return cursor.lastrowid
+        with self._write_lock:
+            cursor = self.conn.execute(
+                """INSERT INTO posts (author_id, author_tier, platform, content,
+                   parent_id, channel, round, timestamp_sim)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    post_data["author_id"],
+                    post_data.get("author_tier", 1),
+                    post_data.get("platform") or "social",
+                    post_data["text"],
+                    post_data.get("parent_id"),
+                    post_data.get("channel"),
+                    round_num,
+                    post_data.get("timestamp_sim", ""),
+                ),
+            )
+            self._maybe_commit()
+            return cursor.lastrowid
+
+    async def aadd_post(self, post_data: dict, round_num: int) -> int:
+        return await asyncio.to_thread(self.add_post, post_data, round_num)
 
     def add_reaction(self, post_id: int, agent_id: str, reaction_type: str,
                      round_num: int):
-        self.conn.execute(
-            "INSERT INTO reactions (post_id, agent_id, reaction_type, round) "
-            "VALUES (?, ?, ?, ?)",
-            (post_id, agent_id, reaction_type, round_num),
-        )
-        self.conn.commit()
+        with self._write_lock:
+            self.conn.execute(
+                "INSERT INTO reactions (post_id, agent_id, reaction_type, round) "
+                "VALUES (?, ?, ?, ?)",
+                (post_id, agent_id, reaction_type, round_num),
+            )
+            self._maybe_commit()
+
+    async def aadd_reaction(self, post_id: int, agent_id: str,
+                            reaction_type: str, round_num: int):
+        await asyncio.to_thread(self.add_reaction, post_id, agent_id,
+                                reaction_type, round_num)
 
     def add_follow(self, follower_id: str, followed_id: str, platform: str,
                    round_num: int):
-        self.conn.execute(
-            "INSERT OR IGNORE INTO follows (follower_id, followed_id, platform, "
-            "since_round) VALUES (?, ?, ?, ?)",
-            (follower_id, followed_id, platform, round_num),
-        )
-        self.conn.commit()
+        with self._write_lock:
+            self.conn.execute(
+                "INSERT OR IGNORE INTO follows (follower_id, followed_id, platform, "
+                "since_round) VALUES (?, ?, ?, ?)",
+                (follower_id, followed_id, platform, round_num),
+            )
+            self._maybe_commit()
 
     def save_agent_state(self, agent_id: str, round_num: int, position: float,
                          sentiment: str = "", engagement: float = 0.0,
                          memory_summary: str = ""):
-        self.conn.execute(
-            """INSERT OR REPLACE INTO agent_states
-               (agent_id, round, position, sentiment, engagement, memory_summary)
-               VALUES (?, ?, ?, ?, ?, ?)""",
-            (agent_id, round_num, position, sentiment, engagement, memory_summary),
-        )
-        self.conn.commit()
+        with self._write_lock:
+            self.conn.execute(
+                """INSERT OR REPLACE INTO agent_states
+                   (agent_id, round, position, sentiment, engagement, memory_summary)
+                   VALUES (?, ?, ?, ?, ?, ?)""",
+                (agent_id, round_num, position, sentiment, engagement, memory_summary),
+            )
+            self._maybe_commit()
 
     def get_posts_by_round(self, round_num: int, platform: Optional[str] = None,
                            limit: int = 100) -> list[dict]:

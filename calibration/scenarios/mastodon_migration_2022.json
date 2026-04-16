@@ -1,0 +1,83 @@
+{
+  "scenario_name": "mastodon_migration_2022",
+  "domain": "technology",
+  "description": "Following Elon Musk's acquisition of Twitter in late 2022, a significant wave of users migrated to the decentralized platform Mastodon. The debate centered on whether decentralized, server-based social networking could effectively replace centralized corporate platforms.",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 40,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 45,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 52,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 38,
+      "against_pct": 56,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 39,
+      "against_pct": 57,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 38,
+      "against_pct": 62,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Musk takes control of Twitter and initiates mass layoffs."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Mastodon server traffic spikes by 200% as academics and tech journalists join."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Twitter suspends links to Mastodon, causing a PR backlash."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "User growth plateaus as critics cite usability and complexity barriers."
+    }
+  ],
+  "calibration_notes": "Useful for measuring the friction of platform migration versus dissatisfaction with current leadership."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "balenciaga_holiday_campaign_2022",
+  "domain": "commercial",
+  "description": "In November 2022, Balenciaga released a campaign featuring children holding teddy bears in bondage gear. The resulting firestorm led to lawsuits, public apologies, and a significant drop in brand sentiment.",
+  "final_outcome_pro_pct": 5.0,
+  "final_outcome_against_pct": 95.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 10,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 40,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 10,
+      "against_pct": 70,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 8,
+      "against_pct": 85,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 6,
+      "against_pct": 90,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 5,
+      "against_pct": 92,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 5,
+      "against_pct": 93,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 5,
+      "against_pct": 94,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Images go viral; outrage ensues regarding child safety."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Celebrity ambassadors begin distancing themselves."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "CEO issues formal apology and drops lawsuits against production team."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Brand sentiment analysis reports lowest levels in company history."
+    }
+  ],
+  "calibration_notes": "Models irreversible brand damage caused by ethical breaches in advertising."
+}

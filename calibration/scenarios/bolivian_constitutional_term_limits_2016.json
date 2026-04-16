@@ -1,0 +1,83 @@
+{
+  "scenario_name": "bolivian_constitutional_term_limits_2016",
+  "domain": "political",
+  "description": "A February 2016 referendum in Bolivia where voters rejected Evo Morales' attempt to amend the constitution to run for a fourth consecutive term. The 'No' vote won with 51.3%.",
+  "final_outcome_pro_pct": 49,
+  "final_outcome_against_pct": 51,
+  "final_turnout_pct": 84.5,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 53,
+      "against_pct": 37,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 44,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 47,
+      "against_pct": 46,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 49,
+      "against_pct": 48,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 49,
+      "against_pct": 50,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 49,
+      "against_pct": 51,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Allegations of corruption involving the President's former partner emerge."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Media investigations into government contracts dominate the news cycle."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Opposition forces organize nationwide marches against lifetime rule."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final electoral polls show a statistical dead heat."
+    }
+  ],
+  "calibration_notes": "Useful for modeling the 'death by a thousand cuts' scenario where scandals erode a comfortable incumbent lead."
+}

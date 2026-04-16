@@ -1,0 +1,49 @@
+# VERIFIED FACTS — FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202
+Domain: financial | Country: US
+Period: 2022-11-02 to 2022-11-approx
+
+## TIMELINE (verified events, chronological order):
+1. [2022-11-02] CoinDesk publishes a report revealing that Alameda Research’s balance sheet is heavily concentrated in FTT, the native token issued by FTX. This exposes the precarious financial entanglement between the two companies. [confidence: 80%]
+   Detail: N/A
+   Source: bitget.com
+2. [2022-11-06] Binance CEO Changpeng Zhao announces that Binance intends to liquidate its entire holding of FTT tokens due to the recent revelations regarding FTX's financial health.
+   Detail: N/A
+   Source: apnews.com
+3. [2022-11-07] FTX experiences a massive surge in customer withdrawal requests, signaling a loss of public confidence and creating a severe liquidity crisis.
+   Detail: $4 billion
+   Source: coinledger.io
+4. [2022-11-08] FTX officially halts most customer withdrawals, confirming the exchange is unable to meet the demand for funds.
+   Detail: N/A
+   Source: bitget.com
+5. [2022-11-08] Binance announces a non-binding letter of intent to acquire FTX to address the liquidity crunch, contingent on due diligence. [confidence: 80%]
+   Detail: N/A
+   Source: apnews.com
+6. [2022-11-approx] The full extent of the crisis is revealed, confirming an $8 billion shortfall in customer funds that had been improperly diverted to Alameda Research. [confidence: 80%]
+   Detail: $8 billion
+   Source: bitget.com
+
+## KEY FIGURES:
+- initial_report_date: November 2, 2022
+- bankruptcy_filing_date: November 11, 2022
+- exchange_collapse_date: November 17, 2022
+- democrat_conviction_support: 70%
+- republican_conviction_support: 71%
+- post_scandal_survey_sample_size: 2,036
+- post_scandal_survey_period: November 22 – December 5, 2022
+
+## POLLING/SENTIMENT DATA:
+- [2022-12-05] 70.0% pro (N=2036) — Economist/YouGov
+- [2022-12-05] 71.0% pro (N=2036) — Economist/YouGov
+
+## KEY STAKEHOLDER POSITIONS:
+- Sam Bankman-Fried (Former CEO of FTX): Resigned from his position as CEO following the revelation of improper financial links between FTX and Alameda Research and the subsequent collapse of the exchange.
+- John J. Ray III (CEO of FTX (appointed post-collapse)): Assumed leadership of the company to oversee the bankruptcy proceedings and the unwinding of the exchange's operations.
+
+## FINAL OUTCOME:
+The collapse of FTX resulted in a total loss of public trust, leading to the exchange's bankruptcy and the criminal conviction of its founder, Sam Bankman-Fried, for massive financial fraud. Public sentiment shifted overwhelmingly against the platform as it was revealed that billions in customer funds had been misappropriated.
+Pro %: 0.0% — Source: Confidence < 0.5; no formal public opinion poll exists, but the consensus among financial regulators, media, and the general public is near-unanimous condemnation following the criminal proceedings.
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

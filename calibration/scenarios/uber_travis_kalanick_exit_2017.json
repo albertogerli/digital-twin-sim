@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uber_travis_kalanick_exit_2017",
+  "domain": "corporate",
+  "description": "In 2017, a series of allegations regarding a toxic workplace, sexual harassment, and aggressive corporate culture led to the resignation of Uber CEO Travis Kalanick. This event underscored the 'bro-culture' crisis prevalent in Silicon Valley during the mid-2010s.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 32,
+      "against_pct": 63,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 35,
+      "against_pct": 64,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Susan Fowler blog post exposes toxic culture."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Video of Kalanick berating an Uber driver surfaces."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Major investors force Kalanick's resignation."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Internal cultural audit results published."
+    }
+  ],
+  "calibration_notes": "Evaluates how individual executive conduct can trigger a fundamental reset of corporate governance in a high-growth environment."
+}

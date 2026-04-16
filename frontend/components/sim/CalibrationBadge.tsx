@@ -19,8 +19,8 @@ export default function CalibrationBadge({ source, showDetails = false }: Calibr
   const isV2 = version === "v2";
 
   const badgeColor = isV2
-    ? "bg-blue-50 text-blue-700 border-blue-200"
-    : "bg-gray-50 text-gray-600 border-gray-200";
+    ? "bg-ki-primary/10 text-ki-primary border-ki-primary/25"
+    : "bg-ki-surface-sunken text-ki-on-surface-secondary border-ki-border";
 
   const versionLabel = isV2 ? "Bayesian v2" : "Grid Search v1";
 
@@ -36,7 +36,7 @@ export default function CalibrationBadge({ source, showDetails = false }: Calibr
     <div className="inline-flex flex-col">
       <button
         onClick={() => showDetails && setExpanded(!expanded)}
-        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-medium border ${badgeColor} ${
+        className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-medium border ${badgeColor} ${
           showDetails ? "cursor-pointer hover:opacity-80" : "cursor-default"
         }`}
       >
@@ -46,7 +46,7 @@ export default function CalibrationBadge({ source, showDetails = false }: Calibr
           />
         </svg>
         {versionLabel}
-        {isV2 && <span className="text-blue-400">({originLabels[origin] || origin})</span>}
+        {isV2 && <span className="text-ki-primary-muted">({originLabels[origin] || origin})</span>}
         {showDetails && (
           <svg className={`w-2.5 h-2.5 transition-transform ${expanded ? "rotate-180" : ""}`}
             fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ export default function CalibrationBadge({ source, showDetails = false }: Calibr
       </button>
 
       {expanded && (
-        <div className="mt-1 p-2 bg-white border border-gray-200 rounded text-[10px] text-gray-500 space-y-0.5">
+        <div className="mt-1 p-2 bg-ki-surface-raised border border-ki-border rounded-sm text-[10px] text-ki-on-surface-muted space-y-0.5">
           <div>Model: {version} hierarchical Bayesian</div>
           <div>Source: {originLabels[origin] || origin}</div>
           {isV2 && (

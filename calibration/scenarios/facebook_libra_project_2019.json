@@ -1,0 +1,83 @@
+{
+  "scenario_name": "facebook_libra_project_2019",
+  "domain": "financial",
+  "description": "Facebook announced its 'Libra' stablecoin project in 2019, aiming to create a global financial payment system. It faced immediate and intense scrutiny from global regulators, leading to a massive loss of corporate backing.",
+  "final_outcome_pro_pct": 25.0,
+  "final_outcome_against_pct": 75.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 28,
+      "against_pct": 65,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 27,
+      "against_pct": 68,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 72,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Facebook whitepaper for Libra released"
+    },
+    {
+      "round_equivalent": 3,
+      "description": "US Congress requests immediate halt to project"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "PayPal, Visa, Mastercard withdraw from Libra Association"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Mark Zuckerberg testifies before Congress"
+    }
+  ],
+  "calibration_notes": "Captures the impact of Big Tech brand toxicity on the adoption of crypto-financial projects."
+}

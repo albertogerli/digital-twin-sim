@@ -1,0 +1,79 @@
+{
+  "scenario_name": "kraft_heinz_cost_cutting_2015",
+  "domain": "commercial",
+  "description": "Following the merger of Kraft and Heinz by 3G Capital, the company implemented extreme 'zero-based budgeting', which led to product quality concerns and a significant erosion of brand value among long-term customers.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 30,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 51,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 41,
+      "against_pct": 55,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Massive layoffs and budget cuts announced."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Consumer reports surface regarding recipe changes."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Stock price crashes as analysts question the sustainability of the model."
+    }
+  ],
+  "calibration_notes": "Models the conflict between aggressive operational efficiency and long-term brand equity."
+}

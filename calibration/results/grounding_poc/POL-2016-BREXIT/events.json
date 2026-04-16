@@ -1,0 +1,62 @@
+[
+  {
+    "round": 1,
+    "description": "Prime Minister David Cameron delivered a speech at Bloomberg London promising an in-out referendum on UK membership in the EU if the Conservative Party won the 2015 general election.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6YLt3jY6n2ydY0y7tHBbe7OVDgHBX2uk6_g5KBC1znU1wk-8AigkeqPzsqaDtmlTvDbXQX7tU1Lj7wh8MjQicCqGTKwMm38icGHkl0giQAEYiQ3tKSrlx9B8gqlJQP8ggkGqKoYNOrMIw7zHTEmlUtVwpJtcQV7G8WhRnmYA6HdnYS5cfrhDyfLN7d2KsU3oCy95LAqvExm2JfyE=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6YLt3jY6n2ydY0y7tHBbe7OVDgHBX2uk6_g5KBC1znU1wk-8AigkeqPzsqaDtmlTvDbXQX7tU1Lj7wh8MjQicCqGTKwMm38icGHkl0giQAEYiQ3tKSrlx9B8gqlJQP8ggkGqKoYNOrMIw7zHTEmlUtVwpJtcQV7G8WhRnmYA6HdnYS5cfrhDyfLN7d2KsU3oCy95LAqvExm2JfyE="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "The European Union Referendum Bill 2015\u201316 was formally introduced to Parliament, setting the legislative framework for the vote.",
+    "shock_magnitude": 0.3,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "David Cameron officially announced the referendum date and declared his intention to campaign for the UK to remain in the EU.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "Boris Johnson announced he would join the Vote Leave campaign, significantly undermining the Prime Minister's Remain efforts.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUBlwVV1pSreVbsnK-fMtOkmdc1KK2nkwuyqYdoetLt3S5Va_ERG-fI1Th_vVawPOSCfhzbt1wUZZLk7hexoK1nqWPDYW9dpOJM-1IcERMG9Ua4YERueIX7EHbY7FtLfc630DbIn1kHogj",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHUBlwVV1pSreVbsnK-fMtOkmdc1KK2nkwuyqYdoetLt3S5Va_ERG-fI1Th_vVawPOSCfhzbt1wUZZLk7hexoK1nqWPDYW9dpOJM-1IcERMG9Ua4YERueIX7EHbY7FtLfc630DbIn1kHogj"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "The official campaign period began, marking the start of formal operations for groups like Britain Stronger in Europe.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "Labour MP and Remain campaigner Jo Cox was murdered by an extremist, leading to a temporary suspension of all referendum campaigning.",
+    "shock_magnitude": 1.0,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz_Ga7bKzh9G8oM_W95qQupwtPx1ZrU5JNmakO8JQFBHU5u1w2_Z8Ho8QzaZdLDxnJzIzPmRLX4GjA4shogIROAUBL1TckOpPCNflsoWIkR7uR0KbirIBK2hEuSbFpVMoXWlMUmaZlBj71OFAOpd1-GQWvqVi7yfyKw17mTlUXvk16DHsfmnjPWIEGurhY6naDWIj4flJXI6GMaUEzgVOEB05BGvdX8tl7LKJVs6qUA9N1Kkv5j16hd6_k2Z92Sj8=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFz_Ga7bKzh9G8oM_W95qQupwtPx1ZrU5JNmakO8JQFBHU5u1w2_Z8Ho8QzaZdLDxnJzIzPmRLX4GjA4shogIROAUBL1TckOpPCNflsoWIkR7uR0KbirIBK2hEuSbFpVMoXWlMUmaZlBj71OFAOpd1-GQWvqVi7yfyKw17mTlUXvk16DHsfmnjPWIEGurhY6naDWIj4flJXI6GMaUEzgVOEB05BGvdX8tl7LKJVs6qUA9N1Kkv5j16hd6_k2Z92Sj8="
+    ],
+    "_verified": true
+  }
+]

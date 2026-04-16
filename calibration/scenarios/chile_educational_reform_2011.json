@@ -1,0 +1,83 @@
+{
+  "scenario_name": "chile_educational_reform_2011",
+  "domain": "social",
+  "description": "In 2011, Chile witnessed the 'Chilean Winter', a massive series of student-led protests demanding a complete overhaul of the education system, specifically the end of for-profit schooling and increased state funding. The movement, led by student federations like FECH, gained overwhelming public support against the conservative administration of Sebastián Piñera, eventually forcing the government to negotiate systemic policy shifts.",
+  "final_outcome_pro_pct": 82.0,
+  "final_outcome_against_pct": 18.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 28,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 22,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 18,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 78,
+      "against_pct": 17,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 80,
+      "against_pct": 17,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 82,
+      "against_pct": 18,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "May 2011: First massive national demonstration mobilized by CONFECH."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "July 2011: Public approval of the student movement reaches majority levels in major pollsters like CEP."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "August 2011: Government unveils 'GANE' proposal; rejected by students for not addressing profit motive."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "October 2011: General strikes and massive nationwide marches consolidate public opinion against the status quo."
+    }
+  ],
+  "calibration_notes": "This scenario captures how a grassroots social movement can rapidly shift public opinion from indifference to near-unanimous consensus through persistent, high-visibility protest tactics, challenging a sitting government's policy framework."
+}

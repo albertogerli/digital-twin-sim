@@ -1,0 +1,51 @@
+[
+  {
+    "round": 1,
+    "description": "Elon Musk reveals he has acquired a 9.2% stake in Twitter, becoming the company's largest shareholder. This disclosure signals his significant influence over the platform's future direction. | Twitter announces that Musk will not join the board of directors after initially being appointed. This reversal creates immediate public uncertainty regarding his intentions for the company.",
+    "shock_magnitude": 0.4,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Musk makes an unsolicited offer to purchase Twitter, initiating a high-profile hostile takeover attempt. The move forces a public debate over the platform's ownership and governance.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYmXPzW2wHD5eTiKVRHAkXv7B3jeINoV_sqU-lbneqYPtr7G4DBPjc7nZhmGyhgultEA2Ut9D7h3VBGXFfSj0BcIckBIOc6IELeiDcMeYXbPDuhsiqxJ3dgoZ_Kn9ZBu8J4BQl75gcyNTqNhKegu-nKdLt6ecDewV6K-1wSc7fDQ==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGYmXPzW2wHD5eTiKVRHAkXv7B3jeINoV_sqU-lbneqYPtr7G4DBPjc7nZhmGyhgultEA2Ut9D7h3VBGXFfSj0BcIckBIOc6IELeiDcMeYXbPDuhsiqxJ3dgoZ_Kn9ZBu8J4BQl75gcyNTqNhKegu-nKdLt6ecDewV6K-1wSc7fDQ=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Twitter's board adopts a 'poison pill' strategy to defend against Musk's hostile takeover bid. This action highlights the deep institutional resistance to the acquisition. | Twitter's board unanimously accepts Musk's $44 billion buyout offer. The agreement marks a definitive shift in the company's trajectory and ownership status.",
+    "shock_magnitude": 0.65,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAWbQTt39Jwi0XvFUaf3U3xj_5OWMS9I2l0kRpVkhSECFI2fTYEtqK3i52gkQiECpH44lrjEpGtPJ8pfhRViMMmsqPWvkBMjXZOVALbxPoAVqP5asma0L0vydIS2rcDH1kxBritA==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEAWbQTt39Jwi0XvFUaf3U3xj_5OWMS9I2l0kRpVkhSECFI2fTYEtqK3i52gkQiECpH44lrjEpGtPJ8pfhRViMMmsqPWvkBMjXZOVALbxPoAVqP5asma0L0vydIS2rcDH1kxBritA=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "After months of legal disputes, Musk reverses his position and agrees to proceed with the acquisition at the original price. This move ends the immediate threat of a protracted court battle.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "Court filings reveal that Musk is under federal investigation regarding the Twitter takeover. The news introduces significant legal and regulatory risk to the acquisition process.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

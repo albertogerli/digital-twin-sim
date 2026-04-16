@@ -1,0 +1,47 @@
+# VERIFIED FACTS — CORP-2021-FACEBOOK_META_REBRAND_OCTOBER
+Domain: corporate | Country: US
+Period: 2021-10-21 to 2021-10-28
+
+## TIMELINE (verified events, chronological order):
+1. [2021-10-21] Media reports began circulating regarding Facebook's internal plans to rebrand the company and change its corporate name. [confidence: 80%]
+   Detail: none
+   Source: officetimeline.com
+2. [2021-10-25] CEO Mark Zuckerberg addressed public criticism of the company's social services during the Q3 2021 earnings call while emphasizing a strategic pivot toward the metaverse. [confidence: 80%]
+   Detail: Q3 2021
+   Source: wikipedia.org
+3. [2021-10-28] Mark Zuckerberg officially announced at the Facebook Connect conference that the parent company would be renamed Meta Platforms, Inc.
+   Detail: none
+   Source: wildnettechnologies.com
+4. [2021-10-28] The company formally outlined its 'metaverse-first' strategy, aiming to build an interconnected digital ecosystem using VR and AR technologies. [confidence: 80%]
+   Detail: 1 billion people
+   Source: cbsnews.com
+
+## KEY FIGURES:
+- rebrand_announcement_date: October 28, 2021
+- whistleblower_identity_reveal_date: October 3, 2021
+- survey_sample_size: Just over 1,000 U.S. adults
+- survey_period: October 28–29, 2021
+- poor_idea_sentiment: 47%
+- lack_of_excitement_percentage: 49.2%
+- skepticism_of_organizational_change: 37.5%
+
+## POLLING/SENTIMENT DATA:
+- [2021-10-28] 53.0% pro — SightX
+- [2021-10-28] 47.0% pro — SightX
+- [2021-10-28] 50.8% pro — SightX
+- [2021-10-28] 49.2% pro — SightX
+- [2021-10-28] 62.5% pro — SightX
+- [2021-10-28] 37.5% pro — SightX
+
+## KEY STAKEHOLDER POSITIONS:
+- Mark Zuckerberg (CEO of Meta (formerly Facebook Inc.)): He announced the company's rebranding to Meta to signal a strategic shift toward building the metaverse as the company's future focus.
+- Frances Haugen (Whistleblower): She publicly criticized the company's internal practices and ethics, creating a PR crisis that coincided with the timing of the corporate rebrand.
+
+## FINAL OUTCOME:
+The rebranding to Meta was met with widespread public skepticism and criticism, largely viewed as a strategic attempt to distract from ongoing controversies regarding the company's social media platforms and data privacy practices.
+Pro %: 25.0% — Source: The Verge/SurveyMonkey poll (2021)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

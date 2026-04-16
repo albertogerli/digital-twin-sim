@@ -1,0 +1,79 @@
+{
+  "scenario_name": "brexit_north_ireland_unification_polling_2020",
+  "domain": "political",
+  "description": "Post-Brexit, support for a border poll on Northern Ireland's unification with the Republic of Ireland shifted. While remaining a minority, pro-unification polling saw a measurable spike following the implementation of the Northern Ireland Protocol.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35.0,
+      "against_pct": 55.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 36.0,
+      "against_pct": 54.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 37.0,
+      "against_pct": 53.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38.0,
+      "against_pct": 54.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40.0,
+      "against_pct": 52.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 41.0,
+      "against_pct": 51.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42.0,
+      "against_pct": 52.0,
+      "undecided_pct": 6.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41.5,
+      "against_pct": 53.5,
+      "undecided_pct": 5.0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42.0,
+      "against_pct": 58.0,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "UK officially leaves the EU."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Implementation of the Northern Ireland Protocol causes trade friction."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Sinn Féin gains momentum in regional assembly elections."
+    }
+  ],
+  "calibration_notes": "Useful for tracking long-term shifts in identity-based politics influenced by external trade policy."
+}

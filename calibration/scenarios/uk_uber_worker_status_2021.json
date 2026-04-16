@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_uber_worker_status_2021",
+  "domain": "labor",
+  "description": "Following a years-long legal battle, the UK Supreme Court ruled in February 2021 that Uber drivers are 'workers' rather than independent contractors, entitling them to minimum wage, holiday pay, and pensions. The case, brought by former drivers Yaseen Aslam and James Farrar, fundamentally challenged the gig economy business model in the United Kingdom.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 20,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 38,
+      "against_pct": 25,
+      "undecided_pct": 37
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 28,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 32,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 35,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 39,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 39,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Employment Tribunal rules in favor of drivers (October 2016)."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Uber loses appeal at the Employment Appeal Tribunal (November 2017)."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "UK Supreme Court upholds the lower court ruling (February 2021)."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Uber announces it will reclassify its 70,000 UK drivers as workers (March 2021)."
+    }
+  ],
+  "calibration_notes": "This scenario captures the shift from public uncertainty regarding gig-work status to a definitive legal precedent. It illustrates the 'momentum shift' that occurs once a high-court ruling forces a private corporation to pivot its business model, effectively polarizing the debate between labor rights advocates and industry stakeholders."
+}

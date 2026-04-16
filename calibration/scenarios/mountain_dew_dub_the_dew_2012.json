@@ -1,0 +1,83 @@
+{
+  "scenario_name": "mountain_dew_dub_the_dew_2012",
+  "domain": "marketing",
+  "description": "In 2012, Mountain Dew launched an online contest asking users to name a new flavor. The campaign was hijacked by 4chan users, resulting in offensive top-voted submissions, leading to the immediate cancellation of the project.",
+  "final_outcome_pro_pct": 12.0,
+  "final_outcome_against_pct": 88.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 15,
+      "against_pct": 75,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 12,
+      "against_pct": 82,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 12,
+      "against_pct": 85,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 12,
+      "against_pct": 88,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Campaign launches with high initial engagement."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "4chan users begin organized vote-brigading."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Offensive names reach the top of the leaderboard."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Mountain Dew shuts down the campaign site."
+    }
+  ],
+  "calibration_notes": "A classic example of a total failure due to lack of moderation in UGC campaigns."
+}

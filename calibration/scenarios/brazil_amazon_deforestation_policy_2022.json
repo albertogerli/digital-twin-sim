@@ -1,0 +1,79 @@
+{
+  "scenario_name": "brazil_amazon_deforestation_policy_2022",
+  "domain": "environmental",
+  "description": "The 2022 Brazilian election between Bolsonaro and Lula saw deforestation of the Amazon as a primary wedge issue, with global and domestic voters debating environmental enforcement vs. development.",
+  "final_outcome_pro_pct": 51.0,
+  "final_outcome_against_pct": 49.0,
+  "final_turnout_pct": 79.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 47,
+      "against_pct": 43,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 49,
+      "against_pct": 41,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 43,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 53,
+      "against_pct": 45,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "International pressure mounts at COP26."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Lula platform emphasizes zero-deforestation."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final runoff debates focus on Amazon policy."
+    }
+  ],
+  "calibration_notes": "Captures the tension between economic growth and global environmental responsibility."
+}

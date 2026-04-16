@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nintendo_switch_online_2018",
+  "domain": "commercial",
+  "description": "Nintendo launched its paid 'Switch Online' service in 2018. While cheap, it was criticized for poor infrastructure compared to competitors, with users debating the value proposition of paying for online play.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 65.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 35,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 47,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 46,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Nintendo announces details of paid subscription service."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Critics highlight lack of voice chat and poor netcode."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Nintendo adds classic games to the service to improve value."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Subscription numbers hit internal target milestones."
+    }
+  ],
+  "calibration_notes": "Useful for modeling 'good enough' pricing strategies that overcome initial feature-set criticism."
+}

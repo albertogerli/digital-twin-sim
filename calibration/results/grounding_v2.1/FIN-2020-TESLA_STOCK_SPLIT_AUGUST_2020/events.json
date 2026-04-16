@@ -1,0 +1,40 @@
+[
+  {
+    "round": 1,
+    "description": "Tesla officially announced a 5-for-1 stock split in the form of a stock dividend to make shares more accessible to employees and retail investors.",
+    "shock_magnitude": 0.8,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8AvxG2L3aKx8o1mCbaGIFudyvZoqG2kZtO-U_gpX9sNttFG0IxxIdJ2q75PginHTEbhZPU6LF5cuczI39ccnOigkxS7LRF_68ZLD5g9zucG4cwXVjmfZn85g9gUCbrq8SvUdXjJ1S_ciCwt-14OjD4Q==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH8AvxG2L3aKx8o1mCbaGIFudyvZoqG2kZtO-U_gpX9sNttFG0IxxIdJ2q75PginHTEbhZPU6LF5cuczI39ccnOigkxS7LRF_68ZLD5g9zucG4cwXVjmfZn85g9gUCbrq8SvUdXjJ1S_ciCwt-14OjD4Q=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "The record date was reached, establishing which shareholders were entitled to receive four additional shares for every one share held.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "The distribution date occurred, with the additional shares being issued to shareholders after the close of trading.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "Tesla stock began trading on a split-adjusted basis, significantly lowering the per-share price for market participants.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_rail_strikes_2022_2023",
+  "domain": "labor",
+  "description": "Beginning in June 2022, the RMT union in the UK launched the largest rail strikes in 30 years over pay and job security against Network Rail and private operators. The prolonged nature of the disruption caused a steady decline in public sympathy as the cost-of-living crisis deepened.",
+  "final_outcome_pro_pct": 41.0,
+  "final_outcome_against_pct": 59.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 49,
+      "against_pct": 41,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 43,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 46,
+      "against_pct": 47,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44,
+      "against_pct": 52,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 43,
+      "against_pct": 54,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 56,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 58,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "First massive national rail walkout begins."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Government launches media campaign criticizing RMT leadership."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Strikes continue through the winter, causing widespread travel chaos."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "General public exhaustion leads to majority opposition."
+    }
+  ],
+  "calibration_notes": "Demonstrates the 'fatigue effect' where long-term disruption erodes initial support for labor grievances."
+}

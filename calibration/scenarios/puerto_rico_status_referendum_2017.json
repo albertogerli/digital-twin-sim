@@ -1,0 +1,83 @@
+{
+  "scenario_name": "puerto_rico_status_referendum_2017",
+  "domain": "political",
+  "description": "A non-binding referendum in Puerto Rico where voters were asked to choose between statehood, independence, or remaining a territory. Statehood won overwhelmingly, but it was marred by an opposition boycott.",
+  "final_outcome_pro_pct": 97.2,
+  "final_outcome_against_pct": 2.8,
+  "final_turnout_pct": 23.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 68,
+      "against_pct": 12,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 72,
+      "against_pct": 10,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 75,
+      "against_pct": 8,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 80,
+      "against_pct": 6,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 88,
+      "against_pct": 4,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 94,
+      "against_pct": 3,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 97.2,
+      "against_pct": 2.8,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Major political parties announce a coordinated boycott."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "DOJ refuses to endorse the ballot language, leading to further confusion."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Hurricane season fears and economic crisis distract the public."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Record-low turnout renders the 'landslide' politically symbolic."
+    }
+  ],
+  "calibration_notes": "Demonstrates the paradox of a 'landslide' victory resulting from a successful opposition boycott."
+}

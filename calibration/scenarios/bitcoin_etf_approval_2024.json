@@ -1,0 +1,79 @@
+{
+  "scenario_name": "bitcoin_etf_approval_2024",
+  "domain": "technology",
+  "description": "The SEC's decision to approve Spot Bitcoin ETFs in January 2024 represented a monumental shift toward treating crypto as a legitimate asset class, following years of legal battles.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 35,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 63,
+      "against_pct": 27,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 66,
+      "against_pct": 32,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 67,
+      "against_pct": 33,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Grayscale wins court appeal against SEC over ETF conversion."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "SEC officially approves 11 spot Bitcoin ETF applications."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "BlackRock and Fidelity report record-breaking inflows."
+    }
+  ],
+  "calibration_notes": "Captures the institutionalization of a once-subversive technological movement."
+}

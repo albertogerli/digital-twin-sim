@@ -1,0 +1,244 @@
+{
+  "id": "CORP-2022-TWITTER_X_ACQUISITION_BY_ELON",
+  "domain": "corporate",
+  "title": "Public opinion dynamics regarding Elon Musk's acquisition of Twitter (X) in 2022",
+  "country": "US",
+  "date_start": "2022-04-01",
+  "date_end": "2022-11-30",
+  "n_rounds": 5,
+  "round_duration_days": 48,
+  "ground_truth_outcome": {
+    "pro_pct": 41.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2022-04-01",
+      "pro_pct": 35.0,
+      "against_pct": 30.0,
+      "undecided_pct": 35.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline sentiment prior to formal bid announcement",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2022-05-19",
+      "pro_pct": 38.0,
+      "against_pct": 35.0,
+      "undecided_pct": 27.0,
+      "sample_size": null,
+      "source": "Estimated: Post-bid announcement volatility",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2022-07-06",
+      "pro_pct": 36.0,
+      "against_pct": 42.0,
+      "undecided_pct": 22.0,
+      "sample_size": null,
+      "source": "Estimated: Reaction to Musk's attempt to terminate the deal",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2022-08-23",
+      "pro_pct": 39.0,
+      "against_pct": 40.0,
+      "undecided_pct": 21.0,
+      "sample_size": null,
+      "source": "Estimated: Legal battle phase",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2022-10-10",
+      "pro_pct": 41.0,
+      "against_pct": 44.0,
+      "undecided_pct": 15.0,
+      "sample_size": 1500,
+      "source": "https://today.yougov.com/topics/politics/articles-reports/2022/10/27/americans-views-elon-musk-twitter",
+      "pollster": "YouGov"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Elon Musk reveals he has acquired a 9.2% stake in Twitter, becoming the company's largest shareholder. This disclosure signals his significant influence over the platform's future direction. | Twitter announces that Musk will not join the board of directors after initially being appointed. This reversal creates immediate public uncertainty regarding his intentions for the company.",
+      "shock_magnitude": 0.4,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "Musk makes an unsolicited offer to purchase Twitter, initiating a high-profile hostile takeover attempt. The move forces a public debate over the platform's ownership and governance.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "Twitter's board adopts a 'poison pill' strategy to defend against Musk's hostile takeover bid. This action highlights the deep institutional resistance to the acquisition. | Twitter's board unanimously accepts Musk's $44 billion buyout offer. The agreement marks a definitive shift in the company's trajectory and ownership status.",
+      "shock_magnitude": 0.65,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "After months of legal disputes, Musk reverses his position and agrees to proceed with the acquisition at the original price. This move ends the immediate threat of a protracted court battle.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "Court filings reveal that Musk is under federal investigation regarding the Twitter takeover. The news introduces significant legal and regulatory risk to the acquisition process.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Parag Agrawal",
+      "initial_position": -0.8,
+      "influence": 0.6,
+      "rigidity": 0.7,
+      "_grounded": true,
+      "_stake": "affected_party",
+      "_role": "CEO of Twitter"
+    },
+    {
+      "type": "elite",
+      "name": "Ned Segal",
+      "initial_position": -0.7,
+      "influence": 0.4,
+      "rigidity": 0.6,
+      "_grounded": true,
+      "_stake": "affected_party",
+      "_role": "Chief Financial Officer (CFO) of Twitter"
+    },
+    {
+      "type": "elite",
+      "name": "Vijaya Gadde",
+      "initial_position": -0.8,
+      "influence": 0.5,
+      "rigidity": 0.7,
+      "_grounded": true,
+      "_stake": "affected_party",
+      "_role": "Chief Legal Officer of Twitter"
+    },
+    {
+      "name": "Twitter Board of Directors",
+      "type": "institutional",
+      "initial_position": -0.8,
+      "influence": 0.7,
+      "description": "Initially resistant, later accepted the acquisition offer."
+    },
+    {
+      "name": "Twitter Power Users",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.5,
+      "description": "High-activity users concerned about moderation policies."
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.1,
+      "description": "Average US citizens with varying levels of interest in tech news."
+    },
+    {
+      "name": "Advertisers",
+      "type": "institutional",
+      "initial_position": -0.3,
+      "influence": 0.8,
+      "description": "Corporate entities concerned about brand safety on the platform."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.669,
+    "event_volatility": 0.8,
+    "elite_concentration": 0.75,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.35
+  },
+  "notes": "Pro-side is defined as support for Elon Musk's acquisition of Twitter. Against-side is defined as opposition to the acquisition or negative sentiment toward the deal. Data quality is mixed; early rounds are estimated based on news cycle sentiment, while final round is based on YouGov survey data.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 73,
+    "n_grounded_agents": 3,
+    "n_grounded_events": 5
+  },
+  "market_observations": {
+    "primary_ticker": "XLK",
+    "primary_sector": "tech",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": -16.559,
+        "volume_ratio": 1.54
+      },
+      {
+        "round": 2,
+        "return_pct": -1.089,
+        "volume_ratio": 1.02
+      },
+      {
+        "round": 3,
+        "return_pct": 10.652,
+        "volume_ratio": 0.72
+      },
+      {
+        "round": 4,
+        "return_pct": -15.691,
+        "volume_ratio": 0.91
+      },
+      {
+        "round": 5,
+        "return_pct": 12.515,
+        "volume_ratio": 0.84
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": -13.481,
+        "volume_ratio": 1.21
+      },
+      {
+        "round": 2,
+        "return_pct": -1.502,
+        "volume_ratio": 1.04
+      },
+      {
+        "round": 3,
+        "return_pct": 7.854,
+        "volume_ratio": 0.75
+      },
+      {
+        "round": 4,
+        "return_pct": -11.657,
+        "volume_ratio": 1.01
+      },
+      {
+        "round": 5,
+        "return_pct": 11.752,
+        "volume_ratio": 1.01
+      }
+    ],
+    "cumulative_return_pct": -13.37,
+    "benchmark_return_pct": -9.259,
+    "excess_return_pct": -4.111,
+    "volatility_realized": 34.2425,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

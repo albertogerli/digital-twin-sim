@@ -1,0 +1,21 @@
+{
+  "run_id": "20260410_221704",
+  "started_at": "2026-04-10T22:17:04.723378+00:00",
+  "finished_at": "2026-04-10T22:17:07.370674+00:00",
+  "duration_seconds": 2.647296,
+  "articles_fetched": 227,
+  "articles_deduplicated": 227,
+  "stakeholders_matched": 48,
+  "total_matches": 98,
+  "llm_calls": 0,
+  "signals_extracted": 0,
+  "updates_computed": 0,
+  "updates_approved": 0,
+  "updates_flagged": 0,
+  "updates_rejected": 0,
+  "position_changes": 0,
+  "influence_changes": 0,
+  "quotes_added": 0,
+  "estimated_cost_usd": 0.0,
+  "errors": []
+}

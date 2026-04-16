@@ -1,0 +1,79 @@
+{
+  "scenario_name": "coca_cola_israeli_boycott_2023",
+  "domain": "commercial",
+  "description": "Following the 2023 conflict in Gaza, Coca-Cola faced significant grassroots boycotts in Middle Eastern and some Western markets due to its operations in Israel, impacting localized regional sales.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 46,
+      "against_pct": 49,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 53,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 54,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Viral social media posts link brands to conflict."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Retailers in some regions report drops in shelf velocity."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Competitors (local brands) report gains in market share."
+    }
+  ],
+  "calibration_notes": "Highlights the difficulty of managing multinational brand perceptions in polarized geopolitical climates."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "quebec_sovereignty_referendum_1995",
+  "domain": "political",
+  "description": "A referendum held on October 30, 1995, in the Canadian province of Quebec, asking voters if Quebec should proclaim sovereignty and become an independent country. The result was a narrow victory for the 'No' side, with 50.58% against independence and 49.42% in favor.",
+  "final_outcome_pro_pct": 49.4,
+  "final_outcome_against_pct": 50.6,
+  "final_turnout_pct": 93.5,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 43,
+      "against_pct": 47,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 44,
+      "against_pct": 46,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 47,
+      "against_pct": 44,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 43,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 46,
+      "against_pct": 48,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 50,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 49.4,
+      "against_pct": 50.6,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Jacques Parizeau formally launches the sovereignty campaign."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "The 'Oui' side gains momentum following a televised debate."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "The 'Love-in' rally in Montreal galvanizes the 'No' side."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final vote count shows the narrowest margin in Canadian history."
+    }
+  ],
+  "calibration_notes": "Useful for modeling extreme polarization and late-stage momentum shifts in a high-stakes constitutional referendum."
+}

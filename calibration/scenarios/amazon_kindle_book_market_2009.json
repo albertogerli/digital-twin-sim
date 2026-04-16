@@ -1,0 +1,79 @@
+{
+  "scenario_name": "amazon_kindle_book_market_2009",
+  "domain": "commercial",
+  "description": "Amazon's push to digitize the reading market through the Kindle, threatening traditional bookstores like Barnes & Noble and independent publishers.",
+  "final_outcome_pro_pct": 65.0,
+  "final_outcome_against_pct": 35.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 60,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 55,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 63,
+      "against_pct": 35,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Kindle 2 release increases device affordability."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Major publishers fight over e-book pricing models."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "E-book sales begin to rival hardcover sales."
+    }
+  ],
+  "calibration_notes": "A classic case of format disruption and how quickly convenience outweighs the cultural 'love for physical objects'."
+}

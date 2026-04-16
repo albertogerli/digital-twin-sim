@@ -1,0 +1,83 @@
+{
+  "scenario_name": "samsung_galaxy_note7_recall_2016",
+  "domain": "commercial",
+  "description": "Samsung Galaxy Note 7 devices began exploding due to battery defects, leading to an unprecedented global recall and total discontinuation of the product line. It remains a case study in aggressive crisis management versus product safety.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 80,
+      "against_pct": 5,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 70,
+      "against_pct": 15,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 56,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 57,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Samsung pauses sales after reports of battery fires."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Replacement units also begin to catch fire, leading to a total recall."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Airlines ban the device from being carried on planes."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Samsung officially pulls the plug on the Note 7 line."
+    }
+  ],
+  "calibration_notes": "Highlights the difficulty of restoring brand sentiment after a second failed attempt at a recall."
+}

@@ -1,0 +1,298 @@
+{
+  "id": "CORP-2019-BOEING_MAX",
+  "domain": "corporate",
+  "title": "Boeing 737 MAX crisis: public trust collapse after two fatal crashes",
+  "country": "US",
+  "date_start": "2018-10-29",
+  "date_end": "2019-12-31",
+  "n_rounds": 7,
+  "round_duration_days": 60,
+  "ground_truth_outcome": {
+    "pro_pct": 40.0,
+    "source": "Atmosphere Research Group survey, December 2019 — approximately 40% willing to fly MAX",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2018-11-30",
+      "pro_pct": 78.0,
+      "against_pct": 12.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Morning Consult brand tracking — Boeing net favorability +50 pre-crisis (estimated pro-trust ~78%)",
+      "pollster": "Morning Consult"
+    },
+    {
+      "round": 2,
+      "date": "2019-01-31",
+      "pro_pct": 72.0,
+      "against_pct": 15.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated from Morning Consult — slight decline after Lion Air but not sustained",
+      "pollster": "Morning Consult"
+    },
+    {
+      "round": 3,
+      "date": "2019-03-31",
+      "pro_pct": 47.0,
+      "against_pct": 40.0,
+      "undecided_pct": 13.0,
+      "sample_size": 2000,
+      "source": "Reuters/Ipsos poll April 2019: 52% less likely to fly Boeing after crashes",
+      "pollster": "Reuters/Ipsos"
+    },
+    {
+      "round": 4,
+      "date": "2019-05-31",
+      "pro_pct": 45.0,
+      "against_pct": 42.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Barclays survey mid-2019: 53% would avoid MAX or pay more for alternative",
+      "pollster": "Barclays"
+    },
+    {
+      "round": 5,
+      "date": "2019-07-31",
+      "pro_pct": 44.0,
+      "against_pct": 43.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated from Atmosphere Research Group tracking — willingness plateaued mid-year",
+      "pollster": "Atmosphere Research Group"
+    },
+    {
+      "round": 6,
+      "date": "2019-10-31",
+      "pro_pct": 42.0,
+      "against_pct": 45.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Congressional hearings period — internal emails revealed Boeing knew of MCAS issues",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2019-12-31",
+      "pro_pct": 40.0,
+      "against_pct": 47.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "End of year: ~40% willing per Atmosphere Research; Muilenburg fired Dec 23",
+      "pollster": "Atmosphere Research Group"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "Lion Air Flight 610 crashed into the Java Sea shortly after takeoff, resulting in the loss of all lives on board. Investigations later revealed that the MCAS system repeatedly forced the nose down due to faulty sensor data.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "Ethiopian Airlines Flight 302 crashed shortly after takeoff, killing everyone on board. The crash exhibited striking similarities to the Lion Air incident, specifically regarding the activation of the MCAS system.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "The U.S. Federal Aviation Administration (FAA) issued an emergency order grounding all Boeing 737 MAX aircraft in the United States. This followed similar global grounding actions by other aviation authorities.",
+      "shock_magnitude": 0.9,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "Boeing CEO Dennis Muilenburg publicly acknowledged that the MCAS system was a factor in both the Lion Air and Ethiopian Airlines crashes. This admission marked a significant shift in the company's public narrative regarding the cause of the accidents.",
+      "shock_magnitude": 0.7,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "Boeing announced it would suspend production of the 737 MAX aircraft starting in January 2020. The decision reflected the ongoing uncertainty regarding the timeline for the aircraft's return to service.",
+      "shock_magnitude": 0.6,
+      "shock_direction": -1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Dennis Muilenburg",
+      "initial_position": 0.8,
+      "influence": 0.95,
+      "rigidity": 0.8,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "CEO of Boeing"
+    },
+    {
+      "type": "elite",
+      "name": "Steve Dickson",
+      "initial_position": 0.2,
+      "influence": 0.85,
+      "rigidity": 0.7,
+      "_grounded": true,
+      "_stake": "regulator",
+      "_role": "FAA Administrator"
+    },
+    {
+      "type": "elite",
+      "name": "David Calhoun",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "CEO of Boeing (successor)"
+    },
+    {
+      "name": "FAA",
+      "type": "institutional",
+      "initial_position": 0.3,
+      "influence": 0.8,
+      "description": "Aviation regulator — criticized for delegating certification to Boeing"
+    },
+    {
+      "name": "EASA (European regulator)",
+      "type": "institutional",
+      "initial_position": -0.4,
+      "influence": 0.6,
+      "description": "Demanded independent review, refused to follow FAA lead"
+    },
+    {
+      "name": "Airlines (Southwest, American, United)",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.7,
+      "description": "Major MAX operators — publicly supported Boeing while seeking compensation"
+    },
+    {
+      "name": "Frequent flyers",
+      "type": "citizen_cluster",
+      "initial_position": 0.3,
+      "influence": 0.3,
+      "description": "Business travelers — more informed, initially trusted Boeing"
+    },
+    {
+      "name": "General flying public",
+      "type": "citizen_cluster",
+      "initial_position": -0.1,
+      "influence": 0.3,
+      "description": "Casual flyers — reactive to media coverage of crashes"
+    },
+    {
+      "name": "Victims' families and advocates",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.4,
+      "description": "Families of 346 crash victims — powerful media presence"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.55,
+    "event_volatility": 0.24,
+    "elite_concentration": 0.28,
+    "institutional_trust": 0.45,
+    "undecided_share": 0.1
+  },
+  "notes": "Pro = trust Boeing / willing to fly 737 MAX, Against = distrust / would refuse to fly. This is an asymmetric crisis: trust starts very high and erodes under repeated shocks. Polling data for rounds 1-2 and 5-6 are estimates based on known survey ranges; rounds 3-4 have direct survey citations. Boeing stock dropped from ~$370 (pre-Ethiopian crash) to ~$325 (year-end 2019) despite broader S&P 500 rising 29%.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 77,
+    "n_grounded_agents": 3,
+    "n_grounded_events": 5
+  },
+  "market_observations": {
+    "primary_ticker": "BA",
+    "primary_sector": "defense",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": -5.061,
+        "volume_ratio": 0.87
+      },
+      {
+        "round": 2,
+        "return_pct": 35.601,
+        "volume_ratio": 0.8
+      },
+      {
+        "round": 3,
+        "return_pct": -10.774,
+        "volume_ratio": 1.78
+      },
+      {
+        "round": 4,
+        "return_pct": -2.455,
+        "volume_ratio": 0.81
+      },
+      {
+        "round": 5,
+        "return_pct": -4.456,
+        "volume_ratio": 0.92
+      },
+      {
+        "round": 6,
+        "return_pct": -4.357,
+        "volume_ratio": 0.82
+      },
+      {
+        "round": 7,
+        "return_pct": -4.248,
+        "volume_ratio": 0.97
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": -5.435,
+        "volume_ratio": 1.62
+      },
+      {
+        "round": 2,
+        "return_pct": 12.823,
+        "volume_ratio": 1.14
+      },
+      {
+        "round": 3,
+        "return_pct": 5.507,
+        "volume_ratio": 0.86
+      },
+      {
+        "round": 4,
+        "return_pct": -0.421,
+        "volume_ratio": 0.97
+      },
+      {
+        "round": 5,
+        "return_pct": -1.935,
+        "volume_ratio": 0.89
+      },
+      {
+        "round": 6,
+        "return_pct": 5.763,
+        "volume_ratio": 0.82
+      },
+      {
+        "round": 7,
+        "return_pct": 7.303,
+        "volume_ratio": 0.72
+      }
+    ],
+    "cumulative_return_pct": -1.959,
+    "benchmark_return_pct": 24.749,
+    "excess_return_pct": -26.708,
+    "volatility_realized": 35.7355,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

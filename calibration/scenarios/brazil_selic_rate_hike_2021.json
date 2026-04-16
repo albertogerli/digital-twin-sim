@@ -1,0 +1,83 @@
+{
+  "scenario_name": "brazil_selic_rate_hike_2021",
+  "domain": "financial",
+  "description": "The Central Bank of Brazil (BCB) initiated a series of aggressive interest rate hikes in early 2021 to combat inflation, moving the Selic rate from a historic low of 2% to double digits by the end of the year. This was a response to volatile exchange rates and fiscal concerns.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 25,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 35,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "BCB surprises market with 75bps initial hike."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Political pushback from Executive branch regarding growth."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Inflation data confirms double-digit trend."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "BCB confirms 'front-loading' strategy is permanent."
+    }
+  ],
+  "calibration_notes": "Models how emerging market central banks navigate political pressure versus inflation targets."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "german_national_minimum_wage_2015",
+  "domain": "labor",
+  "description": "Germany, a country known for collective bargaining, introduced its first-ever national minimum wage of 8.50 euros in 2015, ending a long-standing tradition of sector-specific wage setting.",
+  "final_outcome_pro_pct": 77.0,
+  "final_outcome_against_pct": 23.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 74,
+      "against_pct": 23,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 76,
+      "against_pct": 22,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 77,
+      "against_pct": 23,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 77,
+      "against_pct": 23,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Grand Coalition government includes minimum wage in the coalition agreement."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Economic institutes warn of potential unemployment spikes."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Bundestag passes the Minimum Wage Act."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Policy implementation begins nationwide."
+    }
+  ],
+  "calibration_notes": "Shows how deeply ingrained institutional systems can be bypassed in favor of universal legislative mandates."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tiktok_uk_child_safety_2023",
+  "domain": "technology",
+  "description": "Amid mounting pressure from the UK's Online Safety Act, TikTok faced intense scrutiny over child safety algorithms and content moderation practices. The debate centered on whether the platform was doing enough to protect minors, leading to significant changes in their 'Family Pairing' features and stricter age-gating policies.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 32,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "UK Parliamentary committee releases report on TikTok's failure to protect children."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "TikTok releases 'Transparency Report' focusing on child safety initiatives."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Platform launches mandatory 60-minute daily time limits for users under 18."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "UK government confirms compliance of TikTok's revised safety features."
+    }
+  ],
+  "calibration_notes": "Illustrates the influence of regulatory bodies on platform policy evolution."
+}

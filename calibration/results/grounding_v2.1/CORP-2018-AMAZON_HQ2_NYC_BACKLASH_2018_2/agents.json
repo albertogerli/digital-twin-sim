@@ -1,0 +1,48 @@
+[
+  {
+    "id": "holly_sullivan",
+    "name": "Holly Sullivan",
+    "role": "Head of Worldwide Economic Development at Amazon",
+    "archetype": "business_leader",
+    "position": 0.9,
+    "influence": 0.7,
+    "rigidity": 0.75,
+    "bio": "A long-time Amazon executive responsible for the company's global economic development and site selection strategy.",
+    "communication_style": "professional, analytical",
+    "key_traits": [
+      "methodical",
+      "strategic"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.9,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "She led the Amazon HQ2 search team and managed the site selection process and negotiations with local governments."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "jeff_wilke",
+    "name": "Jeff Wilke",
+    "role": "CEO of Worldwide Consumer at Amazon",
+    "archetype": "business_leader",
+    "position": 0.8,
+    "influence": 0.75,
+    "rigidity": 0.75,
+    "bio": "Former CEO of Amazon's Worldwide Consumer division, known for his operational leadership.",
+    "communication_style": "direct, data-oriented",
+    "key_traits": [
+      "pragmatic",
+      "analytical"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He was a prominent voice in the early stages of the search, advocating for a data-driven, practical approach to the HQ2 selection."
+    ],
+    "_grounded": true
+  }
+]

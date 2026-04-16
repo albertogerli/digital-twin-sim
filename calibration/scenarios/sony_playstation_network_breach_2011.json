@@ -1,0 +1,83 @@
+{
+  "scenario_name": "sony_playstation_network_breach_2011",
+  "domain": "technology",
+  "description": "In April 2011, Sony suffered a massive data breach of the PlayStation Network, exposing the personal data of 77 million users. This event forced a national conversation regarding corporate responsibility for consumer digital assets.",
+  "final_outcome_pro_pct": 28.0,
+  "final_outcome_against_pct": 72.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 80,
+      "against_pct": 10,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 75,
+      "against_pct": 15,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32,
+      "against_pct": 65,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 30,
+      "against_pct": 68,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 28,
+      "against_pct": 72,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Sony confirms intrusion and takes network offline"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Sony admits credit card data may have been stolen"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Sony CEO apologizes publicly in Tokyo"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "US Congress requests detailed briefing on the breach"
+    }
+  ],
+  "calibration_notes": "Tests the speed of reputational collapse following a catastrophic failure in cybersecurity infrastructure."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "aducanumab_alzheimers_approval",
+  "domain": "public_health",
+  "description": "The 2021 FDA accelerated approval of Biogen's aducanumab for Alzheimer's, despite a lack of clinical evidence of cognitive benefit and an expert panel's recommendation against it. This triggered internal FDA resignations.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 20,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 30,
+      "undecided_pct": 55
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 40,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 65,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32,
+      "against_pct": 66,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "FDA advisory committee votes overwhelmingly (10-0 with 1 abstention) against approval."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "FDA grants accelerated approval, sparking outrage in the medical community."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Three members of the FDA advisory board resign in protest."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Medicare severely restricts coverage of the drug, effectively killing the commercial rollout."
+    }
+  ],
+  "calibration_notes": "Captures the impact of expert panel rejection versus institutional regulatory decision-making."
+}

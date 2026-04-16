@@ -1,0 +1,79 @@
+{
+  "scenario_name": "no_dapl_standing_rock_2016",
+  "domain": "environmental",
+  "description": "The Dakota Access Pipeline (DAPL) protests at Standing Rock saw indigenous activists and supporters block construction to protect water resources. The movement gained massive digital traction but faced militarized policing before the Trump administration eventually fast-tracked the project.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 20,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 30,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 39,
+      "against_pct": 58,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 39,
+      "against_pct": 59,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Viral footage of dogs and pepper spray used against protesters gains global sympathy."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "US Army Corps of Engineers denies the permit for the crossing under Lake Oahe."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "President Trump signs an executive order to expedite the pipeline completion upon taking office."
+    }
+  ],
+  "calibration_notes": "Highlights the vulnerability of social movements when they encounter a shift in political regime."
+}

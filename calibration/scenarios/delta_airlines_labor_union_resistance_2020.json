@@ -1,0 +1,83 @@
+{
+  "scenario_name": "delta_airlines_labor_union_resistance_2020",
+  "domain": "corporate",
+  "description": "Delta's management strategy during the pandemic involved avoiding layoffs through voluntary leave programs, contrasting with competitors. This created a unique corporate reputation narrative.",
+  "final_outcome_pro_pct": 80.0,
+  "final_outcome_against_pct": 20.0,
+  "final_turnout_pct": 65.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 12,
+      "undecided_pct": 33
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 17,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 74,
+      "against_pct": 18,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 76,
+      "against_pct": 19,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 78,
+      "against_pct": 20,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 80,
+      "against_pct": 20,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Delta CEO announces avoidance of involuntary layoffs."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Voluntary leave program adoption exceeds expectations."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Industry competitors announce mandatory layoffs."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public sentiment shifts strongly in favor of Delta’s 'people-first' culture."
+    }
+  ],
+  "calibration_notes": "Useful for calibration against 'positive' corporate restructuring narratives that prioritize employee retention."
+}

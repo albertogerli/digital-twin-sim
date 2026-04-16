@@ -1,0 +1,61 @@
+[
+  {
+    "round": 1,
+    "description": "Dr. David Dao is forcibly removed from United Express Flight 3411 by aviation security officers after refusing to give up his seat for airline crew. | Videos of the violent removal go viral on social media, sparking global outrage and widespread condemnation of United Airlines' handling of the situation.",
+    "shock_magnitude": 0.95,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8LkRr8v6WtSQGzuFiUXCWObN0nC90WHesU2tw3cFo-xdmQdKJE8yOkfJRciIS9ta2wS0IgUo51fgXikcVY3K-lKfOkxJ8VrAh18FoXEqgxdc8sdsQLYvVAj-PGiNJuuoQRvphEUTx2a45aRgYH1TlRwAuHa146EJzEPHpsFs=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8LkRr8v6WtSQGzuFiUXCWObN0nC90WHesU2tw3cFo-xdmQdKJE8yOkfJRciIS9ta2wS0IgUo51fgXikcVY3K-lKfOkxJ8VrAh18FoXEqgxdc8sdsQLYvVAj-PGiNJuuoQRvphEUTx2a45aRgYH1TlRwAuHa146EJzEPHpsFs=",
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpdXT-qi56O0XQdt-1k76-rT-4rxJgq5odeVQcsvAxRZ1o7UXhDDhBk3OwQQ184HAzLBMUqsz_2xOLemmcaWAGtp2Jo1BYqjSGqDcDVC6LRbJFsgNeooby2Rp4bkUt3UsHEgMfRru7afwHhfabAxwOOs8S-kz_tprm-rS3BZhwMPoRrDonYVljnX3cbsvAFk5qJnqY12TzxV9KssxNJ7On4zzrZjO9-g=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "United Airlines CEO Oscar Munoz issues an initial statement apologizing for having to 're-accommodate' customers, which is widely criticized as tone-deaf.",
+    "shock_magnitude": 0.7,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9gGu4bGlpgnl09k0QrMckRBgbp85nre-Yo_aPyBbijmJPnS1B3xI5FuDsR6nqOwFGzWBSBHcmKU3Ku6f8PM9I3OssR_KZ3teCYGgC6uc18jIHO9a4LIO76v1G0DgHTyhUq8AEEq-DiXuKAjeU19P3eRcYZGGC45mNNNwikhEw2DlE-dDZO3D5_A==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9gGu4bGlpgnl09k0QrMckRBgbp85nre-Yo_aPyBbijmJPnS1B3xI5FuDsR6nqOwFGzWBSBHcmKU3Ku6f8PM9I3OssR_KZ3teCYGgC6uc18jIHO9a4LIO76v1G0DgHTyhUq8AEEq-DiXuKAjeU19P3eRcYZGGC45mNNNwikhEw2DlE-dDZO3D5_A=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "United Airlines stock price drops significantly following the public relations fallout, wiping out nearly $1 billion in market value.",
+    "shock_magnitude": 0.6,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "CEO Oscar Munoz issues a second, more contrite apology, taking full responsibility and promising a thorough review of airline policies.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "United Airlines reaches an undisclosed settlement with Dr. David Dao to resolve claims related to the incident.",
+    "shock_magnitude": 0.4,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "United Airlines announces a new policy allowing passengers to receive up to $10,000 in compensation for voluntarily giving up their seats.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

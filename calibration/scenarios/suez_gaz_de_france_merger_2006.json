@@ -1,0 +1,83 @@
+{
+  "scenario_name": "suez_gaz_de_france_merger_2006",
+  "domain": "corporate",
+  "description": "The French government orchestrated the merger of state-owned Gaz de France and private energy company Suez in 2006 to prevent an unwanted takeover by Italy's Enel. The move triggered significant labor union strikes and political outcry.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 30,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 40,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 28,
+      "against_pct": 55,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 46,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Major nationwide protests by energy workers begin."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "French National Assembly debates the privatization law."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final legislative hurdles cleared by government pressure."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Merger formally finalized."
+    }
+  ],
+  "calibration_notes": "Useful for assessing public vs state interest in high-stakes utility infrastructure mergers."
+}

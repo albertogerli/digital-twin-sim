@@ -1,0 +1,83 @@
+{
+  "scenario_name": "patagonia_vs_trumps_public_lands_2017",
+  "domain": "commercial",
+  "description": "Patagonia took a strong political stance against the Trump administration's reduction of Bears Ears National Monument in 2017. While this alienated some shoppers, it solidified the brand's position among its core demographic.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 37,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 61,
+      "against_pct": 37,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 61,
+      "against_pct": 38,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Patagonia changes homepage to read 'The President Stole Your Land'."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Significant media coverage drives polarized consumer response."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Patagonia sales data shows resilience despite boycott threats."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Legal challenges to the land status solidify Patagonia as an activist brand."
+    }
+  ],
+  "calibration_notes": "Demonstrates successful political alignment in marketing, contrasting with failed ones."
+}

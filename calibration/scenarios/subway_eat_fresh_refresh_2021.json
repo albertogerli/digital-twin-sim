@@ -1,0 +1,79 @@
+{
+  "scenario_name": "subway_eat_fresh_refresh_2021",
+  "domain": "marketing",
+  "description": "Subway launched a massive 'Eat Fresh Refresh' campaign in 2021 to pivot away from negative perceptions of their ingredients. The campaign focused on menu overhauls and celebrity endorsements.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 35,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 51,
+      "against_pct": 46,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Extensive national ad campaign featuring sports celebrities airs."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Subway reports record-breaking daily sales post-launch."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Independent food critics review the 'refreshed' ingredients with mixed feedback."
+    }
+  ],
+  "calibration_notes": "Useful for modeling long-term, expensive corporate rebranding efforts that seek to reverse negative public perception."
+}

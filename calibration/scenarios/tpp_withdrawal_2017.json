@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tpp_withdrawal_2017",
+  "domain": "political",
+  "description": "The Trans-Pacific Partnership (TPP) was a centerpiece of the Obama 'pivot to Asia' until Donald Trump withdrew the US from the deal in 2017, shifting global trade dynamics.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 35,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 58,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 37,
+      "against_pct": 60,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 38,
+      "against_pct": 60,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Candidates in 2016 election uniformly denounce the TPP"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "President Trump signs executive order withdrawing the US"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Remaining 11 nations (CPTPP) signal intent to proceed without the US"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "CPTPP agreement is finalized in Chile"
+    }
+  ],
+  "calibration_notes": "Highlights the divergence between original intent and post-withdrawal reality."
+}

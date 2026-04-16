@@ -1,0 +1,79 @@
+{
+  "scenario_name": "boc_digital_cad_consultation_2023",
+  "domain": "technology",
+  "description": "The Bank of Canada (BoC) initiated public consultations on a potential Central Bank Digital Currency (CBDC), sparking significant debate regarding financial privacy and government surveillance.",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 40,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 48,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 37,
+      "against_pct": 58,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 36,
+      "against_pct": 60,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 37,
+      "against_pct": 61,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 38,
+      "against_pct": 62,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 38,
+      "against_pct": 62,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "BoC publishes 'Digital Canadian Dollar' discussion paper."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Conservative party leaders vocally oppose the CBDC initiative."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public feedback highlights privacy concerns as primary objection."
+    }
+  ],
+  "calibration_notes": "Measures public resistance to government-backed digital alternatives to cash."
+}

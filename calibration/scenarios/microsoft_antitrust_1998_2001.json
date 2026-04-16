@@ -1,0 +1,83 @@
+{
+  "scenario_name": "microsoft_antitrust_1998_2001",
+  "domain": "technology",
+  "description": "The US government challenged Microsoft's bundling of Internet Explorer with Windows, alleging anticompetitive practices. The case ended in a 2001 settlement that mandated the company disclose APIs to third-party developers.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 42,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 44,
+      "against_pct": 46,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 51,
+      "against_pct": 46,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 46,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "DOJ files formal antitrust complaint"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Judge Penfield Jackson issues findings of fact"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Microsoft appeals verdict"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Settlement reached with DOJ"
+    }
+  ],
+  "calibration_notes": "Measures public sentiment during a landmark era-defining antitrust case."
+}

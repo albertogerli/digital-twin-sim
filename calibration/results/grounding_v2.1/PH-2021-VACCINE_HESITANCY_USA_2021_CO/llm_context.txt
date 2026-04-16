@@ -1,0 +1,40 @@
+# VERIFIED FACTS — PH-2021-VACCINE_HESITANCY_USA_2021_CO
+Domain: public_health | Country: US
+Period: 2021-01-20 to 2021-03-01
+
+## TIMELINE (verified events, chronological order):
+1. [2021-01-20] President Joe Biden was inaugurated and established a federal goal of administering 100 million vaccine doses within his first 100 days in office. [confidence: 80%]
+   Detail: 100 million doses, 100 days
+   Source: wikipedia.org
+2. [2021-02-27] The FDA granted Emergency Use Authorization (EUA) for the Johnson & Johnson (Janssen) single-dose COVID-19 vaccine, expanding access options. [confidence: 80%]
+   Detail: 1 dose
+   Source: wikipedia.org
+3. [2021-03-01] Public health data indicated a significant decline in vaccine hesitancy across most demographic groups, particularly among young adults and Black Americans. [confidence: 80%]
+   Detail: 18-24 age group
+   Source: hhs.gov
+
+## KEY FIGURES:
+- vaccinated_or_planning_march_2021: 62% of Colorado residents
+- unvaccinated_population_segment: 15% of respondents
+- reason_threat_overstated: 50% of unvaccinated respondents
+- reason_safety_concerns: 49% of unvaccinated respondents
+- reason_developed_too_quickly: 47% of unvaccinated respondents
+- republican_vaccination_intent: 56% had received or planned to receive the vaccine
+- rural_county_vaccination_rate: 64%
+
+## POLLING/SENTIMENT DATA:
+- [2021-03-01] 62.0% pro — Denver Gazette
+- [2021-01-01] 56.0% pro — OnSight Public Affairs
+
+## KEY STAKEHOLDER POSITIONS:
+- Jared Polis (Governor of Colorado): Advocated for widespread vaccination efforts and emphasized the importance of reaching rural and hesitant populations to achieve state health goals.
+- Jill Hunsaker Ryan (Executive Director, Colorado Department of Public Health and Environment): Publicly addressed the need to overcome vaccine hesitancy by focusing on community-based outreach and addressing specific safety concerns among skeptical residents.
+
+## FINAL OUTCOME:
+Throughout 2021, vaccine hesitancy in the United States generally declined across most demographic groups, though it remained persistent in specific populations despite increased availability and public health outreach.
+Pro %: 75.0% — Source: Kaiser Family Foundation (KFF) COVID-19 Vaccine Monitor
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

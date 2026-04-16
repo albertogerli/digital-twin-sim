@@ -1,0 +1,83 @@
+{
+  "scenario_name": "snowden_nsa_surveillance_revelations",
+  "domain": "technology",
+  "description": "In June 2013, Edward Snowden leaked classified documents exposing the NSA's PRISM program, which involved the bulk collection of digital communications from major US tech firms. The revelations sparked a global debate on the balance between national security surveillance and individual digital privacy rights.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 12,
+      "against_pct": 25,
+      "undecided_pct": 63
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 18,
+      "against_pct": 32,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 40,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 32,
+      "against_pct": 45,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 48,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 52,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 54,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 56,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "The Guardian and Washington Post publish the first leaks regarding PRISM."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Tech giants including Google, Apple, and Facebook issue public letters demanding greater transparency on data requests."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "President Obama delivers a major speech at the Department of Justice defending the necessity of the surveillance programs."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The USA Freedom Act is introduced to Congress to curtail bulk data collection practices."
+    }
+  ],
+  "calibration_notes": "This event serves as a foundational benchmark for tracking how public perception shifts when high-level technical intelligence activities are exposed, highlighting the divide between security-focused and privacy-focused demographics."
+}

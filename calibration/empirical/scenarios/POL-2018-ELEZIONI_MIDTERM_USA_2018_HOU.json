@@ -1,0 +1,147 @@
+{
+  "id": "POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU",
+  "domain": "political",
+  "title": "2018 United States House of Representatives Election Popular Vote Dynamics",
+  "country": "US",
+  "date_start": "2018-09-01",
+  "date_end": "2018-11-06",
+  "n_rounds": 6,
+  "round_duration_days": 11,
+  "ground_truth_outcome": {
+    "pro_pct": 53.4,
+    "source": "https://clerk.house.gov/member_info/electionInfo/2018election.pdf",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2018-09-01",
+      "pro_pct": 48.2,
+      "against_pct": 41.5,
+      "undecided_pct": 10.3,
+      "sample_size": 1500,
+      "source": "https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html",
+      "pollster": "RCP Average"
+    },
+    {
+      "round": 2,
+      "date": "2018-09-12",
+      "pro_pct": 48.5,
+      "against_pct": 41.8,
+      "undecided_pct": 9.7,
+      "sample_size": 1500,
+      "source": "https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html",
+      "pollster": "RCP Average"
+    },
+    {
+      "round": 3,
+      "date": "2018-09-23",
+      "pro_pct": 49.1,
+      "against_pct": 42.2,
+      "undecided_pct": 8.7,
+      "sample_size": 1500,
+      "source": "https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html",
+      "pollster": "RCP Average"
+    },
+    {
+      "round": 4,
+      "date": "2018-10-04",
+      "pro_pct": 49.5,
+      "against_pct": 42.5,
+      "undecided_pct": 8.0,
+      "sample_size": 1500,
+      "source": "https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html",
+      "pollster": "RCP Average"
+    },
+    {
+      "round": 5,
+      "date": "2018-10-15",
+      "pro_pct": 49.8,
+      "against_pct": 43.1,
+      "undecided_pct": 7.1,
+      "sample_size": 1500,
+      "source": "https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html",
+      "pollster": "RCP Average"
+    },
+    {
+      "round": 6,
+      "date": "2018-10-26",
+      "pro_pct": 50.2,
+      "against_pct": 43.8,
+      "undecided_pct": 6.0,
+      "sample_size": 1500,
+      "source": "https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html",
+      "pollster": "RCP Average"
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2018-09-27",
+      "description": "Brett Kavanaugh Supreme Court confirmation hearings",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.2,
+      "source": "https://www.nytimes.com/2018/09/27/us/politics/brett-kavanaugh-christine-blasey-ford-testimony.html"
+    },
+    {
+      "round": 5,
+      "date": "2018-10-22",
+      "description": "Trump announces caravan of migrants as a national emergency",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.3,
+      "source": "https://www.reuters.com/article/us-usa-election-caravan/trump-says-he-will-send-military-to-border-to-stop-migrant-caravan-idUSKCN1MW19N"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Democratic Party",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "National party organization advocating for House majority"
+    },
+    {
+      "name": "Republican Party",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "National party organization defending House majority"
+    },
+    {
+      "name": "Donald Trump",
+      "type": "elite",
+      "initial_position": -0.8,
+      "influence": 1.0,
+      "description": "Incumbent President mobilizing base"
+    },
+    {
+      "name": "Fox News",
+      "type": "elite",
+      "initial_position": -0.7,
+      "influence": 0.7,
+      "description": "Conservative media outlet"
+    },
+    {
+      "name": "CNN",
+      "type": "elite",
+      "initial_position": 0.6,
+      "influence": 0.6,
+      "description": "Liberal-leaning media outlet"
+    },
+    {
+      "name": "Suburban Women",
+      "type": "citizen_cluster",
+      "initial_position": 0.1,
+      "influence": 0.4,
+      "description": "Key swing demographic in 2018 midterms"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.776,
+    "event_volatility": 0.3,
+    "elite_concentration": 0.75,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.1
+  },
+  "notes": "Pro-side is defined as the Democratic Party House vote share. Against-side is defined as the Republican Party House vote share. Data quality is high due to official FEC/Clerk records for the outcome and consistent RCP polling averages. Polling percentages are normalized to exclude third-party candidates for simplicity."
+}

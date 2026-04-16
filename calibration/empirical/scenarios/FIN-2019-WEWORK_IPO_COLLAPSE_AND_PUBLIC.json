@@ -1,0 +1,251 @@
+{
+  "id": "FIN-2019-WEWORK_IPO_COLLAPSE_AND_PUBLIC",
+  "domain": "financial",
+  "title": "Public perception and investor sentiment during the 2019 WeWork IPO collapse",
+  "country": "US",
+  "date_start": "2019-08-14",
+  "date_end": "2019-11-30",
+  "n_rounds": 7,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 18.0,
+    "source": "https://morningconsult.com/2019/09/27/wework-ipo-brand/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2019-08-14",
+      "pro_pct": 45.0,
+      "against_pct": 20.0,
+      "undecided_pct": 35.0,
+      "sample_size": null,
+      "source": "Estimated: Based on pre-S-1 filing sentiment and unicorn hype",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2019-08-29",
+      "pro_pct": 38.0,
+      "against_pct": 25.0,
+      "undecided_pct": 37.0,
+      "sample_size": null,
+      "source": "Estimated: Initial market skepticism following S-1 filing",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2019-09-13",
+      "pro_pct": 30.0,
+      "against_pct": 35.0,
+      "undecided_pct": 35.0,
+      "sample_size": null,
+      "source": "Estimated: Increased scrutiny of corporate governance",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2019-09-28",
+      "pro_pct": 18.0,
+      "against_pct": 55.0,
+      "undecided_pct": 27.0,
+      "sample_size": 2200,
+      "source": "https://morningconsult.com/2019/09/27/wework-ipo-brand/",
+      "pollster": "Morning Consult"
+    },
+    {
+      "round": 5,
+      "date": "2019-10-13",
+      "pro_pct": 15.0,
+      "against_pct": 65.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Post-IPO cancellation sentiment",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2019-10-28",
+      "pro_pct": 12.0,
+      "against_pct": 72.0,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Softbank bailout news impact",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2019-11-12",
+      "pro_pct": 10.0,
+      "against_pct": 78.0,
+      "undecided_pct": 12.0,
+      "sample_size": null,
+      "source": "Estimated: Long-term brand damage assessment",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2019-08-14",
+      "description": "WeWork files S-1 IPO prospectus revealing massive losses and governance issues",
+      "shock_magnitude": 0.6,
+      "shock_direction": -0.8,
+      "source": "https://www.sec.gov/Archives/edgar/data/1533523/000119312519220499/d781203ds1.htm"
+    },
+    {
+      "round": 4,
+      "date": "2019-09-24",
+      "description": "Adam Neumann steps down as CEO amid intense investor pressure",
+      "shock_magnitude": 0.8,
+      "shock_direction": -0.5,
+      "source": "https://www.nytimes.com/2019/09/24/business/wework-adam-neumann-resignation.html"
+    },
+    {
+      "round": 5,
+      "date": "2019-10-22",
+      "description": "SoftBank announces $9.5 billion rescue package to take control of WeWork",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.3,
+      "source": "https://www.reuters.com/article/us-wework-softbank/softbank-takes-control-of-wework-in-rescue-deal-idUSKBN1X1185"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Adam Neumann",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Founder and CEO of WeWork"
+    },
+    {
+      "name": "SoftBank Group",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.95,
+      "description": "Major investor and eventual savior"
+    },
+    {
+      "name": "Retail Investors",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.3,
+      "description": "General public interested in tech IPOs"
+    },
+    {
+      "name": "Financial Analysts",
+      "type": "elite",
+      "initial_position": -0.4,
+      "influence": 0.7,
+      "description": "Wall Street experts analyzing S-1 data"
+    },
+    {
+      "name": "Tech Journalists",
+      "type": "elite",
+      "initial_position": -0.2,
+      "influence": 0.6,
+      "description": "Media outlets reporting on corporate governance"
+    },
+    {
+      "name": "WeWork Employees",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.2,
+      "description": "Staff with stock options and job security concerns"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.553,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.75,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.35
+  },
+  "notes": "Pro-side defined as positive sentiment towards WeWork's business model and investment viability. Against-side defined as negative sentiment, skepticism, or belief in corporate failure. Data quality: Early rounds are estimates based on market sentiment shifts; round 4 is anchored to Morning Consult survey data.",
+  "market_observations": {
+    "primary_ticker": "IWO",
+    "primary_sector": "real_estate",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": 0.11,
+        "volume_ratio": 0.72
+      },
+      {
+        "round": 2,
+        "return_pct": 3.254,
+        "volume_ratio": 1.06
+      },
+      {
+        "round": 3,
+        "return_pct": -4.594,
+        "volume_ratio": 1.03
+      },
+      {
+        "round": 4,
+        "return_pct": -0.094,
+        "volume_ratio": 1.23
+      },
+      {
+        "round": 5,
+        "return_pct": 2.705,
+        "volume_ratio": 0.68
+      },
+      {
+        "round": 6,
+        "return_pct": 1.859,
+        "volume_ratio": 0.97
+      },
+      {
+        "round": 7,
+        "return_pct": 3.376,
+        "volume_ratio": 1.22
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": 1.758,
+        "volume_ratio": 1.26
+      },
+      {
+        "round": 2,
+        "return_pct": 2.977,
+        "volume_ratio": 0.98
+      },
+      {
+        "round": 3,
+        "return_pct": -1.437,
+        "volume_ratio": 1.08
+      },
+      {
+        "round": 4,
+        "return_pct": 0.298,
+        "volume_ratio": 1.24
+      },
+      {
+        "round": 5,
+        "return_pct": 1.796,
+        "volume_ratio": 0.71
+      },
+      {
+        "round": 6,
+        "return_pct": 1.665,
+        "volume_ratio": 0.81
+      },
+      {
+        "round": 7,
+        "return_pct": 1.644,
+        "volume_ratio": 0.86
+      }
+    ],
+    "cumulative_return_pct": 6.552,
+    "benchmark_return_pct": 8.968,
+    "excess_return_pct": -2.416,
+    "volatility_realized": 12.8676,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

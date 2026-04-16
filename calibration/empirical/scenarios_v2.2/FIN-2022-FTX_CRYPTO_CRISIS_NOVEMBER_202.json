@@ -1,0 +1,208 @@
+{
+  "id": "FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202",
+  "domain": "financial",
+  "title": "US Public Sentiment Toward Cryptocurrency Following the FTX Exchange Collapse in November 2022",
+  "country": "US",
+  "date_start": "2022-10-01",
+  "date_end": "2022-12-31",
+  "n_rounds": 7,
+  "round_duration_days": 13,
+  "ground_truth_outcome": {
+    "pro_pct": 22.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2022-10-01",
+      "pro_pct": 33.0,
+      "against_pct": 45.0,
+      "undecided_pct": 22.0,
+      "sample_size": 1000,
+      "source": "Estimated: Based on Pew Research trends prior to FTX collapse",
+      "pollster": "Pew Research Center"
+    },
+    {
+      "round": 2,
+      "date": "2022-10-14",
+      "pro_pct": 32.5,
+      "against_pct": 45.5,
+      "undecided_pct": 22.0,
+      "sample_size": null,
+      "source": "Estimated: Slight decline in market confidence",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2022-10-27",
+      "pro_pct": 31.0,
+      "against_pct": 47.0,
+      "undecided_pct": 22.0,
+      "sample_size": null,
+      "source": "Estimated: Pre-collapse market jitters",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2022-11-09",
+      "pro_pct": 28.0,
+      "against_pct": 52.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Immediate reaction to FTX liquidity crisis announcement",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2022-11-22",
+      "pro_pct": 24.0,
+      "against_pct": 58.0,
+      "undecided_pct": 18.0,
+      "sample_size": null,
+      "source": "Estimated: Post-bankruptcy filing sentiment shift",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2022-12-05",
+      "pro_pct": 23.0,
+      "against_pct": 60.0,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "Estimated: Sustained negative sentiment",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2022-12-18",
+      "pro_pct": 22.0,
+      "against_pct": 61.0,
+      "undecided_pct": 17.0,
+      "sample_size": 10332,
+      "source": "Pew Research Center (Dec 2022)",
+      "pollster": "Pew Research Center"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "CoinDesk publishes a report revealing that Alameda Research\u2019s balance sheet is heavily concentrated in FTT, the native token issued by FTX. This exposes the precarious financial entanglement between the two companies.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "Binance CEO Changpeng Zhao announces that Binance intends to liquidate its entire holding of FTT tokens due to the recent revelations regarding FTX's financial health.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrSTamzQyng86fVR7nriyF2-KQ0X1_vod-LsNIQMHBySFYaoFaxR794KflBU959FoMfPSn54rwfeaBpOUp0Z_8wO7xPqXJ_61pbxlY6NXEHXQRK6P-G7rKaPkS2ixTWPqZELUz4c_RKciw",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGrSTamzQyng86fVR7nriyF2-KQ0X1_vod-LsNIQMHBySFYaoFaxR794KflBU959FoMfPSn54rwfeaBpOUp0Z_8wO7xPqXJ_61pbxlY6NXEHXQRK6P-G7rKaPkS2ixTWPqZELUz4c_RKciw"
+      ],
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "FTX experiences a massive surge in customer withdrawal requests, signaling a loss of public confidence and creating a severe liquidity crisis.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4PLOOnQ_-tPAfmQCci4XuIF9wGnHzNIIP3xU6xWiDuAhhpkiYrlIvD8i5YzIWr6QxKutnZOjDGcrwtM0gaJd0cnBmYui4QE43FQXfJaSsGgOnx98bpU-NBvxU5H96pXayRBO7Yk7nAw==",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF4PLOOnQ_-tPAfmQCci4XuIF9wGnHzNIIP3xU6xWiDuAhhpkiYrlIvD8i5YzIWr6QxKutnZOjDGcrwtM0gaJd0cnBmYui4QE43FQXfJaSsGgOnx98bpU-NBvxU5H96pXayRBO7Yk7nAw=="
+      ],
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "FTX officially halts most customer withdrawals, confirming the exchange is unable to meet the demand for funds.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwqk_3mkTbbWWFbnMHXjvciIJ1jyjW31tRbobEZtouNC2y_3FEJM_pflLu-tAGQlcIlRHwtB2BNxPCFJ1eTLqyf_yp6sPUmO7j6KcbrpfdyCd1xb9ESCp_cE3omstsuNnUrE-4enasZo2BIrAlSjgRhXeazVpdjv8UZ1lOQQtnYHu49KPyILo1ZyCPVwBsaF2d3chT6g==",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHwqk_3mkTbbWWFbnMHXjvciIJ1jyjW31tRbobEZtouNC2y_3FEJM_pflLu-tAGQlcIlRHwtB2BNxPCFJ1eTLqyf_yp6sPUmO7j6KcbrpfdyCd1xb9ESCp_cE3omstsuNnUrE-4enasZo2BIrAlSjgRhXeazVpdjv8UZ1lOQQtnYHu49KPyILo1ZyCPVwBsaF2d3chT6g=="
+      ],
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "Binance announces a non-binding letter of intent to acquire FTX to address the liquidity crunch, contingent on due diligence.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "The full extent of the crisis is revealed, confirming an $8 billion shortfall in customer funds that had been improperly diverted to Alameda Research.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "name": "Sam Bankman-Fried",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Former CEO of FTX, primary driver of pro-crypto institutional legitimacy"
+    },
+    {
+      "name": "SEC (Gary Gensler)",
+      "type": "institutional",
+      "initial_position": -0.3,
+      "influence": 0.8,
+      "description": "Regulatory body advocating for stricter crypto oversight"
+    },
+    {
+      "name": "Retail Crypto Investors",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "General public holding crypto assets"
+    },
+    {
+      "name": "Mainstream Financial Media",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.7,
+      "description": "Traditional financial news outlets reporting on market volatility"
+    },
+    {
+      "name": "Crypto-Skeptic Academics",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.5,
+      "description": "Economists and researchers critical of decentralized finance models"
+    },
+    {
+      "name": "Non-investor Public",
+      "type": "citizen_cluster",
+      "initial_position": -0.5,
+      "influence": 0.2,
+      "description": "US adults with no exposure to crypto markets"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.683,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.22
+  },
+  "notes": "Pro-side is defined as individuals holding a favorable view of cryptocurrency as a legitimate financial asset. Against-side is defined as individuals holding an unfavorable view or believing crypto is a scam/high-risk hazard. Data reflects a significant shift from cautious optimism to widespread skepticism following the collapse of the FTX exchange.",
+  "_grounding_v2.2": {
+    "strategy": "hybrid_events_only",
+    "agents": "original",
+    "events": "grounded_v2.1",
+    "n_grounded_events": 6,
+    "n_original_events": 3
+  }
+}

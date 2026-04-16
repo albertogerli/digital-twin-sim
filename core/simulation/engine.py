@@ -81,6 +81,12 @@ class SimulationEngine:
         self.event_injector: Optional[EventInjector] = None
         self.round_results: list[dict] = []
 
+        # Orchestrator (Dynamic Contextual Activation)
+        self.activation_plan = getattr(config, "_activation_plan", None)
+        self.escalation_engine = None
+        self.contagion_scorer = None
+        self.financial_scorer = None
+
     async def run(self):
         """Execute the full simulation pipeline."""
         self._print_header()
@@ -93,6 +99,9 @@ class SimulationEngine:
 
         # Step 2: Run simulation rounds
         await self._simulate()
+
+        # Step 2b: Serialise financial-impact timeline (frontend bridge)
+        self._save_financial_impact()
 
         # Step 3: Evaluate realism
         await self._evaluate_realism()
@@ -193,6 +202,31 @@ class SimulationEngine:
             self.citizen_swarm = CitizenSwarm([])
             print(f"  ├─ Skipping Tier 2+3 (elite-only mode)")
 
+        # Inject implicit "Public Opinion" agent — represents mass citizen
+        # sentiment as a single institutional-tier agent. Initialized at the
+        # influence-weighted mean position of all named agents. Low rigidity
+        # makes it highly responsive to events; high tolerance means it's
+        # influenced by all agents. Aligned with calibration v2.3 model.
+        if not self.elite_only and (self.elite_agents or self.institutional_agents):
+            all_named = self.elite_agents + self.institutional_agents
+            total_infl = sum(a.influence for a in all_named) or 1.0
+            weighted_pos = sum(a.position * a.influence for a in all_named) / total_infl
+            pub_agent = InstitutionalAgent(
+                id="public_opinion",
+                name="Public Opinion",
+                role="aggregate citizen sentiment",
+                archetype="public_opinion",
+                position=weighted_pos,
+                original_position=weighted_pos,
+                influence=0.7,
+                rigidity=0.1,
+                key_trait="responsive to events and social pressure",
+                category="public_opinion",
+            )
+            pub_agent.tolerance = 0.9
+            self.institutional_agents.append(pub_agent)
+            print(f"  ├─ Public Opinion agent injected (pos={weighted_pos:+.2f}) ✓")
+
         # Initialize follow graph
         self._init_follow_graph()
         print(f"  ├─ Initializing social platforms... ✓")
@@ -216,7 +250,48 @@ class SimulationEngine:
             few_shot_example=event_few_shot,
         )
         grounding = "grounded" if self.seed_data else "emergent"
-        print(f"  └─ Event injector ready ({grounding} mode) ✓\n")
+        print(f"  └─ Event injector ready ({grounding} mode) ✓")
+
+        # Initialize orchestrator if activation plan is available
+        if self.activation_plan:
+            try:
+                from core.orchestrator.escalation import EscalationEngine
+                from core.orchestrator.contagion import ContagionScorer
+                from core.orchestrator.ticker_relevance import TickerRelevanceScorer
+                self.escalation_engine = EscalationEngine(self.activation_plan)
+                self.contagion_scorer = ContagionScorer(self.escalation_engine)
+
+                # Global Relevance Scoring — select 10-30 tickers from 190+ universe
+                rel_scorer = TickerRelevanceScorer()
+                domain = self.config.domain
+                geography = getattr(self.activation_plan, "country", "IT")
+                entities = self.activation_plan.detected_sectors
+                topics = self.activation_plan.detected_topics
+                relevant_universe = rel_scorer.select(domain, entities, geography, topics)
+
+                # Financial Impact Scorer
+                from core.orchestrator.financial_impact import FinancialImpactScorer
+                self.financial_scorer = FinancialImpactScorer(
+                    detected_topics=topics,
+                    detected_sectors=entities,
+                    llm=self.llm,
+                    relevant_universe=relevant_universe,
+                )
+                n_w1 = len(self.activation_plan.wave_1)
+                n_w2 = len(self.activation_plan.wave_2)
+                n_w3 = len(self.activation_plan.wave_3)
+                sectors = self.financial_scorer.get_sector_summary()
+                n_betas = len(sectors.get("sector_betas", {}))
+                n_topics = len(sectors.get("detected_topics", []))
+                print(f"  ┌─ Orchestrator active: {n_w1}→{n_w2}→{n_w3} wave escalation ✓")
+                if n_topics:
+                    topics_str = ", ".join(sectors["detected_topics"][:4])
+                    print(f"  ├─ Financial Alpha: {n_topics} topics → {n_betas} sector betas, LLM Flash Notes ✓ ({topics_str})")
+            except Exception as e:
+                logger.warning(f"Orchestrator init failed: {e}")
+                self.escalation_engine = None
+                self.contagion_scorer = None
+        print()
 
     def _init_follow_graph(self):
         """Initialize follower relationships."""
@@ -330,11 +405,17 @@ class SimulationEngine:
             language=self.config.language,
             scenario_context=self.config.scenario_context,
             metrics_to_track=self.config.metrics_to_track,
+            escalation_engine=self.escalation_engine,
+            contagion_scorer=self.contagion_scorer,
+            financial_scorer=self.financial_scorer,
         )
 
         # Inject event override for the first branched round
         if self.event_override and start_round > 1:
             round_manager._branch_event_override = self.event_override
+
+        # Expose round_manager for wargame mode (progress_callback can inject overrides)
+        self._round_manager = round_manager
 
         for round_num in range(start_round, self.config.num_rounds + 1):
             result = await round_manager.execute_round(round_num)
@@ -467,6 +548,50 @@ class SimulationEngine:
         with open(report_path, "w") as f:
             f.write(report_text)
         print(f"  └─ Report: {report_path} ✓")
+
+    def _save_financial_impact(self):
+        """Serialise the per-round financial-impact output from the scorer.
+
+        Writes a single JSON array keyed by round, using the Python schema as
+        the source of truth for the frontend bridge. Skipped if the scorer
+        was not active (e.g., non-financial scenarios without plugin wiring).
+        """
+        if not self.financial_scorer:
+            return
+
+        import json
+        from core.orchestrator.financial_impact import FIN_SCHEMA_VERSION
+
+        rounds_payload = []
+        for r in self.round_results:
+            orch = r.get("orchestrator") or {}
+            fin = orch.get("financial_impact")
+            if not fin:
+                continue
+            rounds_payload.append({
+                "round": r["round"],
+                "timeline_label": r.get("timeline_label", ""),
+                **fin,
+            })
+
+        if not rounds_payload:
+            return
+
+        safe_name = "".join(
+            c if c.isalnum() or c in "-_" else "_" for c in self.config.name
+        )
+        out_path = os.path.join(self.output_dir, f"{safe_name}_financial_impact.json")
+        payload = {
+            "schema_version": FIN_SCHEMA_VERSION,
+            "scenario": self.config.name,
+            "domain": self.config.domain,
+            "num_rounds": self.config.num_rounds,
+            "provenance": "backend-simulated",
+            "rounds": rounds_payload,
+        }
+        with open(out_path, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(f"  └─ Financial impact: {out_path} ✓ ({len(rounds_payload)} rounds)")
 
     def get_simulation_state(self) -> dict:
         return {

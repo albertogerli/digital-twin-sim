@@ -1,0 +1,33 @@
+[
+  {
+    "round": 1,
+    "description": "The Tomari 3 reactor in Hokkaido was taken offline for inspection, leaving Japan with zero operational nuclear reactors for the first time since 1970.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcLqDoGW16DfKItVSQPftC9lJQsmfD7NQXZW5A7eizf2dfv2F0R1qvFcrNnu1bq81tVt3y9fECP4cV6LnOqZV_kx4Tx_SWrKB7YKouN5gJjOz6pkNa16GYuYBB6lsUJQ-nbnZ2QDSkRJJGRITqQ5g9SwWfH-8W2gLCY0z2uZxN0ayWbbO9M-4Omy8ZRcBdIKIfEEsfWNVfILz12A==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcLqDoGW16DfKItVSQPftC9lJQsmfD7NQXZW5A7eizf2dfv2F0R1qvFcrNnu1bq81tVt3y9fECP4cV6LnOqZV_kx4Tx_SWrKB7YKouN5gJjOz6pkNa16GYuYBB6lsUJQ-nbnZ2QDSkRJJGRITqQ5g9SwWfH-8W2gLCY0z2uZxN0ayWbbO9M-4Omy8ZRcBdIKIfEEsfWNVfILz12A=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Prime Minister Yoshihiko Noda officially approved the restart of Ohi units 3 and 4, citing the need to prevent power shortages in the Kansai region.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "The Ohi 3 reactor reached criticality, marking the first time a nuclear reactor resumed operations in Japan following the Fukushima disaster.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXml845ck1JJM4bpQkNqeqNIqIhKXjwKfW1gyEEqwkPczwAT0J8LQJEZBIi_sJDKfYvV5mYlkXJ3HbM1EVxwBSbJDVhxyt0eMHNEUAnOTOjefWyeD_XyCfoId-WokJRQxiRbgj1TTVrTJ00ChPe9KdLC1ASWYqSFHmOTvcfp6muImZJNGZ4sg8ZBFwa-NhYaxYF0EnAgeEqt1osg==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXml845ck1JJM4bpQkNqeqNIqIhKXjwKfW1gyEEqwkPczwAT0J8LQJEZBIi_sJDKfYvV5mYlkXJ3HbM1EVxwBSbJDVhxyt0eMHNEUAnOTOjefWyeD_XyCfoId-WokJRQxiRbgj1TTVrTJ00ChPe9KdLC1ASWYqSFHmOTvcfp6muImZJNGZ4sg8ZBFwa-NhYaxYF0EnAgeEqt1osg=="
+    ],
+    "_verified": true
+  }
+]

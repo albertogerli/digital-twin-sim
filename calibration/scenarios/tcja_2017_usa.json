@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tcja_2017_usa",
+  "domain": "financial",
+  "description": "The Tax Cuts and Jobs Act of 2017 was the largest overhaul of the US tax code in decades, focusing on corporate tax rate reduction.",
+  "final_outcome_pro_pct": 44.0,
+  "final_outcome_against_pct": 56.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 38,
+      "against_pct": 48,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 52,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 43,
+      "against_pct": 53,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 44,
+      "against_pct": 53,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 53,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 44,
+      "against_pct": 55,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 44,
+      "against_pct": 56,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "House passes the initial version of the bill."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Senate passes the bill in a narrow vote late at night."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "President Trump signs the legislation at the White House."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Major corporations announce employee bonuses following the tax changes."
+    }
+  ],
+  "calibration_notes": "Shows how polarizing major legislation can remain even after passage."
+}

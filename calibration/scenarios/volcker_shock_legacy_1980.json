@@ -1,0 +1,83 @@
+{
+  "scenario_name": "volcker_shock_legacy_1980",
+  "domain": "financial",
+  "description": "The debate over Federal Reserve Chairman Paul Volcker's high-interest-rate policy to combat stagflation in 1980-1981. Public sentiment shifted from supporting aggressive inflation control to opposing it as unemployment surged and industrial production plummeted.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 25,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 38,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 45,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 56,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Volcker announces the 'Saturday Night Special' monetary tightening."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Auto industry layoffs reach crisis levels in Detroit."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Farmers drive tractors to Washington D.C. to protest high rates."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Inflation begins to taper, stabilizing Fed support among elite observers."
+    }
+  ],
+  "calibration_notes": "Useful for measuring how economic hardship overrides long-term strategic support for central bank policies."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "polio_campaign_pakistan_2012_2014",
+  "domain": "public_health",
+  "description": "Efforts to eradicate polio in Pakistan faced severe setbacks due to conspiracy theories linking vaccination programs to espionage, resulting in attacks on health workers.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 55,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 60,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 38,
+      "against_pct": 59,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 39,
+      "against_pct": 60,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Allegations of CIA-led vaccination ruse surfacing in local media."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Militant groups target polio workers; vaccination suspended in key regions."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Government shifts to religious outreach to restore vaccine trust."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Persistent pockets of opposition remain in tribal regions."
+    }
+  ],
+  "calibration_notes": "Models extreme resistance triggered by security/espionage concerns."
+}

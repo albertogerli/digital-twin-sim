@@ -1,0 +1,83 @@
+{
+  "scenario_name": "berlin_rent_cap_2019_2021",
+  "domain": "social",
+  "description": "In 2019, the Berlin Senate introduced the 'Mietendeckel' (rent cap) to freeze rents for approximately 1.5 million apartments to curb surging housing costs. The policy faced immediate legal challenges from real estate associations, culminating in a 2021 Federal Constitutional Court ruling that declared the law unconstitutional due to lack of legislative competence.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42,
+      "against_pct": 28,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 54,
+      "against_pct": 41,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 44,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 46,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Berlin Senate approves the draft of the rent cap law (October 2019)."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "The law officially goes into force, triggering mass legal filings from landlords (February 2020)."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Regional Berlin court refers constitutional doubts to the Federal Court (December 2020)."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Federal Constitutional Court strikes down the law, requiring retroactive rent payments (April 2021)."
+    }
+  ],
+  "calibration_notes": "This scenario demonstrates how public support initially surges for populist housing interventions but erodes as the legal feasibility and economic consequences (like the requirement for retroactive payments) become clear."
+}

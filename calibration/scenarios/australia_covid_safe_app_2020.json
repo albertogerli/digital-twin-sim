@@ -1,0 +1,83 @@
+{
+  "scenario_name": "australia_covid_safe_app_2020",
+  "domain": "technology",
+  "description": "Debate surrounding the Australian government's release of the COVIDSafe contact tracing app in 2020. Concerns over data privacy and storage location created a significant divide between public health compliance and data sovereignty.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 15,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 68,
+      "against_pct": 20,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 62,
+      "against_pct": 28,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 35,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 38,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 57,
+      "against_pct": 37,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 36,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 61,
+      "against_pct": 37,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Launch of COVIDSafe app with government promises of privacy."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Tech experts highlight vulnerabilities in the data encryption."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Government releases source code to quell security concerns."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Public health benefits begin to overshadow privacy fears as lockdown fatigue peaks."
+    }
+  ],
+  "calibration_notes": "Shows how trust in technical transparency measures can arrest a decline in public support."
+}

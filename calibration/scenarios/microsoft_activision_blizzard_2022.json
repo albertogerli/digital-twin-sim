@@ -1,0 +1,79 @@
+{
+  "scenario_name": "microsoft_activision_blizzard_2022",
+  "domain": "commercial",
+  "description": "In January 2022, Microsoft announced plans to acquire Activision Blizzard for $68.7 billion. The deal faced intense regulatory scrutiny regarding gaming exclusivity and competition in the cloud gaming market.",
+  "final_outcome_pro_pct": 58.0,
+  "final_outcome_against_pct": 42.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 65,
+      "against_pct": 10,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 30,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 38,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 57,
+      "against_pct": 40,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 58,
+      "against_pct": 41,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Sony openly lobbies the FTC and UK CMA against the deal's impact on PlayStation."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Activision Blizzard internal culture issues create a 'buyout as bailout' narrative."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Microsoft agrees to ten-year licensing deals to secure regulatory approval."
+    }
+  ],
+  "calibration_notes": "Models long-duration regulatory battles where public opinion oscillates based on legal concessions."
+}

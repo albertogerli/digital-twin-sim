@@ -1,0 +1,79 @@
+{
+  "scenario_name": "jacob_zuma_no_confidence_2017",
+  "domain": "political",
+  "description": "South African parliamentary motion of no confidence against President Jacob Zuma. The motion failed to pass due to ANC majority support.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 53,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44,
+      "against_pct": 56,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Public protests erupt across South Africa."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Opposition parties force a secret ballot vote."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Parliament votes down the motion."
+    }
+  ],
+  "calibration_notes": "Models political resistance within a single-party dominant system."
+}

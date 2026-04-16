@@ -1,0 +1,29 @@
+[
+  {
+    "round": 1,
+    "description": "President Joe Biden was inaugurated and established a federal goal of administering 100 million vaccine doses within his first 100 days in office.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "The FDA granted Emergency Use Authorization (EUA) for the Johnson & Johnson (Janssen) single-dose COVID-19 vaccine, expanding access options.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "Public health data indicated a significant decline in vaccine hesitancy across most demographic groups, particularly among young adults and Black Americans.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

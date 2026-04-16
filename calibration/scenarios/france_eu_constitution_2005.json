@@ -1,0 +1,79 @@
+{
+  "scenario_name": "france_eu_constitution_2005",
+  "domain": "political",
+  "description": "France held a referendum on the European Constitution in 2005; voters rejected it by 54.7%, causing a major crisis for the EU project.",
+  "final_outcome_pro_pct": 45.3,
+  "final_outcome_against_pct": 54.7,
+  "final_turnout_pct": 69.3,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 50,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 46,
+      "against_pct": 54,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44,
+      "against_pct": 56,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 43,
+      "against_pct": 57,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 44,
+      "against_pct": 56,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45.3,
+      "against_pct": 54.7,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Opposition claims Constitution promotes 'ultra-liberalism'."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Socialist Party splits over the referendum stance."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Protests erupt over fears of outsourcing and loss of welfare standards."
+    }
+  ],
+  "calibration_notes": "Shows how economic left-wing anxiety can override pro-EU party establishment."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_indoor_smoking_ban_2007",
+  "domain": "public_health",
+  "description": "The UK government implemented a comprehensive ban on smoking in all enclosed public places and workplaces, including pubs and restaurants, which took effect in England on July 1, 2007, following similar bans in Scotland, Wales, and Northern Ireland. The policy, driven by the Department of Health, aimed to protect citizens from secondhand smoke and shift public norms regarding indoor air quality.",
+  "final_outcome_pro_pct": 78.0,
+  "final_outcome_against_pct": 22.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 35,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 32,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 28,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 75,
+      "against_pct": 22,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Scotland implements the smoking ban in March 2006, creating a trial environment for the rest of the UK."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "The Health Act 2006 receives Royal Assent, setting a firm date for the English ban."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Intense media campaigns and trade organization opposition peak regarding the impact on the hospitality industry."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The ban goes into full effect on July 1, 2007, with widespread compliance and rapid public adoption."
+    }
+  ],
+  "calibration_notes": "This scenario demonstrates the 'lagged consensus' phenomenon, where initial policy skepticism converts into high public support once the regulation is implemented and benefits become tangible."
+}

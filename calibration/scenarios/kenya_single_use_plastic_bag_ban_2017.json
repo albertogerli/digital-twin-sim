@@ -1,0 +1,83 @@
+{
+  "scenario_name": "kenya_single_use_plastic_bag_ban_2017",
+  "domain": "environmental",
+  "description": "Kenya implemented one of the world's strictest bans on the manufacturing, sale, and use of plastic bags in August 2017. The initiative faced significant pushback from manufacturers but gained strong public support due to clear environmental degradation visible in urban waterways.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 30,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 25,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 32,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 28,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 27,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 28,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "National Environment Management Authority issues initial notice."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Kenya Association of Manufacturers files court petition against the ban."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "High Court ruling upholds the government's authority to enforce the ban."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Official enforcement date begins with heavy fines for violators."
+    }
+  ],
+  "calibration_notes": "Useful for modeling high-friction policy shifts in developing economies with strong executive environmental mandates."
+}

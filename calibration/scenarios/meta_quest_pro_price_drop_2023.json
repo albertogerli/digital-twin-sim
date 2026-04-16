@@ -1,0 +1,79 @@
+{
+  "scenario_name": "meta_quest_pro_price_drop_2023",
+  "domain": "technology",
+  "description": "After a lackluster launch in 2022, Meta slashed the price of the Quest Pro by $500, angering early adopters who felt penalized for their loyalty while signaling the company's struggle to capture a mass audience for the metaverse.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 40.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Meta announces $500 price cut."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Community forums erupt with refund requests."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Meta pivots focus to AI, downplaying metaverse."
+    }
+  ],
+  "calibration_notes": "Tests consumer perception of corporate price strategy and product longevity."
+}

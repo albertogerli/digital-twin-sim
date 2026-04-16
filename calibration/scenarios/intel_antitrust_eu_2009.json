@@ -1,0 +1,79 @@
+{
+  "scenario_name": "intel_antitrust_eu_2009",
+  "domain": "technology",
+  "description": "The European Commission fined Intel 1.06 billion euros for anti-competitive practices against AMD, specifically rebates to PC manufacturers to exclude AMD chips.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 15,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 20,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "AMD files formal antitrust complaint in Europe."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "EC issues statement of objections to Intel."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Record fine imposed in May 2009."
+    }
+  ],
+  "calibration_notes": "Shows the evolution of global regulatory power against dominant hardware manufacturers."
+}

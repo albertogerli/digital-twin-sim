@@ -1,0 +1,79 @@
+{
+  "scenario_name": "twitter_musk_acquisition_2022",
+  "domain": "commercial",
+  "description": "Elon Musk's $44 billion acquisition of Twitter (now X) in 2022 was characterized by extreme polarization, massive internal employee unrest, and significant debate regarding content moderation versus free speech.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 35,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 52,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 56,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 43,
+      "against_pct": 55,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 54,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Musk announces a plan to 'fix' free speech by buying the company."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Large-scale layoffs and advertiser pull-outs trigger public backlash."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Musk restores banned accounts, fueling further polarization."
+    }
+  ],
+  "calibration_notes": "Ideal for scenarios involving 'personality-driven' corporate acquisitions and extreme polarization."
+}

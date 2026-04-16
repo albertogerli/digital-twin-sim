@@ -144,6 +144,11 @@ class ScenarioBuilder:
 
         config = self._analysis_to_config(analysis)
 
+        # Pass orchestrator activation plan through (if available)
+        # Stored as transient attribute, not serialized
+        if analysis.get("_activation_plan"):
+            config._activation_plan = analysis["_activation_plan"]
+
         # Set seed_data_path on config so engine can load it
         if seed_data_path:
             config.seed_data_path = seed_data_path

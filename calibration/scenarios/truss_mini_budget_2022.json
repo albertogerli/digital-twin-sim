@@ -1,0 +1,83 @@
+{
+  "scenario_name": "truss_mini_budget_2022",
+  "domain": "financial",
+  "description": "The UK government under Liz Truss introduced a 'mini-budget' featuring unfunded tax cuts, causing immediate turbulence in the bond markets and public outcry over the impact on cost-of-living.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 18,
+      "against_pct": 75,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 17,
+      "against_pct": 78,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 16,
+      "against_pct": 81,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 16,
+      "against_pct": 82,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 84,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "The Chancellor announces the mini-budget to the House of Commons."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "The British Pound crashes to an all-time low against the US Dollar."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "The Bank of England intervenes to stabilize the gilt market."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Kwasi Kwarteng is dismissed as Chancellor of the Exchequer."
+    }
+  ],
+  "calibration_notes": "Calibration benchmark for extreme volatility and rapid shifts in public sentiment regarding financial policy."
+}

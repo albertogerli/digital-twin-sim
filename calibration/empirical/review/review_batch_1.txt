@@ -1,0 +1,260 @@
+ISTRUZIONI PER IL REVIEWER: per ogni scenario, verifica:
+1. Ground truth outcome: il numero è corretto? La fonte esiste?
+2. Polling trajectory: i trend sono coerenti con dati pubblici noti?
+3. Events: le date sono corrette? Mancano eventi critici?
+4. Agents: i key stakeholder sono quelli giusti? Posizioni iniziali plausibili?
+5. Shock magnitudes: le scale sono ragionevoli?
+Rispondi con: PASS / CORRECTIONS [dettaglio] / REJECT [motivo]
+
+BATCH 1 — 5 scenarios: COM-2017-IPHONE_X, CORP-2019-BOEING_MAX, PH-2021-COVID_VAX_IT, POL-2016-BREXIT, POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU
+======================================================================
+
+----------------------------------------------------------------------
+SCENARIO: COM-2017-IPHONE_X
+Domain: commercial | Country: US
+Period: 2017-09-01 -> 2017-12-31 | Rounds: 5
+
+OUTCOME: 65.0% pro | Source: https://www.macrumors.com/2018/04/23/iphone-x-siri-survey-creative-strategies/ — Creative Strategies survey (N=1746 iPhone X owners): 97% satisfaction, 85% 'very satisfied'; Piper Jaffray: 31% of non-upgraders cited price (69% neutral-positive)
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2017-09-15]: 33.0% vs 67.0% undec ? (n=2117) [?]
+     src: https://9to5mac.com/2017/08/24/iphone-loyalty/ — Fluent survey (N=2117): 67% said $999 is 'too expen
+  R2 [2017-10-23]: 69.0% vs 31.0% undec ? (n=?) [?]
+     src: https://appleinsider.com/articles/17/10/23/survey-finds-iphone-x-8-purchase-intent-at-highest-level-
+  R3 [2017-11-06]: 55.0% vs 30.0% undec 15.0% (n=?) [?]
+     src: https://www.macrumors.com/2017/11/06/iphone-x-adoption-localytics/ — Localytics: iPhone X captured 0
+  R4 [2017-11-28]: 60.0% vs 27.0% undec 13.0% (n=?) [?]
+     src: Strategy Analytics: camera #1 driver of positive sentiment, display and battery ~80% positive (https
+  R5 [2017-12-25]: 69.0% vs 31.0% undec ? (n=1500) [?]
+     src: https://www.macrumors.com/2018/03/05/iphone-x-no-upgrade-survey/ — Piper Jaffray (N=1500 iPhone owne
+
+KEY EVENTS:
+  R1 [2017-09-12]: Apple announces iPhone X at $999 — first mainstream smartphone to break $1000; immediate m
+     shock: 0.7 x -0.6 | https://www.apple.com/newsroom/2017/09/the-future-is-here-iphone-x/ [?]
+  R2 [2017-09-22]: iPhone 8/8 Plus launch — lukewarm reception, below-trend upgrade rates. Market interprets 
+     shock: 0.3 x +0.3 | https://www.reuters.com/article/us-apple-iphone-idUSKCN1BX2K2 [?]
+  R3 [2017-10-27]: iPhone X pre-orders open and sell out within minutes; 5-6 week shipping delays across all 
+     shock: 0.5 x +0.7 | https://www.apple.com/newsroom/2017/10/iphone-x-available-for-pre-order-on-frida [?]
+  R3 [2017-11-03]: iPhone X launch day: lines at Apple Stores worldwide; first reviews praise Face ID and OLE
+     shock: 0.4 x +0.6 | https://www.theverge.com/2017/11/1/16593414/apple-iphone-x-review [?]
+  R5 [2017-12-15]: Analyst reports indicate iPhone X drove Apple to record Q1 FY2018 revenue ($88.3B); ASP hi
+     shock: 0.3 x +0.5 | https://www.apple.com/newsroom/2018/02/apple-reports-first-quarter-results/ [?]
+
+AGENTS (top 5 of 9 by influence):
+  Tim Cook (elite): pos=+0.9 inf=0.80
+  Marques Brownlee (MKBHD) (elite): pos=+0.3 inf=0.60
+  Tech media (The Verge, Wired) (institutional): pos=+0.2 inf=0.60
+  Phil Schiller (elite): pos=+0.9 inf=0.50
+  Wall Street analysts (institutional): pos=+0.4 inf=0.50
+
+COVARIATES:
+  polarization=0.6, event_vol=0.16, elite_conc=0.25, trust=0.55, undecided=0.2
+
+METADATA:
+  Generator: hand_crafted
+  All fields human-authored (no .meta.json)
+
+NOTES: Pro = positive about iPhone X / willing to buy at $999, Against = too expensive / negative reaction. This is a classic commercial backlash-to-acceptance arc. Initial sticker shock (round 1) was overco
+
+----------------------------------------------------------------------
+SCENARIO: CORP-2019-BOEING_MAX
+Domain: corporate | Country: US
+Period: 2018-10-29 -> 2019-12-31 | Rounds: 7
+
+OUTCOME: 40.0% pro | Source: Atmosphere Research Group survey, December 2019 — approximately 40% willing to fly MAX
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2018-11-30]: 78.0% vs 12.0% undec 10.0% (n=?) [?]
+     src: Morning Consult brand tracking — Boeing net favorability +50 pre-crisis (estimated pro-trust ~78%)
+  R2 [2019-01-31]: 72.0% vs 15.0% undec 13.0% (n=?) [?]
+     src: Estimated from Morning Consult — slight decline after Lion Air but not sustained
+  R3 [2019-03-31]: 47.0% vs 40.0% undec 13.0% (n=2000) [?]
+     src: Reuters/Ipsos poll April 2019: 52% less likely to fly Boeing after crashes
+  R4 [2019-05-31]: 45.0% vs 42.0% undec 13.0% (n=?) [?]
+     src: Barclays survey mid-2019: 53% would avoid MAX or pay more for alternative
+  R5 [2019-07-31]: 44.0% vs 43.0% undec 13.0% (n=?) [?]
+     src: Estimated from Atmosphere Research Group tracking — willingness plateaued mid-year
+  R6 [2019-10-31]: 42.0% vs 45.0% undec 13.0% (n=?) [?]
+     src: Congressional hearings period — internal emails revealed Boeing knew of MCAS issues
+  R7 [2019-12-31]: 40.0% vs 47.0% undec 13.0% (n=?) [?]
+     src: End of year: ~40% willing per Atmosphere Research; Muilenburg fired Dec 23
+
+KEY EVENTS:
+  R1 [2018-10-29]: Lion Air Flight 610 crashes into Java Sea, killing all 189 aboard; MCAS system implicated
+     shock: 0.6 x -0.5 | https://www.bbc.co.uk/news/world-asia-46014463 [?]
+  R3 [2019-03-10]: Ethiopian Airlines Flight 302 crashes, killing 157; worldwide grounding of 737 MAX follows
+     shock: 0.9 x -0.9 | https://www.bbc.co.uk/news/world-africa-47513508 [?]
+  R4 [2019-04-29]: Boeing announces MCAS software fix and pilot training changes; cuts 737 production rate 20
+     shock: 0.3 x +0.2 | https://www.boeing.com/commercial/737max/737-max-update.page [?]
+  R5 [2019-06-16]: Paris Air Show: Boeing receives zero new orders for 737 MAX; Airbus dominates with 100+ or
+     shock: 0.4 x -0.4 | https://www.reuters.com/article/us-airshow-paris-idUSKCN1TH0GK [?]
+  R6 [2019-10-29]: Congressional hearings: internal Boeing emails reveal employees knew of MCAS problems, moc
+     shock: 0.6 x -0.7 | https://transportation.house.gov/committee-activity/boeing-737-max-702702 [?]
+  R7 [2019-12-23]: CEO Dennis Muilenburg fired; production halt announced; board installs David Calhoun as re
+     shock: 0.5 x -0.3 | https://www.bbc.co.uk/news/business-50901834 [?]
+
+AGENTS (top 5 of 9 by influence):
+  Dennis Muilenburg (elite): pos=+0.9 inf=0.80
+  FAA (institutional): pos=+0.3 inf=0.80
+  Airlines (Southwest, American, United) (institutional): pos=+0.2 inf=0.70
+  Peter DeFazio (elite): pos=-0.8 inf=0.60
+  EASA (European regulator) (institutional): pos=-0.4 inf=0.60
+
+COVARIATES:
+  polarization=0.55, event_vol=0.24, elite_conc=0.28, trust=0.45, undecided=0.1
+
+METADATA:
+  Generator: hand_crafted
+  All fields human-authored (no .meta.json)
+
+NOTES: Pro = trust Boeing / willing to fly 737 MAX, Against = distrust / would refuse to fly. This is an asymmetric crisis: trust starts very high and erodes under repeated shocks. Polling data for rounds 1-
+
+----------------------------------------------------------------------
+SCENARIO: PH-2021-COVID_VAX_IT
+Domain: public_health | Country: IT
+Period: 2020-12-21 -> 2021-06-30 | Rounds: 7
+
+OUTCOME: 80.0% pro | Source: https://ourworldindata.org/covid-vaccinations — Italy: 54% with at least one dose by June 30, 2021; IPSOS Global Attitudes June 2021: ~80% willing
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2020-12-31]: 67.0% vs 20.0% undec 13.0% (n=1000) [?]
+     src: IPSOS Global Attitudes on COVID-19 Vaccines, December 2020
+  R2 [2021-01-31]: 64.0% vs 22.0% undec 14.0% (n=1000) [?]
+     src: IPSOS Global Attitudes, January 2021 — Italy dipped due to slow rollout concerns
+  R3 [2021-02-28]: 62.0% vs 23.0% undec 15.0% (n=1000) [?]
+     src: IPSOS Global Attitudes, February 2021 — AstraZeneca concerns emerging
+  R4 [2021-03-31]: 58.0% vs 27.0% undec 15.0% (n=1000) [?]
+     src: IPSOS Global Attitudes, March 2021 — AstraZeneca suspended March 15, lifted March 18; lowest point
+  R5 [2021-04-30]: 68.0% vs 20.0% undec 12.0% (n=1000) [?]
+     src: IPSOS Global Attitudes, April 2021 — recovery after Draghi vaccine mandate for healthcare workers
+  R6 [2021-05-31]: 74.0% vs 16.0% undec 10.0% (n=1000) [?]
+     src: IPSOS Global Attitudes, May 2021 — vaccination campaign accelerating, Green Pass announced
+  R7 [2021-06-30]: 80.0% vs 13.0% undec 7.0% (n=1000) [?]
+     src: IPSOS Global Attitudes, June 2021; Eurobarometer 494 (April–May) Italy ~78-80%
+
+KEY EVENTS:
+  R1 [2020-12-27]: V-Day: Italy begins vaccination campaign at Spallanzani hospital, Rome — first symbolic do
+     shock: 0.3 x +0.5 | https://www.reuters.com/article/us-health-coronavirus-italy-vaccine-idUSKBN29100 [?]
+  R2 [2021-01-29]: EMA authorizes AstraZeneca vaccine for EU; Italy's slow rollout (< 2M doses administered) 
+     shock: 0.2 x +0.1 | https://www.ema.europa.eu/en/news/ema-recommends-covid-19-vaccine-astrazeneca-au [?]
+  R4 [2021-03-15]: AIFA suspends AstraZeneca precautionarily after blood clot reports in Europe; 3-day halt, 
+     shock: 0.6 x -0.7 | https://www.aifa.gov.it/-/aifa-dispone-lo-stop-precauzionale-per-il-vaccino-astr [?]
+  R5 [2021-04-01]: Draghi government mandates vaccination for healthcare workers (DL 44/2021); Figliuolo acce
+     shock: 0.4 x +0.6 | https://www.gazzettaufficiale.it/eli/id/2021/04/01/21G00056/sg [?]
+  R6 [2021-05-17]: Italy opens vaccinations to all adults; daily doses exceed 500,000 for first time
+     shock: 0.3 x +0.5 | https://www.governo.it/it/cscovid19/report-vaccini/ [?]
+  R7 [2021-06-17]: Green Pass (Certificazione Verde) decree: required for travel between regions and large ev
+     shock: 0.4 x +0.5 | https://www.gazzettaufficiale.it/eli/id/2021/06/21/21G00098/sg [?]
+
+AGENTS (top 5 of 11 by influence):
+  Mario Draghi (elite): pos=+0.9 inf=0.95
+  ISS (Istituto Superiore di Sanità) (institutional): pos=+0.9 inf=0.80
+  Matteo Salvini (elite): pos=-0.2 inf=0.70
+  AIFA (institutional): pos=+0.7 inf=0.70
+  RAI / mainstream media (institutional): pos=+0.6 inf=0.70
+
+COVARIATES:
+  polarization=0.52, event_vol=0.15, elite_conc=0.3, trust=0.42, undecided=0.13
+
+METADATA:
+  Generator: hand_crafted
+  All fields human-authored (no .meta.json)
+
+NOTES: Pro = willing to get vaccinated, Against = vaccine hesitant/refuser. Polling data from IPSOS Global Advisor monthly tracker for Italy. The AstraZeneca suspension (round 4) caused the sharpest dip. Rec
+
+----------------------------------------------------------------------
+SCENARIO: POL-2016-BREXIT
+Domain: political | Country: GB
+Period: 2016-01-15 -> 2016-06-23 | Rounds: 6
+
+OUTCOME: 51.89% pro | Source: https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/eu-referendum/results-and-turnout-eu-referendum
+  Type: referendum
+
+POLLING TRAJECTORY:
+  R1 [2016-01-31]: 41.0% vs 42.0% undec 17.0% (n=?) [?]
+     src: https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_refer
+  R2 [2016-02-29]: 42.0% vs 43.0% undec 15.0% (n=?) [?]
+     src: https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_refer
+  R3 [2016-03-31]: 43.0% vs 44.0% undec 13.0% (n=?) [?]
+     src: https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_refer
+  R4 [2016-04-30]: 43.0% vs 44.0% undec 13.0% (n=?) [?]
+     src: https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_refer
+  R5 [2016-05-31]: 44.0% vs 43.0% undec 13.0% (n=?) [?]
+     src: https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_refer
+  R6 [2016-06-22]: 44.0% vs 45.0% undec 11.0% (n=?) [?]
+     src: https://en.wikipedia.org/wiki/Opinion_polling_for_the_United_Kingdom_European_Union_membership_refer
+
+KEY EVENTS:
+  R2 [2016-02-21]: Boris Johnson announces support for Leave campaign, giving it major establishment credibil
+     shock: 0.3 x +0.5 | https://www.bbc.co.uk/news/uk-politics-eu-referendum-35621621 [?]
+  R4 [2016-04-18]: HM Treasury publishes Brexit impact report: GDP 6% lower after 15 years outside EU
+     shock: 0.2 x -0.3 | https://www.gov.uk/government/publications/hm-treasury-analysis-the-long-term-ec [?]
+  R4 [2016-04-22]: President Obama warns UK would be at 'back of the queue' for US trade deal if it leaves EU
+     shock: 0.2 x -0.2 | https://www.bbc.co.uk/news/uk-36115138 [?]
+  R6 [2016-06-16]: Labour MP Jo Cox murdered by far-right extremist; campaigning suspended for 3 days
+     shock: 0.5 x -0.6 | https://www.bbc.co.uk/news/uk-england-36550304 [?]
+
+AGENTS (top 5 of 12 by influence):
+  David Cameron (elite): pos=-0.8 inf=0.90
+  Boris Johnson (elite): pos=+0.7 inf=0.85
+  BBC (institutional): pos=-0.1 inf=0.80
+  Nigel Farage (elite): pos=+1.0 inf=0.70
+  Bank of England (institutional): pos=-0.6 inf=0.70
+
+COVARIATES:
+  polarization=0.65, event_vol=0.13, elite_conc=0.22, trust=0.35, undecided=0.17
+
+METADATA:
+  Generator: hand_crafted
+  All fields human-authored (no .meta.json)
+
+NOTES: Polling data are monthly averages blending online and phone polls. Online polls (YouGov, TNS) consistently showed Leave 3-4pp higher than phone polls (ComRes, Ipsos MORI). The 'shy Leaver' effect and 
+
+----------------------------------------------------------------------
+SCENARIO: POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU
+Domain: political | Country: US
+Period: 2018-09-01 -> 2018-11-06 | Rounds: 6
+
+OUTCOME: 53.4% pro | Source: https://clerk.house.gov/member_info/electionInfo/2018election.pdf
+  Type: election
+
+POLLING TRAJECTORY:
+  R1 [2018-09-01]: 48.2% vs 41.5% undec 10.3% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R2 [2018-09-12]: 48.5% vs 41.8% undec 9.7% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R3 [2018-09-23]: 49.1% vs 42.2% undec 8.7% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R4 [2018-10-04]: 49.5% vs 42.5% undec 8.0% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R5 [2018-10-15]: 49.8% vs 43.1% undec 7.1% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R6 [2018-10-26]: 50.2% vs 43.8% undec 6.0% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+
+KEY EVENTS:
+  R2 [2018-09-27]: Brett Kavanaugh Supreme Court confirmation hearings
+     shock: 0.6 x +0.2 | https://www.nytimes.com/2018/09/27/us/politics/brett-kavanaugh-christine-blasey- [VERIFIED URL]
+  R5 [2018-10-22]: Trump announces caravan of migrants as a national emergency
+     shock: 0.4 x -0.3 | https://www.reuters.com/article/us-usa-election-caravan/trump-says-he-will-send- [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Donald Trump (elite): pos=-0.8 inf=1.00
+  Democratic Party (institutional): pos=+0.9 inf=0.90
+  Republican Party (institutional): pos=-0.9 inf=0.90
+  Fox News (elite): pos=-0.7 inf=0.70
+  CNN (elite): pos=+0.6 inf=0.60
+
+COVARIATES:
+  polarization=0.776, event_vol=0.3, elite_conc=0.75, trust=0.4, undecided=0.1
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 18/22 (82%)
+  LLM-estimated: title, agents, covariates, notes
+  Polling verified: 100.0% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as the Democratic Party House vote share. Against-side is defined as the Republican Party House vote share. Data quality is high due to official FEC/Clerk records for the outcome a

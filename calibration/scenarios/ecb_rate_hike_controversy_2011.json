@@ -1,0 +1,79 @@
+{
+  "scenario_name": "ecb_rate_hike_controversy_2011",
+  "domain": "financial",
+  "description": "ECB President Jean-Claude Trichet raised interest rates in April and July 2011, citing inflation concerns, despite the onset of the sovereign debt crisis in Southern Europe. This scenario tracks support from the German public versus the rest of the Eurozone.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 40,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 54,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 57,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "ECB hikes rates by 25 basis points in April 2011."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Bond yields in Italy and Spain spike significantly."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Mario Draghi replaces Trichet, signaling a shift in approach."
+    }
+  ],
+  "calibration_notes": "Measures geopolitical split in economic sentiment during institutional decision-making."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "dengvaxia_vaccine_controversy_philippines_2017",
+  "domain": "public_health",
+  "description": "The controversy surrounding the Dengvaxia vaccine in the Philippines, where a mass immunization campaign was halted following reports of adverse health effects, leading to a collapse in public vaccine trust.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 18,
+      "against_pct": 80,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 16,
+      "against_pct": 83,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Sanofi Pasteur issues warning on vaccine risks."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Senate inquiry begins into procurement process."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Measles outbreak linked to drop in routine vaccination."
+    }
+  ],
+  "calibration_notes": "Shows how institutional failure destroys long-term public health policy."
+}

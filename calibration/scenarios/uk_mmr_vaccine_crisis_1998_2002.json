@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_mmr_vaccine_crisis_1998_2002",
+  "domain": "public_health",
+  "description": "Following Andrew Wakefield's 1998 Lancet study linking the MMR vaccine to autism, public confidence in the UK plummeted. The crisis lasted until 2002 when the government and medical authorities launched a massive campaign to restore trust, resulting in a gradual recovery of vaccination rates.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 85,
+      "against_pct": 5,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 70,
+      "against_pct": 15,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 46,
+      "against_pct": 49,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Publication of Wakefield's paper in The Lancet."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "National media coverage causes MMR uptake to drop below 80%."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "UK government launches 'MMR: The Facts' campaign."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "General Medical Council begins formal investigation into Wakefield."
+    }
+  ],
+  "calibration_notes": "Exhibits a classic 'scare-driven' erosion of public trust followed by a slow, evidence-based recovery curve."
+}

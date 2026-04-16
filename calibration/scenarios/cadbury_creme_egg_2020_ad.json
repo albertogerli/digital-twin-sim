@@ -1,0 +1,83 @@
+{
+  "scenario_name": "cadbury_creme_egg_2020_ad",
+  "domain": "marketing",
+  "description": "In 2020, Cadbury UK released a Valentine’s Day ad featuring a same-sex couple kissing while sharing a Cadbury Creme Egg. The advertisement generated significant backlash from conservative groups and praise from LGBTQ+ advocates, creating a binary 'pro' or 'against' sentiment in the UK public discourse.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 58.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 38,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 61,
+      "against_pct": 38,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Official release of the 'Creme de la Creme' campaign on social media channels."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Boycott campaigns organized by conservative activist groups gain traction on Twitter."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Major UK media outlets report on the 'culture war' over the advert."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Cadbury issues a formal statement reaffirming their commitment to inclusivity."
+    }
+  ],
+  "calibration_notes": "Effective for analyzing the 'inclusivity backlash' phenomenon in European markets and the speed of brand-related social sentiment convergence."
+}

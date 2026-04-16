@@ -1,0 +1,83 @@
+{
+  "scenario_name": "love_canal_legacy_cleanup_support_2004",
+  "domain": "public_health",
+  "description": "Public sentiment regarding the ongoing EPA cleanup operations and liability settlements at the Love Canal site in Niagara Falls, NY. Decades after the initial 1978 disaster, the early 2000s saw debate over the 'delisting' of the site from the Superfund program.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 53,
+      "against_pct": 33,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 38,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 40,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 44,
+      "against_pct": 51,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 46,
+      "against_pct": 52,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "EPA proposes removing major segments of the site from the Superfund National Priorities List."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Local community advocacy groups organize protests citing lingering health concerns."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "A peer-reviewed health study is released showing mixed data on long-term cancer clusters."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "EPA officially removes the site from the priority list despite public skepticism."
+    }
+  ],
+  "calibration_notes": "Ideal for modeling 'institutional fatigue' where government technocrats favor closure, but the public remains skeptical of long-term health safety."
+}

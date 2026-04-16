@@ -1,0 +1,62 @@
+[
+  {
+    "round": 1,
+    "description": "Austrian authorities reported the death of a 49-year-old woman and the hospitalization of a 35-year-old following vaccination, both linked to a specific batch of the AstraZeneca vaccine.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Denmark, Norway, and Iceland suspended the use of the AstraZeneca vaccine as a precautionary measure following reports of serious blood clot cases.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF211p9XXc2jT8gXKVWi-up_IARsEqU1oxXEjFOLLgsUuDnvyK9T4JsYhwDb1kKfeyiHmxXndMAZ33q4XzhKFogZEfAqVcg-HFweHKzOsMJTsG8kUGVuw0kOq0q8sCM2lKYwfuPfVGOQ48kvm5-iV99zRsAJ-FRfVQrsUwxHUMoiA45EOV-1zcIRXI65lxUmirl4KI01jCUR4UjNdYqNPhAntaWDFbEqJXxdo5h1-K49qe33Tn58w-EgzRL_2UvtC-N",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF211p9XXc2jT8gXKVWi-up_IARsEqU1oxXEjFOLLgsUuDnvyK9T4JsYhwDb1kKfeyiHmxXndMAZ33q4XzhKFogZEfAqVcg-HFweHKzOsMJTsG8kUGVuw0kOq0q8sCM2lKYwfuPfVGOQ48kvm5-iV99zRsAJ-FRfVQrsUwxHUMoiA45EOV-1zcIRXI65lxUmirl4KI01jCUR4UjNdYqNPhAntaWDFbEqJXxdo5h1-K49qe33Tn58w-EgzRL_2UvtC-N"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Major European nations, including Germany, France, and Italy, paused the rollout of the AstraZeneca vaccine to await further investigation by the European Medicines Agency.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH2LG2fj6Fet5MJOqbIQMlHdP4cM93MbzCALmwYmM-VrmLYPAVwfvCZ8UFGx9UyIDblJtySL1-9ZAnm9o0RTh6Ck167eXnuGOinKotSVe2OqFcnWSbzgSJP5D5OKm5GnBJ_wy4k1Bt8vFJei4MRVXUBHGj0mePF3B5fBcaCQWs85UxNfn6d3fLO362Pk3J6j4PurZcJBCEWscINH1Pl91YjF6xWPb1AQzVvSaK3oolhGoHwfXbuWNix8yuoECc-tdRZg==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH2LG2fj6Fet5MJOqbIQMlHdP4cM93MbzCALmwYmM-VrmLYPAVwfvCZ8UFGx9UyIDblJtySL1-9ZAnm9o0RTh6Ck167eXnuGOinKotSVe2OqFcnWSbzgSJP5D5OKm5GnBJ_wy4k1Bt8vFJei4MRVXUBHGj0mePF3B5fBcaCQWs85UxNfn6d3fLO362Pk3J6j4PurZcJBCEWscINH1Pl91YjF6xWPb1AQzVvSaK3oolhGoHwfXbuWNix8yuoECc-tdRZg=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "The European Medicines Agency (EMA) concluded that the vaccine is safe and effective, stating the benefits outweigh the risks, leading several countries to resume vaccinations.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "The EMA announced that unusual blood clots with low blood platelets should be listed as very rare side effects of the AstraZeneca vaccine.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUFg4dX2czmbU8vNz4Fpm8FJ5sP4jHibb-B4VBF1zeo5AGdDA34869e0Z4JS25q6I_ZUZbJt2Gj-V_hSyNCDH259PEFYwkI5ZwjdxgXIlrMcmQHUKJEwws6-fy0Di8PvQTmwvSHY-EhPsZ4Z47ztD9vQUgbmHcqqslo-apGxdtTdSacPaCaIyHt2JBYoAnOufWrhtC_L6HvQLJy2IcSGHNDZ6n4gLhgey9O3BoDupWG9PKjk4osQh3ZSVSGmhN-7OkpTWBTzGdQd7Kag==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUFg4dX2czmbU8vNz4Fpm8FJ5sP4jHibb-B4VBF1zeo5AGdDA34869e0Z4JS25q6I_ZUZbJt2Gj-V_hSyNCDH259PEFYwkI5ZwjdxgXIlrMcmQHUKJEwws6-fy0Di8PvQTmwvSHY-EhPsZ4Z47ztD9vQUgbmHcqqslo-apGxdtTdSacPaCaIyHt2JBYoAnOufWrhtC_L6HvQLJy2IcSGHNDZ6n4gLhgey9O3BoDupWG9PKjk4osQh3ZSVSGmhN-7OkpTWBTzGdQd7Kag=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "Following the EMA's update, the UK's Joint Committee on Vaccination and Immunisation recommended that adults under 30 be offered alternative vaccines where available.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  }
+]

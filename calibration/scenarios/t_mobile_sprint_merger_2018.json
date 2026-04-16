@@ -1,0 +1,79 @@
+{
+  "scenario_name": "t_mobile_sprint_merger_2018",
+  "domain": "commercial",
+  "description": "T-Mobile and Sprint announced a $26 billion merger in April 2018. The deal promised to accelerate 5G deployment in the US but was heavily opposed by consumer advocacy groups fearing higher prices.",
+  "final_outcome_pro_pct": 53.0,
+  "final_outcome_against_pct": 47.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 53,
+      "against_pct": 47,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 53,
+      "against_pct": 47,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Executives claim the merger is the only way to compete with AT&T and Verizon."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Attorneys general from 13 states file a lawsuit to block the merger."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Federal judge rules in favor of the merger, citing the promise of 5G infrastructure."
+    }
+  ],
+  "calibration_notes": "A perfect example of an 'infrastructure-justified' merger facing 'competitive-impact' opposition."
+}

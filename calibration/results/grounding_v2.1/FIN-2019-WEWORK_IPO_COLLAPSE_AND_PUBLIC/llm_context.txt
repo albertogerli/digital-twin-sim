@@ -1,0 +1,43 @@
+# VERIFIED FACTS — FIN-2019-WEWORK_IPO_COLLAPSE_AND_PUBLIC
+Domain: financial | Country: US
+Period: 2019-01-01 to 2019-10-22
+
+## TIMELINE (verified events, chronological order):
+1. [2019-01-01] WeWork, rebranded as The We Company, raised $1 billion in a Series H funding round led by SoftBank, pushing its private valuation to a peak of $47 billion. [confidence: 80%]
+   Detail: $1 billion raised; $47 billion valuation
+   Source: crunchbase.com
+2. [2019-08-14] WeWork publicly filed its S-1 registration statement for an initial public offering, revealing significant financial losses and complex corporate governance issues. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+3. [2019-09-01] Following intense public and investor scrutiny regarding its business model and leadership, WeWork officially postponed its planned IPO.
+   Detail: N/A
+   Source: forbes.com
+4. [2019-09-24] Adam Neumann resigned as CEO of WeWork under pressure from investors and the board of directors following the failed IPO attempt.
+   Detail: N/A
+   Source: businessinsider.com
+5. [2019-10-22] SoftBank announced a massive bailout package to take control of WeWork, effectively valuing the company at approximately $8 billion, a sharp decline from its previous $47 billion valuation.
+   Detail: $8 billion valuation; $47 billion previous valuation
+   Source: theguardian.com
+
+## KEY FIGURES:
+- 2018_net_loss: $1.9 billion
+- 2018_revenue: $1.8 billion
+- long_term_lease_obligations: $47 billion
+- founder_voting_power_multiplier: 20 times
+- ipo_filing_date: August 14, 2019
+- ceo_resignation_date: September 24, 2019
+- ipo_withdrawal_date: September 30, 2019
+- softbank_takeover_date: October 22, 2019
+
+## KEY STAKEHOLDER POSITIONS:
+- Adam Neumann (Co-founder and former CEO of WeWork): Following intense scrutiny of his leadership and the company's governance, he resigned as CEO to allow the company to focus on its future. He acknowledged that the intense attention on him had become a distraction.
+- Masayoshi Son (CEO of SoftBank Group): He expressed regret for his investment in WeWork, admitting he made a poor judgment call in backing Adam Neumann and failing to see the red flags in the company's governance.
+
+## FINAL OUTCOME:
+The WeWork IPO was abandoned in 2019 following intense public and investor scrutiny regarding the company's massive financial losses, unsustainable business model, and controversial corporate governance. The collapse led to a dramatic devaluation of the company and the resignation of co-founder Adam Neumann.
+Pro %: 0.0% — Source: Forbes/Business Insider (Consensus reporting on market sentiment)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

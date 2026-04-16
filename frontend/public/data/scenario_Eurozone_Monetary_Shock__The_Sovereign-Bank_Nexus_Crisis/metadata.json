@@ -1,0 +1,30 @@
+{
+  "scenario_id": "Eurozone_Monetary_Shock__The_Sovereign-Bank_Nexus_Crisis",
+  "scenario_name": "Eurozone Monetary Shock  The Sovereign-Bank Nexus Crisis",
+  "num_rounds": 5,
+  "domain": "financial",
+  "description": "",
+  "calibration": {
+    "model_version": "v2",
+    "params_source": "domain",
+    "params": {
+      "herd_weight": 0.1192,
+      "anchor_weight": 0.2765,
+      "social_weight": 0.1367,
+      "event_weight": 0.1047,
+      "herd_threshold": 0.21,
+      "direct_shift_weight": 0.4,
+      "anchor_drift_rate": 0.25
+    },
+    "final_confidence_interval": {
+      "pro_pct_mean": 39.5,
+      "pro_pct_ci95_lo": 12.2,
+      "pro_pct_ci95_hi": 66.9,
+      "sigma_pp": 14.0
+    },
+    "final_regime_info": {
+      "regime_prob": 0.663,
+      "regime_label": "crisis"
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "greek_pension_austerity_2010",
+  "domain": "financial",
+  "description": "As part of the first bailout agreement with the EU/IMF, the Greek government slashed pension payments to manage the sovereign debt crisis, leading to years of social unrest.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 22,
+      "against_pct": 65,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 18,
+      "against_pct": 80,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 19,
+      "against_pct": 81,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 19,
+      "against_pct": 81,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Government announces emergency pension cuts."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Violent protests occur in central Athens."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Bailout package finalized with strict austerity measures."
+    }
+  ],
+  "calibration_notes": "A classic example of public backlash against imposed, non-consensual financial restructuring."
+}

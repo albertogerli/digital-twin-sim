@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dolce_gabbana_china_marketing_fail_2018",
+  "domain": "commercial",
+  "description": "In 2018, D&G released an ad campaign in China showing a model struggling to eat Italian food with chopsticks, followed by derogatory leaked DMs from Stefano Gabbana. This led to a massive boycott across the Chinese market.",
+  "final_outcome_pro_pct": 5.0,
+  "final_outcome_against_pct": 95.0,
+  "final_turnout_pct": 98.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 10,
+      "against_pct": 80,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 5,
+      "against_pct": 90,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 5,
+      "against_pct": 93,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 4,
+      "against_pct": 95,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ad goes live, sparking immediate criticism in China."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Stefano Gabbana's private messages leaked, insulting China."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Major Chinese retailers pull D&G products; show in Shanghai cancelled."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Founders issue apology video, but damage is irreversible."
+    }
+  ],
+  "calibration_notes": "Demonstrates the volatility of brand reputation in international markets facing cultural insensitivity."
+}

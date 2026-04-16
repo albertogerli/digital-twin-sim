@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dove_racist_ad_backlash_2017",
+  "domain": "commercial",
+  "description": "In 2017, Dove released a Facebook ad showing a Black woman turning into a white woman after using their body wash. The brand was accused of racism and failure of internal diversity oversight.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 18,
+      "against_pct": 75,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 16,
+      "against_pct": 80,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 15,
+      "against_pct": 82,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 15,
+      "against_pct": 83,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 84,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ad spreads virally on social media with 'racist' labels."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Dove removes the ad and issues a public apology."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "The woman in the ad speaks out, stating the context was misrepresented."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Dove internal audit results are announced to pacify consumers."
+    }
+  ],
+  "calibration_notes": "Examines the role of context in influencer/brand marketing disasters."
+}

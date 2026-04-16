@@ -51,40 +51,40 @@ export default function MonteCarloPanel({ data, positiveLabel = "Pro", negativeL
     return {
       label: lo.toFixed(1),
       count,
-      color: lo + binWidth / 2 > 0 ? "#22c55e" : lo + binWidth / 2 < 0 ? "#ef4444" : "#94a3b8",
+      color: lo + binWidth / 2 > 0 ? "#16a34a" : lo + binWidth / 2 < 0 ? "#dc2626" : "#8a8a8a",
     };
   });
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-5 space-y-5">
+    <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-3 space-y-3">
       <div className="flex items-center gap-2">
-        <h3 className="text-sm font-semibold text-gray-700">Analisi Monte Carlo</h3>
-        <span className="px-2 py-0.5 rounded-full bg-purple-50 border border-purple-200 text-[10px] font-mono text-purple-600">
+        <h3 className="text-xs font-semibold text-ki-on-surface-secondary">Analisi Monte Carlo</h3>
+        <span className="px-2 py-0.5 rounded-sm bg-domain-corporate/10 border border-domain-corporate/25 text-[10px] font-data text-domain-corporate">
           {data.n_completed}/{data.n_runs} runs
         </span>
       </div>
 
       {/* Key metrics */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="bg-gray-50 rounded-lg p-3 text-center">
-          <div className="text-[10px] font-mono text-gray-400 uppercase">Outcome</div>
-          <div className="text-lg font-bold text-emerald-600">{data.outcome_probability.pro_pct}%</div>
-          <div className="text-[10px] text-gray-400">{positiveLabel}</div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+        <div className="bg-ki-surface-sunken rounded-sm p-2 text-center">
+          <div className="text-[10px] font-data text-ki-on-surface-muted uppercase">Outcome</div>
+          <div className="text-lg font-bold text-ki-success">{data.outcome_probability.pro_pct}%</div>
+          <div className="text-[10px] text-ki-on-surface-muted">{positiveLabel}</div>
         </div>
-        <div className="bg-gray-50 rounded-lg p-3 text-center">
-          <div className="text-[10px] font-mono text-gray-400 uppercase">Outcome</div>
-          <div className="text-lg font-bold text-red-600">{data.outcome_probability.against_pct}%</div>
-          <div className="text-[10px] text-gray-400">{negativeLabel}</div>
+        <div className="bg-ki-surface-sunken rounded-sm p-2 text-center">
+          <div className="text-[10px] font-data text-ki-on-surface-muted uppercase">Outcome</div>
+          <div className="text-lg font-bold text-ki-error">{data.outcome_probability.against_pct}%</div>
+          <div className="text-[10px] text-ki-on-surface-muted">{negativeLabel}</div>
         </div>
-        <div className="bg-gray-50 rounded-lg p-3 text-center">
-          <div className="text-[10px] font-mono text-gray-400 uppercase">Polarizzazione</div>
-          <div className="text-lg font-bold text-gray-900">{data.final_polarization.mean}</div>
-          <div className="text-[10px] text-gray-400">&plusmn;{data.final_polarization.std}</div>
+        <div className="bg-ki-surface-sunken rounded-sm p-2 text-center">
+          <div className="text-[10px] font-data text-ki-on-surface-muted uppercase">Polarizzazione</div>
+          <div className="text-lg font-bold text-ki-on-surface">{data.final_polarization.mean}</div>
+          <div className="text-[10px] text-ki-on-surface-muted">&plusmn;{data.final_polarization.std}</div>
         </div>
-        <div className="bg-gray-50 rounded-lg p-3 text-center">
-          <div className="text-[10px] font-mono text-gray-400 uppercase">Posizione</div>
-          <div className="text-lg font-bold text-gray-900">{data.final_position.mean > 0 ? "+" : ""}{data.final_position.mean}</div>
-          <div className="text-[10px] text-gray-400">
+        <div className="bg-ki-surface-sunken rounded-sm p-2 text-center">
+          <div className="text-[10px] font-data text-ki-on-surface-muted uppercase">Posizione</div>
+          <div className="text-lg font-bold text-ki-on-surface">{data.final_position.mean > 0 ? "+" : ""}{data.final_position.mean}</div>
+          <div className="text-[10px] text-ki-on-surface-muted">
             CI [{data.final_position.ci_low}, {data.final_position.ci_high}]
           </div>
         </div>
@@ -92,22 +92,22 @@ export default function MonteCarloPanel({ data, positiveLabel = "Pro", negativeL
 
       {/* Polarization with CI band */}
       <div>
-        <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">
+        <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-1.5">
           Polarizzazione (95% CI)
         </p>
-        <div className="h-36">
+        <div className="h-32">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={chartData} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
               <defs>
                 <linearGradient id="mcCi" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.2} />
-                  <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0.05} />
+                  <stop offset="5%" stopColor="#7c3aed" stopOpacity={0.2} />
+                  <stop offset="95%" stopColor="#7c3aed" stopOpacity={0.05} />
                 </linearGradient>
               </defs>
-              <XAxis dataKey="round" tick={{ fontSize: 10 }} tickLine={false} axisLine={false} />
-              <YAxis domain={[0, 10]} tick={{ fontSize: 10 }} tickLine={false} axisLine={false} />
+              <XAxis dataKey="round" tick={{ fontSize: 10, fill: "#8a8a8a" }} tickLine={false} axisLine={false} />
+              <YAxis domain={[0, 10]} tick={{ fontSize: 10, fill: "#8a8a8a" }} tickLine={false} axisLine={false} />
               <Tooltip
-                contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e5e7eb" }}
+                contentStyle={{ fontSize: 11, borderRadius: 4, border: "1px solid #d4d4d4" }}
                 labelFormatter={(l) => `Round ${l}`}
               />
               <Area
@@ -121,13 +121,13 @@ export default function MonteCarloPanel({ data, positiveLabel = "Pro", negativeL
                 type="monotone"
                 dataKey="polLow"
                 stroke="none"
-                fill="#fff"
+                fill="#fafafa"
                 animationDuration={600}
               />
               <Area
                 type="monotone"
                 dataKey="polMean"
-                stroke="#8b5cf6"
+                stroke="#7c3aed"
                 strokeWidth={2}
                 fill="none"
                 animationDuration={600}
@@ -139,16 +139,16 @@ export default function MonteCarloPanel({ data, positiveLabel = "Pro", negativeL
 
       {/* Outcome distribution */}
       <div>
-        <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-2">
+        <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-1.5">
           Distribuzione Outcome
         </p>
-        <div className="h-28">
+        <div className="h-24">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={histogram} margin={{ top: 4, right: 4, bottom: 0, left: -20 }}>
-              <XAxis dataKey="label" tick={{ fontSize: 9 }} tickLine={false} axisLine={false} />
-              <YAxis tick={{ fontSize: 9 }} tickLine={false} axisLine={false} />
+              <XAxis dataKey="label" tick={{ fontSize: 9, fill: "#8a8a8a" }} tickLine={false} axisLine={false} />
+              <YAxis tick={{ fontSize: 9, fill: "#8a8a8a" }} tickLine={false} axisLine={false} />
               <Tooltip
-                contentStyle={{ fontSize: 11, borderRadius: 8, border: "1px solid #e5e7eb" }}
+                contentStyle={{ fontSize: 11, borderRadius: 4, border: "1px solid #d4d4d4" }}
                 formatter={(v) => [`${v} runs`]}
               />
               <Bar dataKey="count" animationDuration={600}>
@@ -159,7 +159,7 @@ export default function MonteCarloPanel({ data, positiveLabel = "Pro", negativeL
             </BarChart>
           </ResponsiveContainer>
         </div>
-        <div className="flex justify-between text-[9px] text-gray-400 px-2 mt-1">
+        <div className="flex justify-between text-[9px] text-ki-on-surface-muted px-2 mt-1">
           <span>{negativeLabel}</span>
           <span>{positiveLabel}</span>
         </div>

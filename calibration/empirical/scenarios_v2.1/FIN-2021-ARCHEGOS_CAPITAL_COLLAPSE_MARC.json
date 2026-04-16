@@ -1,0 +1,259 @@
+{
+  "id": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC",
+  "domain": "financial",
+  "title": "Market Confidence in Prime Brokerage Risk Management Following the Archegos Capital Management Collapse",
+  "country": "US",
+  "date_start": "2021-02-01",
+  "date_end": "2021-05-31",
+  "n_rounds": 7,
+  "round_duration_days": 17,
+  "ground_truth_outcome": {
+    "pro_pct": 35.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-02-01",
+      "pro_pct": 65.0,
+      "against_pct": 15.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline market confidence in prime brokerage risk controls prior to Archegos exposure disclosure.",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2021-02-18",
+      "pro_pct": 62.0,
+      "against_pct": 18.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Slight decline due to early rumors of margin pressure in family offices.",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2021-03-07",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Market sentiment stable but cautious.",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2021-03-24",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Immediate reaction to the Archegos fire sale and multi-billion dollar bank losses.",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2021-04-10",
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Continued scrutiny of Credit Suisse and Nomura risk management failures.",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2021-04-27",
+      "pro_pct": 36.0,
+      "against_pct": 50.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Regulatory bodies begin formal inquiries into family office transparency.",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2021-05-14",
+      "pro_pct": 35.0,
+      "against_pct": 52.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Post-event equilibrium reached with permanent loss of confidence in prime brokerage risk oversight.",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "ViacomCBS announced a secondary stock offering, which caused a sharp decline in its share price and acted as the catalyst for the collapse.",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "Archegos Capital Management failed to meet massive margin calls from its prime brokers as the value of its concentrated portfolio plummeted.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "Prime brokers began a massive fire sale of Archegos-linked stocks, leading to significant market volatility and public realization of the firm's hidden leverage.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "Major global investment banks began disclosing their exposure to Archegos, revealing the extent of the financial damage caused by the firm's collapse.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "Regulatory scrutiny intensified as questions arose regarding the 'family office' exemption that allowed Archegos to operate with minimal oversight.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Sung Kook \"Bill\" Hwang",
+      "initial_position": -0.8,
+      "influence": 0.95,
+      "rigidity": 0.9,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Founder and CEO of Archegos Capital Management"
+    },
+    {
+      "name": "Goldman Sachs",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "Prime broker that exited positions early, maintaining high confidence in their own risk management."
+    },
+    {
+      "name": "Credit Suisse",
+      "type": "institutional",
+      "initial_position": 0.5,
+      "influence": 0.8,
+      "description": "Prime broker that suffered massive losses; position shifted to -0.8 post-event."
+    },
+    {
+      "name": "Institutional Investors",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.5,
+      "description": "General market participants concerned about counterparty risk and transparency."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.422,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.2
+  },
+  "notes": "Pro-side: Confidence in existing prime brokerage risk management and transparency. Against-side: Lack of confidence, favoring stricter regulation and oversight of family offices. Data is estimated based on market volatility indices and financial reporting trends during the Q1 2021 period.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 56,
+    "n_grounded_agents": 1,
+    "n_grounded_events": 5
+  },
+  "market_observations": {
+    "primary_ticker": "XLF",
+    "primary_sector": "banking",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [
+      "GS"
+    ],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": 9.853,
+        "volume_ratio": 0.83
+      },
+      {
+        "round": 2,
+        "return_pct": 5.245,
+        "volume_ratio": 1.35
+      },
+      {
+        "round": 3,
+        "return_pct": -1.196,
+        "volume_ratio": 1.36
+      },
+      {
+        "round": 4,
+        "return_pct": 5.619,
+        "volume_ratio": 0.91
+      },
+      {
+        "round": 5,
+        "return_pct": 1.053,
+        "volume_ratio": 0.77
+      },
+      {
+        "round": 6,
+        "return_pct": 4.162,
+        "volume_ratio": 0.99
+      },
+      {
+        "round": 7,
+        "return_pct": 0.29,
+        "volume_ratio": 0.77
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": 4.295,
+        "volume_ratio": 0.64
+      },
+      {
+        "round": 2,
+        "return_pct": -1.815,
+        "volume_ratio": 1.37
+      },
+      {
+        "round": 3,
+        "return_pct": 1.863,
+        "volume_ratio": 1.17
+      },
+      {
+        "round": 4,
+        "return_pct": 6.186,
+        "volume_ratio": 1.09
+      },
+      {
+        "round": 5,
+        "return_pct": 1.487,
+        "volume_ratio": 0.86
+      },
+      {
+        "round": 6,
+        "return_pct": -1.734,
+        "volume_ratio": 1.03
+      },
+      {
+        "round": 7,
+        "return_pct": 0.831,
+        "volume_ratio": 0.83
+      }
+    ],
+    "cumulative_return_pct": 27.364,
+    "benchmark_return_pct": 11.378,
+    "excess_return_pct": 15.986,
+    "volatility_realized": 16.3016,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

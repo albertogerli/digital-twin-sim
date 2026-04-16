@@ -1,0 +1,83 @@
+{
+  "scenario_name": "risc_v_vs_arm_2022",
+  "domain": "technology",
+  "description": "RISC-V, an open-source instruction set architecture, poses a challenge to Arm's proprietary chip designs. The scenario tracks geopolitical and industry interest in hardware sovereignty.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 50.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 40,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 40,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 35,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 35,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 53,
+      "against_pct": 40,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "RISC-V seen as niche academic project."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "US-China trade tensions heighten interest in non-Arm, open chip IP."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Major firms like Western Digital and Google commit to RISC-V development."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "RISC-V chips gain widespread use in embedded controllers."
+    }
+  ],
+  "calibration_notes": "Highlights the intersection of open-source philosophy and geopolitical trade security."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "canada_federal_election_2015",
+  "domain": "political",
+  "description": "Justin Trudeau's Liberal Party moved from third place to a majority government, defeating Stephen Harper's Conservatives in 2015.",
+  "final_outcome_pro_pct": 53.0,
+  "final_outcome_against_pct": 47.0,
+  "final_turnout_pct": 68.3,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 35,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 32,
+      "against_pct": 34,
+      "undecided_pct": 34
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 33,
+      "undecided_pct": 32
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 32,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 41,
+      "against_pct": 31,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 44,
+      "against_pct": 30,
+      "undecided_pct": 26
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 47,
+      "against_pct": 29,
+      "undecided_pct": 24
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50,
+      "against_pct": 28,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 53.0,
+      "against_pct": 47.0,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Trudeau performs well in first major debate."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Niqab debate mobilizes voters for Liberals."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Strategic voting against incumbents peaks."
+    }
+  ],
+  "calibration_notes": "Useful for measuring late-stage momentum shifts when an 'underdog' captures the public narrative."
+}

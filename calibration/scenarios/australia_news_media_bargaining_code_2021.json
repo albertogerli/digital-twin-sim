@@ -1,0 +1,79 @@
+{
+  "scenario_name": "australia_news_media_bargaining_code_2021",
+  "domain": "technology",
+  "description": "In 2021, the Australian government mandated that platforms like Facebook pay news outlets for shared content. Facebook responded by briefly banning all news content in Australia, triggering a intense legislative standoff.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 20,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 25,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 62,
+      "against_pct": 35,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 63,
+      "against_pct": 37,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Facebook executes total news ban in Australia."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Public backlash against Facebook for blocking emergency services."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Government amends code to provide path to arbitration."
+    }
+  ],
+  "calibration_notes": "Tests public support for regulating Big Tech revenue distribution to media."
+}

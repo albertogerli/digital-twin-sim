@@ -1,0 +1,79 @@
+{
+  "scenario_name": "thames_gateway_bridge_2008",
+  "domain": "environmental",
+  "description": "The proposed Thames Gateway Bridge in London faced strong opposition from environmental groups citing increased traffic pollution. In 2008, the newly elected Mayor Boris Johnson cancelled the project, favoring alternative transit solutions.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 45.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 40,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 50,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 37,
+      "against_pct": 55,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 36,
+      "against_pct": 60,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 35,
+      "against_pct": 62,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 35,
+      "against_pct": 64,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Local campaign groups publish air quality studies showing severe health risks for residents."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Environmental advocacy gains traction within London Assembly debates."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Boris Johnson cancels the project shortly after assuming office, citing financial and environmental concerns."
+    }
+  ],
+  "calibration_notes": "Shows how urban planning projects can be successfully blocked when environmental arguments align with fiscal austerity."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "brazil_tax_reform_2023",
+  "domain": "financial",
+  "description": "Brazil initiated a historic overhaul of its complex consumption tax system to replace five different taxes with a single Value Added Tax (VAT) to simplify the business environment.",
+  "final_outcome_pro_pct": 65.0,
+  "final_outcome_against_pct": 35.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 33,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 34,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 63,
+      "against_pct": 35,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 64,
+      "against_pct": 35,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Lower house approves the text in a landmark vote."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Business associations express unified support for the measure."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Senate passes the reform with modifications."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The bill is officially enacted."
+    }
+  ],
+  "calibration_notes": "Example of a successful, consensus-driven financial reform process."
+}

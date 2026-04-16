@@ -1,0 +1,83 @@
+{
+  "scenario_name": "california_sb_277_vaccine_mandate_2015",
+  "domain": "public_health",
+  "description": "Following a measles outbreak at Disneyland, California removed personal belief exemptions for mandatory school vaccinations. The move triggered intense debate over bodily autonomy vs. public health safety.",
+  "final_outcome_pro_pct": 67.0,
+  "final_outcome_against_pct": 33.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 25,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 32,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 57,
+      "against_pct": 35,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 33,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 63,
+      "against_pct": 31,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 65,
+      "against_pct": 32,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 67,
+      "against_pct": 33,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Disneyland measles outbreak confirms public health risk."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Large protests erupt at the California State Capitol."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Medical associations rally in support of SB 277."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Final legislative push results in Governor Brown signing the bill."
+    }
+  ],
+  "calibration_notes": "Measures the impact of crisis events on public opinion regarding mandates."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "israel_parliamentary_2022",
+  "domain": "political",
+  "description": "The 2022 Israeli legislative election resulted in a clear victory for Benjamin Netanyahu’s right-wing bloc, ending a period of political deadlock.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 70.6,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 49,
+      "against_pct": 51,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 49,
+      "against_pct": 51,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 50,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 50,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52.0,
+      "against_pct": 48.0,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Security tensions in the West Bank mobilize right-wing base."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Failure of centrist parties to form a unified front."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Election day turnout among right-wing voters exceeds projections."
+    }
+  ],
+  "calibration_notes": "Useful for modeling scenarios where turnout differentials determine the result in a deadlocked system."
+}

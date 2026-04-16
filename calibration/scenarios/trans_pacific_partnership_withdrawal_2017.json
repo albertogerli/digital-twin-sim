@@ -1,0 +1,79 @@
+{
+  "scenario_name": "trans_pacific_partnership_withdrawal_2017",
+  "domain": "political",
+  "description": "The TPP was initially a landmark trade deal for the Obama administration. Upon Donald Trump's inauguration in 2017, the US abruptly withdrew, drastically altering the ratification trajectory for remaining members.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 99.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 58,
+      "against_pct": 30,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 58,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 39,
+      "against_pct": 59,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Drafting of final protocols completed by 12 nations"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Executive order signed by President Trump formally withdrawing the US"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Remaining members (CPTPP) signal intent to proceed without the US"
+    }
+  ],
+  "calibration_notes": "Models the impact of an exogenous 'black swan' political event destroying the momentum of a multi-year negotiation."
+}

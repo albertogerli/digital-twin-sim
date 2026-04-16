@@ -1,0 +1,83 @@
+{
+  "scenario_name": "arizona_sb_1070_2010",
+  "domain": "social",
+  "description": "In April 2010, Arizona passed SB 1070, the strictest anti-illegal immigration law in the United States, requiring police to determine the immigration status of individuals during routine stops. The legislation sparked intense national debate and federal litigation, polarizing the country between those favoring stricter enforcement and those warning of racial profiling.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42,
+      "against_pct": 38,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 51,
+      "against_pct": 39,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 49,
+      "against_pct": 42,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 47,
+      "against_pct": 45,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 46,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 47,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 48,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Governor Jan Brewer signs SB 1070 into law on April 23, 2010."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Large-scale May Day protests erupt across the United States against the law."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "U.S. Department of Justice files a lawsuit against Arizona to block the law."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Supreme Court takes up the case, leading to widespread media coverage and national polarization."
+    }
+  ],
+  "calibration_notes": "This scenario captures the 'honeymoon' surge of popularity for restrictive policy immediately following legislation, followed by a steady erosion as legal and civil rights concerns gain mainstream media traction."
+}

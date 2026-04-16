@@ -1,0 +1,83 @@
+{
+  "scenario_name": "rwanda_plastic_ban_2008",
+  "domain": "environmental",
+  "description": "Rwanda enacted a total ban on non-biodegradable plastic bags in 2008, one of the first countries in the world to do so. The policy was part of a larger national vision for cleanliness and sustainability.",
+  "final_outcome_pro_pct": 95.0,
+  "final_outcome_against_pct": 5.0,
+  "final_turnout_pct": 98.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 80,
+      "against_pct": 2,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 85,
+      "against_pct": 3,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 88,
+      "against_pct": 3,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 90,
+      "against_pct": 4,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 92,
+      "against_pct": 4,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 93,
+      "against_pct": 5,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 94,
+      "against_pct": 5,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 94,
+      "against_pct": 6,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 95,
+      "against_pct": 5,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "National awareness campaign highlights agricultural benefits."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Government begins border inspections for plastic contraband."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Successful integration of alternative packaging solutions."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "International recognition of Kigali as a leader in waste management."
+    }
+  ],
+  "calibration_notes": "Useful for modeling state-driven environmental policies in centralized systems with high compliance."
+}

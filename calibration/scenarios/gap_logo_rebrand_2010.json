@@ -1,0 +1,83 @@
+{
+  "scenario_name": "gap_logo_rebrand_2010",
+  "domain": "marketing",
+  "description": "In October 2010, Gap Inc. abruptly replaced its iconic blue-box logo with a minimalist Helvetica design. The move triggered a massive, organized public backlash on social media, forcing the company to revert to the original logo just six days later.",
+  "final_outcome_pro_pct": 12.0,
+  "final_outcome_against_pct": 88.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 25,
+      "against_pct": 15,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 30,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 18,
+      "against_pct": 45,
+      "undecided_pct": 37
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 15,
+      "against_pct": 60,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 14,
+      "against_pct": 72,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 13,
+      "against_pct": 80,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 12,
+      "against_pct": 85,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 12,
+      "against_pct": 87,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 12,
+      "against_pct": 88,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "New logo launched on Gap website; immediate negative sentiment on Twitter"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Viral mockery spreads; creation of 'Crap Logo' parody site"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Gap issues official statement acknowledging the 'love for the original'"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Gap officially scraps the redesign and returns to the classic branding"
+    }
+  ],
+  "calibration_notes": "A classic case study in brand equity loss and the speed of modern digital sentiment backlash."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "usmca_ratification_2019",
+  "domain": "political",
+  "description": "The USMCA replaced NAFTA. Negotiations were fraught with political tension between the Trump administration and the Democratic-controlled House, leading to a long ratification process throughout 2019.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 62,
+      "against_pct": 22,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 35,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 33,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Agreement signed by US, MX, CA."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "House Democrats demand stronger labor enforcement."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Pelosi announces support for revised USMCA."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Senate votes to ratify."
+    }
+  ],
+  "calibration_notes": "Captures the dynamic of bipartisan support coalescing around an executive-negotiated deal."
+}

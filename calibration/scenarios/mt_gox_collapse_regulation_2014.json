@@ -1,0 +1,79 @@
+{
+  "scenario_name": "mt_gox_collapse_regulation_2014",
+  "domain": "technology",
+  "description": "Following the 2014 collapse of the Mt. Gox exchange in Japan, public opinion shifted regarding the necessity of oversight for centralized cryptocurrency platforms. The debate centered on whether government intervention was a betrayal of decentralization or a required safety net.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 55,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 38,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 36,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 61,
+      "against_pct": 37,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Mt. Gox files for bankruptcy after losing 850,000 BTC."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Japanese FSA begins formal investigations into crypto-exchanges."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Global financial regulators warn of systemic risks from crypto-assets."
+    }
+  ],
+  "calibration_notes": "Measures the shift from 'crypto-anarchist' sentiment to mainstream safety expectations."
+}

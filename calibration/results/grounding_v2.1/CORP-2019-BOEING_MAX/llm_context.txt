@@ -1,0 +1,45 @@
+# VERIFIED FACTS — CORP-2019-BOEING_MAX
+Domain: corporate | Country: US
+Period: 2018-10-29 to 2019-12-16
+
+## TIMELINE (verified events, chronological order):
+1. [2018-10-29] Lion Air Flight 610 crashed into the Java Sea shortly after takeoff, resulting in the loss of all lives on board. Investigations later revealed that the MCAS system repeatedly forced the nose down due to faulty sensor data.
+   Detail: 189 people killed
+   Source: barchart.com
+2. [2019-03-10] Ethiopian Airlines Flight 302 crashed shortly after takeoff, killing everyone on board. The crash exhibited striking similarities to the Lion Air incident, specifically regarding the activation of the MCAS system.
+   Detail: 157 people killed
+   Source: apnews.com
+3. [2019-03-13] The U.S. Federal Aviation Administration (FAA) issued an emergency order grounding all Boeing 737 MAX aircraft in the United States. This followed similar global grounding actions by other aviation authorities.
+   Detail: N/A
+   Source: dot.gov
+4. [2019-04-04] Boeing CEO Dennis Muilenburg publicly acknowledged that the MCAS system was a factor in both the Lion Air and Ethiopian Airlines crashes. This admission marked a significant shift in the company's public narrative regarding the cause of the accidents. [confidence: 80%]
+   Detail: N/A
+   Source: theguardian.com
+5. [2019-12-16] Boeing announced it would suspend production of the 737 MAX aircraft starting in January 2020. The decision reflected the ongoing uncertainty regarding the timeline for the aircraft's return to service. [confidence: 80%]
+   Detail: N/A
+   Source: barchart.com
+
+## KEY FIGURES:
+- willing_to_reschedule_max_flight: 53.1% of American adults
+- would_cancel_or_reschedule_regardless_of_cost: 30%
+- would_have_no_issue_flying_on_max: 9.4%
+- public_concern_about_commercial_aviation_safety: 55%
+- public_believing_flying_is_very_safe: 56%
+
+## POLLING/SENTIMENT DATA:
+- [2019-03-01] 9.4% pro — Business Insider
+- [2019-03-01] 56.0% pro — YouGov
+
+## KEY STAKEHOLDER POSITIONS:
+- Dennis Muilenburg (Former CEO of Boeing): He publicly apologized for the lives lost in the 737 MAX crashes and committed to making the aircraft safe through software updates and rigorous testing.
+- Steve Dickson (Former FAA Administrator): He emphasized that the FAA would not clear the 737 MAX for return to service until he was personally satisfied with the safety of the aircraft and its training protocols.
+- Peter DeFazio (Former Chairman of the House Committee on Transportation and Infrastructure): He criticized Boeing for prioritizing profits over safety and accused the FAA of failing in its oversight responsibilities regarding the 737 MAX certification.
+
+## FINAL OUTCOME:
+Following two fatal crashes, the Boeing 737 MAX fleet was grounded worldwide for nearly two years; while the aircraft was eventually recertified for service, public trust in Boeing suffered a significant and lasting decline.
+Pro %: 35.0% — Source: Reuters/Ipsos Poll (2019)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

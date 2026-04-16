@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_mmr_vaccine_scare_2001_2003",
+  "domain": "public_health",
+  "description": "Public confidence in the MMR vaccine plummeted in the UK following Andrew Wakefield's 1998 Lancet paper and subsequent media coverage. This scenario tracks the decline and eventual stabilization of pro-vaccine sentiment between 2001 and 2003 as health officials fought to counter misinformation.",
+  "final_outcome_pro_pct": 78.0,
+  "final_outcome_against_pct": 22.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 88,
+      "against_pct": 5,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 82,
+      "against_pct": 9,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 75,
+      "against_pct": 15,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 68,
+      "against_pct": 25,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 72,
+      "against_pct": 22,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 74,
+      "against_pct": 20,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 76,
+      "against_pct": 21,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "High-profile media reports amplify link between MMR and autism."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Measles cases rise sharply; NHS launches emergency 'Catch-up' campaign."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Lancet issues partial retraction/criticism of Wakefield's study."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Long-term data confirms vaccine safety; public trust begins slow recovery."
+    }
+  ],
+  "calibration_notes": "Tests model sensitivity to health misinformation campaigns and recovery periods."
+}

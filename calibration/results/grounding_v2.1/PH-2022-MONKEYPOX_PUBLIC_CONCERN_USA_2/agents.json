@@ -1,0 +1,71 @@
+[
+  {
+    "id": "xavier_becerra",
+    "name": "Xavier Becerra",
+    "role": "Secretary of Health and Human Services",
+    "archetype": "politician",
+    "position": 0.9,
+    "influence": 0.95,
+    "rigidity": 0.8,
+    "bio": "Xavier Becerra is an American politician and lawyer serving as the 25th United States Secretary of Health and Human Services.",
+    "communication_style": "formal, authoritative",
+    "key_traits": [
+      "strategic",
+      "decisive"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the Secretary of HHS, he officially declared the 2022 mpox outbreak a public health emergency, centralizing the federal response."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "rochelle_walensky",
+    "name": "Rochelle Walensky",
+    "role": "Director of the Centers for Disease Control and Prevention (CDC)",
+    "archetype": "scientist",
+    "position": 0.95,
+    "influence": 0.9,
+    "rigidity": 0.75,
+    "bio": "Rochelle Walensky is an American physician and scientist who served as the 19th director of the CDC from 2021 to 2023.",
+    "communication_style": "clinical, data-driven",
+    "key_traits": [
+      "analytical",
+      "methodical"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "She led the CDC's technical response, vaccination strategy, and public health messaging throughout the 2022 outbreak."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "robert_fenton",
+    "name": "Robert Fenton",
+    "role": "White House National Mpox Response Coordinator",
+    "archetype": "politician",
+    "position": 0.85,
+    "influence": 0.85,
+    "rigidity": 0.75,
+    "bio": "Robert Fenton is a career emergency management official who served as the regional administrator for FEMA before leading the national mpox response.",
+    "communication_style": "pragmatic, operational",
+    "key_traits": [
+      "efficient",
+      "logistical"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "Appointed to coordinate the interagency federal response, he was responsible for the operational execution of the vaccination campaign."
+    ],
+    "_grounded": true
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "balenciaga_campaign_controversy",
+  "domain": "commercial",
+  "description": "In late 2022, Balenciaga released an ad campaign featuring children holding teddy bears in bondage gear. The resulting backlash was swift, causing a global firestorm and damaging the luxury brand's reputation for several months.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 18,
+      "against_pct": 80,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 16,
+      "against_pct": 82,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 15,
+      "against_pct": 84,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Images surface on social media."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Mainstream media coverage and celebrity criticism."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Balenciaga files lawsuit against production company."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "CEO issues formal apology."
+    }
+  ],
+  "calibration_notes": "Models the extreme reputational risk associated with poor creative direction and influencer/model choices."
+}

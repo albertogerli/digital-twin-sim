@@ -1,0 +1,79 @@
+{
+  "scenario_name": "facial_recognition_ban_san_francisco_2019",
+  "domain": "technology",
+  "description": "The San Francisco Board of Supervisors vote to ban the use of facial recognition technology by city agencies and law enforcement, citing civil liberties concerns.",
+  "final_outcome_pro_pct": 58.0,
+  "final_outcome_against_pct": 42.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 25,
+      "undecided_pct": 33
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 35,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 56,
+      "against_pct": 41,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 57,
+      "against_pct": 42,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Initial proposal introduced to Board of Supervisors."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Civil rights groups release reports on surveillance bias."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final vote confirms the municipal ban."
+    }
+  ],
+  "calibration_notes": "Illustrates local-level sentiment shifts regarding surveillance tech."
+}

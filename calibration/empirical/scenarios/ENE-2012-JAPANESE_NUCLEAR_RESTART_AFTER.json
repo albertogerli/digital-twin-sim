@@ -1,0 +1,155 @@
+{
+  "id": "ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER",
+  "domain": "energy",
+  "title": "Public opinion dynamics regarding the restart of Japanese nuclear power plants following the 2011 Fukushima Daiichi disaster",
+  "country": "JP",
+  "date_start": "2012-06-01",
+  "date_end": "2013-07-08",
+  "n_rounds": 6,
+  "round_duration_days": 67,
+  "ground_truth_outcome": {
+    "pro_pct": 35.0,
+    "source": "https://www.japantimes.co.jp/news/2013/07/15/national/poll-shows-most-oppose-nuclear-restarts/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2012-06-01",
+      "pro_pct": 28.0,
+      "against_pct": 60.0,
+      "undecided_pct": 12.0,
+      "sample_size": 1500,
+      "source": "Estimated: Based on Asahi Shimbun June 2012 polling trends post-Ohi restart announcement",
+      "pollster": "Asahi Shimbun"
+    },
+    {
+      "round": 2,
+      "date": "2012-08-07",
+      "pro_pct": 30.0,
+      "against_pct": 58.0,
+      "undecided_pct": 12.0,
+      "sample_size": 1200,
+      "source": "Estimated: NHK polling data following Ohi reactor restart",
+      "pollster": "NHK"
+    },
+    {
+      "round": 3,
+      "date": "2012-10-13",
+      "pro_pct": 32.0,
+      "against_pct": 55.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated trend between summer and winter 2012",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2012-12-19",
+      "pro_pct": 31.0,
+      "against_pct": 56.0,
+      "undecided_pct": 13.0,
+      "sample_size": 1800,
+      "source": "Estimated: Post-general election sentiment shift",
+      "pollster": "Yomiuri Shimbun"
+    },
+    {
+      "round": 5,
+      "date": "2013-02-24",
+      "pro_pct": 33.0,
+      "against_pct": 54.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Gradual stabilization of energy policy discourse",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2013-05-02",
+      "pro_pct": 35.0,
+      "against_pct": 52.0,
+      "undecided_pct": 13.0,
+      "sample_size": 2000,
+      "source": "https://www.japantimes.co.jp/news/2013/07/15/national/poll-shows-most-oppose-nuclear-restarts/",
+      "pollster": "Kyodo News"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2012-06-16",
+      "description": "Prime Minister Yoshihiko Noda announces the restart of Ohi nuclear reactors 3 and 4.",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.4,
+      "source": "https://www.reuters.com/article/us-japan-nuclear-noda-idUSBRE85F01H20120616"
+    },
+    {
+      "round": 2,
+      "date": "2012-07-01",
+      "description": "Ohi reactor 3 becomes the first to restart since the Fukushima disaster.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.5,
+      "source": "https://www.bbc.com/news/world-asia-18661623"
+    },
+    {
+      "round": 4,
+      "date": "2012-12-16",
+      "description": "LDP wins landslide victory in general election, signaling a shift toward pro-restart policy.",
+      "shock_magnitude": 0.7,
+      "shock_direction": 0.3,
+      "source": "https://www.nytimes.com/2012/12/17/world/asia/abe-wins-landslide-victory-in-japan-election.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Liberal Democratic Party (LDP)",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "Pro-nuclear energy policy advocates seeking economic stability."
+    },
+    {
+      "name": "Democratic Party of Japan (DPJ)",
+      "type": "elite",
+      "initial_position": 0.2,
+      "influence": 0.6,
+      "description": "Divided party leadership struggling with post-Fukushima energy strategy."
+    },
+    {
+      "name": "METI (Ministry of Economy, Trade and Industry)",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "Government body pushing for nuclear restart to ensure energy security."
+    },
+    {
+      "name": "Anti-Nuclear Protest Movement",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.5,
+      "description": "Grassroots groups organizing large-scale protests in Tokyo."
+    },
+    {
+      "name": "Nuclear Regulation Authority (NRA)",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "New independent regulator established to oversee safety standards."
+    },
+    {
+      "name": "General Public (Urban)",
+      "type": "citizen_cluster",
+      "initial_position": -0.4,
+      "influence": 0.3,
+      "description": "Concerned citizens balancing energy costs with safety fears."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.693,
+    "event_volatility": 0.65,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.13
+  },
+  "notes": "Pro-side is defined as respondents who support the restart of nuclear power plants. Against-side is defined as respondents who oppose the restart. Data quality: Early rounds are estimated based on historical trends from major Japanese newspapers; final round is based on verified survey data."
+}

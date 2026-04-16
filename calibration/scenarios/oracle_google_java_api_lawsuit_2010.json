@@ -1,0 +1,83 @@
+{
+  "scenario_name": "oracle_google_java_api_lawsuit_2010",
+  "domain": "technology",
+  "description": "The legal battle over whether APIs could be copyrighted, pitting Oracle's proprietary claim over Java against the open-source industry's need for interoperability.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 30,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 59,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Oracle sues Google, claiming API copyright infringement."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Initial jury ruling favors Google on fair use, but lower courts vacillate."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Appeals court overturns fair use, causing massive alarm in the dev community."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Supreme Court eventually rules for Google, protecting interoperability."
+    }
+  ],
+  "calibration_notes": "Measures the impact of legal threats on the open-source community's risk appetite."
+}

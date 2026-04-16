@@ -1,0 +1,152 @@
+{
+  "id": "PH-2021-MASKING_MANDATE_DEBATE_USA_202",
+  "domain": "public_health",
+  "title": "Public opinion trajectory on indoor mask mandates in the United States during 2021",
+  "country": "US",
+  "date_start": "2021-03-01",
+  "date_end": "2021-09-30",
+  "n_rounds": 5,
+  "round_duration_days": 42,
+  "ground_truth_outcome": {
+    "pro_pct": 63.0,
+    "source": "https://www.pewresearch.org/short-reads/2021/09/15/more-americans-say-they-are-regularly-wearing-masks-in-stores-and-other-businesses/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-03-01",
+      "pro_pct": 78.0,
+      "against_pct": 20.0,
+      "undecided_pct": 2.0,
+      "sample_size": 12055,
+      "source": "https://www.pewresearch.org/politics/2021/03/05/growing-share-of-americans-say-they-are-regularly-wearing-masks-in-stores-and-other-businesses/",
+      "pollster": "Pew Research Center"
+    },
+    {
+      "round": 2,
+      "date": "2021-04-12",
+      "pro_pct": 75.0,
+      "against_pct": 22.0,
+      "undecided_pct": 3.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated based on CDC guidance shifts in April 2021",
+      "pollster": "N/A"
+    },
+    {
+      "round": 3,
+      "date": "2021-05-24",
+      "pro_pct": 70.0,
+      "against_pct": 26.0,
+      "undecided_pct": 4.0,
+      "sample_size": null,
+      "source": "Estimated: Reflects post-CDC May 13th guidance update allowing vaccinated people to go maskless",
+      "pollster": "N/A"
+    },
+    {
+      "round": 4,
+      "date": "2021-07-05",
+      "pro_pct": 66.0,
+      "against_pct": 30.0,
+      "undecided_pct": 4.0,
+      "sample_size": null,
+      "source": "Estimated: Reflects Delta variant emergence and early local mandate re-impositions",
+      "pollster": "N/A"
+    },
+    {
+      "round": 5,
+      "date": "2021-08-16",
+      "pro_pct": 63.0,
+      "against_pct": 34.0,
+      "undecided_pct": 3.0,
+      "sample_size": 10348,
+      "source": "https://www.pewresearch.org/short-reads/2021/09/15/more-americans-say-they-are-regularly-wearing-masks-in-stores-and-other-businesses/",
+      "pollster": "Pew Research Center"
+    }
+  ],
+  "events": [
+    {
+      "round": 3,
+      "date": "2021-05-13",
+      "description": "CDC announces fully vaccinated people can resume activities without wearing masks",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1.0,
+      "source": "https://www.cdc.gov/media/releases/2021/s0513-cdc-statement-mask-guidance.html"
+    },
+    {
+      "round": 4,
+      "date": "2021-07-27",
+      "description": "CDC updates guidance recommending masks for vaccinated people in areas of high transmission",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.5,
+      "source": "https://www.cdc.gov/media/releases/2021/s0727-mask-guidance.html"
+    },
+    {
+      "round": 5,
+      "date": "2021-09-09",
+      "description": "President Biden announces federal vaccine and masking requirements for large employers",
+      "shock_magnitude": 0.7,
+      "shock_direction": -0.3,
+      "source": "https://www.whitehouse.gov/briefing-room/speeches-remarks/2021/09/09/remarks-by-president-biden-on-fighting-the-covid-19-pandemic/"
+    }
+  ],
+  "agents": [
+    {
+      "name": "CDC",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Federal public health agency setting national masking guidelines"
+    },
+    {
+      "name": "Joe Biden",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.8,
+      "description": "US President advocating for public health safety measures"
+    },
+    {
+      "name": "Ron DeSantis",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.7,
+      "description": "Governor of Florida, prominent opponent of mask mandates"
+    },
+    {
+      "name": "Republican Party",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.8,
+      "description": "Political party generally opposing federal mandates"
+    },
+    {
+      "name": "Democratic Party",
+      "type": "institutional",
+      "initial_position": 0.7,
+      "influence": 0.8,
+      "description": "Political party generally supporting public health mandates"
+    },
+    {
+      "name": "Urban Liberal Cluster",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.3,
+      "description": "High-density population centers with high compliance"
+    },
+    {
+      "name": "Rural Conservative Cluster",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.3,
+      "description": "Low-density population centers with low compliance"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.873,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.05
+  },
+  "notes": "Pro-side defined as supporting government-mandated mask requirements in public spaces. Against-side defined as opposing such mandates, favoring individual choice. Data quality: Early 2021 data is robust; mid-year data reflects significant volatility due to CDC guidance shifts."
+}

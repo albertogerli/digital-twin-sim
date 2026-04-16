@@ -1,0 +1,72 @@
+[
+  {
+    "id": "adam_m_aron",
+    "name": "Adam M. Aron",
+    "role": "CEO, President, and Director of AMC Entertainment",
+    "archetype": "business_leader",
+    "position": 0.8,
+    "influence": 0.95,
+    "rigidity": 0.75,
+    "bio": "Adam Aron is a veteran business executive who has served as the CEO and President of AMC Entertainment since 2016.",
+    "communication_style": "direct, engaging, populist",
+    "key_traits": [
+      "strategic",
+      "charismatic",
+      "adaptive"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "Aron actively embraced the retail investor base during the 2021 squeeze, leveraging the momentum to raise capital and stabilize the company's balance sheet."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "sean_d_goodman",
+    "name": "Sean D. Goodman",
+    "role": "Executive Vice President and Chief Financial Officer of AMC Entertainment",
+    "archetype": "business_leader",
+    "position": 0.5,
+    "influence": 0.6,
+    "rigidity": 0.75,
+    "bio": "Sean Goodman serves as the CFO of AMC, overseeing the company's financial strategy and capital structure.",
+    "communication_style": "formal, analytical",
+    "key_traits": [
+      "pragmatic",
+      "detail-oriented"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CFO, he was responsible for managing the financial implications of the volatility and executing the capital raises that capitalized on the retail-driven price surge."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "elizabeth_furst_frank",
+    "name": "Elizabeth Furst Frank",
+    "role": "Executive Vice President, Worldwide Programming & Chief Content Officer",
+    "archetype": "business_leader",
+    "position": 0.3,
+    "influence": 0.4,
+    "rigidity": 0.75,
+    "bio": "Elizabeth Frank is a long-standing executive at AMC, responsible for global programming and content strategy.",
+    "communication_style": "professional, strategic",
+    "key_traits": [
+      "operational",
+      "focused"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.4,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "While focused on operations and content, her leadership role during the 2021 period was central to maintaining the company's core business viability amidst the market chaos."
+    ],
+    "_grounded": true
+  }
+]

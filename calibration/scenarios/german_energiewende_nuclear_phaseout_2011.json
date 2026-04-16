@@ -1,0 +1,83 @@
+{
+  "scenario_name": "german_energiewende_nuclear_phaseout_2011",
+  "domain": "environmental",
+  "description": "Following the Fukushima Daiichi nuclear disaster in March 2011, the German government under Angela Merkel reversed its previous policy to extend the lifespans of nuclear power plants. This led to a massive shift in public support for the 'Energiewende' (Energy Turnaround) policy, mandating a transition to renewables and a total nuclear phaseout by 2022.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 68,
+      "against_pct": 25,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 70,
+      "against_pct": 22,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 69,
+      "against_pct": 23,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 71,
+      "against_pct": 24,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 73,
+      "against_pct": 25,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 72,
+      "against_pct": 27,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Fukushima Daiichi nuclear accident occurs, triggering immediate global scrutiny."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Merkel announces a 3-month moratorium on nuclear plant life extensions."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Hundreds of thousands participate in massive anti-nuclear demonstrations across Germany."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Bundestag formally votes to shut down all nuclear reactors by 2022."
+    }
+  ],
+  "calibration_notes": "Ideal for measuring 'shock-event' volatility and how a singular global crisis can permanently shift national policy paradigms."
+}

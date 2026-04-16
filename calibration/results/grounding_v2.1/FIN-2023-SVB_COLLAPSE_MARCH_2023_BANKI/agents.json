@@ -1,0 +1,71 @@
+[
+  {
+    "id": "greg_becker",
+    "name": "Greg Becker",
+    "role": "CEO of Silicon Valley Bank",
+    "archetype": "business_leader",
+    "position": -0.8,
+    "influence": 0.9,
+    "rigidity": 0.8,
+    "bio": "Greg Becker served as the President and CEO of SVB Financial Group and Silicon Valley Bank until the institution was taken over by regulators in March 2023.",
+    "communication_style": "formal, corporate",
+    "key_traits": [
+      "strategic",
+      "risk-averse"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the CEO, his leadership and risk management decisions directly precipitated the bank's liquidity crisis and subsequent collapse."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "martin_gruenberg",
+    "name": "Martin Gruenberg",
+    "role": "Chairman of the FDIC",
+    "archetype": "regulator",
+    "position": 0.9,
+    "influence": 0.85,
+    "rigidity": 0.7,
+    "bio": "Martin Gruenberg is a long-serving member and Chairman of the Federal Deposit Insurance Corporation (FDIC), responsible for managing bank failures.",
+    "communication_style": "decisive, authoritative",
+    "key_traits": [
+      "pragmatic",
+      "bureaucratic"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "regulator",
+    "_evidence": [
+      "He oversaw the federal intervention and the decision to guarantee deposits to prevent systemic contagion in the banking sector."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "janet_yellen",
+    "name": "Janet Yellen",
+    "role": "U.S. Secretary of the Treasury",
+    "archetype": "politician",
+    "position": 0.8,
+    "influence": 0.95,
+    "rigidity": 0.75,
+    "bio": "Janet Yellen is the 78th United States Secretary of the Treasury and former Chair of the Federal Reserve.",
+    "communication_style": "measured, technical",
+    "key_traits": [
+      "analytical",
+      "diplomatic"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.9,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "She played a critical role in authorizing the systemic risk exception that allowed the government to protect uninsured depositors."
+    ],
+    "_grounded": true
+  }
+]

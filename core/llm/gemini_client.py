@@ -46,7 +46,8 @@ class GeminiClient(BaseLLMClient):
         config_kwargs = {
             "temperature": temperature,
             "max_output_tokens": max_output_tokens,
-            # Relax safety filters for simulation content (political, corporate scenarios)
+            # Disable safety filters for simulation content (political, corporate scenarios).
+            # CIVIC_INTEGRITY is the main blocker for political simulations.
             "safety_settings": [
                 types.SafetySetting(
                     category="HARM_CATEGORY_HARASSMENT",
@@ -66,7 +67,7 @@ class GeminiClient(BaseLLMClient):
                 ),
                 types.SafetySetting(
                     category="HARM_CATEGORY_CIVIC_INTEGRITY",
-                    threshold="BLOCK_ONLY_HIGH",
+                    threshold="BLOCK_NONE",
                 ),
             ],
         }
@@ -102,8 +103,22 @@ class GeminiClient(BaseLLMClient):
             logger.warning(f"[{component}] No candidates returned. prompt_feedback={block_reason}")
 
         if not text:
-            logger.warning(f"[{component}] Empty text from API (prompt length={len(prompt)})")
-            raise LLMError(f"Empty response from Gemini for {component}")
+            # Detailed diagnostics for empty responses
+            diag = f"prompt_len={len(prompt)}"
+            if response.candidates:
+                c = response.candidates[0]
+                diag += f", finish_reason={getattr(c, 'finish_reason', '?')}"
+                sr = getattr(c, 'safety_ratings', None)
+                if sr:
+                    blocked = [f"{r.category}={r.probability}" for r in sr
+                               if getattr(r, 'blocked', False)]
+                    if blocked:
+                        diag += f", BLOCKED: {blocked}"
+            pf = getattr(response, 'prompt_feedback', None)
+            if pf:
+                diag += f", prompt_feedback={pf}"
+            logger.warning(f"[{component}] Empty text from API ({diag})")
+            raise LLMError(f"Empty response from Gemini for {component} ({diag})")
 
         # Track usage
         input_tokens = getattr(

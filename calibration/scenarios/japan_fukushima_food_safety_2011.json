@@ -1,0 +1,83 @@
+{
+  "scenario_name": "japan_fukushima_food_safety_2011",
+  "domain": "public_health",
+  "description": "Following the 2011 nuclear disaster, fears of radioactive contamination in food supplies led to widespread public distrust in Japanese government food safety monitoring.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 28,
+      "against_pct": 67,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 68,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32,
+      "against_pct": 67,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 34,
+      "against_pct": 66,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Radiation detected in local produce"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Government expands testing zones"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public protests over lack of transparency"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Establishment of new independent monitoring bodies"
+    }
+  ],
+  "calibration_notes": "Captures the impact of external disasters on domestic public health perception."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "california_mental_health_services_act_reform_prop_1_2024",
+  "domain": "public_health",
+  "description": "In March 2024, California voters decided on Proposition 1, a ballot measure championed by Governor Gavin Newsom to overhaul the state's mental health system by repurposing the 2004 Mental Health Services Act. The measure sought to authorize $6.38 billion in bonds to build treatment facilities for the homeless and those with severe mental health challenges, facing opposition from civil rights groups and some county organizations concerned about funding cuts to existing community services.",
+  "final_outcome_pro_pct": 50.2,
+  "final_outcome_against_pct": 49.8,
+  "final_turnout_pct": 35.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 58,
+      "against_pct": 22,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 30,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 46,
+      "against_pct": 42,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 47,
+      "against_pct": 45,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 50.2,
+      "against_pct": 49.8,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Governor Newsom launches a high-profile campaign framing Prop 1 as the essential fix for the state's visible homeless and mental health crisis."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "The California State Association of Counties and various mental health advocacy groups announce formal opposition, highlighting concerns over the diversion of existing local tax revenue."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "The campaign narrative shifts as independent editorials question the financial feasibility of the bond measure, causing a tightening in public support."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final statewide television advertisements saturate the market with emotional testimonials, narrowly pulling the pro-measure sentiment back to lead in the final days."
+    }
+  ],
+  "calibration_notes": "This scenario is ideal for testing 'late-stage momentum' and the volatility of ballot initiatives that begin with strong abstract support but face organized grassroots opposition as implementation details are scrutinized."
+}

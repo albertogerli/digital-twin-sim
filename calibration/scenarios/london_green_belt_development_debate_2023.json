@@ -1,0 +1,79 @@
+{
+  "scenario_name": "london_green_belt_development_debate_2023",
+  "domain": "social",
+  "description": "In 2023, UK government ministers floated the idea of easing planning restrictions on 'grey belt' land within London's protected Green Belt to address the housing shortfall. The proposal triggered a fierce backlash from local council leaders and environmental groups.",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 46,
+      "against_pct": 46,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 54,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 39,
+      "against_pct": 57,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 39,
+      "against_pct": 59,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 38,
+      "against_pct": 61,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 38,
+      "against_pct": 62,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Government proposes building on 'low quality' Green Belt land."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "National media highlights loss of biodiversity and rural charm."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "By-election results show voter anger in suburbs."
+    }
+  ],
+  "calibration_notes": "Useful for understanding the 'NIMBY' (Not In My Backyard) sentiment and its political efficacy."
+}

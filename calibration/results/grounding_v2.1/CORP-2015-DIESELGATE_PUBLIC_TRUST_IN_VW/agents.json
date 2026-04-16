@@ -1,0 +1,74 @@
+[
+  {
+    "id": "martin_winterkorn",
+    "name": "Martin Winterkorn",
+    "role": "CEO of Volkswagen AG",
+    "archetype": "business_leader",
+    "position": -0.8,
+    "influence": 0.95,
+    "rigidity": 0.9,
+    "bio": "Martin Winterkorn served as the CEO of Volkswagen AG from 2007 until his resignation in September 2015 following the revelation of the emissions scandal.",
+    "communication_style": "formal, authoritative",
+    "key_traits": [
+      "strategic",
+      "demanding",
+      "authoritarian"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CEO during the scandal, he was the primary figurehead responsible for the company's culture and oversight, eventually resigning due to the crisis."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "matthias_m_ller",
+    "name": "Matthias M\u00fcller",
+    "role": "CEO of Volkswagen AG (succeeded Winterkorn)",
+    "archetype": "business_leader",
+    "position": 0.6,
+    "influence": 0.9,
+    "rigidity": 0.75,
+    "bio": "Matthias M\u00fcller was the former CEO of Porsche who took over as CEO of Volkswagen AG in the immediate aftermath of the Dieselgate scandal.",
+    "communication_style": "pragmatic, corporate",
+    "key_traits": [
+      "pragmatic",
+      "restorative",
+      "technocratic"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.9,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He was tasked with leading the company's recovery, rebranding efforts, and the strategic pivot toward electric vehicles to restore public trust."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "alexander_dobrindt",
+    "name": "Alexander Dobrindt",
+    "role": "German Federal Minister of Transport",
+    "archetype": "politician",
+    "position": -0.4,
+    "influence": 0.8,
+    "rigidity": 0.7,
+    "bio": "Alexander Dobrindt served as the German Federal Minister of Transport and Digital Infrastructure during the height of the Dieselgate scandal.",
+    "communication_style": "formal, defensive",
+    "key_traits": [
+      "political",
+      "cautious",
+      "bureaucratic"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "regulator",
+    "_evidence": [
+      "He oversaw the government investigation into Volkswagen and faced public pressure to hold the company accountable for emissions violations."
+    ],
+    "_grounded": true
+  }
+]

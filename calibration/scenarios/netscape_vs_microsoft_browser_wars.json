@@ -1,0 +1,83 @@
+{
+  "scenario_name": "netscape_vs_microsoft_browser_wars",
+  "domain": "technology",
+  "description": "The mid-90s battle between Netscape's open-web vision and Microsoft's proprietary IE integration into Windows. The event tracks the shift in developer sentiment as Microsoft's bundling strategy dominated market share by 1998.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 65,
+      "against_pct": 10,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 25,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 32,
+      "against_pct": 63,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Netscape IPO signals dominance of open-web standards."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Microsoft releases IE 3.0, bundled for free with Windows 95."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "DOJ files antitrust lawsuit against Microsoft for bundling."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "IE becomes the dominant browser worldwide, crushing Netscape's business model."
+    }
+  ],
+  "calibration_notes": "Measures the tipping point where convenience and distribution outweigh ideological support for open systems."
+}

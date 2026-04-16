@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dove_real_beauty_campaign_2004",
+  "domain": "marketing",
+  "description": "Unilever's Dove launched the 'Campaign for Real Beauty' in 2004, using non-professional models to challenge traditional beauty standards. It was praised for its social impact but critiqued for perceived corporate hypocrisy.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 22,
+      "undecided_pct": 38
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 30,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 28,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 27,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 28,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Billboards of 'real' women appear in major cities causing media stir."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Viral evolution series launched on early YouTube gaining millions of views."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Critics publish articles questioning if Dove parent company sells beauty products that promote insecurity."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Brand sentiment stabilizes as the campaign becomes an industry standard for 'purpose-led marketing'."
+    }
+  ],
+  "calibration_notes": "Useful for calibrating long-term brand equity and the shift from niche controversy to mainstream acceptance."
+}

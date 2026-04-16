@@ -1,0 +1,79 @@
+{
+  "scenario_name": "swiss_co2_law_referendum_2021",
+  "domain": "environmental",
+  "description": "In June 2021, Swiss voters narrowly rejected a proposed revision to the CO2 law, which aimed to reduce carbon emissions through taxes on flight tickets and fuels.",
+  "final_outcome_pro_pct": 48.4,
+  "final_outcome_against_pct": 51.6,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 58,
+      "against_pct": 25,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 51,
+      "against_pct": 44,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 47,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 49,
+      "against_pct": 49,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 50,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Opposition campaign highlights cost of living."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Rural-urban divide becomes central to debate."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Final polls show a statistical dead heat."
+    }
+  ],
+  "calibration_notes": "Illustrates how 'cost' concerns can erode popular support for climate goals near the finish line."
+}

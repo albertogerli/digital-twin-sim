@@ -1,0 +1,83 @@
+{
+  "scenario_name": "trump_first_impeachment_2019",
+  "domain": "political",
+  "description": "Public polling during the first impeachment inquiry into Donald Trump over his phone call with Ukrainian President Volodymyr Zelenskyy. He was acquitted in Feb 2020.",
+  "final_outcome_pro_pct": 47.0,
+  "final_outcome_against_pct": 53.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 49,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 47,
+      "against_pct": 48,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 46,
+      "against_pct": 50,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 47,
+      "against_pct": 51,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 47,
+      "against_pct": 52,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 46,
+      "against_pct": 53,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 47,
+      "against_pct": 53,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Whistleblower report becomes public."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Public testimony phase in House Intelligence Committee."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Senate trial opens."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final Senate vote on acquittal."
+    }
+  ],
+  "calibration_notes": "Highlights high polarization and the 'fixed base' effect on impeachment polling."
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "round": 1,
+    "description": "Researchers from West Virginia University publish findings showing that certain Volkswagen diesel models emit significantly higher levels of pollutants during real-world driving than in laboratory tests.",
+    "shock_magnitude": 0.3,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Volkswagen initiates a voluntary recall to recalibrate its EA189 diesel engines in an attempt to address the emissions discrepancies identified by researchers.",
+    "shock_magnitude": 0.3,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Volkswagen officially admits to regulators that it intentionally installed 'defeat device' software in its vehicles to bypass emissions control systems.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzMcMClvQku4nOotYKhK6XMaulNsLatHT5Zaq1A1_aULvA3tzqUmLwthl7WDIPG6xzIm1aKyTRABdaLpv-SLnwOEy4ZvGzGUVYKJgRsT2S8rOTfBeCOn39YaMngk6JfzHZq-RzEsUosZNGXIHNSpHMTyBAEVk=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzMcMClvQku4nOotYKhK6XMaulNsLatHT5Zaq1A1_aULvA3tzqUmLwthl7WDIPG6xzIm1aKyTRABdaLpv-SLnwOEy4ZvGzGUVYKJgRsT2S8rOTfBeCOn39YaMngk6JfzHZq-RzEsUosZNGXIHNSpHMTyBAEVk="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "The U.S. Environmental Protection Agency (EPA) issues a formal Notice of Violation to Volkswagen, publicly accusing the company of violating the Clean Air Act.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLv7zGomRm8puyI1HIF8FXCe3nSGcw4HGoRs2itjlzVB-fR8Qn6TOyRlpNZSzJJW9yIXkyzXHjAg5somTtqXpNe49jiJJNL5UeMgjdHqa2g9OUGaVRhWJa3-HVAAErFdVXVVDHp9C7EFsEYJQI2kA5YmSB9ctSeGibSplOKNbdaSJx4THoAH0gzPMZf2_38D_D3xETR0xUjlRw4qpfDcrAk548tesG3Ejp-W3F7mnmSh1ycxEYIHarqBYMN4l5YlIi15gl-cI0zmUE2Q7DiB5HanfPE3Fz090d3gjofFc4akAT8XzYBbGXDIdAgNT4u_MsL08=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFLv7zGomRm8puyI1HIF8FXCe3nSGcw4HGoRs2itjlzVB-fR8Qn6TOyRlpNZSzJJW9yIXkyzXHjAg5somTtqXpNe49jiJJNL5UeMgjdHqa2g9OUGaVRhWJa3-HVAAErFdVXVVDHp9C7EFsEYJQI2kA5YmSB9ctSeGibSplOKNbdaSJx4THoAH0gzPMZf2_38D_D3xETR0xUjlRw4qpfDcrAk548tesG3Ejp-W3F7mnmSh1ycxEYIHarqBYMN4l5YlIi15gl-cI0zmUE2Q7DiB5HanfPE3Fz090d3gjofFc4akAT8XzYBbGXDIdAgNT4u_MsL08="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "Following the public EPA announcement, the scale of the deception is revealed, noting that vehicles emitted up to 40 times the legal limit of nitrogen oxides during real-world driving.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEstbKqM4K0SeWN8LrbPeWTihLK0g8pUEAL0ONg_JEU8vcbhkaadH55ttu7UqFzdg8W_XmraMbdkD4BdjIA-KBcB60QyGXd7bpo7TAAT_kKvLuC4bYItggyWu71C_AFHRZy1rKesAP0ULuWrExn6YsVh9kVqDu24DGoFEAxpLm1igTH46rB",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEstbKqM4K0SeWN8LrbPeWTihLK0g8pUEAL0ONg_JEU8vcbhkaadH55ttu7UqFzdg8W_XmraMbdkD4BdjIA-KBcB60QyGXd7bpo7TAAT_kKvLuC4bYItggyWu71C_AFHRZy1rKesAP0ULuWrExn6YsVh9kVqDu24DGoFEAxpLm1igTH46rB"
+    ],
+    "_verified": true
+  }
+]

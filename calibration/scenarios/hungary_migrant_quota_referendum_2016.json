@@ -1,0 +1,83 @@
+{
+  "scenario_name": "hungary_migrant_quota_referendum_2016",
+  "domain": "political",
+  "description": "An October 2, 2016, referendum in Hungary asking voters if they wanted the EU to mandate migrant quotas. Despite 98% of the 'valid' votes supporting the 'No' side, the referendum was ruled invalid due to turnout failing to reach the 50% threshold.",
+  "final_outcome_pro_pct": 2,
+  "final_outcome_against_pct": 98,
+  "final_turnout_pct": 44.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 60,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 8,
+      "against_pct": 65,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 7,
+      "against_pct": 68,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 6,
+      "against_pct": 70,
+      "undecided_pct": 24
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 5,
+      "against_pct": 72,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 4,
+      "against_pct": 73,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 3,
+      "against_pct": 74,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 2,
+      "against_pct": 75,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 2,
+      "against_pct": 98,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Government launches a massive anti-immigration billboard campaign."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Opposition parties call for a boycott to invalidate the referendum."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public polling shows high support for the question, but low intent to vote."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Official results confirm boycott success via low turnout."
+    }
+  ],
+  "calibration_notes": "Important scenario for modeling the 'boycott' strategy where opponents attempt to invalidate a vote by depressing turnout."
+}

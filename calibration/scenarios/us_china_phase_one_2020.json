@@ -1,0 +1,83 @@
+{
+  "scenario_name": "us_china_phase_one_2020",
+  "domain": "political",
+  "description": "The Phase One trade deal was an attempt to de-escalate the trade war, focusing on Chinese purchases of US goods. It faced skepticism regarding enforceability.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 35,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 38,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 55,
+      "against_pct": 42,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 54,
+      "against_pct": 44,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 4,
+      "description": "Trump and Liu He sign the deal in Washington"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "COVID-19 pandemic severely impacts global supply chains"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Reports emerge that China is lagging behind purchase targets"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Tensions resurface over Hong Kong and tech restrictions"
+    }
+  ],
+  "calibration_notes": "Measures support for 'transactional' trade deals during geopolitical instability."
+}

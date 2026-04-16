@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nba_china_daryl_morey_tweet_2019",
+  "domain": "commercial",
+  "description": "In 2019, Houston Rockets GM Daryl Morey tweeted support for Hong Kong protesters, leading to a massive freeze in NBA coverage and sponsorship in China, a multi-billion dollar market for the league.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 20,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 65,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 62,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 60,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Tweet triggers immediate backlash from Chinese state media."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Chinese sponsors drop support; CCTV pulls NBA broadcasts."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "NBA issues statement, criticized by both US and Chinese audiences."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Financial loss reports reach billions in long-term value."
+    }
+  ],
+  "calibration_notes": "Illustrates the massive financial risk of geopolitical friction for a global commercial entity."
+}

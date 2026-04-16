@@ -1,0 +1,79 @@
+{
+  "scenario_name": "dublin_short_term_rental_ban_2019",
+  "domain": "social",
+  "description": "Ireland introduced strict regulations in 2019 to prevent properties in Rent Pressure Zones from being converted into short-term tourist lets (Airbnb). The measure was a response to Dublin's severe housing shortage.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 38,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 32,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 63,
+      "against_pct": 30,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 66,
+      "against_pct": 31,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 67,
+      "against_pct": 32,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Minister of Housing announces the Airbnb restrictions."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Tourism industry warns of negative impact on economy."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Reports show housing availability for long-term tenants improves."
+    }
+  ],
+  "calibration_notes": "Models the trade-off between gig-economy convenience and social infrastructure stability."
+}

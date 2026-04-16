@@ -1,0 +1,83 @@
+{
+  "scenario_name": "gillette_we_believe_2019",
+  "domain": "marketing",
+  "description": "Gillette released a 'We Believe' ad in 2019 addressing toxic masculinity. The campaign faced intense polarized backlash, with significant calls for brand boycotts from conservative demographics.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 52,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44,
+      "against_pct": 51,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 46,
+      "against_pct": 49,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 47,
+      "against_pct": 50,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 51,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "YouTube dislike counts spike rapidly, exceeding likes."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "News cycle focuses on the cultural divide and boycott calls."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Brand leadership defends the ad as a move to appeal to younger Gen-Z demographics."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Sentiment settles into a permanent partisan split."
+    }
+  ],
+  "calibration_notes": "Useful for modeling high-polarization scenarios where the target audience is split and core customers are alienated."
+}

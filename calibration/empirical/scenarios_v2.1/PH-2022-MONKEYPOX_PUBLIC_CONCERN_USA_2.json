@@ -1,0 +1,205 @@
+{
+  "id": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2",
+  "domain": "public_health",
+  "title": "Public concern and support for public health response to the 2022 Monkeypox outbreak in the United States",
+  "country": "US",
+  "date_start": "2022-05-01",
+  "date_end": "2022-09-30",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 47.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2022-05-01",
+      "pro_pct": 15.0,
+      "against_pct": 10.0,
+      "undecided_pct": 75.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline awareness before widespread media coverage",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2022-05-22",
+      "pro_pct": 22.0,
+      "against_pct": 12.0,
+      "undecided_pct": 66.0,
+      "sample_size": null,
+      "source": "Estimated: Initial news reports of US cases",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2022-06-12",
+      "pro_pct": 30.0,
+      "against_pct": 15.0,
+      "undecided_pct": 55.0,
+      "sample_size": null,
+      "source": "Estimated: Rising case counts and CDC travel alerts",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2022-07-03",
+      "pro_pct": 38.0,
+      "against_pct": 20.0,
+      "undecided_pct": 42.0,
+      "sample_size": null,
+      "source": "Estimated: WHO declares PHEIC",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2022-07-24",
+      "pro_pct": 44.0,
+      "against_pct": 25.0,
+      "undecided_pct": 31.0,
+      "sample_size": null,
+      "source": "Estimated: US declares national public health emergency",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2022-08-14",
+      "pro_pct": 47.0,
+      "against_pct": 28.0,
+      "undecided_pct": 25.0,
+      "sample_size": 1200,
+      "source": "KFF Health Tracking Poll August 2022",
+      "pollster": "KFF"
+    },
+    {
+      "round": 7,
+      "date": "2022-09-04",
+      "pro_pct": 46.0,
+      "against_pct": 30.0,
+      "undecided_pct": 24.0,
+      "sample_size": null,
+      "source": "Estimated: Plateauing concern as cases stabilize",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "The first confirmed case of mpox in the United States is reported to the CDC in a Massachusetts resident who had recently traveled from Canada.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "The CDC officially activates its emergency outbreak response to address the emerging mpox situation.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "The World Health Organization (WHO) declares the multi-country mpox outbreak a Public Health Emergency of International Concern (PHEIC).",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "New York Governor Kathy Hochul declares a state disaster emergency to mobilize resources for the mpox outbreak.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "California Governor Gavin Newsom proclaims a State of Emergency to bolster vaccination efforts and coordinate the state's response.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "The U.S. Department of Health and Human Services (HHS) officially declares the mpox outbreak a national Public Health Emergency.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "type": "elite",
+      "name": "Xavier Becerra",
+      "initial_position": 0.9,
+      "influence": 0.95,
+      "rigidity": 0.8,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Secretary of Health and Human Services"
+    },
+    {
+      "type": "elite",
+      "name": "Rochelle Walensky",
+      "initial_position": 0.95,
+      "influence": 0.9,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "Director of the Centers for Disease Control and Prevention (CDC)"
+    },
+    {
+      "type": "elite",
+      "name": "Robert Fenton",
+      "initial_position": 0.85,
+      "influence": 0.85,
+      "rigidity": 0.75,
+      "_grounded": true,
+      "_stake": "decision_maker",
+      "_role": "White House National Mpox Response Coordinator"
+    },
+    {
+      "name": "CDC",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Primary federal agency providing guidance and response coordination"
+    },
+    {
+      "name": "White House",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.8,
+      "description": "Executive branch managing federal resource allocation"
+    },
+    {
+      "name": "Skeptical Citizen Cluster",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.3,
+      "description": "Groups expressing distrust in federal health mandates"
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.1,
+      "description": "The broader population with varying levels of risk perception"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.605,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.75
+  },
+  "notes": "Pro-side is defined as individuals expressing concern about the monkeypox outbreak and supporting government public health responses (vaccination, containment). Against-side is defined as individuals expressing low concern, skepticism toward government response, or opposition to public health measures. Data for rounds 1-5 and 7 are estimates based on the trajectory toward the KFF August benchmark.",
+  "_grounding_v2.1": {
+    "grounded": true,
+    "quality": 78,
+    "n_grounded_agents": 3,
+    "n_grounded_events": 6
+  }
+}

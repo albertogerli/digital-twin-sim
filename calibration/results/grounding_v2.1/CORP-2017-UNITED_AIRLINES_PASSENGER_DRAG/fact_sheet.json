@@ -1,0 +1,129 @@
+{
+  "scenario_id": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG",
+  "topic": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG",
+  "domain": "corporate",
+  "country": "US",
+  "timeframe_start": "2017-04-09",
+  "timeframe_end": "2017-04-27",
+  "events": [
+    {
+      "date": "2017-04-09",
+      "description": "Dr. David Dao is forcibly removed from United Express Flight 3411 by aviation security officers after refusing to give up his seat for airline crew.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF8LkRr8v6WtSQGzuFiUXCWObN0nC90WHesU2tw3cFo-xdmQdKJE8yOkfJRciIS9ta2wS0IgUo51fgXikcVY3K-lKfOkxJ8VrAh18FoXEqgxdc8sdsQLYvVAj-PGiNJuuoQRvphEUTx2a45aRgYH1TlRwAuHa146EJzEPHpsFs=",
+      "source_name": "wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "69-year-old passenger"
+    },
+    {
+      "date": "2017-04-10",
+      "description": "Videos of the violent removal go viral on social media, sparking global outrage and widespread condemnation of United Airlines' handling of the situation.",
+      "shock_magnitude": 0.9,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHpdXT-qi56O0XQdt-1k76-rT-4rxJgq5odeVQcsvAxRZ1o7UXhDDhBk3OwQQ184HAzLBMUqsz_2xOLemmcaWAGtp2Jo1BYqjSGqDcDVC6LRbJFsgNeooby2Rp4bkUt3UsHEgMfRru7afwHhfabAxwOOs8S-kz_tprm-rS3BZhwMPoRrDonYVljnX3cbsvAFk5qJnqY12TzxV9KssxNJ7On4zzrZjO9-g==",
+      "source_name": "washingtonpost.com",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2017-04-10",
+      "description": "United Airlines CEO Oscar Munoz issues an initial statement apologizing for having to 're-accommodate' customers, which is widely criticized as tone-deaf.",
+      "shock_magnitude": 0.7,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH9gGu4bGlpgnl09k0QrMckRBgbp85nre-Yo_aPyBbijmJPnS1B3xI5FuDsR6nqOwFGzWBSBHcmKU3Ku6f8PM9I3OssR_KZ3teCYGgC6uc18jIHO9a4LIO76v1G0DgHTyhUq8AEEq-DiXuKAjeU19P3eRcYZGGC45mNNNwikhEw2DlE-dDZO3D5_A==",
+      "source_name": "businessinsider.com",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2017-04-11",
+      "description": "United Airlines stock price drops significantly following the public relations fallout, wiping out nearly $1 billion in market value.",
+      "shock_magnitude": 0.6,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "theguardian.com",
+      "confidence": 0.8,
+      "quantitative_detail": "$1 billion"
+    },
+    {
+      "date": "2017-04-11",
+      "description": "CEO Oscar Munoz issues a second, more contrite apology, taking full responsibility and promising a thorough review of airline policies.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "latimes.com",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2017-04-27",
+      "description": "United Airlines reaches an undisclosed settlement with Dr. David Dao to resolve claims related to the incident.",
+      "shock_magnitude": 0.4,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2017-04-27",
+      "description": "United Airlines announces a new policy allowing passengers to receive up to $10,000 in compensation for voluntarily giving up their seats.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "liveandletsfly.com",
+      "confidence": 0.8,
+      "quantitative_detail": "$10,000"
+    }
+  ],
+  "polls": [],
+  "stakeholders": [
+    {
+      "name": "Oscar Munoz",
+      "role": "CEO of United Airlines",
+      "position": "Initially defended the airline's actions by calling the passenger 'disruptive and belligerent,' but later issued a formal apology and promised a full review of company policies.",
+      "date": "2017-04-10",
+      "source": "United Airlines official statement"
+    },
+    {
+      "name": "David Dao",
+      "role": "Passenger",
+      "position": "Through his legal counsel, he expressed that he was 'traumatized' by the incident and sought to hold the airline and authorities accountable for his injuries.",
+      "date": "2017-04-13",
+      "source": "Press conference held by his legal team"
+    },
+    {
+      "name": "Thomas Demetrio",
+      "role": "Attorney for David Dao",
+      "position": "Argued that the airline's actions were a clear case of excessive force and that the incident highlighted a systemic issue with how airlines treat their customers.",
+      "date": "2017-04-13",
+      "source": "Press conference"
+    },
+    {
+      "name": "Sean Spicer",
+      "role": "White House Press Secretary",
+      "position": "Stated that the incident was 'troubling' and that the President had been briefed on the situation, noting that it was not the way any passenger should be treated.",
+      "date": "2017-04-11",
+      "source": "White House press briefing"
+    },
+    {
+      "name": "Rahm Emanuel",
+      "role": "Mayor of Chicago",
+      "position": "Called the incident 'completely unacceptable' and demanded a thorough investigation into the conduct of the aviation security officers involved.",
+      "date": "2017-04-11",
+      "source": "Public statement"
+    }
+  ],
+  "outcome_description": "The incident triggered a massive global public relations crisis for United Airlines, resulting in widespread condemnation, a significant drop in brand sentiment, and a subsequent overhaul of the airline's passenger handling and overbooking policies. The airline reached an undisclosed financial settlement with Dr. David Dao shortly after the incident.",
+  "outcome_pro_pct": 0.0,
+  "outcome_source": "Confidence < 0.5; no singular quantitative survey exists, but sentiment analysis from the period (e.g., YouGov BrandIndex) showed United's brand perception score plummeted to its lowest level in years following the viral video.",
+  "key_figures": {
+    "incident_date": "April 2017",
+    "teeth_lost": "2",
+    "injuries_sustained": "broken nose, concussion, and loss of two teeth"
+  },
+  "n_sources_consulted": 7,
+  "research_timestamp": "2026-04-01T02:27:16.990729",
+  "quality_score": 73
+}

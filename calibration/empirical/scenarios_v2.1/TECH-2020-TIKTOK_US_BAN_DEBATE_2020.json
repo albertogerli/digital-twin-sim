@@ -1,0 +1,155 @@
+{
+  "id": "TECH-2020-TIKTOK_US_BAN_DEBATE_2020",
+  "domain": "technology",
+  "title": "Public opinion trajectory regarding the proposed US ban of TikTok in 2020",
+  "country": "US",
+  "date_start": "2020-06-29",
+  "date_end": "2020-09-27",
+  "n_rounds": 6,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 60.0,
+    "source": "https://www.pewresearch.org/internet/2020/08/26/46-of-us-adults-have-concerns-about-tiktok/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2020-06-29",
+      "pro_pct": 45.0,
+      "against_pct": 30.0,
+      "undecided_pct": 25.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline sentiment prior to Secretary Pompeo's public comments",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2020-07-14",
+      "pro_pct": 52.0,
+      "against_pct": 28.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Post-Pompeo announcement of potential ban",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2020-07-29",
+      "pro_pct": 55.0,
+      "against_pct": 25.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Following Trump's executive order threats",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2020-08-13",
+      "pro_pct": 58.0,
+      "against_pct": 22.0,
+      "undecided_pct": 20.0,
+      "sample_size": 2549,
+      "source": "https://www.pewresearch.org/internet/2020/08/26/46-of-us-adults-have-concerns-about-tiktok/",
+      "pollster": "Pew Research Center"
+    },
+    {
+      "round": 5,
+      "date": "2020-08-28",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Reflecting peak media coverage of Oracle/Microsoft acquisition bids",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2020-09-12",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Stabilization after court injunctions delayed the ban",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2020-07-06",
+      "description": "Secretary of State Mike Pompeo states the US is looking at banning TikTok over data privacy concerns.",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5,
+      "source": "https://www.reuters.com/article/us-usa-tiktok-pompeo-idUSKBN24705X"
+    },
+    {
+      "round": 3,
+      "date": "2020-08-06",
+      "description": "President Trump signs executive order prohibiting transactions with ByteDance after 45 days.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.7,
+      "source": "https://www.nytimes.com/2020/08/06/technology/trump-tiktok-wechat-ban.html"
+    },
+    {
+      "round": 5,
+      "date": "2020-09-14",
+      "description": "Oracle selected as TikTok's US technology partner, complicating the ban narrative.",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.3,
+      "source": "https://www.bbc.com/news/business-54151745"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Donald Trump",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "US President advocating for a total ban citing national security."
+    },
+    {
+      "name": "Mike Pompeo",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": "Secretary of State driving the anti-TikTok rhetoric."
+    },
+    {
+      "name": "ByteDance",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.6,
+      "description": "Parent company of TikTok lobbying against the ban."
+    },
+    {
+      "name": "TikTok Creators",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Large community of influencers opposing the ban due to economic impact."
+    },
+    {
+      "name": "Tech Policy Analysts",
+      "type": "elite",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Experts debating the technical feasibility and necessity of the ban."
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.1,
+      "description": "The broader US population with varying levels of digital literacy."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.852,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.25
+  },
+  "notes": "Pro-side is defined as supporting a ban or strict government restrictions on TikTok; Against-side is defined as opposing a ban or favoring continued operation. Data quality is high for the mid-point (Pew survey), while early and late rounds are estimated based on news cycles and political momentum."
+}

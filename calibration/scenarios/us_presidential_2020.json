@@ -1,0 +1,79 @@
+{
+  "scenario_name": "us_presidential_2020",
+  "domain": "political",
+  "description": "The 2020 US Presidential Election between Joe Biden and Donald Trump occurred amidst a global pandemic. Biden secured 51.3% of the popular vote to Trump's 46.8%.",
+  "final_outcome_pro_pct": 51.3,
+  "final_outcome_against_pct": 46.8,
+  "final_turnout_pct": 66.8,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 42,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 51,
+      "against_pct": 43,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 49,
+      "against_pct": 44,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 44,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 51,
+      "against_pct": 45,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 52,
+      "against_pct": 46,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 47,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51.3,
+      "against_pct": 46.8,
+      "undecided_pct": 1.9
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Civil unrest following the death of George Floyd shifts focus."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "First presidential debate creates volatility."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Large-scale early voting begins to lock in base support."
+    }
+  ],
+  "calibration_notes": "Essential for measuring the stability of a lead during highly volatile national crises."
+}

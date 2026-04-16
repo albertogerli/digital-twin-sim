@@ -1,0 +1,83 @@
+{
+  "scenario_name": "mental_health_parity_act_2008",
+  "domain": "public_health",
+  "description": "The Paul Wellstone and Pete Domenici Mental Health Parity and Addiction Equity Act mandated that health insurance plans provide mental health benefits equivalent to medical/surgical benefits. It was a bipartisan effort to end institutionalized discrimination in healthcare coverage.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 26,
+      "undecided_pct": 26
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 24,
+      "undecided_pct": 24
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 28,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 27,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 61,
+      "against_pct": 26,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 27,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 27,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Congressional hearings highlight personal stories of insurance denials."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "American Psychiatric Association endorses the parity language."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Insurance industry groups raise initial concerns about premium spikes."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "President George W. Bush signals readiness to sign the bill."
+    }
+  ],
+  "calibration_notes": "Tests public sentiment alignment with bipartisan health policy shifts."
+}

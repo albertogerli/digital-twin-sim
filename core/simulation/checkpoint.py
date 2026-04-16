@@ -21,8 +21,14 @@ def save_checkpoint(
     confidence_interval: dict = None,
     regime_info: dict = None,
     params_used: dict = None,
+    orchestrator_state: dict = None,
 ) -> str:
-    """Save full state checkpoint and return filename."""
+    """Save full state checkpoint and return filename.
+
+    Args:
+        orchestrator_state: Optional dict with escalation/contagion/financial state
+            for wargame rollback (save scumming).
+    """
     os.makedirs(checkpoint_dir, exist_ok=True)
     # Sanitize scenario name for filename
     safe_name = "".join(c if c.isalnum() or c in "-_" else "_" for c in scenario_name)
@@ -59,6 +65,10 @@ def save_checkpoint(
         state["regime_info"] = regime_info
     if params_used:
         state["params_used"] = params_used
+
+    # Orchestrator state for wargame rollback
+    if orchestrator_state:
+        state["orchestrator_state"] = orchestrator_state
 
     with open(filepath, "w") as f:
         json.dump(state, f, indent=2, ensure_ascii=False)

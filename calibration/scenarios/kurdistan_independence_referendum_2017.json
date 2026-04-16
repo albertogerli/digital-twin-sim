@@ -1,0 +1,83 @@
+{
+  "scenario_name": "kurdistan_independence_referendum_2017",
+  "domain": "political",
+  "description": "The Kurdistan Region of Iraq held a non-binding referendum on independence in 2017. Despite 92.7% voting in favor, the move led to military conflict and loss of territory.",
+  "final_outcome_pro_pct": 92.7,
+  "final_outcome_against_pct": 7.3,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 15,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 75,
+      "against_pct": 15,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 78,
+      "against_pct": 14,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 82,
+      "against_pct": 12,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 85,
+      "against_pct": 10,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 88,
+      "against_pct": 8,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 90,
+      "against_pct": 6,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 91,
+      "against_pct": 7,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 92.7,
+      "against_pct": 7.3,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Baghdad labels the move a violation of the constitution."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Regional neighbors threaten economic sanctions."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Final pre-vote campaign rallies held in Erbil."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Referendum held; subsequent military response follows."
+    }
+  ],
+  "calibration_notes": "Models the divergence between public opinion outcomes and geopolitical reality."
+}

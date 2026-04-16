@@ -1,0 +1,83 @@
+{
+  "scenario_name": "aol_time_warner_merger_2000",
+  "domain": "corporate",
+  "description": "The 2000 merger between America Online and Time Warner was hailed as the future of media, but internal cultural clashes and the dot-com bubble burst led to a disastrous integration. It is considered one of the largest corporate failures in history.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 65,
+      "against_pct": 10,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Announcement of the $165 billion merger."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Dot-com bubble begins to deflate, impacting AOL stock."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Massive cultural friction reported between old-media and tech staff."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Record-breaking write-down of $99 billion."
+    }
+  ],
+  "calibration_notes": "Useful for measuring the decay of optimism in 'synergy' narratives."
+}

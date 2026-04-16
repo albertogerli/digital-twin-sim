@@ -1,0 +1,83 @@
+{
+  "scenario_name": "california_plastic_bag_ban_prop_67_2016",
+  "domain": "environmental",
+  "description": "Proposition 67 was a 2016 California ballot measure that asked voters to uphold or overturn the state's existing plastic bag ban legislation (SB 270). It represented a direct confrontation between environmental groups and the plastic manufacturing lobby.",
+  "final_outcome_pro_pct": 53.0,
+  "final_outcome_against_pct": 47.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 49,
+      "against_pct": 41,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 47,
+      "against_pct": 45,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 46,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 47,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 53,
+      "against_pct": 47,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "American Progressive Bag Alliance spends millions on 'No' campaign."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Opposition messaging highlights grocery bag costs to low-income families."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Major California newspapers endorse the 'Yes' vote."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Election night results confirm the retention of the state ban."
+    }
+  ],
+  "calibration_notes": "Excellent for studying the influence of high-budget industry lobbying against environmental ballot initiatives."
+}

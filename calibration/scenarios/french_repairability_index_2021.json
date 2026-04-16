@@ -1,0 +1,79 @@
+{
+  "scenario_name": "french_repairability_index_2021",
+  "domain": "technology",
+  "description": "France introduced a mandatory repairability index label for electronic devices, requiring manufacturers to disclose how easy a product is to fix, implemented in 2021.",
+  "final_outcome_pro_pct": 78.0,
+  "final_outcome_against_pct": 22.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 10,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 10,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 15,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 74,
+      "against_pct": 21,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 76,
+      "against_pct": 22,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "French Anti-Waste Law introduced."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Tech industry lobbies against transparency requirements."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Index becomes mandatory for smartphones and laptops."
+    }
+  ],
+  "calibration_notes": "Assesses public support for transparency-based regulation versus strict product bans."
+}

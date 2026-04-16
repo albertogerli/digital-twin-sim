@@ -1,0 +1,79 @@
+{
+  "scenario_name": "ireland_carbon_tax_2020",
+  "domain": "environmental",
+  "description": "The Irish government mandated incremental increases to the carbon tax, tied to a 'Climate Action Plan', which sustained support through social dividend payments.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 68.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 44,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 42,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 41,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 53,
+      "against_pct": 42,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 54,
+      "against_pct": 43,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 54,
+      "against_pct": 44,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Government announces the 'Climate Action Fund' to support low-income households."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Public awareness campaign links tax revenue directly to home energy efficiency grants."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Opposition party attempts to leverage energy price spikes but fails to move the needle."
+    }
+  ],
+  "calibration_notes": "Demonstrates the efficacy of 'earmarking' tax revenues for specific, visible social benefits."
+}

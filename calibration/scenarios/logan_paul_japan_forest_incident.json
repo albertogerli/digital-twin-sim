@@ -1,0 +1,83 @@
+{
+  "scenario_name": "logan_paul_japan_forest_incident",
+  "domain": "commercial",
+  "description": "In January 2018, YouTuber Logan Paul filmed a video in Japan's Aokigahara forest featuring a deceased body. The incident led to a massive advertiser boycott and a temporary suspension of his status within the YouTube Preferred program.",
+  "final_outcome_pro_pct": 8.0,
+  "final_outcome_against_pct": 92.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 20,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 15,
+      "against_pct": 75,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 10,
+      "against_pct": 85,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 9,
+      "against_pct": 89,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 8,
+      "against_pct": 90,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 8,
+      "against_pct": 91,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 8,
+      "against_pct": 92,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 8,
+      "against_pct": 92,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Video uploaded to YouTube."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Internet outrage spikes; Logan Paul apologizes."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "YouTube pauses original projects and removes him from Google Preferred."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Major brands pull advertising from his channel."
+    }
+  ],
+  "calibration_notes": "Measures the impact of platform-level accountability on influencer commercial viability."
+}

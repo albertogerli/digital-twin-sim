@@ -1,0 +1,83 @@
+{
+  "scenario_name": "toyota_hydrogen_vs_electric_2023",
+  "domain": "corporate",
+  "description": "Toyota maintained a controversial stance throughout 2023, favoring a 'multi-pathway' approach (hybrids and hydrogen) over an all-in battery electric vehicle (BEV) pivot. The strategy placed them at odds with global industry trends and activist investors.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 52,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Toyota reaffirms hybrid-led strategy."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "EV competitors post record growth."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Hybrid sales surge as EV demand cools globally."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Industry debates the 'Toyota bet' as visionary vs stagnant."
+    }
+  ],
+  "calibration_notes": "Ideal for scenarios involving contrarian strategic positioning."
+}

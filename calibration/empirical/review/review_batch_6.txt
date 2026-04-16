@@ -1,0 +1,248 @@
+ISTRUZIONI PER IL REVIEWER: per ogni scenario, verifica:
+1. Ground truth outcome: il numero è corretto? La fonte esiste?
+2. Polling trajectory: i trend sono coerenti con dati pubblici noti?
+3. Events: le date sono corrette? Mancano eventi critici?
+4. Agents: i key stakeholder sono quelli giusti? Posizioni iniziali plausibili?
+5. Shock magnitudes: le scale sono ragionevoli?
+Rispondi con: PASS / CORRECTIONS [dettaglio] / REJECT [motivo]
+
+BATCH 6 — 5 scenarios: POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU, PH-2021-VACCINE_HESITANCY_USA_2021_CO, POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE, POL-2020-ELEZIONI_PRESIDENZIALI_USA_202, POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA
+======================================================================
+
+----------------------------------------------------------------------
+SCENARIO: POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU
+Domain: political | Country: US
+Period: 2018-09-01 -> 2018-11-06 | Rounds: 6
+
+OUTCOME: 53.4% pro | Source: https://clerk.house.gov/member_info/electionInfo/2018election.pdf
+  Type: election
+
+POLLING TRAJECTORY:
+  R1 [2018-09-01]: 48.2% vs 41.5% undec 10.3% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R2 [2018-09-12]: 48.5% vs 41.8% undec 9.7% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R3 [2018-09-23]: 49.1% vs 42.2% undec 8.7% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R4 [2018-10-04]: 49.5% vs 42.5% undec 8.0% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R5 [2018-10-15]: 49.8% vs 43.1% undec 7.1% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+  R6 [2018-10-26]: 50.2% vs 43.8% undec 6.0% (n=1500) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/other/2018_generic_congressional_vote-6185.html
+
+KEY EVENTS:
+  R2 [2018-09-27]: Brett Kavanaugh Supreme Court confirmation hearings
+     shock: 0.6 x +0.2 | https://www.nytimes.com/2018/09/27/us/politics/brett-kavanaugh-christine-blasey- [VERIFIED URL]
+  R5 [2018-10-22]: Trump announces caravan of migrants as a national emergency
+     shock: 0.4 x -0.3 | https://www.reuters.com/article/us-usa-election-caravan/trump-says-he-will-send- [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Donald Trump (elite): pos=-0.8 inf=1.00
+  Democratic Party (institutional): pos=+0.9 inf=0.90
+  Republican Party (institutional): pos=-0.9 inf=0.90
+  Fox News (elite): pos=-0.7 inf=0.70
+  CNN (elite): pos=+0.6 inf=0.60
+
+COVARIATES:
+  polarization=0.776, event_vol=0.3, elite_conc=0.75, trust=0.4, undecided=0.1
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 18/22 (82%)
+  LLM-estimated: title, agents, covariates, notes
+  Polling verified: 100.0% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as the Democratic Party House vote share. Against-side is defined as the Republican Party House vote share. Data quality is high due to official FEC/Clerk records for the outcome a
+
+----------------------------------------------------------------------
+SCENARIO: PH-2021-VACCINE_HESITANCY_USA_2021_CO
+Domain: public_health | Country: US
+Period: 2021-01-01 -> 2021-07-31 | Rounds: 5
+
+OUTCOME: 67.0% pro | Source: https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-july-2021/
+  Type: survey
+
+POLLING TRAJECTORY:
+  R1 [2021-01-01]: 47.0% vs 39.0% undec 14.0% (n=1676) [VERIFIED URL]
+     src: https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-december-2020/
+  R2 [2021-02-12]: 55.0% vs 32.0% undec 13.0% (n=1563) [LLM ESTIMATED]
+     src: Estimated: Interpolated based on KFF Vaccine Monitor Feb 2021 trends
+  R3 [2021-03-26]: 61.0% vs 27.0% undec 12.0% (n=1873) [VERIFIED URL]
+     src: https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-march-2021/
+  R4 [2021-05-07]: 64.0% vs 25.0% undec 11.0% (n=2089) [VERIFIED URL]
+     src: https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-may-2021/
+  R5 [2021-06-18]: 67.0% vs 22.0% undec 11.0% (n=1888) [VERIFIED URL]
+     src: https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-july-2021/
+
+KEY EVENTS:
+  R1 [2021-01-20]: Inauguration of President Biden and federal push for 100 million doses in 100 days
+     shock: 0.3 x +0.2 | https://www.whitehouse.gov/briefing-room/statements-releases/2021/01/21/fact-she [VERIFIED URL]
+  R3 [2021-04-13]: CDC and FDA recommend pause of Johnson & Johnson vaccine due to rare blood clots
+     shock: 0.6 x -0.4 | https://www.cdc.gov/media/releases/2021/s0413-JJ-vaccine.html [VERIFIED URL]
+  R4 [2021-05-13]: CDC announces fully vaccinated people can stop wearing masks in most settings
+     shock: 0.5 x +0.3 | https://www.cdc.gov/media/releases/2021/s0513-vaccination-mask-guidance.html [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  CDC (institutional): pos=+1.0 inf=0.90
+  White House (institutional): pos=+1.0 inf=0.80
+  State Governors (elite): pos=+0.2 inf=0.70
+  Mainstream Media (elite): pos=+0.8 inf=0.60
+  Vaccine Skeptic Groups (citizen_cluster): pos=-1.0 inf=0.40
+
+COVARIATES:
+  polarization=0.776, event_vol=0.45, elite_conc=0.7, trust=0.55, undecided=0.14
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 14/19 (74%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 80.0% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as individuals who have received at least one dose of a COVID-19 vaccine or are willing to get vaccinated as soon as possible. Against-side is defined as individuals who refuse vac
+
+----------------------------------------------------------------------
+SCENARIO: POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE
+Domain: political | Country: BR
+Period: 2022-08-01 -> 2022-10-30 | Rounds: 6
+
+OUTCOME: 50.9% pro | Source: https://resultados.tse.jus.br/oficial/app/index.html#/eleicao/resultados
+  Type: election
+
+POLLING TRAJECTORY:
+  R1 [2022-08-01]: 45.0% vs 33.0% undec 22.0% (n=2000) [VERIFIED URL]
+     src: Datafolha: https://datafolha.folha.uol.com.br/
+  R2 [2022-08-16]: 47.0% vs 32.0% undec 21.0% (n=2500) [VERIFIED URL]
+     src: Ipec: https://www.ipec-intelligence.com.br/
+  R3 [2022-08-31]: 48.0% vs 32.0% undec 20.0% (n=2000) [VERIFIED URL]
+     src: Datafolha: https://datafolha.folha.uol.com.br/
+  R4 [2022-09-15]: 49.0% vs 31.0% undec 20.0% (n=2000) [LLM ESTIMATED]
+     src: Estimated: Based on trend interpolation from Ipec/Datafolha
+  R5 [2022-09-30]: 50.0% vs 36.0% undec 14.0% (n=3000) [VERIFIED URL]
+     src: Datafolha: https://datafolha.folha.uol.com.br/
+  R6 [2022-10-15]: 51.0% vs 45.0% undec 4.0% (n=2000) [LLM ESTIMATED]
+     src: Estimated: Convergence toward final result
+
+KEY EVENTS:
+  R1 [2022-08-16]: Official start of the electoral campaign period
+     shock: 0.2 x +0.1 | https://www.tse.jus.br/ [VERIFIED URL]
+  R3 [2022-08-28]: First televised presidential debate
+     shock: 0.4 x +0.2 | https://www.bbc.com/portuguese/brasil-62706342 [VERIFIED URL]
+  R5 [2022-10-02]: First round election results show tighter gap than polls predicted
+     shock: 0.8 x -0.5 | https://resultados.tse.jus.br/ [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Luiz Inácio Lula da Silva (elite): pos=+1.0 inf=0.90
+  Jair Bolsonaro (elite): pos=-1.0 inf=0.90
+  Agribusiness Sector (elite): pos=-0.6 inf=0.80
+  Superior Electoral Court (TSE) (institutional): pos=+0.0 inf=0.70
+  Evangelical Voters (citizen_cluster): pos=-0.7 inf=0.60
+
+COVARIATES:
+  polarization=0.83, event_vol=0.6, elite_conc=0.8, trust=0.5, undecided=0.15
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 16/21 (76%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 66.7% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as voting for Lula da Silva. Against-side is defined as voting for Jair Bolsonaro. Data quality: Polling in Brazil is highly professionalized but suffered from significant house ef
+
+----------------------------------------------------------------------
+SCENARIO: POL-2020-ELEZIONI_PRESIDENZIALI_USA_202
+Domain: political | Country: US
+Period: 2020-06-01 -> 2020-11-03 | Rounds: 7
+
+OUTCOME: 51.3% pro | Source: https://www.fec.gov/resources/cms-content/documents/federalelections2020.pdf
+  Type: election
+
+POLLING TRAJECTORY:
+  R1 [2020-06-01]: 49.5% vs 41.2% undec 9.3% (n=1200) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/2020/president/us/general_election_trump_vs_biden-6247.html
+  R2 [2020-06-23]: 50.1% vs 40.5% undec 9.4% (n=1150) [LLM ESTIMATED]
+     src: Estimated: Based on RCP average trend for late June 2020
+  R3 [2020-07-15]: 50.5% vs 40.8% undec 8.7% (n=1000) [VERIFIED URL]
+     src: https://www.nytimes.com/2020/07/15/upshot/poll-biden-trump-lead.html
+  R4 [2020-08-06]: 50.2% vs 42.1% undec 7.7% (n=1200) [LLM ESTIMATED]
+     src: Estimated: Post-DNC convention anticipation trend
+  R5 [2020-08-28]: 50.8% vs 43.2% undec 6.0% (n=1500) [VERIFIED URL]
+     src: https://www.pewresearch.org/politics/2020/08/28/biden-holds-a-wide-lead-in-the-presidential-race/
+  R6 [2020-09-19]: 50.4% vs 43.5% undec 6.1% (n=1100) [LLM ESTIMATED]
+     src: Estimated: Post-debate volatility baseline
+  R7 [2020-10-11]: 51.1% vs 44.2% undec 4.7% (n=1300) [VERIFIED URL]
+     src: https://www.realclearpolitics.com/epolls/2020/president/us/general_election_trump_vs_biden-6247.html
+
+KEY EVENTS:
+  R2 [2020-06-20]: Trump Tulsa Rally low attendance impact
+     shock: 0.2 x +0.1 | https://www.bbc.com/news/world-us-canada-53123565 [VERIFIED URL]
+  R5 [2020-08-20]: Democratic National Convention concludes
+     shock: 0.3 x +0.2 | https://www.reuters.com/article/us-usa-election-biden-idUSKBN25H03G [VERIFIED URL]
+  R6 [2020-09-29]: First Presidential Debate
+     shock: 0.4 x +0.1 | https://www.nytimes.com/2020/09/29/us/politics/debate-trump-biden.html [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Joe Biden (elite): pos=+1.0 inf=0.90
+  Donald Trump (elite): pos=-1.0 inf=0.90
+  Fox News (institutional): pos=-0.7 inf=0.60
+  CNN (institutional): pos=+0.6 inf=0.60
+  Suburban Voters (citizen_cluster): pos=+0.1 inf=0.50
+
+COVARIATES:
+  polarization=0.824, event_vol=0.35, elite_conc=0.8, trust=0.4, undecided=0.08
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 14/19 (74%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 57.1% | Events verified: 100.0%
+
+NOTES: Pro-side is defined as voters supporting Joe Biden. Against-side is defined as voters supporting Donald Trump. Data quality: Polling data is derived from RCP averages and major reputable outlets. Esti
+
+----------------------------------------------------------------------
+SCENARIO: POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA
+Domain: political | Country: FR
+Period: 2017-04-01 -> 2017-05-07 | Rounds: 6
+
+OUTCOME: 66.1% pro | Source: https://www.conseil-constitutionnel.fr/decision/2017/20170510resultatsEN.htm
+  Type: election
+
+POLLING TRAJECTORY:
+  R1 [2017-04-01]: 62.0% vs 38.0% undec 0.0% (n=1500) [VERIFIED URL]
+     src: https://www.ipsos.com/fr-fr/presidentielle-2017-le-barometre-quotidien-ipsos-sopra-steria
+  R2 [2017-04-07]: 61.0% vs 39.0% undec 0.0% (n=1500) [LLM ESTIMATED]
+     src: Estimated: Interpolated trend from Ipsos/OpinionWay daily tracking
+  R3 [2017-04-13]: 60.0% vs 40.0% undec 0.0% (n=1500) [LLM ESTIMATED]
+     src: Estimated: Trend reflecting pre-first round tightening
+  R4 [2017-04-19]: 60.5% vs 39.5% undec 0.0% (n=1500) [LLM ESTIMATED]
+     src: Estimated: Post-first round consolidation
+  R5 [2017-04-25]: 62.0% vs 38.0% undec 0.0% (n=1500) [VERIFIED URL]
+     src: https://www.ipsos.com/fr-fr/presidentielle-2017-le-barometre-quotidien-ipsos-sopra-steria
+  R6 [2017-05-01]: 64.0% vs 36.0% undec 0.0% (n=1500) [VERIFIED URL]
+     src: https://www.ipsos.com/fr-fr/presidentielle-2017-le-barometre-quotidien-ipsos-sopra-steria
+
+KEY EVENTS:
+  R1 [2017-04-23]: First round of presidential elections held; Macron and Le Pen qualify for runoff.
+     shock: 0.8 x +0.2 | https://www.reuters.com/article/us-france-election-idUSKBN17P07A [VERIFIED URL]
+  R5 [2017-04-27]: Whirlpool factory visit controversy involving Le Pen and Macron.
+     shock: 0.4 x -0.3 | https://www.theguardian.com/world/2017/apr/27/emmanuel-macron-marine-le-pen-whir [VERIFIED URL]
+  R6 [2017-05-03]: Televised presidential debate between Macron and Le Pen.
+     shock: 0.7 x +0.5 | https://www.bbc.com/news/world-europe-39803565 [VERIFIED URL]
+
+AGENTS (top 5 of 6 by influence):
+  Emmanuel Macron (elite): pos=+1.0 inf=0.90
+  Marine Le Pen (elite): pos=-1.0 inf=0.90
+  Traditional Media (institutional): pos=+0.2 inf=0.60
+  Jean-Luc Mélenchon (elite): pos=-0.2 inf=0.50
+  François Fillon (elite): pos=+0.5 inf=0.40
+
+COVARIATES:
+  polarization=0.733, event_vol=0.4, elite_conc=0.8, trust=0.45, undecided=0.15
+
+METADATA:
+  Generator: llm_generated
+  Fields verified: 14/19 (74%)
+  LLM-estimated: title, polling_trajectory, agents, covariates, notes
+  Polling verified: 50.0% | Events verified: 100.0%
+
+NOTES: Pro-side defined as voters for Emmanuel Macron. Against-side defined as voters for Marine Le Pen. Polling data reflects the two-way runoff intention. Estimates for intermediate rounds are based on the

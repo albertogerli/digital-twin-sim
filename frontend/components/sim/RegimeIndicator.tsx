@@ -16,21 +16,21 @@ export default function RegimeIndicator({ regimeInfo }: RegimeIndicatorProps) {
   const isCrisis = regimeInfo.regime_label === "crisis";
   const pct = Math.round(prob * 100);
 
-  // Color gradient: green (0) → yellow (0.3) → orange (0.5) → red (0.8+)
+  // Color gradient: green (0) -> yellow (0.3) -> orange (0.5) -> red (0.8+)
   const getColor = (p: number) => {
-    if (p < 0.2) return "#22c55e";
-    if (p < 0.4) return "#eab308";
-    if (p < 0.6) return "#f97316";
-    return "#ef4444";
+    if (p < 0.2) return "#16a34a";
+    if (p < 0.4) return "#d97706";
+    if (p < 0.6) return "#d97706";
+    return "#dc2626";
   };
 
   const color = getColor(prob);
 
   return (
-    <div className={`flex items-center gap-2 px-2.5 py-1.5 rounded-md border text-xs ${
+    <div className={`flex items-center gap-2 px-2 py-1 rounded-sm border text-xs ${
       isCrisis
-        ? "bg-red-50 border-red-200 text-red-700"
-        : "bg-gray-50 border-gray-200 text-gray-600"
+        ? "bg-ki-error/10 border-ki-error/25 text-ki-error"
+        : "bg-ki-surface-sunken border-ki-border text-ki-on-surface-secondary"
     }`}>
       {/* Pulsing dot for crisis */}
       <span className="relative flex h-2.5 w-2.5">
@@ -49,14 +49,14 @@ export default function RegimeIndicator({ regimeInfo }: RegimeIndicatorProps) {
       <span className="font-medium capitalize">{regimeInfo.regime_label}</span>
 
       {/* Mini bar */}
-      <div className="w-12 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+      <div className="w-12 h-1.5 bg-ki-surface-sunken rounded-full overflow-hidden">
         <div
           className="h-full rounded-full transition-all duration-500"
           style={{ width: `${pct}%`, backgroundColor: color }}
         />
       </div>
 
-      <span className="text-[10px] text-gray-400">{pct}%</span>
+      <span className="text-[10px] text-ki-on-surface-muted">{pct}%</span>
     </div>
   );
 }

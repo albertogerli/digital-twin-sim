@@ -1,0 +1,8 @@
+{
+  "generation_timestamp": "hand_crafted",
+  "generator": "hand_crafted",
+  "field_provenance": {
+    "ground_truth_outcome.pro_pct": "partially_verified"
+  },
+  "verification_summary": {}
+}

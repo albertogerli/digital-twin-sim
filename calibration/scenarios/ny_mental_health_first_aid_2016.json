@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ny_mental_health_first_aid_2016",
+  "domain": "public_health",
+  "description": "New York City launched an ambitious program to train 250,000 residents in Mental Health First Aid. The policy debate focused on the efficacy of layperson intervention versus professional psychiatric care.",
+  "final_outcome_pro_pct": 75.0,
+  "final_outcome_against_pct": 25.0,
+  "final_turnout_pct": 50.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 62,
+      "against_pct": 20,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 68,
+      "against_pct": 22,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 73,
+      "against_pct": 25,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 75,
+      "against_pct": 25,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "First Lady Chirlane McCray spearheads the initiative."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Critics argue for funding clinical services instead of training."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "First cohort graduates, gaining local media coverage."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public survey shows high satisfaction with training quality."
+    }
+  ],
+  "calibration_notes": "Tests support for community-based public health interventions."
+}

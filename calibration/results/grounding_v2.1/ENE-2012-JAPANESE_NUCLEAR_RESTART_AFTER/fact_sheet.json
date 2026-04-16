@@ -1,0 +1,75 @@
+{
+  "scenario_id": "ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER",
+  "topic": "ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER",
+  "domain": "energy",
+  "country": "JP",
+  "timeframe_start": "2012-05-05",
+  "timeframe_end": "2012-07-02",
+  "events": [
+    {
+      "date": "2012-05-05",
+      "description": "The Tomari 3 reactor in Hokkaido was taken offline for inspection, leaving Japan with zero operational nuclear reactors for the first time since 1970.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcLqDoGW16DfKItVSQPftC9lJQsmfD7NQXZW5A7eizf2dfv2F0R1qvFcrNnu1bq81tVt3y9fECP4cV6LnOqZV_kx4Tx_SWrKB7YKouN5gJjOz6pkNa16GYuYBB6lsUJQ-nbnZ2QDSkRJJGRITqQ5g9SwWfH-8W2gLCY0z2uZxN0ayWbbO9M-4Omy8ZRcBdIKIfEEsfWNVfILz12A==",
+      "source_name": "world-nuclear-news.org",
+      "confidence": 1.0,
+      "quantitative_detail": "0 reactors operational"
+    },
+    {
+      "date": "2012-06-16",
+      "description": "Prime Minister Yoshihiko Noda officially approved the restart of Ohi units 3 and 4, citing the need to prevent power shortages in the Kansai region.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "world-nuclear-news.org",
+      "confidence": 0.8,
+      "quantitative_detail": "2 units approved for restart"
+    },
+    {
+      "date": "2012-07-02",
+      "description": "The Ohi 3 reactor reached criticality, marking the first time a nuclear reactor resumed operations in Japan following the Fukushima disaster.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHXml845ck1JJM4bpQkNqeqNIqIhKXjwKfW1gyEEqwkPczwAT0J8LQJEZBIi_sJDKfYvV5mYlkXJ3HbM1EVxwBSbJDVhxyt0eMHNEUAnOTOjefWyeD_XyCfoId-WokJRQxiRbgj1TTVrTJ00ChPe9KdLC1ASWYqSFHmOTvcfp6muImZJNGZ4sg8ZBFwa-NhYaxYF0EnAgeEqt1osg==",
+      "source_name": "pv-magazine.com",
+      "confidence": 1.0,
+      "quantitative_detail": "1 reactor resumed"
+    }
+  ],
+  "polls": [],
+  "stakeholders": [
+    {
+      "name": "Yoshihiko Noda",
+      "role": "Prime Minister of Japan",
+      "position": "He advocated for the restart of the Ohi nuclear reactors, arguing that they were necessary to prevent power shortages and support the national economy. He emphasized that the reactors met new safety standards established after the Fukushima disaster.",
+      "date": "2012-06-08",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Yukio Edano",
+      "role": "Minister of Economy, Trade and Industry",
+      "position": "He supported the government's decision to restart the Ohi reactors, maintaining that the safety checks were sufficient to ensure the plants could operate without risk to the public.",
+      "date": "2012-06-16",
+      "source": "World Nuclear News"
+    },
+    {
+      "name": "Shinzo Abe",
+      "role": "Leader of the Liberal Democratic Party (Opposition)",
+      "position": "He criticized the government's handling of the energy crisis and supported the restart of nuclear power, arguing that the shutdown was damaging Japan's industrial competitiveness and economic stability.",
+      "date": "2012-05-20",
+      "source": "APJJF.org"
+    }
+  ],
+  "outcome_description": "Following the total shutdown of Japan's nuclear fleet after the Fukushima disaster, the government authorized the restart of Ohi units 3 and 4 in mid-2012 to prevent summer power shortages, despite significant public opposition.",
+  "outcome_pro_pct": 30.0,
+  "outcome_source": "Asahi Shimbun (June 2012 poll indicating approximately 30% support for the restart of Ohi reactors)",
+  "key_figures": {
+    "total_commercial_reactors": "54",
+    "shutdown_date": "May 2012",
+    "nuclear_power_hiatus_precedent": "First time since 1970"
+  },
+  "n_sources_consulted": 3,
+  "research_timestamp": "2026-04-01T02:37:07.715705",
+  "quality_score": 51
+}

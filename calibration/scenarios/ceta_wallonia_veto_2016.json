@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ceta_wallonia_veto_2016",
+  "domain": "political",
+  "description": "The Comprehensive Economic and Trade Agreement (CETA) between the EU and Canada faced a near-collapse in 2016 when the Belgian region of Wallonia refused to approve the signing.",
+  "final_outcome_pro_pct": 95.0,
+  "final_outcome_against_pct": 5.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 80,
+      "against_pct": 15,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 90,
+      "against_pct": 8,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 95,
+      "against_pct": 5,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Walloon Parliament votes to block Belgium's signature"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "EU-Canada summit is cancelled due to deadlock"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "EU and Belgian regions reach an internal declaration on agriculture"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "CETA is formally signed by Justin Trudeau and EU leaders"
+    }
+  ],
+  "calibration_notes": "Models the impact of localized regional interests on international treaties."
+}

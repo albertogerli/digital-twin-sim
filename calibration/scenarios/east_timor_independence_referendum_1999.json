@@ -1,0 +1,79 @@
+{
+  "scenario_name": "east_timor_independence_referendum_1999",
+  "domain": "political",
+  "description": "The UN-sponsored referendum where East Timor voted to end Indonesian occupation, occurring during high instability.",
+  "final_outcome_pro_pct": 78.5,
+  "final_outcome_against_pct": 21.5,
+  "final_turnout_pct": 98.6,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 68,
+      "against_pct": 22,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 73,
+      "against_pct": 17,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 76,
+      "against_pct": 14,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78.5,
+      "against_pct": 21.5,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "UNAMET deployment begins"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Militia intimidation increases"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Referendum day results"
+    }
+  ],
+  "calibration_notes": "Models scenarios where polling must contend with extreme security risks and high turnout."
+}

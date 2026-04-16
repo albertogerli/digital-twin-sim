@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ryanair_baggage_fee_2013",
+  "domain": "commercial",
+  "description": "Ryanair, a leader in the ultra-low-cost carrier model, introduced increasingly strict baggage fees and penalty charges in 2013. The strategy was successful for the company's bottom line but maintained consistently negative customer satisfaction scores.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 58,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 37,
+      "against_pct": 60,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 36,
+      "against_pct": 62,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 35,
+      "against_pct": 64,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ryanair implements stricter cabin baggage enforcement."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Passengers share viral stories of 'unfair' penalty fees."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "CEO Michael O'Leary defends policy in public interviews."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Customer surveys rank Ryanair as one of the least liked airlines in Europe."
+    }
+  ],
+  "calibration_notes": "Useful for understanding the 'utility vs reputation' trade-off in business models."
+}

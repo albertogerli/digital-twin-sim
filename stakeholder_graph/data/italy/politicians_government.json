@@ -1,0 +1,342 @@
+[
+  {
+    "id": "giorgia_meloni",
+    "name": "Giorgia Meloni",
+    "role": "Presidente del Consiglio dei Ministri",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.95,
+    "rigidity": 0.80,
+    "bio": "Presidente del Consiglio dal 2022, leader di FdI. Prima donna premier in Italia.",
+    "communication_style": "Assertiva, populista-istituzionale, linguaggio diretto, forte presenza social",
+    "key_traits": ["assertiva", "strategica", "polarizzante"],
+    "platform_primary": "social_media",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": 0.85, "source": "public_statement", "confidence": "high", "quotes": ["La separazione delle carriere non è una riforma contro i magistrati, è una riforma a favore dei cittadini."]},
+      {"topic_tag": "general_left_right", "value": 0.75, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": 0.2, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "immigration", "value": 0.85, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "premierato", "value": 0.95, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "autonomia_differenziata", "value": 0.6, "source": "public_statement", "confidence": "medium"}
+    ],
+    "relationships": [
+      {"target_id": "carlo_nordio", "type": "ally", "strength": 0.9, "context": "Nordio è il suo Ministro della Giustizia, architetto della riforma"},
+      {"target_id": "matteo_salvini", "type": "coalition", "strength": 0.6, "context": "Alleato di governo, rapporti tesi"},
+      {"target_id": "antonio_tajani", "type": "coalition", "strength": 0.7, "context": "Alleato di governo, rapporto più stabile"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia", "public_statements"],
+    "wikidata_qid": "Q467005"
+  },
+  {
+    "id": "carlo_nordio",
+    "name": "Carlo Nordio",
+    "role": "Ministro della Giustizia",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.85,
+    "rigidity": 0.90,
+    "bio": "Ex magistrato con 35 anni di carriera in procura. Autore della riforma che porta il suo nome sulla separazione delle carriere.",
+    "communication_style": "Tecnico-istituzionale, autorevole, cita esperienza diretta come ex-magistrato",
+    "key_traits": ["tecnico", "autorevole", "determinato"],
+    "platform_primary": "parliament",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": 0.95, "source": "institutional_statement", "confidence": "high", "quotes": ["Ho fatto il pubblico ministero per tutta la vita. So per esperienza diretta che la contiguità tra giudici e PM compromette la percezione di imparzialità."]},
+      {"topic_tag": "general_left_right", "value": 0.6, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giorgia_meloni", "type": "ally", "strength": 0.9}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q3658984"
+  },
+  {
+    "id": "antonio_tajani",
+    "name": "Antonio Tajani",
+    "role": "Vicepresidente del Consiglio e Ministro degli Esteri",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Forza Italia",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.75,
+    "rigidity": 0.55,
+    "bio": "Leader di Forza Italia, ex Presidente del Parlamento Europeo. Centrista ed europeista, erede politico di Berlusconi.",
+    "communication_style": "Diplomatico, moderato, richiama eredità berlusconiana, tono istituzionale",
+    "key_traits": ["diplomatico", "moderato", "europeista"],
+    "platform_primary": "tv",
+    "platform_secondary": "parliament",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": 0.70, "source": "public_statement", "confidence": "high", "quotes": ["Silvio Berlusconi ha combattuto per trent'anni per questa riforma. Forza Italia la porta a compimento."]},
+      {"topic_tag": "general_left_right", "value": 0.45, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": 0.75, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "premierato", "value": 0.65, "source": "public_statement", "confidence": "medium"}
+    ],
+    "relationships": [
+      {"target_id": "giorgia_meloni", "type": "coalition", "strength": 0.7},
+      {"target_id": "matteo_salvini", "type": "coalition", "strength": 0.5}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q209810"
+  },
+  {
+    "id": "matteo_salvini",
+    "name": "Matteo Salvini",
+    "role": "Vicepresidente del Consiglio e Ministro delle Infrastrutture",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.65,
+    "rigidity": 0.50,
+    "bio": "Leader della Lega, vicepresidente del Consiglio. Consensi in calo (~8-9%), noto per comunicazione aggressiva sui social.",
+    "communication_style": "Populista, diretto, slogan semplici, toni da social media, uso di selfie e cibo",
+    "key_traits": ["populista", "impulsivo", "mediatore interno"],
+    "platform_primary": "social_media",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": 0.75, "source": "public_statement", "confidence": "high", "quotes": ["Basta con i magistrati che un giorno ti accusano e il giorno dopo ti giudicano."]},
+      {"topic_tag": "general_left_right", "value": 0.7, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "immigration", "value": 0.95, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "autonomia_differenziata", "value": 0.90, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": -0.3, "source": "public_statement", "confidence": "medium"}
+    ],
+    "relationships": [
+      {"target_id": "giorgia_meloni", "type": "coalition", "strength": 0.6},
+      {"target_id": "antonio_tajani", "type": "coalition", "strength": 0.5},
+      {"target_id": "roberto_calderoli", "type": "ally", "strength": 0.8}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q1055449"
+  },
+  {
+    "id": "roberto_calderoli",
+    "name": "Roberto Calderoli",
+    "role": "Ministro per gli Affari Regionali e le Autonomie",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.55,
+    "rigidity": 0.75,
+    "bio": "Ministro per le autonomie, architetto della legge sull'autonomia differenziata. Veterano della politica leghista.",
+    "communication_style": "Tecnico-leghista, pragmatico, linguaggio da veterano parlamentare",
+    "key_traits": ["tecnico", "tenace", "federalista"],
+    "platform_primary": "parliament",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "autonomia_differenziata", "value": 0.95, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "judiciary_reform", "value": 0.65, "source": "party_line", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.65, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "matteo_salvini", "type": "ally", "strength": 0.8}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q539874"
+  },
+  {
+    "id": "giancarlo_giorgetti",
+    "name": "Giancarlo Giorgetti",
+    "role": "Ministro dell'Economia e delle Finanze",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.70,
+    "rigidity": 0.55,
+    "bio": "Ministro dell'Economia, ala moderata della Lega. Considerato l'uomo dei mercati nel governo Meloni.",
+    "communication_style": "Tecnico, misurato, linguaggio economico-finanziario, evita polemiche",
+    "key_traits": ["pragmatico", "moderato", "tecnico"],
+    "platform_primary": "parliament",
+    "platform_secondary": "press",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.45, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": 0.3, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "fiscal_policy", "value": 0.4, "source": "institutional_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "matteo_salvini", "type": "ally", "strength": 0.6},
+      {"target_id": "giorgia_meloni", "type": "coalition", "strength": 0.65}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q739937"
+  },
+  {
+    "id": "guido_crosetto",
+    "name": "Guido Crosetto",
+    "role": "Ministro della Difesa",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.60,
+    "rigidity": 0.55,
+    "bio": "Cofondatore di FdI, imprenditore nel settore difesa prima di diventare ministro. Considerato l'ala moderata del partito.",
+    "communication_style": "Diretto, pragmatico, toni da imprenditore, spesso critico anche verso alleati",
+    "key_traits": ["pragmatico", "indipendente", "schietto"],
+    "platform_primary": "social_media",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.55, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": 0.4, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "defense_spending", "value": 0.85, "source": "institutional_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giorgia_meloni", "type": "ally", "strength": 0.8}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q1553015"
+  },
+  {
+    "id": "matteo_piantedosi",
+    "name": "Matteo Piantedosi",
+    "role": "Ministro dell'Interno",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Indipendente (area Lega)",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.60,
+    "rigidity": 0.70,
+    "bio": "Prefetto, Ministro dell'Interno. Ex capo di gabinetto di Salvini al Viminale. Linea dura su immigrazione e ordine pubblico.",
+    "communication_style": "Istituzionale, burocratico, linguaggio da prefetto, evita polemiche dirette",
+    "key_traits": ["rigoroso", "tecnico", "esecutore"],
+    "platform_primary": "parliament",
+    "platform_secondary": "press",
+    "positions": [
+      {"topic_tag": "immigration", "value": 0.80, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": 0.55, "source": "inferred", "confidence": "medium"}
+    ],
+    "relationships": [
+      {"target_id": "matteo_salvini", "type": "ally", "strength": 0.7}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"],
+    "wikidata_qid": "Q113529534"
+  },
+  {
+    "id": "giuseppe_valditara",
+    "name": "Giuseppe Valditara",
+    "role": "Ministro dell'Istruzione e del Merito",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.65,
+    "bio": "Giurista e professore, Ministro dell'Istruzione. Promotore del 'merito' nella scuola e di riforme conservatrici dell'educazione.",
+    "communication_style": "Professorale, ideologico, toni conservatori sulla scuola",
+    "key_traits": ["conservatore", "professorale", "ideologico"],
+    "platform_primary": "press",
+    "platform_secondary": "parliament",
+    "positions": [
+      {"topic_tag": "education_reform", "value": 0.75, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": 0.6, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"]
+  },
+  {
+    "id": "adolfo_urso",
+    "name": "Adolfo Urso",
+    "role": "Ministro delle Imprese e del Made in Italy",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.50,
+    "rigidity": 0.60,
+    "bio": "Ministro delle Imprese, ex presidente del Copasir. Gestisce dossier industriali critici (automotive, siderurgia).",
+    "communication_style": "Istituzionale, pro-industria, toni rassicuranti verso le imprese",
+    "key_traits": ["industrialista", "cauto", "atlantista"],
+    "platform_primary": "press",
+    "platform_secondary": "parliament",
+    "positions": [
+      {"topic_tag": "industrial_policy", "value": 0.6, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": 0.55, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"]
+  },
+  {
+    "id": "marina_calderone",
+    "name": "Marina Calderone",
+    "role": "Ministra del Lavoro e delle Politiche Sociali",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Indipendente",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.50,
+    "bio": "Ex presidente del Consiglio Nazionale dell'Ordine dei Consulenti del Lavoro. Tecnica prestata alla politica.",
+    "communication_style": "Tecnica, pragmatica, toni da professionista del settore",
+    "key_traits": ["tecnica", "pragmatica", "conciliante"],
+    "platform_primary": "press",
+    "platform_secondary": "parliament",
+    "positions": [
+      {"topic_tag": "labor_reform", "value": 0.4, "source": "institutional_statement", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.35, "source": "inferred", "confidence": "low"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "alfredo_mantovano",
+    "name": "Alfredo Mantovano",
+    "role": "Sottosegretario alla Presidenza del Consiglio",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.65,
+    "rigidity": 0.75,
+    "bio": "Ex magistrato, braccio destro di Meloni a Palazzo Chigi. Gestisce i servizi segreti e i dossier più delicati.",
+    "communication_style": "Riservato, istituzionale, estrema cautela nelle dichiarazioni pubbliche",
+    "key_traits": ["riservato", "potente", "cattolico-conservatore"],
+    "platform_primary": "parliament",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": 0.80, "source": "inferred", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.70, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giorgia_meloni", "type": "ally", "strength": 0.9}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"]
+  }
+]

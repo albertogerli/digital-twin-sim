@@ -1,0 +1,83 @@
+{
+  "scenario_name": "twitter_musk_acquisition_board_takeover_2022",
+  "domain": "corporate",
+  "description": "Elon Musk's hostile takeover bid for Twitter in 2022 created a polarized environment among shareholders, employees, and the general public, ending in the removal of the existing leadership team.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 45,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 50,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 46,
+      "against_pct": 48,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 44,
+      "against_pct": 52,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 54,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Musk discloses 9.2% stake in Twitter."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Twitter board adopts a 'poison pill' strategy to stop takeover."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Twitter accepts Musk's acquisition offer of $44 billion."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Musk closes the deal and fires the executive team."
+    }
+  ],
+  "calibration_notes": "Ideal for scenarios involving hostile takeovers and highly polarized public perceptions of executive replacement."
+}

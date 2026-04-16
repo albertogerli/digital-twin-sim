@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_national_identity_register_2006",
+  "domain": "technology",
+  "description": "The UK government's Identity Cards Act 2006 proposed a biometric database of all citizens. The controversy focused on the 'Big Brother' implications of a centralized government digital ID.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 42,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 36,
+      "against_pct": 58,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 35,
+      "against_pct": 61,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 35,
+      "against_pct": 63,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Identity Cards Act receives Royal Assent."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Privacy advocates (NO2ID) launch national publicity campaign."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Government admits to significant cost overruns in implementation."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Opposition parties promise to scrap the scheme if elected."
+    }
+  ],
+  "calibration_notes": "Highlights the impact of long-term opposition campaigns on state-led technology initiatives."
+}

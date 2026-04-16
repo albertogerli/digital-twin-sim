@@ -1,0 +1,362 @@
+[
+  {
+    "round": 1,
+    "coalitions": [
+      {
+        "label": "Cautious optimists",
+        "color": "#1e40af",
+        "members": [
+          "emmanuel_macron",
+          "carlo_messina",
+          "ignazio_visco_successor",
+          "sergio_mattarella",
+          "keir_starmer",
+          "andrea_orcel",
+          "marine_le_pen",
+          "bernard_arnault",
+          "manuel_valls",
+          "stephane_richard",
+          "omid_nouripour",
+          "herbert_diess",
+          "pontecorvo",
+          "camporini",
+          "silvestri",
+          "del_re",
+          "walter_veltroni",
+          "dario_nardella",
+          "giorgia_meloni",
+          "mario_draghi",
+          "friedrich_merz",
+          "pedro_sanchez",
+          "antonio_tajani",
+          "isabel_diaz_ayuso",
+          "rachel_reeves",
+          "giuseppe_conte",
+          "european_central_bank",
+          "intesa_sanpaolo_group",
+          "financial_times",
+          "public_opinion"
+        ],
+        "avg_position": 0.0,
+        "size": 30
+      },
+      {
+        "label": "Bears",
+        "color": "#059669",
+        "members": [
+          "banca_ditalia",
+          "confindustria"
+        ],
+        "avg_position": -0.725,
+        "size": 2
+      },
+      {
+        "label": "Bulls",
+        "color": "#dc2626",
+        "members": [
+          "bundesbank"
+        ],
+        "avg_position": 0.95,
+        "size": 1
+      },
+      {
+        "label": "Bulls (Pro)",
+        "color": "#f59e0b",
+        "members": [
+          "european_stability_mechanism",
+          "bruegel_think_tank"
+        ],
+        "avg_position": 0.3,
+        "size": 2
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "coalitions": [
+      {
+        "label": "Cautious optimists",
+        "color": "#1e40af",
+        "members": [
+          "emmanuel_macron",
+          "carlo_messina",
+          "ignazio_visco_successor",
+          "sergio_mattarella",
+          "keir_starmer",
+          "andrea_orcel",
+          "marine_le_pen",
+          "bernard_arnault",
+          "manuel_valls",
+          "stephane_richard",
+          "omid_nouripour",
+          "herbert_diess",
+          "pontecorvo",
+          "camporini",
+          "silvestri",
+          "del_re",
+          "walter_veltroni",
+          "dario_nardella",
+          "giorgia_meloni",
+          "mario_draghi",
+          "friedrich_merz",
+          "pedro_sanchez",
+          "antonio_tajani",
+          "isabel_diaz_ayuso",
+          "rachel_reeves",
+          "giuseppe_conte",
+          "european_central_bank",
+          "intesa_sanpaolo_group",
+          "financial_times",
+          "bruegel_think_tank",
+          "public_opinion"
+        ],
+        "avg_position": 0.001,
+        "size": 31
+      },
+      {
+        "label": "Bears",
+        "color": "#059669",
+        "members": [
+          "banca_ditalia",
+          "confindustria"
+        ],
+        "avg_position": -0.678,
+        "size": 2
+      },
+      {
+        "label": "Bulls",
+        "color": "#dc2626",
+        "members": [
+          "bundesbank"
+        ],
+        "avg_position": 0.927,
+        "size": 1
+      },
+      {
+        "label": "Bulls (Pro)",
+        "color": "#f59e0b",
+        "members": [
+          "european_stability_mechanism"
+        ],
+        "avg_position": 0.381,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "coalitions": [
+      {
+        "label": "Cautious optimists",
+        "color": "#1e40af",
+        "members": [
+          "emmanuel_macron",
+          "carlo_messina",
+          "ignazio_visco_successor",
+          "sergio_mattarella",
+          "keir_starmer",
+          "andrea_orcel",
+          "marine_le_pen",
+          "bernard_arnault",
+          "manuel_valls",
+          "stephane_richard",
+          "omid_nouripour",
+          "herbert_diess",
+          "pontecorvo",
+          "camporini",
+          "silvestri",
+          "walter_veltroni",
+          "friedrich_merz",
+          "pedro_sanchez",
+          "antonio_tajani",
+          "isabel_diaz_ayuso",
+          "rachel_reeves",
+          "european_central_bank",
+          "european_stability_mechanism",
+          "financial_times",
+          "bruegel_think_tank"
+        ],
+        "avg_position": 0.018,
+        "size": 25
+      },
+      {
+        "label": "Risk-averse",
+        "color": "#059669",
+        "members": [
+          "del_re",
+          "dario_nardella",
+          "giorgia_meloni",
+          "mario_draghi",
+          "giuseppe_conte",
+          "intesa_sanpaolo_group",
+          "public_opinion"
+        ],
+        "avg_position": -0.221,
+        "size": 7
+      },
+      {
+        "label": "Bulls",
+        "color": "#dc2626",
+        "members": [
+          "bundesbank"
+        ],
+        "avg_position": 0.896,
+        "size": 1
+      },
+      {
+        "label": "Bears",
+        "color": "#f59e0b",
+        "members": [
+          "banca_ditalia",
+          "confindustria"
+        ],
+        "avg_position": -0.696,
+        "size": 2
+      }
+    ]
+  },
+  {
+    "round": 4,
+    "coalitions": [
+      {
+        "label": "Risk-averse",
+        "color": "#1e40af",
+        "members": [
+          "carlo_messina",
+          "sergio_mattarella",
+          "keir_starmer",
+          "andrea_orcel",
+          "marine_le_pen",
+          "bernard_arnault",
+          "manuel_valls",
+          "stephane_richard",
+          "omid_nouripour",
+          "herbert_diess",
+          "pontecorvo",
+          "camporini",
+          "silvestri",
+          "walter_veltroni",
+          "giorgia_meloni",
+          "friedrich_merz",
+          "antonio_tajani",
+          "isabel_diaz_ayuso",
+          "rachel_reeves",
+          "european_central_bank",
+          "european_stability_mechanism",
+          "bruegel_think_tank"
+        ],
+        "avg_position": -0.007,
+        "size": 22
+      },
+      {
+        "label": "Risk-averse (Anti)",
+        "color": "#059669",
+        "members": [
+          "emmanuel_macron",
+          "ignazio_visco_successor",
+          "del_re",
+          "dario_nardella",
+          "mario_draghi",
+          "pedro_sanchez",
+          "giuseppe_conte",
+          "intesa_sanpaolo_group",
+          "financial_times",
+          "public_opinion"
+        ],
+        "avg_position": -0.282,
+        "size": 10
+      },
+      {
+        "label": "Bears",
+        "color": "#dc2626",
+        "members": [
+          "banca_ditalia",
+          "confindustria"
+        ],
+        "avg_position": -0.72,
+        "size": 2
+      },
+      {
+        "label": "Bulls",
+        "color": "#f59e0b",
+        "members": [
+          "bundesbank"
+        ],
+        "avg_position": 0.865,
+        "size": 1
+      }
+    ]
+  },
+  {
+    "round": 5,
+    "coalitions": [
+      {
+        "label": "Risk-averse",
+        "color": "#1e40af",
+        "members": [
+          "emmanuel_macron",
+          "ignazio_visco_successor",
+          "giorgia_meloni",
+          "mario_draghi",
+          "pedro_sanchez",
+          "rachel_reeves",
+          "intesa_sanpaolo_group",
+          "financial_times",
+          "bruegel_think_tank",
+          "public_opinion"
+        ],
+        "avg_position": -0.299,
+        "size": 10
+      },
+      {
+        "label": "Risk-averse (Leaning Anti)",
+        "color": "#059669",
+        "members": [
+          "carlo_messina",
+          "sergio_mattarella",
+          "keir_starmer",
+          "andrea_orcel",
+          "marine_le_pen",
+          "bernard_arnault",
+          "manuel_valls",
+          "stephane_richard",
+          "omid_nouripour",
+          "herbert_diess",
+          "pontecorvo",
+          "camporini",
+          "silvestri",
+          "del_re",
+          "walter_veltroni",
+          "friedrich_merz",
+          "antonio_tajani",
+          "isabel_diaz_ayuso",
+          "european_central_bank",
+          "european_stability_mechanism"
+        ],
+        "avg_position": -0.003,
+        "size": 20
+      },
+      {
+        "label": "Bulls",
+        "color": "#dc2626",
+        "members": [
+          "bundesbank"
+        ],
+        "avg_position": 0.838,
+        "size": 1
+      },
+      {
+        "label": "Bears",
+        "color": "#f59e0b",
+        "members": [
+          "dario_nardella",
+          "giuseppe_conte",
+          "banca_ditalia",
+          "confindustria"
+        ],
+        "avg_position": -0.621,
+        "size": 4
+      }
+    ]
+  }
+]

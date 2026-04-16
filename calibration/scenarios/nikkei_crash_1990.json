@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nikkei_crash_1990",
+  "domain": "financial",
+  "description": "Public reaction in Japan following the bursting of the Japanese asset price bubble in 1990, where land and stock prices entered a decades-long decline.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 68.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 62,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 22,
+      "against_pct": 75,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 21,
+      "against_pct": 78,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Nikkei 225 hits record high of 38,915."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Bank of Japan aggressively raises rates to pop the bubble."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Index loses half its value in less than a year."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Corporate Japan begins 'balance sheet recession' phase."
+    }
+  ],
+  "calibration_notes": "Measures the transition from speculative optimism to long-term economic pessimism."
+}

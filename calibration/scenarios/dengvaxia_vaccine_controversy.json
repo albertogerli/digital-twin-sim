@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dengvaxia_vaccine_controversy",
+  "domain": "public_health",
+  "description": "In 2017, the Philippines government suspended the use of the Sanofi-Pasteur Dengvaxia vaccine after the manufacturer announced it could worsen symptoms in individuals who had not previously contracted dengue.",
+  "final_outcome_pro_pct": 25.0,
+  "final_outcome_against_pct": 75.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 25,
+      "against_pct": 73,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Sanofi admits the vaccine may pose risks for seronegative individuals."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Philippine Department of Health halts the nationwide immunization program."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Public protests erupt, citing fears for children who had already received the shot."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Government launches criminal investigation into previous health administration officials."
+    }
+  ],
+  "calibration_notes": "Examines the geopolitical fallout and erosion of trust in national vaccination programs following a localized safety crisis."
+}

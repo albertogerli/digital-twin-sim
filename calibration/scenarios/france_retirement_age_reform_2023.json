@@ -1,0 +1,79 @@
+{
+  "scenario_name": "france_retirement_age_reform_2023",
+  "domain": "political",
+  "description": "President Emmanuel Macron's effort to increase the retirement age from 62 to 64, which met with massive public and labor union opposition.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 99.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 33,
+      "against_pct": 64,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 32,
+      "against_pct": 66,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 69,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 28,
+      "against_pct": 72,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 29,
+      "against_pct": 71,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Government presents the bill."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Invoke Article 49.3 to bypass parliamentary vote."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Massive nationwide strikes paralyze transport."
+    }
+  ],
+  "calibration_notes": "Excellent for studying the failure of policy implementation in the face of mass social mobilization."
+}

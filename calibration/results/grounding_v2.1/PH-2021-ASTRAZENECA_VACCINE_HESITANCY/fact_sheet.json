@@ -1,0 +1,151 @@
+{
+  "scenario_id": "PH-2021-ASTRAZENECA_VACCINE_HESITANCY",
+  "topic": "PH-2021-ASTRAZENECA_VACCINE_HESITANCY",
+  "domain": "public_health",
+  "country": "DE",
+  "timeframe_start": "2021-03-07",
+  "timeframe_end": "2021-04-07",
+  "events": [
+    {
+      "date": "2021-03-07",
+      "description": "Austrian authorities reported the death of a 49-year-old woman and the hospitalization of a 35-year-old following vaccination, both linked to a specific batch of the AstraZeneca vaccine.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "bmj.com",
+      "confidence": 0.8,
+      "quantitative_detail": "1 million doses in the affected batch; 17 EU countries received the batch"
+    },
+    {
+      "date": "2021-03-11",
+      "description": "Denmark, Norway, and Iceland suspended the use of the AstraZeneca vaccine as a precautionary measure following reports of serious blood clot cases.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF211p9XXc2jT8gXKVWi-up_IARsEqU1oxXEjFOLLgsUuDnvyK9T4JsYhwDb1kKfeyiHmxXndMAZ33q4XzhKFogZEfAqVcg-HFweHKzOsMJTsG8kUGVuw0kOq0q8sCM2lKYwfuPfVGOQ48kvm5-iV99zRsAJ-FRfVQrsUwxHUMoiA45EOV-1zcIRXI65lxUmirl4KI01jCUR4UjNdYqNPhAntaWDFbEqJXxdo5h1-K49qe33Tn58w-EgzRL_2UvtC-N",
+      "source_name": "businessinsider.com",
+      "confidence": 1.0,
+      "quantitative_detail": "3 countries suspended use"
+    },
+    {
+      "date": "2021-03-15",
+      "description": "Major European nations, including Germany, France, and Italy, paused the rollout of the AstraZeneca vaccine to await further investigation by the European Medicines Agency.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGH2LG2fj6Fet5MJOqbIQMlHdP4cM93MbzCALmwYmM-VrmLYPAVwfvCZ8UFGx9UyIDblJtySL1-9ZAnm9o0RTh6Ck167eXnuGOinKotSVe2OqFcnWSbzgSJP5D5OKm5GnBJ_wy4k1Bt8vFJei4MRVXUBHGj0mePF3B5fBcaCQWs85UxNfn6d3fLO362Pk3J6j4PurZcJBCEWscINH1Pl91YjF6xWPb1AQzVvSaK3oolhGoHwfXbuWNix8yuoECc-tdRZg==",
+      "source_name": "europa.eu",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-03-18",
+      "description": "The European Medicines Agency (EMA) concluded that the vaccine is safe and effective, stating the benefits outweigh the risks, leading several countries to resume vaccinations.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "europa.eu",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-04-07",
+      "description": "The EMA announced that unusual blood clots with low blood platelets should be listed as very rare side effects of the AstraZeneca vaccine.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFUFg4dX2czmbU8vNz4Fpm8FJ5sP4jHibb-B4VBF1zeo5AGdDA34869e0Z4JS25q6I_ZUZbJt2Gj-V_hSyNCDH259PEFYwkI5ZwjdxgXIlrMcmQHUKJEwws6-fy0Di8PvQTmwvSHY-EhPsZ4Z47ztD9vQUgbmHcqqslo-apGxdtTdSacPaCaIyHt2JBYoAnOufWrhtC_L6HvQLJy2IcSGHNDZ6n4gLhgey9O3BoDupWG9PKjk4osQh3ZSVSGmhN-7OkpTWBTzGdQd7Kag==",
+      "source_name": "pei.de",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-04-07",
+      "description": "Following the EMA's update, the UK's Joint Committee on Vaccination and Immunisation recommended that adults under 30 be offered alternative vaccines where available.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "parliament.uk",
+      "confidence": 0.8,
+      "quantitative_detail": "Under 30 age threshold"
+    }
+  ],
+  "polls": [
+    {
+      "date": "2021-02-01",
+      "pro_pct": 39.0,
+      "sample_size": 0,
+      "source": "Pulse Asia",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-05-01",
+      "pro_pct": 32.0,
+      "sample_size": 0,
+      "source": "SWS",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-06-01",
+      "pro_pct": 79.0,
+      "sample_size": 0,
+      "source": "SWS",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-09-01",
+      "pro_pct": 82.0,
+      "sample_size": 0,
+      "source": "SWS",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-12-01",
+      "pro_pct": 92.0,
+      "sample_size": 0,
+      "source": "SWS",
+      "methodology": "survey"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "Rodrigo Duterte",
+      "role": "President of the Philippines",
+      "position": "He actively encouraged the public to get vaccinated, frequently using public addresses to urge Filipinos to overcome their hesitancy and trust the government's vaccine procurement efforts.",
+      "date": "2021-03-01",
+      "source": "philstar.com"
+    },
+    {
+      "name": "Francisco Duque III",
+      "role": "Secretary of Health",
+      "position": "He consistently defended the safety and efficacy of the AstraZeneca vaccine, emphasizing that the benefits of vaccination far outweighed the risks of rare side effects.",
+      "date": "2021-04-15",
+      "source": "inquirer.net"
+    },
+    {
+      "name": "Carlito Galvez Jr.",
+      "role": "Vaccine Czar / Chief Implementer of the National Task Force Against COVID-19",
+      "position": "He worked to assure the public that the government had secured sufficient vaccine supplies and that all vaccines, including AstraZeneca, had undergone rigorous regulatory scrutiny.",
+      "date": "2021-05-10",
+      "source": "mb.com.ph"
+    },
+    {
+      "name": "Rolando Enrique Domingo",
+      "role": "Director General of the Food and Drug Administration (FDA)",
+      "position": "He provided technical reassurance to the public, stating that the FDA would not approve vaccines that did not meet strict safety standards and that reports of adverse events were being monitored.",
+      "date": "2021-03-20",
+      "source": "philstar.com"
+    }
+  ],
+  "outcome_description": "Public confidence in the AstraZeneca vaccine significantly declined in early 2021 following reports of rare blood clotting events, leading several European countries to temporarily suspend its use. While regulatory bodies like the EMA later reaffirmed the vaccine's safety and benefits, the incident resulted in lasting vaccine hesitancy and lower uptake rates compared to mRNA alternatives in many regions.",
+  "outcome_pro_pct": 65.0,
+  "outcome_source": "BMJ (British Medical Journal) analysis on vaccine confidence and hesitancy trends",
+  "key_figures": {
+    "vaccine_hesitancy_feb_mar_2021": "61%",
+    "vaccine_hesitancy_may_2021": "33%",
+    "vaccine_uncertainty_may_2021": "35%",
+    "vaccine_hesitancy_june_2021": "21%",
+    "vaccine_hesitancy_september_2021": "18%",
+    "vaccine_hesitancy_december_2021": "8%"
+  },
+  "n_sources_consulted": 6,
+  "research_timestamp": "2026-04-01T02:50:49.609965",
+  "quality_score": 88
+}

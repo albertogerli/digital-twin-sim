@@ -1,0 +1,83 @@
+{
+  "scenario_name": "peloton_the_gift_that_gives_back_2019",
+  "domain": "commercial",
+  "description": "Peloton's 2019 holiday ad featuring a husband gifting a bike to his wife was perceived by many as sexist and dystopian, causing the company's stock to briefly tumble.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 28,
+      "against_pct": 62,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 64,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 32,
+      "against_pct": 65,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 34,
+      "against_pct": 65,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Twitter users label the ad 'dystopian' and 'sexist'."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Stock prices drop significantly as mainstream media picks up the story."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Aviation Gin creates an ad featuring the same actress as a 'relief' spot."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Peloton management stands by the creative direction while acknowledging the criticism."
+    }
+  ],
+  "calibration_notes": "Focuses on the rapid, sentiment-driven financial impact of a cultural misstep."
+}

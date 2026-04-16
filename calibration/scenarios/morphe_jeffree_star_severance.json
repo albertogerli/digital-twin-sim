@@ -1,0 +1,83 @@
+{
+  "scenario_name": "morphe_jeffree_star_severance",
+  "domain": "commercial",
+  "description": "In 2020, following years of controversy, Morphe Cosmetics finally severed ties with beauty influencer Jeffree Star. The move came after mounting pressure from the beauty community to end their commercial partnership due to the influencer's history of racist comments and bullying.",
+  "final_outcome_pro_pct": 75.0,
+  "final_outcome_against_pct": 25.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 28,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 26,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 73,
+      "against_pct": 25,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 75,
+      "against_pct": 25,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Public pressure campaign by beauty community."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Competitor brands begin dropping Star."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Morphe announces end of partnership."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Morphe removes product from stores."
+    }
+  ],
+  "calibration_notes": "Illustrates a 'pro' outcome for a brand distancing itself from a toxic influencer partnership."
+}

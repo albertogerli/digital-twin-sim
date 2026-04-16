@@ -1,0 +1,83 @@
+{
+  "scenario_name": "us_longshoremen_automation_dispute_2024",
+  "domain": "labor",
+  "description": "In late 2024, the International Longshoremen's Association (ILA) went on strike across U.S. East and Gulf Coast ports, primarily citing the threat of automated cranes and gates to their job security. The conflict tested public support for labor unions versus the economic necessity of supply chain modernization and automation technology.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42.0,
+      "against_pct": 25.0,
+      "undecided_pct": 33.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45.0,
+      "against_pct": 28.0,
+      "undecided_pct": 27.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48.0,
+      "against_pct": 32.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52.0,
+      "against_pct": 35.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55.0,
+      "against_pct": 38.0,
+      "undecided_pct": 7.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 53.0,
+      "against_pct": 42.0,
+      "undecided_pct": 5.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51.0,
+      "against_pct": 45.0,
+      "undecided_pct": 4.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52.0,
+      "against_pct": 46.0,
+      "undecided_pct": 2.0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52.0,
+      "against_pct": 48.0,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "ILA officially issues strike notice explicitly naming automation as a core grievance."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "National media reports on potential shortages of consumer goods, shifting public perception."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "White House signals reluctance to invoke Taft-Hartley to force ports open."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Tentative agreement reached with port operators regarding a temporary moratorium on new automation projects."
+    }
+  ],
+  "calibration_notes": "This scenario captures the tension between pro-labor sentiment and the practical economic anxieties regarding AI and robotics. It demonstrates how polling shifts from broad support for 'workers' to specific opposition when supply chain disruptions directly impact consumer costs."
+}

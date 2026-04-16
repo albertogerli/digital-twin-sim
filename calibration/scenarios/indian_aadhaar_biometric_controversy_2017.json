@@ -1,0 +1,83 @@
+{
+  "scenario_name": "indian_aadhaar_biometric_controversy_2017",
+  "domain": "technology",
+  "description": "The challenge against India's Aadhaar program, which mandated biometric ID for public services. The Supreme Court battle weighed digital efficiency against the right to bodily integrity and privacy.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 80,
+      "against_pct": 10,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 78,
+      "against_pct": 12,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 75,
+      "against_pct": 18,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 72,
+      "against_pct": 22,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 68,
+      "against_pct": 28,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 67,
+      "against_pct": 30,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 31,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Widespread adoption for government subsidies."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Supreme Court case begins; focus on data breach reports."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Critics highlight exclusionary failures for elderly/poor citizens."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Supreme Court verdict allows Aadhaar but limits its mandatory nature."
+    }
+  ],
+  "calibration_notes": "Useful for understanding scenarios where a technology is embedded in the system before the controversy reaches its peak."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_national_living_wage_2016",
+  "domain": "labor",
+  "description": "In 2016, the UK government under George Osborne implemented the 'National Living Wage' for workers over 25. It was a surprise move by a Conservative government to bridge the income gap.",
+  "final_outcome_pro_pct": 74.0,
+  "final_outcome_against_pct": 26.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 62,
+      "against_pct": 15,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 65,
+      "against_pct": 18,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 68,
+      "against_pct": 22,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 72,
+      "against_pct": 25,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 73,
+      "against_pct": 26,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 74,
+      "against_pct": 26,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 74,
+      "against_pct": 26,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Chancellor George Osborne announces the policy in the Summer Budget."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Hospitality industry groups warn of restaurant closures."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public polling shows high support across party lines."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The policy takes effect for all eligible workers."
+    }
+  ],
+  "calibration_notes": "Useful for modeling policy support when a typically 'pro-business' party pivots toward populist labor economics."
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "round": 1,
+    "description": "Silicon Valley Bank announced a $1.8 billion loss from the sale of its bond portfolio and a plan to raise $2.25 billion in capital. This disclosure triggered immediate concern among venture capital clients regarding the bank's solvency.",
+    "shock_magnitude": 0.5,
+    "shock_direction": -1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Following warnings from prominent venture capitalists, customers initiated a massive bank run, attempting to withdraw $42 billion in a single day. This event signaled a rapid collapse of public confidence in the institution.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb5SqP3HjN4_Y05gKC3krV6f3V0XAL2N10nVrl1zy4uZ_GEVNfdxL4O3iMSCZ26DAHyYVbMM-v4xc_6pSLKiIpV-Rs8uMqpSy25unWBbvkCwqkchg3yKiVFGv11aioESu1QEvHKeD0-uJpilQMT-XYC09XTyRQXjxzgsqT8hPs5q6bfjgjSbD5FfE1",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb5SqP3HjN4_Y05gKC3krV6f3V0XAL2N10nVrl1zy4uZ_GEVNfdxL4O3iMSCZ26DAHyYVbMM-v4xc_6pSLKiIpV-Rs8uMqpSy25unWBbvkCwqkchg3yKiVFGv11aioESu1QEvHKeD0-uJpilQMT-XYC09XTyRQXjxzgsqT8hPs5q6bfjgjSbD5FfE1"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 4,
+    "description": "The California Department of Financial Protection and Innovation officially closed Silicon Valley Bank and appointed the FDIC as receiver. This marked the second-largest bank failure in U.S. history at the time.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0ttNY2z5iMCgUFL_yx6mpxiXGLOgKoR_3Jl34nKvp6ne8FltzUJ3XQxiaaHAV8eLvokQCUmlJYTKpTACrFHg4crjYGmgC5paN6Tj-L_t0yDAEEmrOjTDotS1dldRAb7AtVHBqKdDuPAI2iagGoGSNQnU1cMXX079O9Iv7Rqo7k1NQFRB3GgBmg2nrkEII0NmncWD6-IKU2u5rLgsEhvnCQw==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0ttNY2z5iMCgUFL_yx6mpxiXGLOgKoR_3Jl34nKvp6ne8FltzUJ3XQxiaaHAV8eLvokQCUmlJYTKpTACrFHg4crjYGmgC5paN6Tj-L_t0yDAEEmrOjTDotS1dldRAb7AtVHBqKdDuPAI2iagGoGSNQnU1cMXX079O9Iv7Rqo7k1NQFRB3GgBmg2nrkEII0NmncWD6-IKU2u5rLgsEhvnCQw=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "Federal regulators announced that all depositors at SVB would be fully protected and have access to their money, aiming to prevent systemic contagion. This intervention was intended to stabilize broader public confidence in the banking system.",
+    "shock_magnitude": 0.8,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN5cVB0794FtbBmbIuJg-mM65aom9TN9dFv6WWCjm1gQHWIZzV3Jgn4i73jgV1h89-eyuqnij5negDbAfJdex9SvasV4F0pU_Jw3oAvsP4_0K1b6CmL-gJGPSzEyUz68ELOTvZ6DYh3uDRgloepSTSX-Yuy9KvD_o=",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN5cVB0794FtbBmbIuJg-mM65aom9TN9dFv6WWCjm1gQHWIZzV3Jgn4i73jgV1h89-eyuqnij5negDbAfJdex9SvasV4F0pU_Jw3oAvsP4_0K1b6CmL-gJGPSzEyUz68ELOTvZ6DYh3uDRgloepSTSX-Yuy9KvD_o="
+    ],
+    "_verified": true
+  }
+]

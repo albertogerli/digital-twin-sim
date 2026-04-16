@@ -1,0 +1,79 @@
+{
+  "scenario_name": "denmark_maastricht_referendum_1992",
+  "domain": "political",
+  "description": "Denmark's first referendum on the Maastricht Treaty in 1992 resulted in a shock rejection, forcing the EU to negotiate the 'Edinburgh Agreement' to satisfy Danish opt-outs.",
+  "final_outcome_pro_pct": 49.3,
+  "final_outcome_against_pct": 50.7,
+  "final_turnout_pct": 83.1,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 53,
+      "against_pct": 37,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 43,
+      "against_pct": 47,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 49,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 49,
+      "against_pct": 51,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Concerns over loss of national currency grow"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Grassroots 'June Movement' gathers momentum"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Late surge for Pro-EU forces fails to close the gap"
+    }
+  ],
+  "calibration_notes": "Excellent for studying the 'shock' of unexpected referendum outcomes."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "open_handset_alliance_android_birth",
+  "domain": "technology",
+  "description": "The 2007-2008 formation of the Open Handset Alliance (OHA) to promote Android as an open-source mobile competitor to the highly proprietary Apple iOS (iPhone) and Windows Mobile ecosystems.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 35,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 25,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 22,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Google announces Open Handset Alliance with major carriers (2007)."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "T-Mobile G1 launches as the first Android device (2008)."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Android gains significant market share against Symbian and Windows (2009)."
+    }
+  ],
+  "calibration_notes": "Captures the impact of industry consortia in overriding proprietary dominance through collective open-source branding."
+}

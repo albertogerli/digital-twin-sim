@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tulip_mania_revisionism_1637",
+  "domain": "financial",
+  "description": "A retrospective look at the Dutch Tulip Mania. While modern historians debate the scale, the immediate aftermath created a public consensus regarding the dangers of speculative excess.",
+  "final_outcome_pro_pct": 5.0,
+  "final_outcome_against_pct": 95.0,
+  "final_turnout_pct": 40.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 40,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 50,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 12,
+      "against_pct": 60,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 10,
+      "against_pct": 70,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 8,
+      "against_pct": 78,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 7,
+      "against_pct": 85,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 6,
+      "against_pct": 90,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 5,
+      "against_pct": 93,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 5,
+      "against_pct": 95,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Price of rare bulbs surges 20-fold in one month."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Buyers fail to appear at Haarlem auction, prices collapse."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Dutch government refuses to enforce speculative contracts."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Pamphlets denounce 'tulip folly' as a moral failing of the merchant class."
+    }
+  ],
+  "calibration_notes": "Tests extreme consensus building against speculative bubbles in a historical context."
+}

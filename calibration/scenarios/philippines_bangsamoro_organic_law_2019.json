@@ -1,0 +1,83 @@
+{
+  "scenario_name": "philippines_bangsamoro_organic_law_2019",
+  "domain": "political",
+  "description": "A two-part plebiscite held in January and February 2019 to ratify the creation of the Bangsamoro Autonomous Region in Muslim Mindanao. The 'Yes' vote passed with roughly 88% support.",
+  "final_outcome_pro_pct": 88.0,
+  "final_outcome_against_pct": 12.0,
+  "final_turnout_pct": 86.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 70,
+      "against_pct": 18,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 75,
+      "against_pct": 16,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 78,
+      "against_pct": 15,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 80,
+      "against_pct": 14,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 82,
+      "against_pct": 13,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 85,
+      "against_pct": 12,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 88,
+      "against_pct": 12,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "President Duterte endorses the measure publicly."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Major regional clans declare support for the autonomy law."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Minor security incidents fail to dampen voter turnout."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The ratification results are officially announced across the region."
+    }
+  ],
+  "calibration_notes": "Useful for modeling high-consensus regional referendums driven by elite-level agreements filtering down to the public."
+}

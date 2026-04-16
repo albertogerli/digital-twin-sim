@@ -1,0 +1,83 @@
+{
+  "scenario_name": "sega_dreamcast_launch_1999",
+  "domain": "commercial",
+  "description": "Sega launched the Dreamcast in North America in September 1999, hoping to regain market dominance against the PlayStation. While initial sales were high, the announcement of the PlayStation 2 shortly after eroded consumer support.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 62,
+      "against_pct": 20,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 43,
+      "against_pct": 54,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Dreamcast launches in North America to record sales."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Sony teases specifications for the PlayStation 2."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Third-party developers begin signaling support for the PS2 over Dreamcast."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Sega announces discontinuation of the console project."
+    }
+  ],
+  "calibration_notes": "Shows how early-stage success can be flipped by a superior competitor's pre-announcement."
+}

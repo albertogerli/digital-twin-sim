@@ -1,0 +1,83 @@
+{
+  "scenario_name": "finland_education_curriculum_2016",
+  "domain": "social",
+  "description": "Finland introduced a major education reform in 2016 moving toward 'phenomenon-based' learning. The debate focused on whether moving away from traditional subjects would harm core academic rigor.",
+  "final_outcome_pro_pct": 71.0,
+  "final_outcome_against_pct": 29.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 20,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 28,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 28,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 71,
+      "against_pct": 29,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Ministry of Education publishes the new National Core Curriculum."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Global media picks up the 'Finland abandons subjects' narrative."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Teacher surveys show high support for pilot programs."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Implementation begins nationwide."
+    }
+  ],
+  "calibration_notes": "Useful for understanding consensus-building in highly trusted educational systems."
+}

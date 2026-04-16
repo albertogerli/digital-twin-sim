@@ -1,0 +1,145 @@
+{
+  "id": "PH-2021-VACCINE_HESITANCY_USA_2021_CO",
+  "domain": "public_health",
+  "title": "Public opinion trajectory regarding COVID-19 vaccination acceptance in the United States during the 2021 vaccine rollout",
+  "country": "US",
+  "date_start": "2021-01-01",
+  "date_end": "2021-07-31",
+  "n_rounds": 5,
+  "round_duration_days": 42,
+  "ground_truth_outcome": {
+    "pro_pct": 67.0,
+    "source": "https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-july-2021/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-01-01",
+      "pro_pct": 47.0,
+      "against_pct": 39.0,
+      "undecided_pct": 14.0,
+      "sample_size": 1676,
+      "source": "https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-december-2020/",
+      "pollster": "KFF"
+    },
+    {
+      "round": 2,
+      "date": "2021-02-12",
+      "pro_pct": 55.0,
+      "against_pct": 32.0,
+      "undecided_pct": 13.0,
+      "sample_size": 1563,
+      "source": "Estimated: Interpolated based on KFF Vaccine Monitor Feb 2021 trends",
+      "pollster": "KFF"
+    },
+    {
+      "round": 3,
+      "date": "2021-03-26",
+      "pro_pct": 61.0,
+      "against_pct": 27.0,
+      "undecided_pct": 12.0,
+      "sample_size": 1873,
+      "source": "https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-march-2021/",
+      "pollster": "KFF"
+    },
+    {
+      "round": 4,
+      "date": "2021-05-07",
+      "pro_pct": 64.0,
+      "against_pct": 25.0,
+      "undecided_pct": 11.0,
+      "sample_size": 2089,
+      "source": "https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-may-2021/",
+      "pollster": "KFF"
+    },
+    {
+      "round": 5,
+      "date": "2021-06-18",
+      "pro_pct": 67.0,
+      "against_pct": 22.0,
+      "undecided_pct": 11.0,
+      "sample_size": 1888,
+      "source": "https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-july-2021/",
+      "pollster": "KFF"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2021-01-20",
+      "description": "Inauguration of President Biden and federal push for 100 million doses in 100 days",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2,
+      "source": "https://www.whitehouse.gov/briefing-room/statements-releases/2021/01/21/fact-sheet-president-biden-signs-executive-orders-to-strengthen-americas-covid-19-response/"
+    },
+    {
+      "round": 3,
+      "date": "2021-04-13",
+      "description": "CDC and FDA recommend pause of Johnson & Johnson vaccine due to rare blood clots",
+      "shock_magnitude": 0.6,
+      "shock_direction": -0.4,
+      "source": "https://www.cdc.gov/media/releases/2021/s0413-JJ-vaccine.html"
+    },
+    {
+      "round": 4,
+      "date": "2021-05-13",
+      "description": "CDC announces fully vaccinated people can stop wearing masks in most settings",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.3,
+      "source": "https://www.cdc.gov/media/releases/2021/s0513-vaccination-mask-guidance.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "CDC",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Federal public health agency promoting vaccination"
+    },
+    {
+      "name": "White House",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.8,
+      "description": "Executive branch driving federal vaccine distribution"
+    },
+    {
+      "name": "Mainstream Media",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "Major news outlets reporting on vaccine efficacy"
+    },
+    {
+      "name": "Vaccine Skeptic Groups",
+      "type": "citizen_cluster",
+      "initial_position": -1.0,
+      "influence": 0.4,
+      "description": "Organized groups opposing mandates and expressing safety concerns"
+    },
+    {
+      "name": "State Governors",
+      "type": "elite",
+      "initial_position": 0.2,
+      "influence": 0.7,
+      "description": "State-level leaders with varying levels of vaccine promotion"
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.1,
+      "description": "The aggregate population of US adults"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.776,
+    "event_volatility": 0.45,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.55,
+    "undecided_share": 0.14
+  },
+  "notes": "Pro-side is defined as individuals who have received at least one dose of a COVID-19 vaccine or are willing to get vaccinated as soon as possible. Against-side is defined as individuals who refuse vaccination or are in the 'wait-and-see' category. Data quality is high due to consistent methodology from KFF Vaccine Monitor."
+}

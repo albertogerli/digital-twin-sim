@@ -1,0 +1,79 @@
+{
+  "scenario_name": "canada_safe_third_country_agreement",
+  "domain": "social",
+  "description": "The public debate regarding the Canada-US Safe Third Country Agreement (STCA) and its modernization to include irregular border crossings at Roxham Road. This highlights the tension between international refugee obligations and border control.",
+  "final_outcome_pro_pct": 51.0,
+  "final_outcome_against_pct": 49.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 42,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 42,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 53,
+      "against_pct": 43,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 46,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Sharp rise in irregular crossings at Roxham Road becomes daily news."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Conservative Party calls for immediate border closure to refugees."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Trudeau government successfully negotiates STCA expansion with Biden admin."
+    }
+  ],
+  "calibration_notes": "Illustrates how economic and social pressure can shift a traditionally liberal consensus on immigration."
+}

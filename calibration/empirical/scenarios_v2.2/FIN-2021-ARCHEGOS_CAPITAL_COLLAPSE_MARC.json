@@ -1,0 +1,197 @@
+{
+  "id": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC",
+  "domain": "financial",
+  "title": "Market Confidence in Prime Brokerage Risk Management Following the Archegos Capital Management Collapse",
+  "country": "US",
+  "date_start": "2021-02-01",
+  "date_end": "2021-05-31",
+  "n_rounds": 7,
+  "round_duration_days": 17,
+  "ground_truth_outcome": {
+    "pro_pct": 35.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-02-01",
+      "pro_pct": 65.0,
+      "against_pct": 15.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline market confidence in prime brokerage risk controls prior to Archegos exposure disclosure.",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2021-02-18",
+      "pro_pct": 62.0,
+      "against_pct": 18.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Slight decline due to early rumors of margin pressure in family offices.",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2021-03-07",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Market sentiment stable but cautious.",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2021-03-24",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Immediate reaction to the Archegos fire sale and multi-billion dollar bank losses.",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2021-04-10",
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Continued scrutiny of Credit Suisse and Nomura risk management failures.",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2021-04-27",
+      "pro_pct": 36.0,
+      "against_pct": 50.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Regulatory bodies begin formal inquiries into family office transparency.",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2021-05-14",
+      "pro_pct": 35.0,
+      "against_pct": 52.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Post-event equilibrium reached with permanent loss of confidence in prime brokerage risk oversight.",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "ViacomCBS announced a secondary stock offering, which caused a sharp decline in its share price and acted as the catalyst for the collapse.",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "Archegos Capital Management failed to meet massive margin calls from its prime brokers as the value of its concentrated portfolio plummeted.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "Prime brokers began a massive fire sale of Archegos-linked stocks, leading to significant market volatility and public realization of the firm's hidden leverage.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiAhVrKI8PBeM0sqpBtLkEA60Ztd43zaQgEVDqfwufrrkt4qs2qppbNhiqI8jlxQBofTndjHka-K5_SJwPMNNyWyhl_O8EU-ueQz49E-lfzTJcTx0PQ8BYP2P4BR4w0-_tCZxUcKYnNCi_4ihxrINr648fXvXcp5cAOfrYz2IP0ZTldGo=",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFiAhVrKI8PBeM0sqpBtLkEA60Ztd43zaQgEVDqfwufrrkt4qs2qppbNhiqI8jlxQBofTndjHka-K5_SJwPMNNyWyhl_O8EU-ueQz49E-lfzTJcTx0PQ8BYP2P4BR4w0-_tCZxUcKYnNCi_4ihxrINr648fXvXcp5cAOfrYz2IP0ZTldGo="
+      ],
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "Major global investment banks began disclosing their exposure to Archegos, revealing the extent of the financial damage caused by the firm's collapse.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH05Hkk5qTHkIM-rP7Lb5xHQ-oiPmax-TdDaJ2Or_SIEmF5scmh0McCkN-_nCkoXKLS4rUIuDSzM_9GhBHb1cItjHtF2tHj4OF84Xx9xfAbD6s--jKjjmA_1pfzJC_XtyNEBBwC8AWWpYinCU6hkthpAKriGD-yjUnA1DBRD_aEFmoTR9HMF6aYR6pUJ82aTLvU5t6IzGgT6uXKjwPd",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH05Hkk5qTHkIM-rP7Lb5xHQ-oiPmax-TdDaJ2Or_SIEmF5scmh0McCkN-_nCkoXKLS4rUIuDSzM_9GhBHb1cItjHtF2tHj4OF84Xx9xfAbD6s--jKjjmA_1pfzJC_XtyNEBBwC8AWWpYinCU6hkthpAKriGD-yjUnA1DBRD_aEFmoTR9HMF6aYR6pUJ82aTLvU5t6IzGgT6uXKjwPd"
+      ],
+      "_verified": true
+    },
+    {
+      "round": 6,
+      "description": "Regulatory scrutiny intensified as questions arose regarding the 'family office' exemption that allowed Archegos to operate with minimal oversight.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "name": "Goldman Sachs",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "Prime broker that exited positions early, maintaining high confidence in their own risk management."
+    },
+    {
+      "name": "Credit Suisse",
+      "type": "institutional",
+      "initial_position": 0.5,
+      "influence": 0.8,
+      "description": "Prime broker that suffered massive losses; position shifted to -0.8 post-event."
+    },
+    {
+      "name": "SEC",
+      "type": "elite",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "Regulatory body seeking to tighten oversight of opaque financial instruments."
+    },
+    {
+      "name": "Institutional Investors",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.5,
+      "description": "General market participants concerned about counterparty risk and transparency."
+    },
+    {
+      "name": "Bill Hwang",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.3,
+      "description": "Founder of Archegos; represents the high-leverage, high-secrecy investment strategy."
+    },
+    {
+      "name": "Financial Media",
+      "type": "elite",
+      "initial_position": 0.0,
+      "influence": 0.6,
+      "description": "Outlets like Bloomberg and FT shaping the narrative of systemic risk."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.422,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.2
+  },
+  "notes": "Pro-side: Confidence in existing prime brokerage risk management and transparency. Against-side: Lack of confidence, favoring stricter regulation and oversight of family offices. Data is estimated based on market volatility indices and financial reporting trends during the Q1 2021 period.",
+  "_grounding_v2.2": {
+    "strategy": "hybrid_events_only",
+    "agents": "original",
+    "events": "grounded_v2.1",
+    "n_grounded_events": 5,
+    "n_original_events": 3
+  }
+}

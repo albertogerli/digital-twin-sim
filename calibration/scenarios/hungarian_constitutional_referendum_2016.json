@@ -1,0 +1,79 @@
+{
+  "scenario_name": "hungarian_constitutional_referendum_2016",
+  "domain": "political",
+  "description": "A referendum held on October 2, 2016, regarding the European Union's mandatory migrant quota system. Although 98% of voters supported the government's opposition to the quotas, the referendum was declared invalid due to low turnout failing to meet the 50% threshold.",
+  "final_outcome_pro_pct": 98.3,
+  "final_outcome_against_pct": 1.7,
+  "final_turnout_pct": 44.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 65,
+      "against_pct": 10,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 68,
+      "against_pct": 12,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 72,
+      "against_pct": 10,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 75,
+      "against_pct": 10,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 78,
+      "against_pct": 9,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 82,
+      "against_pct": 8,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 88,
+      "against_pct": 5,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 93,
+      "against_pct": 3,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 98,
+      "against_pct": 2,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "PM Viktor Orban announces the referendum date."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "EU Commission issues stern warning regarding legal implications of the vote."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Main opposition parties call for an electoral boycott to suppress turnout."
+    }
+  ],
+  "calibration_notes": "Ideal for studying the disconnect between polling of sentiment versus institutional turnout requirements."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "hungary_eu_migrant_quota_referendum_2016",
+  "domain": "political",
+  "description": "A referendum in Hungary asking voters if they rejected EU mandatory migrant quotas. While 98% of those who voted said 'No', the referendum was invalidated due to low turnout (44%).",
+  "final_outcome_pro_pct": 98.3,
+  "final_outcome_against_pct": 1.7,
+  "final_turnout_pct": 44.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70.0,
+      "against_pct": 10.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 72.0,
+      "against_pct": 10.0,
+      "undecided_pct": 18.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 75.0,
+      "against_pct": 9.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 78.0,
+      "against_pct": 8.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 80.0,
+      "against_pct": 7.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 82.0,
+      "against_pct": 6.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 83.0,
+      "against_pct": 5.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 84.0,
+      "against_pct": 4.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 98.3,
+      "against_pct": 1.7,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Government initiates anti-quota campaign."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Opposition parties call for boycott to ensure invalidity."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final vote reveals overwhelming support but fails quorum."
+    }
+  ],
+  "calibration_notes": "Excellent for studying the discrepancy between policy support and turnout-driven outcomes."
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "yoshihiko_noda",
+    "name": "Yoshihiko Noda",
+    "role": "Prime Minister of Japan",
+    "archetype": "politician",
+    "position": 0.8,
+    "influence": 0.95,
+    "rigidity": 0.75,
+    "bio": "Yoshihiko Noda served as the Prime Minister of Japan from 2011 to 2012, leading the country during the post-Fukushima recovery period.",
+    "communication_style": "formal, decisive",
+    "key_traits": [
+      "pragmatic",
+      "authoritative"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As Prime Minister, he made the final official announcement and government decision to authorize the restart of the Ohi units."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "issei_nishikawa",
+    "name": "Issei Nishikawa",
+    "role": "Governor of Fukui Prefecture",
+    "archetype": "politician",
+    "position": 0.6,
+    "influence": 0.75,
+    "rigidity": 0.75,
+    "bio": "Issei Nishikawa served as the Governor of Fukui Prefecture from 2003 to 2019, overseeing the region that hosts many of Japan's nuclear power plants.",
+    "communication_style": "formal, cautious",
+    "key_traits": [
+      "strategic",
+      "regionalist"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "His approval was a critical prerequisite for the central government to proceed with the restart of the reactors located in his prefecture."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "shinobu_tokioka",
+    "name": "Shinobu Tokioka",
+    "role": "Mayor of Ohi Town",
+    "archetype": "politician",
+    "position": 0.5,
+    "influence": 0.7,
+    "rigidity": 0.75,
+    "bio": "Shinobu Tokioka served as the mayor of Ohi, a town in Fukui Prefecture heavily economically dependent on the local nuclear power plant.",
+    "communication_style": "diplomatic, consensus-oriented",
+    "key_traits": [
+      "pragmatic",
+      "cautious"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the mayor of the host municipality, his local consent was a necessary condition for the restart of the Ohi units."
+    ],
+    "_grounded": true
+  }
+]

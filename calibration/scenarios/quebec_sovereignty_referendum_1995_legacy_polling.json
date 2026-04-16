@@ -1,0 +1,79 @@
+{
+  "scenario_name": "quebec_sovereignty_referendum_1995_legacy_polling",
+  "domain": "political",
+  "description": "A long-term look at the separatist sentiment in Quebec following the narrow 1995 defeat. This trajectory captures the fluctuating support for the Parti Québécois and independence until the 2000s decline.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 93.5,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 44,
+      "against_pct": 52,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 53,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 46,
+      "against_pct": 50,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 51,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 43,
+      "against_pct": 54,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 57,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Supreme Court of Canada rules on secession legality"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Introduction of the Clarity Act"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Election of Jean Charest as Premier"
+    }
+  ],
+  "calibration_notes": "Useful for modeling long-term sentiment cooling after high-stakes constitutional events."
+}

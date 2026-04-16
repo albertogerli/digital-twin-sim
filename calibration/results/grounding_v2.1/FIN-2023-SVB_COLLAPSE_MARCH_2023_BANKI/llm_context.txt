@@ -1,0 +1,53 @@
+# VERIFIED FACTS — FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI
+Domain: financial | Country: US
+Period: 2023-03-08 to 2023-03-12
+
+## TIMELINE (verified events, chronological order):
+1. [2023-03-08] Silvergate Bank announced it would wind down operations and liquidate, which significantly heightened market anxiety regarding the banking sector. [confidence: 80%]
+   Detail: N/A
+   Source: ca.gov
+2. [2023-03-08] SVB Financial Group announced a $1.8 billion loss from selling securities and a plan to raise $2.25 billion in capital, triggering investor panic.
+   Detail: $21 billion in securities sold; $1.8 billion loss; $2.25 billion capital raise
+   Source: lowenstein.com / wikipedia.org
+3. [2023-03-08] Moody’s Investors Service notified Silicon Valley Bank of a potential credit rating downgrade, further eroding market confidence. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+4. [2023-03-09] Venture capital firms advised portfolio companies to withdraw their funds from SVB, leading to a massive bank run.
+   Detail: N/A
+   Source: wikipedia.org
+5. [2023-03-10] The California Department of Financial Protection and Innovation closed Silicon Valley Bank and appointed the FDIC as receiver.
+   Detail: N/A
+   Source: wikipedia.org
+6. [2023-03-12] U.S. regulators announced that all depositors at SVB would be fully protected and have access to their money, aiming to stem systemic panic. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+
+## KEY FIGURES:
+- bailout_support_total: 64% of Americans
+- bailout_support_democrats: 79%
+- bailout_support_republicans: 62%
+- bailout_support_independents: 54%
+- high_confidence_in_banks_2023: 10%
+- high_confidence_in_banks_2020: 22%
+- trust_in_banks_to_do_right: 70%
+- deposit_safety_feeling_safe: 70%
+
+## POLLING/SENTIMENT DATA:
+- [2023-03-13] 64.0% pro (N=10041) — YouGov
+- [2023-03-13] 70.0% pro (N=10041) — YouGov
+- [2023-03-13] 70.0% pro — Morning Consult
+- [2023-03-16] 10.0% pro (N=1081) — AP-NORC
+
+## KEY STAKEHOLDER POSITIONS:
+- Joe Biden (President of the United States): Stated that the government would ensure depositors have access to their money and that the banking system is safe, emphasizing that taxpayers would not bear the losses.
+- Janet Yellen (U.S. Treasury Secretary): Confirmed that the government would take decisive actions to protect depositors while clarifying that the intervention was not a taxpayer-funded bailout of the bank itself.
+- Greg Becker (CEO of Silicon Valley Bank): Urged customers to remain calm and stay with the bank during the liquidity crisis, shortly before the institution was seized by regulators.
+
+## FINAL OUTCOME:
+The collapse of Silicon Valley Bank resulted in a loss of public and investor confidence in the bank's liquidity, leading to a federal intervention where the FDIC took control to protect depositors and prevent systemic contagion. Public opinion was characterized by widespread concern regarding banking sector stability, though the government's subsequent guarantee of all deposits helped stabilize broader market sentiment.
+Pro %: 35.0% — Source: Gallup (Economic Confidence Index, March 2023)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

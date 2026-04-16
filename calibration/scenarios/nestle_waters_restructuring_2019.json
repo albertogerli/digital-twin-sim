@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nestle_waters_restructuring_2019",
+  "domain": "corporate",
+  "description": "Nestlé Waters faced intense public pressure and legal battles in North America, leading to structural changes in how they source and manage water assets, effectively a corporate pivot.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 46,
+      "against_pct": 45,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44,
+      "against_pct": 50,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 44,
+      "against_pct": 54,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Local communities launch legal campaigns."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Media exposes water extraction volumes during drought."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Nestlé announces strategic review and asset divestment."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final corporate restructuring plan finalized."
+    }
+  ],
+  "calibration_notes": "Models corporate reaction to environmental activism and the subsequent restructuring of business operations."
+}

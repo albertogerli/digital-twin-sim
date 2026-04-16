@@ -1,0 +1,125 @@
+{
+  "scenario_id": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER",
+  "topic": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER",
+  "domain": "corporate",
+  "country": "US",
+  "timeframe_start": "2021-10-21",
+  "timeframe_end": "2021-10-28",
+  "events": [
+    {
+      "date": "2021-10-21",
+      "description": "Media reports began circulating regarding Facebook's internal plans to rebrand the company and change its corporate name.",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "officetimeline.com",
+      "confidence": 0.8,
+      "quantitative_detail": "none"
+    },
+    {
+      "date": "2021-10-25",
+      "description": "CEO Mark Zuckerberg addressed public criticism of the company's social services during the Q3 2021 earnings call while emphasizing a strategic pivot toward the metaverse.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "Q3 2021"
+    },
+    {
+      "date": "2021-10-28",
+      "description": "Mark Zuckerberg officially announced at the Facebook Connect conference that the parent company would be renamed Meta Platforms, Inc.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF9UjipLXuAxrh3ZTLTddxmFCVFreolmoMfA3kPXjpHoX5v8ZczxU4mrSvepgC59T2HNLeYGwmWBOi4UyHt7QGQQouWqKBIe6VobCidU-i1fe1LVlw-bsG0AOz9TdKfDV02HVwmfioG",
+      "source_name": "wildnettechnologies.com",
+      "confidence": 1.0,
+      "quantitative_detail": "none"
+    },
+    {
+      "date": "2021-10-28",
+      "description": "The company formally outlined its 'metaverse-first' strategy, aiming to build an interconnected digital ecosystem using VR and AR technologies.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "cbsnews.com",
+      "confidence": 0.8,
+      "quantitative_detail": "1 billion people"
+    }
+  ],
+  "polls": [
+    {
+      "date": "2021-10-28",
+      "pro_pct": 53.0,
+      "sample_size": 0,
+      "source": "SightX",
+      "methodology": "Survey"
+    },
+    {
+      "date": "2021-10-28",
+      "pro_pct": 47.0,
+      "sample_size": 0,
+      "source": "SightX",
+      "methodology": "Survey"
+    },
+    {
+      "date": "2021-10-28",
+      "pro_pct": 50.8,
+      "sample_size": 0,
+      "source": "SightX",
+      "methodology": "Survey"
+    },
+    {
+      "date": "2021-10-28",
+      "pro_pct": 49.2,
+      "sample_size": 0,
+      "source": "SightX",
+      "methodology": "Survey"
+    },
+    {
+      "date": "2021-10-28",
+      "pro_pct": 62.5,
+      "sample_size": 0,
+      "source": "SightX",
+      "methodology": "Survey"
+    },
+    {
+      "date": "2021-10-28",
+      "pro_pct": 37.5,
+      "sample_size": 0,
+      "source": "SightX",
+      "methodology": "Survey"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "Mark Zuckerberg",
+      "role": "CEO of Meta (formerly Facebook Inc.)",
+      "position": "He announced the company's rebranding to Meta to signal a strategic shift toward building the metaverse as the company's future focus.",
+      "date": "2021-10-28",
+      "source": "Business Insider"
+    },
+    {
+      "name": "Frances Haugen",
+      "role": "Whistleblower",
+      "position": "She publicly criticized the company's internal practices and ethics, creating a PR crisis that coincided with the timing of the corporate rebrand.",
+      "date": "2021-10-03",
+      "source": "Business Insider"
+    }
+  ],
+  "outcome_description": "The rebranding to Meta was met with widespread public skepticism and criticism, largely viewed as a strategic attempt to distract from ongoing controversies regarding the company's social media platforms and data privacy practices.",
+  "outcome_pro_pct": 25.0,
+  "outcome_source": "The Verge/SurveyMonkey poll (2021)",
+  "key_figures": {
+    "rebrand_announcement_date": "October 28, 2021",
+    "whistleblower_identity_reveal_date": "October 3, 2021",
+    "survey_sample_size": "Just over 1,000 U.S. adults",
+    "survey_period": "October 28\u201329, 2021",
+    "poor_idea_sentiment": "47%",
+    "lack_of_excitement_percentage": "49.2%",
+    "skepticism_of_organizational_change": "37.5%"
+  },
+  "n_sources_consulted": 4,
+  "research_timestamp": "2026-04-01T02:46:38.582940",
+  "quality_score": 72
+}

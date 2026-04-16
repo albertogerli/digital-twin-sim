@@ -1,0 +1,79 @@
+{
+  "scenario_name": "ny_taxi_medallion_crisis_2018",
+  "domain": "labor",
+  "description": "The rapid rise of Uber and Lyft in NYC led to a collapse in taxi medallion values and widespread protests, resulting in the city's 2018 cap on ride-hail vehicles.",
+  "final_outcome_pro_pct": 59.0,
+  "final_outcome_against_pct": 41.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 35,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 42,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 42,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 57,
+      "against_pct": 41,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 41,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 59,
+      "against_pct": 41,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 59,
+      "against_pct": 41,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Suicides of several debt-ridden taxi drivers gain national media attention."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "NYC Council votes to freeze new ride-hail licenses."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Public rallies push for minimum pay for app drivers."
+    }
+  ],
+  "calibration_notes": "Useful for calibration of extreme economic hardship as a driver of labor policy change."
+}

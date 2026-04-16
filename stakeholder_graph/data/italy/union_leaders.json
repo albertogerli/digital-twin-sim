@@ -1,0 +1,141 @@
+[
+  {
+    "id": "maurizio_landini",
+    "name": "Maurizio Landini",
+    "role": "Segretario Generale CGIL",
+    "country": "IT",
+    "category": "union_leader",
+    "party_or_org": "CGIL",
+    "archetype": "union_leader",
+    "tier": 1,
+    "influence": 0.70,
+    "rigidity": 0.75,
+    "bio": "Leader della CGIL dal 2019, ex segretario FIOM. Voce più combattiva del sindacato italiano, promotore di scioperi generali contro il governo.",
+    "communication_style": "Sindacalista combattivo, linguaggio di classe, toni appassionati, forte nei comizi",
+    "key_traits": ["combattivo", "carismatico", "intransigente"],
+    "platform_primary": "tv",
+    "platform_secondary": "piazza",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": -0.75, "source": "public_statement", "confidence": "high", "quotes": ["Una magistratura indipendente è la prima garanzia dei diritti dei lavoratori e dei più deboli."]},
+      {"topic_tag": "general_left_right", "value": -0.70, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "labor_reform", "value": -0.90, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "premierato", "value": -0.85, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "autonomia_differenziata", "value": -0.85, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "fiscal_policy", "value": -0.70, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "luigi_sbarra", "type": "rival", "strength": 0.5, "context": "CGIL e CISL su posizioni diverse verso il governo"},
+      {"target_id": "elly_schlein", "type": "ally", "strength": 0.6}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia", "public_statements"],
+    "wikidata_qid": "Q3843099"
+  },
+  {
+    "id": "luigi_sbarra",
+    "name": "Luigi Sbarra",
+    "role": "Segretario Generale CISL",
+    "country": "IT",
+    "category": "union_leader",
+    "party_or_org": "CISL",
+    "archetype": "union_leader",
+    "tier": 1,
+    "influence": 0.55,
+    "rigidity": 0.50,
+    "bio": "Leader della CISL, linea dialogante con il governo. Non ha aderito agli scioperi generali CGIL, preferendo la concertazione.",
+    "communication_style": "Concertativo, moderato, toni da negoziatore, evita lo scontro frontale",
+    "key_traits": ["dialogante", "moderato", "pragmatico"],
+    "platform_primary": "press",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "labor_reform", "value": -0.40, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": -0.25, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "judiciary_reform", "value": -0.30, "source": "inferred", "confidence": "low"},
+      {"topic_tag": "fiscal_policy", "value": -0.35, "source": "public_statement", "confidence": "medium"}
+    ],
+    "relationships": [
+      {"target_id": "maurizio_landini", "type": "rival", "strength": 0.5}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia", "public_statements"]
+  },
+  {
+    "id": "pierpaolo_bombardieri",
+    "name": "Pierpaolo Bombardieri",
+    "role": "Segretario Generale UIL",
+    "country": "IT",
+    "category": "union_leader",
+    "party_or_org": "UIL",
+    "archetype": "union_leader",
+    "tier": 1,
+    "influence": 0.50,
+    "rigidity": 0.65,
+    "bio": "Leader della UIL dal 2020. Spesso allineato con la CGIL sugli scioperi generali, ma con toni più pragmatici.",
+    "communication_style": "Diretto, pragmatico, meno ideologico di Landini",
+    "key_traits": ["pragmatico", "diretto", "combattivo"],
+    "platform_primary": "press",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "labor_reform", "value": -0.75, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": -0.50, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "fiscal_policy", "value": -0.65, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "maurizio_landini", "type": "ally", "strength": 0.7}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia", "public_statements"]
+  },
+  {
+    "id": "paolo_capone",
+    "name": "Paolo Capone",
+    "role": "Segretario Generale UGL",
+    "country": "IT",
+    "category": "union_leader",
+    "party_or_org": "UGL",
+    "archetype": "union_leader",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.50,
+    "bio": "Leader della UGL, sindacato storicamente vicino alla destra. Più dialogante con il governo Meloni.",
+    "communication_style": "Istituzionale, collaborativo con il governo, toni moderati",
+    "key_traits": ["moderato", "collaborativo", "leale"],
+    "platform_primary": "press",
+    "positions": [
+      {"topic_tag": "labor_reform", "value": -0.20, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.20, "source": "inferred", "confidence": "low"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "emanuele_orsini",
+    "name": "Emanuele Orsini",
+    "role": "Presidente di Confindustria",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Confindustria",
+    "archetype": "business_leader",
+    "tier": 1,
+    "influence": 0.70,
+    "rigidity": 0.50,
+    "bio": "Presidente di Confindustria dal 2024. Imprenditore veneto, linea pragmatica e vicina al governo su politiche industriali.",
+    "communication_style": "Imprenditoriale, pragmatico, focus su competitività e costi energia",
+    "key_traits": ["pragmatico", "industrialista", "concreto"],
+    "platform_primary": "press",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "labor_reform", "value": 0.50, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "fiscal_policy", "value": 0.60, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "industrial_policy", "value": 0.40, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": 0.50, "source": "public_statement", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia", "confindustria.it"]
+  }
+]

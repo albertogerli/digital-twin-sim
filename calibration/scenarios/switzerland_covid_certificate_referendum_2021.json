@@ -1,0 +1,83 @@
+{
+  "scenario_name": "switzerland_covid_certificate_referendum_2021",
+  "domain": "public_health",
+  "description": "Switzerland held a popular referendum in November 2021 regarding the COVID-19 Law, which granted the government powers to implement COVID certificates for social participation.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 65.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 58,
+      "against_pct": 32,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 62,
+      "against_pct": 35,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 61,
+      "against_pct": 36,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 36,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 63,
+      "against_pct": 35,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 62,
+      "against_pct": 37,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Referendum called by opposition groups."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Intense public debate about 'medical apartheid' and individual liberty."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Major campaign by pro-government health alliances emphasizes stability."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Referendum passes with 62% support."
+    }
+  ],
+  "calibration_notes": "Excellent for measuring direct democracy outcomes in high-trust societies."
+}

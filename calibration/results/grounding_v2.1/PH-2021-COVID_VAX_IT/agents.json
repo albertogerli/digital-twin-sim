@@ -1,0 +1,73 @@
+[
+  {
+    "id": "francesco_paolo_figliuolo",
+    "name": "Francesco Paolo Figliuolo",
+    "role": "Extraordinary Commissioner for the COVID-19 Emergency",
+    "archetype": "regulator",
+    "position": 1.0,
+    "influence": 0.95,
+    "rigidity": 0.8,
+    "bio": "An Italian Army General who served as the head of the COVID-19 vaccination campaign from March 2021 to March 2022, tasked with accelerating the national rollout.",
+    "communication_style": "formal, decisive, military-oriented",
+    "key_traits": [
+      "strategic",
+      "pragmatic",
+      "disciplined"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the Extraordinary Commissioner, he was directly responsible for the logistical execution and management of Italy's national vaccination campaign throughout 2021."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "mario_draghi",
+    "name": "Mario Draghi",
+    "role": "Prime Minister of Italy",
+    "archetype": "politician",
+    "position": 0.9,
+    "influence": 0.95,
+    "rigidity": 0.75,
+    "bio": "Served as the Prime Minister of Italy from 2021 to 2022, leading a national unity government during the height of the pandemic recovery.",
+    "communication_style": "formal, technocratic, authoritative",
+    "key_traits": [
+      "decisive",
+      "analytical",
+      "statesmanlike"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.9,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He initiated the strategic shift in the vaccination campaign by appointing General Figliuolo to replace the previous leadership, prioritizing rapid immunization."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "domenico_arcuri",
+    "name": "Domenico Arcuri",
+    "role": "Former Extraordinary Commissioner for the COVID-19 Emergency",
+    "archetype": "regulator",
+    "position": 0.7,
+    "influence": 0.5,
+    "rigidity": 0.75,
+    "bio": "An Italian manager who served as the first Extraordinary Commissioner for the COVID-19 emergency until his removal in March 2021.",
+    "communication_style": "formal, bureaucratic",
+    "key_traits": [
+      "administrative",
+      "cautious"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.4,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "His tenure as the initial commissioner set the baseline for the campaign; his perceived slow progress led to his replacement by the Draghi administration."
+    ],
+    "_grounded": true
+  }
+]

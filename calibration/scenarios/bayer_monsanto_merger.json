@@ -1,0 +1,79 @@
+{
+  "scenario_name": "bayer_monsanto_merger",
+  "domain": "commercial",
+  "description": "Bayer's $66 billion acquisition of Monsanto (2016-2018) was one of the most controversial corporate deals in history, triggering intense activist, environmental, and regulatory pushback due to Monsanto's reputation.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 57,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 36,
+      "against_pct": 59,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 39,
+      "against_pct": 58,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 41,
+      "against_pct": 57,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 59,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "International protests erupt against the combination of chemical and seed companies."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "EU regulatory concerns lead to required divestitures of assets."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Merger completes, but legal liabilities regarding Roundup emerge, damaging public sentiment."
+    }
+  ],
+  "calibration_notes": "Shows how reputation transfer (the 'Monsanto brand effect') can permanently depress support for an acquisition."
+}

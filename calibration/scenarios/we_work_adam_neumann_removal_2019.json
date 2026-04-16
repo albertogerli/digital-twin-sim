@@ -1,0 +1,83 @@
+{
+  "scenario_name": "we_work_adam_neumann_removal_2019",
+  "domain": "corporate",
+  "description": "WeWork CEO Adam Neumann's eccentric leadership and controversial IPO filing led to a massive loss of investor confidence in 2019, ultimately forcing his resignation.",
+  "final_outcome_pro_pct": 10.0,
+  "final_outcome_against_pct": 90.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 15,
+      "against_pct": 80,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 12,
+      "against_pct": 85,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 10,
+      "against_pct": 88,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 10,
+      "against_pct": 90,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "WeWork S-1 filing reveals heavy losses and complex self-dealing."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Major investors (SoftBank) begin questioning the IPO valuation."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Neumann resigns under pressure from the board."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The IPO is officially pulled, causing a crisis of market confidence."
+    }
+  ],
+  "calibration_notes": "Models corporate governance crises sparked by founder-led toxicity and transparency failures."
+}

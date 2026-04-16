@@ -1,0 +1,83 @@
+{
+  "scenario_name": "cadbury_gorilla_ad_2007",
+  "domain": "marketing",
+  "description": "Cadbury aired an unconventional TV commercial in 2007 featuring a gorilla playing the drums to Phil Collins' 'In the Air Tonight'. The bizarre, non-product-centric ad was initially confusing but became a massive viral sensation, revitalizing the brand image in the UK.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 40,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 45,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 32,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 30,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 69,
+      "against_pct": 30,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "First broadcast of the 'Gorilla' ad on UK television."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Initial audience confusion regarding why a gorilla is drumming for chocolate."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Ad goes viral on early YouTube platforms; massive search traffic spike."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Phil Collins' song re-enters the UK charts due to the ad's popularity."
+    }
+  ],
+  "calibration_notes": "Useful for modeling 'bizarre' marketing strategies that overcome initial skepticism to achieve high levels of audience recall and brand affinity."
+}

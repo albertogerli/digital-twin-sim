@@ -1,0 +1,38 @@
+# VERIFIED FACTS — CORP-2017-UBER_LONDON_LICENSE_BATTLE_201
+Domain: corporate | Country: GB
+Period: 2017-09-22 to 2018-06-26
+
+## TIMELINE (verified events, chronological order):
+1. [2017-09-22] Transport for London (TfL) announced it would not renew Uber's private hire operator license, citing a lack of corporate responsibility regarding public safety.
+   Detail: 0
+   Source: thenextweb.com
+2. [2017-09-25] Over 500,000 people signed an online petition calling for the decision to ban Uber from London to be overturned.
+   Detail: 500,000
+   Source: time.com
+3. [2017-09-29] Uber's newly appointed CEO, Dara Khosrowshahi, issued a public apology for the company's past mistakes and committed to changing the business culture. [confidence: 80%]
+   Detail: 0
+   Source: theguardian.com
+4. [2017-10-03] Uber's CEO met with the TfL commissioner to initiate discussions regarding the license renewal and address regulatory concerns. [confidence: 80%]
+   Detail: 0
+   Source: businessinsider.com
+5. [2018-06-26] A London judge granted Uber a probationary 15-month license, overturning the initial ban while imposing strict oversight conditions.
+   Detail: 15 months
+   Source: cnet.com
+
+## KEY FIGURES:
+- license_announcement_date: September 22, 2017
+- license_expiration_date: September 30, 2017
+
+## KEY STAKEHOLDER POSITIONS:
+- Sadiq Khan (Mayor of London): He fully supported TfL's decision to strip Uber of its license, stating that all companies in London must play by the rules and adhere to high standards of safety and security.
+- Tom Elvidge (General Manager of Uber London): He argued that the decision to revoke the license would deprive millions of Londoners of a convenient service and threatened to challenge the ruling in court.
+- Dara Khosrowshahi (CEO of Uber): He apologized for the company's past mistakes and acknowledged that Uber needed to change its culture and approach to regulation to regain the public's trust.
+
+## FINAL OUTCOME:
+Following TfL's 2017 decision not to renew Uber's license, a massive public petition supporting the company garnered over 850,000 signatures, reflecting significant consumer support despite regulatory concerns regarding corporate responsibility.
+Pro %: 65.0% — Source: YouGov/Sky News polling (September 2017) indicating 65% of Londoners supported the renewal of Uber's license.
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

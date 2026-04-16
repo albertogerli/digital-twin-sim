@@ -1,0 +1,48 @@
+# VERIFIED FACTS — CORP-2022-TWITTER_X_ACQUISITION_BY_ELON
+Domain: corporate | Country: US
+Period: 2022-04-04 to 2022-10-13
+
+## TIMELINE (verified events, chronological order):
+1. [2022-04-04] Elon Musk reveals he has acquired a 9.2% stake in Twitter, becoming the company's largest shareholder. This disclosure signals his significant influence over the platform's future direction. [confidence: 80%]
+   Detail: 9.2% stake, $3 billion
+   Source: theguardian.com
+2. [2022-04-11] Twitter announces that Musk will not join the board of directors after initially being appointed. This reversal creates immediate public uncertainty regarding his intentions for the company. [confidence: 80%]
+   Detail: N/A
+   Source: theguardian.com
+3. [2022-04-14] Musk makes an unsolicited offer to purchase Twitter, initiating a high-profile hostile takeover attempt. The move forces a public debate over the platform's ownership and governance.
+   Detail: $54.20 per share, $44 billion
+   Source: wikipedia.org
+4. [2022-04-15] Twitter's board adopts a 'poison pill' strategy to defend against Musk's hostile takeover bid. This action highlights the deep institutional resistance to the acquisition. [confidence: 80%]
+   Detail: N/A
+   Source: theguardian.com
+5. [2022-04-25] Twitter's board unanimously accepts Musk's $44 billion buyout offer. The agreement marks a definitive shift in the company's trajectory and ownership status.
+   Detail: $44 billion
+   Source: wikipedia.org
+6. [2022-10-04] After months of legal disputes, Musk reverses his position and agrees to proceed with the acquisition at the original price. This move ends the immediate threat of a protracted court battle. [confidence: 80%]
+   Detail: $54.20 per share
+   Source: tinshingle.com
+7. [2022-10-13] Court filings reveal that Musk is under federal investigation regarding the Twitter takeover. The news introduces significant legal and regulatory risk to the acquisition process. [confidence: 80%]
+   Detail: N/A
+   Source: theguardian.com
+
+## KEY FIGURES:
+- acquisition_finalization_date: October 27, 2022
+- ceo_resignation_poll_participation: 17.5 million respondents
+- ceo_resignation_poll_yes_vote: 57.5%
+- attempted_termination_date: July 2022
+
+## POLLING/SENTIMENT DATA:
+- [2022-12-18] 42.5% pro (N=17500000) — Twitter poll conducted by Elon Musk
+
+## KEY STAKEHOLDER POSITIONS:
+- Elon Musk (Owner and CEO of Twitter (now X)): Musk initially sought to acquire the platform to promote free speech, but later attempted to terminate the deal due to concerns regarding spambot accounts before ultimately finalizing the acquisition.
+- Elon Musk (Owner and CEO of Twitter (now X)): Following criticism of his leadership, Musk polled users on whether he should step down as CEO, acknowledging the results of the public vote.
+
+## FINAL OUTCOME:
+Elon Musk successfully acquired Twitter for $44 billion in October 2022, taking the company private and implementing significant changes to its operations and content moderation policies. Public opinion remained deeply polarized, with no consensus on the platform's direction under his leadership.
+Pro %: 35.0% — Source: Pew Research Center (2023 survey indicating 35% of U.S. adults had a favorable view of the platform's direction under Musk)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

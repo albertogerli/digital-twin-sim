@@ -1,0 +1,79 @@
+{
+  "scenario_name": "brazil_telegram_ban_2023",
+  "domain": "technology",
+  "description": "In 2023, the Brazilian judiciary ordered a temporary suspension of the messaging app Telegram for failing to provide data on neo-Nazi groups, highlighting the conflict between digital platforms and national judicial sovereignty.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 38,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 37,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 61,
+      "against_pct": 37,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Telegram refuses court request for data on extremist cells."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Supreme Court of Brazil orders temporary suspension of Telegram services."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Public backlash against the censorship impact vs support for security."
+    }
+  ],
+  "calibration_notes": "Excellent for studying the clash between 'free speech' tech platforms and state-mandated content regulation."
+}

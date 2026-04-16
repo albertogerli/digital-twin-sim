@@ -1,0 +1,83 @@
+{
+  "scenario_name": "papa_johns_racial_slur_controversy_2018",
+  "domain": "commercial",
+  "description": "Founder John Schnatter used a racial slur during a conference call, leading to his removal from the company and a massive rebranding campaign to distance the pizza chain from his persona.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 28,
+      "against_pct": 65,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 65,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 32,
+      "against_pct": 64,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 33,
+      "against_pct": 65,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 34,
+      "against_pct": 66,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Forbes reports on the use of the racial slur."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Schnatter resigns as Chairman of the Board."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Company launches 'Pizza with Purpose' rebrand."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Company removes Schnatter's face from marketing material."
+    }
+  ],
+  "calibration_notes": "Useful for modeling brand recovery after the removal of a 'toxic' founder."
+}

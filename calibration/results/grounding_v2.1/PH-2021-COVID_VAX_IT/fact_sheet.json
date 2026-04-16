@@ -1,0 +1,121 @@
+{
+  "scenario_id": "PH-2021-COVID_VAX_IT",
+  "topic": "PH-2021-COVID_VAX_IT",
+  "domain": "public_health",
+  "country": "IT",
+  "timeframe_start": "2020-12-27",
+  "timeframe_end": "2021-03-01",
+  "events": [
+    {
+      "date": "2020-12-27",
+      "description": "Italy officially launched its national COVID-19 vaccination campaign in coordination with other European Union member states.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "visualcapitalist.com",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-01-06",
+      "description": "The European Medicines Agency (EMA) granted authorization for the Moderna COVID-19 vaccine, expanding the available supply.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-01-15",
+      "description": "Pfizer-BioNTech announced delivery delays to Italy, causing a temporary slowdown in the national vaccination rate due to limited stock.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-02-06",
+      "description": "The first shipment of the AstraZeneca vaccine arrived in Italy, providing a new supply source for the vaccination campaign.",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "wikipedia.org",
+      "confidence": 0.8,
+      "quantitative_detail": "249,600 doses"
+    },
+    {
+      "date": "2021-03-01",
+      "description": "General Francesco Paolo Figliuolo was appointed as the new Special Commissioner for the COVID-19 emergency to oversee the acceleration of the vaccination campaign.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHBw0WxOIcp7yM1N9-9G1IZdWddnEGJQ48X-0LZStAHb1eZonKhBm_4zeuRrOFOBdOtFHdSkn1E1lr92Pc-QZmGzGrl39pGApiJIKygnMiTH5175_O13IovVdpRlJ6FAmgNxfBn8wBh3dAUYx5b7g_z7jQ=",
+      "source_name": "wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    }
+  ],
+  "polls": [
+    {
+      "date": "2020-10-01",
+      "pro_pct": 36.0,
+      "sample_size": 0,
+      "source": "Science in Society Monitor (Italy)",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-01-01",
+      "pro_pct": 60.0,
+      "sample_size": 0,
+      "source": "Science in Society Monitor (Italy)",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-05-01",
+      "pro_pct": 84.0,
+      "sample_size": 0,
+      "source": "Science in Society Monitor (Italy)",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-05-01",
+      "pro_pct": 52.0,
+      "sample_size": 0,
+      "source": "Science in Society Monitor (Italy)",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-01-01",
+      "pro_pct": 89.0,
+      "sample_size": 0,
+      "source": "Science in Society Monitor (Italy)",
+      "methodology": "survey"
+    },
+    {
+      "date": "2021-05-01",
+      "pro_pct": 90.0,
+      "sample_size": 0,
+      "source": "Science in Society Monitor (Italy)",
+      "methodology": "survey"
+    }
+  ],
+  "stakeholders": [],
+  "outcome_description": "The Italian COVID-19 vaccination campaign achieved high public uptake, with over 80% of the total population completing the primary vaccination cycle by the end of 2021. Despite initial logistical challenges and localized vaccine hesitancy, the national effort was characterized by widespread public participation and the implementation of the 'Green Pass' mandate to encourage compliance.",
+  "outcome_pro_pct": 80.0,
+  "outcome_source": "Istituto Superiore di Sanit\u00e0 (ISS) - COVID-19 Vaccination Dashboard",
+  "key_figures": {
+    "vaccine_willingness_oct_2020": "36%",
+    "vaccine_willingness_jan_2021": "60%",
+    "vaccine_willingness_may_2021": "84%",
+    "benefit_risk_perception_increase": "17 percentage points",
+    "hasty_approval_concern_jan_2021": "45%",
+    "hasty_approval_concern_may_2021": "37%",
+    "distrust_in_pharma_jan_2021": "11%",
+    "distrust_in_pharma_may_2021": "17%"
+  },
+  "n_sources_consulted": 5,
+  "research_timestamp": "2026-04-01T03:09:34.010841",
+  "quality_score": 72
+}

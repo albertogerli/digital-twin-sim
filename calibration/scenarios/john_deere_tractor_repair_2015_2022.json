@@ -1,0 +1,83 @@
+{
+  "scenario_name": "john_deere_tractor_repair_2015_2022",
+  "domain": "technology",
+  "description": "Farmers in the US began pushing back against John Deere's software locks that prevented them from performing independent repairs, leading to a long-term right-to-repair battle.",
+  "final_outcome_pro_pct": 78.0,
+  "final_outcome_against_pct": 22.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 10,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 15,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 60,
+      "against_pct": 18,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 74,
+      "against_pct": 21,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 76,
+      "against_pct": 22,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Media exposes digital locking of tractors"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Farmer coalitions formally lobby state legislatures"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "White House executive order on right to repair"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "John Deere signs memorandum of understanding"
+    }
+  ],
+  "calibration_notes": "Focuses on the emergence of the grassroots Right to Repair movement."
+}

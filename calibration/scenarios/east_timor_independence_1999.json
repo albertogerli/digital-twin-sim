@@ -1,0 +1,83 @@
+{
+  "scenario_name": "east_timor_independence_1999",
+  "domain": "political",
+  "description": "An UN-sponsored referendum on whether East Timor should accept autonomy within Indonesia or opt for independence. 78.5% voted for independence, leading to a violent transition period.",
+  "final_outcome_pro_pct": 78.5,
+  "final_outcome_against_pct": 21.5,
+  "final_turnout_pct": 98.6,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 62,
+      "against_pct": 28,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 68,
+      "against_pct": 22,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 72,
+      "against_pct": 18,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 75,
+      "against_pct": 15,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 77,
+      "against_pct": 23,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78.5,
+      "against_pct": 21.5,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "UN and Indonesia sign the May 5 agreement."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Militia groups begin campaign of intimidation."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "UN mission completes voter registration process."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Result announced amid significant post-vote violence."
+    }
+  ],
+  "calibration_notes": "Models high-stakes geopolitical shifts influenced by international intervention."
+}

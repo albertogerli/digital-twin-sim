@@ -1,0 +1,83 @@
+{
+  "scenario_name": "foxconn_labor_suicide_scandal_2010",
+  "domain": "commercial",
+  "description": "In 2010, Apple supplier Foxconn faced intense global scrutiny following a series of worker suicides at its Shenzhen facility. This sparked a massive debate on the ethics of global supply chains, tech manufacturing, and corporate responsibility, leading to immediate changes in labor policies and mandatory audits.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 22,
+      "against_pct": 25,
+      "undecided_pct": 53
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 45,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 28,
+      "against_pct": 60,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 62,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 33,
+      "against_pct": 60,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 36,
+      "against_pct": 58,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 39,
+      "against_pct": 56,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "International media reports emerge detailing horrific working conditions and high suicide rates."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Public outcry peaks as NGOs organize global protests outside Apple retail stores."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Foxconn announces massive wage hikes and the installation of anti-suicide nets, shifting the narrative."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Apple joins the Fair Labor Association to increase oversight, stabilizing brand reputation."
+    }
+  ],
+  "calibration_notes": "Useful for modeling high-impact moral panics that start with low awareness and evolve into structural corporate changes."
+}

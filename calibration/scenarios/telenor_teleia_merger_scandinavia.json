@@ -1,0 +1,83 @@
+{
+  "scenario_name": "telenor_teleia_merger_scandinavia",
+  "domain": "commercial",
+  "description": "In 2000, the Norwegian government-owned Telenor and the Swedish government-owned Telia announced a merger to create a dominant Nordic telecommunications giant. The deal collapsed within months due to cultural clashes, conflicting management structures, and government interference.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 10,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 25,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32,
+      "against_pct": 62,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 30,
+      "against_pct": 67,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Merger announcement hailed as a landmark Nordic economic collaboration."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Public reports emerge regarding internal disagreement on the CEO selection process."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Norwegian and Swedish parliament members voice concerns over loss of national control."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The merger is officially abandoned, cementing failure of the cross-border strategy."
+    }
+  ],
+  "calibration_notes": "Useful for modeling how high initial optimism can rapidly erode due to organizational friction and political nationalism."
+}

@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import ScenarioCard from "../components/ScenarioCard";
-import DeliverablesSection from "../components/deliverables/DeliverablesSection";
 
 interface ScenarioInfo {
   id: string;
@@ -26,15 +24,24 @@ interface SimStatus {
   created_at: string;
 }
 
-const STATUS_LABELS: Record<string, { label: string; color: string }> = {
-  queued: { label: "In coda", color: "bg-gray-500" },
-  analyzing: { label: "Analisi", color: "bg-blue-600 animate-pulse" },
-  configuring: { label: "Configurazione", color: "bg-blue-600 animate-pulse" },
-  running: { label: "In esecuzione", color: "bg-emerald-600 animate-pulse" },
-  exporting: { label: "Export", color: "bg-amber-600 animate-pulse" },
-  completed: { label: "Completata", color: "bg-emerald-600" },
-  failed: { label: "Errore", color: "bg-red-600" },
-  cancelled: { label: "Annullata", color: "bg-gray-500" },
+const ST: Record<string, { label: string; cls: string }> = {
+  queued:      { label: "QUEUED",   cls: "text-ki-on-surface-muted" },
+  analyzing:   { label: "ANLYZ",    cls: "text-ki-primary" },
+  configuring: { label: "CONFIG",   cls: "text-ki-primary" },
+  running:     { label: "LIVE",     cls: "text-ki-success font-black" },
+  exporting:   { label: "EXPORT",   cls: "text-ki-warning" },
+  completed:   { label: "DONE",     cls: "text-ki-success" },
+  failed:      { label: "FAIL",     cls: "text-ki-error" },
+  cancelled:   { label: "CANCEL",   cls: "text-ki-on-surface-muted" },
+};
+
+const DOMAIN_COLOR: Record<string, string> = {
+  political: "text-domain-political",
+  corporate: "text-domain-corporate",
+  financial: "text-domain-financial",
+  commercial: "text-domain-commercial",
+  public_health: "text-domain-health",
+  technology: "text-domain-technology",
 };
 
 export default function Home() {
@@ -43,7 +50,6 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load scenarios from API (fallback to static)
     Promise.all([
       fetch("/api/scenarios").then((r) => r.ok ? r.json() : []).catch(() =>
         fetch("/data/scenarios.json").then((r) => r.json()).catch(() => [])
@@ -55,7 +61,6 @@ export default function Home() {
       setLoading(false);
     });
 
-    // Poll running simulations
     const interval = setInterval(() => {
       fetch("/api/simulations").then((r) => r.ok ? r.json() : []).then(setSimulations).catch(() => {});
     }, 5000);
@@ -67,106 +72,81 @@ export default function Home() {
   );
   const recentSims = simulations
     .filter((s) => ["completed", "failed", "cancelled"].includes(s.status))
-    .slice(0, 10);
+    .slice(0, 30);
 
   return (
-    <main className="min-h-screen text-gray-900">
-      {/* Header */}
-      <header className="pt-12 pb-6 px-6 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-          DigitalTwinSim
-        </h1>
-        <p className="mt-3 text-lg text-gray-500">
-          Universal Digital Twin Simulation Platform
-        </p>
-      </header>
-
-      {/* New Simulation CTA */}
-      <section className="max-w-5xl mx-auto px-6 mb-8">
+    <div className="p-3 space-y-3">
+      {/* Header row */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-baseline gap-3">
+          <h2 className="text-base font-extrabold tracking-tight text-ki-on-surface font-headline">
+            Simulations
+          </h2>
+          <span className="font-data text-2xs text-ki-on-surface-muted">
+            {scenarios.length} scenarios &middot; {simulations.length} runs
+          </span>
+        </div>
         <Link
           href="/new"
-          className="block w-full p-6 rounded-xl border-2 border-dashed border-gray-300 hover:border-blue-500 hover:bg-gray-50 transition-all group text-center"
+          className="px-3 py-1 text-2xs font-bold bg-ki-primary text-ki-on-surface rounded-sm hover:bg-ki-primary-muted transition-colors"
         >
-          <div className="flex items-center justify-center gap-3">
-            <svg className="w-8 h-8 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-            </svg>
-            <span className="text-xl font-semibold text-gray-500 group-hover:text-blue-600 transition-colors">
-              Nuova Simulazione
+          + NEW SIM
+        </Link>
+      </div>
+
+      {/* Quick nav strip */}
+      <div className="flex gap-1">
+        {[
+          { href: "/wargame", label: "WARGAME", icon: "swords" },
+          { href: "/backtest", label: "BACKTEST", icon: "history" },
+          { href: "/paper", label: "PAPER", icon: "description" },
+        ].map((n) => (
+          <Link
+            key={n.href}
+            href={n.href}
+            className="flex items-center gap-1.5 px-2.5 py-1 bg-ki-surface-raised border border-ki-border text-2xs font-bold text-ki-on-surface-secondary hover:bg-ki-surface-hover hover:text-ki-on-surface transition-colors"
+          >
+            <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'wght' 300" }}>
+              {n.icon}
+            </span>
+            {n.label}
+          </Link>
+        ))}
+      </div>
+
+      {/* Active simulations */}
+      {runningSims.length > 0 && (
+        <section>
+          <div className="flex items-center gap-2 mb-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-ki-success animate-pulse" />
+            <span className="text-2xs font-bold text-ki-on-surface-muted tracking-[0.08em]">
+              ACTIVE ({runningSims.length})
             </span>
           </div>
-          <p className="mt-2 text-sm text-gray-400">
-            Descrivi uno scenario e lancia una simulazione con agenti AI
-          </p>
-        </Link>
-      </section>
-
-      {/* Technical Paper CTA */}
-      <section className="max-w-5xl mx-auto px-6 mb-8">
-        <Link
-          href="/paper"
-          className="block w-full rounded-xl border border-blue-200 bg-blue-50 p-5 hover:bg-blue-100 transition-colors group"
-        >
-          <div className="flex items-center gap-4">
-            <div className="shrink-0 w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center">
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            </div>
-            <div>
-              <h3 className="text-base font-semibold text-gray-900 group-hover:text-blue-700 transition-colors">
-                Technical Paper: Calibrating LLM-Driven Opinion Dynamics
-              </h3>
-              <p className="text-sm text-gray-500 mt-0.5">
-                1,000 historical scenarios &middot; 14 domains &middot; 12.0% median error &middot; Grid search calibration methodology
-              </p>
-            </div>
-            <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-600 shrink-0 ml-auto transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </Link>
-      </section>
-
-      {/* Output & Deliverable */}
-      <DeliverablesSection />
-
-      {/* Running Simulations */}
-      {runningSims.length > 0 && (
-        <section className="max-w-5xl mx-auto px-6 mb-8">
-          <h2 className="text-lg font-semibold mb-3 text-gray-700">Simulazioni in corso</h2>
-          <div className="space-y-3">
-            {runningSims.map((sim) => {
-              const st = STATUS_LABELS[sim.status] || STATUS_LABELS.queued;
+          <div className="border border-ki-border bg-ki-surface-raised">
+            {runningSims.map((sim, i) => {
+              const st = ST[sim.status] || ST.queued;
+              const pct = sim.total_rounds > 0 ? (sim.current_round / sim.total_rounds) * 100 : 0;
               return (
                 <Link
                   key={sim.id}
                   href={`/sim/${sim.id}`}
-                  className="block bg-white border border-gray-200 rounded-lg p-4 hover:border-blue-500/50 transition-colors"
+                  className={`flex items-center gap-2 px-2 py-1 hover:bg-ki-surface-hover transition-colors ${
+                    i < runningSims.length - 1 ? "border-b border-ki-border" : ""
+                  }`}
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-3">
-                      <span className={`px-2 py-0.5 rounded text-xs font-medium text-white ${st.color}`}>
-                        {st.label}
-                      </span>
-                      <span className="font-medium text-sm">
-                        {sim.scenario_name || sim.brief.slice(0, 60) + (sim.brief.length > 60 ? "..." : "")}
-                      </span>
-                    </div>
-                    <span className="text-xs text-gray-400">
-                      {sim.total_rounds > 0
-                        ? `Round ${sim.current_round}/${sim.total_rounds}`
-                        : "..."}
-                    </span>
+                  <span className={`w-14 shrink-0 font-data text-2xs font-bold ${st.cls}`}>
+                    {st.label}
+                  </span>
+                  <span className="font-body text-xs text-ki-on-surface truncate flex-1">
+                    {sim.scenario_name || sim.brief.slice(0, 80)}
+                  </span>
+                  <span className="font-data text-2xs text-ki-on-surface-muted shrink-0">
+                    {sim.total_rounds > 0 ? `${sim.current_round}/${sim.total_rounds}` : "..."}
+                  </span>
+                  <div className="w-20 h-1 bg-ki-sunken shrink-0">
+                    <div className="h-full bg-ki-primary transition-all duration-500" style={{ width: `${pct}%` }} />
                   </div>
-                  {sim.total_rounds > 0 && (
-                    <div className="w-full bg-gray-100 rounded-full h-2 overflow-hidden">
-                      <div
-                        className="h-full bg-blue-500 rounded-full transition-all duration-500"
-                        style={{ width: `${(sim.current_round / sim.total_rounds) * 100}%` }}
-                      />
-                    </div>
-                  )}
                 </Link>
               );
             })}
@@ -174,45 +154,65 @@ export default function Home() {
         </section>
       )}
 
-      {/* Recent Simulations */}
+      {/* Recent simulations — dense table */}
       {recentSims.length > 0 && (
-        <section className="max-w-5xl mx-auto px-6 mb-8">
-          <h2 className="text-lg font-semibold mb-3 text-gray-700">Simulazioni recenti</h2>
-          <div className="space-y-2">
-            {recentSims.map((sim) => {
-              const st = STATUS_LABELS[sim.status] || STATUS_LABELS.completed;
+        <section>
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-2xs font-bold text-ki-on-surface-muted tracking-[0.08em]">
+              RECENT ({recentSims.length})
+            </span>
+          </div>
+          {/* Table header */}
+          <div className="border border-ki-border bg-ki-surface-raised">
+            <div className="flex items-center gap-2 px-2 py-0.5 bg-ki-surface-sunken border-b border-ki-border text-2xs font-bold text-ki-on-surface-muted tracking-[0.06em]">
+              <span className="w-12 shrink-0">STATUS</span>
+              <span className="flex-1">SCENARIO</span>
+              <span className="w-20 shrink-0 text-right hidden sm:block">DOMAIN</span>
+              <span className="w-12 shrink-0 text-right">RNDS</span>
+              <span className="w-16 shrink-0 text-right">COST</span>
+              <span className="w-20 shrink-0 text-right">ACTIONS</span>
+            </div>
+            {recentSims.map((sim, i) => {
+              const st = ST[sim.status] || ST.completed;
               return (
                 <div
                   key={sim.id}
-                  className="flex items-center gap-3 bg-white border border-gray-200 rounded-lg px-4 py-3"
+                  className={`flex items-center gap-2 px-2 py-[3px] hover:bg-ki-surface-hover transition-colors ${
+                    i < recentSims.length - 1 ? "border-b border-ki-border/50" : ""
+                  }`}
                 >
-                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-medium text-white ${st.color}`}>
+                  <span className={`w-12 shrink-0 font-data text-2xs font-bold ${st.cls}`}>
                     {st.label}
                   </span>
-                  <span className="font-medium text-sm text-gray-800 truncate flex-1">
-                    {sim.scenario_name || sim.brief.slice(0, 60)}
+                  <span className="font-body text-xs text-ki-on-surface truncate flex-1">
+                    {sim.scenario_name || sim.brief.slice(0, 80)}
                   </span>
-                  {sim.domain && (
-                    <span className="hidden sm:inline text-xs text-gray-400">
-                      {sim.domain.replace(/_/g, " ")}
+                  {sim.domain ? (
+                    <span className={`w-20 shrink-0 text-right hidden sm:block font-data text-2xs font-bold ${DOMAIN_COLOR[sim.domain] || "text-ki-on-surface-muted"}`}>
+                      {sim.domain.replace(/_/g, " ").toUpperCase().slice(0, 10)}
                     </span>
+                  ) : (
+                    <span className="w-20 shrink-0 hidden sm:block" />
                   )}
-                  <span className="text-xs text-gray-400 shrink-0">
-                    {sim.total_rounds > 0 ? `${sim.total_rounds}R` : ""} ${sim.cost.toFixed(2)}
+                  <span className="w-12 shrink-0 text-right font-data text-2xs text-ki-on-surface-muted">
+                    {sim.total_rounds > 0 ? sim.total_rounds : "—"}
                   </span>
-                  <div className="flex gap-1.5 shrink-0">
+                  <span className="w-16 shrink-0 text-right font-data text-2xs text-ki-on-surface-muted">
+                    ${sim.cost.toFixed(2)}
+                  </span>
+                  <div className="w-20 shrink-0 flex justify-end gap-1">
                     <Link
                       href={`/sim/${sim.id}`}
-                      className="px-2.5 py-1 rounded text-xs font-medium bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
+                      className="px-1.5 py-0.5 text-2xs font-bold text-ki-on-surface-muted hover:text-ki-on-surface border border-ki-border hover:bg-ki-surface-hover transition-colors"
                     >
-                      Log
+                      LOG
                     </Link>
                     {sim.status === "completed" && sim.scenario_id && (
                       <Link
                         href={`/scenario/${sim.scenario_id}`}
-                        className="px-2.5 py-1 rounded text-xs font-medium bg-blue-600 hover:bg-blue-500 text-white transition-colors"
+                        className="px-1.5 py-0.5 text-2xs font-bold text-ki-primary hover:bg-ki-primary hover:text-ki-on-surface border border-ki-primary/30 transition-colors"
                       >
-                        Dashboard
+                        VIEW
                       </Link>
                     )}
                   </div>
@@ -223,35 +223,59 @@ export default function Home() {
         </section>
       )}
 
-      {/* Scenario Grid */}
-      <section className="max-w-5xl mx-auto px-6 pb-20">
-        <h2 className="text-lg font-semibold mb-4 text-gray-700">
-          Scenari completati
-          {scenarios.length > 0 && (
-            <span className="text-sm text-gray-400 font-normal ml-2">({scenarios.length})</span>
-          )}
-        </h2>
+      {/* Scenarios grid — compact cards */}
+      <section>
+        <div className="flex items-center justify-between mb-1">
+          <span className="text-2xs font-bold text-ki-on-surface-muted tracking-[0.08em]">
+            SCENARIOS ({scenarios.length})
+          </span>
+        </div>
         {loading ? (
-          <p className="text-center text-gray-400">Caricamento...</p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-1">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="bg-ki-surface-raised border border-ki-border p-2 animate-pulse">
+                <div className="h-3 bg-ki-surface-sunken w-16 mb-2" />
+                <div className="h-3 bg-ki-surface-sunken w-full mb-1" />
+                <div className="h-3 bg-ki-surface-sunken w-2/3" />
+              </div>
+            ))}
+          </div>
         ) : scenarios.length === 0 ? (
-          <p className="text-center text-gray-400 py-12">
-            Nessuno scenario completato. Lancia la tua prima simulazione!
-          </p>
+          <div className="border border-dashed border-ki-border-strong bg-ki-surface-raised p-6 text-center">
+            <span className="font-data text-xs text-ki-on-surface-muted">
+              NO SCENARIOS — LAUNCH A SIMULATION TO BEGIN
+            </span>
+          </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-1">
             {scenarios.map((s) => (
-              <ScenarioCard
+              <Link
                 key={s.id}
-                id={s.id}
-                name={s.name}
-                domain={s.domain}
-                description={s.description}
-                num_rounds={s.num_rounds}
-              />
+                href={`/scenario/${s.id}`}
+                className="group bg-ki-surface-raised border border-ki-border p-2 hover:bg-ki-surface-hover hover:border-ki-border-strong transition-colors"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className={`font-data text-2xs font-bold ${DOMAIN_COLOR[s.domain] || "text-ki-on-surface-muted"}`}>
+                    {s.domain.replace(/_/g, " ").toUpperCase()}
+                  </span>
+                  <span className="font-data text-2xs text-ki-on-surface-muted">
+                    {s.id}
+                  </span>
+                </div>
+                <div className="text-xs font-semibold text-ki-on-surface mb-0.5 truncate group-hover:text-ki-primary transition-colors">
+                  {s.name}
+                </div>
+                <div className="text-2xs text-ki-on-surface-muted line-clamp-1">
+                  {s.description}
+                </div>
+                <div className="mt-1 font-data text-2xs text-ki-on-surface-muted">
+                  {s.num_rounds}R
+                </div>
+              </Link>
             ))}
           </div>
         )}
       </section>
-    </main>
+    </div>
   );
 }

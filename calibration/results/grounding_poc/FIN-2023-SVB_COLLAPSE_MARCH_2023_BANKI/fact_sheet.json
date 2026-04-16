@@ -1,0 +1,85 @@
+{
+  "scenario_id": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI",
+  "topic": "Silicon Valley Bank collapse \u2014 public confidence in US banking",
+  "domain": "financial",
+  "country": "USA",
+  "timeframe_start": "2023-03-08",
+  "timeframe_end": "2023-03-12",
+  "events": [
+    {
+      "date": "2023-03-08",
+      "description": "Silicon Valley Bank announced a $1.8 billion loss from the sale of its bond portfolio and a plan to raise $2.25 billion in capital. This disclosure triggered immediate concern among venture capital clients regarding the bank's solvency.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "Wikipedia",
+      "confidence": 0.8,
+      "quantitative_detail": "$1.8 billion loss, $2.25 billion capital raise"
+    },
+    {
+      "date": "2023-03-09",
+      "description": "Following warnings from prominent venture capitalists, customers initiated a massive bank run, attempting to withdraw $42 billion in a single day. This event signaled a rapid collapse of public confidence in the institution.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGb5SqP3HjN4_Y05gKC3krV6f3V0XAL2N10nVrl1zy4uZ_GEVNfdxL4O3iMSCZ26DAHyYVbMM-v4xc_6pSLKiIpV-Rs8uMqpSy25unWBbvkCwqkchg3yKiVFGv11aioESu1QEvHKeD0-uJpilQMT-XYC09XTyRQXjxzgsqT8hPs5q6bfjgjSbD5FfE1",
+      "source_name": "Wikipedia / Lowenstein",
+      "confidence": 1.0,
+      "quantitative_detail": "$42 billion withdrawal"
+    },
+    {
+      "date": "2023-03-10",
+      "description": "The California Department of Financial Protection and Innovation officially closed Silicon Valley Bank and appointed the FDIC as receiver. This marked the second-largest bank failure in U.S. history at the time.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF0ttNY2z5iMCgUFL_yx6mpxiXGLOgKoR_3Jl34nKvp6ne8FltzUJ3XQxiaaHAV8eLvokQCUmlJYTKpTACrFHg4crjYGmgC5paN6Tj-L_t0yDAEEmrOjTDotS1dldRAb7AtVHBqKdDuPAI2iagGoGSNQnU1cMXX079O9Iv7Rqo7k1NQFRB3GgBmg2nrkEII0NmncWD6-IKU2u5rLgsEhvnCQw==",
+      "source_name": "Economics Observatory",
+      "confidence": 1.0,
+      "quantitative_detail": "Second-largest bank failure"
+    },
+    {
+      "date": "2023-03-12",
+      "description": "Federal regulators announced that all depositors at SVB would be fully protected and have access to their money, aiming to prevent systemic contagion. This intervention was intended to stabilize broader public confidence in the banking system.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFN5cVB0794FtbBmbIuJg-mM65aom9TN9dFv6WWCjm1gQHWIZzV3Jgn4i73jgV1h89-eyuqnij5negDbAfJdex9SvasV4F0pU_Jw3oAvsP4_0K1b6CmL-gJGPSzEyUz68ELOTvZ6DYh3uDRgloepSTSX-Yuy9KvD_o=",
+      "source_name": "PBS",
+      "confidence": 1.0,
+      "quantitative_detail": "Full protection of all deposits"
+    }
+  ],
+  "polls": [],
+  "stakeholders": [
+    {
+      "name": "Joe Biden",
+      "role": "President of the United States",
+      "position": "He assured the American public that the banking system is safe and that depositors' money would be protected following the SVB collapse.",
+      "date": "2023-03-13",
+      "source": "pbs.org"
+    },
+    {
+      "name": "Janet Yellen",
+      "role": "U.S. Treasury Secretary",
+      "position": "She emphasized that the government would not bail out SVB shareholders but would take necessary steps to protect depositors and ensure financial stability.",
+      "date": "2023-03-12",
+      "source": "pbs.org"
+    },
+    {
+      "name": "Rob Nichols",
+      "role": "President and CEO of the American Bankers Association",
+      "position": "He publicly reaffirmed the strength and resilience of the U.S. banking system, urging customers to remain confident in their local institutions.",
+      "date": "2023-03-15",
+      "source": "aba.com"
+    }
+  ],
+  "outcome_description": "The collapse of Silicon Valley Bank triggered a temporary period of heightened anxiety and a decline in public confidence regarding the stability of regional banks. However, swift government intervention to guarantee deposits effectively stabilized the broader financial system and prevented a widespread loss of trust in the U.S. banking sector.",
+  "outcome_pro_pct": 48.0,
+  "outcome_source": "Gallup (April 2023 survey: 48% of Americans expressed 'a great deal' or 'a fair amount' of confidence in the U.S. banking system following the bank failures)",
+  "key_figures": {
+    "svb_collapse_date": "March 10, 2023",
+    "signature_bank_closure_date": "March 12, 2023",
+    "svb_failure_scale": "Largest U.S. bank failure since the 2008 financial crisis"
+  },
+  "n_sources_consulted": 4,
+  "research_timestamp": "2026-04-01T01:56:36.743881",
+  "quality_score": 57
+}

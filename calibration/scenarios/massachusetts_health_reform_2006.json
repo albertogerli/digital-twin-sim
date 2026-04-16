@@ -1,0 +1,83 @@
+{
+  "scenario_name": "massachusetts_health_reform_2006",
+  "domain": "public_health",
+  "description": "The 2006 Massachusetts Health Care Reform Act, signed by Governor Mitt Romney, introduced an individual mandate for health insurance. This landmark legislation, often called 'Romneycare', served as a blueprint for the federal Affordable Care Act.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 32,
+      "undecided_pct": 26
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 35,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 33,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 35,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 37,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Governor Romney announces the bipartisan bill proposal."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Legislative debate heats up over individual mandate penalties."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Final passage of the bill in the state house."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Official signing ceremony at Faneuil Hall."
+    }
+  ],
+  "calibration_notes": "Tests the impact of bipartisan political consensus on public support for complex mandates."
+}

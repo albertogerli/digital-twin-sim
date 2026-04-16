@@ -1,0 +1,83 @@
+{
+  "scenario_name": "peloton_sex_and_the_city_ad_2021",
+  "domain": "commercial",
+  "description": "When a character died on a Peloton bike in the 'Sex and the City' reboot, the company's stock plummeted due to concerns over brand association with a fatal heart attack. Peloton quickly created a spoof ad to control the narrative.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 68,
+      "against_pct": 31,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Episode airs; Peloton stock drops 11%."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Media analysts discuss the potential 'brand killer' impact."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Peloton releases a viral response ad with the same actor."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Market sentiment recovers, brand viewed as 'good sports'."
+    }
+  ],
+  "calibration_notes": "Measures the effectiveness of rapid, humorous crisis intervention on brand perception."
+}

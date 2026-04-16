@@ -1,0 +1,79 @@
+{
+  "scenario_name": "chile_constitutional_referendum_2023",
+  "domain": "political",
+  "description": "The second attempt to replace Chile's constitution. Voters rejected the new conservative-drafted proposal by 55.7% to 44.3% on December 17, 2023.",
+  "final_outcome_pro_pct": 44.3,
+  "final_outcome_against_pct": 55.7,
+  "final_turnout_pct": 84.5,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30.0,
+      "against_pct": 40.0,
+      "undecided_pct": 30.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 32.0,
+      "against_pct": 42.0,
+      "undecided_pct": 26.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35.0,
+      "against_pct": 45.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40.0,
+      "against_pct": 50.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 42.0,
+      "against_pct": 52.0,
+      "undecided_pct": 6.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 43.0,
+      "against_pct": 53.0,
+      "undecided_pct": 4.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 44.0,
+      "against_pct": 55.0,
+      "undecided_pct": 1.0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 44.3,
+      "against_pct": 55.7,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Debate over controversial social articles increases rejection."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Broad political opposition forms coalition against document."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final rejection confirmed."
+    }
+  ],
+  "calibration_notes": "Excellent for studying electoral fatigue after multiple constitutional attempts."
+}

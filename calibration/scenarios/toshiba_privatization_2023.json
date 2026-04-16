@@ -1,0 +1,83 @@
+{
+  "scenario_name": "toshiba_privatization_2023",
+  "domain": "corporate",
+  "description": "After years of turmoil and scandal, Toshiba was taken private in 2023 by a consortium led by Japan Industrial Partners. The event marked the end of the firm's long history as a public entity.",
+  "final_outcome_pro_pct": 65.0,
+  "final_outcome_against_pct": 35.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 32,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 33,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 34,
+      "undecided_pct": 11
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 64,
+      "against_pct": 35,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Tender offer by JIP is announced."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Institutional shareholders express mixed signals."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Major activist investors back the deal."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final vote reaches the required majority to delist."
+    }
+  ],
+  "calibration_notes": "Excellent for measuring the endgame of long-term corporate crises and privatization."
+}

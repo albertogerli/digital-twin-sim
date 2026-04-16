@@ -1,0 +1,83 @@
+{
+  "scenario_name": "disney_plus_price_hike_2022",
+  "domain": "commercial",
+  "description": "In December 2022, Disney implemented a significant price increase for Disney+ in the US alongside an ad-supported tier. This triggered a debate regarding the sustainability of streaming models.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 42,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 49,
+      "against_pct": 49,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Disney announces price hike and ad-tier strategy."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Wall Street analysts express initial support for increased revenue per user."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Subscriber churn data indicates higher-than-expected cancellations."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Disney reports quarterly financial results confirming net loss in growth."
+    }
+  ],
+  "calibration_notes": "Useful for calibrating between 'financial necessity' and 'consumer pushback'."
+}

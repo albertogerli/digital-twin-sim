@@ -1,0 +1,115 @@
+[
+  {
+    "id": "mattia_santori",
+    "name": "Mattia Santori",
+    "role": "Consigliere comunale Bologna, fondatore Sardine",
+    "country": "IT",
+    "category": "activist",
+    "party_or_org": "Partito Democratico",
+    "archetype": "activist",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.55,
+    "bio": "Fondatore del movimento delle Sardine (2019), ora consigliere comunale PD a Bologna. Simbolo dell'anti-populismo giovanile.",
+    "communication_style": "Giovanile, social, anti-populista, piazze piene",
+    "key_traits": ["giovanile", "anti-populista", "piazze"],
+    "platform_primary": "social_media",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.50, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "immigration", "value": -0.65, "source": "public_statement", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  },
+  {
+    "id": "breaking_italy",
+    "name": "Breaking Italy (Alessandro Masala)",
+    "role": "YouTuber di informazione politica",
+    "country": "IT",
+    "category": "journalist",
+    "party_or_org": "YouTube",
+    "archetype": "journalist",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.40,
+    "bio": "Creatore di Breaking Italy, il canale YouTube di informazione più seguito in Italia. Rassegna stampa quotidiana per giovani.",
+    "communication_style": "Informale, equilibrato, rassegna stampa per millennial, toni da amico informato",
+    "key_traits": ["equilibrato", "digitale", "giovane"],
+    "platform_primary": "social_media",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.15, "source": "inferred", "confidence": "low"},
+      {"topic_tag": "media_freedom", "value": -0.60, "source": "public_statement", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["youtube"]
+  },
+  {
+    "id": "will_media",
+    "name": "Will Media (Alessandro Tommasi)",
+    "role": "Fondatore Will Media",
+    "country": "IT",
+    "category": "journalist",
+    "party_or_org": "Will Media",
+    "archetype": "journalist",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.35,
+    "bio": "Fondatore di Will Media, media company di informazione social. 2M+ follower, target Gen Z e millennial.",
+    "communication_style": "Visual, infografico, toni neutri ed educativi, social-first",
+    "key_traits": ["educativo", "visual", "generazione_Z"],
+    "platform_primary": "social_media",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.10, "source": "inferred", "confidence": "low"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["willmedia.it"]
+  },
+  {
+    "id": "torcha_media",
+    "name": "Torcha Media (Vari autori)",
+    "role": "Media company di informazione politica social",
+    "country": "IT",
+    "category": "journalist",
+    "party_or_org": "Torcha",
+    "archetype": "journalist",
+    "tier": 2,
+    "influence": 0.30,
+    "rigidity": 0.40,
+    "bio": "Media company nata su Instagram, informazione politica per Gen Z. Posizioni progressiste ma con format accessibili.",
+    "communication_style": "Social, infographic, progressista, linguaggio generazionale",
+    "key_traits": ["social", "generazionale", "progressista"],
+    "platform_primary": "social_media",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.35, "source": "inferred", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["torcha.it"]
+  },
+  {
+    "id": "fedez",
+    "name": "Fedez (Federico Lucia)",
+    "role": "Rapper e imprenditore digitale",
+    "country": "IT",
+    "category": "activist",
+    "party_or_org": "Indipendente",
+    "archetype": "influencer",
+    "tier": 2,
+    "influence": 0.40,
+    "rigidity": 0.30,
+    "bio": "Rapper tra i più famosi d'Italia, imprenditore digitale. Interventi politici sul palco di Sanremo e sui social. Post-separazione da Ferragni.",
+    "communication_style": "Provocatorio, social media native, interventi politici sporadici ma virali",
+    "key_traits": ["virale", "imprevedibile", "giovane"],
+    "platform_primary": "social_media",
+    "positions": [
+      {"topic_tag": "diritti_civili", "value": -0.70, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": -0.30, "source": "inferred", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"]
+  }
+]

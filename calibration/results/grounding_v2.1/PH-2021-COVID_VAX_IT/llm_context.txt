@@ -1,0 +1,47 @@
+# VERIFIED FACTS — PH-2021-COVID_VAX_IT
+Domain: public_health | Country: IT
+Period: 2020-12-27 to 2021-03-01
+
+## TIMELINE (verified events, chronological order):
+1. [2020-12-27] Italy officially launched its national COVID-19 vaccination campaign in coordination with other European Union member states. [confidence: 80%]
+   Detail: N/A
+   Source: visualcapitalist.com
+2. [2021-01-06] The European Medicines Agency (EMA) granted authorization for the Moderna COVID-19 vaccine, expanding the available supply. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+3. [2021-01-15] Pfizer-BioNTech announced delivery delays to Italy, causing a temporary slowdown in the national vaccination rate due to limited stock. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+4. [2021-02-06] The first shipment of the AstraZeneca vaccine arrived in Italy, providing a new supply source for the vaccination campaign. [confidence: 80%]
+   Detail: 249,600 doses
+   Source: wikipedia.org
+5. [2021-03-01] General Francesco Paolo Figliuolo was appointed as the new Special Commissioner for the COVID-19 emergency to oversee the acceleration of the vaccination campaign.
+   Detail: N/A
+   Source: wikipedia.org
+
+## KEY FIGURES:
+- vaccine_willingness_oct_2020: 36%
+- vaccine_willingness_jan_2021: 60%
+- vaccine_willingness_may_2021: 84%
+- benefit_risk_perception_increase: 17 percentage points
+- hasty_approval_concern_jan_2021: 45%
+- hasty_approval_concern_may_2021: 37%
+- distrust_in_pharma_jan_2021: 11%
+- distrust_in_pharma_may_2021: 17%
+
+## POLLING/SENTIMENT DATA:
+- [2020-10-01] 36.0% pro — Science in Society Monitor (Italy)
+- [2021-01-01] 60.0% pro — Science in Society Monitor (Italy)
+- [2021-05-01] 84.0% pro — Science in Society Monitor (Italy)
+- [2021-05-01] 52.0% pro — Science in Society Monitor (Italy)
+- [2021-01-01] 89.0% pro — Science in Society Monitor (Italy)
+- [2021-05-01] 90.0% pro — Science in Society Monitor (Italy)
+
+## FINAL OUTCOME:
+The Italian COVID-19 vaccination campaign achieved high public uptake, with over 80% of the total population completing the primary vaccination cycle by the end of 2021. Despite initial logistical challenges and localized vaccine hesitancy, the national effort was characterized by widespread public participation and the implementation of the 'Green Pass' mandate to encourage compliance.
+Pro %: 80.0% — Source: Istituto Superiore di Sanità (ISS) - COVID-19 Vaccination Dashboard
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

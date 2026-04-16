@@ -1,0 +1,253 @@
+{
+  "id": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL",
+  "domain": "financial",
+  "title": "Retail Investor Sentiment and Market Activism during the 2021 AMC Short Squeeze",
+  "country": "US",
+  "date_start": "2021-01-01",
+  "date_end": "2021-06-30",
+  "n_rounds": 7,
+  "round_duration_days": 25,
+  "ground_truth_outcome": {
+    "pro_pct": 62.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-01-01",
+      "pro_pct": 35.0,
+      "against_pct": 20.0,
+      "undecided_pct": 45.0,
+      "sample_size": null,
+      "source": "Estimated: Baseline retail interest in meme stocks pre-squeeze",
+      "pollster": null
+    },
+    {
+      "round": 2,
+      "date": "2021-01-26",
+      "pro_pct": 55.0,
+      "against_pct": 15.0,
+      "undecided_pct": 30.0,
+      "sample_size": null,
+      "source": "Estimated: Surge in retail participation following GME/AMC volatility",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2021-02-20",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0,
+      "sample_size": null,
+      "source": "Estimated: Sustained momentum post-Robinhood trading restrictions",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2021-03-17",
+      "pro_pct": 58.0,
+      "against_pct": 25.0,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "Estimated: Market correction and profit-taking phase",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2021-04-11",
+      "pro_pct": 56.0,
+      "against_pct": 28.0,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Consolidation period",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2021-05-06",
+      "pro_pct": 60.0,
+      "against_pct": 25.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Renewed retail interest in AMC specifically",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2021-05-31",
+      "pro_pct": 62.0,
+      "against_pct": 25.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Peak retail sentiment during June 2021 rally",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2021-01-27",
+      "description": "Robinhood and other brokers restrict buying of AMC and GME",
+      "shock_magnitude": 0.9,
+      "shock_direction": 1.0,
+      "source": "https://www.reuters.com/article/us-retail-trading-robinhood-idUSKBN29W27V"
+    },
+    {
+      "round": 3,
+      "date": "2021-02-18",
+      "description": "Congressional hearing on GameStop and retail trading",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.2,
+      "source": "https://www.nytimes.com/2021/02/18/business/dealbook/gamestop-hearing-takeaways.html"
+    },
+    {
+      "round": 6,
+      "date": "2021-05-13",
+      "description": "AMC announces retail shareholder base exceeds 3 million",
+      "shock_magnitude": 0.7,
+      "shock_direction": 1.0,
+      "source": "https://investor.amctheatres.com/newsroom/news-details/2021/AMC-Entertainment-Holdings-Inc.-Announces-Shareholder-Base-of-Over-3-Million-People/default.aspx"
+    }
+  ],
+  "agents": [
+    {
+      "name": "r/WallStreetBets",
+      "type": "citizen_cluster",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Primary hub for retail investor coordination"
+    },
+    {
+      "name": "Citadel Securities",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "Market maker and hedge fund target of retail sentiment"
+    },
+    {
+      "name": "Robinhood",
+      "type": "institutional",
+      "initial_position": -0.5,
+      "influence": 0.7,
+      "description": "Retail brokerage platform involved in trading restrictions"
+    },
+    {
+      "name": "Adam Aron (CEO of AMC)",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "AMC leadership engaging directly with retail investors"
+    },
+    {
+      "name": "SEC",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Regulatory body monitoring market volatility"
+    },
+    {
+      "name": "Mainstream Financial Media",
+      "type": "elite",
+      "initial_position": -0.4,
+      "influence": 0.6,
+      "description": "Traditional outlets skeptical of meme stock viability"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.781,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.4,
+    "institutional_trust": 0.2,
+    "undecided_share": 0.45
+  },
+  "notes": "Pro-side defined as support for retail investor activism, 'diamond hands' mentality, and the belief that retail can influence market outcomes. Against-side defined as belief in efficient market hypothesis, skepticism of retail activism, or support for traditional institutional market structures. Data is largely estimated based on social media sentiment trends and retail trading volume spikes.",
+  "market_observations": {
+    "primary_ticker": "AMC",
+    "primary_sector": "banking",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [
+      "XRT"
+    ],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": 108.491,
+        "volume_ratio": 0.73
+      },
+      {
+        "round": 2,
+        "return_pct": 14.919,
+        "volume_ratio": 1.77
+      },
+      {
+        "round": 3,
+        "return_pct": 128.421,
+        "volume_ratio": 1.08
+      },
+      {
+        "round": 4,
+        "return_pct": -30.531,
+        "volume_ratio": 0.46
+      },
+      {
+        "round": 5,
+        "return_pct": -2.654,
+        "volume_ratio": 0.25
+      },
+      {
+        "round": 6,
+        "return_pct": 190.222,
+        "volume_ratio": 1.22
+      },
+      {
+        "round": 7,
+        "return_pct": 117.075,
+        "volume_ratio": 1.81
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": 2.811,
+        "volume_ratio": 0.9
+      },
+      {
+        "round": 2,
+        "return_pct": 1.626,
+        "volume_ratio": 0.85
+      },
+      {
+        "round": 3,
+        "return_pct": 1.508,
+        "volume_ratio": 1.44
+      },
+      {
+        "round": 4,
+        "return_pct": 3.921,
+        "volume_ratio": 1.21
+      },
+      {
+        "round": 5,
+        "return_pct": 1.035,
+        "volume_ratio": 0.94
+      },
+      {
+        "round": 6,
+        "return_pct": 0.231,
+        "volume_ratio": 1.03
+      },
+      {
+        "round": 7,
+        "return_pct": 1.536,
+        "volume_ratio": 0.79
+      }
+    ],
+    "cumulative_return_pct": 2231.656,
+    "benchmark_return_pct": 13.329,
+    "excess_return_pct": 2218.327,
+    "volatility_realized": 288.1112,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

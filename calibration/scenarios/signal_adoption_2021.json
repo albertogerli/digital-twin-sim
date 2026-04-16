@@ -1,0 +1,83 @@
+{
+  "scenario_name": "signal_adoption_2021",
+  "domain": "technology",
+  "description": "In early 2021, WhatsApp announced a controversial update to its privacy policy, leading to a massive spike in downloads for the encrypted alternative Signal. This was a critical test of whether privacy-centric tech could outcompete convenience-centric tech.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 5,
+      "against_pct": 80,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 47,
+      "against_pct": 48,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 46,
+      "against_pct": 52,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "WhatsApp privacy policy update notification is released."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Elon Musk tweets 'Use Signal', causing a surge in downloads."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "WhatsApp delays implementation of policy, citing misinformation."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "General users drift back to WhatsApp due to network requirements."
+    }
+  ],
+  "calibration_notes": "Illustrates how a temporary 'privacy protest' can fail when it disrupts the core network effect."
+}

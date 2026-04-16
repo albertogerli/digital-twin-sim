@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sung_kook_bill_hwang",
+    "name": "Sung Kook \"Bill\" Hwang",
+    "role": "Founder and CEO of Archegos Capital Management",
+    "archetype": "business_leader",
+    "position": -0.8,
+    "influence": 0.95,
+    "rigidity": 0.9,
+    "bio": "Bill Hwang is a South Korean-born investor and former hedge fund manager who founded Archegos Capital Management, a family office that collapsed in 2021 due to highly leveraged positions.",
+    "communication_style": "secretive, aggressive",
+    "key_traits": [
+      "risk-taking",
+      "secretive",
+      "ambitious"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the founder of Archegos, his aggressive use of total return swaps and excessive leverage was the direct cause of the firm's collapse and the subsequent $10 billion in losses for prime brokers."
+    ],
+    "_grounded": true
+  }
+]

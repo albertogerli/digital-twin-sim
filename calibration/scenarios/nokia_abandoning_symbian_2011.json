@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nokia_abandoning_symbian_2011",
+  "domain": "corporate",
+  "description": "Nokia CEO Stephen Elop issued the 'Burning Platform' memo in 2011, announcing a pivot from the Symbian OS to Microsoft Windows Phone. The move sparked intense internal and market debate regarding the survival of a legacy giant.",
+  "final_outcome_pro_pct": 30.0,
+  "final_outcome_against_pct": 70.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 57,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 32,
+      "against_pct": 65,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 30,
+      "against_pct": 68,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 28,
+      "against_pct": 71,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 30,
+      "against_pct": 70,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Burning Platform memo leaked."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Nokia Lumia launch receives mixed reviews."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Market share continues to plummet vs iOS/Android."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Microsoft acquires Nokia mobile unit for a loss."
+    }
+  ],
+  "calibration_notes": "Excellent for measuring the skepticism of legacy firms attempting late-stage pivots."
+}

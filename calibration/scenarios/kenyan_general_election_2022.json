@@ -1,0 +1,79 @@
+{
+  "scenario_name": "kenyan_general_election_2022",
+  "domain": "political",
+  "description": "William Ruto was declared the winner of the 2022 Kenyan presidential election against long-time political veteran Raila Odinga. The result was highly contested, leading to legal challenges in the Supreme Court.",
+  "final_outcome_pro_pct": 50.5,
+  "final_outcome_against_pct": 48.9,
+  "final_turnout_pct": 65.4,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42,
+      "against_pct": 40,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 43,
+      "against_pct": 41,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 44,
+      "against_pct": 42,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 44,
+      "undecided_pct": 11
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 46,
+      "against_pct": 45,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 47,
+      "against_pct": 46,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 49,
+      "against_pct": 48,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 50,
+      "against_pct": 49,
+      "undecided_pct": 1
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Major campaign rally in Nairobi shifts youth engagement."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Concerns over potential voter suppression tactics reported."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final tallies reported amidst high tension and media scrutiny."
+    }
+  ],
+  "calibration_notes": "Ideal for testing scenarios involving high volatility and regional ethnic voting patterns."
+}

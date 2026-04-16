@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dell_privatization_2013",
+  "domain": "corporate",
+  "description": "Michael Dell and Silver Lake Partners orchestrated a $24.9 billion buyout to take Dell private in 2013. Shareholders were split on whether the valuation was fair or if it undervalued the company's future potential.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Activist investor Carl Icahn publicly opposes the deal."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Dell increases bid price slightly to secure board support."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Special committee recommends the buyout to shareholders."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Shareholders vote in favor of the privatization."
+    }
+  ],
+  "calibration_notes": "Measures the impact of institutional shareholder activism on corporate restructuring."
+}

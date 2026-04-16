@@ -1,0 +1,71 @@
+[
+  {
+    "id": "sadiq_khan",
+    "name": "Sadiq Khan",
+    "role": "Mayor of London",
+    "archetype": "politician",
+    "position": 0.2,
+    "influence": 0.95,
+    "rigidity": 0.75,
+    "bio": "Sadiq Khan is the Mayor of London, first elected in 2016, responsible for overseeing the city's transport network through Transport for London (TfL).",
+    "communication_style": "formal, authoritative",
+    "key_traits": [
+      "strategic",
+      "cautious"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As Mayor, he backed TfL's decision to deny the license renewal, citing safety and corporate responsibility concerns, while balancing public pressure."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "tom_elvidge",
+    "name": "Tom Elvidge",
+    "role": "General Manager of Uber London",
+    "archetype": "business_leader",
+    "position": 1.0,
+    "influence": 0.8,
+    "rigidity": 0.7,
+    "bio": "Tom Elvidge served as the General Manager for Uber in London during the 2017 license crisis, acting as the primary public face for the company's operations.",
+    "communication_style": "defensive, persuasive",
+    "key_traits": [
+      "resilient",
+      "determined"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "affected_party",
+    "_evidence": [
+      "He led the public defense of Uber in London, spearheading the appeal process and the campaign to mobilize the 850,000 petition signers."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "mike_brown",
+    "name": "Mike Brown",
+    "role": "Commissioner of Transport for London (TfL)",
+    "archetype": "regulator",
+    "position": -0.8,
+    "influence": 0.85,
+    "rigidity": 0.8,
+    "bio": "Mike Brown was the Commissioner of Transport for London, the highest-ranking official at the agency responsible for the city's transport licensing.",
+    "communication_style": "bureaucratic, decisive",
+    "key_traits": [
+      "principled",
+      "methodical"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "regulator",
+    "_evidence": [
+      "He oversaw the regulatory body that determined Uber was not 'fit and proper' to hold a private hire operator license in London."
+    ],
+    "_grounded": true
+  }
+]

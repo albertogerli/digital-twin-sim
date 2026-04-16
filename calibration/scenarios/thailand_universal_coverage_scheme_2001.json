@@ -1,0 +1,83 @@
+{
+  "scenario_name": "thailand_universal_coverage_scheme_2001",
+  "domain": "public_health",
+  "description": "The '30-Baht Health Scheme' was launched by the Thaksin Shinawatra administration in 2001 to provide universal healthcare access to all Thai citizens. It was a flagship populist policy that quickly gained massive public support despite initial skepticism from the medical establishment regarding funding sustainability.",
+  "final_outcome_pro_pct": 82.0,
+  "final_outcome_against_pct": 18.0,
+  "final_turnout_pct": 0.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 20,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 72,
+      "against_pct": 18,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 17,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 78,
+      "against_pct": 18,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 80,
+      "against_pct": 18,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 82,
+      "against_pct": 18,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Election campaign launch highlighting universal healthcare."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Initial rollout begins in pilot provinces."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "First wave of beneficiaries reports high satisfaction."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "National full-scale implementation achieved."
+    }
+  ],
+  "calibration_notes": "Represents a successful populist health reform that achieved high public buy-in despite elite/professional institutional friction."
+}

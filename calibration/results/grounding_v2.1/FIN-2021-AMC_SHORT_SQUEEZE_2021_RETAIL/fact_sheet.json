@@ -1,0 +1,89 @@
+{
+  "scenario_id": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL",
+  "topic": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL",
+  "domain": "financial",
+  "country": "US",
+  "timeframe_start": "2021-01-27",
+  "timeframe_end": "2021-05-26",
+  "events": [
+    {
+      "date": "2021-01-27",
+      "description": "Retail investor activity surged, causing AMC shares to increase by over 300% in a single day. This rapid price movement forced institutional short sellers to cover their positions.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy81cpIHGs3nWgBxDtFqWSw9ynGbXJsF38SE_T38qMeBMYx6zJKT2A-9EPuFvgG-p86u0CD5nonkRTF30cSDhDotSxBKgUFLzkUvJcQJLlaugAJ25Sj75M5MowDX8M_z1cmQ4DKMk2InbrHrf5tshwi0-tjJpYgYqz7_7adwjvJGXfFVXvqFkOYn2tLCaIQbuHy8A7sLNL",
+      "source_name": "spartantrading.com",
+      "confidence": 1.0,
+      "quantitative_detail": "300% increase"
+    },
+    {
+      "date": "2021-05-21",
+      "description": "AMC stock began a rapid ascent from its previous price level, marking the start of a second major wave of retail-driven momentum. This event reignited public interest in the 'meme stock' phenomenon.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "tradingsim.com",
+      "confidence": 0.8,
+      "quantitative_detail": "$12.08"
+    },
+    {
+      "date": "2021-05-26",
+      "description": "Retail interest intensified significantly, building on the momentum from earlier in the week. This period saw the stock price reach extreme intraday highs, drawing widespread media attention.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "gemini-grounded-search",
+      "source_name": "insiderfinancial.com",
+      "confidence": 1.0,
+      "quantitative_detail": "$72.62"
+    }
+  ],
+  "polls": [],
+  "stakeholders": [
+    {
+      "name": "Vlad Tenev",
+      "role": "CEO of Robinhood",
+      "position": "Defended the decision to restrict trading as a necessary measure to meet clearinghouse deposit requirements, denying claims of conspiracy with hedge funds.",
+      "date": "2021-02-18",
+      "source": "U.S. House Committee on Financial Services Hearing"
+    },
+    {
+      "name": "Ken Griffin",
+      "role": "CEO of Citadel",
+      "position": "Testified that his firm did not coordinate with Robinhood to restrict trading and that Citadel's role was to provide liquidity to the market.",
+      "date": "2021-02-18",
+      "source": "U.S. House Committee on Financial Services Hearing"
+    },
+    {
+      "name": "Keith Gill",
+      "role": "Investor (known as Roaring Kitty)",
+      "position": "Maintained that his investment in GameStop was based on a fundamental belief in the company's value and denied any intent to manipulate the market.",
+      "date": "2021-02-18",
+      "source": "U.S. House Committee on Financial Services Hearing"
+    },
+    {
+      "name": "Maxine Waters",
+      "role": "Chairwoman of the House Financial Services Committee",
+      "position": "Criticized the power dynamics between retail investors and institutional hedge funds, calling for greater transparency and accountability in market practices.",
+      "date": "2021-02-18",
+      "source": "U.S. House Committee on Financial Services Hearing"
+    },
+    {
+      "name": "Steve Huffman",
+      "role": "CEO of Reddit",
+      "position": "Defended the r/wallstreetbets community as a legitimate forum for retail investors to discuss market trends and share investment ideas.",
+      "date": "2021-02-18",
+      "source": "U.S. House Committee on Financial Services Hearing"
+    }
+  ],
+  "outcome_description": "The 2021 AMC short squeeze was a retail-driven market event that successfully forced institutional short sellers to cover positions, resulting in significant short-term price volatility and a temporary surge in the company's valuation. While it empowered retail investors and brought national attention to market mechanics, it did not result in a permanent shift in institutional power or a long-term stabilization of the company's fundamental financial health.",
+  "outcome_pro_pct": 45.0,
+  "outcome_source": "Confidence < 0.5; estimate based on the polarized nature of retail investor sentiment versus institutional financial analysis during the 2021 meme stock phenomenon.",
+  "key_figures": {
+    "litigation_case_number": "No. 1:21-md-02989",
+    "rapid_price_appreciation_period": "January 21\u201327, 2021",
+    "trading_restriction_period": "January 29 \u2013 February 4, 2021"
+  },
+  "n_sources_consulted": 3,
+  "research_timestamp": "2026-04-01T02:44:19.603420",
+  "quality_score": 55
+}

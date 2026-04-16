@@ -1,0 +1,83 @@
+{
+  "scenario_name": "seattle_plastic_bag_tax_2012",
+  "domain": "environmental",
+  "description": "Seattle implemented a 5-cent fee on disposable plastic shopping bags in 2012 to reduce litter and environmental impact. The debate focused on the fairness of the fee to consumers vs. the ecological necessity.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 35,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 38,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 53,
+      "against_pct": 40,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 56,
+      "against_pct": 40,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 40,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 59,
+      "against_pct": 40,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "City council debates the socioeconomic impact of the fee."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Local retail associations express concern over administrative costs."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "The measure passes the city council despite vocal minority opposition."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Post-implementation audit shows significant reduction in bag usage."
+    }
+  ],
+  "calibration_notes": "Useful for modeling fiscal-based environmental interventions at the local government level."
+}

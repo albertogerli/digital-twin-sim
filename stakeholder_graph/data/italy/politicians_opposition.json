@@ -1,0 +1,391 @@
+[
+  {
+    "id": "elly_schlein",
+    "name": "Elly Schlein",
+    "role": "Segretaria del Partito Democratico",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.80,
+    "rigidity": 0.75,
+    "bio": "Segretaria del PD dal 2023, ha impresso una svolta a sinistra su diritti civili e lavoro. Guida l'opposizione parlamentare.",
+    "communication_style": "Appassionata, progressista, argomentazione strutturata, forte sui social",
+    "key_traits": ["progressista", "energica", "polarizzante"],
+    "platform_primary": "social_media",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": -0.85, "source": "public_statement", "confidence": "high", "quotes": ["Questa non è una riforma della giustizia, è una riforma contro la giustizia."]},
+      {"topic_tag": "general_left_right", "value": -0.65, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": 0.70, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "immigration", "value": -0.75, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "premierato", "value": -0.90, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "labor_reform", "value": -0.60, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "diritti_civili", "value": -0.90, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giuseppe_conte", "type": "ally", "strength": 0.5, "context": "Alleanza tattica campo largo, rapporti altalenanti"},
+      {"target_id": "nicola_fratoianni", "type": "ally", "strength": 0.6, "context": "Alleanza organica con AVS"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q110629968"
+  },
+  {
+    "id": "giuseppe_conte",
+    "name": "Giuseppe Conte",
+    "role": "Presidente del Movimento 5 Stelle",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Movimento 5 Stelle",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.70,
+    "rigidity": 0.70,
+    "bio": "Leader M5S, ex Presidente del Consiglio (governi Conte I e II). Linea giustizialista, opposizione dura al governo.",
+    "communication_style": "Professorale, tecnico-politico, toni pacati ma fermi, usa molto Facebook",
+    "key_traits": ["professorale", "cauto", "giustizialista"],
+    "platform_primary": "social_media",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": -0.80, "source": "public_statement", "confidence": "high", "quotes": ["La separazione delle carriere è una soluzione a un problema che non esiste."]},
+      {"topic_tag": "general_left_right", "value": -0.35, "source": "voting_record", "confidence": "medium"},
+      {"topic_tag": "eu_integration", "value": 0.30, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "premierato", "value": -0.85, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "reddito_cittadinanza", "value": -0.90, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "elly_schlein", "type": "ally", "strength": 0.5},
+      {"target_id": "beppe_grillo", "type": "rival", "strength": 0.8, "context": "Rottura sul terzo mandato e identità M5S"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q1779494"
+  },
+  {
+    "id": "nicola_fratoianni",
+    "name": "Nicola Fratoianni",
+    "role": "Segretario di Sinistra Italiana, co-leader AVS",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Alleanza Verdi e Sinistra",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.45,
+    "rigidity": 0.85,
+    "bio": "Co-leader AVS con Bonelli. Posizione radicale contro tutte le riforme del governo Meloni.",
+    "communication_style": "Militante, ideologico, retorica di sinistra, molto attivo in parlamento",
+    "key_traits": ["militante", "coerente", "radicale"],
+    "platform_primary": "parliament",
+    "platform_secondary": "social_media",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": -0.90, "source": "public_statement", "confidence": "high", "quotes": ["Premierato, autonomia differenziata, separazione delle carriere: tre riforme che convergono verso lo stesso obiettivo, concentrare il potere."]},
+      {"topic_tag": "general_left_right", "value": -0.85, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "immigration", "value": -0.90, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "labor_reform", "value": -0.85, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "angelo_bonelli", "type": "ally", "strength": 0.9},
+      {"target_id": "elly_schlein", "type": "ally", "strength": 0.6}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q3876568"
+  },
+  {
+    "id": "angelo_bonelli",
+    "name": "Angelo Bonelli",
+    "role": "Co-portavoce Europa Verde, co-leader AVS",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Alleanza Verdi e Sinistra",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.40,
+    "rigidity": 0.80,
+    "bio": "Co-leader AVS, ambientalista storico. Focus su clima, giustizia sociale e opposizione alle politiche energetiche del governo.",
+    "communication_style": "Appassionato, dati ambientali, toni allarmati su clima ed ecomafie",
+    "key_traits": ["ambientalista", "tenace", "denuncia"],
+    "platform_primary": "social_media",
+    "platform_secondary": "parliament",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.75, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "environment", "value": -0.95, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "judiciary_reform", "value": -0.80, "source": "party_line", "confidence": "medium"}
+    ],
+    "relationships": [
+      {"target_id": "nicola_fratoianni", "type": "ally", "strength": 0.9}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"]
+  },
+  {
+    "id": "carlo_calenda",
+    "name": "Carlo Calenda",
+    "role": "Leader di Azione",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Azione",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.40,
+    "rigidity": 0.40,
+    "bio": "Leader centrista di Azione, ex Ministro dello Sviluppo Economico. Posizioni spesso indipendenti da centrodestra e centrosinistra.",
+    "communication_style": "Tecnocratico, polemico, distinguo continui, usa molto Twitter",
+    "key_traits": ["tecnocratico", "polemico", "indipendente"],
+    "platform_primary": "social_media",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": -0.20, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "general_left_right", "value": 0.05, "source": "voting_record", "confidence": "medium"},
+      {"topic_tag": "eu_integration", "value": 0.80, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "industrial_policy", "value": 0.60, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "matteo_renzi", "type": "rival", "strength": 0.7, "context": "Ex alleati nella federazione centrista, poi rottura"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q3658974"
+  },
+  {
+    "id": "matteo_renzi",
+    "name": "Matteo Renzi",
+    "role": "Leader di Italia Viva, Senatore",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Italia Viva",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.45,
+    "rigidity": 0.35,
+    "bio": "Ex Presidente del Consiglio e segretario PD, fondatore di Italia Viva. Posizioni fluide, spesso alleato tattico trasversale.",
+    "communication_style": "Brillante, provocatorio, auto-referenziale, usa newsletter e social",
+    "key_traits": ["trasformista", "eloquente", "ambizioso"],
+    "platform_primary": "social_media",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": 0.30, "source": "public_statement", "confidence": "medium", "notes": "Posizione ambigua, favorevole in linea di principio ma critico sui dettagli"},
+      {"topic_tag": "general_left_right", "value": 0.15, "source": "voting_record", "confidence": "medium"},
+      {"topic_tag": "premierato", "value": 0.40, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "eu_integration", "value": 0.80, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "carlo_calenda", "type": "rival", "strength": 0.7},
+      {"target_id": "giorgia_meloni", "type": "rival", "strength": 0.4, "context": "Opposizione morbida, dialogo su alcune riforme"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q862380"
+  },
+  {
+    "id": "maurizio_lupi",
+    "name": "Maurizio Lupi",
+    "role": "Presidente di Noi Moderati",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Noi Moderati",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.30,
+    "rigidity": 0.55,
+    "bio": "Leader di Noi Moderati, componente centrista della coalizione di centrodestra. Ex Ministro delle Infrastrutture.",
+    "communication_style": "Moderato, cattolico, toni concilianti",
+    "key_traits": ["moderato", "cattolico", "mediatore"],
+    "platform_primary": "parliament",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.35, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "judiciary_reform", "value": 0.55, "source": "party_line", "confidence": "medium"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"]
+  },
+  {
+    "id": "beppe_grillo",
+    "name": "Beppe Grillo",
+    "role": "Fondatore e Garante del Movimento 5 Stelle",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Movimento 5 Stelle",
+    "archetype": "activist",
+    "tier": 1,
+    "influence": 0.50,
+    "rigidity": 0.80,
+    "bio": "Comico e fondatore del M5S. In rotta con Conte sulla leadership, rivendica il ruolo di garante dei valori originari.",
+    "communication_style": "Sarcastico, provocatorio, usa il blog come arma, linguaggio da comico-politico",
+    "key_traits": ["provocatore", "visionario", "imprevedibile"],
+    "platform_primary": "social_media",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.30, "source": "public_statement", "confidence": "low"},
+      {"topic_tag": "environment", "value": -0.70, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "reddito_cittadinanza", "value": -0.85, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giuseppe_conte", "type": "rival", "strength": 0.8}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia"],
+    "wikidata_qid": "Q193236"
+  },
+  {
+    "id": "riccardo_magi",
+    "name": "Riccardo Magi",
+    "role": "Segretario di +Europa",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "+Europa",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.30,
+    "rigidity": 0.70,
+    "bio": "Leader di +Europa, partito liberal-radicale. Molto attivo su diritti civili, cannabis, eutanasia, cittadinanza.",
+    "communication_style": "Razionale, liberale, battaglie radicali, toni civili",
+    "key_traits": ["liberale", "radicale", "europeista"],
+    "platform_primary": "parliament",
+    "platform_secondary": "social_media",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.30, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": 0.95, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "diritti_civili", "value": -0.95, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "immigration", "value": -0.80, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"]
+  },
+  {
+    "id": "lorenzo_fontana",
+    "name": "Lorenzo Fontana",
+    "role": "Presidente della Camera dei Deputati",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Lega",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.55,
+    "rigidity": 0.70,
+    "bio": "Presidente della Camera dal 2022. Esponente dell'ala cattolico-tradizionalista della Lega.",
+    "communication_style": "Istituzionale come presidente Camera, posizioni conservative sui temi etici",
+    "key_traits": ["tradizionalista", "cattolico", "istituzionale"],
+    "platform_primary": "parliament",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.65, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "diritti_civili", "value": 0.80, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q3840901"
+  },
+  {
+    "id": "ignazio_la_russa",
+    "name": "Ignazio La Russa",
+    "role": "Presidente del Senato della Repubblica",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 1,
+    "influence": 0.60,
+    "rigidity": 0.75,
+    "bio": "Presidente del Senato, cofondatore di FdI. Veterano della destra italiana, figura controversa per dichiarazioni sulla storia.",
+    "communication_style": "Istituzionale ma a tratti provocatorio, orgoglioso della tradizione missina",
+    "key_traits": ["veterano", "provocatorio", "patriottico"],
+    "platform_primary": "parliament",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.75, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "judiciary_reform", "value": 0.80, "source": "party_line", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giorgia_meloni", "type": "ally", "strength": 0.8}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"],
+    "wikidata_qid": "Q529197"
+  },
+  {
+    "id": "stefano_patuanelli",
+    "name": "Stefano Patuanelli",
+    "role": "Capogruppo M5S al Senato",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Movimento 5 Stelle",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.65,
+    "bio": "Capogruppo M5S al Senato, ex Ministro dell'Agricoltura e dello Sviluppo Economico nei governi Conte II e Draghi.",
+    "communication_style": "Pacato, tecnico, linea Conte",
+    "key_traits": ["fedele", "tecnico", "pragmatico"],
+    "platform_primary": "parliament",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": -0.35, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento"]
+  },
+  {
+    "id": "debora_serracchiani",
+    "name": "Debora Serracchiani",
+    "role": "Capogruppo PD alla Camera",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Partito Democratico",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.40,
+    "rigidity": 0.60,
+    "bio": "Capogruppo PD alla Camera, ex presidente della regione Friuli Venezia Giulia. Avvocata, area riformista del PD.",
+    "communication_style": "Giuridica, argomentativa, toni moderati ma fermi",
+    "key_traits": ["riformista", "giurista", "determinata"],
+    "platform_primary": "parliament",
+    "platform_secondary": "tv",
+    "positions": [
+      {"topic_tag": "judiciary_reform", "value": -0.75, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "general_left_right", "value": -0.45, "source": "voting_record", "confidence": "high"}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento"]
+  },
+  {
+    "id": "francesco_lollobrigida",
+    "name": "Francesco Lollobrigida",
+    "role": "Ministro dell'Agricoltura e della Sovranità Alimentare",
+    "country": "IT",
+    "category": "politician",
+    "party_or_org": "Fratelli d'Italia",
+    "archetype": "politician",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.70,
+    "bio": "Ministro dell'Agricoltura, cognato di Meloni. Controverso per dichiarazioni sulla 'sostituzione etnica' e sulla carne coltivata.",
+    "communication_style": "Populista, sovranista, toni accesi, gaffe frequenti",
+    "key_traits": ["sovranista", "impulsivo", "fedele"],
+    "platform_primary": "tv",
+    "platform_secondary": "social_media",
+    "positions": [
+      {"topic_tag": "general_left_right", "value": 0.70, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "immigration", "value": 0.85, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giorgia_meloni", "type": "ally", "strength": 0.9}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["openparlamento", "wikipedia"]
+  }
+]

@@ -1,0 +1,213 @@
+{
+  "id": "CORP-2015-DIESELGATE_PUBLIC_TRUST_IN_VW",
+  "domain": "corporate",
+  "title": "Public trust in Volkswagen following the 2015 diesel emissions scandal",
+  "country": "DE",
+  "date_start": "2015-09-18",
+  "date_end": "2016-03-31",
+  "n_rounds": 5,
+  "round_duration_days": 39,
+  "ground_truth_outcome": {
+    "pro_pct": 32.0,
+    "source": "https://www.handelsblatt.com/unternehmen/industrie/umfrage-vertrauen-in-volkswagen-bricht-ein/12368484.html",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2015-09-18",
+      "pro_pct": 78.0,
+      "against_pct": 12.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Pre-scandal baseline based on historical brand loyalty metrics",
+      "pollster": "Internal Estimate"
+    },
+    {
+      "round": 2,
+      "date": "2015-10-27",
+      "pro_pct": 45.0,
+      "against_pct": 40.0,
+      "undecided_pct": 15.0,
+      "sample_size": 1000,
+      "source": "https://www.handelsblatt.com/unternehmen/industrie/umfrage-vertrauen-in-volkswagen-bricht-ein/12368484.html",
+      "pollster": "YouGov"
+    },
+    {
+      "round": 3,
+      "date": "2015-12-05",
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated decline following CEO resignation and ongoing investigations",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2016-01-13",
+      "pro_pct": 35.0,
+      "against_pct": 52.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Continued erosion of trust during initial recall planning",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2016-02-21",
+      "pro_pct": 32.0,
+      "against_pct": 58.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "https://www.handelsblatt.com/unternehmen/industrie/umfrage-vertrauen-in-volkswagen-bricht-ein/12368484.html",
+      "pollster": "YouGov"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2015-09-18",
+      "description": "EPA issues notice of violation to Volkswagen regarding defeat devices",
+      "shock_magnitude": 0.9,
+      "shock_direction": -1.0,
+      "source": "https://www.epa.gov/newsreleases/epa-issues-notice-violation-clean-air-act-volkswagen"
+    },
+    {
+      "round": 2,
+      "date": "2015-09-23",
+      "description": "Martin Winterkorn resigns as CEO of Volkswagen",
+      "shock_magnitude": 0.7,
+      "shock_direction": -0.5,
+      "source": "https://www.reuters.com/article/us-volkswagen-emissions-idUSKCN0RN09G20150923"
+    },
+    {
+      "round": 3,
+      "date": "2015-11-03",
+      "description": "VW admits irregularities in CO2 emissions for 800,000 vehicles",
+      "shock_magnitude": 0.6,
+      "shock_direction": -0.8,
+      "source": "https://www.nytimes.com/2015/11/04/business/international/volkswagen-emissions-scandal.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Martin Winterkorn",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Former CEO of Volkswagen"
+    },
+    {
+      "name": "German Federal Motor Transport Authority (KBA)",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.8,
+      "description": "Regulatory body overseeing vehicle compliance"
+    },
+    {
+      "name": "Environmental NGOs",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.6,
+      "description": "Groups advocating for strict emissions enforcement"
+    },
+    {
+      "name": "VW Brand Loyalists",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.3,
+      "description": "Long-term customers resistant to negative news"
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.1,
+      "description": "Average German consumer"
+    },
+    {
+      "name": "Financial Analysts",
+      "type": "elite",
+      "initial_position": -0.4,
+      "influence": 0.7,
+      "description": "Market observers focused on stock impact"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.712,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.1
+  },
+  "notes": "Pro-side defined as individuals who express trust in the Volkswagen brand. Against-side defined as individuals who express distrust or loss of confidence in the brand. Data quality: Early rounds are based on survey snapshots, while intermediate rounds are interpolated based on the trajectory of the scandal's public reputation crisis.",
+  "market_observations": {
+    "primary_ticker": "VOW3.DE",
+    "primary_sector": "automotive",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [
+      "STLA"
+    ],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": -34.113,
+        "volume_ratio": 1.89
+      },
+      {
+        "round": 2,
+        "return_pct": 20.685,
+        "volume_ratio": 1.04
+      },
+      {
+        "round": 3,
+        "return_pct": -4.689,
+        "volume_ratio": 0.8
+      },
+      {
+        "round": 4,
+        "return_pct": -15.311,
+        "volume_ratio": 0.74
+      },
+      {
+        "round": 5,
+        "return_pct": 11.269,
+        "volume_ratio": 0.65
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": 5.909,
+        "volume_ratio": 0.98
+      },
+      {
+        "round": 2,
+        "return_pct": 1.462,
+        "volume_ratio": 0.79
+      },
+      {
+        "round": 3,
+        "return_pct": -7.064,
+        "volume_ratio": 1.1
+      },
+      {
+        "round": 4,
+        "return_pct": 1.679,
+        "volume_ratio": 1.35
+      },
+      {
+        "round": 5,
+        "return_pct": 7.856,
+        "volume_ratio": 0.83
+      }
+    ],
+    "cumulative_return_pct": -28.584,
+    "benchmark_return_pct": 9.521,
+    "excess_return_pct": -38.104,
+    "volatility_realized": 59.2699,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

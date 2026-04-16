@@ -1,0 +1,83 @@
+{
+  "scenario_name": "mt_gox_collapse_impact_2014",
+  "domain": "financial",
+  "description": "In early 2014, Mt. Gox, the world's largest Bitcoin exchange based in Tokyo, filed for bankruptcy after reporting the loss of 850,000 bitcoins. This event severely damaged early cryptocurrency adoption sentiment and triggered calls for regulation.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 30,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 38,
+      "against_pct": 32,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 45,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 55,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 22,
+      "against_pct": 65,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 20,
+      "against_pct": 72,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 18,
+      "against_pct": 77,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 19,
+      "against_pct": 79,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Rumors of insolvency emerge on Reddit and crypto forums."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Mt. Gox halts all withdrawals citing technical issues."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Company officially files for bankruptcy protection in Tokyo."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "CEO Mark Karpeles apologizes publicly; media coverage turns extremely hostile."
+    }
+  ],
+  "calibration_notes": "Highlights how exchange-level failures create systemic distrust in new financial technologies."
+}

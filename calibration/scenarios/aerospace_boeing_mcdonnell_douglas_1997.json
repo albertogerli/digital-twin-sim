@@ -1,0 +1,79 @@
+{
+  "scenario_name": "aerospace_boeing_mcdonnell_douglas_1997",
+  "domain": "commercial",
+  "description": "In 1997, Boeing acquired McDonnell Douglas in a $13 billion deal that created a global aerospace monopoly. The merger is frequently cited by historians as the turning point where Boeing shifted its culture from 'engineering excellence' to 'shareholder primacy'.",
+  "final_outcome_pro_pct": 65.0,
+  "final_outcome_against_pct": 35.0,
+  "final_turnout_pct": 50.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 70,
+      "against_pct": 18,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 68,
+      "against_pct": 22,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 64,
+      "against_pct": 28,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 63,
+      "against_pct": 32,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 64,
+      "against_pct": 34,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Wall Street cheers the consolidation, sending share prices soaring."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Aerospace unions express early concerns regarding the integration of two disparate cultures."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Regulators approve the deal with little friction, unaware of long-term safety culture impacts."
+    }
+  ],
+  "calibration_notes": "Captures the 'short-term market triumph vs long-term institutional decline' dynamic."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "canadian_carbon_tax_2023",
+  "domain": "political",
+  "description": "Debate over the Canadian federal carbon pricing policy (fuel charge) amidst high inflation and cost-of-living concerns in late 2023.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 47,
+      "against_pct": 45,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44,
+      "against_pct": 50,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 43,
+      "against_pct": 52,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 41,
+      "against_pct": 55,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 57,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Opposition 'Axe the Tax' campaign gains traction."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Government announces temporary exemptions for home heating oil."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Public polling confirms majority opposition to current pricing model."
+    }
+  ],
+  "calibration_notes": "Useful for understanding how environmental policies suffer during inflationary periods."
+}

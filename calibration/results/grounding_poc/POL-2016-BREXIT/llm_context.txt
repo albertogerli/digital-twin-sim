@@ -1,0 +1,52 @@
+# VERIFIED FACTS — 2016 Brexit referendum — UK EU membership vote
+Domain: political | Country: United Kingdom
+Period: 2013-01-23 to 2016-06-16
+
+## TIMELINE (verified events, chronological order):
+1. [2013-01-23] Prime Minister David Cameron delivered a speech at Bloomberg London promising an in-out referendum on UK membership in the EU if the Conservative Party won the 2015 general election.
+   Detail: N/A
+   Source: wikipedia.org
+2. [2015-05-28] The European Union Referendum Bill 2015–16 was formally introduced to Parliament, setting the legislative framework for the vote. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+3. [2016-02-20] David Cameron officially announced the referendum date and declared his intention to campaign for the UK to remain in the EU. [confidence: 80%]
+   Detail: 2016-06-23
+   Source: wikipedia.org
+4. [2016-02-21] Boris Johnson announced he would join the Vote Leave campaign, significantly undermining the Prime Minister's Remain efforts.
+   Detail: N/A
+   Source: apnews.com
+5. [2016-04-15] The official campaign period began, marking the start of formal operations for groups like Britain Stronger in Europe. [confidence: 80%]
+   Detail: N/A
+   Source: wikipedia.org
+6. [2016-06-16] Labour MP and Remain campaigner Jo Cox was murdered by an extremist, leading to a temporary suspension of all referendum campaigning.
+   Detail: N/A
+   Source: apnews.com
+
+## KEY FIGURES:
+- voter_turnout_percentage: 72.2%
+- total_votes_cast: 33,577,342
+- leave_vote_percentage: 51.9%
+- remain_vote_percentage: 48.1%
+- leave_votes_count: 17,410,742
+- remain_votes_count: 16,141,241
+- highest_leave_support_area: 76% in Boston, Lincolnshire
+
+## POLLING/SENTIMENT DATA:
+- [2016-06-23] 48.1% pro (N=33577342) — UK Electoral Commission (Official Referendum Result)
+- [2016-06-23] 51.9% pro (N=33577342) — UK Electoral Commission (Official Referendum Result)
+
+## KEY STAKEHOLDER POSITIONS:
+- David Cameron (Prime Minister of the United Kingdom): He campaigned for the UK to remain in the European Union, arguing that membership was vital for the country's economic security and global influence. Following the referendum result, he announced his intention to resign.
+- Boris Johnson (Member of Parliament / Leave Campaigner): He was a prominent leader of the 'Vote Leave' campaign, arguing that leaving the EU would allow the UK to regain sovereignty and control over its borders and laws.
+- Nigel Farage (Leader of the UK Independence Party (UKIP)): He was a vocal advocate for Brexit, framing the referendum as a victory for ordinary people against the political establishment and arguing for the restoration of national independence.
+- Jeremy Corbyn (Leader of the Labour Party): He supported the 'Remain' campaign, though he faced criticism from some within his party for what was perceived as a lukewarm commitment to the cause.
+- Nicola Sturgeon (First Minister of Scotland): She strongly opposed Brexit, noting that Scotland had voted decisively to remain in the EU and suggesting that a second Scottish independence referendum was highly likely.
+
+## FINAL OUTCOME:
+The 2016 referendum resulted in a victory for the 'Leave' campaign, with 51.9% of voters choosing for the United Kingdom to withdraw from the European Union. The 'Remain' campaign received 48.1% of the vote.
+Pro %: 51.9% — Source: Electoral Commission (UK)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

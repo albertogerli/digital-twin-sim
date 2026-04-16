@@ -1,0 +1,79 @@
+{
+  "scenario_name": "nike_dream_crazy_2018",
+  "domain": "marketing",
+  "description": "Nike's 2018 'Dream Crazy' campaign featuring Colin Kaepernick was a high-risk gamble targeting Gen Z demographics. It sparked massive controversy but ultimately led to increased revenue and brand loyalty among the target demographic.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 48,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 47,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 46,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 45,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 54,
+      "against_pct": 45,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Social media footage of people burning Nike products."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Nike stock price drops initially before surging to record highs."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Market analysts attribute revenue growth to alignment with younger, progressive consumers."
+    }
+  ],
+  "calibration_notes": "Illustrates how brand value can increase despite high initial public opposition."
+}

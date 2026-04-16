@@ -1,0 +1,26 @@
+[
+  {
+    "id": "adam_neumann",
+    "name": "Adam Neumann",
+    "role": "Co-founder and CEO of WeWork",
+    "archetype": "business_leader",
+    "position": 1.0,
+    "influence": 0.95,
+    "rigidity": 0.9,
+    "bio": "Adam Neumann is an Israeli-American businessman who co-founded WeWork in 2010 and served as its CEO until his resignation in September 2019 following the failed IPO.",
+    "communication_style": "charismatic, visionary, unconventional",
+    "key_traits": [
+      "visionary",
+      "persuasive",
+      "controversial"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As the primary architect of WeWork's aggressive growth strategy and IPO attempt, he was the central figure whose leadership style and governance decisions directly triggered the collapse."
+    ],
+    "_grounded": true
+  }
+]

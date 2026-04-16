@@ -1,0 +1,83 @@
+{
+  "scenario_name": "gillette_toxic_masculinity_2019",
+  "domain": "marketing",
+  "description": "Gillette's 'The Best Men Can Be' campaign in 2019 sought to redefine masculinity in the #MeToo era. The ad faced polarized responses, with some praising its progressive stance and others accusing it of attacking its core male customer base.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 35,
+      "against_pct": 35,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 55,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 53,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 46,
+      "against_pct": 53,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 47,
+      "against_pct": 52,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Ad release sparks immediate social media divide."
+    },
+    {
+      "round_equivalent": 2,
+      "description": "Major media outlets publish polarized op-eds."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Boycott threats circulate among conservative influencer groups."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "P&G reports on brand perception impact."
+    }
+  ],
+  "calibration_notes": "Captures the dynamics of culture-war marketing and polarized consumer response."
+}

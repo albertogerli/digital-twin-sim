@@ -1,0 +1,83 @@
+{
+  "scenario_name": "australia_human_papillomavirus_vaccination_2007",
+  "domain": "public_health",
+  "description": "In 2007, Australia became the first nation to implement a free, nationwide school-based HPV vaccination program for girls. Despite initial parental concerns regarding sexual health education, the program achieved high coverage and served as a model for global public health campaigns.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 32,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 29,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 28,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Announcement of the National HPV Vaccination Program."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Debate occurs in federal parliament regarding morality and sexual behavior."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "First successful school-based vaccination rounds completed with few adverse reports."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Government releases data showing 70%+ uptake in the first cohort."
+    }
+  ],
+  "calibration_notes": "Represents a successful 'progressive' public health initiative that overcomes initial cultural hesitation through consistent program delivery."
+}

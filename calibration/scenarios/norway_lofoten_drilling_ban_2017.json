@@ -1,0 +1,83 @@
+{
+  "scenario_name": "norway_lofoten_drilling_ban_2017",
+  "domain": "environmental",
+  "description": "The debate over oil exploration in the Lofoten, Vesterålen, and Senja archipelagos became the central environmental battleground in Norway. Environmental NGOs and the tourism sector successfully pressured the government to keep the areas off-limits for drilling despite intense pressure from the oil industry.",
+  "final_outcome_pro_pct": 68.0,
+  "final_outcome_against_pct": 32.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 35,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 34,
+      "undecided_pct": 11
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 58,
+      "against_pct": 33,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 61,
+      "against_pct": 32,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 64,
+      "against_pct": 31,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 67,
+      "against_pct": 31,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68,
+      "against_pct": 32,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Labor Party leadership faces internal revolt over proposed exploration."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "New scientific report highlights extreme biodiversity risks in the region."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Major coalition partners formally agree to protect the region from oil development."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Official government decision confirms a long-term ban on drilling in the islands."
+    }
+  ],
+  "calibration_notes": "Serves as a case study for successful environmental advocacy in a nation heavily dependent on fossil fuel exports."
+}

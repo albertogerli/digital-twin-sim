@@ -1,0 +1,83 @@
+{
+  "scenario_name": "kraft_heinz_merger_2015",
+  "domain": "corporate",
+  "description": "The 2015 merger between Kraft and Heinz, orchestrated by 3G Capital and Berkshire Hathaway, created the third-largest food company in North America. The move was hailed as a masterclass in efficiency but later criticized for cost-cutting damage.",
+  "final_outcome_pro_pct": 75.0,
+  "final_outcome_against_pct": 25.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 10,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 75,
+      "against_pct": 20,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 77,
+      "against_pct": 23,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 76,
+      "against_pct": 24,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 75,
+      "against_pct": 25,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Merger announcement surprises Wall Street."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Buffett endorses the strategic synergy."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Shareholders approve merger with overwhelming support."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Long-term brand devaluation complaints emerge years later."
+    }
+  ],
+  "calibration_notes": "Demonstrates the 'honeymoon period' of corporate M&A before performance reality sets in."
+}

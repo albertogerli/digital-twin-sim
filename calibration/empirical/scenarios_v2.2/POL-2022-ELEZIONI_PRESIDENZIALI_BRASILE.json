@@ -1,0 +1,155 @@
+{
+  "id": "POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE",
+  "domain": "political",
+  "title": "2022 Brazilian Presidential Election: Second Round Competition between Lula da Silva and Jair Bolsonaro",
+  "country": "BR",
+  "date_start": "2022-08-01",
+  "date_end": "2022-10-30",
+  "n_rounds": 6,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 50.9,
+    "source": "https://resultados.tse.jus.br/oficial/app/index.html#/eleicao/resultados",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2022-08-01",
+      "pro_pct": 45.0,
+      "against_pct": 33.0,
+      "undecided_pct": 22.0,
+      "sample_size": 2000,
+      "source": "Datafolha: https://datafolha.folha.uol.com.br/",
+      "pollster": "Datafolha"
+    },
+    {
+      "round": 2,
+      "date": "2022-08-16",
+      "pro_pct": 47.0,
+      "against_pct": 32.0,
+      "undecided_pct": 21.0,
+      "sample_size": 2500,
+      "source": "Ipec: https://www.ipec-intelligence.com.br/",
+      "pollster": "Ipec"
+    },
+    {
+      "round": 3,
+      "date": "2022-08-31",
+      "pro_pct": 48.0,
+      "against_pct": 32.0,
+      "undecided_pct": 20.0,
+      "sample_size": 2000,
+      "source": "Datafolha: https://datafolha.folha.uol.com.br/",
+      "pollster": "Datafolha"
+    },
+    {
+      "round": 4,
+      "date": "2022-09-15",
+      "pro_pct": 49.0,
+      "against_pct": 31.0,
+      "undecided_pct": 20.0,
+      "sample_size": 2000,
+      "source": "Estimated: Based on trend interpolation from Ipec/Datafolha",
+      "pollster": "Aggregate"
+    },
+    {
+      "round": 5,
+      "date": "2022-09-30",
+      "pro_pct": 50.0,
+      "against_pct": 36.0,
+      "undecided_pct": 14.0,
+      "sample_size": 3000,
+      "source": "Datafolha: https://datafolha.folha.uol.com.br/",
+      "pollster": "Datafolha"
+    },
+    {
+      "round": 6,
+      "date": "2022-10-15",
+      "pro_pct": 51.0,
+      "against_pct": 45.0,
+      "undecided_pct": 4.0,
+      "sample_size": 2000,
+      "source": "Estimated: Convergence toward final result",
+      "pollster": "Aggregate"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2022-08-16",
+      "description": "Official start of the electoral campaign period",
+      "shock_magnitude": 0.2,
+      "shock_direction": 0.1,
+      "source": "https://www.tse.jus.br/"
+    },
+    {
+      "round": 3,
+      "date": "2022-08-28",
+      "description": "First televised presidential debate",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.2,
+      "source": "https://www.bbc.com/portuguese/brasil-62706342"
+    },
+    {
+      "round": 5,
+      "date": "2022-10-02",
+      "description": "First round election results show tighter gap than polls predicted",
+      "shock_magnitude": 0.8,
+      "shock_direction": -0.5,
+      "source": "https://resultados.tse.jus.br/"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Luiz In\u00e1cio Lula da Silva",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Workers' Party candidate, pro-side leader"
+    },
+    {
+      "name": "Jair Bolsonaro",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "Liberal Party candidate, against-side leader"
+    },
+    {
+      "name": "Superior Electoral Court (TSE)",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "Electoral management body ensuring process integrity"
+    },
+    {
+      "name": "Evangelical Voters",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.6,
+      "description": "Strongly conservative demographic block"
+    },
+    {
+      "name": "Urban Working Class",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.5,
+      "description": "Traditional base for the Workers' Party"
+    },
+    {
+      "name": "Agribusiness Sector",
+      "type": "elite",
+      "initial_position": -0.6,
+      "influence": 0.8,
+      "description": "Economic elite favoring deregulation and Bolsonaro"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.83,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side is defined as voting for Lula da Silva. Against-side is defined as voting for Jair Bolsonaro. Data quality: Polling in Brazil is highly professionalized but suffered from significant house effects in 2022, leading to underestimation of the incumbent's support in the first round."
+}

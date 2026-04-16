@@ -1,0 +1,83 @@
+{
+  "scenario_name": "common_core_standards_usa_2013",
+  "domain": "social",
+  "description": "The Common Core State Standards were intended to unify K-12 education standards across the US. The initiative faced a massive grassroots backlash from both the political left and right regarding federal overreach and curriculum quality.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 25,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 40,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 48,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 36,
+      "against_pct": 60,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 35,
+      "against_pct": 63,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Standards adopted by 45 states."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Tea Party movement labels it 'Obamacore' and federal overreach."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Teachers' unions express dissatisfaction with testing implementation."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Multiple states repeal or rename the standards."
+    }
+  ],
+  "calibration_notes": "Perfect for measuring the 'horseshoe theory' of opposition in US political discourse."
+}

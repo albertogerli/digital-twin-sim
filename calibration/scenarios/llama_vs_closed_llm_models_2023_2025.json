@@ -1,0 +1,79 @@
+{
+  "scenario_name": "llama_vs_closed_llm_models_2023_2025",
+  "domain": "technology",
+  "description": "The debate regarding whether the future of AI belongs to open-weights models (Meta's LLaMA) or strictly proprietary, API-gated models (OpenAI/Anthropic). This tracks the shift in the AI research community and enterprise developers.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 10,
+      "against_pct": 80,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 15,
+      "against_pct": 75,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 40,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 46,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 47,
+      "against_pct": 50,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Release of LLaMA-2 allows for commercial usage, disrupting the proprietary market."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "OpenAI releases proprietary GPT-4-Turbo with massive performance lead."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Concerns over 'AI safety' lead to lobbying for stricter controls on open-weights model releases."
+    }
+  ],
+  "calibration_notes": "Calibrates how safety concerns and performance gaps impact the open-vs-closed source battle."
+}

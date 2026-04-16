@@ -1,0 +1,83 @@
+{
+  "scenario_name": "croatia_same_sex_marriage_referendum_2013",
+  "domain": "political",
+  "description": "A December 1, 2013, referendum in Croatia asking if marriage should be constitutionally defined as a union between a man and a woman. The 'Yes' (against same-sex marriage) side won with 65.8% of the vote.",
+  "final_outcome_pro_pct": 65.8,
+  "final_outcome_against_pct": 34.2,
+  "final_turnout_pct": 37.9,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 36,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 35,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 34,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 64,
+      "against_pct": 33,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 65,
+      "against_pct": 33,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 65.8,
+      "against_pct": 34.2,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Catholic Church launches a nationwide campaign for the referendum."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Human rights groups organize protests against the proposed amendment."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Polling consistently shows the conservative side maintaining a steady lead."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final results are confirmed with relatively low overall turnout."
+    }
+  ],
+  "calibration_notes": "Exemplifies how cultural/moral issues can mobilize a specific segment of the electorate despite low overall interest."
+}

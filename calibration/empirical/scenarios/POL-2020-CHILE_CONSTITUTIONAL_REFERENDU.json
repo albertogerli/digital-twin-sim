@@ -1,0 +1,155 @@
+{
+  "id": "POL-2020-CHILE_CONSTITUTIONAL_REFERENDU",
+  "domain": "political",
+  "title": "Chile Constitutional Referendum 2020: Public opinion trajectory regarding the replacement of the 1980 Constitution",
+  "country": "CL",
+  "date_start": "2020-09-01",
+  "date_end": "2020-10-25",
+  "n_rounds": 6,
+  "round_duration_days": 9,
+  "ground_truth_outcome": {
+    "pro_pct": 78.3,
+    "source": "https://www.servel.cl/resultados-plebiscito-2020/",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2020-09-01",
+      "pro_pct": 68.0,
+      "against_pct": 18.0,
+      "undecided_pct": 14.0,
+      "sample_size": 1200,
+      "source": "https://www.cadem.cl/estudios/plaza-publica-344/",
+      "pollster": "Cadem"
+    },
+    {
+      "round": 2,
+      "date": "2020-09-10",
+      "pro_pct": 69.0,
+      "against_pct": 17.0,
+      "undecided_pct": 14.0,
+      "sample_size": 1200,
+      "source": "Estimated: Interpolated trend from Cadem and Pulso Ciudadano",
+      "pollster": "Cadem"
+    },
+    {
+      "round": 3,
+      "date": "2020-09-19",
+      "pro_pct": 71.0,
+      "against_pct": 16.0,
+      "undecided_pct": 13.0,
+      "sample_size": 1200,
+      "source": "https://www.cadem.cl/estudios/plaza-publica-347/",
+      "pollster": "Cadem"
+    },
+    {
+      "round": 4,
+      "date": "2020-09-28",
+      "pro_pct": 73.0,
+      "against_pct": 15.0,
+      "undecided_pct": 12.0,
+      "sample_size": 1200,
+      "source": "Estimated: Linear progression toward final result",
+      "pollster": "Cadem"
+    },
+    {
+      "round": 5,
+      "date": "2020-10-07",
+      "pro_pct": 75.0,
+      "against_pct": 14.0,
+      "undecided_pct": 11.0,
+      "sample_size": 1200,
+      "source": "https://www.cadem.cl/estudios/plaza-publica-351/",
+      "pollster": "Cadem"
+    },
+    {
+      "round": 6,
+      "date": "2020-10-16",
+      "pro_pct": 76.0,
+      "against_pct": 13.0,
+      "undecided_pct": 11.0,
+      "sample_size": 1200,
+      "source": "https://www.cadem.cl/estudios/plaza-publica-352/",
+      "pollster": "Cadem"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2020-09-04",
+      "description": "Official start of the electoral campaign period for the plebiscite.",
+      "shock_magnitude": 0.2,
+      "shock_direction": 0.1,
+      "source": "https://www.bcn.cl/leychile/navegar?idNorma=1148454"
+    },
+    {
+      "round": 3,
+      "date": "2020-09-20",
+      "description": "Intensification of televised political advertising (franja electoral) begins.",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.2,
+      "source": "https://www.reuters.com/article/us-chile-constitution-idUSKBN27B08L"
+    },
+    {
+      "round": 5,
+      "date": "2020-10-08",
+      "description": "First anniversary of the 2019 social unrest (Estallido Social) approaches, mobilizing pro-change sentiment.",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.3,
+      "source": "https://www.bbc.com/news/world-latin-america-54656660"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Sebastian Piñera",
+      "type": "elite",
+      "initial_position": -0.2,
+      "influence": 0.8,
+      "description": "President of Chile, officially neutral but associated with the status quo."
+    },
+    {
+      "name": "Gabriel Boric",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "Prominent opposition leader and advocate for the new constitution."
+    },
+    {
+      "name": "Chile Vamos",
+      "type": "institutional",
+      "initial_position": -0.5,
+      "influence": 0.6,
+      "description": "Right-wing political coalition, largely favoring the existing constitution."
+    },
+    {
+      "name": "Social Movements",
+      "type": "citizen_cluster",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Grassroots organizations driving the demand for constitutional change."
+    },
+    {
+      "name": "Catholic Church",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.3,
+      "description": "Neutral institutional actor with moderate social influence."
+    },
+    {
+      "name": "Business Associations",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.5,
+      "description": "Industry groups concerned about economic stability under a new framework."
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.714,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.2,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side (Apruebo) refers to voters supporting the creation of a new constitution. Against-side (Rechazo) refers to voters supporting the retention of the 1980 constitution. Data quality is high due to consistent polling by Cadem and definitive official results from Servel."
+}

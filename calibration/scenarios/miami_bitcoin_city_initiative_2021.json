@@ -1,0 +1,79 @@
+{
+  "scenario_name": "miami_bitcoin_city_initiative_2021",
+  "domain": "technology",
+  "description": "Mayor Francis Suarez led a campaign to turn Miami into a global crypto hub, culminating in the launch of 'MiamiCoin' (MIA). The project faced backlash as the token value collapsed, leading to city-wide fiscal scrutiny.",
+  "final_outcome_pro_pct": 45.0,
+  "final_outcome_against_pct": 55.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 25,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 50,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 46,
+      "against_pct": 53,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 45,
+      "against_pct": 55,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Mayor Suarez pushes for salary payments in Bitcoin."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "MiamiCoin launch results in significant value loss for retail holders."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "City commission pauses all future crypto-municipal projects."
+    }
+  ],
+  "calibration_notes": "Highlights the lifecycle of municipal-led tech adoption: high initial hype followed by institutional retreat."
+}

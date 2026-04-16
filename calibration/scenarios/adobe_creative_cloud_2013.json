@@ -1,0 +1,83 @@
+{
+  "scenario_name": "adobe_creative_cloud_2013",
+  "domain": "commercial",
+  "description": "In 2013, Adobe switched from a perpetual license model to a mandatory monthly subscription (Creative Cloud). Creative professionals decried the loss of ownership, leading to years of recurring friction.",
+  "final_outcome_pro_pct": 50.0,
+  "final_outcome_against_pct": 50.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 52,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 53,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 50,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 49,
+      "against_pct": 50,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50,
+      "against_pct": 50,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 50,
+      "against_pct": 50,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Adobe announces end of perpetual licenses."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Online petition against Creative Cloud reaches 20k signatures."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Financial reports show subscription revenue success."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Industry adoption forces normalized acceptance of the model."
+    }
+  ],
+  "calibration_notes": "Example of a successful business model shift that survived intense initial controversy."
+}

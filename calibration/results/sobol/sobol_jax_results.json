@@ -1,0 +1,129 @@
+{
+  "model": "JAX",
+  "jax_version": "0.9.2",
+  "parameters": [
+    "lambda_elite",
+    "lambda_citizen",
+    "alpha_social",
+    "alpha_event",
+    "alpha_herd",
+    "alpha_anchor",
+    "herd_threshold",
+    "anchor_drift_rate"
+  ],
+  "bounds": [
+    [
+      0.05,
+      0.3
+    ],
+    [
+      0.1,
+      0.4
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      -2.0,
+      2.0
+    ],
+    [
+      0.1,
+      0.4
+    ],
+    [
+      0.1,
+      0.4
+    ]
+  ],
+  "N": 1024,
+  "total_evaluations": 18432,
+  "n_agents": 30,
+  "n_rounds": 7,
+  "eval_time_s": 2.76,
+  "output_stats": {
+    "mean": 19.685709746931245,
+    "std": 19.666107527097314,
+    "min": 8.744153318085424e-11,
+    "max": 58.64525604248047
+  },
+  "S1": {
+    "lambda_elite": 0.009218182012160401,
+    "lambda_citizen": 0.021936213363854602,
+    "alpha_social": 0.06991055919521189,
+    "alpha_event": 0.005102617877928082,
+    "alpha_herd": 0.2587111072488144,
+    "alpha_anchor": 0.37928206314910207,
+    "herd_threshold": 0.0060302811821863955,
+    "anchor_drift_rate": -0.004516124072232907
+  },
+  "S1_conf": {
+    "lambda_elite": 0.013056117061557194,
+    "lambda_citizen": 0.02601336444474881,
+    "alpha_social": 0.03089702731997555,
+    "alpha_event": 0.02107313178561073,
+    "alpha_herd": 0.05910732383529085,
+    "alpha_anchor": 0.05850727438081985,
+    "herd_threshold": 0.010980182032966676,
+    "anchor_drift_rate": 0.00696963696495573
+  },
+  "ST": {
+    "lambda_elite": 0.02603590170675978,
+    "lambda_citizen": 0.06406945499730828,
+    "alpha_social": 0.16407690650640638,
+    "alpha_event": 0.06428058081256287,
+    "alpha_herd": 0.44539061743430824,
+    "alpha_anchor": 0.5509043074850148,
+    "herd_threshold": 0.018770564512292334,
+    "anchor_drift_rate": 0.007997216256579844
+  },
+  "ST_conf": {
+    "lambda_elite": 0.0054062819357043575,
+    "lambda_citizen": 0.010997539842746588,
+    "alpha_social": 0.029803251600267536,
+    "alpha_event": 0.011823882174767509,
+    "alpha_herd": 0.04341628011276718,
+    "alpha_anchor": 0.055449234599872714,
+    "herd_threshold": 0.004862378494546602,
+    "anchor_drift_rate": 0.0026656145840549535
+  },
+  "S2": {
+    "lambda_elite:lambda_citizen": 0.001129519118446068,
+    "lambda_elite:alpha_social": -0.002070430093804476,
+    "lambda_elite:alpha_event": 0.003945415738117517,
+    "lambda_elite:alpha_herd": 0.004381311371086771,
+    "lambda_elite:alpha_anchor": 0.01058925157877777,
+    "lambda_elite:herd_threshold": 0.0032966229215163163,
+    "lambda_elite:anchor_drift_rate": 0.00011752845680860092,
+    "lambda_citizen:alpha_social": -0.0021743363243306724,
+    "lambda_citizen:alpha_event": 0.004883747643669583,
+    "lambda_citizen:alpha_herd": -0.0022409654595272333,
+    "lambda_citizen:alpha_anchor": 0.004688693434459434,
+    "lambda_citizen:herd_threshold": -0.0004274552233297429,
+    "lambda_citizen:anchor_drift_rate": -0.0015811629274302581,
+    "alpha_social:alpha_event": -0.0009572887418147916,
+    "alpha_social:alpha_herd": 0.014455568007304298,
+    "alpha_social:alpha_anchor": 0.0292465555564429,
+    "alpha_social:herd_threshold": -0.0023215846778843396,
+    "alpha_social:anchor_drift_rate": -0.007074165949616806,
+    "alpha_event:alpha_herd": 0.007663156668046289,
+    "alpha_event:alpha_anchor": 0.017632418355652213,
+    "alpha_event:herd_threshold": 0.007134293255693547,
+    "alpha_event:anchor_drift_rate": 0.01122041281056329,
+    "alpha_herd:alpha_anchor": 0.06689116742742784,
+    "alpha_herd:herd_threshold": 0.01804492312643769,
+    "alpha_herd:anchor_drift_rate": 0.016833723811696465,
+    "alpha_anchor:herd_threshold": -0.020198829078511775,
+    "alpha_anchor:anchor_drift_rate": -0.014182321542942956,
+    "herd_threshold:anchor_drift_rate": 0.00867636167163251
+  }
+}

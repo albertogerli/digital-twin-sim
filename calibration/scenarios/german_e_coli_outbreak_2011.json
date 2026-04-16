@@ -1,0 +1,83 @@
+{
+  "scenario_name": "german_e_coli_outbreak_2011",
+  "domain": "public_health",
+  "description": "In May 2011, a deadly E. coli outbreak in Germany caused by contaminated fenugreek sprouts led to over 50 deaths. Public confusion between Spanish cucumbers and sprouts caused significant economic friction and distrust in European food supply chains.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 45,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 47,
+      "against_pct": 50,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "German authorities incorrectly identify Spanish cucumbers as the source, triggering trade bans."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Spain demands compensation for billions in lost revenue due to false public alerts."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Robert Koch Institute confirms sprouts as the true source of infection."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public sentiment shifts toward skepticism of EU food safety coordination."
+    }
+  ],
+  "calibration_notes": "Useful for modeling public reaction to false alerts and subsequent breakdown of cross-border institutional trust."
+}

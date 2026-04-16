@@ -1,0 +1,83 @@
+{
+  "scenario_name": "jack_in_the_box_e_coli_crisis_1993",
+  "domain": "public_health",
+  "description": "In 1993, an E. coli outbreak linked to undercooked hamburgers at Jack in the Box resulted in four deaths and hundreds of illnesses across the US. The crisis led to massive public outcry, regulatory reforms by the USDA, and a permanent shift in American food safety perception.",
+  "final_outcome_pro_pct": 82.0,
+  "final_outcome_against_pct": 18.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 10,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 15,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 72,
+      "against_pct": 22,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 20,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 78,
+      "against_pct": 19,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 80,
+      "against_pct": 18,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 82,
+      "against_pct": 18,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Initial reports of child illnesses emerge in Washington state."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Jack in the Box CEO Robert Nugent takes public responsibility for the undercooked meat."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "USDA Secretary Mike Espy declares E. coli an adulterant in ground beef."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public support for strict federal meat inspection standards reaches record highs."
+    }
+  ],
+  "calibration_notes": "Measures the impact of a public health crisis on shifting from corporate trust to government-mandated regulation."
+}

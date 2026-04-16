@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uae_autoworker_strike_2023",
+  "domain": "labor",
+  "description": "The 2023 UAW strike against the 'Big Three' automakers (Ford, GM, Stellantis) utilized a 'Stand Up' strike strategy, targeting specific plants. The union successfully pressured the companies for significant wage increases, maintaining majority public support throughout the process.",
+  "final_outcome_pro_pct": 75.0,
+  "final_outcome_against_pct": 25.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 28,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 27,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 65,
+      "against_pct": 26,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 68,
+      "against_pct": 25,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 72,
+      "against_pct": 26,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 74,
+      "against_pct": 26,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 75,
+      "against_pct": 25,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "UAW launches innovative 'Stand Up' strike strategy."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "President Biden visits a picket line, signaling federal support."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Automakers concede to major wage hikes."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Final contract ratification by UAW members."
+    }
+  ],
+  "calibration_notes": "Useful for calibrating the impact of political alignment and innovative strike tactics on public perception."
+}

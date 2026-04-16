@@ -1,0 +1,83 @@
+{
+  "scenario_name": "enron_accounting_fraud_disclosure_2001",
+  "domain": "corporate",
+  "description": "Public sentiment regarding the collapse of Enron in late 2001 following revelations of massive systemic accounting fraud. Pro-regulation sentiment surged as investors demanded stricter oversight of energy trading and auditing practices.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 22,
+      "undecided_pct": 43
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 28,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 26,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 27,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 29,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 28,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Enron announces massive third-quarter loss and SEC investigation begins."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Sherron Watkins sends warning letter to Kenneth Lay about accounting irregularities."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Enron files for Chapter 11 bankruptcy; national outrage peaks."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Congressional hearings begin into Arthur Andersen's role in the fraud."
+    }
+  ],
+  "calibration_notes": "Useful for calibrating trust-collapse trajectories and the speed at which systemic corporate failure translates into public demand for regulatory intervention."
+}

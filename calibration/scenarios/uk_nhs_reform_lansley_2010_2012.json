@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_nhs_reform_lansley_2010_2012",
+  "domain": "public_health",
+  "description": "The Health and Social Care Act 2012, introduced by Andrew Lansley under the UK Coalition government, aimed to decentralize the NHS by shifting power to GP-led consortia. It faced massive backlash from medical professionals and the public, leading to a 'pause and listen' period before eventually passing into law.",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 0.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 20,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 25,
+      "undecided_pct": 33
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 55,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 58,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 34,
+      "against_pct": 60,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 36,
+      "against_pct": 61,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 38,
+      "against_pct": 62,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Lansley announces the white paper outlining 'Liberating the NHS'."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Royal College of General Practitioners officially opposes the bill."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Government initiates a mandatory 'listening exercise' to address concerns."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "The Health and Social Care Act receives Royal Assent despite intense opposition."
+    }
+  ],
+  "calibration_notes": "Useful for measuring how institutional professional opposition impacts public perception of technocratic reform."
+}

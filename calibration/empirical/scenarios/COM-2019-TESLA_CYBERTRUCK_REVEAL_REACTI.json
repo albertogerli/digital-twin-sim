@@ -1,0 +1,165 @@
+{
+  "id": "COM-2019-TESLA_CYBERTRUCK_REVEAL_REACTI",
+  "domain": "commercial",
+  "title": "Public perception and market reaction following the 2019 Tesla Cybertruck reveal event",
+  "country": "US",
+  "date_start": "2019-11-21",
+  "date_end": "2020-02-28",
+  "n_rounds": 7,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 62.0,
+    "source": "https://morningconsult.com/2019/11/25/teslas-cybertruck-launch-event-dented-brand-perception/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2019-11-21",
+      "pro_pct": 36.0,
+      "against_pct": 48.0,
+      "undecided_pct": 16.0,
+      "sample_size": 2200,
+      "source": "https://morningconsult.com/2019/11/25/teslas-cybertruck-launch-event-dented-brand-perception/",
+      "pollster": "Morning Consult"
+    },
+    {
+      "round": 2,
+      "date": "2019-12-05",
+      "pro_pct": 42.0,
+      "against_pct": 40.0,
+      "undecided_pct": 18.0,
+      "sample_size": null,
+      "source": "Estimated: Recovery trend based on social media sentiment analysis following initial shock",
+      "pollster": null
+    },
+    {
+      "round": 3,
+      "date": "2019-12-19",
+      "pro_pct": 48.0,
+      "against_pct": 35.0,
+      "undecided_pct": 17.0,
+      "sample_size": null,
+      "source": "Estimated: Normalization of brand perception as novelty settles",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2020-01-02",
+      "pro_pct": 52.0,
+      "against_pct": 32.0,
+      "undecided_pct": 16.0,
+      "sample_size": null,
+      "source": "Estimated: Continued positive momentum from pre-order volume reports",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2020-01-16",
+      "pro_pct": 56.0,
+      "against_pct": 29.0,
+      "undecided_pct": 15.0,
+      "sample_size": null,
+      "source": "Estimated: Stabilization of brand sentiment",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2020-01-30",
+      "pro_pct": 59.0,
+      "against_pct": 27.0,
+      "undecided_pct": 14.0,
+      "sample_size": null,
+      "source": "Estimated: Incremental growth in pro-side sentiment",
+      "pollster": null
+    },
+    {
+      "round": 7,
+      "date": "2020-02-13",
+      "pro_pct": 62.0,
+      "against_pct": 25.0,
+      "undecided_pct": 13.0,
+      "sample_size": null,
+      "source": "Estimated: Final convergence toward long-term brand affinity",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2019-11-21",
+      "description": "Official Cybertruck reveal event featuring broken window demo",
+      "shock_magnitude": 0.8,
+      "shock_direction": -0.6,
+      "source": "https://www.bbc.com/news/technology-50513220"
+    },
+    {
+      "round": 3,
+      "date": "2019-12-15",
+      "description": "Elon Musk tweets about 200,000 pre-orders, boosting confidence",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.5,
+      "source": "https://www.reuters.com/article/us-tesla-cybertruck/musk-says-tesla-has-received-200000-orders-for-cybertruck-idUSKBN1Y003V"
+    },
+    {
+      "round": 6,
+      "date": "2020-02-05",
+      "description": "Tesla stock price surge increases public interest and perceived viability",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.4,
+      "source": "https://www.nytimes.com/2020/02/04/business/tesla-stock.html"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Elon Musk",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "CEO of Tesla, primary driver of brand narrative"
+    },
+    {
+      "name": "Mainstream Automotive Media",
+      "type": "institutional",
+      "initial_position": -0.4,
+      "influence": 0.6,
+      "description": "Traditional car reviewers skeptical of design"
+    },
+    {
+      "name": "Tesla Loyalists",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.5,
+      "description": "Core fan base supporting all Tesla products"
+    },
+    {
+      "name": "General Public",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.2,
+      "description": "Average consumers with no prior brand loyalty"
+    },
+    {
+      "name": "Wall Street Analysts",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.7,
+      "description": "Financial experts focused on production feasibility"
+    },
+    {
+      "name": "Tech Enthusiasts",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "Early adopters interested in innovation"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.595,
+    "event_volatility": 0.8,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.16
+  },
+  "notes": "Pro-side is defined as individuals expressing positive sentiment, purchase intent, or admiration for the Cybertruck design/innovation. Against-side is defined as individuals expressing negative sentiment, mockery of the design, or skepticism regarding the vehicle's utility. Data quality note: Only the first round is based on a verified survey; subsequent rounds are estimates based on trend extrapolation and market sentiment indicators."
+}

@@ -1,0 +1,170 @@
+{
+  "scenario_id": "PH-2021-MASKING_MANDATE_DEBATE_USA_202",
+  "topic": "PH-2021-MASKING_MANDATE_DEBATE_USA_202",
+  "domain": "public_health",
+  "country": "US",
+  "timeframe_start": "2021-01-20",
+  "timeframe_end": "2021-08-06",
+  "events": [
+    {
+      "date": "2021-01-20",
+      "description": "President Joe Biden issued executive orders mandating masks on federal property and across all public transportation systems. This established a federal baseline for masking requirements in the United States.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELLNHgYl293gr6loqdeljXwpKQxEy9c_sPpKVpsReyEJ8HrhpElFtQaxDnPQIXMJDIF-qZgAqcKMtzbFJ25tM4FQBUiY1CLT39ntQwq0eu2I263Qsfj2us7E2P2ayMlXCSHFRYbcd4kCoD-xvPf2NNQ_FGUjUm7X_ykQYX7ffjoKfY1qzgQeBmb9QuPRKl2l_yQFY=",
+      "source_name": "nih.gov",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-05-13",
+      "description": "The CDC announced that fully vaccinated individuals were no longer required to wear masks or practice social distancing in most settings. This marked a significant shift toward pre-pandemic normalcy.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAjRaGocQK2AYrFgGGo78X4dlmxvVOsenQEMtt6e3LIYD9egBXqgKm-h2ntwWt_9xvr2cUoCep1n1bjyZZecvImzPaSAzPQyjatBdy5Fyl4PaQertbRJQ5JQtvPKp4AcLQXkfGmiMHjeJl6c8qcloO30DcAZV2owjZGyvvZ2S_dDL9n2IRPj-k3hwhIlcS9ZKkPbLBQxgMEHj3O25WX7rrGA==",
+      "source_name": "wikipedia.org",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-06-15",
+      "description": "California lifted the majority of its public health orders and mask mandates as the state economy officially reopened. This signaled a major state-level move toward ending pandemic restrictions.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "latimes.com",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-06-30",
+      "description": "The Los Angeles County Department of Public Health reintroduced a strong recommendation for indoor masking for all residents regardless of vaccination status. This was a response to the rising spread of the Delta variant.",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "latimes.com",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-07-27",
+      "description": "The CDC updated its guidance to recommend that vaccinated individuals wear masks indoors in areas experiencing high virus transmission. This reversal of the May guidance caused widespread public confusion and debate.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi9OzbbqzRzQRMVl53o4X2SS1tUf39_id-JesPiFmMg5XHajCiBESAxx1RP2nxETkhEjEpQgDYlX-Jd4qffV3JrkGXVu9ocJdmiIJFKiQ5IBYsdPFpVayUtIYadCoXAcWBg1YXbBLXw24h3mPQvzLFiqqL3LTfiX5KkksILTcXv4YhtiDKzvTSN-lKcQPyG-RajwbW1qr3Wm1f5yQ2xjVOY5rqAYJYCg54CDZtHoDMugyW8QqHj6mheNbi9YUIYLqCuFPNwLIgbJeEEsabrfksm-X1ilae7-q5yyyQ4A-yO45nklg=",
+      "source_name": "latimes.com",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-07-30",
+      "description": "Florida Governor Ron DeSantis issued an executive order prohibiting school districts from imposing mask mandates. The order cited parental rights and constitutional freedoms as the basis for the ban.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "constitutioncenter.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2021-08-06",
+      "description": "An Arkansas state judge issued a temporary injunction against a state law that had previously banned mask mandates in schools. The court ruled that the ban was in violation of the state constitution.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source_url": "",
+      "source_name": "constitutioncenter.org",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    }
+  ],
+  "polls": [
+    {
+      "date": "2021-08-01",
+      "pro_pct": 34.0,
+      "sample_size": 0,
+      "source": "Axios/Ipsos",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2021-08-01",
+      "pro_pct": 23.0,
+      "sample_size": 0,
+      "source": "Axios/Ipsos",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2021-08-01",
+      "pro_pct": 88.0,
+      "sample_size": 0,
+      "source": "Axios/Ipsos (Democrats)",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2021-08-01",
+      "pro_pct": 40.0,
+      "sample_size": 0,
+      "source": "Axios/Ipsos (Republicans)",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2021-08-01",
+      "pro_pct": 92.0,
+      "sample_size": 0,
+      "source": "Axios/Ipsos (Democrats - School Mandates)",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2021-08-01",
+      "pro_pct": 44.0,
+      "sample_size": 0,
+      "source": "Axios/Ipsos (Republicans - School Mandates)",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2021-08-01",
+      "pro_pct": 68.0,
+      "sample_size": 0,
+      "source": "Axios/Ipsos (Blue States)",
+      "methodology": "unknown"
+    },
+    {
+      "date": "2021-08-01",
+      "pro_pct": 63.0,
+      "sample_size": 0,
+      "source": "Axios/Ipsos (Red States)",
+      "methodology": "unknown"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "Ron DeSantis",
+      "role": "Governor of Florida",
+      "position": "Advocated for policies that barred local governments and school districts from instituting their own mask mandates.",
+      "date": "2021-08-01",
+      "source": "Forbes"
+    },
+    {
+      "name": "Henry McMaster",
+      "role": "Governor of South Carolina",
+      "position": "Supported state-level efforts to ban local mask mandates within the state.",
+      "date": "2021-08-01",
+      "source": "Forbes"
+    }
+  ],
+  "outcome_description": "Public opinion regarding mask mandates in 2021 was deeply polarized and geographically fragmented, characterized by shifting federal guidance and significant legal conflicts between state-level bans and local health requirements. Support for mandates generally tracked with political affiliation and regional COVID-19 transmission rates rather than achieving a national consensus.",
+  "outcome_pro_pct": 62.0,
+  "outcome_source": "Pew Research Center (August 2021 survey indicating 62% of U.S. adults favored mask requirements in public spaces)",
+  "key_figures": {
+    "democrat_support_for_mandates": "88%",
+    "republican_support_for_mandates": "40%",
+    "democrat_support_for_school_mandates": "92%",
+    "republican_support_for_school_mandates": "44%",
+    "support_in_blue_states": "68%",
+    "support_in_red_states": "63%",
+    "opposition_to_state_bans_on_mandates": "66%",
+    "opposition_to_withholding_school_funding": "77%"
+  },
+  "n_sources_consulted": 7,
+  "research_timestamp": "2026-04-01T02:39:13.281834",
+  "quality_score": 88
+}

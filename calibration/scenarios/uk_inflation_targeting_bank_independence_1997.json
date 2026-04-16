@@ -1,0 +1,79 @@
+{
+  "scenario_name": "uk_inflation_targeting_bank_independence_1997",
+  "domain": "financial",
+  "description": "Public opinion on the decision by Chancellor Gordon Brown to grant the Bank of England independence to set interest rates to meet inflation targets, removing political control.",
+  "final_outcome_pro_pct": 60.0,
+  "final_outcome_against_pct": 40.0,
+  "final_turnout_pct": 55.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 20,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 22,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 25,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 30,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 59,
+      "against_pct": 38,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 59,
+      "against_pct": 39,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 60,
+      "against_pct": 40,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Announcement of Bank of England independence."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Early inflationary stability confirmed."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Opposition critique regarding lost democratic control."
+    }
+  ],
+  "calibration_notes": "Models the transition of a technocratic policy into accepted institutional norm."
+}

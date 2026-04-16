@@ -1,0 +1,83 @@
+{
+  "scenario_name": "italy_constitutional_referendum_2020",
+  "domain": "political",
+  "description": "Italy held a referendum in 2020 to reduce the number of members of parliament. It resulted in a landslide victory for the 'Yes' side.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 51.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 61,
+      "against_pct": 21,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 62,
+      "against_pct": 22,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 63,
+      "against_pct": 23,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 64,
+      "against_pct": 24,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 26,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 66,
+      "against_pct": 27,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 29,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Five Star Movement champions the cause as cost-cutting"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "COVID-19 pandemic delays the original referendum date"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Mainstream parties pivot to support reform to avoid isolation"
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Reform passes with clear populist backing"
+    }
+  ],
+  "calibration_notes": "Excellent for measuring populist appeal vs establishment caution."
+}

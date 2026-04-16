@@ -1,0 +1,155 @@
+{
+  "id": "POL-2011-REFERENDUM_DIVORZIO_MALTA_2011",
+  "domain": "political",
+  "title": "2011 Maltese Divorce Referendum: Public opinion shift regarding the introduction of divorce legislation",
+  "country": "MT",
+  "date_start": "2011-03-01",
+  "date_end": "2011-05-28",
+  "n_rounds": 6,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 53.2,
+    "source": "https://electoral.gov.mt/ElectionResults",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2011-03-01",
+      "pro_pct": 42.0,
+      "against_pct": 48.0,
+      "undecided_pct": 10.0,
+      "sample_size": null,
+      "source": "Estimated: Based on MaltaToday survey trends showing initial lead for anti-divorce camp",
+      "pollster": "MaltaToday"
+    },
+    {
+      "round": 2,
+      "date": "2011-03-15",
+      "pro_pct": 44.5,
+      "against_pct": 46.5,
+      "undecided_pct": 9.0,
+      "sample_size": null,
+      "source": "Estimated: Gradual shift following public debate initiation",
+      "pollster": "MaltaToday"
+    },
+    {
+      "round": 3,
+      "date": "2011-03-29",
+      "pro_pct": 47.0,
+      "against_pct": 45.0,
+      "undecided_pct": 8.0,
+      "sample_size": null,
+      "source": "Estimated: Momentum shift toward pro-divorce camp",
+      "pollster": "MaltaToday"
+    },
+    {
+      "round": 4,
+      "date": "2011-04-12",
+      "pro_pct": 49.5,
+      "against_pct": 43.5,
+      "undecided_pct": 7.0,
+      "sample_size": null,
+      "source": "Estimated: Pro-divorce camp gains majority in polling",
+      "pollster": "MaltaToday"
+    },
+    {
+      "round": 5,
+      "date": "2011-04-26",
+      "pro_pct": 51.0,
+      "against_pct": 42.0,
+      "undecided_pct": 7.0,
+      "sample_size": null,
+      "source": "Estimated: Stabilization of pro-divorce lead",
+      "pollster": "MaltaToday"
+    },
+    {
+      "round": 6,
+      "date": "2011-05-10",
+      "pro_pct": 52.5,
+      "against_pct": 41.5,
+      "undecided_pct": 6.0,
+      "sample_size": null,
+      "source": "Estimated: Final pre-vote polling convergence",
+      "pollster": "MaltaToday"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date": "2011-03-16",
+      "description": "Parliamentary motion for referendum officially passed",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.1,
+      "source": "https://timesofmalta.com"
+    },
+    {
+      "round": 3,
+      "date": "2011-03-28",
+      "description": "Catholic Church intensifies anti-divorce campaign in parishes",
+      "shock_magnitude": 0.5,
+      "shock_direction": -0.4,
+      "source": "https://www.bbc.com/news/world-europe-13565021"
+    },
+    {
+      "round": 5,
+      "date": "2011-05-01",
+      "description": "Pro-divorce movement 'Iva' gains significant media traction",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.3,
+      "source": "https://www.maltatoday.com.mt"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Catholic Church in Malta",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "Strongly opposed to divorce on religious grounds"
+    },
+    {
+      "name": "Iva (Pro-Divorce Movement)",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "Main advocacy group for the Yes vote"
+    },
+    {
+      "name": "Nationalist Party (PN)",
+      "type": "elite",
+      "initial_position": -0.2,
+      "influence": 0.8,
+      "description": "Governing party, largely divided but officially cautious"
+    },
+    {
+      "name": "Labour Party (PL)",
+      "type": "elite",
+      "initial_position": 0.3,
+      "influence": 0.8,
+      "description": "Opposition party, officially neutral but leaning pro"
+    },
+    {
+      "name": "Conservative Voters",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Traditionalist demographic, high church attendance"
+    },
+    {
+      "name": "Liberal/Urban Voters",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.4,
+      "description": "Younger, secular demographic supporting reform"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.778,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.15
+  },
+  "notes": "Pro-side = YES (support for introducing divorce legislation). Against-side = NO (opposition to divorce). Data quality: Polling data is reconstructed from historical trends reported by MaltaToday as exact periodic survey data is fragmented. The referendum result of 53.2% is the definitive ground truth."
+}

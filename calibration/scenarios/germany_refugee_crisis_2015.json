@@ -1,0 +1,79 @@
+{
+  "scenario_name": "germany_refugee_crisis_2015",
+  "domain": "social",
+  "description": "Angela Merkel’s 'Wir schaffen das' (We can manage this) stance during the 2015 European migrant crisis. The scenario tracks the public's shift from initial humanitarian sympathy to growing skepticism due to integration concerns.",
+  "final_outcome_pro_pct": 47.0,
+  "final_outcome_against_pct": 53.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 40,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 48,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 47,
+      "against_pct": 50,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 47,
+      "against_pct": 53,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Images of Aylan Kurdi spark mass 'Welcome Culture' sentiment."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Cologne New Year's Eve sexual assaults trigger severe public backlash."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Merkel pivots to 'border management' and EU-Turkey migration deal."
+    }
+  ],
+  "calibration_notes": "Captures the transition from empathy to security-based political discourse."
+}

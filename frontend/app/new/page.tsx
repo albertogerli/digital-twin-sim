@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 const DOMAINS = [
   { id: "", label: "Auto-detect (dall'LLM)" },
@@ -18,6 +17,64 @@ const PROVIDERS = [
   { id: "gemini", label: "Google Gemini Flash Lite" },
   { id: "openai", label: "OpenAI (GPT-5.4-mini)" },
 ];
+
+const KPI_SUGGESTIONS: Record<string, string[]> = {
+  "": [
+    "Consenso pubblico",
+    "Fiducia istituzionale",
+    "Polarizzazione sociale",
+    "Viralità mediatica",
+    "Rischio reputazionale",
+  ],
+  political: [
+    "Consenso elettorale",
+    "Fiducia istituzionale",
+    "Mobilitazione di piazza",
+    "Copertura mediatica favorevole",
+    "Coesione della coalizione",
+    "Rischio di crisi governativa",
+  ],
+  commercial: [
+    "Brand sentiment",
+    "Intenzione d'acquisto",
+    "Passaparola positivo",
+    "Rischio boicottaggio",
+    "Quota di voce mediatica",
+    "Fidelizzazione clienti",
+  ],
+  marketing: [
+    "Brand awareness",
+    "Engagement rate",
+    "Sentiment positivo",
+    "Viralità campagna",
+    "Conversione stimata",
+    "Share of voice",
+  ],
+  corporate: [
+    "Fiducia degli investitori",
+    "Morale dipendenti",
+    "Rischio reputazionale",
+    "Fiducia dei clienti",
+    "Stabilità operativa",
+    "Attrattività per talenti",
+  ],
+  public_health: [
+    "Compliance pubblica",
+    "Fiducia nella scienza",
+    "Diffusione disinformazione",
+    "Adesione vaccinale",
+    "Pressione sul sistema sanitario",
+    "Coesione sociale",
+  ],
+  financial: [
+    "Fiducia del mercato",
+    "Appetito al rischio",
+    "Volatilità percepita",
+    "Fiducia nei regolatori",
+    "Rischio contagio",
+    "Sentiment retail",
+  ],
+};
 
 const EXAMPLE_BRIEFS = [
   "L'Italia introduce una tassa del 5% su tutte le transazioni crypto. Come reagiscono mercati, cittadini e istituzioni?",
@@ -41,6 +98,10 @@ export default function NewSimulation() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [files, setFiles] = useState<File[]>([]);
+  const [selectedKpis, setSelectedKpis] = useState<string[]>([]);
+  const [suggestedKpisFromLlm, setSuggestedKpisFromLlm] = useState<string[]>([]);
+  const [loadingKpis, setLoadingKpis] = useState(false);
+  const [customKpi, setCustomKpi] = useState("");
 
   const [dragOver, setDragOver] = useState(false);
 
@@ -61,6 +122,46 @@ export default function NewSimulation() {
   function removeFile(index: number) {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   }
+
+  function toggleKpi(kpi: string) {
+    setSelectedKpis((prev) =>
+      prev.includes(kpi) ? prev.filter((k) => k !== kpi) : [...prev, kpi]
+    );
+  }
+
+  function addCustomKpi() {
+    const trimmed = customKpi.trim();
+    if (trimmed && !selectedKpis.includes(trimmed)) {
+      setSelectedKpis((prev) => [...prev, trimmed]);
+      setCustomKpi("");
+    }
+  }
+
+  async function suggestKpis() {
+    if (!brief.trim()) return;
+    setLoadingKpis(true);
+    try {
+      const res = await fetch("/api/suggest-kpis", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ brief: brief.trim(), domain: domain || undefined }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.kpis?.length) {
+          setSuggestedKpisFromLlm(data.kpis);
+        }
+      }
+    } catch {
+      // fallback to static suggestions
+    } finally {
+      setLoadingKpis(false);
+    }
+  }
+
+  const suggestedKpis = suggestedKpisFromLlm.length > 0
+    ? suggestedKpisFromLlm
+    : KPI_SUGGESTIONS[domain] || KPI_SUGGESTIONS[""];
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -83,6 +184,7 @@ export default function NewSimulation() {
         formData.append("elite_only", String(eliteOnly));
         formData.append("monte_carlo", String(monteCarlo));
         if (monteCarlo) formData.append("monte_carlo_runs", String(monteCarloRuns));
+        if (selectedKpis.length > 0) formData.append("metrics_to_track", JSON.stringify(selectedKpis));
         for (const file of files) {
           formData.append("documents", file);
         }
@@ -104,6 +206,7 @@ export default function NewSimulation() {
             elite_only: eliteOnly,
             monte_carlo: monteCarlo,
             monte_carlo_runs: monteCarlo ? monteCarloRuns : undefined,
+            metrics_to_track: selectedKpis.length > 0 ? selectedKpis : undefined,
           }),
         });
       }
@@ -122,45 +225,34 @@ export default function NewSimulation() {
   }
 
   return (
-    <main className="min-h-screen text-gray-900">
-      <div className="max-w-3xl mx-auto px-6 py-12">
-        {/* Back */}
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-gray-500 hover:text-blue-600 transition-colors mb-8 text-sm"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Torna alla home
-        </Link>
-
-        <h1 className="text-3xl font-bold mb-2">Nuova Simulazione</h1>
-        <p className="text-gray-500 mb-8">
-          Descrivi lo scenario che vuoi simulare. L&apos;AI analizzerà il brief, genererà gli agenti e lancerà la simulazione.
+    <main className="text-ki-on-surface">
+      <div className="p-3">
+        <h1 className="text-base font-extrabold font-headline uppercase tracking-wide mb-1">Nuova Simulazione</h1>
+        <p className="text-xs text-ki-on-surface-muted mb-3 font-data">
+          Descrivi lo scenario che vuoi simulare. L&apos;AI analizzer&agrave; il brief, generer&agrave; gli agenti e lancer&agrave; la simulazione.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-3">
           {/* Brief textarea */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-xs font-semibold text-ki-on-surface-secondary mb-1 uppercase tracking-wide font-headline">
               Scenario Brief
             </label>
             <textarea
               value={brief}
               onChange={(e) => setBrief(e.target.value)}
-              rows={5}
-              className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 resize-none"
+              rows={4}
+              className="w-full bg-ki-surface-raised border border-ki-border rounded-sm px-3 py-2 text-sm text-ki-on-surface placeholder-ki-on-surface-muted focus:outline-none focus:border-ki-primary focus:ring-1 focus:ring-ki-primary resize-none font-data"
               placeholder="Descrivi lo scenario che vuoi simulare..."
               required
             />
-            <div className="mt-2 flex flex-wrap gap-2">
+            <div className="mt-1.5 flex flex-wrap gap-1">
               {EXAMPLE_BRIEFS.map((ex, i) => (
                 <button
                   key={i}
                   type="button"
                   onClick={() => setBrief(ex)}
-                  className="text-xs px-3 py-1.5 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-800 transition-colors truncate max-w-[300px]"
+                  className="text-[10px] px-2 py-1 rounded-sm bg-ki-surface-sunken text-ki-on-surface-muted hover:bg-ki-border hover:text-ki-on-surface-secondary transition-colors truncate max-w-[280px] font-data"
                 >
                   {ex.slice(0, 60)}...
                 </button>
@@ -170,17 +262,17 @@ export default function NewSimulation() {
 
           {/* Document upload (RAG) */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Documentazione <span className="text-gray-400 font-normal">(opzionale)</span>
+            <label className="block text-xs font-semibold text-ki-on-surface-secondary mb-1 uppercase tracking-wide font-headline">
+              Documentazione <span className="text-ki-on-surface-muted font-normal normal-case">(opzionale)</span>
             </label>
             <div
               onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
               onDragLeave={() => setDragOver(false)}
               onDrop={handleDrop}
-              className={`relative border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
+              className={`relative border border-dashed rounded-sm p-3 text-center transition-colors ${
                 dragOver
-                  ? "border-blue-500 bg-blue-50"
-                  : "border-gray-300 hover:border-gray-400"
+                  ? "border-ki-primary bg-ki-primary/[0.07]"
+                  : "border-ki-border hover:border-ki-on-surface-muted"
               }`}
             >
               <input
@@ -190,39 +282,39 @@ export default function NewSimulation() {
                 onChange={handleFileChange}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
-              <svg className="w-8 h-8 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 mx-auto text-ki-on-surface-muted mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
               </svg>
-              <p className="text-sm text-gray-500">
-                Trascina file o <span className="text-blue-600 font-medium">sfoglia</span>
+              <p className="text-xs text-ki-on-surface-muted font-data">
+                Trascina file o <span className="text-ki-primary font-semibold">sfoglia</span>
               </p>
-              <p className="text-xs text-gray-400 mt-1">
-                PDF, DOCX, TXT, MD, CSV, JSON — il contenuto viene usato come contesto RAG
+              <p className="text-[10px] text-ki-on-surface-muted mt-0.5 font-data">
+                PDF, DOCX, TXT, MD, CSV, JSON — contenuto usato come contesto RAG
               </p>
             </div>
 
             {files.length > 0 && (
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-2 space-y-1">
                 {files.map((file, i) => (
                   <li
                     key={`${file.name}-${i}`}
-                    className="flex items-center justify-between bg-gray-50 border border-gray-200 rounded-lg px-4 py-2"
+                    className="flex items-center justify-between bg-ki-surface-sunken border border-ki-border rounded-sm px-2 py-1.5"
                   >
-                    <div className="flex items-center gap-2 min-w-0">
-                      <svg className="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <svg className="w-3.5 h-3.5 text-ki-on-surface-muted flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
-                      <span className="text-sm text-gray-700 truncate">{file.name}</span>
-                      <span className="text-xs text-gray-400 flex-shrink-0">
+                      <span className="text-xs text-ki-on-surface-secondary truncate font-data">{file.name}</span>
+                      <span className="text-[10px] text-ki-on-surface-muted flex-shrink-0 font-data">
                         {(file.size / 1024).toFixed(0)} KB
                       </span>
                     </div>
                     <button
                       type="button"
                       onClick={() => removeFile(i)}
-                      className="text-gray-400 hover:text-red-500 transition-colors ml-2"
+                      className="text-ki-on-surface-muted hover:text-ki-error transition-colors ml-2"
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                     </button>
@@ -232,14 +324,115 @@ export default function NewSimulation() {
             )}
           </div>
 
+          {/* KPI Selection */}
+          <div>
+            <div className="flex items-center justify-between mb-1">
+              <label className="block text-xs font-semibold text-ki-on-surface-secondary uppercase tracking-wide font-headline">
+                KPI da monitorare <span className="text-ki-on-surface-muted font-normal normal-case">(opzionale)</span>
+              </label>
+              <button
+                type="button"
+                onClick={suggestKpis}
+                disabled={!brief.trim() || loadingKpis}
+                className="inline-flex items-center gap-1 px-2 py-1 rounded-sm text-[10px] font-semibold bg-ki-primary/[0.07] text-ki-primary hover:bg-ki-primary/[0.15] disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-data"
+              >
+                {loadingKpis ? (
+                  <>
+                    <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                    Analisi...
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    Suggerisci KPI dal brief
+                  </>
+                )}
+              </button>
+            </div>
+            <p className="text-[10px] text-ki-on-surface-muted mb-2 font-data">
+              {suggestedKpisFromLlm.length > 0
+                ? "KPI suggeriti dall'AI in base al tuo brief. Clicca per selezionare."
+                : "Scrivi il brief e clicca \"Suggerisci KPI\" per ottenere metriche personalizzate, oppure scegli tra quelle generiche."}
+            </p>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {suggestedKpis.map((kpi) => (
+                <button
+                  key={kpi}
+                  type="button"
+                  onClick={() => toggleKpi(kpi)}
+                  className={`px-2 py-1 rounded-sm text-[10px] font-semibold transition-colors font-data ${
+                    selectedKpis.includes(kpi)
+                      ? "bg-ki-primary text-ki-on-surface"
+                      : "bg-ki-surface-sunken text-ki-on-surface-muted hover:bg-ki-border"
+                  }`}
+                >
+                  {selectedKpis.includes(kpi) && (
+                    <span className="mr-0.5">&#10003;</span>
+                  )}
+                  {kpi}
+                </button>
+              ))}
+            </div>
+            {/* Custom KPI pills (user-added, not in suggestions) */}
+            {selectedKpis.filter((k) => !suggestedKpis.includes(k)).length > 0 && (
+              <div className="flex flex-wrap gap-1 mb-2">
+                {selectedKpis
+                  .filter((k) => !suggestedKpis.includes(k))
+                  .map((kpi) => (
+                    <button
+                      key={kpi}
+                      type="button"
+                      onClick={() => toggleKpi(kpi)}
+                      className="px-2 py-1 rounded-sm text-[10px] font-semibold bg-ki-primary text-ki-on-surface transition-colors font-data"
+                    >
+                      &#10003; {kpi}
+                    </button>
+                  ))}
+              </div>
+            )}
+            <div className="flex gap-1.5">
+              <input
+                type="text"
+                value={customKpi}
+                onChange={(e) => setCustomKpi(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    addCustomKpi();
+                  }
+                }}
+                placeholder="Aggiungi KPI personalizzato..."
+                className="flex-1 bg-ki-surface-raised border border-ki-border rounded-sm px-2 py-1.5 text-xs text-ki-on-surface placeholder-ki-on-surface-muted focus:outline-none focus:border-ki-primary font-data"
+              />
+              <button
+                type="button"
+                onClick={addCustomKpi}
+                disabled={!customKpi.trim()}
+                className="px-3 py-1.5 rounded-sm text-xs font-semibold bg-ki-surface-sunken text-ki-on-surface-secondary hover:bg-ki-border disabled:opacity-40 disabled:cursor-not-allowed transition-colors font-data"
+              >
+                Aggiungi
+              </button>
+            </div>
+            {selectedKpis.length > 0 && (
+              <p className="text-[10px] text-ki-primary mt-1 font-data font-semibold">
+                {selectedKpis.length} KPI selezionati
+              </p>
+            )}
+          </div>
+
           {/* Advanced settings toggle */}
           <button
             type="button"
             onClick={() => setShowAdvanced(!showAdvanced)}
-            className="flex items-center gap-2 text-sm text-gray-500 hover:text-gray-800 transition-colors"
+            className="flex items-center gap-1.5 text-xs text-ki-on-surface-muted hover:text-ki-on-surface-secondary transition-colors font-headline uppercase tracking-wide"
           >
             <svg
-              className={`w-4 h-4 transition-transform ${showAdvanced ? "rotate-90" : ""}`}
+              className={`w-3 h-3 transition-transform ${showAdvanced ? "rotate-90" : ""}`}
               fill="none" stroke="currentColor" viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -248,20 +441,20 @@ export default function NewSimulation() {
           </button>
 
           {showAdvanced && (
-            <div className="bg-white border border-gray-200 rounded-lg p-6 space-y-5">
+            <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-3 space-y-3">
               {/* Provider */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Provider LLM</label>
-                <div className="flex gap-3">
+                <label className="block text-xs font-semibold text-ki-on-surface-secondary mb-1 uppercase tracking-wide font-headline">Provider LLM</label>
+                <div className="flex gap-1.5">
                   {PROVIDERS.map((p) => (
                     <button
                       key={p.id}
                       type="button"
                       onClick={() => setProvider(p.id)}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      className={`px-2.5 py-1.5 rounded-sm text-xs font-semibold transition-colors font-data ${
                         provider === p.id
-                          ? "bg-blue-600 text-white"
-                          : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                          ? "bg-ki-primary text-ki-on-surface"
+                          : "bg-ki-surface-sunken text-ki-on-surface-muted hover:bg-ki-border"
                       }`}
                     >
                       {p.label}
@@ -272,11 +465,11 @@ export default function NewSimulation() {
 
               {/* Domain */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Dominio</label>
+                <label className="block text-xs font-semibold text-ki-on-surface-secondary mb-1 uppercase tracking-wide font-headline">Dominio</label>
                 <select
                   value={domain}
                   onChange={(e) => setDomain(e.target.value)}
-                  className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-2.5 text-gray-900 focus:outline-none focus:border-blue-500"
+                  className="w-full bg-ki-surface-sunken border border-ki-border rounded-sm px-2.5 py-1.5 text-xs text-ki-on-surface focus:outline-none focus:border-ki-primary font-data"
                 >
                   {DOMAINS.map((d) => (
                     <option key={d.id} value={d.id}>{d.label}</option>
@@ -286,8 +479,8 @@ export default function NewSimulation() {
 
               {/* Rounds */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Rounds: <span className="text-blue-600 font-bold">{rounds}</span>
+                <label className="block text-xs font-semibold text-ki-on-surface-secondary mb-1 font-headline uppercase tracking-wide">
+                  Rounds: <span className="text-ki-primary font-extrabold font-data">{rounds}</span>
                 </label>
                 <input
                   type="range"
@@ -295,9 +488,9 @@ export default function NewSimulation() {
                   max={12}
                   value={rounds}
                   onChange={(e) => setRounds(Number(e.target.value))}
-                  className="w-full accent-blue-500"
+                  className="w-full accent-ki-primary"
                 />
-                <div className="flex justify-between text-xs text-gray-400 mt-1">
+                <div className="flex justify-between text-[10px] text-ki-on-surface-muted mt-0.5 font-data">
                   <span>2 (veloce)</span>
                   <span>12 (dettagliato)</span>
                 </div>
@@ -305,8 +498,8 @@ export default function NewSimulation() {
 
               {/* Budget */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Budget massimo: <span className="text-blue-600 font-bold">${budget.toFixed(1)}</span>
+                <label className="block text-xs font-semibold text-ki-on-surface-secondary mb-1 font-headline uppercase tracking-wide">
+                  Budget massimo: <span className="text-ki-primary font-extrabold font-data">${budget.toFixed(1)}</span>
                 </label>
                 <input
                   type="range"
@@ -315,41 +508,41 @@ export default function NewSimulation() {
                   step={0.5}
                   value={budget}
                   onChange={(e) => setBudget(Number(e.target.value))}
-                  className="w-full accent-blue-500"
+                  className="w-full accent-ki-primary"
                 />
               </div>
 
               {/* Elite only */}
-              <label className="flex items-center gap-3 cursor-pointer">
+              <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={eliteOnly}
                   onChange={(e) => setEliteOnly(e.target.checked)}
-                  className="w-4 h-4 rounded border-gray-300 bg-white accent-blue-500"
+                  className="w-3.5 h-3.5 rounded-sm border-ki-border bg-ki-surface-raised accent-ki-primary"
                 />
                 <div>
-                  <span className="text-sm text-gray-700">Solo agenti Elite</span>
-                  <p className="text-xs text-gray-400">Salta agenti istituzionali e cittadini (più veloce ed economico)</p>
+                  <span className="text-xs text-ki-on-surface-secondary font-data">Solo agenti Elite</span>
+                  <p className="text-[10px] text-ki-on-surface-muted font-data">Salta agenti istituzionali e cittadini (pi&ugrave; veloce ed economico)</p>
                 </div>
               </label>
 
               {/* Monte Carlo */}
-              <label className="flex items-center gap-3 cursor-pointer">
+              <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={monteCarlo}
                   onChange={(e) => setMonteCarlo(e.target.checked)}
-                  className="w-4 h-4 rounded border-gray-300 bg-white accent-blue-500"
+                  className="w-3.5 h-3.5 rounded-sm border-ki-border bg-ki-surface-raised accent-ki-primary"
                 />
                 <div>
-                  <span className="text-sm text-gray-700">Analisi Monte Carlo</span>
-                  <p className="text-xs text-gray-400">Esegue N simulazioni sintetiche con parametri perturbati per ottenere intervalli di confidenza (costo zero aggiuntivo)</p>
+                  <span className="text-xs text-ki-on-surface-secondary font-data">Analisi Monte Carlo</span>
+                  <p className="text-[10px] text-ki-on-surface-muted font-data">Esegue N simulazioni sintetiche con parametri perturbati per intervalli di confidenza (costo zero)</p>
                 </div>
               </label>
               {monteCarlo && (
-                <div className="ml-7">
-                  <label className="text-xs text-gray-500">
-                    Numero di run: <span className="text-blue-600 font-bold">{monteCarloRuns}</span>
+                <div className="ml-5">
+                  <label className="text-[10px] text-ki-on-surface-muted font-data">
+                    Numero di run: <span className="text-ki-primary font-extrabold">{monteCarloRuns}</span>
                   </label>
                   <input
                     type="range"
@@ -358,7 +551,7 @@ export default function NewSimulation() {
                     step={5}
                     value={monteCarloRuns}
                     onChange={(e) => setMonteCarloRuns(Number(e.target.value))}
-                    className="w-full accent-blue-500"
+                    className="w-full accent-ki-primary"
                   />
                 </div>
               )}
@@ -367,7 +560,7 @@ export default function NewSimulation() {
 
           {/* Error */}
           {error && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-600 text-sm">
+            <div className="bg-ki-error/[0.07] border border-ki-error/30 rounded-sm p-2 text-ki-error text-xs font-data">
               {error}
             </div>
           )}
@@ -376,11 +569,11 @@ export default function NewSimulation() {
           <button
             type="submit"
             disabled={submitting || !brief.trim()}
-            className="w-full py-4 rounded-lg bg-blue-600 hover:bg-blue-500 disabled:bg-gray-200 disabled:text-gray-400 text-white font-semibold text-lg transition-colors flex items-center justify-center gap-3"
+            className="w-full py-2.5 rounded-sm bg-ki-primary hover:bg-ki-primary-muted disabled:bg-ki-surface-sunken disabled:text-ki-on-surface-muted text-ki-on-surface font-extrabold text-sm transition-colors flex items-center justify-center gap-2 font-headline uppercase tracking-wide"
           >
             {submitting ? (
               <>
-                <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                 </svg>
@@ -388,7 +581,7 @@ export default function NewSimulation() {
               </>
             ) : (
               <>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
                 Lancia Simulazione

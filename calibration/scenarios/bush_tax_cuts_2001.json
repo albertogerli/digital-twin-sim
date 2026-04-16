@@ -1,0 +1,83 @@
+{
+  "scenario_name": "bush_tax_cuts_2001",
+  "domain": "financial",
+  "description": "The Economic Growth and Tax Relief Reconciliation Act of 2001 marked a significant shift in US fiscal policy by lowering income tax rates. Public opinion was initially divided along partisan lines regarding the potential deficit impact versus the stimulus promise.",
+  "final_outcome_pro_pct": 58.0,
+  "final_outcome_against_pct": 42.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 32,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 35,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 38,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 53,
+      "against_pct": 40,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 56,
+      "against_pct": 39,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 59,
+      "against_pct": 38,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 58,
+      "against_pct": 41,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "President Bush introduces the proposal in his first address to Congress."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Federal Reserve Chairman Alan Greenspan gives conditional support for tax rebates."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Senate Finance Committee moves the bill to a floor vote."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "President Bush signs the $1.35 trillion package into law."
+    }
+  ],
+  "calibration_notes": "Measures the impact of executive messaging combined with bipartisan compromise during economic uncertainty."
+}

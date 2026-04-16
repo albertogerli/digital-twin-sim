@@ -1,0 +1,79 @@
+{
+  "scenario_name": "firefox_browser_war_2004_2008",
+  "domain": "technology",
+  "description": "This scenario tracks the public support for the open-source Mozilla Firefox against the proprietary, then-ubiquitous Internet Explorer 6. It captures the rapid erosion of IE's market share through grassroots community marketing.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 5,
+      "against_pct": 85,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 12,
+      "against_pct": 80,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 55,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 63,
+      "against_pct": 35,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Firefox 1.0 release generates massive grassroots PR surge."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Widespread reporting of IE security vulnerabilities drives users to Firefox."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Microsoft releases IE7 to combat market share loss."
+    }
+  ],
+  "calibration_notes": "Highlights the impact of security-driven sentiment on proprietary software market dominance."
+}

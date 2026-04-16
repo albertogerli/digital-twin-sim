@@ -1,0 +1,83 @@
+{
+  "scenario_name": "coke_share_a_coke_2011",
+  "domain": "marketing",
+  "description": "Coca-Cola launched the 'Share a Coke' campaign in Australia in 2011, replacing its logo with the 150 most popular names. The initiative successfully drove massive user-generated content across social media as consumers shared photos of their personalized bottles, resulting in a 7% increase in young adult consumption.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 25,
+      "against_pct": 10,
+      "undecided_pct": 65
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 15,
+      "undecided_pct": 55
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 18,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 62,
+      "against_pct": 22,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 68,
+      "against_pct": 24,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 26,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 71,
+      "against_pct": 27,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Coca-Cola Australia announces the campaign with localized TV spots."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Viral surge as Twitter users share photos of bottles with specific names."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Retailer feedback confirms stock shortages due to high demand for specific names."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Competitors criticize the campaign for promoting unhealthy sugary habits."
+    }
+  ],
+  "calibration_notes": "Excellent for measuring the viral coefficient and the shift from 'undecided' to 'pro' as social proof accumulates."
+}

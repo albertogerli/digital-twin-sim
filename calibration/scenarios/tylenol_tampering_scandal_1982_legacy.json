@@ -1,0 +1,83 @@
+{
+  "scenario_name": "tylenol_tampering_scandal_1982_legacy",
+  "domain": "commercial",
+  "description": "Although technically historic, the 1982 Tylenol murders created the modern standard for product recalls. Johnson & Johnson's transparent handling of the crisis is the gold standard for PR; this scenario evaluates public memory of this specific event's 'success' as a benchmark.",
+  "final_outcome_pro_pct": 90.0,
+  "final_outcome_against_pct": 10.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 80,
+      "against_pct": 15,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 75,
+      "against_pct": 20,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 82,
+      "against_pct": 15,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 88,
+      "against_pct": 11,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 90,
+      "against_pct": 10,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Seven people die in Chicago; J&J issues immediate nationwide recall."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "J&J introduces tamper-evident packaging."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Tylenol market share begins rapid recovery."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Public polling confirms J&J is viewed as a victim, not a perpetrator."
+    }
+  ],
+  "calibration_notes": "Contrast case; how a company can reverse a negative sentiment into a positive one through radical transparency."
+}

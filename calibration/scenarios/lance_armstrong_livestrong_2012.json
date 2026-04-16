@@ -1,0 +1,83 @@
+{
+  "scenario_name": "lance_armstrong_livestrong_2012",
+  "domain": "marketing",
+  "description": "Nike and other sponsors faced a critical decision after the USADA released evidence of doping by Lance Armstrong in 2012. The controversy centered on the decoupling of the athlete from the Livestrong brand.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 78.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 18,
+      "against_pct": 80,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 16,
+      "against_pct": 84,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "USADA report published outlining systemic doping."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Nike announces termination of Armstrong contract."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Armstrong resigns from the board of the Livestrong foundation."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Oprah Winfrey interview confirms doping allegations."
+    }
+  ],
+  "calibration_notes": "Analyzes the shift from hero-worship to complete brand rejection."
+}

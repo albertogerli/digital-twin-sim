@@ -1,0 +1,83 @@
+{
+  "scenario_name": "netflix_streaming_pivot_2011",
+  "domain": "commercial",
+  "description": "In 2011, Netflix announced a price hike and the separation of DVD and streaming services into 'Qwikster', causing significant customer backlash. The company eventually reversed the Qwikster decision but maintained the price increase, marking a pivotal shift in consumer sentiment toward digital-first models.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 65,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 38,
+      "against_pct": 58,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Announcement of the Qwikster brand and price split."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Viral social media backlash and massive subscriber loss."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Reed Hastings issues a public apology and cancels Qwikster."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Stabilization of subscriber base with new pricing model."
+    }
+  ],
+  "calibration_notes": "Measures the impact of aggressive corporate pivots on brand loyalty and consumer trust."
+}

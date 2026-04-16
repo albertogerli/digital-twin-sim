@@ -1,0 +1,83 @@
+{
+  "scenario_name": "adani_carmichael_coal_mine_2017",
+  "domain": "environmental",
+  "description": "The controversy surrounding the Adani Group's Carmichael coal mine in Queensland, Australia. The project faced intense local and international opposition due to its proximity to the Great Barrier Reef.",
+  "final_outcome_pro_pct": 44.0,
+  "final_outcome_against_pct": 56.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 35,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 52,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 41,
+      "against_pct": 54,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 55,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 43,
+      "against_pct": 56,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 44,
+      "against_pct": 56,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Stop Adani movement gains national traction."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Concerns over coral bleaching intensify link between mine and reef health."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Queensland government approves major royalty deal, sparking state-wide public backlash."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Banks begin withdrawing financing due to public and ESG pressure."
+    }
+  ],
+  "calibration_notes": "Demonstrates the impact of environmental concerns on corporate financing and ESG sentiment."
+}

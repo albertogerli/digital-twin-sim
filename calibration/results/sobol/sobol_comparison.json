@@ -1,0 +1,105 @@
+{
+  "numpy_model": "NumPy DynamicsV2 (rolling buffer, hard thresholds, feed-based)",
+  "jax_model": "JAX DynamicsV2 (population std, smooth thresholds, interaction matrix)",
+  "parameters": {
+    "lambda_elite": {
+      "S1_numpy": 0.007,
+      "S1_jax": 0.0092,
+      "ST_numpy": 0.0158,
+      "ST_jax": 0.026,
+      "status": "CONFIRMED"
+    },
+    "lambda_citizen": {
+      "S1_numpy": 0.0021,
+      "S1_jax": 0.0219,
+      "ST_numpy": 0.1206,
+      "ST_jax": 0.0641,
+      "status": "UNFROZEN_IN_JAX"
+    },
+    "alpha_social": {
+      "S1_numpy": 0.0857,
+      "S1_jax": 0.0699,
+      "ST_numpy": 0.2125,
+      "ST_jax": 0.1641,
+      "status": "CONFIRMED_ACTIVE"
+    },
+    "alpha_event": {
+      "S1_numpy": 0.0256,
+      "S1_jax": 0.0051,
+      "ST_numpy": 0.1152,
+      "ST_jax": 0.0643,
+      "status": "FROZEN_IN_JAX"
+    },
+    "alpha_herd": {
+      "S1_numpy": 0.3639,
+      "S1_jax": 0.2587,
+      "ST_numpy": 0.5546,
+      "ST_jax": 0.4454,
+      "status": "CONFIRMED_ACTIVE"
+    },
+    "alpha_anchor": {
+      "S1_numpy": 0.2068,
+      "S1_jax": 0.3793,
+      "ST_numpy": 0.4523,
+      "ST_jax": 0.5509,
+      "status": "CONFIRMED_ACTIVE"
+    },
+    "herd_threshold": {
+      "S1_numpy": 0.0032,
+      "S1_jax": 0.006,
+      "ST_numpy": 0.0243,
+      "ST_jax": 0.0188,
+      "status": "CONFIRMED"
+    },
+    "anchor_drift_rate": {
+      "S1_numpy": 0.0029,
+      "S1_jax": -0.0045,
+      "ST_numpy": 0.0127,
+      "ST_jax": 0.008,
+      "status": "CONFIRMED"
+    }
+  },
+  "rank_ST_numpy": [
+    "alpha_herd",
+    "alpha_anchor",
+    "alpha_social",
+    "lambda_citizen",
+    "alpha_event",
+    "herd_threshold",
+    "lambda_elite",
+    "anchor_drift_rate"
+  ],
+  "rank_ST_jax": [
+    "alpha_anchor",
+    "alpha_herd",
+    "alpha_social",
+    "alpha_event",
+    "lambda_citizen",
+    "lambda_elite",
+    "herd_threshold",
+    "anchor_drift_rate"
+  ],
+  "rank_preserved": false,
+  "frozen_numpy": [
+    "lambda_elite",
+    "lambda_citizen",
+    "herd_threshold",
+    "anchor_drift_rate"
+  ],
+  "frozen_jax": [
+    "lambda_elite",
+    "alpha_event",
+    "herd_threshold",
+    "anchor_drift_rate"
+  ],
+  "freeze_decision_holds": false,
+  "top_interaction_numpy": {
+    "pair": "alpha_herd:alpha_anchor",
+    "S2": 0.094
+  },
+  "top_interaction_jax": {
+    "pair": "alpha_herd:alpha_anchor",
+    "S2": 0.0669
+  },
+  "dominant_interaction_same": true
+}

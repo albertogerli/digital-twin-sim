@@ -1,0 +1,83 @@
+{
+  "scenario_name": "california_sb277_vaccine_mandate_2015",
+  "domain": "public_health",
+  "description": "California enacted Senate Bill 277 in 2015, removing non-medical exemptions for school vaccinations following a measles outbreak at Disneyland. The legislative process was marked by intense protests.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 42,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 38,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 37,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 61,
+      "against_pct": 37,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 62,
+      "against_pct": 36,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 62,
+      "against_pct": 37,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Disneyland measles outbreak triggers public outcry."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Protesters converge on California State Capitol to oppose SB277."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Governor Jerry Brown signs the bill into law."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "School enrollment data shows compliance, though underlying opposition remains."
+    }
+  ],
+  "calibration_notes": "Useful for modeling legislative mandates and polarization around parental rights."
+}

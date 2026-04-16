@@ -1,0 +1,83 @@
+{
+  "scenario_name": "luddite_uprising_textile_automation_1811",
+  "domain": "labor",
+  "description": "The Luddite movement in England between 1811 and 1816 involved textile workers destroying wide-frame machinery they believed threatened their livelihoods. The British government eventually sided with industrial owners, deploying 12,000 troops to suppress the rebellion.",
+  "final_outcome_pro_pct": 20.0,
+  "final_outcome_against_pct": 80.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 30,
+      "against_pct": 65,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 25,
+      "against_pct": 70,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 22,
+      "against_pct": 75,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 20,
+      "against_pct": 80,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "First systematic frame breaking at Arnold, Nottinghamshire."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Government introduces the Frame Breaking Act (1812), making it a capital offense."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Mass trial and execution of Luddites at York Castle."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The movement effectively collapses under military pressure."
+    }
+  ],
+  "calibration_notes": "Measures extreme radicalization and the impact of state intervention on worker resistance to automation."
+}

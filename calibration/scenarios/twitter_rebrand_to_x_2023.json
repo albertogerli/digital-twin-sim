@@ -1,0 +1,83 @@
+{
+  "scenario_name": "twitter_rebrand_to_x_2023",
+  "domain": "corporate",
+  "description": "In July 2023, Elon Musk rebranded Twitter to 'X', marking a pivot from a social platform to an 'everything app'. This scenario measures user and advertiser sentiment during the chaotic transition.",
+  "final_outcome_pro_pct": 25.0,
+  "final_outcome_against_pct": 75.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 50,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 22,
+      "against_pct": 68,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 72,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 22,
+      "against_pct": 74,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 24,
+      "against_pct": 75,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Logo changed from blue bird to X."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Advertisers pull spend citing brand safety concerns."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Mass exodus of power users to competitors like Threads."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Musk reports significant drop in platform valuation."
+    }
+  ],
+  "calibration_notes": "Captures the impact of aggressive brand dilution during a strategic pivot."
+}

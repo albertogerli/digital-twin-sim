@@ -16,9 +16,9 @@ interface AgentPositionStripProps {
 }
 
 const TIER_COLORS: Record<number, string> = {
-  1: "#3b82f6", // blue — elite
-  2: "#8b5cf6", // purple — institutional
-  3: "#f59e0b", // amber — citizen
+  1: "#1a6dff", // ki-primary — elite
+  2: "#7c3aed", // purple — institutional
+  3: "#d97706", // ki-warning — citizen
 };
 
 function truncate(s: string, max: number) {
@@ -40,19 +40,19 @@ export default function AgentPositionStrip({
   };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-4">
-      <p className="font-mono text-[10px] text-gray-400 uppercase tracking-wider mb-3">
+    <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-2" role="img" aria-label={`Posizioni di ${agents.length} agenti sull'asse`}>
+      <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-2">
         Posizioni Agenti
       </p>
       {/* Axis labels above the strip */}
-      <div className="flex justify-between text-[10px] text-gray-400 mb-1 px-1">
+      <div className="flex justify-between text-[10px] text-ki-on-surface-muted mb-1 px-1">
         <span className="truncate max-w-[45%]" title={negativeLabel}>{truncate(negativeLabel, 20)}</span>
         <span className="truncate max-w-[45%] text-right" title={positiveLabel}>{truncate(positiveLabel, 20)}</span>
       </div>
       {/* Strip */}
-      <div className="relative h-10 bg-gradient-to-r from-red-50 via-gray-50 to-emerald-50 rounded-lg border border-gray-100 overflow-hidden">
+      <div className="relative h-10 bg-gradient-to-r from-ki-error/10 via-ki-surface-sunken to-ki-success/10 rounded-sm border border-ki-border overflow-hidden">
         {/* Center line */}
-        <div className="absolute left-1/2 top-1 bottom-1 w-px bg-gray-300" />
+        <div className="absolute left-1/2 top-1 bottom-1 w-px bg-ki-border-strong" />
         {/* Dots */}
         {agents.map((a) => {
           const leftPct = ((a.position + 1) / 2) * 100;
@@ -67,7 +67,7 @@ export default function AgentPositionStrip({
                 top: `${topOffset}px`,
                 width: size,
                 height: size,
-                backgroundColor: TIER_COLORS[a.tier] || "#6b7280",
+                backgroundColor: TIER_COLORS[a.tier] || "#8a8a8a",
                 transform: "translate(-50%, -50%)",
               }}
               title={`${a.name} (${a.position >= 0 ? "+" : ""}${a.position.toFixed(2)})`}
@@ -76,10 +76,10 @@ export default function AgentPositionStrip({
         })}
       </div>
       {/* Legend */}
-      <div className="flex items-center justify-center gap-4 mt-2 text-[10px] text-gray-400">
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-blue-500" />Elite</span>
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-purple-500" />Istituzionali</span>
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-amber-500" />Cittadini</span>
+      <div className="flex items-center justify-center gap-4 mt-1.5 text-[10px] text-ki-on-surface-muted">
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-ki-primary" />Elite</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full" style={{ background: "#7c3aed" }} />Istituzionali</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-ki-warning" />Cittadini</span>
       </div>
     </div>
   );

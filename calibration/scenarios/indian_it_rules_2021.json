@@ -1,0 +1,79 @@
+{
+  "scenario_name": "indian_it_rules_2021",
+  "domain": "technology",
+  "description": "The 2021 Indian Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules required platforms to appoint local compliance officers, leading to a massive standoff between Twitter and the government.",
+  "final_outcome_pro_pct": 58.0,
+  "final_outcome_against_pct": 42.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 35,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 40,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 42,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 56,
+      "against_pct": 42,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 57,
+      "against_pct": 42,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Government implements new rules for digital intermediaries."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Twitter non-compliance leads to official government warnings."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Raids on Twitter India offices increase public tension."
+    }
+  ],
+  "calibration_notes": "Demonstrates the 'sovereignty vs global tech platform' tension in emerging digital markets."
+}

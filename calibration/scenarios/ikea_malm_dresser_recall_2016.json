@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ikea_malm_dresser_recall_2016",
+  "domain": "commercial",
+  "description": "Following the tragic deaths of several children, IKEA recalled millions of Malm dressers in North America due to tipping hazards. The recall highlighted the challenge of enforcing safety standards across global product lines.",
+  "final_outcome_pro_pct": 55.0,
+  "final_outcome_against_pct": 45.0,
+  "final_turnout_pct": 65.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 75,
+      "against_pct": 10,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 20,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 49,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 52,
+      "against_pct": 47,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 55,
+      "against_pct": 45,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Recall issued after third child fatality."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "IKEA expands recall to 29 million units."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "CPSC launches 'Anchor It!' campaign to support the recall."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Settlement reached with families of victims."
+    }
+  ],
+  "calibration_notes": "Evaluates the public's perception of responsibility when products require user-led safety installation (anchoring furniture)."
+}

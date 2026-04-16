@@ -1,0 +1,83 @@
+{
+  "scenario_name": "volkswagen_dieselgate_scandal_2015",
+  "domain": "corporate",
+  "description": "Public reaction to the 2015 discovery that Volkswagen installed 'defeat devices' in diesel vehicles to bypass emissions testing. The scandal fundamentally altered the public's trust in automotive engineering and environmental compliance.",
+  "final_outcome_pro_pct": 15.0,
+  "final_outcome_against_pct": 85.0,
+  "final_turnout_pct": 90.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 60,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 20,
+      "against_pct": 75,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 18,
+      "against_pct": 80,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 16,
+      "against_pct": 84,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 15,
+      "against_pct": 85,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "EPA issues notice of violation to Volkswagen."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "VW CEO Martin Winterkorn resigns citing a 'chain of errors'."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Company admits 11 million vehicles worldwide contain the illegal software."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Global investigations launch in US, Germany, and South Korea."
+    }
+  ],
+  "calibration_notes": "Useful for mapping a high-velocity collapse in brand equity and trust where the 'against' sentiment becomes nearly universal within a few weeks."
+}

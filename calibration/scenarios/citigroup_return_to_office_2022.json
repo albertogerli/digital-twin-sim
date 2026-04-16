@@ -1,0 +1,83 @@
+{
+  "scenario_name": "citigroup_return_to_office_2022",
+  "domain": "labor",
+  "description": "In early 2022, Citigroup CEO Jane Fraser pushed for a return to the office, resulting in a public clash with the UK government and local financial regulators regarding flexible working expectations post-COVID-19.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 40,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 52,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 43,
+      "against_pct": 55,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Citigroup issues ultimatum for UK staff to return to office."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "UK government expresses concern over the lack of flexible working for parents."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Banking industry peers suggest hybrid is the new standard, isolating Citi's stance."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Citigroup softens enforcement due to competitive pressures for talent."
+    }
+  ],
+  "calibration_notes": "Shows the tension between traditional finance leadership and modern labor flexibility norms."
+}

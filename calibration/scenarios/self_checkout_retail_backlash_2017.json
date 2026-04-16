@@ -1,0 +1,83 @@
+{
+  "scenario_name": "self_checkout_retail_backlash_2017",
+  "domain": "labor",
+  "description": "In 2017, major retailers in the US and Europe began massive rollouts of self-checkout kiosks. Consumer sentiment initially shifted toward convenience, but a subsequent backlash emerged regarding the loss of human jobs and the 'guilt' of unpaid labor.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 10,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 65,
+      "against_pct": 15,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 30,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 35,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 50,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Kroger and Walmart announce record-speed rollout of self-checkout units."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Viral social media posts criticize the 'unpaid labor' of scanning groceries."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Articles emerge detailing job cuts in front-end retail positions."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Consumer frustration with broken kiosks and security checkpoints rises."
+    }
+  ],
+  "calibration_notes": "Demonstrates the reversal of public opinion when a convenience-based innovation is perceived as a social cost."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "iceland_bank_referendum_2011",
+  "domain": "financial",
+  "description": "Following the 2008 collapse of Iceland's three major commercial banks, the government faced pressure to repay foreign creditors (Icesave). A 2011 referendum allowed the public to vote on whether to accept the repayment terms; the public overwhelmingly voted against the bailout plan.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 35,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 40,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 52,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 28,
+      "against_pct": 58,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32,
+      "against_pct": 60,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 38,
+      "against_pct": 59,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "UK and Netherlands threaten legal action to force repayment."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "President Grímsson announces he will veto the bill, triggering the referendum."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Final televised debates emphasize 'national sovereignty' vs 'economic stability'."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The referendum fails with nearly 60% of voters rejecting the Icesave deal."
+    }
+  ],
+  "calibration_notes": "Highlights the rare dynamic where a nation chooses sovereign default over international bailouts, showing high volatility in public sentiment."
+}

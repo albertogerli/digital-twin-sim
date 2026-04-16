@@ -1,0 +1,231 @@
+{
+  "id": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG",
+  "domain": "corporate",
+  "title": "Public perception of United Airlines following the forcible removal of passenger David Dao in April 2017",
+  "country": "US",
+  "date_start": "2017-04-01",
+  "date_end": "2017-06-30",
+  "n_rounds": 6,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 28.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2017-04-01",
+      "pro_pct": 36.0,
+      "against_pct": 20.0,
+      "undecided_pct": 44.0,
+      "sample_size": null,
+      "source": "Estimated: Pre-incident baseline from Morning Consult historical data",
+      "pollster": "Morning Consult"
+    },
+    {
+      "round": 2,
+      "date": "2017-04-16",
+      "pro_pct": 28.0,
+      "against_pct": 52.0,
+      "undecided_pct": 20.0,
+      "sample_size": 2200,
+      "source": "https://morningconsult.com/2017/04/12/united-airlines-favorability-drops-following-passenger-removal/",
+      "pollster": "Morning Consult"
+    },
+    {
+      "round": 3,
+      "date": "2017-05-01",
+      "pro_pct": 30.0,
+      "against_pct": 48.0,
+      "undecided_pct": 22.0,
+      "sample_size": null,
+      "source": "Estimated: Slight recovery following CEO apology and policy changes",
+      "pollster": null
+    },
+    {
+      "round": 4,
+      "date": "2017-05-16",
+      "pro_pct": 31.5,
+      "against_pct": 45.0,
+      "undecided_pct": 23.5,
+      "sample_size": null,
+      "source": "Estimated: Gradual normalization of brand sentiment",
+      "pollster": null
+    },
+    {
+      "round": 5,
+      "date": "2017-05-31",
+      "pro_pct": 32.0,
+      "against_pct": 42.0,
+      "undecided_pct": 26.0,
+      "sample_size": null,
+      "source": "Estimated: Market stabilization",
+      "pollster": null
+    },
+    {
+      "round": 6,
+      "date": "2017-06-15",
+      "pro_pct": 32.5,
+      "against_pct": 40.0,
+      "undecided_pct": 27.5,
+      "sample_size": null,
+      "source": "Estimated: Long-term post-crisis sentiment",
+      "pollster": null
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date": "2017-04-09",
+      "description": "Video of David Dao being forcibly dragged off United Flight 3411 goes viral",
+      "shock_magnitude": 0.95,
+      "shock_direction": -1.0,
+      "source": "https://www.nytimes.com/2017/04/10/business/united-airlines-passenger-dragged.html"
+    },
+    {
+      "round": 2,
+      "date": "2017-04-11",
+      "description": "CEO Oscar Munoz issues a second, more contrite public apology after initial backlash",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.5,
+      "source": "https://www.reuters.com/article/us-united-airlines-passenger-idUSKBN17D16Y"
+    },
+    {
+      "round": 3,
+      "date": "2017-04-27",
+      "description": "United Airlines reaches an undisclosed settlement with David Dao",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.3,
+      "source": "https://www.bbc.com/news/business-39733475"
+    }
+  ],
+  "agents": [
+    {
+      "name": "Oscar Munoz",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "CEO of United Airlines during the crisis"
+    },
+    {
+      "name": "David Dao",
+      "type": "citizen_cluster",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "The passenger involved in the incident"
+    },
+    {
+      "name": "US Department of Transportation",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.6,
+      "description": "Regulatory body investigating airline policies"
+    },
+    {
+      "name": "Frequent Flyer Community",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.5,
+      "description": "Core customer base concerned with service quality"
+    },
+    {
+      "name": "Social Media Activists",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.7,
+      "description": "Online groups driving the boycott movement"
+    },
+    {
+      "name": "Airline Industry Lobbyists",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.4,
+      "description": "Organizations defending industry practices"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.835,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.44
+  },
+  "notes": "Pro-side is defined as favorable view of United Airlines brand. Against-side is defined as unfavorable view. Data reflects a sharp drop in sentiment following the viral video event, followed by a slow recovery. Estimates are based on Morning Consult brand tracking trends from Q2 2017.",
+  "market_observations": {
+    "primary_ticker": "UAL",
+    "primary_sector": "infrastructure",
+    "benchmark_ticker": "SPY",
+    "extra_tickers": [],
+    "per_round_returns": [
+      {
+        "round": 1,
+        "return_pct": -2.223,
+        "volume_ratio": 1.36
+      },
+      {
+        "round": 2,
+        "return_pct": 1.65,
+        "volume_ratio": 1.35
+      },
+      {
+        "round": 3,
+        "return_pct": 10.702,
+        "volume_ratio": 0.88
+      },
+      {
+        "round": 4,
+        "return_pct": 0.24,
+        "volume_ratio": 0.85
+      },
+      {
+        "round": 5,
+        "return_pct": -2.648,
+        "volume_ratio": 0.94
+      },
+      {
+        "round": 6,
+        "return_pct": -2.457,
+        "volume_ratio": 0.81
+      }
+    ],
+    "benchmark_per_round": [
+      {
+        "round": 1,
+        "return_pct": -1.37,
+        "volume_ratio": 1.11
+      },
+      {
+        "round": 2,
+        "return_pct": 2.396,
+        "volume_ratio": 1.13
+      },
+      {
+        "round": 3,
+        "return_pct": 0.679,
+        "volume_ratio": 0.81
+      },
+      {
+        "round": 4,
+        "return_pct": 0.591,
+        "volume_ratio": 1.03
+      },
+      {
+        "round": 5,
+        "return_pct": 1.16,
+        "volume_ratio": 1.03
+      },
+      {
+        "round": 6,
+        "return_pct": -0.51,
+        "volume_ratio": 0.94
+      }
+    ],
+    "cumulative_return_pct": 4.733,
+    "benchmark_return_pct": 2.939,
+    "excess_return_pct": 1.794,
+    "volatility_realized": 23.0217,
+    "data_source": "yfinance",
+    "fetch_date": "2026-04-13"
+  }
+}

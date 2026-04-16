@@ -1,0 +1,79 @@
+{
+  "scenario_name": "ireland_bank_guarantee_2008",
+  "domain": "financial",
+  "description": "In 2008, the Irish government issued a blanket guarantee for the liabilities of its domestic banks. The move, intended to calm markets, eventually necessitated an EU-IMF bailout and years of austerity.",
+  "final_outcome_pro_pct": 25.0,
+  "final_outcome_against_pct": 75.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 50,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 60,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 28,
+      "against_pct": 67,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 26,
+      "against_pct": 72,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 25,
+      "against_pct": 74,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 25,
+      "against_pct": 75,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Anglo Irish Bank's massive liabilities revealed."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Irish government forced to request EU financial support package."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Strict austerity measures implemented to fund bank debts."
+    }
+  ],
+  "calibration_notes": "Shows the trajectory of a 'pro-stability' move becoming a political liability."
+}

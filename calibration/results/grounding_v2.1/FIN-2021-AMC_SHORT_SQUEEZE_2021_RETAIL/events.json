@@ -1,0 +1,33 @@
+[
+  {
+    "round": 1,
+    "description": "Retail investor activity surged, causing AMC shares to increase by over 300% in a single day. This rapid price movement forced institutional short sellers to cover their positions.",
+    "shock_magnitude": 0.8,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy81cpIHGs3nWgBxDtFqWSw9ynGbXJsF38SE_T38qMeBMYx6zJKT2A-9EPuFvgG-p86u0CD5nonkRTF30cSDhDotSxBKgUFLzkUvJcQJLlaugAJ25Sj75M5MowDX8M_z1cmQ4DKMk2InbrHrf5tshwi0-tjJpYgYqz7_7adwjvJGXfFVXvqFkOYn2tLCaIQbuHy8A7sLNL",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFy81cpIHGs3nWgBxDtFqWSw9ynGbXJsF38SE_T38qMeBMYx6zJKT2A-9EPuFvgG-p86u0CD5nonkRTF30cSDhDotSxBKgUFLzkUvJcQJLlaugAJ25Sj75M5MowDX8M_z1cmQ4DKMk2InbrHrf5tshwi0-tjJpYgYqz7_7adwjvJGXfFVXvqFkOYn2tLCaIQbuHy8A7sLNL"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "AMC stock began a rapid ascent from its previous price level, marking the start of a second major wave of retail-driven momentum. This event reignited public interest in the 'meme stock' phenomenon.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "Retail interest intensified significantly, building on the momentum from earlier in the week. This period saw the stock price reach extreme intraday highs, drawing widespread media attention.",
+    "shock_magnitude": 0.8,
+    "shock_direction": 1,
+    "source": "gemini-grounded-search",
+    "_sources": [
+      "gemini-grounded-search"
+    ],
+    "_verified": true
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "elon_musk_twitter_acquisition_2022",
+  "domain": "corporate",
+  "description": "Elon Musk's $44 billion acquisition of Twitter was a polarized event defined by intense debate over content moderation, corporate governance, and billionaire influence.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 98.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 50,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 38,
+      "against_pct": 58,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 62,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 42,
+      "against_pct": 56,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 58,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Initial hostile bid announcement."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Twitter board fights back with poison pill strategy."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Mass layoffs and advertiser exodus."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Rebranding to 'X' finalized."
+    }
+  ],
+  "calibration_notes": "Captures the high-volatility, high-visibility nature of 'CEO-led' corporate takeovers."
+}

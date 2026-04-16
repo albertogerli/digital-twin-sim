@@ -1,0 +1,83 @@
+{
+  "scenario_name": "ubisoft_toxic_culture_scandal_2020",
+  "domain": "corporate",
+  "description": "In June 2020, Ubisoft, a major video game publisher, faced a massive wave of public and internal allegations regarding systemic sexual harassment, bullying, and a toxic 'boys' club' culture. The scandal led to the resignation of top executives and sparked a global conversation about labor rights, unionization, and accountability in the gaming industry.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 15,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 20,
+      "undecided_pct": 35
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 22,
+      "undecided_pct": 18
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 28,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 27,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 28,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Initial reports emerge on Twitter accusing Ubisoft executives of rampant harassment."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Ubisoft CEO Yves Guillemot issues a public apology and begins structural leadership overhaul."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "The 'ABetterUbisoft' movement gains traction, with employees demanding concrete changes and union support."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Ubisoft announces it will retain some accused leaders in different roles, sparking a massive backlash against the firm's perceived lack of progress."
+    }
+  ],
+  "calibration_notes": "This scenario calibrates how quickly initial vague rumors coalesce into a strong, unified public consensus against corporate leadership when faced with credible whistleblower testimony."
+}

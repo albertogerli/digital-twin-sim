@@ -1,0 +1,83 @@
+{
+  "scenario_name": "turkish_constitutional_referendum_2017",
+  "domain": "political",
+  "description": "A referendum on April 16, 2017, in Turkey that proposed changing the parliamentary system to an executive presidency. The 'Yes' side won with 51.4% of the vote, amidst international concerns regarding democratic standards.",
+  "final_outcome_pro_pct": 51,
+  "final_outcome_against_pct": 49,
+  "final_turnout_pct": 85.4,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 46,
+      "against_pct": 38,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 40,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 47,
+      "against_pct": 41,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 49,
+      "against_pct": 42,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 43,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 51,
+      "against_pct": 44,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 50,
+      "against_pct": 46,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Official campaign launch featuring intense rhetoric from the ruling AKP party."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Diplomatic row erupts after European countries ban Turkish ministers from campaigning abroad."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Economic anxiety dampens 'Yes' campaign momentum temporarily."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "High turnout drives last-minute consolidation among nationalist voters."
+    }
+  ],
+  "calibration_notes": "Useful for modeling high-stakes referendums with significant 'undecided' blocks late in the cycle."
+}

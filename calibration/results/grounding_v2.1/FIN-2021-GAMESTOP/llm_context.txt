@@ -1,0 +1,42 @@
+# VERIFIED FACTS — FIN-2021-GAMESTOP
+Domain: financial | Country: US
+Period: 2021-01-11 to 2021-02-18
+
+## TIMELINE (verified events, chronological order):
+1. [2021-01-11] GameStop announced an agreement with activist investor Ryan Cohen and his firm, RC Ventures, to add him and two other e-commerce specialists to the board of directors. [confidence: 80%]
+   Detail: N/A
+   Source: seekingalpha.com
+2. [2021-01-13] Following the board announcement, GameStop stock experienced a significant surge, reaching an intraday high. [confidence: 80%]
+   Detail: $38.65
+   Source: thestreet.com
+3. [2021-01-19] Citron Research publicly criticized retail investors on Twitter, labeling them 'suckers' and predicting a sharp decline in the stock price.
+   Detail: $20
+   Source: thestreet.com
+4. [2021-01-28] Trading platforms, most notably Robinhood, restricted the purchase of GameStop shares, sparking widespread public outrage and accusations of market manipulation.
+   Detail: N/A
+   Source: wikipedia.org
+5. [2021-02-18] The U.S. House Committee on Financial Services held a hearing to investigate the GameStop short squeeze, bringing the conflict between retail investors and hedge funds into the federal spotlight.
+   Detail: N/A
+   Source: wikipedia.org
+
+## KEY FIGURES:
+- short_interest: more than 100% of the public float
+- initial_stock_price: approximately $17.25 at the start of January 2021
+- peak_stock_price: over $500 per share on January 28, 2021
+- event_date: January 2021
+
+## KEY STAKEHOLDER POSITIONS:
+- Vlad Tenev (CEO of Robinhood): Defended the decision to restrict trading as a necessary move to meet clearinghouse collateral requirements, denying allegations of market manipulation.
+- Keith Gill (Investor (known as Roaring Kitty)): Maintained that GameStop was an undervalued investment opportunity, advocating for the stock's potential despite institutional short positions.
+- Maxine Waters (Chairwoman of the House Financial Services Committee): Led congressional hearings to investigate the market volatility and the role of hedge funds and retail trading platforms in the event.
+- Ken Griffin (CEO of Citadel): Testified that his firm did not dictate Robinhood's decision to restrict trading and emphasized the importance of market liquidity.
+- Steve Huffman (CEO of Reddit): Defended the r/wallstreetbets community, stating that the platform is a place for open discussion and that users were not acting as a coordinated entity.
+
+## FINAL OUTCOME:
+The GameStop short squeeze resulted in a polarized public sentiment, where retail investors viewed the event as a populist victory against institutional hedge funds, while many financial analysts and institutions criticized the volatility as irrational market behavior. There is no consensus on the event's long-term value, leaving the public divided between those who support the 'meme stock' movement and those who advocate for traditional market fundamentals.
+Pro %: 50.0% — Source: Confidence < 0.5; no singular quantitative survey exists to measure total public support, as sentiment remains highly divided between retail investor communities and institutional financial observers.
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

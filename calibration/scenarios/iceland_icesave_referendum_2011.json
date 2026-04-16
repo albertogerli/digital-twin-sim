@@ -1,0 +1,83 @@
+{
+  "scenario_name": "iceland_icesave_referendum_2011",
+  "domain": "political",
+  "description": "An April 9, 2011, referendum in Iceland regarding the repayment of debts to the UK and Netherlands following the collapse of Landsbanki. 59.8% of voters rejected the repayment agreement.",
+  "final_outcome_pro_pct": 40.2,
+  "final_outcome_against_pct": 59.8,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 32,
+      "against_pct": 42,
+      "undecided_pct": 26
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 33,
+      "against_pct": 45,
+      "undecided_pct": 22
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 48,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 37,
+      "against_pct": 50,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 53,
+      "undecided_pct": 9
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 39,
+      "against_pct": 56,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40.2,
+      "against_pct": 59.8,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Government advocates for approval to stabilize relations with the IMF."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Public anger regarding 'unfair' debt repayment terms grows."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Polls show a steady movement toward nationalistic rejection."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "The electorate overwhelmingly votes against the financial settlement."
+    }
+  ],
+  "calibration_notes": "Useful for modeling public sentiment during a national financial crisis involving international debt disputes."
+}

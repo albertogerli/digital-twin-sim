@@ -1,0 +1,83 @@
+{
+  "scenario_name": "sephora_olivia_jade_scandal_2019",
+  "domain": "commercial",
+  "description": "In March 2019, following the 'Varsity Blues' college admissions scandal, Sephora faced intense consumer pressure to drop influencer Olivia Jade Giannulli. After a period of initial hesitation, the company severed ties with the influencer, demonstrating the volatility of influencer-led beauty partnerships when personal scandals intersect with ethical public issues.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 20,
+      "undecided_pct": 28
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 35,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 48,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 32,
+      "against_pct": 60,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 38,
+      "against_pct": 58,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 41,
+      "against_pct": 58,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "News breaks of the Varsity Blues college admissions scandal involving Lori Loughlin and daughter Olivia Jade."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Customers flood Sephora's social media accounts demanding they drop the influencer's makeup collection."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Sephora announces the termination of the partnership and removal of the 'Olivia Jade' collection."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "General public debate transitions from individual guilt to the ethics of brand-influencer vetting."
+    }
+  ],
+  "calibration_notes": "Useful for calibrating the lag time between a crisis event and the necessary corporate response, and the subsequent recovery of brand sentiment."
+}

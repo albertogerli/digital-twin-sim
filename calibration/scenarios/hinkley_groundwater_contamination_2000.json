@@ -1,0 +1,79 @@
+{
+  "scenario_name": "hinkley_groundwater_contamination_2000",
+  "domain": "public_health",
+  "description": "Public support for PG&E class-action settlements regarding hexavalent chromium contamination in Hinkley, California. Following the 1996 film-driven awareness and subsequent legal proceedings, sentiment fluctuated between corporate accountability and economic stability.",
+  "final_outcome_pro_pct": 72.0,
+  "final_outcome_against_pct": 28.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 28,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 30,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 62,
+      "against_pct": 30,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 29,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 68,
+      "against_pct": 28,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 70,
+      "against_pct": 28,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 72,
+      "against_pct": 28,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Erin Brockovich film release boosts public awareness"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "PG&E reaches massive settlement agreement"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Medical experts testify on long-term toxicity"
+    }
+  ],
+  "calibration_notes": "Measures public trust in corporate accountability vs. private utility defense."
+}

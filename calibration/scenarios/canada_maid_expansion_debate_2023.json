@@ -1,0 +1,79 @@
+{
+  "scenario_name": "canada_maid_expansion_debate_2023",
+  "domain": "public_health",
+  "description": "The Canadian government proposed expanding Medical Assistance in Dying (MAiD) to include individuals whose sole underlying condition is mental illness. The policy faced intense scrutiny from human rights groups and mental health advocates, leading to a temporary suspension of the planned expansion due to public backlash.",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 20,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 28,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 48,
+      "against_pct": 35,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 42,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 54,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 39,
+      "against_pct": 58,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 38,
+      "against_pct": 60,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 38,
+      "against_pct": 62,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Federal government signals intent to delay expansion indefinitely."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "UN experts release a statement warning of human rights risks to the disabled community."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Health Minister Mark Holland announces a formal pause until 2027."
+    }
+  ],
+  "calibration_notes": "Useful for modeling how high-initial-support ethical policies lose momentum when confronted with concrete societal concerns."
+}

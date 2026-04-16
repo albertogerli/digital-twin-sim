@@ -1,0 +1,83 @@
+{
+  "scenario_name": "israeli_judicial_reform_protests_2023",
+  "domain": "social",
+  "description": "Throughout 2023, large-scale protests occurred in Israel against the government's proposed judicial reforms which would limit the power of the Supreme Court, creating deep societal divisions.",
+  "final_outcome_pro_pct": 47.0,
+  "final_outcome_against_pct": 53.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 45,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 50,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 44,
+      "against_pct": 52,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 48,
+      "against_pct": 48,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 46,
+      "against_pct": 51,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 45,
+      "against_pct": 53,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 50,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 47,
+      "against_pct": 53,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Defense Minister Yoav Gallant calls for a halt to the legislation."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "General strike paralyzes major sectors of the Israeli economy."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "The 'reasonableness standard' bill passes, reigniting protests."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "High Court of Justice strikes down the judicial reform amendment."
+    }
+  ],
+  "calibration_notes": "Ideal for modeling a polarized society where public opinion remains deadlocked throughout the conflict."
+}

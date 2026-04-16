@@ -1,0 +1,185 @@
+{
+  "id": "PH-2021-MASKING_MANDATE_DEBATE_USA_202",
+  "domain": "public_health",
+  "title": "Public opinion trajectory on indoor mask mandates in the United States during 2021",
+  "country": "US",
+  "date_start": "2021-03-01",
+  "date_end": "2021-09-30",
+  "n_rounds": 5,
+  "round_duration_days": 42,
+  "ground_truth_outcome": {
+    "pro_pct": 63.0,
+    "source": "https://www.pewresearch.org/short-reads/2021/09/15/more-americans-say-they-are-regularly-wearing-masks-in-stores-and-other-businesses/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date": "2021-03-01",
+      "pro_pct": 78.0,
+      "against_pct": 20.0,
+      "undecided_pct": 2.0,
+      "sample_size": 12055,
+      "source": "https://www.pewresearch.org/politics/2021/03/05/growing-share-of-americans-say-they-are-regularly-wearing-masks-in-stores-and-other-businesses/",
+      "pollster": "Pew Research Center"
+    },
+    {
+      "round": 2,
+      "date": "2021-04-12",
+      "pro_pct": 75.0,
+      "against_pct": 22.0,
+      "undecided_pct": 3.0,
+      "sample_size": null,
+      "source": "Estimated: Interpolated based on CDC guidance shifts in April 2021",
+      "pollster": "N/A"
+    },
+    {
+      "round": 3,
+      "date": "2021-05-24",
+      "pro_pct": 70.0,
+      "against_pct": 26.0,
+      "undecided_pct": 4.0,
+      "sample_size": null,
+      "source": "Estimated: Reflects post-CDC May 13th guidance update allowing vaccinated people to go maskless",
+      "pollster": "N/A"
+    },
+    {
+      "round": 4,
+      "date": "2021-07-05",
+      "pro_pct": 66.0,
+      "against_pct": 30.0,
+      "undecided_pct": 4.0,
+      "sample_size": null,
+      "source": "Estimated: Reflects Delta variant emergence and early local mandate re-impositions",
+      "pollster": "N/A"
+    },
+    {
+      "round": 5,
+      "date": "2021-08-16",
+      "pro_pct": 63.0,
+      "against_pct": 34.0,
+      "undecided_pct": 3.0,
+      "sample_size": 10348,
+      "source": "https://www.pewresearch.org/short-reads/2021/09/15/more-americans-say-they-are-regularly-wearing-masks-in-stores-and-other-businesses/",
+      "pollster": "Pew Research Center"
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "description": "President Joe Biden issued executive orders mandating masks on federal property and across all public transportation systems. This established a federal baseline for masking requirements in the United States. | The CDC announced that fully vaccinated individuals were no longer required to wear masks or practice social distancing in most settings. This marked a significant shift toward pre-pandemic normalcy.",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELLNHgYl293gr6loqdeljXwpKQxEy9c_sPpKVpsReyEJ8HrhpElFtQaxDnPQIXMJDIF-qZgAqcKMtzbFJ25tM4FQBUiY1CLT39ntQwq0eu2I263Qsfj2us7E2P2ayMlXCSHFRYbcd4kCoD-xvPf2NNQ_FGUjUm7X_ykQYX7ffjoKfY1qzgQeBmb9QuPRKl2l_yQFY=",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQELLNHgYl293gr6loqdeljXwpKQxEy9c_sPpKVpsReyEJ8HrhpElFtQaxDnPQIXMJDIF-qZgAqcKMtzbFJ25tM4FQBUiY1CLT39ntQwq0eu2I263Qsfj2us7E2P2ayMlXCSHFRYbcd4kCoD-xvPf2NNQ_FGUjUm7X_ykQYX7ffjoKfY1qzgQeBmb9QuPRKl2l_yQFY=",
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFAjRaGocQK2AYrFgGGo78X4dlmxvVOsenQEMtt6e3LIYD9egBXqgKm-h2ntwWt_9xvr2cUoCep1n1bjyZZecvImzPaSAzPQyjatBdy5Fyl4PaQertbRJQ5JQtvPKp4AcLQXkfGmiMHjeJl6c8qcloO30DcAZV2owjZGyvvZ2S_dDL9n2IRPj-k3hwhIlcS9ZKkPbLBQxgMEHj3O25WX7rrGA=="
+      ],
+      "_verified": true
+    },
+    {
+      "round": 2,
+      "description": "California lifted the majority of its public health orders and mask mandates as the state economy officially reopened. This signaled a major state-level move toward ending pandemic restrictions.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 3,
+      "description": "The Los Angeles County Department of Public Health reintroduced a strong recommendation for indoor masking for all residents regardless of vaccination status. This was a response to the rising spread of the Delta variant. | The CDC updated its guidance to recommend that vaccinated individuals wear masks indoors in areas experiencing high virus transmission. This reversal of the May guidance caused widespread public confusion and debate.",
+      "shock_magnitude": 0.55,
+      "shock_direction": -1,
+      "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi9OzbbqzRzQRMVl53o4X2SS1tUf39_id-JesPiFmMg5XHajCiBESAxx1RP2nxETkhEjEpQgDYlX-Jd4qffV3JrkGXVu9ocJdmiIJFKiQ5IBYsdPFpVayUtIYadCoXAcWBg1YXbBLXw24h3mPQvzLFiqqL3LTfiX5KkksILTcXv4YhtiDKzvTSN-lKcQPyG-RajwbW1qr3Wm1f5yQ2xjVOY5rqAYJYCg54CDZtHoDMugyW8QqHj6mheNbi9YUIYLqCuFPNwLIgbJeEEsabrfksm-X1ilae7-q5yyyQ4A-yO45nklg=",
+      "_sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHi9OzbbqzRzQRMVl53o4X2SS1tUf39_id-JesPiFmMg5XHajCiBESAxx1RP2nxETkhEjEpQgDYlX-Jd4qffV3JrkGXVu9ocJdmiIJFKiQ5IBYsdPFpVayUtIYadCoXAcWBg1YXbBLXw24h3mPQvzLFiqqL3LTfiX5KkksILTcXv4YhtiDKzvTSN-lKcQPyG-RajwbW1qr3Wm1f5yQ2xjVOY5rqAYJYCg54CDZtHoDMugyW8QqHj6mheNbi9YUIYLqCuFPNwLIgbJeEEsabrfksm-X1ilae7-q5yyyQ4A-yO45nklg="
+      ],
+      "_verified": true
+    },
+    {
+      "round": 4,
+      "description": "Florida Governor Ron DeSantis issued an executive order prohibiting school districts from imposing mask mandates. The order cited parental rights and constitutional freedoms as the basis for the ban.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    },
+    {
+      "round": 5,
+      "description": "An Arkansas state judge issued a temporary injunction against a state law that had previously banned mask mandates in schools. The court ruled that the ban was in violation of the state constitution.",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1,
+      "source": "",
+      "_sources": [],
+      "_verified": true
+    }
+  ],
+  "agents": [
+    {
+      "name": "CDC",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Federal public health agency setting national masking guidelines"
+    },
+    {
+      "name": "Joe Biden",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.8,
+      "description": "US President advocating for public health safety measures"
+    },
+    {
+      "name": "Ron DeSantis",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.7,
+      "description": "Governor of Florida, prominent opponent of mask mandates"
+    },
+    {
+      "name": "Republican Party",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.8,
+      "description": "Political party generally opposing federal mandates"
+    },
+    {
+      "name": "Democratic Party",
+      "type": "institutional",
+      "initial_position": 0.7,
+      "influence": 0.8,
+      "description": "Political party generally supporting public health mandates"
+    },
+    {
+      "name": "Urban Liberal Cluster",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.3,
+      "description": "High-density population centers with high compliance"
+    },
+    {
+      "name": "Rural Conservative Cluster",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.3,
+      "description": "Low-density population centers with low compliance"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.873,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.05
+  },
+  "notes": "Pro-side defined as supporting government-mandated mask requirements in public spaces. Against-side defined as opposing such mandates, favoring individual choice. Data quality: Early 2021 data is robust; mid-year data reflects significant volatility due to CDC guidance shifts.",
+  "_grounding_v2.2": {
+    "strategy": "hybrid_events_only",
+    "agents": "original",
+    "events": "grounded_v2.1",
+    "n_grounded_events": 5,
+    "n_original_events": 3
+  }
+}

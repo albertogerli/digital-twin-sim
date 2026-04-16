@@ -1,0 +1,1958 @@
+[
+  {
+    "scenario": "Draghi Resignation (Jul 2022)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "HIGH",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -1.79,
+        "actual_t1": 0.89
+      },
+      "ISP.MI": {
+        "predicted_t1": -1.79,
+        "actual_t1": 1.58
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.3225,
+        "actual_t1": 3.41
+      },
+      "G.MI": {
+        "predicted_t1": -1.4,
+        "actual_t1": 0.69
+      },
+      "LDO.MI": {
+        "predicted_t1": 0.87,
+        "actual_t1": 2.36
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.47300000000000003,
+        "actual_t1": 1.82
+      }
+    },
+    "mae_t1": 2.61,
+    "mae_t3": 7.43,
+    "mae_t7": 2.28,
+    "direction_accuracy": "0/6",
+    "ftse_impact": -0.43,
+    "btp_spread": 67
+  },
+  {
+    "scenario": "Bank Windfall Tax (Aug 2023)",
+    "category": "Banking / Financial",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -2.34,
+        "actual_t1": -5.94
+      },
+      "ISP.MI": {
+        "predicted_t1": -2.34,
+        "actual_t1": -8.67
+      },
+      "BAMI.MI": {
+        "predicted_t1": -2.34,
+        "actual_t1": -9.09
+      },
+      "BMPS.MI": {
+        "predicted_t1": -0.9805000000000001,
+        "actual_t1": -10.83
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.3975,
+        "actual_t1": -0.15
+      },
+      "REC.MI": {
+        "predicted_t1": 0.7,
+        "actual_t1": 2.49
+      }
+    },
+    "mae_t1": 4.76,
+    "mae_t3": 3.22,
+    "mae_t7": 2.25,
+    "direction_accuracy": "5/6",
+    "ftse_impact": -0.53,
+    "btp_spread": 88
+  },
+  {
+    "scenario": "Stellantis Layoffs Crisis (Oct 2024)",
+    "category": "Labor / Industrial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "STLAM.MI": {
+        "predicted_t1": -0.22,
+        "actual_t1": -0.33
+      },
+      "RACE.MI": {
+        "predicted_t1": -0.22,
+        "actual_t1": -0.41
+      },
+      "CNHI.MI": {
+        "predicted_t1": -0.22,
+        "actual_t1": 0
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.09250000000000001,
+        "actual_t1": 0.02
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.13,
+        "actual_t1": 0.46
+      },
+      "LDO.MI": {
+        "predicted_t1": 0.15,
+        "actual_t1": -0.47
+      }
+    },
+    "mae_t1": 0.27,
+    "mae_t3": 1.77,
+    "mae_t7": 1.64,
+    "direction_accuracy": "3/5",
+    "ftse_impact": -0.05,
+    "btp_spread": 1
+  },
+  {
+    "scenario": "Budget Standoff / Italexit Fear (May 2018)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": 0.28
+      },
+      "ISP.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": 0.89
+      },
+      "G.MI": {
+        "predicted_t1": -5.8,
+        "actual_t1": -0.3
+      },
+      "ENEL.MI": {
+        "predicted_t1": -1.35,
+        "actual_t1": 0.59
+      },
+      "ENI.MI": {
+        "predicted_t1": -1.9800000000000002,
+        "actual_t1": 0.53
+      }
+    },
+    "mae_t1": 5.18,
+    "mae_t3": 4.96,
+    "mae_t7": 7.95,
+    "direction_accuracy": "0/5",
+    "ftse_impact": -1.8,
+    "btp_spread": 120
+  },
+  {
+    "scenario": "Berlusconi Conviction / Government Crisis (Aug 2013)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "HIGH",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -1.0,
+        "actual_t1": -0.71
+      },
+      "ISP.MI": {
+        "predicted_t1": -1.0,
+        "actual_t1": -1.99
+      },
+      "G.MI": {
+        "predicted_t1": -0.3915,
+        "actual_t1": 0.2
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.2025,
+        "actual_t1": 2.11
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.29700000000000004,
+        "actual_t1": 0.64
+      }
+    },
+    "mae_t1": 1.02,
+    "mae_t3": 1.25,
+    "mae_t7": 3.04,
+    "direction_accuracy": "2/5",
+    "ftse_impact": -0.27,
+    "btp_spread": 37
+  },
+  {
+    "scenario": "Renzi Referendum Defeat (Dec 2016)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -2.22,
+        "actual_t1": 12.81
+      },
+      "ISP.MI": {
+        "predicted_t1": -2.22,
+        "actual_t1": 8.16
+      },
+      "BMPS.MI": {
+        "predicted_t1": -0.9805000000000001,
+        "actual_t1": 1.18
+      },
+      "G.MI": {
+        "predicted_t1": -1.74,
+        "actual_t1": 5.16
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.3975,
+        "actual_t1": 4.97
+      }
+    },
+    "mae_t1": 7.97,
+    "mae_t3": 17.7,
+    "mae_t7": 13.86,
+    "direction_accuracy": "0/5",
+    "ftse_impact": -0.53,
+    "btp_spread": 83
+  },
+  {
+    "scenario": "Conte I Formation — Mattarella Veto (May 27-31 2018)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": -5.61
+      },
+      "ISP.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": -4.09
+      },
+      "BAMI.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": -6.73
+      },
+      "G.MI": {
+        "predicted_t1": -5.8,
+        "actual_t1": -3.48
+      },
+      "ENI.MI": {
+        "predicted_t1": -1.9800000000000002,
+        "actual_t1": 0.13
+      }
+    },
+    "mae_t1": 2.04,
+    "mae_t3": 8.14,
+    "mae_t7": 16.34,
+    "direction_accuracy": "4/5",
+    "ftse_impact": -1.8,
+    "btp_spread": 120
+  },
+  {
+    "scenario": "Conte II Crisis — Italia Viva Withdrawal (Jan 2021)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.21,
+        "actual_t1": -1.41
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.21,
+        "actual_t1": -0.74
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.037500000000000006,
+        "actual_t1": -1.03
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.05500000000000001,
+        "actual_t1": -0.61
+      }
+    },
+    "mae_t1": 0.82,
+    "mae_t3": 1.7,
+    "mae_t7": 1.41,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.05,
+    "btp_spread": 7
+  },
+  {
+    "scenario": "Meloni Election Victory (Sep 2022)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.24,
+        "actual_t1": -2.1
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.24,
+        "actual_t1": -2.33
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.045,
+        "actual_t1": -5.4
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.066,
+        "actual_t1": 0.17
+      },
+      "LDO.MI": {
+        "predicted_t1": 0.11,
+        "actual_t1": -1.2
+      }
+    },
+    "mae_t1": 2.17,
+    "mae_t3": 5.08,
+    "mae_t7": 3.95,
+    "direction_accuracy": "1/5",
+    "ftse_impact": -0.06,
+    "btp_spread": 8
+  },
+  {
+    "scenario": "Salvini-Di Maio Papeete Crisis (Aug 2019)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "HIGH",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -1.03,
+        "actual_t1": -5.13
+      },
+      "ISP.MI": {
+        "predicted_t1": -1.03,
+        "actual_t1": -3.63
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.1875,
+        "actual_t1": -1.69
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.275,
+        "actual_t1": -1.8
+      }
+    },
+    "mae_t1": 2.43,
+    "mae_t3": 1.58,
+    "mae_t7": 4.25,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.25,
+    "btp_spread": 39
+  },
+  {
+    "scenario": "Monte Paschi Bailout Saga (Jul 2016)",
+    "category": "Banking / Financial",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "BMPS.MI": {
+        "predicted_t1": -1.073,
+        "actual_t1": -19.39
+      },
+      "UCG.MI": {
+        "predicted_t1": -2.55,
+        "actual_t1": 0.72
+      },
+      "ISP.MI": {
+        "predicted_t1": -2.55,
+        "actual_t1": -2.21
+      },
+      "BAMI.MI": {
+        "predicted_t1": -2.55,
+        "actual_t1": -3.85
+      },
+      "G.MI": {
+        "predicted_t1": -2.0,
+        "actual_t1": -1.93
+      }
+    },
+    "mae_t1": 4.66,
+    "mae_t3": 6.44,
+    "mae_t7": 8.43,
+    "direction_accuracy": "4/5",
+    "ftse_impact": -0.58,
+    "btp_spread": 96
+  },
+  {
+    "scenario": "Carige Bank Crisis (Jan 2019)",
+    "category": "Banking / Financial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.12,
+        "actual_t1": -1.41
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.12,
+        "actual_t1": -0.26
+      },
+      "BAMI.MI": {
+        "predicted_t1": -0.12,
+        "actual_t1": -1.48
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.0225,
+        "actual_t1": 0.04
+      }
+    },
+    "mae_t1": 0.71,
+    "mae_t3": 4.76,
+    "mae_t7": 3.57,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.03,
+    "btp_spread": 4
+  },
+  {
+    "scenario": "Unicredit Capital Raise (Jan 2017)",
+    "category": "Banking / Financial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.11,
+        "actual_t1": -3.97
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.11,
+        "actual_t1": -1.27
+      },
+      "BAMI.MI": {
+        "predicted_t1": -0.11,
+        "actual_t1": -5.12
+      }
+    },
+    "mae_t1": 3.34,
+    "mae_t3": 1.66,
+    "mae_t7": 5.62,
+    "direction_accuracy": "2/3",
+    "ftse_impact": -0.03,
+    "btp_spread": 4
+  },
+  {
+    "scenario": "Orcel OPS on Banco BPM (Nov 2024)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.28,
+        "actual_t1": -1.12
+      },
+      "BAMI.MI": {
+        "predicted_t1": -0.28,
+        "actual_t1": -1.08
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.28,
+        "actual_t1": -0.73
+      },
+      "MB.MI": {
+        "predicted_t1": -0.12950000000000003,
+        "actual_t1": -1.04
+      }
+    },
+    "mae_t1": 0.75,
+    "mae_t3": 0.58,
+    "mae_t7": 1.04,
+    "direction_accuracy": "2/4",
+    "ftse_impact": -0.07,
+    "btp_spread": 10
+  },
+  {
+    "scenario": "Credit Suisse Collapse — Italian Contagion (Mar 2023)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "HIGH",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.72,
+        "actual_t1": 4.2
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.72,
+        "actual_t1": 3.35
+      },
+      "BAMI.MI": {
+        "predicted_t1": -0.72,
+        "actual_t1": 1.87
+      },
+      "G.MI": {
+        "predicted_t1": -0.57,
+        "actual_t1": 3.62
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.1275,
+        "actual_t1": 2.62
+      }
+    },
+    "mae_t1": 3.7,
+    "mae_t3": 2.32,
+    "mae_t7": 3.61,
+    "direction_accuracy": "0/5",
+    "ftse_impact": -0.17,
+    "btp_spread": 27
+  },
+  {
+    "scenario": "ILVA/ArcelorMittal Steel Crisis (Nov 2019)",
+    "category": "Labor / Industrial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.09250000000000001,
+        "actual_t1": 1.65
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.09250000000000001,
+        "actual_t1": 1.47
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.12,
+        "actual_t1": -0.83
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.18,
+        "actual_t1": 1.6
+      },
+      "LDO.MI": {
+        "predicted_t1": 0.15,
+        "actual_t1": -0.23
+      }
+    },
+    "mae_t1": 1.28,
+    "mae_t3": 3.65,
+    "mae_t7": 2.96,
+    "direction_accuracy": "5/5",
+    "ftse_impact": -0.05,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Alitalia Final Collapse / ITA Airways (Oct 2021)",
+    "category": "Labor / Industrial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.018500000000000003,
+        "actual_t1": 0.77
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.03,
+        "actual_t1": -0.3
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.04,
+        "actual_t1": 1.9
+      },
+      "LDO.MI": {
+        "predicted_t1": 0.04,
+        "actual_t1": 0.87
+      }
+    },
+    "mae_t1": 0.97,
+    "mae_t3": 1.34,
+    "mae_t7": 1.86,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.01,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "General Strike CGIL-UIL (Dec 2021)",
+    "category": "Labor / Industrial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.11,
+        "actual_t1": 0.41
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.11,
+        "actual_t1": -1.65
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.015,
+        "actual_t1": 1.47
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.022000000000000002,
+        "actual_t1": -1.2
+      }
+    },
+    "mae_t1": 1.18,
+    "mae_t3": 1.58,
+    "mae_t7": 1.89,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.02,
+    "btp_spread": 4
+  },
+  {
+    "scenario": "Whirlpool Napoli Plant Closure (Oct 2020)",
+    "category": "Labor / Industrial",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 2.22
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.01,
+        "actual_t1": -1.48
+      }
+    },
+    "mae_t1": 1.86,
+    "mae_t3": 6.82,
+    "mae_t7": 10.92,
+    "direction_accuracy": "1/2",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "GKN Florence Factory Occupation (Jul 2021)",
+    "category": "Labor / Industrial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "STLAM.MI": {
+        "predicted_t1": -0.04,
+        "actual_t1": 0.0
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.0075,
+        "actual_t1": 1.74
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.018500000000000003,
+        "actual_t1": -0.3
+      }
+    },
+    "mae_t1": 0.69,
+    "mae_t3": 1.31,
+    "mae_t7": 3.18,
+    "direction_accuracy": "3/3",
+    "ftse_impact": -0.01,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Tavares Resignation / Stellantis CEO Exit (Dec 2024)",
+    "category": "Labor / Industrial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "STLAM.MI": {
+        "predicted_t1": -0.21,
+        "actual_t1": 1.6
+      },
+      "RACE.MI": {
+        "predicted_t1": -0.21,
+        "actual_t1": 1.2
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.09250000000000001,
+        "actual_t1": 1.89
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.12,
+        "actual_t1": 1.19
+      }
+    },
+    "mae_t1": 1.57,
+    "mae_t3": 4.61,
+    "mae_t7": 5.09,
+    "direction_accuracy": "3/4",
+    "ftse_impact": -0.05,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Gas Price Spike — Nord Stream Fears (Jun 2022)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "HIGH",
+    "tickers": {
+      "ENI.MI": {
+        "predicted_t1": -0.72,
+        "actual_t1": 0.64
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.49,
+        "actual_t1": 4.18
+      },
+      "SNAM.MI": {
+        "predicted_t1": 0.39,
+        "actual_t1": 0
+      },
+      "UCG.MI": {
+        "predicted_t1": -1.21,
+        "actual_t1": 3.74
+      }
+    },
+    "mae_t1": 3.33,
+    "mae_t3": 3.92,
+    "mae_t7": 4.79,
+    "direction_accuracy": "1/3",
+    "ftse_impact": -0.26,
+    "btp_spread": 45
+  },
+  {
+    "scenario": "Superbonus 110% Fraud Scandal (Feb 2022)",
+    "category": "Corporate / Other",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.07,
+        "actual_t1": 2.13
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.07,
+        "actual_t1": 3.09
+      },
+      "IGD.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": 1.92
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.015,
+        "actual_t1": 1.72
+      }
+    },
+    "mae_t1": 2.27,
+    "mae_t3": 1.94,
+    "mae_t7": 2.36,
+    "direction_accuracy": "1/4",
+    "ftse_impact": -0.02,
+    "btp_spread": 2
+  },
+  {
+    "scenario": "Emilia-Romagna Floods (May 2023)",
+    "category": "Energy / Environment",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.17,
+        "actual_t1": 0.37
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.07,
+        "actual_t1": -0.7
+      },
+      "G.MI": {
+        "predicted_t1": -0.13,
+        "actual_t1": -0.75
+      },
+      "HER.MI": {
+        "predicted_t1": -0.018,
+        "actual_t1": -1.52
+      }
+    },
+    "mae_t1": 0.86,
+    "mae_t3": 1.19,
+    "mae_t7": 1.39,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.03,
+    "btp_spread": 6
+  },
+  {
+    "scenario": "ENI Corruption Scandal — Nigeria (Sep 2018)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "ENI.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 0.3
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -0.22
+      },
+      "UCG.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -0.2
+      }
+    },
+    "mae_t1": 0.24,
+    "mae_t3": 1.27,
+    "mae_t7": 1.56,
+    "direction_accuracy": "2/3",
+    "ftse_impact": 0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "ENEL Green Power Spin-off Reversal (Nov 2022)",
+    "category": "Energy / Environment",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "ENEL.MI": {
+        "predicted_t1": 0.01,
+        "actual_t1": -0.92
+      },
+      "ERG.MI": {
+        "predicted_t1": 0.01,
+        "actual_t1": 1.66
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.01,
+        "actual_t1": 0.48
+      }
+    },
+    "mae_t1": 1.02,
+    "mae_t3": 1.48,
+    "mae_t7": 0.39,
+    "direction_accuracy": "2/3",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Ukraine Invasion — Italian Defense Boost (Feb 2022)",
+    "category": "Energy / Environment",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "LDO.MI": {
+        "predicted_t1": 1.4,
+        "actual_t1": 4.07
+      },
+      "ENI.MI": {
+        "predicted_t1": -1.71,
+        "actual_t1": 3.13
+      },
+      "ENEL.MI": {
+        "predicted_t1": 1.17,
+        "actual_t1": 5.77
+      },
+      "UCG.MI": {
+        "predicted_t1": -2.88,
+        "actual_t1": 3.81
+      },
+      "ISP.MI": {
+        "predicted_t1": -2.88,
+        "actual_t1": 2.72
+      }
+    },
+    "mae_t1": 4.88,
+    "mae_t3": 9.71,
+    "mae_t7": 9.73,
+    "direction_accuracy": "2/5",
+    "ftse_impact": -0.59,
+    "btp_spread": 108
+  },
+  {
+    "scenario": "NATO 2% Target Debate — Meloni/Crosetto (Feb 2023)",
+    "category": "Defense / Geopolitical",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "LOW",
+    "tickers": {
+      "LDO.MI": {
+        "predicted_t1": 0.02,
+        "actual_t1": -0.08
+      },
+      "FCT.MI": {
+        "predicted_t1": 0.02,
+        "actual_t1": 1.13
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.04,
+        "actual_t1": -0.22
+      }
+    },
+    "mae_t1": 0.46,
+    "mae_t3": 2.83,
+    "mae_t7": 4.52,
+    "direction_accuracy": "2/3",
+    "ftse_impact": -0.01,
+    "btp_spread": 1
+  },
+  {
+    "scenario": "Vivendi vs Mediaset War (Apr 2017)",
+    "category": "Media / Tech",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "MFEB.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": -0.26
+      },
+      "TLIT.MI": {
+        "predicted_t1": -0.0115,
+        "actual_t1": 0
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.018500000000000003,
+        "actual_t1": -0.36
+      }
+    },
+    "mae_t1": 0.28,
+    "mae_t3": 1.61,
+    "mae_t7": 2.5,
+    "direction_accuracy": "1/2",
+    "ftse_impact": -0.01,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "TIM Network Separation / KKR Bid (Nov 2021)",
+    "category": "Corporate / Other",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "TLIT.MI": {
+        "predicted_t1": -0.023,
+        "actual_t1": 0
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.037000000000000005,
+        "actual_t1": 0.77
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.06,
+        "actual_t1": 0.03
+      }
+    },
+    "mae_t1": 0.42,
+    "mae_t3": 2.88,
+    "mae_t7": 3.14,
+    "direction_accuracy": "2/2",
+    "ftse_impact": -0.02,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Generali Board Fight — Caltagirone/Del Vecchio (Apr 2022)",
+    "category": "Banking / Financial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "LOW",
+    "tickers": {
+      "G.MI": {
+        "predicted_t1": -0.04,
+        "actual_t1": -0.33
+      },
+      "MB.MI": {
+        "predicted_t1": -0.018500000000000003,
+        "actual_t1": -0.22
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": -3.22
+      }
+    },
+    "mae_t1": 1.22,
+    "mae_t3": 2.61,
+    "mae_t7": 4.26,
+    "direction_accuracy": "2/3",
+    "ftse_impact": -0.01,
+    "btp_spread": 1
+  },
+  {
+    "scenario": "Ferrari IPO Spinoff (Jan 2016)",
+    "category": "Corporate / Other",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "RACE.MI": {
+        "predicted_t1": -0.01,
+        "actual_t1": 2.11
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 0.62
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 1.9
+      }
+    },
+    "mae_t1": 1.55,
+    "mae_t3": 2.43,
+    "mae_t7": 5.66,
+    "direction_accuracy": "0/3",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "EU Budget Standoff — Conte vs Brussels (Oct 2018)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -2.1,
+        "actual_t1": 0.81
+      },
+      "ISP.MI": {
+        "predicted_t1": -2.1,
+        "actual_t1": 1.4
+      },
+      "BAMI.MI": {
+        "predicted_t1": -2.1,
+        "actual_t1": -0.69
+      },
+      "G.MI": {
+        "predicted_t1": -1.65,
+        "actual_t1": 1.2
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.539,
+        "actual_t1": 0.44
+      }
+    },
+    "mae_t1": 2.33,
+    "mae_t3": 1.85,
+    "mae_t7": 3.83,
+    "direction_accuracy": "1/5",
+    "ftse_impact": -0.49,
+    "btp_spread": 79
+  },
+  {
+    "scenario": "Flat Tax Debate — Salvini Push (Jun 2019)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.17,
+        "actual_t1": 0.23
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.17,
+        "actual_t1": 0.08
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.03,
+        "actual_t1": 0.34
+      }
+    },
+    "mae_t1": 0.34,
+    "mae_t3": 1.09,
+    "mae_t7": 2.48,
+    "direction_accuracy": "3/3",
+    "ftse_impact": -0.04,
+    "btp_spread": 6
+  },
+  {
+    "scenario": "Nadef Deficit Target Debate (Sep 2023)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.11,
+        "actual_t1": -2.4
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.11,
+        "actual_t1": -1.36
+      },
+      "G.MI": {
+        "predicted_t1": -0.08,
+        "actual_t1": 0.26
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.0225,
+        "actual_t1": -0.45
+      }
+    },
+    "mae_t1": 1.08,
+    "mae_t3": 1.59,
+    "mae_t7": 3.68,
+    "direction_accuracy": "3/4",
+    "ftse_impact": -0.03,
+    "btp_spread": 3
+  },
+  {
+    "scenario": "Reddito di Cittadinanza Abolition (May 2023)",
+    "category": "Labor / Industrial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.07,
+        "actual_t1": 3.76
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.07,
+        "actual_t1": 1.74
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.0075,
+        "actual_t1": 0.02
+      }
+    },
+    "mae_t1": 1.89,
+    "mae_t3": 4.34,
+    "mae_t7": 4.5,
+    "direction_accuracy": "2/3",
+    "ftse_impact": -0.01,
+    "btp_spread": 2
+  },
+  {
+    "scenario": "ECB Rate Hike Surprise (Jun 2022)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "HIGH",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -1.29,
+        "actual_t1": -9.1
+      },
+      "ISP.MI": {
+        "predicted_t1": -1.29,
+        "actual_t1": -7.38
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.22499999999999998,
+        "actual_t1": -4.33
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.33,
+        "actual_t1": -5.6
+      },
+      "G.MI": {
+        "predicted_t1": -1.01,
+        "actual_t1": -4.88
+      }
+    },
+    "mae_t1": 5.43,
+    "mae_t3": 6.87,
+    "mae_t7": 8.36,
+    "direction_accuracy": "4/5",
+    "ftse_impact": -0.3,
+    "btp_spread": 48
+  },
+  {
+    "scenario": "ECB TPI Announcement — Spread Shield (Jul 2022)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.15,
+        "actual_t1": -2.35
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.15,
+        "actual_t1": -0.18
+      },
+      "G.MI": {
+        "predicted_t1": -0.11,
+        "actual_t1": 0.39
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.0225,
+        "actual_t1": -0.51
+      }
+    },
+    "mae_t1": 0.8,
+    "mae_t3": 0.34,
+    "mae_t7": 2.68,
+    "direction_accuracy": "0/4",
+    "ftse_impact": -0.03,
+    "btp_spread": 5
+  },
+  {
+    "scenario": "Greek Referendum / Grexit (Jul 2015)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "HIGH",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -1.33,
+        "actual_t1": -3.87
+      },
+      "ISP.MI": {
+        "predicted_t1": -1.33,
+        "actual_t1": -2.89
+      },
+      "BAMI.MI": {
+        "predicted_t1": -1.33,
+        "actual_t1": -4.18
+      },
+      "G.MI": {
+        "predicted_t1": -1.04,
+        "actual_t1": -2.8
+      }
+    },
+    "mae_t1": 2.18,
+    "mae_t3": 4.88,
+    "mae_t7": 7.94,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.31,
+    "btp_spread": 50
+  },
+  {
+    "scenario": "Brexit Vote (Jun 2016)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -2.79,
+        "actual_t1": -8.09
+      },
+      "ISP.MI": {
+        "predicted_t1": -2.79,
+        "actual_t1": -10.92
+      },
+      "BMPS.MI": {
+        "predicted_t1": -1.221,
+        "actual_t1": -13.34
+      },
+      "G.MI": {
+        "predicted_t1": -2.19,
+        "actual_t1": -8.47
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.7260000000000001,
+        "actual_t1": -0.08
+      }
+    },
+    "mae_t1": 6.5,
+    "mae_t3": 6.19,
+    "mae_t7": 6.88,
+    "direction_accuracy": "4/5",
+    "ftse_impact": -0.66,
+    "btp_spread": 105
+  },
+  {
+    "scenario": "COVID First Italian Lockdown (Feb-Mar 2020)",
+    "category": "Healthcare / COVID",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": -4.13
+      },
+      "ISP.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": -5.75
+      },
+      "ENI.MI": {
+        "predicted_t1": -1.848,
+        "actual_t1": -4.67
+      },
+      "ENEL.MI": {
+        "predicted_t1": -1.26,
+        "actual_t1": -4.9
+      },
+      "LDO.MI": {
+        "predicted_t1": -1.512,
+        "actual_t1": -6.71
+      },
+      "DIA.MI": {
+        "predicted_t1": 2.2,
+        "actual_t1": -4.9
+      }
+    },
+    "mae_t1": 3.95,
+    "mae_t3": 6.98,
+    "mae_t7": 10.3,
+    "direction_accuracy": "5/6",
+    "ftse_impact": -1.68,
+    "btp_spread": 120
+  },
+  {
+    "scenario": "AstraZeneca Suspension in Italy (Mar 2021)",
+    "category": "Healthcare / COVID",
+    "crisis_scope": "micro_idiosyncratic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "DIA.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": 2.67
+      },
+      "REC.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": -0.62
+      },
+      "AMP.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": 1.27
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 2.05
+      }
+    },
+    "mae_t1": 1.66,
+    "mae_t3": 2.25,
+    "mae_t7": 0.97,
+    "direction_accuracy": "2/4",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Cutro Migrant Shipwreck (Feb 2023)",
+    "category": "Immigration / Social",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 1.42
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 0.21
+      },
+      "ENI.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -0.25
+      }
+    },
+    "mae_t1": 0.63,
+    "mae_t3": 1.17,
+    "mae_t7": 0.86,
+    "direction_accuracy": "3/3",
+    "ftse_impact": 0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Albania Migration Deal (Nov 2023)",
+    "category": "Immigration / Social",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "LOW",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.06,
+        "actual_t1": 0.53
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.015,
+        "actual_t1": -0.44
+      }
+    },
+    "mae_t1": 0.51,
+    "mae_t3": 1.17,
+    "mae_t7": 2.82,
+    "direction_accuracy": "2/2",
+    "ftse_impact": -0.02,
+    "btp_spread": 2
+  },
+  {
+    "scenario": "Autonomia Differenziata Approval (Jun 2024)",
+    "category": "Constitutional Reform",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.09,
+        "actual_t1": 2.14
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.09,
+        "actual_t1": 0.97
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.015,
+        "actual_t1": 1.39
+      },
+      "A2A.MI": {
+        "predicted_t1": -0.03,
+        "actual_t1": 2.5
+      }
+    },
+    "mae_t1": 1.81,
+    "mae_t3": 2.86,
+    "mae_t7": 2.12,
+    "direction_accuracy": "2/4",
+    "ftse_impact": -0.02,
+    "btp_spread": 3
+  },
+  {
+    "scenario": "Premierato Reform — First Senate Vote (Jun 2024)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "LOW",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": 2.82
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": 1.59
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.0075,
+        "actual_t1": 2.07
+      }
+    },
+    "mae_t1": 2.2,
+    "mae_t3": 3.83,
+    "mae_t7": 4.97,
+    "direction_accuracy": "1/3",
+    "ftse_impact": -0.01,
+    "btp_spread": 1
+  },
+  {
+    "scenario": "ChatGPT Ban in Italy (Mar 2023)",
+    "category": "Media / Tech",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "STM.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 0
+      },
+      "REY.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": -1.56
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 2.99
+      }
+    },
+    "mae_t1": 2.28,
+    "mae_t3": 2.2,
+    "mae_t7": 4.2,
+    "direction_accuracy": "1/2",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Spread Crisis Peak — 2011 Sovereign (Nov 2011)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": 2.08
+      },
+      "ISP.MI": {
+        "predicted_t1": -7.4,
+        "actual_t1": 3.54
+      },
+      "G.MI": {
+        "predicted_t1": -5.8,
+        "actual_t1": 0.96
+      },
+      "ENI.MI": {
+        "predicted_t1": -1.9800000000000002,
+        "actual_t1": 1.08
+      }
+    },
+    "mae_t1": 7.56,
+    "mae_t3": 7.8,
+    "mae_t7": 13.97,
+    "direction_accuracy": "0/4",
+    "ftse_impact": -1.8,
+    "btp_spread": 120
+  },
+  {
+    "scenario": "Monti Resignation / Berlusconi Return (Dec 2012)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "HIGH",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.74,
+        "actual_t1": -5.15
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.74,
+        "actual_t1": -5.15
+      },
+      "G.MI": {
+        "predicted_t1": -0.58,
+        "actual_t1": -3.0
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.198,
+        "actual_t1": 0.11
+      }
+    },
+    "mae_t1": 2.89,
+    "mae_t3": 1.61,
+    "mae_t7": 2.52,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.18,
+    "btp_spread": 28
+  },
+  {
+    "scenario": "Banche Venete Bail-out (Jun 2017)",
+    "category": "Banking / Financial",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "ISP.MI": {
+        "predicted_t1": -0.22,
+        "actual_t1": 3.52
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.22,
+        "actual_t1": 2.22
+      },
+      "BAMI.MI": {
+        "predicted_t1": -0.22,
+        "actual_t1": 3.79
+      }
+    },
+    "mae_t1": 3.4,
+    "mae_t3": 6.8,
+    "mae_t7": 5.58,
+    "direction_accuracy": "1/3",
+    "ftse_impact": -0.05,
+    "btp_spread": 8
+  },
+  {
+    "scenario": "Deutsche Bank CoCo Fears (Feb 2016)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "CRITICAL",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -2.14,
+        "actual_t1": -7.91
+      },
+      "ISP.MI": {
+        "predicted_t1": -2.14,
+        "actual_t1": -6.21
+      },
+      "BMPS.MI": {
+        "predicted_t1": -0.925,
+        "actual_t1": -3.08
+      },
+      "G.MI": {
+        "predicted_t1": -1.67,
+        "actual_t1": -4.05
+      }
+    },
+    "mae_t1": 3.59,
+    "mae_t3": 4.06,
+    "mae_t7": 6.86,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.5,
+    "btp_spread": 80
+  },
+  {
+    "scenario": "Draghi Appointment as PM (Feb 2021)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "LOW",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.07,
+        "actual_t1": 2.62
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.07,
+        "actual_t1": 2.94
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.015,
+        "actual_t1": 0.05
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.022000000000000002,
+        "actual_t1": 0.95
+      },
+      "G.MI": {
+        "predicted_t1": -0.05,
+        "actual_t1": 3.14
+      }
+    },
+    "mae_t1": 1.99,
+    "mae_t3": 4.57,
+    "mae_t7": 5.29,
+    "direction_accuracy": "4/5",
+    "ftse_impact": -0.02,
+    "btp_spread": 2
+  },
+  {
+    "scenario": "EU Recovery Fund Agreement (Jul 2020)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "LOW",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.06,
+        "actual_t1": 0.1
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.06,
+        "actual_t1": -0.46
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.0075,
+        "actual_t1": -1.63
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.011000000000000001,
+        "actual_t1": -2.49
+      }
+    },
+    "mae_t1": 1.17,
+    "mae_t3": 3.99,
+    "mae_t7": 5.33,
+    "direction_accuracy": "0/4",
+    "ftse_impact": -0.01,
+    "btp_spread": 2
+  },
+  {
+    "scenario": "Italy Investment Grade Reaffirmed — S&P (Oct 2023)",
+    "category": "Banking / Financial",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.01,
+        "actual_t1": 0
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.01,
+        "actual_t1": 1.26
+      },
+      "G.MI": {
+        "predicted_t1": -0.01,
+        "actual_t1": 0.61
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 0.78
+      }
+    },
+    "mae_t1": 0.89,
+    "mae_t3": 1.22,
+    "mae_t7": 1.59,
+    "direction_accuracy": "3/3",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Leonardo F-35 Order Confirmation (Mar 2023)",
+    "category": "Defense / Geopolitical",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "LDO.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -0.18
+      },
+      "FCT.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -2.55
+      },
+      "UCG.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -1.01
+      }
+    },
+    "mae_t1": 1.25,
+    "mae_t3": 4.75,
+    "mae_t7": 8.77,
+    "direction_accuracy": "1/3",
+    "ftse_impact": 0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Campari CEO Surprise Exit (Sep 2024)",
+    "category": "Corporate / Other",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "CPR.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 9.54
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 1.24
+      }
+    },
+    "mae_t1": 5.39,
+    "mae_t3": 3.17,
+    "mae_t7": 2.4,
+    "direction_accuracy": "1/2",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Piaggio Results Beat (Mar 2024)",
+    "category": "Corporate / Other",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "PIA.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -1.27
+      },
+      "STLAM.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": -0.3
+      },
+      "UCG.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -1.86
+      }
+    },
+    "mae_t1": 1.14,
+    "mae_t3": 1.31,
+    "mae_t7": 1.77,
+    "direction_accuracy": "2/3",
+    "ftse_impact": 0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "STMicroelectronics Guidance Cut (Jan 2024)",
+    "category": "Corporate / Other",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "STM.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 0
+      },
+      "STLAM.MI": {
+        "predicted_t1": -0.01,
+        "actual_t1": 0.53
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.0,
+        "actual_t1": 0.64
+      }
+    },
+    "mae_t1": 0.59,
+    "mae_t3": 3.03,
+    "mae_t7": 3.5,
+    "direction_accuracy": "2/2",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Moncler Acquires Stone Island (Dec 2020)",
+    "category": "Corporate / Other",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "MONC.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 1.51
+      },
+      "BC.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 2.74
+      },
+      "UCG.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 0.42
+      }
+    },
+    "mae_t1": 1.56,
+    "mae_t3": 4.3,
+    "mae_t7": 5.9,
+    "direction_accuracy": "1/3",
+    "ftse_impact": 0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "RAI Reform / Governance Fight (May 2023)",
+    "category": "Media / Tech",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "LOW",
+    "tickers": {
+      "MFEB.MI": {
+        "predicted_t1": -0.02,
+        "actual_t1": 0.59
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.018500000000000003,
+        "actual_t1": 0.51
+      }
+    },
+    "mae_t1": 0.57,
+    "mae_t3": 4.2,
+    "mae_t7": 3.24,
+    "direction_accuracy": "2/2",
+    "ftse_impact": -0.01,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "Separazione Carriere Magistratura Debate (Jan 2025)",
+    "category": "Political Crisis",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "LOW",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 1.3
+      },
+      "ISP.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 1.11
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": 0.73
+      }
+    },
+    "mae_t1": 1.05,
+    "mae_t3": 1.71,
+    "mae_t7": 3.0,
+    "direction_accuracy": "3/3",
+    "ftse_impact": 0.0,
+    "btp_spread": 0
+  },
+  {
+    "scenario": "PNRR Deadline Fears (Jun 2023)",
+    "category": "Fiscal / EU Standoff",
+    "crisis_scope": "macro_systematic",
+    "wave": 2,
+    "warning": "MODERATE",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.09,
+        "actual_t1": 0.03
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.09,
+        "actual_t1": 0.26
+      },
+      "ENEL.MI": {
+        "predicted_t1": -0.015,
+        "actual_t1": -0.67
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.022000000000000002,
+        "actual_t1": 1.01
+      }
+    },
+    "mae_t1": 0.54,
+    "mae_t3": 1.52,
+    "mae_t7": 2.81,
+    "direction_accuracy": "4/4",
+    "ftse_impact": -0.02,
+    "btp_spread": 3
+  },
+  {
+    "scenario": "Ponte Morandi Collapse (Aug 2018)",
+    "category": "Corporate / Other",
+    "crisis_scope": "macro_systematic",
+    "wave": 3,
+    "warning": "HIGH",
+    "tickers": {
+      "UCG.MI": {
+        "predicted_t1": -0.35150000000000003,
+        "actual_t1": -1.1
+      },
+      "ISP.MI": {
+        "predicted_t1": -0.35150000000000003,
+        "actual_t1": -1.81
+      },
+      "ENEL.MI": {
+        "predicted_t1": 0.49,
+        "actual_t1": -1.05
+      },
+      "ENI.MI": {
+        "predicted_t1": -0.72,
+        "actual_t1": -1.25
+      },
+      "G.MI": {
+        "predicted_t1": -0.27549999999999997,
+        "actual_t1": 0.34
+      }
+    },
+    "mae_t1": 0.98,
+    "mae_t3": 1.37,
+    "mae_t7": 1.43,
+    "direction_accuracy": "4/5",
+    "ftse_impact": -0.19,
+    "btp_spread": 3
+  },
+  {
+    "scenario": "Fincantieri-STX Deal Collapse (Jul 2021)",
+    "category": "Defense / Geopolitical",
+    "crisis_scope": "macro_systematic",
+    "wave": 1,
+    "warning": "LOW",
+    "tickers": {
+      "FCT.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -1.87
+      },
+      "LDO.MI": {
+        "predicted_t1": 0.0,
+        "actual_t1": -2.36
+      },
+      "UCG.MI": {
+        "predicted_t1": -0.01,
+        "actual_t1": -2.78
+      }
+    },
+    "mae_t1": 2.33,
+    "mae_t3": 5.49,
+    "mae_t7": 3.32,
+    "direction_accuracy": "1/3",
+    "ftse_impact": -0.0,
+    "btp_spread": 0
+  }
+]

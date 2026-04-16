@@ -1,0 +1,632 @@
+[
+  {
+    "id": "angelo_scola",
+    "name": "Angelo Scola",
+    "role": "Cardinale emerito di Milano",
+    "country": "IT",
+    "category": "religious",
+    "party_or_org": "Chiesa Cattolica",
+    "archetype": "religious",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.65,
+    "bio": "Cardinale emerito dell'Arcidiocesi di Milano, teologo di orientamento conservatore. Figura di spicco della Chiesa italiana, ha guidato le diocesi di Grosseto, Venezia e Milano. Studioso del rapporto tra fede e cultura contemporanea.",
+    "communication_style": "Riflessivo e dottrinale, linguaggio teologico accessibile ma fermo sui principi",
+    "key_traits": [
+      "conservatore",
+      "teologo",
+      "istituzionale"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "family_values",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "bioethics",
+        "value": 0.7,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "immigration",
+        "value": 0.3,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "antonio_spadaro",
+    "name": "Antonio Spadaro",
+    "role": "Sottosegretario Dicastero per la Cultura del Vaticano",
+    "country": "IT",
+    "category": "religious",
+    "party_or_org": "Compagnia di Gesù / Santa Sede",
+    "archetype": "religious",
+    "tier": 2,
+    "influence": 0.4,
+    "rigidity": 0.45,
+    "bio": "Gesuita, già direttore de La Civiltà Cattolica, ora sottosegretario del Dicastero per la Cultura e l'Educazione. Tra i più stretti collaboratori intellettuali di Papa Francesco, interprete della visione riformista del pontificato.",
+    "communication_style": "Intellettuale e dialogante, usa i social media con disinvoltura, ponte tra Chiesa e cultura contemporanea",
+    "key_traits": [
+      "progressista",
+      "gesuita",
+      "comunicatore"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "church_reform",
+        "value": 0.7,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "social_justice",
+        "value": 0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "dialogue_interreligious",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "vincenzo_paglia",
+    "name": "Vincenzo Paglia",
+    "role": "Presidente Pontificia Accademia per la Vita",
+    "country": "IT",
+    "category": "religious",
+    "party_or_org": "Santa Sede",
+    "archetype": "religious",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.5,
+    "bio": "Arcivescovo, presidente della Pontificia Accademia per la Vita e gran cancelliere del Pontificio Istituto Teologico Giovanni Paolo II. Referente vaticano sui temi di bioetica, fine vita e intelligenza artificiale.",
+    "communication_style": "Pastorale e mediativo, attento al linguaggio bioetico, cerca il dialogo con la scienza",
+    "key_traits": [
+      "bioeticista",
+      "moderato",
+      "diplomatico"
+    ],
+    "platform_primary": "institutional",
+    "positions": [
+      {
+        "topic_tag": "bioethics",
+        "value": 0.4,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "end_of_life",
+        "value": 0.2,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "artificial_intelligence",
+        "value": 0.3,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "enzo_bianchi",
+    "name": "Enzo Bianchi",
+    "role": "Fondatore Comunità monastica di Bose",
+    "country": "IT",
+    "category": "religious",
+    "party_or_org": "Comunità di Bose",
+    "archetype": "religious",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.4,
+    "bio": "Fondatore della Comunità monastica di Bose, teologo, saggista e editorialista. Voce autorevole del cattolicesimo progressista italiano, autore prolifico sul dialogo ecumenico e la spiritualità laica.",
+    "communication_style": "Contemplativo e colto, scrittura saggistica accessibile, editorialista su grandi quotidiani",
+    "key_traits": [
+      "ecumenico",
+      "progressista",
+      "intellettuale"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "ecumenism",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "social_justice",
+        "value": 0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "church_reform",
+        "value": 0.7,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "mattia_ferrari",
+    "name": "Mattia Ferrari",
+    "role": "Cappellano di mare, Mediterranea Saving Humans",
+    "country": "IT",
+    "category": "religious",
+    "party_or_org": "Mediterranea Saving Humans / CEI",
+    "archetype": "activist",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.45,
+    "bio": "Sacerdote e cappellano di mare, opera con Mediterranea Saving Humans nel soccorso ai migranti nel Mediterraneo. Figura simbolo dell'impegno cattolico per i diritti dei migranti, spesso in contrasto con le politiche di chiusura dei porti.",
+    "communication_style": "Testimoniale e appassionato, racconta dal campo, linguaggio diretto e umano",
+    "key_traits": [
+      "umanitario",
+      "coraggioso",
+      "attivista"
+    ],
+    "platform_primary": "social_media",
+    "positions": [
+      {
+        "topic_tag": "immigration",
+        "value": 0.9,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "human_rights",
+        "value": 0.9,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "mediterranean_rescue",
+        "value": 1.0,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "giuseppe_cavo_dragone",
+    "name": "Giuseppe Cavo Dragone",
+    "role": "Capo di Stato Maggiore della Difesa",
+    "country": "IT",
+    "category": "military",
+    "party_or_org": "Stato Maggiore della Difesa",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.6,
+    "bio": "Ammiraglio di squadra, Capo di Stato Maggiore della Difesa italiana. Proveniente dalla Marina Militare, guida le Forze Armate italiane e rappresenta l'Italia nei consessi NATO e UE in materia di difesa.",
+    "communication_style": "Istituzionale e misurato, comunicazione strategica attenta alla riservatezza operativa",
+    "key_traits": [
+      "strategico",
+      "atlantista",
+      "istituzionale"
+    ],
+    "platform_primary": "institutional",
+    "positions": [
+      {
+        "topic_tag": "nato_alliance",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "defense_spending",
+        "value": 0.7,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "european_defense",
+        "value": 0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "luciano_portolano",
+    "name": "Luciano Portolano",
+    "role": "Generale, ex comandante UNIFIL",
+    "country": "IT",
+    "category": "military",
+    "party_or_org": "Esercito Italiano",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.6,
+    "bio": "Generale di corpo d'armata dell'Esercito Italiano, già comandante della missione UNIFIL in Libano e del Comando Operativo di Vertice Interforze. Esperto di operazioni di peacekeeping e gestione delle crisi internazionali.",
+    "communication_style": "Tecnico-militare, sobrio, orientato ai fatti e alla dimensione operativa",
+    "key_traits": [
+      "peacekeeping",
+      "operativo",
+      "multilaterale"
+    ],
+    "platform_primary": "institutional",
+    "positions": [
+      {
+        "topic_tag": "peacekeeping",
+        "value": 0.7,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "international_missions",
+        "value": 0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "defense_spending",
+        "value": 0.5,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "elisabetta_trenta",
+    "name": "Elisabetta Trenta",
+    "role": "Ex Ministra della Difesa",
+    "country": "IT",
+    "category": "military",
+    "party_or_org": "Movimento 5 Stelle",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.25,
+    "rigidity": 0.45,
+    "bio": "Ex Ministra della Difesa nel governo Conte I (2018-2019), esperta di geopolitica e sicurezza. Docente di relazioni internazionali, ha portato una visione meno atlantista e più attenta alla diplomazia nel dibattito sulla difesa italiana.",
+    "communication_style": "Analitica e divulgativa, toni moderati, attenta alla dimensione geopolitica",
+    "key_traits": [
+      "geopolitica",
+      "moderata",
+      "analitica"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "defense_policy",
+        "value": 0.3,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "arms_exports",
+        "value": -0.4,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "nato_alliance",
+        "value": 0.3,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "marco_bertolini",
+    "name": "Marco Bertolini",
+    "role": "Generale, ex comandante COI",
+    "country": "IT",
+    "category": "military",
+    "party_or_org": "Indipendente (area centrodestra)",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.65,
+    "bio": "Generale di corpo d'armata in pensione, già comandante del Comando Operativo di Vertice Interforze e della Brigata Folgore. Commentatore politico-militare su media di area centrodestra, posizioni sovraniste in politica estera.",
+    "communication_style": "Diretto e polemico, linguaggio militare adattato al dibattito pubblico, toni assertivi",
+    "key_traits": [
+      "sovranista",
+      "conservatore",
+      "polemista"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "national_sovereignty",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "immigration",
+        "value": -0.7,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "defense_spending",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "gabriele_gravina",
+    "name": "Gabriele Gravina",
+    "role": "Presidente FIGC",
+    "country": "IT",
+    "category": "institutional",
+    "party_or_org": "FIGC",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.5,
+    "bio": "Presidente della Federazione Italiana Giuoco Calcio. Imprenditore e dirigente sportivo, guida il calcio italiano tra riforme strutturali, sostenibilità finanziaria dei club e rapporti con UEFA e FIFA.",
+    "communication_style": "Diplomatico e manageriale, linguaggio federale, attento agli equilibri tra club e istituzioni",
+    "key_traits": [
+      "diplomatico",
+      "riformista",
+      "federale"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "sports_governance",
+        "value": 0.5,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "football_reform",
+        "value": 0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "sports_integrity",
+        "value": 0.5,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "giovanni_malago",
+    "name": "Giovanni Malagò",
+    "role": "Presidente CONI",
+    "country": "IT",
+    "category": "institutional",
+    "party_or_org": "CONI",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.4,
+    "rigidity": 0.5,
+    "bio": "Presidente del Comitato Olimpico Nazionale Italiano, imprenditore romano. Ha guidato la candidatura vincente di Milano-Cortina 2026, figura di vertice dello sport italiano con ampie connessioni politiche e economiche.",
+    "communication_style": "Carismatico e mondano, abile comunicatore istituzionale, sa navigare tra sport e politica",
+    "key_traits": [
+      "lobbista",
+      "carismatico",
+      "connesso"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "olympic_games",
+        "value": 0.9,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "sports_autonomy",
+        "value": 0.7,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "sports_funding",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "claudio_lotito",
+    "name": "Claudio Lotito",
+    "role": "Presidente S.S. Lazio, Senatore",
+    "country": "IT",
+    "category": "institutional",
+    "party_or_org": "Forza Italia",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.6,
+    "bio": "Imprenditore, presidente della S.S. Lazio e senatore di Forza Italia. Figura controversa che incarna il legame tra calcio, imprenditoria e politica italiana, noto per il suo stile diretto e le frequenti polemiche.",
+    "communication_style": "Diretto e spigoloso, linguaggio imprenditoriale senza filtri, toni polemici frequenti",
+    "key_traits": [
+      "imprenditore",
+      "controverso",
+      "pragmatico"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "sports_business",
+        "value": 0.7,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "tax_policy",
+        "value": -0.5,
+        "source": "inferred",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "center_right_coalition",
+        "value": 0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "aurelio_de_laurentiis",
+    "name": "Aurelio De Laurentiis",
+    "role": "Presidente SSC Napoli, produttore cinematografico",
+    "country": "IT",
+    "category": "institutional",
+    "party_or_org": "SSC Napoli / Filmauro",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.55,
+    "bio": "Produttore cinematografico e presidente del SSC Napoli, che ha riportato allo scudetto nel 2023. Imprenditore del cinema e dello sport, voce influente nel dibattito su industria culturale e calcio italiano.",
+    "communication_style": "Teatrale e provocatorio, comunicazione da showman, grande presenza mediatica",
+    "key_traits": [
+      "showman",
+      "imprenditore",
+      "provocatore"
+    ],
+    "platform_primary": "press",
+    "positions": [
+      {
+        "topic_tag": "football_reform",
+        "value": 0.4,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "cultural_industry",
+        "value": 0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "south_italy_development",
+        "value": 0.5,
+        "source": "inferred",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  },
+  {
+    "id": "andrea_abodi",
+    "name": "Andrea Abodi",
+    "role": "Ministro per lo Sport e i Giovani",
+    "country": "IT",
+    "category": "institutional",
+    "party_or_org": "Indipendente (Governo Meloni)",
+    "archetype": "institutional",
+    "tier": 2,
+    "influence": 0.4,
+    "rigidity": 0.5,
+    "bio": "Ministro per lo Sport e i Giovani nel governo Meloni, già presidente dell'Istituto per il Credito Sportivo e della Lega di Serie B. Manager sportivo di lungo corso, gestisce le politiche sportive e giovanili e il dossier Milano-Cortina 2026.",
+    "communication_style": "Manageriale e pacato, linguaggio tecnico-sportivo, attento alla dimensione sociale dello sport",
+    "key_traits": [
+      "manager",
+      "tecnico",
+      "mediatore"
+    ],
+    "platform_primary": "institutional",
+    "positions": [
+      {
+        "topic_tag": "sports_policy",
+        "value": 0.6,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "youth_policy",
+        "value": 0.5,
+        "source": "public_statement",
+        "confidence": "medium"
+      },
+      {
+        "topic_tag": "olympic_games",
+        "value": 0.8,
+        "source": "public_statement",
+        "confidence": "medium"
+      }
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": [
+      "wikipedia"
+    ]
+  }
+]

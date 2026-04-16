@@ -1,0 +1,26 @@
+[
+  {
+    "id": "albert_bourla",
+    "name": "Albert Bourla",
+    "role": "CEO of Pfizer",
+    "archetype": "business_leader",
+    "position": 1.0,
+    "influence": 0.95,
+    "rigidity": 0.9,
+    "bio": "Albert Bourla is a Greek-American veterinarian and executive who has served as the Chairman and Chief Executive Officer of Pfizer since 2019.",
+    "communication_style": "formal, decisive",
+    "key_traits": [
+      "strategic",
+      "persuasive",
+      "results-oriented"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CEO of Pfizer, he was the primary decision-maker responsible for the development, production, and promotion of the COVID-19 vaccine, directly advocating for its uptake to combat hesitancy."
+    ],
+    "_grounded": true
+  }
+]

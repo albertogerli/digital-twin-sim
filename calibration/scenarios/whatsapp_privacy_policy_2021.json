@@ -1,0 +1,79 @@
+{
+  "scenario_name": "whatsapp_privacy_policy_2021",
+  "domain": "technology",
+  "description": "WhatsApp announced a policy update in 2021 that clarified data sharing with parent company Facebook. The update was widely misinterpreted as a change in personal message privacy, causing a global user exodus to Signal and Telegram.",
+  "final_outcome_pro_pct": 35.0,
+  "final_outcome_against_pct": 65.0,
+  "final_turnout_pct": 60.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 10,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 25,
+      "against_pct": 65,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 68,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 32,
+      "against_pct": 67,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 33,
+      "against_pct": 66,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 34,
+      "against_pct": 66,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 35,
+      "against_pct": 65,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "WhatsApp issues clarification notification."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Signal experiences record downloads."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "WhatsApp delays rollout to stem user loss."
+    }
+  ],
+  "calibration_notes": "Measures public sensitivity to data sharing between platform subsidiaries."
+}

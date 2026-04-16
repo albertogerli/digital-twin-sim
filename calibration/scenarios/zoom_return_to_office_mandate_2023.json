@@ -1,0 +1,83 @@
+{
+  "scenario_name": "zoom_return_to_office_mandate_2023",
+  "domain": "labor",
+  "description": "In August 2023, Zoom Video Communications, a company built on facilitating remote work, mandated that employees living within 50 miles of an office must return at least two days a week. This move triggered a significant backlash among the tech workforce and public discourse regarding the hypocrisy of 'remote-first' corporate messaging vs. reality.",
+  "final_outcome_pro_pct": 32.0,
+  "final_outcome_against_pct": 68.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 10,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 20,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 38,
+      "against_pct": 35,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 33,
+      "against_pct": 52,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 34,
+      "against_pct": 58,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 32,
+      "against_pct": 63,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 31,
+      "against_pct": 66,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 32,
+      "against_pct": 68,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Zoom issues official August 2023 memo requiring hybrid attendance for local staff."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Global media outlets highlight the irony of the 'Zoom' company forcing office returns."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Internal employee town halls leak to the press showing widespread staff frustration."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Competitors in the tech sector publicly contrast their 'remote-first' policies against Zoom's mandate."
+    }
+  ],
+  "calibration_notes": "This scenario is useful for calibrating models on corporate credibility and the limits of executive authority when the company's product directly enables the very behavior it is banning."
+}

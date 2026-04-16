@@ -1,0 +1,83 @@
+{
+  "scenario_name": "kansas_tax_cut_experiment_2012_2017",
+  "domain": "financial",
+  "description": "In 2012, Kansas Governor Sam Brownback signed the Kansas Senate Bill 347, implementing massive tax cuts on pass-through business income, promising an 'economic shot of adrenaline.' By 2017, the state faced severe budget deficits, crumbling infrastructure, and a lack of the promised growth, forcing a bipartisan legislative reversal to repeal the cuts.",
+  "final_outcome_pro_pct": 38.0,
+  "final_outcome_against_pct": 62.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 52.0,
+      "against_pct": 28.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55.0,
+      "against_pct": 25.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50.0,
+      "against_pct": 32.0,
+      "undecided_pct": 18.0
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 46.0,
+      "against_pct": 38.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44.0,
+      "against_pct": 42.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 41.0,
+      "against_pct": 49.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 39.0,
+      "against_pct": 54.0,
+      "undecided_pct": 7.0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 37.0,
+      "against_pct": 59.0,
+      "undecided_pct": 4.0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 38.0,
+      "against_pct": 62.0,
+      "undecided_pct": 0.0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Governor Brownback signs the tax cut bill into law with significant fanfare."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "State credit rating downgraded by Moody's due to persistent budget shortfalls."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Kansas schools close early due to lack of funds, sparking public outrage."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "State legislature passes a bill to reverse tax cuts, overriding the Governor's veto."
+    }
+  ],
+  "calibration_notes": "This scenario captures the lifecycle of a high-conviction economic policy that encounters severe reality-based friction, illustrating how public opinion shifts as initial political optimism is replaced by material fiscal consequences."
+}

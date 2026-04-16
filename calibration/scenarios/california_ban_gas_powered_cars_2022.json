@@ -1,0 +1,79 @@
+{
+  "scenario_name": "california_ban_gas_powered_cars_2022",
+  "domain": "environmental",
+  "description": "The California Air Resources Board (CARB) approved a landmark mandate to ban the sale of new gas-powered cars by 2035. This triggered a public divide regarding state authority and the feasibility of an electric vehicle transition.",
+  "final_outcome_pro_pct": 54.0,
+  "final_outcome_against_pct": 46.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 48,
+      "against_pct": 38,
+      "undecided_pct": 14
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 51,
+      "against_pct": 42,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 52,
+      "against_pct": 43,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 53,
+      "against_pct": 44,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 54,
+      "against_pct": 45,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 54,
+      "against_pct": 46,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 54,
+      "against_pct": 46,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Governor Newsom signs executive order signaling the transition."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "CARB formally adopts the regulation, sparking intense media debate."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Other states begin mirroring the policy, increasing regional pressure."
+    }
+  ],
+  "calibration_notes": "Useful for modeling public reactions to government mandates on consumer technology transitions."
+}

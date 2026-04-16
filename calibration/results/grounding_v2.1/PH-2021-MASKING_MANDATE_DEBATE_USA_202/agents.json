@@ -1,0 +1,71 @@
+[
+  {
+    "id": "rochelle_walensky",
+    "name": "Rochelle Walensky",
+    "role": "Director of the Centers for Disease Control and Prevention (CDC)",
+    "archetype": "regulator",
+    "position": 0.9,
+    "influence": 0.85,
+    "rigidity": 0.8,
+    "bio": "An American physician and scientist who served as the 19th Director of the CDC from 2021 to 2023.",
+    "communication_style": "formal, data-driven",
+    "key_traits": [
+      "authoritative",
+      "methodical"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "regulator",
+    "_evidence": [
+      "As the head of the CDC, she was the primary federal authority issuing guidance on mask mandates and public health safety protocols during 2021."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "joe_biden",
+    "name": "Joe Biden",
+    "role": "President of the United States",
+    "archetype": "politician",
+    "position": 0.8,
+    "influence": 0.95,
+    "rigidity": 0.75,
+    "bio": "The 46th President of the United States, serving during the height of the 2021 COVID-19 pandemic response.",
+    "communication_style": "persuasive, executive",
+    "key_traits": [
+      "strategic",
+      "political"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He set the federal tone for mask-wearing and attempted to implement federal mandates for federal employees and contractors, shaping the national debate."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "ron_desantis",
+    "name": "Ron DeSantis",
+    "role": "Governor of Florida",
+    "archetype": "politician",
+    "position": -0.9,
+    "influence": 0.8,
+    "rigidity": 0.9,
+    "bio": "The 46th Governor of Florida, known for his vocal opposition to federal and local COVID-19 mitigation mandates.",
+    "communication_style": "confrontational, decisive",
+    "key_traits": [
+      "ideological",
+      "assertive"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.9,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He was a leading figure in the legal and political conflict against mask mandates, issuing executive orders to ban school mask requirements."
+    ],
+    "_grounded": true
+  }
+]

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "indian_river_lagoon_restoration_2013",
+  "domain": "public_health",
+  "description": "Public outcry and subsequent legislative support for emergency funding to clean up the Indian River Lagoon in Florida following mass die-offs and toxic algae blooms affecting local community health.",
+  "final_outcome_pro_pct": 66.0,
+  "final_outcome_against_pct": 34.0,
+  "final_turnout_pct": 62.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 20,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 25,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 32,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 62,
+      "against_pct": 33,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 64,
+      "against_pct": 33,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 65,
+      "against_pct": 34,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 66,
+      "against_pct": 34,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 66,
+      "against_pct": 34,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Mass manatee and dolphin die-off reported"
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Governor declares state of emergency"
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Legislature approves $40M restoration grant"
+    }
+  ],
+  "calibration_notes": "Shows how ecological crisis can rapidly mobilize political policy shifts."
+}

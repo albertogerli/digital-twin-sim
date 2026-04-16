@@ -1,0 +1,83 @@
+{
+  "scenario_name": "chile_plastic_bag_ban_2018",
+  "domain": "environmental",
+  "description": "Chile became the first Latin American country to ban plastic bags in retail businesses in 2018. The policy was implemented in stages, starting with coastal areas before a nationwide rollout.",
+  "final_outcome_pro_pct": 90.0,
+  "final_outcome_against_pct": 10.0,
+  "final_turnout_pct": 95.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 70,
+      "against_pct": 5,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 75,
+      "against_pct": 5,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 78,
+      "against_pct": 7,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 80,
+      "against_pct": 8,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 82,
+      "against_pct": 8,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 85,
+      "against_pct": 9,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 87,
+      "against_pct": 10,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 89,
+      "against_pct": 10,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 90,
+      "against_pct": 10,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Government launches public awareness campaign in coastal cities."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Major retail chains announce early compliance before deadlines."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Legislature passes the final law with near-unanimous support."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "National enforcement phase kicks in for all commerce."
+    }
+  ],
+  "calibration_notes": "Useful for modeling high-consensus policies that face little organized opposition."
+}

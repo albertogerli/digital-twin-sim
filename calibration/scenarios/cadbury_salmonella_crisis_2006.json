@@ -1,0 +1,83 @@
+{
+  "scenario_name": "cadbury_salmonella_crisis_2006",
+  "domain": "public_health",
+  "description": "In 2006, Cadbury recalled over a million chocolate bars in the UK due to a salmonella contamination, damaging public trust in the brand and leading to massive fines.",
+  "final_outcome_pro_pct": 65.0,
+  "final_outcome_against_pct": 35.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 40,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 58,
+      "against_pct": 37,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 62,
+      "against_pct": 36,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 65,
+      "against_pct": 35,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Cadbury admits to salmonella leak months prior"
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Massive public recall initiated"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Food Standards Agency issues official reprimand"
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Company implements new quality safety measures"
+    }
+  ],
+  "calibration_notes": "Illustrates the recovery curve of consumer confidence following corporate safety failures."
+}

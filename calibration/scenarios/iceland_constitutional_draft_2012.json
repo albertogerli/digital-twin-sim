@@ -1,0 +1,83 @@
+{
+  "scenario_name": "iceland_constitutional_draft_2012",
+  "domain": "political",
+  "description": "In October 2012, Iceland held a non-binding national referendum on a new draft constitution written by a popular assembly after the 2008 financial crisis. While 67% voted 'Yes', the parliament failed to formally enact it.",
+  "final_outcome_pro_pct": 67,
+  "final_outcome_against_pct": 33,
+  "final_turnout_pct": 49.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 62,
+      "against_pct": 22,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 65,
+      "against_pct": 25,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 64,
+      "against_pct": 26,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 66,
+      "against_pct": 28,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 67,
+      "against_pct": 30,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 68,
+      "against_pct": 31,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 67,
+      "against_pct": 33,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Constitutional Council publishes the final version of the draft."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Main political parties announce they will not be bound by the referendum result."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Grassroots 'Yes' campaign gains traction on social media."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Voters go to polls, reflecting frustration with political establishment."
+    }
+  ],
+  "calibration_notes": "A classic case of a 'populist' constitutional project versus institutional skepticism."
+}

@@ -1,0 +1,79 @@
+{
+  "scenario_name": "mountain_valley_pipeline_2023",
+  "domain": "environmental",
+  "description": "A contentious natural gas pipeline project through Virginia and West Virginia that became a focal point of US energy policy negotiations in the 2023 debt ceiling deal.",
+  "final_outcome_pro_pct": 51.0,
+  "final_outcome_against_pct": 49.0,
+  "final_turnout_pct": 100.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 30,
+      "undecided_pct": 40
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 35,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 40,
+      "against_pct": 40,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 48,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 49,
+      "against_pct": 50,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 50,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 51,
+      "against_pct": 49,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Project faces significant judicial hurdles over water quality permits."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Congressional leadership inserts pipeline approval into the Fiscal Responsibility Act."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Supreme Court clears final regulatory path for construction completion."
+    }
+  ],
+  "calibration_notes": "Ideal for understanding 'backroom' political deals vs public grassroots opposition."
+}

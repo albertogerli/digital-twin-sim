@@ -1,0 +1,83 @@
+{
+  "scenario_name": "smallpox_vaccination_campaign_nigeria_2003",
+  "domain": "public_health",
+  "description": "In 2003, religious leaders in northern Nigeria boycotted the polio vaccination campaign, alleging it was a Western conspiracy to cause infertility. This sparked a regional health crisis that set back global eradication efforts for years.",
+  "final_outcome_pro_pct": 40.0,
+  "final_outcome_against_pct": 60.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 60,
+      "against_pct": 10,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 15,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 25,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 35,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 32,
+      "against_pct": 52,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 38,
+      "against_pct": 58,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 40,
+      "against_pct": 60,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Supreme Council for Sharia in Nigeria issues formal warning against polio vaccine."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Kano state governor suspends all polio vaccination activities."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "WHO reports new cases of polio linked to the suspension of the vaccination program."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "National vaccination campaigns resume with intervention from religious leaders."
+    }
+  ],
+  "calibration_notes": "Useful for testing how misinformation impacts public sentiment regarding scientific interventions in sensitive cultural contexts."
+}

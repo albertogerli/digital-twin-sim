@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 DEFAULT_POSTERIOR_PATH = os.path.join(
     os.path.dirname(__file__), "..", "..",
     "calibration", "results", "hierarchical_calibration",
-    "v2_discrepancy", "posteriors_v2.json"
+    "v2.3_pubop", "posteriors_v2.json"
 )
 
 # v2 parameter names in order (matches posterior array indices)
@@ -75,7 +75,9 @@ TRANSITION_DEFAULTS = {
 
 def _softmax_weight(alpha_vec: list[float], index: int) -> float:
     """Compute softmax weight for index given alpha vector [0, a_h, a_a, a_s, a_e]."""
-    exps = [math.exp(a) for a in alpha_vec]
+    # Numerically stable softmax: subtract max to prevent overflow
+    max_a = max(alpha_vec) if alpha_vec else 0.0
+    exps = [math.exp(a - max_a) for a in alpha_vec]
     total = sum(exps)
     return exps[index] / total if total > 0 else 0.2
 

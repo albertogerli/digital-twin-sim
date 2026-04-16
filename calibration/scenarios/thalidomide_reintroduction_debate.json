@@ -1,0 +1,83 @@
+{
+  "scenario_name": "thalidomide_reintroduction_debate",
+  "domain": "public_health",
+  "description": "The debate over the FDA's 1998 approval of Celgene's Thalomid (thalidomide) for leprosy, following its history as a cause of birth defects. The controversy centered on whether strict distribution controls could prevent a repeat of the 1950s tragedy.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 80.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 60,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 25,
+      "against_pct": 55,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 30,
+      "against_pct": 50,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 42,
+      "undecided_pct": 13
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 55,
+      "against_pct": 39,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Celgene proposes a mandatory registry system for doctors and patients."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "FDA advisory committee votes 11-0 in favor of approval with strict risk management."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Public hearings feature emotional testimony from original thalidomide victims."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "FDA officially approves the drug with the 'STEPS' monitoring program."
+    }
+  ],
+  "calibration_notes": "Tests the balance between historical trauma/stigma and scientific data-driven risk management."
+}

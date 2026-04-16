@@ -1,0 +1,71 @@
+[
+  {
+    "id": "emer_cooke",
+    "name": "Emer Cooke",
+    "role": "Executive Director of the European Medicines Agency (EMA)",
+    "archetype": "regulator",
+    "position": 0.9,
+    "influence": 0.85,
+    "rigidity": 0.7,
+    "bio": "Emer Cooke is an Irish pharmacist who has served as the Executive Director of the European Medicines Agency since November 2020.",
+    "communication_style": "formal, measured, scientific",
+    "key_traits": [
+      "authoritative",
+      "methodical"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "regulator",
+    "_evidence": [
+      "As head of the EMA, she led the regulatory review that ultimately reaffirmed the vaccine's safety, directly countering the suspension decisions made by member states."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "pascal_soriot",
+    "name": "Pascal Soriot",
+    "role": "CEO of AstraZeneca",
+    "archetype": "business_leader",
+    "position": 1.0,
+    "influence": 0.95,
+    "rigidity": 0.9,
+    "bio": "Pascal Soriot is a French business executive who has served as the Chief Executive Officer of AstraZeneca since 2012.",
+    "communication_style": "strategic, defensive, corporate",
+    "key_traits": [
+      "resilient",
+      "persuasive"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CEO, he was the primary public face of the company, responsible for defending the vaccine's safety profile and managing the reputational fallout during the March 2021 crisis."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "ann_taylor",
+    "name": "Ann Taylor",
+    "role": "Chief Medical Officer at AstraZeneca",
+    "archetype": "scientist",
+    "position": 1.0,
+    "influence": 0.7,
+    "rigidity": 0.8,
+    "bio": "Ann Taylor serves as the Chief Medical Officer at AstraZeneca, overseeing the company's clinical development and safety monitoring.",
+    "communication_style": "technical, precise, evidence-based",
+    "key_traits": [
+      "analytical",
+      "diligent"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "She provided the medical and scientific justification for the vaccine's safety, citing data from millions of vaccinated individuals to refute claims of increased clotting risks."
+    ],
+    "_grounded": true
+  }
+]

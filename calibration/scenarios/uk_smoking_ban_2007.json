@@ -1,0 +1,83 @@
+{
+  "scenario_name": "uk_smoking_ban_2007",
+  "domain": "political",
+  "description": "The UK government implemented a comprehensive ban on smoking in all enclosed public places and workplaces in England on July 1, 2007. The policy shift followed years of public health advocacy and legislative debate, resulting in high levels of public support once enacted.",
+  "final_outcome_pro_pct": 78.0,
+  "final_outcome_against_pct": 22.0,
+  "final_turnout_pct": 0.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 42,
+      "against_pct": 48,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 52,
+      "against_pct": 40,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 35,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 62,
+      "against_pct": 31,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 65,
+      "against_pct": 28,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 70,
+      "against_pct": 25,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 75,
+      "against_pct": 22,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Public health lobby releases comprehensive reports on second-hand smoke dangers."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Government introduces the Health Bill to Parliament."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Parliament votes decisively in favor of the total ban."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Extensive media campaign launched in lead-up to July 1 enforcement date."
+    }
+  ],
+  "calibration_notes": "Useful for modeling public sentiment on 'nanny state' policies that shift from skepticism to high post-implementation approval."
+}

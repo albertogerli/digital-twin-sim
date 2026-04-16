@@ -1,0 +1,83 @@
+{
+  "scenario_name": "dodge_so_god_made_a_farmer",
+  "domain": "marketing",
+  "description": "Dodge's 2013 Super Bowl ad, 'So God Made a Farmer,' repurposed a Paul Harvey speech. The high-minded, emotional tone surprised viewers and resulted in massive sentiment shift.",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 15.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 5,
+      "undecided_pct": 80
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 30,
+      "against_pct": 10,
+      "undecided_pct": 60
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 15,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 75,
+      "against_pct": 15,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 80,
+      "against_pct": 15,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 82,
+      "against_pct": 15,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 83,
+      "against_pct": 15,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 84,
+      "against_pct": 15,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 85,
+      "against_pct": 15,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Super Bowl XLVII airs the spot; audiences are caught off guard by the non-commercial tone."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Social media conversation highlights the emotional resonance of the speech."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Brand favorability for Ram trucks spikes among rural and suburban demographics."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Industry analysts praise the ad as a departure from standard automotive tropes."
+    }
+  ],
+  "calibration_notes": "Measures the impact of emotional, non-product-centric storytelling in marketing."
+}

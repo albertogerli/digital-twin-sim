@@ -1,0 +1,83 @@
+{
+  "scenario_name": "australia_mediscare_2016",
+  "domain": "public_health",
+  "description": "During the 2016 Australian federal election, the Labor Party launched the 'Mediscare' campaign, claiming the Liberal-National Coalition planned to privatize Medicare. The campaign became a defining factor of the election, turning a perceived government advantage into a close race.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 91.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 53,
+      "against_pct": 37,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 42,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 46,
+      "against_pct": 48,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 44,
+      "against_pct": 50,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 45,
+      "against_pct": 51,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 47,
+      "against_pct": 51,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Labor Party sends text messages to voters claiming Medicare is under threat."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Coalition government issues public denials of any privatization plans."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Polling shows significant voter trust shift toward Labor on healthcare issues."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Election result confirms a narrow win for the Coalition with a swing against them."
+    }
+  ],
+  "calibration_notes": "Useful for understanding the impact of 'fear-based' political messaging on long-standing public health institutions."
+}

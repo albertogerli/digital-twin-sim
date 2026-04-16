@@ -1,0 +1,71 @@
+[
+  {
+    "id": "dennis_muilenburg",
+    "name": "Dennis Muilenburg",
+    "role": "CEO of Boeing",
+    "archetype": "business_leader",
+    "position": 0.8,
+    "influence": 0.95,
+    "rigidity": 0.8,
+    "bio": "Dennis Muilenburg served as the Chairman, President, and CEO of The Boeing Company from 2015 until his ouster in December 2019 following the 737 MAX crisis.",
+    "communication_style": "formal, defensive",
+    "key_traits": [
+      "strategic",
+      "corporate-focused"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 1.0,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "As CEO during the 737 MAX crisis, he was the primary public face defending the aircraft's safety and managing the company's response to the grounding."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "steve_dickson",
+    "name": "Steve Dickson",
+    "role": "FAA Administrator",
+    "archetype": "regulator",
+    "position": 0.2,
+    "influence": 0.85,
+    "rigidity": 0.7,
+    "bio": "Steve Dickson was the Administrator of the Federal Aviation Administration (FAA) from 2019 to 2022, leading the agency during the return-to-service of the Boeing 737 MAX.",
+    "communication_style": "technical, measured",
+    "key_traits": [
+      "methodical",
+      "cautious"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "regulator",
+    "_evidence": [
+      "He oversaw the rigorous recertification process of the 737 MAX, balancing the need for safety with the pressure to return the fleet to service."
+    ],
+    "_grounded": true
+  },
+  {
+    "id": "david_calhoun",
+    "name": "David Calhoun",
+    "role": "CEO of Boeing (successor)",
+    "archetype": "business_leader",
+    "position": 0.9,
+    "influence": 0.9,
+    "rigidity": 0.75,
+    "bio": "David Calhoun became the CEO of Boeing in January 2020, tasked with navigating the company through the aftermath of the 737 MAX grounding and the COVID-19 pandemic.",
+    "communication_style": "direct, pragmatic",
+    "key_traits": [
+      "pragmatic",
+      "decisive"
+    ],
+    "platform_primary": "",
+    "platform_secondary": "",
+    "_relevance": 0.7,
+    "_stake": "decision_maker",
+    "_evidence": [
+      "He took over leadership to restore public trust and stabilize the company's operations following the grounding and the subsequent leadership vacuum."
+    ],
+    "_grounded": true
+  }
+]

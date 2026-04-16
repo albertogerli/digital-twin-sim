@@ -1,0 +1,83 @@
+{
+  "scenario_name": "disney_direct_to_consumer_2019",
+  "domain": "corporate",
+  "description": "In 2019, Disney launched Disney+ and signaled a major pivot away from the traditional cable-TV bundle. The strategy involved cannibalizing their own high-margin cable revenue for long-term streaming growth, sparking fierce debate among media investors.",
+  "final_outcome_pro_pct": 70.0,
+  "final_outcome_against_pct": 30.0,
+  "final_turnout_pct": 70.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 20,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 55,
+      "against_pct": 25,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 55,
+      "against_pct": 35,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 30,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 65,
+      "against_pct": 30,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 70,
+      "against_pct": 30,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Disney+ launch announcement."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Linear TV revenues drop faster than expected."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Subscriber growth surpasses Netflix in specific metrics."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Disney pivots entire studio focus to streaming."
+    }
+  ],
+  "calibration_notes": "Measures tolerance for 'cannibalizing' existing revenue streams."
+}

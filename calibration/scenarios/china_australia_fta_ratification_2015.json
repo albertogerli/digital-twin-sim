@@ -1,0 +1,79 @@
+{
+  "scenario_name": "china_australia_fta_ratification_2015",
+  "domain": "political",
+  "description": "The ChAFTA was a significant pivot for Australia, bringing the country closer to China's market. It faced intense scrutiny from unions and opposition parties regarding labor mobility and foreign ownership laws.",
+  "final_outcome_pro_pct": 58.0,
+  "final_outcome_against_pct": 42.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 35,
+      "undecided_pct": 23
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 40,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 48,
+      "against_pct": 42,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 50,
+      "against_pct": 45,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 52,
+      "against_pct": 45,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 54,
+      "against_pct": 44,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 56,
+      "against_pct": 43,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 58,
+      "against_pct": 42,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "ACTU launches 'Real Choices' campaign against the deal"
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Labor Party leadership agrees to support after side letters on visa standards"
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Parliament passes legislation implementing the agreement"
+    }
+  ],
+  "calibration_notes": "Excellent for measuring the impact of legislative 'side letters' in overcoming labor/union resistance."
+}

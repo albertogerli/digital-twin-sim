@@ -1,0 +1,83 @@
+{
+  "scenario_name": "coca_cola_share_a_coke_marketing_success_2011",
+  "domain": "marketing",
+  "description": "In 2011, Coca-Cola launched the 'Share a Coke' campaign in Australia, replacing their logo on bottles with popular first names to encourage user-generated content and personal connections. The strategy triggered a massive viral surge of consumers sharing photos of their namesake bottles on social media, significantly reversing a decade-long decline in youth consumption.",
+  "final_outcome_pro_pct": 78.0,
+  "final_outcome_against_pct": 22.0,
+  "final_turnout_pct": 92.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 30,
+      "against_pct": 20,
+      "undecided_pct": 50
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 35,
+      "against_pct": 22,
+      "undecided_pct": 43
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 25,
+      "undecided_pct": 33
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 50,
+      "against_pct": 24,
+      "undecided_pct": 26
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 62,
+      "against_pct": 21,
+      "undecided_pct": 17
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 70,
+      "against_pct": 20,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 74,
+      "against_pct": 21,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 77,
+      "against_pct": 22,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 78,
+      "against_pct": 22,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 1,
+      "description": "Coca-Cola Australia introduces personalized labels in physical retail stores."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Social media saturation begins as users post #ShareACoke photos across Facebook and Twitter."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "National news outlets begin reporting on the 'crazes' and shortages of specific names in stores."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Independent marketing analysts release data showing a 7% increase in youth consumption directly linked to the campaign."
+    }
+  ],
+  "calibration_notes": "This scenario calibrates how a brand-led user-generated content campaign shifts from initial curiosity to mass viral adoption, measuring the speed at which undecided segments convert into brand advocates."
+}

@@ -1,0 +1,83 @@
+{
+  "scenario_name": "nestle_maggi_noodles_ban_2015",
+  "domain": "commercial",
+  "description": "The Indian government banned Nestlé's Maggi noodles for alleged excess lead content. The debate centered on food safety versus corporate lobbying.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 75.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 90,
+      "against_pct": 5,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 75,
+      "against_pct": 15,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 50,
+      "against_pct": 40,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 60,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 30,
+      "against_pct": 68,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 35,
+      "against_pct": 63,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 40,
+      "against_pct": 58,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 45,
+      "against_pct": 53,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Food safety regulators in Uttar Pradesh flag lead levels."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Nestlé orders a nationwide recall of all Maggi products."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Bombay High Court overturns the national ban, citing lack of clear evidence."
+    },
+    {
+      "round_equivalent": 8,
+      "description": "Product returns to market after extensive testing protocols."
+    }
+  ],
+  "calibration_notes": "Models the volatility of public support during a government-mandated product recall."
+}

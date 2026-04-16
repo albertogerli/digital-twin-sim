@@ -22,7 +22,7 @@ export default function RoundPhaseIndicator({ phaseIndex, totalPhases, message }
   const phases = totalPhases || 7;
 
   return (
-    <div className="flex items-center gap-1.5 mt-2">
+    <div className="flex items-center gap-1.5 mt-1.5">
       {Array.from({ length: phases }, (_, i) => {
         const step = i + 1;
         const done = step < phaseIndex;
@@ -30,19 +30,19 @@ export default function RoundPhaseIndicator({ phaseIndex, totalPhases, message }
         return (
           <div key={i} className="flex items-center gap-1.5">
             <div
-              className={`h-1.5 rounded-full transition-all duration-300 ${
+              className={`h-1 rounded-full transition-all duration-300 ${
                 done
-                  ? "bg-emerald-400 w-6"
+                  ? "bg-ki-success w-6"
                   : active
-                  ? "bg-blue-500 w-8 animate-pulse"
-                  : "bg-gray-200 w-6"
+                  ? "bg-ki-primary w-8 animate-pulse"
+                  : "bg-ki-surface-sunken w-6"
               }`}
               title={PHASE_NAMES[i] || `Phase ${step}`}
             />
           </div>
         );
       })}
-      <span className="text-[10px] text-gray-400 font-mono ml-2 truncate">{message}</span>
+      <span className="text-[10px] text-ki-on-surface-muted font-data ml-2 truncate">{message}</span>
     </div>
   );
 }

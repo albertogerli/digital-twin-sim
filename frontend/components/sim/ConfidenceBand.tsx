@@ -29,7 +29,7 @@ export default function ConfidenceBand({ rounds, positionAxis }: ConfidenceBandP
   const xScale = (r: number) => padX + ((r - minRound) / Math.max(maxRound - minRound, 1)) * plotW;
   const yScale = (v: number) => padY + plotH - (v / 100) * plotH;
 
-  // CI band path (upper → lower reversed)
+  // CI band path (upper -> lower reversed)
   const upperPath = dataWithCI
     .map((r, i) => {
       const x = xScale(r.round);
@@ -62,28 +62,28 @@ export default function ConfidenceBand({ rounds, positionAxis }: ConfidenceBandP
   const ciWidth = lastCI.pro_pct_ci95_hi - lastCI.pro_pct_ci95_lo;
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-3">
+    <div className="bg-ki-surface-raised rounded-sm border border-ki-border p-2">
       <div className="flex items-center justify-between mb-1">
-        <h4 className="text-xs font-semibold text-gray-700 uppercase tracking-wide">
+        <h4 className="text-xs font-semibold text-ki-on-surface-secondary uppercase tracking-wide">
           Confidence Band
         </h4>
-        <span className="text-[10px] text-gray-500">
+        <span className="text-[10px] text-ki-on-surface-muted">
           95% CI: {ciWidth.toFixed(1)}pp
         </span>
       </div>
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ height: 140 }}>
+      <svg viewBox={`0 0 ${width} ${height}`} className="w-full" style={{ height: 130 }}>
         {/* 50% reference line */}
         <line
           x1={padX} y1={yScale(50)} x2={width - padX} y2={yScale(50)}
-          stroke="#e5e7eb" strokeDasharray="4 2" strokeWidth={0.5}
+          stroke="#d4d4d4" strokeDasharray="4 2" strokeWidth={0.5}
         />
-        <text x={padX - 4} y={yScale(50) + 3} textAnchor="end" fontSize={8} fill="#9ca3af">50%</text>
+        <text x={padX - 4} y={yScale(50) + 3} textAnchor="end" fontSize={8} fill="#8a8a8a">50%</text>
 
         {/* CI band */}
-        <path d={bandPath} fill="#3b82f6" fillOpacity={0.15} />
+        <path d={bandPath} fill="#1a6dff" fillOpacity={0.15} />
 
         {/* Mean line */}
-        <path d={meanPath} fill="none" stroke="#3b82f6" strokeWidth={2} />
+        <path d={meanPath} fill="none" stroke="#1a6dff" strokeWidth={2} />
 
         {/* Data points */}
         {dataWithCI.map((r) => (
@@ -92,13 +92,13 @@ export default function ConfidenceBand({ rounds, positionAxis }: ConfidenceBandP
             cx={xScale(r.round)}
             cy={yScale(r.confidence_interval!.pro_pct_mean)}
             r={2.5}
-            fill="#3b82f6"
+            fill="#1a6dff"
           />
         ))}
 
         {/* Y-axis labels */}
-        <text x={padX - 4} y={yScale(100) + 3} textAnchor="end" fontSize={8} fill="#9ca3af">100</text>
-        <text x={padX - 4} y={yScale(0) + 3} textAnchor="end" fontSize={8} fill="#9ca3af">0</text>
+        <text x={padX - 4} y={yScale(100) + 3} textAnchor="end" fontSize={8} fill="#8a8a8a">100</text>
+        <text x={padX - 4} y={yScale(0) + 3} textAnchor="end" fontSize={8} fill="#8a8a8a">0</text>
 
         {/* X-axis */}
         {dataWithCI.map((r) => (
@@ -108,7 +108,7 @@ export default function ConfidenceBand({ rounds, positionAxis }: ConfidenceBandP
             y={height - 4}
             textAnchor="middle"
             fontSize={8}
-            fill="#9ca3af"
+            fill="#8a8a8a"
           >
             R{r.round}
           </text>
@@ -120,12 +120,12 @@ export default function ConfidenceBand({ rounds, positionAxis }: ConfidenceBandP
           y={yScale(lastCI.pro_pct_mean)}
           fontSize={9}
           fontWeight="bold"
-          fill="#3b82f6"
+          fill="#1a6dff"
         >
           {lastCI.pro_pct_mean.toFixed(1)}%
         </text>
       </svg>
-      <div className="flex justify-between text-[10px] text-gray-400 mt-1 px-1">
+      <div className="flex justify-between text-[10px] text-ki-on-surface-muted mt-1 px-1">
         <span>{positiveLabel} estimate with model uncertainty (sigma={lastCI.sigma_pp.toFixed(1)}pp)</span>
       </div>
     </div>

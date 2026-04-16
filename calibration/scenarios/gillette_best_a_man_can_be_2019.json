@@ -1,0 +1,83 @@
+{
+  "scenario_name": "gillette_best_a_man_can_be_2019",
+  "domain": "commercial",
+  "description": "Gillette's 2019 'We Believe' ad addressed toxic masculinity. It generated massive debate and polarized consumers, with some supporting the message and others calling it an insult to their core customer base.",
+  "final_outcome_pro_pct": 48.0,
+  "final_outcome_against_pct": 52.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 45,
+      "against_pct": 30,
+      "undecided_pct": 25
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 45,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 44,
+      "against_pct": 51,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 46,
+      "against_pct": 51,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 47,
+      "against_pct": 52,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 48,
+      "against_pct": 52,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "YouTube video gains massive 'dislike' count compared to 'likes'."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Major conservative voices call for a permanent boycott of Gillette products."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Corporate executives defend the campaign as 'modernizing' the brand."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Analysis suggests the ad successfully engaged younger audiences despite the backlash."
+    }
+  ],
+  "calibration_notes": "Highlights high-stakes brand repositioning and the resulting market polarization."
+}

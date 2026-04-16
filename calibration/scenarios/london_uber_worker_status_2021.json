@@ -1,0 +1,79 @@
+{
+  "scenario_name": "london_uber_worker_status_2021",
+  "domain": "labor",
+  "description": "Following a UK Supreme Court ruling in February 2021, Uber was forced to classify its drivers as workers rather than independent contractors. This set a global precedent for gig economy labor rights.",
+  "final_outcome_pro_pct": 62.0,
+  "final_outcome_against_pct": 38.0,
+  "final_turnout_pct": 72.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 42,
+      "against_pct": 32,
+      "undecided_pct": 26
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 45,
+      "against_pct": 35,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 52,
+      "against_pct": 38,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 55,
+      "against_pct": 40,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 58,
+      "against_pct": 39,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 60,
+      "against_pct": 38,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 61,
+      "against_pct": 38,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 62,
+      "against_pct": 38,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "UK Supreme Court rules against Uber appeal."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Uber announces £12 minimum wage for UK drivers."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Public support peaks as competitor platforms face similar scrutiny."
+    }
+  ],
+  "calibration_notes": "Useful for measuring the shift in public perception when legal judicial intervention validates grass-roots labor movements."
+}

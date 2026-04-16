@@ -1,0 +1,79 @@
+{
+  "scenario_name": "linux_kernel_desktop_adoption_2002_2006",
+  "domain": "technology",
+  "description": "The debate centered on whether the Linux kernel and open-source desktop environments (GNOME/KDE) could realistically replace proprietary Microsoft Windows for general enterprise usage. Following the 2002 memo leaks and the 2004 Ubuntu launch, momentum shifted toward open source, though proprietary lock-in remained dominant in corporate sectors.",
+  "final_outcome_pro_pct": 42.0,
+  "final_outcome_against_pct": 58.0,
+  "final_turnout_pct": 82.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 15,
+      "against_pct": 70,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 20,
+      "against_pct": 65,
+      "undecided_pct": 15
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 28,
+      "against_pct": 60,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 35,
+      "against_pct": 55,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 42,
+      "against_pct": 50,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 40,
+      "against_pct": 52,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 38,
+      "against_pct": 55,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 40,
+      "against_pct": 56,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 42,
+      "against_pct": 58,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "Microsoft 'Get the Facts' campaign launched to counter Linux adoption."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Release of Ubuntu 4.10, which simplified Linux for non-technical users."
+    },
+    {
+      "round_equivalent": 6,
+      "description": "Major corporate enterprise contracts reaffirm Windows dominance."
+    }
+  ],
+  "calibration_notes": "Useful for assessing the 'tipping point' fallacy in technology adoption and proprietary lock-in."
+}

@@ -1,0 +1,137 @@
+{
+  "scenario_id": "CORP-2018-AMAZON_HQ2_NYC_BACKLASH_2018_2",
+  "topic": "CORP-2018-AMAZON_HQ2_NYC_BACKLASH_2018_2",
+  "domain": "corporate",
+  "country": "US",
+  "timeframe_start": "2018-11-13",
+  "timeframe_end": "2019-02-14",
+  "events": [
+    {
+      "date": "2018-11-13",
+      "description": "Amazon officially announced Long Island City, Queens, as one of the two locations for its new headquarters, sparking immediate local debate.",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEe9vFhpL4jZ7TmwuU7dR_mPWypAGtJL3qYxoUKAZo0VkFcXu3E3MrfYiMPapg1yj0a1ORKpvNwsObjTt6Ai7z1kCYVLB6O7MUNunD2k5tGXdCVV8jEOtfe7bB5PX-Pjygx2Iqjj0gvQA==",
+      "source_name": "Business Insider",
+      "confidence": 1.0,
+      "quantitative_detail": "50,000 jobs; $5 billion investment"
+    },
+    {
+      "date": "2018-11-13",
+      "description": "Public reports revealed that New York City and State officials offered Amazon approximately $3 billion in tax incentives to secure the deal.",
+      "shock_magnitude": 0.9,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHPHLsCjm76o7sPoNVCR-CYDlIyvRUAJOh04v-NjXO7zUaB0ocaFzb4iGSZ0gTsQ75lOqA5GJha1CitDPmKlPNBEtwoWxiaMh9fAJoyJ4QleBA4UZP0SeE9T0O8_8LesQuk_Q==",
+      "source_name": "The Guardian",
+      "confidence": 1.0,
+      "quantitative_detail": "$3 billion in incentives"
+    },
+    {
+      "date": "2018-11-27",
+      "description": "Local residents and activists held a town hall meeting in Queens to protest the lack of transparency and the potential impact on housing affordability.",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "CBS News",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2018-12-12",
+      "description": "Amazon executives testified before the New York City Council, facing intense questioning regarding labor practices and the use of public subsidies.",
+      "shock_magnitude": 0.6,
+      "shock_direction": -1,
+      "source_url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG5aAFAEvaItPCSjkJZimCepJWiRvFYeByiJ5y_IrPgdg22fgUk4k-I-sHyAk-Af9r_HuASImiqTt4wJtOoH3rUAuatPK-NZW-wu-ZmOUPDwH0-NlDsptEZTYBNTlemY-RWLvxWfoQVHOsc367XYBoAZeJMuo8HYEtDaNAUwNJNMnq69fz7Yi9MBbhdIJl-Nvi3BImnYYwfxaxxIbmEhaOmdXbOnSPcikhv",
+      "source_name": "Washington Post",
+      "confidence": 1.0,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2019-01-30",
+      "description": "New York State Senate Majority Leader Andrea Stewart-Cousins appointed vocal Amazon critic Senator Michael Gianaris to the Public Authorities Control Board, giving him potential veto power over the deal.",
+      "shock_magnitude": 0.7,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "City & State NY",
+      "confidence": 0.8,
+      "quantitative_detail": "N/A"
+    },
+    {
+      "date": "2019-02-14",
+      "description": "Amazon officially canceled its plans to build the Long Island City headquarters, citing opposition from local politicians and community members.",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1,
+      "source_url": "",
+      "source_name": "PBS",
+      "confidence": 0.8,
+      "quantitative_detail": "25,000 jobs (projected for NYC site)"
+    }
+  ],
+  "polls": [
+    {
+      "date": "2018-12-01",
+      "pro_pct": 57.0,
+      "sample_size": 1075,
+      "source": "Siena College Research Institute",
+      "methodology": "Survey of New York City voters"
+    },
+    {
+      "date": "2018-12-01",
+      "pro_pct": 60.0,
+      "sample_size": 1075,
+      "source": "Siena College Research Institute",
+      "methodology": "Survey of Queens voters"
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "Bill de Blasio",
+      "role": "Mayor of New York City",
+      "position": "He was a primary proponent of the deal, arguing that the headquarters would bring 25,000 jobs and significant economic growth to the city.",
+      "date": "2018-11-13",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Andrew Cuomo",
+      "role": "Governor of New York",
+      "position": "He strongly championed the Amazon project, framing it as a major victory for New York's economy and a testament to the state's competitiveness.",
+      "date": "2018-11-13",
+      "source": "AP News"
+    },
+    {
+      "name": "Alexandria Ocasio-Cortez",
+      "role": "U.S. Representative",
+      "position": "She emerged as a vocal critic, arguing that the $3 billion in public subsidies should have been invested in local infrastructure and education rather than a wealthy corporation.",
+      "date": "2018-11-13",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Jimmy Van Bramer",
+      "role": "New York City Council Member",
+      "position": "He opposed the deal, citing concerns over the lack of transparency in the negotiations and the negative impact of tax breaks on the local community.",
+      "date": "2018-11-13",
+      "source": "The Guardian"
+    },
+    {
+      "name": "Michael Gianaris",
+      "role": "New York State Senator",
+      "position": "He was a leading opponent who criticized the use of public funds for Amazon and questioned the company's labor practices and impact on housing affordability.",
+      "date": "2018-11-14",
+      "source": "Business Insider"
+    }
+  ],
+  "outcome_description": "Following intense public and political backlash regarding the $3 billion in tax incentives and concerns over gentrification, Amazon officially canceled its plans to build an HQ2 campus in Long Island City, Queens, in February 2019.",
+  "outcome_pro_pct": 57.0,
+  "outcome_source": "Siena College Research Institute (February 2019 poll showing 57% of New York voters supported the project, despite the vocal opposition that led to its cancellation)",
+  "key_figures": {
+    "voter_survey_sample_size": "1,075 New York City voters",
+    "nyc_voter_approval_rate": "57%",
+    "nyc_voter_opposition_rate": "26%",
+    "queens_voter_approval_rate": "60%",
+    "queens_voter_opposition_rate": "26%",
+    "proposed_tax_incentives": "$3 billion"
+  },
+  "n_sources_consulted": 6,
+  "research_timestamp": "2026-04-01T03:04:29.508785",
+  "quality_score": 85
+}

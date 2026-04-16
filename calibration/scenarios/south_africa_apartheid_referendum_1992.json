@@ -1,0 +1,83 @@
+{
+  "scenario_name": "south_africa_apartheid_referendum_1992",
+  "domain": "political",
+  "description": "A referendum held on March 17, 1992, for white South Africans to vote on whether to continue the negotiations to end apartheid. The 'Yes' vote resulted in a 68.7% majority for reform.",
+  "final_outcome_pro_pct": 68.7,
+  "final_outcome_against_pct": 31.3,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 50,
+      "against_pct": 30,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 52,
+      "against_pct": 32,
+      "undecided_pct": 16
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 55,
+      "against_pct": 33,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 58,
+      "against_pct": 34,
+      "undecided_pct": 8
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 60,
+      "against_pct": 35,
+      "undecided_pct": 5
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 62,
+      "against_pct": 34,
+      "undecided_pct": 4
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 64,
+      "against_pct": 33,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 66,
+      "against_pct": 32,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 68.7,
+      "against_pct": 31.3,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "President F.W. de Klerk announces the referendum to solidify his mandate."
+    },
+    {
+      "round_equivalent": 4,
+      "description": "Conservative party campaigns heavily against the 'surrender of power'."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "International community pressure mounts on white voters to choose reform."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Final results confirm an overwhelming mandate for change."
+    }
+  ],
+  "calibration_notes": "Ideal for modeling a referendum used as a tool to bypass parliamentary opposition and secure a public mandate for systemic change."
+}

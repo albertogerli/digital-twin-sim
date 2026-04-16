@@ -1,0 +1,53 @@
+[
+  {
+    "round": 1,
+    "description": "GameStop announced an agreement with activist investor Ryan Cohen and his firm, RC Ventures, to add him and two other e-commerce specialists to the board of directors.",
+    "shock_magnitude": 0.3,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 2,
+    "description": "Following the board announcement, GameStop stock experienced a significant surge, reaching an intraday high.",
+    "shock_magnitude": 0.5,
+    "shock_direction": 1,
+    "source": "",
+    "_sources": [],
+    "_verified": true
+  },
+  {
+    "round": 3,
+    "description": "Citron Research publicly criticized retail investors on Twitter, labeling them 'suckers' and predicting a sharp decline in the stock price.",
+    "shock_magnitude": 0.8,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcqsCvdSQ-No4csm_e2FexSQwU-nx5xWQrqjdcMlmRdB9yYJWkRfPvD-FT84tKmrD1t4VByGLbfo4KWcC2OkFPaXt5nv8VSZKpLm-u8lHzE8nwXkhbWSEtsGr5gEMKEDHKoiuuWGXc1svftl7tYXnfLtDyGc6c1ogvxR4lcUk95SOXaFKioZirMKhNgswh4v8GvwlkfuNQ2Nlnk2dwLx-iN9XU5VVfqjFuFwl-5S8-NzIzWXRvhTYv018csBz1u67n1Y8Tu9FbYBuAd_ElMs4y7oDxgoLpQlQ0-mfidOUCPj8npqaDVbEo6EEGfOxbDP7r8xBF1u-rvENCAGZW3Lq2TopfyQFgxA==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEcqsCvdSQ-No4csm_e2FexSQwU-nx5xWQrqjdcMlmRdB9yYJWkRfPvD-FT84tKmrD1t4VByGLbfo4KWcC2OkFPaXt5nv8VSZKpLm-u8lHzE8nwXkhbWSEtsGr5gEMKEDHKoiuuWGXc1svftl7tYXnfLtDyGc6c1ogvxR4lcUk95SOXaFKioZirMKhNgswh4v8GvwlkfuNQ2Nlnk2dwLx-iN9XU5VVfqjFuFwl-5S8-NzIzWXRvhTYv018csBz1u67n1Y8Tu9FbYBuAd_ElMs4y7oDxgoLpQlQ0-mfidOUCPj8npqaDVbEo6EEGfOxbDP7r8xBF1u-rvENCAGZW3Lq2TopfyQFgxA=="
+    ],
+    "_verified": true
+  },
+  {
+    "round": 5,
+    "description": "Trading platforms, most notably Robinhood, restricted the purchase of GameStop shares, sparking widespread public outrage and accusations of market manipulation.",
+    "shock_magnitude": 1.0,
+    "shock_direction": -1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE12DiBge-YA6P9GK1UQqv4_j8JRvk1OIy4dwUCWpQ52NdF1Da4bB_Mawd-PUfXEisTFXA1aNobjIwJsJICLM5YFXnZu3ZPh0XR0CW5Qi6T1SbameodieFEEtQ0a8iundrSdASkY2_6R8Kvc_U_T99S8CR9R8lClXtDm05lco2mIYcOP0_utSDf",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE12DiBge-YA6P9GK1UQqv4_j8JRvk1OIy4dwUCWpQ52NdF1Da4bB_Mawd-PUfXEisTFXA1aNobjIwJsJICLM5YFXnZu3ZPh0XR0CW5Qi6T1SbameodieFEEtQ0a8iundrSdASkY2_6R8Kvc_U_T99S8CR9R8lClXtDm05lco2mIYcOP0_utSDf"
+    ],
+    "_verified": true
+  },
+  {
+    "round": 6,
+    "description": "The U.S. House Committee on Financial Services held a hearing to investigate the GameStop short squeeze, bringing the conflict between retail investors and hedge funds into the federal spotlight.",
+    "shock_magnitude": 0.8,
+    "shock_direction": 1,
+    "source": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsI1HxPLI7IWrJFV9MKVLSMJTIqNHRUyEIAgdQ5VsOYUKtEE2bxC71I9VilWDMHMyqJsMgVF522dnAsX4ga-SA3V_irTWNp4-m2oVecK2CuPSz13HgEZy0J1cmjMJzjjlImxNCi0YS_keKzA-uDRqYImkGAjV9lFptq6jnA2QRjYdXuLlxll6M9h7YBgfKNRePuVo5vfstxyaqcRLL-ap2ZA==",
+    "_sources": [
+      "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEsI1HxPLI7IWrJFV9MKVLSMJTIqNHRUyEIAgdQ5VsOYUKtEE2bxC71I9VilWDMHMyqJsMgVF522dnAsX4ga-SA3V_irTWNp4-m2oVecK2CuPSz13HgEZy0J1cmjMJzjjlImxNCi0YS_keKzA-uDRqYImkGAjV9lFptq6jnA2QRjYdXuLlxll6M9h7YBgfKNRePuVo5vfstxyaqcRLL-ap2ZA=="
+    ],
+    "_verified": true
+  }
+]

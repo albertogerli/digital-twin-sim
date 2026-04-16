@@ -1,0 +1,79 @@
+{
+  "scenario_name": "activision_blizzard_lawsuit_2021",
+  "domain": "corporate",
+  "description": "The California Department of Fair Employment and Housing sued Activision Blizzard over allegations of a 'frat boy' workplace culture and systemic sexual harassment, triggering a massive wave of employee protests.",
+  "final_outcome_pro_pct": 85.0,
+  "final_outcome_against_pct": 15.0,
+  "final_turnout_pct": 88.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 20,
+      "against_pct": 10,
+      "undecided_pct": 70
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 40,
+      "against_pct": 15,
+      "undecided_pct": 45
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 60,
+      "against_pct": 20,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 75,
+      "against_pct": 18,
+      "undecided_pct": 7
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 80,
+      "against_pct": 17,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 82,
+      "against_pct": 16,
+      "undecided_pct": 2
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 84,
+      "against_pct": 16,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 85,
+      "against_pct": 15,
+      "undecided_pct": 0
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 85,
+      "against_pct": 15,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 2,
+      "description": "State of California files lawsuit detailing toxic workplace culture."
+    },
+    {
+      "round_equivalent": 3,
+      "description": "Hundreds of employees stage a walkout at Blizzard's Irvine campus."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Shareholders file a derivative lawsuit against the board of directors."
+    }
+  ],
+  "calibration_notes": "Useful for measuring the impact of regulatory intervention on corporate cultural reputation."
+}

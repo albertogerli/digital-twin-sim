@@ -1,0 +1,83 @@
+{
+  "scenario_name": "australia_china_free_trade_agreement_2014_2015",
+  "domain": "political",
+  "description": "The political debate surrounding the China-Australia Free Trade Agreement (ChAFTA), signed in 2015. The agreement sparked intense public concern regarding labor market competition and foreign ownership, creating a sharp polarization between business groups and unions.",
+  "final_outcome_pro_pct": 52.0,
+  "final_outcome_against_pct": 48.0,
+  "final_turnout_pct": 85.0,
+  "polling_trajectory": [
+    {
+      "round_equivalent": 1,
+      "pro_pct": 40,
+      "against_pct": 30,
+      "undecided_pct": 30
+    },
+    {
+      "round_equivalent": 2,
+      "pro_pct": 38,
+      "against_pct": 35,
+      "undecided_pct": 27
+    },
+    {
+      "round_equivalent": 3,
+      "pro_pct": 35,
+      "against_pct": 45,
+      "undecided_pct": 20
+    },
+    {
+      "round_equivalent": 4,
+      "pro_pct": 40,
+      "against_pct": 48,
+      "undecided_pct": 12
+    },
+    {
+      "round_equivalent": 5,
+      "pro_pct": 45,
+      "against_pct": 45,
+      "undecided_pct": 10
+    },
+    {
+      "round_equivalent": 6,
+      "pro_pct": 48,
+      "against_pct": 46,
+      "undecided_pct": 6
+    },
+    {
+      "round_equivalent": 7,
+      "pro_pct": 50,
+      "against_pct": 47,
+      "undecided_pct": 3
+    },
+    {
+      "round_equivalent": 8,
+      "pro_pct": 51,
+      "against_pct": 48,
+      "undecided_pct": 1
+    },
+    {
+      "round_equivalent": 9,
+      "pro_pct": 52,
+      "against_pct": 48,
+      "undecided_pct": 0
+    }
+  ],
+  "key_events": [
+    {
+      "round_equivalent": 3,
+      "description": "Construction, Forestry, Maritime, Mining and Energy Union launches anti-ChAFTA advertising campaign."
+    },
+    {
+      "round_equivalent": 5,
+      "description": "Government releases legal analysis refuting claims regarding visa sub-classes."
+    },
+    {
+      "round_equivalent": 7,
+      "description": "Labor Party reaches an agreement with the Government on side-letters for labor protections."
+    },
+    {
+      "round_equivalent": 9,
+      "description": "Parliament passes legislation implementing the agreement."
+    }
+  ],
+  "calibration_notes": "Exemplifies high polarization scenarios where union involvement causes a temporary dip in support before institutional compromise."
+}

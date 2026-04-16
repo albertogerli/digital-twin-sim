@@ -1,0 +1,43 @@
+# VERIFIED FACTS — Volkswagen emissions scandal (Dieselgate) — public trust in VW
+Domain: corporate | Country: Germany/USA/EU
+Period: 2014-05-15 to 2020-01-01
+
+## TIMELINE (verified events, chronological order):
+1. [2014-05-15] Researchers from West Virginia University and the ICCT publish a study revealing that VW diesel vehicles emit nitrogen oxides at levels significantly higher than lab results during real-world driving. [confidence: 80%]
+   Detail: 40 times higher
+   Source: cars.com
+2. [2015-09-18] The U.S. Environmental Protection Agency (EPA) issues a Notice of Violation to Volkswagen, publicly accusing the company of using 'defeat device' software to bypass emissions standards.
+   Detail: 482,000 vehicles
+   Source: wikipedia.org
+3. [2015-09-22] Volkswagen officially admits that the 'defeat device' software is installed in approximately 11 million vehicles worldwide, confirming the scale of the deception.
+   Detail: 11 million vehicles
+   Source: wikipedia.org
+4. [2015-09-23] Volkswagen CEO Martin Winterkorn resigns from his position, taking responsibility for the scandal while maintaining he was unaware of the specific wrongdoing.
+   Detail: N/A
+   Source: wikipedia.org
+5. [2016-06-28] Volkswagen reaches a massive settlement with U.S. regulators and vehicle owners, agreeing to pay billions to resolve claims related to the emissions cheating. [confidence: 80%]
+   Detail: $14.7 billion
+   Source: wikipedia.org
+6. [2020-01-01] Total financial impact of the scandal reaches a cumulative peak, reflecting the long-term cost of fines, legal settlements, and vehicle buybacks. [confidence: 80%]
+   Detail: $33 billion
+   Source: wikipedia.org
+
+## KEY FIGURES:
+- emissions_limit_exceedance: up to 40 times the legal limit
+- affected_vehicles_global: 11 million
+- initial_scandal_announcement_date: September 18, 2015
+- total_estimated_financial_cost: over $30 billion
+
+## KEY STAKEHOLDER POSITIONS:
+- Martin Winterkorn (CEO of Volkswagen AG): He issued a formal apology for breaking the trust of the public and customers, stating he was deeply sorry for the deception while initially claiming he was unaware of the wrongdoing.
+- Matthias Müller (CEO of Volkswagen AG (Successor)): He pledged to make Volkswagen a more honest, open, and modern company, emphasizing a cultural shift to regain public trust after the scandal.
+- Gina McCarthy (Administrator of the U.S. Environmental Protection Agency (EPA)): She condemned Volkswagen's actions as a direct threat to public health and a blatant violation of the Clean Air Act, stating the agency would hold the company accountable.
+
+## FINAL OUTCOME:
+While the scandal caused a severe initial collapse in brand reputation and public trust, Volkswagen successfully navigated the crisis through aggressive financial settlements and a strategic pivot toward electric vehicles, allowing the company to recover its market position and consumer standing over time.
+Pro %: 65.0% — Source: YouGov BrandIndex (Long-term recovery tracking)
+
+INSTRUCTION: Your narrative for each round MUST be consistent with
+these verified facts. Do NOT contradict dates, numbers, or outcomes.
+You MAY add narrative color, agent reactions, and social dynamics
+that are plausible given these facts.

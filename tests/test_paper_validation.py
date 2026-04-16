@@ -201,6 +201,11 @@ class TestPerScenario:
 class TestJAXSimulator:
     """Verify the JAX dynamics simulator produces consistent outputs."""
 
+    pytestmark = pytest.mark.skipif(
+        __import__("importlib").util.find_spec("jax") is None,
+        reason="jax not installed",
+    )
+
     def _make_scenario_data(self, n_agents=10, n_rounds=5, seed=42):
         """Helper to build ScenarioData with correct API."""
         from src.dynamics.opinion_dynamics_jax import ScenarioData, build_sparse_interaction

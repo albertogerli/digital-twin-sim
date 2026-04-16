@@ -27,6 +27,11 @@ jobs:
         env:
           DTS_API_KEYS: "ci-test-key"
           DTS_RATE_LIMIT_ENABLED: "false"
+          # CI runners are ~2-3× slower than dev machines; relax SLA budgets
+          DTS_SLA_DM: "15"
+          DTS_SLA_COVERAGE: "20"
+          DTS_SLA_BASELINES: "10"
+          DTS_SLA_RUNNER: "15"
         run: |
           pytest tests/ -v --tb=short -m "not slow" --cov=api --cov=core --cov-report=term-missing
 

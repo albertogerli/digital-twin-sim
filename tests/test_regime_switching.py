@@ -11,8 +11,10 @@ import json
 import os
 import sys
 
-import jax
-import jax.numpy as jnp
+import pytest
+
+jax = pytest.importorskip("jax")
+jnp = pytest.importorskip("jax.numpy")
 import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))

@@ -19,7 +19,10 @@ from __future__ import annotations
 import logging
 import math
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
+
+if TYPE_CHECKING:
+    from .market_context import MarketContext
 
 logger = logging.getLogger(__name__)
 
@@ -78,67 +81,62 @@ class SectorBeta:
 # - 2023 bank windfall tax (Aug 7-10)
 
 
-import json
-import os
+from .market_context import MarketContext as _MarketContext
+from .market_data import get_default_provider as _get_default_provider
+
 
 class UniverseLoader:
-    _instance = None
-    _universe = {}
-    
+    """DEPRECATED — thin backward-compat shim over `MarketContext`.
+
+    Historically a module-level singleton; now a trivial wrapper that
+    delegates to a process-wide default `MarketContext(geography="IT")`.
+    New code should construct and pass a `MarketContext` explicitly so
+    scenarios can target different geographies / data sources.
+    """
+
+    _instance: "UniverseLoader | None" = None
+
     def __new__(cls):
         if cls._instance is None:
-            cls._instance = super(UniverseLoader, cls).__new__(cls)
-            cls._instance._load()
+            cls._instance = super().__new__(cls)
+            cls._instance._context = _MarketContext(geography="IT")
         return cls._instance
-        
-    def _load(self):
-        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-        path = os.path.join(base_dir, "shared", "stock_universe.json")
-        try:
-            with open(path, "r") as f:
-                self._universe = json.load(f)
-        except Exception as e:
-            logger.error(f"Failed to load stock universe: {e}")
-            self._universe = {"sectors": {}, "stocks": [], "org_aliases": {}}
-            
+
     def get_beta(self, sector: str, regime: str = "default") -> SectorBeta:
-        s_data = self._universe.get("sectors", {}).get(sector, {})
-        betas = s_data.get("betas", {})
-        target = betas.get(regime) or betas.get("default", {})
-        return SectorBeta(
-            sector=sector,
-            political_beta=target.get("political_beta", 1.0),
-            spread_beta=target.get("spread_beta", 0.0),
-            crisis_alpha=target.get("crisis_alpha", 0.0),
-            volatility_multiplier=target.get("volatility_multiplier", 1.0)
-        )
-        
+        # Legacy callers pass regime="default" — honour it explicitly so the
+        # shim stays behaviourally identical to the old singleton. New code
+        # should go through MarketContext, which picks the geography regime
+        # automatically.
+        return self._context.get_beta(sector, regime=regime)
+
     def resolve_org(self, name: str) -> list[str]:
-        aliases = self._universe.get("org_aliases", {})
-        for k, v in aliases.items():
-            if k in name or name in k:
-                return v
-        return []
-        
+        return self._context.resolve_org(name)
+
     def tickers_for_sector(self, sector: str) -> list[dict]:
-        return [s for s in self._universe.get("stocks", []) if s.get("sector") == sector]
+        return self._context.tickers_for_sector(sector)
 
     def get_stock(self, ticker: str) -> dict | None:
-        """Look up a single stock by ticker symbol."""
-        for s in self._universe.get("stocks", []):
-            if s.get("ticker") == ticker:
-                return s
-        return None
+        return self._context.get_stock(ticker)
 
     def get_ticker_sector(self, ticker: str) -> str | None:
-        """Return the sector for a ticker, or None if not found."""
-        stock = self.get_stock(ticker)
-        return stock["sector"] if stock else None
+        return self._context.get_ticker_sector(ticker)
 
     @property
     def _data(self) -> dict:
-        """Raw universe data accessor."""
-        return self._universe
+        """Raw universe data accessor (legacy)."""
+        provider = _get_default_provider()
+        return {
+            "sectors": provider.sectors(),
+            "stocks": provider.stocks(),
+            "indices": provider.indices(),
+            "org_aliases": provider.org_aliases(),
+            "macro": provider.macro(),
+        }
+
+    @property
+    def _universe(self) -> dict:
+        """Legacy alias for _data."""
+        return self._data
 
 
 # ── Backward-compatible SECTOR_BETAS and TICKER_SECTOR ──────────────────────
@@ -384,6 +382,15 @@ class FinancialImpactReport:
     ftse_mib_impact_pct: float = 0.0
     btp_spread_impact_bps: int = 0
 
+    # Geography metadata — populated by the scorer from its MarketContext so
+    # the frontend can label the sovereign spread and local index correctly
+    # (BTP-Bund + FTSE MIB for IT, UST + S&P 500 for US, …).
+    geography: str = "IT"
+    beta_regime: str = "IT"
+    local_index_ticker: str = "FTSEMIB.MI"
+    local_index_label: str = "FTSE MIB"
+    sovereign_spread_name: str = "BTP-Bund"
+
     # Crisis metadata
     crisis_wave: int = 1
     contagion_risk: float = 0.0
@@ -473,8 +480,15 @@ class FinancialImpactReport:
             "ticker_impacts": enriched,     # legacy alias
             "sector_impacts": self.sector_impacts,
             "ftse_mib_impact_pct": round(self.ftse_mib_impact_pct, 2),
+            "local_index_impact_pct": round(self.ftse_mib_impact_pct, 2),  # geo-agnostic alias
+            "local_index_ticker": self.local_index_ticker,
+            "local_index_label": self.local_index_label,
             "btp_spread_bps": self.btp_spread_impact_bps,               # TS-aligned
             "btp_spread_impact_bps": self.btp_spread_impact_bps,        # legacy alias
+            "sovereign_spread_bps": self.btp_spread_impact_bps,         # geo-agnostic alias
+            "sovereign_spread_name": self.sovereign_spread_name,
+            "geography": self.geography,
+            "beta_regime": self.beta_regime,
             "crisis_wave": self.crisis_wave,
             "contagion_risk": round(self.contagion_risk, 3),
             "engagement_score": round(self.engagement_score, 3),
@@ -519,11 +533,24 @@ class FinancialImpactScorer:
         detected_topics: list[str] = None,
         detected_sectors: list[str] = None,
         llm=None,  # Optional BaseLLMClient for Flash Note generation
+        market: "MarketContext | None" = None,
+        relevant_universe=None,
     ):
         self.detected_topics = detected_topics or []
         self.detected_sectors = detected_sectors or []
         self.llm = llm
         self.impact_history: list[dict] = []
+        self.relevant_universe = relevant_universe
+        # Market context resolution order:
+        #   1. explicit `market` arg (new code, tests)
+        #   2. regime derived from `relevant_universe.beta_regime` (orchestrator)
+        #   3. default IT context (legacy calls, single-scenario scripts)
+        if market is not None:
+            self.market: _MarketContext = market
+        elif relevant_universe is not None and getattr(relevant_universe, "beta_regime", None):
+            self.market = _MarketContext(geography=relevant_universe.beta_regime)
+        else:
+            self.market = _MarketContext(geography="IT")
 
     def classify_crisis_scope(self) -> tuple[str, float, str]:
         """Classify whether this crisis is macro/systematic or micro/idiosyncratic.
@@ -592,6 +619,9 @@ class FinancialImpactScorer:
             active_agents: List of agent objects with .party_or_org and
                           optionally .affiliated_tickers for dynamic ticker resolution.
         """
+        # Cache for dashboard/summary — no behavioural effect yet.
+        self.relevant_universe = relevant_universe
+
         # ── Step 0: Crisis scope classification ────────────────────────
         crisis_scope, scope_confidence, scope_disclaimer = self.classify_crisis_scope()
 
@@ -618,9 +648,8 @@ class FinancialImpactScorer:
         # Add direct agent-ticker impacts (agents explicitly involved)
         for ticker, agent_source in agent_tickers.items():
             if not any(t.ticker == ticker for t in all_ticker_impacts):
-                target_stock = next((s for s in UniverseLoader()._universe.get("stocks", []) if s["ticker"] == ticker), None)
-                sector = target_stock["sector"] if target_stock else "unknown"
-                beta = UniverseLoader().get_beta(sector)
+                sector = self.market.get_ticker_sector(ticker) or "unknown"
+                beta = self.market.get_beta(sector)
                 impact = self._compute_ticker_impact(
                     ticker, sector, "short", base_intensity, beta, agent_source,
                 )
@@ -669,6 +698,11 @@ class FinancialImpactScorer:
             ticker_impacts=all_ticker_impacts,
             ftse_mib_impact_pct=round(ftse_impact, 2),
             btp_spread_impact_bps=btp_spread,
+            geography=self.market.geography,
+            beta_regime=self.market.beta_regime,
+            local_index_ticker=self.market.local_index.ticker,
+            local_index_label=self.market.local_index.label,
+            sovereign_spread_name=self.market.sovereign.spread_name,
             crisis_wave=active_wave,
             contagion_risk=contagion_risk,
             engagement_score=engagement_score,
@@ -778,7 +812,7 @@ class FinancialImpactScorer:
 
         # SHORT leg: sectors that lose
         for sector_key in pair_config["short"]:
-            beta_data = UniverseLoader().get_beta(sector_key)
+            beta_data = self.market.get_beta(sector_key)
 
             # Find tickers for this sector
             sector_tickers = self._tickers_for_sector(sector_key, agent_tickers)
@@ -791,7 +825,7 @@ class FinancialImpactScorer:
 
         # LONG leg: sectors that benefit
         for sector_key in pair_config["long"]:
-            beta_data = UniverseLoader().get_beta(sector_key)
+            beta_data = self.market.get_beta(sector_key)
 
             sector_tickers = self._tickers_for_sector(sector_key, agent_tickers)
             for ticker in sector_tickers[:2]:  # max 2 per long sector
@@ -895,13 +929,11 @@ class FinancialImpactScorer:
         """Get tickers for a sector, preferring agent-sourced ones."""
         # Agent tickers in this sector (highest priority)
         agent_in_sector = [
-            t for t, _ in agent_tickers.items()
-            if TICKER_SECTOR.get(t) == sector_key
+            t for t in agent_tickers
+            if self.market.get_ticker_sector(t) == sector_key
         ]
         # All known tickers for sector (fallback)
-        all_in_sector = [
-            t for t, s in TICKER_SECTOR.items() if s == sector_key
-        ]
+        all_in_sector = [s["ticker"] for s in self.market.tickers_for_sector(sector_key)]
         # Agent tickers first, then fill with other known tickers
         result = list(agent_in_sector)
         for t in all_in_sector:
@@ -912,40 +944,25 @@ class FinancialImpactScorer:
     def _compute_ftse_impact(
         self, ticker_impacts: list[TickerImpact], intensity: float,
     ) -> float:
-        """Estimate broad FTSE MIB impact."""
+        """Estimate broad local-index impact (FTSE MIB for IT, S&P 500 for US, …).
+
+        Delegates to the MarketContext's `LocalIndexModel` so the aggregation
+        (weighted shorts + long offset) uses the geography's calibrated cap.
+        """
         if not ticker_impacts:
             return 0.0
-        # Weighted average of short impacts (shorts dominate broad index)
-        shorts = [t for t in ticker_impacts if t.direction == "short"]
-        longs = [t for t in ticker_impacts if t.direction == "long"]
-        if not shorts:
-            return 0.0
-
-        avg_short = sum(t.t1_pct for t in shorts) / len(shorts)
-        # Broad market moves ~30% of worst-hit sectors
-        ftse = avg_short * 0.3
-        # Longs partially offset (diversification)
-        if longs:
-            avg_long = sum(t.t1_pct for t in longs) / len(longs)
-            ftse += avg_long * 0.1  # small positive offset
-        return max(-8.0, min(0.0, ftse))  # Raised cap for fat tails
+        short_moves = [t.t1_pct for t in ticker_impacts if t.direction == "short"]
+        long_moves = [t.t1_pct for t in ticker_impacts if t.direction == "long"]
+        return self.market.local_index_impact_pct(short_moves, long_moves)
 
     def _compute_btp_spread(self, intensity: float) -> int:
-        """BTP-Bund spread impact in basis points."""
-        political_topics = {
-            "fiscal_policy", "premierato", "eu_integration",
-            "autonomia_differenziata",
-        }
-        is_political = bool(set(self.detected_topics) & political_topics)
-        if not is_political:
-            # Non-political crises: minimal spread impact
-            return int(intensity * 3)  # max ~12bps
+        """Sovereign-spread impact in basis points for this geography.
 
-        # Political crises: BTP sensitivity is well-documented
-        # 2018 budget: ~250bps over 3 months at severe intensity (~3.5)
-        # 2022 Draghi: ~30bps in 1 week at moderate intensity (~1.5)
-        bps = int(self.BTP_SENSITIVITY_BPS_PER_UNIT * intensity)
-        return min(120, bps)  # Cap at 120bps (anything more needs a full sovereign crisis)
+        The method name is kept for backward compatibility with external
+        callers; it now delegates to the MarketContext's SovereignSpreadModel
+        (BTP-Bund for IT, UST for US, EM sovereign for EM, etc.).
+        """
+        return self.market.sovereign_spread_bps(intensity, self.detected_topics)
 
     def _classify_warning(self, intensity: float, cri: float) -> str:
         """Market volatility warning classification."""
@@ -1085,106 +1102,26 @@ class FinancialImpactScorer:
             return report.headline
 
     def get_sector_summary(self) -> dict:
-        """Quick summary for dashboard."""
-        return {
-            "detected_topics": self.detected_topics,
-            "detected_sectors": self.detected_sectors,
-            "sector_betas": {
-                k: {"beta": v.political_beta, "spread_beta": v.spread_beta,
-                     "defensive": v.is_defensive}
-                for k, v in SECTOR_BETAS.items()
-            },
-        }
+        """Quick summary for dashboard.
 
-    # ── LLM Analyst Flash Note ────────────────────────────────────────────
-
-    async def generate_flash_note(
-        self,
-        report: FinancialImpactReport,
-        crisis_brief: str = "",
-        round_num: int = 0,
-    ) -> str:
-        """Generate a Goldman Sachs-style Flash Note via LLM.
-
-        Call this AFTER score_round() with the returned report.
-        Falls back to report.headline if LLM is unavailable.
+        Uses this scorer's bound MarketContext as the source of truth for
+        the active beta regime (e.g. "IT", "US"). Legacy `SECTOR_BETAS`
+        still drives the dict shape for backward compat, but the regime
+        reflects what the scorer actually used to compute impacts.
         """
-        if not self.llm:
-            return report.headline
-
-        # Build the raw data payload for the LLM
-        data_payload = {
-            "round": round_num,
-            "crisis_brief": crisis_brief[:300],
-            "warning_level": report.market_volatility_warning,
-            "engagement_score": report.engagement_score,
-            "contagion_risk": report.contagion_risk,
-            "crisis_wave": report.crisis_wave,
-            "ftse_mib_impact_pct": report.ftse_mib_impact_pct,
-            "btp_spread_impact_bps": report.btp_spread_impact_bps,
-            "pair_trades": [
-                {
-                    "topic": pt.topic,
-                    "short": [f"{t.ticker} {t.short_term_pct:+.1f}% (β={t.beta:.1f})" for t in pt.short_leg[:3]],
-                    "long": [f"{t.ticker} {t.short_term_pct:+.1f}% (β={t.beta:.1f})" for t in pt.long_leg[:3]],
-                }
-                for pt in report.pair_trades[:3]
-            ],
-            "crisis_scope": report.crisis_scope,
-            "top_shorts": [
-                f"{t.ticker} ({t.sector}): T+1={t.t1_pct:+.1f}% T+3={t.t3_pct:+.1f}% T+7={t.t7_pct:+.1f}%"
-                for t in sorted(report.ticker_impacts, key=lambda x: x.t1_pct)[:5]
-            ],
-            "top_longs": [
-                f"{t.ticker} ({t.sector}): T+1={t.t1_pct:+.1f}%"
-                for t in sorted(
-                    [ti for ti in report.ticker_impacts if ti.direction == "long"],
-                    key=lambda x: -x.t1_pct,
-                )
-            ][:3],
-        }
-
-        system_prompt = (
-            "You are a sell-side equity strategist at a top-tier investment bank "
-            "(Goldman Sachs / JP Morgan) covering Italian & European markets. "
-            "You write Flash Notes for institutional traders and portfolio managers. "
-            "Your tone is precise, data-driven, and actionable. "
-            "Never use emojis. Use standard market terminology."
-        )
-
-        prompt = (
-            f"Based on the following real-time crisis simulation data from our "
-            f"Digital Twin platform, write a 3-line Flash Note.\n\n"
-            f"DATA:\n```json\n{data_payload}\n```\n\n"
-            f"FORMAT (exactly 3 lines):\n"
-            f"Line 1: Market sentiment + key risk (1 sentence)\n"
-            f"Line 2: Actionable trade recommendation with specific tickers\n"
-            f"Line 3: Tail risk warning + catalyst to watch\n\n"
-            f"Write in English. Be specific about tickers and basis points. "
-            f"Include beta-adjusted expected moves where relevant."
-        )
-
-        try:
-            note = await self.llm.generate_text(
-                prompt=prompt,
-                system_prompt=system_prompt,
-                temperature=0.4,
-                max_output_tokens=300,
-                component="financial_flash_note",
-            )
-            return note.strip()
-        except Exception as e:
-            logger.warning(f"LLM Flash Note generation failed: {e}")
-            return report.headline
-
-    def get_sector_summary(self) -> dict:
-        """Quick summary for dashboard."""
-        ru = self.relevant_universe
-        beta_regime = ru.beta_regime if ru else "IT"
         return {
+            "geography": self.market.geography,
+            "beta_regime": self.market.beta_regime,
             "detected_topics": self.detected_topics,
             "detected_sectors": self.detected_sectors,
-            "beta_regime": beta_regime,
+            "local_index": {
+                "ticker": self.market.local_index.ticker,
+                "label": self.market.local_index.label,
+            },
+            "sovereign_spread": {
+                "name": self.market.sovereign.spread_name,
+                "sensitivity_bps_per_unit": self.market.sovereign.sensitivity_bps_per_unit,
+            },
             "sector_betas": {
                 k: {"beta": v.political_beta, "spread_beta": v.spread_beta,
                      "defensive": v.is_defensive}

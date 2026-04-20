@@ -319,5 +319,79 @@
     "lega": [], "forza italia": [], "azione": [], "italia viva": [],
     "cdp": [], "rai": [], "barilla": [], "ferrero": [], "lavazza": [], "de cecco": [],
     "edison": [], "ducati": [], "autostrade per l'italia": [], "aeroporti di roma": [], "chiesi": []
+  },
+  "macro": {
+    "default": {
+      "beta_regime": "default",
+      "local_index": { "ticker": "^STOXX50E", "label": "Euro Stoxx 50", "base_move_pct_per_unit": 0.5, "cap_abs_pct": 8.0 },
+      "sovereign": {
+        "spread_name": "Sovereign spread",
+        "spread_unit": "bps",
+        "sensitivity_bps_per_unit": 20,
+        "non_political_sensitivity_bps_per_unit": 3,
+        "cap_bps": 100,
+        "political_topics": ["fiscal_policy", "eu_integration"]
+      }
+    },
+    "IT": {
+      "beta_regime": "IT",
+      "local_index": { "ticker": "FTSEMIB.MI", "label": "FTSE MIB", "base_move_pct_per_unit": 0.5, "cap_abs_pct": 8.0 },
+      "sovereign": {
+        "spread_name": "BTP-Bund",
+        "spread_unit": "bps",
+        "sensitivity_bps_per_unit": 35,
+        "non_political_sensitivity_bps_per_unit": 3,
+        "cap_bps": 120,
+        "political_topics": ["fiscal_policy", "premierato", "eu_integration", "autonomia_differenziata"]
+      }
+    },
+    "US": {
+      "beta_regime": "US",
+      "local_index": { "ticker": "^GSPC", "label": "S&P 500", "base_move_pct_per_unit": 0.4, "cap_abs_pct": 6.0 },
+      "sovereign": {
+        "spread_name": "UST 10Y vs IG",
+        "spread_unit": "bps",
+        "sensitivity_bps_per_unit": 15,
+        "non_political_sensitivity_bps_per_unit": 2,
+        "cap_bps": 80,
+        "political_topics": ["fiscal_policy", "trade_war", "tech_regulation", "central_bank_hawkish"]
+      }
+    },
+    "EU": {
+      "beta_regime": "default",
+      "local_index": { "ticker": "^STOXX50E", "label": "Euro Stoxx 50", "base_move_pct_per_unit": 0.45, "cap_abs_pct": 7.0 },
+      "sovereign": {
+        "spread_name": "Peripheral-Bund",
+        "spread_unit": "bps",
+        "sensitivity_bps_per_unit": 22,
+        "non_political_sensitivity_bps_per_unit": 3,
+        "cap_bps": 100,
+        "political_topics": ["fiscal_policy", "eu_integration", "trade_war"]
+      }
+    },
+    "GB": {
+      "beta_regime": "default",
+      "local_index": { "ticker": "^FTSE", "label": "FTSE 100", "base_move_pct_per_unit": 0.4, "cap_abs_pct": 6.0 },
+      "sovereign": {
+        "spread_name": "Gilt spread",
+        "spread_unit": "bps",
+        "sensitivity_bps_per_unit": 25,
+        "non_political_sensitivity_bps_per_unit": 3,
+        "cap_bps": 120,
+        "political_topics": ["fiscal_policy", "eu_integration", "central_bank_hawkish"]
+      }
+    },
+    "EM": {
+      "beta_regime": "EM",
+      "local_index": { "ticker": "^BVSP", "label": "Bovespa", "base_move_pct_per_unit": 0.6, "cap_abs_pct": 10.0 },
+      "sovereign": {
+        "spread_name": "EM sovereign spread",
+        "spread_unit": "bps",
+        "sensitivity_bps_per_unit": 45,
+        "non_political_sensitivity_bps_per_unit": 5,
+        "cap_bps": 250,
+        "political_topics": ["fiscal_policy", "currency_crisis", "commodity_shock", "eu_integration"]
+      }
+    }
   }
 }

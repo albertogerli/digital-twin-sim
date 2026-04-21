@@ -323,13 +323,12 @@ class SimulationSetup:
                 parts = []
                 if snap.vix is not None:
                     parts.append(f"VIX={snap.vix:.2f}")
-                if snap.ust_10y_pct is not None:
-                    parts.append(f"UST10Y={snap.ust_10y_pct:.2f}%")
+                if snap.us_ig_oas_bps is not None:
+                    parts.append(f"US-IG-OAS={snap.us_ig_oas_bps:.0f}bps")
                 if snap.btp_bund_spread_bps is not None:
-                    parts.append(
-                        f"BTP-Bund={snap.btp_bund_spread_bps:.1f}bps "
-                        f"(ECB {snap.it_10y_as_of})"
-                    )
+                    parts.append(f"BTP-Bund={snap.btp_bund_spread_bps:.1f}bps")
+                if snap.gilt_bund_spread_bps is not None:
+                    parts.append(f"Gilt-Bund={snap.gilt_bund_spread_bps:.1f}bps")
                 print("  ├─ Live market snapshot: " + ", ".join(parts) + "  ✓")
             else:
                 print("  ├─ Market snapshot: static priors (live fetch unavailable)")

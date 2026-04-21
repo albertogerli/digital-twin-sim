@@ -84,6 +84,20 @@ _ECB_AAA_10Y_KEY = "YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_10Y"   # daily AAA 10Y spot
 _ECB_IT_10Y_LTIR_KEY = "IRS/M.IT.L.L40.CI.0000.EUR.N.Z"    # monthly IT 10Y
 _ECB_DE_10Y_LTIR_KEY = "IRS/M.DE.L.L40.CI.0000.EUR.N.Z"    # monthly DE 10Y
 
+# FRED public CSV endpoint — no API key for this pattern, same one the
+# fredgraph.csv export uses. Rate-limited but plenty for our use case.
+#
+# BAMLC0A0CM = ICE BofA US Corporate Index OAS (daily, in percent).
+#              This IS the US IG credit spread the sovereign regression
+#              trains on (not the UST yield itself — corpus events like
+#              2011 debt ceiling had base_spread_bps≈50, i.e. 50 bps of
+#              IG OAS, not 50 bps of 10Y yield).
+# IRLTLT01GBM156N = UK 10Y long-term interest rate (monthly, percent).
+#                   Used with DE 10Y LTIR to compute gilt-Bund spread.
+_FRED_CSV_ROOT = "https://fred.stlouisfed.org/graph/fredgraph.csv"
+_FRED_US_IG_OAS_SERIES = "BAMLC0A0CM"
+_FRED_GB_10Y_SERIES = "IRLTLT01GBM156N"
+
 
 @dataclass(frozen=True)
 class LiveMarketSnapshot:
@@ -107,6 +121,12 @@ class LiveMarketSnapshot:
     de_10y_pct: Optional[float] = None       # Monthly DE 10Y LTIR (percent)
     de_10y_as_of: Optional[str] = None
 
+    # ── FRED leg (US IG OAS daily + UK LTIR monthly) ───────────────────
+    us_ig_oas_pct: Optional[float] = None    # ICE BofA US Corp OAS (percent)
+    us_ig_oas_as_of: Optional[str] = None    # Daily ISO date
+    gb_10y_pct: Optional[float] = None       # UK 10Y LTIR (percent, monthly)
+    gb_10y_as_of: Optional[str] = None
+
     # ── Common metadata ────────────────────────────────────────────────
     fetched_at: float = 0.0
     errors: dict[str, str] = field(default_factory=dict)
@@ -114,10 +134,24 @@ class LiveMarketSnapshot:
     # ── Derived ────────────────────────────────────────────────────────
     @property
     def btp_bund_spread_bps(self) -> Optional[float]:
-        """IT − DE 10Y LTIR spread in basis points (live ECB data)."""
+        """IT − DE 10Y LTIR spread in basis points (ECB monthly)."""
         if self.it_10y_pct is None or self.de_10y_pct is None:
             return None
         return round((self.it_10y_pct - self.de_10y_pct) * 100, 1)
+
+    @property
+    def gilt_bund_spread_bps(self) -> Optional[float]:
+        """GB − DE 10Y LTIR spread in basis points (FRED + ECB monthly)."""
+        if self.gb_10y_pct is None or self.de_10y_pct is None:
+            return None
+        return round((self.gb_10y_pct - self.de_10y_pct) * 100, 1)
+
+    @property
+    def us_ig_oas_bps(self) -> Optional[float]:
+        """US IG corporate OAS in basis points (FRED daily)."""
+        if self.us_ig_oas_pct is None:
+            return None
+        return round(self.us_ig_oas_pct * 100, 1)
 
     @property
     def is_fresh(self) -> bool:
@@ -196,6 +230,10 @@ class _SnapshotCache:
             "it_10y_as_of": snapshot.it_10y_as_of,
             "de_10y_pct": snapshot.de_10y_pct,
             "de_10y_as_of": snapshot.de_10y_as_of,
+            "us_ig_oas_pct": snapshot.us_ig_oas_pct,
+            "us_ig_oas_as_of": snapshot.us_ig_oas_as_of,
+            "gb_10y_pct": snapshot.gb_10y_pct,
+            "gb_10y_as_of": snapshot.gb_10y_as_of,
             "fetched_at": snapshot.fetched_at,
             "errors": snapshot.errors,
         }
@@ -259,6 +297,78 @@ def _ecb_fetch_csv(series_key: str, last_n: int = 1) -> list[tuple[str, float]]:
     if not out:
         raise RuntimeError(f"parsed 0 rows for {series_key}")
     return out
+
+
+def _fred_fetch_last(series_id: str) -> Optional[tuple[str, float]]:
+    """Fetch the last observation from a FRED series via the public CSV
+    endpoint. Returns (date_iso, value) or None on any failure.
+
+    FRED's fredgraph.csv endpoint is open and doesn't require an API key
+    for direct CSV export; it serves the full series every call so we
+    tail locally. We pass `cosd` (closest to today) far enough back to
+    catch monthly series (~4 months) but close enough to stay lightweight.
+    """
+    import httpx
+    from datetime import datetime, timedelta
+
+    cosd = (datetime.utcnow() - timedelta(days=120)).strftime("%Y-%m-%d")
+    url = _FRED_CSV_ROOT
+    resp = httpx.get(
+        url,
+        params={"id": series_id, "cosd": cosd},
+        timeout=_FETCH_TIMEOUT_SEC,
+        follow_redirects=True,
+    )
+    resp.raise_for_status()
+    body = resp.text
+
+    lines = [ln for ln in body.splitlines() if ln.strip()]
+    if len(lines) < 2:
+        return None
+
+    # FRED CSV format: "observation_date,<series_id>" or "DATE,<series_id>"
+    # The last row with a numeric value wins (FRED sometimes pads with
+    # empty values at the leading edge for mixed-frequency series).
+    last: Optional[tuple[str, float]] = None
+    for line in lines[1:]:
+        parts = line.split(",")
+        if len(parts) < 2:
+            continue
+        date, raw = parts[0].strip(), parts[1].strip()
+        if not raw or raw == ".":
+            continue
+        try:
+            last = (date, float(raw))
+        except ValueError:
+            continue
+    return last
+
+
+def _fetch_fred_snapshot() -> dict:
+    """Pull FRED US IG OAS (daily) + UK 10Y LTIR (monthly). Partial
+    failures don't poison the rest."""
+    out = {
+        "us_ig_oas_pct": None, "us_ig_oas_as_of": None,
+        "gb_10y_pct": None, "gb_10y_as_of": None,
+    }
+    errors: dict[str, str] = {}
+
+    for series, field_val, field_asof in (
+        (_FRED_US_IG_OAS_SERIES, "us_ig_oas_pct", "us_ig_oas_as_of"),
+        (_FRED_GB_10Y_SERIES, "gb_10y_pct", "gb_10y_as_of"),
+    ):
+        try:
+            result = _fred_fetch_last(series)
+            if result is None:
+                errors[series] = "empty_response"
+                continue
+            tp, val = result
+            out[field_val] = val
+            out[field_asof] = tp
+        except Exception as e:
+            errors[series] = str(e)[:120]
+
+    return {"values": out, "errors": errors}
 
 
 def _fetch_ecb_snapshot() -> dict:
@@ -339,10 +449,11 @@ def _fetch_yfinance_snapshot() -> dict:
 
 
 def _fetch_snapshot_sync() -> LiveMarketSnapshot:
-    """Combined fetch: yfinance + ECB, running them on parallel threads
-    so total wall time ≈ max(yf_time, ecb_time) instead of sum."""
+    """Combined fetch: yfinance + ECB + FRED in parallel. Total wall time
+    ≈ max(t_yf, t_ecb, t_fred) instead of sum."""
     yf_result: list[dict] = []
     ecb_result: list[dict] = []
+    fred_result: list[dict] = []
 
     def _yf_worker():
         try:
@@ -356,21 +467,33 @@ def _fetch_snapshot_sync() -> LiveMarketSnapshot:
         except Exception as e:
             ecb_result.append({"values": {}, "errors": {"_ecb_worker": str(e)[:80]}})
 
-    t_yf = threading.Thread(target=_yf_worker, daemon=True)
-    t_ecb = threading.Thread(target=_ecb_worker, daemon=True)
-    t_yf.start()
-    t_ecb.start()
-    t_yf.join(timeout=_FETCH_TIMEOUT_SEC)
-    t_ecb.join(timeout=_FETCH_TIMEOUT_SEC)
+    def _fred_worker():
+        try:
+            fred_result.append(_fetch_fred_snapshot())
+        except Exception as e:
+            fred_result.append({"values": {}, "errors": {"_fred_worker": str(e)[:80]}})
+
+    threads = [
+        threading.Thread(target=_yf_worker, daemon=True),
+        threading.Thread(target=_ecb_worker, daemon=True),
+        threading.Thread(target=_fred_worker, daemon=True),
+    ]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(timeout=_FETCH_TIMEOUT_SEC)
 
     yf_vals = (yf_result[0]["values"] if yf_result else {}) or {}
     yf_errs = (yf_result[0]["errors"] if yf_result else {"_yf_timeout": "no_result"}) or {}
     ecb_vals = (ecb_result[0]["values"] if ecb_result else {}) or {}
     ecb_errs = (ecb_result[0]["errors"] if ecb_result else {"_ecb_timeout": "no_result"}) or {}
+    fred_vals = (fred_result[0]["values"] if fred_result else {}) or {}
+    fred_errs = (fred_result[0]["errors"] if fred_result else {"_fred_timeout": "no_result"}) or {}
 
     errors: dict[str, str] = {}
     errors.update(yf_errs)
     errors.update(ecb_errs)
+    errors.update(fred_errs)
 
     return LiveMarketSnapshot(
         vix=yf_vals.get("vix"),
@@ -382,6 +505,10 @@ def _fetch_snapshot_sync() -> LiveMarketSnapshot:
         it_10y_as_of=ecb_vals.get("it_10y_as_of"),
         de_10y_pct=ecb_vals.get("de_10y_pct"),
         de_10y_as_of=ecb_vals.get("de_10y_as_of"),
+        us_ig_oas_pct=fred_vals.get("us_ig_oas_pct"),
+        us_ig_oas_as_of=fred_vals.get("us_ig_oas_as_of"),
+        gb_10y_pct=fred_vals.get("gb_10y_pct"),
+        gb_10y_as_of=fred_vals.get("gb_10y_as_of"),
         fetched_at=time.time(),
         errors=errors,
     )
@@ -503,14 +630,23 @@ class YFinanceProvider:
             else:
                 sov["_vix_source"] = "static_prior"
 
-            # ── US 10Y from ^TNX ─────────────────────────────────────
-            if geo == "US" and snap and snap.ust_10y_pct is not None:
-                sov["base_spread_bps"] = round(snap.ust_10y_pct * 100, 1)
-                sov["_spread_source"] = "yfinance:^TNX"
+            # ── US: IG credit spread (corpus metric, NOT ^TNX yield) ─
+            # Previous version wrote ^TNX×100 here (UST yield in bps),
+            # which pushed inference far outside the regression's
+            # training distribution — corpus events had base_spread_bps
+            # in the 50-200 range (IG OAS), not 400+ (yield level).
+            # Fixed by pulling FRED BAMLC0A0CM (ICE BofA US Corp OAS).
+            if geo == "US" and snap and snap.us_ig_oas_bps is not None:
+                sov["base_spread_bps"] = snap.us_ig_oas_bps
+                sov["_spread_source"] = f"fred:BAMLC0A0CM({snap.us_ig_oas_as_of})"
                 sov["_spread_fetched_at"] = snap.fetched_at
-                sov["_spread_as_of"] = "realtime"
+                sov["_spread_as_of"] = snap.us_ig_oas_as_of
+                if snap.ust_10y_pct is not None:
+                    # Keep UST 10Y as auxiliary metadata (useful for the
+                    # pitch deck / dashboard; NOT fed to the regression).
+                    sov["_ust_10y_pct"] = snap.ust_10y_pct
 
-            # ── IT BTP-Bund spread from ECB (IT − DE) ────────────────
+            # ── IT: BTP-Bund spread from ECB (IT − DE) ───────────────
             elif geo == "IT" and snap and snap.btp_bund_spread_bps is not None:
                 sov["base_spread_bps"] = snap.btp_bund_spread_bps
                 sov["_spread_source"] = (
@@ -524,11 +660,23 @@ class YFinanceProvider:
                     sov["_eu_aaa_10y_pct"] = snap.ecb_aaa_10y_pct
                     sov["_eu_aaa_as_of"] = snap.ecb_aaa_as_of
 
-            # ── EU block: attach the ECB AAA daily yield as reference ─
+            # ── GB: gilt-Bund spread (UK 10Y − DE 10Y) ───────────────
+            elif geo == "GB" and snap and snap.gilt_bund_spread_bps is not None:
+                sov["base_spread_bps"] = snap.gilt_bund_spread_bps
+                sov["_spread_source"] = (
+                    f"fred+ecb_monthly:GB({snap.gb_10y_as_of})-DE({snap.de_10y_as_of})"
+                )
+                sov["_spread_fetched_at"] = snap.fetched_at
+                sov["_spread_as_of"] = snap.gb_10y_as_of
+                sov["_gb_10y_pct"] = snap.gb_10y_pct
+                sov["_de_10y_pct"] = snap.de_10y_pct
+
+            # ── EU block: attach ECB AAA daily yield as reference ────
             elif geo == "EU" and snap and snap.ecb_aaa_10y_pct is not None:
-                # EU block carries AAA daily as its live benchmark; static
-                # base_spread_bps prior stays as the portfolio-weighted
-                # estimate (no free daily EA-wide spread index exists).
+                # No free daily EA-wide peripheral-Bund spread index
+                # exists. Keep static prior for base_spread_bps, but
+                # carry the AAA daily benchmark so consumers can build
+                # their own euro-area rate signals if needed.
                 sov["_spread_source"] = "static_prior"
                 sov["_eu_aaa_10y_pct"] = snap.ecb_aaa_10y_pct
                 sov["_eu_aaa_as_of"] = snap.ecb_aaa_as_of

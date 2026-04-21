@@ -6,76 +6,90 @@ import pytest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from core.orchestrator.market_context import MarketContext
 from core.orchestrator.ticker_relevance import (
-    UniverseLoader,
     TickerRelevanceScorer,
     RelevantUniverse,
 )
 
 
-class TestUniverseLoader:
+class TestMarketContext:
+    """MarketContext + StaticUniverseProvider replaces the legacy
+    UniverseLoader singleton. These tests guard the same invariants."""
+
     def test_loads_universe(self):
-        loader = UniverseLoader()
-        assert len(loader._data["stocks"]) >= 150
-        assert len(loader._data["indices"]) >= 10
-        assert len(loader._data["sectors"]) >= 14
+        ctx = MarketContext(geography="IT")
+        provider = ctx.provider
+        assert len(provider.stocks()) >= 150
+        assert len(provider.indices()) >= 10
+        assert len(provider.sectors()) >= 14
 
     def test_get_beta_it_regime(self):
-        loader = UniverseLoader()
-        beta = loader.get_beta("banking", "IT")
+        ctx = MarketContext(geography="IT")
+        beta = ctx.get_beta("banking", regime="IT")
         assert beta.political_beta == 1.85
         assert beta.crisis_alpha == -3.2
 
     def test_get_beta_us_regime(self):
-        loader = UniverseLoader()
-        beta = loader.get_beta("banking", "US")
+        ctx = MarketContext(geography="IT")
+        beta = ctx.get_beta("banking", regime="US")
         assert beta.political_beta == 1.10
 
     def test_get_beta_fallback_to_default(self):
-        loader = UniverseLoader()
-        beta = loader.get_beta("banking", "NONEXISTENT")
+        ctx = MarketContext(geography="IT")
+        beta = ctx.get_beta("banking", regime="NONEXISTENT")
         assert beta.political_beta == 1.20  # default regime
 
-    def test_resolve_org_exact(self):
-        loader = UniverseLoader()
-        assert loader.resolve_org("apple") == ["AAPL"]
-        assert loader.resolve_org("unicredit") == ["UCG.MI"]
+    def test_context_regime_tracks_geography(self):
+        """MarketContext(geography='US') should resolve betas under US regime
+        without the caller passing `regime=` explicitly — that's the whole
+        point of binding a geography to a context."""
+        us_ctx = MarketContext(geography="US")
+        beta = us_ctx.get_beta("banking")
+        assert beta.political_beta == 1.10
 
-    def test_resolve_org_case_insensitive(self):
-        loader = UniverseLoader()
-        # resolve_org expects lowered input per _resolve_tickers_for_org
-        assert loader.resolve_org("apple") == ["AAPL"]
+    def test_resolve_org_exact(self):
+        ctx = MarketContext(geography="IT")
+        assert ctx.resolve_org("apple") == ["AAPL"]
+        assert ctx.resolve_org("unicredit") == ["UCG.MI"]
 
     def test_resolve_org_partial(self):
-        loader = UniverseLoader()
-        # "eni" should match
-        assert "ENI.MI" in loader.resolve_org("eni")
+        ctx = MarketContext(geography="IT")
+        assert "ENI.MI" in ctx.resolve_org("eni")
 
     def test_resolve_org_no_match(self):
-        loader = UniverseLoader()
-        assert loader.resolve_org("nonexistentcorp") == []
+        ctx = MarketContext(geography="IT")
+        assert ctx.resolve_org("nonexistentcorp") == []
 
     def test_tickers_for_sector(self):
-        loader = UniverseLoader()
-        banking = loader.tickers_for_sector("banking")
+        ctx = MarketContext(geography="IT")
+        banking = ctx.tickers_for_sector("banking")
         assert len(banking) > 5
         assert all(s["sector"] == "banking" for s in banking)
 
     def test_get_stock(self):
-        loader = UniverseLoader()
-        stock = loader.get_stock("AAPL")
+        ctx = MarketContext(geography="IT")
+        stock = ctx.get_stock("AAPL")
         assert stock is not None
         assert stock["name"] == "Apple"
         assert stock["sector"] == "tech"
 
     def test_get_stock_not_found(self):
-        loader = UniverseLoader()
-        assert loader.get_stock("ZZZZZZ") is None
+        ctx = MarketContext(geography="IT")
+        assert ctx.get_stock("ZZZZZZ") is None
 
     def test_get_ticker_sector(self):
-        loader = UniverseLoader()
-        assert loader.get_ticker_sector("UCG.MI") == "banking"
-        assert loader.get_ticker_sector("NONEXIST") is None
+        ctx = MarketContext(geography="IT")
+        assert ctx.get_ticker_sector("UCG.MI") == "banking"
+        assert ctx.get_ticker_sector("NONEXIST") is None
+
+    def test_scorer_accepts_explicit_market(self):
+        """The scorer must accept a DI'd MarketContext so tests and the
+        simulation entrypoint can point it at a different data source."""
+        ctx = MarketContext(geography="US")
+        scorer = TickerRelevanceScorer(market=ctx)
+        assert scorer.market.geography == "US"
+        assert scorer.market is ctx
 
 
 class TestTickerRelevanceScorer:

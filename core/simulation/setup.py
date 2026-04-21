@@ -308,12 +308,33 @@ class SimulationSetup:
             from core.orchestrator.contagion import ContagionScorer
             from core.orchestrator.ticker_relevance import TickerRelevanceScorer
             from core.orchestrator.financial_impact import FinancialImpactScorer
+            from core.orchestrator.market_context import MarketContext
 
             escalation_engine = EscalationEngine(self.activation_plan)
             contagion_scorer = ContagionScorer(escalation_engine)
 
-            rel_scorer = TickerRelevanceScorer()
+            # Live market snapshot: refreshes VIX + US 10Y yield (yfinance) +
+            # BTP-Bund spread (ECB IT−DE monthly LTIR) at scenario start,
+            # TTL-gated with a silent fallback to static priors on failure.
             geography = getattr(self.activation_plan, "country", "IT")
+            market = MarketContext.with_live_data(geography=geography, refresh=True)
+            snap = getattr(market.provider, "snapshot", None)
+            if snap and getattr(snap, "has_any_live", False):
+                parts = []
+                if snap.vix is not None:
+                    parts.append(f"VIX={snap.vix:.2f}")
+                if snap.ust_10y_pct is not None:
+                    parts.append(f"UST10Y={snap.ust_10y_pct:.2f}%")
+                if snap.btp_bund_spread_bps is not None:
+                    parts.append(
+                        f"BTP-Bund={snap.btp_bund_spread_bps:.1f}bps "
+                        f"(ECB {snap.it_10y_as_of})"
+                    )
+                print("  ├─ Live market snapshot: " + ", ".join(parts) + "  ✓")
+            else:
+                print("  ├─ Market snapshot: static priors (live fetch unavailable)")
+
+            rel_scorer = TickerRelevanceScorer(market=market)
             entities = self.activation_plan.detected_sectors
             topics = self.activation_plan.detected_topics
             relevant_universe = rel_scorer.select(
@@ -324,6 +345,7 @@ class SimulationSetup:
                 detected_topics=topics,
                 detected_sectors=entities,
                 llm=self.llm,
+                market=market,
                 relevant_universe=relevant_universe,
             )
 

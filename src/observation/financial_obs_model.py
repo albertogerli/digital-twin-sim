@@ -43,8 +43,10 @@ class FinancialObsData(NamedTuple):
 
 
 # ── Sector Beta Lookup ───────────────────────────────────────────────────────
-# Subset of SECTOR_BETAS from core/orchestrator/financial_impact.py
-# Only the political_beta values needed for calibration.
+# Calibration-time political_beta snapshot for the IT regime. The authoritative
+# source is `MarketContext(geography="IT").get_beta(sector).political_beta` —
+# this dict is kept in-tree because the calibration pipeline runs under JAX
+# and must not depend on the full market-context stack.
 
 POLITICAL_BETAS = {
     "banking": 1.85,

@@ -7,7 +7,7 @@ This is a pure, deterministic scorer — no LLM calls. It replaces the old
 approach of hardcoding ticker lists per scenario.
 
 Selection pipeline:
-1. **Entity resolution** — resolve named orgs to tickers via UniverseLoader
+1. **Entity resolution** — resolve named orgs to tickers via MarketContext
 2. **Domain→sector mapping** — map crisis domain to relevant sectors
 3. **Country/region filter** — prioritise tickers from the affected country/region
 4. **Keyword tag match** — boost tickers whose tags overlap with keywords
@@ -19,8 +19,10 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass, field
+from typing import TYPE_CHECKING
 
-from core.orchestrator.financial_impact import UniverseLoader
+if TYPE_CHECKING:
+    from core.orchestrator.market_context import MarketContext
 
 logger = logging.getLogger(__name__)
 
@@ -95,12 +97,19 @@ class TickerRelevanceScorer:
     """Deterministic ticker relevance scorer.
 
     Usage:
-        scorer = TickerRelevanceScorer()
+        scorer = TickerRelevanceScorer()                              # default IT market
+        scorer = TickerRelevanceScorer(market=ctx)                    # explicit context
         result = scorer.select("financial", ["UniCredit"], "IT", ["banking"])
+
+    The scorer reads from the injected `MarketContext`; pass one explicitly
+    to point the scorer at a different geography or data source (live,
+    snapshot, test fixture). When omitted, a default `MarketContext(geography="IT")`
+    is constructed lazily.
     """
 
-    def __init__(self):
-        self._loader = UniverseLoader()
+    def __init__(self, market: "MarketContext | None" = None):
+        from core.orchestrator.market_context import MarketContext
+        self.market: MarketContext = market or MarketContext(geography="IT")
 
     def _resolve_regime(self, country: str) -> str:
         """Map a country string to a beta regime."""
@@ -168,7 +177,7 @@ class TickerRelevanceScorer:
         # 1. Entity resolution → direct matches (highest priority)
         direct_tickers: dict[str, float] = {}  # ticker → score
         for entity in entities:
-            resolved = self._loader.resolve_org(entity.lower())
+            resolved = self.market.resolve_org(entity.lower())
             for t in resolved:
                 direct_tickers[t] = direct_tickers.get(t, 0) + 10.0
 
@@ -178,7 +187,7 @@ class TickerRelevanceScorer:
 
         # 3. Score all stocks
         scored: dict[str, float] = dict(direct_tickers)
-        all_stocks = self._loader._data.get("stocks", [])
+        all_stocks = self.market.provider.stocks()
         keyword_set = {k.lower() for k in keywords}
 
         for stock in all_stocks:
@@ -237,7 +246,7 @@ class TickerRelevanceScorer:
         sectors_seen: set[str] = set()
 
         def _make_entry(ticker: str, score: float) -> dict | None:
-            stock = self._loader.get_stock(ticker)
+            stock = self.market.get_stock(ticker)
             if stock is None:
                 return None
             return {
@@ -251,7 +260,7 @@ class TickerRelevanceScorer:
         # Phase 1: ensure diversity — pick top ticker per sector
         sector_best: dict[str, tuple[str, float]] = {}
         for ticker, score in sorted_tickers:
-            stock = self._loader.get_stock(ticker)
+            stock = self.market.get_stock(ticker)
             if stock is None:
                 continue
             sector = stock.get("sector", "")
@@ -288,7 +297,7 @@ class TickerRelevanceScorer:
             for sector in sorted(missing):
                 if len(sectors_seen) >= min_sectors:
                     break
-                sector_stocks = self._loader.tickers_for_sector(sector)
+                sector_stocks = self.market.tickers_for_sector(sector)
                 if sector_stocks:
                     top = sector_stocks[0]
                     if top["ticker"] not in selected_set:
@@ -331,7 +340,7 @@ class TickerRelevanceScorer:
         self, country_code: str | None, region: str, max_indices: int
     ) -> list[dict]:
         """Pick the most relevant market indices."""
-        all_indices = self._loader._data.get("indices", [])
+        all_indices = self.market.provider.indices()
         selected = []
 
         # Priority: country-specific index first

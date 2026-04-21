@@ -26,9 +26,12 @@ import numpy as np
 # Add project root
 sys.path.insert(0, os.path.dirname(__file__))
 
-from core.orchestrator.financial_impact import (
-    FinancialImpactScorer, SECTOR_BETAS, TICKER_SECTOR, ORG_TICKER_MAP,
-)
+from core.orchestrator.financial_impact import FinancialImpactScorer
+from core.orchestrator.market_context import MarketContext
+
+# Historical backtest — pin to the IT static universe so runs are reproducible
+# (live VIX/yields would make results non-deterministic across invocations).
+_MARKET = MarketContext(geography="IT")
 
 
 # ── Historical Crisis Scenarios ──────────────────────────────────────────────
@@ -296,8 +299,8 @@ def run_scorer(scenario: BacktestScenario) -> dict:
             }
         else:
             # Ticker not in direct impacts — estimate from FTSE MIB
-            sector = TICKER_SECTOR.get(ticker, "unknown")
-            beta_data = SECTOR_BETAS.get(sector)
+            sector = _MARKET.get_ticker_sector(ticker) or "unknown"
+            beta_data = _MARKET.get_beta(sector) if sector != "unknown" else None
             ftse_est = report.ftse_mib_impact_pct * (beta_data.political_beta if beta_data else 1.0)
             predicted[ticker] = {
                 "predicted_pct": ftse_est,
@@ -530,7 +533,6 @@ def print_ticker_leaderboard(all_results: list[dict], top_n: int = 15):
     print(f"  {'Ticker':<12} {'Tests':>5} {'Dir%':>7} {'MAE':>8} {'MedAE':>8} {'Sector':<18}")
     print(f"  {'-'*12} {'-'*5} {'-'*7} {'-'*8} {'-'*8} {'-'*18}")
 
-    from core.orchestrator.financial_impact import TICKER_SECTOR, SECTOR_BETAS
     sorted_tickers = sorted(tickers.items(), key=lambda x: len(x[1]["errors"]), reverse=True)
     for ticker, data in sorted_tickers[:top_n]:
         n = len(data["errors"])
@@ -538,7 +540,7 @@ def print_ticker_leaderboard(all_results: list[dict], top_n: int = 15):
         dir_pct = f"{data['dir_c']/data['dir_t']*100:.0f}%" if data["dir_t"] > 0 else "N/A"
         mae = f"{np.mean(valid_errors):.2f}" if valid_errors else "N/A"
         med = f"{np.median(valid_errors):.2f}" if valid_errors else "N/A"
-        sector = TICKER_SECTOR.get(ticker, "?")
+        sector = _MARKET.get_ticker_sector(ticker) or "?"
         print(f"  {ticker:<12} {n:>5} {dir_pct:>7} {mae:>8} {med:>8} {sector:<18}")
     print()
 

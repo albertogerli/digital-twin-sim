@@ -37,12 +37,16 @@ FIN_SCHEMA_VERSION = "2.0.0"
 
 
 
-def _resolve_tickers_for_org(org: str) -> list[str]:
-    """Resolve tickers from an organisation name."""
+def _resolve_tickers_for_org(org: str, market: "MarketContext") -> list[str]:
+    """Resolve tickers from an organisation name via the injected MarketContext.
+
+    The market context carries the active provider (static JSON, yfinance,
+    a test fixture, etc.) — so callers in different geographies or data-
+    source regimes resolve against the right alias table.
+    """
     if not org:
         return []
-    org_lower = org.lower().strip()
-    return UniverseLoader().resolve_org(org_lower)
+    return market.resolve_org(org.lower().strip())
 
 # ── Historical Beta Coefficients ─────────────────────────────────────────────
 # Empirical sector sensitivity to Italian political/crisis events.
@@ -82,131 +86,6 @@ class SectorBeta:
 
 
 from .market_context import MarketContext as _MarketContext
-from .market_data import get_default_provider as _get_default_provider
-
-
-class UniverseLoader:
-    """DEPRECATED — thin backward-compat shim over `MarketContext`.
-
-    Historically a module-level singleton; now a trivial wrapper that
-    delegates to a process-wide default `MarketContext(geography="IT")`.
-    New code should construct and pass a `MarketContext` explicitly so
-    scenarios can target different geographies / data sources.
-    """
-
-    _instance: "UniverseLoader | None" = None
-
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance._context = _MarketContext(geography="IT")
-        return cls._instance
-
-    def get_beta(self, sector: str, regime: str = "default") -> SectorBeta:
-        # Legacy callers pass regime="default" — honour it explicitly so the
-        # shim stays behaviourally identical to the old singleton. New code
-        # should go through MarketContext, which picks the geography regime
-        # automatically.
-        return self._context.get_beta(sector, regime=regime)
-
-    def resolve_org(self, name: str) -> list[str]:
-        return self._context.resolve_org(name)
-
-    def tickers_for_sector(self, sector: str) -> list[dict]:
-        return self._context.tickers_for_sector(sector)
-
-    def get_stock(self, ticker: str) -> dict | None:
-        return self._context.get_stock(ticker)
-
-    def get_ticker_sector(self, ticker: str) -> str | None:
-        return self._context.get_ticker_sector(ticker)
-
-    @property
-    def _data(self) -> dict:
-        """Raw universe data accessor (legacy)."""
-        provider = _get_default_provider()
-        return {
-            "sectors": provider.sectors(),
-            "stocks": provider.stocks(),
-            "indices": provider.indices(),
-            "org_aliases": provider.org_aliases(),
-            "macro": provider.macro(),
-        }
-
-    @property
-    def _universe(self) -> dict:
-        """Legacy alias for _data."""
-        return self._data
-
-
-# ── Backward-compatible SECTOR_BETAS and TICKER_SECTOR ──────────────────────
-# Built dynamically from UniverseLoader (IT regime for backward compat).
-
-def _build_sector_betas() -> dict[str, SectorBeta]:
-    """Build legacy SECTOR_BETAS dict from UniverseLoader IT regime."""
-    loader = UniverseLoader()
-    result = {}
-    for key in loader._data.get("sectors", {}):
-        result[key] = loader.get_beta(key, "IT")
-    return result
-
-def _build_ticker_sector() -> dict[str, str]:
-    """Build legacy TICKER_SECTOR dict from UniverseLoader stocks."""
-    loader = UniverseLoader()
-    return {s["ticker"]: s["sector"] for s in loader._data.get("stocks", [])}
-
-# Lazy singletons
-_sector_betas_cache: dict[str, SectorBeta] | None = None
-_ticker_sector_cache: dict[str, str] | None = None
-
-class _LazySectorBetas:
-    """Dict-like proxy that builds from UniverseLoader on first access."""
-    def __getitem__(self, key):
-        global _sector_betas_cache
-        if _sector_betas_cache is None:
-            _sector_betas_cache = _build_sector_betas()
-        return _sector_betas_cache[key]
-
-    def get(self, key, default=None):
-        global _sector_betas_cache
-        if _sector_betas_cache is None:
-            _sector_betas_cache = _build_sector_betas()
-        return _sector_betas_cache.get(key, default)
-
-    def items(self):
-        global _sector_betas_cache
-        if _sector_betas_cache is None:
-            _sector_betas_cache = _build_sector_betas()
-        return _sector_betas_cache.items()
-
-    def __contains__(self, key):
-        global _sector_betas_cache
-        if _sector_betas_cache is None:
-            _sector_betas_cache = _build_sector_betas()
-        return key in _sector_betas_cache
-
-class _LazyTickerSector:
-    """Dict-like proxy that builds from UniverseLoader on first access."""
-    def __getitem__(self, key):
-        global _ticker_sector_cache
-        if _ticker_sector_cache is None:
-            _ticker_sector_cache = _build_ticker_sector()
-        return _ticker_sector_cache[key]
-
-    def get(self, key, default=None):
-        global _ticker_sector_cache
-        if _ticker_sector_cache is None:
-            _ticker_sector_cache = _build_ticker_sector()
-        return _ticker_sector_cache.get(key, default)
-
-    def items(self):
-        global _ticker_sector_cache
-        if _ticker_sector_cache is None:
-            _ticker_sector_cache = _build_ticker_sector()
-        return _ticker_sector_cache.items()
-
-SECTOR_BETAS = _LazySectorBetas()
-TICKER_SECTOR = _LazyTickerSector()
 
 
 # ── Pair Trade Logic ─────────────────────────────────────────────────────────
@@ -400,6 +279,12 @@ class FinancialImpactReport:
     # Time-series
     impact_history: list[dict] = field(default_factory=list)
 
+    # Non-serialised: the MarketContext that produced this report. Used by
+    # `_enrich_ticker` to look up ticker name + sector label. Populated by
+    # the scorer; reports constructed directly in tests can leave it None
+    # (enrichment will fall back to raw ticker symbols).
+    market: "_MarketContext | None" = field(default=None, repr=False, compare=False)
+
     # Back-compat: sector_impacts for frontend
     @property
     def sector_impacts(self) -> list[dict]:
@@ -431,8 +316,8 @@ class FinancialImpactReport:
 
     def _enrich_ticker(self, t: "TickerImpact") -> dict:
         """Enrich a TickerImpact with name + sectorLabel from the universe."""
-        stock = UniverseLoader().get_stock(t.ticker)
-        sectors = UniverseLoader()._data.get("sectors", {})
+        stock = self.market.get_stock(t.ticker) if self.market else None
+        sectors = self.market.provider.sectors() if self.market else {}
         sector_def = sectors.get(t.sector, {})
         return {
             "ticker": t.ticker,
@@ -708,6 +593,7 @@ class FinancialImpactScorer:
             engagement_score=engagement_score,
             institutional_actors_count=int(negative_institutional_pct * 20),
             impact_history=list(self.impact_history),
+            market=self.market,
         )
 
     # ── Core computations ─────────────────────────────────────────────────
@@ -788,9 +674,9 @@ class FinancialImpactScorer:
                     tickers[t] = f"agent:{agent_id}"
                 continue
 
-            # Fallback: resolve from party_or_org
+            # Fallback: resolve from party_or_org via this scorer's MarketContext
             org = getattr(agent, "party_or_org", "") or getattr(agent, "_party", "")
-            resolved = _resolve_tickers_for_org(org)
+            resolved = _resolve_tickers_for_org(org, self.market)
             for t in resolved:
                 tickers[t] = f"agent:{agent_id}"
 
@@ -1104,11 +990,12 @@ class FinancialImpactScorer:
     def get_sector_summary(self) -> dict:
         """Quick summary for dashboard.
 
-        Uses this scorer's bound MarketContext as the source of truth for
-        the active beta regime (e.g. "IT", "US"). Legacy `SECTOR_BETAS`
-        still drives the dict shape for backward compat, but the regime
-        reflects what the scorer actually used to compute impacts.
+        Sector betas are resolved through this scorer's `MarketContext`,
+        so the output reflects the active beta regime (e.g. IT betas for
+        an Italian scenario, US betas for an American one) — not a
+        process-wide static table.
         """
+        sector_keys = list(self.market.provider.sectors().keys())
         return {
             "geography": self.market.geography,
             "beta_regime": self.market.beta_regime,
@@ -1123,8 +1010,8 @@ class FinancialImpactScorer:
                 "sensitivity_bps_per_unit": self.market.sovereign.sensitivity_bps_per_unit,
             },
             "sector_betas": {
-                k: {"beta": v.political_beta, "spread_beta": v.spread_beta,
-                     "defensive": v.is_defensive}
-                for k, v in SECTOR_BETAS.items()
+                k: {"beta": (v := self.market.get_beta(k)).political_beta,
+                    "spread_beta": v.spread_beta, "defensive": v.is_defensive}
+                for k in sector_keys
             },
         }

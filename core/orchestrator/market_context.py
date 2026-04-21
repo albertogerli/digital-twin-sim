@@ -24,6 +24,27 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 
+_REGRESSION_CACHE: object | None = None
+
+
+def _get_regression():
+    """Lazily load the event-study regression. Soft-fails if sklearn is absent."""
+    global _REGRESSION_CACHE
+    if _REGRESSION_CACHE is not None:
+        return _REGRESSION_CACHE
+    try:
+        from .sovereign_model import load_or_fit
+        _REGRESSION_CACHE = load_or_fit()
+    except Exception as e:
+        logger.warning(
+            "Event-study regression unavailable (%s); falling back to parametric "
+            "SovereignSpreadModel. Install sklearn to enable the non-linear model.",
+            e,
+        )
+        _REGRESSION_CACHE = False
+    return _REGRESSION_CACHE or None
+
+
 @dataclass(frozen=True)
 class LocalIndexModel:
     """Benchmark index for a geography (FTSE MIB for IT, S&P 500 for US, …).
@@ -56,13 +77,45 @@ class LocalIndexModel:
         return max(-self.cap_abs_pct, min(0.0, idx))
 
 
+# Topic keyword → model category. Keys matched as substrings (lower-cased)
+# against elements of `detected_topics`. First match wins.
+_TOPIC_CATEGORY_RULES: tuple[tuple[str, str], ...] = (
+    ("fiscal", "fiscal"), ("budget", "fiscal"), ("debt", "fiscal"), ("tax", "fiscal"),
+    ("monetary", "monetary"), ("rate", "monetary"), ("ecb", "monetary"), ("fed", "monetary"),
+    ("geopolit", "geopolitical"), ("war", "geopolitical"), ("sanction", "geopolitical"),
+    ("invasion", "geopolitical"), ("nato", "geopolitical"),
+)
+
+
+def _classify_topic(detected_topics: list[str] | None, political_topics: frozenset[str]) -> str:
+    """Map a topic list to one of: political | fiscal | monetary | geopolitical | macro."""
+    topics = [t.lower() for t in (detected_topics or []) if isinstance(t, str)]
+    if not topics:
+        return "macro"
+    for t in topics:
+        for kw, cat in _TOPIC_CATEGORY_RULES:
+            if kw in t:
+                return cat
+    if set(topics) & {t.lower() for t in political_topics}:
+        return "political"
+    return "macro"
+
+
 @dataclass(frozen=True)
 class SovereignSpreadModel:
     """Sovereign yield-spread sensitivity for a geography.
 
-    IT → BTP-Bund (2018 budget, 2022 Draghi event studies)
-    US → 10Y Treasury vs IG spread (smaller sensitivity)
-    EM → country-specific EM sovereign spread (larger sensitivity)
+    Two modes:
+
+    * **Regression mode** (default when a `SovereignSpreadRegression` is
+      attached): Ridge + quantile regression trained on a 28-event
+      historical corpus (2011 BTP crisis, 2018 Italy budget, 2022 Truss,
+      2018 Argentina, 2020 COVID, etc.). Returns both median and p95 bps,
+      with no artificial cap — a 2011-style shock can produce 400+ bps.
+
+    * **Parametric fallback** (used when the regression is absent, e.g.
+      in unit tests that construct the model directly): the old linear
+      `sensitivity_bps_per_unit * intensity` with `cap_bps` ceiling.
     """
 
     spread_name: str
@@ -71,15 +124,38 @@ class SovereignSpreadModel:
     cap_bps: int
     political_topics: frozenset[str]
     spread_unit: str = "bps"
+    # Regression-mode context (all optional for backward compat)
+    country: str = ""
+    base_spread_bps: float = 100.0
+    vix_level: float = 20.0
+    regression: object | None = None  # SovereignSpreadRegression | None
 
     def impact_bps(self, intensity: float, detected_topics: list[str] | None) -> int:
-        """BTP-like spread impact: large for political topics, small otherwise."""
+        """Return the median spread impact in bps (signed positive = widening)."""
+        band = self.impact_band(intensity, detected_topics)
+        return int(round(band[0]))
+
+    def impact_band(
+        self, intensity: float, detected_topics: list[str] | None,
+    ) -> tuple[float, float]:
+        """Return (median_bps, p95_bps). Falls back to parametric when no regression."""
+        if self.regression is not None and self.country:
+            topic = _classify_topic(detected_topics, self.political_topics)
+            band = self.regression.predict(
+                intensity=intensity, topic=topic, country=self.country,
+                base_spread_bps=self.base_spread_bps, vix_level=self.vix_level,
+            )
+            return (band.median_bps, band.p95_bps)
+        # Parametric fallback — preserved for tests and minimal configs
         topics = set(detected_topics or [])
         is_political = bool(topics & self.political_topics)
         if not is_political:
-            return int(intensity * self.non_political_sensitivity_bps_per_unit)
-        bps = int(self.sensitivity_bps_per_unit * intensity)
-        return min(self.cap_bps, bps)
+            median = intensity * self.non_political_sensitivity_bps_per_unit
+        else:
+            median = min(self.cap_bps, self.sensitivity_bps_per_unit * intensity)
+        # Simple tail heuristic for the parametric mode: +50% on severe topics
+        p95 = median * 1.5 if is_political else median * 1.2
+        return (median, p95)
 
 
 class MarketContext:
@@ -130,6 +206,8 @@ class MarketContext:
         )
 
         sov_cfg = macro_cfg.get("sovereign", {})
+        regression = _get_regression()
+        country_code = sov_cfg.get("country") or geography
         self.sovereign = SovereignSpreadModel(
             spread_name=sov_cfg.get("spread_name", "Sovereign"),
             spread_unit=sov_cfg.get("spread_unit", "bps"),
@@ -139,7 +217,39 @@ class MarketContext:
             ),
             cap_bps=int(sov_cfg.get("cap_bps", 100)),
             political_topics=frozenset(sov_cfg.get("political_topics", [])),
+            country=country_code,
+            base_spread_bps=float(sov_cfg.get("base_spread_bps", 100.0)),
+            vix_level=float(sov_cfg.get("vix_level", 20.0)),
+            regression=regression,
         )
+
+    @classmethod
+    def with_live_data(
+        cls, geography: str = "IT", refresh: bool = True,
+    ) -> "MarketContext":
+        """Construct a MarketContext backed by the live YFinanceProvider.
+
+        The simulation entrypoint calls this so every scenario inherits a
+        fresh VIX / UST-10Y snapshot. TTL-gated (5 min): `refresh=True`
+        triggers a fetch only if the cache is stale.
+
+        Gracefully degrades to the static provider if yfinance is missing
+        or the network is unreachable — the caller always gets a working
+        context, just without the live overlay.
+        """
+        try:
+            from .providers.yfinance_provider import get_live_provider
+            provider = get_live_provider()
+            if refresh:
+                provider.refresh()
+            return cls(geography=geography, provider=provider)
+        except Exception as e:
+            logger.warning(
+                "Live provider unavailable (%s); falling back to static provider. "
+                "The sovereign regression will run with stale base_spread / VIX priors.",
+                e,
+            )
+            return cls(geography=geography)
 
     # ── Beta + ticker lookups (previously on UniverseLoader) ─────────────
 
@@ -202,6 +312,13 @@ class MarketContext:
         self, intensity: float, detected_topics: list[str] | None,
     ) -> int:
         return self.sovereign.impact_bps(intensity, detected_topics)
+
+    def sovereign_spread_band(
+        self, intensity: float, detected_topics: list[str] | None,
+    ) -> tuple[int, int]:
+        """Return (median_bps, p95_bps) — tail estimate for crisis scenarios."""
+        median, p95 = self.sovereign.impact_band(intensity, detected_topics)
+        return int(round(median)), int(round(p95))
 
     def local_index_impact_pct(
         self, short_moves: list[float], long_moves: list[float],

@@ -1,0 +1,128 @@
+{
+  "id": "BLINDED_dd7b9f382d",
+  "original_id": "TECH-2017-NET_NEUTRALITY_REPEAL_US_2017",
+  "domain": "technology",
+  "title": "Binary technology referendum-style decision over 5 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-230d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 46,
+  "ground_truth_outcome": {
+    "pro_pct": 83.0,
+    "source": "https://www.publicknowledge.org/blog/net-neutrality-poll/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-232d",
+      "pro_pct": 75.0,
+      "against_pct": 15.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-186d",
+      "pro_pct": 77.0,
+      "against_pct": 14.0,
+      "undecided_pct": 9.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-140d",
+      "pro_pct": 79.0,
+      "against_pct": 13.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-94d",
+      "pro_pct": 81.0,
+      "against_pct": 12.0,
+      "undecided_pct": 7.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-48d",
+      "pro_pct": 83.0,
+      "against_pct": 11.0,
+      "undecided_pct": 6.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-232d",
+      "description": "FCC Chairman AGAINST_LEADER_1 announces plans to roll back net neutrality rules",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5
+    },
+    {
+      "round": 3,
+      "date_rel": "T-155d",
+      "description": "Net Neutrality Day of Action: Major websites and PRO_LEADER_2 protest the repeal",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.9
+    },
+    {
+      "round": 5,
+      "date_rel": "T-0",
+      "description": "FCC votes 3-2 to repeal the YEAR Open AGAINST_LEADER_2 Order",
+      "shock_magnitude": 0.9,
+      "shock_direction": -0.4
+    }
+  ],
+  "agents": [
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "FCC Chairman leading the repeal effort"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.8,
+      "influence": 0.8,
+      "description": "Corporate entities lobbying for deregulation"
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "Companies advocating for strict net neutrality rules"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": 1.0,
+      "influence": 0.6,
+      "description": "Grassroots organizations like Fight for the Future"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.2,
+      "description": "The broader COUNTRY population surveyed"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "elite",
+      "initial_position": 0.7,
+      "influence": 0.5,
+      "description": "Legislators opposing the FCC repeal"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.884,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.1
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

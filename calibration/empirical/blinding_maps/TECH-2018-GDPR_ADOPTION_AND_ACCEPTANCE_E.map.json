@@ -1,0 +1,58 @@
+{
+  "scenario_id": "TECH-2018-GDPR_ADOPTION_AND_ACCEPTANCE_E",
+  "original_title": "Public awareness and support for the General Data Protection Regulation (GDPR) implementation in the EU",
+  "original_country": "EU",
+  "country_alias": "Country_C8",
+  "date_end_original": "2018-05-25",
+  "title_template": "Binary technology referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "European Commission",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Věra Jourová",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 1.0,
+      "influence": 0.8
+    },
+    {
+      "original": "Privacy Advocacy NGOs",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.9,
+      "influence": 0.5
+    },
+    {
+      "original": "Tech Lobby Groups",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.4,
+      "influence": 0.6
+    },
+    {
+      "original": "General Public (Rural/Skeptical)",
+      "alias": "AGAINST_SUPPORTER_2",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 2,
+      "initial_position": -0.2,
+      "influence": 0.2
+    },
+    {
+      "original": "General Public (Urban)",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.3,
+      "influence": 0.2
+    }
+  ]
+}

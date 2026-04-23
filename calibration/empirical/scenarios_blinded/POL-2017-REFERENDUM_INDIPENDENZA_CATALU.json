@@ -1,0 +1,128 @@
+{
+  "id": "BLINDED_a4dd83bb84",
+  "original_id": "POL-2017-REFERENDUM_INDIPENDENZA_CATALU",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 5 polling rounds",
+  "country": "Country_9D",
+  "date_start_rel": "T-30d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 6,
+  "ground_truth_outcome": {
+    "pro_pct": 48.0,
+    "source": "https://ceo.gencat.cat/ca/barometre/detall/index.html?p_codi=756",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-30d",
+      "pro_pct": 41.0,
+      "against_pct": 49.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-24d",
+      "pro_pct": 42.5,
+      "against_pct": 48.5,
+      "undecided_pct": 9.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-18d",
+      "pro_pct": 44.0,
+      "against_pct": 47.0,
+      "undecided_pct": 9.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-12d",
+      "pro_pct": 46.0,
+      "against_pct": 46.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-6d",
+      "pro_pct": 48.0,
+      "against_pct": 45.0,
+      "undecided_pct": 7.0
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date_rel": "T-25d",
+      "description": "Parliament passes the Law of the Referendum",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5
+    },
+    {
+      "round": 3,
+      "date_rel": "T-16d",
+      "description": "AGAINST_LEADER_2 suspends the referendum law",
+      "shock_magnitude": 0.7,
+      "shock_direction": -0.4
+    },
+    {
+      "round": 4,
+      "date_rel": "T-11d",
+      "description": "Operation Anubis: Guardia Civil raids government offices",
+      "shock_magnitude": 0.9,
+      "shock_direction": 0.8
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "President of the PRO_LEADER_2 of REGION, lead pro-PRO_LEADER_3 figure"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "Prime Minister of Spain, staunch defender of AGAINST_LEADER_2 unity"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.7,
+      "description": "The regional government of REGION"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.8,
+      "description": "Judicial body declaring the referendum unconstitutional"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.7,
+      "influence": 0.4,
+      "description": "Citizens supporting secession"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.4,
+      "description": "Citizens opposing secession and supporting the AGAINST_LEADER_2 state"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.9,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.1
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

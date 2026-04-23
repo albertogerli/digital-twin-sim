@@ -1,0 +1,170 @@
+{
+  "id": "BLINDED_ca6ffea82e",
+  "original_id": "PH-2021-ASTRAZENECA_VACCINE_HESITANCY",
+  "domain": "public_health",
+  "title": "Binary public health referendum-style decision over 7 polling rounds",
+  "country": "Country_CE",
+  "date_start_rel": "T-147d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 62.0,
+    "source": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Projekte_RKI/covimo_ergebnisse.html",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-152d",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-131d",
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-110d",
+      "pro_pct": 32.0,
+      "against_pct": 55.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-89d",
+      "pro_pct": 45.0,
+      "against_pct": 40.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-68d",
+      "pro_pct": 52.0,
+      "against_pct": 35.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-47d",
+      "pro_pct": 58.0,
+      "against_pct": 30.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-26d",
+      "pro_pct": 62.0,
+      "against_pct": 28.0,
+      "undecided_pct": 10.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "Austrian authorities reported the death of a 49-year-old woman and the hospitalization of a 35-year-old following PRO_LEADER_6, both linked to a specific batch of the AstraZeneca vaccine",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "Denmark, Norway, and Iceland suspended the use of the AstraZeneca vaccine as a precautionary measure following reports of serious blood clot cases",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "Major nations, including COUNTRY, COUNTRY, and COUNTRY, paused the rollout of the AstraZeneca vaccine to await further investigation by the Medicines Agency",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "The Medicines Agency (EMA) concluded that the vaccine is safe and effective, stating the benefits outweigh the risks, leading several countries to resume vaccinations",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "The EMA announced that unusual blood clots with low blood platelets should be listed as very rare side effects of the AstraZeneca vaccine",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "Following the EMA's update, the COUNTRY's Joint PRO_LEADER_2 on PRO_LEADER_6 and Immunisation recommended that adults under 30 be offered alternative vaccines where available",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_4",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.85,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.95,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_5",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Primary public health authority in COUNTRY"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.95,
+      "description": "Expert PRO_LEADER_2 providing PRO_LEADER_6 recommendations"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Population segment concerned about vaccine side effects"
+    },
+    {
+      "name": "PRO_LEADER_6",
+      "type": "citizen_cluster",
+      "initial_position": 0.7,
+      "influence": 0.5,
+      "description": "Population segment eager for any available vaccine"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.666,
+    "event_volatility": 0.8,
+    "elite_concentration": 0.75,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

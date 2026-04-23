@@ -1,0 +1,90 @@
+{
+  "scenario_id": "PH-2021-COVID_VAX_IT",
+  "original_title": "COVID-19 vaccine acceptance trajectory in Italy (Dec 2020 – Jun 2021)",
+  "original_country": "IT",
+  "country_alias": "Country_54",
+  "date_end_original": "2021-06-30",
+  "title_template": "Binary public health referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "Francesco Paolo Figliuolo",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.95
+    },
+    {
+      "original": "Mario Draghi",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.9,
+      "influence": 0.95
+    },
+    {
+      "original": "ISS (Istituto Superiore di Sanità)",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.9,
+      "influence": 0.8
+    },
+    {
+      "original": "AIFA",
+      "alias": "PRO_LEADER_4",
+      "role": "PRO_LEADER",
+      "rank": 4,
+      "initial_position": 0.7,
+      "influence": 0.7
+    },
+    {
+      "original": "RAI / mainstream media",
+      "alias": "PRO_LEADER_5",
+      "role": "PRO_LEADER",
+      "rank": 5,
+      "initial_position": 0.6,
+      "influence": 0.7
+    },
+    {
+      "original": "Domenico Arcuri",
+      "alias": "PRO_LEADER_6",
+      "role": "PRO_LEADER",
+      "rank": 6,
+      "initial_position": 0.7,
+      "influence": 0.5
+    },
+    {
+      "original": "Healthcare workers",
+      "alias": "PRO_LEADER_7",
+      "role": "PRO_LEADER",
+      "rank": 7,
+      "initial_position": 0.6,
+      "influence": 0.4
+    },
+    {
+      "original": "Elderly (65+)",
+      "alias": "PRO_LEADER_8",
+      "role": "PRO_LEADER",
+      "rank": 8,
+      "initial_position": 0.5,
+      "influence": 0.3
+    },
+    {
+      "original": "Young adults (18-30)",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.1,
+      "influence": 0.25
+    },
+    {
+      "original": "No-vax / vaccine hesitant",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.8,
+      "influence": 0.2
+    }
+  ]
+}

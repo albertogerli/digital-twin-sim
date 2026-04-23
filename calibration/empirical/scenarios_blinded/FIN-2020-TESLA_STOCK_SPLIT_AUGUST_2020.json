@@ -1,0 +1,149 @@
+{
+  "id": "BLINDED_43fd29621f",
+  "original_id": "FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020",
+  "domain": "financial",
+  "title": "Binary financial referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-91d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 13,
+  "ground_truth_outcome": {
+    "pro_pct": 72.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-91d",
+      "pro_pct": 64.0,
+      "against_pct": 20.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-78d",
+      "pro_pct": 65.5,
+      "against_pct": 19.5,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-65d",
+      "pro_pct": 68.0,
+      "against_pct": 18.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-52d",
+      "pro_pct": 70.0,
+      "against_pct": 17.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-39d",
+      "pro_pct": 72.5,
+      "against_pct": 16.5,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-26d",
+      "pro_pct": 71.0,
+      "against_pct": 18.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-13d",
+      "pro_pct": 72.0,
+      "against_pct": 17.5,
+      "undecided_pct": 10.5
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "Tesla officially announced a 5-for-1 stock split in the form of a stock dividend to make shares more accessible to employees and PRO_LEADER_2",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "The record date was reached, establishing which shareholders were entitled to receive four additional shares for every one share held",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "The distribution date occurred, with the additional shares being issued to shareholders after the close of trading",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "Tesla stock began trading on a split-adjusted basis, significantly lowering the per-share price for market participants",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.95,
+      "description": "CEO of Tesla, primary driver of PRO_LEADER_2 sentiment"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.7,
+      "description": "High-frequency traders and individual Tesla PRO_LEADER_3"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.8,
+      "influence": 0.6,
+      "description": "Hedge NEUTRAL_1 betting against Tesla valuation"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": 0.2,
+      "influence": 0.5,
+      "description": "Mainstream PRO_SUPPORTER_1 news outlets reporting on market volatility"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.1,
+      "influence": 0.4,
+      "description": "Large NEUTRAL_1 forced to rebalance based on NEUTRAL_1 inclusion"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.3,
+      "description": "Social PRO_SUPPORTER_1 users promoting Tesla's long-term vision"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.662,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.65,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

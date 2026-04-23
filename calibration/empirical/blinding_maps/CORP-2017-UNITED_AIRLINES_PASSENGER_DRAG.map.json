@@ -1,0 +1,58 @@
+{
+  "scenario_id": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG",
+  "original_title": "Public perception of United Airlines following the forcible removal of passenger David Dao in April 2017",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2017-06-30",
+  "title_template": "Binary corporate referendum-style decision over 6 polling rounds",
+  "agents": [
+    {
+      "original": "Oscar Munoz",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Airline Industry Lobbyists",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.8,
+      "influence": 0.4
+    },
+    {
+      "original": "David Dao",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -1.0,
+      "influence": 0.8
+    },
+    {
+      "original": "Social Media Activists",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.9,
+      "influence": 0.7
+    },
+    {
+      "original": "US Department of Transportation",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.0,
+      "influence": 0.6
+    },
+    {
+      "original": "Frequent Flyer Community",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.2,
+      "influence": 0.5
+    }
+  ]
+}

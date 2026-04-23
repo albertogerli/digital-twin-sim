@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_17e2e263cc",
+  "original_id": "SOC-2017-AUSTRALIA_SAME_SEX_MARRIAGE_PO",
+  "domain": "social",
+  "title": "Binary social referendum-style decision over 7 polling rounds",
+  "country": "Country_AC",
+  "date_start_rel": "T-98d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 61.6,
+    "source": "https://www.abs.gov.au/ausstats/abs@.nsf/mf/1800.0",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-99d",
+      "pro_pct": 59.0,
+      "against_pct": 33.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-85d",
+      "pro_pct": 59.0,
+      "against_pct": 33.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-71d",
+      "pro_pct": 58.0,
+      "against_pct": 34.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-57d",
+      "pro_pct": 59.0,
+      "against_pct": 33.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-43d",
+      "pro_pct": 60.0,
+      "against_pct": 32.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-29d",
+      "pro_pct": 60.0,
+      "against_pct": 32.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-15d",
+      "pro_pct": 61.6,
+      "against_pct": 38.4,
+      "undecided_pct": 0.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-99d",
+      "description": "Government announces the postal survey mechanism",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.2
+    },
+    {
+      "round": 3,
+      "date_rel": "T-64d",
+      "description": "Postal survey forms begin arriving in mailboxes",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-39d",
+      "description": "Large pro-PRO_LEADER_2 PRO_LEADER_2 rallies held across major cities",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.3
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.5,
+      "influence": 0.9,
+      "description": "Prime Minister of PRO_LEADER_2, supported the survey process"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.7,
+      "description": "Primary organization campaigning for the No vote"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "Primary organization campaigning for the Yes vote"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.7,
+      "description": "Leader of the Opposition, vocal supporter of Yes"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.4,
+      "description": "High-density PRO_LEADER_4 demographic, strongly pro-Yes"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.4,
+      "description": "AGAINST_LEADER_2 demographic, strongly pro-No"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.829,
+    "event_volatility": 0.3,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.08
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

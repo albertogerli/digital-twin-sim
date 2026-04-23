@@ -1,0 +1,177 @@
+{
+  "id": "BLINDED_32372a9e6b",
+  "original_id": "CORP-2019-BOEING_MAX",
+  "domain": "corporate",
+  "title": "Binary corporate referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-420d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 60,
+  "ground_truth_outcome": {
+    "pro_pct": 40.0,
+    "source": "Atmosphere Research Group survey, December 2019 — approximately 40% willing to fly MAX",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-396d",
+      "pro_pct": 78.0,
+      "against_pct": 12.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-334d",
+      "pro_pct": 72.0,
+      "against_pct": 15.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-275d",
+      "pro_pct": 47.0,
+      "against_pct": 40.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-214d",
+      "pro_pct": 45.0,
+      "against_pct": 42.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-153d",
+      "pro_pct": 44.0,
+      "against_pct": 43.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-61d",
+      "pro_pct": 42.0,
+      "against_pct": 45.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-0",
+      "pro_pct": 40.0,
+      "against_pct": 47.0,
+      "undecided_pct": 13.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "Lion Air Flight 610 crashed into the Java Sea shortly after takeoff, resulting in the loss of all lives on board. Investigations later revealed that the MCAS system repeatedly forced the nose down due to faulty sensor data",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "Ethiopian PRO_SUPPORTER_3 Flight 302 crashed shortly after takeoff, killing everyone on board. The crash exhibited striking similarities to the Lion Air incident, specifically regarding the activation of the MCAS system",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "The U.S. Federal Aviation Administration (PRO_SUPPORTER_2) issued an emergency order grounding all Boeing 737 MAX aircraft in the COUNTRY. This followed similar global grounding actions by other aviation authorities",
+      "shock_magnitude": 0.9,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "Boeing CEO PRO_LEADER_1 publicly acknowledged that the MCAS system was a factor in both the Lion Air and Ethiopian PRO_SUPPORTER_3 crashes. This admission marked a significant shift in the company's NEUTRAL_1 narrative regarding the cause of the accidents",
+      "shock_magnitude": 0.7,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "Boeing announced it would suspend production of the 737 MAX aircraft starting in January YEAR. The decision reflected the ongoing uncertainty regarding the timeline for the aircraft's return to service",
+      "shock_magnitude": 0.6,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.95,
+      "description": ""
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": 0.2,
+      "influence": 0.85,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": ""
+    },
+    {
+      "name": "PRO_SUPPORTER_2",
+      "type": "institutional",
+      "initial_position": 0.3,
+      "influence": 0.8,
+      "description": "Aviation regulator — criticized for delegating certification to Boeing"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": -0.4,
+      "influence": 0.6,
+      "description": "Demanded independent review, refused to follow PRO_SUPPORTER_2 lead"
+    },
+    {
+      "name": "PRO_SUPPORTER_3",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.7,
+      "description": "Major MAX operators — publicly supported Boeing while seeking compensation"
+    },
+    {
+      "name": "PRO_SUPPORTER_4",
+      "type": "citizen_cluster",
+      "initial_position": 0.3,
+      "influence": 0.3,
+      "description": "Business travelers — more informed, initially trusted Boeing"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.1,
+      "influence": 0.3,
+      "description": "Casual PRO_SUPPORTER_4 — reactive to media coverage of crashes"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.4,
+      "description": "AGAINST_LEADER_1 of 346 crash victims — powerful media presence"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.55,
+    "event_volatility": 0.24,
+    "elite_concentration": 0.28,
+    "institutional_trust": 0.45,
+    "undecided_share": 0.1
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

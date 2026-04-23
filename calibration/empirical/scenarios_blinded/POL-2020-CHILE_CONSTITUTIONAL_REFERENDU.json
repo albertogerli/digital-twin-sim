@@ -1,0 +1,135 @@
+{
+  "id": "BLINDED_588884b9ef",
+  "original_id": "POL-2020-CHILE_CONSTITUTIONAL_REFERENDU",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_46",
+  "date_start_rel": "T-54d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 9,
+  "ground_truth_outcome": {
+    "pro_pct": 78.3,
+    "source": "https://www.servel.cl/resultados-plebiscito-2020/",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-54d",
+      "pro_pct": 68.0,
+      "against_pct": 18.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-45d",
+      "pro_pct": 69.0,
+      "against_pct": 17.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-36d",
+      "pro_pct": 71.0,
+      "against_pct": 16.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-27d",
+      "pro_pct": 73.0,
+      "against_pct": 15.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-18d",
+      "pro_pct": 75.0,
+      "against_pct": 14.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-9d",
+      "pro_pct": 76.0,
+      "against_pct": 13.0,
+      "undecided_pct": 11.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-51d",
+      "description": "Official start of the electoral campaign period for the plebiscite",
+      "shock_magnitude": 0.2,
+      "shock_direction": 0.1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-35d",
+      "description": "Intensification of televised political advertising (franja electoral) begins",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 5,
+      "date_rel": "T-17d",
+      "description": "First anniversary of the YEAR PRO_LEADER_1 unrest (Estallido PRO_LEADER_1) approaches, mobilizing pro-change sentiment",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.3
+    }
+  ],
+  "agents": [
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": -0.2,
+      "influence": 0.8,
+      "description": "President of AGAINST_LEADER_1, officially neutral but associated with the status quo"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "Prominent opposition leader and advocate for the new constitution"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.5,
+      "influence": 0.6,
+      "description": "Right-wing political coalition, largely favoring the existing constitution"
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Grassroots organizations driving the demand for constitutional change"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.3,
+      "description": "Neutral institutional actor with moderate PRO_LEADER_1 influence"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.5,
+      "description": "Industry groups concerned about economic stability under a new framework"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.714,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.2,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

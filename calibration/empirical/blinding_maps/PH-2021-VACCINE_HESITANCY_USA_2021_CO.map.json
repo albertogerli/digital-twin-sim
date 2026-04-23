@@ -1,0 +1,58 @@
+{
+  "scenario_id": "PH-2021-VACCINE_HESITANCY_USA_2021_CO",
+  "original_title": "Public opinion trajectory regarding COVID-19 vaccination acceptance in the United States during the 2021 vaccine rollout",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2021-07-31",
+  "title_template": "Binary public health referendum-style decision over 5 polling rounds",
+  "agents": [
+    {
+      "original": "CDC",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "White House",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 1.0,
+      "influence": 0.8
+    },
+    {
+      "original": "Mainstream Media",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.8,
+      "influence": 0.6
+    },
+    {
+      "original": "Vaccine Skeptic Groups",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -1.0,
+      "influence": 0.4
+    },
+    {
+      "original": "State Governors",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.2,
+      "influence": 0.7
+    },
+    {
+      "original": "General Public",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.0,
+      "influence": 0.1
+    }
+  ]
+}

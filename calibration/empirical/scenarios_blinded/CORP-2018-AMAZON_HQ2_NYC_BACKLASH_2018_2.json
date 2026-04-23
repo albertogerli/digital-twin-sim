@@ -1,0 +1,156 @@
+{
+  "id": "BLINDED_5f5d75f5c0",
+  "original_id": "CORP-2018-AMAZON_HQ2_NYC_BACKLASH_2018_2",
+  "domain": "corporate",
+  "title": "Binary corporate referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-91d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 13,
+  "ground_truth_outcome": {
+    "pro_pct": 56.0,
+    "source": "https://poll.qu.edu/poll-release?releaseid=2601",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-93d",
+      "pro_pct": 57.0,
+      "against_pct": 26.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-80d",
+      "pro_pct": 56.5,
+      "against_pct": 27.5,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-67d",
+      "pro_pct": 55.0,
+      "against_pct": 30.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-54d",
+      "pro_pct": 54.0,
+      "against_pct": 32.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-41d",
+      "pro_pct": 53.0,
+      "against_pct": 35.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-28d",
+      "pro_pct": 52.0,
+      "against_pct": 38.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-15d",
+      "pro_pct": 51.0,
+      "against_pct": 40.0,
+      "undecided_pct": 9.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_3 officially announced Long Island City, Queens, as one of the two locations for its new headquarters, sparking immediate AGAINST_SUPPORTER_1 debate",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "Public reports revealed that CITY City and State officials offered PRO_LEADER_3 approximately $3 billion in tax incentives to secure the deal",
+      "shock_magnitude": 0.9,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "AGAINST_SUPPORTER_1 residents and activists held a town hall meeting in Queens to protest the lack of transparency and the potential impact on housing affordability",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_3 executives testified before the CITY City Council, facing intense questioning regarding labor practices and the use of public subsidies",
+      "shock_magnitude": 0.6,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "CITY State Senate Majority Leader Andrea Stewart-Cousins appointed vocal PRO_LEADER_3 critic Senator Michael Gianaris to the Public Authorities Control Board, giving him potential veto power over the deal",
+      "shock_magnitude": 0.7,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_3 officially canceled its plans to build the Long Island City headquarters, citing opposition from AGAINST_SUPPORTER_1 politicians and community members",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.75,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": "The company seeking to establish the new headquarters"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.4,
+      "influence": 0.3,
+      "description": "Concerned about gentrification and rising rents"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "Generally supportive of job growth and PRO_LEADER_4 expansion"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.802,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.17
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

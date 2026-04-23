@@ -1,0 +1,82 @@
+{
+  "scenario_id": "CORP-2019-BOEING_MAX",
+  "original_title": "Boeing 737 MAX crisis: public trust collapse after two fatal crashes",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2019-12-31",
+  "title_template": "Binary corporate referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "Dennis Muilenburg",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.8,
+      "influence": 0.95
+    },
+    {
+      "original": "David Calhoun",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.9,
+      "influence": 0.9
+    },
+    {
+      "original": "Steve Dickson",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.2,
+      "influence": 0.85
+    },
+    {
+      "original": "FAA",
+      "alias": "PRO_SUPPORTER_2",
+      "role": "PRO_SUPPORTER",
+      "rank": 2,
+      "initial_position": 0.3,
+      "influence": 0.8
+    },
+    {
+      "original": "Airlines (Southwest, American, United)",
+      "alias": "PRO_SUPPORTER_3",
+      "role": "PRO_SUPPORTER",
+      "rank": 3,
+      "initial_position": 0.2,
+      "influence": 0.7
+    },
+    {
+      "original": "Frequent flyers",
+      "alias": "PRO_SUPPORTER_4",
+      "role": "PRO_SUPPORTER",
+      "rank": 4,
+      "initial_position": 0.3,
+      "influence": 0.3
+    },
+    {
+      "original": "EASA (European regulator)",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.4,
+      "influence": 0.6
+    },
+    {
+      "original": "General flying public",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": -0.1,
+      "influence": 0.3
+    },
+    {
+      "original": "Victims' families and advocates",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.9,
+      "influence": 0.4
+    }
+  ]
+}

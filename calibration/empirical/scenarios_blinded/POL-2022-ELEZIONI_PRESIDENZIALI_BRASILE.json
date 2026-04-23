@@ -1,0 +1,135 @@
+{
+  "id": "BLINDED_5e170537f3",
+  "original_id": "POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_B6",
+  "date_start_rel": "T-90d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 50.9,
+    "source": "https://resultados.tse.jus.br/oficial/app/index.html#/eleicao/resultados",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-90d",
+      "pro_pct": 45.0,
+      "against_pct": 33.0,
+      "undecided_pct": 22.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-75d",
+      "pro_pct": 47.0,
+      "against_pct": 32.0,
+      "undecided_pct": 21.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-60d",
+      "pro_pct": 48.0,
+      "against_pct": 32.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-45d",
+      "pro_pct": 49.0,
+      "against_pct": 31.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-30d",
+      "pro_pct": 50.0,
+      "against_pct": 36.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-15d",
+      "pro_pct": 51.0,
+      "against_pct": 45.0,
+      "undecided_pct": 4.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-75d",
+      "description": "Official start of the NEUTRAL_1 campaign period",
+      "shock_magnitude": 0.2,
+      "shock_direction": 0.1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-63d",
+      "description": "First televised presidential debate",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 5,
+      "date_rel": "T-28d",
+      "description": "First round election results show tighter gap than polls predicted",
+      "shock_magnitude": 0.8,
+      "shock_direction": -0.5
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Workers' Party candidate, pro-side leader"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "Liberal Party candidate, against-side leader"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "NEUTRAL_1 management body ensuring process integrity"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.6,
+      "description": "Strongly demographic block"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.5,
+      "description": "Traditional base for the Workers' Party"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "elite",
+      "initial_position": -0.6,
+      "influence": 0.8,
+      "description": "Economic elite favoring deregulation and AGAINST_LEADER_1"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.83,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

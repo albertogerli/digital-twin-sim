@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_06a41645a3",
+  "original_id": "FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL",
+  "domain": "financial",
+  "title": "Binary financial referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-175d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 25,
+  "ground_truth_outcome": {
+    "pro_pct": 62.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-180d",
+      "pro_pct": 35.0,
+      "against_pct": 20.0,
+      "undecided_pct": 45.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-155d",
+      "pro_pct": 55.0,
+      "against_pct": 15.0,
+      "undecided_pct": 30.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-130d",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-105d",
+      "pro_pct": 58.0,
+      "against_pct": 25.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-80d",
+      "pro_pct": 56.0,
+      "against_pct": 28.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-55d",
+      "pro_pct": 60.0,
+      "against_pct": 25.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-30d",
+      "pro_pct": 62.0,
+      "against_pct": 25.0,
+      "undecided_pct": 13.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "Retail investor activity surged, causing AMC shares to increase by over 300% in a single day. This rapid price movement forced institutional short sellers to cover their positions",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "AMC stock began a rapid ascent from its previous price level, marking the start of a second major wave of retail-driven momentum. This event reignited public interest in the 'meme stock' phenomenon",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "Retail interest intensified significantly, building on the momentum from earlier in the week. This period saw the stock price reach extreme intraday highs, drawing widespread AGAINST_SUPPORTER_1 attention",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Primary hub for retail investor coordination"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "Market maker and hedge fund target of retail sentiment"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.5,
+      "influence": 0.7,
+      "description": "Retail brokerage platform involved in trading restrictions"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "AMC leadership engaging directly with retail investors"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Regulatory body monitoring market volatility"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": -0.4,
+      "influence": 0.6,
+      "description": "Traditional outlets skeptical of meme stock viability"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.781,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.4,
+    "institutional_trust": 0.2,
+    "undecided_share": 0.45
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

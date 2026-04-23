@@ -1,0 +1,135 @@
+{
+  "id": "BLINDED_bad070274f",
+  "original_id": "ENV-2018-GRETA_THUNBERG_CLIMATE_STRIKES",
+  "domain": "environmental",
+  "title": "Binary environmental referendum-style decision over 6 polling rounds",
+  "country": "Country_5D",
+  "date_start_rel": "T-396d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 66,
+  "ground_truth_outcome": {
+    "pro_pct": 71.0,
+    "source": "https://www.pewresearch.org/global/2020/09/09/concern-over-climate-and-environment/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-396d",
+      "pro_pct": 58.0,
+      "against_pct": 25.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-330d",
+      "pro_pct": 60.5,
+      "against_pct": 23.5,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-264d",
+      "pro_pct": 63.0,
+      "against_pct": 22.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-198d",
+      "pro_pct": 66.5,
+      "against_pct": 20.5,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-132d",
+      "pro_pct": 69.0,
+      "against_pct": 19.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-66d",
+      "pro_pct": 71.0,
+      "against_pct": 18.0,
+      "undecided_pct": 11.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-396d",
+      "description": "PRO_LEADER_1 begins her school strike for climate outside the PRO_LEADER_2 Parliament",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.4
+    },
+    {
+      "round": 3,
+      "date_rel": "T-279d",
+      "description": "PRO_LEADER_1 addresses the COP24 UN Climate Change Conference in Poland",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.3
+    },
+    {
+      "round": 4,
+      "date_rel": "T-189d",
+      "description": "Global Climate Strike sees millions of participants worldwide",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.5
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Primary activist and initiator of the school strike movement"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "Political PRO_LEADER_2 advocating for aggressive climate policy"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": -0.4,
+      "influence": 0.7,
+      "description": "Represents manufacturing and energy interests concerned about rapid transition costs"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.5,
+      "description": "Core group of student activists organizing local strikes"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.5,
+      "influence": 0.4,
+      "description": "Demographic concerned about fuel prices and urban-centric policy"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.8,
+      "description": "Mainstream press providing significant coverage of the movement"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.668,
+    "event_volatility": 0.65,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.17
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

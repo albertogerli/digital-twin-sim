@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_9d9ff9c4ae",
+  "original_id": "POL-2020-ELEZIONI_PRESIDENZIALI_USA_202",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-154d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 22,
+  "ground_truth_outcome": {
+    "pro_pct": 51.3,
+    "source": "https://www.fec.gov/resources/cms-content/documents/federalelections2020.pdf",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-155d",
+      "pro_pct": 49.5,
+      "against_pct": 41.2,
+      "undecided_pct": 9.3
+    },
+    {
+      "round": 2,
+      "date_rel": "T-133d",
+      "pro_pct": 50.1,
+      "against_pct": 40.5,
+      "undecided_pct": 9.4
+    },
+    {
+      "round": 3,
+      "date_rel": "T-111d",
+      "pro_pct": 50.5,
+      "against_pct": 40.8,
+      "undecided_pct": 8.7
+    },
+    {
+      "round": 4,
+      "date_rel": "T-89d",
+      "pro_pct": 50.2,
+      "against_pct": 42.1,
+      "undecided_pct": 7.7
+    },
+    {
+      "round": 5,
+      "date_rel": "T-67d",
+      "pro_pct": 50.8,
+      "against_pct": 43.2,
+      "undecided_pct": 6.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-45d",
+      "pro_pct": 50.4,
+      "against_pct": 43.5,
+      "undecided_pct": 6.1
+    },
+    {
+      "round": 7,
+      "date_rel": "T-23d",
+      "pro_pct": 51.1,
+      "against_pct": 44.2,
+      "undecided_pct": 4.7
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date_rel": "T-136d",
+      "description": "AGAINST_LEADER_1 Tulsa Rally low attendance impact",
+      "shock_magnitude": 0.2,
+      "shock_direction": 0.1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-75d",
+      "description": "Democratic National Convention concludes",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 6,
+      "date_rel": "T-35d",
+      "description": "First Presidential Debate",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "RULING_PARTY nominee"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "Incumbent OPPOSITION_BLOC President"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.6,
+      "description": "media outlet"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.6,
+      "influence": 0.6,
+      "description": "Liberal-leaning media outlet"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.1,
+      "influence": 0.5,
+      "description": "Key swing demographic"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Core OPPOSITION_BLOC support AGAINST_LEADER_3"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.824,
+    "event_volatility": 0.35,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.08
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

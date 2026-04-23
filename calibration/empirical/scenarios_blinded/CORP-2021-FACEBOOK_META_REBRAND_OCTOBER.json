@@ -1,0 +1,149 @@
+{
+  "id": "BLINDED_58f42d6b66",
+  "original_id": "CORP-2021-FACEBOOK_META_REBRAND_OCTOBER",
+  "domain": "corporate",
+  "title": "Binary corporate referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-147d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 26.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-152d",
+      "pro_pct": 32.0,
+      "against_pct": 45.0,
+      "undecided_pct": 23.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-131d",
+      "pro_pct": 30.0,
+      "against_pct": 48.0,
+      "undecided_pct": 22.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-110d",
+      "pro_pct": 28.0,
+      "against_pct": 52.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-89d",
+      "pro_pct": 26.0,
+      "against_pct": 58.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-68d",
+      "pro_pct": 25.0,
+      "against_pct": 60.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-47d",
+      "pro_pct": 24.0,
+      "against_pct": 62.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-26d",
+      "pro_pct": 24.0,
+      "against_pct": 63.0,
+      "undecided_pct": 13.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "Media reports began circulating regarding Facebook's internal plans to rebrand the company and change its corporate name",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "CEO PRO_LEADER_1 addressed NEUTRAL_1 criticism of the company's social services during the Q3 YEAR earnings call while emphasizing a strategic pivot toward the metaverse",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_1 officially announced at the Facebook Connect conference that the parent company would be renamed Meta Platforms, Inc",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "The company formally outlined its 'metaverse-first' strategy, aiming to build an interconnected digital ecosystem using VR and AR technologies",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "CEO of Meta, primary driver of the metaverse pivot"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.8,
+      "description": "Whistleblower whose testimony significantly damaged NEUTRAL_1 trust"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.6,
+      "description": "Media outlets covering the rebrand as a distraction from regulatory scrutiny"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.3,
+      "description": "AGAINST_SUPPORTER_1 enthusiasts interested in VR/AR and virtual worlds"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.1,
+      "influence": 0.1,
+      "description": "Average social media users skeptical of Facebook's privacy record"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.7,
+      "description": "Legislators focused on antitrust and data privacy regulation"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.717,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.2
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

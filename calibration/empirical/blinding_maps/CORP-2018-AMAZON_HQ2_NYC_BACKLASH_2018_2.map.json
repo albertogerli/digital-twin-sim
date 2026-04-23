@@ -1,0 +1,50 @@
+{
+  "scenario_id": "CORP-2018-AMAZON_HQ2_NYC_BACKLASH_2018_2",
+  "original_title": "Public Opinion Dynamics regarding Amazon's HQ2 Proposal in Long Island City, New York",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2019-02-14",
+  "title_template": "Binary corporate referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "Jeff Wilke",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.8,
+      "influence": 0.75
+    },
+    {
+      "original": "Holly Sullivan",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.9,
+      "influence": 0.7
+    },
+    {
+      "original": "Amazon Corporate",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 1.0,
+      "influence": 0.7
+    },
+    {
+      "original": "Tech Industry Workers",
+      "alias": "PRO_LEADER_4",
+      "role": "PRO_LEADER",
+      "rank": 4,
+      "initial_position": 0.6,
+      "influence": 0.4
+    },
+    {
+      "original": "Local Small Business Owners",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.4,
+      "influence": 0.3
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "id": "BLINDED_dbfc65e504",
+  "original_id": "FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC",
+  "domain": "financial",
+  "title": "Binary financial referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-119d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 17,
+  "ground_truth_outcome": {
+    "pro_pct": 35.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-119d",
+      "pro_pct": 65.0,
+      "against_pct": 15.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-102d",
+      "pro_pct": 62.0,
+      "against_pct": 18.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-85d",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-68d",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-51d",
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-34d",
+      "pro_pct": 36.0,
+      "against_pct": 50.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-17d",
+      "pro_pct": 35.0,
+      "against_pct": 52.0,
+      "undecided_pct": 13.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "ViacomCBS announced a secondary stock offering, which caused a sharp decline in its share price and acted as the catalyst for the collapse",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "Archegos Capital Management failed to meet massive margin calls from its prime brokers as the value of its concentrated portfolio plummeted",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "Prime brokers began a massive fire sale of Archegos-linked stocks, leading to significant market volatility and public realization of the firm's hidden leverage",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "Major global investment banks began disclosing their exposure to Archegos, revealing the extent of the NEUTRAL_2 damage caused by the firm's collapse",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "Regulatory scrutiny intensified as questions arose regarding the 'family office' exemption that allowed Archegos to operate with minimal oversight",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "Prime broker that exited positions early, maintaining high confidence in their own risk management"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.5,
+      "influence": 0.8,
+      "description": "Prime broker that suffered massive losses; position shifted to -0.8 post-event"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "elite",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "Regulatory body seeking to tighten oversight of opaque NEUTRAL_2 instruments"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.5,
+      "description": "General market participants concerned about counterparty risk and transparency"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.3,
+      "description": "Founder of Archegos; represents the high-leverage, high-secrecy investment strategy"
+    },
+    {
+      "name": "NEUTRAL_2",
+      "type": "elite",
+      "initial_position": 0.0,
+      "influence": 0.6,
+      "description": "Outlets like Bloomberg and FT shaping the narrative of systemic risk"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.422,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.2
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

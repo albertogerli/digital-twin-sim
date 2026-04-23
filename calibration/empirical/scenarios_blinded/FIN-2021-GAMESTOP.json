@@ -1,0 +1,170 @@
+{
+  "id": "BLINDED_3594cfb58d",
+  "original_id": "FIN-2021-GAMESTOP",
+  "domain": "financial",
+  "title": "Binary financial referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-49d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 7,
+  "ground_truth_outcome": {
+    "pro_pct": 72.0,
+    "source": "https://morningconsult.com/2021/02/02/gamestop-stock-trading-poll/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-40d",
+      "pro_pct": 15.0,
+      "against_pct": 55.0,
+      "undecided_pct": 30.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-33d",
+      "pro_pct": 20.0,
+      "against_pct": 50.0,
+      "undecided_pct": 30.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-25d",
+      "pro_pct": 35.0,
+      "against_pct": 40.0,
+      "undecided_pct": 25.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-17d",
+      "pro_pct": 55.0,
+      "against_pct": 30.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-9d",
+      "pro_pct": 80.0,
+      "against_pct": 12.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-7d",
+      "pro_pct": 72.0,
+      "against_pct": 15.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-0",
+      "pro_pct": 55.0,
+      "against_pct": 30.0,
+      "undecided_pct": 15.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "GameStop announced an agreement with activist investor PRO_LEADER_1 and his firm, RC Ventures, to add him and two other e-commerce specialists to the board of directors",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "Following the board announcement, GameStop stock experienced a significant surge, reaching an intraday high",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "Citron Research publicly criticized PRO_SUPPORTER_1 AGAINST_LEADER_2 on Twitter, labeling them 'suckers' and predicting a sharp decline in the stock price",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "Trading platforms, most notably Robinhood, restricted the purchase of GameStop shares, sparking widespread public outrage and accusations of market manipulation",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "The U.S. House Committee on AGAINST_LEADER_1 Services held a hearing to investigate the GameStop short squeeze, bringing the conflict between PRO_SUPPORTER_1 AGAINST_LEADER_2 and AGAINST_LEADER_2 AGAINST_LEADER_2 into the federal spotlight",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.85,
+      "description": ""
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "elite",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": ""
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.6,
+      "description": "Regulator monitoring the situation; issued statements about market integrity"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.5,
+      "influence": 0.7,
+      "description": "Legacy AGAINST_LEADER_1 AGAINST_LEADER_1 largely skeptical of PRO_SUPPORTER_1 squeeze, some anchors dismissive"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "Core Reddit PRO_LEADER_3: 1.8M to 9.8M members during the squeeze"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.3,
+      "description": "General public drawn in by AGAINST_LEADER_1 coverage and FOMO"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.4,
+      "description": "Wall Street firms; Melvin Capital and others heavily short"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.7,
+    "event_volatility": 0.3,
+    "elite_concentration": 0.35,
+    "institutional_trust": 0.25,
+    "undecided_share": 0.3
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

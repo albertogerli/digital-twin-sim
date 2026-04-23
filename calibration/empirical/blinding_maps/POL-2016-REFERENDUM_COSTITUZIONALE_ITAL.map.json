@@ -1,0 +1,58 @@
+{
+  "scenario_id": "POL-2016-REFERENDUM_COSTITUZIONALE_ITAL",
+  "original_title": "2016 Italian Constitutional Referendum on the Renzi-Boschi Reform",
+  "original_country": "IT",
+  "country_alias": "Country_54",
+  "date_end_original": "2016-12-04",
+  "title_template": "Binary political referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "Matteo Renzi",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Partito Democratico (PD)",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.8,
+      "influence": 0.7
+    },
+    {
+      "original": "Movimento 5 Stelle (M5S)",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.9,
+      "influence": 0.8
+    },
+    {
+      "original": "Lega Nord",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -1.0,
+      "influence": 0.6
+    },
+    {
+      "original": "Forza Italia",
+      "alias": "AGAINST_LEADER_3",
+      "role": "AGAINST_LEADER",
+      "rank": 3,
+      "initial_position": -0.7,
+      "influence": 0.6
+    },
+    {
+      "original": "Italian Youth Cluster",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.2,
+      "influence": 0.3
+    }
+  ]
+}

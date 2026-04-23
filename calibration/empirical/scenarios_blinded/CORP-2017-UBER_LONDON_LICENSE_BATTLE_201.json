@@ -1,0 +1,184 @@
+{
+  "id": "BLINDED_1b4377d8b0",
+  "original_id": "CORP-2017-UBER_LONDON_LICENSE_BATTLE_201",
+  "domain": "corporate",
+  "title": "Binary corporate referendum-style decision over 9 polling rounds",
+  "country": "Country_50",
+  "date_start_rel": "T-729d",
+  "date_end_rel": "T-0",
+  "n_rounds": 9,
+  "round_duration_days": 81,
+  "ground_truth_outcome": {
+    "pro_pct": 65.0,
+    "source": "https://yougov.co.uk/topics/transport/articles-reports/2017/09/25/majority-londoners-support-uber",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-732d",
+      "pro_pct": 65.0,
+      "against_pct": 25.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-651d",
+      "pro_pct": 62.0,
+      "against_pct": 28.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-570d",
+      "pro_pct": 60.0,
+      "against_pct": 30.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-489d",
+      "pro_pct": 58.0,
+      "against_pct": 32.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-408d",
+      "pro_pct": 60.0,
+      "against_pct": 30.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-327d",
+      "pro_pct": 61.0,
+      "against_pct": 29.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-246d",
+      "pro_pct": 62.0,
+      "against_pct": 28.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 8,
+      "date_rel": "T-165d",
+      "pro_pct": 63.0,
+      "against_pct": 27.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 9,
+      "date_rel": "T-84d",
+      "pro_pct": 65.0,
+      "against_pct": 25.0,
+      "undecided_pct": 10.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "AGAINST_LEADER_1 for PRO_LEADER_3 (TfL) announced it would not renew PRO_LEADER_2's private hire operator license, citing a lack of corporate responsibility regarding public safety",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "Over 500,000 people signed an online petition calling for the decision to ban PRO_LEADER_2 from PRO_LEADER_3 to be overturned",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_2's newly appointed CEO, Dara Khosrowshahi, issued a public apology for the company's past mistakes and committed to changing the business culture",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_2's CEO met with the TfL commissioner to initiate discussions regarding the license renewal and address regulatory concerns",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    },
+    {
+      "round": 8,
+      "date_rel": "T-?",
+      "description": "A PRO_LEADER_3 judge granted PRO_LEADER_2 a probationary 15-month license, overturning the initial ban while imposing strict oversight conditions",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": 0.2,
+      "influence": 0.95,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.8,
+      "description": ""
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "elite",
+      "initial_position": -0.8,
+      "influence": 0.85,
+      "description": ""
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.8,
+      "influence": 0.9,
+      "description": "Regulatory body responsible for AGAINST_LEADER_1 licensing in PRO_LEADER_3"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "The corporate entity seeking to maintain market access"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.5,
+      "description": "Traditional taxi AGAINST_LEADER_3 opposing PRO_LEADER_2's market entry"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.7,
+      "influence": 0.4,
+      "description": "General public relying on PRO_LEADER_2 for affordable AGAINST_LEADER_1"
+    },
+    {
+      "name": "PRO_SUPPORTER_2",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.6,
+      "description": "Central PRO_SUPPORTER_2 balancing economic growth and regulation"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.788,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.1
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_4590243ffc",
+  "original_id": "FIN-2019-WEWORK_IPO_COLLAPSE_AND_PUBLIC",
+  "domain": "financial",
+  "title": "Binary financial referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-105d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 18.0,
+    "source": "https://morningconsult.com/2019/09/27/wework-ipo-brand/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-108d",
+      "pro_pct": 45.0,
+      "against_pct": 20.0,
+      "undecided_pct": 35.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-93d",
+      "pro_pct": 38.0,
+      "against_pct": 25.0,
+      "undecided_pct": 37.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-78d",
+      "pro_pct": 30.0,
+      "against_pct": 35.0,
+      "undecided_pct": 35.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-63d",
+      "pro_pct": 18.0,
+      "against_pct": 55.0,
+      "undecided_pct": 27.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-48d",
+      "pro_pct": 15.0,
+      "against_pct": 65.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-33d",
+      "pro_pct": 12.0,
+      "against_pct": 72.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-18d",
+      "pro_pct": 10.0,
+      "against_pct": 78.0,
+      "undecided_pct": 12.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_3, rebranded as The We Company, raised $1 billion in a Series H funding round led by PRO_LEADER_2, pushing its private valuation to a peak of $47 billion",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_3 publicly filed its S-1 registration statement for an initial public offering, revealing significant financial losses and complex corporate governance issues",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "Following intense public and investor scrutiny regarding its business model and leadership, PRO_LEADER_3 officially postponed its planned IPO",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_1 resigned as CEO of PRO_LEADER_3 under pressure from PRO_SUPPORTER_1 and the board of directors following the failed IPO attempt",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_2 announced a massive bailout package to take control of PRO_LEADER_3, effectively valuing the company at approximately $8 billion, a sharp decline from its previous $47 billion valuation",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.95,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.95,
+      "description": "Major investor and eventual savior"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.3,
+      "description": "General public interested in tech IPOs"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.2,
+      "description": "Staff with stock options and job security concerns"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.553,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.75,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.35
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

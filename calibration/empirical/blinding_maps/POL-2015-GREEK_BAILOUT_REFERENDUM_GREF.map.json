@@ -1,0 +1,58 @@
+{
+  "scenario_id": "POL-2015-GREEK_BAILOUT_REFERENDUM_GREF",
+  "original_title": "Greek Bailout Referendum 2015: Public opinion on accepting the terms of the EU/IMF bailout package",
+  "original_country": "GR",
+  "country_alias": "Country_74",
+  "date_end_original": "2015-07-05",
+  "title_template": "Binary political referendum-style decision over 5 polling rounds",
+  "agents": [
+    {
+      "original": "Syriza Party",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.9,
+      "influence": 0.9
+    },
+    {
+      "original": "Public Sector Workers",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.7,
+      "influence": 0.4
+    },
+    {
+      "original": "European Central Bank",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.8,
+      "influence": 0.9
+    },
+    {
+      "original": "New Democracy",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.9,
+      "influence": 0.7
+    },
+    {
+      "original": "Urban Professional Cluster",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.6,
+      "influence": 0.3
+    },
+    {
+      "original": "Greek Orthodox Church",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.0,
+      "influence": 0.5
+    }
+  ]
+}

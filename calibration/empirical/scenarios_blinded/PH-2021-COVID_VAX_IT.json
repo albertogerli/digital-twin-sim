@@ -1,0 +1,184 @@
+{
+  "id": "BLINDED_7599558032",
+  "original_id": "PH-2021-COVID_VAX_IT",
+  "domain": "public_health",
+  "title": "Binary public health referendum-style decision over 7 polling rounds",
+  "country": "Country_54",
+  "date_start_rel": "T-196d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 28,
+  "ground_truth_outcome": {
+    "pro_pct": 80.0,
+    "source": "https://ourworldindata.org/covid-vaccinations — Italy: 54% with at least one dose by June 30, 2021; IPSOS Global Attitudes June 2021: ~80% willing",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-181d",
+      "pro_pct": 67.0,
+      "against_pct": 20.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-150d",
+      "pro_pct": 64.0,
+      "against_pct": 22.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-122d",
+      "pro_pct": 62.0,
+      "against_pct": 23.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-91d",
+      "pro_pct": 58.0,
+      "against_pct": 27.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-61d",
+      "pro_pct": 68.0,
+      "against_pct": 20.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-30d",
+      "pro_pct": 74.0,
+      "against_pct": 16.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-0",
+      "pro_pct": 80.0,
+      "against_pct": 13.0,
+      "undecided_pct": 7.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "COUNTRY officially launched its national COVID-19 vaccination campaign in coordination with other INSTITUTIONAL_BLOC member states",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "The Medicines Agency (EMA) granted authorization for the Moderna COVID-19 AGAINST_LEADER_1, expanding the available supply",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "Pfizer-BioNTech announced delivery delays to COUNTRY, causing a temporary slowdown in the national vaccination rate due to limited stock",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "The first shipment of the AstraZeneca AGAINST_LEADER_1 arrived in COUNTRY, providing a new supply source for the vaccination campaign",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "General PRO_LEADER_1 was appointed as the new Special Commissioner for the COVID-19 emergency to oversee the acceleration of the vaccination campaign",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.95,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.95,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_6",
+      "type": "elite",
+      "initial_position": 0.7,
+      "influence": 0.5,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "National health institute — provided scientific guidance"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "institutional",
+      "initial_position": 0.7,
+      "influence": 0.7,
+      "description": "Drug regulator — suspended/resumed AstraZeneca"
+    },
+    {
+      "name": "PRO_LEADER_5",
+      "type": "institutional",
+      "initial_position": 0.6,
+      "influence": 0.7,
+      "description": "Public broadcaster and PRO_LEADER_5 PRO_LEADER_5 — pro-vaccination messaging"
+    },
+    {
+      "name": "PRO_LEADER_7",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "First vaccinated group; high acceptance but some resistance"
+    },
+    {
+      "name": "PRO_LEADER_8",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.3,
+      "description": "Priority group; high acceptance driven by mortality risk"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.1,
+      "influence": 0.25,
+      "description": "Higher hesitancy, lower perceived risk; influenced by social PRO_LEADER_5"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.2,
+      "description": "~15-20% of population; active on social PRO_LEADER_5, Telegram groups"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.52,
+    "event_volatility": 0.15,
+    "elite_concentration": 0.3,
+    "institutional_trust": 0.42,
+    "undecided_share": 0.13
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

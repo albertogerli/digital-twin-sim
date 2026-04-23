@@ -1,0 +1,58 @@
+{
+  "scenario_id": "POL-2020-ELEZIONI_PRESIDENZIALI_USA_202",
+  "original_title": "2020 US Presidential Election Popular Vote Dynamics: Biden vs Trump",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2020-11-03",
+  "title_template": "Binary political referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "Joe Biden",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "CNN",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.6,
+      "influence": 0.6
+    },
+    {
+      "original": "Donald Trump",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Fox News",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.7,
+      "influence": 0.6
+    },
+    {
+      "original": "Rural Base",
+      "alias": "AGAINST_LEADER_3",
+      "role": "AGAINST_LEADER",
+      "rank": 3,
+      "initial_position": -0.8,
+      "influence": 0.4
+    },
+    {
+      "original": "Suburban Voters",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.1,
+      "influence": 0.5
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "id": "BLINDED_13523ae789",
+  "original_id": "POL-2015-GREEK_BAILOUT_REFERENDUM_GREF",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 5 polling rounds",
+  "country": "Country_74",
+  "date_start_rel": "T-15d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 3,
+  "ground_truth_outcome": {
+    "pro_pct": 38.7,
+    "source": "https://www.ypes.gr/en/Elections/NationalElections/DeploymentElections/",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-15d",
+      "pro_pct": 45.0,
+      "against_pct": 42.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-12d",
+      "pro_pct": 43.0,
+      "against_pct": 45.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-9d",
+      "pro_pct": 41.0,
+      "against_pct": 48.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-6d",
+      "pro_pct": 39.0,
+      "against_pct": 52.0,
+      "undecided_pct": 9.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-3d",
+      "pro_pct": 37.5,
+      "against_pct": 55.0,
+      "undecided_pct": 7.5
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-8d",
+      "description": "Prime Minister Alexis Tsipras announces a surprise referendum on bailout terms",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-7d",
+      "description": "NEUTRAL_1 government announces PRO_LEADER_1 holidays and capital controls",
+      "shock_magnitude": 0.9,
+      "shock_direction": -0.5
+    },
+    {
+      "round": 4,
+      "date_rel": "T-5d",
+      "description": "COUNTRY misses IMF debt repayment deadline, officially defaulting",
+      "shock_magnitude": 0.7,
+      "shock_direction": -0.3
+    }
+  ],
+  "agents": [
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "Governing AGAINST_LEADER_1 advocating for a 'No' vote to strengthen bargaining position"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "Main opposition AGAINST_LEADER_1 advocating for a 'Yes' vote to keep COUNTRY in the Eurozone"
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "Restricted liquidity to NEUTRAL_1 banks, pressuring the 'Yes' outcome"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.3,
+      "description": "Demographic concerned with financial stability and Eurozone membership"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.4,
+      "description": "Demographic heavily impacted by austerity measures"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Remained largely neutral, calling for national unity"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.778,
+    "event_volatility": 0.9,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.2,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

@@ -1,0 +1,135 @@
+{
+  "id": "BLINDED_bd03fb985c",
+  "original_id": "POL-2011-REFERENDUM_DIVORZIO_MALTA_2011",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_C3",
+  "date_start_rel": "T-84d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 53.2,
+    "source": "https://electoral.gov.mt/ElectionResults",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-88d",
+      "pro_pct": 42.0,
+      "against_pct": 48.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-74d",
+      "pro_pct": 44.5,
+      "against_pct": 46.5,
+      "undecided_pct": 9.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-60d",
+      "pro_pct": 47.0,
+      "against_pct": 45.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-46d",
+      "pro_pct": 49.5,
+      "against_pct": 43.5,
+      "undecided_pct": 7.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-32d",
+      "pro_pct": 51.0,
+      "against_pct": 42.0,
+      "undecided_pct": 7.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-18d",
+      "pro_pct": 52.5,
+      "against_pct": 41.5,
+      "undecided_pct": 6.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-73d",
+      "description": "Parliamentary motion for referendum officially passed",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-61d",
+      "description": "AGAINST_LEADER_1 AGAINST_LEADER_1 intensifies anti-PRO_LEADER_1 campaign in parishes",
+      "shock_magnitude": 0.5,
+      "shock_direction": -0.4
+    },
+    {
+      "round": 5,
+      "date_rel": "T-27d",
+      "description": "Pro-PRO_LEADER_1 movement 'Iva' gains significant media traction",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.3
+    }
+  ],
+  "agents": [
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "Strongly opposed to PRO_LEADER_1 on religious grounds"
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.7,
+      "description": "Main advocacy group for the Yes vote"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": -0.2,
+      "influence": 0.8,
+      "description": "Governing AGAINST_SUPPORTER_1, largely divided but officially cautious"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": 0.3,
+      "influence": 0.8,
+      "description": "Opposition AGAINST_SUPPORTER_1, officially neutral but leaning pro"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Traditionalist demographic, high AGAINST_LEADER_1 attendance"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.4,
+      "description": "Younger, secular demographic supporting reform"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.778,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

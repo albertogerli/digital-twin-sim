@@ -1,0 +1,58 @@
+{
+  "scenario_id": "COM-2019-TESLA_CYBERTRUCK_REVEAL_REACTI",
+  "original_title": "Public perception and market reaction following the 2019 Tesla Cybertruck reveal event",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2020-02-28",
+  "title_template": "Binary commercial referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "Elon Musk",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Tesla Loyalists",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.9,
+      "influence": 0.5
+    },
+    {
+      "original": "Tech Enthusiasts",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.6,
+      "influence": 0.4
+    },
+    {
+      "original": "Wall Street Analysts",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.2,
+      "influence": 0.7
+    },
+    {
+      "original": "Mainstream Automotive Media",
+      "alias": "AGAINST_SUPPORTER_2",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 2,
+      "initial_position": -0.4,
+      "influence": 0.6
+    },
+    {
+      "original": "General Public",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.0,
+      "influence": 0.2
+    }
+  ]
+}

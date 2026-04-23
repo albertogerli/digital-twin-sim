@@ -1,0 +1,66 @@
+{
+  "scenario_id": "ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER",
+  "original_title": "Public opinion dynamics regarding the restart of Japanese nuclear power plants following the 2011 Fukushima Daiichi disaster",
+  "original_country": "JP",
+  "country_alias": "Country_19",
+  "date_end_original": "2013-07-08",
+  "title_template": "Binary energy referendum-style decision over 6 polling rounds",
+  "agents": [
+    {
+      "original": "Yoshihiko Noda",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.8,
+      "influence": 0.95
+    },
+    {
+      "original": "METI (Ministry of Economy, Trade and Industry)",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.9,
+      "influence": 0.8
+    },
+    {
+      "original": "Issei Nishikawa",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.6,
+      "influence": 0.75
+    },
+    {
+      "original": "Shinobu Tokioka",
+      "alias": "PRO_LEADER_4",
+      "role": "PRO_LEADER",
+      "rank": 4,
+      "initial_position": 0.5,
+      "influence": 0.7
+    },
+    {
+      "original": "Anti-Nuclear Protest Movement",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.9,
+      "influence": 0.5
+    },
+    {
+      "original": "Nuclear Regulation Authority (NRA)",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.0,
+      "influence": 0.7
+    },
+    {
+      "original": "General Public (Urban)",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.4,
+      "influence": 0.3
+    }
+  ]
+}

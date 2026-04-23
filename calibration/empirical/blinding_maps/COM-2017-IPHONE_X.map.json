@@ -1,0 +1,82 @@
+{
+  "scenario_id": "COM-2017-IPHONE_X",
+  "original_title": "iPhone X pricing controversy: $999 price point and consumer acceptance",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2017-12-31",
+  "title_template": "Binary commercial referendum-style decision over 5 polling rounds",
+  "agents": [
+    {
+      "original": "Tim Cook",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.9,
+      "influence": 0.8
+    },
+    {
+      "original": "Phil Schiller",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.9,
+      "influence": 0.5
+    },
+    {
+      "original": "Apple loyalists / early adopters",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.7,
+      "influence": 0.3
+    },
+    {
+      "original": "Marques Brownlee (MKBHD)",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.3,
+      "influence": 0.6
+    },
+    {
+      "original": "Tech media (The Verge, Wired)",
+      "alias": "PRO_SUPPORTER_2",
+      "role": "PRO_SUPPORTER",
+      "rank": 2,
+      "initial_position": 0.2,
+      "influence": 0.6
+    },
+    {
+      "original": "Wall Street analysts",
+      "alias": "PRO_SUPPORTER_3",
+      "role": "PRO_SUPPORTER",
+      "rank": 3,
+      "initial_position": 0.4,
+      "influence": 0.5
+    },
+    {
+      "original": "Consumer Reports",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.0,
+      "influence": 0.5
+    },
+    {
+      "original": "Budget-conscious consumers",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.6,
+      "influence": 0.3
+    },
+    {
+      "original": "Android users / skeptics",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.7,
+      "influence": 0.2
+    }
+  ]
+}

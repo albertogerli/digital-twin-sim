@@ -1,0 +1,135 @@
+{
+  "id": "BLINDED_0a680a88f3",
+  "original_id": "TECH-2020-TIKTOK_US_BAN_DEBATE_2020",
+  "domain": "technology",
+  "title": "Binary technology referendum-style decision over 6 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-90d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 60.0,
+    "source": "https://www.pewresearch.org/internet/2020/08/26/46-of-us-adults-have-concerns-about-tiktok/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-90d",
+      "pro_pct": 45.0,
+      "against_pct": 30.0,
+      "undecided_pct": 25.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-75d",
+      "pro_pct": 52.0,
+      "against_pct": 28.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-60d",
+      "pro_pct": 55.0,
+      "against_pct": 25.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-45d",
+      "pro_pct": 58.0,
+      "against_pct": 22.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-30d",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-15d",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-83d",
+      "description": "Secretary of State PRO_LEADER_2 states the COUNTRY is looking at banning AGAINST_LEADER_2 over data privacy concerns",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5
+    },
+    {
+      "round": 3,
+      "date_rel": "T-52d",
+      "description": "President PRO_LEADER_1 signs executive order prohibiting transactions with AGAINST_LEADER_1 after 45 days",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.7
+    },
+    {
+      "round": 5,
+      "date_rel": "T-13d",
+      "description": "Oracle selected as AGAINST_LEADER_2's COUNTRY technology partner, complicating the ban narrative",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.3
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "COUNTRY President advocating for a total ban citing national security"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": "Secretary of State driving the anti-AGAINST_LEADER_2 rhetoric"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.6,
+      "description": "Parent company of AGAINST_LEADER_2 lobbying against the ban"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Large community of influencers opposing the ban due to economic impact"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "elite",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Experts debating the technical feasibility and necessity of the ban"
+    },
+    {
+      "name": "NEUTRAL_2",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.1,
+      "description": "The broader COUNTRY population with varying levels of digital literacy"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.852,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.25
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

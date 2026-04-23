@@ -1,0 +1,135 @@
+{
+  "id": "BLINDED_73f6049e68",
+  "original_id": "POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_6D",
+  "date_start_rel": "T-36d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 6,
+  "ground_truth_outcome": {
+    "pro_pct": 66.1,
+    "source": "https://www.conseil-constitutionnel.fr/decision/2017/20170510resultatsEN.htm",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-36d",
+      "pro_pct": 62.0,
+      "against_pct": 38.0,
+      "undecided_pct": 0.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-30d",
+      "pro_pct": 61.0,
+      "against_pct": 39.0,
+      "undecided_pct": 0.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-24d",
+      "pro_pct": 60.0,
+      "against_pct": 40.0,
+      "undecided_pct": 0.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-18d",
+      "pro_pct": 60.5,
+      "against_pct": 39.5,
+      "undecided_pct": 0.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-12d",
+      "pro_pct": 62.0,
+      "against_pct": 38.0,
+      "undecided_pct": 0.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-6d",
+      "pro_pct": 64.0,
+      "against_pct": 36.0,
+      "undecided_pct": 0.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-14d",
+      "description": "First round of presidential elections held; PRO_LEADER_1 and Le Pen qualify for runoff",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 5,
+      "date_rel": "T-10d",
+      "description": "Whirlpool factory visit controversy involving Le Pen and PRO_LEADER_1",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.3
+    },
+    {
+      "round": 6,
+      "date_rel": "T-4d",
+      "description": "Televised presidential debate between PRO_LEADER_1 and Le Pen",
+      "shock_magnitude": 0.7,
+      "shock_direction": 0.5
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Candidate for En Marche!, pro-INSTITUTIONAL_BLOC, liberal economic platform"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "Candidate for Front National, nationalist, anti-INSTITUTIONAL_BLOC platform"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.5,
+      "influence": 0.4,
+      "description": "Les Républicains candidate, endorsed PRO_LEADER_1 after first round"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": -0.2,
+      "influence": 0.5,
+      "description": "La COUNTRY Insoumise leader, refused to explicitly endorse PRO_LEADER_1"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.6,
+      "description": "Mainstream press generally critical of Le Pen's platform"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.3,
+      "description": "Demographic group heavily leaning towards Le Pen due to economic grievances"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.733,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.45,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

@@ -1,0 +1,66 @@
+{
+  "scenario_id": "POL-2017-TURKISH_CONSTITUTIONAL_REFEREN",
+  "original_title": "2017 Turkish Constitutional Referendum on the transition to an executive presidential system",
+  "original_country": "TR",
+  "country_alias": "Country_5E",
+  "date_end_original": "2017-04-16",
+  "title_template": "Binary political referendum-style decision over 6 polling rounds",
+  "agents": [
+    {
+      "original": "Recep Tayyip Erdogan",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 1.0
+    },
+    {
+      "original": "AKP (Justice and Development Party)",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "MHP (Nationalist Movement Party)",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.6,
+      "influence": 0.5
+    },
+    {
+      "original": "Conservative Anatolian Voters",
+      "alias": "PRO_LEADER_4",
+      "role": "PRO_LEADER",
+      "rank": 4,
+      "initial_position": 0.8,
+      "influence": 0.3
+    },
+    {
+      "original": "CHP (Republican People's Party)",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -1.0,
+      "influence": 0.8
+    },
+    {
+      "original": "HDP (Peoples' Democratic Party)",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -1.0,
+      "influence": 0.4
+    },
+    {
+      "original": "Urban Secular Voters",
+      "alias": "AGAINST_LEADER_3",
+      "role": "AGAINST_LEADER",
+      "rank": 3,
+      "initial_position": -0.9,
+      "influence": 0.3
+    }
+  ]
+}

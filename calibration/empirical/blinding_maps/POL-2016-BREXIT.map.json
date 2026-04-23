@@ -1,0 +1,106 @@
+{
+  "scenario_id": "POL-2016-BREXIT",
+  "original_title": "2016 United Kingdom European Union membership referendum",
+  "original_country": "GB",
+  "country_alias": "Country_50",
+  "date_end_original": "2016-06-23",
+  "title_template": "Binary political referendum-style decision over 6 polling rounds",
+  "agents": [
+    {
+      "original": "David Cameron",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.8,
+      "influence": 0.9
+    },
+    {
+      "original": "Bank of England",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.6,
+      "influence": 0.7
+    },
+    {
+      "original": "George Osborne",
+      "alias": "AGAINST_LEADER_3",
+      "role": "AGAINST_LEADER",
+      "rank": 3,
+      "initial_position": -0.9,
+      "influence": 0.6
+    },
+    {
+      "original": "Urban professionals",
+      "alias": "AGAINST_LEADER_4",
+      "role": "AGAINST_LEADER",
+      "rank": 4,
+      "initial_position": -0.5,
+      "influence": 0.3
+    },
+    {
+      "original": "Young voters (18-24)",
+      "alias": "AGAINST_LEADER_5",
+      "role": "AGAINST_LEADER",
+      "rank": 5,
+      "initial_position": -0.7,
+      "influence": 0.15
+    },
+    {
+      "original": "Boris Johnson",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.7,
+      "influence": 0.85
+    },
+    {
+      "original": "Nigel Farage",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 1.0,
+      "influence": 0.7
+    },
+    {
+      "original": "Daily Mail / Sun",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.8,
+      "influence": 0.7
+    },
+    {
+      "original": "Michael Gove",
+      "alias": "PRO_LEADER_4",
+      "role": "PRO_LEADER",
+      "rank": 4,
+      "initial_position": 0.8,
+      "influence": 0.6
+    },
+    {
+      "original": "Post-industrial working class",
+      "alias": "PRO_LEADER_5",
+      "role": "PRO_LEADER",
+      "rank": 5,
+      "initial_position": 0.6,
+      "influence": 0.3
+    },
+    {
+      "original": "BBC",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": -0.1,
+      "influence": 0.8
+    },
+    {
+      "original": "Retirees",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.4,
+      "influence": 0.25
+    }
+  ]
+}

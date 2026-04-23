@@ -1,0 +1,135 @@
+{
+  "id": "BLINDED_3a82731b2a",
+  "original_id": "POL-2019-ELEZIONI_EUROPEE_2019_ITALIA",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_54",
+  "date_start_rel": "T-84d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 40.0,
+    "source": "https://elezionistorico.interno.gov.it/index.php?tpel=E&dession=1558825200",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-86d",
+      "pro_pct": 35.2,
+      "against_pct": 33.0,
+      "undecided_pct": 31.8
+    },
+    {
+      "round": 2,
+      "date_rel": "T-72d",
+      "pro_pct": 36.0,
+      "against_pct": 33.5,
+      "undecided_pct": 30.5
+    },
+    {
+      "round": 3,
+      "date_rel": "T-58d",
+      "pro_pct": 36.6,
+      "against_pct": 34.0,
+      "undecided_pct": 29.4
+    },
+    {
+      "round": 4,
+      "date_rel": "T-44d",
+      "pro_pct": 37.5,
+      "against_pct": 34.5,
+      "undecided_pct": 28.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-30d",
+      "pro_pct": 38.5,
+      "against_pct": 35.0,
+      "undecided_pct": 26.5
+    },
+    {
+      "round": 6,
+      "date_rel": "T-16d",
+      "pro_pct": 39.8,
+      "against_pct": 35.5,
+      "undecided_pct": 24.7
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-82d",
+      "description": "PRO_LEADER_1 intensifies campaign focus on migration policy and sovereignism",
+      "shock_magnitude": 0.2,
+      "shock_direction": 0.1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-48d",
+      "description": "CITY rally of nationalist parties hosted by Lega",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 5,
+      "date_rel": "T-27d",
+      "description": "Internal government tensions between Lega and M5S regarding infrastructure projects",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Leader of Lega, primary driver of the pro-Lega sentiment"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.5,
+      "influence": 0.7,
+      "description": "Leader of M5S, coalition partner often in conflict with Lega"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "elite",
+      "initial_position": -0.8,
+      "influence": 0.6,
+      "description": "Main opposition party, strongly against Lega's platform"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.5,
+      "description": "Traditional Lega support base, focused on economic stability"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.3,
+      "influence": 0.4,
+      "description": "Historically skeptical of Lega, targeted by YEAR expansion efforts"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_2",
+      "type": "institutional",
+      "initial_position": -0.4,
+      "influence": 0.3,
+      "description": "Often critical of Lega's hardline stance on migration"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.609,
+    "event_volatility": 0.35,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

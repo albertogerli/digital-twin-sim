@@ -1,0 +1,58 @@
+{
+  "scenario_id": "POL-2011-REFERENDUM_DIVORZIO_MALTA_2011",
+  "original_title": "2011 Maltese Divorce Referendum: Public opinion shift regarding the introduction of divorce legislation",
+  "original_country": "MT",
+  "country_alias": "Country_C3",
+  "date_end_original": "2011-05-28",
+  "title_template": "Binary political referendum-style decision over 6 polling rounds",
+  "agents": [
+    {
+      "original": "Catholic Church in Malta",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.9,
+      "influence": 0.9
+    },
+    {
+      "original": "Conservative Voters",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.8,
+      "influence": 0.4
+    },
+    {
+      "original": "Iva (Pro-Divorce Movement)",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.9,
+      "influence": 0.7
+    },
+    {
+      "original": "Liberal/Urban Voters",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.8,
+      "influence": 0.4
+    },
+    {
+      "original": "Nationalist Party (PN)",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.2,
+      "influence": 0.8
+    },
+    {
+      "original": "Labour Party (PL)",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.3,
+      "influence": 0.8
+    }
+  ]
+}

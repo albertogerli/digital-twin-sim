@@ -1,0 +1,135 @@
+{
+  "id": "BLINDED_d07bd4c0d7",
+  "original_id": "POL-2018-REFERENDUM_ABORTO_IRLANDA_2018",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_9F",
+  "date_start_rel": "T-84d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 66.4,
+    "source": "https://www.refcom.ie/previous-referendums/thirty-sixth-amendment/",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-85d",
+      "pro_pct": 47.0,
+      "against_pct": 28.0,
+      "undecided_pct": 25.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-71d",
+      "pro_pct": 48.0,
+      "against_pct": 27.0,
+      "undecided_pct": 25.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-57d",
+      "pro_pct": 50.0,
+      "against_pct": 26.0,
+      "undecided_pct": 24.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-43d",
+      "pro_pct": 53.0,
+      "against_pct": 24.0,
+      "undecided_pct": 23.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-29d",
+      "pro_pct": 56.0,
+      "against_pct": 22.0,
+      "undecided_pct": 22.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-15d",
+      "pro_pct": 60.0,
+      "against_pct": 20.0,
+      "undecided_pct": 20.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-77d",
+      "description": "Government publishes the Thirty-sixth Amendment of the Constitution Bill YEAR",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 3,
+      "date_rel": "T-59d",
+      "description": "Official launch of the PRO_LEADER_1 campaign",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.3
+    },
+    {
+      "round": 5,
+      "date_rel": "T-31d",
+      "description": "The AGAINST_LEADER_1 campaign intensifies billboard and media advertising",
+      "shock_magnitude": 0.2,
+      "shock_direction": -0.1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Main umbrella organization advocating for repeal"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "Main organization advocating for retention of the 8th amendment"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "Taoiseach and leader of Fine Gael, supporting repeal"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.6,
+      "description": "Religious leadership opposing the repeal"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.4,
+      "description": "Young voters in Dublin and PRO_LEADER_3 centers, strongly pro-repeal"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Older voters in AGAINST_LEADER_3 areas, strongly against repeal"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.99,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.25
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

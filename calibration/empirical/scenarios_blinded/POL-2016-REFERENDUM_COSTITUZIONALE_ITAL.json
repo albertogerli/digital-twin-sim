@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_86453b273a",
+  "original_id": "POL-2016-REFERENDUM_COSTITUZIONALE_ITAL",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 7 polling rounds",
+  "country": "Country_54",
+  "date_start_rel": "T-91d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 13,
+  "ground_truth_outcome": {
+    "pro_pct": 40.9,
+    "source": "https://elezionistorico.interno.gov.it/index.php?tpel=F&dession=1480806000",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-94d",
+      "pro_pct": 46.0,
+      "against_pct": 45.0,
+      "undecided_pct": 9.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-81d",
+      "pro_pct": 45.5,
+      "against_pct": 46.0,
+      "undecided_pct": 8.5
+    },
+    {
+      "round": 3,
+      "date_rel": "T-68d",
+      "pro_pct": 44.0,
+      "against_pct": 47.0,
+      "undecided_pct": 9.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-55d",
+      "pro_pct": 43.0,
+      "against_pct": 49.0,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-42d",
+      "pro_pct": 42.0,
+      "against_pct": 51.0,
+      "undecided_pct": 7.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-29d",
+      "pro_pct": 41.5,
+      "against_pct": 53.0,
+      "undecided_pct": 5.5
+    },
+    {
+      "round": 7,
+      "date_rel": "T-16d",
+      "pro_pct": 41.0,
+      "against_pct": 55.0,
+      "undecided_pct": 4.0
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date_rel": "T-69d",
+      "description": "PRO_LEADER_1 announces the date of the referendum, formalizing the campaign period",
+      "shock_magnitude": 0.2,
+      "shock_direction": -0.1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-46d",
+      "description": "Former PM Berlusconi officially declares his opposition to the reform",
+      "shock_magnitude": 0.5,
+      "shock_direction": -0.4
+    },
+    {
+      "round": 6,
+      "date_rel": "T-26d",
+      "description": "Market volatility increases as international investors express concern over political stability",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Prime Minister and main proponent of the constitutional reform"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.7,
+      "description": "Governing party supporting the Yes vote"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.8,
+      "description": "Main opposition party campaigning for No"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.6,
+      "description": "Right-wing populist party strongly opposing the reform"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.6,
+      "description": "Center-right party that shifted to oppose the reform"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.3,
+      "description": "Demographic group generally leaning toward reform but susceptible to anti-establishment sentiment"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.885,
+    "event_volatility": 0.4,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

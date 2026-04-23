@@ -1,0 +1,163 @@
+{
+  "id": "BLINDED_60207b79c4",
+  "original_id": "COM-2017-IPHONE_X",
+  "domain": "commercial",
+  "title": "Binary commercial referendum-style decision over 5 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-125d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 25,
+  "ground_truth_outcome": {
+    "pro_pct": 65.0,
+    "source": "https://www.macrumors.com/2018/04/23/iphone-x-siri-survey-creative-strategies/ — Creative Strategies survey (N=1746 iPhone X owners): 97% satisfaction, 85% 'very satisfied'; Piper Jaffray: 31% of non-upgraders cited price (69% neutral-positive)",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-107d",
+      "pro_pct": 33.0,
+      "against_pct": 67.0,
+      "undecided_pct": null
+    },
+    {
+      "round": 2,
+      "date_rel": "T-69d",
+      "pro_pct": 69.0,
+      "against_pct": 31.0,
+      "undecided_pct": null
+    },
+    {
+      "round": 3,
+      "date_rel": "T-55d",
+      "pro_pct": 55.0,
+      "against_pct": 30.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-33d",
+      "pro_pct": 60.0,
+      "against_pct": 27.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-6d",
+      "pro_pct": 69.0,
+      "against_pct": 31.0,
+      "undecided_pct": null
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-110d",
+      "description": "PRO_LEADER_3 announces iPhone X at $999 — first mainstream smartphone to break $1000; immediate PRO_SUPPORTER_2 sticker shock",
+      "shock_magnitude": 0.7,
+      "shock_direction": -0.6
+    },
+    {
+      "round": 2,
+      "date_rel": "T-100d",
+      "description": "iPhone 8/8 Plus launch — lukewarm reception, below-trend upgrade rates. Market interprets as 'everyone waiting for X'",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.3
+    },
+    {
+      "round": 3,
+      "date_rel": "T-65d",
+      "description": "iPhone X pre-orders open and sell out within minutes; 5-6 week shipping delays across all carriers",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.7
+    },
+    {
+      "round": 3,
+      "date_rel": "T-58d",
+      "description": "iPhone X launch day: lines at PRO_LEADER_3 Stores worldwide; first reviews praise Face ID and OLED display",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.6
+    },
+    {
+      "round": 5,
+      "date_rel": "T-16d",
+      "description": "Analyst NEUTRAL_1 indicate iPhone X drove PRO_LEADER_3 to record Q1 FY2018 revenue ($88.3B); ASP highest ever at $796",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.5
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "PRO_LEADER_3 CEO, framed $999 as 'value of the future'"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.5,
+      "description": "SVP Marketing, presented iPhone X at Keynote"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": 0.3,
+      "influence": 0.6,
+      "description": "Top PRO_SUPPORTER_2 YouTuber; initially cautious, then positive review"
+    },
+    {
+      "name": "PRO_SUPPORTER_3",
+      "type": "institutional",
+      "initial_position": 0.4,
+      "influence": 0.5,
+      "description": "Mixed: supply concerns vs. ASP uplift optimism"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.5,
+      "description": "Independent reviewer; eventually recommended iPhone X"
+    },
+    {
+      "name": "PRO_SUPPORTER_2",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 0.6,
+      "description": "Initial sticker shock coverage shifted to positive reviews post-launch"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.7,
+      "influence": 0.3,
+      "description": "Would buy regardless; drove pre-order sellout"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.3,
+      "description": "Sticker shock: $999 seen as excessive; considered AGAINST_LEADER_2 alternatives"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.2,
+      "description": "Mocked notch design and price; Samsung Galaxy S8 comparisons"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.6,
+    "event_volatility": 0.16,
+    "elite_concentration": 0.25,
+    "institutional_trust": 0.55,
+    "undecided_share": 0.2
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

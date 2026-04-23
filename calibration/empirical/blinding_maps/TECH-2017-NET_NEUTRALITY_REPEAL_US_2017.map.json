@@ -1,0 +1,58 @@
+{
+  "scenario_id": "TECH-2017-NET_NEUTRALITY_REPEAL_US_2017",
+  "original_title": "Public Opinion Dynamics during the 2017 FCC Net Neutrality Repeal Process",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2017-12-14",
+  "title_template": "Binary technology referendum-style decision over 5 polling rounds",
+  "agents": [
+    {
+      "original": "Ajit Pai",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Internet Service Providers (ISPs)",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.8,
+      "influence": 0.8
+    },
+    {
+      "original": "Tech Giants (Google, Netflix)",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.9,
+      "influence": 0.7
+    },
+    {
+      "original": "Digital Rights Activists",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 1.0,
+      "influence": 0.6
+    },
+    {
+      "original": "Congressional Democrats",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.7,
+      "influence": 0.5
+    },
+    {
+      "original": "General Public",
+      "alias": "PRO_LEADER_4",
+      "role": "PRO_LEADER",
+      "rank": 4,
+      "initial_position": 0.5,
+      "influence": 0.2
+    }
+  ]
+}

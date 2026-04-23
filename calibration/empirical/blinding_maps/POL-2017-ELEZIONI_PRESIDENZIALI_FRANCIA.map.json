@@ -1,0 +1,58 @@
+{
+  "scenario_id": "POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA",
+  "original_title": "French Presidential Election 2017 Second Round: Emmanuel Macron vs Marine Le Pen",
+  "original_country": "FR",
+  "country_alias": "Country_6D",
+  "date_end_original": "2017-05-07",
+  "title_template": "Binary political referendum-style decision over 6 polling rounds",
+  "agents": [
+    {
+      "original": "Emmanuel Macron",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "François Fillon",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.5,
+      "influence": 0.4
+    },
+    {
+      "original": "Marine Le Pen",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Working Class Voters",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.6,
+      "influence": 0.3
+    },
+    {
+      "original": "Jean-Luc Mélenchon",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.2,
+      "influence": 0.5
+    },
+    {
+      "original": "Traditional Media",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.2,
+      "influence": 0.6
+    }
+  ]
+}

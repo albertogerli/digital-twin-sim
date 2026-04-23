@@ -1,0 +1,184 @@
+{
+  "id": "BLINDED_f2e4b3494b",
+  "original_id": "POL-2016-BREXIT",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_50",
+  "date_start_rel": "T-168d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 28,
+  "ground_truth_outcome": {
+    "pro_pct": 51.89,
+    "source": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/eu-referendum/results-and-turnout-eu-referendum",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-144d",
+      "pro_pct": 41.0,
+      "against_pct": 42.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-115d",
+      "pro_pct": 42.0,
+      "against_pct": 43.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-84d",
+      "pro_pct": 43.0,
+      "against_pct": 44.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-54d",
+      "pro_pct": 43.0,
+      "against_pct": 44.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-23d",
+      "pro_pct": 44.0,
+      "against_pct": 43.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-1d",
+      "pro_pct": 44.0,
+      "against_pct": 45.0,
+      "undecided_pct": 11.0
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date_rel": "T-123d",
+      "description": "PRO_LEADER_1 announces support for Leave campaign, giving it major establishment credibility",
+      "shock_magnitude": 0.35,
+      "shock_direction": 0.5
+    },
+    {
+      "round": 4,
+      "date_rel": "T-66d",
+      "description": "HM Treasury publishes REFERENDUM impact report: GDP 6% lower after 15 years outside INSTITUTIONAL_BLOC",
+      "shock_magnitude": 0.25,
+      "shock_direction": -0.3
+    },
+    {
+      "round": 4,
+      "date_rel": "T-62d",
+      "description": "President Obama warns COUNTRY would be at 'back of the queue' for COUNTRY trade deal if it leaves INSTITUTIONAL_BLOC",
+      "shock_magnitude": 0.2,
+      "shock_direction": -0.2
+    },
+    {
+      "round": 6,
+      "date_rel": "T-7d",
+      "description": "MP Jo Cox murdered by far-right extremist; campaigning suspended for 3 days",
+      "shock_magnitude": 0.5,
+      "shock_direction": -0.6
+    }
+  ],
+  "agents": [
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.8,
+      "influence": 0.9,
+      "description": "Prime Minister, leading Remain campaign"
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.7,
+      "influence": 0.85,
+      "description": "CITY Mayor, leading Leave campaign from Feb 21"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": "UKIP leader, prominent Leave campaigner"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.6,
+      "description": "Chancellor, Project Fear economic warnings"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "Justice Secretary, prominent Leave advocate"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.6,
+      "influence": 0.7,
+      "description": "Mark Carney warned of REFERENDUM economic risks"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": -0.1,
+      "influence": 0.8,
+      "description": "Public broadcaster, statutory impartiality"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.7,
+      "description": "Major pro-Leave tabloids with large readership"
+    },
+    {
+      "name": "AGAINST_LEADER_4",
+      "type": "citizen_cluster",
+      "initial_position": -0.5,
+      "influence": 0.3,
+      "description": "CITY and major city residents, largely pro-Remain"
+    },
+    {
+      "name": "PRO_LEADER_5",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.3,
+      "description": "Northern AGAINST_LEADER_2, Midlands, Wales — pro-Leave demographic"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.4,
+      "influence": 0.25,
+      "description": "Over-65s, highest turnout, leaned Leave"
+    },
+    {
+      "name": "AGAINST_LEADER_5",
+      "type": "citizen_cluster",
+      "initial_position": -0.7,
+      "influence": 0.15,
+      "description": "Strongly pro-Remain but lowest turnout"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.65,
+    "event_volatility": 0.13,
+    "elite_concentration": 0.22,
+    "institutional_trust": 0.35,
+    "undecided_share": 0.17
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

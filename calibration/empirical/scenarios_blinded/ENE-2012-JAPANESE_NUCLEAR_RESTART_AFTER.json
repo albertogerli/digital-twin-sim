@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_a18621b127",
+  "original_id": "ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER",
+  "domain": "energy",
+  "title": "Binary energy referendum-style decision over 6 polling rounds",
+  "country": "Country_19",
+  "date_start_rel": "T-402d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 67,
+  "ground_truth_outcome": {
+    "pro_pct": 35.0,
+    "source": "https://www.japantimes.co.jp/news/2013/07/15/national/poll-shows-most-oppose-nuclear-restarts/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-402d",
+      "pro_pct": 28.0,
+      "against_pct": 60.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-335d",
+      "pro_pct": 30.0,
+      "against_pct": 58.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-268d",
+      "pro_pct": 32.0,
+      "against_pct": 55.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-201d",
+      "pro_pct": 31.0,
+      "against_pct": 56.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-134d",
+      "pro_pct": 33.0,
+      "against_pct": 54.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-67d",
+      "pro_pct": 35.0,
+      "against_pct": 52.0,
+      "undecided_pct": 13.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "The Tomari 3 reactor in Hokkaido was taken offline for inspection, leaving COUNTRY with zero operational AGAINST_LEADER_1 reactors for the first time since YEAR",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "Prime Minister PRO_LEADER_1 officially approved the restart of Ohi units 3 and 4, citing the need to prevent power shortages in the Kansai region",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "The Ohi 3 reactor reached criticality, marking the first time a AGAINST_LEADER_1 reactor resumed operations in COUNTRY following the Fukushima disaster",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.95,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "elite",
+      "initial_position": 0.6,
+      "influence": 0.75,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "elite",
+      "initial_position": 0.5,
+      "influence": 0.7,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "Government body pushing for AGAINST_LEADER_1 restart to ensure energy security"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.5,
+      "description": "Grassroots groups organizing large-scale protests in Tokyo"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "New independent regulator established to oversee safety standards"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.4,
+      "influence": 0.3,
+      "description": "Concerned citizens balancing energy costs with safety fears"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.693,
+    "event_volatility": 0.65,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.13
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

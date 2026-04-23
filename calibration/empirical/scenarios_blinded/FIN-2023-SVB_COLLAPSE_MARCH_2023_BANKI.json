@@ -1,0 +1,156 @@
+{
+  "id": "BLINDED_6bacaf7288",
+  "original_id": "FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI",
+  "domain": "financial",
+  "title": "Binary financial referendum-style decision over 6 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-84d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 38.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-88d",
+      "pro_pct": 48.0,
+      "against_pct": 35.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-74d",
+      "pro_pct": 47.5,
+      "against_pct": 35.5,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-60d",
+      "pro_pct": 47.0,
+      "against_pct": 36.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-46d",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-32d",
+      "pro_pct": 38.5,
+      "against_pct": 48.0,
+      "undecided_pct": 13.5
+    },
+    {
+      "round": 6,
+      "date_rel": "T-18d",
+      "pro_pct": 38.0,
+      "against_pct": 49.0,
+      "undecided_pct": 13.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "Silvergate Bank announced it would wind down operations and liquidate, which significantly heightened market anxiety regarding the banking sector",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "SVB Financial Group announced a $1.8 billion loss from selling securities and a plan to raise $2.25 billion in capital, triggering investor panic",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "Moody’s Investors Service notified Silicon Valley Bank of a potential credit rating downgrade, further eroding market confidence",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "Venture capital firms advised portfolio companies to withdraw their funds from SVB, leading to a massive bank run",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "The REGION Department of Financial Protection and Innovation closed Silicon Valley Bank and appointed the FDIC as receiver",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "U.S. regulators announced that all PRO_SUPPORTER_1 at SVB would be fully protected and have access to their money, aiming to stem systemic panic",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.95,
+      "description": "Central bank aiming to maintain financial stability"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.9,
+      "description": "COUNTRY Treasury Secretary providing public assurances"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "elite",
+      "initial_position": 0.5,
+      "influence": 0.7,
+      "description": "Financial experts providing market commentary"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.6,
+      "description": "Reporting on bank runs and systemic risk"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.3,
+      "description": "General public concerned about savings safety"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.5,
+      "description": "Viral spreaders of bank run panic"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.559,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.17
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

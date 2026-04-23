@@ -1,0 +1,128 @@
+{
+  "id": "BLINDED_61cc0cb492",
+  "original_id": "CORP-2020-BOEING_737_MAX_RETURN_TO_SERVI",
+  "domain": "corporate",
+  "title": "Binary corporate referendum-style decision over 5 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-320d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 64,
+  "ground_truth_outcome": {
+    "pro_pct": 41.0,
+    "source": "https://www.atmosphere-research.com",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-322d",
+      "pro_pct": 25.0,
+      "against_pct": 60.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-258d",
+      "pro_pct": 28.0,
+      "against_pct": 58.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-194d",
+      "pro_pct": 32.0,
+      "against_pct": 52.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-130d",
+      "pro_pct": 36.0,
+      "against_pct": 48.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-66d",
+      "pro_pct": 41.0,
+      "against_pct": 42.0,
+      "undecided_pct": 17.0
+    }
+  ],
+  "events": [
+    {
+      "round": 3,
+      "date_rel": "T-142d",
+      "description": "PRO_SUPPORTER_1 and PRO_LEADER_1 begin formal certification flight tests",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.3
+    },
+    {
+      "round": 4,
+      "date_rel": "T-49d",
+      "description": "PRO_SUPPORTER_1 Administrator Steve Dickson conducts his own evaluation flight",
+      "shock_magnitude": 0.5,
+      "shock_direction": 0.4
+    },
+    {
+      "round": 5,
+      "date_rel": "T-0",
+      "description": "PRO_SUPPORTER_1 officially clears the PRO_LEADER_1 737 MAX to return to commercial service",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.5
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Manufacturer seeking to restore brand reputation and market share"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": 0.2,
+      "influence": 1.0,
+      "description": "Regulatory body responsible for AGAINST_LEADER_1 certification"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "Labor union focused on pilot training and AGAINST_LEADER_1 protocols"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.3,
+      "influence": 0.4,
+      "description": "Business AGAINST_LEADER_2 prioritizing schedule and availability"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.3,
+      "description": "Leisure AGAINST_LEADER_2 highly sensitive to AGAINST_LEADER_1 news and media coverage"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.6,
+      "description": "Watchdog groups and families of crash victims"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.703,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

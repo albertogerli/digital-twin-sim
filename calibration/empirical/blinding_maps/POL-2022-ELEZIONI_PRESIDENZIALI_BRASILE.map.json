@@ -1,0 +1,58 @@
+{
+  "scenario_id": "POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE",
+  "original_title": "2022 Brazilian Presidential Election: Second Round Competition between Lula da Silva and Jair Bolsonaro",
+  "original_country": "BR",
+  "country_alias": "Country_B6",
+  "date_end_original": "2022-10-30",
+  "title_template": "Binary political referendum-style decision over 6 polling rounds",
+  "agents": [
+    {
+      "original": "Luiz Inácio Lula da Silva",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Urban Working Class",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.8,
+      "influence": 0.5
+    },
+    {
+      "original": "Jair Bolsonaro",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Agribusiness Sector",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.6,
+      "influence": 0.8
+    },
+    {
+      "original": "Evangelical Voters",
+      "alias": "AGAINST_LEADER_3",
+      "role": "AGAINST_LEADER",
+      "rank": 3,
+      "initial_position": -0.7,
+      "influence": 0.6
+    },
+    {
+      "original": "Superior Electoral Court (TSE)",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.0,
+      "influence": 0.7
+    }
+  ]
+}

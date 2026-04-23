@@ -1,0 +1,163 @@
+{
+  "id": "BLINDED_5aebb34b7c",
+  "original_id": "PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2",
+  "domain": "public_health",
+  "title": "Binary public health referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-147d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 47.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-152d",
+      "pro_pct": 15.0,
+      "against_pct": 10.0,
+      "undecided_pct": 75.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-131d",
+      "pro_pct": 22.0,
+      "against_pct": 12.0,
+      "undecided_pct": 66.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-110d",
+      "pro_pct": 30.0,
+      "against_pct": 15.0,
+      "undecided_pct": 55.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-89d",
+      "pro_pct": 38.0,
+      "against_pct": 20.0,
+      "undecided_pct": 42.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-68d",
+      "pro_pct": 44.0,
+      "against_pct": 25.0,
+      "undecided_pct": 31.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-47d",
+      "pro_pct": 47.0,
+      "against_pct": 28.0,
+      "undecided_pct": 25.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-26d",
+      "pro_pct": 46.0,
+      "against_pct": 30.0,
+      "undecided_pct": 24.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "The first confirmed case of mpox in the COUNTRY is reported to the PRO_LEADER_1 in a Massachusetts resident who had recently traveled from Canada",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "The PRO_LEADER_1 officially activates its emergency outbreak response to address the emerging mpox situation",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "The World PRO_LEADER_4 Organization (WHO) declares the multi-country mpox outbreak a PRO_LEADER_4 PRO_LEADER_4 Emergency of International Concern (PHEIC)",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "CITY Governor Kathy Hochul declares a state disaster emergency to mobilize resources for the mpox outbreak",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "REGION Governor Gavin Newsom proclaims a State of Emergency to bolster vaccination efforts and coordinate the state's response",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "The U.S. Department of PRO_LEADER_4 and Human Services (HHS) officially declares the mpox outbreak a national PRO_LEADER_4 PRO_LEADER_4 Emergency",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Primary federal agency providing guidance and response coordination"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.8,
+      "description": "Executive branch managing federal resource allocation"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "elite",
+      "initial_position": 0.5,
+      "influence": 0.7,
+      "description": "National news outlets reporting on case spread and vaccination efforts"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.3,
+      "description": "Groups expressing distrust in federal PRO_LEADER_4 mandates"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.5,
+      "description": "Academic and medical experts pushing for aggressive intervention"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.1,
+      "description": "The broader population with varying levels of risk perception"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.605,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.75
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

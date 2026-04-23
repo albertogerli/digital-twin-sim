@@ -1,0 +1,156 @@
+{
+  "id": "BLINDED_afef68f1ef",
+  "original_id": "POL-2014-SCOTTISH_INDEPENDENCE_REFEREND",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 7 polling rounds",
+  "country": "Country_50",
+  "date_start_rel": "T-105d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 44.7,
+    "source": "https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/scottish-independence-referendum",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-109d",
+      "pro_pct": 37.0,
+      "against_pct": 52.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-94d",
+      "pro_pct": 36.0,
+      "against_pct": 53.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-79d",
+      "pro_pct": 38.0,
+      "against_pct": 51.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-64d",
+      "pro_pct": 39.0,
+      "against_pct": 50.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-49d",
+      "pro_pct": 40.0,
+      "against_pct": 49.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-34d",
+      "pro_pct": 42.0,
+      "against_pct": 48.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-19d",
+      "pro_pct": 44.0,
+      "against_pct": 47.0,
+      "undecided_pct": 9.0
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date_rel": "T-92d",
+      "description": "Second televised debate between PRO_LEADER_1 and AGAINST_LEADER_1",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 7,
+      "date_rel": "T-12d",
+      "description": "YouGov poll shows Yes at 47%, narrowing the gap significantly",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.5
+    },
+    {
+      "round": 7,
+      "date_rel": "T-9d",
+      "description": "The Vow: COUNTRY PRO_LEADER_2 leaders promise more powers for PRO_LEADER_3",
+      "shock_magnitude": 0.8,
+      "shock_direction": -0.4
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "First Minister of PRO_LEADER_3 and leader of the Yes campaign"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -1.0,
+      "influence": 0.9,
+      "description": "Leader of the AGAINST_LEADER_3 campaign"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.8,
+      "description": "Primary political vehicle for independence"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.7,
+      "description": "COUNTRY government PRO_LEADER_2 opposing independence"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.7,
+      "description": "Official pro-independence campaign organization"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.7,
+      "description": "Official anti-independence campaign organization"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.4,
+      "description": "Key demographic group targeted by Yes campaign"
+    },
+    {
+      "name": "AGAINST_LEADER_4",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.4,
+      "description": "Key demographic group targeted by AGAINST_LEADER_3"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.991,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.12
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

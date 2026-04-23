@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_46ad069da3",
+  "original_id": "CORP-2022-TWITTER_X_ACQUISITION_BY_ELON",
+  "domain": "corporate",
+  "title": "Binary corporate referendum-style decision over 5 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-240d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 48,
+  "ground_truth_outcome": {
+    "pro_pct": 41.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-243d",
+      "pro_pct": 35.0,
+      "against_pct": 30.0,
+      "undecided_pct": 35.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-195d",
+      "pro_pct": 38.0,
+      "against_pct": 35.0,
+      "undecided_pct": 27.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-147d",
+      "pro_pct": 36.0,
+      "against_pct": 42.0,
+      "undecided_pct": 22.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-99d",
+      "pro_pct": 39.0,
+      "against_pct": 40.0,
+      "undecided_pct": 21.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-51d",
+      "pro_pct": 41.0,
+      "against_pct": 44.0,
+      "undecided_pct": 15.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_1 reveals he has acquired a 9.2% stake in AGAINST_LEADER_1, becoming the company's largest shareholder. This disclosure signals his significant influence over the platform's future direction. | AGAINST_LEADER_1 announces that PRO_LEADER_1 will not join the AGAINST_LEADER_1 of AGAINST_LEADER_1 after initially being appointed. This reversal creates immediate NEUTRAL_1 uncertainty regarding his intentions for the company",
+      "shock_magnitude": 0.4,
+      "shock_direction": 1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "PRO_LEADER_1 makes an unsolicited offer to purchase AGAINST_LEADER_1, initiating a high-profile hostile takeover attempt. The move forces a NEUTRAL_1 debate over the platform's ownership and governance",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "AGAINST_LEADER_1's AGAINST_LEADER_1 adopts a 'poison pill' strategy to defend against PRO_LEADER_1's hostile takeover bid. This action highlights the deep institutional resistance to the acquisition. | AGAINST_LEADER_1's AGAINST_LEADER_1 unanimously accepts PRO_LEADER_1's $44 billion buyout offer. The agreement marks a definitive shift in the company's trajectory and ownership status",
+      "shock_magnitude": 0.65,
+      "shock_direction": 1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "After months of legal disputes, PRO_LEADER_1 reverses his position and agrees to proceed with the acquisition at the original price. This move ends the immediate threat of a protracted court battle",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "Court filings reveal that PRO_LEADER_1 is under federal investigation regarding the AGAINST_LEADER_1 takeover. The news introduces significant legal and regulatory risk to the acquisition process",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.95,
+      "description": "CEO of Tesla/SpaceX and acquirer of AGAINST_LEADER_1"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.8,
+      "influence": 0.7,
+      "description": "Initially resistant, later accepted the acquisition offer"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": 0.4,
+      "influence": 0.6,
+      "description": "Venture capitalists and institutional shareholders"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.6,
+      "influence": 0.5,
+      "description": "High-activity AGAINST_LEADER_2 concerned about moderation policies"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.1,
+      "description": "Average COUNTRY citizens with varying levels of interest in PRO_SUPPORTER_1 news"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": -0.3,
+      "influence": 0.8,
+      "description": "Corporate entities concerned about brand safety on the platform"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.669,
+    "event_volatility": 0.8,
+    "elite_concentration": 0.75,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.35
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

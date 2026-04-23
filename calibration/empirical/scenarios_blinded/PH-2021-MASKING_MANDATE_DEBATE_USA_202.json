@@ -1,0 +1,149 @@
+{
+  "id": "BLINDED_645ced13da",
+  "original_id": "PH-2021-MASKING_MANDATE_DEBATE_USA_202",
+  "domain": "public_health",
+  "title": "Binary public health referendum-style decision over 5 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-210d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 42,
+  "ground_truth_outcome": {
+    "pro_pct": 63.0,
+    "source": "https://www.pewresearch.org/short-reads/2021/09/15/more-americans-say-they-are-regularly-wearing-masks-in-stores-and-other-businesses/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-213d",
+      "pro_pct": 78.0,
+      "against_pct": 20.0,
+      "undecided_pct": 2.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-171d",
+      "pro_pct": 75.0,
+      "against_pct": 22.0,
+      "undecided_pct": 3.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-129d",
+      "pro_pct": 70.0,
+      "against_pct": 26.0,
+      "undecided_pct": 4.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-87d",
+      "pro_pct": 66.0,
+      "against_pct": 30.0,
+      "undecided_pct": 4.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-45d",
+      "pro_pct": 63.0,
+      "against_pct": 34.0,
+      "undecided_pct": 3.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "President PRO_LEADER_2 issued executive orders mandating masks on federal property and across all public transportation systems. This established a federal baseline for masking requirements in the COUNTRY. | The PRO_LEADER_1 announced that fully vaccinated individuals were no longer required to wear masks or practice social distancing in most settings. This marked a significant shift toward pre-pandemic normalcy",
+      "shock_magnitude": 0.8,
+      "shock_direction": 1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "REGION lifted the majority of its public health orders and mask mandates as the state economy officially reopened. This signaled a major state-level move toward ending pandemic restrictions",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "The Los Angeles County Department of Public Health reintroduced a strong recommendation for indoor masking for all residents regardless of vaccination status. This was a response to the rising spread of the Delta variant. | The PRO_LEADER_1 updated its guidance to recommend that vaccinated individuals wear masks indoors in areas experiencing high virus transmission. This reversal of the May guidance caused widespread public confusion and debate",
+      "shock_magnitude": 0.55,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "Florida Governor AGAINST_LEADER_2 issued an executive order prohibiting school districts from imposing mask mandates. The order cited parental rights and constitutional freedoms as the basis for the ban",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "An Arkansas state judge issued a temporary injunction against a state law that had previously banned mask mandates in schools. The court ruled that the ban was in violation of the state constitution",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Federal public health agency setting national masking guidelines"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.8,
+      "description": "COUNTRY President advocating for public health safety measures"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.7,
+      "description": "Governor of Florida, prominent opponent of mask mandates"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.7,
+      "influence": 0.8,
+      "description": "Political PRO_LEADER_3 generally opposing federal mandates"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "institutional",
+      "initial_position": 0.7,
+      "influence": 0.8,
+      "description": "Political PRO_LEADER_3 generally supporting public health mandates"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.3,
+      "description": "High-density population centers with high compliance"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": -0.8,
+      "influence": 0.3,
+      "description": "Low-density population centers with low compliance"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.873,
+    "event_volatility": 0.6,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.05
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

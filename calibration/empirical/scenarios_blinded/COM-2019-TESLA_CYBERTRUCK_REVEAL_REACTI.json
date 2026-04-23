@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_d857e4e374",
+  "original_id": "COM-2019-TESLA_CYBERTRUCK_REVEAL_REACTI",
+  "domain": "commercial",
+  "title": "Binary commercial referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-98d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 14,
+  "ground_truth_outcome": {
+    "pro_pct": 62.0,
+    "source": "https://morningconsult.com/2019/11/25/teslas-cybertruck-launch-event-dented-brand-perception/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-99d",
+      "pro_pct": 36.0,
+      "against_pct": 48.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-85d",
+      "pro_pct": 42.0,
+      "against_pct": 40.0,
+      "undecided_pct": 18.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-71d",
+      "pro_pct": 48.0,
+      "against_pct": 35.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-57d",
+      "pro_pct": 52.0,
+      "against_pct": 32.0,
+      "undecided_pct": 16.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-43d",
+      "pro_pct": 56.0,
+      "against_pct": 29.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-29d",
+      "pro_pct": 59.0,
+      "against_pct": 27.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-15d",
+      "pro_pct": 62.0,
+      "against_pct": 25.0,
+      "undecided_pct": 13.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-99d",
+      "description": "Official Cybertruck reveal event featuring broken window demo",
+      "shock_magnitude": 0.8,
+      "shock_direction": -0.6
+    },
+    {
+      "round": 3,
+      "date_rel": "T-75d",
+      "description": "PRO_LEADER_1 tweets about 200,000 pre-orders, boosting confidence",
+      "shock_magnitude": 0.4,
+      "shock_direction": 0.5
+    },
+    {
+      "round": 6,
+      "date_rel": "T-23d",
+      "description": "PRO_LEADER_2 stock price surge increases NEUTRAL_1 interest and perceived viability",
+      "shock_magnitude": 0.3,
+      "shock_direction": 0.4
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "CEO of PRO_LEADER_2, primary driver of brand narrative"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_2",
+      "type": "institutional",
+      "initial_position": -0.4,
+      "influence": 0.6,
+      "description": "Traditional car reviewers skeptical of design"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": 0.9,
+      "influence": 0.5,
+      "description": "Core fan base supporting all PRO_LEADER_2 products"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.2,
+      "description": "Average consumers with no prior brand loyalty"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.7,
+      "description": "Financial experts focused on production feasibility"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "Early adopters interested in innovation"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.595,
+    "event_volatility": 0.8,
+    "elite_concentration": 0.8,
+    "institutional_trust": 0.5,
+    "undecided_share": 0.16
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

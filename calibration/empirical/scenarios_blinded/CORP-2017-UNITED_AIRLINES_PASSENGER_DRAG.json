@@ -1,0 +1,156 @@
+{
+  "id": "BLINDED_8a10398f0a",
+  "original_id": "CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG",
+  "domain": "corporate",
+  "title": "Binary corporate referendum-style decision over 6 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-90d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 15,
+  "ground_truth_outcome": {
+    "pro_pct": 28.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-90d",
+      "pro_pct": 36.0,
+      "against_pct": 20.0,
+      "undecided_pct": 44.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-75d",
+      "pro_pct": 28.0,
+      "against_pct": 52.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-60d",
+      "pro_pct": 30.0,
+      "against_pct": 48.0,
+      "undecided_pct": 22.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-45d",
+      "pro_pct": 31.5,
+      "against_pct": 45.0,
+      "undecided_pct": 23.5
+    },
+    {
+      "round": 5,
+      "date_rel": "T-30d",
+      "pro_pct": 32.0,
+      "against_pct": 42.0,
+      "undecided_pct": 26.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-15d",
+      "pro_pct": 32.5,
+      "against_pct": 40.0,
+      "undecided_pct": 27.5
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "Dr. AGAINST_LEADER_1 is forcibly removed from United Express Flight 3411 by aviation security officers after refusing to give up his seat for PRO_LEADER_2 crew. | Videos of the violent removal go viral on AGAINST_LEADER_2 AGAINST_LEADER_2, sparking global outrage and widespread condemnation of United Airlines' handling of the situation",
+      "shock_magnitude": 0.95,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "United Airlines CEO PRO_LEADER_1 issues an initial statement apologizing for having to 're-accommodate' customers, which is widely criticized as tone-deaf",
+      "shock_magnitude": 0.7,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "United Airlines stock price drops significantly following the public relations fallout, wiping out nearly $1 billion in market value",
+      "shock_magnitude": 0.6,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "CEO PRO_LEADER_1 issues a second, more contrite apology, taking full responsibility and promising a thorough review of PRO_LEADER_2 policies",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "United Airlines reaches an undisclosed settlement with Dr. AGAINST_LEADER_1 to resolve claims related to the incident",
+      "shock_magnitude": 0.4,
+      "shock_direction": 1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "United Airlines announces a new policy allowing passengers to receive up to $10,000 in compensation for voluntarily giving up their seats",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "CEO of United Airlines during the crisis"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "The passenger involved in the incident"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.6,
+      "description": "Regulatory body investigating PRO_LEADER_2 policies"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.2,
+      "influence": 0.5,
+      "description": "Core customer base concerned with service quality"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.7,
+      "description": "Online groups driving the boycott movement"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 0.8,
+      "influence": 0.4,
+      "description": "Organizations defending PRO_LEADER_2 practices"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.835,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.44
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

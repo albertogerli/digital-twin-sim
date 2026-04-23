@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_e061e0ebcf",
+  "original_id": "LAB-2015-UBER_VS_TAXI_PROTESTS_FRANCE_2",
+  "domain": "labor",
+  "title": "Binary labor referendum-style decision over 7 polling rounds",
+  "country": "Country_6D",
+  "date_start_rel": "T-147d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 21,
+  "ground_truth_outcome": {
+    "pro_pct": 45.0,
+    "source": "https://www.ifop.com/wp-content/uploads/2018/03/3349-1-study_file.pdf",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-151d",
+      "pro_pct": 40.0,
+      "against_pct": 45.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-130d",
+      "pro_pct": 41.5,
+      "against_pct": 44.0,
+      "undecided_pct": 14.5
+    },
+    {
+      "round": 3,
+      "date_rel": "T-109d",
+      "pro_pct": 42.0,
+      "against_pct": 43.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-88d",
+      "pro_pct": 43.5,
+      "against_pct": 42.0,
+      "undecided_pct": 14.5
+    },
+    {
+      "round": 5,
+      "date_rel": "T-67d",
+      "pro_pct": 44.0,
+      "against_pct": 41.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-46d",
+      "pro_pct": 44.5,
+      "against_pct": 40.5,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-25d",
+      "pro_pct": 45.0,
+      "against_pct": 40.0,
+      "undecided_pct": 15.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-150d",
+      "description": "Massive AGAINST_LEADER_1 driver strikes across PRO_LEADER_1 blocking major airports and roads",
+      "shock_magnitude": 0.8,
+      "shock_direction": 0.3
+    },
+    {
+      "round": 4,
+      "date_rel": "T-86d",
+      "description": "NEUTRAL_1 court rules against UberPop, fueling public debate on innovation vs regulation",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 6,
+      "date_rel": "T-36d",
+      "description": "NEUTRAL_1 announces new regulations for ride-sharing apps",
+      "shock_magnitude": 0.7,
+      "shock_direction": 0.1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.8,
+      "description": "The ride-sharing platform advocating for market liberalization"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "Traditional AGAINST_LEADER_1 drivers' organizations protecting existing licenses"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.7,
+      "description": "Regulators attempting to balance innovation and labor protection"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "Consumers favoring cheaper and more accessible transport"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "citizen_cluster",
+      "initial_position": -0.2,
+      "influence": 0.3,
+      "description": "Less impacted by ride-sharing, generally indifferent or skeptical"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.5,
+      "description": "Advocates for digital economy and deregulation"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.696,
+    "event_volatility": 0.75,
+    "elite_concentration": 0.6,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

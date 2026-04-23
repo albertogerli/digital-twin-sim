@@ -1,0 +1,163 @@
+{
+  "id": "BLINDED_ff2a3850eb",
+  "original_id": "FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202",
+  "domain": "financial",
+  "title": "Binary financial referendum-style decision over 7 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-91d",
+  "date_end_rel": "T-0",
+  "n_rounds": 7,
+  "round_duration_days": 13,
+  "ground_truth_outcome": {
+    "pro_pct": 22.0,
+    "source": "NEEDS_VERIFICATION",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-91d",
+      "pro_pct": 33.0,
+      "against_pct": 45.0,
+      "undecided_pct": 22.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-78d",
+      "pro_pct": 32.5,
+      "against_pct": 45.5,
+      "undecided_pct": 22.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-65d",
+      "pro_pct": 31.0,
+      "against_pct": 47.0,
+      "undecided_pct": 22.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-52d",
+      "pro_pct": 28.0,
+      "against_pct": 52.0,
+      "undecided_pct": 20.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-39d",
+      "pro_pct": 24.0,
+      "against_pct": 58.0,
+      "undecided_pct": 18.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-26d",
+      "pro_pct": 23.0,
+      "against_pct": 60.0,
+      "undecided_pct": 17.0
+    },
+    {
+      "round": 7,
+      "date_rel": "T-13d",
+      "pro_pct": 22.0,
+      "against_pct": 61.0,
+      "undecided_pct": 17.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "CoinDesk publishes a report revealing that Alameda Research’s balance sheet is heavily concentrated in FTT, the native token issued by FTX. This exposes the precarious AGAINST_SUPPORTER_2 entanglement between the two companies",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "Binance CEO Changpeng Zhao announces that Binance intends to liquidate its entire holding of FTT tokens due to the recent revelations regarding FTX's AGAINST_SUPPORTER_2 health",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "FTX experiences a massive surge in customer withdrawal requests, signaling a loss of AGAINST_LEADER_2 confidence and creating a severe liquidity crisis",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "FTX officially halts most customer withdrawals, confirming the exchange is unable to meet the demand for funds",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "Binance announces a non-binding letter of intent to acquire FTX to address the liquidity crunch, contingent on due diligence",
+      "shock_magnitude": 0.5,
+      "shock_direction": -1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-?",
+      "description": "The full extent of the crisis is revealed, confirming an $8 billion shortfall in customer funds that had been improperly diverted to Alameda Research",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "Former CEO of FTX, primary driver of pro-PRO_LEADER_2 institutional legitimacy"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "institutional",
+      "initial_position": -0.3,
+      "influence": 0.8,
+      "description": "Regulatory body advocating for stricter PRO_LEADER_2 oversight"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": 0.6,
+      "influence": 0.4,
+      "description": "General AGAINST_LEADER_2 holding PRO_LEADER_2 assets"
+    },
+    {
+      "name": "AGAINST_SUPPORTER_2",
+      "type": "institutional",
+      "initial_position": -0.2,
+      "influence": 0.7,
+      "description": "Traditional AGAINST_SUPPORTER_2 news outlets reporting on market volatility"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.9,
+      "influence": 0.5,
+      "description": "Economists and researchers critical of decentralized finance models"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": -0.5,
+      "influence": 0.2,
+      "description": "COUNTRY adults with no exposure to PRO_LEADER_2 markets"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.683,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.3,
+    "undecided_share": 0.22
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

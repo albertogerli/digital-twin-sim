@@ -1,0 +1,58 @@
+{
+  "scenario_id": "ENV-2018-GRETA_THUNBERG_CLIMATE_STRIKES",
+  "original_title": "Public opinion shift in Sweden regarding climate action during the rise of the Fridays for Future movement",
+  "original_country": "SE",
+  "country_alias": "Country_5D",
+  "date_end_original": "2019-09-20",
+  "title_template": "Binary environmental referendum-style decision over 6 polling rounds",
+  "agents": [
+    {
+      "original": "Greta Thunberg",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Swedish Green Party",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.8,
+      "influence": 0.6
+    },
+    {
+      "original": "Fridays for Future Youth",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.9,
+      "influence": 0.5
+    },
+    {
+      "original": "Swedish Industrial Lobby",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.4,
+      "influence": 0.7
+    },
+    {
+      "original": "Rural Conservative Voters",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.5,
+      "influence": 0.4
+    },
+    {
+      "original": "Swedish Media Outlets",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.2,
+      "influence": 0.8
+    }
+  ]
+}

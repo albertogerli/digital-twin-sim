@@ -1,0 +1,74 @@
+{
+  "scenario_id": "FIN-2021-GAMESTOP",
+  "original_title": "GameStop short squeeze and retail investor revolt (January 2021)",
+  "original_country": "US",
+  "country_alias": "Country_AA",
+  "date_end_original": "2021-02-05",
+  "title_template": "Binary financial referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "Ryan Cohen",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.9,
+      "influence": 0.9
+    },
+    {
+      "original": "Keith Gill",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 1.0,
+      "influence": 0.85
+    },
+    {
+      "original": "r/WallStreetBets community",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.8,
+      "influence": 0.6
+    },
+    {
+      "original": "George Sherman",
+      "alias": "NEUTRAL_1",
+      "role": "NEUTRAL",
+      "rank": 1,
+      "initial_position": 0.0,
+      "influence": 0.7
+    },
+    {
+      "original": "SEC",
+      "alias": "AGAINST_SUPPORTER_1",
+      "role": "AGAINST_SUPPORTER",
+      "rank": 1,
+      "initial_position": -0.2,
+      "influence": 0.6
+    },
+    {
+      "original": "Financial media (CNBC, Bloomberg)",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.5,
+      "influence": 0.7
+    },
+    {
+      "original": "Institutional investors / hedge funds",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.6,
+      "influence": 0.4
+    },
+    {
+      "original": "Retail investors (non-Reddit)",
+      "alias": "PRO_SUPPORTER_1",
+      "role": "PRO_SUPPORTER",
+      "rank": 1,
+      "initial_position": 0.2,
+      "influence": 0.3
+    }
+  ]
+}

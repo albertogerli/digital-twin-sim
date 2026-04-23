@@ -1,0 +1,128 @@
+{
+  "id": "BLINDED_3198333f69",
+  "original_id": "POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-66d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 11,
+  "ground_truth_outcome": {
+    "pro_pct": 53.4,
+    "source": "https://clerk.house.gov/member_info/electionInfo/2018election.pdf",
+    "type": "election"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-66d",
+      "pro_pct": 48.2,
+      "against_pct": 41.5,
+      "undecided_pct": 10.3
+    },
+    {
+      "round": 2,
+      "date_rel": "T-55d",
+      "pro_pct": 48.5,
+      "against_pct": 41.8,
+      "undecided_pct": 9.7
+    },
+    {
+      "round": 3,
+      "date_rel": "T-44d",
+      "pro_pct": 49.1,
+      "against_pct": 42.2,
+      "undecided_pct": 8.7
+    },
+    {
+      "round": 4,
+      "date_rel": "T-33d",
+      "pro_pct": 49.5,
+      "against_pct": 42.5,
+      "undecided_pct": 8.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-22d",
+      "pro_pct": 49.8,
+      "against_pct": 43.1,
+      "undecided_pct": 7.1
+    },
+    {
+      "round": 6,
+      "date_rel": "T-11d",
+      "pro_pct": 50.2,
+      "against_pct": 43.8,
+      "undecided_pct": 6.0
+    }
+  ],
+  "events": [
+    {
+      "round": 2,
+      "date_rel": "T-40d",
+      "description": "Brett Kavanaugh Supreme Court confirmation hearings",
+      "shock_magnitude": 0.6,
+      "shock_direction": 0.2
+    },
+    {
+      "round": 5,
+      "date_rel": "T-15d",
+      "description": "AGAINST_LEADER_1 announces caravan of migrants as a national emergency",
+      "shock_magnitude": 0.4,
+      "shock_direction": -0.3
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 0.9,
+      "influence": 0.9,
+      "description": "National PRO_LEADER_1 organization advocating for House majority"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.9,
+      "description": "National PRO_LEADER_1 organization defending House majority"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.8,
+      "influence": 1.0,
+      "description": "Incumbent President mobilizing base"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "elite",
+      "initial_position": -0.7,
+      "influence": 0.7,
+      "description": "media outlet"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "elite",
+      "initial_position": 0.6,
+      "influence": 0.6,
+      "description": "Liberal-leaning media outlet"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.1,
+      "influence": 0.4,
+      "description": "Key swing demographic in YEAR midterms"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.776,
+    "event_volatility": 0.3,
+    "elite_concentration": 0.75,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.1
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

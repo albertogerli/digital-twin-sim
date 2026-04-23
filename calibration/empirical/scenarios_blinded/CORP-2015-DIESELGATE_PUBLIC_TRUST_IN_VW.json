@@ -1,0 +1,149 @@
+{
+  "id": "BLINDED_a3b45142e7",
+  "original_id": "CORP-2015-DIESELGATE_PUBLIC_TRUST_IN_VW",
+  "domain": "corporate",
+  "title": "Binary corporate referendum-style decision over 5 polling rounds",
+  "country": "Country_CE",
+  "date_start_rel": "T-195d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 39,
+  "ground_truth_outcome": {
+    "pro_pct": 32.0,
+    "source": "https://www.handelsblatt.com/unternehmen/industrie/umfrage-vertrauen-in-volkswagen-bricht-ein/12368484.html",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-195d",
+      "pro_pct": 78.0,
+      "against_pct": 12.0,
+      "undecided_pct": 10.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-156d",
+      "pro_pct": 45.0,
+      "against_pct": 40.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-117d",
+      "pro_pct": 38.0,
+      "against_pct": 48.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-78d",
+      "pro_pct": 35.0,
+      "against_pct": 52.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-39d",
+      "pro_pct": 32.0,
+      "against_pct": 58.0,
+      "undecided_pct": 10.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "Researchers from West Virginia University publish findings showing that certain Volkswagen diesel models emit significantly higher levels of pollutants during real-world driving than in laboratory tests",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "Volkswagen initiates a voluntary recall to recalibrate its EA189 diesel engines in an attempt to address the emissions discrepancies identified by researchers",
+      "shock_magnitude": 0.3,
+      "shock_direction": -1
+    },
+    {
+      "round": 3,
+      "date_rel": "T-?",
+      "description": "Volkswagen officially admits to regulators that it intentionally installed 'defeat device' software in its vehicles to bypass emissions control systems",
+      "shock_magnitude": 0.8,
+      "shock_direction": -1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "The U.S. AGAINST_LEADER_2 Protection Agency (EPA) issues a formal Notice of Violation to Volkswagen, publicly accusing the company of violating the Clean Air Act",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-?",
+      "description": "Following the PRO_LEADER_3 EPA announcement, the scale of the deception is revealed, noting that vehicles emitted up to 40 times the legal limit of nitrogen oxides during real-world driving",
+      "shock_magnitude": 1.0,
+      "shock_direction": -1
+    }
+  ],
+  "agents": [
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "elite",
+      "initial_position": -0.8,
+      "influence": 0.95,
+      "description": ""
+    },
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 0.6,
+      "influence": 0.9,
+      "description": ""
+    },
+    {
+      "name": "AGAINST_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": -0.4,
+      "influence": 0.8,
+      "description": ""
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "institutional",
+      "initial_position": 0.0,
+      "influence": 0.8,
+      "description": "Regulatory body overseeing vehicle compliance"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -0.9,
+      "influence": 0.6,
+      "description": "Groups advocating for strict emissions enforcement"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.3,
+      "description": "Long-term customers resistant to negative news"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": 0.5,
+      "influence": 0.1,
+      "description": "Average NEUTRAL_1 consumer"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.712,
+    "event_volatility": 0.85,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.6,
+    "undecided_share": 0.1
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

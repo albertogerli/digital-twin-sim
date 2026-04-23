@@ -1,0 +1,142 @@
+{
+  "id": "BLINDED_a222c620d1",
+  "original_id": "POL-2017-TURKISH_CONSTITUTIONAL_REFEREN",
+  "domain": "political",
+  "title": "Binary political referendum-style decision over 6 polling rounds",
+  "country": "Country_5E",
+  "date_start_rel": "T-72d",
+  "date_end_rel": "T-0",
+  "n_rounds": 6,
+  "round_duration_days": 12,
+  "ground_truth_outcome": {
+    "pro_pct": 51.4,
+    "source": "https://www.ysk.gov.tr",
+    "type": "referendum"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-74d",
+      "pro_pct": 44.0,
+      "against_pct": 41.0,
+      "undecided_pct": 15.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-62d",
+      "pro_pct": 45.2,
+      "against_pct": 42.5,
+      "undecided_pct": 12.3
+    },
+    {
+      "round": 3,
+      "date_rel": "T-50d",
+      "pro_pct": 46.5,
+      "against_pct": 43.8,
+      "undecided_pct": 9.7
+    },
+    {
+      "round": 4,
+      "date_rel": "T-38d",
+      "pro_pct": 47.8,
+      "against_pct": 45.1,
+      "undecided_pct": 7.1
+    },
+    {
+      "round": 5,
+      "date_rel": "T-26d",
+      "pro_pct": 49.1,
+      "against_pct": 46.4,
+      "undecided_pct": 4.5
+    },
+    {
+      "round": 6,
+      "date_rel": "T-14d",
+      "pro_pct": 50.5,
+      "against_pct": 48.0,
+      "undecided_pct": 1.5
+    }
+  ],
+  "events": [
+    {
+      "round": 4,
+      "date_rel": "T-36d",
+      "description": "Dutch government blocks ministers from holding rallies, sparking diplomatic crisis",
+      "shock_magnitude": 0.6,
+      "shock_direction": 1.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-22d",
+      "description": "President PRO_LEADER_1 intensifies rhetoric against 'Nazism' to mobilize nationalist base",
+      "shock_magnitude": 0.4,
+      "shock_direction": 1.0
+    },
+    {
+      "round": 6,
+      "date_rel": "T-0",
+      "description": "Supreme Election Council (YSK) decides to accept unstamped ballots as valid",
+      "shock_magnitude": 0.9,
+      "shock_direction": 1.0
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "elite",
+      "initial_position": 1.0,
+      "influence": 1.0,
+      "description": "President of COUNTRY, primary proponent of the executive system"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Ruling party supporting the constitutional changes"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.8,
+      "description": "Main opposition party campaigning against the changes"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "institutional",
+      "initial_position": 0.6,
+      "influence": 0.5,
+      "description": "Nationalist party leadership supporting the changes"
+    },
+    {
+      "name": "AGAINST_LEADER_2",
+      "type": "institutional",
+      "initial_position": -1.0,
+      "influence": 0.4,
+      "description": "Pro-Kurdish opposition party campaigning against the changes"
+    },
+    {
+      "name": "PRO_LEADER_4",
+      "type": "citizen_cluster",
+      "initial_position": 0.8,
+      "influence": 0.3,
+      "description": "Core electoral base for the pro-referendum side"
+    },
+    {
+      "name": "AGAINST_LEADER_3",
+      "type": "citizen_cluster",
+      "initial_position": -0.9,
+      "influence": 0.3,
+      "description": "Core electoral base for the anti-referendum side"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.981,
+    "event_volatility": 0.7,
+    "elite_concentration": 0.9,
+    "institutional_trust": 0.4,
+    "undecided_share": 0.15
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

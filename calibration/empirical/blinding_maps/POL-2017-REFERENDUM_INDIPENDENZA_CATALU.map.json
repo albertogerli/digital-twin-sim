@@ -1,0 +1,58 @@
+{
+  "scenario_id": "POL-2017-REFERENDUM_INDIPENDENZA_CATALU",
+  "original_title": "Catalan Independence Referendum 2017: Public Opinion and Institutional Conflict",
+  "original_country": "ES",
+  "country_alias": "Country_9D",
+  "date_end_original": "2017-10-01",
+  "title_template": "Binary political referendum-style decision over 5 polling rounds",
+  "agents": [
+    {
+      "original": "Carles Puigdemont",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 0.9,
+      "influence": 0.9
+    },
+    {
+      "original": "Generalitat de Catalunya",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 0.8,
+      "influence": 0.7
+    },
+    {
+      "original": "Pro-Independence Voters",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 0.7,
+      "influence": 0.4
+    },
+    {
+      "original": "Mariano Rajoy",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -0.9,
+      "influence": 0.9
+    },
+    {
+      "original": "Spanish Constitutional Court",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -0.9,
+      "influence": 0.8
+    },
+    {
+      "original": "Unionist Voters",
+      "alias": "AGAINST_LEADER_3",
+      "role": "AGAINST_LEADER",
+      "rank": 3,
+      "initial_position": -0.7,
+      "influence": 0.4
+    }
+  ]
+}

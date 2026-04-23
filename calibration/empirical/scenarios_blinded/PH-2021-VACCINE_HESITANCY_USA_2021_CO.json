@@ -1,0 +1,128 @@
+{
+  "id": "BLINDED_cde21ab654",
+  "original_id": "PH-2021-VACCINE_HESITANCY_USA_2021_CO",
+  "domain": "public_health",
+  "title": "Binary public health referendum-style decision over 5 polling rounds",
+  "country": "Country_AA",
+  "date_start_rel": "T-210d",
+  "date_end_rel": "T-0",
+  "n_rounds": 5,
+  "round_duration_days": 42,
+  "ground_truth_outcome": {
+    "pro_pct": 67.0,
+    "source": "https://www.kff.org/coronavirus-covid-19/poll-finding/kff-covid-19-vaccine-monitor-july-2021/",
+    "type": "survey"
+  },
+  "polling_trajectory": [
+    {
+      "round": 1,
+      "date_rel": "T-211d",
+      "pro_pct": 47.0,
+      "against_pct": 39.0,
+      "undecided_pct": 14.0
+    },
+    {
+      "round": 2,
+      "date_rel": "T-169d",
+      "pro_pct": 55.0,
+      "against_pct": 32.0,
+      "undecided_pct": 13.0
+    },
+    {
+      "round": 3,
+      "date_rel": "T-127d",
+      "pro_pct": 61.0,
+      "against_pct": 27.0,
+      "undecided_pct": 12.0
+    },
+    {
+      "round": 4,
+      "date_rel": "T-85d",
+      "pro_pct": 64.0,
+      "against_pct": 25.0,
+      "undecided_pct": 11.0
+    },
+    {
+      "round": 5,
+      "date_rel": "T-43d",
+      "pro_pct": 67.0,
+      "against_pct": 22.0,
+      "undecided_pct": 11.0
+    }
+  ],
+  "events": [
+    {
+      "round": 1,
+      "date_rel": "T-?",
+      "description": "President Joe Biden was inaugurated and established a federal goal of administering 100 million AGAINST_LEADER_1 doses within his first 100 days in office",
+      "shock_magnitude": 0.3,
+      "shock_direction": 1
+    },
+    {
+      "round": 2,
+      "date_rel": "T-?",
+      "description": "The FDA granted Emergency Use Authorization (EUA) for the Johnson & Johnson (Janssen) single-dose COVID-19 AGAINST_LEADER_1, expanding access options",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    },
+    {
+      "round": 4,
+      "date_rel": "T-?",
+      "description": "NEUTRAL_1 health data indicated a significant decline in AGAINST_LEADER_1 hesitancy across most demographic AGAINST_LEADER_1, particularly among young adults and Black Americans",
+      "shock_magnitude": 0.5,
+      "shock_direction": 1
+    }
+  ],
+  "agents": [
+    {
+      "name": "PRO_LEADER_1",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.9,
+      "description": "Federal NEUTRAL_1 health agency promoting vaccination"
+    },
+    {
+      "name": "PRO_LEADER_2",
+      "type": "institutional",
+      "initial_position": 1.0,
+      "influence": 0.8,
+      "description": "Executive branch driving federal AGAINST_LEADER_1 distribution"
+    },
+    {
+      "name": "PRO_LEADER_3",
+      "type": "elite",
+      "initial_position": 0.8,
+      "influence": 0.6,
+      "description": "Major news outlets reporting on AGAINST_LEADER_1 efficacy"
+    },
+    {
+      "name": "AGAINST_LEADER_1",
+      "type": "citizen_cluster",
+      "initial_position": -1.0,
+      "influence": 0.4,
+      "description": "Organized AGAINST_LEADER_1 opposing mandates and expressing safety concerns"
+    },
+    {
+      "name": "PRO_SUPPORTER_1",
+      "type": "elite",
+      "initial_position": 0.2,
+      "influence": 0.7,
+      "description": "PRO_SUPPORTER_1-level leaders with varying levels of AGAINST_LEADER_1 promotion"
+    },
+    {
+      "name": "NEUTRAL_1",
+      "type": "citizen_cluster",
+      "initial_position": 0.0,
+      "influence": 0.1,
+      "description": "The aggregate population of COUNTRY adults"
+    }
+  ],
+  "covariates": {
+    "initial_polarization": 0.776,
+    "event_volatility": 0.45,
+    "elite_concentration": 0.7,
+    "institutional_trust": 0.55,
+    "undecided_share": 0.14
+  },
+  "notes": "Blinded: entity names, geography, and absolute dates redacted. Numeric fields preserved."
+}

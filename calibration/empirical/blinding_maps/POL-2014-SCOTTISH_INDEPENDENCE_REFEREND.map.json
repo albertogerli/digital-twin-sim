@@ -1,0 +1,74 @@
+{
+  "scenario_id": "POL-2014-SCOTTISH_INDEPENDENCE_REFEREND",
+  "original_title": "Scottish Independence Referendum 2014: Public Opinion Trajectory",
+  "original_country": "GB",
+  "country_alias": "Country_50",
+  "date_end_original": "2014-09-18",
+  "title_template": "Binary political referendum-style decision over 7 polling rounds",
+  "agents": [
+    {
+      "original": "Alex Salmond",
+      "alias": "PRO_LEADER_1",
+      "role": "PRO_LEADER",
+      "rank": 1,
+      "initial_position": 1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Scottish National Party",
+      "alias": "PRO_LEADER_2",
+      "role": "PRO_LEADER",
+      "rank": 2,
+      "initial_position": 1.0,
+      "influence": 0.8
+    },
+    {
+      "original": "Yes Scotland",
+      "alias": "PRO_LEADER_3",
+      "role": "PRO_LEADER",
+      "rank": 3,
+      "initial_position": 1.0,
+      "influence": 0.7
+    },
+    {
+      "original": "Urban Working Class",
+      "alias": "PRO_LEADER_4",
+      "role": "PRO_LEADER",
+      "rank": 4,
+      "initial_position": 0.5,
+      "influence": 0.4
+    },
+    {
+      "original": "Alistair Darling",
+      "alias": "AGAINST_LEADER_1",
+      "role": "AGAINST_LEADER",
+      "rank": 1,
+      "initial_position": -1.0,
+      "influence": 0.9
+    },
+    {
+      "original": "Conservative Party",
+      "alias": "AGAINST_LEADER_2",
+      "role": "AGAINST_LEADER",
+      "rank": 2,
+      "initial_position": -1.0,
+      "influence": 0.7
+    },
+    {
+      "original": "Better Together",
+      "alias": "AGAINST_LEADER_3",
+      "role": "AGAINST_LEADER",
+      "rank": 3,
+      "initial_position": -1.0,
+      "influence": 0.7
+    },
+    {
+      "original": "Rural Older Voters",
+      "alias": "AGAINST_LEADER_4",
+      "role": "AGAINST_LEADER",
+      "rank": 4,
+      "initial_position": -0.8,
+      "influence": 0.4
+    }
+  ]
+}

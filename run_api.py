@@ -18,7 +18,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 if __name__ == "__main__":
     env = os.getenv("DTS_ENV", "development")
     host = os.getenv("DTS_HOST", "0.0.0.0")
-    port = int(os.getenv("DTS_PORT", "8000"))
+    # Railway / Heroku inject PORT — prefer it over DTS_PORT for portability.
+    port = int(os.getenv("PORT") or os.getenv("DTS_PORT") or "8000")
 
     if env == "production":
         uvicorn.run(

@@ -119,6 +119,15 @@ def _tenant_id(tenant: Optional[Tenant]) -> str:
     return tenant.tenant_id if tenant else "default"
 
 
+# ── Health (used by Railway / load balancer) ─────────────────
+
+@app.get("/api/health")
+async def health():
+    """Lightweight readiness probe — no DB, no LLM. Returns 200 if the
+    process is alive and the FastAPI app has started."""
+    return {"status": "ok", "service": "digital-twin-sim-api"}
+
+
 # ── Domains ──────────────────────────────────────────────────
 
 @app.get("/api/domains")

@@ -27,20 +27,36 @@ const PHASE_LABELS: Record<string, string> = {
   brief_analysis: "Analisi Brief",
 };
 
+// Fasi predicte mostrate prima che arrivi il primo evento dal backend, così la UI
+// non resta cieca durante i ~2-5s di "analyzing" iniziale.
+const PREDICTED_PHASES: BriefingStep[] = [
+  { phase: "web_research", message: "Ricerca contesto online...", done: false },
+  { phase: "documents", message: "Lettura documenti caricati...", done: false },
+  { phase: "brief_analysis", message: "Analisi del brief...", done: false },
+  { phase: "entity_research", message: "Ricerca entit\u00E0 rilevanti...", done: false },
+  { phase: "agent_generation", message: "Generazione agenti...", done: false },
+];
+
 export default function BriefingProgress({ steps, visible }: BriefingProgressProps) {
-  if (!visible || steps.length === 0) return null;
+  if (!visible) return null;
+
+  // No real events yet → show predicted pipeline with first phase pulsing.
+  const isPredicted = steps.length === 0;
+  const renderSteps = isPredicted ? PREDICTED_PHASES : steps;
 
   return (
     <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-3 mb-4">
       <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-3">
-        Preparazione Scenario
+        {isPredicted ? "Preparazione Scenario \u00B7 in attesa..." : "Preparazione Scenario"}
       </p>
       <div className="space-y-2">
-        {steps.map((step, i) => {
+        {renderSteps.map((step, i) => {
           const icon = PHASE_ICONS[step.phase] || "\u2699\uFE0F";
           const label = PHASE_LABELS[step.phase] || step.phase;
-          const isLast = i === steps.length - 1;
-          const isActive = isLast && !step.done;
+          const isLast = i === renderSteps.length - 1;
+          // In predicted mode, only the first phase pulses; the rest are dimmed.
+          // In live mode, the last incomplete step is the active one.
+          const isActive = isPredicted ? i === 0 : (isLast && !step.done);
 
           return (
             <div key={`${step.phase}-${i}`} className="flex items-start gap-2">
@@ -55,7 +71,7 @@ export default function BriefingProgress({ steps, visible }: BriefingProgressPro
                 }`}>
                   {step.done ? "\u2713" : icon}
                 </div>
-                {i < steps.length - 1 && (
+                {i < renderSteps.length - 1 && (
                   <div className={`w-px h-3 ${step.done ? "bg-ki-success/30" : "bg-ki-border"}`} />
                 )}
               </div>

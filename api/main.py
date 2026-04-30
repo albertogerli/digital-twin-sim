@@ -423,8 +423,8 @@ async def get_scenario_file(
     # Sanitize
     if ".." in scenario_id or ".." in filename:
         raise HTTPException(400, "Invalid path")
-    if not filename.endswith(".json") and not filename.endswith(".md"):
-        raise HTTPException(400, "Only .json and .md files allowed")
+    if not (filename.endswith(".json") or filename.endswith(".md") or filename.endswith(".html")):
+        raise HTTPException(400, "Only .json, .md and .html files allowed")
 
     path = os.path.join(EXPORTS_DIR, f"scenario_{scenario_id}", filename)
     if not os.path.exists(path):
@@ -433,8 +433,9 @@ async def get_scenario_file(
     if filename.endswith(".json"):
         with open(path) as f:
             return json.load(f)
-    else:
-        return FileResponse(path, media_type="text/markdown")
+    if filename.endswith(".html"):
+        return FileResponse(path, media_type="text/html")
+    return FileResponse(path, media_type="text/markdown")
 
 
 # ── Online observations (EnKF) ───────────────────────────────

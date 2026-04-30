@@ -859,6 +859,14 @@ def export_scenario(scenario: str, outputs_dir: str, export_dir: str, source_nam
         shutil.copy2(report_path, dest)
         print(f"  Written: report.md")
 
+    # Copy printable HTML report if exists
+    html_report_path = os.path.join(outputs_dir, f"{src}_report.html")
+    if os.path.exists(html_report_path):
+        import shutil
+        dest = os.path.join(scenario_dir, "report.html")
+        shutil.copy2(html_report_path, dest)
+        print(f"  Written: report.html")
+
     # Financial impact (backend-simulated) — frontend bridge
     fin_src = os.path.join(outputs_dir, f"{src}_financial_impact.json")
     if os.path.exists(fin_src):

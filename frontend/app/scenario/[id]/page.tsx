@@ -500,6 +500,21 @@ export default function ScenarioDashboard({
       {/* Report Section (Markdown — dynamic import) */}
       {reportMarkdown && reportMarkdown.trim().length > 0 && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-headline font-bold">Report di simulazione</h2>
+            <a
+              href={`/api/scenarios/${id}/report.html`}
+              target="_blank"
+              rel="noopener"
+              className="px-3 py-1.5 rounded-sm bg-ki-primary hover:bg-ki-primary-muted text-white font-semibold transition-colors text-xs flex items-center gap-1.5"
+              title="Apri il report stampabile in una nuova scheda. Premi ⌘P / Ctrl+P per esportare in PDF."
+            >
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 2v6m0 0L3 5m3 3l3-3M3 13v3a1 1 0 001 1h12a1 1 0 001-1v-3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Esporta Report (PDF)
+            </a>
+          </div>
           <ReportSection markdown={reportMarkdown} />
         </div>
       )}

@@ -417,8 +417,8 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
           )}
         </div>
 
-        {/* Briefing Progress (pre-round phase) */}
-        <BriefingProgress steps={briefingSteps} visible={!!isBriefing && briefingSteps.length > 0} />
+        {/* Briefing Progress (pre-round phase) — visible anche prima del primo evento */}
+        <BriefingProgress steps={briefingSteps} visible={!!isBriefing} />
 
         {/* Main content: 2-column layout on desktop */}
         {rounds.length > 0 && (
@@ -616,12 +616,26 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             </button>
           )}
           {status?.status === "completed" && scenarioId && (
-            <Link
-              href={`/scenario/${scenarioId}`}
-              className="px-4 py-1.5 rounded-sm bg-ki-primary hover:bg-ki-primary-muted text-white font-semibold transition-colors text-xs"
-            >
-              Vedi Dashboard Completa
-            </Link>
+            <>
+              <Link
+                href={`/scenario/${scenarioId}`}
+                className="px-4 py-1.5 rounded-sm bg-ki-primary hover:bg-ki-primary-muted text-white font-semibold transition-colors text-xs"
+              >
+                Vedi Dashboard Completa
+              </Link>
+              <a
+                href={`/api/scenarios/${scenarioId}/report.html`}
+                target="_blank"
+                rel="noopener"
+                className="px-4 py-1.5 rounded-sm bg-ki-surface-raised border border-ki-border hover:bg-ki-surface-hover text-ki-on-surface font-semibold transition-colors text-xs flex items-center gap-1.5"
+                title="Apri il report in una nuova scheda. Premi ⌘P / Ctrl+P per esportare in PDF."
+              >
+                <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M6 2v6m0 0L3 5m3 3l3-3M3 13v3a1 1 0 001 1h12a1 1 0 001-1v-3" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                Esporta Report (PDF)
+              </a>
+            </>
           )}
           <Link
             href="/new"

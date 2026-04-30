@@ -391,13 +391,23 @@ class RoundManager:
         channel_map = self.domain.get_archetype_channel_map()
         profile_template = self.domain.get_mini_profile_template()
 
-        # Inject few-shot examples into prompts
-        elite_few_shot = self.domain.get_elite_few_shot()
-        cluster_few_shot = self.domain.get_cluster_few_shot()
+        # Inject few-shot examples into prompts.
+        # The few-shot content is JSON and contains unescaped {}; these must be
+        # doubled so the subsequent prompt_template.format() in
+        # elite_agent.generate_round / citizen_swarm.simulate_round treats them
+        # as literal braces, not placeholders. Blinded mode drops the example
+        # to avoid culturally-specific contamination (e.g. Italian roster).
+        blinded_mode = EventInjector._detect_blinded(self.scenario_context or "")
+        elite_few_shot = self.domain.get_elite_few_shot() if not blinded_mode else ""
+        cluster_few_shot = self.domain.get_cluster_few_shot() if not blinded_mode else ""
+
+        def _esc(s: str) -> str:
+            return s.replace("{", "{{").replace("}", "}}")
+
         if elite_few_shot:
-            elite_prompt = elite_prompt + f"\n\nEXAMPLE OF A HIGH-QUALITY RESPONSE (use as format/quality reference, do NOT copy content):\n{elite_few_shot}\n"
+            elite_prompt = elite_prompt + f"\n\nEXAMPLE OF A HIGH-QUALITY RESPONSE (use as format/quality reference, do NOT copy content):\n{_esc(elite_few_shot)}\n"
         if cluster_few_shot:
-            cluster_prompt = cluster_prompt + f"\n\nEXAMPLE OF A HIGH-QUALITY RESPONSE (use as format/quality reference, do NOT copy content):\n{cluster_few_shot}\n"
+            cluster_prompt = cluster_prompt + f"\n\nEXAMPLE OF A HIGH-QUALITY RESPONSE (use as format/quality reference, do NOT copy content):\n{_esc(cluster_few_shot)}\n"
 
         # Inject language instruction into prompts
         if self.language and self.language != "en":
@@ -686,6 +696,11 @@ class RoundManager:
             "confidence_interval": confidence_interval,
             "regime_info": regime_info,
             "orchestrator": orchestrator_data,
+            # Persisted for downstream reporting (HTML report, exports)
+            "top_posts": top_posts_data,
+            "sentiment": sentiment_pcts,
+            "shock_magnitude": event.get("shock_magnitude", 0),
+            "shock_direction": event.get("shock_direction", 0),
         }
 
         # Flush any pending SQLite writes before reporting round complete so

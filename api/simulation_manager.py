@@ -707,11 +707,20 @@ class SimulationManager:
         state = self.simulations[sim_id]
         request = state.request
 
+        # Heartbeat immediato: senza questo l'utente vede "Log eventi (0)" finché
+        # job_queue.acquire() rilascia il lock (può richiedere secondi se ci sono
+        # sim in coda davanti).
+        state.status = "analyzing"
+        self._persist()
+        await self._emit(sim_id, ProgressEvent(
+            type="status",
+            message="Simulazione in coda, preparazione...",
+            phase="queued",
+        ))
+
         async with job_queue.acquire(sim_id):
             try:
                 # Phase 1: Create LLM client
-                state.status = "analyzing"
-                self._persist()
                 await self._emit(sim_id, ProgressEvent(
                     type="status", message="Inizializzazione LLM...",
                     phase="init"

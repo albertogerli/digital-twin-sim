@@ -156,14 +156,27 @@ class SimulationEngine:
         )
 
         # Step 4 — final Markdown report
-        await ReportingService(
+        report_svc = ReportingService(
             llm=self.llm, config=self.config, domain=self.domain,
             output_dir=self.output_dir, elite_only=self.elite_only,
-        ).generate_report(
+        )
+        md_path = await report_svc.generate_report(
             round_results=self.round_results,
             elite_agents=self.elite_agents,
             citizen_swarm=self.citizen_swarm,
         )
+
+        # Step 4b — printable HTML report (deliverable for the client)
+        try:
+            report_svc.generate_html_report(
+                round_results=self.round_results,
+                elite_agents=self.elite_agents,
+                citizen_swarm=self.citizen_swarm,
+                markdown_report_path=md_path,
+                cost=self.llm.stats.total_cost if hasattr(self.llm, "stats") else None,
+            )
+        except Exception as e:
+            logger.warning(f"HTML report generation failed: {e}")
 
         self._print_footer()
 

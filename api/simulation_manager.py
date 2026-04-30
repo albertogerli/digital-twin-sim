@@ -130,9 +130,17 @@ class SimulationManager:
                 with open(PERSISTENCE_FILE) as f:
                     data = json.load(f)
                 for entry in data:
+                    # Restore wargame fields by faking a request that carries
+                    # them, so SimulationState.__init__ picks them up.
+                    req = SimulationRequest(brief=entry.get("brief", ""))
+                    if entry.get("wargame_mode"):
+                        try:
+                            req.wargame_mode = True
+                            req.player_role = entry.get("player_role", "")
+                        except Exception:
+                            pass
                     state = SimulationState(
-                        entry["id"],
-                        SimulationRequest(brief=entry.get("brief", "")),
+                        entry["id"], req,
                         tenant_id=entry.get("tenant_id", "default"),
                     )
                     state.status = entry.get("status", "completed")
@@ -140,14 +148,26 @@ class SimulationManager:
                     state.scenario_id = entry.get("scenario_id")
                     state.domain = entry.get("domain")
                     state.total_rounds = entry.get("total_rounds", 0)
-                    state.current_round = state.total_rounds
+                    state.current_round = entry.get("current_round", state.total_rounds)
                     state.cost = entry.get("cost", 0)
                     state.agents_count = entry.get("agents_count", 0)
                     state.created_at = entry.get("created_at", "")
                     state.completed_at = entry.get("completed_at")
                     state.error = entry.get("error")
-                    # Mark running sims as failed (server restarted)
-                    if state.status in ("running", "analyzing", "configuring", "exporting"):
+                    # Wargame: restore sitrep so the UI can show the last
+                    # awaiting_player snapshot even after a container restart.
+                    sitrep = entry.get("wargame_sitrep")
+                    if sitrep:
+                        state._wargame_sitrep = sitrep
+                    # Wargame paused at awaiting_player: keep the status so the
+                    # UI shows the SITREP instead of a blank "failed" screen.
+                    # The submit_intervention endpoint will return a clear 410
+                    # because state._restored_after_restart is set below.
+                    if (state.status == "awaiting_player"
+                            and entry.get("wargame_mode")):
+                        state._restored_after_restart = True
+                    elif state.status in ("running", "analyzing",
+                                          "configuring", "exporting"):
                         state.status = "failed"
                         state.error = "Server restarted during simulation"
                     self.simulations[state.id] = state
@@ -167,8 +187,10 @@ class SimulationManager:
         self._persist_dirty = True
         now = time.time()
         force = any(
-            s.status in ("completed", "failed", "cancelled")
-            and s.completed_at
+            (s.status in ("completed", "failed", "cancelled") and s.completed_at)
+            # Wargame paused → flush immediately so a container restart during
+            # the human-thinking window doesn't lose the SITREP.
+            or s.status == "awaiting_player"
             for s in self.simulations.values()
         )
         if not force and (now - self._last_persist_ts) < PERSIST_MIN_INTERVAL_S:
@@ -180,7 +202,7 @@ class SimulationManager:
         os.makedirs(os.path.dirname(PERSISTENCE_FILE), exist_ok=True)
         data = []
         for s in self.simulations.values():
-            data.append({
+            entry = {
                 "id": s.id,
                 "tenant_id": s.tenant_id,
                 "status": s.status,
@@ -189,12 +211,21 @@ class SimulationManager:
                 "scenario_id": s.scenario_id,
                 "domain": s.domain,
                 "total_rounds": s.total_rounds,
+                "current_round": s.current_round,
                 "cost": s.cost,
                 "agents_count": s.agents_count,
                 "created_at": s.created_at,
                 "completed_at": s.completed_at,
                 "error": s.error,
-            })
+            }
+            # Wargame fields — let the UI rehydrate after a container restart.
+            if getattr(s, "wargame_mode", False):
+                entry["wargame_mode"] = True
+                entry["player_role"] = getattr(s, "player_role", "")
+                sitrep = getattr(s, "_wargame_sitrep", None)
+                if sitrep:
+                    entry["wargame_sitrep"] = sitrep
+            data.append(entry)
         tmp_path = PERSISTENCE_FILE + ".tmp"
         with open(tmp_path, "w") as f:
             json.dump(data, f, indent=2)

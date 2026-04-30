@@ -223,6 +223,14 @@ export async function submitIntervention(
   });
 
   if (!res.ok) {
+    // 410 Gone = the server restarted between rounds and the live wargame
+    // task is dead. Surface a human-readable message to the UI.
+    if (res.status === 410) {
+      const body = await res.json().catch(() => ({}));
+      const detail = (body.detail as string)
+        || "Sessione interrotta dal riavvio del server. Avvia una nuova simulazione.";
+      throw new Error(detail);
+    }
     const err = await res.text();
     throw new Error(`Intervention failed: ${res.status} — ${err}`);
   }

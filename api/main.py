@@ -321,6 +321,16 @@ async def wargame_intervene(
     state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant))
     if not state:
         raise HTTPException(404, "Simulation not found")
+    # Container restarted between rounds: the SITREP survived (in-memory state
+    # was rehydrated from disk) but the live asyncio task and LLM clients did
+    # not. We can't resume reliably yet — return a clear 410 so the UI prompts
+    # the player to start a new run instead of a cryptic 404.
+    if getattr(state, "_restored_after_restart", False):
+        raise HTTPException(
+            410,
+            "Simulazione interrotta da un riavvio del server. La sessione "
+            "wargame non può essere ripresa. Avvia una nuova simulazione."
+        )
     if state.status != "awaiting_player":
         raise HTTPException(
             400,

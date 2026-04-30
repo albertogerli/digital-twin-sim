@@ -35,11 +35,39 @@ class EventInjector:
         self.few_shot_example = few_shot_example
         self.event_history: list[dict] = []
 
+        # Blinded-mode detection: the sim-lift adapter anonymizes scenarios
+        # with tokens like "Country_NN" and "PRO_LEADER_N" and states
+        # "Ground truth withheld". When we detect those, we disable the
+        # domain few-shot example (which may be culturally specific, e.g.
+        # Italian) and prepend a hard-guard instruction telling the LLM to
+        # stay within the anonymized schema. See sim_adapter._blind().
+        self.blinded = self._detect_blinded(scenario_context)
+        if self.blinded:
+            self.few_shot_example = ""  # drop potentially-contaminating example
+            blind_guard = (
+                "\nBLINDED MODE: the scenario is anonymized. You MUST NOT invent or "
+                "reference real-world named institutions, parties, politicians, media "
+                "outlets, or legal bodies from any country. Use only the generic "
+                "placeholder labels already present in the scenario context (e.g. "
+                "PRO_LEADER_1, AGAINST_LEADER_3, COUNTRY, Country_NN) or purely "
+                "role-based descriptions (e.g. 'the central bank', 'a major daily "
+                "newspaper', 'the finance ministry'). This overrides any example "
+                "event style.\n"
+            )
+            self.event_prompt_template = blind_guard + self.event_prompt_template
+
         # Inject language instruction
         if language and language != "en":
             lang_map = {"it": "Italian", "es": "Spanish", "fr": "French", "de": "German", "pt": "Portuguese"}
             lang_name = lang_map.get(language, language)
             self.event_prompt_template = f"\nIMPORTANT: Write ALL text content in {lang_name}. Only JSON keys in English.\n" + self.event_prompt_template
+
+    @staticmethod
+    def _detect_blinded(scenario_context: str) -> bool:
+        if not scenario_context:
+            return False
+        markers = ("Ground truth withheld", "Country_", "PRO_LEADER_", "AGAINST_LEADER_")
+        return any(m in scenario_context for m in markers)
 
     def _get_timeline_label(self, round_num: int) -> str:
         if self.timeline_labels and round_num <= len(self.timeline_labels):

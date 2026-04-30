@@ -117,6 +117,28 @@ class SimulationManager:
             # JSON snapshot: if both exist, DB wins (it's append-only true state).
             await db.mark_running_as_failed()
             rows = await db.list_simulations()
+            # First-run migration: DB exists but empty, in-memory state has
+            # data from the old JSON file → push it into DB instead of wiping.
+            if not rows and self.simulations:
+                logger.info(f"Postgres empty, migrating {len(self.simulations)} sims from JSON")
+                for s in self.simulations.values():
+                    try:
+                        await db.upsert_simulation({
+                            "id": s.id, "tenant_id": s.tenant_id, "status": s.status,
+                            "brief": s.request.brief, "scenario_name": s.scenario_name,
+                            "scenario_id": s.scenario_id, "domain": s.domain,
+                            "current_round": s.current_round, "total_rounds": s.total_rounds,
+                            "cost": s.cost, "agents_count": s.agents_count,
+                            "created_at": s.created_at, "completed_at": s.completed_at,
+                            "error": s.error,
+                            "wargame_mode": getattr(s, "wargame_mode", False),
+                            "player_role": getattr(s, "player_role", ""),
+                            "wargame_sitrep": getattr(s, "_wargame_sitrep", None),
+                        })
+                    except Exception as ex:
+                        logger.warning(f"Migrate {s.id} failed: {ex}")
+                logger.info("JSON→DB migration complete")
+                return  # in-memory state preserved
             self.simulations.clear()
             for row in rows:
                 req = SimulationRequest(brief=row.get("brief") or "")

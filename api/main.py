@@ -134,6 +134,51 @@ async def health():
     return {"status": "ok", "service": "digital-twin-sim-api"}
 
 
+@app.get("/api/db/stats")
+async def db_stats():
+    """Diagnostic: row counts directly from Postgres (bypasses in-memory)."""
+    from api import db as _db
+    if not _db.is_available():
+        return {"db_configured": False, "message": "DATABASE_URL not set"}
+    try:
+        pool = await _db.get_pool()
+        if not pool:
+            return {"db_configured": True, "connected": False}
+        async with pool.acquire() as conn:
+            total = await conn.fetchval("SELECT COUNT(*) FROM simulations")
+            by_status = await conn.fetch(
+                "SELECT status, COUNT(*) AS n FROM simulations GROUP BY status"
+            )
+            wargame = await conn.fetchval(
+                "SELECT COUNT(*) FROM simulations WHERE wargame_mode = TRUE"
+            )
+            recent = await conn.fetch(
+                "SELECT id, status, scenario_name, wargame_mode, "
+                "current_round, total_rounds, created_at "
+                "FROM simulations ORDER BY created_at DESC LIMIT 5"
+            )
+        return {
+            "db_configured": True,
+            "connected": True,
+            "total_simulations": total,
+            "by_status": {r["status"]: r["n"] for r in by_status},
+            "wargame_count": wargame,
+            "recent": [
+                {
+                    "id": r["id"],
+                    "status": r["status"],
+                    "scenario_name": r["scenario_name"],
+                    "wargame": r["wargame_mode"],
+                    "round": f"{r['current_round']}/{r['total_rounds']}",
+                    "created_at": r["created_at"].isoformat() if r["created_at"] else None,
+                }
+                for r in recent
+            ],
+        }
+    except Exception as e:
+        return {"db_configured": True, "connected": False, "error": str(e)}
+
+
 # ── Domains ──────────────────────────────────────────────────
 
 @app.get("/api/domains")

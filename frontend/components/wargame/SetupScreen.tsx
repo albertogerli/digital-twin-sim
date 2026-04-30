@@ -146,7 +146,7 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
           </button>
 
           <div className="font-data text-[8px] text-ki-on-surface-muted mt-2 text-center">
-            BACKEND MUST BE RUNNING ON localhost:8000 — ALL AGENTS WILL REACT TO YOUR MOVES
+            ALL AGENTS WILL REACT TO YOUR MOVES IN REAL TIME
           </div>
         </div>
       </div>

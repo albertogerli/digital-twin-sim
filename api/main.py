@@ -134,6 +134,65 @@ async def health():
     return {"status": "ok", "service": "digital-twin-sim-api"}
 
 
+@app.get("/api/disk/stats")
+async def disk_stats():
+    """Diagnostic: check writability + free space on /app/outputs (volume mount).
+    Helps debug 'disk I/O error' from SQLite on Railway volume."""
+    import shutil
+    out_dir = OUTPUTS_DIR
+    info = {"path": out_dir, "exists": os.path.isdir(out_dir)}
+    try:
+        usage = shutil.disk_usage(out_dir)
+        info["total_gb"] = round(usage.total / 1e9, 2)
+        info["used_gb"] = round(usage.used / 1e9, 2)
+        info["free_gb"] = round(usage.free / 1e9, 2)
+        info["used_pct"] = round(usage.used / usage.total * 100, 1) if usage.total else None
+    except Exception as e:
+        info["disk_usage_error"] = str(e)
+
+    # Test writability with a small probe file
+    probe = os.path.join(out_dir, ".write_probe")
+    try:
+        with open(probe, "w") as f:
+            f.write(str(time.time()))
+        os.remove(probe)
+        info["writable"] = True
+    except Exception as e:
+        info["writable"] = False
+        info["write_error"] = str(e)
+
+    # Test SQLite + WAL specifically (the failure mode the user hit)
+    sqlite_probe = os.path.join(out_dir, ".sqlite_probe.db")
+    try:
+        import sqlite3
+        if os.path.exists(sqlite_probe):
+            os.remove(sqlite_probe)
+        conn = sqlite3.connect(sqlite_probe, timeout=5.0)
+        conn.execute("PRAGMA journal_mode = WAL")
+        conn.execute("CREATE TABLE t (x INT)")
+        conn.execute("INSERT INTO t VALUES (1)")
+        conn.commit()
+        conn.close()
+        for ext in ("", "-wal", "-shm"):
+            f = sqlite_probe + ext
+            if os.path.exists(f):
+                os.remove(f)
+        info["sqlite_wal"] = "ok"
+    except Exception as e:
+        info["sqlite_wal"] = "FAIL"
+        info["sqlite_error"] = str(e)
+
+    # List existing .db files to spot stuck simulations
+    try:
+        dbs = [f for f in os.listdir(out_dir) if f.endswith(".db")]
+        info["existing_dbs"] = dbs[:20]
+        info["db_count"] = len(dbs)
+    except Exception:
+        pass
+
+    return info
+
+
 @app.get("/api/db/stats")
 async def db_stats():
     """Diagnostic: row counts directly from Postgres (bypasses in-memory)."""

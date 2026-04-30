@@ -5,7 +5,11 @@ ENV PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
     DTS_ENV=production \
     DTS_HOST=0.0.0.0 \
-    DTS_WORKERS=2
+    DTS_WORKERS=1
+# DTS_WORKERS=1: single uvicorn worker because the social-platform layer uses
+# SQLite + WAL on the Railway volume; multiple workers race on the .db-wal
+# / .db-shm files and trigger "disk I/O error". When we move social platform
+# to Postgres (C-full) we can scale workers freely.
 
 WORKDIR /app
 

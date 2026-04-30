@@ -280,11 +280,18 @@ class SimulationManager:
             if not db.is_available():
                 return
             async def _upsert_all():
+                ok, err = 0, 0
                 for e in entries:
                     try:
                         await db.upsert_simulation(e)
+                        ok += 1
                     except Exception as ex:
+                        err += 1
                         logger.warning(f"DB upsert failed for {e.get('id')}: {ex}")
+                if err:
+                    logger.warning(f"DB persist batch: {ok} ok, {err} failed")
+                else:
+                    logger.debug(f"DB persist batch: {ok} sims upserted")
             loop.create_task(_upsert_all())
         except Exception as e:
             logger.warning(f"DB persist scheduling failed: {e}")

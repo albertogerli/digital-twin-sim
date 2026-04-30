@@ -6,6 +6,7 @@ Falls back to JSON file persistence when DATABASE_URL is not set.
 import json
 import logging
 import os
+from datetime import datetime
 from typing import Optional
 
 logger = logging.getLogger(__name__)
@@ -97,6 +98,19 @@ async def check_health() -> bool:
         return False
 
 
+def _to_dt(v):
+    """Coerce ISO string / datetime / None into a datetime asyncpg accepts."""
+    if v is None or isinstance(v, datetime):
+        return v
+    if isinstance(v, str):
+        try:
+            # Handle "Z" suffix and microseconds
+            return datetime.fromisoformat(v.replace("Z", "+00:00"))
+        except ValueError:
+            return None
+    return None
+
+
 async def upsert_simulation(data: dict):
     """Insert or update a simulation record."""
     pool = await get_pool()
@@ -136,8 +150,8 @@ async def upsert_simulation(data: dict):
             data.get("total_rounds", 0),
             data.get("cost", 0),
             data.get("agents_count", 0),
-            data.get("created_at"),
-            data.get("completed_at"),
+            _to_dt(data.get("created_at")),
+            _to_dt(data.get("completed_at")),
             data.get("error"),
             bool(data.get("wargame_mode", False)),
             data.get("player_role"),

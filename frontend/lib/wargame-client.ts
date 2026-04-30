@@ -266,6 +266,9 @@ export function connectSSE(simId: string, cb: WargameCallbacks): () => void {
       case "status": {
         log("status", evt.message);
         if (evt.data?.total_rounds) totalRounds = evt.data.total_rounds as number;
+        // Bridge status events to the phase indicator so the wargame UI
+        // doesn't sit on "CONNECTING..." for 30+s during init/web_research/etc.
+        cb.onRoundPhase(0, evt.phase || "init", evt.message);
         break;
       }
 

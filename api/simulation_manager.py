@@ -101,7 +101,57 @@ class SimulationManager:
         self._last_persist_ts: float = 0.0
         self._persist_dirty: bool = False
         self._safe_name_cache: dict[str, str] = {}
+        # Sync fallback at boot — Postgres rehydration runs in initialize()
+        # called from FastAPI startup hook (db calls require an event loop).
         self._load_persisted()
+
+    async def initialize(self):
+        """Async startup: rehydrate from Postgres if DATABASE_URL is set.
+        Must be called from a FastAPI startup hook, not __init__."""
+        try:
+            from api import db
+            if not db.is_available():
+                logger.info("DATABASE_URL not set — using JSON file persistence")
+                return
+            # Rebuild in-memory state from DB. DB takes precedence over the
+            # JSON snapshot: if both exist, DB wins (it's append-only true state).
+            await db.mark_running_as_failed()
+            rows = await db.list_simulations()
+            self.simulations.clear()
+            for row in rows:
+                req = SimulationRequest(brief=row.get("brief") or "")
+                if row.get("wargame_mode"):
+                    try:
+                        req.wargame_mode = True
+                        req.player_role = row.get("player_role") or ""
+                    except Exception:
+                        pass
+                state = SimulationState(
+                    row["id"], req,
+                    tenant_id=row.get("tenant_id", "default"),
+                )
+                state.status = row.get("status") or "completed"
+                state.scenario_name = row.get("scenario_name")
+                state.scenario_id = row.get("scenario_id")
+                state.domain = row.get("domain")
+                state.total_rounds = row.get("total_rounds") or 0
+                state.current_round = row.get("current_round") or 0
+                state.cost = float(row.get("cost") or 0)
+                state.agents_count = row.get("agents_count") or 0
+                ca = row.get("created_at")
+                state.created_at = ca.isoformat() if hasattr(ca, "isoformat") else (ca or "")
+                cm = row.get("completed_at")
+                state.completed_at = cm.isoformat() if hasattr(cm, "isoformat") else cm
+                state.error = row.get("error")
+                sitrep = row.get("wargame_sitrep")
+                if sitrep:
+                    state._wargame_sitrep = sitrep
+                if state.status == "awaiting_player" and row.get("wargame_mode"):
+                    state._restored_after_restart = True
+                self.simulations[state.id] = state
+            logger.info(f"Postgres rehydrate: {len(self.simulations)} simulations loaded")
+        except Exception as e:
+            logger.warning(f"Postgres rehydrate failed (continuing with JSON state): {e}")
 
     @staticmethod
     def _sanitize_name(name: str) -> str:
@@ -197,8 +247,28 @@ class SimulationManager:
             return
         self._flush_persist()
 
+    def _persist_to_db_fire_and_forget(self, entries: list[dict]):
+        """Async upsert to Postgres. Called from sync code via create_task."""
+        try:
+            loop = asyncio.get_running_loop()
+        except RuntimeError:
+            return  # No event loop (e.g. unit tests) → skip DB, file is enough
+        try:
+            from api import db
+            if not db.is_available():
+                return
+            async def _upsert_all():
+                for e in entries:
+                    try:
+                        await db.upsert_simulation(e)
+                    except Exception as ex:
+                        logger.warning(f"DB upsert failed for {e.get('id')}: {ex}")
+            loop.create_task(_upsert_all())
+        except Exception as e:
+            logger.warning(f"DB persist scheduling failed: {e}")
+
     def _flush_persist(self):
-        """Write simulations.json now. Safe to call from any thread."""
+        """Write simulations.json + Postgres now. Safe to call from any thread."""
         os.makedirs(os.path.dirname(PERSISTENCE_FILE), exist_ok=True)
         data = []
         for s in self.simulations.values():
@@ -232,6 +302,8 @@ class SimulationManager:
         os.replace(tmp_path, PERSISTENCE_FILE)
         self._last_persist_ts = time.time()
         self._persist_dirty = False
+        # Mirror to Postgres (no-op if DATABASE_URL unset)
+        self._persist_to_db_fire_and_forget(data)
 
     async def launch(
         self,

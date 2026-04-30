@@ -89,6 +89,12 @@ except ImportError:
 
 manager = SimulationManager()
 
+
+@app.on_event("startup")
+async def _on_startup():
+    """Rehydrate SimulationManager from Postgres if DATABASE_URL is set."""
+    await manager.initialize()
+
 # ── In-memory TTL cache for GET endpoints ─────────────────
 _cache: dict[str, tuple[float, any]] = {}
 

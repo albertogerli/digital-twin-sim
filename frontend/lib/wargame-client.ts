@@ -247,13 +247,111 @@ export function connectSSE(simId: string, cb: WargameCallbacks): () => void {
   const url = `/api/simulations/${simId}/stream`;
   const evtSource = new EventSource(url);
   let totalRounds = 9;
+  let eventsReceived = false;
+  let pollingInterval: ReturnType<typeof setInterval> | null = null;
+  let pollingFallbackTimer: ReturnType<typeof setTimeout> | null = null;
+  let lastPolledRound = 0;
+  let lastPolledStatus = "";
+  let pollingTerminated = false;
 
   const log = (type: string, message: string) => {
     cb.onLog({ ts: Date.now(), type, message });
   };
 
+  const stopPolling = () => {
+    if (pollingInterval) {
+      clearInterval(pollingInterval);
+      pollingInterval = null;
+    }
+    if (pollingFallbackTimer) {
+      clearTimeout(pollingFallbackTimer);
+      pollingFallbackTimer = null;
+    }
+  };
+
+  // REST polling fallback for environments where EventSource doesn't deliver
+  // events (some headless browsers, agent runtimes, restrictive proxies).
+  // Activated 5s after connection if no SSE event has arrived.
+  const startPollingFallback = () => {
+    if (pollingInterval || pollingTerminated) return;
+    log("fallback", "SSE silente, avvio polling REST fallback...");
+
+    const poll = async () => {
+      if (pollingTerminated) return;
+      try {
+        const res = await fetch(`/api/simulations/${simId}`);
+        if (!res.ok) return;
+        const s = await res.json();
+        const status = String(s.status || "");
+        const round = Number(s.current_round || 0);
+        const total = Number(s.total_rounds || totalRounds);
+        if (total > 0) totalRounds = total;
+
+        // Status transitions
+        if (status !== lastPolledStatus) {
+          if (status === "analyzing" || status === "configuring") {
+            cb.onRoundPhase(0, "init", `Stato: ${status}...`);
+          } else if (status === "running" && lastPolledStatus !== "running") {
+            cb.onPhaseChange("running");
+          } else if (status === "completed") {
+            cb.onPhaseChange("completed");
+            cb.onCompleted("Simulazione completata");
+            log("completed", "Simulazione completata (via polling)");
+            pollingTerminated = true;
+            stopPolling();
+            return;
+          } else if (status === "failed") {
+            cb.onPhaseChange("error");
+            cb.onError(s.error || "Simulazione fallita");
+            pollingTerminated = true;
+            stopPolling();
+            return;
+          }
+          lastPolledStatus = status;
+        }
+
+        // Agent count update
+        if (s.agents_count) cb.onAgentCount(Number(s.agents_count));
+
+        // New round detected
+        if (round > lastPolledRound && round > 0) {
+          cb.onRoundStart(round, `Round ${round} di ${total}`);
+          lastPolledRound = round;
+        }
+
+        // Check wargame sitrep (poll-only, since SSE is silent here)
+        if (status === "running") {
+          try {
+            const sr = await fetch(`/api/simulations/${simId}/wargame-state`);
+            if (sr.ok) {
+              const sitrep = await sr.json();
+              if (sitrep && sitrep.round_completed !== undefined) {
+                cb.onPhaseChange("awaiting");
+                cb.onAwaitingIntervention(sitrep as WgSitrep);
+              }
+            }
+          } catch {
+            /* ignore sitrep fetch errors */
+          }
+        }
+      } catch (e) {
+        log("poll_error", `Polling failure: ${e}`);
+      }
+    };
+    poll(); // immediate first poll
+    pollingInterval = setInterval(poll, 2500);
+  };
+
+  // Arm fallback timer
+  pollingFallbackTimer = setTimeout(startPollingFallback, 5000);
+
   // Generic handler for known event types
   const handleEvent = (eventType: string, raw: string) => {
+    // First real event → SSE is alive, kill any fallback polling
+    if (!eventsReceived) {
+      eventsReceived = true;
+      stopPolling();
+    }
     let evt: SSEEvent;
     try {
       evt = JSON.parse(raw);
@@ -399,12 +497,17 @@ export function connectSSE(simId: string, cb: WargameCallbacks): () => void {
   evtSource.onmessage = (e) => handleEvent("unknown", e.data);
 
   evtSource.onerror = () => {
-    // EventSource auto-reconnects; only log once
-    log("sse_error", "SSE connection interrupted — reconnecting...");
+    // EventSource auto-reconnects; only log once. If we never received
+    // events at all, the polling fallback will already have kicked in.
+    if (eventsReceived) {
+      log("sse_error", "SSE connection interrupted — reconnecting...");
+    }
   };
 
   // Return cleanup function
   return () => {
+    pollingTerminated = true;
+    stopPolling();
     evtSource.close();
   };
 }

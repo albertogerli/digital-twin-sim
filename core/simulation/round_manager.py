@@ -105,6 +105,13 @@ class RoundManager:
             try:
                 from core.financial.twin import FinancialTwin
                 self.financial_twin = FinancialTwin()
+                # Sprint 4: best-effort live anchor refresh (ECB SDW). Cache
+                # 24h TTL, urllib stdlib only, fallback su default su qualsiasi
+                # error → nessun blocco al boot se la rete è giù.
+                try:
+                    self.financial_twin.refresh_market_anchors(use_cache=True)
+                except Exception as exc:
+                    logger.warning(f"FinancialTwin live anchor refresh skipped: {exc}")
                 logger.info(
                     f"FinancialTwin initialised: baseline "
                     f"{self.financial_twin.current_state().to_compact_str()}"

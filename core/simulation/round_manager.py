@@ -104,7 +104,26 @@ class RoundManager:
         if domain_id == "financial":
             try:
                 from core.financial.twin import FinancialTwin
-                self.financial_twin = FinancialTwin()
+                # Sprint 5: per-country params dispatch from scope.geography
+                # (set by Layer-0 brief_scope when available). Falls back
+                # to IT if no geography or non-supported country.
+                country_params = None
+                country_used = "IT"
+                try:
+                    geo = []
+                    if scenario_context:
+                        # Best-effort extraction; a structured scope object
+                        # would be cleaner but isn't always available here.
+                        for code in ("IT", "DE", "FR", "ES", "NL", "US", "GB"):
+                            if f" {code}" in scenario_context or scenario_context.endswith(code):
+                                geo.append(code)
+                    from core.financial.country_params import select_country_params
+                    country_used, country_params = select_country_params(geo or ["IT"])
+                except Exception as exc:
+                    logger.debug(f"country dispatch fallback to IT: {exc}")
+
+                self.financial_twin = FinancialTwin(params=country_params)
+                logger.info(f"FinancialTwin country selected: {country_used}")
                 # Sprint 4: best-effort live anchor refresh (ECB SDW). Cache
                 # 24h TTL, urllib stdlib only, fallback su default su qualsiasi
                 # error → nessun blocco al boot se la rete è giù.

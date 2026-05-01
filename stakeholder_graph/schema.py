@@ -42,6 +42,10 @@ class Stakeholder(BaseModel):
         "politician", "journalist", "union_leader", "ceo",
         "magistrate", "academic", "activist", "military",
         "religious", "institutional", "diplomat",
+        # Sprint 9+: finance domain categories
+        "industry_association", "consumer_advocacy", "regulator",
+        "central_bank", "competitor_bank", "ceo_business",
+        "government",
     ] = "politician"
     party_or_org: str = ""              # "Fratelli d'Italia", "CGIL", "ENI"
     archetype: str = ""                 # maps to domain archetypes

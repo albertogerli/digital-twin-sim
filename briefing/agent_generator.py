@@ -350,13 +350,40 @@ async def generate_agents_multistep(
             n for n in _HARD_BLOCK_NAMES if n.lower() not in brief_lower
         }
 
+        # Sprint 9: Layer 1 deterministic relevance score — drops noisy
+        # candidates BEFORE the LLM realism gate, so we don't waste tokens
+        # auditing obviously-out-of-scope stakeholders. Always-on, even
+        # when scope is None (uses degraded scoring with neutral defaults).
+        try:
+            from .relevance_score import filter_stakeholders_by_relevance
+        except ImportError:
+            filter_stakeholders_by_relevance = None
+
         # Convert all wave agents to agent spec format
         all_wave_agents = []
+        # First materialise the wave stakeholder list, then run Layer 1 on it.
+        wave_stakeholders = []
+        wave_score_map = {}
         for wave in activation_plan.all_waves:
             for score in wave:
                 stakeholder = db.get(score.stakeholder_id)
                 if stakeholder:
-                    # Hard-block filter (defence-in-depth)
+                    wave_stakeholders.append(stakeholder)
+                    wave_score_map[stakeholder.id] = score
+
+        if filter_stakeholders_by_relevance is not None:
+            kept_stakeholders, _verdicts = filter_stakeholders_by_relevance(
+                wave_stakeholders, brief or "", scope=scope, threshold=0.40,
+            )
+        else:
+            kept_stakeholders = wave_stakeholders
+
+        for stakeholder in kept_stakeholders:
+            score = wave_score_map.get(stakeholder.id)
+            if True:  # placeholder to keep indentation/diff small
+                if stakeholder:
+                    # Hard-block filter (defence-in-depth, Sprint 11 will remove
+                    # this once Layer 1+2 are validated on test brief set)
                     if stakeholder.name in _hard_block_active:
                         logger.info(
                             f"hard_block: dropping {stakeholder.name} "

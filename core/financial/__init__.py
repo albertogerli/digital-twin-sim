@@ -21,6 +21,12 @@ from .exposure import (
     default_exposure,
     infer_financial_exposure,
 )
+from .market_data import (
+    fetch_all_anchors,
+    get_btp_bund_spread_bps,
+    get_ecb_dfr_pct,
+    get_euribor_3m_pct,
+)
 from .rates import (
     CIRRateProcess,
     EBAStressTemplate,
@@ -50,4 +56,8 @@ __all__ = [
     "eba_baseline_2025_template",
     "get_stress_template",
     "list_stress_templates",
+    "fetch_all_anchors",
+    "get_btp_bund_spread_bps",
+    "get_ecb_dfr_pct",
+    "get_euribor_3m_pct",
 ]

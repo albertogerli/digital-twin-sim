@@ -451,6 +451,31 @@ class FinancialTwin:
         """Most recent FeedbackSignals (parallel to current_state)."""
         return self.feedback_history[-1]
 
+    def refresh_market_anchors(self, use_cache: bool = True) -> dict:
+        """Sprint 4: pull live anchors (ECB DFR, BTP-Bund, Euribor 3M) and
+        update twin params before round 1. Idempotent if cache fresh.
+
+        Returns the fetched anchors dict (also applied to self.params and
+        baseline state). Safe to call any time but normally invoked once
+        right after FinancialTwin construction.
+        """
+        from .market_data import fetch_all_anchors
+        anchors = fetch_all_anchors(use_cache=use_cache)
+        # Only override the keys the twin actually uses (skip private _ ones)
+        for k, v in anchors.items():
+            if k in self.params and not k.startswith("_"):
+                self.params[k] = v
+        # Rebuild baseline state if no rounds simulated yet, so the new
+        # anchors reflect in the round-0 snapshot.
+        if len(self.history) == 1:
+            self.history[0] = self._build_baseline_state()
+        logger.info(
+            f"FinancialTwin: refreshed market anchors → "
+            f"policy_rate={self.params['policy_rate_pct']:.3f}%, "
+            f"BTP-Bund={self.params['btp_bund_spread_bps']:.0f}bp"
+        )
+        return anchors
+
     # ── Helpers ─────────────────────────────────────────────────────────
 
     def _build_baseline_state(self) -> FinancialState:

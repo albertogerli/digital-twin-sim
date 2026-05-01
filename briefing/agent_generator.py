@@ -331,12 +331,38 @@ async def generate_agents_multistep(
             llm_topics=llm_topics,
         )
 
+        # ── HARD GUARD: heads-of-state / global tech billionaires ─────────
+        # Hard-block list applied BEFORE the scope filter, because we keep
+        # finding Biden/Trump/Musk/DeSantis in IT-scoped sims. Either the
+        # LLM scope detector returned scope_tier="global" (it shouldn't for
+        # a bank pricing brief) or scope was None entirely. Defence-in-depth:
+        # certain very-recognisable global figures are dropped UNLESS the
+        # brief verbatim names them.
+        _HARD_BLOCK_NAMES = {
+            "Donald Trump", "Joe Biden", "Kamala Harris", "JD Vance",
+            "Elon Musk", "Ron DeSantis", "Alexandria Ocasio-Cortez",
+            "Bernie Sanders", "Vladimir Putin", "Xi Jinping",
+            "Volodymyr Zelensky", "Mark Zuckerberg", "Jeff Bezos",
+            "Bill Gates", "Tim Cook", "Sundar Pichai", "Satya Nadella",
+        }
+        brief_lower = (brief or "").lower()
+        _hard_block_active = {
+            n for n in _HARD_BLOCK_NAMES if n.lower() not in brief_lower
+        }
+
         # Convert all wave agents to agent spec format
         all_wave_agents = []
         for wave in activation_plan.all_waves:
             for score in wave:
                 stakeholder = db.get(score.stakeholder_id)
                 if stakeholder:
+                    # Hard-block filter (defence-in-depth)
+                    if stakeholder.name in _hard_block_active:
+                        logger.info(
+                            f"hard_block: dropping {stakeholder.name} "
+                            f"(global figure not named in brief)"
+                        )
+                        continue
                     # Geography filter for narrow-scope briefs: drop foreign
                     # stakeholders unless they have international reach AND
                     # the scope tier is broader than national.

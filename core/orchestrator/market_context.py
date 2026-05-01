@@ -28,13 +28,30 @@ _REGRESSION_CACHE: object | None = None
 
 
 def _get_regression():
-    """Lazily load the event-study regression. Soft-fails if sklearn is absent."""
+    """Lazily load the event-study regression. Soft-fails if sklearn is absent.
+
+    The cache stores either the live regression object, False (load failed,
+    don't retry), or None (not loaded yet). Bug fix: returning False from the
+    cache hit branch propagated False into SovereignSpreadModel.regression,
+    which then triggered "'bool' object has no attribute 'predict'" at
+    impact_band() time."""
     global _REGRESSION_CACHE
+    if _REGRESSION_CACHE is False:
+        return None  # known-unavailable, don't try again
     if _REGRESSION_CACHE is not None:
         return _REGRESSION_CACHE
     try:
         from .sovereign_model import load_or_fit
-        _REGRESSION_CACHE = load_or_fit()
+        loaded = load_or_fit()
+        # Defensive: only cache if it actually has the expected interface.
+        if loaded is None or not hasattr(loaded, "predict"):
+            logger.warning(
+                "load_or_fit() returned %r without .predict(); using parametric fallback.",
+                type(loaded).__name__,
+            )
+            _REGRESSION_CACHE = False
+            return None
+        _REGRESSION_CACHE = loaded
     except Exception as e:
         logger.warning(
             "Event-study regression unavailable (%s); falling back to parametric "
@@ -42,7 +59,8 @@ def _get_regression():
             e,
         )
         _REGRESSION_CACHE = False
-    return _REGRESSION_CACHE or None
+        return None
+    return _REGRESSION_CACHE
 
 
 @dataclass(frozen=True)
@@ -139,13 +157,17 @@ class SovereignSpreadModel:
         self, intensity: float, detected_topics: list[str] | None,
     ) -> tuple[float, float]:
         """Return (median_bps, p95_bps). Falls back to parametric when no regression."""
-        if self.regression is not None and self.country:
-            topic = _classify_topic(detected_topics, self.political_topics)
-            band = self.regression.predict(
-                intensity=intensity, topic=topic, country=self.country,
-                base_spread_bps=self.base_spread_bps, vix_level=self.vix_level,
-            )
-            return (band.median_bps, band.p95_bps)
+        if (self.regression is not None and self.country
+                and hasattr(self.regression, "predict")):
+            try:
+                topic = _classify_topic(detected_topics, self.political_topics)
+                band = self.regression.predict(
+                    intensity=intensity, topic=topic, country=self.country,
+                    base_spread_bps=self.base_spread_bps, vix_level=self.vix_level,
+                )
+                return (band.median_bps, band.p95_bps)
+            except Exception as e:
+                logger.warning(f"regression.predict failed, using parametric: {e}")
         # Parametric fallback — preserved for tests and minimal configs
         topics = set(detected_topics or [])
         is_political = bool(topics & self.political_topics)

@@ -331,24 +331,20 @@ async def generate_agents_multistep(
             llm_topics=llm_topics,
         )
 
-        # ── HARD GUARD: heads-of-state / global tech billionaires ─────────
-        # Hard-block list applied BEFORE the scope filter, because we keep
-        # finding Biden/Trump/Musk/DeSantis in IT-scoped sims. Either the
-        # LLM scope detector returned scope_tier="global" (it shouldn't for
-        # a bank pricing brief) or scope was None entirely. Defence-in-depth:
-        # certain very-recognisable global figures are dropped UNLESS the
-        # brief verbatim names them.
-        _HARD_BLOCK_NAMES = {
+        # Sprint 11: hard-block list rimossa. La validation suite
+        # (tests/test_relevance_score.py) prova che Layer 1 + Layer 2
+        # gestiscono correttamente tutti i casi che la blacklist copriva.
+        # In caso di regressione, la suite fallisce in CI prima del deploy.
+        # Lasciamo solo un WARN-only assertion difensivo che logga (ma non
+        # droppa) eventuali leak di global figures, così il problema appare
+        # nei log Railway senza bloccare la sim.
+        _LEAK_WARN_NAMES = frozenset({
             "Donald Trump", "Joe Biden", "Kamala Harris", "JD Vance",
             "Elon Musk", "Ron DeSantis", "Alexandria Ocasio-Cortez",
             "Bernie Sanders", "Vladimir Putin", "Xi Jinping",
             "Volodymyr Zelensky", "Mark Zuckerberg", "Jeff Bezos",
             "Bill Gates", "Tim Cook", "Sundar Pichai", "Satya Nadella",
-        }
-        brief_lower = (brief or "").lower()
-        _hard_block_active = {
-            n for n in _HARD_BLOCK_NAMES if n.lower() not in brief_lower
-        }
+        })
 
         # Sprint 9: Layer 1 deterministic relevance score — drops noisy
         # candidates BEFORE the LLM realism gate, so we don't waste tokens
@@ -378,18 +374,21 @@ async def generate_agents_multistep(
         else:
             kept_stakeholders = wave_stakeholders
 
+        brief_lower = (brief or "").lower()
         for stakeholder in kept_stakeholders:
             score = wave_score_map.get(stakeholder.id)
             if True:  # placeholder to keep indentation/diff small
                 if stakeholder:
-                    # Hard-block filter (defence-in-depth, Sprint 11 will remove
-                    # this once Layer 1+2 are validated on test brief set)
-                    if stakeholder.name in _hard_block_active:
-                        logger.info(
-                            f"hard_block: dropping {stakeholder.name} "
-                            f"(global figure not named in brief)"
+                    # WARN-only leak detection (was Sprint 8 hard block).
+                    # If a known global figure passes Layer 1, log so we can
+                    # tighten the score weights — but don't drop them
+                    # silently (could be legitimately named in brief).
+                    if (stakeholder.name in _LEAK_WARN_NAMES
+                            and stakeholder.name.lower() not in brief_lower):
+                        logger.warning(
+                            f"layer1_leak: {stakeholder.name} passed score filter "
+                            f"despite not being named in brief — possible Layer 1 weights miscalibration"
                         )
-                        continue
                     # Geography filter for narrow-scope briefs: drop foreign
                     # stakeholders unless they have international reach AND
                     # the scope tier is broader than national.

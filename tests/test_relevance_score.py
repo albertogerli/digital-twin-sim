@@ -246,6 +246,42 @@ def test_brief_us_politics_keeps_us_politicians():
         assert keep, f"{s.name} named in US politics brief should pass; got {v.score}"
 
 
+# ── Brief 7: Election-style brief WITHOUT explicit politician names ────────
+# Regression test for E2E batch finding: the 2020 USA Presidential election
+# brief had ZERO US candidates because it didn't name them verbatim AND the
+# scope detector didn't flag it as political-enough → in-country head-of-state
+# penalty triggered. Fix: brief-level keyword check ("presidential election"
+# / "election" / "presidenziali") forces _is_political_brief=True even when
+# scope.sector is generic.
+
+BRIEF_ELECTION_NO_NAMES = """
+Public sentiment trajectory during the 2020 US Presidential Election cycle.
+The popular vote dynamics shifted significantly between September and
+November 2020. Polling data showed a closing gap in key swing states.
+"""
+
+SCOPE_ELECTION_NO_NAMES = _build_scope(
+    ["US"], sector="us_politics_2020",  # NOT in _POLITICAL_SECTOR_PREFIXES
+    scope_tier="national",
+    stakeholder_archetypes=[],
+    excluded_archetypes=["world_religious_leader"],
+)
+
+
+def test_election_brief_no_explicit_names_still_keeps_top_candidates():
+    """The 2020 USA election brief above doesn't name Trump/Biden but they
+    SHOULD pass — they're the candidates. Brief-level keyword check rescues."""
+    for name in ["donald_trump", "joe_biden"]:
+        s = _get(name)
+        keep, v = _kept(s, BRIEF_ELECTION_NO_NAMES, SCOPE_ELECTION_NO_NAMES)
+        assert keep, (
+            f"{s.name} should pass on election brief even if not named "
+            f"verbatim; got score={v.score}, components={v.components}. "
+            f"Brief keyword 'presidential election' should trigger "
+            f"_is_political_brief=True."
+        )
+
+
 def test_brief_us_politics_drops_italian_specific_actors():
     """Italian consumer / banking bodies should not pass a US politics brief."""
     for name in ["codacons_org", "antonio_patuelli"]:

@@ -96,6 +96,21 @@ _SECTOR_TO_TOPIC_TAGS: dict[str, set[str]] = {
     # politics
     "italian_politics":        {"general_left_right", "premierato", "judiciary_reform",
                                 "eu_integration"},
+    "us_politics":             {"general_left_right", "us_election_2020",
+                                "us_election_2024", "us_election_2028",
+                                "trade_policy", "immigration_policy",
+                                "tax_policy", "election_policy"},
+    "us_politics_2020":        {"general_left_right", "us_election_2020",
+                                "election_policy", "trade_policy",
+                                "immigration_policy"},
+    "us_politics_2024":        {"general_left_right", "us_election_2024",
+                                "election_policy", "trade_policy"},
+    "us_politics_2028":        {"general_left_right", "us_election_2028",
+                                "election_policy"},
+    "uk_politics":             {"general_left_right", "brexit",
+                                "election_policy", "constitutional_reform"},
+    "us_elections":            {"general_left_right", "election_policy"},
+    "elections":               {"general_left_right", "election_policy"},
     "eu_monetary":             {"monetary_policy", "btp_spread", "eu_integration"},
     "eurozone_monetary":       {"monetary_policy", "btp_spread", "eu_integration"},
     # generic fallback handled by partial-match scan
@@ -213,16 +228,33 @@ _POLITICAL_SECTOR_PREFIXES = (
 )
 
 
-def _is_political_brief(scope) -> bool:
-    """Return True iff the scope's sector / sub_sector is one where the
-    head-of-state class would naturally weigh in. Banking pricing, consumer
-    products, sports, food, fashion etc. are NOT political enough."""
-    if scope is None:
-        return False
-    sector = (getattr(scope, "sector", "") or "").lower()
-    sub = (getattr(scope, "sub_sector", "") or "").lower()
-    blob = f"{sector} {sub}"
-    return any(p in blob for p in _POLITICAL_SECTOR_PREFIXES)
+def _is_political_brief(scope, brief_lower: str = "") -> bool:
+    """Return True iff the scope's sector / sub_sector / the brief itself
+    indicates politics. Banking pricing, consumer products, sports, food,
+    fashion etc. are NOT political enough. Election briefs ARE political
+    even if the LLM scope detector mislabels the sector."""
+    if scope is not None:
+        sector = (getattr(scope, "sector", "") or "").lower()
+        sub = (getattr(scope, "sub_sector", "") or "").lower()
+        blob = f"{sector} {sub}"
+        if any(p in blob for p in _POLITICAL_SECTOR_PREFIXES):
+            return True
+    # Brief-level fallback: catches USA Presidential / Italian referenda
+    # / Brexit etc. where the LLM scope detector occasionally returns a
+    # narrower sector (e.g. "us_politics_2020" doesn't match the prefix
+    # list) but the brief is unambiguously political.
+    if brief_lower:
+        keywords = (
+            "presidential election", "presidenziali", "election", "elezioni",
+            "referendum", "primary 20", "primaries",
+            "constitutional", "costituzionale",
+            "campagna elettorale", "voting", "ballot",
+            "presidente del consiglio", "head of government",
+            "parliamentary", "midterm",
+        )
+        if any(kw in brief_lower for kw in keywords):
+            return True
+    return False
 
 
 def _global_figure_penalty(
@@ -302,7 +334,7 @@ def _global_figure_penalty(
         return 0.0
 
     # Case 2: in-country head-of-state on a non-political brief
-    if is_head_of_state and not _is_political_brief(scope):
+    if is_head_of_state and not _is_political_brief(scope, brief_lower):
         return 0.7
 
     return 0.0

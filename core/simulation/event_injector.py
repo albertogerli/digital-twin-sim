@@ -110,8 +110,21 @@ class EventInjector:
             for a in elite_agents[:15]
         )
 
-        # Build enhanced prompt with historical context and few-shot
-        extra_context = ""
+        # Build enhanced prompt with historical context and few-shot.
+        # Sprint 8: prepend today's date so the LLM doesn't generate events
+        # set in years past (it has been hallucinating "Marzo 2024..." on
+        # 2026 simulations). Round 1 anchors to today; subsequent rounds
+        # advance by the timeline_unit set in the scenario.
+        from datetime import datetime as _dt
+        today_iso = _dt.now().strftime("%Y-%m-%d")
+        extra_context = (
+            f"\n\nDATA REALE CORRENTE (SYSTEM CLOCK): {today_iso}. "
+            f"Tutti gli eventi devono essere coerenti con questa data o "
+            f"successivi (mai nel passato a meno che il brief lo richieda "
+            f"esplicitamente). Per riferimenti macro (tassi BCE, spread BTP, "
+            f"trend di mercato) usa lo stato corrente, non scenari del 2022 "
+            f"o anni precedenti.\n"
+        )
         if self.historical_context:
             extra_context += f"\n\n{self.historical_context}\n"
         if self.few_shot_example:

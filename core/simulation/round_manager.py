@@ -359,6 +359,18 @@ class RoundManager:
         if round_num > 1:
             viral_posts_text = self.platform.format_viral_posts(round_num - 1, top_n=5)
 
+        # Sprint 8: prepend the SYSTEM CLOCK date so agents don't reason
+        # in the past ("nel 2022 i tassi erano..."). The LLM otherwise
+        # anchors on its training-time priors and produces hallucinations.
+        from datetime import datetime as _dt
+        today_str = _dt.now().strftime("%Y-%m-%d")
+        date_line = (
+            f"[DATA CORRENTE: {today_str}] Ragiona come se fosse oggi. "
+            f"Riferimenti macro (tassi BCE, spread BTP, mercato del lavoro, "
+            f"contesto politico) devono essere coerenti con questa data."
+        )
+        viral_posts_text = date_line + "\n" + (viral_posts_text or "")
+
         # ALM context: prepend a compact financial-twin snapshot + previous
         # round's feedback signals so agents see both the balance-sheet state
         # AND the stress signals when reasoning. Domain-only; no-op if
@@ -800,6 +812,24 @@ class RoundManager:
                 financial_twin_state = ts.to_dict()
                 fb = self.financial_twin.latest_feedback()
                 financial_feedback = fb.to_dict()
+                # Patch the checkpoint that was already saved earlier in this
+                # round, so the export pipeline (which reads checkpoints) sees
+                # the financial twin state. We can't move save_checkpoint
+                # earlier because the twin needs post-agent-update positions.
+                try:
+                    import json as _json
+                    safe_name = "".join(
+                        c if c.isalnum() or c in "-_" else "_" for c in self.scenario_name
+                    )
+                    cp_path = f"{self.checkpoint_dir}/state_{safe_name}_r{round_num}.json"
+                    with open(cp_path, "r") as _f:
+                        _cp_data = _json.load(_f)
+                    _cp_data["financial_twin"] = financial_twin_state
+                    _cp_data["financial_feedback"] = financial_feedback
+                    with open(cp_path, "w") as _f:
+                        _json.dump(_cp_data, _f, indent=2, ensure_ascii=False)
+                except Exception as _exc:
+                    logger.warning(f"Could not patch checkpoint with financial twin: {_exc}")
             except Exception as exc:
                 logger.warning(f"FinancialTwin step failed at round {round_num}: {exc}")
 

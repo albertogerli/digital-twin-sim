@@ -632,6 +632,13 @@ def build_round_data(scenario: str, round_num: int, conn: sqlite3.Connection,
     if checkpoint.get("regime_info"):
         result["regime_info"] = checkpoint["regime_info"]
 
+    # Sprint 1+2: Financial twin ALM state (banking domain only — checkpoint
+    # only carries this when round_manager attached a FinancialTwin).
+    if checkpoint.get("financial_twin"):
+        result["financial_twin"] = checkpoint["financial_twin"]
+    if checkpoint.get("financial_feedback"):
+        result["financial_feedback"] = checkpoint["financial_feedback"]
+
     return result
 
 

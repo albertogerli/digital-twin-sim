@@ -110,6 +110,25 @@ interface ReplayRoundRaw {
   key_insight?: string;
   postImpacts?: any[];
   realWorldEffects?: any[];
+  financial_twin?: {
+    round: number;
+    nim_pct: number;
+    cet1_pct: number;
+    lcr_pct: number;
+    deposit_balance: number;
+    loan_demand_index: number;
+    deposit_runoff_round_pct: number;
+    policy_rate_pct: number;
+    btp_bund_spread_bps: number;
+    breaches?: string[];
+  };
+  financial_feedback?: {
+    nim_anxiety: number;
+    cet1_alarm: number;
+    runoff_panic: number;
+    competitor_pressure: number;
+    rate_pressure: number;
+  };
 }
 
 // ============================================================
@@ -256,6 +275,7 @@ export default function ScenarioDashboard({
   const [reportMarkdown, setReportMarkdown] = useState<string>("");
   const [roundsData, setRoundsData] = useState<RoundData[]>([]);
   const [roundGraphSnapshots, setRoundGraphSnapshots] = useState<any[]>([]);
+  const [almRounds, setAlmRounds] = useState<Array<{ round: number; financial_twin?: any; financial_feedback?: any; }>>([]);
   const [financialImpact, setFinancialImpact] = useState<RoundFinancial[]>([]);
   const [finProvenance, setFinProvenance] = useState<Provenance>("client-fallback");
   const [finSchemaVersion, setFinSchemaVersion] = useState<string>(FIN_SCHEMA_VERSION);
@@ -307,6 +327,17 @@ export default function ScenarioDashboard({
           .sort((a, b) => a.round - b.round)
           .map(replayToRoundData);
         setRoundsData(converted);
+
+        // Extract financial_twin / financial_feedback (banking domain)
+        const almPayload = validRounds
+          .sort((a, b) => a.round - b.round)
+          .filter((r) => r.financial_twin)
+          .map((r) => ({
+            round: r.round,
+            financial_twin: r.financial_twin,
+            financial_feedback: r.financial_feedback,
+          }));
+        setAlmRounds(almPayload);
 
         // Financial impact: prefer backend-simulated payload (schema-validated),
         // fall back to client-side heuristic generator with provenance marker.
@@ -494,6 +525,61 @@ export default function ScenarioDashboard({
       {graphSnapshots.length > 0 && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <NetworkGraph snapshots={graphSnapshots} />
+        </div>
+      )}
+
+      {/* ALM section (banking domain only) */}
+      {almRounds.length > 0 && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <h2 className="text-lg font-headline font-bold mb-1">Stato ALM (Asset–Liability Management)</h2>
+          <p className="text-xs text-ki-on-surface-muted mb-4">
+            Modello deterministico parametrato su benchmark italiani 2025
+            (deposit β EBA, elasticità credito al consumo Bonaccorsi/Magri,
+            NIM/CET1/LCR EBA Risk Dashboard). I numeri stanno entro vincoli
+            ALM realistici per banca commerciale italiana media.
+          </p>
+          <div className="overflow-x-auto bg-ki-surface-raised border border-ki-border rounded-sm">
+            <table className="w-full text-xs">
+              <thead className="bg-ki-surface-sunken">
+                <tr className="border-b border-ki-border">
+                  <th className="px-2 py-2 text-left font-semibold">Round</th>
+                  <th className="px-2 py-2 text-right font-semibold">NIM</th>
+                  <th className="px-2 py-2 text-right font-semibold">CET1</th>
+                  <th className="px-2 py-2 text-right font-semibold">LCR</th>
+                  <th className="px-2 py-2 text-right font-semibold">Depositi</th>
+                  <th className="px-2 py-2 text-right font-semibold">Domanda credito</th>
+                  <th className="px-2 py-2 text-right font-semibold">Runoff/round</th>
+                  <th className="px-2 py-2 text-right font-semibold">Policy rate</th>
+                  <th className="px-2 py-2 text-left font-semibold">Breach</th>
+                </tr>
+              </thead>
+              <tbody>
+                {almRounds.map((r) => {
+                  const t = r.financial_twin || {};
+                  const breaches = (t.breaches as string[]) || [];
+                  return (
+                    <tr key={r.round} className="border-b border-ki-border/50">
+                      <td className="px-2 py-1.5 font-data">R{r.round}</td>
+                      <td className="px-2 py-1.5 text-right font-data">{(t.nim_pct ?? 0).toFixed(2)}%</td>
+                      <td className="px-2 py-1.5 text-right font-data">{(t.cet1_pct ?? 0).toFixed(1)}%</td>
+                      <td className="px-2 py-1.5 text-right font-data">{(t.lcr_pct ?? 0).toFixed(0)}%</td>
+                      <td className="px-2 py-1.5 text-right font-data">{(t.deposit_balance ?? 0).toFixed(3)}</td>
+                      <td className="px-2 py-1.5 text-right font-data">{(t.loan_demand_index ?? 0).toFixed(2)}</td>
+                      <td className="px-2 py-1.5 text-right font-data">{((t.deposit_runoff_round_pct ?? 0) * 100).toFixed(2)}%</td>
+                      <td className="px-2 py-1.5 text-right font-data">{(t.policy_rate_pct ?? 0).toFixed(2)}%</td>
+                      <td className="px-2 py-1.5">
+                        {breaches.length > 0 ? (
+                          <span className="text-ki-error font-semibold">{breaches.join(", ")}</span>
+                        ) : (
+                          <span className="text-ki-on-surface-muted">—</span>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
 

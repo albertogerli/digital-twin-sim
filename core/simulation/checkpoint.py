@@ -22,6 +22,8 @@ def save_checkpoint(
     regime_info: dict = None,
     params_used: dict = None,
     orchestrator_state: dict = None,
+    financial_twin_state: dict = None,
+    financial_feedback: dict = None,
 ) -> str:
     """Save full state checkpoint and return filename.
 
@@ -69,6 +71,12 @@ def save_checkpoint(
     # Orchestrator state for wargame rollback
     if orchestrator_state:
         state["orchestrator_state"] = orchestrator_state
+
+    # Financial twin (Sprint 1+) — exposes ALM KPIs to export pipeline
+    if financial_twin_state:
+        state["financial_twin"] = financial_twin_state
+    if financial_feedback:
+        state["financial_feedback"] = financial_feedback
 
     with open(filepath, "w") as f:
         json.dump(state, f, indent=2, ensure_ascii=False)

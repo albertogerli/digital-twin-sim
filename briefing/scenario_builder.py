@@ -199,6 +199,44 @@ class ScenarioBuilder:
             logger.warning(f"realism_gate failed: {exc}")
             print(f"  ├─ Realism gate failed ({exc.__class__.__name__}), continuing")
 
+        # Sprint 13: Chain-of-Thought reasoning audit on marginal cases.
+        # Generates a structured reasoning trace for stakeholders whose
+        # Layer 1 score is in the [0.30, 0.60] uncertain band. Trace is
+        # surfaced in the report HTML so enterprise reviewers see WHY
+        # each marginal candidate was kept or dropped.
+        layer1_verdicts_raw = analysis.get("_layer1_verdicts") or []
+        if layer1_verdicts_raw:
+            try:
+                from .reasoning_audit import (
+                    reason_about_marginal_stakeholders,
+                    serialise_traces,
+                )
+                # Reconstitute lightweight verdict objects from dicts
+                from .relevance_score import RelevanceVerdict
+                verdicts_objs = [
+                    RelevanceVerdict(
+                        stakeholder_id=d["stakeholder_id"],
+                        name=d["name"],
+                        score=d["score"],
+                        components=d.get("components", {}),
+                        kept=d.get("kept", False),
+                        reason=d.get("reason", ""),
+                    )
+                    for d in layer1_verdicts_raw
+                ]
+                print("  Reasoning audit on marginal cases (CoT)...")
+                traces = await reason_about_marginal_stakeholders(
+                    verdicts_objs, brief_text, scope=gate_scope, llm=llm,
+                )
+                if traces:
+                    analysis["_realism_reasoning"] = serialise_traces(traces)
+                    print(f"  ├─ Reasoning traces: {len(traces)} marginal verdicts audited")
+                    for tid, t in list(traces.items())[:5]:
+                        print(f"  │   • {t.name} → {t.verdict} ({t.confidence:.2f}): {t.summary[:80]}")
+            except Exception as exc:
+                logger.warning(f"reasoning_audit skipped: {exc}")
+                print(f"  ├─ Reasoning audit skipped ({exc.__class__.__name__})")
+
         # Step 5: Auto seed data (Phase 5) — only if no manual seed data
         if not seed_data_bundle and entity_context:
             auto_seed = build_seed_from_entity_research(entity_context, analysis)

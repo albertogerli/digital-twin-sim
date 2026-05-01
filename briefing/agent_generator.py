@@ -296,6 +296,9 @@ async def generate_agents_multistep(
     # Try Semantic Retriever first (zero LLM cost, wave-based activation)
     elite_agents = []
     graph_used = False
+    # Sprint 13: declare here so it's always in scope, even if SemanticRetriever
+    # branch is skipped (LLM fallback path doesn't populate it).
+    layer1_verdicts_for_audit = []
     activation_plan = None
     try:
         from stakeholder_graph.db import StakeholderDB
@@ -367,10 +370,14 @@ async def generate_agents_multistep(
                     wave_stakeholders.append(stakeholder)
                     wave_score_map[stakeholder.id] = score
 
+        layer1_verdicts_for_audit = []
         if filter_stakeholders_by_relevance is not None:
             kept_stakeholders, _verdicts = filter_stakeholders_by_relevance(
                 wave_stakeholders, brief or "", scope=scope, threshold=0.40,
             )
+            # Sprint 13: keep verdicts (kept + dropped) so the downstream
+            # reasoning audit can target marginal cases (score 0.30-0.60).
+            layer1_verdicts_for_audit = _verdicts
         else:
             kept_stakeholders = wave_stakeholders
 
@@ -561,5 +568,21 @@ async def generate_agents_multistep(
     # Pass activation plan through for engine integration
     if activation_plan:
         result["_activation_plan"] = activation_plan
+
+    # Sprint 13: pass Layer 1 verdicts so the scenario_builder can run
+    # the reasoning audit on marginal cases. We serialise to plain dicts
+    # to avoid pickling RelevanceVerdict dataclass through downstream code.
+    if layer1_verdicts_for_audit:
+        result["_layer1_verdicts"] = [
+            {
+                "stakeholder_id": v.stakeholder_id,
+                "name": v.name,
+                "score": v.score,
+                "components": v.components,
+                "kept": v.kept,
+                "reason": v.reason,
+            }
+            for v in layer1_verdicts_for_audit
+        ]
 
     return result

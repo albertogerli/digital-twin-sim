@@ -302,9 +302,37 @@ async def run_realism_gate(
             aid = str(v.get("agent_id", "")).strip()
             verdict = _coerce_verdict(v.get("verdict"))
             rationale = str(v.get("rationale", "") or "").strip()
-            if aid:
-                verdict_by_id[aid] = (verdict, rationale)
-                _cache_set(brief_h, aid, (verdict, rationale))
+            if not aid:
+                continue
+            # Programmatic override: rescue obvious in-scope candidates the
+            # LLM may have over-rejected (Trump on US election brief, Boris
+            # Johnson on Brexit brief, etc.). Find the corresponding row.
+            if verdict == "reject":
+                row_match = next((r for r in batch if r[0] == aid), None)
+                if row_match:
+                    _id, name, archetype, _role, _tier = row_match
+                    # Country match: look up via the agents list in analysis
+                    # We don't have stakeholder country here directly; use a
+                    # liberal heuristic — if scope geography is set, assume
+                    # match (the upstream filters already did geography work).
+                    is_obv = _is_obvious_in_scope_candidate(
+                        agent_name=name,
+                        archetype=archetype,
+                        country_match=True,
+                        scope=scope,
+                        brief_lower=(brief_text or "").lower(),
+                    )
+                    if is_obv:
+                        verdict = "accept"
+                        rationale = (
+                            f"OVERRIDE: LLM gate said reject, but {name} is "
+                            f"obviously in-scope (named in brief OR political "
+                            f"protagonist on political brief). Original LLM "
+                            f"rationale: {rationale[:120]}"
+                        )
+                        logger.info(f"realism_gate override: {name} forced accept")
+            verdict_by_id[aid] = (verdict, rationale)
+            _cache_set(brief_h, aid, (verdict, rationale))
 
     # Assemble report in roster order
     for row in rows:
@@ -327,6 +355,57 @@ def _coerce_verdict(value) -> Verdict:
     if v in ("accept", "reject", "uncertain"):
         return v  # type: ignore
     return "uncertain"
+
+
+def _is_obvious_in_scope_candidate(
+    agent_name: str, archetype: str, country_match: bool,
+    scope, brief_lower: str,
+) -> bool:
+    """Programmatic override: an agent the LLM gate marked 'reject' should
+    actually be ACCEPT if any of these unambiguous in-scope conditions hold.
+    Defends against LLM gate over-rejecting on politically-charged names
+    (Trump/Biden/Macron/Boris Johnson/Renzi) that appear on brief topics
+    where they are the natural protagonist.
+    """
+    if not agent_name:
+        return False
+    name_l = agent_name.lower()
+    # 1) Name verbatim in brief: always in-scope
+    if name_l and len(name_l) > 4 and name_l in brief_lower:
+        return True
+    # Last name in brief
+    if " " in name_l:
+        last = name_l.rsplit(" ", 1)[1]
+        if len(last) > 4:
+            import re as _re
+            if _re.search(rf"\b{_re.escape(last)}\b", brief_lower):
+                return True
+    # 2) In scope named_entities list (LLM Layer-0 already flagged them)
+    if scope is not None:
+        named = [str(n).lower() for n in (getattr(scope, "named_entities", []) or [])]
+        for n in named:
+            if n and len(n) > 4 and (n in name_l or name_l in n):
+                return True
+    # 3) Political brief + in-country political figure: protagonist override
+    if country_match and scope is not None:
+        sector = (getattr(scope, "sector", "") or "").lower()
+        sub = (getattr(scope, "sub_sector", "") or "").lower()
+        political_keywords = (
+            "politic", "election", "elezioni", "referendum",
+            "presidenz", "constitut", "premiera", "parliament", "midterm",
+        )
+        is_political = any(k in f"{sector} {sub} {brief_lower[:500]}"
+                           for k in political_keywords)
+        if is_political and archetype:
+            arch_l = archetype.lower()
+            political_archetypes = (
+                "politician", "head_of_state", "president", "prime_minister",
+                "vice_president", "chancellor", "minister", "senator",
+                "mp", "mep", "governor", "mayor",
+            )
+            if any(p in arch_l for p in political_archetypes):
+                return True
+    return False
 
 
 # Action / meta keywords the LLM sometimes emits as if they were agent names.

@@ -124,12 +124,41 @@ def _hash_brief(brief: str) -> str:
 
 # ── Per-stakeholder scoring ────────────────────────────────────────────────
 
+# ISO 3166-1 alpha-2 alias normalisation. The stakeholder DB uses canonical
+# ISO codes (GB, US) but the LLM scope detector often emits common variants
+# (UK, USA, England). Without this map, a UK brief drops Boris Johnson because
+# his stored country is "GB" and "GB" not in ["UK"].
+_COUNTRY_ALIASES = {
+    "UK": "GB", "GBR": "GB", "ENGLAND": "GB", "BRITAIN": "GB",
+    "USA": "US", "AMERICA": "US", "U.S.": "US", "U.S.A.": "US",
+    "DEUTSCHLAND": "DE", "GERMANY": "DE",
+    "FRANCE": "FR", "FRA": "FR",
+    "SPAIN": "ES", "ESPAÑA": "ES", "ESP": "ES",
+    "ITALY": "IT", "ITALIA": "IT", "ITA": "IT",
+    "NETHERLANDS": "NL", "HOLLAND": "NL", "NLD": "NL",
+    "TURKEY": "TR", "TURKIYE": "TR",
+    "GREECE": "GR", "ELLAS": "GR",
+    "BRAZIL": "BR", "BRASIL": "BR",
+    "CHILE": "CL",
+    "IRELAND": "IE", "EIRE": "IE",
+    "MALTA": "MT",
+}
+
+
+def _normalise_country(code: str) -> str:
+    """Map common variants to canonical ISO 3166-1 alpha-2."""
+    c = (code or "").strip().upper()
+    return _COUNTRY_ALIASES.get(c, c)
+
+
 def _country_score(stakeholder_country: str, geography: list[str]) -> float:
-    """Return [0, 1] match between stakeholder country and brief geography."""
+    """Return [0, 1] match between stakeholder country and brief geography.
+    Handles common ISO aliases (UK↔GB, USA↔US) so Boris Johnson on a 'UK'
+    brief is correctly recognised as in-country."""
     if not geography:
         return 0.5  # neutral when scope geography unknown
-    sc = (stakeholder_country or "").upper()
-    geo = [g.upper() for g in geography]
+    sc = _normalise_country(stakeholder_country or "")
+    geo = [_normalise_country(g) for g in geography]
     if not sc:
         return 0.3  # no country info → conservative low
     if sc in geo:
@@ -277,14 +306,14 @@ def _global_figure_penalty(
     """
     if not geography:
         return 0.0
-    geo_upper = [g.upper() for g in geography]
+    geo_upper = [_normalise_country(g) for g in geography]
     name = (getattr(stakeholder, "name", "") or "").lower()
     if name and name in brief_lower:
         return 0.0  # explicitly named: no penalty
     if "GLOBAL" in geo_upper:
         return 0.0  # global brief: no penalty
 
-    sc = (getattr(stakeholder, "country", "") or "").upper()
+    sc = _normalise_country(getattr(stakeholder, "country", "") or "")
     arch = (getattr(stakeholder, "archetype", "") or "").lower()
     role = (getattr(stakeholder, "role", "") or "").lower()
     category = (getattr(stakeholder, "category", "") or "").lower()

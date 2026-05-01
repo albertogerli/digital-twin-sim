@@ -319,7 +319,8 @@ async def generate_agents_multistep(
         scope_is_global = False
         if scope is not None:
             scope_is_global = scope.scope_tier == "global"
-            geo_codes = [g.upper() for g in (scope.geography or [])]
+            from .relevance_score import _normalise_country
+            geo_codes = [_normalise_country(g) for g in (scope.geography or [])]
             if geo_codes and not scope_is_global:
                 # Pick the first non-supranational country code
                 for g in geo_codes:
@@ -400,8 +401,9 @@ async def generate_agents_multistep(
                     # stakeholders unless they have international reach AND
                     # the scope tier is broader than national.
                     if scope is not None and not scope_is_global:
-                        s_country = (getattr(stakeholder, "country", "") or "").upper()
-                        scope_geo = [g.upper() for g in (scope.geography or [])]
+                        from .relevance_score import _normalise_country as _norm
+                        s_country = _norm(getattr(stakeholder, "country", "") or "")
+                        scope_geo = [_norm(g) for g in (scope.geography or [])]
                         if s_country and scope_geo and s_country not in scope_geo:
                             # Allow EU figures for IT briefs and vice versa
                             ok_supranational = (

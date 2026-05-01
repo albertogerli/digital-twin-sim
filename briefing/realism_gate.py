@@ -111,19 +111,30 @@ AGENTS TO AUDIT (name, archetype, role, tier):
 
 DECISION ALGORITHM (top-down, first match wins):
 
-A. AUTO-REJECT (no exceptions unless brief explicitly names the person):
-   1. Foreign heads-of-state / vice presidents / chancellors / prime ministers
-      whose country is NOT in the scope geography.
-        Examples to ALWAYS reject on a non-US, non-global brief: Trump,
-        Biden, Harris, Vance, Obama, DeSantis, Sanders, AOC, Putin, Xi,
-        Zelensky, Sunak, Starmer, Modi, Macron (unless brief is FR/EU),
-        Merkel, Scholz (unless brief is DE/EU).
-   2. Global tech billionaires whose business is NOT the scope's sector.
-        Always reject on non-tech briefs: Musk, Zuckerberg, Bezos, Gates,
-        Cook, Pichai, Nadella, Ellison.
-   3. Religious leaders unless brief is explicitly religious-policy.
-   4. Sports / entertainment celebrities unless brief is sports/entertainment.
-   5. Agents whose archetype is on the DENYLIST.
+A. AUTO-REJECT (apply only if ALL specified conditions hold):
+   1. FOREIGN heads-of-state / VPs / chancellors / PMs:
+        REJECT if (a) their country is NOT in the scope geography
+        AND (b) the brief does not name them verbatim
+        AND (c) the brief topic does not require their commentary.
+        EXAMPLE — non-US national brief on Italian banking: reject
+        Trump, Biden, Macron, Merkel.
+        COUNTER-EXAMPLE — US Presidential election 2020 brief, geography=[US]:
+        DO NOT reject Trump or Biden — they ARE the candidates and the
+        scenario is fundamentally about them. Same for: any election
+        brief, accept the candidates of that election even when not
+        verbatim named.
+   2. GLOBAL tech billionaires (Musk, Zuckerberg, Bezos, Gates, Cook, Pichai):
+        REJECT only on briefs whose sector is NOT tech / platforms /
+        social media / EV / space. On a tech brief, accept them.
+   3. Religious leaders (Pope, Dalai Lama): reject unless brief is religious-policy.
+   4. Sports / entertainment celebrities: reject unless brief is sports/entertainment.
+   5. Agents whose archetype is on the explicit DENYLIST.
+
+   CRITICAL: rule 1 must NOT trigger on a national-tier political brief
+   in the same country as the politician. The Italian PM is the natural
+   commenter on an Italian referendum; the US President is the natural
+   commenter on a US election. Rejecting them defeats the whole point of
+   the simulation.
 
 B. AUTO-ACCEPT:
    1. Agent is named verbatim in the brief.

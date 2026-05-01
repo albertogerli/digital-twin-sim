@@ -16,6 +16,24 @@ current state via context strings; in v0.6 they also receive light
 balance-sheet snippets (financial_state field).
 """
 
-from .twin import FinancialState, FinancialTwin, default_italian_bank_params
+from .exposure import (
+    aggregate_opinion_by_exposure,
+    default_exposure,
+    infer_financial_exposure,
+)
+from .twin import (
+    FeedbackSignals,
+    FinancialState,
+    FinancialTwin,
+    default_italian_bank_params,
+)
 
-__all__ = ["FinancialState", "FinancialTwin", "default_italian_bank_params"]
+__all__ = [
+    "FeedbackSignals",
+    "FinancialState",
+    "FinancialTwin",
+    "default_italian_bank_params",
+    "aggregate_opinion_by_exposure",
+    "default_exposure",
+    "infer_financial_exposure",
+]

@@ -332,18 +332,25 @@ class RoundManager:
         if round_num > 1:
             viral_posts_text = self.platform.format_viral_posts(round_num - 1, top_n=5)
 
-        # ALM context: prepend a compact financial-twin snapshot so agents
-        # see the current balance-sheet state when reasoning. Domain-only;
-        # no-op if FinancialTwin is not active. Uses the previous round's
-        # state since the new step happens later in this round.
+        # ALM context: prepend a compact financial-twin snapshot + previous
+        # round's feedback signals so agents see both the balance-sheet state
+        # AND the stress signals when reasoning. Domain-only; no-op if
+        # FinancialTwin is not active. Uses the previous round's state
+        # (the new step happens later in this round).
         if self.financial_twin is not None:
             try:
                 ts = self.financial_twin.current_state()
-                alm_line = (
+                fb = self.financial_twin.latest_feedback()
+                alm_lines = [
                     f"[ALM corrente — banca scenario] {ts.to_compact_str()} "
-                    f"(rate {ts.policy_rate_pct:.2f}%, BTP-Bund {ts.btp_bund_spread_bps:.0f}bp).\n"
-                )
-                viral_posts_text = alm_line + (viral_posts_text or "")
+                    f"(rate {ts.policy_rate_pct:.2f}%, BTP-Bund {ts.btp_bund_spread_bps:.0f}bp)."
+                ]
+                fb_summary = fb.to_compact_str()
+                if fb_summary:
+                    alm_lines.append(
+                        f"[Segnali di stress finanziario percepiti dal mercato] {fb_summary}."
+                    )
+                viral_posts_text = "\n".join(alm_lines) + "\n" + (viral_posts_text or "")
             except Exception:
                 pass
 
@@ -715,19 +722,45 @@ class RoundManager:
         self._last_ci = confidence_interval
         self._last_regime = regime_info
 
-        # ── Step the FinancialTwin (weak coupling, banking domain only) ───
-        # opinion_aggregate ∈ [-1, +1]. We use the population mean position;
-        # rate_change_bps maps shock_magnitude * shock_direction to a basis-
-        # point shift (a +1 magnitude × +1 direction = 200bps shock cap).
+        # ── Step the FinancialTwin (Sprint 1 + Sprint 2 closed loop) ─────
+        # Sprint 2: opinion is now weighted by per-agent financial exposure
+        # (depositors / borrowers / competitors) so that retail negativity
+        # drives runoff harder than institutional moderation.
         financial_twin_state = None
+        financial_feedback = None
         if self.financial_twin is not None:
             try:
+                from core.financial import (
+                    aggregate_opinion_by_exposure,
+                    infer_financial_exposure,
+                )
                 opinion_aggregate = sum(all_positions) / max(len(all_positions), 1)
+                # Build per-agent exposure-tagged positions
+                exposure_rows = []
+                for a in (self.elite_agents or []):
+                    ex = infer_financial_exposure(
+                        archetype=getattr(a, "archetype", ""),
+                        role=getattr(a, "role", ""),
+                        party_or_org=getattr(a, "domain_attributes", {}).get("party_or_org", ""),
+                    )
+                    exposure_rows.append({
+                        "position": getattr(a, "position", 0.0),
+                        "exposure": ex,
+                        "weight": getattr(a, "influence", 0.5),
+                    })
+                # Citizens count as full retail
+                if not self.elite_only and self.citizen_swarm is not None:
+                    for c in self.citizen_swarm.clusters.values():
+                        ex = infer_financial_exposure(archetype="citizen", role="citizen")
+                        exposure_rows.append({
+                            "position": getattr(c, "position", 0.0),
+                            "exposure": ex,
+                            "weight": float(getattr(c, "population", 100)) / 1000.0,
+                        })
+                exposure_weighted = aggregate_opinion_by_exposure(exposure_rows)
+
                 shock_mag = float(event.get("shock_magnitude", 0) or 0)
                 shock_dir = float(event.get("shock_direction", 0) or 0)
-                # Map opinion-shock to a rate-bps proxy. Banking events that
-                # are interest-rate-related read shock_dir as direction; events
-                # unrelated to rates send 0 and twin only reacts to opinion.
                 rate_change_bps = shock_mag * shock_dir * 200.0
                 ts = self.financial_twin.step(
                     round_num=round_num,
@@ -735,8 +768,11 @@ class RoundManager:
                     opinion_aggregate=opinion_aggregate,
                     polarization=polarization,
                     narrative=str(round_event)[:160],
+                    opinion_by_exposure=exposure_weighted,
                 )
                 financial_twin_state = ts.to_dict()
+                fb = self.financial_twin.latest_feedback()
+                financial_feedback = fb.to_dict()
             except Exception as exc:
                 logger.warning(f"FinancialTwin step failed at round {round_num}: {exc}")
 
@@ -760,6 +796,7 @@ class RoundManager:
             "shock_magnitude": event.get("shock_magnitude", 0),
             "shock_direction": event.get("shock_direction", 0),
             "financial_twin": financial_twin_state,
+            "financial_feedback": financial_feedback,
         }
 
         # Flush any pending SQLite writes before reporting round complete so

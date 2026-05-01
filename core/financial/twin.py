@@ -97,6 +97,39 @@ def default_italian_bank_params() -> dict:
 # ── State snapshot ──────────────────────────────────────────────────────────
 
 @dataclass(frozen=True)
+class FeedbackSignals:
+    """Per-round signals the twin sends back to the opinion layer to close
+    the loop. Each signal is normalised to [0, 1] = "intensity of stress".
+    Agents with relevant exposure read these in their prompt context and
+    can choose to update positions accordingly (LLM-driven, not forced).
+    """
+    nim_anxiety: float          # market sees NIM compression → retail/PMI worry about lending costs
+    cet1_alarm: float           # capital ratio nearing regulatory floor → all stakeholders react
+    runoff_panic: float         # deposit outflow above physiological → trust crisis spiral risk
+    competitor_pressure: float  # peer banks gain market share → opportunity narrative for rivals
+    rate_pressure: float        # cumulative rate change → mortgage / consumer-loan holders feel rate increase
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+    def to_compact_str(self) -> str:
+        """Human-readable, low-token summary for agent prompts. Returns
+        an empty string if all signals are below noise floor (< 0.1)."""
+        bits = []
+        if self.cet1_alarm >= 0.5:
+            bits.append(f"CET1 vicino al limite regolatorio (alarm {self.cet1_alarm:.2f})")
+        if self.runoff_panic >= 0.4:
+            bits.append(f"deposit outflow oltre soglia fisiologica (panic {self.runoff_panic:.2f})")
+        if self.nim_anxiety >= 0.4:
+            bits.append(f"compressione NIM percepita (anxiety {self.nim_anxiety:.2f})")
+        if self.competitor_pressure >= 0.4:
+            bits.append(f"competitor approfittano del momento (pressure {self.competitor_pressure:.2f})")
+        if self.rate_pressure >= 0.5:
+            bits.append(f"rate path cumulato significativo ({self.rate_pressure:.2f})")
+        return " · ".join(bits)
+
+
+@dataclass(frozen=True)
 class FinancialState:
     """Immutable snapshot of the bank's ALM state at a single round.
 
@@ -174,8 +207,11 @@ class FinancialTwin:
         self._cum_rate_change_bps = 0.0
         self._opinion_anchor = 0.0
         self._consecutive_negative_rounds = 0
+        # Sprint 2: feedback signals history (parallel to state history)
+        self.feedback_history: list[FeedbackSignals] = []
         # Build round-0 baseline state
         self.history.append(self._build_baseline_state())
+        self.feedback_history.append(FeedbackSignals(0.0, 0.0, 0.0, 0.0, 0.0))
 
     # ── Public API ──────────────────────────────────────────────────────
 
@@ -189,6 +225,8 @@ class FinancialTwin:
         opinion_aggregate: float = 0.0,
         polarization: float = 5.0,
         narrative: str = "",
+        # ── Sprint 2: closed-loop coupling inputs ─────────────────────
+        opinion_by_exposure: Optional[dict] = None,
     ) -> FinancialState:
         """Advance the twin one round.
 
@@ -203,12 +241,28 @@ class FinancialTwin:
                 High polarization + negative opinion compounds runoff.
             narrative: optional free-text label of what drove the change
                 (logged into the snapshot for auditability).
+            opinion_by_exposure: dict with exposure-weighted opinion aggregates.
+                Keys (all optional, default 0.0):
+                  - "depositors_negative": mean of -opinion weighted by deposit
+                    balance share (drives runoff intensity)
+                  - "borrowers_negative": mean of -opinion weighted by loan
+                    balance share (drives loan demand contraction)
+                  - "competitors_negative_to_us": mean opinion of competitor
+                    bank agents toward THIS bank (high = predator behaviour)
+                Falls back to opinion_aggregate-based defaults if absent.
 
         Returns the new FinancialState (also appended to self.history).
+        Use `latest_feedback()` after calling step to get the FeedbackSignals.
         """
         prev = self.current_state()
         p = self.params
         self._cum_rate_change_bps += rate_change_bps
+
+        # Sprint 2: exposure-weighted opinion (defaults to flat opinion_aggregate)
+        ex = opinion_by_exposure or {}
+        depositors_neg = float(ex.get("depositors_negative", max(0.0, -opinion_aggregate)))
+        borrowers_neg = float(ex.get("borrowers_negative", max(0.0, -opinion_aggregate)))
+        competitors_neg = float(ex.get("competitors_negative_to_us", 0.0))
 
         # ── 1. Deposit dynamics ─────────────────────────────────────────
         # Effective beta = blended sight + term, weighted by share
@@ -220,14 +274,17 @@ class FinancialTwin:
         #   (a) rates rise but our beta is < competitor beta (price war), and
         #   (b) opinion turns negative (trust erosion).
         rate_pressure = max(0.0, rate_change_bps / 100.0) * (1 - beta_eff) * 0.015
-        opinion_pressure = max(0.0, -opinion_aggregate) * p["opinion_to_runoff_coef"]
+        # Sprint 2: use depositor-weighted negative opinion if available
+        opinion_pressure = depositors_neg * p["opinion_to_runoff_coef"]
+        # Competitor pressure adds incremental runoff (deposits flowing to peers)
+        competitor_drain = competitors_neg * 0.012
         # Polarization amplifier — only kicks in past the panic threshold
         panic_amp = 0.0
         if polarization > 7.0 and opinion_aggregate < -0.4:
             panic_amp = p["deposit_runoff_panic_extra"] * min(
                 1.0, (polarization - 7.0) / 3.0
             )
-        runoff_pct = rate_pressure + opinion_pressure + panic_amp
+        runoff_pct = rate_pressure + opinion_pressure + competitor_drain + panic_amp
         # Cap at the physiological max (no LLM-driven bank-run unless panic_amp explicit)
         runoff_pct = min(runoff_pct, p["deposit_runoff_max_per_round"] + panic_amp)
         runoff_pct = max(0.0, runoff_pct)
@@ -238,7 +295,9 @@ class FinancialTwin:
         # Baseline = 1.0; demand drops as rates rise, demand drops with bad opinion.
         rate_pct_change = self._cum_rate_change_bps / 10000.0  # bps → fraction
         demand_from_rate = 1.0 + p["consumer_loan_elasticity"] * rate_pct_change
-        demand_from_opinion = 1.0 - max(0.0, -opinion_aggregate) * p["opinion_to_loan_demand_coef"]
+        # Sprint 2: borrower-weighted opinion drag (consumers who actually
+        # need loans react more strongly to bank's reputation than the average)
+        demand_from_opinion = 1.0 - borrowers_neg * p["opinion_to_loan_demand_coef"]
         loan_demand_index = max(p["loan_demand_floor"], demand_from_rate * demand_from_opinion)
         # Loan balance is sticky (stock vs flow): lerp toward demand
         new_loans = prev.loan_balance * 0.92 + (loan_demand_index * 0.85) * 0.08
@@ -316,7 +375,33 @@ class FinancialTwin:
             notes=narrative[:160] if narrative else "",
         )
         self.history.append(new_state)
+
+        # ── Sprint 2: feedback signals to opinion layer ───────────────────
+        # Each signal is squashed into [0, 1] = "intensity of stress".
+        # Agents read these via prompt context and may update positions.
+        baseline_nim = self._initial_nim_pct()
+        nim_delta_pct = max(0.0, baseline_nim - new_nim_pct) / max(baseline_nim, 0.5)
+        cet1_distance = max(0.0, p["cet1_alarm_pct"] - cet1_pct) / max(
+            p["cet1_alarm_pct"] - p["cet1_min_pct"], 0.5
+        )
+        runoff_excess = max(0.0, runoff_pct - p["deposit_runoff_max_per_round"]) / max(
+            p["deposit_runoff_panic_extra"], 0.001
+        )
+        rate_change_norm = abs(self._cum_rate_change_bps) / 400.0  # normalise: 400bps = full
+
+        feedback = FeedbackSignals(
+            nim_anxiety=round(min(1.0, nim_delta_pct * 3.0), 3),
+            cet1_alarm=round(min(1.0, cet1_distance), 3),
+            runoff_panic=round(min(1.0, runoff_excess + max(0.0, runoff_pct / 0.05 - 0.6)), 3),
+            competitor_pressure=round(min(1.0, competitors_neg), 3),
+            rate_pressure=round(min(1.0, rate_change_norm), 3),
+        )
+        self.feedback_history.append(feedback)
         return new_state
+
+    def latest_feedback(self) -> FeedbackSignals:
+        """Most recent FeedbackSignals (parallel to current_state)."""
+        return self.feedback_history[-1]
 
     # ── Helpers ─────────────────────────────────────────────────────────
 

@@ -1,19 +1,20 @@
-"""Financial Twin layer — ALM (asset-liability management) state for the
-banking domain. Distinct from core.orchestrator.financial_impact, which
-handles equity-market side (tickers, pair trades, betas).
+"""Financial domain — ALM/Solvency/Asset-Mgmt twins for digital-twin sims.
 
-This module provides:
-- FinancialState: immutable snapshot of a bank's balance sheet at a round
-- FinancialTwin: stateful engine that steps the balance sheet given an
-  event + opinion aggregate, applying ALM constraints (deposit beta,
-  loan elasticity, NIM compression, regulatory floors).
-- default_italian_bank_params(): literature-grounded defaults derived from
-  ECB / EBA / Banca d'Italia 2025 benchmarks. Override per scenario.
+Three sub-namespaces, each a stateful engine that steps in lockstep with
+the opinion simulation:
 
-Design: weak coupling — the twin runs in lockstep with the opinion
-simulation but does not directly modify agent positions. Agents read the
-current state via context strings; in v0.6 they also receive light
-balance-sheet snippets (financial_state field).
+- `core.financial.banking` — bank balance sheet (NIM, CET1, LCR, deposit
+  β, loan elasticity, hedging P&L). Default IT/DE/FR/ES/NL/US/UK with
+  live ECB/FRED/BoE refresh. Auto-attached to round_manager when
+  domain_id == "financial".
+- `core.financial.insurance` — insurer P&C / Life (combined ratio,
+  Solvency II ratio, lapse, technical provisions). v0.1 minimal.
+- `core.financial.asset_mgmt` — asset manager (AUM, fee revenue, net
+  flows, market beta). v0.1 minimal.
+
+Backward-compat: top-level imports (`from core.financial import
+FinancialTwin`) keep working for the banking case. New code should
+prefer the sub-namespace paths for clarity.
 """
 
 from .exposure import (

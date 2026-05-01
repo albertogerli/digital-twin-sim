@@ -47,8 +47,9 @@ DEFAULT_THRESHOLD = 0.40
 # These are ad-hoc heuristics, NOT learned. Tune on a labelled test set
 # (5-10 brief × ~30 candidates with human relevance verdict) when ready.
 WEIGHTS = {
-    "country_match":      0.40,   # strongest signal: geography is the bedrock
-    "sector_match":       0.25,   # second strongest: domain alignment
+    "country_match":      0.35,   # strongest signal: geography is the bedrock
+    "sector_match":       0.20,   # rule-based topic_tag overlap
+    "semantic_sim":       0.20,   # Sprint 12: embedding-based bio→brief similarity
     "brief_mention":      0.40,   # huge bonus: explicitly named in the brief
     "archetype_allow":    0.15,   # mild bonus
     "archetype_deny":     0.50,   # strong PENALTY (subtracted)
@@ -155,15 +156,31 @@ def _sector_overlap_score(stakeholder, sector: str, sub_sector: str = "") -> flo
 
 
 def _brief_mention_bonus(stakeholder, brief_lower: str) -> float:
-    """1.0 if stakeholder name or party/org appears verbatim in the brief."""
+    """1.0 if stakeholder name or party/org appears verbatim in the brief.
+
+    Note on acronym matching: ABI, MEF, BCE, FCA, OCC are valid party_or_org
+    values that are 3 chars, so we use word-boundary regex to match them
+    safely without false positives from substrings.
+    """
     if not brief_lower:
         return 0.0
     name = (getattr(stakeholder, "name", "") or "").lower()
     party = (getattr(stakeholder, "party_or_org", "") or "").lower()
     if name and len(name) > 3 and name in brief_lower:
         return 1.0
-    if party and len(party) > 3 and party in brief_lower:
-        return 0.7
+    # Acronyms (≥2 chars): use word boundary to avoid matching e.g. "abi"
+    # inside "abituale". Longer party names use plain substring check.
+    if party and len(party) >= 2:
+        if len(party) <= 5 and party.isupper() == False:
+            # Likely acronym (in original casing). Use word boundary.
+            if re.search(rf"\b{re.escape(party)}\b", brief_lower):
+                return 0.7
+        elif party in brief_lower:
+            return 0.7
+    # Acronym match also when the original was uppercase (already lowered)
+    if party and len(party) >= 2 and len(party) <= 6:
+        if re.search(rf"\b{re.escape(party)}\b", brief_lower):
+            return 0.7
     # Last name only (e.g. "Meloni" mentioned without first name)
     if name and " " in name:
         last = name.rsplit(" ", 1)[1]
@@ -305,10 +322,17 @@ class RelevanceVerdict:
 
 def score_stakeholder_relevance(
     stakeholder, brief: str, scope=None,
+    *, brief_embedding: Optional[list] = None,
 ) -> RelevanceVerdict:
     """Compute the relevance score for one stakeholder against one brief.
 
     Returns a RelevanceVerdict with the decomposed score, useful for audit.
+
+    Args:
+        brief_embedding: optional precomputed brief embedding (list of float).
+            When provided, the semantic_similarity component is added; when
+            None, the embedding component is skipped (Layer 1 stays purely
+            rule-based for offline / no-API runs).
     """
     brief_lower = (brief or "").lower()
     geography = list(getattr(scope, "geography", []) or []) if scope else []
@@ -321,10 +345,23 @@ def score_stakeholder_relevance(
     a_allow, a_deny = _archetype_score(stakeholder, scope)
     g_pen = _global_figure_penalty(stakeholder, geography, brief_lower, scope=scope)
 
+    # Sprint 12: semantic similarity (skipped if no brief_embedding)
+    sem_score = 0.0
+    sem_used = False
+    if brief_embedding is not None:
+        try:
+            from .semantic_similarity import semantic_similarity
+            sem_score = semantic_similarity(stakeholder, brief_embedding)
+            sem_used = True
+        except Exception:
+            sem_score = 0.0
+            sem_used = False
+
     # Combine — additive, then clamp to [0, 1]
     raw = (
         WEIGHTS["country_match"]    * c_score
         + WEIGHTS["sector_match"]   * s_score
+        + (WEIGHTS["semantic_sim"]  * sem_score if sem_used else 0.0)
         + WEIGHTS["brief_mention"]  * m_bonus
         + WEIGHTS["archetype_allow"]* a_allow
         - WEIGHTS["archetype_deny"] * a_deny
@@ -339,6 +376,7 @@ def score_stakeholder_relevance(
     components = {
         "country": round(c_score, 3),
         "sector": round(s_score, 3),
+        "semantic": round(sem_score, 3) if sem_used else None,
         "brief_mention": round(m_bonus, 3),
         "archetype_allow": a_allow,
         "archetype_deny": a_deny,
@@ -361,18 +399,34 @@ def filter_stakeholders_by_relevance(
     brief: str,
     scope=None,
     threshold: float = DEFAULT_THRESHOLD,
+    *, use_semantic: bool = True,
 ) -> tuple[list, list[RelevanceVerdict]]:
     """Score every stakeholder, drop those below threshold.
 
     Returns (kept_stakeholders, full_verdict_list). Full verdict list is
     useful for audit/debugging — it includes both kept and dropped, with
     score components. Logs dropped at INFO level.
+
+    Args:
+        use_semantic: when True (default), computes a single brief embedding
+            via Gemini and adds the semantic_similarity component to each
+            score. Set to False for pure rule-based runs (offline / tests).
     """
+    # Compute brief embedding once and pass to per-stakeholder scoring
+    brief_embedding = None
+    if use_semantic and brief:
+        try:
+            from .semantic_similarity import get_brief_embedding
+            brief_embedding = get_brief_embedding(brief, scope)
+        except Exception as exc:
+            logger.warning(f"semantic_similarity disabled (brief embedding failed): {exc}")
+            brief_embedding = None
+
     kept = []
     verdicts = []
     dropped_count = 0
     for s in stakeholders:
-        v = score_stakeholder_relevance(s, brief, scope)
+        v = score_stakeholder_relevance(s, brief, scope, brief_embedding=brief_embedding)
         if v.score >= threshold:
             v.kept = True
             v.reason = "above threshold"

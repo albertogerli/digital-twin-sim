@@ -198,15 +198,50 @@ class FinancialTwin:
         # s1 is a FinancialState; twin.history is the list of all snapshots
     """
 
-    def __init__(self, params: Optional[dict] = None):
+    def __init__(
+        self,
+        params: Optional[dict] = None,
+        *,
+        stress_template_name: Optional[str] = None,
+        cir_rate_process=None,
+    ):
+        """Build the twin.
+
+        Args:
+            params: override of default_italian_bank_params() keys.
+            stress_template_name: optional EBA-style template name
+                ("baseline" | "adverse"). Applies twin_overrides + sets up a
+                CIR process with the template's cir_overrides if no
+                cir_rate_process is provided. See core.financial.rates.
+            cir_rate_process: optional CIRRateProcess instance. If set, the
+                twin will draw rate increments from it each round (overriding
+                manual rate_change_bps). Pass None to keep manual control.
+        """
         self.params = default_italian_bank_params()
         if params:
             self.params.update(params)
+        # Sprint 3: stress template overlay
+        self.stress_template = None
+        if stress_template_name:
+            from .rates import get_stress_template, CIRRateProcess
+            self.stress_template = get_stress_template(stress_template_name)
+            if self.stress_template:
+                self.params.update(self.stress_template.twin_overrides)
+                if cir_rate_process is None:
+                    self.cir = CIRRateProcess(**self.stress_template.cir_overrides)
+                else:
+                    self.cir = cir_rate_process
+            else:
+                self.cir = cir_rate_process
+        else:
+            self.cir = cir_rate_process
         self.history: list[FinancialState] = []
         # Internal trackers (not exposed in state snapshot)
         self._cum_rate_change_bps = 0.0
         self._opinion_anchor = 0.0
         self._consecutive_negative_rounds = 0
+        # Track baseline rate for CIR delta computation
+        self._cir_baseline_rate = self.cir.r0 if self.cir is not None else None
         # Sprint 2: feedback signals history (parallel to state history)
         self.feedback_history: list[FeedbackSignals] = []
         # Build round-0 baseline state
@@ -256,6 +291,19 @@ class FinancialTwin:
         """
         prev = self.current_state()
         p = self.params
+
+        # Sprint 3: if a CIR process is attached, draw the round's rate from it
+        # and override the manual rate_change_bps. Round 1 also applies any
+        # initial_rate_shock_bps from a stress template (one-shot).
+        if self.cir is not None:
+            new_rate = self.cir.step()
+            inferred_rate_bps = (new_rate - self._cir_baseline_rate) * 10000.0
+            # Apply initial stress shock once at round 1
+            if (round_num == 1 and self.stress_template is not None
+                    and self.stress_template.initial_rate_shock_bps != 0):
+                inferred_rate_bps += self.stress_template.initial_rate_shock_bps
+            rate_change_bps = inferred_rate_bps
+            self._cir_baseline_rate = new_rate
         self._cum_rate_change_bps += rate_change_bps
 
         # Sprint 2: exposure-weighted opinion (defaults to flat opinion_aggregate)

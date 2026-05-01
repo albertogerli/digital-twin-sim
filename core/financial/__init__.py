@@ -21,6 +21,14 @@ from .exposure import (
     default_exposure,
     infer_financial_exposure,
 )
+from .rates import (
+    CIRRateProcess,
+    EBAStressTemplate,
+    eba_adverse_2025_template,
+    eba_baseline_2025_template,
+    get_stress_template,
+    list_stress_templates,
+)
 from .twin import (
     FeedbackSignals,
     FinancialState,
@@ -36,4 +44,10 @@ __all__ = [
     "aggregate_opinion_by_exposure",
     "default_exposure",
     "infer_financial_exposure",
+    "CIRRateProcess",
+    "EBAStressTemplate",
+    "eba_adverse_2025_template",
+    "eba_baseline_2025_template",
+    "get_stress_template",
+    "list_stress_templates",
 ]

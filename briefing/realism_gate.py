@@ -94,48 +94,56 @@ class RealismReport:
         )
 
 
-REALISM_CHECK_PROMPT = """You are a realism auditor for digital-twin simulation agent rosters.
-For each listed agent, decide whether they would CREDIBLY COMMENT PUBLICLY on this
-scenario at the given scope. The test is scope plausibility, not archetype taxonomy.
+REALISM_CHECK_PROMPT = """You are a STRICT realism auditor for digital-twin simulation rosters.
+Your default stance is REJECT. An agent earns ACCEPT only when their public
+role makes them an obvious commenter for THIS specific brief.
 
 SCENARIO SCOPE:
 - Sector: {sector}{sub_sector_line}
 - Geography: {geography}
 - Scope tier: {scope_tier}
-- Brief (verbatim): {brief_excerpt}
-- Archetype whitelist (ADVISORY — typical commenters; not exhaustive): {allowed_archetypes}
-- Archetype denylist (HARD — these are out-of-scope): {excluded_archetypes}
+- Brief (verbatim, low-priority context only): {brief_excerpt}
+- Archetype whitelist (typical commenters; advisory): {allowed_archetypes}
+- Archetype denylist (HARD; never accept): {excluded_archetypes}
 
 AGENTS TO AUDIT (name, archetype, role, tier):
 {agent_list}
 
-DECISION RULES (apply in order, first match wins):
+DECISION ALGORITHM (top-down, first match wins):
 
-1. REJECT if any of the following is true:
-   - Agent's archetype is on the DENYLIST (hard block).
-   - Agent's known public role is clearly OUTSIDE the sector (e.g. pharma CEO on a fashion brief)
-     AND they are not explicitly named in the brief.
-   - Agent's geography is clearly OUTSIDE the scope (e.g. US-only local politician on an Italy-only brief)
-     AND they don't operate internationally in this sector.
-   - The scope tier is national/niche and the agent only makes sense at a global tier
-     (heads of state, central bank governors, global tech billionaires, world religious leaders),
-     UNLESS the brief explicitly invokes them.
-   - The name is generic, invented-sounding, or has no obvious public record.
+A. AUTO-REJECT (no exceptions unless brief explicitly names the person):
+   1. Foreign heads-of-state / vice presidents / chancellors / prime ministers
+      whose country is NOT in the scope geography.
+        Examples to ALWAYS reject on a non-US, non-global brief: Trump,
+        Biden, Harris, Vance, Obama, DeSantis, Sanders, AOC, Putin, Xi,
+        Zelensky, Sunak, Starmer, Modi, Macron (unless brief is FR/EU),
+        Merkel, Scholz (unless brief is DE/EU).
+   2. Global tech billionaires whose business is NOT the scope's sector.
+        Always reject on non-tech briefs: Musk, Zuckerberg, Bezos, Gates,
+        Cook, Pichai, Nadella, Ellison.
+   3. Religious leaders unless brief is explicitly religious-policy.
+   4. Sports / entertainment celebrities unless brief is sports/entertainment.
+   5. Agents whose archetype is on the DENYLIST.
 
-2. ACCEPT if:
-   - Agent's public role is plausibly IN the sector AND IN the geography/tier, regardless of
-     whether their archetype string is literally on the whitelist.
-   - Industry associations, academic institutions, trade bodies, regulators, and media outlets
-     that cover the sector count as in-scope even if their archetype label isn't in the whitelist,
-     SO LONG AS their sector/geography match.
-   - Agent is explicitly named in the brief.
+B. AUTO-ACCEPT:
+   1. Agent is named verbatim in the brief.
+   2. Agent's public role is the OBVIOUS regulator / industry association /
+      consumer body / direct competitor / trade press for the sector AND
+      operates in the scope geography.
+        Banking IT example: ABI, Banca d'Italia, Codacons, Findomestic,
+        Agos, Compass, Carlo Messina (peer bank CEO), Federico Fubini
+        (financial press IT).
 
-3. UNCERTAIN if:
-   - Boundary case: same industry but different vertical, or same country but peripheral role.
+C. UNCERTAIN (only when neither A nor B applies):
+   - Boundary case: same industry but different sub-vertical.
    - Insufficient public record to be confident either way.
 
-The archetype whitelist is a hint about typical commenters, NOT an exhaustive filter.
-Do not reject on archetype mismatch alone when sector + geography clearly fit.
+CALIBRATION TARGETS for a typical national-tier brief:
+   - Reject rate ~50-70% of an unfiltered global roster
+   - Accept rate ~25-40%
+   - Uncertain rate <15%
+   If you accept >50% of agents on a national brief, you are being too
+   permissive. If you accept <15%, you are being too restrictive.
 
 Respond with JSON:
 {{
@@ -143,7 +151,7 @@ Respond with JSON:
     {{
       "agent_id": "...",
       "verdict": "accept|reject|uncertain",
-      "rationale": "one short sentence — cite WHICH scope dimension matched or failed. Do NOT cite archetype-whitelist mismatch as the sole reason."
+      "rationale": "one short sentence — cite WHICH rule (A1-A5, B1-B2, C) matched."
     }}
   ]
 }}
@@ -160,6 +168,29 @@ def _format_agent_list(agents: list[tuple[str, str, str, str, str]]) -> str:
     )
 
 
+# Sprint 10: in-process cache for verdicts. Key = (brief_hash, agent_id).
+# Survives within a single API process; cleared on restart. Sized loosely.
+_VERDICT_CACHE: dict[tuple[str, str], tuple[Verdict, str]] = {}
+_VERDICT_CACHE_MAX = 5000
+
+
+def _brief_hash(brief: str) -> str:
+    import hashlib
+    return hashlib.sha1((brief or "").encode("utf-8")).hexdigest()[:12]
+
+
+def _cache_get(brief_hash: str, agent_id: str):
+    return _VERDICT_CACHE.get((brief_hash, agent_id))
+
+
+def _cache_set(brief_hash: str, agent_id: str, verdict_tuple):
+    if len(_VERDICT_CACHE) >= _VERDICT_CACHE_MAX:
+        # Crude eviction: drop ~10% of oldest (ordered dict semantic)
+        for k in list(_VERDICT_CACHE.keys())[: _VERDICT_CACHE_MAX // 10]:
+            _VERDICT_CACHE.pop(k, None)
+    _VERDICT_CACHE[(brief_hash, agent_id)] = verdict_tuple
+
+
 async def run_realism_gate(
     scope: BriefScope,
     brief_text: str,
@@ -170,10 +201,14 @@ async def run_realism_gate(
 
     `analysis` is the dict produced by `generate_agents_multistep`, containing
     "suggested_elite_agents" and "suggested_institutional_agents" keys.
+
+    Sprint 10: cached verdicts by (brief_hash, agent_id). Re-runs (e.g. after
+    regen) skip already-judged agents → fewer LLM tokens, faster pipeline.
     """
 
     elites = analysis.get("suggested_elite_agents", []) or []
     insts = analysis.get("suggested_institutional_agents", []) or []
+    brief_h = _brief_hash(brief_text)
 
     rows: list[tuple[str, str, str, str, str]] = []
     for a in elites:
@@ -197,9 +232,24 @@ async def run_realism_gate(
     if not rows:
         return report
 
+    # Sprint 10: split rows into cached vs uncached. Only uncached go to LLM.
+    verdict_by_id: dict[str, tuple[Verdict, str]] = {}
+    rows_to_query: list[tuple[str, str, str, str, str]] = []
+    cache_hits = 0
+    for row in rows:
+        aid = row[0]
+        cached = _cache_get(brief_h, aid) if aid else None
+        if cached is not None:
+            verdict_by_id[aid] = cached
+            cache_hits += 1
+        else:
+            rows_to_query.append(row)
+    if cache_hits > 0:
+        logger.info(f"realism_gate cache: {cache_hits}/{len(rows)} hits")
+
     # Chunk into batches of 12 agents per LLM call to keep prompt small.
     BATCH = 12
-    batches = [rows[i:i + BATCH] for i in range(0, len(rows), BATCH)]
+    batches = [rows_to_query[i:i + BATCH] for i in range(0, len(rows_to_query), BATCH)]
 
     # We run batches sequentially to keep LLM budget predictable (gate is
     # cheap; each batch is small). If latency becomes a problem, switch to
@@ -210,8 +260,6 @@ async def run_realism_gate(
 
     prompt_base = REALISM_CHECK_PROMPT
     sub_sector_line = f" / {scope.sub_sector}" if scope.sub_sector else ""
-
-    verdict_by_id: dict[str, tuple[Verdict, str]] = {}
 
     for batch in batches:
         prompt = prompt_base.format(
@@ -245,6 +293,7 @@ async def run_realism_gate(
             rationale = str(v.get("rationale", "") or "").strip()
             if aid:
                 verdict_by_id[aid] = (verdict, rationale)
+                _cache_set(brief_h, aid, (verdict, rationale))
 
     # Assemble report in roster order
     for row in rows:

@@ -10,6 +10,8 @@ from core.config.schema import (
 )
 from core.llm.base_client import BaseLLMClient
 from .brief_analyzer import analyze_brief
+from .brief_scope import analyze_scope, BriefScope
+from .realism_gate import run_realism_gate, enforce_realism
 from .web_research import research_context
 from .entity_researcher import research_entities
 from .agent_generator import generate_agents_multistep
@@ -72,6 +74,19 @@ class ScenarioBuilder:
                 f"=== FINE DOCUMENTAZIONE ==="
             ).strip()
 
+        # Step 1.5: Layer 0 — scope analysis (sector, geography, scope tier,
+        # plausible archetypes). No person names produced here; this defines
+        # the boundaries within which later generation must pick realistic
+        # commenters.
+        print("  Scope analysis (Layer 0)...")
+        scope: BriefScope | None = None
+        try:
+            scope = await analyze_scope(brief_text, llm, web_context=combined_context)
+            print(f"  ├─ Scope: {scope.summary()} ✓")
+        except Exception as exc:
+            logger.warning(f"Layer-0 scope analysis failed: {exc}")
+            print(f"  ├─ Scope analysis failed ({exc.__class__.__name__}), continuing without gate")
+
         # Step 2: Entity deep-dive research (Phase 2)
         entity_context = ""
         if combined_context:
@@ -79,6 +94,7 @@ class ScenarioBuilder:
             entity_context = await research_entities(
                 brief_text, combined_context, llm,
                 progress_callback=progress_callback,
+                scope=scope,
             )
             if entity_context:
                 print(f"  ├─ Entity profiles: {len(entity_context)} chars ✓")
@@ -109,6 +125,7 @@ class ScenarioBuilder:
             entity_context=entity_context,
             domain_plugin=domain_plugin,
             progress_callback=progress_callback,
+            scope=scope,
         )
 
         # Step 4: Validation & balancing (Phase 4)
@@ -133,6 +150,54 @@ class ScenarioBuilder:
             print(f"  ├─ Critic review complete ✓")
         else:
             print(f"  ├─ All validation checks passed ✓")
+
+        # Step 4.5: Layer 0 — realism gate with ENFORCEMENT (Phase 3).
+        # Audits every elite + institutional agent against the scope. If the
+        # rejection rate exceeds the threshold, rejected agents are replaced
+        # via targeted regeneration (up to `max_passes` cycles). The final
+        # report is logged and attached to the analysis dict.
+        # Sprint 10: realism gate is now ALWAYS-ON. When Layer-0 scope
+        # analysis fails (scope=None), we synthesise a conservative default
+        # scope (national-tier, unknown sector) so the LLM still audits for
+        # gross out-of-scope agents (foreign heads of state, etc.).
+        gate_scope = scope
+        if gate_scope is None:
+            gate_scope = BriefScope(
+                sector="unknown",
+                geography=["IT"],  # safe default: most briefs we run are IT
+                scope_tier="national",
+                stakeholder_archetypes=[],
+                excluded_archetypes=[
+                    "head_of_state", "global_tech_billionaire",
+                    "world_religious_leader", "central_bank_governor",
+                ],
+                rationale="synthesised default — Layer-0 scope failed",
+            )
+            print("  Running realism gate (synthesised default scope)...")
+        else:
+            print("  Running realism gate (enforcement mode)...")
+        try:
+            final_report, initial_report = await enforce_realism(
+                gate_scope, brief_text, analysis, llm,
+                rejection_threshold=0.15,
+                max_passes=2,
+            )
+            if initial_report is not None:
+                print(f"  ├─ Initial: {initial_report.summary()}")
+                print(f"  ├─ After regen: {final_report.summary()}")
+            else:
+                print(f"  ├─ {final_report.summary()}")
+            if final_report.rejected:
+                for v in final_report.rejected[:8]:
+                    print(f"  │   ✗ {v.tier} {v.name!r} ({v.archetype}) — {v.rationale}")
+                if len(final_report.rejected) > 8:
+                    print(f"  │   … +{len(final_report.rejected) - 8} more still rejected")
+            analysis["_realism_report"] = final_report.to_dict()
+            if initial_report is not None:
+                analysis["_realism_initial_report"] = initial_report.to_dict()
+        except Exception as exc:
+            logger.warning(f"realism_gate failed: {exc}")
+            print(f"  ├─ Realism gate failed ({exc.__class__.__name__}), continuing")
 
         # Step 5: Auto seed data (Phase 5) — only if no manual seed data
         if not seed_data_bundle and entity_context:

@@ -127,11 +127,18 @@ def _tenant_id(tenant: Optional[Tenant]) -> str:
 
 # ── Health (used by Railway / load balancer) ─────────────────
 
+API_VERSION = "0.6.0"
+
+
 @app.get("/api/health")
 async def health():
     """Lightweight readiness probe — no DB, no LLM. Returns 200 if the
     process is alive and the FastAPI app has started."""
-    return {"status": "ok", "service": "digital-twin-sim-api"}
+    return {
+        "status": "ok",
+        "service": "digital-twin-sim-api",
+        "version": API_VERSION,
+    }
 
 
 @app.get("/api/disk/stats")

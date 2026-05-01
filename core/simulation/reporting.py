@@ -37,6 +37,25 @@ _LANG_MAP = {
     "pt": "Portuguese",
 }
 
+# Concrete heading translations for languages where the domain prompt
+# templates leak English headings (LLMs tend to copy template wording even
+# when instructed to translate). For unlisted languages, the LLM is left
+# to translate on its own.
+_HEADING_OVERRIDES = {
+    "it": {
+        "Executive Summary": "Sintesi Esecutiva",
+        "Simulated Timeline": "Cronologia Simulata",
+        "Coalition Map": "Mappa delle Coalizioni",
+        "Market Sentiment Dynamics": "Dinamiche del Sentiment di Mercato",
+        "Polarization and Herding": "Polarizzazione ed Effetto Gregge",
+        "The Viral Posts That Moved the Market": "Post Virali che Hanno Mosso il Mercato",
+        "Dominant Emerging Narrative": "Narrazione Dominante Emergente",
+        "Institutional and Regulatory Impact": "Impatto Istituzionale e Regolamentare",
+        "Scenarios Forward": "Scenari Futuri",
+        "Methodological Note": "Nota Metodologica",
+    },
+}
+
 
 def _safe_name(name: str) -> str:
     return "".join(c if c.isalnum() or c in "-_" else "_" for c in name)
@@ -141,8 +160,19 @@ class ReportingService:
                 f"\n\nCRITICAL LANGUAGE REQUIREMENT: Write the ENTIRE report in "
                 f"{lang_name}. Every heading, paragraph, analysis, conclusion, and "
                 f"narrative MUST be in {lang_name}. Do NOT use English for any part "
-                f"of the report content."
+                f"of the report content, INCLUDING markdown section headings "
+                f"(##, ###). The template below uses English headings only as "
+                f"a structural guide — translate them when you write."
             )
+            overrides = _HEADING_OVERRIDES.get(lang)
+            if overrides:
+                mapping_lines = "\n".join(
+                    f"  '{en}' → '{tr}'" for en, tr in overrides.items()
+                )
+                lang_instruction += (
+                    f"\n\nUse these EXACT translations for the section headings:\n"
+                    f"{mapping_lines}"
+                )
             report_system += lang_instruction
             user_prompt = lang_instruction + "\n\n" + user_prompt
 

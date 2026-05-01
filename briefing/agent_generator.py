@@ -8,7 +8,10 @@ Splits agent generation into 4 focused LLM calls:
 """
 
 import logging
+from typing import Optional
+
 from core.llm.base_client import BaseLLMClient
+from .brief_scope import BriefScope
 
 logger = logging.getLogger(__name__)
 
@@ -64,6 +67,8 @@ SCENARIO SCAFFOLD:
 - Context: {scenario_context}
 - Initial event: {initial_event}
 
+{scope_section}
+
 {web_context}
 
 {entity_context}
@@ -82,6 +87,8 @@ CRITICAL RULES:
 - Ensure positions span the full -1 to +1 range with natural distribution.
 - Generate {elite_min}-{elite_max} elite agents.
 - Keep bios to 1-2 sentences to stay within output limits.
+- If SCOPE CONSTRAINTS are provided above, they are NON-NEGOTIABLE. Any agent whose public role
+  falls outside the scope sector / geography / tier must be excluded — no exceptions for fame.
 
 Respond with JSON:
 {{
@@ -113,6 +120,8 @@ SCENARIO:
 - Axis: [{neg_label}] <--> [{pos_label}]
 - Context: {scenario_context}
 
+{scope_section}
+
 ELITE AGENTS ALREADY GENERATED (cross-reference these — institutions should interact with them):
 {elite_summary}
 
@@ -125,6 +134,8 @@ CRITICAL RULES:
 - Each institution should have clear relationships to at least 1-2 elite agents.
 - Generate {inst_min}-{inst_max} institutional agents.
 - Ensure position diversity across the axis.
+- If SCOPE CONSTRAINTS are provided above, restrict organizations to the scoped sector / geography.
+  Global bodies (IMF, UN, World Bank) only if the scope tier is global.
 
 Respond with JSON:
 {{
@@ -192,10 +203,15 @@ async def generate_agents_multistep(
     entity_context: str = "",
     domain_plugin=None,
     progress_callback=None,
+    scope: Optional[BriefScope] = None,
 ) -> dict:
     """Generate scenario config via 4 focused LLM calls instead of 1 monolithic call.
 
     Returns a dict compatible with the old analyze_brief output format.
+
+    When `scope` is provided (Layer 0), its constraints are injected into the
+    elite + institutional prompts so generation stays on-scope by construction
+    (not just post-audited by the realism gate).
     """
     # Get archetype guidance from domain plugin (if known already)
     guidance = domain_plugin.get_agent_generation_guidance() if domain_plugin else {}
@@ -207,6 +223,9 @@ async def generate_agents_multistep(
             f"Optional: {', '.join(guidance.get('optional_archetypes', []))}\n"
             f"Hint: {guidance.get('position_distribution_hint', '')}"
         )
+
+    # Layer-0 scope block (empty if no scope was provided — backward compat)
+    scope_section = scope.prompt_block() if scope is not None else ""
 
     # Format context sections
     web_section = ""
@@ -251,10 +270,17 @@ async def generate_agents_multistep(
 
     logger.info(f"Scaffold: domain={scaffold.get('domain')}, name={scaffold.get('scenario_name')}")
 
-    # Resolve domain plugin if not provided yet
+    # Resolve domain plugin if not provided yet.
+    # DomainRegistry.get() raises ValueError on unknown domain; we treat that
+    # as "no plugin — use LLM defaults" so the pipeline stays robust when a
+    # domain isn't registered (e.g. in tests or novel briefs).
     if not domain_plugin:
-        from domains.domain_registry import DomainRegistry
-        domain_plugin = DomainRegistry.get(scaffold.get("domain", "political"))
+        try:
+            from domains.domain_registry import DomainRegistry
+            domain_plugin = DomainRegistry.get(scaffold.get("domain", "political"))
+        except Exception as exc:
+            logger.debug(f"domain plugin not resolvable: {exc}")
+            domain_plugin = None
         if domain_plugin:
             guidance = domain_plugin.get_agent_generation_guidance()
 
@@ -284,9 +310,23 @@ async def generate_agents_multistep(
             from stakeholder_graph.integration import infer_topic_tags
             llm_topics = infer_topic_tags(scaffold_context, scaffold.get("domain", ""))
 
+        # Derive primary country from scope so the retriever doesn't pull
+        # all global stakeholders. Default "IT" if no scope (back-compat).
+        scope_country = "IT"
+        scope_is_global = False
+        if scope is not None:
+            scope_is_global = scope.scope_tier == "global"
+            geo_codes = [g.upper() for g in (scope.geography or [])]
+            if geo_codes and not scope_is_global:
+                # Pick the first non-supranational country code
+                for g in geo_codes:
+                    if g not in ("EU", "GLOBAL", "EUROZONE", "WORLD"):
+                        scope_country = g
+                        break
+
         activation_plan = retriever.retrieve(
             brief=brief,
-            country="",  # auto-detect from brief
+            country=scope_country,
             max_total=elite_range[1] + 15,  # extra for waves 2-3
             llm_topics=llm_topics,
         )
@@ -297,6 +337,24 @@ async def generate_agents_multistep(
             for score in wave:
                 stakeholder = db.get(score.stakeholder_id)
                 if stakeholder:
+                    # Geography filter for narrow-scope briefs: drop foreign
+                    # stakeholders unless they have international reach AND
+                    # the scope tier is broader than national.
+                    if scope is not None and not scope_is_global:
+                        s_country = (getattr(stakeholder, "country", "") or "").upper()
+                        scope_geo = [g.upper() for g in (scope.geography or [])]
+                        if s_country and scope_geo and s_country not in scope_geo:
+                            # Allow EU figures for IT briefs and vice versa
+                            ok_supranational = (
+                                ("EU" in scope_geo and s_country in {"DE","FR","IT","ES","NL","BE","AT","PT","IE","FI","GR","DK","SE","PL"})
+                                or ("EU" in {s_country} and "IT" in scope_geo)
+                            )
+                            if not ok_supranational:
+                                logger.debug(
+                                    f"retriever filter: dropping {stakeholder.name} "
+                                    f"(country={s_country}, scope={scope_geo})"
+                                )
+                                continue
                     spec = stakeholder.to_agent_spec()
                     spec["_activation_tier"] = score.activation_tier
                     spec["_relevance_score"] = score.total
@@ -342,6 +400,7 @@ async def generate_agents_multistep(
                 pos_label=pos_label,
                 scenario_context=scaffold.get("scenario_context", "")[:2000],
                 initial_event=scaffold.get("initial_event", "")[:500],
+                scope_section=scope_section,
                 web_context=web_section[:4000],
                 entity_context=entity_section,
                 seed_context=seed_section,
@@ -380,6 +439,7 @@ async def generate_agents_multistep(
             neg_label=neg_label,
             pos_label=pos_label,
             scenario_context=scaffold.get("scenario_context", "")[:2000],
+            scope_section=scope_section,
             elite_summary=elite_summary,
             web_context=web_section[:3000],
             entity_context=entity_section[:2000],
@@ -428,6 +488,17 @@ async def generate_agents_multistep(
         cluster_result = cluster_result[0] if cluster_result and isinstance(cluster_result[0], dict) else {}
     clusters = cluster_result.get("citizen_clusters", [])
     logger.info(f"Citizen clusters generated: {len(clusters)}")
+
+    # ── Final safety net: drop action-token impostors (e.g. "remove_agent")
+    # that may have slipped past upstream LLM calls. ────────────────────────
+    from .realism_gate import filter_invalid_agents
+    elite_agents, dropped_e = filter_invalid_agents(elite_agents)
+    inst_agents, dropped_i = filter_invalid_agents(inst_agents)
+    if dropped_e or dropped_i:
+        logger.warning(
+            f"agent_generator final filter: dropped {len(dropped_e)} elite + "
+            f"{len(dropped_i)} institutional agents with invalid names"
+        )
 
     # ── Merge into unified output ──────────────────────────────────────────
     result = {**scaffold}

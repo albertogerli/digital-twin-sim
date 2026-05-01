@@ -146,14 +146,27 @@ MOST DISCUSSED POSTS LAST PERIOD:
 Generate a realistic financial event for {timeline_label} that:
 1. Is a NATURAL CONSEQUENCE of the scenario context and previous events
 2. Reflects current tensions and dynamics among market participants, regulators, and institutions
-3. Introduces a new element, escalation, or turning point (regulation change, earnings surprise, market shock, IPO, crypto event, etc.)
+3. Introduces a new element OR a measured escalation — not necessarily a crisis. Most periods
+   in a real market are uneventful or feature small adjustments (analyst notes, sector
+   rotation, normal trading-volume shifts). Apocalyptic outcomes (rating downgrade,
+   emergency tax, bank-run, regulator emergency action) should appear ONLY when current
+   polarization > 7.0 AND the previous events have been escalating for at least 2 periods.
 4. Is specific and detailed (institution names, plausible numbers, concrete market actions)
 5. Has a measurable impact on market participants' positions
+
+REALISM CALIBRATION (HARD):
+- Default shock_magnitude is 0.2-0.4. Reserve 0.5-0.7 for genuine inflection points.
+- Use 0.7-0.8 ONLY for the rare crisis moment (max once per simulation).
+- Do NOT escalate to systemic crisis (Moody's downgrade, extra-profit tax, central-bank
+  emergency intervention, bank-run) within the first 4 periods. Build narrative gradually.
+- Counter-narrative events (de-escalation, calming statements, technical correction,
+  industry self-regulation) are valid event types — use them ~30% of the time when
+  polarization > 5.0 to avoid one-way escalation cascades.
 
 Respond with JSON:
 {{
   "event": "Description of the event in 4-5 detailed sentences",
-  "shock_magnitude": "float from 0.1 to 0.8, how impactful the event is",
+  "shock_magnitude": "float from 0.1 to 0.8, default 0.2-0.4; see calibration above",
   "shock_direction": "float from -1 to +1, positive = bullish/risk-on, negative = bearish/risk-off",
   "key_actors_affected": ["list of most affected agents"],
   "institutional_impact": "brief description of institutional/regulatory impact",

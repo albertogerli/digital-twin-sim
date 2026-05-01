@@ -629,6 +629,59 @@ def _build_html_body(
 
     md_section = f'<section><h2>Sintesi narrativa</h2><div class="md-block">{md_html}</div></section>' if md_html else ""
 
+    # ── ALM section (banking domain only) ─────────────────────────────
+    alm_html = ""
+    twin_states = [r.get("financial_twin") for r in round_results if r.get("financial_twin")]
+    if twin_states:
+        baseline_nim = twin_states[0]["nim_pct"]
+        baseline_cet1 = twin_states[0]["cet1_pct"]
+        baseline_lcr = twin_states[0]["lcr_pct"]
+        baseline_dep = twin_states[0]["deposit_balance"]
+        last = twin_states[-1]
+        rows = ""
+        for st in twin_states:
+            br = ", ".join(st.get("breaches", []))
+            br_html = f'<span style="color:#dc2626;font-weight:600">{_esc(br)}</span>' if br else "—"
+            rows += (
+                f'<tr><td style="padding:4px 8px">R{st["round"]}</td>'
+                f'<td style="padding:4px 8px;text-align:right">{st["nim_pct"]:.2f}%</td>'
+                f'<td style="padding:4px 8px;text-align:right">{st["cet1_pct"]:.1f}%</td>'
+                f'<td style="padding:4px 8px;text-align:right">{st["lcr_pct"]:.0f}%</td>'
+                f'<td style="padding:4px 8px;text-align:right">{st["deposit_balance"]:.3f}</td>'
+                f'<td style="padding:4px 8px;text-align:right">{st["loan_demand_index"]:.2f}</td>'
+                f'<td style="padding:4px 8px;text-align:right">{st["deposit_runoff_round_pct"]*100:.2f}%</td>'
+                f'<td style="padding:4px 8px;text-align:right">{st["policy_rate_pct"]:.2f}%</td>'
+                f'<td style="padding:4px 8px">{br_html}</td></tr>'
+            )
+        cumulative_dep_drop = (1 - last["deposit_balance"] / max(baseline_dep, 1e-9)) * 100
+        alm_html = (
+            f'<section><h2>Stato ALM (Asset-Liability Management)</h2>'
+            f'<p style="color:#475569;font-size:10pt;margin-bottom:8px">'
+            f'Modello deterministico parametrato su benchmark italiani 2025 '
+            f'(deposit β EBA, elasticità credito al consumo Bonaccorsi/Magri, '
+            f'NIM/CET1/LCR EBA Risk Dashboard). I numeri stanno entro vincoli '
+            f'ALM realistici per banca commerciale italiana media.</p>'
+            f'<table style="width:100%;border-collapse:collapse;font-size:10pt;">'
+            f'<thead><tr style="background:#f8fafc;border-bottom:2px solid #e2e8f0">'
+            f'<th style="padding:6px 8px;text-align:left">Round</th>'
+            f'<th style="padding:6px 8px;text-align:right">NIM</th>'
+            f'<th style="padding:6px 8px;text-align:right">CET1</th>'
+            f'<th style="padding:6px 8px;text-align:right">LCR</th>'
+            f'<th style="padding:6px 8px;text-align:right">Depositi</th>'
+            f'<th style="padding:6px 8px;text-align:right">Domanda credito</th>'
+            f'<th style="padding:6px 8px;text-align:right">Runoff/round</th>'
+            f'<th style="padding:6px 8px;text-align:right">Policy rate</th>'
+            f'<th style="padding:6px 8px;text-align:left">Breach</th>'
+            f'</tr></thead><tbody>{rows}</tbody></table>'
+            f'<p style="margin-top:8px;font-size:10pt;color:#475569">'
+            f'<strong>Variazione cumulativa depositi:</strong> {-cumulative_dep_drop:+.2f}% '
+            f'(baseline normalizzato 1.000). '
+            f'<strong>NIM Δ:</strong> {(last["nim_pct"] - baseline_nim)*100:+.0f}bp · '
+            f'<strong>CET1 Δ:</strong> {last["cet1_pct"] - baseline_cet1:+.1f}pp · '
+            f'<strong>LCR Δ:</strong> {last["lcr_pct"] - baseline_lcr:+.0f}pp.</p>'
+            f'</section>'
+        )
+
     return f"""<!DOCTYPE html>
 <html lang="it">
 <head>
@@ -665,6 +718,8 @@ def _build_html_body(
     <h2>Sentiment per round</h2>
     <div class="chart">{sent_chart}</div>
   </section>
+
+  {alm_html}
 
   {md_section}
 

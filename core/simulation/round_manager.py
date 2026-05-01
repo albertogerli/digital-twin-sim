@@ -94,6 +94,24 @@ class RoundManager:
         self._active_elite_ids: set[str] = set()  # IDs of currently active elite agents
         self._active_inst_ids: set[str] = set()    # IDs of currently active institutional agents
 
+        # ── ALM Financial Twin (Sprint 1, weak coupling) ───────────────────
+        # Only enabled for the banking-style financial domain. Steps in
+        # lockstep with the opinion sim, enforces ALM bounds (deposit beta,
+        # loan elasticity, NIM compression, regulatory floors). Defaults are
+        # Italian commercial-bank reference (EBA / ECB / BdI 2025); override
+        # via scenario_context or future scenario.financial_twin_overrides.
+        self.financial_twin = None
+        if domain_id == "financial":
+            try:
+                from core.financial.twin import FinancialTwin
+                self.financial_twin = FinancialTwin()
+                logger.info(
+                    f"FinancialTwin initialised: baseline "
+                    f"{self.financial_twin.current_state().to_compact_str()}"
+                )
+            except Exception as exc:
+                logger.warning(f"FinancialTwin init failed (continuing without): {exc}")
+
     def _get_active_elite_agents(self, round_num: int) -> list[EliteAgent]:
         """Get elite agents active in this round (filtered by orchestrator)."""
         if not self.escalation_engine:
@@ -313,6 +331,21 @@ class RoundManager:
         viral_posts_text = ""
         if round_num > 1:
             viral_posts_text = self.platform.format_viral_posts(round_num - 1, top_n=5)
+
+        # ALM context: prepend a compact financial-twin snapshot so agents
+        # see the current balance-sheet state when reasoning. Domain-only;
+        # no-op if FinancialTwin is not active. Uses the previous round's
+        # state since the new step happens later in this round.
+        if self.financial_twin is not None:
+            try:
+                ts = self.financial_twin.current_state()
+                alm_line = (
+                    f"[ALM corrente — banca scenario] {ts.to_compact_str()} "
+                    f"(rate {ts.policy_rate_pct:.2f}%, BTP-Bund {ts.btp_bund_spread_bps:.0f}bp).\n"
+                )
+                viral_posts_text = alm_line + (viral_posts_text or "")
+            except Exception:
+                pass
 
         # Current stats
         all_positions = self._all_positions()
@@ -682,6 +715,31 @@ class RoundManager:
         self._last_ci = confidence_interval
         self._last_regime = regime_info
 
+        # ── Step the FinancialTwin (weak coupling, banking domain only) ───
+        # opinion_aggregate ∈ [-1, +1]. We use the population mean position;
+        # rate_change_bps maps shock_magnitude * shock_direction to a basis-
+        # point shift (a +1 magnitude × +1 direction = 200bps shock cap).
+        financial_twin_state = None
+        if self.financial_twin is not None:
+            try:
+                opinion_aggregate = sum(all_positions) / max(len(all_positions), 1)
+                shock_mag = float(event.get("shock_magnitude", 0) or 0)
+                shock_dir = float(event.get("shock_direction", 0) or 0)
+                # Map opinion-shock to a rate-bps proxy. Banking events that
+                # are interest-rate-related read shock_dir as direction; events
+                # unrelated to rates send 0 and twin only reacts to opinion.
+                rate_change_bps = shock_mag * shock_dir * 200.0
+                ts = self.financial_twin.step(
+                    round_num=round_num,
+                    rate_change_bps=rate_change_bps,
+                    opinion_aggregate=opinion_aggregate,
+                    polarization=polarization,
+                    narrative=str(round_event)[:160],
+                )
+                financial_twin_state = ts.to_dict()
+            except Exception as exc:
+                logger.warning(f"FinancialTwin step failed at round {round_num}: {exc}")
+
         result = {
             "round": round_num,
             "timeline_label": timeline_label,
@@ -701,6 +759,7 @@ class RoundManager:
             "sentiment": sentiment_pcts,
             "shock_magnitude": event.get("shock_magnitude", 0),
             "shock_direction": event.get("shock_direction", 0),
+            "financial_twin": financial_twin_state,
         }
 
         # Flush any pending SQLite writes before reporting round complete so

@@ -48,12 +48,18 @@ _CACHE_PATH = os.path.join(
 _CACHE_TTL_SECONDS = 24 * 3600  # 24h
 _HTTP_TIMEOUT = 4.0
 
-# Default values when network fails AND no cache (Italian commercial-bank
-# benchmarks, late April 2026 — kept consistent with twin defaults).
+# Default values when network fails AND no cache.
+# Anchors for euro area, US, UK — late April 2026 plausible levels.
 _DEFAULTS = {
     "euribor_3m_pct": 2.40,
     "btp_bund_spread_bps": 95.0,
     "ecb_dfr_pct": 2.40,
+    # US: anchored to recent Fed funds + 10Y Treasury
+    "fed_funds_pct": 4.00,
+    "us_10y_treasury_pct": 4.10,
+    # UK: anchored to BoE base rate + 10Y gilt
+    "boe_bank_rate_pct": 4.25,
+    "uk_10y_gilt_pct": 4.30,
 }
 
 
@@ -153,6 +159,84 @@ def _fetch_yfinance_yield(ticker: str) -> Optional[float]:
     return None
 
 
+# ── FRED (US Federal Reserve, free public API, no key required for some) ──
+
+# FRED has both a public API (key required, free signup) and an
+# unauthenticated CSV download endpoint that we use here to avoid making
+# DTS_FRED_API_KEY a hard requirement. Format docs:
+# https://fred.stlouisfed.org/docs/api/fred/series_observations.html
+_FRED_CSV = "https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}"
+
+
+def _fetch_fred_series_csv(series_id: str) -> Optional[float]:
+    """Fetch the latest observation of a FRED series via the public CSV
+    endpoint. Returns the last numeric value or None on failure."""
+    url = _FRED_CSV.format(series=series_id)
+    try:
+        req = urllib.request.Request(
+            url, headers={"User-Agent": "DigitalTwinSim/0.6 (+contact via repo)"}
+        )
+        with urllib.request.urlopen(req, timeout=_HTTP_TIMEOUT) as resp:
+            text = resp.read().decode("utf-8")
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as exc:
+        logger.warning(f"FRED fetch failed for {series_id}: {exc}")
+        return None
+
+    # CSV format: DATE,VALUE  (header on first row, dates ascending)
+    last = None
+    for line in text.splitlines():
+        if not line or line.startswith("DATE") or line.startswith("observation_date"):
+            continue
+        parts = line.split(",")
+        if len(parts) < 2:
+            continue
+        try:
+            v = float(parts[1].strip())
+            last = v
+        except ValueError:
+            continue  # skip "." / N/A
+    return last
+
+
+# ── Bank of England (free public API for stats) ────────────────────────────
+
+# BoE Statistical Database returns CSV. The Bank Rate series code is IUDBEDR.
+_BOE_CSV = (
+    "https://www.bankofengland.co.uk/boeapps/iadb/fromshowcolumns.asp?"
+    "csv.x=yes&Datefrom=01/Jan/2025&Dateto=31/Dec/2026&"
+    "SeriesCodes={series}&CSVF=TT&UsingCodes=Y&VPD=Y&VFD=N"
+)
+
+
+def _fetch_boe_series(series_code: str) -> Optional[float]:
+    """Fetch the latest observation of a Bank of England series."""
+    url = _BOE_CSV.format(series=series_code)
+    try:
+        req = urllib.request.Request(
+            url, headers={"User-Agent": "DigitalTwinSim/0.6 (+contact via repo)"}
+        )
+        with urllib.request.urlopen(req, timeout=_HTTP_TIMEOUT) as resp:
+            text = resp.read().decode("utf-8")
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as exc:
+        logger.warning(f"BoE fetch failed for {series_code}: {exc}")
+        return None
+
+    # CSV: DATE,RATE per row, header on first line
+    last = None
+    for line in text.splitlines():
+        if not line or "DATE" in line.upper() or "TT" in line[:5]:
+            continue
+        parts = line.split(",")
+        if len(parts) < 2:
+            continue
+        try:
+            v = float(parts[-1].strip())
+            last = v
+        except ValueError:
+            continue
+    return last
+
+
 # ── Public anchor getters ──────────────────────────────────────────────────
 
 def get_euribor_3m_pct(use_cache: bool = True) -> float:
@@ -207,6 +291,109 @@ def get_ecb_dfr_pct(use_cache: bool = True) -> float:
         val = _DEFAULTS["ecb_dfr_pct"]
     _cache_set("ecb_dfr_pct", val)
     return val
+
+
+# ── US anchors (FRED public CSV) ───────────────────────────────────────────
+
+def get_fed_funds_pct(use_cache: bool = True) -> float:
+    """Latest Effective Federal Funds Rate (FRED EFFR / DFF). %."""
+    if use_cache:
+        v = _cache_get("fed_funds_pct")
+        if v is not None:
+            return v
+    val = _fetch_fred_series_csv("DFF")  # daily Fed funds
+    if val is None:
+        val = _DEFAULTS["fed_funds_pct"]
+    _cache_set("fed_funds_pct", val)
+    return val
+
+
+def get_us_10y_treasury_pct(use_cache: bool = True) -> float:
+    """Latest 10-Year Treasury Constant Maturity Rate (FRED DGS10). %."""
+    if use_cache:
+        v = _cache_get("us_10y_treasury_pct")
+        if v is not None:
+            return v
+    val = _fetch_fred_series_csv("DGS10")
+    if val is None:
+        val = _DEFAULTS["us_10y_treasury_pct"]
+    _cache_set("us_10y_treasury_pct", val)
+    return val
+
+
+# ── UK anchors (BoE) ───────────────────────────────────────────────────────
+
+def get_boe_bank_rate_pct(use_cache: bool = True) -> float:
+    """Latest BoE Bank Rate (BoE series IUDBEDR). %."""
+    if use_cache:
+        v = _cache_get("boe_bank_rate_pct")
+        if v is not None:
+            return v
+    val = _fetch_boe_series("IUDBEDR")
+    if val is None:
+        val = _DEFAULTS["boe_bank_rate_pct"]
+    _cache_set("boe_bank_rate_pct", val)
+    return val
+
+
+def get_uk_10y_gilt_pct(use_cache: bool = True) -> float:
+    """Latest 10-Year UK Gilt yield (FRED IRLTLT01GBM156N monthly avg).
+    Falls back to default. Daily series via BoE requires deeper parsing."""
+    if use_cache:
+        v = _cache_get("uk_10y_gilt_pct")
+        if v is not None:
+            return v
+    val = _fetch_fred_series_csv("IRLTLT01GBM156N")
+    if val is None:
+        val = _DEFAULTS["uk_10y_gilt_pct"]
+    _cache_set("uk_10y_gilt_pct", val)
+    return val
+
+
+# ── Country-aware anchor bundle ────────────────────────────────────────────
+
+def fetch_country_anchors(country: str, use_cache: bool = True) -> dict:
+    """Pull the right anchor set for a given ISO country code.
+
+    Returns a dict consumable by FinancialTwin.params.update():
+      - policy_rate_pct (DFR / Fed Funds / Bank Rate)
+      - btp_bund_spread_bps (only meaningful for IT; empty for others)
+      - country: echoed back for inspection
+
+    Cross-country dispatch:
+      IT, ES, FR (with BTP/Bono/OAT default 0 for non-IT) → ECB
+      DE, NL → ECB (spread = 0 since DE is the bund)
+      US → FRED
+      GB / UK → BoE
+    Unknown country → ECB DFR as conservative default.
+    """
+    c = (country or "").strip().upper()
+    if c == "US":
+        return {
+            "policy_rate_pct": get_fed_funds_pct(use_cache),
+            "_us_10y_treasury_pct": get_us_10y_treasury_pct(use_cache),
+            "_country": "US",
+            "_fetched_at": time.time(),
+        }
+    if c in ("GB", "UK"):
+        return {
+            "policy_rate_pct": get_boe_bank_rate_pct(use_cache),
+            "_uk_10y_gilt_pct": get_uk_10y_gilt_pct(use_cache),
+            "_country": "GB",
+            "_fetched_at": time.time(),
+        }
+    # Euro area: ECB DFR + (only for IT) BTP-Bund spread
+    out = {
+        "policy_rate_pct": get_ecb_dfr_pct(use_cache),
+        "_euribor_3m_pct": get_euribor_3m_pct(use_cache),
+        "_country": c or "IT",
+        "_fetched_at": time.time(),
+    }
+    if c == "IT" or not c:
+        out["btp_bund_spread_bps"] = get_btp_bund_spread_bps(use_cache)
+    else:
+        out["btp_bund_spread_bps"] = 0.0  # DE/NL: bund itself; FR/ES handled in country_params
+    return out
 
 
 # ── Convenience: bundle for FinancialTwin.refresh_market_anchors() ────────

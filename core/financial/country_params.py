@@ -137,6 +137,70 @@ def default_dutch_bank_params() -> dict:
     return p
 
 
+# ── US — diversified, fee-driven, mortgage securitised, FDIC insured ──────
+
+def default_us_bank_params() -> dict:
+    """United States — characterised by:
+    - mortgages largely securitised (off balance sheet via Fannie/Freddie),
+      so on-bs duration gap is shorter than EU
+    - more fee/non-interest income → NIM less sensitive
+    - deposit beta historically higher (more competitive market for term)
+    - LCR similar (~120-140% post-Basel III)
+    - CET1 lower than EU (~13.5% avg)
+    """
+    p = default_italian_bank_params()
+    p.update({
+        "deposit_beta_sight": 0.40,    # NIB / sweep accounts hold β down
+        "deposit_beta_term": 0.85,     # CDs and brokered deposits very competitive
+        "sight_share": 0.55,           # smaller share of pure sight in US mix
+        "consumer_loan_elasticity": -1.4,  # less elastic, credit-card-driven
+        "mortgage_var_share_stock": 0.10,  # 30y fixed is dominant
+        "mortgage_var_share_new": 0.05,
+        "tier1_capital": 0.068,        # baseline CET1 ~13.5%
+        "rwa_density": 0.50,
+        "hqla_balance": 0.075,         # baseline LCR ~135-150%
+        "btp_bund_spread_bps": 0,      # n/a (overwritten by FRED feed)
+        "policy_rate_pct": 4.00,       # Fed funds, will refresh from FRED
+        "duration_gap_yrs": 1.2,       # shorter than EU due to securitisation
+        "loan_repricing_speed": 0.50,  # variable-rate consumer loans common
+        "cet1_min_pct": 10.5,          # US SREP equivalent
+        "cet1_alarm_pct": 11.5,
+        "lcr_min_pct": 100.0,
+    })
+    return p
+
+
+# ── UK — concentrated retail + structured savings, ring-fencing rules ─────
+
+def default_uk_bank_params() -> dict:
+    """United Kingdom — characterised by:
+    - Big-four concentration (HSBC / Barclays / NatWest / Lloyds)
+    - ring-fencing post-2019: retail subsidiaries hold higher capital
+    - mortgage market mostly variable / 2-5y fixed reset (faster repricing
+      than EU continent)
+    - PRA stress tests align with EBA but more conservative
+    """
+    p = default_italian_bank_params()
+    p.update({
+        "deposit_beta_sight": 0.35,    # Big-four oligopoly dampens passthrough
+        "deposit_beta_term": 0.75,
+        "sight_share": 0.65,
+        "consumer_loan_elasticity": -1.6,
+        "mortgage_var_share_stock": 0.40,  # 2-5y fixed common but resets fast
+        "mortgage_var_share_new": 0.30,
+        "tier1_capital": 0.085,        # baseline CET1 ~16% (PRA buffer)
+        "rwa_density": 0.50,
+        "hqla_balance": 0.080,
+        "btp_bund_spread_bps": 0,      # n/a
+        "policy_rate_pct": 4.25,       # BoE Bank Rate, will refresh from BoE
+        "duration_gap_yrs": 1.4,
+        "loan_repricing_speed": 0.45,
+        "cet1_min_pct": 11.0,
+        "cet1_alarm_pct": 12.5,
+    })
+    return p
+
+
 # ── Country dispatch ───────────────────────────────────────────────────────
 
 _COUNTRY_DISPATCH = {
@@ -145,6 +209,9 @@ _COUNTRY_DISPATCH = {
     "FR": default_french_bank_params,
     "ES": default_spanish_bank_params,
     "NL": default_dutch_bank_params,
+    "US": default_us_bank_params,
+    "GB": default_uk_bank_params,
+    "UK": default_uk_bank_params,  # alias
 }
 
 _SUPRANATIONAL = {"EU", "EUROZONE", "GLOBAL", "WORLD"}

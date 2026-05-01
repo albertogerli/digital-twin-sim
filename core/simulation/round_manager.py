@@ -114,7 +114,7 @@ class RoundManager:
                     if scenario_context:
                         # Best-effort extraction; a structured scope object
                         # would be cleaner but isn't always available here.
-                        for code in ("IT", "DE", "FR", "ES", "NL", "US", "GB"):
+                        for code in ("IT", "DE", "FR", "ES", "NL", "US", "GB", "UK"):
                             if f" {code}" in scenario_context or scenario_context.endswith(code):
                                 geo.append(code)
                     from core.financial.country_params import select_country_params
@@ -124,11 +124,12 @@ class RoundManager:
 
                 self.financial_twin = FinancialTwin(params=country_params)
                 logger.info(f"FinancialTwin country selected: {country_used}")
-                # Sprint 4: best-effort live anchor refresh (ECB SDW). Cache
-                # 24h TTL, urllib stdlib only, fallback su default su qualsiasi
-                # error → nessun blocco al boot se la rete è giù.
+                # Sprint 4+6: country-aware live anchor refresh (ECB / FRED /
+                # BoE depending on jurisdiction). Cache 24h, fallback graceful.
                 try:
-                    self.financial_twin.refresh_market_anchors(use_cache=True)
+                    self.financial_twin.refresh_market_anchors(
+                        use_cache=True, country=country_used,
+                    )
                 except Exception as exc:
                     logger.warning(f"FinancialTwin live anchor refresh skipped: {exc}")
                 logger.info(

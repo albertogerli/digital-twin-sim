@@ -53,6 +53,7 @@ _ARCHETYPE_RULES: dict[str, dict] = {
 
 # Role substring fallback when archetype is unknown / generic.
 _ROLE_KEYWORDS: list[tuple[str, dict]] = [
+    # ── IT ─────────────────────────────────────────────────────
     ("Codacons",                {"is_consumer_voice": 1.0, "is_depositor": 0.5}),
     ("Altroconsumo",            {"is_consumer_voice": 1.0, "is_depositor": 0.5}),
     ("Federconsumatori",        {"is_consumer_voice": 1.0, "is_depositor": 0.5}),
@@ -78,6 +79,54 @@ _ROLE_KEYWORDS: list[tuple[str, dict]] = [
     ("Repubblica",              {"is_journalist": 0.7}),
     ("PMI",                     {"is_borrower": 1.0, "is_depositor": 0.5}),
     ("Imprenditore",            {"is_borrower": 0.7, "is_depositor": 0.5}),
+    # ── US ─────────────────────────────────────────────────────
+    ("CFPB",                    {"is_regulator": 1.0, "is_consumer_voice": 0.6}),
+    ("Consumer Financial Protection Bureau",
+                                {"is_regulator": 1.0, "is_consumer_voice": 0.6}),
+    ("OCC",                     {"is_regulator": 1.0}),
+    ("Office of the Comptroller",
+                                {"is_regulator": 1.0}),
+    ("FDIC",                    {"is_regulator": 1.0}),
+    ("Federal Reserve",         {"is_regulator": 1.0}),
+    ("FRB",                     {"is_regulator": 1.0}),
+    ("Treasury Department",     {"is_government": 1.0}),
+    ("US Treasury",             {"is_government": 1.0}),
+    ("ABA",                     {"is_industry_lobby": 1.0}),  # American Bankers Assoc
+    ("Independent Community Bankers",
+                                {"is_industry_lobby": 1.0}),
+    # US peer banks (treat as competitors when domain bank ≠ them)
+    ("JPMorgan",                {"is_competitor": 1.0}),
+    ("Bank of America",         {"is_competitor": 1.0}),
+    ("Wells Fargo",             {"is_competitor": 1.0}),
+    ("Citi",                    {"is_competitor": 1.0}),
+    ("Goldman Sachs",           {"is_competitor": 0.7}),
+    ("Morgan Stanley",          {"is_competitor": 0.7}),
+    ("US Bank",                 {"is_competitor": 1.0}),
+    ("PNC",                     {"is_competitor": 1.0}),
+    # US press
+    ("WSJ",                     {"is_journalist": 1.0}),
+    ("Wall Street Journal",     {"is_journalist": 1.0}),
+    ("Bloomberg",               {"is_journalist": 1.0}),
+    ("Financial Times",         {"is_journalist": 1.0}),
+    ("Reuters",                 {"is_journalist": 0.9}),
+    # ── UK ─────────────────────────────────────────────────────
+    ("FCA",                     {"is_regulator": 1.0}),
+    ("Financial Conduct Authority",
+                                {"is_regulator": 1.0}),
+    ("PRA",                     {"is_regulator": 1.0}),
+    ("Prudential Regulation",   {"is_regulator": 1.0}),
+    ("Bank of England",         {"is_regulator": 1.0}),
+    ("BoE",                     {"is_regulator": 1.0}),
+    ("UK Finance",              {"is_industry_lobby": 1.0}),
+    ("HM Treasury",             {"is_government": 1.0}),
+    ("HSBC",                    {"is_competitor": 1.0}),
+    ("Barclays",                {"is_competitor": 1.0}),
+    ("NatWest",                 {"is_competitor": 1.0}),
+    ("Lloyds",                  {"is_competitor": 1.0}),
+    ("Santander UK",            {"is_competitor": 1.0}),
+    ("Standard Chartered",      {"is_competitor": 0.7}),
+    ("Which?",                  {"is_consumer_voice": 1.0, "is_depositor": 0.5}),
+    ("MoneySavingExpert",       {"is_consumer_voice": 1.0, "is_journalist": 0.6}),
 ]
 
 

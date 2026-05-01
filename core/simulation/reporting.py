@@ -563,7 +563,7 @@ def _build_html_body(
                 f'<div class="post">'
                 f'<div class="hdr"><span class="author">{author}</span>'
                 f'<span class="platform">{platform}</span>'
-                f'<span class="eng">{eng:,} eng</span></div>'
+                f'<span class="eng" title="Engagement totale">★ {eng:,}</span></div>'
                 f'<div class="text">{text}</div></div>'
             )
         if not top_posts_html:

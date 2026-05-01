@@ -184,45 +184,110 @@ def _archetype_score(stakeholder, scope) -> tuple[float, float]:
     return bonus, penalty
 
 
-def _global_figure_penalty(stakeholder, geography: list[str], brief_lower: str) -> float:
-    """Penalise FOREIGN heads-of-state and global tech billionaires UNLESS the
-    brief is global-tier or names them verbatim. In-country heads-of-state
-    (e.g. Italian PM on an Italian brief) are NOT penalised — they're often
-    the most natural commenter.
+# Sectors where political top figures (PM, head of state, justice minister)
+# are LEGITIMATE commenters even without explicit mention. For everything
+# else, they should be penalised (Mattarella doesn't comment on cacao).
+_POLITICAL_SECTOR_PREFIXES = (
+    "politics", "policy", "policy_", "election", "constitut", "judiciar",
+    "parliament", "government", "premiera", "tax", "public_finance",
+    "national_security", "defence", "defense", "geopolit", "diplomatic",
+    "labor_law", "civil_rights", "immigrat", "energy_policy", "monetary",
+    "eurozone", "eu_integration", "regulator", "regulation",
+)
 
-    Note: matches archetype only (not role substring), because Italian roles
-    like "Presidente della Repubblica" / "Presidente del Consiglio" / "Presidente
-    ABI" all contain "presidente" and would false-trigger.
+
+def _is_political_brief(scope) -> bool:
+    """Return True iff the scope's sector / sub_sector is one where the
+    head-of-state class would naturally weigh in. Banking pricing, consumer
+    products, sports, food, fashion etc. are NOT political enough."""
+    if scope is None:
+        return False
+    sector = (getattr(scope, "sector", "") or "").lower()
+    sub = (getattr(scope, "sub_sector", "") or "").lower()
+    blob = f"{sector} {sub}"
+    return any(p in blob for p in _POLITICAL_SECTOR_PREFIXES)
+
+
+def _global_figure_penalty(
+    stakeholder, geography: list[str], brief_lower: str, scope=None,
+) -> float:
+    """Penalise top-political figures (heads of state, PMs, ministers,
+    chancellors) and global tech billionaires when they don't belong on
+    this specific brief.
+
+    Two distinct cases:
+
+    1. FOREIGN head-of-state / global tech billionaire on non-global brief →
+       penalty 1.0 (full drop). Existing Sprint 9 behaviour.
+
+    2. IN-COUNTRY top-political figure on a NON-political brief
+       (e.g. Mattarella on a cacao brief, Nordio on a banking pricing brief) →
+       penalty 0.7 (partial drop, beats the country bonus). NEW Sprint 11b.
+
+    Both cases are bypassed if the brief verbatim names the figure.
     """
     if not geography:
         return 0.0
     geo_upper = [g.upper() for g in geography]
-    if "GLOBAL" in geo_upper:
-        return 0.0  # global brief: no penalty
-    sc = (getattr(stakeholder, "country", "") or "").upper()
-    # In-scope country: Italian PM on Italian brief, German chancellor on
-    # German brief, etc. — they're the natural commenters, no penalty.
-    if sc and sc in geo_upper:
-        return 0.0
-    # Stakeholder operates in one of the EU partner countries on an EU/IT brief
-    if sc and "EU" in geo_upper and sc in {
-        "DE", "FR", "IT", "ES", "NL", "BE", "AT", "PT", "IE", "FI", "GR", "DK", "SE", "PL"
-    }:
-        return 0.0
     name = (getattr(stakeholder, "name", "") or "").lower()
     if name and name in brief_lower:
         return 0.0  # explicitly named: no penalty
-    # Foreign + not named: check if they're a global figure type
+    if "GLOBAL" in geo_upper:
+        return 0.0  # global brief: no penalty
+
+    sc = (getattr(stakeholder, "country", "") or "").upper()
     arch = (getattr(stakeholder, "archetype", "") or "").lower()
     role = (getattr(stakeholder, "role", "") or "").lower()
+    category = (getattr(stakeholder, "category", "") or "").lower()
+
+    # Detect "top political figure" via several signals
     is_head_of_state = any(h in arch for h in _HEAD_OF_STATE_HINTS)
     is_global_tech = any(h in arch for h in _GLOBAL_TECH_HINTS)
-    # Role-based fallback for English-language roles (US/UK presidents),
-    # safe because in-country case already returned 0 above.
-    if not is_head_of_state and any(h in role for h in {"president", "prime minister", "chancellor"}):
-        is_head_of_state = True
-    if is_head_of_state or is_global_tech:
-        return 1.0
+    if not is_head_of_state:
+        # English role fallback (US/UK) — use word-boundary regex to avoid
+        # matching the Italian "Presidente ABI" via "president" prefix.
+        for kw in (r"\bpresident\b", r"\bprime minister\b",
+                   r"\bchancellor\b", r"\bvice president\b"):
+            if re.search(kw, role):
+                is_head_of_state = True
+                break
+        # Italian role fallback (heads of state and key ministries).
+        # Specific phrases — NOT just "presidente" or "ministro" alone, which
+        # would match presidente ABI / ministro plenipotenziario / etc.
+        if not is_head_of_state and any(h in role for h in {
+            "presidente della repubblica", "presidente del consiglio",
+            "ministro della giustizia", "ministro degli esteri",
+            "ministro dell'interno", "ministro dell'economia",
+            "ministro della difesa", "presidente della commissione",
+            "vice presidente del consiglio", "presidente del senato",
+            "presidente della camera",
+        }):
+            is_head_of_state = True
+        # Category-based fallback for high-tier politicians whose role
+        # string lacks the canonical phrases above. Restricted to
+        # category=politician + tier 1 to avoid overreach.
+        if (not is_head_of_state and category == "politician"
+                and getattr(stakeholder, "tier", 3) == 1):
+            if "ministro" in role or "presidente" in role:
+                is_head_of_state = True
+
+    # Case 1: foreign country, not named → full penalty
+    in_scope_country = (
+        (sc and sc in geo_upper)
+        or (sc and "EU" in geo_upper and sc in {
+            "DE", "FR", "IT", "ES", "NL", "BE", "AT", "PT", "IE", "FI", "GR",
+            "DK", "SE", "PL"
+        })
+    )
+    if not in_scope_country:
+        if is_head_of_state or is_global_tech:
+            return 1.0
+        return 0.0
+
+    # Case 2: in-country head-of-state on a non-political brief
+    if is_head_of_state and not _is_political_brief(scope):
+        return 0.7
+
     return 0.0
 
 
@@ -254,7 +319,7 @@ def score_stakeholder_relevance(
     s_score = _sector_overlap_score(stakeholder, sector, sub_sector)
     m_bonus = _brief_mention_bonus(stakeholder, brief_lower)
     a_allow, a_deny = _archetype_score(stakeholder, scope)
-    g_pen = _global_figure_penalty(stakeholder, geography, brief_lower)
+    g_pen = _global_figure_penalty(stakeholder, geography, brief_lower, scope=scope)
 
     # Combine — additive, then clamp to [0, 1]
     raw = (

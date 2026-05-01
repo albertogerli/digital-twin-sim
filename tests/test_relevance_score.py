@@ -98,11 +98,19 @@ def test_brief_sella_keeps_italian_finance_actors(name_or_id):
     )
 
 
-def test_brief_sella_keeps_italian_political_figures():
-    """Mattarella/Meloni are Italian and may comment on a banking brief."""
+def test_brief_sella_drops_italian_president_on_banking():
+    """Mattarella is Italian, but a banking-pricing brief is NOT political.
+    Sprint 11b in-country political-figure penalty correctly drops him.
+    (Updated from the previous test which assumed he'd pass — the user
+    rightly pointed out that the Italian president doesn't comment on
+    Banca Sella's mortgage pricing.)"""
     s = _get("sergio_mattarella")
     keep, v = _kept(s, BRIEF_SELLA, SCOPE_SELLA)
-    assert keep, f"Mattarella should pass; score={v.score}, comp={v.components}"
+    assert not keep, (
+        f"Mattarella should NOT pass on a banking brief; got score={v.score} "
+        f"(components={v.components}). Italian president doesn't comment on "
+        f"Sella's mortgage pricing."
+    )
 
 
 def test_brief_sella_named_competitor_gets_top_score():
@@ -249,6 +257,88 @@ def test_brief_us_politics_drops_italian_specific_actors():
 
 
 # ── Hard-block redundancy check ────────────────────────────────────────────
+
+# ── Brief 6: Cacao / luxury food (NON-political IT brief) ────────────────
+
+BRIEF_CACAO = """
+Foreverland è una startup italiana che produce cioccolato sostenibile
+basato su carruba al posto del cacao. Il founder discute la strategia
+di lancio sul mercato italiano: pricing, distribuzione GDO, partnership
+con catene retail come Eataly, Esselunga, NaturaSì. Reazione attesa
+dai consumer journalists, food critics, sustainability advocates.
+"""
+
+SCOPE_CACAO = _build_scope(
+    ["IT"], sector="food_beverage", sub_sector="sustainable_food",
+    scope_tier="national",
+    stakeholder_archetypes=["food_journalist", "consumer_advocate", "sustainability_expert"],
+    excluded_archetypes=["head_of_state", "global_tech_billionaire"],
+)
+
+
+def test_brief_cacao_drops_italian_president():
+    """Mattarella is Italian → country_match=1.0, but cacao isn't political.
+    Sprint 11b adds in-country political-figure penalty for non-political briefs."""
+    s = _get("sergio_mattarella")
+    keep, v = _kept(s, BRIEF_CACAO, SCOPE_CACAO)
+    assert not keep, (
+        f"Mattarella should NOT pass on a cacao brief; got score={v.score} "
+        f"(components={v.components}). The Italian president doesn't comment on cacao."
+    )
+
+
+def test_brief_cacao_drops_italian_justice_minister():
+    """Nordio (Ministro Giustizia) on a cacao brief: should drop."""
+    s = _get("carlo_nordio")
+    if s is None:
+        # Try by name lookup since id may differ
+        from stakeholder_graph.db import StakeholderDB
+        db = StakeholderDB()
+        s = next((sk for sk in db._stakeholders.values()
+                  if sk.name == "Carlo Nordio"), None)
+    if s is None:
+        pytest.skip("Carlo Nordio not in DB")
+    keep, v = _kept(s, BRIEF_CACAO, SCOPE_CACAO)
+    assert not keep, (
+        f"Nordio (Min. Giustizia) should NOT pass on cacao brief; got "
+        f"score={v.score} (components={v.components})"
+    )
+
+
+def test_brief_sella_drops_italian_justice_minister():
+    """Nordio on a banking brief: should also drop (banking ≠ judicial)."""
+    from stakeholder_graph.db import StakeholderDB
+    db = StakeholderDB()
+    nordio = next((sk for sk in db._stakeholders.values()
+                   if sk.name == "Carlo Nordio"), None)
+    if nordio is None:
+        pytest.skip("Carlo Nordio not in DB")
+    keep, v = _kept(nordio, BRIEF_SELLA, SCOPE_SELLA)
+    assert not keep, (
+        f"Nordio on banking brief should drop; got {v.score}"
+    )
+
+
+def test_brief_political_keeps_italian_political_figures():
+    """On an actual political brief (premierato reform), Mattarella/Meloni
+    SHOULD pass — the in-country penalty must NOT apply."""
+    BRIEF_POLITICAL = """
+    Discussione sulla riforma del premierato in Italia. Il presidente
+    Mattarella ha espresso perplessità, mentre la maggioranza spinge
+    per la quarta lettura parlamentare.
+    """
+    SCOPE_POLITICAL = _build_scope(
+        ["IT"], sector="italian_politics", sub_sector="premierato",
+        scope_tier="national",
+        stakeholder_archetypes=["politician", "head_of_state", "magistrate", "academic"],
+    )
+    s = _get("sergio_mattarella")
+    keep, v = _kept(s, BRIEF_POLITICAL, SCOPE_POLITICAL)
+    assert keep, (
+        f"Mattarella on political brief should pass; got {v.score} "
+        f"(components={v.components})"
+    )
+
 
 def test_hard_block_list_is_now_redundant_for_sella_brief():
     """If Layer 1 alone correctly drops every name on the hard-block list

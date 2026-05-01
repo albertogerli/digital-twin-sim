@@ -146,22 +146,40 @@ MOST DISCUSSED POSTS LAST PERIOD:
 Generate a realistic financial event for {timeline_label} that:
 1. Is a NATURAL CONSEQUENCE of the scenario context and previous events
 2. Reflects current tensions and dynamics among market participants, regulators, and institutions
-3. Introduces a new element OR a measured escalation — not necessarily a crisis. Most periods
-   in a real market are uneventful or feature small adjustments (analyst notes, sector
-   rotation, normal trading-volume shifts). Apocalyptic outcomes (rating downgrade,
-   emergency tax, bank-run, regulator emergency action) should appear ONLY when current
-   polarization > 7.0 AND the previous events have been escalating for at least 2 periods.
-4. Is specific and detailed (institution names, plausible numbers, concrete market actions)
-5. Has a measurable impact on market participants' positions
+3. Is specific and detailed (institution names, plausible numbers, concrete market actions)
+4. Has a measurable impact on market participants' positions
 
-REALISM CALIBRATION (HARD):
-- Default shock_magnitude is 0.2-0.4. Reserve 0.5-0.7 for genuine inflection points.
-- Use 0.7-0.8 ONLY for the rare crisis moment (max once per simulation).
-- Do NOT escalate to systemic crisis (Moody's downgrade, extra-profit tax, central-bank
-  emergency intervention, bank-run) within the first 4 periods. Build narrative gradually.
-- Counter-narrative events (de-escalation, calming statements, technical correction,
-  industry self-regulation) are valid event types — use them ~30% of the time when
-  polarization > 5.0 to avoid one-way escalation cascades.
+How realistic financial periods actually unfold (read the contrast):
+
+GOOD — a 5-period sequence after a mid-size bank announces a 2% retail rate hike:
+  P1: Announcement + first consumer-association complaint, sector trade press picks it up.
+  P2: A direct competitor publicly *holds* its rates and runs an opportunistic campaign;
+      the original bank's stock dips 1-2% on the comparison.
+  P3: Quiet period of analyst notes — two upgrades, one downgrade, mild rotation in the
+      sector ETF. No major political or regulatory action.
+  P4: Central-bank monthly bulletin mentions the case neutrally; the bank announces a
+      small loyalty / counter-offer to soften the narrative.
+  P5: Quarterly results: applications -1.2%, net interest margin +0.3pp, mixed reception.
+
+  → Notice: most periods are *not* crises. Competitive moves and counter-narratives appear.
+    Numbers are small. Institutional reactions are measured. The story can still be tense
+    without anyone dying.
+
+BAD — what the model has been doing and we want to avoid:
+  P1: Announcement.  P2: Parliamentary inquiry.  P3: Emergency tax.
+  P4: Rating-agency downgrade.  P5: Bank-run / suspension of operations.
+  → A pure one-way escalation cascade. Real markets almost never look like this for
+    routine pricing decisions. Reserve this trajectory only for the actual rare crisis
+    a brief explicitly sets up (e.g. fraud disclosure, sovereign-default scenario).
+
+Use the GOOD pattern as your default rhythm. Mix in counter-narrative events (a competitor
+move, a calming institutional statement, a technical correction, a community-driven
+defense of the firm) so the simulation isn't a monotone descent into panic.
+
+shock_magnitude follows the *event*, not a target curve. Routine analyst notes and
+incremental announcements sit low. A genuine inflection point — the day a rating actually
+moves, the day a regulator opens a formal probe — sits high. If everything is high, nothing
+is. Earn the high numbers.
 
 Respond with JSON:
 {{

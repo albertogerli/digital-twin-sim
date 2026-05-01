@@ -679,7 +679,9 @@ def build_editorial_data(scenario: str, checkpoints: list[dict],
     if calibration_meta:
         metadata["calibration"] = calibration_meta
 
-    # agents.json
+    # agents.json — include all 3 tiers (elite=1, institutional=2, clusters=3).
+    # Bug pre-Sprint-8: solo gli elite venivano esportati → frontend mostrava
+    # "Institutional (0) · Citizen Clusters (0)" anche su sim popolate.
     agents = []
     cp0 = checkpoints[0]
     cp_last = checkpoints[-1]
@@ -696,6 +698,34 @@ def build_editorial_data(scenario: str, checkpoints: list[dict],
             "position_delta": round(final["position"] - a.get("original_position", a["position"]), 3),
             "influence": a.get("influence", 0.5),
             "emotional_state": final.get("emotional_state", "neutral"),
+        })
+    for a in cp0.get("institutional_agents", []):
+        final = next((x for x in cp_last.get("institutional_agents", []) if x["id"] == a["id"]), a)
+        agents.append({
+            "id": a["id"],
+            "name": a.get("name", a["id"]),
+            "role": a.get("role", ""),
+            "archetype": a.get("category", a.get("archetype", "institutional")),
+            "tier": 2,
+            "initial_position": round(a.get("original_position", a["position"]), 3),
+            "final_position": round(final["position"], 3),
+            "position_delta": round(final["position"] - a.get("original_position", a["position"]), 3),
+            "influence": a.get("influence", 0.4),
+            "emotional_state": final.get("emotional_state", "neutral"),
+        })
+    for c in cp0.get("citizen_clusters", []):
+        final = next((x for x in cp_last.get("citizen_clusters", []) if x["id"] == c["id"]), c)
+        agents.append({
+            "id": c["id"],
+            "name": c.get("name", c["id"]),
+            "role": c.get("description", "Cluster cittadino"),
+            "archetype": "citizen",
+            "tier": 3,
+            "initial_position": round(c.get("original_position", c["position"]), 3),
+            "final_position": round(final["position"], 3),
+            "position_delta": round(final["position"] - c.get("original_position", c["position"]), 3),
+            "influence": float(c.get("population", c.get("size", 100))) / 1000.0,
+            "emotional_state": final.get("dominant_sentiment", final.get("emotional_state", "neutral")),
         })
 
     # polarization.json — per-round polarization curve

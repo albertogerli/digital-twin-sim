@@ -1,0 +1,44 @@
+scenario_id,domain,country,sim_id,status,agents_count,has_financial_twin,has_reasoning_trace,duration_s,errors,title
+COM-2017-IPHONE_X,commercial,US,2722630c,completed,22,False,False,186,,iPhone X pricing controversy: $999 price point and consumer acceptance
+COM-2019-TESLA_CYBERTRUCK_REVEAL_REACTI,commercial,US,756aef73,completed,23,False,False,236,,Public perception and market reaction following the 2019 Tesla Cybertruck reveal event
+CORP-2015-DIESELGATE_PUBLIC_TRUST_IN_VW,corporate,DE,02a817b6,completed,23,False,False,332,,Public trust in Volkswagen following the 2015 diesel emissions scandal
+CORP-2017-UBER_LONDON_LICENSE_BATTLE_201,corporate,GB,435c8f9c,completed,23,False,False,381,,Public and Regulatory Conflict over Uber's Operating License in London 2017-2019
+CORP-2017-UNITED_AIRLINES_PASSENGER_DRAG,corporate,US,498738e6,completed,25,False,False,242,,Public perception of United Airlines following the forcible removal of passenger David Dao in April 2017
+CORP-2018-AMAZON_HQ2_NYC_BACKLASH_2018_2,corporate,US,5196c58f,completed,23,False,False,195,,"Public Opinion Dynamics regarding Amazon's HQ2 Proposal in Long Island City, New York"
+CORP-2019-BOEING_MAX,corporate,US,28d7b470,completed,22,False,False,195,,Boeing 737 MAX crisis: public trust collapse after two fatal crashes
+CORP-2020-BOEING_737_MAX_RETURN_TO_SERVI,corporate,US,da107b2f,completed,22,False,False,195,,Public sentiment regarding the return to service of the Boeing 737 MAX aircraft following the 2019 grounding
+CORP-2021-FACEBOOK_META_REBRAND_OCTOBER,corporate,US,a8d29d6c,completed,23,False,False,195,,Public sentiment shift following Facebook's corporate rebrand to Meta and the strategic pivot toward the Metaverse
+CORP-2022-TWITTER_X_ACQUISITION_BY_ELON,corporate,US,e6554336,completed,22,False,False,196,,Public opinion dynamics regarding Elon Musk's acquisition of Twitter (X) in 2022
+ENE-2012-JAPANESE_NUCLEAR_RESTART_AFTER,energy,JP,fff8e426,completed,25,False,False,195,,Public opinion dynamics regarding the restart of Japanese nuclear power plants following the 2011 Fukushima Daiichi disaster
+ENV-2018-GRETA_THUNBERG_CLIMATE_STRIKES,environmental,SE,f1764138,completed,23,False,False,242,,Public opinion shift in Sweden regarding climate action during the rise of the Fridays for Future movement
+FIN-2019-WEWORK_IPO_COLLAPSE_AND_PUBLIC,financial,US,ece43580,completed,22,True,False,243,,Public perception and investor sentiment during the 2019 WeWork IPO collapse
+FIN-2020-TESLA_STOCK_SPLIT_AUGUST_2020,financial,US,8a832834,completed,23,True,False,243,,Investor sentiment dynamics surrounding the Tesla 5-for-1 stock split in August 2020
+FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE_MARC,financial,US,e943fd92,completed,23,True,False,254,,Market Confidence in Prime Brokerage Risk Management Following the Archegos Capital Management Collapse
+FIN-2022-FTX_CRYPTO_CRISIS_NOVEMBER_202,financial,US,940821a5,completed,25,True,False,205,,US Public Sentiment Toward Cryptocurrency Following the FTX Exchange Collapse in November 2022
+FIN-2023-SVB_COLLAPSE_MARCH_2023_BANKI,financial,US,e638abf0,completed,22,True,False,191,,Public confidence in the US banking sector following the collapse of Silicon Valley Bank in March 2023
+LAB-2015-UBER_VS_TAXI_PROTESTS_FRANCE_2,labor,FR,f497cb48,completed,24,False,False,191,,Public opinion dynamics regarding the Uber vs traditional taxi industry conflict in France during 2015
+PH-2021-ASTRAZENECA_VACCINE_HESITANCY,public_health,DE,765efb0b,completed,22,False,False,189,,Public willingness to receive the AstraZeneca COVID-19 vaccine in Germany during the first half of 2021
+PH-2021-COVID_VAX_IT,public_health,IT,5a3f33a3,completed,22,False,False,189,,COVID-19 vaccine acceptance trajectory in Italy (Dec 2020 – Jun 2021)
+PH-2021-MASKING_MANDATE_DEBATE_USA_202,public_health,US,276460a8,completed,39,False,False,190,,Public opinion trajectory on indoor mask mandates in the United States during 2021
+PH-2021-VACCINE_HESITANCY_USA_2021_CO,public_health,US,6540d50d,completed,39,False,False,189,,Public opinion trajectory regarding COVID-19 vaccination acceptance in the United States during the 2021 vaccine rollout
+PH-2022-MONKEYPOX_PUBLIC_CONCERN_USA_2,public_health,US,0cc451cc,completed,39,False,False,190,,Public concern and support for public health response to the 2022 Monkeypox outbreak in the United States
+POL-2011-REFERENDUM_DIVORZIO_MALTA_2011,political,MT,9a04ab8f,completed,23,False,False,190,,2011 Maltese Divorce Referendum: Public opinion shift regarding the introduction of divorce legislation
+POL-2014-SCOTTISH_INDEPENDENCE_REFEREND,political,GB,0d83e380,completed,24,False,False,189,,Scottish Independence Referendum 2014: Public Opinion Trajectory
+POL-2015-GREEK_BAILOUT_REFERENDUM_GREF,political,GR,8e16a6ba,completed,22,False,False,190,,Greek Bailout Referendum 2015: Public opinion on accepting the terms of the EU/IMF bailout package
+FIN-2021-AMC_SHORT_SQUEEZE_2021_RETAIL,financial,US,8c89bb55,timeout,22,False,False,1510,,Retail Investor Sentiment and Market Activism during the 2021 AMC Short Squeeze
+POL-2016-BREXIT,political,GB,892d0d6b,completed,23,False,False,239,,2016 United Kingdom European Union membership referendum
+POL-2016-REFERENDUM_COSTITUZIONALE_ITAL,political,IT,7d2ba3f8,completed,33,False,False,239,,2016 Italian Constitutional Referendum on the Renzi-Boschi Reform
+FIN-2021-GAMESTOP,financial,US,810dc963,timeout,21,False,False,1513,,GameStop short squeeze and retail investor revolt (January 2021)
+POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA,political,FR,922ade77,completed,24,False,False,196,,French Presidential Election 2017 Second Round: Emmanuel Macron vs Marine Le Pen
+POL-2017-REFERENDUM_INDIPENDENZA_CATALU,political,ES,72afede9,completed,23,False,False,195,,Catalan Independence Referendum 2017: Public Opinion and Institutional Conflict
+POL-2017-TURKISH_CONSTITUTIONAL_REFEREN,political,TR,1a418eb5,completed,25,False,False,382,,2017 Turkish Constitutional Referendum on the transition to an executive presidential system
+POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU,political,US,7c997081,completed,22,False,False,290,,2018 United States House of Representatives Election Popular Vote Dynamics
+POL-2018-REFERENDUM_ABORTO_IRLANDA_2018,political,IE,e208761d,completed,23,False,False,383,,Thirty-sixth Amendment of the Constitution of Ireland (Abortion) Referendum 2018
+POL-2019-ELEZIONI_EUROPEE_2019_ITALIA,political,IT,46d74746,completed,34,False,False,383,,Italian European Parliament Elections 2019: Sovereignism vs Europeanism
+POL-2020-CHILE_CONSTITUTIONAL_REFERENDU,political,CL,edfc1eb0,completed,25,False,False,336,,Chile Constitutional Referendum 2020: Public opinion trajectory regarding the replacement of the 1980 Constitution
+POL-2020-ELEZIONI_PRESIDENZIALI_USA_202,political,US,b40180b3,completed,25,False,False,429,,2020 US Presidential Election Popular Vote Dynamics: Biden vs Trump
+POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE,political,BR,f8f9f917,completed,22,False,False,383,,2022 Brazilian Presidential Election: Second Round Competition between Lula da Silva and Jair Bolsonaro
+SOC-2017-AUSTRALIA_SAME_SEX_MARRIAGE_PO,social,AU,738106c0,completed,23,False,False,476,,Australian Marriage Law Postal Survey 2017 regarding the legalization of same-sex marriage
+TECH-2017-NET_NEUTRALITY_REPEAL_US_2017,technology,US,9e1e826d,completed,14,False,False,336,,Public Opinion Dynamics during the 2017 FCC Net Neutrality Repeal Process
+TECH-2018-GDPR_ADOPTION_AND_ACCEPTANCE_E,technology,EU,9ea44d50,completed,24,False,False,424,,Public awareness and support for the General Data Protection Regulation (GDPR) implementation in the EU
+TECH-2020-TIKTOK_US_BAN_DEBATE_2020,technology,US,c05b6683,completed,25,False,False,331,,Public opinion trajectory regarding the proposed US ban of TikTok in 2020

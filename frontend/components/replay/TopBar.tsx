@@ -15,30 +15,33 @@ interface Props {
 
 export default function TopBar({ state, currentEvent, controls, scenarioId, scenarioTitle, totalRounds }: Props) {
   return (
-    <div className="h-full flex items-center gap-3 px-4 py-2">
-      {/* Logo + Scenario Title */}
+    <div className="h-11 flex items-center gap-3 px-4">
+      {/* Brand + scenario */}
       <div className="flex items-center gap-2 flex-shrink-0">
-        <span className="font-mono text-sm font-bold text-gray-900">DigitalTwinSim</span>
-        <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-50 text-blue-600 border border-blue-700/50">
+        <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted">
+          DigitalTwinSim
+        </span>
+        <span className="text-ki-border-strong">/</span>
+        <span className="text-[14px] font-medium text-ki-on-surface tracking-[-0.005em] truncate max-w-[280px]">
           {scenarioTitle}
         </span>
       </div>
 
-      {/* Divider */}
-      <div className="w-px h-7 bg-gray-200" />
+      <div className="w-px h-5 bg-ki-border" />
 
       {/* Play / Pause */}
       <button
         onClick={controls.toggle}
-        className="w-8 h-8 rounded-full bg-gray-100 border border-gray-300 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-blue-500 transition-all flex-shrink-0"
+        aria-label={state.status === "playing" ? "Pause" : "Play"}
+        className="w-7 h-7 rounded-sm border border-ki-border bg-ki-surface-raised flex items-center justify-center text-ki-on-surface-secondary hover:text-ki-on-surface hover:border-ki-border-strong transition-colors flex-shrink-0"
       >
         {state.status === "playing" ? (
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor">
             <rect x="1" y="1" width="4" height="10" rx="1" />
             <rect x="7" y="1" width="4" height="10" rx="1" />
           </svg>
         ) : (
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="currentColor">
             <polygon points="2,1 11,6 2,11" />
           </svg>
         )}
@@ -50,13 +53,13 @@ export default function TopBar({ state, currentEvent, controls, scenarioId, scen
           <button
             key={s}
             onClick={() => controls.setSpeed(s)}
-            className={`px-1.5 py-0.5 rounded text-[10px] font-mono transition-all ${
+            className={`px-1.5 h-6 rounded-sm font-data tabular text-[11px] transition-colors ${
               state.speed === s
-                ? "bg-blue-900/60 text-blue-600 font-bold"
-                : "text-gray-400 hover:text-gray-700"
+                ? "bg-ki-primary-soft text-ki-primary"
+                : "text-ki-on-surface-muted hover:text-ki-on-surface-secondary hover:bg-ki-surface-hover"
             }`}
           >
-            {s}x
+            {s}×
           </button>
         ))}
       </div>
@@ -67,55 +70,53 @@ export default function TopBar({ state, currentEvent, controls, scenarioId, scen
           <button
             key={i}
             onClick={() => controls.seekToRound(i + 1)}
-            className={`flex-1 h-1.5 rounded-full transition-all cursor-pointer ${
+            aria-label={`Seek to round ${i + 1}`}
+            className={`flex-1 h-1 rounded-full transition-colors cursor-pointer ${
               i + 1 < state.currentRound
-                ? "bg-blue-500"
+                ? "bg-ki-primary"
                 : i + 1 === state.currentRound
-                ? "bg-blue-400"
-                : "bg-gray-200"
+                ? "bg-ki-primary/60"
+                : "bg-ki-surface-sunken hover:bg-ki-border"
             }`}
           />
         ))}
       </div>
 
-      {/* Event Banner */}
-      <div className="flex-shrink min-w-0 max-w-[400px]">
+      {/* Event banner */}
+      <div className="flex-shrink min-w-0 max-w-[420px]">
         {currentEvent ? (
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse flex-shrink-0" />
-            <p className="font-mono text-[10px] text-gray-500 truncate">
-              <span className="text-gray-900 font-semibold">R{state.currentRound}</span>
-              {" "}{currentEvent.month} — {currentEvent.event.event.substring(0, 80)}...
+            <div className="w-1.5 h-1.5 rounded-full bg-ki-error animate-live-pulse flex-shrink-0" />
+            <p className="font-data tabular text-[11px] text-ki-on-surface-muted truncate">
+              <span className="text-ki-on-surface font-medium">R{state.currentRound}</span>
+              {" "}· {currentEvent.month} — {currentEvent.event.event.substring(0, 80)}…
             </p>
           </div>
         ) : (
-          <p className="font-mono text-[10px] text-gray-400">
-            Press Space to start simulation
+          <p className="font-data tabular text-[11px] text-ki-on-surface-muted">
+            Press <span className="kbd">Space</span> to start
           </p>
         )}
       </div>
 
-      {/* Back to Scenario Link */}
+      {/* Back to scenario */}
       <Link
         href={`/scenario/${scenarioId}`}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gray-100 border border-gray-300 text-xs font-mono font-semibold text-gray-700 hover:bg-gray-200 hover:text-gray-900 transition-all flex-shrink-0"
+        className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm border border-ki-border bg-ki-surface-raised text-[11px] text-ki-on-surface-secondary hover:bg-ki-surface-hover hover:text-ki-on-surface transition-colors flex-shrink-0"
       >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M15 19l-7-7 7-7" />
-        </svg>
-        Analysis
+        ← Analysis
       </Link>
 
-      {/* Elapsed + Status */}
+      {/* Elapsed + status */}
       <div className="flex items-center gap-2 flex-shrink-0">
-        <span className="font-mono text-xs text-gray-500">{state.elapsedDisplay}</span>
+        <span className="font-data tabular text-[11px] text-ki-on-surface-muted">{state.elapsedDisplay}</span>
         <div
-          className={`w-2 h-2 rounded-full ${
+          className={`w-1.5 h-1.5 rounded-full ${
             state.status === "playing"
-              ? "bg-green-500 animate-pulse"
+              ? "bg-ki-success animate-live-pulse"
               : state.status === "finished"
-              ? "bg-amber-500"
-              : "bg-gray-300"
+              ? "bg-ki-warning"
+              : "bg-ki-on-surface-muted"
           }`}
         />
       </div>

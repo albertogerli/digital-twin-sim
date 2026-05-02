@@ -2,94 +2,183 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap');
+/* ───────────────────────────────────────────────────────────
+   Quiet Intelligence Terminal — base layer
+   Fonts loaded via <head> (Geist + Geist Mono primary;
+   JetBrains Mono kept as fallback for any legacy bits).
+   ─────────────────────────────────────────────────────────── */
 
-/* ── Legacy vars ───────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+
+/* —— Root tokens (mirror of tailwind.config.ts for raw CSS use) —— */
 :root {
-  --bg: #0a0a0a;
-  --bg-panel: #111111;
-  --bg-row-hover: #161616;
-  --border: #262626;
-  --border-strong: #333333;
-  --text-primary: #e5e5e5;
-  --text-secondary: #999999;
-  --text-muted: #666666;
-  --text-dim: #444444;
-  --green: #00d26a;
-  --red: #ff3b3b;
-  --amber: #ffaa00;
-  --white: #ffffff;
+  --bg:           oklch(0.985 0.003 90);
+  --bg-sunken:    oklch(0.965 0.004 90);
+  --bg-raised:    oklch(1 0 0);
+  --bg-hover:     oklch(0.955 0.004 90);
+  --bg-active:    oklch(0.93 0.005 90);
+
+  --line:         oklch(0.9 0.005 90);
+  --line-strong:  oklch(0.82 0.006 90);
+  --line-faint:   oklch(0.94 0.004 90);
+
+  --ink:          oklch(0.2 0.012 260);
+  --ink-2:        oklch(0.42 0.012 260);
+  --ink-3:        oklch(0.6 0.01 260);
+  --ink-4:        oklch(0.72 0.008 260);
+  --ink-inv:      oklch(0.985 0.003 90);
+
+  --accent:       oklch(0.52 0.17 264);
+  --accent-hover: oklch(0.46 0.18 264);
+  --accent-soft:  oklch(0.94 0.04 264);
+  --accent-ink:   oklch(0.28 0.15 264);
+
+  --pos:  oklch(0.58 0.13 150);
+  --neg:  oklch(0.55 0.18 25);
+  --warn: oklch(0.7 0.13 75);
+
+  --font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  background: #f5f5f5;
-  color: #1a1a1a;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--ink);
   font-size: 13px;
+  line-height: 1.5;
+  font-feature-settings: "ss01", "cv11", "tnum";
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Inter Tight", "Inter", system-ui, sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
-::selection { background: rgba(26, 109, 255, 0.2); }
+::selection { background: var(--accent-soft); color: var(--accent-ink); }
 
-/* ── Scrollbar — thin, invisible ───────────────────── */
-::-webkit-scrollbar { width: 3px; height: 3px; }
+/* —— Hairline scrollbars —— */
+::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #c0c0c0; border-radius: 0; }
-::-webkit-scrollbar-thumb:hover { background: #999; }
-.dark ::-webkit-scrollbar-thumb { background: #333; }
-.dark ::-webkit-scrollbar-thumb:hover { background: #555; }
+::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-3); }
 
-/* ── Data typography ───────────────────────────────── */
+/* —— Data typography utility (also exposed via Tailwind font-data) —— */
 .font-data {
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum", "zero";
 }
 
-/* ── Material Symbols (loaded via <head>) ──────────── */
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* —— Material Symbols, kept for icons used across screens —— */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-/* ── Domain labels — text only, no bg pills ────────── */
-.domain-label { font-family: "JetBrains Mono", monospace; font-size: 0.625rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+/* —— Domain label (text-only, no pill bg) —— */
+.domain-label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
 
-/* ── Legacy dark theme styles ──────────────────────── */
+/* —— Cursor blink for terminal-style fields —— */
 .cursor-blink { animation: blink 1s step-end infinite; }
 @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
-@keyframes flash-green { 0% { background: rgba(0,210,106,0.15); } 100% { background: transparent; } }
-@keyframes flash-red { 0% { background: rgba(255,59,59,0.15); } 100% { background: transparent; } }
-.flash-green { animation: flash-green 0.6s ease-out; }
-.flash-red { animation: flash-red 0.6s ease-out; }
 
-.section-warm { background: var(--bg-warm, #f5f0eb); color: #1a1a1a; }
-.section-light { background: var(--bg, #ffffff); color: #1a1a1a; }
-.section-gray { background: #f8fafc; color: #1a1a1a; }
+/* —— Live indicator pulse —— */
+@keyframes live-pulse {
+  0%   { box-shadow: 0 0 0 0 oklch(0.55 0.18 25 / 0.45); }
+  70%  { box-shadow: 0 0 0 6px oklch(0.55 0.18 25 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(0.55 0.18 25 / 0); }
+}
 
+/* —— Stream-fade for new feed items —— */
+@keyframes stream-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stream-in { animation: stream-fade 0.25s ease-out; }
+
+/* —— Light flash effects (kept for value tickers) —— */
+@keyframes flash-pos { 0% { background: oklch(0.94 0.04 150); } 100% { background: transparent; } }
+@keyframes flash-neg { 0% { background: oklch(0.94 0.04 25); }  100% { background: transparent; } }
+.flash-pos { animation: flash-pos 0.6s ease-out; }
+.flash-neg { animation: flash-neg 0.6s ease-out; }
+/* Legacy aliases */
+.flash-green { animation: flash-pos 0.6s ease-out; }
+.flash-red   { animation: flash-neg 0.6s ease-out; }
+
+/* —— Section backgrounds (legacy markdown sections) —— */
+.section-warm  { background: var(--bg-sunken); color: var(--ink); }
+.section-light { background: var(--bg-raised); color: var(--ink); }
+.section-gray  { background: var(--bg-sunken); color: var(--ink); }
+
+/* —— Position bar (kept for legacy editorial timelines) —— */
 .position-bar {
-  background: linear-gradient(90deg, #ff3b3b 0%, #ffaa00 25%, #666 50%, #86efac 75%, #00d26a 100%);
+  background: linear-gradient(90deg, var(--neg) 0%, var(--warn) 25%, var(--ink-3) 50%, color-mix(in oklch, var(--pos) 60%, white) 75%, var(--pos) 100%);
   height: 4px; border-radius: 2px; position: relative;
 }
 .position-marker {
   position: absolute; top: -4px; width: 12px; height: 12px;
-  border-radius: 50%; background: #fff; border: 2px solid var(--green);
+  border-radius: 50%; background: var(--bg-raised); border: 2px solid var(--pos);
   transform: translateX(-50%); transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.post-card { background: var(--bg-panel); border: 1px solid var(--border); border-radius: 4px; padding: 8px 10px; transition: border-color 0.15s; }
-.post-card:hover { border-color: var(--border-strong); }
+/* —— Card primitive used on the feed —— */
+.post-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 8px 10px;
+  transition: border-color 0.12s, background 0.12s;
+}
+.post-card:hover { border-color: var(--line-strong); background: var(--bg-hover); }
 
-.report-content h1 { font-family: "Playfair Display", serif; font-size: 2rem; font-weight: 700; margin: 2rem 0 1rem; color: var(--text-primary); }
-.report-content h2 { font-family: "Playfair Display", serif; font-size: 1.5rem; font-weight: 600; margin: 1.5rem 0 0.75rem; color: var(--text-primary); border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
-.report-content h3 { font-family: "Inter Tight", sans-serif; font-size: 1.15rem; font-weight: 600; margin: 1rem 0 0.5rem; }
-.report-content p { font-family: "Source Serif 4", serif; font-size: 1.05rem; line-height: 1.8; margin: 0.75rem 0; color: var(--text-secondary); }
-.report-content ul, .report-content ol { font-family: "Source Serif 4", serif; padding-left: 1.5rem; margin: 0.5rem 0; }
-.report-content li { margin: 0.3rem 0; line-height: 1.7; }
-.report-content strong { color: var(--text-primary); }
-.report-content em { font-style: italic; color: var(--text-muted); }
-.report-content blockquote { border-left: 2px solid var(--amber); padding-left: 1rem; margin: 1rem 0; color: var(--text-muted); font-style: italic; }
+/* —— Hairline helpers —— */
+.hairline   { background: var(--line); height: 1px; }
+.hairline-v { background: var(--line); width: 1px; }
+
+/* —— Keyboard hint chip —— */
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 1px 5px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: var(--bg-sunken);
+  color: var(--ink-2);
+}
+
+/* —— Eyebrow utility —— */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+/* —— Report content (used by /sim and /scenario markdown render) —— */
+.report-content h1 { font-family: var(--font-sans); font-size: 1.5rem; font-weight: 600; margin: 1.75rem 0 0.75rem; color: var(--ink); letter-spacing: -0.01em; }
+.report-content h2 { font-family: var(--font-sans); font-size: 1.15rem; font-weight: 600; margin: 1.25rem 0 0.5rem; color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 0.4rem; letter-spacing: -0.005em; }
+.report-content h3 { font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; margin: 1rem 0 0.4rem; color: var(--ink); }
+.report-content p { font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.65; margin: 0.6rem 0; color: var(--ink-2); }
+.report-content ul, .report-content ol { font-family: var(--font-sans); font-size: 0.875rem; padding-left: 1.25rem; margin: 0.5rem 0; color: var(--ink-2); }
+.report-content li { margin: 0.25rem 0; line-height: 1.6; }
+.report-content strong { color: var(--ink); font-weight: 600; }
+.report-content em { font-style: italic; color: var(--ink-3); }
+.report-content blockquote { border-left: 2px solid var(--accent); padding-left: 0.85rem; margin: 0.85rem 0; color: var(--ink-2); font-style: italic; }
+.report-content code { font-family: var(--font-mono); font-size: 0.8125rem; background: var(--bg-sunken); padding: 1px 4px; border-radius: 3px; color: var(--ink); }
+.report-content pre  { font-family: var(--font-mono); font-size: 0.8125rem; background: var(--bg-sunken); padding: 0.75rem; border-radius: 5px; overflow-x: auto; border: 1px solid var(--line); }

@@ -27,13 +27,21 @@ class SimulationRequest(BaseModel):
     metrics_to_track: list[str] = []  # User-selected quantitative KPIs to monitor
 
 
+class KBInjectDoc(BaseModel):
+    """Document to be injected mid-simulation into the agent KB."""
+    title: str = Field(..., max_length=200)        # Display name (filename or URL slug)
+    text: str = Field(..., max_length=200_000)     # Raw text body to chunk + embed
+    source: str = Field(default="wargame_inject", max_length=64)  # provenance
+
+
 class WargameIntervention(BaseModel):
     """Human player's counter-move during a wargame simulation."""
     action_text: str = Field(..., max_length=5000)
-    action_type: str = "press_release"         # press_release, internal_memo, social_post, policy_announcement
+    action_type: str = "press_release"         # press_release, internal_memo, social_post, policy_announcement, inject_kb
     shock_magnitude: Optional[float] = Field(default=None, ge=0.0, le=1.0)
     target_audience: str = Field(default="", max_length=500)
     skip: bool = False                         # Skip intervention, let simulation auto-generate
+    kb_doc: Optional[KBInjectDoc] = None       # If action_type == "inject_kb", payload to ingest into RAG store
 
 
 class SimulationStatus(BaseModel):

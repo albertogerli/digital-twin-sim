@@ -202,19 +202,33 @@ export async function createSimulation(config: WargameConfig): Promise<string> {
   return data.id as string;
 }
 
+export interface KBInjectDoc {
+  title: string;
+  text: string;
+  source?: string;
+}
+
 export async function submitIntervention(
   simId: string,
   actionText: string,
   actionType: string = "press_release",
   targetAudience: string = "",
   skip: boolean = false,
+  kbDoc?: KBInjectDoc,
 ): Promise<void> {
-  const body = {
+  const body: Record<string, unknown> = {
     action_text: actionText,
     action_type: actionType,
     target_audience: targetAudience,
     skip,
   };
+  if (actionType === "inject_kb" && kbDoc) {
+    body.kb_doc = {
+      title: kbDoc.title,
+      text: kbDoc.text,
+      source: kbDoc.source ?? "wargame_inject",
+    };
+  }
 
   const res = await fetch(`/api/simulations/${simId}/intervene`, {
     method: "POST",

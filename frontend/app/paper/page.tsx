@@ -182,30 +182,30 @@ export default function PaperPage() {
   return (
     <main>
       {/* Title block */}
-      <div className="max-w-4xl mx-auto p-3 pt-8 pb-6">
-        <p className="text-xs font-data text-ki-primary mb-2 uppercase tracking-wider">Working Paper</p>
-        <h1 className="text-2xl sm:text-3xl font-bold text-ki-on-surface leading-tight mb-4">
+      <div className="max-w-4xl mx-auto px-5 pt-10 pb-6">
+        <div className="eyebrow text-ki-primary mb-2">Working paper</div>
+        <h1 className="text-[28px] sm:text-[34px] font-medium tracking-tight2 text-ki-on-surface leading-[1.15] mb-4">
           DigitalTwinSim: Bayesian Calibration, Null-Baseline Benchmarking, and Online Data Assimilation for LLM-Agent Opinion Dynamics
         </h1>
-        <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-ki-on-surface-muted mb-1">
+        <div className="flex flex-wrap gap-x-6 gap-y-1 text-[12px] text-ki-on-surface-secondary mb-1">
           <span>Alberto Giovanni Gerli</span>
-          <span className="font-data">v2.5 &mdash; April 2026</span>
+          <span className="font-data">v2.5 · April 2026</span>
         </div>
-        <div className="text-xs text-ki-on-surface-muted mb-6">
-          Tourbillon Tech Srl &middot; Universit&agrave; degli Studi di Milano
+        <div className="text-[12px] text-ki-on-surface-muted mb-6">
+          Tourbillon Tech Srl · Università degli Studi di Milano
         </div>
 
         {/* v2.5 banner */}
-        <div className="bg-ki-primary/10 border border-ki-primary/30 rounded-sm p-3 mb-4 text-xs text-ki-on-surface leading-relaxed">
-          <span className="font-data uppercase tracking-wider text-ki-primary mr-2">New in v2.5:</span>
-          null-baseline benchmarking layer (Diebold&ndash;Mariano with Harvey&ndash;Leybourne&ndash;Newbold correction),
-          residual-bootstrap coverage, and a 7&times;5&times;4 scenario-diversity matrix. v2.4 calibration numbers
-          are unchanged; see &sect;11 for the new content.
+        <div className="bg-ki-primary-soft border border-ki-primary/20 rounded p-3 mb-5 text-[12px] text-ki-on-surface leading-relaxed">
+          <span className="eyebrow text-ki-primary mr-2">New in v2.5</span>
+          null-baseline benchmarking layer (Diebold–Mariano with Harvey–Leybourne–Newbold correction),
+          residual-bootstrap coverage, and a 7×5×4 scenario-diversity matrix. v2.4 calibration numbers
+          are unchanged; see §11 for the new content.
         </div>
 
         {/* Abstract */}
-        <div className="bg-ki-surface-sunken border border-ki-border rounded-sm p-4">
-          <h3 className="text-xs font-data uppercase text-ki-on-surface-muted tracking-wider mb-2">Abstract</h3>
+        <div className="bg-ki-surface-sunken border border-ki-border rounded p-5">
+          <div className="eyebrow mb-2">Abstract</div>
           <p className="text-xs text-ki-on-surface-secondary leading-relaxed">
             LLM-agent simulations can generate rich opinion-dynamics narratives, but their outputs are
             uncalibrated. We address this by embedding a differentiable, force-based opinion simulator
@@ -270,25 +270,25 @@ export default function PaperPage() {
         </nav>
 
         {/* ── Evaluation Protocols ────────────────── */}
-        <div className="mb-10 p-4 bg-[#fff8e1] border border-[#ffe082] rounded-sm">
-          <h3 className="text-xs font-data uppercase text-[#f59e0b] tracking-wider mb-2">Evaluation Protocols</h3>
-          <p className="text-xs text-[#b45309] mb-3 leading-relaxed">
+        <div className="mb-10 p-4 bg-ki-warning-soft border border-ki-warning/30 rounded">
+          <div className="eyebrow text-ki-warning mb-2">Evaluation protocols</div>
+          <p className="text-[12px] text-ki-on-surface-secondary mb-3 leading-relaxed">
             This paper uses multiple evaluation protocols across versions. To avoid confusion, we summarize
-            them here. <strong>The canonical test metric is MAE on the full held-out test set.</strong> Coverage
+            them here. <strong className="text-ki-on-surface">The canonical test metric is MAE on the full held-out test set.</strong> Coverage
             is reported on both training and test sets where available (v2, v2.2, v2.3). We caution against
             direct cross-version coverage comparison since the denominator changes (8 test for v2 vs 5 test for v2.2/v2.3).
           </p>
-          <div className="overflow-x-auto rounded-sm border border-[#ffe082]">
-            <table className="w-full text-xs">
+          <div className="overflow-x-auto rounded border border-ki-warning/30">
+            <table className="w-full text-[12px]">
               <thead>
-                <tr className="bg-[#fff8e1]/50 border-b border-[#ffe082]">
-                  <th className="text-left px-3 py-1.5 font-data text-[#f59e0b]">Protocol</th>
-                  <th className="text-left px-3 py-1.5 font-data text-[#f59e0b]">Used in</th>
-                  <th className="text-left px-3 py-1.5 font-data text-[#f59e0b]">Train / Test</th>
-                  <th className="text-left px-3 py-1.5 font-data text-[#f59e0b]">Note</th>
+                <tr className="bg-ki-warning-soft border-b border-ki-warning/30">
+                  <th className="text-left px-3 py-1.5 eyebrow text-ki-warning">Protocol</th>
+                  <th className="text-left px-3 py-1.5 eyebrow text-ki-warning">Used in</th>
+                  <th className="text-left px-3 py-1.5 eyebrow text-ki-warning">Train / Test</th>
+                  <th className="text-left px-3 py-1.5 eyebrow text-ki-warning">Note</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#fff8e1] text-[#78350f]">
+              <tbody className="divide-y divide-ki-warning/15 text-ki-on-surface-secondary">
                 <tr>
                   <td className="px-3 py-1.5 font-semibold">Full test (N=8)</td>
                   <td className="px-3 py-1.5">v2 &sect;3</td>

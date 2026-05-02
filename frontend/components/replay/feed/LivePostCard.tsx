@@ -15,18 +15,10 @@ function highlightText(text: string): React.ReactNode[] {
   const parts = text.split(/(#\w+|@\w+)/g);
   return parts.map((part, i) => {
     if (part.startsWith("#")) {
-      return (
-        <span key={i} className="text-cyan-600 font-medium">
-          {part}
-        </span>
-      );
+      return <span key={i} className="text-ki-primary font-medium">{part}</span>;
     }
     if (part.startsWith("@")) {
-      return (
-        <span key={i} className="text-blue-600">
-          {part}
-        </span>
-      );
+      return <span key={i} className="text-ki-primary">{part}</span>;
     }
     return <span key={i}>{part}</span>;
   });
@@ -41,57 +33,47 @@ export default function LivePostCard({ post, isSelected, onSelect }: Props) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -16, scale: 0.98 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
+      initial={{ opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ type: "spring", stiffness: 400, damping: 30, mass: 0.8 }}
       onClick={() => onSelect(isSelected ? null : post.id)}
-      className={`px-3 py-3 border-b border-gray-200 cursor-pointer transition-colors ${
+      className={`px-3 py-3 border-b border-ki-border-faint cursor-pointer transition-colors ${
         isSelected
-          ? "bg-blue-50 ring-1 ring-blue-600"
-          : "hover:bg-white"
+          ? "bg-ki-primary-soft shadow-[inset_2px_0_0_var(--accent)]"
+          : "hover:bg-ki-surface-hover"
       }`}
     >
       <div className="flex gap-2.5">
-        {/* Avatar */}
         <div
-          className="w-8 h-8 rounded-full flex items-center justify-center text-[9px] font-bold text-white flex-shrink-0"
+          className="w-7 h-7 rounded-full flex items-center justify-center text-[9px] font-medium text-white flex-shrink-0"
           style={{ backgroundColor: post.avatarColor }}
         >
           {initials}
         </div>
 
-        {/* Content */}
         <div className="flex-1 min-w-0">
-          {/* Header row */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="font-semibold text-xs text-gray-900 truncate">
-              {post.author_name}
-            </span>
-            <span className="text-gray-400 text-[10px] font-mono truncate">
-              {post.handle}
-            </span>
-            <span className="text-gray-500 text-[10px]">&middot;</span>
-            <span className="text-gray-400 text-[10px] font-mono">R{post.round}</span>
+            <span className="text-[12px] font-medium text-ki-on-surface truncate">{post.author_name}</span>
+            <span className="font-data text-[11px] text-ki-on-surface-muted truncate">{post.handle}</span>
+            <span className="text-ki-on-surface-faint text-[10px]">·</span>
+            <span className="font-data tabular text-[10px] text-ki-on-surface-muted">R{post.round}</span>
             <div className="ml-auto flex-shrink-0">
               <PlatformBadge platform={post.platform} />
             </div>
           </div>
 
-          {/* Post text */}
-          <p className="mt-1 text-[12px] text-gray-700 leading-relaxed">
+          <p className="mt-1.5 text-[12.5px] text-ki-on-surface-secondary leading-[1.55]">
             {highlightText(post.text)}
           </p>
 
-          {/* Role badge */}
           {post.author_role && (
-            <div className="mt-1">
-              <span className="inline-block px-1.5 py-0.5 rounded text-[8px] font-mono bg-gray-100 text-gray-500 border border-gray-300">
+            <div className="mt-1.5">
+              <span className="inline-block px-1.5 py-0.5 rounded-sm font-data text-[10px] bg-ki-surface-sunken text-ki-on-surface-muted border border-ki-border">
                 {post.author_role}
               </span>
             </div>
           )}
 
-          {/* Engagement */}
           <PostEngagement
             likes={post.likes}
             reposts={post.reposts}
@@ -99,30 +81,48 @@ export default function LivePostCard({ post, isSelected, onSelect }: Props) {
             progress={post.engagementProgress}
           />
 
-          {/* Impact badge */}
           {post.impact && (
-            <div className="mt-1.5 flex items-center gap-2">
-              <div className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-blue-50 border border-blue-700/50">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2">
+            <div className="mt-2 flex items-center gap-1.5">
+              <div className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-sm bg-ki-primary-soft text-ki-primary font-data tabular text-[10px]">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                 </svg>
-                <span className="text-[9px] font-mono text-blue-600">
-                  {post.impact.reach} agents
-                </span>
+                {post.impact.reach} agents
               </div>
-              <div className={`flex items-center gap-0.5 px-1.5 py-0.5 rounded border ${
+              <div className={`inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-sm font-data tabular text-[10px] ${
                 post.impact.aggregateShift > 0
-                  ? "bg-green-50 border-green-700/50 text-green-300"
+                  ? "bg-ki-success-soft text-ki-success"
                   : post.impact.aggregateShift < 0
-                  ? "bg-red-50 border-red-700/50 text-red-300"
-                  : "bg-gray-100 border-gray-300 text-gray-500"
+                  ? "bg-ki-error-soft text-ki-error"
+                  : "bg-ki-surface-sunken text-ki-on-surface-muted"
               }`}>
-                <span className="text-[9px] font-mono font-bold">
-                  {post.impact.aggregateShift > 0 ? "+" : ""}
-                  {post.impact.aggregateShift.toFixed(2)}
-                </span>
-                <span className="text-[8px] font-mono opacity-70">shift</span>
+                {post.impact.aggregateShift > 0 ? "+" : ""}
+                {post.impact.aggregateShift.toFixed(2)} shift
               </div>
+            </div>
+          )}
+
+          {/* RAG citations — chunks consulted by the agent */}
+          {post.citations && post.citations.length > 0 && (
+            <div className="mt-2 flex items-center gap-1 flex-wrap">
+              <span className="font-data text-[9px] uppercase tracking-[0.06em] text-ki-on-surface-muted mr-0.5">
+                cites
+              </span>
+              {post.citations.map((c) => (
+                <span
+                  key={c.chunk_id}
+                  title={`${c.title} · ${c.chunk_id} · score ${c.score.toFixed(2)}`}
+                  className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-sm bg-ki-surface-sunken border border-ki-border text-ki-on-surface-secondary hover:bg-ki-surface-hover hover:text-ki-on-surface transition-colors cursor-help font-data text-[10px]"
+                >
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <path d="M14 2v6h6" />
+                  </svg>
+                  <span className="truncate max-w-[120px]">{c.title.replace(/\.[a-z]+$/i, "")}</span>
+                  <span className="text-ki-on-surface-muted">·</span>
+                  <span className="tabular">{c.score.toFixed(2)}</span>
+                </span>
+              ))}
             </div>
           )}
         </div>

@@ -15,9 +15,9 @@ const CommandCenter = dynamic(
 
 function ReplayLoadingSkeleton() {
   return (
-    <div className="h-screen bg-gray-50 flex flex-col items-center justify-center gap-4">
-      <div className="w-16 h-16 rounded-full border-2 border-blue-500/30 border-t-blue-500 animate-spin" />
-      <p className="text-gray-500 text-sm font-mono">Loading simulation replay...</p>
+    <div className="h-screen bg-ki-surface flex flex-col items-center justify-center gap-3">
+      <div className="w-12 h-12 rounded-full border-2 border-ki-primary/20 border-t-ki-primary animate-spin" />
+      <p className="text-ki-on-surface-muted text-[12px] font-data tabular">Loading simulation replay…</p>
     </div>
   );
 }
@@ -93,18 +93,16 @@ export default function ReplayPage({
 
   if (error || !meta) {
     return (
-      <div className="h-screen bg-gray-50 flex flex-col items-center justify-center gap-6 px-4">
-        <div className="bg-red-950/30 border border-red-900/50 rounded-xl p-8 max-w-md text-center">
-          <p className="text-red-300 text-lg font-medium mb-2">Failed to Load Replay</p>
-          <p className="text-red-600/70 text-sm mb-6">{error || "Replay data not found."}</p>
+      <div className="h-screen bg-ki-surface flex flex-col items-center justify-center gap-6 px-4">
+        <div className="bg-ki-surface-raised border border-ki-error/30 rounded p-8 max-w-md text-center">
+          <div className="w-1.5 h-1.5 rounded-full bg-ki-error mx-auto mb-4" />
+          <p className="text-ki-on-surface text-[15px] font-medium mb-2">Failed to load replay</p>
+          <p className="text-ki-on-surface-secondary text-[12px] mb-6">{error || "Replay data not found."}</p>
           <Link
             href={`/scenario/${id}`}
-            className="inline-flex items-center gap-2 text-cyan-600 hover:text-blue-600 transition-colors text-sm font-medium"
+            className="inline-flex items-center gap-2 text-ki-primary hover:text-ki-primary-muted transition-colors text-[12px] font-medium"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back to scenario
+            ← Back to scenario
           </Link>
         </div>
       </div>

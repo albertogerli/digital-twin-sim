@@ -351,8 +351,15 @@ async def create_simulation_with_documents(
             save_uploaded_file(sim_id, doc.filename, content)
             doc_count += 1
 
-    # Process uploads
-    doc_result = process_uploads(sim_id) if doc_count > 0 else None
+    # Process uploads + build per-simulation RAG store (in-memory, lives for run)
+    rag_store = None
+    if doc_count > 0:
+        try:
+            from api.rag_store import RAGStore
+            rag_store = RAGStore()
+        except Exception as exc:
+            logger.warning(f"RAGStore init failed: {exc}")
+    doc_result = process_uploads(sim_id, rag_store=rag_store) if doc_count > 0 else None
 
     # Parse metrics_to_track from JSON string
     parsed_metrics = []
@@ -373,7 +380,7 @@ async def create_simulation_with_documents(
     )
 
     actual_id = await manager.launch(
-        sim_request, sim_id=sim_id, document_context=doc_result, tenant_id=tid,
+        sim_request, sim_id=sim_id, document_context=doc_result, rag_store=rag_store, tenant_id=tid,
     )
     return {
         "id": actual_id,

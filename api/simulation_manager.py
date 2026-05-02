@@ -339,12 +339,14 @@ class SimulationManager:
         request: SimulationRequest,
         sim_id: str = "",
         document_context: dict = None,
+        rag_store=None,
         tenant_id: str = "default",
     ) -> str:
         if not sim_id:
             sim_id = str(uuid4())[:8]
         state = SimulationState(sim_id, request, tenant_id=tenant_id)
-        state.document_context = document_context  # RAG docs
+        state.document_context = document_context  # RAG raw context (legacy)
+        state.rag_store = rag_store                # RAGStore — agent retrieval at round time
         self.simulations[sim_id] = state
         self._persist()
         state.task = asyncio.create_task(self._run_pipeline(sim_id))
@@ -618,6 +620,44 @@ class SimulationManager:
         if state.status != "awaiting_player":
             return {"error": f"Simulation is '{state.status}', not awaiting input"}
 
+        # ── KB inject: ingest the doc into the live RAG store BEFORE resuming ──
+        # Subsequent rounds will retrieve from this newly-injected content.
+        kb_result = None
+        if intervention.action_type == "inject_kb" and intervention.kb_doc:
+            store = getattr(state, "rag_store", None)
+            if store is None:
+                # Lazy-create per-sim store if none was attached at launch (no docs uploaded)
+                try:
+                    from api.rag_store import RAGStore
+                    store = RAGStore()
+                    state.rag_store = store
+                    # Hand the live store to the running engine so RoundManager picks it up
+                    engine_ref = getattr(state, "_engine_ref", None)
+                    if engine_ref is not None:
+                        engine_ref.rag_store = store
+                        rm = getattr(engine_ref, "_round_manager", None)
+                        if rm is not None:
+                            rm.rag_store = store
+                except Exception as exc:
+                    logger.warning(f"Could not init RAGStore for KB inject: {exc}")
+                    store = None
+
+            if store is not None:
+                try:
+                    # Stable doc_id includes the round so injects are inspectable later
+                    inject_round = state.current_round + 1
+                    doc_id = f"inject_r{inject_round}_{intervention.kb_doc.source[:16]}"
+                    added = store.add_document(
+                        doc_id=doc_id,
+                        title=intervention.kb_doc.title,
+                        text=intervention.kb_doc.text,
+                    )
+                    kb_result = {"doc_id": doc_id, "chunks_added": added, "total_chunks": store.chunk_count}
+                    logger.info(f"Wargame KB inject: {doc_id} → {added} chunks (sim={sim_id})")
+                except Exception as exc:
+                    logger.warning(f"Wargame KB inject failed: {exc}")
+                    kb_result = {"error": str(exc)}
+
         # Store the intervention
         state._wargame_intervention = intervention
 
@@ -635,6 +675,7 @@ class SimulationManager:
                 "action_text": intervention.action_text,
                 "action_type": intervention.action_type,
                 "target_audience": intervention.target_audience,
+                "kb_inject": kb_result,
             }
         ))
 
@@ -642,6 +683,7 @@ class SimulationManager:
             "status": "accepted",
             "message": f"Intervention accepted. Round {state.current_round + 1} starting with your action.",
             "action_type": intervention.action_type,
+            "kb_inject": kb_result,
         }
 
     async def rollback_to_round(self, sim_id: str, target_round: int) -> dict:
@@ -1022,6 +1064,7 @@ class SimulationManager:
                     elite_only=request.elite_only,
                     verbose=False,
                     progress_callback=on_progress,
+                    rag_store=getattr(state, "rag_store", None),
                 )
 
                 # Store engine ref for wargame mode (so callback can inject overrides)

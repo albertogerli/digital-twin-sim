@@ -35,102 +35,111 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
 
   return (
     <div className="h-screen w-screen bg-ki-surface text-ki-on-surface flex flex-col overflow-hidden">
-      {/* Header */}
-      <div className="h-7 flex items-center px-2 border-b border-ki-border bg-ki-surface-sunken shrink-0">
-        <span className="font-data text-[10px] text-ki-on-surface font-bold tracking-wider">WARGAME</span>
-        <span className="font-data text-[9px] text-ki-on-surface-muted ml-2">SETUP</span>
-        <span className="ml-auto font-data text-[9px] text-ki-on-surface-muted">DIGITAL TWIN SIMULATOR</span>
+      {/* Sub-toolbar */}
+      <div className="h-11 flex items-center px-4 gap-2 border-b border-ki-border bg-ki-surface-raised shrink-0">
+        <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted">
+          DigitalTwinSim
+        </span>
+        <span className="text-ki-border-strong">/</span>
+        <span className="text-[14px] font-medium text-ki-on-surface">Wargame</span>
+        <span className="text-ki-border-strong">/</span>
+        <span className="font-data text-[11px] text-ki-on-surface-secondary">Setup</span>
+        <span className="ml-auto font-data text-[11px] text-ki-on-surface-muted">
+          Multi-agent crisis simulator
+        </span>
       </div>
 
       <div className="flex-1 flex items-center justify-center min-h-0 overflow-y-auto">
-        <div className="max-w-2xl w-full px-3 py-4">
+        <div className="max-w-2xl w-full px-6 py-8">
           {/* Title */}
-          <div className="mb-3">
-            <h1 className="font-data text-[14px] text-ki-on-surface font-bold tracking-wider mb-1">
-              WARGAME TERMINAL
+          <div className="mb-6">
+            <div className="eyebrow mb-1">Briefing</div>
+            <h1 className="text-[20px] font-medium tracking-tight2 text-ki-on-surface mb-1">
+              Deploy a wargame simulation
             </h1>
-            <p className="font-data text-[10px] text-ki-on-surface-muted">
-              DEPLOY A MULTI-AGENT SIMULATION. ALL AGENTS REACT TO YOUR MOVES IN REAL-TIME.
+            <p className="text-[12px] text-ki-on-surface-secondary leading-relaxed">
+              Definisci scenario di crisi e ruolo. Tutti gli agenti reagiscono alle tue mosse in tempo reale.
             </p>
           </div>
 
           {/* Presets */}
-          <div className="mb-3">
-            <div className="font-data text-[9px] text-ki-on-surface-muted uppercase tracking-wider mb-2">PRESETS</div>
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-5">
+            <div className="eyebrow mb-2">Presets</div>
+            <div className="flex flex-wrap gap-1.5">
               {PRESETS.map((p) => (
                 <button
                   key={p.label}
                   onClick={() => { setBrief(p.brief); setPlayerRole(p.role); }}
-                  className="font-data text-[9px] px-3 py-1.5 border border-ki-border text-ki-on-surface-muted hover:text-ki-on-surface hover:border-ki-border-strong transition-colors"
+                  className="inline-flex items-center h-7 px-2.5 rounded-sm border border-ki-border bg-ki-surface-raised text-[12px] text-ki-on-surface-secondary hover:bg-ki-surface-hover hover:text-ki-on-surface hover:border-ki-border-strong transition-colors"
                 >
-                  {p.label.toUpperCase()}
+                  {p.label}
                 </button>
               ))}
             </div>
           </div>
 
           {/* Brief */}
-          <div className="mb-4">
-            <label className="font-data text-[9px] text-ki-on-surface-muted uppercase tracking-wider block mb-1">
-              SCENARIO BRIEF *
+          <div className="mb-5">
+            <label className="block eyebrow mb-1.5">
+              Scenario brief <span className="text-ki-error">*</span>
             </label>
             <textarea
               value={brief}
               onChange={(e) => setBrief(e.target.value)}
-              placeholder="Descrivi lo scenario di crisi. Più dettagli dai, più ricca sarà la simulazione..."
+              placeholder="Descrivi lo scenario di crisi. Più dettagli dai, più ricca sarà la simulazione…"
               rows={5}
-              className="w-full bg-ki-surface-sunken border border-ki-border focus:border-ki-border-strong font-data text-[11px] text-ki-on-surface placeholder:text-ki-on-surface-muted px-3 py-2 focus:outline-none resize-none"
+              className="w-full bg-ki-surface-raised border border-ki-border rounded text-[13px] text-ki-on-surface placeholder:text-ki-on-surface-muted px-3 py-2 focus:outline-none focus:border-ki-primary focus:ring-1 focus:ring-ki-primary/30 resize-none leading-relaxed"
             />
-            <div className="font-data text-[8px] text-ki-on-surface-muted mt-0.5">
-              {brief.length} chars — min 20
+            <div className="font-data tabular text-[11px] text-ki-on-surface-muted mt-1">
+              {brief.length} chars · min 20
             </div>
           </div>
 
           {/* Player Role */}
-          <div className="mb-4">
-            <label className="font-data text-[9px] text-ki-on-surface-muted uppercase tracking-wider block mb-1">
-              YOUR ROLE
-            </label>
+          <div className="mb-5">
+            <label className="block eyebrow mb-1.5">Your role</label>
             <input
               type="text"
               value={playerRole}
               onChange={(e) => setPlayerRole(e.target.value)}
               placeholder='es. "Presidente del Consiglio", "CEO di Stellantis", "Segretario CGIL"'
-              className="w-full bg-ki-surface-sunken border border-ki-border focus:border-ki-border-strong font-data text-[11px] text-ki-on-surface placeholder:text-ki-on-surface-muted px-3 py-1.5 focus:outline-none"
+              className="w-full bg-ki-surface-raised border border-ki-border rounded text-[13px] text-ki-on-surface placeholder:text-ki-on-surface-muted px-3 h-8 focus:outline-none focus:border-ki-primary focus:ring-1 focus:ring-ki-primary/30"
             />
           </div>
 
           {/* Advanced toggle */}
           <button
             onClick={() => setShowAdvanced(!showAdvanced)}
-            className="font-data text-[8px] text-ki-on-surface-muted hover:text-ki-on-surface-muted mb-3 uppercase tracking-wider"
+            className="inline-flex items-center gap-1 text-[11px] text-ki-on-surface-muted hover:text-ki-on-surface-secondary mb-3 transition-colors"
           >
-            {showAdvanced ? "▼" : "▶"} ADVANCED OPTIONS
+            <span className={`material-symbols-outlined text-[14px] transition-transform ${showAdvanced ? "rotate-90" : ""}`} style={{ fontVariationSettings: "'wght' 400" }}>
+              chevron_right
+            </span>
+            Advanced options
           </button>
 
           {showAdvanced && (
-            <div className="grid grid-cols-2 gap-3 mb-4 p-3 border border-ki-border-strong bg-ki-surface-sunken">
+            <div className="grid grid-cols-2 gap-3 mb-5 p-3 rounded border border-ki-border bg-ki-surface-sunken">
               <div>
-                <label className="font-data text-[8px] text-ki-on-surface-muted uppercase block mb-1">PROVIDER</label>
+                <label className="block eyebrow mb-1">Provider</label>
                 <select
                   value={provider}
                   onChange={(e) => setProvider(e.target.value)}
-                  className="w-full bg-ki-surface-sunken border border-ki-border font-data text-[10px] text-ki-on-surface px-2 py-1 focus:outline-none"
+                  className="w-full bg-ki-surface-raised border border-ki-border rounded-sm text-[12px] text-ki-on-surface px-2 h-7 focus:outline-none focus:border-ki-primary"
                 >
                   <option value="gemini">Gemini</option>
                   <option value="openai">OpenAI</option>
                 </select>
               </div>
               <div>
-                <label className="font-data text-[8px] text-ki-on-surface-muted uppercase block mb-1">ROUNDS</label>
+                <label className="block eyebrow mb-1">Rounds</label>
                 <input
                   type="number"
                   min={3}
                   max={15}
                   value={rounds}
                   onChange={(e) => setRounds(parseInt(e.target.value) || 9)}
-                  className="w-full bg-ki-surface-sunken border border-ki-border font-data text-[10px] text-ki-on-surface px-2 py-1 focus:outline-none"
+                  className="w-full bg-ki-surface-raised border border-ki-border rounded-sm font-data tabular text-[12px] text-ki-on-surface px-2 h-7 focus:outline-none focus:border-ki-primary"
                 />
               </div>
             </div>
@@ -140,13 +149,16 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
           <button
             onClick={() => canStart && onStart(brief, playerRole, provider, rounds)}
             disabled={!canStart}
-            className="w-full h-10 font-data text-[11px] font-bold tracking-wider border transition-colors disabled:opacity-20 disabled:cursor-not-allowed border-ki-success/25 text-ki-success hover:bg-ki-success/5 hover:border-ki-success/50"
+            className="w-full h-9 inline-flex items-center justify-center gap-2 rounded-sm bg-ki-on-surface text-ki-surface text-[13px] font-medium hover:bg-ki-on-surface-secondary disabled:bg-ki-surface-sunken disabled:text-ki-on-surface-muted disabled:cursor-not-allowed transition-colors"
           >
-            ▶ DEPLOY SIMULATION
+            <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'wght' 500" }}>
+              play_arrow
+            </span>
+            Deploy simulation
           </button>
 
-          <div className="font-data text-[8px] text-ki-on-surface-muted mt-2 text-center">
-            ALL AGENTS WILL REACT TO YOUR MOVES IN REAL TIME
+          <div className="text-[11px] text-ki-on-surface-muted mt-3 text-center">
+            Tutti gli agenti reagiscono alle tue mosse in tempo reale
           </div>
         </div>
       </div>

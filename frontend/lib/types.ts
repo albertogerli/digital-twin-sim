@@ -94,6 +94,14 @@ export interface RoundEvent {
   shock_direction: number;
 }
 
+export interface PostCitationRaw {
+  doc_id: string;
+  chunk_id: string;
+  title: string;
+  score: number;
+  snippet?: string;
+}
+
 export interface PostData {
   id: string;
   author_id: string;
@@ -108,6 +116,7 @@ export interface PostData {
   replies: number;
   engagement_score: number;
   virality_tier: number;
+  citations?: PostCitationRaw[];
 }
 
 export interface GraphNode {

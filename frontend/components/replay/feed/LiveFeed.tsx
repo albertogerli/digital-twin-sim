@@ -27,22 +27,23 @@ export default function LiveFeed({ posts, keyInsight, status, onPlay, selectedPo
 
   if (status === "idle" || (status === "paused" && posts.length === 0)) {
     return (
-      <div className="h-full flex flex-col items-center justify-center gap-4 px-8">
-        <div className="w-14 h-14 rounded-full bg-ki-surface-sunken border border-ki-border flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ki-on-surface-muted">
+      <div className="h-full flex flex-col items-center justify-center gap-4 px-8 bg-ki-surface">
+        <div className="w-12 h-12 rounded-full bg-ki-surface-sunken border border-ki-border flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ki-on-surface-secondary">
             <polygon points="5,3 19,12 5,21" />
           </svg>
         </div>
         <div className="text-center">
-          <p className="text-sm text-ki-on-surface-secondary font-medium">Ready to simulate</p>
-          <p className="text-xs text-ki-on-surface-muted mt-1 font-mono">
-            Press Space or click below
+          <p className="text-[14px] text-ki-on-surface font-medium">Ready to simulate</p>
+          <p className="text-[11px] text-ki-on-surface-muted mt-1">
+            Premi <span className="kbd">Space</span> o clicca sotto
           </p>
         </div>
         <button
           onClick={onPlay}
-          className="px-4 py-2 rounded-lg bg-ki-primary/[0.07] border border-ki-primary/30 text-ki-primary text-xs font-mono hover:bg-ki-primary/20 transition-all"
+          className="inline-flex items-center gap-1.5 h-8 px-3 rounded-sm bg-ki-on-surface text-ki-surface text-[12px] font-medium hover:bg-ki-on-surface-secondary transition-colors"
         >
+          <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'wght' 500" }}>play_arrow</span>
           Start simulation
         </button>
       </div>
@@ -53,25 +54,27 @@ export default function LiveFeed({ posts, keyInsight, status, onPlay, selectedPo
     <div className="h-full flex flex-col">
       {/* Key insight banner */}
       {keyInsight && (
-        <div className="px-3 py-1.5 bg-amber-900/30 border-b border-amber-700/40">
-          <p className="text-[10px] font-mono text-amber-300">
-            <span className="font-bold">INSIGHT</span> — {keyInsight}
+        <div className="px-3 py-2 bg-ki-warning-soft border-b border-ki-warning/30">
+          <p className="text-[12px] text-ki-on-surface">
+            <span className="eyebrow text-ki-warning mr-1.5">Insight</span>
+            {keyInsight}
           </p>
         </div>
       )}
 
-      {/* Post counter */}
-      <div className="px-3 py-1.5 border-b border-gray-200 flex items-center justify-between">
-        <span className="font-mono text-[10px] text-gray-400">
-          LIVE FEED — {posts.length} posts
-        </span>
+      {/* Header */}
+      <div className="px-3 h-8 border-b border-ki-border flex items-center justify-between bg-ki-surface-raised">
+        <div className="flex items-center gap-2">
+          <span className="eyebrow">Live feed</span>
+          <span className="font-data tabular text-[11px] text-ki-on-surface-muted">{posts.length} posts</span>
+        </div>
         {status === "finished" && (
-          <span className="font-mono text-[10px] text-amber-600">Completed</span>
+          <span className="font-data text-[11px] text-ki-warning">Completed</span>
         )}
       </div>
 
       {/* Post list */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto bg-ki-surface">
         {posts.length > 0 ? (
           posts.map((post) => (
             <LivePostCard
@@ -84,8 +87,8 @@ export default function LiveFeed({ posts, keyInsight, status, onPlay, selectedPo
         ) : status === "playing" ? (
           <div className="flex items-center justify-center h-32">
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-              <span className="text-xs text-gray-400 font-mono">Waiting for posts...</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-ki-primary animate-pulse" />
+              <span className="text-[12px] text-ki-on-surface-muted font-data">Waiting for posts…</span>
             </div>
           </div>
         ) : null}

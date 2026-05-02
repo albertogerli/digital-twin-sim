@@ -43,6 +43,7 @@ class RoundManager:
         escalation_engine=None,
         contagion_scorer=None,
         financial_scorer=None,
+        rag_store=None,
     ):
         self.llm = llm
         self.platform = platform
@@ -61,6 +62,10 @@ class RoundManager:
         self.metrics_to_track = metrics_to_track or []
         self._phase_labels = self._build_phase_labels(language)
         self.interaction_resolver = InteractionResolver(platform, domain_plugin)
+        # Optional RAG retrieval for grounded reasoning
+        self.rag_store = rag_store
+        # Cache: round_num -> retrieved chunks (so all posts in a round share citations)
+        self._round_retrieved: dict = {}
 
         # Load calibrated params from v2 posterior (with v1 fallback)
         self.param_loader = CalibratedParamLoader()
@@ -497,6 +502,16 @@ class RoundManager:
             inst_prompt = lang_instruction + inst_prompt
             cluster_prompt = lang_instruction + cluster_prompt
 
+        # === RAG retrieval (once per round) ─────────────────────
+        # Query the rag_store with the round event so all subsequent agent
+        # prompts can be grounded in retrieved snippets, and so we can
+        # attribute citations to each post emitted this round.
+        rag_context_block = self._rag_setup_round(round_num, round_event)
+        if rag_context_block:
+            elite_prompt   = elite_prompt   + rag_context_block
+            inst_prompt    = inst_prompt    + rag_context_block
+            cluster_prompt = cluster_prompt + rag_context_block
+
         # === Phase 2: Elite Agent Generation ===
         # Filter active elite agents via orchestrator
         active_elite = self._get_active_elite_agents(round_num)
@@ -511,6 +526,7 @@ class RoundManager:
         for r in elite_results:
             if r:
                 for p in r.get("posts", []):
+                    self._attach_citations(p, round_num)
                     self.platform.add_post(p, round_num)
         cost_str = f"${self.llm.stats.total_cost:.2f}"
         print(f"✓ {len([r for r in elite_results if r])}/{len(active_elite)}  ({cost_str})")
@@ -529,6 +545,7 @@ class RoundManager:
                 if isinstance(batch, list):
                     for r in batch:
                         for p in r.get("posts", []):
+                            self._attach_citations(p, round_num)
                             self.platform.add_post(p, round_num)
             print(f"✓ ({cost_str})")
             await self._notify("round_phase", {"round": round_num, "phase": "institutional_batch", "message": f"{self._phase_labels['institutional']}: {len(active_inst)}", "phase_index": 3, "total_phases": 7})
@@ -542,6 +559,7 @@ class RoundManager:
             )
             for cr in cluster_results:
                 for p in cr.get("posts", []):
+                    self._attach_citations(p, round_num)
                     self.platform.add_post(p, round_num)
             print(f"✓ {len(cluster_results)} clusters ({cost_str})")
             await self._notify("round_phase", {"round": round_num, "phase": "citizen_swarm", "message": f"{self._phase_labels['citizens']}: {len(cluster_results)} clusters", "phase_index": 4, "total_phases": 7})
@@ -965,6 +983,77 @@ Respond with JSON only:
         except Exception as e:
             logger.warning(f"Custom metrics evaluation failed: {e}")
             return {m: 50 for m in self.metrics_to_track}
+
+    # ── RAG: per-round retrieval + citation attachment ───────────────────
+
+    def _rag_setup_round(self, round_num: int, round_event) -> str:
+        """Retrieve top-K KB chunks for this round and cache them.
+
+        Returns a context block to append to agent prompts. If rag_store is
+        absent or empty, returns "" and skips citation attachment downstream.
+        """
+        if not getattr(self, "rag_store", None):
+            return ""
+        try:
+            if self.rag_store.chunk_count == 0:
+                return ""
+        except Exception:
+            return ""
+
+        # Build the query from the round's narrative event
+        if isinstance(round_event, dict):
+            query = round_event.get("event") or round_event.get("title") or str(round_event)
+        else:
+            query = str(round_event)
+        if self.scenario_context:
+            query = f"{self.scenario_context}\n{query}"
+
+        try:
+            chunks = self.rag_store.retrieve(query, k=4)
+        except Exception as exc:
+            logger.warning(f"RAG retrieve failed for round {round_num}: {exc}")
+            return ""
+
+        if not chunks:
+            self._round_retrieved[round_num] = []
+            return ""
+
+        # Cache for citation attachment on every post in this round
+        self._round_retrieved[round_num] = [
+            {
+                "doc_id":   c.doc_id,
+                "chunk_id": c.chunk_id,
+                "title":    c.title,
+                "snippet":  c.snippet,
+                "score":    c.score,
+            }
+            for c in chunks
+        ]
+
+        # Build the prompt context block (snippet excerpts to ground reasoning)
+        lines = ["", "RETRIEVED REFERENCE DOCUMENTS (use to ground your reasoning):"]
+        for c in chunks:
+            lines.append(f"  [{c.chunk_id}] {c.title} (score {c.score:.2f})")
+            lines.append(f"    \"{c.snippet}\"")
+        lines.append("")
+        return "\n".join(lines)
+
+    def _attach_citations(self, post_dict: dict, round_num: int) -> None:
+        """Annotate a post with the round's retrieved chunks (lightweight)."""
+        chunks = self._round_retrieved.get(round_num)
+        if not chunks:
+            return
+        # Carry only the lean fields the frontend renders
+        post_dict["citations"] = [
+            {
+                "doc_id":   c["doc_id"],
+                "chunk_id": c["chunk_id"],
+                "title":    c["title"],
+                "score":    c["score"],
+                "snippet":  c["snippet"],
+            }
+            for c in chunks
+        ]
 
     async def _run_elite_agents_filtered(self, agents: list, round_num,
                                           timeline_label, round_event,

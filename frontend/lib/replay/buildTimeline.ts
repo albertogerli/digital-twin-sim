@@ -19,6 +19,42 @@ function eid(): string {
   return `evt_${++eventCounter}`;
 }
 
+/* ── Mock RAG citations ──────────────────────────────────────
+   Deterministic, hash-based per post id. Until the backend ships
+   real citations, this gives the UI something to render. */
+const KB_DOCS = [
+  { doc_id: "d1", title: "EU_energy_package_draft_v3.pdf",  pages: 84 },
+  { doc_id: "d2", title: "Brandt_speech_2026-04-22.txt",    pages: 4  },
+  { doc_id: "d3", title: "industry_position_paper.docx",     pages: 22 },
+  { doc_id: "d4", title: "grid_investment_dataset_q1.csv",   pages: 0  },
+  { doc_id: "d5", title: "council_voting_record_2025.json",  pages: 0  },
+];
+
+function hashStr(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+function mockCitations(postId: string, authorId: string, round: number) {
+  const h = hashStr(postId + ":" + authorId);
+  // ~30% of posts get citations
+  if (h % 100 >= 30) return undefined;
+  const n = 1 + (h % 3); // 1-3 citations
+  const cs = [];
+  for (let i = 0; i < n; i++) {
+    const doc = KB_DOCS[(h + i * 7) % KB_DOCS.length];
+    cs.push({
+      doc_id: doc.doc_id,
+      chunk_id: `${doc.doc_id}_${(h + i * 13) % 200}`,
+      title: doc.title,
+      score: 0.55 + ((h + i * 19) % 40) / 100,
+      snippet: undefined,
+    });
+  }
+  return cs;
+}
+
 export function buildTimelineForRound(
   roundData: ReplayRoundData,
 ): SimEvent[] {
@@ -56,6 +92,14 @@ export function buildTimelineForRound(
     const postTime = roundStart + 2000 + i * POST_STAGGER;
 
     // POST_APPEAR
+    // Use real RAG citations from the backend payload when present;
+    // fall back to deterministic mock citations for older scenarios where the
+    // backend didn't yet thread citations through.
+    const realCitations = (post as any).citations as VisiblePost["citations"] | undefined;
+    const citations = realCitations && realCitations.length > 0
+      ? realCitations
+      : mockCitations(post.id, post.author_id, r);
+
     events.push({
       id: eid(),
       type: "POST_APPEAR",
@@ -69,6 +113,7 @@ export function buildTimelineForRound(
         engagementProgress: 0,
         isNew: true,
         virtualTimestamp: postTime,
+        citations,
       } as VisiblePost,
     });
 

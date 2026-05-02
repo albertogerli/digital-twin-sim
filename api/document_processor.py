@@ -99,8 +99,12 @@ def _extract_docx(path: Path) -> str:
         return f"[DOCX file: {path.name} — install python-docx to extract text]"
 
 
-def process_uploads(sim_id: str) -> dict:
+def process_uploads(sim_id: str, rag_store=None) -> dict:
     """Process all uploaded files for a simulation.
+
+    If `rag_store` (RAGStore instance) is provided, each file is also chunked,
+    embedded, and added to the store so agents can retrieve grounded snippets
+    at round time.
 
     Returns:
         {
@@ -108,15 +112,17 @@ def process_uploads(sim_id: str) -> dict:
             "seed_data_path": str,     # Path to seed data dir (if JSON stakeholders found)
             "file_count": int,
             "total_chars": int,
+            "rag_chunks": int,         # Total chunks indexed in rag_store
         }
     """
     upload_dir = UPLOAD_DIR / sim_id
     if not upload_dir.exists():
-        return {"context_text": "", "seed_data_path": "", "file_count": 0, "total_chars": 0}
+        return {"context_text": "", "seed_data_path": "", "file_count": 0, "total_chars": 0, "rag_chunks": 0}
 
     context_parts = []
     seed_data_path = ""
     file_count = 0
+    doc_index = 0  # for stable doc_ids (d1, d2, …) across the simulation
 
     for file_path in sorted(upload_dir.iterdir()):
         if file_path.name.startswith("."):
@@ -127,6 +133,8 @@ def process_uploads(sim_id: str) -> dict:
             continue
 
         file_count += 1
+        doc_index += 1
+        doc_id = f"d{doc_index}"
 
         # Check if it's structured seed data (JSON with stakeholders)
         if file_path.suffix == ".json":
@@ -140,6 +148,13 @@ def process_uploads(sim_id: str) -> dict:
             f"--- DOCUMENTO: {file_path.name} ---\n{text}"
         )
 
+        # ── RAG: chunk + embed for retrieval-grounded reasoning ──
+        if rag_store is not None:
+            try:
+                rag_store.add_document(doc_id=doc_id, title=file_path.name, text=text)
+            except Exception as exc:
+                logger.warning(f"RAG indexing failed for {file_path.name}: {exc}")
+
     context_text = "\n\n".join(context_parts)
 
     return {
@@ -147,6 +162,7 @@ def process_uploads(sim_id: str) -> dict:
         "seed_data_path": seed_data_path,
         "file_count": file_count,
         "total_chars": len(context_text),
+        "rag_chunks": rag_store.chunk_count if rag_store is not None else 0,
     }
 
 

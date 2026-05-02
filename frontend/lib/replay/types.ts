@@ -53,6 +53,15 @@ export interface IndicatorState {
 // ─── Real-World Effects (re-exported from lib/types) ───
 export type { RealWorldEffects } from "@/lib/types";
 
+// ─── KB citation (RAG retrieval — backend-provided when grounded) ───
+export interface PostCitation {
+  doc_id: string;
+  chunk_id: string;
+  title: string;       // human-readable doc name
+  snippet?: string;    // optional preview
+  score: number;       // 0-1 retrieval similarity
+}
+
 // ─── Visible Post (with engagement progress) ───
 export interface VisiblePost extends PostData {
   engagementProgress: number; // 0-1, how much of final engagement to show
@@ -62,6 +71,7 @@ export interface VisiblePost extends PostData {
   avatarColor: string;
   hashtags: string[];
   impact?: PostImpact;
+  citations?: PostCitation[];  // RAG chunks consulted for this post
 }
 
 // ─── Active Impact (transient graph animation state) ───

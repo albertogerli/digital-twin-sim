@@ -97,7 +97,21 @@ def get_posts_for_round(conn: sqlite3.Connection, round_num: int) -> list[dict]:
     rows = conn.execute(
         "SELECT * FROM posts WHERE round = ? ORDER BY id", (round_num,)
     ).fetchall()
-    return [dict(r) for r in rows]
+    out = []
+    for r in rows:
+        d = dict(r)
+        # citations stored as JSON string in SQLite — re-hydrate to a list
+        cit = d.get("citations")
+        if isinstance(cit, str) and cit.strip():
+            try:
+                import json as _json
+                d["citations"] = _json.loads(cit)
+            except Exception:
+                d["citations"] = []
+        elif cit is None:
+            d["citations"] = []
+        out.append(d)
+    return out
 
 
 def get_reactions_for_post(conn: sqlite3.Connection, post_id: int) -> dict:
@@ -590,6 +604,7 @@ def build_round_data(scenario: str, round_num: int, conn: sqlite3.Connection,
             "replies": replies,
             "engagement_score": round(total_eng / max(1, max(likes, 1) * 3), 2),
             "virality_tier": 3 if total_eng > 20 else (2 if total_eng > 5 else 1),
+            "citations": p.get("citations", []),
         })
 
     # Sort by engagement

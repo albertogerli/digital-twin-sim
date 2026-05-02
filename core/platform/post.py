@@ -1,7 +1,7 @@
 """Data models for posts, comments, and reactions."""
 
-from dataclasses import dataclass
-from typing import Optional
+from dataclasses import dataclass, field
+from typing import Optional, List, Dict, Any
 
 
 @dataclass
@@ -21,6 +21,8 @@ class Post:
     replies: int = 0
     upvotes: int = 0
     downvotes: int = 0
+    # RAG citations: chunks the agent's reasoning was grounded in for this post
+    citations: List[Dict[str, Any]] = field(default_factory=list)
 
     @property
     def is_reply(self) -> bool:

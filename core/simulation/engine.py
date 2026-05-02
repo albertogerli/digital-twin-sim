@@ -66,6 +66,8 @@ class SimulationEngine:
         resume_round: int = 0,
         event_override: str = None,
         agent_overrides: dict = None,
+        # RAG retrieval — optional, agents will query this for grounded reasoning
+        rag_store=None,
     ):
         self.llm = llm
         self.config = config
@@ -80,6 +82,9 @@ class SimulationEngine:
         self.resume_round = resume_round
         self.event_override = event_override
         self.agent_overrides = agent_overrides or {}
+
+        # RAG store (optional)
+        self.rag_store = rag_store
 
         os.makedirs(self.output_dir, exist_ok=True)
 
@@ -214,6 +219,7 @@ class SimulationEngine:
             escalation_engine=self.escalation_engine,
             contagion_scorer=self.contagion_scorer,
             financial_scorer=self.financial_scorer,
+            rag_store=self.rag_store,
         )
 
         # First round of a branched run uses the injected event override

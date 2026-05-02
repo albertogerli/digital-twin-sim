@@ -23,6 +23,7 @@ import { CommandBar } from "./CommandBar";
 import { StatusBar } from "./StatusBar";
 import { SetupScreen } from "./SetupScreen";
 import { SitrepOverlay } from "./SitrepOverlay";
+import { InterventionModal } from "./InterventionModal";
 
 const EMPTY_STATE: WgRoundState = {
   round: 0,
@@ -52,6 +53,7 @@ export default function WargameTerminal() {
   const [, setLogs] = useState<LogEntry[]>([]);
   const [phaseMessage, setPhaseMessage] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [interveneOpen, setInterveneOpen] = useState(false);
 
   const cleanupRef = useRef<(() => void) | null>(null);
   const postQueueRef = useRef<WgPost[]>([]);
@@ -169,20 +171,60 @@ export default function WargameTerminal() {
     return <SetupScreen onStart={handleStart} />;
   }
 
-  const warnColor = roundState.warning === "CRITICAL" ? "#ff3b3b" : roundState.warning === "HIGH" ? "#ff7700" : roundState.warning === "MODERATE" ? "#ffaa00" : "#00d26a";
+  const warnColor =
+    roundState.warning === "CRITICAL" ? "var(--neg)" :
+    roundState.warning === "HIGH"     ? "var(--warn)" :
+    roundState.warning === "MODERATE" ? "var(--warn)" :
+    "var(--pos)";
   const isProcessing = phase === "configuring" || phase === "briefing" || (phase === "running" && roundState.round === 0);
   const displayAgentCount = agentCount || agents.length || 0;
 
   return (
     <div className="h-screen w-screen bg-ki-surface text-ki-on-surface flex flex-col overflow-hidden">
       {/* Top Status Bar */}
-      <StatusBar state={roundState} processing={isProcessing} agentCount={displayAgentCount} />
+      <StatusBar
+        state={roundState}
+        processing={isProcessing}
+        agentCount={displayAgentCount}
+        onIntervene={phase === "running" || phase === "awaiting" ? () => setInterveneOpen(true) : undefined}
+      />
+
+      <InterventionModal
+        open={interveneOpen}
+        round={roundState.round}
+        onClose={() => setInterveneOpen(false)}
+        onSubmit={async ({ actor, action, message, kbDoc }) => {
+          if (action === "inject_kb" && kbDoc && simId) {
+            // Direct call: bypass `handleIntervention` (which is text-only) so we can
+            // ship the KB doc payload to the backend for live RAG ingestion.
+            try {
+              await submitIntervention(
+                simId,
+                `[${actor}/${action}] ${message}`,
+                "inject_kb",
+                "",
+                false,
+                { title: kbDoc.name, text: kbDoc.text, source: kbDoc.sourceType },
+              );
+              setLastIntervention(message);
+              setSitrep(null);
+              setPhaseMessage("Document injected — resuming with live KB…");
+            } catch (err) {
+              setErrorMsg(err instanceof Error ? err.message : String(err));
+            }
+          } else {
+            handleIntervention(`[${actor}/${action}] ${message}`);
+          }
+          setInterveneOpen(false);
+        }}
+        submitting={false}
+      />
 
       {/* Error banner */}
       {errorMsg && (
-        <div className="h-6 flex items-center px-2 bg-[#1a0a0a] border-b border-[#ff3b3b20] shrink-0">
-          <span className="font-data text-[9px] text-[#ff3b3b]">ERROR: {errorMsg}</span>
-          <button onClick={() => setErrorMsg("")} className="ml-auto font-data text-[8px] text-ki-on-surface-muted hover:text-ki-on-surface">DISMISS</button>
+        <div className="h-7 flex items-center px-3 gap-3 bg-ki-error-soft border-b border-ki-error/30 shrink-0">
+          <span className="font-data text-[11px] text-ki-error">ERROR — {errorMsg}</span>
+          <button onClick={() => setErrorMsg("")} className="ml-auto font-data text-[11px] text-ki-error/70 hover:text-ki-error transition-colors">Dismiss</button>
         </div>
       )}
 
@@ -190,22 +232,22 @@ export default function WargameTerminal() {
       {(phase === "configuring" || phase === "briefing") && (
         <div className="flex-1 flex items-center justify-center min-h-0">
           <div className="max-w-md w-full px-4">
-            <div className="font-data text-[11px] text-ki-on-surface-muted mb-4 uppercase tracking-wider">
-              {phase === "configuring" ? "INITIALIZING SIMULATION..." : "ANALYZING BRIEF..."}
+            <div className="eyebrow mb-3">
+              {phase === "configuring" ? "Initializing simulation" : "Analyzing brief"}
             </div>
             {briefingSteps.map((step, i) => (
               <div key={i} className="flex items-center gap-2 mb-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00d26a] shrink-0" />
-                <span className="font-data text-[10px] text-ki-on-surface-muted">{step.message}</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-ki-success shrink-0" />
+                <span className="text-[12px] text-ki-on-surface-secondary">{step.message}</span>
               </div>
             ))}
             <div className="mt-3 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ffaa00] animate-pulse shrink-0" />
-              <span className="font-data text-[10px] text-[#ffaa00] animate-pulse">{phaseMessage || "CONNECTING..."}</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-ki-warning animate-pulse shrink-0" />
+              <span className="text-[12px] text-ki-warning animate-pulse">{phaseMessage || "Connecting…"}</span>
             </div>
             {agentCount > 0 && (
-              <div className="mt-4 font-data text-[10px] text-ki-on-surface-muted">
-                {agentCount} AGENTS GENERATED
+              <div className="mt-4 font-data tabular text-[11px] text-ki-on-surface-muted">
+                {agentCount} agents generated
               </div>
             )}
           </div>
@@ -217,11 +259,11 @@ export default function WargameTerminal() {
         <div className="flex-1 flex min-h-0">
           {/* LEFT: Agent Feed */}
           <div className="w-[340px] border-r border-ki-border flex flex-col min-h-0">
-            <div className="h-6 flex items-center px-2 border-b border-ki-border-strong bg-ki-surface-sunken shrink-0">
-              <span className="font-data text-[9px] text-ki-on-surface-muted uppercase tracking-wider">
-                Agent Feed{displayAgentCount > 0 ? ` — ${displayAgentCount} active` : ""}
+            <div className="h-7 flex items-center px-3 border-b border-ki-border bg-ki-surface-sunken shrink-0">
+              <span className="eyebrow">
+                Agent feed{displayAgentCount > 0 ? ` · ${displayAgentCount} active` : ""}
               </span>
-              <span className="ml-auto font-data text-[9px] text-ki-on-surface-muted">
+              <span className="ml-auto font-data tabular text-[11px] text-ki-on-surface-muted">
                 R{roundState.round}/{roundState.totalRounds}
               </span>
             </div>
@@ -230,13 +272,13 @@ export default function WargameTerminal() {
 
           {/* CENTER: Contagion Graph */}
           <div className="flex-1 flex flex-col min-h-0 border-r border-ki-border">
-            <div className="h-6 flex items-center px-2 border-b border-ki-border-strong bg-ki-surface-sunken shrink-0 justify-between">
-              <span className="font-data text-[9px] text-ki-on-surface-muted uppercase tracking-wider">
-                Social Graph — Contagion Overlay
+            <div className="h-7 flex items-center px-3 border-b border-ki-border bg-ki-surface-sunken shrink-0 justify-between">
+              <span className="eyebrow">
+                Social graph · contagion overlay
               </span>
-              <div className="flex gap-3 font-data text-[9px]">
-                <span>CRI: <span style={{ color: roundState.contagionRisk > 0.7 ? "#ff3b3b" : "#ffaa00" }}>{roundState.contagionRisk.toFixed(2)}</span></span>
-                <span>POL: <span style={{ color: roundState.polarization > 7 ? "#ff3b3b" : "#ffaa00" }}>{roundState.polarization.toFixed(1)}</span></span>
+              <div className="flex gap-3 font-data tabular text-[11px] text-ki-on-surface-secondary">
+                <span>CRI <span style={{ color: roundState.contagionRisk > 0.7 ? "var(--neg)" : "var(--warn)" }}>{roundState.contagionRisk.toFixed(2)}</span></span>
+                <span>POL <span style={{ color: roundState.polarization > 7 ? "var(--neg)" : "var(--warn)" }}>{roundState.polarization.toFixed(1)}</span></span>
                 <span>W<span style={{ color: warnColor }}>{roundState.wave}</span></span>
               </div>
             </div>
@@ -245,11 +287,11 @@ export default function WargameTerminal() {
 
           {/* RIGHT: Ticker Panel */}
           <div className="w-[280px] flex flex-col min-h-0">
-            <div className="h-6 flex items-center px-2 border-b border-ki-border-strong bg-ki-surface-sunken shrink-0">
-              <span className="font-data text-[9px] text-ki-on-surface-muted uppercase tracking-wider">
-                Estimated Impact
+            <div className="h-7 flex items-center px-3 border-b border-ki-border bg-ki-surface-sunken shrink-0">
+              <span className="eyebrow">
+                Estimated impact
               </span>
-              <span className="ml-auto font-data text-[9px]" style={{ color: warnColor }}>
+              <span className="ml-auto font-data tabular text-[11px]" style={{ color: warnColor }}>
                 {roundState.warning}
               </span>
             </div>
@@ -277,15 +319,18 @@ export default function WargameTerminal() {
 
       {/* Completed overlay */}
       {phase === "completed" && (
-        <div className="absolute inset-0 bg-ki-surface/80 flex items-center justify-center z-50">
-          <div className="text-center">
-            <div className="font-data text-[14px] text-[#00d26a] font-bold mb-2">SIMULATION COMPLETE</div>
-            <div className="font-data text-[10px] text-ki-on-surface-muted">{roundState.totalRounds} rounds executed</div>
+        <div className="absolute inset-0 bg-ki-surface/80 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="text-center bg-ki-surface-raised border border-ki-border rounded p-8 max-w-md">
+            <div className="w-1.5 h-1.5 rounded-full bg-ki-success mx-auto mb-3" />
+            <div className="text-[16px] font-medium text-ki-on-surface mb-1">Simulation complete</div>
+            <div className="font-data tabular text-[12px] text-ki-on-surface-muted mb-5">
+              {roundState.totalRounds} rounds executed
+            </div>
             <button
               onClick={() => { cleanupRef.current?.(); setPhase("idle"); }}
-              className="mt-4 font-data text-[10px] px-3 py-1.5 border border-ki-border text-ki-on-surface-muted hover:text-ki-on-surface hover:border-ki-border-strong transition-colors"
+              className="inline-flex items-center justify-center h-8 px-3 rounded-sm bg-ki-on-surface text-ki-surface text-[12px] font-medium hover:bg-ki-on-surface-secondary transition-colors"
             >
-              NEW SIMULATION
+              New simulation
             </button>
           </div>
         </div>

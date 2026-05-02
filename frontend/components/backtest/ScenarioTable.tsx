@@ -50,79 +50,81 @@ export function ScenarioTable({ data }: { data: BacktestScenario[] }) {
   const SH = ({ label, field, className = "" }: { label: string; field: SortKey; className?: string }) => (
     <button
       onClick={() => sort(field)}
-      className={`text-[8px] font-data uppercase tracking-wider transition-colors ${
-        sortKey === field ? "text-ki-on-surface" : "text-ki-on-surface-muted hover:text-ki-on-surface-muted"
+      className={`eyebrow font-medium transition-colors ${
+        sortKey === field ? "text-ki-on-surface" : "text-ki-on-surface-muted hover:text-ki-on-surface-secondary"
       } ${className}`}
     >
-      {label}{sortKey === field && (sortAsc ? "↑" : "↓")}
+      {label}{sortKey === field && (sortAsc ? " ↑" : " ↓")}
     </button>
   );
 
-  const WARN_COLORS: Record<string, string> = {
-    LOW: "#00d26a", MODERATE: "#ffaa00", HIGH: "#ff7700", CRITICAL: "#ff3b3b",
-  };
+  const warnTone = (w: string) =>
+    w === "CRITICAL" ? "var(--neg)" :
+    w === "HIGH"     ? "var(--neg)" :
+    w === "MODERATE" ? "var(--warn)" :
+    "var(--pos)";
 
   return (
     <div className="border-t border-ki-border">
       {/* Header */}
-      <div className="h-6 flex items-center px-2 justify-between border-b border-ki-border-strong bg-ki-surface-sunken">
-        <span className="font-data text-[9px] text-ki-on-surface-muted uppercase tracking-wider">
-          Scenario Detail — {filtered.length}/{data.length}
+      <div className="h-8 flex items-center px-3 justify-between border-b border-ki-border bg-ki-surface-sunken">
+        <span className="eyebrow">
+          Scenario detail · {filtered.length}/{data.length}
         </span>
         <input
           type="text"
-          placeholder="FILTER"
+          placeholder="Filter"
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="bg-transparent border border-ki-border px-2 py-0 h-4 text-[9px] font-data text-ki-on-surface-muted placeholder:text-ki-on-surface-muted w-32 focus:outline-none focus:border-ki-border-strong"
+          className="bg-ki-surface-raised border border-ki-border rounded-sm px-2 h-6 text-[11px] text-ki-on-surface placeholder:text-ki-on-surface-muted w-40 focus:outline-none focus:border-ki-primary"
         />
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-[1fr_110px_28px_60px_44px_44px_40px] gap-0 px-2 h-5 items-center border-b border-ki-border-strong">
-        <SH label="Scenario " field="scenario" />
-        <SH label="Cat " field="cat" />
-        <SH label="W " field="wave" />
-        <SH label="Warn " field="warn" />
-        <SH label="Dir " field="dir" className="text-right" />
-        <SH label="MAE " field="mae" className="text-right" />
-        <SH label="BTP " field="btp" className="text-right" />
+      <div className="grid grid-cols-[1fr_110px_28px_72px_52px_52px_48px] gap-0 px-3 h-7 items-center border-b border-ki-border bg-ki-surface-raised">
+        <SH label="Scenario" field="scenario" />
+        <SH label="Cat" field="cat" />
+        <SH label="W" field="wave" />
+        <SH label="Warn" field="warn" />
+        <SH label="Dir" field="dir" className="text-right" />
+        <SH label="MAE" field="mae" className="text-right" />
+        <SH label="BTP" field="btp" className="text-right" />
       </div>
 
       {/* Rows */}
-      <div className="max-h-[480px] overflow-y-auto">
+      <div className="max-h-[480px] overflow-y-auto bg-ki-surface-raised">
         {filtered.map((s, i) => {
           const [dc, dt] = s.direction_accuracy.split("/").map(Number);
           const dirPct = dt > 0 ? (dc / dt) * 100 : 0;
-          const dirColor = dirPct >= 70 ? "#00d26a" : dirPct >= 50 ? "#ffaa00" : "#ff3b3b";
+          const dirColor = dirPct >= 70 ? "var(--pos)" : dirPct >= 50 ? "var(--warn)" : "var(--neg)";
           const isExp = expandedIdx === i;
 
           return (
             <div key={i}>
               <button
                 onClick={() => setExpandedIdx(isExp ? null : i)}
-                className="w-full grid grid-cols-[1fr_110px_28px_60px_44px_44px_40px] gap-0 px-2 h-6 items-center border-b border-ki-border-strong hover:bg-ki-surface-hover transition-colors text-left"
+                className="w-full grid grid-cols-[1fr_110px_28px_72px_52px_52px_48px] gap-0 px-3 h-7 items-center border-b border-ki-border-faint hover:bg-ki-surface-hover transition-colors text-left"
               >
-                <span className="font-data text-[10px] text-ki-on-surface-muted truncate pr-1">
-                  <span className="text-ki-on-surface-muted mr-1">{isExp ? "▾" : "▸"}</span>
+                <span className="text-[12px] text-ki-on-surface truncate pr-2 inline-flex items-center gap-1.5">
+                  <span className="text-ki-on-surface-muted text-[10px]">{isExp ? "▾" : "▸"}</span>
                   {s.scenario}
                 </span>
-                <span className="font-data text-[9px] text-ki-on-surface-muted truncate">{s.category}</span>
-                <span className="font-data text-[10px] text-center" style={{
-                  color: s.wave === 3 ? "#ff3b3b" : s.wave === 2 ? "#ffaa00" : "#00d26a"
+                <span className="font-data text-[11px] text-ki-on-surface-secondary truncate">{s.category}</span>
+                <span className="font-data tabular text-[11px] text-center" style={{
+                  color: s.wave === 3 ? "var(--neg)" : s.wave === 2 ? "var(--warn)" : "var(--pos)"
                 }}>{s.wave}</span>
-                <span className="font-data text-[9px] text-center" style={{ color: WARN_COLORS[s.warning] }}>
+                <span className="font-data tabular text-[10px] text-center uppercase tracking-[0.04em]" style={{ color: warnTone(s.warning) }}>
                   {s.warning}
                 </span>
-                <span className="font-data text-[10px] text-right" style={{ color: dirColor }}>
+                <span className="font-data tabular text-[11px] text-right" style={{ color: dirColor }}>
                   {dc}/{dt}
                 </span>
-                <span className="font-data text-[10px] text-right" style={{
-                  color: (s.mae_t1 || 0) > 5 ? "#ff3b3b" : (s.mae_t1 || 0) > 2 ? "#ffaa00" : "#00d26a"
+                <span className="font-data tabular text-[11px] text-right" style={{
+                  color: (s.mae_t1 || 0) > 5 ? "var(--neg)" : (s.mae_t1 || 0) > 2 ? "var(--warn)" : "var(--pos)"
                 }}>
                   {s.mae_t1 != null ? s.mae_t1.toFixed(1) : "—"}
                 </span>
-                <span className="font-data text-[9px] text-ki-on-surface-muted text-right">
+                <span className="font-data tabular text-[11px] text-ki-on-surface-secondary text-right">
                   {s.btp_spread > 0 ? `+${s.btp_spread}` : "0"}
                 </span>
               </button>
@@ -130,7 +132,7 @@ export function ScenarioTable({ data }: { data: BacktestScenario[] }) {
               {/* Expanded ticker detail */}
               {isExp && (
                 <div className="bg-ki-surface-sunken border-b border-ki-border">
-                  <div className="grid grid-cols-[70px_70px_70px_50px] gap-0 px-4 h-4 items-center text-[8px] font-data text-ki-on-surface-muted uppercase">
+                  <div className="grid grid-cols-[80px_80px_80px_56px] gap-0 px-5 h-6 items-center eyebrow">
                     <span>Ticker</span>
                     <span className="text-right">Pred T+1</span>
                     <span className="text-right">Act T+1</span>
@@ -142,29 +144,29 @@ export function ScenarioTable({ data }: { data: BacktestScenario[] }) {
                     return (
                       <div
                         key={ticker}
-                        className="grid grid-cols-[70px_70px_70px_50px] gap-0 px-4 h-5 items-center border-t border-ki-border-strong"
+                        className="grid grid-cols-[80px_80px_80px_56px] gap-0 px-5 h-6 items-center border-t border-ki-border-faint"
                       >
-                        <span className="font-data text-[10px] text-ki-on-surface-muted">
-                          <span className={`inline-block w-1 h-1 rounded-full mr-1 ${dirOk ? "bg-[#00d26a]" : "bg-[#ff3b3b]"}`} />
+                        <span className="font-data text-[11px] text-ki-on-surface inline-flex items-center gap-1.5">
+                          <span className="inline-block w-1 h-1 rounded-full" style={{ background: dirOk ? "var(--pos)" : "var(--neg)" }} />
                           {ticker.replace(".MI", "")}
                         </span>
-                        <span className="font-data text-[10px] text-right" style={{ color: tr.predicted_t1 < 0 ? "#ff3b3b" : "#00d26a" }}>
+                        <span className="font-data tabular text-[11px] text-right" style={{ color: tr.predicted_t1 < 0 ? "var(--neg)" : "var(--pos)" }}>
                           {tr.predicted_t1 > 0 ? "+" : ""}{tr.predicted_t1.toFixed(2)}%
                         </span>
-                        <span className="font-data text-[10px] text-right" style={{ color: tr.actual_t1 < 0 ? "#ff3b3b" : "#00d26a" }}>
+                        <span className="font-data tabular text-[11px] text-right" style={{ color: tr.actual_t1 < 0 ? "var(--neg)" : "var(--pos)" }}>
                           {tr.actual_t1 > 0 ? "+" : ""}{tr.actual_t1.toFixed(2)}%
                         </span>
-                        <span className="font-data text-[10px] text-right" style={{ color: err > 5 ? "#ff3b3b" : err > 2 ? "#ffaa00" : "#8a8a8a" }}>
+                        <span className="font-data tabular text-[11px] text-right" style={{ color: err > 5 ? "var(--neg)" : err > 2 ? "var(--warn)" : "var(--ink-3)" }}>
                           {err.toFixed(1)}
                         </span>
                       </div>
                     );
                   })}
-                  <div className="flex gap-3 px-4 h-5 items-center text-[9px] font-data text-ki-on-surface-muted border-t border-ki-border-strong">
-                    <span>FTSE: <span style={{ color: s.ftse_impact < 0 ? "#ff3b3b" : "#00d26a" }}>{s.ftse_impact > 0 ? "+" : ""}{s.ftse_impact.toFixed(2)}%</span></span>
-                    <span>BTP: <span className="text-ki-on-surface-muted">+{s.btp_spread}bps</span></span>
-                    <span>SCOPE: <span className={s.crisis_scope === "macro_systematic" ? "text-[#00d26a]" : "text-[#ffaa00]"}>
-                      {s.crisis_scope === "macro_systematic" ? "MACRO" : "IDIO"}
+                  <div className="flex gap-4 px-5 h-6 items-center font-data tabular text-[11px] text-ki-on-surface-secondary border-t border-ki-border-faint">
+                    <span>FTSE <span style={{ color: s.ftse_impact < 0 ? "var(--neg)" : "var(--pos)" }}>{s.ftse_impact > 0 ? "+" : ""}{s.ftse_impact.toFixed(2)}%</span></span>
+                    <span>BTP <span className="text-ki-on-surface">+{s.btp_spread}bps</span></span>
+                    <span>SCOPE <span style={{ color: s.crisis_scope === "macro_systematic" ? "var(--pos)" : "var(--warn)" }}>
+                      {s.crisis_scope === "macro_systematic" ? "macro" : "idio"}
                     </span></span>
                   </div>
                 </div>

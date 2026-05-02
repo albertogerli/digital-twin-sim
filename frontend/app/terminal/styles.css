@@ -1,0 +1,278 @@
+/* DigitalTwinSim — Quiet Intelligence Terminal
+   Design system tokens + base styles, scoped to .terminal-app to coexist
+   with the legacy Tailwind frontend. Ported from claude.ai/design bundle.
+*/
+
+.terminal-app {
+  /* —— Surfaces (neutral cool) —— */
+  --bg: oklch(0.985 0.003 90);
+  --bg-sunken: oklch(0.965 0.004 90);
+  --bg-raised: oklch(1 0 0);
+  --bg-hover: oklch(0.955 0.004 90);
+  --bg-active: oklch(0.93 0.005 90);
+
+  /* —— Borders —— */
+  --line: oklch(0.9 0.005 90);
+  --line-strong: oklch(0.82 0.006 90);
+  --line-faint: oklch(0.94 0.004 90);
+
+  /* —— Ink —— */
+  --ink: oklch(0.2 0.012 260);
+  --ink-2: oklch(0.42 0.012 260);
+  --ink-3: oklch(0.6 0.01 260);
+  --ink-4: oklch(0.72 0.008 260);
+  --ink-inv: oklch(0.985 0.003 90);
+
+  /* —— Accent —— */
+  --accent: oklch(0.52 0.17 264);
+  --accent-hover: oklch(0.46 0.18 264);
+  --accent-soft: oklch(0.94 0.04 264);
+  --accent-ink: oklch(0.28 0.15 264);
+
+  /* —— Signal —— */
+  --pos: oklch(0.58 0.13 150);
+  --pos-soft: oklch(0.94 0.04 150);
+  --neg: oklch(0.55 0.18 25);
+  --neg-soft: oklch(0.94 0.04 25);
+  --warn: oklch(0.7 0.13 75);
+  --warn-soft: oklch(0.95 0.05 75);
+
+  /* —— Domain accents —— */
+  --d-political: oklch(0.55 0.14 50);
+  --d-corporate: oklch(0.48 0.16 290);
+  --d-financial: oklch(0.52 0.17 264);
+  --d-commercial: oklch(0.55 0.13 165);
+  --d-marketing: oklch(0.58 0.18 340);
+  --d-health: oklch(0.55 0.18 25);
+  --d-tech: oklch(0.55 0.14 220);
+
+  /* —— Type —— */
+  --font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  /* —— Spacing —— */
+  --gap-1: 4px;
+  --gap-2: 8px;
+  --gap-3: 12px;
+  --gap-4: 16px;
+  --gap-5: 24px;
+  --gap-6: 32px;
+  --gap-7: 48px;
+
+  --radius-sm: 3px;
+  --radius: 5px;
+  --radius-lg: 8px;
+
+  --shadow-1: 0 1px 0 oklch(0.92 0.005 90);
+  --shadow-2: 0 1px 2px oklch(0 0 0 / 0.04), 0 0 0 1px var(--line);
+
+  --row-h: 32px;
+  --pad-x: 16px;
+  --pad-y: 12px;
+
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--bg);
+  font-feature-settings: "ss01", "cv11", "tnum";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.terminal-app[data-theme="dark"] {
+  --bg: oklch(0.16 0.008 260);
+  --bg-sunken: oklch(0.13 0.008 260);
+  --bg-raised: oklch(0.19 0.008 260);
+  --bg-hover: oklch(0.22 0.009 260);
+  --bg-active: oklch(0.25 0.01 260);
+  --line: oklch(0.27 0.01 260);
+  --line-strong: oklch(0.36 0.012 260);
+  --line-faint: oklch(0.22 0.009 260);
+  --ink: oklch(0.96 0.005 90);
+  --ink-2: oklch(0.78 0.008 260);
+  --ink-3: oklch(0.6 0.01 260);
+  --ink-4: oklch(0.45 0.012 260);
+  --ink-inv: oklch(0.16 0.008 260);
+  --accent: oklch(0.7 0.16 264);
+  --accent-hover: oklch(0.78 0.16 264);
+  --accent-soft: oklch(0.28 0.08 264);
+  --accent-ink: oklch(0.85 0.12 264);
+  --pos: oklch(0.72 0.15 150);
+  --pos-soft: oklch(0.26 0.06 150);
+  --neg: oklch(0.7 0.18 25);
+  --neg-soft: oklch(0.26 0.07 25);
+  --warn: oklch(0.78 0.14 75);
+  --warn-soft: oklch(0.28 0.07 75);
+}
+
+.terminal-app[data-density="compact"] {
+  --row-h: 28px;
+  --pad-x: 12px;
+  --pad-y: 8px;
+}
+.terminal-app[data-density="spacious"] {
+  --row-h: 40px;
+  --pad-x: 20px;
+  --pad-y: 16px;
+}
+
+.terminal-app *, .terminal-app *::before, .terminal-app *::after { box-sizing: border-box; }
+.terminal-app button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+.terminal-app input, .terminal-app textarea, .terminal-app select { font: inherit; color: inherit; }
+.terminal-app a { color: inherit; text-decoration: none; }
+.terminal-app table { border-collapse: collapse; width: 100%; }
+.terminal-app ::selection { background: var(--accent-soft); color: var(--accent-ink); }
+
+/* —— Typography —— */
+.terminal-app .t-mono { font-family: var(--font-mono); font-feature-settings: "tnum", "zero"; }
+.terminal-app .t-num { font-variant-numeric: tabular-nums; }
+.terminal-app .t-eyebrow {
+  font-family: var(--font-mono); font-size: 10px;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-3); font-weight: 500;
+}
+.terminal-app .t-label { font-size: 11px; color: var(--ink-2); font-weight: 500; }
+.terminal-app .t-display { font-family: var(--font-sans); font-weight: 500; font-size: 28px; letter-spacing: -0.02em; line-height: 1.1; }
+.terminal-app .t-h1 { font-size: 20px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; }
+.terminal-app .t-h2 { font-size: 15px; font-weight: 500; letter-spacing: -0.005em; line-height: 1.3; }
+.terminal-app .t-h3 { font-size: 13px; font-weight: 500; line-height: 1.3; }
+.terminal-app .t-body { font-size: 13px; line-height: 1.5; }
+.terminal-app .t-small { font-size: 12px; line-height: 1.45; }
+.terminal-app .t-mini { font-size: 11px; line-height: 1.4; }
+
+/* —— Building blocks —— */
+.terminal-app .hairline { background: var(--line); height: 1px; }
+.terminal-app .hairline-v { background: var(--line); width: 1px; }
+.terminal-app .card { background: var(--bg-raised); border: 1px solid var(--line); border-radius: var(--radius); }
+.terminal-app .kbd {
+  font-family: var(--font-mono); font-size: 10px;
+  padding: 1px 5px; border: 1px solid var(--line); border-bottom-width: 2px;
+  border-radius: 3px; background: var(--bg-sunken); color: var(--ink-2);
+}
+.terminal-app .dot {
+  display: inline-block; width: 6px; height: 6px;
+  border-radius: 999px; background: var(--ink-3);
+}
+.terminal-app .dot.live { background: var(--neg); animation: pulse 1.6s infinite; }
+.terminal-app .dot.pos { background: var(--pos); }
+.terminal-app .dot.warn { background: var(--warn); }
+.terminal-app .dot.accent { background: var(--accent); }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 oklch(0.55 0.18 25 / 0.5); }
+  70% { box-shadow: 0 0 0 6px oklch(0.55 0.18 25 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(0.55 0.18 25 / 0); }
+}
+
+/* Buttons */
+.terminal-app .btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 12px; border-radius: var(--radius-sm);
+  font-size: 12px; font-weight: 500;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-raised); color: var(--ink);
+  height: 28px; white-space: nowrap;
+  transition: background .12s, border-color .12s;
+}
+.terminal-app .btn:hover { background: var(--bg-hover); }
+.terminal-app .btn[data-variant="primary"] { background: var(--ink); color: var(--ink-inv); border-color: var(--ink); }
+.terminal-app .btn[data-variant="accent"] { background: var(--accent); color: white; border-color: var(--accent); }
+.terminal-app .btn[data-variant="accent"]:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.terminal-app .btn[data-variant="ghost"] { border-color: transparent; background: transparent; }
+.terminal-app .btn[data-variant="ghost"]:hover { background: var(--bg-hover); }
+.terminal-app .btn[data-size="sm"] { height: 24px; padding: 4px 8px; font-size: 11px; }
+.terminal-app .btn[data-size="lg"] { height: 36px; padding: 8px 16px; font-size: 13px; }
+
+/* Chips */
+.terminal-app .chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 7px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--bg-raised);
+  font-size: 11px; color: var(--ink-2); height: 20px; white-space: nowrap;
+}
+.terminal-app .chip[data-variant="solid"] { background: var(--bg-sunken); }
+.terminal-app .chip[data-variant="accent"] { background: var(--accent-soft); border-color: transparent; color: var(--accent-ink); }
+.terminal-app .chip[data-variant="pos"] { background: var(--pos-soft); border-color: transparent; color: var(--pos); }
+.terminal-app .chip[data-variant="neg"] { background: var(--neg-soft); border-color: transparent; color: var(--neg); }
+.terminal-app .chip[data-variant="warn"] { background: var(--warn-soft); border-color: transparent; color: var(--warn); }
+
+/* Layout primitives */
+.terminal-app .row { display: flex; align-items: center; }
+.terminal-app .col { display: flex; flex-direction: column; }
+.terminal-app .gap-1 { gap: 4px; }
+.terminal-app .gap-2 { gap: 8px; }
+.terminal-app .gap-3 { gap: 12px; }
+.terminal-app .gap-4 { gap: 16px; }
+.terminal-app .gap-5 { gap: 24px; }
+.terminal-app .between { justify-content: space-between; }
+.terminal-app .flex-1 { flex: 1; min-width: 0; min-height: 0; }
+.terminal-app .scroll-y { overflow-y: auto; }
+.terminal-app .scroll-y::-webkit-scrollbar { width: 8px; }
+.terminal-app .scroll-y::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 4px; }
+
+.terminal-app .delta-pos { color: var(--pos); }
+.terminal-app .delta-neg { color: var(--neg); }
+
+/* Domain caps */
+.terminal-app .dcap { width: 2px; align-self: stretch; border-radius: 1px; }
+.terminal-app .dcap.political { background: var(--d-political); }
+.terminal-app .dcap.corporate { background: var(--d-corporate); }
+.terminal-app .dcap.financial { background: var(--d-financial); }
+.terminal-app .dcap.commercial { background: var(--d-commercial); }
+.terminal-app .dcap.marketing { background: var(--d-marketing); }
+.terminal-app .dcap.health { background: var(--d-health); }
+.terminal-app .dcap.tech { background: var(--d-tech); }
+
+/* Bars */
+.terminal-app .bar { height: 4px; background: var(--bg-sunken); border-radius: 999px; overflow: hidden; position: relative; }
+.terminal-app .bar > i { display: block; height: 100%; background: var(--ink); border-radius: inherit; }
+
+/* Shell */
+.terminal-app.app {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  height: 100vh;
+  width: 100%;
+}
+.terminal-app .sidenav {
+  border-right: 1px solid var(--line);
+  background: var(--bg-sunken);
+  display: flex; flex-direction: column;
+  align-items: center; padding: 12px 0; gap: 4px;
+}
+.terminal-app .sidenav .brand {
+  width: 32px; height: 32px; border-radius: 6px;
+  background: var(--ink); color: var(--ink-inv);
+  display: grid; place-items: center;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  margin-bottom: 12px; letter-spacing: -0.04em;
+}
+.terminal-app .sidenav .nav-item {
+  width: 36px; height: 36px; border-radius: 6px;
+  display: grid; place-items: center;
+  color: var(--ink-3); position: relative;
+}
+.terminal-app .sidenav .nav-item:hover { background: var(--bg-hover); color: var(--ink); }
+.terminal-app .sidenav .nav-item.active {
+  color: var(--ink); background: var(--bg-raised);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.terminal-app .sidenav .nav-item.active::before {
+  content: ""; position: absolute; left: -10px; top: 8px; bottom: 8px;
+  width: 2px; background: var(--ink); border-radius: 1px;
+}
+.terminal-app .main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.terminal-app .topbar {
+  height: 44px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; padding: 0 16px;
+  gap: 12px; background: var(--bg-raised); flex-shrink: 0;
+}
+.terminal-app .workspace { flex: 1 1 0; overflow: hidden; min-height: 0; display: flex; flex-direction: column; }
+.terminal-app .workspace > * { min-height: 0; }
+
+@keyframes streamFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.terminal-app .stream-in { animation: streamFade .25s ease-out; }

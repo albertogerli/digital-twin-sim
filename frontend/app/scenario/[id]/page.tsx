@@ -398,45 +398,20 @@ export default function ScenarioDashboard({
   // --- Error state ---
   if (error || !metadata) {
     return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center gap-6 px-4">
-        <div className="bg-red-50 border border-red-200 rounded-xl p-8 max-w-md text-center">
-          <svg
-            className="w-12 h-12 text-red-400 mx-auto mb-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
-            />
-          </svg>
-          <p className="text-red-700 text-lg font-medium mb-2">
-            Failed to Load Scenario
+      <div className="min-h-screen bg-ki-surface flex flex-col items-center justify-center gap-6 px-4">
+        <div className="bg-ki-surface-raised border border-ki-error/30 rounded p-8 max-w-md text-center">
+          <div className="w-1.5 h-1.5 rounded-full bg-ki-error mx-auto mb-4" />
+          <p className="text-ki-on-surface text-[15px] font-medium mb-2">
+            Failed to load scenario
           </p>
-          <p className="text-red-600 text-sm mb-6">
+          <p className="text-ki-on-surface-secondary text-[12px] mb-6">
             {error || "Scenario not found."}
           </p>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-600 transition-colors text-sm font-medium"
+            className="inline-flex items-center gap-2 text-ki-primary hover:text-ki-primary-muted transition-colors text-[12px] font-medium"
           >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            Back to home
+            ← Back to dashboard
           </Link>
         </div>
       </div>
@@ -451,28 +426,54 @@ export default function ScenarioDashboard({
 
   // --- Render ---
   return (
-    <div className="min-h-screen bg-white text-gray-900">
-      {/* Back link */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <div className="min-h-screen bg-ki-surface text-ki-on-surface">
+      {/* Sub-toolbar: breadcrumb + actions (this page is fullscreen, no AppShell) */}
+      <div className="sticky top-0 z-30 bg-ki-surface-raised/95 backdrop-blur border-b border-ki-border h-11 flex items-center px-4 gap-3">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-gray-500 hover:text-cyan-600 transition-colors text-sm"
+          className="inline-flex items-center gap-1.5 text-[11px] text-ki-on-surface-muted hover:text-ki-on-surface transition-colors"
         >
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          Back to scenarios
+          ← Dashboard
         </Link>
+        <span className="text-ki-border-strong">/</span>
+        <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted">
+          Scenario
+        </span>
+        <span className="text-ki-border-strong">/</span>
+        <span className="text-[13px] font-medium text-ki-on-surface truncate flex-1 min-w-0">
+          {metadata.scenario_name}
+        </span>
+        <Link
+          href={`/scenario/${id}/replay`}
+          className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm bg-ki-on-surface text-ki-surface text-[11px] font-medium hover:bg-ki-on-surface-secondary transition-colors"
+        >
+          <span className="material-symbols-outlined text-[13px]" style={{ fontVariationSettings: "'wght' 500" }}>
+            play_arrow
+          </span>
+          Live command
+        </Link>
+        <Link
+          href={`/scenario/${id}/branches`}
+          className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm border border-ki-border text-[11px] text-ki-on-surface hover:bg-ki-surface-hover transition-colors"
+        >
+          <span className="material-symbols-outlined text-[13px]" style={{ fontVariationSettings: "'wght' 400" }}>
+            account_tree
+          </span>
+          Branches
+        </Link>
+        {reportMarkdown && reportMarkdown.trim().length > 0 && (
+          <a
+            href={`/api/scenarios/${id}/report.html`}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm border border-ki-border text-[11px] text-ki-on-surface hover:bg-ki-surface-hover transition-colors"
+          >
+            <span className="material-symbols-outlined text-[13px]" style={{ fontVariationSettings: "'wght' 400" }}>
+              download
+            </span>
+            Export PDF
+          </a>
+        )}
       </div>
 
       {/* ScenarioHero */}
@@ -531,8 +532,9 @@ export default function ScenarioDashboard({
       {/* ALM section (banking domain only) */}
       {almRounds.length > 0 && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <h2 className="text-lg font-headline font-bold mb-1">Stato ALM (Asset–Liability Management)</h2>
-          <p className="text-xs text-ki-on-surface-muted mb-4">
+          <div className="eyebrow mb-1">ALM · Asset–Liability Management</div>
+          <h2 className="text-[18px] font-medium tracking-tight2 text-ki-on-surface mb-2">Stato bancario per round</h2>
+          <p className="text-[12px] text-ki-on-surface-secondary mb-4 max-w-3xl leading-relaxed">
             Modello deterministico parametrato su benchmark italiani 2025
             (deposit β EBA, elasticità credito al consumo Bonaccorsi/Magri,
             NIM/CET1/LCR EBA Risk Dashboard). I numeri stanno entro vincoli
@@ -586,19 +588,22 @@ export default function ScenarioDashboard({
       {/* Report Section (Markdown — dynamic import) */}
       {reportMarkdown && reportMarkdown.trim().length > 0 && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-headline font-bold">Report di simulazione</h2>
+          <div className="flex items-end justify-between mb-4">
+            <div>
+              <div className="eyebrow mb-1">Editorial</div>
+              <h2 className="text-[18px] font-medium tracking-tight2 text-ki-on-surface">Report di simulazione</h2>
+            </div>
             <a
               href={`/api/scenarios/${id}/report.html`}
               target="_blank"
               rel="noopener"
-              className="px-3 py-1.5 rounded-sm bg-ki-primary hover:bg-ki-primary-muted text-white font-semibold transition-colors text-xs flex items-center gap-1.5"
+              className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm bg-ki-on-surface text-ki-surface text-[11px] font-medium hover:bg-ki-on-surface-secondary transition-colors"
               title="Apri il report stampabile in una nuova scheda. Premi ⌘P / Ctrl+P per esportare in PDF."
             >
-              <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 2v6m0 0L3 5m3 3l3-3M3 13v3a1 1 0 001 1h12a1 1 0 001-1v-3" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              Esporta Report (PDF)
+              <span className="material-symbols-outlined text-[13px]" style={{ fontVariationSettings: "'wght' 500" }}>
+                download
+              </span>
+              Export PDF
             </a>
           </div>
           <ReportSection markdown={reportMarkdown} />

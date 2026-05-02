@@ -31,10 +31,15 @@ export default function SentimentDonut({ positive, neutral, negative }: Props) {
     const total = positive + neutral + negative;
     if (total === 0) return;
 
+    const cs = getComputedStyle(document.documentElement);
+    const cPos = cs.getPropertyValue("--pos").trim() || "oklch(0.58 0.13 150)";
+    const cNeg = cs.getPropertyValue("--neg").trim() || "oklch(0.55 0.18 25)";
+    const cNeu = cs.getPropertyValue("--ink-3").trim() || "oklch(0.6 0.01 260)";
+
     const data = [
-      { label: "Pos", value: positive / total, color: "#22c55e" },
-      { label: "Neu", value: neutral / total, color: "#64748b" },
-      { label: "Neg", value: negative / total, color: "#ef4444" },
+      { label: "Pos", value: positive / total, color: cPos },
+      { label: "Neu", value: neutral / total, color: cNeu },
+      { label: "Neg", value: negative / total, color: cNeg },
     ];
 
     const pie = d3
@@ -71,33 +76,47 @@ export default function SentimentDonut({ positive, neutral, negative }: Props) {
       .attr("fill", (d) => d.data.color);
 
     // Center percentage
+    const cInk  = cs.getPropertyValue("--ink").trim()  || "oklch(0.2 0.012 260)";
+    const cInk3 = cs.getPropertyValue("--ink-3").trim() || "oklch(0.6 0.01 260)";
     let centerText = g.select<SVGTextElement>("text.center");
     if (centerText.empty()) {
       centerText = g.append("text").attr("class", "center").attr("text-anchor", "middle").attr("dy", "0.1em");
-      centerText.append("tspan").attr("class", "pct").attr("fill", "#e2e8f0").attr("font-size", "12").attr("font-weight", "bold").attr("font-family", "monospace");
-      centerText.append("tspan").attr("class", "lbl").attr("fill", "#94a3b8").attr("font-size", "6").attr("font-family", "monospace").attr("x", "0").attr("dy", "11");
+      centerText.append("tspan").attr("class", "pct").attr("font-size", "13").attr("font-weight", "500").attr("font-family", "var(--font-mono)");
+      centerText.append("tspan").attr("class", "lbl").attr("font-size", "7").attr("font-family", "var(--font-mono)").attr("x", "0").attr("dy", "11");
     }
-    centerText.select("tspan.pct").text(`${Math.round((positive / total) * 100)}%`);
-    centerText.select("tspan.lbl").text("positive");
+    centerText.select("tspan.pct").attr("fill", cInk).text(`${Math.round((positive / total) * 100)}%`);
+    centerText.select("tspan.lbl").attr("fill", cInk3).text("positive");
 
   }, [positive, neutral, negative]);
 
   return (
-    <div className="flex flex-col items-center gap-1">
-      <svg ref={svgRef} className="w-full max-w-[100px]" />
-      <div className="flex gap-3 text-[8px] font-mono">
-        <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-          <span className="text-gray-500">Positive</span>
-        </span>
-        <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-gray-400" />
-          <span className="text-gray-500">Neutral</span>
-        </span>
-        <span className="flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-          <span className="text-gray-500">Negative</span>
-        </span>
+    <div className="flex flex-col">
+      <div className="eyebrow mb-2">Sentiment</div>
+      <div className="flex items-center gap-3">
+        <svg ref={svgRef} className="w-[88px] h-[88px] flex-shrink-0" />
+        <div className="flex flex-col gap-1.5 font-data tabular text-[11px] flex-1">
+          <span className="flex items-center justify-between">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-ki-success" />
+              <span className="text-ki-on-surface-secondary">Positive</span>
+            </span>
+            <span className="text-ki-on-surface">{Math.round(positive * 100)}%</span>
+          </span>
+          <span className="flex items-center justify-between">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-ki-on-surface-muted" />
+              <span className="text-ki-on-surface-secondary">Neutral</span>
+            </span>
+            <span className="text-ki-on-surface">{Math.round(neutral * 100)}%</span>
+          </span>
+          <span className="flex items-center justify-between">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-ki-error" />
+              <span className="text-ki-on-surface-secondary">Negative</span>
+            </span>
+            <span className="text-ki-on-surface">{Math.round(negative * 100)}%</span>
+          </span>
+        </div>
       </div>
     </div>
   );

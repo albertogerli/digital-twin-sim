@@ -48,62 +48,47 @@ export default function PolarizationGauge({ value }: Props) {
     return { a1, a2, color: `rgb(${red},${green},${blue})` };
   });
 
+  const activeColor = clampedValue > 6 ? "var(--neg)" : clampedValue > 3 ? "var(--warn)" : "var(--pos)";
+
   return (
-    <div className="flex flex-col items-center">
-      <svg viewBox="0 0 120 70" className="w-full max-w-[140px]">
-        {/* Background arc */}
-        <path
-          d={arcPath(Math.PI, 0, radius)}
-          fill="none"
-          stroke="#1e293b"
-          strokeWidth="10"
-        />
-        {/* Colored gradient segments */}
+    <div className="flex flex-col">
+      <div className="flex items-baseline justify-between mb-1">
+        <span className="eyebrow">Polarization</span>
+        <span className="font-data text-[10px] text-ki-on-surface-muted">σ²(opinion)</span>
+      </div>
+      <div className="flex items-baseline gap-2">
+        <span className="font-data tabular text-[28px] font-medium tracking-tight2 text-ki-on-surface">
+          {clampedValue.toFixed(2)}
+        </span>
+      </div>
+      <svg viewBox="0 0 120 70" className="w-full max-w-[180px] mt-1">
+        <path d={arcPath(Math.PI, 0, radius)} fill="none" stroke="var(--line)" strokeWidth="6" />
         {slices.map((s, i) => (
-          <path
-            key={i}
-            d={arcPath(s.a1, s.a2, radius)}
-            fill="none"
-            stroke={s.color}
-            strokeWidth="10"
-            opacity="0.35"
-          />
+          <path key={i} d={arcPath(s.a1, s.a2, radius)} fill="none" stroke={s.color} strokeWidth="6" opacity="0.18" />
         ))}
-        {/* Active arc */}
         {clampedValue > 0.1 && (
           <path
             d={arcPath(Math.PI, Math.PI - (clampedValue / 10) * Math.PI, radius)}
             fill="none"
-            stroke={clampedValue > 6 ? "#ef4444" : clampedValue > 3 ? "#eab308" : "#22c55e"}
-            strokeWidth="10"
-            opacity="0.6"
+            stroke={activeColor}
+            strokeWidth="6"
+            opacity="0.85"
             strokeLinecap="round"
           />
         )}
-        {/* Needle */}
         <line
-          x1={cx}
-          y1={cy}
-          x2={needleX}
-          y2={needleY}
-          stroke="#e2e8f0"
-          strokeWidth="2.5"
+          x1={cx} y1={cy} x2={needleX} y2={needleY}
+          stroke="var(--ink)"
+          strokeWidth="2"
           strokeLinecap="round"
           style={{ transition: "all 1s cubic-bezier(0.4, 0, 0.2, 1)" }}
         />
-        {/* Center dot */}
-        <circle cx={cx} cy={cy} r="3.5" fill="#e2e8f0" />
-        {/* Labels */}
-        <text x="14" y="60" fill="#64748b" fontSize="7" fontFamily="monospace">0</text>
-        <text x="100" y="60" fill="#64748b" fontSize="7" fontFamily="monospace">10</text>
+        <circle cx={cx} cy={cy} r="2.5" fill="var(--ink)" />
+        <text x="14"  y="60" fill="var(--ink-3)" fontSize="7" fontFamily="var(--font-mono)">0</text>
+        <text x="100" y="60" fill="var(--ink-3)" fontSize="7" fontFamily="var(--font-mono)">10</text>
       </svg>
-      <div className="flex items-center gap-1.5 -mt-1">
-        <span className="font-mono text-sm font-bold text-gray-800">
-          {clampedValue.toFixed(1)}
-        </span>
-        <span className="font-mono text-[9px] text-gray-400 uppercase tracking-wider">
-          polarization
-        </span>
+      <div className="flex justify-between font-data tabular text-[10px] text-ki-on-surface-muted -mt-1">
+        <span>cohesive</span><span>fragmented</span><span>polarized</span>
       </div>
     </div>
   );

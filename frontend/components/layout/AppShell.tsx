@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import SideNav from "./SideNav";
 import TopBar from "./TopBar";
 
-const FULLSCREEN_ROUTES = ["/scenario/", "/replay", "/wargame", "/backtest"];
+const FULLSCREEN_ROUTES = ["/scenario/", "/replay", "/wargame", "/backtest", "/branches"];
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -19,7 +19,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <div className="hidden md:block">
         <SideNav />
       </div>
-      <main className="flex-1 md:ml-48 flex flex-col min-h-screen">
+      <main className="flex-1 md:ml-14 flex flex-col min-h-screen">
         <TopBar />
         <div className="flex-1">{children}</div>
       </main>

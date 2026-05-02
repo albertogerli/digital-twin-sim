@@ -18,16 +18,14 @@ function defaultFormat(n: number): string {
 export default function AnimatedCounter({ value, label, format = defaultFormat, size = "md" }: Props) {
   const animated = useAnimatedNumber(value, 800);
 
-  const textSize = size === "lg" ? "text-2xl" : size === "md" ? "text-lg" : "text-sm";
+  const textSize = size === "lg" ? "text-[24px]" : size === "md" ? "text-[18px]" : "text-[13px]";
 
   return (
     <div className="flex flex-col">
-      <span className={`font-mono ${textSize} font-bold text-gray-900 tabular-nums`}>
+      <span className={`font-data tabular ${textSize} font-medium text-ki-on-surface tracking-tight2`}>
         {format(animated)}
       </span>
-      <span className="font-mono text-[9px] text-gray-500 uppercase tracking-wider">
-        {label}
-      </span>
+      <span className="eyebrow mt-0.5">{label}</span>
     </div>
   );
 }

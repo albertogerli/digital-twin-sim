@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS posts (
     channel TEXT,
     round INTEGER NOT NULL,
     timestamp_sim TEXT,
+    citations TEXT,
     created_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -124,11 +125,26 @@ class PlatformEngine:
             self.conn.close()
 
     def add_post(self, post_data: dict, round_num: int) -> int:
+        # Serialize RAG citations (if present) to JSON for SQLite storage
+        import json as _json
+        citations_json = None
+        if post_data.get("citations"):
+            try:
+                citations_json = _json.dumps(post_data["citations"], ensure_ascii=False)
+            except Exception:
+                citations_json = None
+
         with self._write_lock:
+            # Defensive: add citations column to legacy DBs that pre-date the schema change
+            try:
+                self.conn.execute("ALTER TABLE posts ADD COLUMN citations TEXT")
+            except sqlite3.OperationalError:
+                pass  # column already exists
+
             cursor = self.conn.execute(
                 """INSERT INTO posts (author_id, author_tier, platform, content,
-                   parent_id, channel, round, timestamp_sim)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                   parent_id, channel, round, timestamp_sim, citations)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     post_data["author_id"],
                     post_data.get("author_tier", 1),
@@ -138,6 +154,7 @@ class PlatformEngine:
                     post_data.get("channel"),
                     round_num,
                     post_data.get("timestamp_sim", ""),
+                    citations_json,
                 ),
             )
             self._maybe_commit()

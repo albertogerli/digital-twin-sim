@@ -352,70 +352,114 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
   const coalitionData = rounds.map((r) => ({ round: r.round, coalitions: r.coalitions }));
   const latestRound = rounds.length > 0 ? rounds[rounds.length - 1] : null;
 
-  return (
-    <main className="text-ki-on-surface">
-      <div className="max-w-7xl mx-auto px-4 py-4">
-        {/* Header */}
-        <div className="mb-4">
-          <div className="flex items-center gap-2 mb-0.5">
-            <h1 className="text-base font-headline font-extrabold">
-              {status?.scenario_name || "Simulazione in avvio..."}
-            </h1>
-            {status?.domain && (
-              <span className="px-2 py-0.5 rounded-sm text-[10px] font-semibold uppercase tracking-wide bg-ki-surface-sunken border border-ki-border text-ki-on-surface-muted">
-                {status.domain.replace("_", " ")}
-              </span>
-            )}
-            {connected && isActive && (
-              <span className="flex items-center gap-1 text-[10px] text-ki-success font-medium">
-                <span className="w-1.5 h-1.5 bg-ki-success rounded-full animate-pulse" />
-                Live
-              </span>
-            )}
-            {/* Calibration badge */}
-            {latestRound?.calibration_source && (
-              <CalibrationBadge source={latestRound.calibration_source} showDetails />
-            )}
-            {/* Regime indicator */}
-            {latestRound?.regime_info && latestRound.regime_info.regime_prob > 0.05 && (
-              <RegimeIndicator regimeInfo={latestRound.regime_info} />
-            )}
-          </div>
-          <p className="text-ki-on-surface-muted text-xs">{status?.brief}</p>
-        </div>
+  const statusLabel =
+    status?.status === "completed" ? "Completed" :
+    status?.status === "failed" ? "Failed" :
+    status?.status === "running" ? `Round ${status.current_round}/${status.total_rounds}` :
+    status?.status === "exporting" ? "Exporting" :
+    status?.status?.replace("_", " ") || "Initializing";
 
-        {/* Progress bar + RoundPhaseIndicator */}
-        <div className="bg-ki-surface-raised border border-ki-border rounded-sm p-2 mb-4">
-          <div className="flex items-center justify-between mb-1.5 text-xs">
-            <span className="font-semibold">
-              {status?.status === "completed" ? "Completata!" :
-               status?.status === "failed" ? "Errore" :
-               status?.status === "running" ? `Round ${status.current_round} di ${status.total_rounds}` :
-               status?.status?.replace("_", " ") || "..."}
+  return (
+    <main className="flex flex-col h-[calc(100vh-44px)] text-ki-on-surface">
+      {/* Sub-toolbar: identity + live indicator + actions */}
+      <div className="flex items-center gap-3 px-4 h-11 border-b border-ki-border bg-ki-surface-raised flex-shrink-0">
+        <div className="flex items-center gap-2 min-w-0 flex-1">
+          {status?.domain && (
+            <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted shrink-0">
+              {status.domain.replace("_", " ")}
             </span>
-            <div className="flex items-center gap-3 text-ki-on-surface-muted font-data text-[10px]">
-              <span>{status?.agents_count || "..."} agenti</span>
-              <span>${(status?.cost || 0).toFixed(3)}</span>
-            </div>
-          </div>
-          <div className="w-full bg-ki-surface-sunken rounded-full h-1.5 overflow-hidden">
-            <div
-              className={`h-full rounded-full transition-all duration-700 ${
-                status?.status === "completed" ? "bg-ki-success" :
-                status?.status === "failed" ? "bg-ki-error" : "bg-ki-primary"
-              }`}
-              style={{ width: `${status?.status === "completed" ? 100 : progressPct}%` }}
-            />
-          </div>
-          {/* Round Phase Indicator (only during round execution) */}
-          {status?.status === "running" && currentPhase.index > 0 && (
-            <RoundPhaseIndicator
-              phaseIndex={currentPhase.index}
-              totalPhases={currentPhase.total}
-              message={currentPhase.message}
-            />
+          )}
+          <h1 className="text-[14px] font-medium text-ki-on-surface tracking-[-0.005em] truncate">
+            {status?.scenario_name || "Simulation starting…"}
+          </h1>
+          {connected && isActive && (
+            <span className="inline-flex items-center gap-1.5 text-[11px] text-ki-error font-data shrink-0">
+              <span className="w-1.5 h-1.5 bg-ki-error rounded-full animate-live-pulse" />
+              LIVE
+            </span>
+          )}
+          {latestRound?.calibration_source && (
+            <CalibrationBadge source={latestRound.calibration_source} showDetails />
+          )}
+          {latestRound?.regime_info && latestRound.regime_info.regime_prob > 0.05 && (
+            <RegimeIndicator regimeInfo={latestRound.regime_info} />
           )}
         </div>
+        <div className="flex items-center gap-2 shrink-0">
+          {isActive && (
+            <button
+              onClick={handleCancel}
+              className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm text-[11px] text-ki-error border border-ki-error/30 hover:bg-ki-error/10 transition-colors"
+            >
+              Cancel
+            </button>
+          )}
+          {status?.status === "completed" && scenarioId && (
+            <Link
+              href={`/scenario/${scenarioId}`}
+              className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm bg-ki-on-surface text-ki-surface text-[11px] font-medium hover:bg-ki-on-surface-secondary transition-colors"
+            >
+              Open dashboard
+            </Link>
+          )}
+        </div>
+      </div>
+
+      {/* KPI strip */}
+      <div className="flex border-b border-ki-border bg-ki-surface-raised flex-shrink-0">
+        <div className="flex-1 px-4 py-2 border-r border-ki-border">
+          <div className="eyebrow">Status</div>
+          <div className="text-[14px] font-medium text-ki-on-surface mt-0.5">{statusLabel}</div>
+        </div>
+        <div className="flex-1 px-4 py-2 border-r border-ki-border">
+          <div className="eyebrow">Progress</div>
+          <div className="flex items-center gap-2 mt-1">
+            <span className="font-data tabular text-[14px] text-ki-on-surface">
+              {status ? `${status.current_round}/${status.total_rounds}` : "—"}
+            </span>
+            <div className="flex-1 h-1 bg-ki-surface-sunken rounded-full overflow-hidden max-w-[120px]">
+              <div
+                className={`h-full transition-all duration-500 ${
+                  status?.status === "completed" ? "bg-ki-success" :
+                  status?.status === "failed" ? "bg-ki-error" : "bg-ki-primary"
+                }`}
+                style={{ width: `${status?.status === "completed" ? 100 : progressPct}%` }}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="flex-1 px-4 py-2 border-r border-ki-border">
+          <div className="eyebrow">Agents</div>
+          <div className="font-data tabular text-[14px] text-ki-on-surface mt-0.5">
+            {status?.agents_count?.toLocaleString() || "—"}
+          </div>
+        </div>
+        <div className="flex-1 px-4 py-2 border-r border-ki-border">
+          <div className="eyebrow">LLM spend</div>
+          <div className="font-data tabular text-[14px] text-ki-on-surface mt-0.5">
+            ${(status?.cost || 0).toFixed(3)}
+          </div>
+        </div>
+        <div className="flex-1 px-4 py-2">
+          <div className="eyebrow">Brief</div>
+          <div className="text-[12px] text-ki-on-surface-secondary mt-0.5 truncate" title={status?.brief}>
+            {status?.brief || "—"}
+          </div>
+        </div>
+      </div>
+
+      {/* Phase indicator (only while a round is running) */}
+      {status?.status === "running" && currentPhase.index > 0 && (
+        <div className="px-4 py-2 border-b border-ki-border bg-ki-surface-sunken flex-shrink-0">
+          <RoundPhaseIndicator
+            phaseIndex={currentPhase.index}
+            totalPhases={currentPhase.total}
+            message={currentPhase.message}
+          />
+        </div>
+      )}
+
+      <div className="flex-1 overflow-y-auto px-4 py-4">
 
         {/* Briefing Progress (pre-round phase) — visible anche prima del primo evento */}
         <BriefingProgress steps={briefingSteps} visible={!!isBriefing} />
@@ -440,7 +484,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
                             {key}
                           </div>
                           <div className="flex items-end gap-1.5">
-                            <span className="text-xl font-bold text-ki-on-surface">{latest}</span>
+                            <span className="font-data tabular text-[20px] font-medium text-ki-on-surface">{latest}</span>
                             <span className="text-[10px] text-ki-on-surface-muted">/100</span>
                             {delta !== null && delta !== 0 && (
                               <span className={`text-[10px] font-semibold ${delta > 0 ? "text-ki-success" : "text-ki-error"}`}>
@@ -607,41 +651,25 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
 
         {/* Actions */}
         <div className="flex gap-2">
-          {isActive && (
-            <button
-              onClick={handleCancel}
-              className="px-4 py-1.5 rounded-sm bg-ki-error/10 hover:bg-ki-error/20 text-ki-error font-medium transition-colors text-xs"
-            >
-              Annulla
-            </button>
-          )}
           {status?.status === "completed" && scenarioId && (
-            <>
-              <Link
-                href={`/scenario/${scenarioId}`}
-                className="px-4 py-1.5 rounded-sm bg-ki-primary hover:bg-ki-primary-muted text-white font-semibold transition-colors text-xs"
-              >
-                Vedi Dashboard Completa
-              </Link>
-              <a
-                href={`/api/scenarios/${scenarioId}/report.html`}
-                target="_blank"
-                rel="noopener"
-                className="px-4 py-1.5 rounded-sm bg-ki-surface-raised border border-ki-border hover:bg-ki-surface-hover text-ki-on-surface font-semibold transition-colors text-xs flex items-center gap-1.5"
-                title="Apri il report in una nuova scheda. Premi ⌘P / Ctrl+P per esportare in PDF."
-              >
-                <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 2v6m0 0L3 5m3 3l3-3M3 13v3a1 1 0 001 1h12a1 1 0 001-1v-3" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                Esporta Report (PDF)
-              </a>
-            </>
+            <a
+              href={`/api/scenarios/${scenarioId}/report.html`}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-1.5 h-7 px-2.5 rounded-sm border border-ki-border text-[11px] text-ki-on-surface hover:bg-ki-surface-hover transition-colors"
+              title="Apri il report in una nuova scheda. Premi ⌘P / Ctrl+P per esportare in PDF."
+            >
+              <span className="material-symbols-outlined text-[13px]" style={{ fontVariationSettings: "'wght' 400" }}>
+                download
+              </span>
+              Export report
+            </a>
           )}
           <Link
             href="/new"
-            className="px-4 py-1.5 rounded-sm bg-ki-surface-sunken hover:bg-ki-surface-hover text-ki-on-surface-secondary font-medium transition-colors text-xs"
+            className="inline-flex items-center h-7 px-2.5 rounded-sm bg-ki-surface-sunken text-[11px] text-ki-on-surface-secondary hover:bg-ki-surface-hover transition-colors"
           >
-            Nuova Simulazione
+            New simulation
           </Link>
         </div>
 
@@ -664,7 +692,7 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
         className="w-full px-3 py-2.5 flex items-center gap-3 hover:bg-ki-surface-hover transition-colors cursor-pointer"
       >
         <div className="w-8 h-8 rounded-sm bg-ki-primary/10 border border-ki-primary/25 flex items-center justify-center flex-shrink-0">
-          <span className="font-data text-xs font-bold text-ki-primary">{round.round}</span>
+          <span className="font-data tabular text-xs font-medium text-ki-primary">{round.round}</span>
         </div>
         <div className="flex-1 min-w-0 text-left">
           <div className="flex items-center gap-1.5 flex-wrap">
@@ -732,7 +760,7 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
               {round.top_posts.slice(0, 5).map((post, i) => (
                 <div key={post.id || i} className="bg-ki-surface-sunken border border-ki-border rounded-sm p-2">
                   <div className="flex items-center gap-1.5 mb-0.5">
-                    <div className="w-4 h-4 rounded-sm bg-ki-surface-hover flex items-center justify-center text-ki-on-surface-muted font-data text-[8px] font-bold">
+                    <div className="w-4 h-4 rounded-sm bg-ki-surface-hover flex items-center justify-center text-ki-on-surface-secondary font-data text-[8px] font-medium">
                       {(post.author_name || "?").charAt(0).toUpperCase()}
                     </div>
                     <span className="text-[11px] font-semibold text-ki-on-surface-secondary">{post.author_name}</span>

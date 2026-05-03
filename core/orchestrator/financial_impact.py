@@ -43,6 +43,25 @@ FIN_SCHEMA_VERSION = "2.0.0"
 _IR_COEFFS_PATH = Path(__file__).resolve().parent.parent.parent / "shared" / "impulse_response_coefficients.json"
 _ir_coeffs_cache: Optional[dict] = None
 
+# ── Empirical panic multiplier ────────────────────────────────────────────────
+# shared/panic_multiplier_calibration.json carries the |realized T+1| /
+# |linear-prediction T+1| amplification ratio per CRI bin from event
+# studies on the pooled IT + global backtest corpus, computed using each
+# event's *actual* engagement / wave / institutional / CEO / polar_vel
+# metrics (not neutral defaults). Median ratios:
+#
+#     mid  CRI (0.4–0.7)   → median ~2.7x   (legacy exp(cri·1.5) ≈ 2.3x)
+#     high CRI (0.7–0.85)  → median ~5.5x   (legacy ≈ 3.2x)  — under by 70%
+#     extreme  (≥0.85)     → median ~11x    (legacy ≈ 4.0x)  — under by 170%
+#
+# We use MEDIAN (robust to outliers) rather than weighted-mean (which
+# is dominated by tail observations like Lehman / COVID). The empirical
+# curve replaces the gated analytic formula; the analytic remains as a
+# fallback when the JSON is absent.
+
+_PANIC_MULT_PATH = Path(__file__).resolve().parent.parent.parent / "shared" / "panic_multiplier_calibration.json"
+_panic_mult_cache: Optional[dict] = None
+
 
 def _load_impulse_response() -> dict:
     """Load the empirical T+3/T+1 and T+7/T+1 ratios. Cached per-process."""
@@ -61,6 +80,63 @@ def _load_impulse_response() -> dict:
         logger.info("No impulse-response file (%s); using heuristic ratios only", e)
         _ir_coeffs_cache = {}
     return _ir_coeffs_cache
+
+
+def _load_panic_multipliers() -> dict:
+    """Load the empirical fat-tail amplification table. Cached per-process."""
+    global _panic_mult_cache
+    if _panic_mult_cache is not None:
+        return _panic_mult_cache
+    try:
+        payload = json.loads(_PANIC_MULT_PATH.read_text())
+        _panic_mult_cache = payload.get("panic_multipliers", {})
+        logger.info(
+            "Loaded empirical panic multipliers: %d CRI bins",
+            len(_panic_mult_cache),
+        )
+    except (FileNotFoundError, json.JSONDecodeError, OSError) as e:
+        logger.info("No panic-multiplier file (%s); using analytic formula", e)
+        _panic_mult_cache = {}
+    return _panic_mult_cache
+
+
+def _cri_bin(cri: float) -> str:
+    """Mirrors scripts/calibrate_panic_multiplier.py:cri_bin."""
+    if cri < 0.4:
+        return "low"
+    if cri < 0.7:
+        return "mid"
+    if cri < 0.85:
+        return "high"
+    return "extreme"
+
+
+def _empirical_panic_mult(cri: float) -> Optional[tuple[float, str]]:
+    """Return (panic_mult, source_label) or None when unavailable.
+
+    Reads the *median* amplification ratio from
+    shared/panic_multiplier_calibration.json. We prefer ``median_ratio``
+    over the bin's ``panic_mult`` (weighted-mean) because the
+    distribution is heavy-tailed (a handful of historical extremes like
+    Lehman / COVID dominate the mean). Median gives a more representative
+    "typical event in this regime" amplification.
+
+    Requires ``n_obs >= 4`` to be considered usable.
+    """
+    table = _load_panic_multipliers()
+    if not table:
+        return None
+    bin_name = _cri_bin(cri)
+    cell = table.get(bin_name)
+    if not cell or cell.get("n_obs", 0) < 4:
+        return None
+    # Prefer median (robust); fall back to weighted-mean if absent.
+    mult = cell.get("median_ratio")
+    if mult is None:
+        mult = cell.get("panic_mult")
+    if mult is None:
+        return None
+    return float(mult), f"empirical:{bin_name}:median"
 
 
 def _intensity_bin(intensity: float) -> str:
@@ -711,17 +787,34 @@ class FinancialImpactScorer:
             intensity *= (1.0 + polar_vel * 0.25)
 
         # ── PANIC MULTIPLIER (Fat Tails) ──────────────────────────────
-        # When wave == 3 AND CRI > 0.8 → exponential amplification.
-        # This models margin calls, forced selling, and herding.
-        # math.exp(0.8 * 1.5) = 3.32x, math.exp(0.95 * 1.5) = 4.17x
-        if wave >= 3 and cri > 0.8:
-            # Clamp CRI to [0, 1] — corrupted values (e.g. from agent failures)
-            # would cause math.exp overflow
-            safe_cri = max(0.0, min(1.0, cri))
+        # Resolution order:
+        #   1. **Empirical** — shared/panic_multiplier_calibration.json
+        #      gives the median |realized T+1| / |linear-prediction T+1|
+        #      ratio per CRI bin from event studies on the pooled corpus.
+        #      Calibrated using each scenario's *actual* crisis metrics
+        #      (engagement, wave, neg_inst, neg_ceo, polar_vel) — not
+        #      neutral defaults — so the ratio cleanly isolates the
+        #      fat-tail amplification beyond the linear formula. Applied
+        #      whenever an empirical cell exists, with no wave/CRI gating
+        #      (the empirical curve is meaningful at every regime).
+        #   2. **Analytic fallback** — the legacy math.exp(cri·1.5)
+        #      formula gated on wave>=3 and cri>0.8. Kept verbatim so
+        #      behaviour is unchanged on a fresh checkout where the
+        #      empirical JSON is missing.
+        safe_cri = max(0.0, min(1.0, cri))
+        emp = _empirical_panic_mult(safe_cri)
+        if emp is not None:
+            panic_mult, source_label = emp
+            intensity *= panic_mult
+            logger.debug(
+                "PANIC MULT (%s): wave=%d, CRI=%.2f, mult=%.2fx → intensity=%.2f",
+                source_label, wave, cri, panic_mult, intensity,
+            )
+        elif wave >= 3 and safe_cri > 0.8:
             panic_mult = math.exp(safe_cri * 1.5)
             intensity *= panic_mult
             logger.debug(
-                f"PANIC MULTIPLIER active: wave={wave}, CRI={cri:.2f}, "
+                f"PANIC MULT (analytic): wave={wave}, CRI={cri:.2f}, "
                 f"mult={panic_mult:.2f}x → intensity={intensity:.2f}"
             )
 

@@ -139,3 +139,84 @@ def test_empirical_loader_falls_back_to_pooled(tmp_path, monkeypatch):
     t3, t7, n, label = r
     assert t3 == 0.7 and t7 == 0.9 and n == 60
     assert "ALL" in label
+
+
+# ── Empirical panic-multiplier ─────────────────────────────────────────────
+
+def test_cri_bin_thresholds():
+    """The CRI bucketing must match the calibration script's bins."""
+    from core.orchestrator.financial_impact import _cri_bin
+    assert _cri_bin(0.0) == "low"
+    assert _cri_bin(0.39) == "low"
+    assert _cri_bin(0.4) == "mid"
+    assert _cri_bin(0.69) == "mid"
+    assert _cri_bin(0.7) == "high"
+    assert _cri_bin(0.84) == "high"
+    assert _cri_bin(0.85) == "extreme"
+    assert _cri_bin(1.0) == "extreme"
+
+
+def test_panic_mult_loader_handles_missing(tmp_path, monkeypatch):
+    """When the JSON is absent, the loader returns {} and the caller
+    falls back to the analytic formula."""
+    from core.orchestrator import financial_impact as fi
+    monkeypatch.setattr(fi, "_PANIC_MULT_PATH", tmp_path / "absent.json")
+    monkeypatch.setattr(fi, "_panic_mult_cache", None)
+    assert fi._load_panic_multipliers() == {}
+    assert fi._empirical_panic_mult(0.95) is None
+
+
+def test_panic_mult_prefers_median_over_mean(tmp_path, monkeypatch):
+    """When both median_ratio and panic_mult (mean) are present, median
+    is preferred (robust to outliers like Lehman / COVID)."""
+    import json
+    from core.orchestrator import financial_impact as fi
+    fake = tmp_path / "panic.json"
+    fake.write_text(json.dumps({
+        "panic_multipliers": {
+            "extreme": {
+                "panic_mult": 42.07,        # mean (would over-amplify)
+                "median_ratio": 10.86,       # median (representative)
+                "n_obs": 49,
+            }
+        }
+    }))
+    monkeypatch.setattr(fi, "_PANIC_MULT_PATH", fake)
+    monkeypatch.setattr(fi, "_panic_mult_cache", None)
+    r = fi._empirical_panic_mult(0.95)
+    assert r is not None
+    mult, label = r
+    assert mult == 10.86
+    assert "median" in label
+    assert "extreme" in label
+
+
+def test_panic_mult_falls_back_to_mean_when_no_median(tmp_path, monkeypatch):
+    """If only the weighted-mean field is present, use it."""
+    import json
+    from core.orchestrator import financial_impact as fi
+    fake = tmp_path / "panic.json"
+    fake.write_text(json.dumps({
+        "panic_multipliers": {
+            "high": {"panic_mult": 5.0, "n_obs": 52}
+        }
+    }))
+    monkeypatch.setattr(fi, "_PANIC_MULT_PATH", fake)
+    monkeypatch.setattr(fi, "_panic_mult_cache", None)
+    r = fi._empirical_panic_mult(0.78)
+    assert r is not None and r[0] == 5.0
+
+
+def test_panic_mult_skips_sparse_cells(tmp_path, monkeypatch):
+    """A cell with n_obs < 4 is treated as unreliable → return None."""
+    import json
+    from core.orchestrator import financial_impact as fi
+    fake = tmp_path / "panic.json"
+    fake.write_text(json.dumps({
+        "panic_multipliers": {
+            "mid": {"median_ratio": 3.0, "panic_mult": 4.0, "n_obs": 2}
+        }
+    }))
+    monkeypatch.setattr(fi, "_PANIC_MULT_PATH", fake)
+    monkeypatch.setattr(fi, "_panic_mult_cache", None)
+    assert fi._empirical_panic_mult(0.5) is None

@@ -1,0 +1,53 @@
+{
+  "version": "1.0",
+  "computed_at": "2026-05-04",
+  "method": "weighted-mean |realized T+1| / |linear-model T+1| ratio across pooled IT + global backtest corpus; weights = |realized|; 1000-boot 95% CI.",
+  "linear_model": {
+    "base_market_move_pct_per_unit": 0.5,
+    "engagement_default": 0.65,
+    "neg_inst_pct_default": 0.4,
+    "neg_ceo_default": 1,
+    "polar_vel_default": 1.0,
+    "wave_inferred_from_cri": "cri>=0.8\u21923, >=0.5\u21922, else 1",
+    "uses_empirical_political_beta": true
+  },
+  "cri_bins": {
+    "low": "<0.4",
+    "mid": "[0.4,0.7)",
+    "high": "[0.7,0.85)",
+    "extreme": ">=0.85"
+  },
+  "panic_multipliers": {
+    "mid": {
+      "panic_mult": 4.816,
+      "panic_mult_ci95": [
+        3.616,
+        5.737
+      ],
+      "median_ratio": 2.684,
+      "p90_ratio": 6.815,
+      "n_obs": 28
+    },
+    "high": {
+      "panic_mult": 10.817,
+      "panic_mult_ci95": [
+        8.624,
+        12.49
+      ],
+      "median_ratio": 5.541,
+      "p90_ratio": 17.576,
+      "n_obs": 52
+    },
+    "extreme": {
+      "panic_mult": 42.067,
+      "panic_mult_ci95": [
+        32.917,
+        51.128
+      ],
+      "median_ratio": 10.861,
+      "p90_ratio": 57.059,
+      "n_obs": 49
+    }
+  },
+  "n_observations": 129
+}

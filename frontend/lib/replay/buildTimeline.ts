@@ -36,7 +36,7 @@ function hashStr(s: string): number {
   return Math.abs(h);
 }
 
-function mockCitations(postId: string, authorId: string, round: number) {
+function mockCitations(postId: string, authorId: string) {
   const h = hashStr(postId + ":" + authorId);
   // ~30% of posts get citations
   if (h % 100 >= 30) return undefined;
@@ -98,7 +98,7 @@ export function buildTimelineForRound(
     const realCitations = (post as any).citations as VisiblePost["citations"] | undefined;
     const citations = realCitations && realCitations.length > 0
       ? realCitations
-      : mockCitations(post.id, post.author_id, r);
+      : mockCitations(post.id, post.author_id);
 
     events.push({
       id: eid(),

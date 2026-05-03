@@ -680,11 +680,11 @@ export default function NewSimulation() {
 
                 <div className="bg-ki-surface-raised border border-ki-border rounded">
                   {([
-                    ["Name",         name || <span className="text-ki-on-surface-muted">— (auto-generated)</span>],
-                    ["Domain",       <span className="inline-flex items-center gap-2"><span className="w-[2px] h-3 rounded-sm" style={{ background: domain ? `var(--d-${domain === "public_health" ? "health" : domain})` : "var(--ink-3)" }} /> {DOMAINS.find((d) => d.id === domain)?.label || "Auto-detect"}</span>],
-                    ["Brief",        brief.length > 80 ? brief.slice(0, 80) + "…" : brief || <span className="text-ki-on-surface-muted">—</span>],
+                    ["Name",         name || <span key="name-empty" className="text-ki-on-surface-muted">— (auto-generated)</span>],
+                    ["Domain",       <span key="domain-val" className="inline-flex items-center gap-2"><span key="cap" className="w-[2px] h-3 rounded-sm" style={{ background: domain ? `var(--d-${domain === "public_health" ? "health" : domain})` : "var(--ink-3)" }} /> {DOMAINS.find((d) => d.id === domain)?.label || "Auto-detect"}</span>],
+                    ["Brief",        brief.length > 80 ? brief.slice(0, 80) + "…" : brief || <span key="brief-empty" className="text-ki-on-surface-muted">—</span>],
                     ["Knowledge base", `${files.length} doc${files.length === 1 ? "" : "s"} · ${fmtSize(totalSize)} · ${rag.mode} retrieval, top-${rag.topK}`],
-                    ["KPI tracked",  selectedKpis.length > 0 ? `${selectedKpis.length} metriche custom` : <span className="text-ki-on-surface-muted">— (auto)</span>],
+                    ["KPI tracked",  selectedKpis.length > 0 ? `${selectedKpis.length} metriche custom` : <span key="kpi-empty" className="text-ki-on-surface-muted">— (auto)</span>],
                     ["Engine",       `${PROVIDERS.find((p) => p.id === provider)?.label} · ${rounds} rounds${eliteOnly ? " · elite-only" : ""}${monteCarlo ? ` · Monte Carlo (n=${monteCarloRuns})` : ""}`],
                     ["Budget",       `$${budget.toFixed(2)}`],
                     ["Estimated runtime", `~${estimatedRuntime} min`],

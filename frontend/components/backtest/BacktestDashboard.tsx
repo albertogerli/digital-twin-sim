@@ -3,7 +3,6 @@
 import { useEffect, useState, useMemo, useRef } from "react";
 import {
   BacktestScenario,
-  AggregateStats,
   computeAggregates,
   computeCategoryStats,
   computeTickerStats,

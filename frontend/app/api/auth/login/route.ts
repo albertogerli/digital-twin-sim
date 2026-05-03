@@ -45,12 +45,12 @@ export async function POST(req: Request) {
   // not available; use the same XOR trick from the verify path.
   const a = new TextEncoder().encode(submitted);
   const b = new TextEncoder().encode(auth.password);
-  let ok = a.length === b.length;
+  const sameLength = a.length === b.length;
   let diff = 0;
   for (let i = 0; i < Math.max(a.length, b.length); i++) {
     diff |= (a[i] ?? 0) ^ (b[i] ?? 0);
   }
-  if (!ok || diff !== 0) {
+  if (!sameLength || diff !== 0) {
     // Tiny artificial delay to slow brute-force attempts (real rate-limiting
     // belongs at the platform layer, e.g. Vercel WAF).
     await new Promise((r) => setTimeout(r, 250));

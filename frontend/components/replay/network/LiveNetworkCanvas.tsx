@@ -71,13 +71,10 @@ function nodeRadius(n: SimNode): number {
   return n.clusterSize && n.clusterSize > 1 ? base + 2 : base;
 }
 
-export default function LiveNetworkCanvas({
-  snapshot,
-  activeAgentIds,
-  activeImpact,
-  selectedPostId,
-  selectedPostImpact,
-}: Props) {
+export default function LiveNetworkCanvas(props: Props) {
+  // selectedPostId / selectedPostImpact accepted for API parity with the
+  // legacy SVG component but currently unused by the Canvas renderer.
+  const { snapshot, activeAgentIds, activeImpact } = props;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const simRef = useRef<d3.Simulation<SimNode, SimLink> | null>(null);

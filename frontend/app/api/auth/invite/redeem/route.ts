@@ -51,7 +51,18 @@ export async function POST(req: Request) {
   }
 
   const exp = Math.floor(Date.now() / 1000) + TOKEN_TTL_SECONDS;
-  const session = await signToken({ kind: "session", exp }, auth.secret);
+  const session = await signToken(
+    {
+      kind: "session",
+      exp,
+      // Carry the invite's identity into the new session so per-user filtering
+      // (X-Tenant-Id header → backend tenant_id) works transparently.
+      sub: invite.sub ?? "guest",
+      label: invite.label ?? "",
+      isAdmin: false,
+    },
+    auth.secret,
+  );
 
   const res = NextResponse.json({ ok: true, label: invite.label ?? "" });
   res.cookies.set({

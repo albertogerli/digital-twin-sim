@@ -2,6 +2,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
+import { useCurrentUser, clearCurrentUserCache } from "@/lib/use-current-user";
 
 /* ───────────────────────────────────────────────────────────
    Quiet Intelligence Terminal — 44px header.
@@ -18,9 +19,17 @@ const PAGE_TITLES: Record<string, string> = {
   "/settings": "Settings",
 };
 
+function initials(label: string): string {
+  const parts = label.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "—";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
 export default function TopBar() {
   const pathname = usePathname();
   const router = useRouter();
+  const me = useCurrentUser();
   const [signingOut, setSigningOut] = useState(false);
 
   async function handleLogout() {
@@ -31,8 +40,13 @@ export default function TopBar() {
     } catch {
       /* even if request fails, clear-local-state-and-redirect */
     }
+    clearCurrentUserCache();
     router.replace("/login");
   }
+
+  // Display values — graceful while /api/auth/me is in flight
+  const displayLabel = me?.label || (me?.isAdmin ? "Admin" : me === undefined ? "…" : "Guest");
+  const displayInitials = me?.label ? initials(me.label) : me?.isAdmin ? "AD" : "—";
 
   let title = PAGE_TITLES[pathname] || "DigitalTwinSim";
   let breadcrumb: string | null = null;
@@ -85,9 +99,14 @@ export default function TopBar() {
         </button>
         <div className="flex items-center gap-2 pl-2 border-l border-ki-border">
           <div className="w-[22px] h-[22px] rounded-full bg-ki-on-surface text-ki-surface grid place-items-center font-data text-[10px] font-semibold">
-            AG
+            {displayInitials}
           </div>
-          <span className="text-[12px] text-ki-on-surface-secondary whitespace-nowrap">A. Gerli</span>
+          <span className="text-[12px] text-ki-on-surface-secondary whitespace-nowrap" title={me?.isAdmin ? "Admin (password login)" : "Invite session"}>
+            {displayLabel}
+          </span>
+          {me?.isAdmin && (
+            <span className="font-data text-[9px] uppercase tracking-[0.06em] text-ki-on-surface-muted">admin</span>
+          )}
           <button
             onClick={handleLogout}
             disabled={signingOut}

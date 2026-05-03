@@ -21,9 +21,13 @@ type TokenKind = "session" | "invite";
 interface Payload {
   exp: number;
   kind?: TokenKind;
-  sub?: string;     // invite tokens: invite id (uuid)
-  label?: string;   // invite tokens: human label (e.g. "Marco Rossi")
+  sub?: string;       // session: tenant identifier · invite: invite id (uuid)
+  label?: string;     // human label (e.g. "Marco Rossi") — shown in welcome
+  isAdmin?: boolean;  // true for the password-login session, false for invite redemptions
 }
+
+/** Public type re-exported for the API routes that read identity from cookies. */
+export type SessionPayload = Payload;
 
 function b64urlEncode(bytes: ArrayBuffer | Uint8Array): string {
   const arr = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);

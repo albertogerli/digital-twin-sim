@@ -61,7 +61,16 @@ export async function POST(req: Request) {
   }
 
   const exp = Math.floor(Date.now() / 1000) + TOKEN_TTL_SECONDS;
-  const token = await signToken({ exp }, auth.secret);
+  const token = await signToken(
+    {
+      kind: "session",
+      exp,
+      sub: "admin",
+      label: "Admin",
+      isAdmin: true,
+    },
+    auth.secret,
+  );
 
   const res = NextResponse.json({ ok: true });
   res.cookies.set({

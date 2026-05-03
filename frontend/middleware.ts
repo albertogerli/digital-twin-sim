@@ -22,7 +22,12 @@ const PUBLIC_PATHS = [
   "/api/auth/login",
   "/api/auth/logout",
   "/api/auth/invite/redeem",
+  // /me is public so the client can distinguish "loading" from "anonymous"
+  // by getting a clean 401 instead of a 307 redirect to HTML.
+  "/api/auth/me",
 ];
+
+const AUTH_API_PREFIX = "/api/auth/";
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
@@ -45,15 +50,28 @@ export async function middleware(req: NextRequest) {
   }
 
   const payload = await verifyToken(token, secret);
-  if (payload) {
-    return NextResponse.next();
+  if (!payload) {
+    // Not authenticated → redirect to /login (preserving destination)
+    const url = req.nextUrl.clone();
+    url.pathname = "/login";
+    url.search = pathname === "/" ? "" : `?next=${encodeURIComponent(pathname + req.nextUrl.search)}`;
+    return NextResponse.redirect(url);
   }
 
-  // Not authenticated → redirect to /login (preserving destination)
-  const url = req.nextUrl.clone();
-  url.pathname = "/login";
-  url.search = pathname === "/" ? "" : `?next=${encodeURIComponent(pathname + req.nextUrl.search)}`;
-  return NextResponse.redirect(url);
+  // ── Authenticated ─────────────────────────────────────────
+  // For non-auth /api/* requests, inject the tenant identity into request
+  // headers so downstream handlers (Edge routes + proxied FastAPI) can do
+  // per-user filtering without re-validating the cookie themselves.
+  if (pathname.startsWith("/api/") && !pathname.startsWith(AUTH_API_PREFIX)) {
+    const sub = payload.sub ?? "anonymous";
+    const headers = new Headers(req.headers);
+    headers.set("X-Tenant-Id", sub);
+    headers.set("X-User-Is-Admin", payload.isAdmin ? "1" : "0");
+    if (payload.label) headers.set("X-User-Label", encodeURIComponent(payload.label));
+    return NextResponse.next({ request: { headers } });
+  }
+
+  return NextResponse.next();
 }
 
 /**

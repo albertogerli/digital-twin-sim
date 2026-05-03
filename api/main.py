@@ -120,8 +120,24 @@ OUTPUTS_DIR = os.path.join(PROJECT_ROOT, "outputs")
 EXPORTS_DIR = os.path.join(OUTPUTS_DIR, "exports")
 
 
-def _tenant_id(tenant: Optional[Tenant]) -> str:
-    """Extract tenant_id, defaulting to 'default' if auth is disabled."""
+def _tenant_id(tenant: Optional[Tenant], request: Optional[Request] = None) -> str:
+    """Extract tenant_id, with this priority:
+
+      1. Forwarded `X-Tenant-Id` header (set by the Next.js Edge middleware
+         from the cookie's `sub` claim — this is how invite-link sessions
+         get isolated workspaces).
+      2. The Tenant.tenant_id from the API-key auth dependency.
+      3. "default" fallback (auth disabled).
+
+    The header is trusted because the Next.js layer only sets it after
+    verifying the HMAC-signed session cookie — clients can't spoof it
+    when going through Next, and a direct backend hit needs a valid
+    API key anyway.
+    """
+    if request is not None:
+        forwarded = request.headers.get("x-tenant-id")
+        if forwarded:
+            return forwarded.strip()[:64]
     return tenant.tenant_id if tenant else "default"
 
 
@@ -308,7 +324,7 @@ async def create_simulation(
     body: SimulationRequest,
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
-    sim_id = await manager.launch(body, tenant_id=_tenant_id(tenant))
+    sim_id = await manager.launch(body, tenant_id=_tenant_id(tenant, request))
     return {"id": sim_id, "status": "queued"}
 
 
@@ -329,7 +345,7 @@ async def create_simulation_with_documents(
     """Launch simulation with uploaded documents for RAG grounding."""
     from uuid import uuid4
     sim_id = str(uuid4())[:8]
-    tid = _tenant_id(tenant)
+    tid = _tenant_id(tenant, request)
 
     # Validate upload limits
     if len(documents) > MAX_UPLOAD_FILES:
@@ -397,7 +413,7 @@ async def list_simulations(
     request: Request,
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
-    return manager.list_simulations(tenant_id=_tenant_id(tenant))
+    return manager.list_simulations(tenant_id=_tenant_id(tenant, request))
 
 
 @app.get("/api/simulations/{sim_id}")
@@ -407,7 +423,7 @@ async def get_simulation(
     sim_id: str,
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
-    status = manager.get_status(sim_id, tenant_id=_tenant_id(tenant))
+    status = manager.get_status(sim_id, tenant_id=_tenant_id(tenant, request))
     if not status:
         raise HTTPException(404, "Simulation not found")
     return status
@@ -419,7 +435,7 @@ async def stream_simulation(
     sim_id: str,
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
-    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant))
+    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant, request))
     if not state:
         raise HTTPException(404, "Simulation not found")
 
@@ -442,7 +458,7 @@ async def wargame_intervene(
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
     """Submit a human player's counter-move during a wargame simulation."""
-    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant))
+    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant, request))
     if not state:
         raise HTTPException(404, "Simulation not found")
     # Container restarted between rounds: the SITREP survived (in-memory state
@@ -474,7 +490,7 @@ async def get_wargame_state(
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
     """Get the current wargame situation report for the player."""
-    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant))
+    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant, request))
     if not state:
         raise HTTPException(404, "Simulation not found")
 
@@ -493,7 +509,7 @@ async def wargame_rollback(
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
     """Rollback a wargame simulation to a previous round."""
-    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant))
+    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant, request))
     if not state:
         raise HTTPException(404, "Simulation not found")
     result = await manager.rollback_to_round(sim_id, target_round)
@@ -515,7 +531,7 @@ async def branch_scenario(
     if not os.path.exists(export_dir):
         raise HTTPException(404, f"Scenario not found: {scenario_id}")
     body.parent_scenario_id = scenario_id
-    sim_id = await manager.launch_branch(body, tenant_id=_tenant_id(tenant))
+    sim_id = await manager.launch_branch(body, tenant_id=_tenant_id(tenant, request))
     return {"id": sim_id, "status": "queued", "branch_from": scenario_id}
 
 
@@ -525,7 +541,7 @@ async def cancel_simulation(
     sim_id: str,
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
-    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant))
+    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant, request))
     if not state:
         raise HTTPException(404, "Simulation not found")
     ok = await manager.cancel(sim_id)
@@ -543,7 +559,7 @@ async def list_scenarios(
     request: Request,
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
-    tid = _tenant_id(tenant)
+    tid = _tenant_id(tenant, request)
     # Try tenant-specific manifest first, fall back to shared
     tenant_manifest = os.path.join(EXPORTS_DIR, tid, "scenarios.json")
     shared_manifest = os.path.join(EXPORTS_DIR, "scenarios.json")
@@ -592,7 +608,7 @@ async def submit_observation(
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
     """Submit a real-world observation for EnKF data assimilation."""
-    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant))
+    state = manager.get_state(sim_id, tenant_id=_tenant_id(tenant, request))
     if not state:
         raise HTTPException(404, "Simulation not found")
     if state.status not in ("running",):
@@ -651,7 +667,7 @@ async def get_usage(
 ):
     """Get LLM usage records for cost tracking."""
     from api import db
-    records = await db.get_usage(tenant_id=_tenant_id(tenant), since=since)
+    records = await db.get_usage(tenant_id=_tenant_id(tenant, request), since=since)
     return {"records": records, "count": len(records)}
 
 

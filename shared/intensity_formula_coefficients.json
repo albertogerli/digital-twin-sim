@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "_status": "diagnostic-only — not consumed by financial_impact",
+  "_finding": "OLS on the corpus reveals that 'wave' and 'neg_inst_pct' (as currently labelled) do not track T+1 magnitude as the legacy formula assumed: wave-3 events have SMALLER T+1 moves than wave-1 (corpus wave=3 captures slow-burn institutional escalation, wave=1 includes flash events like the Saudi-Russia oil war). Applying these coefficients in production would invert the simulator's intended behaviour. The honest fix is metric re-definition (e.g. 'event speed' as a separate dimension from 'crisis depth'), not a coefficient swap.",
+  "computed_at": "2026-05-04",
+  "n_observations": 310,
+  "r_squared": 0.1933,
+  "method": "OLS on log|t1_real| with log-space features and wave dummies",
+  "noise_floor_bps": 20.0,
+  "coefficients": {
+    "intercept": -1.7894,
+    "log_beta": 0.6663,
+    "log_eng": 0.6575,
+    "log_cri": 0.8806,
+    "log_inst": -4.209,
+    "log_ceo": 0.3894,
+    "log_polar": 1.0182,
+    "wave_2": -0.7829,
+    "wave_3": -1.2736
+  },
+  "standard_errors": {
+    "intercept": 0.709,
+    "log_beta": 0.2793,
+    "log_eng": 0.5022,
+    "log_cri": 0.2271,
+    "log_inst": 1.8298,
+    "log_ceo": 0.2637,
+    "log_polar": 0.6179,
+    "wave_2": 0.1947,
+    "wave_3": 0.2512
+  },
+  "interpretation": {
+    "engagement_exponent": 0.657,
+    "cri_exponent": 0.881,
+    "inst_slope": -4.209,
+    "ceo_slope": 0.389,
+    "polar_slope": 1.018,
+    "wave_multipliers": {
+      "1": 1.0,
+      "2": 0.457,
+      "3": 0.28
+    },
+    "beta_exponent": 0.666,
+    "intercept": -1.789
+  }
+}

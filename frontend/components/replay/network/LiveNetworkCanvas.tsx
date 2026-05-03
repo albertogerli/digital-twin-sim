@@ -233,11 +233,12 @@ export default function LiveNetworkCanvas({
       for (const l of linksRef.current) {
         const s = l.source as SimNode;
         const target = l.target as SimNode;
-        if (typeof s.x !== "number" || typeof target.x !== "number") continue;
+        if (typeof s.x !== "number" || typeof s.y !== "number" ||
+            typeof target.x !== "number" || typeof target.y !== "number") continue;
         ctx.lineWidth = Math.min(1.5, 0.4 + l.weight * 1.2);
         ctx.beginPath();
         ctx.moveTo(s.x, s.y);
-        ctx.lineTo(target.x!, target.y!);
+        ctx.lineTo(target.x, target.y);
         ctx.stroke();
       }
 
@@ -249,10 +250,12 @@ export default function LiveNetworkCanvas({
         for (const e of activeImpact.affectedEdges) {
           const s = byId.get(e.source);
           const tgt = byId.get(e.target);
-          if (!s || !tgt || typeof s.x !== "number" || typeof tgt.x !== "number") continue;
+          if (!s || !tgt ||
+              typeof s.x !== "number" || typeof s.y !== "number" ||
+              typeof tgt.x !== "number" || typeof tgt.y !== "number") continue;
           ctx.beginPath();
-          ctx.moveTo(s.x!, s.y!);
-          ctx.lineTo(tgt.x!, tgt.y!);
+          ctx.moveTo(s.x, s.y);
+          ctx.lineTo(tgt.x, tgt.y);
           ctx.stroke();
         }
       }
@@ -308,9 +311,9 @@ export default function LiveNetworkCanvas({
       ctx.textBaseline = "middle";
       for (const n of nodesRef.current) {
         if ((n.power_level ?? 0) < 0.7) continue;
-        if (typeof n.x !== "number") continue;
+        if (typeof n.x !== "number" || typeof n.y !== "number") continue;
         const r = n.radius ?? 6;
-        ctx.fillText(n.name.slice(0, 22), n.x + r + 4, n.y!);
+        ctx.fillText(n.name.slice(0, 22), n.x + r + 4, n.y);
       }
 
       ctx.restore();
@@ -360,11 +363,11 @@ export default function LiveNetworkCanvas({
 
   // Compute selected node screen position for the inspector card
   const inspectorPos = useMemo(() => {
-    if (!selectedNode || typeof selectedNode.x !== "number") return null;
+    if (!selectedNode || typeof selectedNode.x !== "number" || typeof selectedNode.y !== "number") return null;
     const t = transformRef.current;
     return {
       x: Math.min(selectedNode.x * t.k + t.x + 14, dimensions.width - 240),
-      y: Math.max(selectedNode.y! * t.k + t.y - 80, 8),
+      y: Math.max(selectedNode.y * t.k + t.y - 80, 8),
     };
   }, [selectedNode, dimensions]);
 

@@ -22,17 +22,34 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 
 # ── Deterministic embedding shim ──────────────────────────────────────────
-def _fake_embed(text: str):
-    """Hash-based stable 16-dim 'embedding' for deterministic cosine ranking.
+import hashlib
+import re
 
-    Texts that share the same words score high against each other.
+_DIM = 256  # large enough to keep token-bucket collisions rare
+
+
+def _stable_bucket(token: str, dim: int = _DIM) -> int:
+    """Process-stable hash → bucket index (Python's hash() is randomized
+    per-process, so use MD5 to keep CI / local results identical)."""
+    return int.from_bytes(hashlib.md5(token.encode()).digest()[:4], "big") % dim
+
+
+_TOKEN_RE = re.compile(r"[a-z0-9]+")
+
+
+def _fake_embed(text: str):
+    """Bag-of-words 256-dim 'embedding' with stable bucketing.
+
+    Texts that share the same content words score high against each other,
+    deterministically across runs and platforms.
     """
     if not text:
         return None
-    vec = [0.0] * 16
-    for w in text.lower().split():
-        h = abs(hash(w)) % 16
-        vec[h] += 1.0
+    vec = [0.0] * _DIM
+    for tok in _TOKEN_RE.findall(text.lower()):
+        if len(tok) < 3:
+            continue  # drop stop-words / punctuation
+        vec[_stable_bucket(tok)] += 1.0
     # L2 normalize
     norm = sum(v * v for v in vec) ** 0.5
     if norm == 0:

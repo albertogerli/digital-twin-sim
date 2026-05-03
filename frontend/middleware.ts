@@ -25,6 +25,9 @@ const PUBLIC_PATHS = [
   // /me is public so the client can distinguish "loading" from "anonymous"
   // by getting a clean 401 instead of a 307 redirect to HTML.
   "/api/auth/me",
+  // /debug/env returns NAMES ONLY of DTS_* env vars (no values) so a
+  // misconfiguration is observable without logging in. Safe in prod.
+  "/api/debug/env",
 ];
 
 const AUTH_API_PREFIX = "/api/auth/";

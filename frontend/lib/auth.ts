@@ -117,15 +117,22 @@ export async function verifyToken(
 /**
  * Read auth secrets from env. In dev, sane fallbacks let `npm run dev` work
  * without setup; in prod (NODE_ENV=production), missing values are fatal.
+ *
+ * Error messages call out exactly which variable(s) are missing so a
+ * Vercel misconfiguration is easy to diagnose from the response body.
  */
 export function readAuthEnv(): { password: string; secret: string } {
   const password = process.env.DTS_LOGIN_PASSWORD || "";
   const secret = process.env.DTS_AUTH_SECRET || "";
   if (process.env.NODE_ENV === "production") {
-    if (!password || !secret) {
+    const missing: string[] = [];
+    if (!password) missing.push("DTS_LOGIN_PASSWORD");
+    if (!secret)   missing.push("DTS_AUTH_SECRET");
+    if (missing.length > 0) {
       throw new Error(
-        "DTS_LOGIN_PASSWORD and DTS_AUTH_SECRET must be set in production. " +
-          "See README for setup.",
+        `Missing env var${missing.length > 1 ? "s" : ""}: ${missing.join(", ")}. ` +
+        `Set ${missing.length > 1 ? "them" : "it"} in Vercel → project → Settings → ` +
+        `Environment Variables → scope=Production, then Redeploy.`,
       );
     }
   } else {

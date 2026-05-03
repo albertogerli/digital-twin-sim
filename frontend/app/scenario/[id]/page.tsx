@@ -28,7 +28,6 @@ import Timeline from "../../../components/timeline/Timeline";
 import type { RoundData } from "../../../components/timeline/Timeline";
 import ViralShowcase from "../../../components/viral-posts/ViralShowcase";
 import FinancialImpactPanel from "../../../components/scenario/FinancialImpactPanel";
-import { generateFinancialImpact } from "../../../lib/generate-financial-impact";
 import {
   FIN_SCHEMA_VERSION,
   isCompatible,
@@ -277,7 +276,7 @@ export default function ScenarioDashboard({
   const [roundGraphSnapshots, setRoundGraphSnapshots] = useState<any[]>([]);
   const [almRounds, setAlmRounds] = useState<Array<{ round: number; financial_twin?: any; financial_feedback?: any; }>>([]);
   const [financialImpact, setFinancialImpact] = useState<RoundFinancial[]>([]);
-  const [finProvenance, setFinProvenance] = useState<Provenance>("client-fallback");
+  const [finProvenance, setFinProvenance] = useState<Provenance>("unavailable");
   const [finSchemaVersion, setFinSchemaVersion] = useState<string>(FIN_SCHEMA_VERSION);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -339,10 +338,11 @@ export default function ScenarioDashboard({
           }));
         setAlmRounds(almPayload);
 
-        // Financial impact: prefer backend-simulated payload (schema-validated),
-        // fall back to client-side heuristic generator with provenance marker.
+        // Financial impact: backend-simulated payload only. No client-side
+        // heuristic fallback — if the backend hasn't emitted financial data,
+        // the panel renders an explicit empty state instead of fake numbers.
         let finRounds: RoundFinancial[] = [];
-        let provenance: Provenance = "client-fallback";
+        let provenance: Provenance = "unavailable";
         let schemaVersion = FIN_SCHEMA_VERSION;
 
         if (isCompatible(finImpact)) {
@@ -352,16 +352,10 @@ export default function ScenarioDashboard({
         } else if (Array.isArray(finImpact) && finImpact.length > 0) {
           // Legacy: bare round array — accept but mark as unknown schema
           finRounds = finImpact as RoundFinancial[];
-          provenance = (finImpact[0] as any)?.provenance ?? "client-fallback";
+          provenance = (finImpact[0] as any)?.provenance ?? "backend-simulated";
           schemaVersion = (finImpact[0] as any)?.schema_version ?? "legacy";
-        } else {
-          finRounds = generateFinancialImpact(
-            meta.domain,
-            validRounds.sort((a, b) => a.round - b.round),
-            pol,
-          );
-          provenance = "client-fallback";
         }
+        // No fallback: leave finRounds empty + provenance="unavailable"
         setFinancialImpact(finRounds);
         setFinProvenance(provenance);
         setFinSchemaVersion(schemaVersion);

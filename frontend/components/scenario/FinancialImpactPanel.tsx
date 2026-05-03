@@ -250,20 +250,29 @@ function RoundCard({
 
 function ProvenanceBadge({ provenance, schemaVersion }: { provenance?: Provenance; schemaVersion?: string }) {
   const isBackend = provenance === "backend-simulated";
-  const label = isBackend ? "Backend-simulated" : "Client fallback";
+  const isUnavailable = provenance === "unavailable";
+  const label = isBackend
+    ? "Backend-simulated"
+    : isUnavailable
+    ? "Unavailable"
+    : "Client fallback (deprecated)";
   const tooltip = isBackend
     ? "Computed by Python FinancialImpactScorer with full crisis model"
-    : "Heuristic fallback — backend scorer output unavailable for this scenario";
+    : isUnavailable
+    ? "Backend scorer did not emit financial data for this scenario"
+    : "Legacy client-side heuristic — do not use for decisions";
+  const tone = isBackend
+    ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+    : isUnavailable
+    ? "bg-gray-50 text-gray-700 border-gray-200"
+    : "bg-amber-50 text-amber-700 border-amber-200";
+  const dot = isBackend ? "bg-emerald-500" : isUnavailable ? "bg-gray-400" : "bg-amber-500";
   return (
     <span
       title={tooltip}
-      className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] font-mono font-semibold uppercase tracking-wider border ${
-        isBackend
-          ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-          : "bg-amber-50 text-amber-700 border-amber-200"
-      }`}
+      className={`inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[9px] font-mono font-semibold uppercase tracking-wider border ${tone}`}
     >
-      <span className={`w-1.5 h-1.5 rounded-full ${isBackend ? "bg-emerald-500" : "bg-amber-500"}`} />
+      <span className={`w-1.5 h-1.5 rounded-full ${dot}`} />
       {label}
       {schemaVersion && <span className="text-gray-400 font-normal ml-1">v{schemaVersion}</span>}
     </span>
@@ -276,7 +285,30 @@ export default function FinancialImpactPanel({ data, provenance, schemaVersion }
   const [sortBy, setSortBy] = useState<SortKey>("t1_pct");
   const [expandedRounds, setExpandedRounds] = useState<Set<number>>(new Set());
 
-  if (!data || data.length === 0) return null;
+  // Explicit empty state when backend has not emitted financial data.
+  // We do NOT fabricate numbers client-side anymore.
+  if (!data || data.length === 0) {
+    return (
+      <section className="border border-ki-border rounded p-5 bg-ki-surface-sunken">
+        <div className="flex items-center gap-3 mb-2">
+          <h2 className="text-xl font-bold text-gray-900">Financial Impact</h2>
+          <ProvenanceBadge provenance={provenance ?? "unavailable"} schemaVersion={schemaVersion} />
+        </div>
+        <p className="text-sm text-gray-600 leading-relaxed">
+          The backend financial scorer did not emit data for this scenario.
+          We deliberately do not fabricate sector betas, pair trades, or
+          T+1/T+3/T+7 returns client-side — those numbers must come from the
+          calibrated <code>FinancialImpactScorer</code> on the backend, or
+          they are not shown.
+        </p>
+        <p className="text-xs text-gray-500 mt-2">
+          Cause: scorer offline, scenario predates the scorer, or the
+          provider rejected the brief. Re-run the simulation against a
+          healthy backend to populate this panel.
+        </p>
+      </section>
+    );
+  }
 
   const filteredTickerCount = data.reduce((sum, r) => {
     const count = regionFilter === "all"

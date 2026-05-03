@@ -688,38 +688,87 @@ class FinancialImpactScorer:
         intensity: float,
         agent_tickers: dict[str, str],
     ) -> Optional[PairTrade]:
-        """Build a pair trade for a crisis topic."""
-        pair_config = CRISIS_PAIR_TRADES.get(topic)
-        if not pair_config:
-            return None
+        """Build a pair trade for a crisis topic.
 
+        Strategy (in priority order):
+          1. **Empirical** — derive legs from the precomputed cross-market
+             correlation matrix (``correlation_lookup.derive_pair_trade``):
+             SHORT = positively-correlated globals to the agent-resolved
+             seed basket (will move with the impacted names),
+             LONG = negatively-correlated globals (defensive offset).
+             This replaces the hardcoded ``CRISIS_PAIR_TRADES`` dict for
+             every crisis where seed tickers can be resolved from the
+             active agents.
+          2. **Fallback** — if the seed basket is empty OR the matrix is
+             unavailable OR the topic still has a static recipe defined,
+             fall back to ``CRISIS_PAIR_TRADES``. We log a warning each
+             time this path is taken so we can audit how often the
+             empirical lookup is bypassed.
+        """
+        from . import correlation_lookup as _cl
+
+        seed_tickers = list(agent_tickers.keys())
+        empirical_used = False
         short_leg: list[TickerImpact] = []
         long_leg: list[TickerImpact] = []
+        rationale = ""
 
-        # SHORT leg: sectors that lose
-        for sector_key in pair_config["short"]:
-            beta_data = self.market.get_beta(sector_key)
-
-            # Find tickers for this sector
-            sector_tickers = self._tickers_for_sector(sector_key, agent_tickers)
-            for ticker in sector_tickers[:3]:  # max 3 per sector
-                source = agent_tickers.get(ticker, f"pair_trade:{topic}")
-                impact = self._compute_ticker_impact(
-                    ticker, sector_key, "short", intensity, beta_data, source,
+        if seed_tickers and _cl.matrix_available():
+            pt = _cl.derive_pair_trade(seed_tickers, k_short=4, k_long=4, min_corr=0.30)
+            if pt["short"] or pt["long"]:
+                empirical_used = True
+                rationale = (
+                    f"Empirical pair trade derived from cross-market correlation matrix "
+                    f"({len(seed_tickers)} seed tickers, |r|≥0.30, top-4 each leg)."
                 )
-                short_leg.append(impact)
+                for nb in pt["short"]:
+                    sector_key = nb.sector
+                    beta_data = self.market.get_beta(sector_key)
+                    impact = self._compute_ticker_impact(
+                        nb.ticker, sector_key, "short", intensity, beta_data,
+                        source=f"empirical:r={nb.correlation:+.2f}",
+                    )
+                    short_leg.append(impact)
+                for nb in pt["long"]:
+                    sector_key = nb.sector
+                    beta_data = self.market.get_beta(sector_key)
+                    impact = self._compute_ticker_impact(
+                        nb.ticker, sector_key, "long", intensity, beta_data,
+                        source=f"empirical:r={nb.correlation:+.2f}",
+                    )
+                    long_leg.append(impact)
 
-        # LONG leg: sectors that benefit
-        for sector_key in pair_config["long"]:
-            beta_data = self.market.get_beta(sector_key)
+        # Heuristic fallback only if the empirical path produced nothing
+        if not empirical_used:
+            pair_config = CRISIS_PAIR_TRADES.get(topic)
+            if not pair_config:
+                return None
+            logger.warning(
+                "pair_trade: falling back to hardcoded CRISIS_PAIR_TRADES[%s] "
+                "(seed=%d, matrix_available=%s) — empirical lookup unavailable",
+                topic, len(seed_tickers), _cl.matrix_available(),
+            )
+            rationale = pair_config["rationale"] + " [heuristic — no empirical signal]"
 
-            sector_tickers = self._tickers_for_sector(sector_key, agent_tickers)
-            for ticker in sector_tickers[:2]:  # max 2 per long sector
-                source = agent_tickers.get(ticker, f"pair_trade:{topic}")
-                impact = self._compute_ticker_impact(
-                    ticker, sector_key, "long", intensity, beta_data, source,
-                )
-                long_leg.append(impact)
+            for sector_key in pair_config["short"]:
+                beta_data = self.market.get_beta(sector_key)
+                sector_tickers = self._tickers_for_sector(sector_key, agent_tickers)
+                for ticker in sector_tickers[:3]:
+                    source = agent_tickers.get(ticker, f"pair_trade:{topic}")
+                    impact = self._compute_ticker_impact(
+                        ticker, sector_key, "short", intensity, beta_data, source,
+                    )
+                    short_leg.append(impact)
+
+            for sector_key in pair_config["long"]:
+                beta_data = self.market.get_beta(sector_key)
+                sector_tickers = self._tickers_for_sector(sector_key, agent_tickers)
+                for ticker in sector_tickers[:2]:
+                    source = agent_tickers.get(ticker, f"pair_trade:{topic}")
+                    impact = self._compute_ticker_impact(
+                        ticker, sector_key, "long", intensity, beta_data, source,
+                    )
+                    long_leg.append(impact)
 
         if not short_leg and not long_leg:
             return None
@@ -728,7 +777,7 @@ class FinancialImpactScorer:
             short_leg=short_leg,
             long_leg=long_leg,
             topic=topic,
-            rationale=pair_config["rationale"],
+            rationale=rationale,
         )
 
     def _compute_ticker_impact(

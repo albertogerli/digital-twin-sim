@@ -1,17 +1,21 @@
 /**
  * Financial Impact schema — mirrors core/orchestrator/financial_impact.py
  *
- * This file is the TypeScript side of the Python↔TS bridge. When the Python
- * schema changes, bump FIN_SCHEMA_VERSION here AND in financial_impact.py.
+ * Bump FIN_SCHEMA_VERSION here AND in financial_impact.py when the schema
+ * changes.
  *
- * Backend-simulated payloads ship with `provenance: "backend-simulated"`.
- * Client-computed fallbacks ship with `provenance: "client-fallback"` and
- * should be surfaced in the UI via a visible badge (see F1.3).
+ * Provenance:
+ *  - "backend-simulated": payload computed by FinancialImpactScorer (the only
+ *    trusted source).
+ *  - "unavailable": backend did not emit financial data for this scenario;
+ *    the panel must render an explicit empty state (NEVER fake numbers).
+ *  - "client-fallback": legacy marker for payloads produced before the
+ *    fallback was killed; treat as untrusted.
  */
 
 export const FIN_SCHEMA_VERSION = "2.0.0";
 
-export type Provenance = "backend-simulated" | "client-fallback";
+export type Provenance = "backend-simulated" | "unavailable" | "client-fallback";
 
 export interface TickerImpact {
   ticker: string;

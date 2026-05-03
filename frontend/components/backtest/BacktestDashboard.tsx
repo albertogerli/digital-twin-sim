@@ -7,11 +7,14 @@ import {
   computeCategoryStats,
   computeTickerStats,
 } from "@/lib/backtest-types";
+import dynamic from "next/dynamic";
 import { CategoryBreakdown } from "./CategoryBreakdown";
 import { PredictedVsActualScatter } from "./PredictedVsActualScatter";
 import { TickerLeaderboard } from "./TickerLeaderboard";
 import { ScenarioTable } from "./ScenarioTable";
 import { CalibrationPanel } from "./CalibrationPanel";
+
+const GlobalContagionGraph = dynamic(() => import("./GlobalContagionGraph"), { ssr: false });
 
 type ScopeFilter = "all" | "macro" | "idio";
 type WindowFilter = "t1" | "t3" | "t7";
@@ -227,6 +230,11 @@ export default function BacktestDashboard() {
           <CategoryBreakdown stats={categoryStats} />
           <CalibrationPanel data={filtered} />
         </aside>
+      </div>
+
+      {/* ── Cross-market contagion graph ─────────────────── */}
+      <div className="border-t border-ki-border p-5">
+        <GlobalContagionGraph />
       </div>
 
       {/* ── Ticker leaderboard ───────────────────────────── */}

@@ -16,7 +16,13 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { COOKIE_NAME, readAuthEnv, verifyToken } from "@/lib/auth";
 
-const PUBLIC_PATHS = ["/login", "/api/auth/login", "/api/auth/logout"];
+const PUBLIC_PATHS = [
+  "/login",
+  "/invite",
+  "/api/auth/login",
+  "/api/auth/logout",
+  "/api/auth/invite/redeem",
+];
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;

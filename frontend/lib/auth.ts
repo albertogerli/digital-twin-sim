@@ -11,8 +11,18 @@
 export const COOKIE_NAME = "dts_auth";
 export const TOKEN_TTL_SECONDS = 60 * 60 * 24 * 7; // 7 days
 
+/**
+ * `kind` discriminates session cookies from invite-link tokens so the two
+ * verifiers can refuse to accept the wrong token type. Existing session
+ * cookies signed before this field was added are treated as `"session"`.
+ */
+type TokenKind = "session" | "invite";
+
 interface Payload {
   exp: number;
+  kind?: TokenKind;
+  sub?: string;     // invite tokens: invite id (uuid)
+  label?: string;   // invite tokens: human label (e.g. "Marco Rossi")
 }
 
 function b64urlEncode(bytes: ArrayBuffer | Uint8Array): string {
@@ -57,8 +67,18 @@ export async function signToken(payload: Payload, secret: string): Promise<strin
   return `${body}.${b64urlEncode(sig)}`;
 }
 
-/** Verify token string. Returns the payload if valid + unexpired, else null. */
-export async function verifyToken(token: string | undefined, secret: string): Promise<Payload | null> {
+/**
+ * Verify token string. Returns the payload if signature is valid AND not expired
+ * AND (when expectedKind is provided) the payload's kind matches.
+ *
+ * `expectedKind` defaults to `"session"` for backward compatibility — old
+ * cookies without a kind field are treated as session cookies.
+ */
+export async function verifyToken(
+  token: string | undefined,
+  secret: string,
+  expectedKind: TokenKind = "session",
+): Promise<Payload | null> {
   if (!token) return null;
   const dot = token.indexOf(".");
   if (dot < 1) return null;
@@ -84,6 +104,9 @@ export async function verifyToken(token: string | undefined, secret: string): Pr
   }
   if (typeof payload.exp !== "number") return null;
   if (payload.exp < Math.floor(Date.now() / 1000)) return null;
+  // kind defaults to "session" when missing, so legacy cookies still work
+  const kind: TokenKind = payload.kind ?? "session";
+  if (kind !== expectedKind) return null;
   return payload;
 }
 

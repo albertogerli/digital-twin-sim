@@ -69,3 +69,73 @@ def test_score_returns_expected_keys():
     # At minimum should have some impact data
     assert isinstance(result, dict)
     assert len(result) > 0
+
+
+# ── Empirical impulse-response coefficients ────────────────────────────────
+# Tests for the new path that replaces hardcoded recovery/escalation factors
+# with calibrated coefficients from shared/impulse_response_coefficients.json.
+
+def test_intensity_bin_thresholds():
+    """The intensity bucketing must match the calibration script's bins."""
+    from core.orchestrator.financial_impact import _intensity_bin
+    assert _intensity_bin(0.0) == "low"
+    assert _intensity_bin(1.99) == "low"
+    assert _intensity_bin(2.0) == "mid"
+    assert _intensity_bin(3.99) == "mid"
+    assert _intensity_bin(4.0) == "high"
+    assert _intensity_bin(8.0) == "high"
+
+
+def test_empirical_loader_handles_missing_file(tmp_path, monkeypatch):
+    """When the JSON is absent, _load_impulse_response returns {} and the
+    empirical lookup returns None → caller falls back to heuristic."""
+    from core.orchestrator import financial_impact as fi
+    monkeypatch.setattr(fi, "_IR_COEFFS_PATH", tmp_path / "nonexistent.json")
+    monkeypatch.setattr(fi, "_ir_coeffs_cache", None)
+    table = fi._load_impulse_response()
+    assert table == {}
+    assert fi._empirical_ratios("banking", 4.0) is None
+
+
+def test_empirical_loader_picks_specific_cell(tmp_path, monkeypatch):
+    """When a sector cell with n_obs >= 4 exists, it is preferred over ALL."""
+    import json
+    from core.orchestrator import financial_impact as fi
+    fake = tmp_path / "ir.json"
+    fake.write_text(json.dumps({
+        "coefficients": {
+            "high": {
+                "banking": {"t3_over_t1": 1.4, "t7_over_t1": 1.8, "n_obs": 12},
+                "ALL":     {"t3_over_t1": 1.0, "t7_over_t1": 1.2, "n_obs": 80},
+            }
+        }
+    }))
+    monkeypatch.setattr(fi, "_IR_COEFFS_PATH", fake)
+    monkeypatch.setattr(fi, "_ir_coeffs_cache", None)
+    r = fi._empirical_ratios("banking", 5.0)
+    assert r is not None
+    t3, t7, n, label = r
+    assert t3 == 1.4 and t7 == 1.8 and n == 12
+    assert "banking" in label
+
+
+def test_empirical_loader_falls_back_to_pooled(tmp_path, monkeypatch):
+    """A sparse sector cell (n_obs < 4) defers to the ALL pooled cell."""
+    import json
+    from core.orchestrator import financial_impact as fi
+    fake = tmp_path / "ir.json"
+    fake.write_text(json.dumps({
+        "coefficients": {
+            "mid": {
+                "luxury": {"t3_over_t1": 0.3, "t7_over_t1": 0.4, "n_obs": 2},
+                "ALL":    {"t3_over_t1": 0.7, "t7_over_t1": 0.9, "n_obs": 60},
+            }
+        }
+    }))
+    monkeypatch.setattr(fi, "_IR_COEFFS_PATH", fake)
+    monkeypatch.setattr(fi, "_ir_coeffs_cache", None)
+    r = fi._empirical_ratios("luxury", 3.0)
+    assert r is not None
+    t3, t7, n, label = r
+    assert t3 == 0.7 and t7 == 0.9 and n == 60
+    assert "ALL" in label

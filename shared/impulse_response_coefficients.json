@@ -1,0 +1,323 @@
+{
+  "version": "1.0",
+  "computed_at": "2026-05-04",
+  "method": "weighted-mean ratios |t1|, 1000-boot 95% CI; corpus = SCENARIOS_EXTENDED + SCENARIOS_GLOBAL",
+  "corpus_size": {
+    "events": 95,
+    "observations_kept": 310,
+    "observations_dropped_t1_floor": 28,
+    "min_t1_bps": 20.0
+  },
+  "intensity_bins": {
+    "low": "<0.4",
+    "mid": "[0.4,0.7)",
+    "high": ">=0.7"
+  },
+  "coefficients": {
+    "high": {
+      "banking": {
+        "t3_over_t1": 1.437,
+        "t3_over_t1_ci95": [
+          1.13,
+          1.735
+        ],
+        "t7_over_t1": 1.135,
+        "t7_over_t1_ci95": [
+          0.59,
+          1.588
+        ],
+        "n_obs": 50
+      },
+      "energy_fossil": {
+        "t3_over_t1": 1.195,
+        "t3_over_t1_ci95": [
+          0.922,
+          1.577
+        ],
+        "t7_over_t1": 1.709,
+        "t7_over_t1_ci95": [
+          1.282,
+          2.106
+        ],
+        "n_obs": 15
+      },
+      "insurance": {
+        "t3_over_t1": 1.053,
+        "t3_over_t1_ci95": [
+          -1.212,
+          1.936
+        ],
+        "t7_over_t1": 0.545,
+        "t7_over_t1_ci95": [
+          -2.359,
+          1.349
+        ],
+        "n_obs": 8
+      },
+      "other": {
+        "t3_over_t1": 1.519,
+        "t3_over_t1_ci95": [
+          0.961,
+          2.22
+        ],
+        "t7_over_t1": 0.897,
+        "t7_over_t1_ci95": [
+          0.504,
+          1.358
+        ],
+        "n_obs": 9
+      },
+      "tech": {
+        "t3_over_t1": 1.185,
+        "t3_over_t1_ci95": [
+          0.518,
+          2.073
+        ],
+        "t7_over_t1": 1.665,
+        "t7_over_t1_ci95": [
+          0.961,
+          4.72
+        ],
+        "n_obs": 7
+      },
+      "ALL": {
+        "t3_over_t1": 1.368,
+        "t3_over_t1_ci95": [
+          1.172,
+          1.582
+        ],
+        "t7_over_t1": 1.279,
+        "t7_over_t1_ci95": [
+          0.947,
+          1.571
+        ],
+        "n_obs": 102
+      }
+    },
+    "low": {
+      "automotive": {
+        "t3_over_t1": 1.454,
+        "t3_over_t1_ci95": [
+          0.612,
+          1.986
+        ],
+        "t7_over_t1": 0.66,
+        "t7_over_t1_ci95": [
+          -4.732,
+          2.44
+        ],
+        "n_obs": 5
+      },
+      "banking": {
+        "t3_over_t1": 0.94,
+        "t3_over_t1_ci95": [
+          0.647,
+          1.237
+        ],
+        "t7_over_t1": 1.051,
+        "t7_over_t1_ci95": [
+          0.349,
+          1.616
+        ],
+        "n_obs": 43
+      },
+      "defense": {
+        "t3_over_t1": 1.189,
+        "t3_over_t1_ci95": [
+          -0.017,
+          3.797
+        ],
+        "t7_over_t1": 1.659,
+        "t7_over_t1_ci95": [
+          -0.81,
+          6.4
+        ],
+        "n_obs": 6
+      },
+      "energy_fossil": {
+        "t3_over_t1": 0.53,
+        "t3_over_t1_ci95": [
+          -0.19,
+          1.209
+        ],
+        "t7_over_t1": 1.226,
+        "t7_over_t1_ci95": [
+          0.2,
+          2.315
+        ],
+        "n_obs": 9
+      },
+      "energy_renewable": {
+        "t3_over_t1": 0.571,
+        "t3_over_t1_ci95": [
+          -0.004,
+          1.044
+        ],
+        "t7_over_t1": 0.344,
+        "t7_over_t1_ci95": [
+          -0.874,
+          1.134
+        ],
+        "n_obs": 18
+      },
+      "media": {
+        "t3_over_t1": 1.402,
+        "t3_over_t1_ci95": [
+          -1.347,
+          2.202
+        ],
+        "t7_over_t1": 2.15,
+        "t7_over_t1_ci95": [
+          1.524,
+          3.593
+        ],
+        "n_obs": 4
+      },
+      "tech": {
+        "t3_over_t1": 1.358,
+        "t3_over_t1_ci95": [
+          1.163,
+          1.653
+        ],
+        "t7_over_t1": 1.068,
+        "t7_over_t1_ci95": [
+          0.692,
+          1.518
+        ],
+        "n_obs": 10
+      },
+      "ALL": {
+        "t3_over_t1": 1.034,
+        "t3_over_t1_ci95": [
+          0.841,
+          1.223
+        ],
+        "t7_over_t1": 1.037,
+        "t7_over_t1_ci95": [
+          0.673,
+          1.358
+        ],
+        "n_obs": 105
+      }
+    },
+    "mid": {
+      "automotive": {
+        "t3_over_t1": 1.874,
+        "t3_over_t1_ci95": [
+          1.377,
+          2.965
+        ],
+        "t7_over_t1": 2.155,
+        "t7_over_t1_ci95": [
+          0.8,
+          3.991
+        ],
+        "n_obs": 6
+      },
+      "banking": {
+        "t3_over_t1": 1.035,
+        "t3_over_t1_ci95": [
+          0.604,
+          1.533
+        ],
+        "t7_over_t1": 0.931,
+        "t7_over_t1_ci95": [
+          0.292,
+          1.642
+        ],
+        "n_obs": 48
+      },
+      "defense": {
+        "t3_over_t1": 0.869,
+        "t3_over_t1_ci95": [
+          -0.446,
+          1.545
+        ],
+        "t7_over_t1": 0.997,
+        "t7_over_t1_ci95": [
+          -0.187,
+          1.586
+        ],
+        "n_obs": 5
+      },
+      "energy_fossil": {
+        "t3_over_t1": 0.751,
+        "t3_over_t1_ci95": [
+          -0.107,
+          1.676
+        ],
+        "t7_over_t1": 1.239,
+        "t7_over_t1_ci95": [
+          -0.772,
+          2.909
+        ],
+        "n_obs": 11
+      },
+      "energy_renewable": {
+        "t3_over_t1": 1.901,
+        "t3_over_t1_ci95": [
+          0.863,
+          2.828
+        ],
+        "t7_over_t1": 1.497,
+        "t7_over_t1_ci95": [
+          -0.468,
+          3.319
+        ],
+        "n_obs": 12
+      },
+      "insurance": {
+        "t3_over_t1": 2.289,
+        "t3_over_t1_ci95": [
+          1.363,
+          4.812
+        ],
+        "t7_over_t1": 0.034,
+        "t7_over_t1_ci95": [
+          -2.001,
+          3.456
+        ],
+        "n_obs": 7
+      },
+      "other": {
+        "t3_over_t1": 0.491,
+        "t3_over_t1_ci95": [
+          -0.309,
+          1.32
+        ],
+        "t7_over_t1": 0.939,
+        "t7_over_t1_ci95": [
+          -0.197,
+          2.273
+        ],
+        "n_obs": 5
+      },
+      "tech": {
+        "t3_over_t1": 1.478,
+        "t3_over_t1_ci95": [
+          1.226,
+          4.104
+        ],
+        "t7_over_t1": 1.804,
+        "t7_over_t1_ci95": [
+          1.371,
+          4.776
+        ],
+        "n_obs": 5
+      },
+      "ALL": {
+        "t3_over_t1": 1.086,
+        "t3_over_t1_ci95": [
+          0.736,
+          1.396
+        ],
+        "t7_over_t1": 1.253,
+        "t7_over_t1_ci95": [
+          0.767,
+          1.7
+        ],
+        "n_obs": 103
+      }
+    }
+  }
+}

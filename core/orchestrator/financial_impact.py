@@ -16,9 +16,11 @@ Output: FinancialImpactReport with pair trades, betas, LLM note.
 
 from __future__ import annotations
 
+import json
 import logging
 import math
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
@@ -29,6 +31,74 @@ logger = logging.getLogger(__name__)
 # Schema version for the frontend bridge. Bump whenever to_dict() fields change.
 # Frontend lib/types/financial-impact.ts must import and check this.
 FIN_SCHEMA_VERSION = "2.0.0"
+
+
+# ── Empirical impulse-response coefficients ──────────────────────────────────
+# Loaded from shared/impulse_response_coefficients.json (built by
+# scripts/calibrate_impulse_response.py via event-study on the pooled
+# IT + global backtest corpus). Indexed by [intensity_bin][sector] →
+# {t3_over_t1, t7_over_t1, n_obs}. The "ALL" sector key is the pooled
+# fallback when a sector-specific cell is missing or too sparse.
+
+_IR_COEFFS_PATH = Path(__file__).resolve().parent.parent.parent / "shared" / "impulse_response_coefficients.json"
+_ir_coeffs_cache: Optional[dict] = None
+
+
+def _load_impulse_response() -> dict:
+    """Load the empirical T+3/T+1 and T+7/T+1 ratios. Cached per-process."""
+    global _ir_coeffs_cache
+    if _ir_coeffs_cache is not None:
+        return _ir_coeffs_cache
+    try:
+        payload = json.loads(_IR_COEFFS_PATH.read_text())
+        _ir_coeffs_cache = payload.get("coefficients", {})
+        n_cells = sum(len(v) for v in _ir_coeffs_cache.values())
+        logger.info(
+            "Loaded empirical impulse-response: %d intensity bins, %d cells",
+            len(_ir_coeffs_cache), n_cells,
+        )
+    except (FileNotFoundError, json.JSONDecodeError, OSError) as e:
+        logger.info("No impulse-response file (%s); using heuristic ratios only", e)
+        _ir_coeffs_cache = {}
+    return _ir_coeffs_cache
+
+
+def _intensity_bin(intensity: float) -> str:
+    """Map the simulator's ``intensity`` (≈0–8) to the corpus's three bins.
+
+    Mirrors the bucketing in scripts/calibrate_impulse_response.py
+    (low/mid/high) but on the simulator's intensity scale, not on raw
+    contagion_risk — the two scales are related but not identical, and
+    this mapping is the bridge between them.
+    """
+    if intensity < 2.0:
+        return "low"
+    if intensity < 4.0:
+        return "mid"
+    return "high"
+
+
+def _empirical_ratios(sector_key: str, intensity: float) -> Optional[tuple[float, float, int, str]]:
+    """Return (t3_over_t1, t7_over_t1, n_obs, source_label) or None.
+
+    Looks up the (intensity_bin, sector) cell in the empirical table; if
+    the sector-specific cell is missing or has fewer than 4 observations,
+    falls back to the "ALL" pooled cell for that bin.
+    """
+    table = _load_impulse_response()
+    if not table:
+        return None
+    bin_name = _intensity_bin(intensity)
+    bin_table = table.get(bin_name, {})
+    cell = bin_table.get(sector_key)
+    if cell and cell.get("n_obs", 0) >= 4:
+        return (cell["t3_over_t1"], cell["t7_over_t1"], cell["n_obs"],
+                f"empirical:{bin_name}/{sector_key}")
+    pooled = bin_table.get("ALL")
+    if pooled and pooled.get("n_obs", 0) >= 4:
+        return (pooled["t3_over_t1"], pooled["t7_over_t1"], pooled["n_obs"],
+                f"empirical:{bin_name}/ALL")
+    return None
 
 
 # ── Organisation → Ticker Resolution ────────────────────────────────────────
@@ -791,17 +861,23 @@ class FinancialImpactScorer:
     ) -> TickerImpact:
         """Compute impact for a single ticker using its sector beta.
 
-        Returns a 3-point temporal curve:
-        - T+1 (Day 1): Panic / initial reaction. Maximum dislocation.
-        - T+3 (Day 3): Partial resolution. Government walkbacks, ECB signals.
-          Typically 40-60% recovery from T+1 peak for shorts (V-shape).
-        - T+7 (Day 7): Structural outcome. Where the stock settles after
-          the initial shock is digested. Includes crisis_alpha.
+        Returns a 3-point temporal curve T+1/T+3/T+7. T+1 is the initial
+        panic move (sign × β × base × intensity). T+3 and T+7 are derived
+        from T+1 by *empirical impulse-response coefficients* keyed on
+        (intensity_bin, sector) — see scripts/calibrate_impulse_response.py
+        and shared/impulse_response_coefficients.json. The coefficients
+        replace the previous arbitrary heuristics::
 
-        Calibrated from Italian event studies:
-        - 2023 Bank Tax: UCG -7% T+1, -4% T+3 (Meloni softened), -2% T+7
-        - 2022 Draghi: UCG -5% T+1, -7% T+3 (no resolution), -8% T+7
-        - 2018 Budget: UCG -10% T+1, -15% T+3 (escalation), -25% T+7
+            recovery_factor = 0.5 + 0.1 * intensity   (legacy)
+            escalation_factor = 1.0 + 0.1 * (i - 2)   (legacy)
+            t7 = t3 * 1.3 + ...                       (legacy)
+
+        with weighted-mean ratios computed across ~85 events × ~4 tickers
+        from the pooled IT + global backtest corpus, with bootstrap CIs.
+
+        Heuristic fallback (above formulas) is used only when:
+          - the empirical JSON is missing, or
+          - the (bin, sector) and (bin, ALL) cells both have <4 observations.
         """
         sign = -1.0 if direction == "short" else 1.0
 
@@ -809,32 +885,34 @@ class FinancialImpactScorer:
         base_market_move = 0.5  # % per unit intensity
 
         # ── T+1: Day 1 Panic ───────────────────────────────────────────
-        # Maximum dislocation. Pure beta × intensity.
         t1_pct = sign * beta.political_beta * base_market_move * intensity
 
-        # ── T+3: Day 3 Resolution ─────────────────────────────────────
-        # Two regimes:
-        # a) Low-moderate intensity (<2): V-shape recovery (govt walkback typical)
-        #    T+3 ≈ 50% of T+1 (half the panic fades)
-        # b) High intensity (>=2): Continuation / escalation
-        #    T+3 ≈ 120% of T+1 (crisis deepens, margin calls cascade)
-        if intensity < 2.0:
-            # V-shape: partial recovery
-            recovery_factor = 0.5 + 0.1 * intensity  # 0.5 at low, 0.7 at intensity=2
-            t3_pct = t1_pct * recovery_factor
+        # ── T+3 / T+7 via empirical impulse-response, with heuristic fallback ──
+        emp = _empirical_ratios(sector_key, intensity)
+        if emp is not None:
+            r3, r7, _n_obs, ir_source = emp
+            t3_pct = t1_pct * r3
+            t7_pct = t1_pct * r7
+            # Crisis_alpha and spread contributions are still added on top
+            # (structural sector skew, not mean-reversion). They are sector-
+            # specific and not absorbed by the bin-pooled ratios.
+            t7_pct += sign * beta.crisis_alpha * min(1.0, intensity)
+            if intensity > 1.5:
+                t7_pct += beta.spread_beta * intensity * 2
+            ticker_source_tag = f"{source} | {ir_source}"
         else:
-            # Escalation: crisis deepens
-            escalation_factor = 1.0 + 0.1 * (intensity - 2.0)  # 1.0→1.6 as intensity→8
-            t3_pct = t1_pct * escalation_factor
-
-        # ── T+7: Day 7 Structural Outcome ─────────────────────────────
-        # Includes crisis_alpha (structural over/underperformance of the sector)
-        # Plus spread_beta contribution for rate-sensitive sectors
-        t7_pct = t3_pct * 1.3 + sign * beta.crisis_alpha * min(1.0, intensity)
-        # Spread contribution for high-intensity political crises
-        if intensity > 1.5:
-            spread_contrib = beta.spread_beta * intensity * 2  # bps → rough % impact
-            t7_pct += spread_contrib
+            # Legacy heuristic (kept verbatim so no behaviour change when the
+            # empirical JSON is absent — e.g. on a fresh checkout).
+            if intensity < 2.0:
+                recovery_factor = 0.5 + 0.1 * intensity
+                t3_pct = t1_pct * recovery_factor
+            else:
+                escalation_factor = 1.0 + 0.1 * (intensity - 2.0)
+                t3_pct = t1_pct * escalation_factor
+            t7_pct = t3_pct * 1.3 + sign * beta.crisis_alpha * min(1.0, intensity)
+            if intensity > 1.5:
+                t7_pct += beta.spread_beta * intensity * 2
+            ticker_source_tag = f"{source} | heuristic"
 
         # Cap at reasonable bounds (raised for fat tails)
         t1_pct = max(-15.0, min(15.0, t1_pct))
@@ -843,6 +921,9 @@ class FinancialImpactScorer:
 
         # Confidence: higher for agent-sourced tickers, lower for pair-trade inferred
         confidence = 0.8 if source.startswith("agent:") else 0.5
+        # Bump confidence when the empirical impulse-response was used
+        if emp is not None:
+            confidence += 0.1
         # Scale with intensity (more confident when crisis is clearly severe)
         confidence = min(0.95, confidence * (0.5 + min(4.0, intensity) * 0.3))
 
@@ -855,7 +936,7 @@ class FinancialImpactScorer:
             t7_pct=round(t7_pct, 2),
             beta=beta.political_beta,
             confidence=round(confidence, 2),
-            source=source,
+            source=ticker_source_tag,
         )
 
     def _tickers_for_sector(

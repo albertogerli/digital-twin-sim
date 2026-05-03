@@ -281,6 +281,102 @@ def fig4_enkf():
 
 
 # ═══════════════════════════════════════════════════════
+# FIGURE 5: v2.8 re-calibration — Sprint 1-13 simulator hardening
+# ═══════════════════════════════════════════════════════
+
+def fig5_v28_recalibration():
+    """Two-panel: (A) aggregate train/test/overall MAE pre→post Sprint 1-13;
+    (B) per-scenario test-set diff with directional arrows."""
+
+    # ── Panel data ──────────────────────────────────────
+    groups = ["OVERALL\n(N=42)", "TRAIN\n(N=34)", "TEST\n(N=8)"]
+    mae_v27 = [15.22, 14.29, 19.18]
+    mae_v28 = [14.65, 13.97, 17.56]
+    cov_v27 = [78.6, 79.4, 75.0]
+    cov_v28 = [83.3, 82.4, 87.5]
+
+    # Per-scenario test diffs (positive Δ = improvement, sorted by Δ)
+    scenarios = [
+        ("Greek bailout '15",  26.63, 15.84),
+        ("French elec '17",    14.50,  7.17),
+        ("Net Neutrality '17", 16.74, 12.53),
+        ("COVID vax IT '21",    9.24,  5.17),
+        ("Archegos '21",       65.00, 64.92),
+        ("Turkish Ref '17",     6.11,  6.49),
+        ("Amazon HQ2 '18",      7.27, 11.27),
+        ("Tesla Cybertr '19",   7.91, 17.04),
+    ]
+
+    fig = plt.figure(figsize=(7.8, 4.6))
+    gs = fig.add_gridspec(1, 2, width_ratios=[1.0, 1.45], wspace=0.35)
+    ax1 = fig.add_subplot(gs[0, 0])
+    ax2 = fig.add_subplot(gs[0, 1])
+
+    # ── Panel A — grouped bars (v2.7 vs v2.8) on dual y-axis MAE + cov90 ──
+    x = np.arange(len(groups))
+    w = 0.35
+    bars_a1 = ax1.bar(x - w/2, mae_v27, w, color=LIGHT_BLUE, edgecolor=BLUE,
+                      linewidth=0.9, label="v2.7")
+    bars_a2 = ax1.bar(x + w/2, mae_v28, w, color=GREEN, edgecolor="#15803d",
+                      linewidth=0.9, alpha=0.85, label="v2.8")
+    ax1.set_ylabel("MAE (pp)")
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(groups, fontsize=8)
+    ax1.set_ylim(0, max(mae_v27 + mae_v28) * 1.20)
+    ax1.legend(loc="upper left", fontsize=7, frameon=False)
+    ax1.set_title("(A) Aggregate MAE — v2.7 vs v2.8", fontsize=9.5)
+
+    # Annotate Δ above each pair
+    for i, (a, b) in enumerate(zip(mae_v27, mae_v28)):
+        d = b - a
+        col = "#15803d" if d < 0 else "#b91c1c"
+        sign = "−" if d < 0 else "+"
+        ax1.annotate(f"{sign}{abs(d):.2f}", (i, max(a, b) + 0.6),
+                     ha="center", fontsize=7, color=col, weight="bold")
+
+    # ── Panel B — per-scenario test diffs ─────────────
+    sc_names = [s[0] for s in scenarios]
+    err27 = np.array([s[1] for s in scenarios])
+    err28 = np.array([s[2] for s in scenarios])
+    delta = err28 - err27   # negative = improvement
+    colors_b = ["#15803d" if d < 0 else "#b91c1c" for d in delta]
+
+    y = np.arange(len(scenarios))
+    # Plot v2.7 as light marker
+    ax2.scatter(err27, y, s=42, color="#9ca3af", marker="o",
+                label="v2.7 |err|", zorder=3)
+    # Plot v2.8 as filled marker (color by improvement sign)
+    ax2.scatter(err28, y, s=64, color=colors_b, marker="D",
+                label="v2.8 |err|", zorder=4, edgecolor="#1f2937", linewidth=0.6)
+    # Connecting arrow lines
+    for i, (a, b) in enumerate(zip(err27, err28)):
+        ax2.annotate("", xy=(b, i), xytext=(a, i),
+                     arrowprops=dict(arrowstyle="->", color=colors_b[i],
+                                     lw=1.2, alpha=0.65))
+        # Δ label at the right end
+        sign = "−" if delta[i] < 0 else "+"
+        ax2.text(max(a, b) + 1.2, i, f"{sign}{abs(delta[i]):.2f}",
+                 fontsize=7, color=colors_b[i], va="center", weight="bold")
+
+    ax2.set_yticks(y)
+    ax2.set_yticklabels(sc_names, fontsize=7.5)
+    ax2.invert_yaxis()
+    ax2.set_xlabel("Absolute error (pp)")
+    ax2.set_xlim(0, 75)
+    ax2.set_title("(B) Per-scenario test-set diff (8 held-out)", fontsize=9.5)
+    ax2.legend(loc="lower right", fontsize=7, frameon=False)
+    ax2.grid(axis="x", alpha=0.25, linestyle="--", linewidth=0.5)
+
+    fig.suptitle(
+        "Figure 5 — Sprint 1-13 simulator hardening: v2.7 → v2.8 re-calibration",
+        fontsize=10, y=1.02,
+    )
+    fig.savefig(os.path.join(OUT, "fig5_v28_recalibration.pdf"))
+    plt.close()
+    print("✓ Figure 5: v2.8 re-calibration")
+
+
+# ═══════════════════════════════════════════════════════
 # Run all
 # ═══════════════════════════════════════════════════════
 
@@ -289,4 +385,5 @@ if __name__ == "__main__":
     fig2_sbc()
     fig3_sobol()
     fig4_enkf()
+    fig5_v28_recalibration()
     print(f"\nAll figures saved to {OUT}/")

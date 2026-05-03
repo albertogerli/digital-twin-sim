@@ -76,6 +76,7 @@
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
+\usepackage{graphicx} % v2.8 — needed for figures/fig5_v28_recalibration
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
 \makeatletter
@@ -3767,6 +3768,20 @@ TEST    &  8 & 19.18 → \textbf{17.56} ($-1.62$) & 75.0\% → \textbf{87.5\%} (
 
 Final SVI loss: 514.74 → \textbf{493.79} ($-20.95$). All deltas isolate
 simulator-side changes from inference-side factors.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{figures/fig5_v28_recalibration.pdf}
+  \caption{Sprint 1-13 simulator hardening: v2.7 → v2.8 re-calibration.
+    \textbf{(A)} Aggregate MAE on the same 42 empirical scenarios with
+    identical SVI hyperparameters. \textbf{(B)} Per-scenario absolute
+    error on the eight held-out test scenarios; arrows trace v2.7 → v2.8,
+    green = improvement, red = regression. The four largest improvements
+    correspond to scenarios (Greek 2015, French 2017, Net Neutrality
+    2017, COVID vax IT 2021) where the country-alias and realism-gate
+    fixes (sprints 6-7) reinstated previously-dropped stakeholders.}
+  \label{fig:v28-recalibration}
+\end{figure}
 
 \subsubsection{10.4 Per-scenario test-set diff}\label{per-scenario-diff}
 

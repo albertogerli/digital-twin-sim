@@ -1,0 +1,61 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software, the calibrated model, or the
+  benchmark-integrity harness (contamination probe, blinding protocol,
+  sim-lift grader) in an academic work, please cite both the paper and
+  the software.
+title: >-
+  DigitalTwinSim — A Calibrated LLM-Conditioned Agent-Based Model
+  of Public Opinion Dynamics
+abstract: >-
+  Calibrated LLM-conditioned agent-based model of public opinion
+  dynamics with hierarchical Bayesian calibration (SVI + NUTS),
+  online assimilation via Ensemble Kalman Filter, a four-axis LLM
+  data-contamination probe, a deterministic title/country/date/agent
+  blinding protocol, and an apples-to-apples null-baseline sim-lift
+  grader (DTW / KS / RMSE / terminal error, Diebold–Mariano with
+  HLN correction against persistence / AR(1) / linear-trend / mean
+  baselines).
+type: software
+version: 2.8.0
+date-released: "2026-05-03"
+repository-code: "https://github.com/albertogerli/digital-twin-sim"
+authors:
+  - family-names: Gerli
+    given-names: Alberto
+    email: alberto@albertogerli.it
+license: MIT
+keywords:
+  - agent-based model
+  - large language models
+  - opinion dynamics
+  - Bayesian calibration
+  - data contamination
+  - blinding
+  - ensemble Kalman filter
+  - JASSS
+preferred-citation:
+  type: article
+  title: >-
+    A Calibrated LLM-Conditioned Agent-Based Model of Public Opinion
+    Dynamics with Null-Baseline Benchmarking, Data-Contamination
+    Auditing, and Online Assimilation
+  authors:
+    - family-names: Gerli
+      given-names: Alberto
+  year: 2026
+  journal: Journal of Artificial Societies and Social Simulation
+  notes: >-
+    Submitted. Preprint and reproducibility package available at the
+    repository above. Version 2.8 supersedes v2.7 with Sprint 1-13
+    simulator hardening (country-alias normalisation, realism-gate
+    fix, agent-prompt + engine improvements) and a re-calibration on
+    the same 42 empirical scenarios (test MAE 19.18 → 17.56 pp,
+    coverage₉₀ 75.0% → 87.5%; see §10 of the paper).
+identifiers:
+  - type: other
+    value: "git-commit:f3bf60e5ed58f582598fad50abd5f0c51bd86238"
+    description: Canonical git commit for the v2.7 paper and artifacts.
+  - type: other
+    value: "calibration/results/hierarchical_calibration/sprint15/"
+    description: v2.8 re-calibration outputs (validation_results, posteriors, comparison report).

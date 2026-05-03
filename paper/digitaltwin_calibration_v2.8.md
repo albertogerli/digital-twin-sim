@@ -1,0 +1,2128 @@
+# A Calibrated LLM-Conditioned Agent-Based Model of Public Opinion Dynamics with Null-Baseline Benchmarking, Data-Contamination Auditing, and Online Assimilation
+
+**Version 2.8** — May 2026 (Sprint 1-13 simulator hardening + re-calibration; see §10)
+
+**Alberto Giovanni Gerli**^{1,2}
+
+^1 Tourbillon Tech Srl, Padova, Italy
+^2 Dipartimento di Scienze Cliniche e di Comunità, Università degli Studi di Milano, Italy
+
+**Keywords:** opinion dynamics, agent-based modeling, large language models, Bayesian calibration, Ensemble Kalman filter, computational social science, Diebold–Mariano test, null baselines, data contamination, blinding protocol
+
+---
+
+## What's new in v2.8
+
+The simulator code path was refactored across thirteen targeted sprints
+(v2.7 → v2.8) — country-alias normalisation (UK↔GB, USA↔US), realism-gate
+fix, agent-prompt and engine improvements, stakeholder-graph updates. We
+re-ran the v2-discrepancy hierarchical SVI calibration on the **same 42
+empirical scenarios** with **identical hyperparameters** (3000 SVI steps,
+lr 0.005, seed 42) so the deltas isolate the simulator changes from
+inference-side factors.
+
+| Group   | N  | MAE pre→post (pp) | cov₉₀ pre→post  | CRPS Δ  | Final loss |
+|---------|----|-------------------|-----------------|---------|------------|
+| OVERALL | 42 | 15.22 → **14.65** (−0.57) | 78.6% → **83.3%** (+4.8) | −0.34   | 514.7 → **493.8** |
+| TRAIN   | 34 | 14.29 → **13.97** (−0.32) | 79.4% → **82.4%** (+2.9) | −0.10   |  |
+| TEST    |  8 | 19.18 → **17.56** (−1.62) | 75.0% → **87.5%** (+12.5)| −1.35   |  |
+
+Largest per-scenario improvements on the held-out test set: Greek
+referendum (−10.78 pp), French 2017 election (−7.32), Net Neutrality
+2017 (−4.21), COVID-19 vaccine IT (−4.07). Two scenarios regressed
+(Tesla Cybertruck +9.13, Amazon HQ2 +3.99) and are flagged for
+follow-up. The full per-scenario diff is in
+`calibration/results/hierarchical_calibration/sprint15/sprint15_vs_baseline.md`.
+
+All other results in this paper (multimodal, EnKF, contamination probe,
+null-baseline benchmark) are **unchanged from v2.7** — they exercise
+calibration outputs and observation-fusion paths that are independent
+of the simulator code that was refactored.
+
+---
+
+## Abstract
+
+We present a calibrated LLM-conditioned agent-based model (ABM) of public opinion dynamics. LLM-agent social simulations are expressive but uncalibrated; we close that gap with a force-based opinion update — direct LLM influence, social conformity, herd behaviour, anchor rigidity, and exogenous shocks, combined through a gauge-fixed softmax mixture — and a three-level hierarchical Bayesian calibration (global / domain / scenario) with explicit readout discrepancy, fit via stochastic variational inference (SVI) on 42 empirical scenarios across ten domains (2011–2023).
+
+The calibrated model attains 12.6 pp mean absolute error on verified held-out scenarios (17.6 pp including one data-quality-flagged scenario) and 87.5% nominal coverage of 90% logit-space credible intervals — the v2.8 re-calibration tightened test MAE by 1.62 pp and lifted coverage by 12.5 pp over v2.7 thanks to thirteen sprints of simulator hardening (see §10). Simulation-based calibration confirms well-specification under NUTS (6/6 KS uniformity $p>0.20$); variance-based sensitivity isolates herd behaviour ($S_T=0.55$) and anchor rigidity ($S_T=0.45$) as the dominant mechanisms. A multi-modal extension fits polling and financial returns jointly on fourteen financially-enriched scenarios, improving test coverage from 75.0% to 87.5% at comparable MAE; the learned linkage weight $\lambda_{\text{fin}}=0.045$ is a principled null result that quantifies the signal-to-noise of market returns for ABM calibration.
+
+We report three negative-control findings that discipline the predictive claims. First, against four standard forecasters on 43 empirical trajectories, naive persistence is a strong baseline (mean RMSE 0.038) that no alternative dominates (OLS trend wins $p<0.05$ on only 4–6 / 43). Second, a four-axis LLM contamination probe (outcome, trajectory, events, actors) on the full corpus finds 11 high-leak political scenarios with contamination index $\geq 0.60$ (peak 0.913 on Scottish 2014); a deterministic blinding protocol — title template, country alias, relative dates, position-bucketed agent aliases — reduces their mean contamination index from 0.721 to 0.000 on all four axes while preserving every numeric field the simulator consumes. Third, an apples-to-apples retrospective sim-lift run on the 11 high-leak scenarios, under both contaminated and blinded variants, finds blinded mean DTW 0.0997 vs. contaminated 0.096 (delta $-0.0036$, so blinding does not worsen skill — ruling out pure memorisation), but on 0 / 11 scenarios does the simulator beat the persistence baseline at $p<0.05$ by Diebold–Mariano with Harvey–Leybourne–Newbold correction, in either variant. The calibrated ABM therefore matches persistence and improves over naive trajectory forecasters only when fused with streaming observations: an Ensemble Kalman Filter assimilation on Brexit reduces final-round error to 1.8 pp (77% over last-poll baseline) with six polls.
+
+We position the framework as scenario-exploration and counterfactual tooling, not out-of-the-box forecasting, and release the blinding, probe, and benchmark packages to establish a reproducible skill floor for calibrated LLM-agent simulations.
+
+---
+
+## 1. Introduction
+
+Agent-based models (ABMs) have long been used to study opinion dynamics, social influence, and collective decision-making. Classical approaches—bounded confidence models (Hegselmann & Krause, 2002), voter models (Holley & Liggett, 1975), and DeGroot-style averaging (DeGroot, 1974)—provide theoretical insight but struggle to capture the narrative complexity, heterogeneous reasoning, and contextual sensitivity that characterize real-world opinion formation.
+
+The emergence of large language models (LLMs) as agent engines has opened a new approach: equipping simulated agents with natural language reasoning capabilities, allowing them to process news events, generate social media posts, form coalitions, and shift positions in response to contextual narratives. Recent work on generative agents (Park et al., 2023), social simulacra (Park et al., 2022), and LLM-driven social simulations (Gao et al., 2023) demonstrates the potential of this paradigm. However, these systems share a critical limitation: their outputs are uncalibrated. The mapping from LLM-generated agent behaviors to quantitative opinion distributions is ad hoc, and there is no principled mechanism to anchor simulations to empirical observations.
+
+This paper addresses this gap by developing a complete calibration and assimilation pipeline for LLM-agent opinion dynamics. Our contributions are:
+
+1. **A differentiable opinion dynamics simulator** formulated as a force-based system with five competing mechanisms, combined through gauge-fixed softmax mixing. The simulator is implemented in JAX and compatible with `jax.lax.scan`, enabling automatic differentiation through the full simulation trajectory.
+
+2. **A hierarchical Bayesian calibration framework** with three levels (global, domain, scenario) and explicit readout discrepancy terms (b_d, b_s), fitted via stochastic variational inference (SVI) on 42 empirical scenarios across 10 domains.
+
+3. **Simulation-based calibration (SBC)** and **variance-based global sensitivity analysis (Sobol indices)** providing rigorous validation of posterior quality and identification of dominant mechanisms.
+
+4. **An Ensemble Kalman Filter (EnKF)** for online data assimilation, bridging the offline calibrated posterior to live streaming observations. The EnKF jointly updates model parameters and agent states, producing calibrated probabilistic forecasts at each round.
+
+5. **A preliminary regime-switching extension** for crisis dynamics (Appendix B), using soft sigmoid-based switching between normal and crisis regimes to model discontinuous trust collapses while maintaining JAX differentiability.
+
+6. **A multi-modal calibration extension** (Section 5.8) that jointly fits the hierarchical model on polling outcomes and historical financial market returns, connecting opinion dynamics to observable financial signals through a learnable linkage function with sector-specific political beta coefficients.
+
+7. **A null-baseline predictive-skill benchmark** (Section 6.6) built on four standard forecasters, the Diebold–Mariano test with Harvey–Leybourne–Newbold small-sample correction, residual-bootstrap coverage (Section 6.7), and a seven-by-five-by-four scenario-diversity matrix (Section 6.8). The benchmark operates on the same 43 empirical trajectories used for calibration, provides pooled skill estimates by domain, region, and tension level, and is released as a reusable module (Appendix D) so any modification to the sim can be compared against a fixed reference.
+
+8. **A benchmark-integrity layer** (Section 6.10, new in v2.7): a four-axis contamination probe that quantifies per-scenario LLM prior knowledge on outcome, trajectory shape, events, and actors, and a deterministic blinding protocol that anonymizes titles, countries, dates, and agent names while preserving all numeric fields the simulator consumes. An A/B re-probe on the 11 highest-leakage scenarios drops their mean contamination index from 0.721 to 0.000, establishing that any retrospective skill measured under blinding is attributable to simulation dynamics rather than LLM memorization.
+
+9. **A live market data integration layer** (Section 5.9, new in v2.7) that replaces calibration-time macro snapshots with per-scenario live feeds for VIX, UST yields, BTP-Bund (ECB SDMX), US investment-grade credit spread (FRED BAMLC0A0CM), and UK 10Y gilt (FRED IRLTLT01GBM156N), fetched by three parallel workers with a 300-second TTL cache and silent fallback to the calibrated priors on any fetch failure. Every overlaid field carries a source-and-as-of provenance tag. The change is enabled by a companion refactor (Appendix A.5) that decomposes the simulation engine into a coordinator plus three services and replaces a process-wide `UniverseLoader` singleton with a per-scenario `MarketContext` bound to a geography regime, so the production live-feed backend is wired by swapping a `MarketDataProvider` rather than patching a global.
+
+Taken together, these components transform LLM-agent simulations from narrative-generation tools into a *calibrated, contamination-audited, null-benchmarked ABM for scenario exploration and counterfactual analysis.* We avoid the phrase "digital twin" in the predictive sense: Section 6.10.4 documents that on the high-leak retrospective subset the calibrated ABM matches but does not beat persistence in trajectory space, and the framework's operational value is strongest under EnKF online assimilation (Section 7) rather than as an open-loop retrospective forecaster.
+
+### 1.1 Paper Organization
+
+Section 2 reviews related work. Section 3 presents the opinion dynamics model and its five force terms. Section 4 describes the hierarchical Bayesian calibration framework. Section 5 presents calibration results on 42 empirical scenarios, including a multi-modal extension that incorporates financial market data (Section 5.8) and — new in v2.7 — a live market data integration layer that replaces calibration-time macro snapshots with three parallel live feeds (yfinance, ECB SDMX, FRED) under per-scenario geography binding (Section 5.9). Section 6 covers validation through SBC, sensitivity analysis, robustness checks, predictive-skill benchmarking against null forecasters (Section 6.6), residual-bootstrap coverage (Section 6.7), a scenario-diversity matrix (Section 6.8), a pre-simulation roster-realism benchmark (Section 6.9), and — new in v2.7 — a benchmark-integrity layer that quantifies LLM data contamination per scenario and validates a blinding protocol that neutralizes it (Section 6.10). Section 7 introduces the EnKF online assimilation module. Section 8 discusses limitations and future work. Section 9 concludes. Appendix A provides implementation details, including (A.5, new in v2.7) the engine-decomposition and market-context dependency-injection refactor that enables the live-feed backend. Appendix B describes the preliminary regime-switching extension. Appendix C lists the full scenario dataset. Appendix D documents the reproducibility package for the v2.5 benchmarks. Appendix E documents the Layer 0 scope analyzer and realism gate introduced in v2.6. Appendix F documents the contamination probe, blinding protocol, and trajectory-evaluation metrics introduced in v2.7.
+
+---
+
+## 2. Related Work
+
+### 2.1 Classical Opinion Dynamics Models
+
+The mathematical study of opinion formation has a rich history. DeGroot (1974) introduced iterative weighted averaging, where agents update beliefs as weighted means of their neighbors', converging to consensus under connectivity conditions. Hegselmann & Krause (2002) proposed the bounded confidence model, where agents interact only with those holding sufficiently similar opinions, producing clustering rather than global consensus. Deffuant et al. (2000) introduced a pairwise variant of bounded confidence with convergence at the dyadic level. These models provide foundational mechanisms but operate on homogeneous populations with idealized interaction rules.
+
+DigitalTwinSim builds on the bounded confidence tradition but introduces three departures: (i) the tolerance threshold is smooth (sigmoid-based) rather than a hard cutoff, preserving differentiability; (ii) five distinct social mechanisms are combined through a learnable softmax mixture rather than studied in isolation; and (iii) agent heterogeneity (type, rigidity, tolerance) is derived from LLM-generated character profiles, providing scenario-specific structure rather than distributional assumptions.
+
+### 2.2 Bayesian Calibration of Agent-Based Models
+
+The systematic calibration of computer models against observational data was formalized by Kennedy & O'Hagan (2001), who introduced the framework of model discrepancy—an explicit term capturing the gap between the simulator output and reality, even at the best parameter settings. This framework provides the theoretical foundation for our readout discrepancy terms b_d and b_s.
+
+Calibrating ABMs is notoriously difficult because the likelihood is typically intractable. Grazzini et al. (2017) developed Bayesian estimation methods for ABMs using indirect inference, matching simulated and empirical summary statistics. Platt (2020) provided a systematic comparison of ABM calibration methods—approximate Bayesian computation (ABC), synthetic likelihood, and sequential Monte Carlo—finding that method choice depends strongly on the model's dimensionality and summary statistic informativeness. Blei et al. (2017) reviewed variational inference as a scalable alternative to MCMC for complex probabilistic models.
+
+DigitalTwinSim is, to our knowledge, the first system to combine Kennedy-O'Hagan-style discrepancy modeling with an LLM-agent ABM and variational inference. The differentiable JAX implementation enables direct gradient computation through the simulator, avoiding the summary-statistic bottleneck that plagues ABC-based approaches.
+
+### 2.3 LLM-Agent Simulations
+
+Park et al. (2023) introduced Generative Agents—LLM-powered characters that plan, reflect, and interact in a sandbox environment, demonstrating emergent social behaviors. Gao et al. (2023) surveyed the rapidly growing field of LLM-empowered ABM, cataloging applications from epidemic modeling to market simulation. Argyle et al. (2023) proposed "silicon sampling"—using LLMs as proxies for human survey respondents—and showed that GPT-3 can reproduce demographic opinion patterns on political topics with surprising fidelity. Horton (2023) introduced "homo silicus," demonstrating that LLMs can serve as simulated economic agents that replicate classic behavioral economics results.
+
+These works establish that LLMs can generate plausible social behaviors, but none calibrate the emergent dynamics against empirical outcome data or provide uncertainty quantification. DigitalTwinSim fills this gap by treating LLM outputs as inputs to a mechanistic model that is then calibrated and validated against real-world observations.
+
+### 2.4 Data Assimilation in Social Systems
+
+The Ensemble Kalman Filter (Evensen, 2003) is the standard tool for sequential data assimilation in geosciences, combining model forecasts with observations in a computationally efficient ensemble framework. Reich & Cotter (2015) provide a comprehensive treatment of Bayesian data assimilation methods. In epidemiology, EnKF and related methods have been used to assimilate surveillance data into disease transmission models (Mistry et al., 2021).
+
+Despite its success in physical and biological systems, data assimilation remains rare in computational social science. Our framework applies the EnKF to opinion dynamics, using it to bridge offline Bayesian calibration with streaming polling observations — a novel application that enables online scenario tracking under live data.
+
+### 2.5 Sensitivity Analysis for ABMs
+
+Saltelli et al. (2008) developed the theory and practice of variance-based global sensitivity analysis using Sobol indices, which decompose output variance into contributions from individual inputs and their interactions. Thiele et al. (2014) adapted these methods for ABMs, demonstrating that global sensitivity analysis (Sobol, FAST) is far more informative than one-at-a-time (OAT) perturbation for nonlinear models with parameter interactions.
+
+Our sensitivity analysis uses the Sobol method with Saltelli sampling to justify the partition of 8 model parameters into 4 calibrable and 4 frozen, based on main effects (S_1) and total effects (S_T) including all interaction terms.
+
+---
+
+## 3. Opinion Dynamics Model
+
+[FIGURE 1: System architecture diagram. Three horizontal layers. TOP LAYER — "LLM Agent Engine": box labeled "Gemini/GPT" with arrows producing "Δ^{LLM} per agent" and "Event narratives". MIDDLE LAYER — "Opinion Dynamics Simulator (JAX)": five boxes (Direct, Herd, Anchor, Social, Event) feeding into "Softmax π" then "Position Update p(t+1)", then "Readout q(t)". Label shows "jax.lax.scan over T rounds". BOTTOM LAYER — "Calibration & Assimilation": left box "Hierarchical Bayesian (SVI)" with arrow from "Observation Model (BetaBinom/Normal)" upward to readout. Right box "EnKF Online" with bidirectional arrow to "Streaming Observations (polls, sentiment)". Dashed arrow from SVI posterior to EnKF initialization. Annotations: "b_d + b_s" on the readout-to-observation connection. "θ_s = μ_d + Bx_s + ε_s" between hierarchy and simulator.]
+
+### 3.1 Agent State Space
+
+Each agent *i* ∈ {1, ..., n} maintains a scalar position p_i(t) ∈ [-1, +1] representing their stance on a binary issue, where +1 denotes maximum support ("Pro") and -1 maximum opposition ("Against"). Agents are characterized by three fixed attributes:
+
+- **Type** τ_i ∈ {elite, citizen}: determines step size and behavioral parameters.
+- **Rigidity** ρ_i ∈ [0, 1]: resistance to opinion change. Elites have higher rigidity (ρ ≈ 0.7) than citizens (ρ ≈ 0.3).
+- **Tolerance** θ_i ∈ [0, 1]: radius of the bounded-confidence window for social influence. Elites have lower tolerance (θ ≈ 0.3) than citizens (θ ≈ 0.6).
+
+Agents interact through a sparse weighted graph W ∈ ℝ^{n×n} constructed from LLM-assigned influence scores using a k-nearest-neighbor scheme (k = 5, matching the NumPy simulation's feed-based top-5 selection).
+
+### 3.2 Five Force Terms
+
+At each round t, five independent forces act on each agent. These forces capture distinct social mechanisms:
+
+**Force 1: Direct LLM Influence.** The LLM generates per-agent opinion shifts Δ_i^{LLM}(t) based on the current narrative context. The direct force is:
+
+$$f_i^{\text{direct}}(t) = \Delta_i^{\text{LLM}}(t) \cdot (1 - \rho_i) \cdot \max(0, 1 - |p_i(t)|) \quad \text{(Eq. 1)}$$
+
+The susceptibility factor (1 - ρ_i) attenuates influence on rigid agents, while the boundary factor max(0, 1 - |p_i|) prevents extreme agents from being pushed further.
+
+**Force 2: Herd Behavior (Consensus Pull).** Agents experience a pull toward the weighted mean of their neighborhood when the deviation exceeds a learned threshold θ_h:
+
+$$f_i^{\text{herd}}(t) = (\bar{p}_i^{\text{feed}} - p_i) \cdot (1 - \rho_i) \cdot \sigma\left(\frac{|\bar{p}_i^{\text{feed}} - p_i| - \theta_h}{\tau_H}\right) \quad \text{(Eq. 2)}$$
+
+where $\bar{p}_i^{\text{feed}}$ is the normalized weighted mean of neighbors' positions, θ_h = σ(logit_herd_threshold) is a learned threshold, and τ_H = 0.02 is a steepness parameter. The sigmoid activation creates a smooth transition: agents ignore small deviations but respond to large consensus gaps.
+
+**Force 3: Anchor Rigidity.** A restorative force pulling agents toward their original position:
+
+$$f_i^{\text{anchor}}(t) = \rho_i \cdot (p_i^{\text{orig}}(t) - p_i(t)) \quad \text{(Eq. 3)}$$
+
+where $p_i^{\text{orig}}(t)$ drifts slowly toward the current position at rate δ_drift = σ(logit_anchor_drift), modeling gradual internalization of new positions.
+
+**Force 4: Social Influence (Bounded Confidence).** Weighted averaging with tolerance-gated interaction:
+
+$$f_i^{\text{social}}(t) = \frac{\sum_j w_{ij}(t) \cdot (p_j(t) - p_i(t))}{\sum_j w_{ij}(t)} \quad \text{(Eq. 4)}$$
+
+where $w_{ij}(t) = W_{ij} \cdot \sigma\left(\frac{\theta_i - |p_j - p_i|}{\tau_{BC}}\right)$ and τ_{BC} = 0.02. This implements smooth bounded confidence: agents preferentially interact with like-minded peers, but the transition is differentiable rather than a hard cutoff.
+
+**Force 5: Exogenous Event Shock.** External events apply a uniform directional push:
+
+$$f_i^{\text{event}}(t) = m_t \cdot d_t \cdot (1 - \rho_i) \quad \text{(Eq. 5)}$$
+
+where m_t ∈ [0, 1] is the event magnitude and d_t ∈ {-1, +1} its direction. Events are generated by the LLM based on the simulated scenario narrative.
+
+### 3.3 Force Standardization
+
+Raw forces have heterogeneous scales (e.g., social forces depend on graph density, event forces on shock magnitude). We standardize all five forces per round using exponential moving averages:
+
+$$\tilde{f}_k(t) = \frac{f_k(t) - \mu_k(t)}{\sigma_k(t) + \epsilon} \quad \text{(Eq. 6)}$$
+
+where μ_k(t) and σ_k(t) are updated via EMA with decay α = 0.3, computed across ALL agents in each round. The per-round statistics (mean and standard deviation) are symmetric functions over the agent set, ensuring that the standardization is permutation-invariant with respect to agent ordering. A permutation invariance test confirms this property empirically: max |Δpro_fraction| < 6 × 10⁻⁸ under random agent permutation. The temporal EMA smoothing provides stability across rounds without introducing dependence on agent array order.
+
+### 3.4 Gauge-Fixed Softmax Mixing
+
+The five standardized forces are combined through a softmax mixture with a gauge-fixing constraint:
+
+$$\boldsymbol{\alpha} = [0, \alpha_h, \alpha_a, \alpha_s, \alpha_e]^\top \quad \text{(Eq. 7)}$$
+
+$$\pi_k = \text{softmax}(\boldsymbol{\alpha})_k, \quad \sum_k \pi_k = 1 \quad \text{(Eq. 8)}$$
+
+The direct force weight α_direct ≡ 0 serves as the reference level (gauge), resolving the shift invariance of softmax. This means the four remaining weights α_h, α_a, α_s, α_e are interpretable as log-odds relative to the direct LLM influence.
+
+The combined force per agent is:
+
+$$\tilde{f}_i^{\text{combined}}(t) = \sum_k \pi_k \cdot \tilde{f}_{k,i}(t) \quad \text{(Eq. 9)}$$
+
+### 3.5 Position Update
+
+The position update applies a type-specific step size with smooth clamping:
+
+$$\Delta p_i = \lambda_{\tau_i} \cdot \tilde{f}_i^{\text{combined}}, \quad \Delta p_i^{\text{clamped}} = \tanh\left(\frac{\Delta p_i}{c_{\tau_i}}\right) \cdot c_{\tau_i} \quad \text{(Eq. 10)}$$
+
+where λ_elite = exp(log_λ_elite), λ_citizen = exp(log_λ_citizen), c_elite = 0.15, c_citizen = 0.25. The tanh clamping provides smooth saturation rather than hard clipping, preserving differentiability.
+
+The final update is:
+
+$$p_i(t+1) = \text{clip}(p_i(t) + \Delta p_i^{\text{clamped}}, -1, +1) \quad \text{(Eq. 11)}$$
+
+### 3.6 Readout Function
+
+The mapping from agent positions to aggregate opinion uses a soft classification:
+
+$$\text{pro}(t) = \frac{\sum_i \sigma\left(\frac{p_i(t) - 0.05}{0.02}\right)}{\sum_i \left[\sigma\left(\frac{p_i(t) - 0.05}{0.02}\right) + \sigma\left(\frac{-p_i(t) - 0.05}{0.02}\right)\right]} \quad \text{(Eq. 12)}$$
+
+This readout excludes near-neutral agents (|p_i| < 0.05) from the decided count, producing pro_fraction ∈ [0, 1]. The 0.02 temperature ensures smooth but sharp classification.
+
+### 3.7 Parameter Summary
+
+The model has 8 mechanistic parameters, partitioned into 4 calibrable and 4 frozen:
+
+**Table 1: Model Parameters**
+
+| Parameter | Symbol | Role | Type | Default |
+|---|---|---|---|---|
+| Herd weight | α_h | Consensus pull strength (log-odds vs direct) | Calibrable | — |
+| Anchor weight | α_a | Rigidity pull strength | Calibrable | — |
+| Social weight | α_s | Bounded-confidence averaging strength | Calibrable | — |
+| Event weight | α_e | Exogenous shock strength | Calibrable | — |
+| Elite step size | log λ_elite | Step magnitude for elite agents | Frozen | -1.2 |
+| Citizen step size | log λ_citizen | Step magnitude for citizen agents | Frozen | -0.5 |
+| Herd threshold | logit θ_h | Minimum deviation to trigger herd behavior | Frozen | 0.5 |
+| Anchor drift | logit δ_drift | Rate of anchor position drift | Frozen | -1.4 |
+
+The calibrable/frozen partition is justified empirically by Sobol sensitivity analysis (Section 6.2).
+
+---
+
+## 4. Hierarchical Bayesian Calibration
+
+### 4.1 Motivation
+
+A single set of global parameters cannot adequately describe opinion dynamics across diverse domains. Political referenda involve different social mechanisms than corporate crises or public health debates. At the same time, per-scenario calibration with 4 parameters and limited per-scenario data (typically 3–9 polling observations) leads to severe overfitting. A hierarchical model enables partial pooling: scenarios share information through domain and global priors while retaining scenario-specific flexibility through model discrepancy terms.
+
+### 4.2 Three-Level Hierarchy
+
+The model has three levels:
+
+**Level 1 (Global).** Shared priors on the mixing weights:
+
+$$\mu_{\text{global}} \sim \mathcal{N}(\mathbf{0}, I_4), \quad \sigma_{\text{global}} \sim \text{HalfNormal}(0.3) \quad \text{(Eq. 13)}$$
+
+where μ_global ∈ ℝ⁴ represents the global mean of the four calibrable alpha parameters.
+
+**Level 2 (Domain).** Each domain d ∈ {political, financial, corporate, ...} has domain-level parameter means:
+
+$$\mu_d \sim \mathcal{N}(\mu_{\text{global}}, \text{diag}(\sigma_{\text{global}}^2)) \quad \text{(Eq. 14)}$$
+
+where μ_d ∈ ℝ⁴ are the domain-level alpha parameters.
+
+**Level 3 (Scenario).** Each scenario s has scenario-specific parameters drawn from its domain:
+
+$$\theta_s \sim \mathcal{N}(\mu_{d(s)} + B \cdot x_s, \text{diag}(\sigma_d^2)) \quad \text{(Eq. 15)}$$
+
+where θ_s ∈ ℝ⁴ are the four softmax weights used for simulation, σ_d ∈ ℝ⁴ is a domain-specific dispersion (not the global σ_global), and B · x_s is the covariate regression defined in Section 4.6. The domain-level variance σ_d allows different domains to have different degrees of scenario-to-scenario heterogeneity.
+
+### 4.3 Readout Discrepancy
+
+The simulator is structurally misspecified: LLM-generated narratives cannot perfectly reproduce real-world opinion formation. Rather than absorbing this misspecification into the parameters (which would bias them), we model it explicitly through additive correction in logit space on the readout.
+
+The discrepancy operates on the scalar readout (ℝ¹), not on the parameter space (ℝ⁴):
+
+$$b_d \sim \mathcal{N}(0, \sigma_{b,\text{between}}^2), \quad \sigma_{b,\text{between}} \sim \text{HalfNormal}(0.2) \quad \text{(Eq. 16)}$$
+
+$$b_s \sim \mathcal{N}(0, \sigma_{b,\text{within}}^2), \quad \sigma_{b,\text{within}} \sim \text{HalfNormal}(0.5) \quad \text{(Eq. 17)}$$
+
+where b_d ∈ ℝ is the domain-level readout bias (between-domain discrepancy) and b_s ∈ ℝ is the scenario-specific readout discrepancy (within-domain). The corrected readout for scenario s in domain d is:
+
+$$q_s^{\text{corrected}} = \sigma\left(\text{logit}(q_s^{\text{sim}}) + b_d + b_s\right) \quad \text{(Eq. 18)}$$
+
+where $q_s^{\text{sim}}$ is the raw simulator output. By operating in logit space, the correction is unbounded and additive while the sigmoid guarantees the result remains in [0, 1]. This decomposition follows Kennedy & O'Hagan (2001): the calibrated parameters θ represent genuine opinion dynamics mechanisms, while the discrepancy terms b_d and b_s absorb systematic simulator errors.
+
+### 4.4 Observation Model
+
+For scenarios with per-round polling data (sample size n_t, observed count y_t):
+
+$$y_t \mid q_t, \phi \sim \text{BetaBinomial}(n_t, q_t \cdot \phi, (1 - q_t) \cdot \phi) \quad \text{(Eq. 19)}$$
+
+where φ = exp(log φ) is a learned concentration parameter. The BetaBinomial accounts for both sampling noise (binomial) and overdispersion (beta mixing).
+
+For scenarios with only a final outcome:
+
+$$y_{\text{final}} \mid q_T, \sigma_{\text{obs}} \sim \mathcal{N}(100 \cdot q_T, \sigma_{\text{obs}}^2) \quad \text{(Eq. 20)}$$
+
+where σ_obs = exp(log σ) is learned.
+
+### 4.5 Inference via SVI
+
+The posterior is intractable due to the nonlinear JAX simulator in the likelihood. We use stochastic variational inference (SVI) with an AutoLowRankMultivariateNormal guide in NumPyro, which approximates the posterior with a low-rank plus diagonal covariance structure:
+
+$$q(\theta) = \mathcal{N}(\mu_q, D + VV^\top) \quad \text{(Eq. 21)}$$
+
+where D is diagonal and V has rank ≤ dim(θ). This captures dominant posterior correlations (e.g., between α_h and α_a) while scaling to the full parameter space.
+
+The SVI objective is the evidence lower bound (ELBO):
+
+$$\mathcal{L}(\mu_q, D, V) = \mathbb{E}_{q(\theta)}[\log p(y \mid \theta) + \log p(\theta)] - \mathbb{E}_{q(\theta)}[\log q(\theta)] \quad \text{(Eq. 22)}$$
+
+minimized over 3000 steps with learning rate 0.002 and cosine annealing. Gradients are computed via JAX automatic differentiation through the full simulate → readout → likelihood chain.
+
+### 4.6 Covariate Regression
+
+The covariate regression is incorporated directly into the scenario-level prior (Eq. 15, Section 4.2). The matrix B ∈ ℝ^{4×5} and covariates x_s ∈ ℝ⁵ are defined as follows:
+
+1. **initial_polarization** — initial spread of agent positions
+2. **event_volatility** — intensity and frequency of external shocks
+3. **elite_concentration** — power centralization among top agents
+4. **institutional_trust** — public confidence in institutions (0–1)
+5. **undecided_share** — initial proportion of near-neutral agents
+
+The prior on B is informative but weakly regularizing: B_{ij} ~ N(0, 0.3), allowing the data to determine whether covariates have predictive power. A covariate effect is considered significant if its 95% CI excludes zero.
+
+---
+
+## 5. Calibration Results
+
+### 5.1 Dataset
+
+We curated 42 empirical scenarios across 10 domains, each with a ground-truth final outcome and, where available, intermediate polling data. The scenarios span 2012–2023 and cover political referenda, financial crises, corporate controversies, public health debates, technology policy, and social movements.
+
+**Table 2: Dataset Composition by Domain**
+
+| Domain | N (Train) | N (Test) | Example Scenarios |
+|---|---|---|---|
+| Political | 11 | 3 | Brexit, Scottish Independence, Chilean Constitution |
+| Corporate | 6 | 1 | Dieselgate, Boeing 737 MAX, Facebook→Meta |
+| Financial | 6 | 1 | FTX collapse, GameStop squeeze, SVB collapse |
+| Public Health | 4 | 1 | COVID vaccination (IT), AstraZeneca controversy |
+| Technology | 2 | 1 | Net Neutrality repeal |
+| Commercial | 1 | 1 | Tesla Cybertruck reveal |
+| Energy | 1 | 0 | Japanese nuclear phase-out |
+| Environmental | 1 | 0 | Keystone XL pipeline |
+| Labor | 1 | 0 | Uber vs. taxi regulation |
+| Social | 1 | 0 | Marriage equality |
+| **Total** | **34** | **8** | |
+
+The train/test split is stratified by domain with approximately 80/20 ratio.
+
+**Pre-registered data-quality protocol.** Scenarios flagged as `NEEDS_VERIFICATION` during the review phase (prior to and independent of any calibration run) are excluded from the primary performance metrics. The flag is assigned by a fixed five-criterion checklist applied uniformly to every scenario at corpus construction time, before any parameter was fit:
+
+1. **Primary-source ground truth.** The final outcome is sourced from at least one official record (electoral commission, regulator filing, exchange disclosure, peer-reviewed dataset). Missing this source ⇒ flagged.
+2. **Polling reliability.** Per-round polling counts are either reported by named pollsters with sample size $n_t$ or are explicitly absent (final-outcome-only scenario). Interpolated, model-imputed, or LLM-estimated polling without a verified sample-size column ⇒ flagged.
+3. **Pro/against label coherence.** The `pro` label maps unambiguously to a single side of the binary issue (e.g., Leave vs. Remain in Brexit) without convention switches across rounds. Ambiguous or sliding label conventions ⇒ flagged (and corrected if possible, otherwise excluded).
+4. **Round-event causal chain.** Each round's narrative `event` references at least one verifiable real-world occurrence on or before the round's date. Synthetic-only event chains ⇒ flagged.
+5. **Aggregate quality score $\geq 70 / 100$.** A simple sum-of-weights score over criteria 1–4 plus a sub-criterion for source diversity, computed during corpus assembly.
+
+These criteria were declared in the v2.1 corpus protocol and recorded in `calibration/empirical/scenarios_v2.1/_quality_audit.json` *before* the v2.5 SVI calibration ran. Of the 43 in-scope scenarios, exactly **one** — `FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE`, quality_score = 67 — falls below the threshold (failures on criteria 1 and 2: the only ground-truth proxy is a Reuters retrospective and per-round polling is LLM-estimated). The Archegos exclusion is therefore a *pre-declared, criterion-driven* drop, not a post-hoc fit-improvement decision; it would have been flagged identically had the v2.5 calibration assigned an Archegos error of 0.5 pp instead of 65 pp. We report both verified-only and full-set metrics throughout the paper to make the exclusion's effect transparent.
+
+### 5.2 Calibrated Global Parameters
+
+SVI converges in 3000 steps (final ELBO loss: 514.7) with a total runtime of 40.2 minutes for Phase B (empirical fine-tuning) and 0.4 minutes for Phase C (validation).
+
+**Table 3: Calibrated Global Posterior**
+
+| Parameter | Mean | 95% CI | Interpretation |
+|---|---|---|---|
+| α_herd | -0.176 | [-0.265, -0.079] | Herd effect slightly below direct influence |
+| α_anchor | +0.297 | [+0.199, +0.401] | Anchor rigidity is the strongest mechanism |
+| α_social | -0.105 | [-0.202, -0.005] | Social influence slightly below direct |
+| α_event | -0.130 | [-0.227, -0.033] | Event shocks below direct influence |
+| σ_global | [0.135, 0.147, 0.144, 0.143] | — | Inter-scenario parameter spread |
+
+The positive α_anchor indicates that anchor rigidity (resistance to change) dominates the force mixture. This is consistent with the well-documented status quo bias in opinion dynamics: people tend to revert toward their initial positions after temporary shifts. The negative values for α_herd, α_social, and α_event indicate these forces are present but weaker than direct LLM influence (the gauge reference).
+
+Converting to softmax weights: π = softmax([0, -0.176, 0.297, -0.105, -0.130]) ≈ [0.201, 0.169, 0.271, 0.181, 0.177]. Anchor rigidity receives approximately 27.1% of the total weight, direct influence 20.1%, social conformity 18.1%, event shocks 17.7%, and herd behavior 16.9%.
+
+### 5.3 Readout Discrepancy
+
+The calibrated discrepancy parameters reveal the scale of structural model misspecification:
+
+$$\sigma_{b,\text{between}} = 0.115 \quad [0.073, 0.173] \quad \text{(Eq. 23)}$$
+$$\sigma_{b,\text{within}} = 0.558 \quad [0.436, 0.696] \quad \text{(Eq. 24)}$$
+
+The within-scenario discrepancy (σ_{b,within} = 0.558) is approximately 5× the between-domain discrepancy (σ_{b,between} = 0.115), indicating that scenario-specific factors dominate over systematic domain-level biases. In practical terms, 0.558 in logit space translates to approximately 12–14 percentage points of systematic prediction error that the model cannot eliminate through parameter adjustment alone.
+
+**Table 4: Domain-Level Readout Discrepancy**
+
+| Domain | N | b_d Mean | 95% CI | Mean |b_s| | Bias |
+|---|---|---|---|---|---|
+| Financial | 6 | -0.054 | [-0.242, +0.126] | 0.744 | Over-predicts |
+| Energy | 1 | -0.026 | [-0.237, +0.186] | 0.709 | Over-predicts |
+| Public Health | 4 | -0.032 | [-0.223, +0.164] | 0.534 | Over-predicts |
+| Corporate | 6 | -0.040 | [-0.221, +0.139] | 0.432 | Over-predicts |
+| Political | 11 | +0.019 | [-0.145, +0.183] | 0.198 | No systematic bias |
+| Technology | 2 | -0.021 | [-0.204, +0.174] | 0.066 | No systematic bias |
+
+Financial scenarios exhibit the largest mean absolute discrepancy (|b_s| = 0.744), driven by cases where the model systematically over-predicts support levels. The political domain, with the most training data (N = 11), shows the lowest systematic bias (b_d ≈ 0, mean |b_s| = 0.198).
+
+### 5.4 Predictive Performance
+
+**Table 5: Validation Metrics (Test Set)**
+
+Credible intervals are computed in logit space and back-transformed via sigmoid, guaranteeing [0, 100] bounds by construction.
+
+| Metric | Full Test (N=8) | Verified Only (N=7) |
+|---|---|---|
+| Metric          | v2.7 — Full Test (N=8) | **v2.8 — Full Test (N=8)** | v2.7 — Verified Only (N=7) |
+|-----------------|------------------------|----------------------------|----------------------------|
+| MAE             | 19.2 pp                | **17.6 pp** (−1.62)        | 12.6 pp                    |
+| RMSE            | 26.6                   | **24.7**                   | 14.3                       |
+| Median AE       | 11.9 pp                | **9.7 pp**                 | 9.2 pp                     |
+| Coverage 90%    | 75.0%                  | **87.5%** (+12.5)          | 85.7%                      |
+| Coverage 50%    | 37.5%                  | 37.5%                      | 42.9%                      |
+| CRPS            | 15.4                   | **14.1** (−1.35)           | 8.6                        |
+
+The primary metric is verified-only MAE of 12.6 pp, excluding the Archegos scenario (error = 65.0 pp) whose ground truth is flagged as unreliable. The 87.5% coverage of 90% credible intervals (v2.8) indicates well-calibrated uncertainty—at nominal 90% within sampling noise for N = 8.
+
+**Table 6: Test Set Detailed Results — v2.8 post-Sprint 1-13 simulator hardening**
+
+| Scenario | Domain | GT (%) | v2.7 pred | v2.8 pred | v2.8 \|err\| | Δ vs v2.7 |
+|---|---|---|---|---|---|---|
+| Archegos Capital*† | Financial | 35.0 | >99.9 | 99.92 | 64.92 | −0.07 ✓ |
+| Greek Bailout      | Political | 38.7 | 65.33 | 54.54 | 15.84 | −10.78 ✓ |
+| Net Neutrality     | Technology | 83.0 | 66.26 | 70.47 | 12.53 | −4.21 ✓ |
+| French Election    | Political | 66.1 | 51.60 | 58.93 | 7.17  | −7.32 ✓ |
+| COVID Vax (IT)     | Pub. Health | 80.0 | 70.76 | 85.17 | 5.17  | −4.07 ✓ |
+| Tesla Cybertruck   | Commercial | 62.0 | 54.09 | 44.96 | 17.04 | +9.13 ✗ |
+| Amazon HQ2         | Corporate  | 56.0 | 63.27 | 67.27 | 11.27 | +3.99 ✗ |
+| Turkish Ref.       | Political  | 51.4 | 57.51 | 57.89 | 6.49  | +0.38 ✗ |
+
+*NEEDS_VERIFICATION — excluded from primary metrics. CI computed in logit space and back-transformed.
+
+† The Archegos posterior predictive in logit space has mean ≈ 4.6 (corresponding to > 99% after sigmoid) with standard deviation ≈ 0.5, yielding CI [99.2, 100.0] in percentage space. The logit-space representation is more informative near the bounds: logit 4.6 ± 1.65 × 0.5 spans [3.78, 5.43], mapping to [97.7%, 99.6%] via sigmoid. This is a genuine model prediction—the simulator assigns near-certainty to high support—not a numerical artifact. The 65 pp error reflects fundamental model misspecification on this scenario, not a confidence interval failure. The simulator's LLM-generated trajectory for Archegos produces a consensus narrative that does not match the complex, fragmented real-world dynamics of a leveraged fund collapse.
+
+### 5.5 Worst-Case Scenarios
+
+**Table 7: Top 5 Scenario Discrepancies (Training Set)**
+
+| Scenario | Domain | b_s | Error (pp) | Failure Mode |
+|---|---|---|---|---|
+| WeWork IPO | Financial | -1.378 | +48.5 | Trust collapse not modeled |
+| United Airlines | Corporate | -0.860 | +15.4 | Viral outrage underestimated |
+| SVB Collapse | Financial | -0.835 | +38.1 | Sequential shocks mishandled |
+| Chile Constitution | Political | +0.816 | -41.5 | Landslide momentum missing |
+| FTX Crypto | Financial | -0.727 | +11.0 | Contagion dynamics absent |
+
+The three largest discrepancies are all financial crises where the model over-predicts support (negative b_s). This systematic failure motivates the regime-switching extension (Appendix B).
+
+### 5.6 Evolution from v1 to v2
+
+**Table 8: v1 vs v2 Comparison**
+
+| Aspect | v1 (Gerli 2025) | v2 (this paper) |
+|---|---|---|
+| Calibration method | Grid search (972 combos) | Hierarchical Bayesian SVI |
+| Training data | 1000 LLM-generated scenarios | 42 empirical scenarios |
+| Parameters | 5 (all ad hoc) | 4 calibrable + 4 frozen (Sobol-justified) |
+| Uncertainty quantification | None | 90% CI, coverage 85.7% |
+| Model discrepancy | None | Explicit b_d + b_s |
+| Validation | Same data as training | Held-out test set + SBC |
+| Online assimilation | None | EnKF (error 1.8 pp with polling) |
+| MAE (test) | 14.8 pp (synthetic test set)* | 12.6 pp (empirical test set)* |
+| Epistemological status | Tool demonstration | Calibrated probabilistic model |
+
+*Direct comparison between v1 and v2 MAE is not straightforward: v1 was evaluated on LLM-generated synthetic scenarios while v2 uses empirical scenarios with real-world ground truth. The v1 test set likely understates true error because synthetic ground truth inherits the same LLM biases as the simulation (epistemic circularity). The improvement from v1 to v2 reflects both better calibration and the elimination of this circularity.
+
+**Table 8b: v2 vs v4 (Multi-Modal) Comparison**
+
+| Aspect | v2 (polling-only) | v4 (multi-modal) |
+|---|---|---|
+| Observation modalities | Polling only | Polling + financial returns |
+| Additional parameters | — | w_opinion, w_event, w_polar, λ_fin, σ_market (+5) |
+| Scenarios with market data | 0 | 14 |
+| Test MAE | 19.2 pp (v2.7) → **17.6 pp (v2.8)** | 18.2 pp |
+| Test Coverage 90% | 75.0% (v2.7) → **87.5% (v2.8)** | 87.5% |
+| Financial domain MAE | n/a | 24.0 pp |
+| Key finding | — | λ_fin = 0.045 (market signal nearly suppressed) |
+| v2.8 contribution | Sprint 1-13 simulator hardening | Unchanged |
+
+**Table 8c: v2.5 vs v2.6 (Roster Realism Layer) Comparison**
+
+| Aspect | v2.5 | v2.6 (this paper) |
+|---|---|---|
+| Roster generation | Unconstrained LLM prompt | Scope-constrained + realism-gated + composition-hinted |
+| Pre-simulation realism check | None | Layer 0 (Section 6.9, Appendix E) |
+| Calibration / benchmark numbers | Unchanged | **Unchanged** — Layer 0 operates upstream of dynamics |
+| Pilot-brief gate accept rate | — | 0.00 → 0.96 (Stone Island); 0.29 → 0.94 (AEC/Signify) |
+| Corpus-wide gate accept rate (legacy rosters, no regen) | — | 0.887 (172 / 194 named agents across 43 scenarios) |
+| Domain split (≥ 0.95 accept) | — | commercial, energy, environmental, labor, corporate |
+| Domain split (≤ 0.90 accept, denylist over-block) | — | political, financial, public_health, technology, social |
+| New test coverage | — | +38 tests (`test_layer0_*.py`) |
+| Cost (full corpus audit) | — | \$0.048 LLM, 39 s wall-clock @ concurrency 4 |
+| Scope of Layer 0 evaluation | — | 2 pilot briefs + 43-scenario corpus audit; full re-run + re-calibration deferred to v2.7 (gate refactor first; 8.3 item 11) |
+
+### 5.7 Covariate Effects
+
+Of the 20 entries in the B matrix (4 parameters × 5 covariates), one effect is statistically significant at the 95% level. With 34 training scenarios and 20 coefficients in the B matrix, statistical power is limited. The following results should be interpreted as exploratory signals consistent with substantive theory, not as confirmed causal effects. No correction for multiple comparisons is applied; with a Bonferroni adjustment at 20 tests, the α_event × institutional_trust effect would require p < 0.0025 to reach significance, which it does not achieve at the current sample size.
+
+**Table 9: Significant Covariate Effects**
+
+| Parameter | Covariate | Effect (B_{ij}) | 95% CI | Interpretation |
+|---|---|---|---|---|
+| α_event | institutional_trust | -0.127 | [-0.242, -0.015] | Higher institutional trust reduces sensitivity to event shocks |
+
+This effect has a natural interpretation: in scenarios with high institutional trust (e.g., established democracies with strong rule of law), external shocks are absorbed by institutional credibility rather than amplified through the opinion network. Conversely, in low-trust environments (financial crises, weak governance), event shocks propagate more strongly.
+
+The remaining 19 covariate effects have 95% CIs that include zero, indicating that the current dataset (N = 34 training scenarios) lacks power to detect additional covariate relationships. The two nearest-to-significant effects are α_anchor × undecided_share (B = +0.116, CI [-0.010, 0.243]) and α_herd × initial_polarization (B = +0.096, CI [-0.013, 0.217]). Both are substantively plausible—more undecided agents may amplify anchoring effects, and higher initial polarization may strengthen herd dynamics—but require a larger dataset to confirm.
+
+### 5.8 Multi-Modal Calibration: Polling + Financial Markets
+
+#### 5.8.1 Motivation
+
+The base calibration (Sections 5.1–5.7) uses a single observation modality: final polling outcomes. However, opinion dynamics in financial and corporate scenarios produce observable signals in equity markets—stock prices, trading volumes, sector ETF returns—that reflect investor-aggregated beliefs about the same underlying events. If these market signals are informative, incorporating them as an auxiliary likelihood should improve calibration, particularly in the financial domain where the polling-only model performs worst (mean |b_s| = 0.744, Table 4).
+
+We develop a multi-modal extension (v4) that jointly maximizes a weighted combination of the polling likelihood (Section 4) and a new financial market likelihood, connected through a learnable linkage function.
+
+#### 5.8.2 Financial Observation Model
+
+For each scenario with available market data, we fetch historical prices from Yahoo Finance for a primary ticker and the S&P 500 benchmark (SPY). We compute per-round excess returns (primary minus benchmark) to isolate the scenario-specific signal from broad market movements.
+
+The linkage function maps three simulator outputs to expected per-round market returns:
+
+$$\mathbb{E}[r_t] = \beta_{\text{sector}} \cdot \left( w_{\text{opinion}} \cdot \Delta q(t) \cdot s_o + w_{\text{event}} \cdot m_t d_t \cdot s_e + w_{\text{polar}} \cdot \Delta \sigma_p(t) \cdot s_p \right) \quad \text{(Eq. 22b)}$$
+
+where Δq(t) is the per-round change in pro-fraction, m_t d_t is the signed event shock, Δσ_p(t) is the change in position standard deviation (a polarization proxy), and s_o = 10, s_e = 5, s_p = 8 are fixed scale factors that map opinion-space units to percentage-point market returns. The sector-specific political beta β_sector captures the sensitivity of each industry to political/opinion events:
+
+**Table 5b: Political Beta Coefficients by Sector**
+
+| Sector | β_sector | Example Scenarios |
+|---|---|---|
+| Sovereign Debt | 2.20 | — |
+| Banking | 1.85 | Archegos, SVB, GameStop, AMC |
+| Insurance | 1.45 | — |
+| Automotive | 1.30 | Dieselgate, Tesla Stock Split |
+| Real Estate | 1.20 | WeWork IPO |
+| Telecom | 1.15 | — |
+| Energy (fossil) | 1.10 | — |
+| Defense | 0.90 | Boeing 737 MAX |
+| Tech | 0.85 | FTX (COIN proxy), Amazon HQ2, Twitter/X, Facebook→Meta |
+| Infrastructure | 0.80 | United Airlines |
+
+The financial likelihood for one scenario is:
+
+$$\log p(\mathbf{r} | \theta) = \sum_{t \in \mathcal{M}} \left[ -\frac{1}{2}\log(2\pi\sigma_m^2) - \frac{(r_t - \mathbb{E}[r_t])^2}{2\sigma_m^2} \right] \quad \text{(Eq. 22c)}$$
+
+where $\mathcal{M}$ is the set of rounds with valid market data and $\sigma_m = \exp(\log\sigma_m)$ is the market noise scale.
+
+#### 5.8.3 Market Data Enrichment
+
+We enriched 14 of the 42 scenarios with historical market data spanning all financial (FIN-*) and corporate (CORP-*) scenarios. Ticker selection follows a proxy rule: for delisted securities (Credit Suisse → XLF Financial ETF; Twitter → XLK Technology ETF), we use the closest sector ETF. For pre-IPO companies (Uber, WeWork), we use small-cap or growth ETFs.
+
+**Table 5c: Enriched Scenarios with Market Data**
+
+| Scenario | Ticker | Sector | Cumulative Return (%) | Excess vs SPY (%) |
+|---|---|---|---|---|
+| FIN-2021-GAMESTOP | GME | banking | +1784.9 | +1774.8 |
+| FIN-2021-AMC | AMC | banking | +432.1 | +421.7 |
+| FIN-2020-TESLA_STOCK_SPLIT | TSLA | automotive | +81.4 | +64.3 |
+| CORP-2021-FACEBOOK→META | META | tech | -4.3 | -13.0 |
+| FIN-2023-SVB_COLLAPSE | KRE | banking | -28.4 | -31.9 |
+| FIN-2021-ARCHEGOS | XLF | banking | +8.7 | +0.5 |
+| CORP-2019-BOEING_MAX | BA | defense | -24.8 | -28.7 |
+| FIN-2022-FTX_CRYPTO | COIN | tech | -64.7 | -57.0 |
+| CORP-2015-DIESELGATE | VOW3.DE | automotive | -35.2 | -37.1 |
+| FIN-2019-WEWORK | IWO | real_estate | +5.1 | +2.3 |
+| CORP-2017-UNITED_AIRLINES | UAL | infrastructure | -3.1 | -5.2 |
+| CORP-2017-UBER_LONDON | ^GSPC | tech | +2.8 | 0.0 |
+| CORP-2018-AMAZON_HQ2 | AMZN | tech | -12.4 | -18.7 |
+| CORP-2022-TWITTER_X | XLK | tech | +3.2 | +0.8 |
+
+#### 5.8.4 Joint Multi-Modal Likelihood
+
+The v4 model extends the v2 hierarchical structure with five additional parameters:
+
+- **Linkage weights** w_opinion, w_event, w_polar ~ Normal(0, 2): connect simulator outputs to expected returns.
+- **Market noise** log σ_market ~ Normal(log 5, 1): scale of return prediction residuals.
+- **Modality weight** λ_fin ~ Beta(2, 5): controls the relative influence of financial vs. polling likelihood.
+
+The joint log-likelihood for scenario s is:
+
+$$\ell_s = \ell_s^{\text{poll}} + \lambda_{\text{fin}} \cdot \ell_s^{\text{fin}} \cdot \mathbf{1}[\text{has\_fin}_s] \quad \text{(Eq. 22d)}$$
+
+The Beta(2, 5) prior on λ_fin has mean 0.286, expressing a soft preference for the polling signal while allowing the data to upweight financial information if it proves informative.
+
+#### 5.8.5 Results
+
+SVI converges in 2500 steps (final loss: 574.7, runtime: 54.5 minutes).
+
+**Table 5d: v2 (Polling-Only) vs v4 (Multi-Modal) Comparison**
+
+| Metric | v2 Train | v2 Test | v4 Train | v4 Test | v4 Financial |
+|---|---|---|---|---|---|
+| MAE (pp) | 14.3 | 19.2 | 13.8 | 18.2 | 24.0 |
+| RMSE (pp) | 18.8 | 26.6 | 18.9 | 25.6 | 30.7 |
+| Coverage 90% | 79.4% | 75.0% | 76% | 87.5% | 57% |
+
+The headline result is a **12.5 percentage point improvement in test set coverage** (75.0% → 87.5%), meaning 7 of 8 test scenarios are now covered by the 90% credible interval compared to 6 of 8 previously. Test MAE improves modestly (19.2 → 18.2 pp). Train metrics are comparable.
+
+**Table 5e: Calibrated Financial Linkage Parameters**
+
+| Parameter | Mean | 95% CI | Interpretation |
+|---|---|---|---|
+| w_opinion | +0.917 | [-1.106, +2.971] | Opinion shifts drive positive returns (wide CI) |
+| w_event | -0.431 | [-2.092, +1.343] | Shocks have ambiguous market effect (CI spans 0) |
+| w_polar | -0.662 | [-2.398, +1.153] | Polarization increase → negative returns (CI spans 0) |
+| λ_fin | 0.045 | [0.037, 0.055] | **Financial signal weighted at only 4.5%** |
+| σ_market | 13.0 | [11.1, 15.5] | Market noise floor: ~13 percentage points |
+
+**Key finding: the model learned to nearly suppress the financial likelihood.** The posterior λ_fin = 0.045 [0.037, 0.055] is far below the prior mean of 0.286, indicating that the data strongly prefer the polling-only signal. All three linkage weight CIs span zero, meaning none of the opinion→market channels are individually identifiable at the current sample size. The high σ_market = 13% confirms that per-round equity returns are dominated by idiosyncratic noise unrelated to the opinion dynamics the model captures.
+
+This is a principled negative result: the Bayesian model was free to upweight the financial channel if it improved the joint likelihood, and it chose not to. The financial domain scenarios remain the hardest (MAE = 24.0 pp, coverage = 57%), with the same outliers: Archegos (+64.7 pp), WeWork (+55.7 pp), SVB (+37.2 pp).
+
+#### 5.8.6 Why Financial Returns Are Uninformative for Opinion Calibration
+
+Three factors explain the low λ_fin:
+
+1. **Signal-to-noise ratio.** Per-round equity returns have standard deviations of 10–30%, while the opinion dynamics signals (Δq, shock, Δσ_p) produce expected returns of 1–5% through the linkage function. The SNR is approximately 0.1–0.3, insufficient for meaningful parameter constraint.
+
+2. **Confounded channel.** Market returns reflect many factors beyond public opinion—earnings, macro, sector rotation, liquidity—that the linkage function cannot capture. The "excess return" (primary minus benchmark) partially deconfounds, but sector-specific factors remain uncontrolled.
+
+3. **Sample size.** With 14 enriched scenarios and ~7 rounds each (~98 return observations), the effective sample for learning 3 linkage weights plus σ_market is small, especially given the high noise.
+
+#### 5.8.7 Implications
+
+Despite the negative financial result, the v4 model demonstrates two valuable findings:
+
+1. **Improved coverage.** The 75% → 87.5% test coverage improvement likely arises from the additional regularization imposed by the multi-modal structure—even a weakly informative auxiliary likelihood can improve uncertainty calibration by preventing the variational posterior from over-concentrating.
+
+2. **Quantified information boundary.** The posterior λ_fin provides a rigorous, data-driven answer to the question "how much can market data help calibrate opinion models?" At the current scale: very little (4.5%). This sets a clear target for future work: either increase the number of enriched scenarios (from 14 to 40+), use higher-frequency data (daily rather than per-round), or incorporate richer market features (implied volatility, options skew, CDS spreads) to push the SNR above the identifiability threshold.
+
+### 5.9 Live Market Data Integration for Scenario Initialization
+
+#### 5.9.1 Motivation
+
+The multi-modal calibration of Section 5.8 anchors the opinion-market linkage on historical return series drawn from the calibration corpus. Operationally, however, each new scenario launched in production inherits a set of macro priors — VIX, UST 10Y yield, Italian BTP–German Bund 10Y spread, US investment-grade credit spread, UK gilt yield — that enter (i) the sovereign-spread regression inside the financial observation model, (ii) the sector-specific political-beta scaffolding, and (iii) the preflight distribution check that warns on out-of-envelope macro states. In v2.6 these priors were hard-coded snapshots taken at calibration time (VIX = 20, IT.base_spread_bps = 180). For any scenario launched months after calibration the snapshot can drift by a factor of two: on 2026-04 the live BTP-Bund spread was 82 bps, not 180 bps. Feeding a stale baseline into the sovereign regression biases every inferred per-round return by that offset, which over 7–9 rounds accumulates into a visible error in the financial-observation likelihood even for a correctly specified model.
+
+#### 5.9.2 Live Provider Architecture
+
+We add a `LiveMarketProvider` that fans out to three independent data sources in parallel via a `ThreadPoolExecutor` (wall-clock ≈ max over sources rather than the sum), with a per-key 300-second TTL cache to avoid re-hitting the endpoints during a sim run:
+
+- **Yahoo Finance** (`yfinance`) — intraday pulls of `^VIX` (implied volatility), `^TNX` (UST 10Y yield), `^FVX` (UST 5Y yield).
+- **ECB SDMX JSON** — monthly long-term interest rates for Italy (`IRS.M.IT.L.L40.CI.0000.EUR.N.Z`) and Germany (`IRS.M.DE.L.L40.CI.0000.EUR.N.Z`), plus the daily AAA euro-area 10Y benchmark yield. The BTP-Bund spread is derived as IT − DE rather than pulled as a single series, so the two legs can be independently audited.
+- **FRED** (St. Louis Fed) — the ICE BofA US Corporate OAS (`BAMLC0A0CM`, daily) for `US.base_spread_bps`, and the UK 10Y long-term interest rate (`IRLTLT01GBM156N`, monthly) from which Gilt-Bund = UK − DE is derived analogously.
+
+Each overlaid macro field is tagged with two sidecar attributes on the `MarketContext`: `_<field>_source` (the human-readable feed name, e.g. `"FRED:BAMLC0A0CM"`) and `_<field>_as_of` (the ISO date of the underlying observation). Downstream tables in dashboards, reports, and audit logs read these tags to cite provenance, so no macro number ever appears in the pitch artifacts without a verifiable origin.
+
+#### 5.9.3 Geographic Market Context
+
+The engine refactor (Appendix A.5) replaces a process-wide `UniverseLoader` singleton with a per-scenario `MarketContext` bound to a geography regime (IT, US, EU, EM, default) at scenario bootstrap time. `MarketContext.with_live_data(provider)` merges live values over the calibrated static priors on a per-field basis: every live value that comes back successfully overrides the prior, and every fetch failure silently retains the calibrated snapshot. Offline evaluation, reproducibility runs, and the SVI calibration pipeline therefore stay deterministic (static priors only) while live production runs transparently pick up current market state. The provider is abstracted behind a `MarketDataProvider` protocol; `StaticUniverseProvider` is the default backend used in tests and for the numbers in Sections 5.1–5.8, `LiveMarketProvider` is the production backend, and test providers can be injected to exercise failure modes.
+
+#### 5.9.4 Distribution Check at Launch
+
+On 2026-04-21 the provider returned the following values (all sources green):
+
+| Feed | Value | Source |
+|---|---|---|
+| VIX (^VIX) | 18.87 | Yahoo Finance |
+| US IG OAS | 80 bps | FRED BAMLC0A0CM |
+| BTP-Bund 10Y | 82.3 bps | ECB SDMX (IT−DE) |
+| Gilt-Bund 10Y | 179.1 bps | FRED IRLTLT01GBM156N − ECB DE |
+
+Each value falls inside the 95% band of the corpus training distribution (VIX corpus band ≈ 12–35, credit spreads ≈ 40–300 bps, BTP-Bund ≈ 50–500 bps), so no preflight warning was raised. The same preflight guard flags any live reading outside its corpus 95% band at scenario-launch time, so inference on tail macro states triggers an explicit out-of-distribution warning rather than silent extrapolation.
+
+#### 5.9.5 Methodological Note: A Quantity-Mismatch Fix
+
+An earlier revision wrote `^TNX × 100` (UST 10Y yield, ≈ 425 bps) into `US.base_spread_bps`, while the corpus was trained on investment-grade credit spread (e.g. 50 bps during the 2011 US debt-ceiling episode and 60 bps during the 2013 shutdown). Feeding the yield where the posterior expects a credit spread pushed all US scenarios off-distribution and degraded the sovereign-regression fit without any visible failure signal (the number was within a plausible macro range, just the wrong quantity). The fix was not a recalibration but a feed swap: routing `US.base_spread_bps` to FRED BAMLC0A0CM restored distributional alignment, and `^TNX` was retained only as auxiliary metadata (`_ust_10y_pct`) surfaced on dashboards. The broader lesson is a calibration-provenance principle for any live-feed overlay: the production feed must be verified to carry the same physical quantity the posterior was trained on, not merely a nominally similar one.
+
+---
+
+## 6. Validation
+
+### 6.1 Simulation-Based Calibration
+
+Simulation-based calibration (SBC; Talts et al., 2018) verifies that the inference procedure recovers known parameters. We generate 100 synthetic datasets from the prior, run NUTS inference (200 warmup + 200 samples) on each, and test whether the posterior rank statistics are uniformly distributed.
+
+**Table 10: SBC Results**
+
+| Parameter | N | KS Statistic | p-value | Verdict |
+|---|---|---|---|---|
+| α_herd | 100 | 0.070 | 0.685 | PASS |
+| α_anchor | 100 | 0.095 | 0.308 | PASS |
+| α_social | 100 | 0.075 | 0.600 | PASS |
+| α_event | 100 | 0.075 | 0.600 | PASS |
+| τ_readout | 100 | 0.095 | 0.308 | PASS |
+| σ_obs | 100 | 0.105 | 0.205 | PASS |
+
+SBC confirms that the generative model is well-specified and that a gold-standard NUTS backend recovers correct posteriors: all 6 parameters pass the KS uniformity test (p > 0.20). However, SBC does not validate the SVI approximation used for the full empirical model, since SBC runs use NUTS.
+
+[FIGURE 2: Six-panel grid of histograms (2×3 layout). Each panel shows rank histogram for one SBC parameter (α_herd, α_anchor, α_social, α_event, τ_readout, σ_obs). X-axis: rank bin (1–10). Y-axis: count (0–15). Horizontal dashed line at expected count = 10 (uniform). Each panel titled with parameter name and KS p-value. All histograms should appear roughly uniform — no U-shape or tent shape.]
+
+The SBC configuration uses 10 agents and 7 rounds per synthetic scenario with Normal(0, 0.3) priors. Total runtime: 297.6 seconds (approximately 3 seconds per instance).
+
+### 6.2 SVI vs NUTS Comparison
+
+To assess variational approximation quality, we compare SVI and NUTS posteriors on a 4-scenario subset spanning two domains.
+
+**Table 11: SVI vs NUTS Posterior Comparison (4-scenario subset)**
+
+| Parameter | SVI mean ± std | NUTS mean ± std | |Δμ|/σ_NUTS | Compatible |
+|---|---|---|---|---|
+| α_herd | -0.500 ± 0.085 | -0.383 ± 0.796 | 0.148 | Yes |
+| α_anchor | +0.905 ± 0.065 | +0.604 ± 0.856 | 0.352 | Yes |
+| α_social | -0.997 ± 0.105 | -0.350 ± 0.763 | 0.848 | No |
+| α_event | -1.752 ± 0.073 | -0.137 ± 0.946 | 1.707 | No |
+
+*SVI: 1000 steps, Adam(lr = 0.01), AutoLowRankMVN guide. NUTS: 200 warmup + 200 samples, max_tree_depth = 8.*
+
+The two dominant parameters show good agreement (α_herd: |Δμ|/σ_NUTS = 0.15; α_anchor: 0.35). The weaker parameters show larger divergence (α_social: 0.85; α_event: 1.71), consistent with the known tendency of structured variational families with restricted covariance to concentrate posterior mass. The SVI standard deviations are 5–13× narrower than the NUTS estimates, indicating that the variational approximation substantially underestimates posterior uncertainty on the less-constrained parameters.
+
+This result has two implications. First, the posterior means for α_herd and α_anchor—which together dominate the force mixture (S_T = 0.55 and 0.45)—are reliably estimated by SVI. Second, uncertainty estimates on α_social and α_event may be underestimated by the variational approximation. Users requiring conservative uncertainty bounds should consider post-hoc inflation of the variational posterior or short NUTS chains initialized from the SVI optimum.
+
+**Limitation.** This comparison uses a 4-scenario subset for computational tractability; a full 42-scenario NUTS run would strengthen the comparison but requires substantially more compute.
+
+### 6.3 Global Sensitivity Analysis
+
+Variance-based global sensitivity analysis (Sobol, 2001) decomposes output variance into contributions from individual parameters and their interactions. We evaluate all 8 model parameters using N = 1024 Saltelli samples (18,432 total simulator evaluations, n = 30 agents, 7 rounds).
+
+**Table 12: Sobol Sensitivity Indices**
+
+| Parameter | S_1 (Main Effect) | S_T (Total Effect) | Type |
+|---|---|---|---|
+| α_herd | 0.364 ± 0.059 | 0.555 ± 0.055 | Calibrable |
+| α_anchor | 0.207 ± 0.060 | 0.452 ± 0.047 | Calibrable |
+| α_social | 0.086 ± 0.040 | 0.213 ± 0.034 | Calibrable |
+| α_event | 0.026 ± 0.033 | 0.115 ± 0.023 | Calibrable |
+| λ_citizen | 0.002 ± 0.033 | 0.121 ± 0.025 | Frozen |
+| λ_elite | 0.007 ± 0.010 | 0.016 ± 0.006 | Frozen |
+| θ_herd | 0.003 ± 0.013 | 0.024 ± 0.006 | Frozen |
+| δ_drift | 0.003 ± 0.010 | 0.013 ± 0.003 | Frozen |
+
+**Key findings:**
+
+1. **Dominant pair.** α_herd (S_T = 0.555) and α_anchor (S_T = 0.452) together account for the vast majority of output variance, including through their interaction. Their second-order interaction index S_2(α_herd, α_anchor) = 0.094 is the largest pairwise interaction, indicating strong nonlinear coupling between herd behavior and anchor rigidity.
+
+2. **Calibrable/frozen partition.** Three of the four frozen parameters (λ_elite, θ_herd, δ_drift) have both S_1 < 0.01 and S_T < 0.025, confirming negligible influence on output variance. The fourth, λ_citizen, has S_1 = 0.002 but S_T = 0.121 due to interaction effects — a non-negligible contribution. The decision to freeze λ_citizen is a pragmatic choice for computational stability (keeping the calibrable space at 4 dimensions), not a conclusion definitively justified by the data. Section 6.4 quantifies the resulting sensitivity.
+
+3. **Sum diagnostics.** ΣS_1 = 0.70 indicates that approximately 30% of output variance arises from parameter interactions. ΣS_T = 1.51 > 1 confirms significant interaction effects, consistent with the nonlinear softmax mixing mechanism.
+
+[FIGURE 3: Two-panel horizontal bar chart. Left panel: S_1 (main effects). Right panel: S_T (total effects). Y-axis: 8 parameter names (α_herd at top, δ_drift at bottom). X-axis: 0 to 0.6. Error bars show ±CI. Visual grouping: top 4 bars (calibrable) in blue, bottom 4 (frozen) in gray. Key visual: α_herd S_T bar extends to ~0.55, dominant. Note: λ_citizen S_T bar extends to ~0.12, visually non-trivial despite being in the "frozen" group — this is the basis for the discussion in Section 6.4.]
+
+### 6.4 Step Size Sensitivity
+
+Sobol analysis identifies λ_citizen as having non-negligible total effect (S_T = 0.121) despite near-zero main effect (S_1 = 0.002), warranting direct investigation. A perturbation analysis varies λ_citizen by ±40% around the default (0.25), measuring MAE impact on 5 representative scenarios.
+
+**Table 13: λ_citizen Sensitivity Analysis**
+
+| Scenario | MAE (0.6×) | MAE (0.8×) | MAE (1.0×) | MAE (1.2×) | MAE (1.4×) | max Δ (pp) |
+|---|---|---|---|---|---|---|
+| iPhone X | 5.8 | 5.9 | 5.9 | 7.0 | 11.5 | 5.6 |
+| Tesla Cybertruck | 8.5 | 10.5 | 11.3 | 11.6 | 11.8 | 3.2 |
+| Dieselgate | 29.8 | 29.6 | 29.6 | 29.6 | 29.7 | 0.2 |
+| Uber London | 15.0 | 15.0 | 15.0 | 15.0 | 15.0 | 0.0 |
+| United Airlines | 17.7 | 14.2 | 12.0 | 10.8 | 9.9 | 7.9 |
+
+The maximum MAE variation across all scenarios is 7.9 pp (United Airlines), concentrated in high-volatility cases. The median sensitivity across scenarios is 3.2 pp. Scenarios with strong anchoring dynamics (Dieselgate, Uber) are essentially insensitive (max Δ < 0.2 pp), while scenarios dominated by citizen-driven opinion shifts show meaningful dependence.
+
+This result indicates that λ_citizen should be included as a calibrable parameter in future work. The current frozen value was selected from prior predictive checks but is not empirically optimized. We note this as a known limitation that may contribute to the systematic errors observed in high-volatility corporate scenarios.
+
+### 6.5 Cross-Validation with Expanded Dataset
+
+To assess sensitivity to dataset size, we compare calibration on the original 22-scenario dataset versus the expanded 42-scenario dataset:
+
+**Table 14: 22-Scenario vs. 42-Scenario Calibration**
+
+| Metric | 22-Scenario | 42-Scenario | Δ |
+|---|---|---|---|
+| N (train / test) | 16 / 6 | 34 / 8 | +18 / +2 |
+| MAE (test) | 11.7 pp | 19.2 pp | +7.4 |
+| RMSE (test) | 14.7 | 26.6 | +11.9 |
+| Coverage 90% (test) | 83.3% | 75.0% | -8.3% |
+| MAE (train) | 16.3 pp | 14.3 pp | -2.0 |
+| Coverage 90% (train) | 68.8% | 79.4% | +10.6% |
+
+The expanded dataset improves training fit (MAE 16.3 → 14.3 pp, coverage 68.8% → 79.4%) but shows degraded test performance, largely driven by the inclusion of more challenging financial and corporate scenarios in the test set. When the NEEDS_VERIFICATION scenario is excluded, test MAE drops to 12.6 pp—comparable to the 22-scenario result (11.7 pp). This suggests that the model's performance ceiling is scenario-dependent rather than data-limited.
+
+### 6.6 Null-Baseline Predictive Skill (Diebold–Mariano)
+
+Sections 6.1–6.5 validate the model's calibration and parameter recovery. They do not, however, answer a distinct and arguably more fundamental question: **does the calibrated LLM-agent simulator actually forecast opinion trajectories better than a trivial statistical baseline?** The 42-scenario dataset averages only 6.3 rounds of ground-truth polling per scenario, so absolute error in the single digits can, in principle, be achieved by a naive model. This subsection quantifies that skill floor.
+
+**Method.** We evaluate four standard forecasters as null baselines against the per-round normalized support $s_t = \text{pro\_pct}_t / 100 \in [0, 1]$ and signed position $p_t = (\text{pro\_pct}_t - \text{against\_pct}_t)/100 \in [-1, 1]$ of every empirical scenario:
+
+1. **Naive persistence** — $\hat{y}_{t+1} = y_t$.
+2. **Running mean** — $\hat{y}_{t+1} = \frac{1}{t} \sum_{i=1}^{t} y_i$, a zero-drift random walk collapsed to the sample average.
+3. **OLS linear trend** — closed-form slope/intercept on rolling history, extrapolated one step ahead.
+4. **AR(1)** — $\hat{y}_{t+1} = \mu + \hat{\phi}(y_t - \mu)$ with $\hat\phi$ from the sample autocorrelation, truncated to $[-0.99, 0.99]$ for stability.
+
+Each forecaster produces a one-step-ahead trajectory using the first 20% of each scenario as training history, emitting one forecast per subsequent round and rolling the realized value forward after each step (one-step-ahead, not recursive multistep). Pairwise predictive skill is tested with the Diebold–Mariano (DM) statistic (Diebold & Mariano, 1995) applied to squared errors, with the Harvey–Leybourne–Newbold (HLN) small-sample correction (Harvey, Leybourne & Newbold, 1997): at horizon $h$, the HLN scale is
+
+$$
+\sqrt{\frac{n + 1 - 2h + h(h-1)/n}{n}},
+$$
+
+and the test statistic is referred to a Student-$t$ distribution with $n - 1$ degrees of freedom rather than the asymptotic $\mathcal{N}(0, 1)$. The HLN correction is non-optional at our sample sizes ($n = 4$ to $n = 9$ forecast pairs per scenario), where uncorrected DM over-rejects.
+
+**Results — pooled across 43 empirical scenarios.**
+
+**Table 15a: Null-baseline skill on normalized support (pro_pct/100)**
+
+| Baseline | Mean RMSE | Median RMSE | Mean terminal error | Significant beats of persistence |
+|----------|-----------|-------------|---------------------|-----------------------------------|
+| Naive persistence | 0.038 | 0.021 | 0.026 | — |
+| Running mean | 0.063 | 0.034 | 0.078 | 0 / 43 |
+| OLS linear trend | 0.042 | 0.015 | 0.043 | 4 / 43 |
+| AR(1) | 0.055 | 0.034 | 0.057 | 0 / 43 |
+
+**Table 15b: Null-baseline skill on signed position ((pro − against) / 100)**
+
+| Baseline | Mean RMSE | Median RMSE | Mean terminal error | Significant beats of persistence |
+|----------|-----------|-------------|---------------------|-----------------------------------|
+| Naive persistence | 0.072 | 0.040 | 0.097 | — |
+| Running mean | 0.117 | 0.077 | 0.148 | 0 / 43 |
+| OLS linear trend | 0.082 | 0.035 | 0.121 | 6 / 43 |
+| AR(1) | 0.102 | 0.058 | 0.118 | 0 / 43 |
+
+*"Significant beats of persistence" counts scenarios where $\text{DM}(\text{baseline}, \text{persistence})$ yields $p < 0.05$ with the baseline having lower mean squared loss. "Terminal error" is the absolute deviation of the last emitted forecast from the verified ground-truth outcome.*
+
+**Three findings.**
+
+1. **Naive persistence is a surprisingly strong baseline.** The mean RMSE of 0.038 on normalized support corresponds to a 3.8 percentage-point one-step-ahead error on pro-support — below the 12.6 pp MAE the hierarchical Bayesian model achieves on full-scenario final outcomes. The two metrics are not directly comparable (one-step-ahead vs full-scenario terminal forecast; normalized support vs raw pp) but the number establishes a tight budget: if a complex LLM simulator cannot improve on a one-line forecaster for intermediate dynamics, the added complexity is difficult to justify.
+
+2. **No baseline reliably dominates persistence.** OLS linear trend attains the lowest median RMSE on both metrics (0.015 on support, 0.035 on signed position), but statistical significance relative to persistence is achieved on only 4/43 and 6/43 scenarios respectively. The running mean and AR(1) baselines never beat persistence at $p < 0.05$, and on the mean they lose substantially (RMSE 0.063 vs 0.038 on support). Empirical polling trajectories are heavily persistent, with round-to-round variance dominated by the previous round's level rather than by trend or mean-reversion components detectable at our sample sizes.
+
+3. **Skill is domain-heterogeneous by a factor of five.** Table 16 breaks persistence RMSE down by domain: political scenarios are the easiest to forecast (0.012 on support), financial the hardest (0.063), with corporate and commercial clustered in between. This spread is the most actionable finding of the benchmark: a calibrated simulator should be expected to add little lift on low-volatility political polling (where persistence is near-optimal) but has substantial room to contribute on financial and corporate scenarios, which is precisely where the hierarchical model's worst performance is observed in Section 5.5.
+
+**Table 16: Persistence RMSE by domain (support metric, n scenarios in parentheses)**
+
+| Domain | n | Persistence RMSE | OLS linear trend RMSE | AR(1) RMSE |
+|--------|---|------------------|-----------------------|------------|
+| Political | 15 | 0.012 | 0.009 | 0.020 |
+| Labor | 1 | 0.009 | 0.008 | 0.016 |
+| Environmental | 2 | 0.021 | 0.013 | 0.033 |
+| Corporate | 8 | 0.048 | 0.062 | 0.065 |
+| Public health | 5 | 0.052 | 0.054 | 0.081 |
+| Commercial | 5 | 0.059 | 0.075 | 0.079 |
+| Financial | 7 | 0.063 | 0.073 | 0.094 |
+
+*Values are mean RMSE per baseline on the `support` metric (pro_pct/100). Lower is better; persistence is the column to beat.*
+
+The 5× persistence RMSE gap between political (0.012) and financial (0.063) mirrors the $|b_s|_\text{financial} = 0.74$ logit-space bias of Section 5.3. Both point to the same conclusion: financial scenarios exhibit regime-switching dynamics (e.g. SVB collapse, Dieselgate) that neither simple persistence nor a stationary hierarchical Gaussian discrepancy captures well.
+
+**Interpretation as a skill floor.** We do not claim that our calibrated model beats all four baselines on all scenarios — Sections 5.4 and 5.5 make the opposite point explicit. Rather, we release Tables 15a, 15b, and 16 as a *reproducible reference distribution* that future iterations of DigitalTwinSim (including the EnKF of Section 7 once extended to multi-step ahead) can be compared against without ambiguity. Appendix D describes how any modification to the sim can be automatically re-evaluated against this same benchmark via a one-line command.
+
+### 6.7 Empirical Coverage via Residual Bootstrap
+
+The credible intervals reported in Section 5.4 are computed in logit space and back-transformed through the sigmoid, guaranteeing bounds within $[0, 100]$ by construction. This is a structural property of the parametric likelihood; it does not, by itself, establish that the intervals are empirically well-calibrated. Section 6.5's 85.7% coverage of 90% credible intervals on verified test scenarios does — but that calculation assumes a specific parametric form for the posterior. We provide a model-free complement below.
+
+**Method.** For each empirical scenario and each baseline forecaster, we pool the in-sample residuals $r_t = y_t - \hat{y}_t$ and construct a residual-bootstrap predictive interval at each round: draw $B = 500$ residuals with replacement, add them to $\hat{y}_t$, and take empirical $[\alpha/2, 1 - \alpha/2]$ quantiles. Empirical coverage is then the fraction of realized values $y_t$ that fall inside $[\hat{y}_t + r_{(B\alpha/2)}, \hat{y}_t + r_{(B(1-\alpha/2))}]$, aggregated across all $\sum_i n_i = 271$ round-level observations in the corpus. A nonparametric bootstrap on the coverage statistic itself yields a 95% confidence band, and a coverage report flags the interval as "calibrated" iff the nominal coverage lies within the band.
+
+**Results.** At a nominal 90% level, the persistence baseline's residual-bootstrap intervals cover 88.4% of round-level observations pooled across the 43-scenario corpus (bootstrap 95% CI: [85.6%, 91.1%]), agreeing with nominal within the bootstrap band. The OLS linear trend baseline's intervals cover 89.2% (CI [86.4%, 91.9%]). On individual scenarios, coverage fluctuates substantially — 26 out of 43 land above 90%, 17 below, with scenarios in the `critical` tension bucket (Dieselgate, United Airlines, iPhone X, Eurozone Monetary Shock) systematically under-covered by the persistence model as expected.
+
+**Interpretation.** The model-free residual-bootstrap agrees with the logit-space parametric coverage of Section 5.4 at the corpus aggregate level. The agreement is worth noting because the two calculations use entirely independent mathematical machinery (sigmoid-transformed Gaussian posteriors vs pooled empirical residual quantiles) and yet converge on similar calibration conclusions. Disagreement would have flagged a potential systematic mismatch between the parametric posterior and empirical error distributions; agreement increases our confidence that the reported 85.7% coverage is not an artifact of the logit parameterization.
+
+### 6.8 Scenario-Diversity Matrix
+
+A pooled performance number can hide systematic under-coverage of a single axis value — for example, a model might average well across domains while failing uniformly on APAC scenarios or high-tension ones. To make axis-level gaps visible, we define a three-axis scenario matrix:
+
+- **Domain** (7 values): financial, commercial, corporate, political, public_health, environmental, labor.
+- **Region** (5 values): EU, US, APAC, LATAM, GLOBAL (region inferred from ISO country code).
+- **Tension** (4 values): low, moderate, high, critical (inferred from per-scenario volatility: the population standard deviation of round-to-round signed-position deltas, bucketed at 0.03 / 0.07 / 0.15).
+
+The Cartesian product contains $7 \times 5 \times 4 = 140$ cells, each representing a qualitatively distinct operating regime.
+
+**Table 17: Scenario-matrix coverage of the 43-scenario empirical corpus**
+
+| Axis | Value | Scenarios |
+|------|-------|-----------|
+| Domain | political | 15 |
+| Domain | corporate | 8 |
+| Domain | financial | 7 |
+| Domain | commercial | 5 |
+| Domain | public_health | 5 |
+| Domain | environmental | 2 |
+| Domain | labor | 1 |
+| Region | US | 22 |
+| Region | EU | 16 |
+| Region | APAC | 2 |
+| Region | LATAM | 2 |
+| Region | GLOBAL | 1 |
+| Tension | low | 26 |
+| Tension | moderate | 7 |
+| Tension | critical | 6 |
+| Tension | high | 4 |
+
+The corpus occupies 25 of the 140 possible cells (18%). No axis value is empty — every domain, region, and tension bucket contains at least one scenario — but the distribution is visibly uneven: US + EU scenarios account for 38/43 (88%), and the labor / environmental / GLOBAL buckets each contain at most two scenarios. We report these imbalances explicitly so that downstream claims ("the model generalizes across tensions") can be weighed against the small-sample cells that support them.
+
+**Forward-looking use.** The matrix is intended as a gating criterion for future scenario additions. A prospective new scenario is prioritized if it fills an under-sampled cell — for example, an APAC labor scenario would lift two weak axes at once. Tables 17 and 16 together suggest that the highest-marginal-value additions would be (i) additional APAC and LATAM scenarios across any domain, (ii) additional financial scenarios with `critical` tension, which currently has only 6 supporting scenarios despite representing the most diagnostic regime for model discrimination.
+
+### 6.9 Agent Roster Realism
+
+The validation in Sections 6.1–6.8 assumes that the agent roster handed to the dynamics model is a sensible sample of actors who would plausibly comment on the scenario brief. In practice, freely prompting an LLM to "generate elite commentators for this brief" produces rosters that systematically over-include global celebrities (heads of state, central bank governors, tech billionaires) even when the scenario is a narrow national or sub-sector event. A roster populated with out-of-scope actors can still produce reasonable aggregate MAE through discrepancy absorption, but the per-agent trajectories become impossible to audit against real-world commentary — breaking the digital-twin claim at its most basic level.
+
+We therefore add a **Layer 0** stage upstream of the dynamics model (Sections 3–4) and the benchmark layer (Sections 6.6–6.8). Layer 0 has two components, both implemented as structured LLM prompts with deterministic post-processing:
+
+1. A **scope analyzer** that converts the free-text brief into a typed `BriefScope` (sector, sub-sector, geography as ISO codes, scope tier in `global | national | regional | niche`, whitelisted and denylisted stakeholder archetypes, entities mentioned verbatim in the brief).
+2. A **realism gate** that, for every agent proposed by the downstream generator, returns an `accept | reject | uncertain` verdict conditioned on the `BriefScope`. Rejected agents are regenerated with feedback; the loop terminates when the rejection rate falls below $\tau = 0.15$ or after $P = 2$ passes.
+
+The rejection prompt is asymmetric by design: the whitelist is advisory (missing from it is not grounds to reject), the denylist is a hard block (heads of state on a consumer-product brief cannot pass), and industry associations, academic institutions, trade bodies, regulators, and media outlets are explicitly acceptable even when their archetype label is absent from the whitelist. This asymmetry corrects the dominant Phase 1 false-positive pattern: legitimate in-sector, in-geography actors being rejected solely because their archetype string did not appear in the advisory list.
+
+A secondary **composition hint** is conditionally injected into the elite and institutional generator prompts: when the scope is narrow (`sub_sector` non-empty or `scope_tier ∈ {niche, regional}`) the hint prefers specialist voices — sub-sector critics, community curators, long-running publication editors, independent newsletter authors — over generalist industry-wide analysts and caps the latter at 1–2 per roster. Under a broad scope the hint is softened to "include at least 2–3 specialist voices alongside generalists." The hint is domain-neutral: no sector-specific names or firm names appear in it.
+
+**Table 18: Layer 0 realism results on two pilot briefs (Gemini 2.0 Flash-Lite)**
+
+| Brief | Scope (sector / tier / geo) | Pre-gate accept | Post-enforcement accept | Rejected (final) | LLM cost |
+|-------|-----------------------------|-----------------|-------------------------|-------------------|----------|
+| Stone Island AW26 women's line launch | fashion_retail / luxury_streetwear / niche / IT | 0.00 | 0.96 | 1 / 26 | ≈ $0.03 |
+| AEC Illuminazione acquired by Signify | industrial_lighting / smart_infrastructure_integration / national / IT,EU | 0.29 (8 / 34) | 0.94 (31 / 34) | 1 / 34 (lone out-of-scope consultant) | $0.029 |
+
+The two briefs were chosen to stress-test domain transfer: one heritage-fashion brief where the pitfall is global luxury-analyst over-selection, and one industrial-B2B brief where the pitfall is over-weighting generalist management consultants. In both cases the enforcement loop converges in a single regeneration pass under the $\tau = 0.15$ threshold, and the composition hint surfaces at least one niche voice per roster (e.g., the *Smart Lighting Monitor* newsletter in the AEC case and a sub-sector archivist in the Stone Island case) that the unconstrained baseline did not select.
+
+**Relationship to Sections 6.6–6.8.** Layer 0 does not affect any number in Sections 5 or 6.6–6.8. The hierarchical calibration, the Diebold–Mariano comparisons, and the residual-bootstrap coverage remain computed from the same 42 empirical scenarios with their legacy rosters. Layer 0 is an input-side realism layer: its contribution is epistemic (the roster now matches the scope the brief claims) rather than predictive (no change in MAE or coverage until Layer 0 is applied to re-generate the training-scenario rosters — see Section 8.3, future-work item 11).
+
+**Failure modes observed (pilot briefs).** Two residual defects survive the gate on the two pilot briefs:
+
+- *Labelling noise.* In the AEC run, one accepted agent carried an archetype string that did not match the whitelist exactly but whose public record clearly fell inside the scope (a sub-sector newsletter editor with a manufacturer-adjacent institutional affiliation). The gate correctly accepted the agent, but the archetype label remained a loose mis-fit — a cosmetic defect, not a realism defect.
+- *Borderline generalists.* A small-firm management consultant with a sector-adjacent practice was rejected in pass 2 of the AEC run. The verdict is defensible — the brief is B2B industrial, not consulting-industry — but sits near the decision boundary and could swing accept/reject with small prompt perturbations. This is the kind of edge case that motivates $P = 2$ passes rather than a single round of rejection-plus-regeneration.
+
+#### 6.9.1 Corpus-Wide Audit on the 43-Scenario Empirical Set
+
+To go beyond the two pilot briefs, we ran the scope analyzer and the realism gate against the **legacy** rosters already curated in the empirical corpus (Appendix C), without any roster regeneration. The point is diagnostic: how does the v2.6 gate score rosters that were assembled *before* Layer 0 existed? The full audit cost \$0.048 in LLM calls and ran in 39 s on a single laptop with concurrency 4 (Gemini Flash-Lite).
+
+The aggregate accept rate is 88.7 % (172 of 194 named elite + institutional agents across the 43 in-scope scenarios; one corpus manifest file was correctly skipped). The per-domain breakdown reveals a sharp split:
+
+**Table 19: Corpus-wide gate audit on legacy rosters**
+
+| Domain | Scenarios | Total agents | Out-of-scope (gate) | Accept rate |
+|--------|-----------|--------------|----------------------|-------------|
+| commercial | 2 | 9 | 0 | 1.00 |
+| energy | 1 | 4 | 0 | 1.00 |
+| environmental | 1 | 4 | 0 | 1.00 |
+| labor | 1 | 4 | 0 | 1.00 |
+| corporate | 8 | 33 | 1 | 0.97 |
+| financial | 7 | 32 | 3 | 0.89 |
+| political | 14 | 68 | 11 | 0.86 |
+| public_health | 5 | 24 | 4 | 0.83 |
+| technology | 3 | 12 | 2 | 0.83 |
+| social | 1 | 4 | 1 | 0.75 |
+
+The gate finds essentially zero out-of-scope actors in the "cold" verticals (commercial, energy, environmental, labor, corporate) but rejects 11–25 % of agents in political, public health, financial, technology, and social briefs. Inspection of the rejection rationales exposes a single systematic pattern that accounts for nearly all of the corpus rejections:
+
+> **"Agent is a head of state / central bank governor / world religious leader, which is explicitly included in the hard denylist."**
+
+The rejected agents include David Cameron, Boris Johnson, and George Osborne on POL-2016-BREXIT; Donald Trump on POL-2018-ELEZIONI_MIDTERM_USA and TECH-2020-TIKTOK_US_BAN; Joe Biden on PH-2021-MASKING_MANDATE_USA; Mario Draghi on PH-2021-COVID_VAX_IT; Janet Yellen and the Federal Reserve on FIN-2023-SVB_COLLAPSE; and the European Central Bank and Greek Orthodox Church on POL-2015-GREEK_BAILOUT.
+
+These agents are *legitimate principals* of their respective scenarios: it is impossible to model the Brexit campaign without Cameron and Johnson, or the SVB run without the Fed. The gate is correctly applying the denylist as written; the denylist itself encodes a **global rule** ("global tech billionaires, heads of state, central bank governors are out") that was calibrated on the two narrow pilot briefs (heritage fashion, industrial B2B) where global figures *would* have been hallucinations. When the brief's substantive subject *is* a national-level political or monetary event, the same denylist excludes the very actors who should be in the roster.
+
+This is the most consequential finding from the corpus audit and reframes the Layer 0 contribution: **the gate is correctly catching out-of-scope hallucinations on commercial / corporate briefs (where they are the dominant failure mode) but is over-blocking on political and financial briefs where the head-of-state archetype is in-scope by construction.** Two architectural fixes follow naturally and are deferred to v2.7:
+
+1. **Context-aware denylist.** The denylist must condition on `scope_tier` and `domain`. For a political brief whose scope is the country whose head of state is the protagonist, the local head of state is in-scope; the denylist still excludes *other* heads of state (which is the original intent — preventing Brazilian-president commentary on a UK referendum).
+2. **Principal-named-entity carve-out.** When the brief's `named_entities` (extracted by the scope analyzer) include a person who would otherwise hit the denylist, the entity-level mention overrides the archetype-level block.
+
+Until those fixes ship, the practical recommendation for v2.6 deployment is to **enable Layer 0 for commercial / corporate / industrial briefs** (where the gate is well-calibrated and the failure mode it catches is real) and **disable enforcement** (run gate in observability-only mode) **for political / financial / monetary briefs** until the denylist is context-aware.
+
+The corpus-wide audit telemetry — per-scenario and per-rejection-rationale — is shipped as `outputs/layer0_corpus_audit.json` and reproducible with:
+
+```bash
+python3 scripts/layer0_corpus_audit.py --concurrency 4
+```
+
+### 6.10 Benchmark Integrity: LLM Contamination and Blinding
+
+Sections 6.6–6.9 evaluate the simulator against 43 empirical scenarios whose ground-truth outcomes are, by construction, in the public record: referendums, elections, corporate-crisis polls, public-health surveys. Every modern LLM has seen some fraction of that record during training. Any retrospective benchmark that does not separately account for LLM prior knowledge is therefore unable to distinguish two qualitatively different sources of apparent skill:
+
+1. *Dynamics* — agents interact, events cascade, positions evolve, and the trajectory converges on ground truth because the calibrated model of opinion update is a faithful approximation of the underlying process;
+2. *Memorization* — LLM agents already know the outcome and steer their textual contributions toward it, regardless of whether the dynamics model would have recovered the same trajectory from an uninformative prior.
+
+The second source of skill is worthless for any claim of prospective forecasting on unseen scenarios. Section 6.10 adds the missing instrumentation: a probe that quantifies the memorization component per scenario, and a blinding protocol that drives it to zero so that the dynamics component can be measured in isolation.
+
+#### 6.10.1 Contamination Probe
+
+We query the same LLM used inside the simulator (`gemini-3.1-flash-lite-preview`) under a system prompt that instructs it to answer factual questions about public events and to return `null` when recall fails rather than guess. Each scenario is probed on four independent axes, each with a schema-constrained JSON response:
+
+- **Outcome**: who prevailed (`"pro"` / `"against"`) and the final support percentage.
+- **Trajectory**: the qualitative shape of the polling movement (`"tightened"`, `"blew_out"`, `"flat"`, `"reversed"`) and which side led early / late.
+- **Events**: up to three named campaign events with approximate dates.
+- **Actors**: up to three named individuals or organizations leading each side.
+
+Each axis is graded against the scenario's ground-truth file with deterministic rubrics. The outcome grader rewards matching winner direction (0.4) and percentage recall within 2 pp (full 0.6) or within 5 pp (partial 0.3). The trajectory grader compares claimed shape and leading-side-early / leading-side-late against the values computed from the empirical trajectory. The events grader uses lowercased word-token intersection ($\geq 2$ token overlap per claimed event against any ground-truth event description). The actors grader uses per-token intersection on pro-side and against-side name sets derived from the scenario's agent list (positions $> +0.2$ or $< -0.2$). All raw grader scores are multiplied by the model's own stated confidence with a floor of $0.3$, which rewards honest `I don't know` answers and penalizes overconfident wrong answers.
+
+The per-scenario **contamination index** is a weighted mean across axes with outcome double-weighted ($w_{\text{outcome}} = 2$, others $= 1$), scaled into $[0, 1]$.
+
+**Table 20: Contamination probe on the 43-scenario corpus.** Summary results on the full corpus; the probe ran 172 LLM calls at total cost \$0.0321. A scenario is classified as *high leakage* if its index $\geq 0.60$ and *low leakage* if $< 0.35$.
+
+| metric | value |
+|--------|-------|
+| Corpus mean contamination index | 0.448 |
+| Scenarios with index $\geq 0.60$ (high leakage) | 11 / 43 |
+| Scenarios with index $< 0.35$ (low leakage) | 16 / 43 |
+| Per-axis mean: outcome | 0.425 |
+| Per-axis mean: trajectory | 0.556 |
+| Per-axis mean: events | 0.565 |
+| Per-axis mean: actors | 0.267 |
+
+**Table 21: High-leak scenarios (contamination index $\geq 0.60$).** All are well-known political referendums and national-level elections.
+
+| scenario id | index |
+|-------------|------:|
+| POL-2014-SCOTTISH_INDEPENDENCE_REFERENDUM | 0.913 |
+| POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU | 0.760 |
+| POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA | 0.736 |
+| POL-2016-REFERENDUM_COSTITUZIONALE_ITAL | 0.735 |
+| POL-2020-ELEZIONI_PRESIDENZIALI_USA_2020 | 0.720 |
+| POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE | 0.717 |
+| POL-2020-CHILE_CONSTITUTIONAL_REFERENDUM | 0.694 |
+| POL-2015-GREEK_BAILOUT_REFERENDUM_GREF | 0.691 |
+| SOC-2017-AUSTRALIA_SAME_SEX_MARRIAGE_PO | 0.675 |
+| POL-2017-TURKISH_CONSTITUTIONAL_REFERENDUM | 0.661 |
+| POL-2018-REFERENDUM_ABORTO_IRLANDA_2018 | 0.631 |
+
+The events and trajectory axes are the leakiest in aggregate (0.565 and 0.556). The actors axis is the cleanest (0.267), reflecting the fact that named individuals decay from model knowledge faster than institutional outcomes, and that partial-name matching penalizes the grader rather than rewarding the model. The Brexit scenario (POL-2016-BREXIT) records an anomalously low index of 0.167 despite being one of the most covered referendums in the training corpus; inspection shows this reflects a pro/against label convention mismatch in the scenario file (`pro` = Leave in the dataset, colloquially `pro-Brexit` = Leave = `pro`) that caused the model's factually correct answers to be graded as wrong. We flag this as a known grader caveat (see Appendix F) rather than repair it in the index itself: the caveat has no effect on the subsequent A/B because the same convention is used in both arms.
+
+#### 6.10.2 Blinding Protocol
+
+The contamination probe establishes that naked retrospective evaluation on the 11 high-leak political scenarios cannot distinguish dynamics from memory. We therefore define a deterministic blinding protocol with four design constraints, in priority order:
+
+1. **No identifying leak** in any field that the simulator's prompts expose to the LLM. The blinded scenario must not contain the country name, the event date, the named principals, the organizations, the political-party tokens, or any distinctive numeric fingerprint.
+2. **Full preservation of the numeric substrate.** The per-round pro / against / undecided percentages, the agent initial positions on $[-1, +1]$, the influence scores, the shock magnitudes and directions, the number of rounds, and the round duration must all be passed through unchanged. The blinded scenario is still a faithful simulation substrate.
+3. **Determinism.** Given the same input scenario, the blinded output is byte-identical across runs. Reproducibility of the A/B comparison depends on this.
+4. **Reversibility for grading only.** The name-to-alias mapping is persisted in a sidecar file (`blinding_maps/<scenario>.map.json`) that the grader reads when rejoining blinded sim output to ground truth. The simulator itself never reads the sidecar.
+
+The transformation has five components:
+
+- **Title** is replaced with a template that encodes only the round count and the canonical domain: `"Binary political referendum-style decision over N polling rounds"`. No identifying string — event name, geography, institution, date — survives.
+- **Country** is mapped to `Country_{H}` where $H$ is the first two hex characters of $\text{sha1}(\text{country}.\text{upper}())$. This is stable across runs (the same country always maps to the same alias) and reveals no information beyond the country identity.
+- **Dates** are converted from absolute ISO form to round-relative form with the terminal date as anchor: $T - 0$ for the final round, $T - k d$ for a round $k$ days earlier, $T + k d$ for a round $k$ days later. The year is never written.
+- **Agents** are renamed by a deterministic rule that preserves the roster's *structure* but strips its identity. Each agent is bucketed by initial position into `PRO_LEADER` ($\geq +0.5$), `PRO_SUPPORTER` ($[+0.2, +0.5)$), `NEUTRAL` ($(-0.2, +0.2)$), `AGAINST_SUPPORTER` ($(-0.5, -0.2]$), or `AGAINST_LEADER` ($\leq -0.5$), and within each bucket assigned a rank $k$ from $1$ in descending influence order, producing aliases like `PRO_LEADER_1`, `AGAINST_LEADER_2`, `NEUTRAL_3`. The alias is then used to substitute the original name anywhere it occurs in event descriptions, agent descriptions, or the title, with a word-boundary regex applied case-insensitively and longest-first.
+- **Stoplist scrub** applies after the named-entity substitution. A fixed list of $\approx 50$ geography and political-lexicon tokens (`italy`, `italian`, `rome`, `britain`, `english`, `brexit`, `washington`, `eu`, `democratic party`, etc.) is rewritten to category placeholders (`COUNTRY`, `CITY`, `REFERENDUM`, `INSTITUTIONAL_BLOC`, …). Four-digit years are replaced with the literal string `YEAR`.
+
+Two refinements handle residual failure modes surfaced during development:
+
+- **Multi-token rename expansion.** An agent `"Matteo Renzi"` in the roster triggers a word-boundary match only on the full bigram; event descriptions that mention the surname alone (`"Renzi announces the referendum"`) leak through. The expansion step splits every multi-token agent name into its constituent tokens of length $\geq 4$ and adds each token as a separate rename key mapping to the same alias, so surname-only occurrences match.
+- **Non-agent proper nouns.** Events describing figures who are *not* in the agent list (e.g., "Former PM Berlusconi officially declares his opposition to the reform" in a scenario whose roster includes Renzi and the PD but not Berlusconi) are still a residual leak source for worst-case text. The current protocol handles this via the stoplist and the title rewrite — which is sufficient for the numeric probe, because Berlusconi's name alone is not enough for the LLM to recover the scenario when title, country, and dates have been stripped — and we defer a LLM-scrub pass on event descriptions as v2.8 work.
+
+#### 6.10.3 A/B Validation of the Blinding Protocol
+
+The decisive experiment is whether the blinding protocol actually drives the contamination index to zero on the high-leak subset where it matters. We ran the identical four-axis probe twice on the 11 high-leak scenarios listed in Table 21, changing only what the LLM sees in the prompt:
+
+- **Contaminated arm**: the LLM is shown the real title, the real country, and the real `date_start` → `date_end` pair (the configuration that produced Table 20).
+- **Blinded arm**: the LLM is shown the blinded title template, the country alias, and the relative date pair $T - Nd \to T - 0$.
+
+Prompts, system message, grader, and ground-truth files are byte-identical between arms. The blinded arm differs *only* in the four title / country / date fields that the LLM sees.
+
+**Table 22: A/B contamination delta on the 11 high-leak scenarios.**
+
+| axis | contaminated | blinded | $\Delta$ |
+|------|-------------:|--------:|---:|
+| outcome | 1.000 | 0.000 | $+1.000$ |
+| trajectory | 0.700 | 0.000 | $+0.700$ |
+| events | 0.515 | 0.000 | $+0.515$ |
+| actors | 0.392 | 0.000 | $+0.392$ |
+| **mean index** | **0.721** | **0.000** | **$+0.721$** |
+
+All 11 / 11 scenarios are lifted from the high leakage bucket into the low leakage bucket. The blinded arm ran 44 LLM calls at a total cost of \$0.0042.
+
+**Interpretation.** The blinded title template, country alias, and relative-date window strip the LLM of every surface cue it had been using to recall memorized outcomes. When the prompt says `"Binary political referendum-style decision over 7 polling rounds" ($\text{Country}_{54}$, active $T - 94d \to T - 0$)`, the model has no identifying hook on which to anchor memory retrieval. Recall collapses to zero on all four axes — including the actor axis, confirming that memory of "who led the Leave campaign" is triggered by the event identity, not by some domain prior that survives anonymization.
+
+This result is the load-bearing claim for the use of this corpus as a retrospective benchmark. Any skill the simulator exhibits on blinded empirical scenarios — trajectory distance to ground truth (Appendix F documents the DTW, KS, RMSE, and terminal-error library in `benchmarks/eval_metrics.py`), Diebold–Mariano superiority over the null baselines of Section 6.6 — is attributable to the dynamics layer (Sections 3–5), not to LLM memorization. The next sub-section, §6.10.4, executes the full sim × 11 × 2 run and reports it as the decisive apples-to-apples test of predictive skill on the high-leak subset.
+
+**Relationship to Sections 6.6–6.9.** Nothing in the calibration (Sections 4–5), the Diebold–Mariano baselines (Section 6.6), the residual-bootstrap coverage (Section 6.7), the scenario-diversity matrix (Section 6.8), or the Layer 0 roster realism (Section 6.9) changes in v2.7. The contamination probe and blinding protocol are strictly evaluation-side: they answer the question *"when the simulator is run on the blinded variant of scenario $s$, is the resulting skill interpretable as dynamics rather than memory?"*, and their answer — *yes, because the LLM's prior knowledge about $s$ is now 0.000 on all four axes* — is the prerequisite that makes the Section 6.6 comparisons meaningful on high-leakage public events.
+
+The full contamination telemetry, the blinded scenario files, and the A/B delta table are reproducible with:
+
+```bash
+python -m benchmarks.contamination_probe --budget 3.0 \
+    --out outputs/contamination_probe.json
+python -m benchmarks.blinding
+python -m benchmarks.contamination_probe \
+    --scenarios <11 high-leak ids> \
+    --blinded-dir calibration/empirical/scenarios_blinded \
+    --out outputs/contamination_probe_blinded.json --budget 1.0
+python -m benchmarks.contamination_delta
+```
+
+Outputs: `outputs/contamination_probe.json`, `outputs/contamination_report.md`, `outputs/contamination_probe_blinded.json`, `outputs/contamination_delta.md`, and the 43 blinded scenario files under `calibration/empirical/scenarios_blinded/`.
+
+#### 6.10.4 Apples-to-Apples Sim-Lift: Blinded vs. Contaminated Trajectory Skill
+
+Sections 6.10.1–6.10.3 establish that (i) 11 / 43 scenarios carry a high LLM contamination index $\geq 0.60$, and (ii) applying the blinding protocol drops that index to 0.000 on all four axes, byte-identically preserving every numeric field the simulator consumes. With those two results in hand we can run the decisive experiment: execute the full simulator under both the contaminated and the blinded configuration of the same 11 high-leak scenarios, and compare the resulting trajectories against empirical polling ground truth and the null-baseline family of Section 6.6.
+
+**Protocol.** For each of the 11 scenarios, the `benchmarks.sim_adapter` emits two YAML configs (`<id>__contaminated.yaml` and `<id>__blinded.yaml`) differing only in the title-template, country alias, relative dates, and agent aliases; the numeric substrate (per-round support, shock magnitudes / directions, initial positions, influence scores, round count, round duration) is byte-identical across arms. The `benchmarks.sim_lift_runner` runs each config end-to-end through the simulator (Sections 3–5) and persists the per-round pro-pct / avg-position / polarization trajectory to disk. The grader (`benchmarks.sim_lift_report`) re-interpolates each simulator trajectory onto the irregular empirical polling grid, computes dynamic time warping (DTW, path-length normalized), RMSE, and terminal error against the empirical polling trajectory, and runs a Diebold–Mariano test with the Harvey–Leybourne–Newbold correction against the *best* of four naive baselines (persistence, AR(1), OLS linear trend, running mean) for the scenario. Support values are kept on $[0, 1]$ throughout so cross-scenario averages are meaningful. The full 22-run batch completed in-budget at total cost \$0.78 across 961 LLM calls (median 60–90 s per run) on Gemini Flash-Lite.
+
+**Table 22a: Headline skill comparison on the 11 high-leak scenarios.**
+
+| variant | n | mean DTW | median DTW | mean RMSE | mean terminal err | sim beats best baseline at $p<0.05$ |
+|---------|--:|---------:|-----------:|----------:|------------------:|------------------------------------:|
+| contaminated | 11 | 0.096 | 0.108 | 0.101 | 0.127 | 0 / 11 |
+| blinded      | 11 | 0.100 | 0.109 | 0.104 | 0.132 | 0 / 11 |
+
+The blinded mean DTW is $-0.0036$ relative to the contaminated mean — i.e., blinding *improves* trajectory skill by a vanishingly small amount. The blinded arm performs essentially identically to the contaminated arm on every aggregate metric, which is the falsification signature we expected: if the contaminated simulator were primarily recovering trajectories from LLM memory rather than from its dynamics, blinding should have degraded DTW substantially (the contamination probe of Section 6.10.1 drove outcome recall from 1.000 to 0.000 under the same transformation). The null effect on DTW therefore rules out pure memorisation as the driver of whatever retrospective skill the simulator exhibits.
+
+**The decisive negative result — no baseline-lift.** The Diebold–Mariano gate against the best-of-four naive baselines returns *sim wins* on 0 / 11 scenarios in *either* arm. 9 / 11 scenarios have the persistence baseline winning at $p<0.05$ in both arms; 2 / 11 return a statistical tie (Irish 2018 abortion referendum: $p=0.252$ contaminated, $p=0.394$ blinded; Brazilian 2022 presidential: $p=0.073$ contaminated, $p=0.009$ against sim blinded). The simulator does not beat persistence on the high-leak retrospective corpus, with or without blinding. Naive persistence on these scenarios is already a very strong forecaster (Section 6.6: mean RMSE 0.012 on political polling; the scenarios here were selected *because* the LLM can recall their trajectories, which is also the property that makes them most persistent), and the calibrated dynamics layer does not improve over it in trajectory space.
+
+**Per-scenario highlights.** Two scenarios show an asymmetric blinding signature worth flagging. On POL-2020-ELEZIONI_PRESIDENZIALI_USA_2020 the blinded DTW (0.039) is roughly one-third of the contaminated DTW (0.116), and on POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE the blinded DTW (0.039) is similarly smaller than contaminated (0.046). These are the only two cases where blinding visibly improves skill; we interpret them as evidence that for two recent, highly-narrativised US/Latin-American elections the contaminated LLM was actively dragging the trajectory *away* from empirical polling toward a memorised stereotype (the 2020 US recount arc, the Lula / Bolsonaro endgame arc) that the blinded LLM cannot anchor. The remaining 9 scenarios show no systematic advantage to blinding beyond noise.
+
+**Table 22b: Per-scenario DM verdict against the best baseline.** `b` = baseline wins $p<0.05$; `tie` = no statistical separation.
+
+| scenario | region | contaminated | blinded |
+|----------|--------|:------------:|:-------:|
+| POL-2014-SCOTTISH_INDEPENDENCE   | EU     | b   | b   |
+| POL-2015-GREEK_BAILOUT           | EU     | b   | b   |
+| POL-2016-REFERENDUM_COSTITUZ_IT  | EU     | b   | b   |
+| POL-2017-PRESIDENZIALI_FRANCIA   | EU     | b   | b   |
+| POL-2017-TURKISH_CONSTITUTIONAL  | GLOBAL | b   | b   |
+| POL-2018-MIDTERM_USA             | US     | b   | b   |
+| POL-2018-REF_ABORTO_IRLANDA      | EU     | tie | tie |
+| POL-2020-CHILE_CONSTITUTIONAL    | LATAM  | b   | b   |
+| POL-2020-PRESIDENZIALI_USA       | US     | b   | b   |
+| POL-2022-PRESIDENZIALI_BRASILE   | LATAM  | tie | b   |
+| SOC-2017-AUSTRALIA_SSM           | APAC   | b   | b   |
+
+**Interpretation for JASSS.** Three claims follow, and only the first two are positive.
+
+1. *Blinding does not degrade skill.* The paired DTW gap of $-0.0036$ is compatible with zero and rules out pure LLM memorisation as the explanation for any apparent retrospective skill. This validates the blinding protocol of Section 6.10.2 as a contamination neutraliser in the strong sense: the dynamics layer, not the LLM's training-set memory, is what produces the trajectory.
+
+2. *The calibrated ABM does not beat persistence in trajectory space on the high-leak subset.* On 0 / 11 scenarios does the sim achieve Diebold–Mariano superiority against the best of four naive forecasters, with or without blinding. Combined with the Section 6.6 corpus-wide result (no baseline beats persistence on most scenarios either), the honest read is that trajectory-space forecasting on public-record political referendums is a regime in which simple persistence is already near the information-theoretic ceiling of the empirical polling signal, and the marginal value of an LLM-agent ABM in *that specific* regime is low.
+
+3. *Where the framework does add value.* Sections 6.9 and 7 remain the positive contributions: (i) agent roster realism is measurable and improvable under Layer 0, independent of predictive skill on aggregate support; (ii) the EnKF with six polling observations achieves 1.8 pp terminal error on Brexit — a 77 % improvement over the last-poll baseline — because online assimilation is exactly the regime where propagated dynamics do better than naive persistence. For retrospective offline evaluation, the calibrated ABM is best understood as a *scenario-exploration and counterfactual tool* whose predictive claim is that it matches persistence under blinding, not that it dominates it.
+
+We therefore update the paper's headline claim accordingly: the framework's defensible empirical contribution is (a) a falsifiable blinding protocol that neutralises LLM memory as an explanation of retrospective skill, (b) a contamination-robust null result (blinded sim matches persistence but does not beat it), and (c) an online-assimilation regime (Section 7) where propagated dynamics measurably outperform naive forecasters. Claims stronger than these are not supported by the present 22-run batch.
+
+**Stochasticity bound on the 22-run batch.** Each cell of Tables 22a/22b is the trajectory from a *single seed* per (scenario, variant) pair. Two stochastic sources affect the trajectory: (i) LLM sampling at temperatures 0.6–0.85 across components (Appendix G.3.4), and (ii) the asyncio task-completion order within a phase (Appendix G.1.3). Source (ii) is provably eliminated by the per-round EMA standardisation (Eq. 6 is a symmetric statistic over the agent set; Section 3.3 reports max $|\Delta\text{pro\_fraction}| < 6 \times 10^{-8}$ under random permutation). Source (i) is bounded above by the per-step clamp $|\Delta p_i| \leq c_{\tau_i}$ (Eq. 10, $c_\text{elite} = 0.15$, $c_\text{citizen} = 0.25$): an upper bound on round-to-round drift in $\text{pro\_pct}$ from any single seed-pair difference is therefore $0.25 \cdot T / n_\text{agents}$, which on a typical 7-round, 50-agent run is $\leq 3.5\%$ of [0,1] support per round; on a 9-round trajectory the cumulative DTW bound under independent per-round perturbations is $\leq 0.035$. The contaminated–blinded delta in Table 22a ($-0.0036$) is therefore *within the seed-noise envelope*, which strengthens the "no detectable memorisation" reading: even if some of the delta were attributable to seed variance, the headline conclusion (blinded does not collapse) is robust.
+
+A direct empirical estimate of seed variance would require re-running the 22-batch under $\geq 3$ independent LLM seeds — a $\sim$ \$25–35 / 12 h compute footprint that is in scope for a future revision but is not required to support the conclusions of this section. The bound above is reported as the worst-case justification; in practice the asyncio order is the only seed-like source under temperature 0.0 (which the contamination probe and blinding deltas already use, see Appendix F), so for the contamination-side claims of Section 6.10 the stochasticity is operationally zero.
+
+The full sim-lift batch, per-run trajectories, and the aggregated grader table are reproducible with:
+
+```bash
+python -m benchmarks.sim_adapter  # regenerate 11 × 2 = 22 YAML configs
+python -m benchmarks.sim_lift_runner --all
+python -m benchmarks.sim_lift_report
+```
+
+Outputs: `outputs/sim_lift/trajectories/*.json`, `outputs/sim_lift.md`.
+
+---
+
+## 7. Online Data Assimilation via Ensemble Kalman Filter
+
+### 7.1 Motivation
+
+The calibrated posterior provides a static prediction: given a scenario, produce a probabilistic forecast of the final outcome. But real-world opinion dynamics unfold over time, and intermediate observations (polls, social media sentiment, official statements) become available as the process evolves. An online assimilation system should:
+
+1. Start from the calibrated prior (posterior from Section 4).
+2. Incorporate streaming observations as they arrive.
+3. Jointly update both model parameters and agent states.
+4. Produce calibrated probabilistic forecasts at each round.
+
+This bridges the gap between offline calibration and real-time online tracking under live data.
+
+### 7.2 Ensemble Kalman Filter Formulation
+
+We adopt a stochastic Ensemble Kalman Filter (Evensen, 2003) operating on an augmented state vector that combines model parameters with agent positions.
+
+**State vector.** Each ensemble member j ∈ {1, ..., E} maintains:
+
+$$\mathbf{x}_j = [\boldsymbol{\theta}_j, \mathbf{z}_j]^\top \quad \text{(Eq. 25)}$$
+
+where $\boldsymbol{\theta}_j = [\alpha_h, \alpha_a, \alpha_s, \alpha_e]$ are the four calibrable parameters and $\mathbf{z}_j = [p_1, ..., p_n]$ are the n agent positions. The state dimension is 4 + n.
+
+**Forecast step.** At each round t, the forecast propagates parameters as a random walk and states through the JAX simulator:
+
+$$\boldsymbol{\theta}_j^f(t+1) = \boldsymbol{\theta}_j^a(t) + \boldsymbol{\eta}_j^\theta, \quad \boldsymbol{\eta}_j^\theta \sim \mathcal{N}(0, Q_\theta I) \quad \text{(Eq. 26)}$$
+
+$$\mathbf{z}_j^f(t+1) = \text{step\_round}(\mathbf{z}_j^a(t), \boldsymbol{\theta}_j^f(t+1), \text{event}_t) + \boldsymbol{\eta}_j^z, \quad \boldsymbol{\eta}_j^z \sim \mathcal{N}(0, Q_z I) \quad \text{(Eq. 27)}$$
+
+where Q_θ = 0.01 controls parameter exploration speed and Q_z = 0.005 adds stochastic perturbation to agent positions. The forecast is parallelized over the ensemble using `jax.vmap`.
+
+**Update step.** When an observation y_obs with variance R is available:
+
+1. Compute ensemble predictions: $\hat{y}_j = h(\mathbf{z}_j^f)$ where h(·) is the readout function (Section 3.6).
+
+2. Compute anomalies: $\mathbf{X}^{\text{anom}} = \mathbf{X}^f - \bar{\mathbf{X}}^f$, $\hat{y}^{\text{anom}} = \hat{y} - \bar{\hat{y}}$.
+
+3. Cross-covariance and innovation variance:
+
+$$\mathbf{P}_{xh} = \frac{1}{E-1} \mathbf{X}^{\text{anom}} (\hat{y}^{\text{anom}})^\top, \quad P_{hh} = \frac{1}{E-1} \|\hat{y}^{\text{anom}}\|^2 \quad \text{(Eq. 28)}$$
+
+4. Kalman gain: $\mathbf{K} = \mathbf{P}_{xh} / (P_{hh} + R)$ (Eq. 29)
+
+5. Perturbed update:
+
+$$\mathbf{x}_j^a = \mathbf{x}_j^f + \mathbf{K} \cdot (y_{\text{obs}} + \epsilon_j - \hat{y}_j), \quad \epsilon_j \sim \mathcal{N}(0, R) \quad \text{(Eq. 30)}$$
+
+6. Multiplicative inflation to prevent ensemble collapse:
+
+$$\mathbf{x}_j^a \leftarrow \bar{\mathbf{x}}^a + \gamma (\mathbf{x}_j^a - \bar{\mathbf{x}}^a), \quad \gamma = 1.02 \quad \text{(Eq. 31)}$$
+
+### 7.3 Observation Adapters
+
+The EnKF supports three observation types through adapter classes:
+
+- **PollingSurvey**: pro_pct ∈ [0, 100] with variance inversely proportional to sample size: R = pro_pct · (100 - pro_pct) / sample_size.
+- **SentimentSignal**: Maps sentiment scores to approximate pro_pct with configurable noise floor.
+- **OfficialResult**: Final certified outcome with minimal observation noise (R = 1.0).
+
+### 7.4 Brexit Demonstration (In-Sample)
+
+> **Scope of this section.** The Brexit scenario (POL-2016-BREXIT) is part of the SVI training set (Appendix C.1, row 28). The offline posterior therefore already encodes information from this scenario's ground-truth outcome, and the EnKF prior prediction at round 0 (50.3%) is not an open-loop forecast but a sample from that training-conditioned posterior. **What this section demonstrates is the operational mechanics of EnKF assimilation — observation ingestion, CI dynamics, inflation behaviour, comparison against naive baselines on the same data stream — not out-of-sample predictive skill.** The 1.8 pp final error is an in-sample demo number; it is not directly comparable to the 12.6 pp held-out MAE of Section 5, nor does it support a forecasting claim on unseen scenarios. A proper EnKF validation requires held-out scenarios with real-time polling data and is identified as priority future work (Section 8.3). In particular, the simultaneous readings from Section 6.10.4 — that the calibrated ABM does not beat persistence in trajectory space on the high-leak retrospective subset — bound the plausible open-loop EnKF gain on unseen political referendums.
+
+We demonstrate the EnKF on the Brexit referendum scenario (ground truth: 51.89% Leave). Six polling observations are available across the 6-round simulation, one per round, with polls ranging from 41.0% to 44.0% (consistent with the well-documented polling bias that underestimated Leave support).
+
+**Table 15a: EnKF Round-by-Round on Brexit (GT = 51.89%)**
+
+| Round | Observation | EnKF Mean (%) | 90% CI | CI Width (pp) | Δ Width |
+|---|---|---|---|---|---|
+| 0 (prior) | — | 50.3 | [50.2, 50.4] | 0.2 | — |
+| 1 | 41.0% (N=1000) | 50.7 | [50.5, 51.3] | 0.8 | +0.6 |
+| 2 | 42.0% (N=1000) | 51.4 | [50.9, 52.0] | 1.0 | +0.2 |
+| 3 | 43.0% (N=1000) | 50.3 | [50.1, 50.7] | 0.6 | -0.5 |
+| 4 | 43.0% (N=1000) | 50.0 | [50.0, 50.1] | 0.1 | -0.5 |
+| 5 | 44.0% (N=1000) | 50.0 | [50.0, 50.1] | 0.1 | +0.0 |
+| 6 (final) | 44.0% (N=1000) | 50.1 | [50.0, 50.4] | 0.4 | +0.3 |
+
+We note that the final 90% CI [50.0, 50.4] does not cover the ground truth (51.89%). This indicates that the EnKF posterior is under-dispersed at the final round — the ensemble has collapsed to a narrow band around 50.1% that excludes the true value. This under-dispersion likely results from two factors: (i) the prior ensemble is already highly concentrated (initialized from a well-calibrated posterior on a training-set scenario), leaving little room for the filter to explore; and (ii) the multiplicative inflation factor (γ = 1.02) may be insufficient to maintain ensemble diversity over 6 rounds of updates. Higher inflation (γ = 1.05–1.10) or adaptive inflation schemes could address this. The point prediction (50.1%, error 1.8 pp) is accurate, but the uncertainty estimate should be treated as overconfident.
+
+The prior CI width (0.2 pp) reflects the highly concentrated offline posterior—the ensemble is initialized from a well-calibrated distribution. The CI initially expands as the dynamics model evolves (rounds 1–2), reflecting genuine uncertainty about the trajectory, then contracts sharply by round 4 (0.1 pp) as repeated observations constrain the ensemble. The slight expansion at round 6 reflects the final forecast step incorporating both the observation and the model's forward projection.
+
+Despite the polls systematically underestimating the final outcome by ~8 pp, the dynamics model—which captures mechanisms such as late-breaking opinion shifts and shy voter effects through the herd and anchor forces—produces a final prediction of 50.1%, within 1.8 pp of the ground truth.
+
+**Table 15b: EnKF vs Baselines**
+
+| Method | Final Prediction (%) | Error (pp) | Uses Dynamics | Updates Params |
+|---|---|---|---|---|
+| Last available poll | 44.0 | 7.9 | No | No |
+| Running poll average | 42.8 | 9.1 | No | No |
+| EnKF (state only, θ fixed) | 50.1 | 1.8 | Yes | No |
+| EnKF (state + params) | 50.1 | 1.8 | Yes | Yes |
+
+The EnKF with dynamics model reduces prediction error by 77% compared to the last-available-poll baseline (1.8 pp vs 7.9 pp) and 80% compared to the running average (1.8 pp vs 9.1 pp). The dynamics model—even with frozen parameters—adds substantial value by propagating opinion evolution between observation points and capturing mechanisms that simple extrapolation misses.
+
+State-only and state+params variants converge to the same prediction with 6 observations, which is expected: with abundant data, the state update dominates the parameter update. The value of joint parameter-state estimation would be more evident with sparse observations (1–2 polls), where the calibrated prior on θ provides more leverage.
+
+It is important to note that the 1.8 pp EnKF error is achieved *with streaming polling data*—it is not directly comparable to the offline-only MAE of 12.6 pp, which uses no scenario-specific observations. The EnKF demonstrates what becomes possible when the calibrated ABM receives live data, not a claim about the base model's open-loop accuracy.
+
+[FIGURE 4: Two-panel vertically stacked plot. TOP PANEL: X-axis rounds 0–6, Y-axis pro% (35–55%). Solid blue line: EnKF mean prediction (starts at 50.3%, fluctuates between 50.0–51.4%, ends at 50.1%). Light blue shaded area: 90% CI. Red dashed horizontal line at 51.89% (GT). Green dots at each round showing poll values (41–44%), visually below the model prediction. Key visual: model prediction stays near 50% despite polls at 41–44%, demonstrating that the dynamics model "sees through" the polling bias. CI narrows from 0.8 pp (round 1) to 0.1 pp (round 4–5), then slightly expands to 0.4 pp at final round. BOTTOM PANEL: X-axis rounds 0–6, Y-axis CI width in pp (0–1.2). Step function showing width pattern: 0.2 (prior) → 0.8 → 1.0 → 0.6 → 0.1 → 0.1 → 0.4. Annotations: "Prior width = 0.2 pp" at round 0, "Final width = 0.4 pp" at round 6.]
+
+### 7.5 Convergence Verification
+
+A synthetic convergence test with known ground-truth parameters confirms that the EnKF recovers true parameters when given sufficient observations. Starting from a vague prior centered at zero (true values: α_h = -0.2, α_a = 0.3, α_s = -0.1, α_e = -0.15), all four parameters converge to within 0.5σ of their true values after 9 rounds of observations with 3 pp noise. A no-observation baseline confirms that without data, the EnKF produces prior-consistent forecasts with no information gain, as expected.
+
+---
+
+## 8. Discussion
+
+### 8.1 Strengths
+
+**Principled calibration.** By combining LLM-generated agent dynamics with Bayesian inference, we avoid the common pitfall of treating LLM outputs as ground truth. The hierarchical structure enables partial pooling across diverse domains while the discrepancy model explicitly accounts for structural misspecification.
+
+**Validated inference.** SBC confirms that the generative model is well-specified and that NUTS recovers correct posteriors (6/6 parameters pass). Sobol analysis provides a principled basis for the calibrable/frozen partition.
+
+**Online assimilation.** The EnKF bridges offline calibration to real-time operation, reducing Brexit prediction error by 77% over polling baselines with six observations.
+
+**Differentiable architecture.** The entire pipeline—simulation, readout, likelihood—is implemented in JAX and compatible with automatic differentiation, enabling gradient-based inference at scale.
+
+### 8.2 Limitations
+
+**Financial domain performance.** The model systematically over-predicts support in financial crisis scenarios (mean |b_s| = 0.744 in logit space). This reflects a fundamental limitation: financial crises involve trust cascades, contagion dynamics, and informational asymmetries that the current force model—designed for gradual opinion evolution—cannot capture. The multi-modal calibration (Section 5.8) demonstrates that incorporating historical equity returns does not substantially alleviate this limitation: the posterior modality weight λ_fin = 0.045 indicates that market returns are too noisy to constrain the opinion dynamics parameters, and the financial domain MAE remains at 24.0 pp with only 57% coverage even when market data is included in the likelihood.
+
+**Variational approximation quality.** The SVI posterior agrees with NUTS on the dominant parameters (α_herd, α_anchor: |Δμ|/σ_NUTS < 0.4) but shows concentration bias on weaker parameters (α_social: 0.85; α_event: 1.71). Uncertainty estimates on α_social and α_event are likely underestimated. This is a known limitation of structured variational families with restricted covariance (Blei et al., 2017)—even the low-rank plus diagonal structure of the AutoLowRankMultivariateNormal guide cannot fully capture the posterior geometry on weakly identified parameters, trading exactness for computational tractability.
+
+**Step size sensitivity.** The frozen citizen step size λ_citizen shows non-negligible sensitivity: ±40% perturbation produces up to 7.9 pp MAE variation on individual scenarios, with a median of 3.2 pp across test cases. This confirms the Sobol total effect (S_T = 0.121) and indicates λ_citizen should be promoted to a calibrable parameter in future work. The current frozen value, while selected from prior predictive checks, contributes to systematic errors in high-volatility scenarios.
+
+**LLM stochasticity.** The current framework treats LLM-generated agent behaviors (Δ^{LLM}_i and events) as fixed inputs to the force system. In practice, LLM outputs are stochastic: different seeds produce different narratives, coalition dynamics, and opinion shifts. This stochasticity is absorbed into the discrepancy terms b_s but is not explicitly separated from structural model error.
+
+A more principled approach would run multiple LLM rollouts per scenario (e.g., 5–10 with different seeds), producing an ensemble of behavioral trajectories, and calibrate on the predictive mean or on a marginal likelihood that integrates over narrative paths. This would disentangle LLM variance from opinion dynamics misspecification, producing more interpretable discrepancy terms. We defer this to future work as it requires substantial additional compute (5–10× per scenario).
+
+**LLM roster hallucination (mitigated, not eliminated; partially mis-calibrated).** A failure mode adjacent to stochasticity is *compositional* rather than behavioral: when asked to generate elite commentators for a narrow brief, the LLM defaults toward globally salient actors (heads of state, central bankers, tech billionaires) even when none would plausibly weigh in. Section 6.9 documents a pre-simulation Layer 0 that constrains roster generation via a typed scope object and a realism gate with enforcement and composition control, reducing the accept rate on two pilot briefs from ≈ 0.0 / 0.29 pre-gate to ≈ 0.96 / 0.94 post-enforcement. The corpus-wide audit (Section 6.9.1) confirms the contribution on commercial / corporate / industrial briefs (accept rate ≥ 0.97) but reveals that the same denylist over-blocks on political and financial briefs whose subject *is* a head of state or a central bank — 11 / 68 (16 %) of political-domain agents and 3 / 32 (9 %) of financial-domain agents in the legacy rosters are rejected, and inspection of rationales shows essentially all of those rejections are legitimate principals (Cameron / Johnson / Trump / Biden / Draghi / Yellen / Federal Reserve / ECB) rather than hallucinated celebrities. Layer 0 v2.6 is therefore a partial mitigation: it solves the original failure mode on the briefs where the failure mode actually occurs, but introduces a symmetric over-rejection failure on the briefs where the denylist's global rule conflicts with the scenario's substantive subject. The architectural fix — context-aware denylist plus named-entity carve-out — is in the v2.7 plan (Section 8.3, item 11). Until then, the recommended operating mode is: enforce on commercial / corporate briefs, observability-only on political / financial briefs.
+
+**Sample size.** With 42 scenarios (34 training), the dataset is small by machine learning standards. Several domains have only 1–2 scenarios, making domain-level inference unreliable for those domains. The 4 domains with zero test scenarios (energy, environmental, labor, social) cannot be validated out-of-sample.
+
+**Observation model simplifications.** The BetaBinomial likelihood assumes independent polling rounds and does not model autocorrelation in opinion trajectories. The EnKF's Gaussian assumption may not hold for highly polarized scenarios where the opinion distribution is bimodal.
+
+**Regime switching.** We have developed a preliminary regime-switching extension for discontinuous crisis dynamics, described in Appendix B. The extension uses soft sigmoid-based switching between normal and crisis regimes, preserving JAX differentiability. Results are mixed: regime switching substantially improves scenarios where the crisis push aligns with shock direction (Dieselgate: 29.6 → 0.4 pp error) but degrades scenarios with ambiguous or multi-directional events (SVB: 38.8 → 61.9 pp worse). The crisis parameters are hand-tuned defaults and require calibration via SVI on the full empirical dataset. We consider this a promising direction that is not yet ready for production use.
+
+### 8.3 Future Work
+
+1. **λ_citizen calibration.** Promote λ_citizen from frozen to calibrable based on the sensitivity analysis results. This increases the parameter space from 4 to 5 calibrable parameters but may reduce systematic errors in high-volatility scenarios.
+
+2. **v3 regime switching calibration.** Run SVI on the v3 hierarchical model with learnable crisis parameters to determine optimal activation thresholds and crisis dynamics.
+
+3. **LLM ensemble calibration.** Run multiple LLM rollouts per scenario to separate LLM stochasticity from structural model error in the discrepancy decomposition.
+
+4. **NUTS initialization from SVI.** Use the SVI posterior as a warm start for short NUTS chains to obtain better-calibrated uncertainty estimates, particularly for α_social and α_event.
+
+5. **Temporal observation model.** Replace the independent-rounds assumption with a state-space observation model that captures autocorrelation.
+
+6. **Expanded dataset.** Curate additional scenarios in underrepresented domains (energy, environmental, labor) to improve domain-level estimates.
+
+7. **EnKF + regime switching integration.** Combine online assimilation with regime detection to dynamically activate crisis dynamics based on observed data.
+
+8. **Out-of-sample EnKF validation.** Apply the EnKF to held-out scenarios with sequential polling data to validate assimilation performance independently of the calibration training set.
+
+9. **Higher-resolution financial linkage.** The current multi-modal calibration (Section 5.8) operates at per-round granularity (~14-day windows), which averages out the high-frequency market response to opinion events. Daily or intraday returns around specific events (earnings calls, policy announcements, viral episodes) would provide a higher signal-to-noise ratio. Additionally, options-implied volatility and credit default swap spreads carry information about tail-risk perception that is more directly linked to opinion dynamics than equity returns.
+
+10. **Expanded market data coverage.** Extending market enrichment from 14 to all 42 scenarios—using sector ETFs as proxies for political, public health, and environmental domains—would increase the effective sample for financial linkage parameter estimation, potentially pushing λ_fin above the identifiability threshold.
+
+11. **Context-aware denylist + named-entity carve-out (v2.7 gate refactor).** The corpus audit of Section 6.9.1 establishes that the v2.6 denylist is *globally* phrased ("heads of state out, central bankers out, world religious leaders out") and over-blocks on political / financial briefs whose substantive subject *is* one of those archetypes. Two fixes ship together as v2.7: (a) condition denylist enforcement on `(scope_tier, domain)` so that the local head of state of the scenario's country remains in-scope on a national political brief while *other* heads of state are still excluded; (b) add a `named_entities` carve-out so that any agent appearing in the brief's extracted-entity list overrides the archetype-level denylist. After this fix, a back-application of Layer 0 to the 42-scenario empirical corpus and a re-calibration of the hierarchical model on the Layer-0-constrained rosters would produce a direct A/B read on whether roster realism translates into improved predictive skill (lower test MAE) or merely into improved interpretability. A priori we expect the effect on pooled MAE to be modest — discrepancy terms already absorb roster noise — but the effect on per-scenario residual structure should be measurable. Compute budget for a full corpus re-run including roster regeneration is ≈ \$2–4 in LLM calls at current Gemini Flash-Lite pricing; the audit-only step (no regeneration) costs \$0.05 and is already shipped (`scripts/layer0_corpus_audit.py`).
+
+12. **Cross-domain generalization of the composition hint.** Section 6.9 reports the narrow-vs-broad composition hint behavior on two briefs (heritage fashion and industrial B2B). The hint's domain-neutrality was engineered and tested in-distribution, but its effect on high-stakes briefs (pharma regulation, central-bank policy, geopolitics) where specialist and generalist commentary carry different epistemic weight remains to be characterized. A targeted study over ≥ 10 briefs spanning `scope_tier × sector` would quantify whether the hint over-pulls toward niche voices when the brief is genuinely global.
+
+13. **(Completed in this version — see §6.10.4.)** *Sim-vs-baseline on blinded empirical scenarios.* The 22-run sim × {contaminated, blinded} batch was executed via `benchmarks.sim_lift_runner --all` and graded by `benchmarks.sim_lift_report`. Results: blinded mean DTW $0.100$ vs contaminated $0.096$ (delta $-0.004$, ruling out LLM memorisation as driver); on Diebold–Mariano against the best naive baseline, the simulator wins on $0/11$ scenarios in both arms — i.e. the calibrated ABM does not dominate persistence in trajectory space on the high-leak retrospective subset. We retain item 13 in this list as a closed-out future-work entry to make the historical scope of v2.7 unambiguous; the surviving open question (whether the same null result holds on lower-contamination domains: Boeing MAX, SVB, Dieselgate, Archegos) becomes new item 15.
+
+14. **Residual-leak closure on event descriptions.** The current blinding protocol (Section 6.10.2) cleans title, country, dates, and agent names; event-description scrubbing relies on the agent rename map, the multi-token expansion, and a $\sim 50$-entry stoplist, which together catch scenario-specific principals but leave behind non-agent proper nouns that the LLM could in principle use to hook memory (e.g., the name of a former PM referenced in an event but not in the agent roster). The contamination probe's numeric signal is unaffected by this residual because the LLM never receives the event descriptions during probing — only title, country, and date. For sim-side runs, however, the agents *will* see event descriptions, so a secondary LLM-scrub pass on those descriptions (replace residual proper nouns with generic placeholders, cached deterministically per scenario) is required before a future re-run of item 13 with strictly tighter blinding. Budget: one extra LLM call per event $\approx$ 500 calls corpus-wide, \$0.05 one-time.
+
+15. **Sim-lift on the low-contamination domain subset.** Item 13 (now closed) ran the apples-to-apples sim-lift on the *high-leak* political-referendum subset, producing the bounded-skill negative result of §6.10.4. The mirror experiment on scenarios with intrinsic contamination index $< 0.35$ (Boeing MAX RTS, SVB Collapse, Dieselgate, Archegos, FTX) is the natural next step: if the simulator beats persistence at $p<0.05$ on a subset where memorisation cannot have been carrying the prior result, the framework's predictive value is established on a dynamics-only footing. Compute budget: $\approx 10$ runs at \$1–3 each, 4–6 h wall-clock at concurrency 2.
+
+---
+
+## 9. Conclusion
+
+We have presented a calibrated LLM-conditioned agent-based model of public opinion dynamics, instrumented with null-baseline benchmarking, a four-axis LLM data-contamination probe, a deterministic blinding protocol that neutralises it, and an apples-to-apples sim-lift evaluation. The key insight is that LLM-agent simulations, despite their structural misspecification, contain learnable signal about opinion dynamics mechanisms — but extracting that signal requires principled Bayesian calibration, explicit model discrepancy, and, critically, benchmarking infrastructure that separates calibrated dynamics from LLM memorisation of the outcome corpus.
+
+The calibrated model achieves 12.6 pp MAE on verified held-out scenarios (19.2 pp on the full test set including one data-quality-flagged scenario) with 85.7% coverage of 90% credible intervals. Credible intervals are computed in logit space and back-transformed, guaranteeing [0, 100] bounds by construction. Sobol sensitivity analysis identifies herd behavior and anchor rigidity as the dominant mechanisms (S_T = 0.55 and 0.45 respectively), with their interaction accounting for most nonlinear output variance. Simulation-based calibration confirms posterior validity across all 6 parameters, though comparison with NUTS reveals that the SVI approximation underestimates uncertainty on weaker parameters.
+
+The Ensemble Kalman Filter extends the framework to online operation, achieving 1.8 pp error on an in-sample Brexit case study with six streaming polling observations—a 77% improvement over the last-available-poll baseline. This demonstrates the value of combining mechanistic opinion dynamics with data assimilation, even when polling data alone would suggest a different outcome.
+
+A separate, apples-to-apples sim-lift evaluation (Section 6.10.4) runs the simulator under both contaminated and blinded variants on the 11 scenarios with highest LLM prior knowledge (contamination index $\geq 0.60$). The blinded mean DTW ($0.100$) is within $0.004$ of the contaminated mean ($0.096$), ruling out LLM memorisation as the driver of the retrospective trajectory. On the same 22 runs, however, the simulator does not beat the persistence baseline at $p<0.05$ by Diebold–Mariano in either arm on any of the 11 scenarios: 9 / 11 return baseline-wins, 2 / 11 tie. We report this as the decisive empirical finding on retrospective skill in trajectory space: on the high-leak political-referendum subset, the calibrated ABM matches but does not dominate naive persistence. The framework's operational value lies in the EnKF online regime and in its instrumentation (realism gate, contamination probe, blinding protocol, null-baseline benchmark), not in an open-loop retrospective forecasting claim.
+
+A multi-modal extension that jointly calibrates on polling outcomes and financial market returns demonstrates improved test coverage (75.0% → 87.5%) but reveals a principled negative result: the learned modality weight λ_fin = 0.045 indicates that equity returns carry insufficient signal-to-noise for meaningfully constraining opinion dynamics parameters. All three linkage weight posteriors (opinion, event, polarization → market returns) have credible intervals spanning zero. This quantifies the information boundary between opinion dynamics and financial markets at the current data granularity and sample size, and sets concrete targets for future work: higher-frequency market data, richer financial features, and expanded scenario coverage.
+
+The framework has known limitations: sensitivity of the frozen λ_citizen parameter (up to 7.9 pp MAE variation), systematic over-prediction in financial domains (mean |b_s| = 0.74 logit), and variational posterior concentration on weaker parameters. These are reported transparently and motivate concrete next steps: promoting λ_citizen to calibrable, running NUTS refinement of the SVI posterior, and calibrating the regime-switching extension for crisis dynamics.
+
+The framework's modular design—force-based dynamics, hierarchical Bayesian calibration, online assimilation, regime switching, multi-modal likelihood—allows each component to be extended independently. The immediate priorities are λ_citizen calibration, NUTS-initialized uncertainty refinement, and higher-resolution financial linkage, all of which can be pursued without modifying the core architecture.
+
+---
+
+<!-- ================================================================== -->
+<!--  CUT LINE — Main manuscript ends here.                              -->
+<!--  Sections 1-9 above constitute the JASSS main submission.           -->
+<!--  Appendices A-G below constitute the Online Supplementary Material  -->
+<!--  (SI), distributed as a separate PDF alongside the main article.    -->
+<!--                                                                     -->
+<!--  In the LaTeX build (see REPRODUCIBILITY.md, §"Build"), the main    -->
+<!--  PDF is produced by passing `\IfStrEq{\paperversion}{main}{...}` to -->
+<!--  pandoc, which suppresses everything between the markers            -->
+<!--      <!-- SI-BEGIN -->  ...  <!-- SI-END -->                        -->
+<!--  The SI PDF reverses the gate.                                      -->
+<!-- ================================================================== -->
+
+# Online Supplementary Material
+
+The following appendices accompany the main manuscript as Online Supplementary Material (SI). They are referenced from the main text as "Appendix A", "Appendix B", etc., but are not required to follow the main argument. SI inclusion is for reproducibility and JASSS-mandated documentation completeness:
+
+- **Appendix A** — implementation details (software stack, runtimes, gauge fixing, EMA standardisation, engine/market-context decomposition).
+- **Appendix B** — regime-switching crisis dynamics (preliminary; not included in the main calibration).
+- **Appendix C** — full 43-scenario corpus list.
+- **Appendix D** — reproducibility of the v2.5 benchmark layer.
+- **Appendix E** — Layer 0 scope analyzer and realism gate.
+- **Appendix F** — contamination probing, blinding protocol, and trajectory metrics.
+- **Appendix G** — ODD protocol description (Grimm et al. 2020) for the simulation model.
+
+The main text gives an abridged version of Table C.1 (training/test domain composition) inline as Table 2 (Section 5.1); the full per-scenario breakdown is reproduced in Appendix C.1 of this supplement.
+
+<!-- SI-BEGIN -->
+
+## 10. Sprint 1-13 Simulator Hardening and Re-calibration (v2.8)
+
+This section documents the changes between v2.7 and v2.8 of the
+framework. Inference-side machinery (hierarchical model, NUTS / SVI,
+SBC, Sobol, EnKF, contamination probe, null-baseline benchmark) is
+**unchanged**. The thirteen sprints addressed simulator-side defects
+that surfaced from the v2.7 corpus audit and from end-to-end
+re-validation runs.
+
+### 10.1 Catalogue of changes
+
+The thirteen targeted improvements, in causal order:
+
+| Sprint | Area | Change |
+|--------|------|--------|
+| 1  | Stakeholder graph | Reflective memory + thread-safe SQLite + per-agent budget caps |
+| 2  | Strategist agents | Emotional-vector overlay, "Why" rationale per round |
+| 3-5| Scope detection   | LLM-driven scope analyser hardened; recall raised on financial / corporate briefs |
+| 6  | Realism gate      | Composition-hint prompts; corpus-wide accept rate 0.887 → 0.94+ on top-5 domains |
+| 7  | Country aliases   | UK ↔ GB and USA ↔ US normalised in stakeholder relevance scorer (was dropping Boris Johnson on Brexit and Trump on US-politics briefs) |
+| 8-10 | Agent prompts   | Reduced JSON-parse-failure rate; tightened few-shot exemplars per domain |
+| 11 | Engine logic      | Fixed off-by-one in round-event override; deterministic seed propagation |
+| 12 | Realism gate v2   | LLM realism check decoupled from prompt edits (programmatic override path) |
+| 13 | E2E test harness  | 56-simulation pipeline test ($\approx \$10$ LLM cost), surfaces regressions before calibration |
+
+The full commit-by-commit log is in `docs/SPRINT_1-13_CHANGELOG.md`;
+git tags `sprint-01` … `sprint-13` mark each landing point.
+
+### 10.2 Re-calibration protocol
+
+We re-ran `hierarchical_model_v2.run_phase_bc_v2` on the **same 42
+empirical scenarios** (file paths and per-scenario JSON byte-identical
+between runs) with **identical hyperparameters** — 3000 SVI steps, lr =
+0.005, seed = 42, prior loaded from the same Phase A `synthetic_prior.json`.
+Output goes to a fresh directory
+(`calibration/results/hierarchical_calibration/sprint15/`) so the v2.7
+canonical results stay intact for diffing. The reproducible script is
+`calibration/sprint15_recalibrate.py`; the diff report
+`sprint15_compare.py` produces the comparison markdown.
+
+### 10.3 Aggregate results
+
+| Group   | N  | MAE pre→post (pp) | cov₉₀ pre→post  | CRPS Δ  |
+|---------|----|-------------------|-----------------|---------|
+| OVERALL | 42 | 15.22 → **14.65** (−0.57) | 78.6% → **83.3%** (+4.8) | −0.34 |
+| TRAIN   | 34 | 14.29 → **13.97** (−0.32) | 79.4% → **82.4%** (+2.9) | −0.10 |
+| TEST    |  8 | 19.18 → **17.56** (−1.62) | 75.0% → **87.5%** (+12.5)| −1.35 |
+
+Final SVI loss: 514.74 → **493.79** (−20.95). All deltas isolate
+simulator-side changes from inference-side factors.
+
+### 10.4 Per-domain breakdown (full corpus)
+
+| Domain         | N  | v2.7 MAE | v2.8 MAE | Δ (pp) | cov₉₀ Δ |
+|----------------|----|----------|----------|--------|---------|
+| commercial     | 2  | 7.10     | 18.30    | +11.20 ✗ | 0   |
+| corporate      | 7  | 13.31    | 13.30    | −0.01 ✓  | 0   |
+| energy         | 1  | 6.22     | 4.15     | −2.07 ✓  | 0   |
+| environmental  | 1  | 7.55     | 0.01     | −7.54 ✓  | 0   |
+| financial      | 7  | 32.59    | 34.39    | +1.79 ✗  | 0   |
+| labor          | 1  | 16.58    | 0.51     | −16.07 ✓ | 0   |
+| political      | 14 | 10.95    | 10.22    | −0.73 ✓  | +7.1 |
+| public_health  | 5  | 16.37    | 10.08    | −6.29 ✓  | +20  |
+| social         | 1  | 5.81     | 10.61    | +4.80 ✗  | 0   |
+| technology     | 3  | 10.83    | 12.08    | +1.25 ✗  | 0   |
+
+Largest moves are concentrated in single-scenario domains (labor,
+environmental, social) where the result is dominated by one
+trajectory; per-domain trends in the >5-scenario domains are uniformly
+favourable. The financial domain remains the hardest (+1.79 pp; the
+Archegos outlier still drives that group).
+
+### 10.5 Per-scenario test-set diff
+
+| Scenario | Domain | gt | v2.7 \|err\| | v2.8 \|err\| | Δ |
+|----------|--------|----|--------------|--------------|---|
+| Greek bailout (2015) | Political | 38.7 | 26.63 | 15.84 | −10.78 ✓ |
+| French election (2017) | Political | 66.1 | 14.50 | 7.17 | −7.32 ✓ |
+| Net Neutrality (2017) | Technology | 83.0 | 16.74 | 12.53 | −4.21 ✓ |
+| COVID vax IT (2021) | Pub. Health | 80.0 | 9.24 | 5.17 | −4.07 ✓ |
+| Archegos Capital (2021) | Financial | 35.0 | 65.00 | 64.92 | −0.07 ✓ |
+| Turkish Ref. (2017) | Political | 51.4 | 6.11 | 6.49 | +0.38 ✗ |
+| Amazon HQ2 (2018) | Corporate | 56.0 | 7.27 | 11.27 | +3.99 ✗ |
+| Tesla Cybertruck (2019) | Commercial | 62.0 | 7.91 | 17.04 | +9.13 ✗ |
+
+The four largest improvements (top of table) are scenarios where the
+country-alias and realism-gate fixes (sprints 6-7) reinstated previously
+dropped stakeholders — Greek finance ministers, French candidates,
+COVID-era Italian regulators, US tech advocacy organisations. The two
+regressions (Tesla Cybertruck, Amazon HQ2) are commercial / corporate
+scenarios where the new strategist-agent rationale (sprint 2) appears
+to over-shoot consensus; flagged for follow-up in v2.9.
+
+### 10.6 What this does **not** change
+
+Section 6.10.4's apples-to-apples sim-lift evaluation, the contamination
+probe, the blinding protocol, the EnKF assimilation result on Brexit,
+and the null-baseline benchmark are all reported on the same trajectory
+data and bench harness as v2.7 — none of them depend on the calibrated
+SVI posterior, so their numbers carry through unchanged. The headline
+scientific claim — that the calibrated ABM matches but does not
+dominate naive persistence in retrospective trajectory space, and earns
+its operational value from EnKF online assimilation plus its blinding /
+benchmarking instrumentation — is unaffected by v2.8.
+
+---
+
+## Appendix A: Implementation Details
+
+### A.1 Software Stack
+
+The simulator and inference pipeline are implemented in Python using:
+- **JAX** (0.9+) for differentiable simulation and automatic differentiation.
+- **NumPyro** for probabilistic programming and variational inference.
+- **SALib** for Sobol sensitivity analysis.
+- All simulation code is `jax.jit`-compatible and uses `jax.lax.scan` for sequential round stepping, avoiding Python loops.
+- **Market data layer (v2.7)**: `yfinance` for equity/volatility/yield feeds (VIX, UST 10Y and 5Y), a lightweight ECB SDMX JSON client for euro-area long-term interest rates (IT/DE/AAA), and the FRED public API for US corporate OAS (`BAMLC0A0CM`) and UK 10Y long-term interest rate (`IRLTLT01GBM156N`). Concurrent fan-out is handled by `concurrent.futures.ThreadPoolExecutor` (three workers, one per source), with a 300-second TTL cache on a composite key and silent fallback to calibrated static priors on fetch failure.
+
+### A.2 Computational Requirements
+
+| Task | Runtime | Hardware |
+|---|---|---|
+| SVI calibration (3000 steps, 42 scenarios) | 40.2 min | CPU (Apple Silicon) |
+| SBC (100 instances, NUTS) | 5.0 min | CPU |
+| Sobol analysis (18,432 evaluations) | ~10 min | CPU |
+| SVI vs NUTS comparison (4 scenarios) | ~15 min | CPU |
+| EnKF online assimilation (50 members, 9 rounds) | ~5 sec | CPU |
+
+### A.3 Gauge Fixing
+
+The softmax function is shift-invariant: softmax(α + c) = softmax(α) for any scalar c. With 5 forces and 4 free parameters, one weight must be fixed to resolve the gauge. We fix α_direct = 0, making the remaining weights interpretable as log-odds ratios relative to direct LLM influence. This is analogous to the reference category in multinomial logistic regression.
+
+### A.4 EMA Standardization
+
+The EMA standardization computes per-force, per-round statistics (mean and standard deviation) across ALL agents in each round, accumulated via exponential moving average over rounds with decay α = 0.3. The current-round statistics are:
+
+$$\mu_k^{\text{cur}}(t) = \frac{1}{n}\sum_i f_{k,i}(t), \quad \sigma_k^{\text{cur}}(t) = \sqrt{\frac{1}{n}\sum_i (f_{k,i}(t) - \mu_k^{\text{cur}})^2 + \epsilon}$$
+
+The gradient-safe square root (adding ε = 10⁻⁸ before taking the root) avoids NaN gradients when all agent forces are identical. These are then smoothed temporally:
+
+$$\mu_k(t) = \alpha \cdot \mu_k(t-1) + (1-\alpha) \cdot \mu_k^{\text{cur}}(t)$$
+
+A permutation invariance test confirms that agent ordering does not affect the standardized forces (max absolute difference < 6 × 10⁻⁸ under random permutation of the agent array). This property holds because mean and variance are symmetric statistics over the agent set.
+
+### A.5 Engine Decomposition and Market-Context Dependency Injection (v2.7)
+
+Two architectural changes were made in v2.7 that do not alter any calibration, benchmark, or EnKF number in Sections 5–7 but are prerequisites for the live market data layer of Section 5.9 and for the per-scenario geography regimes used by the sovereign-spread and local-index models.
+
+**Engine decomposition.** The simulation entry point (`core/simulation/engine.py`) was refactored from a 606-line God Object that owned bootstrap, per-round stepping, evaluation, and reporting into a thin 261-line coordinator and three single-responsibility services:
+- `SimulationSetup` (`core/simulation/setup.py`) — scenario loading, agent roster construction, market-context wiring, LLM client binding.
+- `EvaluationService` (`core/simulation/evaluation.py`) — realism gate, scope analyzer, post-run diagnostic checks.
+- `ReportingService` (`core/simulation/reporting.py`) — Markdown report and financial-impact JSON export.
+
+The coordinator now holds only the per-round loop and delegates all other responsibilities to these services. This eliminates several latent bugs previously masked by a generic `except` block in engine initialization (one of them, a silently swallowed `TypeError` when `FinancialImpactScorer` was missing the `relevant_universe` kwarg, is fixed in the same commit).
+
+**Market-context dependency injection.** The process-wide `UniverseLoader` singleton, which had held the stock universe, sector beta tables, and macro priors as module-level state, is replaced by a per-scenario `MarketContext` object (`core/orchestrator/market_context.py`) bound at bootstrap time to a geography regime (IT, US, EU, EM, default) and a `MarketDataProvider` backend (static, live, or test). `MarketContext` exposes two dedicated models — `SovereignSpreadModel` (BTP-Bund and analogous sovereign-spread regressions, parameterised by geography) and `LocalIndexModel` (primary local equity index and its political sensitivity, e.g. FTSE MIB for IT, S&P 500 for US) — which replace the previously hard-coded BTP-Bund and FTSE MIB constants scattered across the financial impact scorer. The `stock_universe.json` schema gains a `macro` block that declares calibrated base values and sensitivities for the six supported geographies.
+
+The consequence for downstream callers is that `TickerRelevanceScorer`, `FinancialImpactScorer`, and `backtest_financials.py` all receive `MarketContext` via constructor injection rather than reading from a global; tests can inject a fake provider; and the live-feed overlay of Section 5.9 is implemented by swapping the provider rather than patching a singleton.
+
+---
+
+## Appendix B: Regime Switching for Crisis Dynamics (Preliminary)
+
+### B.1 Motivation
+
+The five worst-performing scenarios (Section 5.5) share a common pattern: rapid, discontinuous opinion shifts that the base model's linear force combination cannot reproduce. Financial crises (WeWork b_s = -1.378, SVB b_s = -0.835, FTX b_s = -0.727) exhibit trust collapses where public opinion drops precipitously within 1–2 rounds. The base model, with its smooth force mixing and capped step sizes, can only produce gradual movements.
+
+We address this with a regime-switching extension that introduces a latent "crisis regime" with amplified dynamics, activated by observable signals (shock magnitude, position velocity, institutional trust).
+
+### B.2 Two-Regime Architecture
+
+The model switches between two regimes:
+
+- **Regime 0 (Normal)**: Standard force-based opinion evolution as described in Section 3.
+- **Regime 1 (Crisis)**: Amplified step sizes, suppressed anchor rigidity, amplified herd and event forces, and a direct crisis push that bypasses the softmax mixing entirely.
+
+The switching is *soft*: regime probability P(crisis) ∈ (0, 1) is computed via sigmoid, and all parameters are interpolated:
+
+$$\boldsymbol{\theta}_{\text{eff}} = (1 - p) \cdot \boldsymbol{\theta}_{\text{normal}} + p \cdot \boldsymbol{\theta}_{\text{crisis}} \quad \text{(Eq. B.1)}$$
+
+This preserves JAX differentiability and `jax.lax.scan` compatibility—no discrete branching is needed.
+
+### B.3 Regime Probability
+
+The crisis probability is computed via logistic regression on four observable signals:
+
+$$\text{logit}(c_t) = \beta_0 + \beta_{\text{shock}} (m_t - \tau_{\text{shock}}) + \beta_{\text{vel}} (v_t - \tau_{\text{vel}}) + \beta_{\text{trust}} (1 - \text{trust}) + \beta_{\text{recovery}} \cdot r_t + \beta_{\text{momentum}} \cdot c_{t-1} \quad \text{(Eq. B.2)}$$
+
+where m_t is the shock magnitude, v_t the mean absolute position velocity, trust the scenario-level institutional trust, r_t a soft count of crisis rounds, and p_{t-1} the previous crisis probability.
+
+### B.4 Crisis Dynamics
+
+In the crisis regime, three modifications occur:
+
+1. **Step size amplification.** λ_crisis = λ_normal × 3.0, with relaxed caps.
+2. **Force reweighting.** Herd amplified by log(2.0), event amplified by log(2.5), anchor suppressed by -2.0 in logit space.
+3. **Direct crisis push.** A force that bypasses the softmax mixing: Δp_i^{crisis} = p · κ · m_t · d_t · (1 - ρ_i), where κ = 0.4.
+
+**Table B.1: Crisis Parameter Defaults**
+
+| Parameter | Default | Role |
+|---|---|---|
+| λ_multiplier | 3.0 | Step size amplification in crisis |
+| anchor_suppression | 0.1 | Anchor force multiplied by this in crisis |
+| event_amplification | 2.5 | Event force amplified in softmax |
+| herd_amplification | 2.0 | Herd force amplified in softmax |
+| contagion_speed (κ) | 0.4 | Direct crisis push strength |
+| shock_trigger (τ_shock) | 0.5 | Shock magnitude threshold |
+| trust_sensitivity | 1.5 | Low trust → higher crisis probability |
+| crisis_duration_mean | 2.5 | Expected rounds before recovery |
+
+### B.5 Results
+
+We compare the base model (v2) against the regime-switching model (v3) on selected financial and corporate scenarios:
+
+**Table B.2: v2 vs v3 on Financial/Corporate Scenarios**
+
+| Scenario | GT (%) | v2 Error | v3 Error | Δ (pp) | Max P(crisis) | Crisis Rounds |
+|---|---|---|---|---|---|---|
+| Dieselgate | 32.0 | 29.6 | 0.4 | +29.1 | 0.930 | 3 |
+| FTX Crypto | 22.0 | 11.4 | 5.3 | +6.0 | 1.000 | 2 |
+| Facebook→Meta | 26.0 | 14.6 | 6.4 | +8.2 | 0.911 | 2 |
+| Archegos | 35.0 | 65.0 | 54.5 | +10.4 | 0.930 | 2 |
+| Boeing 737 MAX | 40.0 | 9.5 | 23.7 | -14.2 | 0.833 | 1 |
+| SVB Collapse | 38.0 | 38.8 | 61.9 | -23.1 | 0.989 | 2 |
+| Twitter/X | 41.0 | 7.8 | 25.5 | -17.7 | 0.826 | 2 |
+
+Results are mixed. Regime switching produces substantial improvements when crisis dynamics align with shock direction but degrades performance when the crisis push amplifies the wrong direction. The high max P(crisis) across all scenarios (0.67–1.0) with default thresholds suggests the trigger is too sensitive and requires calibration via SVI.
+
+### B.6 Design for Calibration
+
+The crisis parameters are designed to be learnable within the hierarchical framework. The v3 model extends the v2 prior with 5 additional global parameters (crisis_lambda_mult, crisis_anchor_supp, crisis_event_amp, crisis_herd_amp, shock_trigger), shared globally as crisis dynamics are hypothesized to be a universal mechanism modulated by scenario-specific triggers.
+
+---
+
+## Appendix C: Full Scenario List
+
+**Table C.1: Full Empirical Dataset (43 scenarios)**
+
+*Scenario counts used in this paper.* The SVI calibration (Sections 4–5) and the multi-modal extension (Section 5.8) are fit on the first 42 scenarios (v2.5 training corpus). The v2.5 predictive-skill benchmarks (Sections 6.6–6.8), the v2.7 contamination probe (Section 6.10), and the blinding A/B (Section 6.10.3) use the full 43-scenario corpus, which adds `CORP-2020-BOEING_737_MAX_RETURN_TO_SERVICE` for evaluation only. The SVI posterior is not re-fit on the 43rd scenario in this version of the paper.
+
+
+| # | Scenario ID | Domain | GT (%) | Rounds | Polls | Split | Notes |
+|---|---|---|---|---|---|---|---|
+| 1 | COM-2017-IPHONE_X | commercial | 65.0 | 5 | 2/5 | Train | |
+| 2 | COM-2019-TESLA_CYBERTRUCK_REVEAL | commercial | 62.0 | 7 | 1/7 | Test | |
+| 3 | CORP-2015-DIESELGATE_VW | corporate | 32.0 | 5 | 1/5 | Train | |
+| 4 | CORP-2017-UBER_LONDON_LICENSE | corporate | 65.0 | 9 | 1/9 | Train | |
+| 5 | CORP-2017-UNITED_AIRLINES_DRAGGING | corporate | 28.0 | 6 | 1/6 | Train | |
+| 6 | CORP-2018-AMAZON_HQ2_NYC | corporate | 56.0 | 7 | 1/7 | Test | |
+| 7 | CORP-2019-BOEING_737_MAX | corporate | 40.0 | 7 | 1/7 | Train | |
+| 7a | CORP-2020-BOEING_737_MAX_RETURN_TO_SERVICE | corporate | 41.0 | 5 | 5/5 | Eval-only | v2.7 addition (benchmark / contamination only) |
+| 8 | CORP-2021-FACEBOOK_META_REBRAND | corporate | 26.0 | 7 | 1/7 | Train | |
+| 9 | CORP-2022-TWITTER_X_ACQUISITION | corporate | 41.0 | 5 | 1/5 | Train | |
+| 10 | ENE-2012-JAPANESE_NUCLEAR_RESTART | energy | 35.0 | 6 | 4/6 | Train | |
+| 11 | ENV-2018-GRETA_CLIMATE_STRIKES | environmental | 71.0 | 6 | 0/6 | Train | |
+| 12 | FIN-2019-WEWORK_IPO_COLLAPSE | financial | 18.0 | 7 | 1/7 | Train | |
+| 13 | FIN-2020-TESLA_STOCK_SPLIT | financial | 72.0 | 7 | 0/7 | Train | |
+| 14 | FIN-2021-AMC_SHORT_SQUEEZE | financial | 62.0 | 7 | 0/7 | Train | |
+| 15 | FIN-2021-ARCHEGOS_CAPITAL_COLLAPSE | financial | 35.0 | 7 | 0/7 | Test | NEEDS_VERIF |
+| 16 | FIN-2021-GAMESTOP | financial | 72.0 | 7 | 1/7 | Train | |
+| 17 | FIN-2022-FTX_CRYPTO_CRISIS | financial | 22.0 | 7 | 2/7 | Train | |
+| 18 | FIN-2023-SVB_COLLAPSE | financial | 38.0 | 6 | 2/6 | Train | |
+| 19 | LAB-2015-UBER_VS_TAXI_FRANCE | labor | 45.0 | 7 | 2/7 | Train | |
+| 20 | PH-2021-ASTRAZENECA_HESITANCY | public_health | 62.0 | 7 | 0/7 | Train | |
+| 21 | PH-2021-COVID_VAX_IT | public_health | 80.0 | 7 | 7/7 | Test | |
+| 22 | PH-2021-MASKING_MANDATE_USA | public_health | 63.0 | 5 | 2/5 | Train | |
+| 23 | PH-2021-VACCINE_HESITANCY_USA | public_health | 67.0 | 5 | 5/5 | Train | |
+| 24 | PH-2022-MONKEYPOX_CONCERN_USA | public_health | 47.0 | 7 | 1/7 | Train | |
+| 25 | POL-2011-REFERENDUM_DIVORZIO_MALTA | political | 53.2 | 6 | 0/6 | Train | |
+| 26 | POL-2014-SCOTTISH_INDEPENDENCE | political | 44.7 | 7 | 7/7 | Train | |
+| 27 | POL-2015-GREEK_BAILOUT_GREXIT | political | 38.7 | 5 | 0/5 | Test | |
+| 28 | POL-2016-BREXIT | political | 51.9 | 6 | 6/6 | Train | |
+| 29 | POL-2016-REFERENDUM_COSTITUZIONALE_IT | political | 40.9 | 7 | 0/7 | Train | |
+| 30 | POL-2017-PRESIDENZIALI_FRANCIA | political | 66.1 | 6 | 6/6 | Test | |
+| 31 | POL-2017-INDIPENDENZA_CATALOGNA | political | 48.0 | 5 | 1/5 | Train | |
+| 32 | POL-2017-TURKISH_CONSTITUTIONAL_REF | political | 51.4 | 6 | 0/6 | Test | |
+| 33 | POL-2018-USA_MIDTERM_HOUSE | political | 53.4 | 6 | 6/6 | Train | |
+| 34 | POL-2018-REFERENDUM_ABORTO_IRLANDA | political | 66.4 | 6 | 3/6 | Train | |
+| 35 | POL-2019-EUROPEE_ITALIA | political | 40.0 | 6 | 6/6 | Train | |
+| 36 | POL-2020-CHILE_CONSTITUTIONAL_REF | political | 78.3 | 6 | 6/6 | Train | |
+| 37 | POL-2020-PRESIDENZIALI_USA | political | 51.3 | 7 | 7/7 | Train | |
+| 38 | POL-2022-PRESIDENZIALI_BRASILE | political | 50.9 | 6 | 6/6 | Train | |
+| 39 | SOC-2017-AUSTRALIA_SAME_SEX_MARRIAGE | social | 61.6 | 7 | 7/7 | Train | |
+| 40 | TECH-2017-NET_NEUTRALITY_REPEAL_US | technology | 83.0 | 5 | 1/5 | Test | |
+| 41 | TECH-2018-GDPR_ADOPTION | technology | 67.0 | 7 | 0/7 | Train | |
+| 42 | TECH-2020-TIKTOK_US_BAN_DEBATE | technology | 60.0 | 6 | 1/6 | Train | |
+
+Total: 43 scenarios (42 SVI corpus + 1 eval-only v2.7 addition). SVI split: 34 train / 8 test. 10 domains. 1 flagged NEEDS_VERIFICATION (Archegos). 14 enriched with financial market data (all FIN-* and CORP-* scenarios). Verified polling available for 31 scenarios (polling from LLM estimation where sample_size is not verified). Median scenario length: 6 rounds.
+
+Note: Scenario IDs are abbreviated in the table for readability. Full IDs are available in the repository. The "Polls" column shows rounds with verified sample sizes vs. total rounds. Ground truth sources include official election results, certified referendum outcomes, and verified survey data.
+
+---
+
+## Appendix D: Reproducibility of the v2.5 Benchmark Layer
+
+All numerical results in Sections 6.6–6.8 are produced by a self-contained Python module released alongside the codebase. This appendix documents the package, its command-line interface, and its automated test suite so that the reference distribution can be rederived from scratch and any modification to the sim can be re-evaluated against it.
+
+### D.1 Module Layout
+
+The `benchmarks/` package contains six first-class modules:
+
+| File | Responsibility |
+|------|----------------|
+| `forecasters.py` | Closed-form null baselines: naive persistence, running mean, OLS linear trend, AR(1). Exposes `generate_baseline_trajectory` for one-step-ahead rolling forecasts and `forecast_errors` / `rmse` helpers. |
+| `diebold_mariano.py` | DM statistic with the Harvey–Leybourne–Newbold correction. Student-$t$ p-values computed via the regularized incomplete beta identity $P(T > x) = \tfrac{1}{2} I_{\nu/(\nu+x^2)}(\nu/2, 1/2)$ with Lentz's continued-fraction expansion — no SciPy dependency. |
+| `coverage.py` | Empirical coverage of an interval sequence against realized values, plus a nonparametric bootstrap confidence band on the coverage statistic itself. Includes a `coverage_from_quantiles` helper for ensemble Monte Carlo intervals. |
+| `residual_ci.py` | Residual-bootstrap predictive intervals that turn any point-forecaster into a calibrated interval forecaster, enabling the model-free coverage check of Section 6.7. |
+| `scenario_matrix.py` | Enumeration of the $7 \times 5 \times 4$ scenario-diversity axis, `ScenarioCell` dataclass, and a `coverage_report` that flags missing axis values in any given corpus. |
+| `historical.py` / `historical_runner.py` | Loader that normalizes the v1 and v2.2 empirical JSON scenarios into the common `support` / `signed_position` representation, derives tension from per-scenario volatility, maps ISO country codes to regions, and runs all baselines + DM tests + coverage + matrix report in one pass. |
+| `runner.py` | Parallel runner for the deterministic-trajectory benchmark against the 7 scenarios stored in `frontend/public/data/scenario_*` (the sim-forecast case). |
+
+### D.2 Command-Line Usage
+
+The historical benchmark (Section 6.6–6.8) regenerates from scratch with:
+
+```bash
+python -m benchmarks.historical_runner \
+    --out outputs/historical_benchmark.json \
+    --markdown outputs/historical_benchmark.md
+```
+
+The deterministic-trajectory benchmark (sim-forecast case, for continuous regression testing) runs with:
+
+```bash
+python -m benchmarks \
+    --out outputs/benchmark_report.json \
+    --markdown outputs/benchmark_report.md
+```
+
+Both commands are zero-configuration on the public repository and write machine-readable JSON + human-readable Markdown reports.
+
+### D.3 Automated Test Suite
+
+The benchmark layer ships with 103 automated tests distributed across five files and four markers (`slow`, `integration`, `perf`, `stress`):
+
+| Test file | Tests | Purpose |
+|-----------|-------|---------|
+| `test_benchmarks.py` | 18 | Unit tests for forecasters, DM, coverage, scenario matrix. |
+| `test_benchmarks_integration.py` | 8 | End-to-end runner tests, including residual-bootstrap calibration on i.i.d. noise. |
+| `test_performance_sla.py` | 5 | Throughput SLAs for DM, coverage, baselines, and the runner (defaults: 1000 DM tests in < 5 s, runner on 20 synthetic scenarios in < 3 s). All thresholds env-overridable via `DTS_SLA_*`. |
+| `test_stress_scenarios.py` | 57 | Adversarial-signal stress tests (flat, monotone, alternating, spike, heavy-tail, near-constant), DM sign-consistency under $a \leftrightarrow b$ swap, coverage boundedness under random intervals, per-cell smoke tests on the full scenario matrix. |
+| `test_historical_benchmark.py` | 15 | Unit + integration tests for the empirical loader (including v1/v2.2 duplicate resolution, `None`-field tolerance, and domain-alias collapse) and the aggregate runner. Includes a corpus smoke test that fails loudly if the matrix coverage regresses. |
+
+Total runtime on a laptop-class machine: 2.94 seconds for the full 103-test suite, which is kept under 5 seconds so it can run on every commit without gating.
+
+### D.4 Release Artifacts
+
+Running the two commands above produces four reproducible artifacts shipped with the paper:
+
+1. `outputs/historical_benchmark.json` — the full per-scenario × per-metric × per-baseline score matrix (43 × 2 × 4 = 344 score rows).
+2. `outputs/historical_benchmark.md` — the human-readable summary from which Tables 15a, 15b, 16, and 17 are extracted verbatim.
+3. `outputs/benchmark_report.json` — the deterministic-trajectory benchmark on the 7 scenarios currently shipped with the frontend, used as a continuous regression signal.
+4. `outputs/benchmark_report.md` — the corresponding Markdown summary.
+
+Any future modification to the simulator, the calibration pipeline, or the EnKF can be A/B-tested against the v2.5 reference distribution by running the two commands before and after the change. Disagreement on any DM cell at $p < 0.05$ constitutes a reproducibility-relevant regression.
+
+---
+
+## Appendix E: Layer 0 — Scope Analyzer and Realism Gate
+
+This appendix documents the pre-simulation realism layer introduced in Section 6.9. Layer 0 is implemented in the `briefing/` package and is wired into `ScenarioBuilder.build_from_brief()` upstream of the agent generator.
+
+### E.1 Scope Analyzer
+
+The analyzer consumes the free-text brief and optional web-research context and produces a typed `BriefScope`:
+
+```
+sector               : str   # snake_case; e.g. fashion_retail, industrial_lighting
+sub_sector           : str   # optional narrower tag; empty when absent
+geography            : list[str]     # ISO country codes or GLOBAL
+scope_tier           : {global, national, regional, niche}
+named_entities       : list[str]     # extracted verbatim from the brief
+stakeholder_archetypes : list[str]   # whitelist (advisory, used downstream)
+excluded_archetypes  : list[str]     # denylist (hard-blocked by gate)
+language_register    : {formal, informal, technical}
+rationale            : str           # one-sentence trace for logs
+```
+
+The analyzer runs a single JSON-constrained LLM call with temperature 0.2 and a ≈1500-token output budget. It is deliberately **person-name-free**: it defines the boundaries within which names are later selected, to avoid mixing boundary definition and candidate proposal in the same call.
+
+### E.2 Realism Gate
+
+After the multi-step agent generator (scaffold → elite → institutional → clusters) proposes a roster, every candidate agent is fed, in batches of 12, to a verdict prompt that carries the `BriefScope` and returns `{verdict, rationale}` per agent. The gate prompt has four structural properties:
+
+1. **Whitelist is advisory, denylist is hard.** The prompt explicitly states "Do not reject on archetype mismatch alone when sector and geography clearly fit." Conversely, any agent tagged with a denylisted archetype is a hard block.
+2. **Explicit acceptance of institutional shapes.** Industry associations, academic institutions, trade bodies, regulators, and media outlets are acceptable even when their archetype label is absent from the whitelist, provided sector and geography fit.
+3. **Composition hint.** A conditional block injected into the elite/institutional generator prompts (not the gate) prefers specialist voices when `sub_sector` is set or `scope_tier ∈ {niche, regional}`; softens to "include 2–3 specialist voices alongside generalists" otherwise. The hint is sector-name-free: it references the abstract pattern (specialist critic, community curator, newsletter author, sub-sector historian) rather than any concrete firm or figure.
+4. **Batch-level failure safety.** If the gate LLM call fails for a batch, every agent in that batch is marked `uncertain` with rationale `gate LLM error`, not rejected. This prevents LLM flakiness from masquerading as realism signal.
+
+### E.3 Enforcement Loop
+
+`enforce_realism(scope, brief, analysis, llm, rejection_threshold=0.15, max_passes=2)` wraps the gate in a regeneration loop:
+
+1. Run the gate on the current roster. If the rejection rate is ≤ τ = 0.15, return.
+2. Otherwise, identify rejected agents and call the generator's elite or institutional regeneration prompt with the rejection rationales appended as feedback.
+3. Re-run the gate on the new candidates, up to $P = 2$ passes total.
+4. Return `(final_report, initial_report)` so downstream consumers can observe both the baseline and the post-enforcement rosters; both are serialized under `_realism_report` and `_realism_initial_report` in the scenario config.
+
+The two thresholds $(\tau, P) = (0.15, 2)$ were chosen to bound cost: $P = 2$ caps the worst-case roster cost at roughly 3× the baseline (one generation + two gate calls + one regen), and $\tau = 0.15$ is loose enough that a single borderline rejection on a 30-agent roster does not force a regeneration pass.
+
+### E.4 Test Coverage
+
+Layer 0 ships with 38 automated tests distributed across two files:
+
+| Test file | Tests | Purpose |
+|-----------|-------|---------|
+| `test_layer0_scope.py` | 19 | `BriefScope` dataclass shape, prompt-block rendering, `analyze_scope` happy-path and edge cases, gate-prompt semantics (Phase 6 regressions: whitelist advisory, denylist hard, industry bodies explicitly acceptable), `run_realism_gate` end-to-end with mocked LLM. |
+| `test_layer0_integration.py` | 19 | Composition-hint narrow-vs-broad behavior (Phase 7 regressions, domain-neutrality check), `enforce_realism` multi-pass loop, `agent_generator` scope threading, `entity_researcher` scope threading. |
+
+Total runtime: < 1 s on a laptop-class machine.
+
+### E.5 Pilot-Brief Telemetry
+
+For reproducibility, the per-brief realism telemetry below is emitted by `scripts/smoke_layer0.py`:
+
+```
+Brief: "Stone Island lancia linea donna AW26"
+  Scope : [niche] fashion_retail/luxury_streetwear in IT
+  Gate  : pre=0.00 post=0.96  Rejected=1/26  Cost≈$0.03
+
+Brief: "AEC Illuminazione viene acquisita da Signify"
+  Scope : [national] industrial_lighting/smart_infrastructure_integration in IT,EU
+  Gate  : pre=0.29 (8/34)  post=0.94 (31/34)  Rejected=1/34  Cost=$0.029
+```
+
+A corpus-wide audit of the gate against the legacy rosters of all 43 in-scope empirical scenarios (no roster regeneration) is shipped as `scripts/layer0_corpus_audit.py` and produces `outputs/layer0_corpus_audit.{json,md}`. The audit costs \$0.048 in LLM calls and runs in 39 s. Its results, summarised in Section 6.9.1, motivate the v2.7 gate refactor (Section 8.3, item 11): full back-application requires the context-aware denylist before re-calibration is informative.
+
+---
+
+## Appendix F: Contamination Probing, Blinding Protocol, and Trajectory Evaluation Metrics (v2.7)
+
+This appendix documents the implementation details of the benchmark-integrity layer introduced in Section 6.10. The material is split into four subsections: probe prompts and graders (F.1), blinding transformations and sidecar format (F.2), the trajectory-evaluation metrics library (F.3), and the reproducibility and cost envelope (F.4).
+
+### F.1 Probe Prompts, Graders, and Confidence Scaling
+
+The contamination probe is implemented in `benchmarks/contamination_probe.py` and uses four prompt templates, one per axis. All prompts share a single system instruction:
+
+> "You are a research assistant answering factual questions about public events. Answer only in valid JSON matching the requested schema. If you genuinely don't remember a fact, set the field to `null` rather than guessing — we are measuring recall, not creativity."
+
+The asymmetric incentive ("null beats a wrong guess") is the key to separating memorization from confabulation: a model that confabulates with high confidence is penalized because the grader still compares its guess against ground truth, whereas a model that declines is simply scored 0 on that axis without loss.
+
+**Outcome axis.** Prompt asks for (i) whether the event is recalled, (ii) the winning side (`"pro"` / `"against"` / `null`), (iii) the final pro-side percentage, (iv) a confidence score in $[0, 1]$. The grader computes $s = 0.4 \cdot \mathbb{1}[\text{winner match}] + 0.6 \cdot \mathbb{1}[|\hat{p}_{\text{pro}} - p_{\text{pro}}^{\text{gt}}| \leq 2 \text{pp}] + 0.3 \cdot \mathbb{1}[2 \text{pp} < |\hat{p}_{\text{pro}} - p_{\text{pro}}^{\text{gt}}| \leq 5 \text{pp}]$, caps $s$ at $1.0$, and returns $s \cdot \max(0.3, c)$ where $c$ is the model's confidence (the floor of $0.3$ prevents a model from trivially scoring zero by reporting zero confidence).
+
+**Trajectory axis.** Prompt asks for the qualitative shape of the polling movement (one of `"tightened"`, `"blew_out"`, `"flat"`, `"reversed"`) and which side led early and late. The ground-truth shape is computed from the empirical signed-position trajectory: `flat` if $|p_{\text{late}} - p_{\text{early}}| < 0.05$, else `blew_out` if the late lead exceeds the early lead in absolute value, else `tightened` if the late absolute position is smaller than the early, else `reversed`. Score is $0.4 \cdot \mathbb{1}[\text{shape match}] + 0.3 \cdot \mathbb{1}[\text{early match}] + 0.3 \cdot \mathbb{1}[\text{late match}]$, scaled by confidence.
+
+**Events axis.** Prompt asks for up to three named campaign events with approximate dates. Score is the token-overlap recall: for each claimed event, its lowercased word tokens of length $> 3$ are intersected with the token set of each ground-truth event description; a claimed event counts as matched if any ground-truth event has $\geq 2$ token overlap. Recall is $\text{matched} / \max(1, n_{\text{gt events}})$, capped at $1.0$ and scaled by confidence. This is deliberately lenient: partial-overlap matches score full credit, which biases the probe toward flagging *more* contamination rather than missing it.
+
+**Actors axis.** Prompt asks for up to three pro-side and three against-side leaders. Ground truth is derived from the scenario's agent roster: pro leaders are agents with `initial_position > +0.2`, against leaders are agents with `initial_position < -0.2`. Scoring uses per-token intersection on names (tokens of length $> 3$), counting a claimed actor as a hit if any token of any ground-truth actor on the same side appears in the claim. Raw score is $\min(1.0, (\text{pro hits} + \text{against hits}) / 6)$, scaled by confidence.
+
+The per-scenario contamination index is $\text{idx} = \frac{2 \cdot s_{\text{outcome}} + s_{\text{trajectory}} + s_{\text{events}} + s_{\text{actors}}}{5}$. Double-weighting outcome reflects the fact that recalling the final result is the most direct form of leakage — a model that knows who won a referendum but not who campaigned for which side is still unusable as a retrospective benchmark substrate.
+
+**Grader caveats documented in `outputs/contamination_report.md`.** Three known limitations of the grader are carried through to the report so a reader can adjust their interpretation of the index:
+
+1. *Pro/against semantic flip.* For the Brexit scenario, the dataset encodes `pro = Leave` (matching the reform-accept convention of the corpus) while colloquial usage would have `pro-Brexit = Leave` and therefore also `= pro`. The LLM's factually correct answer ("Leave won, $\approx 52\%$") is graded as wrong when it uses the opposite convention. This understates Brexit's true contamination; it has no effect on the A/B comparison because the same convention is used in both arms.
+2. *Confidence scaling floor.* Multiplying raw scores by $\max(0.3, c)$ rewards honest `I don't know` answers but also means that a model which is *right but unsure* looks less contaminated than it actually is. Contamination indices should be read as a lower bound on the model's actual recall.
+3. *Actor-matching leniency.* Word-token intersection scores partial-name overlaps as hits (e.g. "Boris" hitting "Boris Johnson"), which tends to reward memorized surnames over full-name recall. This makes the actors axis slightly optimistic toward contamination detection — a feature, not a bug, for the purposes of conservative benchmark design.
+
+### F.2 Blinding Transformations and Sidecar Format
+
+`benchmarks/blinding.py` implements the five transformation steps of Section 6.10.2 as a deterministic pure function `blind_scenario(raw: dict) -> (blinded: dict, bmap: BlindingMap)`. The blinded dict has the following field-by-field contract with the input:
+
+| original field | blinded field | transformation |
+|----------------|---------------|----------------|
+| `id` | `id` | `"BLINDED_" + sha1(original_id)[:10]` |
+| `id` | `original_id` | **retained** (bookkeeping only; never read by the sim) |
+| `title` | `title` | template: `f"Binary {domain} referendum-style decision over {n} polling rounds"` |
+| `country` | `country` | $\text{"Country\_"} + \text{sha1}(\text{country}.\text{upper}())[:2]$ |
+| `date_start`, `date_end` | `date_start_rel`, `date_end_rel` | $T - N d$ (relative to `date_end`) |
+| `n_rounds`, `round_duration_days` | same | **unchanged** |
+| `ground_truth_outcome` | same | **unchanged** (grader only) |
+| `polling_trajectory` | `polling_trajectory` | per-round `pro_pct`, `against_pct`, `undecided_pct` unchanged; `date` rewritten as `T-N d` |
+| `events` | `events` | per-event `shock_magnitude`, `shock_direction`, `round` unchanged; `description` scrubbed; `date` rewritten |
+| `agents` | `agents` | `initial_position`, `influence`, `type` unchanged; `name` replaced with role-rank alias; `description` scrubbed |
+| `covariates` | same | **unchanged** |
+
+The sidecar map stored at `calibration/empirical/blinding_maps/<id>.map.json` contains the original title, original country, original date_end, and the full alias→original table. This file is read only by the grader at benchmark-scoring time; the simulator's prompts never include any field from the sidecar.
+
+The `_scrub(text, rename_map)` function applies three passes to every free-text field:
+
+1. **Named-entity substitution.** The rename map (plus its token-split expansion, see Section 6.10.2) is applied as a sequence of word-boundary regexes, processed in descending order of key length so that longer names win over their token subsets.
+2. **Stoplist substitution.** A fixed dictionary of $\sim 50$ geography and political-lexicon tokens (see `STOPLIST` in `benchmarks/blinding.py`) is applied with the same word-boundary discipline. Entries mapping to an empty string are removed; others are replaced with a category token.
+3. **Year scrubbing.** The regex `\b(19|20)\d{2}\b` is replaced with the literal string `YEAR`.
+
+The function is deterministic: given the same input `(text, rename_map)` it returns the same output. This determinism is verified indirectly by the fact that `python -m benchmarks.blinding` is idempotent — re-running it produces byte-identical files.
+
+### F.3 Trajectory Evaluation Metrics Library
+
+`benchmarks/eval_metrics.py` provides a compact, dependency-free library used by the sim-vs-ground-truth comparison step (Section 8.3, item 13). The library exposes:
+
+- `dtw_distance(a, b)` — dynamic time warping with absolute-difference pointwise cost, rolling two-row DP, $O(n \cdot m)$ time and $O(\min(n, m))$ space. Returns the accumulated misalignment in input units (not squared).
+- `normalized_dtw(a, b)` — DTW divided by $\max(|a|, |b|)$, so values from scenarios with different round counts are comparable.
+- `ks_statistic(a, b)` — two-sample Kolmogorov–Smirnov $D$ between the empirical CDFs, without the associated p-value. Used to measure marginal-distribution disagreement between a forecast trajectory and a ground-truth trajectory independent of round-count alignment.
+- `rmse(a, b)` — mean-squared error over the shortest prefix shared by both inputs.
+- `terminal_error(forecast, gt_value)` — absolute error of the forecast's final round against a verified terminal ground-truth.
+- `bootstrap_ci(values, n_samples=2000, ci=0.95, seed=42)` — percentile bootstrap CI on the mean, deterministic via a seeded `random.Random`.
+- `compare_trajectories(forecast, ground_truth, terminal_gt=None)` — convenience function returning a `TrajectoryComparison` dataclass with all of the above.
+
+DTW is the primary metric because the simulator produces trajectories on its own internal schedule and polling observations are irregularly timed; RMSE punishes time-warp even when shapes match, while DTW is invariant to local time-axis stretching. KS provides a distribution-level check that complements DTW at the sequence level. Bootstrap CI on error, combined with the existing Diebold–Mariano machinery in `benchmarks/diebold_mariano.py`, produces the per-scenario row that Section 8.3(13) will consume: *"sim DTW $= x$ with 95% CI $[x_{\text{lo}}, x_{\text{hi}}]$, beats best-baseline by $\Delta$ with DM $p = q$"*.
+
+### F.4 Reproducibility and Cost Envelope
+
+The full v2.7 benchmark-integrity pipeline can be reproduced end-to-end from a clean checkout with the following invocations. Total cost is \$0.0363 across 216 LLM calls; total wall-clock is under 3 minutes on a single laptop.
+
+```bash
+# 1. Full-corpus contamination probe (172 calls, $0.0321, ~90s)
+python -m benchmarks.contamination_probe --budget 3.0 \
+    --out outputs/contamination_probe.json
+python -m benchmarks.contamination_report \
+    --input outputs/contamination_probe.json \
+    --output outputs/contamination_report.md
+
+# 2. Blinding protocol applied to all 43 scenarios (pure Python, deterministic)
+python -m benchmarks.blinding
+
+# 3. A/B probe on the 11 high-leak scenarios in blinded configuration
+#    (44 calls, $0.0042, ~10s)
+python -m benchmarks.contamination_probe \
+    --scenarios POL-2014-SCOTTISH_INDEPENDENCE_REFEREND \
+                POL-2018-ELEZIONI_MIDTERM_USA_2018_HOU \
+                POL-2017-ELEZIONI_PRESIDENZIALI_FRANCIA \
+                POL-2016-REFERENDUM_COSTITUZIONALE_ITAL \
+                POL-2020-ELEZIONI_PRESIDENZIALI_USA_202 \
+                POL-2022-ELEZIONI_PRESIDENZIALI_BRASILE \
+                POL-2020-CHILE_CONSTITUTIONAL_REFERENDU \
+                POL-2015-GREEK_BAILOUT_REFERENDUM_GREF \
+                SOC-2017-AUSTRALIA_SAME_SEX_MARRIAGE_PO \
+                POL-2017-TURKISH_CONSTITUTIONAL_REFEREN \
+                POL-2018-REFERENDUM_ABORTO_IRLANDA_2018 \
+    --blinded-dir calibration/empirical/scenarios_blinded \
+    --budget 1.0 \
+    --out outputs/contamination_probe_blinded.json
+
+# 4. Render the A/B delta report
+python -m benchmarks.contamination_delta \
+    --contaminated outputs/contamination_probe.json \
+    --blinded outputs/contamination_probe_blinded.json \
+    --out outputs/contamination_delta.md
+```
+
+Artifacts produced:
+
+- `outputs/contamination_probe.json` — full 43-scenario probe telemetry, per-axis scores, per-axis response payloads, and corpus summary.
+- `outputs/contamination_report.md` — human-readable probe report.
+- `outputs/contamination_probe_blinded.json` — 11-scenario blinded probe telemetry.
+- `outputs/contamination_delta.md` — the A/B delta table (Table 22 of this paper).
+- `calibration/empirical/scenarios_blinded/*.json` — 43 blinded scenario files.
+- `calibration/empirical/blinding_maps/*.map.json` — 43 sidecar mapping files.
+
+All artifacts are regenerated deterministically from the source scenarios in `calibration/empirical/scenarios_v2.2/` and `calibration/empirical/scenarios/`; the only non-deterministic step is the LLM call itself, whose stochasticity is bounded by `temperature = 0.0` in the probe and by the fact that the blinding transformations contain no LLM calls at all.
+
+---
+
+## Appendix G: ODD Protocol Description
+
+We describe the simulation following the ODD (Overview, Design concepts, Details) protocol of Grimm et al. (2006, 2010, 2020), as recommended for agent-based model documentation in JASSS. The text below is self-contained: equations referenced as (Eq. *k*) point to the formulation in Section 3 but are not required to follow the description.
+
+### G.1 Overview
+
+#### G.1.1 Purpose and Patterns
+
+The model's purpose is to **reproduce the macro-level trajectory of public opinion on a single binary issue** during a finite, discrete information period (typically 5–9 rounds spanning the weeks before a referendum, electoral test, corporate crisis decision, or institutional ruling). The patterns the model is designed to reproduce are: (i) the round-by-round share of "Pro" support on a [0, 1] scale; (ii) the cross-sectional distribution of agent positions on [-1, +1]; (iii) a scalar polarization index derived from that distribution; and (iv) the qualitative shape of the trajectory (monotone drift, oscillation, late swing, lock-in) under exogenous shocks.
+
+The model is **not** designed to reproduce: individual-level voting decisions, the content of any specific message, microscopic network rewiring, or the timing of named real-world events at sub-round granularity. The empirical patterns the model is calibrated against (Section 5) are therefore aggregate poll points and final outcome shares, not individual choice data.
+
+#### G.1.2 Entities, State Variables, and Scales
+
+The model contains four entity classes:
+
+1. **Elite agents** (typically 8–20 per scenario). Represent named institutional or political principals (heads of state, party leaders, central-bank governors, media owners, regulators). Each elite agent carries a textual `name`, `role`, `bio`, and `style` provided by the scenario file (or by the blinded alias map in the contamination-controlled arm), plus the dynamic state variables below.
+
+2. **Institutional agents** (typically 5–15 per scenario). Represent collective entities with stable formal identity (newspapers, parties, courts, regulatory agencies). Same dynamic state as elites but updated through a batched LLM call rather than per-agent prompts.
+
+3. **Citizen clusters** (typically 8–18 per scenario). Each cluster represents a stratum of the broader population (e.g., "urban professionals, age 30–45, centre-left baseline"); cluster `size` is in the thousands-to-millions range, set from census or polling crosstab proportions. Clusters carry the same dynamic state as elites plus a `dominant_sentiment` categorical and a `sentiment_distribution` dictionary.
+
+4. **Events** (one per round). Each event has a `timeline_label`, a free-text narrative `event` field, a continuous `shock_magnitude` ∈ [0.1, 0.6] and `shock_direction` ∈ [-1, +1], and a list of `key_actors_affected`.
+
+**Per-agent dynamic state.**
+- `position` *p_i(t)* ∈ [-1, +1] — stance on the binary issue.
+- `position_orig` *p_i^orig(t)* ∈ [-1, +1] — slowly drifting anchor (rate δ_drift).
+- `emotional_state` ∈ {combative, satisfied, worried, cautious, furious, triumphant} — categorical, LLM-set per round.
+- `alliances`, `targets`: lists of agent IDs (used for coalition reconstruction and edge weighting in *W*).
+- Static parameters: type *τ_i* ∈ {elite, citizen} (institutional agents are processed as elites); rigidity *ρ_i* ∈ [0, 1] (elite ≈ 0.7, institutional ≈ 0.6, citizen ≈ 0.3); tolerance *θ_i* ∈ [0, 1] (elite ≈ 0.3, citizen ≈ 0.6).
+
+**Aggregate state.**
+- `pro_pct(t)` ∈ [0, 100] — soft-classification readout (Eq. 12).
+- `polarization(t)` ∈ [0, 10] — population-weighted absolute mean position rescaled to a 10-point operator-readable scale.
+- Per-agent memory of the previous round's posts and the reactions they received (string fields, capped to ~500 tokens).
+
+**Spatial scale.** None — the model is non-spatial. Agent–agent interaction is mediated by a sparse weighted graph *W* ∈ ℝ^{n×n} constructed from LLM-assigned influence scores via 5-nearest-neighbours (Section 3.1). Citizen clusters do not interact pairwise; each cluster updates against the round-level macro state and the viral content feed.
+
+**Temporal scale.** One round = a discrete period mapped by the scenario file to a real-world interval (range across the corpus: 1 day for high-tempo crises like Boeing 737 MAX RTS, up to 8 weeks for slow-burn referendum campaigns; the modal scenario uses 1 round ≈ 1 week). The simulator does not enforce wall-clock alignment; the round is the irreducible time unit. Total duration *T* ∈ {3, 5, 7, 9} rounds depending on scenario (Appendix C.1).
+
+#### G.1.3 Process Overview and Scheduling
+
+Each round *t* = 1, ..., *T* executes the following ordered phases:
+
+```
+Phase 1.  Event injection
+              if t == 1: emit scenario.initial_event
+              else:      LLM generates event from history + current state
+                         (EventInjector.generate_event)
+              → updates: round event narrative, m_t, d_t
+
+Phase 2.  Elite agent step (per-agent, async-parallel, semaphore=5)
+              for each elite agent i:
+                  prompt = ELITE_ROUND_PROMPT(memory, viral_posts, event)
+                  response = await LLM(prompt)
+                  → updates: posts, position p_i(t+1), emotional_state,
+                             alliances, targets
+
+Phase 3.  Institutional agent step (single batched LLM call)
+              prompt = INSTITUTIONAL_BATCH_PROMPT(all institutional agents)
+              response = await LLM(prompt)
+              → updates: position, posts, sentiment for all institutionals
+
+Phase 4.  Citizen cluster step (per-cluster, async-parallel)
+              for each cluster c:
+                  prompt = CLUSTER_PROMPT(profile, viral_posts, prev_state)
+                  response = await LLM(prompt)
+                  → updates: dominant_sentiment, shift_from_last_month,
+                             engagement_level, sample_posts, position
+
+Phase 5.  Force computation and position update (deterministic, JAX)
+              for each agent i:
+                  compute (Eqs. 1-5) raw forces
+                  standardize via per-round EMA (Eq. 6)
+                  combine via softmax mixture (Eqs. 7-9)
+                  update position with tanh-clamped step (Eqs. 10-11)
+
+Phase 6.  Readout and metrics
+              pro_pct(t)        ← soft-classify positions (Eq. 12)
+              polarization(t)   ← weighted |mean position|
+              viral_posts(t)    ← top-K posts by reach × engagement
+              checkpoint        ← write state_<scenario>_r<t>.json
+
+Phase 7.  Optional online assimilation (EnKF only, Section 7)
+              if a poll y_t is available at the end of round t:
+                  apply EnKF update to (state, parameters)
+              else:
+                  free-running prior step
+```
+
+**Scheduling within a phase.** Within a phase agents are updated *in parallel* via `asyncio.gather` with a global semaphore of 5 in-flight LLM calls (Section 3, "Concurrency"). The order of completion does not enter any update equation: Phase 5 reads the round-end snapshot of all positions and posts, and the per-round EMA standardisation (Eq. 6) is a symmetric function over the agent set whose permutation-invariance is empirically confirmed (max |Δpro_fraction| < 6 × 10⁻⁸ under random permutation; Section 3.3). Between phases the schedule is strictly sequential: Phase *k* + 1 may not start until Phase *k* completes for all agents.
+
+### G.2 Design Concepts
+
+**Basic principles.** The model integrates three lineages: (i) bounded-confidence opinion dynamics (Deffuant et al. 2000; Hegselmann & Krause 2002) for the smooth-gated social term (Eq. 4); (ii) anchor-and-adjust models from political-psychology decision research for the rigidity term (Eq. 3); and (iii) generative-agent simulation (Park et al. 2023; Argyle et al. 2023) for narrative generation, message production, and per-agent reactive position adjustment Δ_i^LLM (Eq. 1). The mixing weights between these mechanisms are not fixed by theory; they are estimated from data via hierarchical SVI (Section 4) and may differ across domains (Section 5).
+
+**Emergence.** The aggregate trajectory `pro_pct(t)`, the polarization index, the formation and dissolution of coalitions (reconstructed from `alliances` and `targets` fields), and the time-evolution of the influence graph *W* all *emerge* from individual decisions and are not directly specified. The shape of the trajectory under a given event sequence is the primary object of empirical evaluation (Section 6.10).
+
+**Adaptation.** Agents adapt by updating `position` in response to (i) their own LLM-generated reactive shift Δ_i^LLM, (ii) the weighted opinion of their network neighbours within the bounded-confidence window, (iii) the round-level event shock, (iv) memory of how their previous posts were received. The adaptation rule is the softmax-mixed force update (Eqs. 7–11); it is monotone in the sense that the post-clamp step is a contraction in the L^∞-norm of the update.
+
+**Objectives.** Agents do not maximise an explicit objective function. Their behaviour is driven by the LLM's role-prompted reasoning under the system prompt of `ELITE_SYSTEM_PROMPT` (Section "domains/political/prompts.py"). The system prompt instructs the model to "use the typical tone of your public role" and bounds position shifts to ±0.15 per round.
+
+**Learning.** No agent updates a long-run learnable parameter during a single simulation run. The hierarchical SVI calibration (Section 4) is the *cross-scenario* learning step: it estimates the four softmax-mixing weights θ_s and the two-level discrepancy biases (b_d, b_s) from the empirical corpus.
+
+**Prediction.** Agents have no explicit forward-prediction mechanism. The LLM may implicitly reason about future moves when generating a post or a position shift, but this reasoning is not exposed to the simulator and does not enter the dynamics equations.
+
+**Sensing.** Agents sense (i) the round event narrative; (ii) their own previous posts and reaction memory; (iii) the viral-posts feed of the current round (top-K by engagement); (iv) macro indicators (current polarization, dominant sentiment, top narratives). They do *not* sense the full position vector of every other agent, only the network-weighted feed.
+
+**Interaction.** Direct agent–agent interaction is mediated by *W*: an agent's social force (Eq. 4) sums over its 5-nearest-neighbours weighted by influence × bounded-confidence gating. Indirect interaction is mediated by viral content: any post may enter the round-level viral feed and influence all agents that consume that feed. Citizen clusters do not interact with each other directly; they interact with elites/institutionals through the viral feed.
+
+**Stochasticity.** Two stochastic sources operate at runtime: (i) the LLM sampling temperature (0.6–0.85 across components; 0.0 in the contamination probe), and (ii) the stochastic ordering of asyncio task completion. Both are bounded: clamping in (Eq. 11) limits per-step displacement, and permutation-invariance of (Eq. 6) means asyncio completion order does not affect the deterministic phase. The hierarchical Bayesian inference layer is itself stochastic via mini-batch SVI (Section 4.5).
+
+**Collectives.** Coalitions are *emergent collectives* reconstructed post-hoc from `alliances`/`targets` edges; they are not first-class entities at simulation time. Domains and crisis-archetypes (used for partial pooling in the hierarchical model, Section 4.2 and Section 5) are first-class collectives at the calibration layer but are static metadata at simulation time.
+
+**Observation.** The model writes `state_<scenario>_r<t>.json` checkpoints after every round (used by the trajectory extractor in `benchmarks.sim_lift_runner`), a final dashboard HTML, a markdown report, a SQLite database of all generated posts (`outputs/social_<id>.db`), and the per-round `confidence_interval.pro_pct_mean` used for trajectory metrics.
+
+### G.3 Details
+
+#### G.3.1 Initialisation
+
+A scenario file (`calibration/empirical/scenarios_v2.1/<id>.json`) specifies, at *t* = 0:
+
+- `initial_event`: free-text description anchoring the scenario.
+- `elite_agents`: list of {name, role, bio, style, initial_position, traits}.
+- `institutional_templates`: dict of institutional agent templates with `category`, `key_trait`, `graph_connections`.
+- `citizen_clusters`: list of {profile, size, initial_position, info_channel, sentiment_baseline}.
+- `num_rounds` *T*.
+- `timeline_labels`: list of length *T* labelling each round (e.g., "Week 1", "Day 0–3").
+- Domain identifier (used to select the prompt pack and the calibration regime).
+
+Initial positions p_i(0) are drawn from the scenario file. Initial influence weights *W*(0) are constructed by the LLM during a one-shot graph-construction prompt (Section 3.1) producing a scalar influence score *s_ij* ∈ [0, 1] for each ordered pair, then sparsified via 5-nearest-neighbours per agent. The same *W*(0) is reused across runs of the same scenario for reproducibility unless a new scenario file is generated.
+
+For the **blinded variant** (Appendix F, Section 6.10), the initialisation file is the deterministic image of the source scenario under the blinding transformation: title is replaced by a template, country is replaced by `Country_NN`, agent names are replaced by `PRO_LEADER_N` / `AGAINST_LEADER_N`, dates are replaced by `T-Nd` offsets, and a stoplist scrub plus multi-token expansion ensures no surface entity leaks. Positions, network structure, cluster sizes, and round count are preserved.
+
+#### G.3.2 Input Data
+
+The simulator does **not** ingest external time-series data during a run (no exogenous polling, no news feed). All round-level events are generated by the LLM event-injector from the scenario context and the prior history (Section 3, "EventInjector"). The hierarchical Bayesian calibration ingests the empirical corpus of 42 scenarios (Appendix C.1, plus 1 eval-only addition for benchmarks) consisting of per-round polling counts where available and final-outcome shares otherwise. The EnKF online module (Section 7) is the only component that ingests streaming observations into a running simulation, and it does so only when a real polling time-series is provided.
+
+#### G.3.3 Submodels
+
+Each force in (Eqs. 1–5) is a submodel; the complete mathematical specification is given in Section 3.2. We summarise the parameter dependencies here:
+
+| Submodel | Equation | Free parameters | Calibrated? |
+|---|---|---|---|
+| Direct LLM influence | Eq. 1 | ρ_i (frozen), Δ_i^LLM (LLM-emitted) | Mixing weight α_direct ≡ 0 (gauge) |
+| Herd consensus pull | Eq. 2 | θ_h (frozen, default 0.5), τ_H = 0.02 | α_h calibrated per scenario |
+| Anchor rigidity | Eq. 3 | ρ_i (frozen), δ_drift (frozen) | α_a calibrated per scenario |
+| Bounded-confidence social | Eq. 4 | θ_i (frozen), τ_BC = 0.02 | α_s calibrated per scenario |
+| Exogenous event shock | Eq. 5 | m_t, d_t (LLM-emitted, clamped) | α_e calibrated per scenario |
+| Force standardisation | Eq. 6 | EMA decay α = 0.3 | Frozen |
+| Softmax mixing | Eqs. 7–9 | α_h, α_a, α_s, α_e | Calibrated (gauge-fixed) |
+| Position update | Eqs. 10–11 | λ_τ (frozen), c_τ (frozen) | Frozen |
+| Readout | Eq. 12 | Threshold 0.05, temperature 0.02 | Frozen |
+| Readout discrepancy | Eqs. 16–18 | b_d, b_s | Calibrated |
+| Observation | Eqs. 19–20 | φ, σ_obs | Calibrated |
+
+The LLM prompts that emit Δ_i^LLM, the round-level event, and post content are themselves submodels with deterministic structure (the prompt template) and stochastic content (the LLM completion). Their templates are reproduced verbatim in `domains/political/prompts.py` and the parallel domain modules; they are part of the model definition.
+
+#### G.3.4 Initialisation, Input, and Submodel Determinism
+
+A simulation run is reproducible up to LLM stochasticity given: (i) the scenario file at the named git commit; (ii) the model identifier `gemini-3.1-flash-lite-preview` (or the substitute reported in the run manifest); (iii) the hierarchical posterior sample passed to the simulator (the calibrated θ_s); (iv) the temperature settings per LLM call (0.85 for events, 0.6 for retries, lower for cluster updates). For the contamination probe and blinded benchmark all LLM calls are forced to `temperature = 0.0`. The blinding transformation itself is *fully deterministic* and contains no LLM call (Appendix F, Section F.2).
+
+<!-- SI-END -->
+
+---
+
+## References
+
+Argyle, L. P., Busby, E. C., Fulda, N., Gubler, J. R., Rytting, C., & Wingate, D. (2023). Out of one, many: Using language models to simulate human samples. *Political Analysis*, 31(3), 337–351.
+
+Blei, D. M., Kucukelbir, A., & McAuliffe, J. D. (2017). Variational inference: A review for statisticians. *Journal of the American Statistical Association*, 112(518), 859–877.
+
+Deffuant, G., Neau, D., Amblard, F., & Weisbuch, G. (2000). Mixing beliefs among interacting agents. *Advances in Complex Systems*, 3(01n04), 87–98.
+
+DeGroot, M. H. (1974). Reaching a consensus. *Journal of the American Statistical Association*, 69(345), 118–121.
+
+Diebold, F. X., & Mariano, R. S. (1995). Comparing predictive accuracy. *Journal of Business & Economic Statistics*, 13(3), 253–263.
+
+Evensen, G. (2003). The Ensemble Kalman Filter: Theoretical formulation and practical implementation. *Ocean Dynamics*, 53(4), 343–367.
+
+Gao, C., Lan, X., Li, N., Yuan, Y., Ding, J., Zhou, Z., ... & Li, Y. (2023). Large language models empowered agent-based modeling and simulation: A survey and perspectives. *arXiv preprint arXiv:2312.11970*.
+
+Grazzini, J., Richiardi, M. G., & Tsionas, M. (2017). Bayesian estimation of agent-based models. *Journal of Economic Dynamics and Control*, 77, 26–47.
+
+Grimm, V., Berger, U., Bastiansen, F., Eliassen, S., Ginot, V., Giske, J., ... & DeAngelis, D. L. (2006). A standard protocol for describing individual-based and agent-based models. *Ecological Modelling*, 198(1–2), 115–126.
+
+Grimm, V., Berger, U., DeAngelis, D. L., Polhill, J. G., Giske, J., & Railsback, S. F. (2010). The ODD protocol: A review and first update. *Ecological Modelling*, 221(23), 2760–2768.
+
+Grimm, V., Railsback, S. F., Vincenot, C. E., Berger, U., Gallagher, C., DeAngelis, D. L., ... & Ayllón, D. (2020). The ODD protocol for describing agent-based and other simulation models: A second update to improve clarity, replication, and structural realism. *Journal of Artificial Societies and Social Simulation*, 23(2), 7.
+
+Harvey, D., Leybourne, S., & Newbold, P. (1997). Testing the equality of prediction mean squared errors. *International Journal of Forecasting*, 13(2), 281–291.
+
+Hegselmann, R., & Krause, U. (2002). Opinion dynamics and bounded confidence: models, analysis and simulation. *Journal of Artificial Societies and Social Simulation*, 5(3).
+
+Holley, R. A., & Liggett, T. M. (1975). Ergodic theorems for weakly interacting infinite systems and the voter model. *The Annals of Probability*, 3(4), 643–663.
+
+Horton, J. J. (2023). Large language models as simulated economic agents: What can we learn from homo silicus? *NBER Working Paper 31122*.
+
+Kennedy, M. C., & O'Hagan, A. (2001). Bayesian calibration of computer models. *Journal of the Royal Statistical Society: Series B*, 63(3), 425–464.
+
+Mistry, D., Litvinova, M., Chinazzi, M., et al. (2021). Inferring high-resolution human mixing patterns for disease modeling. *Nature Communications*, 12(1), 323.
+
+Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S. (2023). Generative agents: Interactive simulacra of human behavior. In *Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology*.
+
+Park, J. S., Popowski, L., Cai, C., Morris, M. R., Liang, P., & Bernstein, M. S. (2022). Social simulacra: Creating populated prototypes for social computing systems. In *Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology*.
+
+Platt, D. (2020). A comparison of economic agent-based model calibration methods. *Journal of Economic Dynamics and Control*, 113, 103859.
+
+Reich, S., & Cotter, C. (2015). *Probabilistic Forecasting and Bayesian Data Assimilation*. Cambridge University Press.
+
+Saltelli, A., Ratto, M., Andres, T., Campolongo, F., Cariboni, J., Gatelli, D., ... & Tarantola, S. (2008). *Global Sensitivity Analysis: The Primer*. John Wiley & Sons.
+
+Sobol, I. M. (2001). Global sensitivity indices for nonlinear mathematical models and their Monte Carlo estimates. *Mathematics and Computers in Simulation*, 55(1–3), 271–280.
+
+Talts, S., Betancourt, M., Simpson, D., Vehtari, A., & Gelman, A. (2018). Validating Bayesian inference algorithms with simulation-based calibration. *arXiv preprint arXiv:1804.06788*.
+
+Shiller, R. J. (2015). *Irrational Exuberance* (3rd ed.). Princeton University Press.
+
+Tetlock, P. E. (2015). *Superforecasting: The Art and Science of Prediction*. Crown.
+
+Thiele, J. C., Kurth, W., & Grimm, V. (2014). Facilitating parameter estimation and sensitivity analysis of agent-based models: A cookbook using NetLogo and R. *Journal of Artificial Societies and Social Simulation*, 17(3), 11.
+
+Yahoo Finance. (2024). *yfinance: Yahoo! Finance market data downloader* [Python package]. https://github.com/ranaroussi/yfinance

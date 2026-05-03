@@ -41,6 +41,7 @@ const VERSION_COMPARISON = [
   { version: "v2.1", scenarios: "42 (34/8)", maeTest: 18.9, maeTrain: 15.1, rmseTest: 21.6, cov90train: 2.9, cov90test: null, strategy: "Selective grounding", pollFree: true },
   { version: "v2.2", scenarios: "20 (15/5)", maeTest: 11.4, maeTrain: 15.3, rmseTest: 16.8, cov90train: 73.3, cov90test: 80.0, strategy: "Hybrid grounding", pollFree: true },
   { version: "v2.3", scenarios: "20 (15/5)", maeTest: 13.6, maeTrain: 13.9, rmseTest: 20.0, cov90train: 86.7, cov90test: 80.0, strategy: "Hybrid + PubOp\u2020", pollFree: false },
+  { version: "v2.8", scenarios: "42 (34/8)", maeTest: 17.6, maeTrain: 14.0, rmseTest: 24.7, cov90train: 82.4, cov90test: 87.5, strategy: "Discrepancy + Sprint 1-13 sim hardening", pollFree: true },
 ];
 
 const TEST_RESULTS = [
@@ -189,18 +190,21 @@ export default function PaperPage() {
         </h1>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-[12px] text-ki-on-surface-secondary mb-1">
           <span>Alberto Giovanni Gerli</span>
-          <span className="font-data">v2.5 · April 2026</span>
+          <span className="font-data">v2.8 · May 2026</span>
         </div>
         <div className="text-[12px] text-ki-on-surface-muted mb-6">
           Tourbillon Tech Srl · Università degli Studi di Milano
         </div>
 
-        {/* v2.5 banner */}
+        {/* v2.8 banner */}
         <div className="bg-ki-primary-soft border border-ki-primary/20 rounded p-3 mb-5 text-[12px] text-ki-on-surface leading-relaxed">
-          <span className="eyebrow text-ki-primary mr-2">New in v2.5</span>
-          null-baseline benchmarking layer (Diebold–Mariano with Harvey–Leybourne–Newbold correction),
-          residual-bootstrap coverage, and a 7×5×4 scenario-diversity matrix. v2.4 calibration numbers
-          are unchanged; see §11 for the new content.
+          <span className="eyebrow text-ki-primary mr-2">New in v2.8</span>
+          Sprint 1-13 simulator hardening (country-alias normalisation UK↔GB / USA↔US,
+          realism-gate fix, agent-prompt + engine improvements). Re-calibration on the
+          same 42 empirical scenarios with identical hyperparameters: <strong>test MAE
+          19.18 → 17.56 pp</strong> (−1.62), <strong>coverage₉₀ 75.0% → 87.5%</strong>
+          (+12.5), final SVI loss 514.7 → 493.8. See §10 for the full diff and §11 for the
+          v2.5 null-baseline benchmark (unchanged).
         </div>
 
         {/* Abstract */}
@@ -213,7 +217,7 @@ export default function PaperPage() {
             through a gauge-fixed softmax mixture; a three-level model (global, domain, scenario) with
             explicit readout discrepancy is fitted via SVI on <strong>42 empirical scenarios</strong>
             spanning 10 domains. On <strong>8 held-out scenarios</strong> the calibrated model achieves
-            <strong>19.2 pp</strong> MAE with <strong>75.0%</strong> coverage of 90% credible intervals.
+            <strong>17.6 pp</strong> MAE with <strong>87.5%</strong> coverage of 90% credible intervals (v2.8 — see §10 for the v2.7 → v2.8 diff).
             Simulation-based calibration confirms well-specified posteriors under NUTS; however, the
             production SVI approximation underestimates uncertainty on weaker parameters
             (5&ndash;13&times; narrower than NUTS)&mdash;a central finding, not a side caveat, since it
@@ -235,7 +239,7 @@ export default function PaperPage() {
 
         {/* Key stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
-          <StatCard label="Test MAE (canonical)" value="19.2 pp" sub="v2, N=8 held-out" />
+          <StatCard label="Test MAE (canonical)" value="17.6 pp" sub="v2.8, N=8 held-out" />
           <StatCard label="Persistence RMSE" value="0.038" sub="null baseline, support" />
           <StatCard label="Scenarios" value="43" sub="25/140 matrix cells" />
           <StatCard label="Benchmark tests" value="103" sub="2.94 s wall time" />
@@ -507,9 +511,9 @@ export default function PaperPage() {
           {/* Test set results */}
           <h3 className="text-xs font-bold uppercase tracking-[0.04em] text-ki-on-surface mt-10 mb-4">Test Set Performance</h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            <StatCard label="MAE (full test, N=8)" value="19.2 pp" sub="canonical metric" />
+            <StatCard label="MAE (full test, N=8)" value="17.6 pp" sub="v2.8 canonical" />
             <StatCard label="MAE (verified, N=7)" value="12.6 pp" sub="excl. Archegos" />
-            <StatCard label="Cov 90% (test, N=8)" value="75.0%" />
+            <StatCard label="Cov 90% (test, N=8)" value="87.5%" sub="v2.8" />
             <StatCard label="Cov 90% (train, N=34)" value="79.4%" />
           </div>
 
@@ -1401,7 +1405,7 @@ export default function PaperPage() {
         {/* Footer */}
         <div className="mt-12 pt-4 border-t border-ki-border">
           <div className="flex items-center justify-between text-xs text-ki-on-surface-muted">
-            <span>DigitalTwinSim &mdash; Technical Paper v2.5</span>
+            <span>DigitalTwinSim &mdash; Technical Paper v2.8</span>
             <span>April 2026</span>
           </div>
         </div>

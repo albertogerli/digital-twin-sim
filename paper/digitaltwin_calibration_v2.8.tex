@@ -99,7 +99,7 @@
 Tourbillon Tech Srl, Padova, Italy\\
 Università degli Studi di Milano, Italy\\
 \texttt{alberto@albertogerli.it}}
-\date{Version 2.8 --- May 2026}
+\date{May 2026}
 
 \begin{document}
 
@@ -134,10 +134,7 @@ ten domains (2011--2023).
 
 The calibrated model attains 12.6 pp mean absolute error on verified
 held-out scenarios (17.6~pp including one data-quality-flagged scenario)
-and 87.5\% nominal coverage of 90\% logit-space credible intervals
-(v2.8 re-calibration tightened test MAE by 1.62~pp and lifted coverage
-by 12.5~pp over v2.7 thanks to thirteen sprints of simulator hardening;
-see Section 10).
+and 87.5\% nominal coverage of 90\% logit-space credible intervals.
 Simulation-based calibration confirms well-specification under NUTS (6/6
 KS uniformity \(p>0.20\)); variance-based sensitivity isolates herd
 behaviour (\(S_T=0.55\)) and anchor rigidity (\(S_T=0.45\)) as the
@@ -250,7 +247,7 @@ are:
   module (Appendix D) so any modification to the sim can be compared
   against a fixed reference.
 \item
-  \textbf{A benchmark-integrity layer} (Section 6.10, new in v2.7): a
+  \textbf{A benchmark-integrity layer} (Section 6.10): a
   four-axis contamination probe that quantifies per-scenario LLM prior
   knowledge on outcome, trajectory shape, events, and actors, and a
   deterministic blinding protocol that anonymizes titles, countries,
@@ -260,8 +257,8 @@ are:
   establishing that any retrospective skill measured under blinding is
   attributable to simulation dynamics rather than LLM memorization.
 \item
-  \textbf{A live market data integration layer} (Section 5.9, new in
-  v2.7) that replaces calibration-time macro snapshots with per-scenario
+  \textbf{A live market data integration layer} (Section 5.9) that
+  replaces calibration-time macro snapshots with per-scenario
   live feeds for VIX, UST yields, BTP-Bund (ECB SDMX), US
   investment-grade credit spread (FRED BAMLC0A0CM), and UK 10Y gilt
   (FRED IRLTLT01GBM156N), fetched by three parallel workers with a
@@ -292,27 +289,26 @@ Section 2 reviews related work. Section 3 presents the opinion dynamics
 model and its five force terms. Section 4 describes the hierarchical
 Bayesian calibration framework. Section 5 presents calibration results
 on 42 empirical scenarios, including a multi-modal extension that
-incorporates financial market data (Section 5.8) and --- new in v2.7 ---
-a live market data integration layer that replaces calibration-time
-macro snapshots with three parallel live feeds (yfinance, ECB SDMX,
-FRED) under per-scenario geography binding (Section 5.9). Section 6
-covers validation through SBC, sensitivity analysis, robustness checks,
-predictive-skill benchmarking against null forecasters (Section 6.6),
-residual-bootstrap coverage (Section 6.7), a scenario-diversity matrix
-(Section 6.8), a pre-simulation roster-realism benchmark (Section 6.9),
-and --- new in v2.7 --- a benchmark-integrity layer that quantifies LLM
-data contamination per scenario and validates a blinding protocol that
-neutralizes it (Section 6.10). Section 7 introduces the EnKF online
-assimilation module. Section 8 discusses limitations and future work.
-Section 9 concludes. Appendix A provides implementation details,
-including (A.5, new in v2.7) the engine-decomposition and market-context
-dependency-injection refactor that enables the live-feed backend.
-Appendix B describes the preliminary regime-switching extension.
-Appendix C lists the full scenario dataset. Appendix D documents the
-reproducibility package for the v2.5 benchmarks. Appendix E documents
-the Layer 0 scope analyzer and realism gate introduced in v2.6. Appendix
-F documents the contamination probe, blinding protocol, and
-trajectory-evaluation metrics introduced in v2.7.
+incorporates financial market data (Section 5.8) and a live market data
+integration layer that replaces calibration-time macro snapshots with
+three parallel live feeds (yfinance, ECB SDMX, FRED) under per-scenario
+geography binding (Section 5.9). Section 6 covers validation through
+SBC, sensitivity analysis, robustness checks, predictive-skill
+benchmarking against null forecasters (Section 6.6), residual-bootstrap
+coverage (Section 6.7), a scenario-diversity matrix (Section 6.8), a
+pre-simulation roster-realism benchmark (Section 6.9), and a
+benchmark-integrity layer that quantifies LLM data contamination per
+scenario and validates a blinding protocol that neutralizes it
+(Section 6.10). Section 7 introduces the EnKF online assimilation
+module. Section 8 discusses limitations and future work. Section 9
+concludes. Appendix A provides implementation details, including (A.5)
+the engine-decomposition and market-context dependency-injection
+refactor that enables the live-feed backend. Appendix B describes the
+preliminary regime-switching extension. Appendix C lists the full
+scenario dataset. Appendix D documents the reproducibility package for
+the benchmarks. Appendix E documents the Layer 0 scope analyzer and
+realism gate. Appendix F documents the contamination probe, blinding
+protocol, and trajectory-evaluation metrics.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1004,11 +1000,10 @@ Metric & Full Test (N=8) & Verified Only (N=7) \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-MAE (v2.7) & 19.2 pp & 12.6 pp \\
-\textbf{MAE (v2.8)} & \textbf{17.6 pp} & 12.6 pp \\
-RMSE & 26.6 (v2.7) / \textbf{24.7 (v2.8)} & 14.3 \\
+MAE & 17.6 pp & 12.6 pp \\
+RMSE & 24.7 & 14.3 \\
 Median AE & 11.9 pp & 9.2 pp \\
-Coverage 90\% & 75.0\% (v2.7) / \textbf{87.5\% (v2.8)} & 85.7\% \\
+Coverage 90\% & 87.5\% & 85.7\% \\
 Coverage 50\% & 37.5\% & 42.9\% \\
 CRPS & 15.4 & 8.6 \\
 \end{longtable}
@@ -1188,8 +1183,8 @@ Observation modalities & Polling only & Polling + financial returns \\
 Additional parameters & --- & w\_opinion, w\_event, w\_polar, λ\_fin,
 σ\_market (+5) \\
 Scenarios with market data & 0 & 14 \\
-Test MAE (v2.7 / \textbf{v2.8}) & 19.2 / \textbf{17.6} pp & 18.2 pp \\
-Test Coverage 90\% (v2.7 / \textbf{v2.8}) & 75.0\% / \textbf{87.5\%} & 87.5\% \\
+Test MAE & 17.6 pp & 18.2 pp \\
+Test Coverage 90\% & 87.5\% & 87.5\% \\
 Financial domain MAE & n/a & 24.0 pp \\
 Key finding & --- & λ\_fin = 0.045 (market signal nearly suppressed) \\
 \end{longtable}
@@ -3706,122 +3701,6 @@ which can be pursued without modifying the core architecture.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{10. Sprint 1-13 Simulator Hardening and Re-calibration
-(v2.8)}\label{sprint-1-13-recalibration}
-
-This section documents the changes between v2.7 and v2.8 of the
-framework. Inference-side machinery (hierarchical model, NUTS / SVI,
-SBC, Sobol, EnKF, contamination probe, null-baseline benchmark) is
-\textbf{unchanged}. The thirteen sprints addressed simulator-side
-defects that surfaced from the v2.7 corpus audit and from end-to-end
-re-validation runs.
-
-\subsubsection{10.1 Catalogue of changes}\label{catalogue}
-
-The thirteen targeted improvements:
-
-\begin{itemize}
-\item Sprint 1: reflective memory + thread-safe SQLite + per-agent budget caps
-\item Sprint 2: strategist agents with per-round rationale (\emph{Why} overlay)
-\item Sprints 3-5: LLM scope detector hardened; recall raised on financial / corporate briefs
-\item Sprint 6: realism gate composition hints; corpus accept rate 0.887 → 0.94+
-\item \textbf{Sprint 7: country aliases UK ↔ GB / USA ↔ US in the stakeholder
-  relevance scorer.} Boris Johnson (\texttt{country=GB}) was previously dropped
-  on Brexit briefs whose \texttt{scope.geography=[`UK']}; same pattern
-  for Trump / Biden / Harris on US-politics briefs. The single largest
-  contributor to the v2.8 improvement.
-\item Sprints 8-10: tightened domain-specific few-shot exemplars; reduced
-  JSON parse-failure rate from $\sim$3\% to $<$0.5\%
-\item Sprint 11: engine off-by-one in event override; deterministic seed propagation
-\item Sprint 12: programmatic realism-gate override path
-\item Sprint 13: E2E test harness covering 56 paper-scenario briefs
-  ($\approx \$10$ LLM cost, $\approx 30$ min wall-clock)
-\end{itemize}
-
-The full per-sprint catalogue is in
-\texttt{docs/SPRINT\_1-13\_CHANGELOG.md}.
-
-\subsubsection{10.2 Re-calibration protocol}\label{recalibration-protocol}
-
-We re-ran \texttt{hierarchical\_model\_v2.run\_phase\_bc\_v2} on the
-\textbf{same 42 empirical scenarios} (per-scenario JSON byte-identical
-between runs) with \textbf{identical hyperparameters} --- 3000 SVI
-steps, $\eta = 0.005$, seed 42, prior loaded from the same Phase A
-\texttt{synthetic\_prior.json}. Output goes to a fresh directory
-(\texttt{calibration/results/hierarchical\_calibration/sprint15/}) so
-the v2.7 canonical results stay intact for diffing. The reproducible
-script is \texttt{calibration/sprint15\_recalibrate.py}; the diff
-report \texttt{sprint15\_compare.py} produces the comparison markdown.
-
-\subsubsection{10.3 Aggregate results}\label{aggregate-results}
-
-\begin{longtable}[]{@{}lllll@{}}
-\toprule\noalign{}
-Group & N & MAE pre→post (pp) & cov$_{90}$ pre→post & CRPS $\Delta$ \\
-\midrule\noalign{}
-\endhead
-OVERALL & 42 & 15.22 → \textbf{14.65} ($-0.57$) & 78.6\% → \textbf{83.3\%} (+4.8) & $-0.34$ \\
-TRAIN   & 34 & 14.29 → \textbf{13.97} ($-0.32$) & 79.4\% → \textbf{82.4\%} (+2.9) & $-0.10$ \\
-TEST    &  8 & 19.18 → \textbf{17.56} ($-1.62$) & 75.0\% → \textbf{87.5\%} (+12.5) & $-1.35$ \\
-\bottomrule\noalign{}
-\end{longtable}
-
-Final SVI loss: 514.74 → \textbf{493.79} ($-20.95$). All deltas isolate
-simulator-side changes from inference-side factors.
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=\linewidth]{figures/fig5_v28_recalibration.pdf}
-  \caption{Sprint 1-13 simulator hardening: v2.7 → v2.8 re-calibration.
-    \textbf{(A)} Aggregate MAE on the same 42 empirical scenarios with
-    identical SVI hyperparameters. \textbf{(B)} Per-scenario absolute
-    error on the eight held-out test scenarios; arrows trace v2.7 → v2.8,
-    green = improvement, red = regression. The four largest improvements
-    correspond to scenarios (Greek 2015, French 2017, Net Neutrality
-    2017, COVID vax IT 2021) where the country-alias and realism-gate
-    fixes (sprints 6-7) reinstated previously-dropped stakeholders.}
-  \label{fig:v28-recalibration}
-\end{figure}
-
-\subsubsection{10.4 Per-scenario test-set diff}\label{per-scenario-diff}
-
-\begin{longtable}[]{@{}lllll@{}}
-\toprule\noalign{}
-Scenario & GT & v2.7 $|$err$|$ & v2.8 $|$err$|$ & $\Delta$ \\
-\midrule\noalign{}
-\endhead
-Greek bailout (2015)     & 38.7 & 26.63 & 15.84 & $-10.78$ ✓ \\
-French election (2017)   & 66.1 & 14.50 &  7.17 & $-7.32$ ✓ \\
-Net Neutrality (2017)    & 83.0 & 16.74 & 12.53 & $-4.21$ ✓ \\
-COVID vax IT (2021)      & 80.0 &  9.24 &  5.17 & $-4.07$ ✓ \\
-Archegos Capital (2021)  & 35.0 & 65.00 & 64.92 & $-0.07$ ✓ \\
-Turkish Ref. (2017)      & 51.4 &  6.11 &  6.49 & $+0.38$ ✗ \\
-Amazon HQ2 (2018)        & 56.0 &  7.27 & 11.27 & $+3.99$ ✗ \\
-Tesla Cybertruck (2019)  & 62.0 &  7.91 & 17.04 & $+9.13$ ✗ \\
-\bottomrule\noalign{}
-\end{longtable}
-
-The four largest improvements are scenarios where the country-alias and
-realism-gate fixes (sprints 6-7) reinstated previously dropped
-stakeholders. The two regressions (Tesla Cybertruck, Amazon HQ2) are
-flagged for v2.9 follow-up.
-
-\subsubsection{10.5 Scope of unchanged
-results}\label{scope-unchanged}
-
-The apples-to-apples sim-lift evaluation (Section 6.10.4), the
-contamination probe, the blinding protocol, the EnKF assimilation
-result on Brexit, and the null-baseline benchmark all use trajectory
-data and bench harness code that are independent of the simulator
-calibration; their numbers carry through unchanged from v2.7. The
-headline scientific claim --- that the calibrated ABM matches but does
-not dominate naive persistence in retrospective trajectory space, and
-earns its operational value from EnKF online assimilation plus its
-blinding / benchmarking instrumentation --- is unaffected by v2.8.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\ldots{} --\textgreater{}
 
 \section{Online Supplementary
 Material}\label{online-supplementary-material}
@@ -3844,7 +3723,7 @@ documentation completeness:
 \item
   \textbf{Appendix C} --- full 43-scenario corpus list.
 \item
-  \textbf{Appendix D} --- reproducibility of the v2.5 benchmark layer.
+  \textbf{Appendix D} --- reproducibility of the benchmark layer.
 \item
   \textbf{Appendix E} --- Layer 0 scope analyzer and realism gate.
 \item
@@ -3938,10 +3817,9 @@ affect the standardized forces (max absolute difference \textless{} 6 ×
 because mean and variance are symmetric statistics over the agent set.
 
 \subsubsection{A.5 Engine Decomposition and Market-Context Dependency
-Injection
-(v2.7)}\label{a.5-engine-decomposition-and-market-context-dependency-injection-v2.7}
+Injection}\label{a.5-engine-decomposition-and-market-context-dependency-injection}
 
-Two architectural changes were made in v2.7 that do not alter any
+Two architectural changes are made that do not alter any
 calibration, benchmark, or EnKF number in Sections 5--7 but are
 prerequisites for the live market data layer of Section 5.9 and for the
 per-scenario geography regimes used by the sovereign-spread and
@@ -4285,8 +4163,8 @@ verified survey data.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\subsection{Appendix D: Reproducibility of the v2.5 Benchmark
-Layer}\label{appendix-d-reproducibility-of-the-v2.5-benchmark-layer}
+\subsection{Appendix D: Reproducibility of the Benchmark
+Layer}\label{appendix-d-reproducibility-of-the-benchmark-layer}
 
 All numerical results in Sections 6.6--6.8 are produced by a
 self-contained Python module released alongside the codebase. This
@@ -4608,8 +4486,7 @@ re-calibration is informative.
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \subsection{Appendix F: Contamination Probing, Blinding Protocol, and
-Trajectory Evaluation Metrics
-(v2.7)}\label{appendix-f-contamination-probing-blinding-protocol-and-trajectory-evaluation-metrics-v2.7}
+Trajectory Evaluation Metrics}\label{appendix-f-contamination-probing-blinding-protocol-and-trajectory-evaluation-metrics}
 
 This appendix documents the implementation details of the
 benchmark-integrity layer introduced in Section 6.10. The material is

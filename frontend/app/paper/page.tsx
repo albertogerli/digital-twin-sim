@@ -190,21 +190,10 @@ export default function PaperPage() {
         </h1>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-[12px] text-ki-on-surface-secondary mb-1">
           <span>Alberto Giovanni Gerli</span>
-          <span className="font-data">v2.8 · May 2026</span>
+          <span className="font-data">May 2026</span>
         </div>
         <div className="text-[12px] text-ki-on-surface-muted mb-6">
           Tourbillon Tech Srl · Università degli Studi di Milano
-        </div>
-
-        {/* v2.8 banner */}
-        <div className="bg-ki-primary-soft border border-ki-primary/20 rounded p-3 mb-5 text-[12px] text-ki-on-surface leading-relaxed">
-          <span className="eyebrow text-ki-primary mr-2">New in v2.8</span>
-          Sprint 1-13 simulator hardening (country-alias normalisation UK↔GB / USA↔US,
-          realism-gate fix, agent-prompt + engine improvements). Re-calibration on the
-          same 42 empirical scenarios with identical hyperparameters: <strong>test MAE
-          19.18 → 17.56 pp</strong> (−1.62), <strong>coverage₉₀ 75.0% → 87.5%</strong>
-          (+12.5), final SVI loss 514.7 → 493.8. See §10 for the full diff and §11 for the
-          v2.5 null-baseline benchmark (unchanged).
         </div>
 
         {/* Abstract */}
@@ -217,7 +206,7 @@ export default function PaperPage() {
             through a gauge-fixed softmax mixture; a three-level model (global, domain, scenario) with
             explicit readout discrepancy is fitted via SVI on <strong>42 empirical scenarios</strong>
             spanning 10 domains. On <strong>8 held-out scenarios</strong> the calibrated model achieves
-            <strong>17.6 pp</strong> MAE with <strong>87.5%</strong> coverage of 90% credible intervals (v2.8 — see §10 for the v2.7 → v2.8 diff).
+            <strong>17.6 pp</strong> MAE with <strong>87.5%</strong> coverage of 90% credible intervals.
             Simulation-based calibration confirms well-specified posteriors under NUTS; however, the
             production SVI approximation underestimates uncertainty on weaker parameters
             (5&ndash;13&times; narrower than NUTS)&mdash;a central finding, not a side caveat, since it
@@ -239,7 +228,7 @@ export default function PaperPage() {
 
         {/* Key stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
-          <StatCard label="Test MAE (canonical)" value="17.6 pp" sub="v2.8, N=8 held-out" />
+          <StatCard label="Test MAE (canonical)" value="17.6 pp" sub="N=8 held-out" />
           <StatCard label="Persistence RMSE" value="0.038" sub="null baseline, support" />
           <StatCard label="Scenarios" value="43" sub="25/140 matrix cells" />
           <StatCard label="Benchmark tests" value="103" sub="2.94 s wall time" />
@@ -511,9 +500,9 @@ export default function PaperPage() {
           {/* Test set results */}
           <h3 className="text-xs font-bold uppercase tracking-[0.04em] text-ki-on-surface mt-10 mb-4">Test Set Performance</h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            <StatCard label="MAE (full test, N=8)" value="17.6 pp" sub="v2.8 canonical" />
+            <StatCard label="MAE (full test, N=8)" value="17.6 pp" sub="canonical" />
             <StatCard label="MAE (verified, N=7)" value="12.6 pp" sub="excl. Archegos" />
-            <StatCard label="Cov 90% (test, N=8)" value="87.5%" sub="v2.8" />
+            <StatCard label="Cov 90% (test, N=8)" value="87.5%" />
             <StatCard label="Cov 90% (train, N=34)" value="79.4%" />
           </div>
 

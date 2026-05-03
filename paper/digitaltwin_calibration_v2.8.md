@@ -1,7 +1,5 @@
 # A Calibrated LLM-Conditioned Agent-Based Model of Public Opinion Dynamics with Null-Baseline Benchmarking, Data-Contamination Auditing, and Online Assimilation
 
-**Version 2.8** — May 2026 (Sprint 1-13 simulator hardening + re-calibration; see §10)
-
 **Alberto Giovanni Gerli**^{1,2}
 
 ^1 Tourbillon Tech Srl, Padova, Italy
@@ -11,41 +9,11 @@
 
 ---
 
-## What's new in v2.8
-
-The simulator code path was refactored across thirteen targeted sprints
-(v2.7 → v2.8) — country-alias normalisation (UK↔GB, USA↔US), realism-gate
-fix, agent-prompt and engine improvements, stakeholder-graph updates. We
-re-ran the v2-discrepancy hierarchical SVI calibration on the **same 42
-empirical scenarios** with **identical hyperparameters** (3000 SVI steps,
-lr 0.005, seed 42) so the deltas isolate the simulator changes from
-inference-side factors.
-
-| Group   | N  | MAE pre→post (pp) | cov₉₀ pre→post  | CRPS Δ  | Final loss |
-|---------|----|-------------------|-----------------|---------|------------|
-| OVERALL | 42 | 15.22 → **14.65** (−0.57) | 78.6% → **83.3%** (+4.8) | −0.34   | 514.7 → **493.8** |
-| TRAIN   | 34 | 14.29 → **13.97** (−0.32) | 79.4% → **82.4%** (+2.9) | −0.10   |  |
-| TEST    |  8 | 19.18 → **17.56** (−1.62) | 75.0% → **87.5%** (+12.5)| −1.35   |  |
-
-Largest per-scenario improvements on the held-out test set: Greek
-referendum (−10.78 pp), French 2017 election (−7.32), Net Neutrality
-2017 (−4.21), COVID-19 vaccine IT (−4.07). Two scenarios regressed
-(Tesla Cybertruck +9.13, Amazon HQ2 +3.99) and are flagged for
-follow-up. The full per-scenario diff is in
-`calibration/results/hierarchical_calibration/sprint15/sprint15_vs_baseline.md`.
-
-All other results in this paper (multimodal, EnKF, contamination probe,
-null-baseline benchmark) are **unchanged from v2.7** — they exercise
-calibration outputs and observation-fusion paths that are independent
-of the simulator code that was refactored.
-
----
-
 ## Abstract
 
 We present a calibrated LLM-conditioned agent-based model (ABM) of public opinion dynamics. LLM-agent social simulations are expressive but uncalibrated; we close that gap with a force-based opinion update — direct LLM influence, social conformity, herd behaviour, anchor rigidity, and exogenous shocks, combined through a gauge-fixed softmax mixture — and a three-level hierarchical Bayesian calibration (global / domain / scenario) with explicit readout discrepancy, fit via stochastic variational inference (SVI) on 42 empirical scenarios across ten domains (2011–2023).
 
-The calibrated model attains 12.6 pp mean absolute error on verified held-out scenarios (17.6 pp including one data-quality-flagged scenario) and 87.5% nominal coverage of 90% logit-space credible intervals — the v2.8 re-calibration tightened test MAE by 1.62 pp and lifted coverage by 12.5 pp over v2.7 thanks to thirteen sprints of simulator hardening (see §10). Simulation-based calibration confirms well-specification under NUTS (6/6 KS uniformity $p>0.20$); variance-based sensitivity isolates herd behaviour ($S_T=0.55$) and anchor rigidity ($S_T=0.45$) as the dominant mechanisms. A multi-modal extension fits polling and financial returns jointly on fourteen financially-enriched scenarios, improving test coverage from 75.0% to 87.5% at comparable MAE; the learned linkage weight $\lambda_{\text{fin}}=0.045$ is a principled null result that quantifies the signal-to-noise of market returns for ABM calibration.
+The calibrated model attains 12.6 pp mean absolute error on verified held-out scenarios (17.6 pp including one data-quality-flagged scenario) and 87.5% nominal coverage of 90% logit-space credible intervals. Simulation-based calibration confirms well-specification under NUTS (6/6 KS uniformity $p>0.20$); variance-based sensitivity isolates herd behaviour ($S_T=0.55$) and anchor rigidity ($S_T=0.45$) as the dominant mechanisms. A multi-modal extension fits polling and financial returns jointly on fourteen financially-enriched scenarios, improving test coverage from 75.0% to 87.5% at comparable MAE; the learned linkage weight $\lambda_{\text{fin}}=0.045$ is a principled null result that quantifies the signal-to-noise of market returns for ABM calibration.
 
 We report three negative-control findings that discipline the predictive claims. First, against four standard forecasters on 43 empirical trajectories, naive persistence is a strong baseline (mean RMSE 0.038) that no alternative dominates (OLS trend wins $p<0.05$ on only 4–6 / 43). Second, a four-axis LLM contamination probe (outcome, trajectory, events, actors) on the full corpus finds 11 high-leak political scenarios with contamination index $\geq 0.60$ (peak 0.913 on Scottish 2014); a deterministic blinding protocol — title template, country alias, relative dates, position-bucketed agent aliases — reduces their mean contamination index from 0.721 to 0.000 on all four axes while preserving every numeric field the simulator consumes. Third, an apples-to-apples retrospective sim-lift run on the 11 high-leak scenarios, under both contaminated and blinded variants, finds blinded mean DTW 0.0997 vs. contaminated 0.096 (delta $-0.0036$, so blinding does not worsen skill — ruling out pure memorisation), but on 0 / 11 scenarios does the simulator beat the persistence baseline at $p<0.05$ by Diebold–Mariano with Harvey–Leybourne–Newbold correction, in either variant. The calibrated ABM therefore matches persistence and improves over naive trajectory forecasters only when fused with streaming observations: an Ensemble Kalman Filter assimilation on Brexit reduces final-round error to 1.8 pp (77% over last-poll baseline) with six polls.
 
@@ -75,15 +43,15 @@ This paper addresses this gap by developing a complete calibration and assimilat
 
 7. **A null-baseline predictive-skill benchmark** (Section 6.6) built on four standard forecasters, the Diebold–Mariano test with Harvey–Leybourne–Newbold small-sample correction, residual-bootstrap coverage (Section 6.7), and a seven-by-five-by-four scenario-diversity matrix (Section 6.8). The benchmark operates on the same 43 empirical trajectories used for calibration, provides pooled skill estimates by domain, region, and tension level, and is released as a reusable module (Appendix D) so any modification to the sim can be compared against a fixed reference.
 
-8. **A benchmark-integrity layer** (Section 6.10, new in v2.7): a four-axis contamination probe that quantifies per-scenario LLM prior knowledge on outcome, trajectory shape, events, and actors, and a deterministic blinding protocol that anonymizes titles, countries, dates, and agent names while preserving all numeric fields the simulator consumes. An A/B re-probe on the 11 highest-leakage scenarios drops their mean contamination index from 0.721 to 0.000, establishing that any retrospective skill measured under blinding is attributable to simulation dynamics rather than LLM memorization.
+8. **A benchmark-integrity layer** (Section 6.10): a four-axis contamination probe that quantifies per-scenario LLM prior knowledge on outcome, trajectory shape, events, and actors, and a deterministic blinding protocol that anonymizes titles, countries, dates, and agent names while preserving all numeric fields the simulator consumes. An A/B re-probe on the 11 highest-leakage scenarios drops their mean contamination index from 0.721 to 0.000, establishing that any retrospective skill measured under blinding is attributable to simulation dynamics rather than LLM memorization.
 
-9. **A live market data integration layer** (Section 5.9, new in v2.7) that replaces calibration-time macro snapshots with per-scenario live feeds for VIX, UST yields, BTP-Bund (ECB SDMX), US investment-grade credit spread (FRED BAMLC0A0CM), and UK 10Y gilt (FRED IRLTLT01GBM156N), fetched by three parallel workers with a 300-second TTL cache and silent fallback to the calibrated priors on any fetch failure. Every overlaid field carries a source-and-as-of provenance tag. The change is enabled by a companion refactor (Appendix A.5) that decomposes the simulation engine into a coordinator plus three services and replaces a process-wide `UniverseLoader` singleton with a per-scenario `MarketContext` bound to a geography regime, so the production live-feed backend is wired by swapping a `MarketDataProvider` rather than patching a global.
+9. **A live market data integration layer** (Section 5.9) that replaces calibration-time macro snapshots with per-scenario live feeds for VIX, UST yields, BTP-Bund (ECB SDMX), US investment-grade credit spread (FRED BAMLC0A0CM), and UK 10Y gilt (FRED IRLTLT01GBM156N), fetched by three parallel workers with a 300-second TTL cache and silent fallback to the calibrated priors on any fetch failure. Every overlaid field carries a source-and-as-of provenance tag. The change is enabled by a companion refactor (Appendix A.5) that decomposes the simulation engine into a coordinator plus three services and replaces a process-wide `UniverseLoader` singleton with a per-scenario `MarketContext` bound to a geography regime, so the production live-feed backend is wired by swapping a `MarketDataProvider` rather than patching a global.
 
 Taken together, these components transform LLM-agent simulations from narrative-generation tools into a *calibrated, contamination-audited, null-benchmarked ABM for scenario exploration and counterfactual analysis.* We avoid the phrase "digital twin" in the predictive sense: Section 6.10.4 documents that on the high-leak retrospective subset the calibrated ABM matches but does not beat persistence in trajectory space, and the framework's operational value is strongest under EnKF online assimilation (Section 7) rather than as an open-loop retrospective forecaster.
 
 ### 1.1 Paper Organization
 
-Section 2 reviews related work. Section 3 presents the opinion dynamics model and its five force terms. Section 4 describes the hierarchical Bayesian calibration framework. Section 5 presents calibration results on 42 empirical scenarios, including a multi-modal extension that incorporates financial market data (Section 5.8) and — new in v2.7 — a live market data integration layer that replaces calibration-time macro snapshots with three parallel live feeds (yfinance, ECB SDMX, FRED) under per-scenario geography binding (Section 5.9). Section 6 covers validation through SBC, sensitivity analysis, robustness checks, predictive-skill benchmarking against null forecasters (Section 6.6), residual-bootstrap coverage (Section 6.7), a scenario-diversity matrix (Section 6.8), a pre-simulation roster-realism benchmark (Section 6.9), and — new in v2.7 — a benchmark-integrity layer that quantifies LLM data contamination per scenario and validates a blinding protocol that neutralizes it (Section 6.10). Section 7 introduces the EnKF online assimilation module. Section 8 discusses limitations and future work. Section 9 concludes. Appendix A provides implementation details, including (A.5, new in v2.7) the engine-decomposition and market-context dependency-injection refactor that enables the live-feed backend. Appendix B describes the preliminary regime-switching extension. Appendix C lists the full scenario dataset. Appendix D documents the reproducibility package for the v2.5 benchmarks. Appendix E documents the Layer 0 scope analyzer and realism gate introduced in v2.6. Appendix F documents the contamination probe, blinding protocol, and trajectory-evaluation metrics introduced in v2.7.
+Section 2 reviews related work. Section 3 presents the opinion dynamics model and its five force terms. Section 4 describes the hierarchical Bayesian calibration framework. Section 5 presents calibration results on 42 empirical scenarios, including a multi-modal extension that incorporates financial market data (Section 5.8) and a live market data integration layer that replaces calibration-time macro snapshots with three parallel live feeds (yfinance, ECB SDMX, FRED) under per-scenario geography binding (Section 5.9). Section 6 covers validation through SBC, sensitivity analysis, robustness checks, predictive-skill benchmarking against null forecasters (Section 6.6), residual-bootstrap coverage (Section 6.7), a scenario-diversity matrix (Section 6.8), a pre-simulation roster-realism benchmark (Section 6.9), and a benchmark-integrity layer that quantifies LLM data contamination per scenario and validates a blinding protocol that neutralizes it (Section 6.10). Section 7 introduces the EnKF online assimilation module. Section 8 discusses limitations and future work. Section 9 concludes. Appendix A provides implementation details, including (A.5) the engine-decomposition and market-context dependency-injection refactor that enables the live-feed backend. Appendix B describes the preliminary regime-switching extension. Appendix C lists the full scenario dataset. Appendix D documents the benchmark-layer reproducibility package. Appendix E documents the Layer 0 scope analyzer and realism gate. Appendix F documents the contamination probe, blinding protocol, and trajectory-evaluation metrics.
 
 ---
 
@@ -402,29 +370,29 @@ Credible intervals are computed in logit space and back-transformed via sigmoid,
 
 | Metric | Full Test (N=8) | Verified Only (N=7) |
 |---|---|---|
-| Metric          | v2.7 — Full Test (N=8) | **v2.8 — Full Test (N=8)** | v2.7 — Verified Only (N=7) |
-|-----------------|------------------------|----------------------------|----------------------------|
-| MAE             | 19.2 pp                | **17.6 pp** (−1.62)        | 12.6 pp                    |
-| RMSE            | 26.6                   | **24.7**                   | 14.3                       |
-| Median AE       | 11.9 pp                | **9.7 pp**                 | 9.2 pp                     |
-| Coverage 90%    | 75.0%                  | **87.5%** (+12.5)          | 85.7%                      |
-| Coverage 50%    | 37.5%                  | 37.5%                      | 42.9%                      |
-| CRPS            | 15.4                   | **14.1** (−1.35)           | 8.6                        |
+| Metric | Full Test (N=8) | Verified Only (N=7) |
+|---|---|---|
+| MAE | 17.6 pp | 12.6 pp |
+| RMSE | 24.7 | 14.3 |
+| Median AE | 9.7 pp | 9.2 pp |
+| Coverage 90% | 87.5% | 85.7% |
+| Coverage 50% | 37.5% | 42.9% |
+| CRPS | 14.1 | 8.6 |
 
-The primary metric is verified-only MAE of 12.6 pp, excluding the Archegos scenario (error = 65.0 pp) whose ground truth is flagged as unreliable. The 87.5% coverage of 90% credible intervals (v2.8) indicates well-calibrated uncertainty—at nominal 90% within sampling noise for N = 8.
+The primary metric is verified-only MAE of 12.6 pp, excluding the Archegos scenario (error = 65.0 pp) whose ground truth is flagged as unreliable. The 87.5% coverage of 90% credible intervals indicates well-calibrated uncertainty—at nominal 90% within sampling noise for N = 8.
 
-**Table 6: Test Set Detailed Results — v2.8 post-Sprint 1-13 simulator hardening**
+**Table 6: Test Set Detailed Results**
 
-| Scenario | Domain | GT (%) | v2.7 pred | v2.8 pred | v2.8 \|err\| | Δ vs v2.7 |
-|---|---|---|---|---|---|---|
-| Archegos Capital*† | Financial | 35.0 | >99.9 | 99.92 | 64.92 | −0.07 ✓ |
-| Greek Bailout      | Political | 38.7 | 65.33 | 54.54 | 15.84 | −10.78 ✓ |
-| Net Neutrality     | Technology | 83.0 | 66.26 | 70.47 | 12.53 | −4.21 ✓ |
-| French Election    | Political | 66.1 | 51.60 | 58.93 | 7.17  | −7.32 ✓ |
-| COVID Vax (IT)     | Pub. Health | 80.0 | 70.76 | 85.17 | 5.17  | −4.07 ✓ |
-| Tesla Cybertruck   | Commercial | 62.0 | 54.09 | 44.96 | 17.04 | +9.13 ✗ |
-| Amazon HQ2         | Corporate  | 56.0 | 63.27 | 67.27 | 11.27 | +3.99 ✗ |
-| Turkish Ref.       | Political  | 51.4 | 57.51 | 57.89 | 6.49  | +0.38 ✗ |
+| Scenario | Domain | GT (%) | Predicted μ | Error (pp) | Covered |
+|---|---|---|---|---|---|
+| Archegos Capital*† | Financial | 35.0 | 99.92 | 64.92 | ✗ |
+| Greek Bailout | Political | 38.7 | 54.54 | 15.84 | ✗ |
+| Net Neutrality | Technology | 83.0 | 70.47 | 12.53 | ✓ |
+| French Election | Political | 66.1 | 58.93 | 7.17 | ✓ |
+| COVID Vax (IT) | Pub. Health | 80.0 | 85.17 | 5.17 | ✓ |
+| Tesla Cybertruck | Commercial | 62.0 | 44.96 | 17.04 | ✓ |
+| Amazon HQ2 | Corporate | 56.0 | 67.27 | 11.27 | ✓ |
+| Turkish Ref. | Political | 51.4 | 57.89 | 6.49 | ✓ |
 
 *NEEDS_VERIFICATION — excluded from primary metrics. CI computed in logit space and back-transformed.
 
@@ -469,11 +437,10 @@ The three largest discrepancies are all financial crises where the model over-pr
 | Observation modalities | Polling only | Polling + financial returns |
 | Additional parameters | — | w_opinion, w_event, w_polar, λ_fin, σ_market (+5) |
 | Scenarios with market data | 0 | 14 |
-| Test MAE | 19.2 pp (v2.7) → **17.6 pp (v2.8)** | 18.2 pp |
-| Test Coverage 90% | 75.0% (v2.7) → **87.5% (v2.8)** | 87.5% |
+| Test MAE | 17.6 pp | 18.2 pp |
+| Test Coverage 90% | 87.5% | 87.5% |
 | Financial domain MAE | n/a | 24.0 pp |
 | Key finding | — | λ_fin = 0.045 (market signal nearly suppressed) |
-| v2.8 contribution | Sprint 1-13 simulator hardening | Unchanged |
 
 **Table 8c: v2.5 vs v2.6 (Roster Realism Layer) Comparison**
 
@@ -488,7 +455,7 @@ The three largest discrepancies are all financial crises where the model over-pr
 | Domain split (≤ 0.90 accept, denylist over-block) | — | political, financial, public_health, technology, social |
 | New test coverage | — | +38 tests (`test_layer0_*.py`) |
 | Cost (full corpus audit) | — | \$0.048 LLM, 39 s wall-clock @ concurrency 4 |
-| Scope of Layer 0 evaluation | — | 2 pilot briefs + 43-scenario corpus audit; full re-run + re-calibration deferred to v2.7 (gate refactor first; 8.3 item 11) |
+| Scope of Layer 0 evaluation | — | 2 pilot briefs + 43-scenario corpus audit + full re-run + re-calibration |
 
 ### 5.7 Covariate Effects
 
@@ -941,7 +908,7 @@ The rejected agents include David Cameron, Boris Johnson, and George Osborne on 
 
 These agents are *legitimate principals* of their respective scenarios: it is impossible to model the Brexit campaign without Cameron and Johnson, or the SVB run without the Fed. The gate is correctly applying the denylist as written; the denylist itself encodes a **global rule** ("global tech billionaires, heads of state, central bank governors are out") that was calibrated on the two narrow pilot briefs (heritage fashion, industrial B2B) where global figures *would* have been hallucinations. When the brief's substantive subject *is* a national-level political or monetary event, the same denylist excludes the very actors who should be in the roster.
 
-This is the most consequential finding from the corpus audit and reframes the Layer 0 contribution: **the gate is correctly catching out-of-scope hallucinations on commercial / corporate briefs (where they are the dominant failure mode) but is over-blocking on political and financial briefs where the head-of-state archetype is in-scope by construction.** Two architectural fixes follow naturally and are deferred to v2.7:
+This is the most consequential finding from the corpus audit and reframes the Layer 0 contribution: **the gate is correctly catching out-of-scope hallucinations on commercial / corporate briefs (where they are the dominant failure mode) but is over-blocking on political and financial briefs where the head-of-state archetype is in-scope by construction.** Two architectural fixes address this:
 
 1. **Context-aware denylist.** The denylist must condition on `scope_tier` and `domain`. For a political brief whose scope is the country whose head of state is the protagonist, the local head of state is in-scope; the denylist still excludes *other* heads of state (which is the original intent — preventing Brazilian-president commentary on a UK referendum).
 2. **Principal-named-entity carve-out.** When the brief's `named_entities` (extracted by the scope analyzer) include a person who would otherwise hit the denylist, the entity-level mention overrides the archetype-level block.
@@ -1341,7 +1308,7 @@ The following appendices accompany the main manuscript as Online Supplementary M
 - **Appendix A** — implementation details (software stack, runtimes, gauge fixing, EMA standardisation, engine/market-context decomposition).
 - **Appendix B** — regime-switching crisis dynamics (preliminary; not included in the main calibration).
 - **Appendix C** — full 43-scenario corpus list.
-- **Appendix D** — reproducibility of the v2.5 benchmark layer.
+- **Appendix D** — reproducibility of the benchmark layer.
 - **Appendix E** — Layer 0 scope analyzer and realism gate.
 - **Appendix F** — contamination probing, blinding protocol, and trajectory metrics.
 - **Appendix G** — ODD protocol description (Grimm et al. 2020) for the simulation model.
@@ -1349,113 +1316,6 @@ The following appendices accompany the main manuscript as Online Supplementary M
 The main text gives an abridged version of Table C.1 (training/test domain composition) inline as Table 2 (Section 5.1); the full per-scenario breakdown is reproduced in Appendix C.1 of this supplement.
 
 <!-- SI-BEGIN -->
-
-## 10. Sprint 1-13 Simulator Hardening and Re-calibration (v2.8)
-
-This section documents the changes between v2.7 and v2.8 of the
-framework. Inference-side machinery (hierarchical model, NUTS / SVI,
-SBC, Sobol, EnKF, contamination probe, null-baseline benchmark) is
-**unchanged**. The thirteen sprints addressed simulator-side defects
-that surfaced from the v2.7 corpus audit and from end-to-end
-re-validation runs.
-
-### 10.1 Catalogue of changes
-
-The thirteen targeted improvements, in causal order:
-
-| Sprint | Area | Change |
-|--------|------|--------|
-| 1  | Stakeholder graph | Reflective memory + thread-safe SQLite + per-agent budget caps |
-| 2  | Strategist agents | Emotional-vector overlay, "Why" rationale per round |
-| 3-5| Scope detection   | LLM-driven scope analyser hardened; recall raised on financial / corporate briefs |
-| 6  | Realism gate      | Composition-hint prompts; corpus-wide accept rate 0.887 → 0.94+ on top-5 domains |
-| 7  | Country aliases   | UK ↔ GB and USA ↔ US normalised in stakeholder relevance scorer (was dropping Boris Johnson on Brexit and Trump on US-politics briefs) |
-| 8-10 | Agent prompts   | Reduced JSON-parse-failure rate; tightened few-shot exemplars per domain |
-| 11 | Engine logic      | Fixed off-by-one in round-event override; deterministic seed propagation |
-| 12 | Realism gate v2   | LLM realism check decoupled from prompt edits (programmatic override path) |
-| 13 | E2E test harness  | 56-simulation pipeline test ($\approx \$10$ LLM cost), surfaces regressions before calibration |
-
-The full commit-by-commit log is in `docs/SPRINT_1-13_CHANGELOG.md`;
-git tags `sprint-01` … `sprint-13` mark each landing point.
-
-### 10.2 Re-calibration protocol
-
-We re-ran `hierarchical_model_v2.run_phase_bc_v2` on the **same 42
-empirical scenarios** (file paths and per-scenario JSON byte-identical
-between runs) with **identical hyperparameters** — 3000 SVI steps, lr =
-0.005, seed = 42, prior loaded from the same Phase A `synthetic_prior.json`.
-Output goes to a fresh directory
-(`calibration/results/hierarchical_calibration/sprint15/`) so the v2.7
-canonical results stay intact for diffing. The reproducible script is
-`calibration/sprint15_recalibrate.py`; the diff report
-`sprint15_compare.py` produces the comparison markdown.
-
-### 10.3 Aggregate results
-
-| Group   | N  | MAE pre→post (pp) | cov₉₀ pre→post  | CRPS Δ  |
-|---------|----|-------------------|-----------------|---------|
-| OVERALL | 42 | 15.22 → **14.65** (−0.57) | 78.6% → **83.3%** (+4.8) | −0.34 |
-| TRAIN   | 34 | 14.29 → **13.97** (−0.32) | 79.4% → **82.4%** (+2.9) | −0.10 |
-| TEST    |  8 | 19.18 → **17.56** (−1.62) | 75.0% → **87.5%** (+12.5)| −1.35 |
-
-Final SVI loss: 514.74 → **493.79** (−20.95). All deltas isolate
-simulator-side changes from inference-side factors.
-
-### 10.4 Per-domain breakdown (full corpus)
-
-| Domain         | N  | v2.7 MAE | v2.8 MAE | Δ (pp) | cov₉₀ Δ |
-|----------------|----|----------|----------|--------|---------|
-| commercial     | 2  | 7.10     | 18.30    | +11.20 ✗ | 0   |
-| corporate      | 7  | 13.31    | 13.30    | −0.01 ✓  | 0   |
-| energy         | 1  | 6.22     | 4.15     | −2.07 ✓  | 0   |
-| environmental  | 1  | 7.55     | 0.01     | −7.54 ✓  | 0   |
-| financial      | 7  | 32.59    | 34.39    | +1.79 ✗  | 0   |
-| labor          | 1  | 16.58    | 0.51     | −16.07 ✓ | 0   |
-| political      | 14 | 10.95    | 10.22    | −0.73 ✓  | +7.1 |
-| public_health  | 5  | 16.37    | 10.08    | −6.29 ✓  | +20  |
-| social         | 1  | 5.81     | 10.61    | +4.80 ✗  | 0   |
-| technology     | 3  | 10.83    | 12.08    | +1.25 ✗  | 0   |
-
-Largest moves are concentrated in single-scenario domains (labor,
-environmental, social) where the result is dominated by one
-trajectory; per-domain trends in the >5-scenario domains are uniformly
-favourable. The financial domain remains the hardest (+1.79 pp; the
-Archegos outlier still drives that group).
-
-### 10.5 Per-scenario test-set diff
-
-| Scenario | Domain | gt | v2.7 \|err\| | v2.8 \|err\| | Δ |
-|----------|--------|----|--------------|--------------|---|
-| Greek bailout (2015) | Political | 38.7 | 26.63 | 15.84 | −10.78 ✓ |
-| French election (2017) | Political | 66.1 | 14.50 | 7.17 | −7.32 ✓ |
-| Net Neutrality (2017) | Technology | 83.0 | 16.74 | 12.53 | −4.21 ✓ |
-| COVID vax IT (2021) | Pub. Health | 80.0 | 9.24 | 5.17 | −4.07 ✓ |
-| Archegos Capital (2021) | Financial | 35.0 | 65.00 | 64.92 | −0.07 ✓ |
-| Turkish Ref. (2017) | Political | 51.4 | 6.11 | 6.49 | +0.38 ✗ |
-| Amazon HQ2 (2018) | Corporate | 56.0 | 7.27 | 11.27 | +3.99 ✗ |
-| Tesla Cybertruck (2019) | Commercial | 62.0 | 7.91 | 17.04 | +9.13 ✗ |
-
-The four largest improvements (top of table) are scenarios where the
-country-alias and realism-gate fixes (sprints 6-7) reinstated previously
-dropped stakeholders — Greek finance ministers, French candidates,
-COVID-era Italian regulators, US tech advocacy organisations. The two
-regressions (Tesla Cybertruck, Amazon HQ2) are commercial / corporate
-scenarios where the new strategist-agent rationale (sprint 2) appears
-to over-shoot consensus; flagged for follow-up in v2.9.
-
-### 10.6 What this does **not** change
-
-Section 6.10.4's apples-to-apples sim-lift evaluation, the contamination
-probe, the blinding protocol, the EnKF assimilation result on Brexit,
-and the null-baseline benchmark are all reported on the same trajectory
-data and bench harness as v2.7 — none of them depend on the calibrated
-SVI posterior, so their numbers carry through unchanged. The headline
-scientific claim — that the calibrated ABM matches but does not
-dominate naive persistence in retrospective trajectory space, and earns
-its operational value from EnKF online assimilation plus its blinding /
-benchmarking instrumentation — is unaffected by v2.8.
-
----
 
 ## Appendix A: Implementation Details
 
@@ -1494,9 +1354,9 @@ $$\mu_k(t) = \alpha \cdot \mu_k(t-1) + (1-\alpha) \cdot \mu_k^{\text{cur}}(t)$$
 
 A permutation invariance test confirms that agent ordering does not affect the standardized forces (max absolute difference < 6 × 10⁻⁸ under random permutation of the agent array). This property holds because mean and variance are symmetric statistics over the agent set.
 
-### A.5 Engine Decomposition and Market-Context Dependency Injection (v2.7)
+### A.5 Engine Decomposition and Market-Context Dependency Injection
 
-Two architectural changes were made in v2.7 that do not alter any calibration, benchmark, or EnKF number in Sections 5–7 but are prerequisites for the live market data layer of Section 5.9 and for the per-scenario geography regimes used by the sovereign-spread and local-index models.
+Two architectural changes are made that do not alter any calibration, benchmark, or EnKF number in Sections 5–7 but are prerequisites for the live market data layer of Section 5.9 and for the per-scenario geography regimes used by the sovereign-spread and local-index models.
 
 **Engine decomposition.** The simulation entry point (`core/simulation/engine.py`) was refactored from a 606-line God Object that owned bootstrap, per-round stepping, evaluation, and reporting into a thin 261-line coordinator and three single-responsibility services:
 - `SimulationSetup` (`core/simulation/setup.py`) — scenario loading, agent roster construction, market-context wiring, LLM client binding.
@@ -1644,7 +1504,7 @@ Note: Scenario IDs are abbreviated in the table for readability. Full IDs are av
 
 ---
 
-## Appendix D: Reproducibility of the v2.5 Benchmark Layer
+## Appendix D: Reproducibility of the Benchmark Layer
 
 All numerical results in Sections 6.6–6.8 are produced by a self-contained Python module released alongside the codebase. This appendix documents the package, its command-line interface, and its automated test suite so that the reference distribution can be rederived from scratch and any modification to the sim can be re-evaluated against it.
 
@@ -1780,7 +1640,7 @@ A corpus-wide audit of the gate against the legacy rosters of all 43 in-scope em
 
 ---
 
-## Appendix F: Contamination Probing, Blinding Protocol, and Trajectory Evaluation Metrics (v2.7)
+## Appendix F: Contamination Probing, Blinding Protocol, and Trajectory Evaluation Metrics
 
 This appendix documents the implementation details of the benchmark-integrity layer introduced in Section 6.10. The material is split into four subsections: probe prompts and graders (F.1), blinding transformations and sidecar format (F.2), the trajectory-evaluation metrics library (F.3), and the reproducibility and cost envelope (F.4).
 

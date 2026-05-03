@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 interface SetupScreenProps {
   onStart: (brief: string, playerRole: string, provider: string, rounds?: number) => void;
@@ -37,6 +38,17 @@ export function SetupScreen({ onStart }: SetupScreenProps) {
     <div className="h-screen w-screen bg-ki-surface text-ki-on-surface flex flex-col overflow-hidden">
       {/* Sub-toolbar */}
       <div className="h-11 flex items-center px-4 gap-2 border-b border-ki-border bg-ki-surface-raised shrink-0">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1 text-[11px] text-ki-on-surface-muted hover:text-ki-on-surface transition-colors mr-1"
+          title="Back to dashboard"
+        >
+          <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'wght' 400" }}>
+            arrow_back
+          </span>
+          Dashboard
+        </Link>
+        <span className="text-ki-border-strong">/</span>
         <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted">
           DigitalTwinSim
         </span>

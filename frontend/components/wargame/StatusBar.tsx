@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { type WgRoundState } from "@/lib/wargame-types";
 
 export function StatusBar({
@@ -21,6 +22,16 @@ export function StatusBar({
 
   return (
     <div className="h-9 flex items-center px-3 border-b border-ki-border bg-ki-surface-raised shrink-0 gap-0">
+      {/* Back to dashboard */}
+      <Link
+        href="/"
+        className="inline-flex items-center gap-1 text-[11px] text-ki-on-surface-muted hover:text-ki-on-surface transition-colors mr-2 pr-2 border-r border-ki-border h-full"
+        title="Back to dashboard"
+      >
+        <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'wght' 400" }}>
+          arrow_back
+        </span>
+      </Link>
       {/* Brand / mode */}
       <div className="flex items-center gap-2 pr-3 border-r border-ki-border">
         <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted">DigitalTwinSim</span>

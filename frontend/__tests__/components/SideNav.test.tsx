@@ -9,7 +9,7 @@ vi.mock("next/navigation", () => ({
   useRouter: vi.fn(() => ({ push: vi.fn() })),
 }));
 
-// Mock next/link to render a plain anchor
+// Mock next/link to render a plain anchor that forwards aria-label/title
 vi.mock("next/link", () => ({
   default: ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: unknown }) => (
     <a href={href} {...props}>
@@ -24,102 +24,86 @@ beforeEach(() => {
   mockUsePathname.mockReturnValue("/");
 });
 
-describe("SideNav", () => {
-  it("renders all main nav links", () => {
-    render(<SideNav />);
+/* ───────────────────────────────────────────────────────────
+   These tests target the icon-rail SideNav (Quiet Intelligence
+   restyle): no visible labels, queried by aria-label / title.
+   Active item gets `bg-ki-surface-raised` (no longer text-color).
+   ─────────────────────────────────────────────────────────── */
 
-    expect(screen.getByText("HOME")).toBeInTheDocument();
-    expect(screen.getByText("NEW SIM")).toBeInTheDocument();
-    expect(screen.getByText("WARGAME")).toBeInTheDocument();
-    expect(screen.getByText("BACKTEST")).toBeInTheDocument();
-    expect(screen.getByText("PAPER")).toBeInTheDocument();
+describe("SideNav (icon rail)", () => {
+  it("renders all main nav links by aria-label", () => {
+    render(<SideNav />);
+    expect(screen.getByLabelText("Dashboard")).toBeInTheDocument();
+    expect(screen.getByLabelText("New simulation")).toBeInTheDocument();
+    expect(screen.getByLabelText("Wargame")).toBeInTheDocument();
+    expect(screen.getByLabelText("Backtest")).toBeInTheDocument();
+    expect(screen.getByLabelText("Paper")).toBeInTheDocument();
   });
 
   it("renders the settings link", () => {
     render(<SideNav />);
-    expect(screen.getByText("SETTINGS")).toBeInTheDocument();
+    expect(screen.getByLabelText("Settings")).toBeInTheDocument();
   });
 
-  it("renders the logo text", () => {
+  it("renders the brand mark", () => {
     render(<SideNav />);
-    expect(screen.getByText("DTS")).toBeInTheDocument();
-    expect(screen.getByText("SIM CONSOLE")).toBeInTheDocument();
+    expect(screen.getByText("DT")).toBeInTheDocument();
   });
 
   it("nav links have correct href attributes", () => {
     render(<SideNav />);
-
-    const homeLink = screen.getByText("HOME").closest("a");
-    expect(homeLink).toHaveAttribute("href", "/");
-
-    const newSimLink = screen.getByText("NEW SIM").closest("a");
-    expect(newSimLink).toHaveAttribute("href", "/new");
-
-    const wargameLink = screen.getByText("WARGAME").closest("a");
-    expect(wargameLink).toHaveAttribute("href", "/wargame");
-
-    const backtestLink = screen.getByText("BACKTEST").closest("a");
-    expect(backtestLink).toHaveAttribute("href", "/backtest");
-
-    const paperLink = screen.getByText("PAPER").closest("a");
-    expect(paperLink).toHaveAttribute("href", "/paper");
-
-    const settingsLink = screen.getByText("SETTINGS").closest("a");
-    expect(settingsLink).toHaveAttribute("href", "/settings");
+    expect(screen.getByLabelText("Dashboard")).toHaveAttribute("href", "/");
+    expect(screen.getByLabelText("New simulation")).toHaveAttribute("href", "/new");
+    expect(screen.getByLabelText("Wargame")).toHaveAttribute("href", "/wargame");
+    expect(screen.getByLabelText("Backtest")).toHaveAttribute("href", "/backtest");
+    expect(screen.getByLabelText("Paper")).toHaveAttribute("href", "/paper");
+    expect(screen.getByLabelText("Settings")).toHaveAttribute("href", "/settings");
   });
 
-  it("highlights the active HOME link when pathname is /", () => {
+  it("highlights the active Dashboard link when pathname is /", () => {
     mockUsePathname.mockReturnValue("/");
     render(<SideNav />);
-
-    const homeLink = screen.getByText("HOME").closest("a");
-    expect(homeLink?.className).toContain("text-ki-primary");
+    const dash = screen.getByLabelText("Dashboard");
+    expect(dash.className).toContain("bg-ki-surface-raised");
   });
 
-  it("does not highlight HOME when on another route", () => {
+  it("does not highlight Dashboard when on another route", () => {
     mockUsePathname.mockReturnValue("/new");
     render(<SideNav />);
-
-    const homeLink = screen.getByText("HOME").closest("a");
-    expect(homeLink?.className).not.toContain("text-ki-primary");
+    const dash = screen.getByLabelText("Dashboard");
+    expect(dash.className).not.toContain("bg-ki-surface-raised");
   });
 
-  it("highlights NEW SIM when pathname starts with /new", () => {
+  it("highlights New simulation when pathname starts with /new", () => {
     mockUsePathname.mockReturnValue("/new");
     render(<SideNav />);
-
-    const newSimLink = screen.getByText("NEW SIM").closest("a");
-    expect(newSimLink?.className).toContain("text-ki-primary");
+    expect(screen.getByLabelText("New simulation").className).toContain("bg-ki-surface-raised");
   });
 
-  it("highlights BACKTEST when pathname starts with /backtest", () => {
+  it("highlights Backtest when pathname starts with /backtest", () => {
     mockUsePathname.mockReturnValue("/backtest/results");
     render(<SideNav />);
-
-    const backtestLink = screen.getByText("BACKTEST").closest("a");
-    expect(backtestLink?.className).toContain("text-ki-primary");
+    expect(screen.getByLabelText("Backtest").className).toContain("bg-ki-surface-raised");
   });
 
-  it("only one link is active at a time", () => {
+  it("only one nav link is active at a time", () => {
     mockUsePathname.mockReturnValue("/wargame");
     render(<SideNav />);
-
     const allLinks = screen.getAllByRole("link");
-    const activeLinks = allLinks.filter((link) =>
-      link.className.includes("text-ki-primary"),
-    );
+    // The brand mark is also an <a>; filter to nav items via aria-label presence
+    const navLinks = allLinks.filter((el) => el.getAttribute("aria-label"));
+    const activeLinks = navLinks.filter((el) => el.className.includes("bg-ki-surface-raised"));
     expect(activeLinks.length).toBe(1);
-    expect(activeLinks[0].textContent).toContain("WARGAME");
+    expect(activeLinks[0].getAttribute("aria-label")).toBe("Wargame");
   });
 
   it("renders material icons for each nav item", () => {
     render(<SideNav />);
-
-    // Each nav item has a span with the icon name
-    expect(screen.getByText("home")).toBeInTheDocument();
-    expect(screen.getByText("add_chart")).toBeInTheDocument();
+    // New icon set after the Quiet Intelligence restyle
+    expect(screen.getByText("grid_view")).toBeInTheDocument();
+    expect(screen.getByText("add")).toBeInTheDocument();
     expect(screen.getByText("swords")).toBeInTheDocument();
-    expect(screen.getByText("history")).toBeInTheDocument();
+    expect(screen.getByText("target")).toBeInTheDocument();
     expect(screen.getByText("description")).toBeInTheDocument();
     expect(screen.getByText("settings")).toBeInTheDocument();
   });

@@ -15,6 +15,7 @@ import { ScenarioTable } from "./ScenarioTable";
 import { CalibrationPanel } from "./CalibrationPanel";
 
 const GlobalContagionGraph = dynamic(() => import("./GlobalContagionGraph"), { ssr: false });
+const SectorContagionGraph = dynamic(() => import("./SectorContagionGraph"), { ssr: false });
 
 type ScopeFilter = "all" | "macro" | "idio";
 type WindowFilter = "t1" | "t3" | "t7";
@@ -235,6 +236,11 @@ export default function BacktestDashboard() {
       {/* ── Cross-market contagion graph ─────────────────── */}
       <div className="border-t border-ki-border p-5">
         <GlobalContagionGraph />
+      </div>
+
+      {/* ── Sector spillover VAR(1) ──────────────────────── */}
+      <div className="border-t border-ki-border p-5">
+        <SectorContagionGraph />
       </div>
 
       {/* ── Ticker leaderboard ───────────────────────────── */}

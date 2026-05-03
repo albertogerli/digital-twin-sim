@@ -13,8 +13,10 @@ state beyond their constructor args so instances are trivially shareable.
 
 from __future__ import annotations
 
+import json
 import logging
 from dataclasses import dataclass
+from pathlib import Path
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -22,6 +24,34 @@ if TYPE_CHECKING:
     from .financial_impact import SectorBeta
 
 logger = logging.getLogger(__name__)
+
+
+# ── Empirical sector-beta override ────────────────────────────────────────
+# Loaded from shared/sector_betas_empirical.json (built by
+# scripts/recalibrate_sector_betas.py via OLS on 2018+ daily log returns).
+# When a (country, sector) cell is present here, it overrides the static
+# beta in stock_universe.json. None signals the file is missing or empty.
+
+_EMPIRICAL_BETA_PATH = Path(__file__).resolve().parent.parent.parent / "shared" / "sector_betas_empirical.json"
+_empirical_betas_cache: dict[str, dict[str, dict]] | None = None
+
+
+def _load_empirical_betas() -> dict[str, dict[str, dict]]:
+    global _empirical_betas_cache
+    if _empirical_betas_cache is not None:
+        return _empirical_betas_cache
+    try:
+        payload = json.loads(_EMPIRICAL_BETA_PATH.read_text())
+        _empirical_betas_cache = payload.get("betas", {})
+        logger.info(
+            "Loaded empirical sector betas: %d countries, %d cells",
+            len(_empirical_betas_cache),
+            sum(len(v) for v in _empirical_betas_cache.values()),
+        )
+    except (FileNotFoundError, json.JSONDecodeError, OSError) as e:
+        logger.info("No empirical beta file (%s); using static betas only", e)
+        _empirical_betas_cache = {}
+    return _empirical_betas_cache
 
 
 _REGRESSION_CACHE: object | None = None
@@ -282,6 +312,15 @@ class MarketContext:
     def get_beta(self, sector: str, regime: str | None = None) -> "SectorBeta":
         """Return the SectorBeta for `sector` under this context's regime.
 
+        Resolution order:
+          1. **Empirical** — if shared/sector_betas_empirical.json carries a
+             value for (effective_regime, sector), use it. These come from
+             OLS regressions of pooled sector returns on country-index
+             returns, 2018+ daily log returns. R² and N are tracked but
+             collapsed into the SectorBeta dataclass for now.
+          2. **Static fallback** — the hand-coded value in
+             stock_universe.json:macro[regime].sectors[sector].betas.
+
         Passing `regime` explicitly overrides the context's default regime
         (useful for stress-testing what-if scenarios: "how would this crisis
         look under EM betas?").
@@ -289,6 +328,29 @@ class MarketContext:
         from .financial_impact import SectorBeta
 
         effective_regime = regime or self._beta_regime
+
+        # ── 1. Empirical override
+        # Empirical betas are keyed by country (geography), not by beta_regime
+        # — they were estimated per (country, sector) bucket on real returns.
+        # Try the raw geography first; fall back to the effective_regime in
+        # case a future override is keyed that way.
+        empirical_table = _load_empirical_betas()
+        empirical = (
+            empirical_table.get(self.geography, {}).get(sector)
+            or empirical_table.get(effective_regime, {}).get(sector)
+        )
+        if empirical is not None:
+            sectors = self.provider.sectors()
+            static = sectors.get(sector, {}).get("betas", {}).get(effective_regime, {})
+            return SectorBeta(
+                sector=sector,
+                political_beta=float(empirical.get("political_beta", 1.0)),
+                spread_beta=float(static.get("spread_beta", 0.0)),
+                crisis_alpha=float(empirical.get("crisis_alpha_pct", 0.0)),
+                volatility_multiplier=float(static.get("volatility_multiplier", 1.0)),
+            )
+
+        # ── 2. Static fallback
         sectors = self.provider.sectors()
         s_data = sectors.get(sector, {})
         betas = s_data.get("betas", {})

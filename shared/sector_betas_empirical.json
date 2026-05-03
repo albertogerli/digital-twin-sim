@@ -1,0 +1,849 @@
+{
+  "version": "1.0",
+  "computed_at": "2026-05-03",
+  "start": "2018-01-01",
+  "end": "2026-05-03",
+  "method": "OLS pooled log-returns vs country index, 2018+; min 60 obs",
+  "country_indices": {
+    "US": "^GSPC",
+    "GB": "^FTSE",
+    "DE": "^GDAXI",
+    "FR": "^FCHI",
+    "IT": "FTSEMIB.MI",
+    "JP": "^N225",
+    "HK": "^HSI",
+    "CH": "^SSMI",
+    "NL": "^AEX",
+    "ES": "^IBEX",
+    "CN": "000001.SS"
+  },
+  "country_fallbacks": {
+    "KR": "^N225",
+    "IN": "^GSPC",
+    "BR": "^GSPC",
+    "AR": "^GSPC",
+    "AU": "^N225",
+    "TW": "^N225",
+    "MX": "^GSPC",
+    "CL": "^GSPC",
+    "DK": "^GDAXI",
+    "FI": "^GDAXI",
+    "SE": "^GDAXI"
+  },
+  "betas": {
+    "AR": {
+      "food_consumer": {
+        "political_beta": 1.001,
+        "crisis_alpha_pct": -15.21,
+        "r2": 0.12,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 1.418,
+        "crisis_alpha_pct": 4.03,
+        "r2": 0.3,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "AU": {
+      "infrastructure": {
+        "political_beta": 0.486,
+        "crisis_alpha_pct": 15.01,
+        "r2": 0.119,
+        "n_obs": 2164,
+        "n_tickers": 2,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "BR": {
+      "banking": {
+        "political_beta": 1.132,
+        "crisis_alpha_pct": -8.9,
+        "r2": 0.286,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "energy_fossil": {
+        "political_beta": 1.138,
+        "crisis_alpha_pct": 9.46,
+        "r2": 0.209,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 1.048,
+        "crisis_alpha_pct": -1.6,
+        "r2": 0.258,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "CH": {
+      "banking": {
+        "political_beta": 1.309,
+        "crisis_alpha_pct": 6.33,
+        "r2": 0.436,
+        "n_obs": 2175,
+        "n_tickers": 1,
+        "vs_index": "^SSMI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "food_consumer": {
+        "political_beta": 0.759,
+        "crisis_alpha_pct": -0.43,
+        "r2": 0.436,
+        "n_obs": 2175,
+        "n_tickers": 1,
+        "vs_index": "^SSMI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "healthcare": {
+        "political_beta": 0.946,
+        "crisis_alpha_pct": 4.46,
+        "r2": 0.655,
+        "n_obs": 2175,
+        "n_tickers": 2,
+        "vs_index": "^SSMI",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "CL": {
+      "infrastructure": {
+        "political_beta": 1.189,
+        "crisis_alpha_pct": -5.16,
+        "r2": 0.23,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "CN": {
+      "automotive": {
+        "political_beta": 1.391,
+        "crisis_alpha_pct": 16.09,
+        "r2": 0.226,
+        "n_obs": 2114,
+        "n_tickers": 1,
+        "vs_index": "000001.SS",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "banking": {
+        "political_beta": 0.568,
+        "crisis_alpha_pct": 7.09,
+        "r2": 0.195,
+        "n_obs": 2114,
+        "n_tickers": 1,
+        "vs_index": "000001.SS",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "insurance": {
+        "political_beta": 1.13,
+        "crisis_alpha_pct": -1.83,
+        "r2": 0.311,
+        "n_obs": 2114,
+        "n_tickers": 1,
+        "vs_index": "000001.SS",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 1.298,
+        "crisis_alpha_pct": -3.18,
+        "r2": 0.325,
+        "n_obs": 2114,
+        "n_tickers": 7,
+        "vs_index": "000001.SS",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "DE": {
+      "automotive": {
+        "political_beta": 1.203,
+        "crisis_alpha_pct": -6.44,
+        "r2": 0.625,
+        "n_obs": 2176,
+        "n_tickers": 3,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "banking": {
+        "political_beta": 1.361,
+        "crisis_alpha_pct": -2.55,
+        "r2": 0.452,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "defense": {
+        "political_beta": 0.85,
+        "crisis_alpha_pct": 24.93,
+        "r2": 0.168,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 1.173,
+        "crisis_alpha_pct": -2.23,
+        "r2": 0.745,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "insurance": {
+        "political_beta": 0.982,
+        "crisis_alpha_pct": 5.42,
+        "r2": 0.658,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 0.981,
+        "crisis_alpha_pct": -0.56,
+        "r2": 0.447,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "telecom": {
+        "political_beta": 0.597,
+        "crisis_alpha_pct": 6.64,
+        "r2": 0.319,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "DK": {
+      "healthcare": {
+        "political_beta": 0.399,
+        "crisis_alpha_pct": 5.19,
+        "r2": 0.051,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "FI": {
+      "telecom": {
+        "political_beta": 0.822,
+        "crisis_alpha_pct": 7.61,
+        "r2": 0.197,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "FR": {
+      "banking": {
+        "political_beta": 1.398,
+        "crisis_alpha_pct": 2.78,
+        "r2": 0.584,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^FCHI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "defense": {
+        "political_beta": 1.449,
+        "crisis_alpha_pct": 2.83,
+        "r2": 0.531,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^FCHI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "energy_fossil": {
+        "political_beta": 0.964,
+        "crisis_alpha_pct": 7.25,
+        "r2": 0.402,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^FCHI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "food_consumer": {
+        "political_beta": 0.846,
+        "crisis_alpha_pct": 5.51,
+        "r2": 0.434,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^FCHI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "healthcare": {
+        "political_beta": 0.506,
+        "crisis_alpha_pct": 2.45,
+        "r2": 0.174,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^FCHI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 0.783,
+        "crisis_alpha_pct": 7.78,
+        "r2": 0.526,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^FCHI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "luxury": {
+        "political_beta": 1.155,
+        "crisis_alpha_pct": 1.68,
+        "r2": 0.624,
+        "n_obs": 2176,
+        "n_tickers": 3,
+        "vs_index": "^FCHI",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "GB": {
+      "banking": {
+        "political_beta": 1.311,
+        "crisis_alpha_pct": 2.01,
+        "r2": 0.575,
+        "n_obs": 2176,
+        "n_tickers": 3,
+        "vs_index": "^FTSE",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "defense": {
+        "political_beta": 1.653,
+        "crisis_alpha_pct": 10.67,
+        "r2": 0.263,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^FTSE",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "energy_fossil": {
+        "political_beta": 1.346,
+        "crisis_alpha_pct": -2.46,
+        "r2": 0.48,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^FTSE",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "food_consumer": {
+        "political_beta": 0.671,
+        "crisis_alpha_pct": -5.65,
+        "r2": 0.329,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^FTSE",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "healthcare": {
+        "political_beta": 0.726,
+        "crisis_alpha_pct": 5.18,
+        "r2": 0.304,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^FTSE",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 1.415,
+        "crisis_alpha_pct": 2.06,
+        "r2": 0.48,
+        "n_obs": 2176,
+        "n_tickers": 3,
+        "vs_index": "^FTSE",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "luxury": {
+        "political_beta": 1.252,
+        "crisis_alpha_pct": -9.22,
+        "r2": 0.273,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^FTSE",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 0.697,
+        "crisis_alpha_pct": 8.5,
+        "r2": 0.172,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^FTSE",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "IN": {
+      "banking": {
+        "political_beta": 0.286,
+        "crisis_alpha_pct": 11.43,
+        "r2": 0.052,
+        "n_obs": 2176,
+        "n_tickers": 4,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "energy_fossil": {
+        "political_beta": 0.28,
+        "crisis_alpha_pct": 11.49,
+        "r2": 0.039,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "food_consumer": {
+        "political_beta": 0.147,
+        "crisis_alpha_pct": 5.81,
+        "r2": 0.017,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "healthcare": {
+        "political_beta": 0.168,
+        "crisis_alpha_pct": 12.3,
+        "r2": 0.015,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 0.261,
+        "crisis_alpha_pct": 23.64,
+        "r2": 0.024,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 0.215,
+        "crisis_alpha_pct": 7.15,
+        "r2": 0.036,
+        "n_obs": 2176,
+        "n_tickers": 3,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "IT": {
+      "automotive": {
+        "political_beta": 0.972,
+        "crisis_alpha_pct": -3.6,
+        "r2": 0.653,
+        "n_obs": 2176,
+        "n_tickers": 5,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "banking": {
+        "political_beta": 1.217,
+        "crisis_alpha_pct": 0.77,
+        "r2": 0.719,
+        "n_obs": 2176,
+        "n_tickers": 7,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "defense": {
+        "political_beta": 0.925,
+        "crisis_alpha_pct": 2.84,
+        "r2": 0.331,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "energy_fossil": {
+        "political_beta": 0.886,
+        "crisis_alpha_pct": 4.3,
+        "r2": 0.443,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "energy_renewable": {
+        "political_beta": 0.727,
+        "crisis_alpha_pct": 4.4,
+        "r2": 0.439,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "food_consumer": {
+        "political_beta": 0.608,
+        "crisis_alpha_pct": -4.85,
+        "r2": 0.191,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "healthcare": {
+        "political_beta": 0.571,
+        "crisis_alpha_pct": -4.92,
+        "r2": 0.231,
+        "n_obs": 2176,
+        "n_tickers": 3,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 0.583,
+        "crisis_alpha_pct": 0.01,
+        "r2": 0.258,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "insurance": {
+        "political_beta": 0.933,
+        "crisis_alpha_pct": 12.18,
+        "r2": 0.717,
+        "n_obs": 2176,
+        "n_tickers": 3,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "luxury": {
+        "political_beta": 0.72,
+        "crisis_alpha_pct": -3.0,
+        "r2": 0.319,
+        "n_obs": 2176,
+        "n_tickers": 4,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "media": {
+        "political_beta": 0.805,
+        "crisis_alpha_pct": -19.79,
+        "r2": 0.036,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "real_estate": {
+        "political_beta": 0.806,
+        "crisis_alpha_pct": -10.82,
+        "r2": 0.256,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 0.707,
+        "crisis_alpha_pct": 2.37,
+        "r2": 0.189,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "utilities": {
+        "political_beta": 0.655,
+        "crisis_alpha_pct": 4.64,
+        "r2": 0.434,
+        "n_obs": 2176,
+        "n_tickers": 4,
+        "vs_index": "FTSEMIB.MI",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "JP": {
+      "automotive": {
+        "political_beta": 0.906,
+        "crisis_alpha_pct": 1.58,
+        "r2": 0.472,
+        "n_obs": 2164,
+        "n_tickers": 1,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "banking": {
+        "political_beta": 0.831,
+        "crisis_alpha_pct": 8.31,
+        "r2": 0.381,
+        "n_obs": 2164,
+        "n_tickers": 1,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "healthcare": {
+        "political_beta": 0.9,
+        "crisis_alpha_pct": 9.55,
+        "r2": 0.366,
+        "n_obs": 2164,
+        "n_tickers": 1,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 1.185,
+        "crisis_alpha_pct": 7.41,
+        "r2": 0.508,
+        "n_obs": 2164,
+        "n_tickers": 1,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 1.215,
+        "crisis_alpha_pct": 3.34,
+        "r2": 0.761,
+        "n_obs": 2164,
+        "n_tickers": 4,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "KR": {
+      "energy_renewable": {
+        "political_beta": 0.479,
+        "crisis_alpha_pct": -9.13,
+        "r2": 0.06,
+        "n_obs": 1103,
+        "n_tickers": 1,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 0.733,
+        "crisis_alpha_pct": -7.56,
+        "r2": 0.124,
+        "n_obs": 2157,
+        "n_tickers": 1,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 0.711,
+        "crisis_alpha_pct": 8.76,
+        "r2": 0.279,
+        "n_obs": 2157,
+        "n_tickers": 3,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "MX": {
+      "food_consumer": {
+        "political_beta": 0.236,
+        "crisis_alpha_pct": 1.7,
+        "r2": 0.031,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 0.765,
+        "crisis_alpha_pct": -4.19,
+        "r2": 0.155,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "NL": {
+      "healthcare": {
+        "political_beta": 0.919,
+        "crisis_alpha_pct": -7.75,
+        "r2": 0.239,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^AEX",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 1.633,
+        "crisis_alpha_pct": 13.81,
+        "r2": 0.588,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^AEX",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "SE": {
+      "telecom": {
+        "political_beta": 0.653,
+        "crisis_alpha_pct": 5.98,
+        "r2": 0.159,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GDAXI",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "TW": {
+      "tech": {
+        "political_beta": 0.495,
+        "crisis_alpha_pct": 17.43,
+        "r2": 0.18,
+        "n_obs": 2164,
+        "n_tickers": 3,
+        "vs_index": "^N225",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    },
+    "US": {
+      "automotive": {
+        "political_beta": 1.639,
+        "crisis_alpha_pct": 14.93,
+        "r2": 0.259,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "banking": {
+        "political_beta": 1.187,
+        "crisis_alpha_pct": -1.23,
+        "r2": 0.602,
+        "n_obs": 2176,
+        "n_tickers": 6,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "defense": {
+        "political_beta": 0.827,
+        "crisis_alpha_pct": -2.67,
+        "r2": 0.451,
+        "n_obs": 2176,
+        "n_tickers": 5,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "energy_fossil": {
+        "political_beta": 0.915,
+        "crisis_alpha_pct": 0.29,
+        "r2": 0.315,
+        "n_obs": 2176,
+        "n_tickers": 3,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "energy_renewable": {
+        "political_beta": 0.653,
+        "crisis_alpha_pct": 5.54,
+        "r2": 0.22,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "food_consumer": {
+        "political_beta": 0.515,
+        "crisis_alpha_pct": 4.46,
+        "r2": 0.358,
+        "n_obs": 2176,
+        "n_tickers": 4,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "healthcare": {
+        "political_beta": 0.629,
+        "crisis_alpha_pct": 4.43,
+        "r2": 0.442,
+        "n_obs": 2176,
+        "n_tickers": 7,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "infrastructure": {
+        "political_beta": 1.018,
+        "crisis_alpha_pct": 7.65,
+        "r2": 0.454,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "insurance": {
+        "political_beta": 0.788,
+        "crisis_alpha_pct": 1.13,
+        "r2": 0.554,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "luxury": {
+        "political_beta": 1.029,
+        "crisis_alpha_pct": -14.64,
+        "r2": 0.344,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "media": {
+        "political_beta": 1.047,
+        "crisis_alpha_pct": -3.33,
+        "r2": 0.44,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "real_estate": {
+        "political_beta": 0.96,
+        "crisis_alpha_pct": -2.34,
+        "r2": 0.496,
+        "n_obs": 2176,
+        "n_tickers": 1,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "tech": {
+        "political_beta": 1.259,
+        "crisis_alpha_pct": 5.09,
+        "r2": 0.846,
+        "n_obs": 2176,
+        "n_tickers": 15,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      },
+      "telecom": {
+        "political_beta": 0.457,
+        "crisis_alpha_pct": -0.3,
+        "r2": 0.181,
+        "n_obs": 2176,
+        "n_tickers": 2,
+        "vs_index": "^GSPC",
+        "method": "ols_pooled_log_returns_2018+"
+      }
+    }
+  }
+}

@@ -197,6 +197,17 @@ export default function CommandCenter({ scenarioId, meta, rounds }: Props) {
           >
             ← Analysis
           </Link>
+          <button
+            onClick={async () => {
+              try { await fetch("/api/auth/logout", { method: "POST" }); } catch {}
+              router.replace("/login");
+            }}
+            aria-label="Sign out"
+            title="Sign out"
+            className="w-7 h-7 grid place-items-center rounded-md text-ki-on-surface-muted hover:bg-ki-surface-hover hover:text-ki-on-surface transition-colors"
+          >
+            <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'wght' 400" }}>logout</span>
+          </button>
         </div>
       </header>
 

@@ -1,6 +1,7 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { useState } from "react";
 
 /* ───────────────────────────────────────────────────────────
    Quiet Intelligence Terminal — 44px header.
@@ -19,6 +20,19 @@ const PAGE_TITLES: Record<string, string> = {
 
 export default function TopBar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const [signingOut, setSigningOut] = useState(false);
+
+  async function handleLogout() {
+    if (signingOut) return;
+    setSigningOut(true);
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+    } catch {
+      /* even if request fails, clear-local-state-and-redirect */
+    }
+    router.replace("/login");
+  }
 
   let title = PAGE_TITLES[pathname] || "DigitalTwinSim";
   let breadcrumb: string | null = null;
@@ -74,6 +88,17 @@ export default function TopBar() {
             AG
           </div>
           <span className="text-[12px] text-ki-on-surface-secondary whitespace-nowrap">A. Gerli</span>
+          <button
+            onClick={handleLogout}
+            disabled={signingOut}
+            aria-label="Sign out"
+            title="Sign out"
+            className="ml-1 w-7 h-7 grid place-items-center rounded-md text-ki-on-surface-muted hover:bg-ki-surface-hover hover:text-ki-on-surface disabled:opacity-50 transition-colors"
+          >
+            <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'wght' 400" }}>
+              {signingOut ? "hourglass_empty" : "logout"}
+            </span>
+          </button>
         </div>
       </div>
     </header>

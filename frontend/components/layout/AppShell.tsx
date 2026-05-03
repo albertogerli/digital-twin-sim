@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import SideNav from "./SideNav";
 import TopBar from "./TopBar";
 
-const FULLSCREEN_ROUTES = ["/scenario/", "/replay", "/wargame", "/backtest", "/branches"];
+const FULLSCREEN_ROUTES = ["/scenario/", "/replay", "/wargame", "/backtest", "/branches", "/login"];
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

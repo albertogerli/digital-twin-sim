@@ -372,7 +372,22 @@ export default function NetworkGraph({ snapshots }: Props) {
       </div>
 
       {/* Legend */}
-      <div className="px-4 py-2 border-t border-gray-200 flex flex-wrap gap-4 text-xs text-gray-500">
+      <div className="px-4 py-2 border-t border-gray-200 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+        <div className="flex items-center gap-1.5">
+          <span className="text-[10px] uppercase tracking-wider text-gray-400 font-data">Forma</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-3 h-3 rounded-full bg-gray-400" />
+          <span>Agente individuale</span>
+        </div>
+        <div className="flex items-center gap-1.5">
+          <div className="w-4 h-3 rounded-sm bg-gray-400/70 border border-gray-500" />
+          <span>Cluster (gruppo)</span>
+        </div>
+        <span className="text-gray-300">|</span>
+        <div className="flex items-center gap-1.5">
+          <span className="text-[10px] uppercase tracking-wider text-gray-400 font-data">Posizione</span>
+        </div>
         <div className="flex items-center gap-1.5">
           <div className="w-3 h-3 rounded-full bg-green-500" />
           <span>Pro (+)</span>
@@ -385,10 +400,7 @@ export default function NetworkGraph({ snapshots }: Props) {
           <div className="w-3 h-3 rounded-full bg-red-500" />
           <span>Contro (-)</span>
         </div>
-        <div className="flex items-center gap-1.5">
-          <div className="w-3 h-2 rounded bg-blue-500/50" />
-          <span>Cluster</span>
-        </div>
+        <span className="text-gray-300">|</span>
         <div className="flex items-center gap-1.5">
           <span className="text-green-600 font-bold">▲</span>
           <span>Shift positivo</span>

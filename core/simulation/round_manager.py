@@ -141,7 +141,20 @@ class RoundManager:
             ]
 
         self.financial_twin = None
-        if domain_id == "financial":
+        # Banking-style ALM (deposit β, CET1, LCR, NIM compression) only
+        # makes sense when the brief actually involves a commercial bank.
+        # On a telecom-merger or AI-policy scenario the ALM table reads
+        # nonsensical even though the numbers are technically valid for
+        # an Italian reference bank. Heuristic: require either the
+        # `banking` subdomain hint or banking-language in the brief.
+        _is_banking_brief = self._looks_like_banking_brief(scenario_context)
+        if domain_id == "financial" and not _is_banking_brief:
+            logger.info(
+                "FinancialTwin (ALM) skipped: domain=financial but brief lacks "
+                "banking signals (deposito/CET1/banca/etc.). Showing ALM bank "
+                "table on a non-banking scenario would mislead the demo viewer."
+            )
+        if domain_id == "financial" and _is_banking_brief:
             try:
                 from core.financial.twin import FinancialTwin
                 # Sprint 5: per-country params dispatch from scope.geography
@@ -330,6 +343,40 @@ class RoundManager:
             positions.extend(a.position for a in self.institutional_agents)
             positions.extend(c.position for c in self.citizen_swarm.clusters.values())
         return positions
+
+    @staticmethod
+    def _looks_like_banking_brief(text: str) -> bool:
+        """Heuristic gate for the ALM (asset-liability) twin.
+
+        The twin is calibrated for a commercial bank (deposit β, CET1,
+        LCR, NIM compression). Showing those numbers on, say, an Open
+        Fiber merger or a Nike marketing crisis is misleading even
+        though the math runs cleanly. Require explicit banking signal
+        in the brief before activating it.
+
+        Match is generous (substring, lowercased) to keep false negatives
+        rare. False positives are tolerable — better to show ALM on a
+        marginally-relevant brief than hide it from a real banking one.
+        """
+        if not text:
+            return False
+        t = text.lower()
+        keywords = (
+            "banca", "banche", "bancari", "bank", "banking",
+            "deposito", "depositi", "depositor", "deposit",
+            "credito al consumo", "consumer credit", "mortgage", "mutui",
+            "cet1", "cet 1", "lcr ", "nsfr", " nim", "nim ",
+            "eba ", "ssm ", "vigilanza ban", "stress test ban",
+            "bce ", "ecb policy rate", "tassi bce", "policy rate",
+            "runoff", "deposit run-off", "liquidità ban",
+            "asset liability", "asset-liability", "alm ",
+            # Italian/EU bank tickers — generous: any one of these in
+            # the brief implies the user is thinking about a bank.
+            "ucg.mi", "isp.mi", "bper.mi", "bmps.mi", "bami.mi",
+            "bnp.pa", "deutsche bank", "santander", "unicredit",
+            "intesa sanpaolo", "monte dei paschi",
+        )
+        return any(k in t for k in keywords)
 
     @staticmethod
     def _build_phase_labels(language: str) -> dict:

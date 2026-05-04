@@ -1229,17 +1229,44 @@ class SimulationManager:
         SHOCK_NOISE_SIGMA = 0.20  # 1σ relative noise on |shock|; TODO calibrate from backtest residuals
         SHOCK_TO_PCT = 14.0  # rough conversion: shock=1.0 → 14pp polling delta over the round
 
+        # ── C) Source of truth #3: initial-condition spread from observed
+        # cross-sectional dispersion of agent positions at round 1.
+        # Wider position dispersion → wider MC envelope on initial pro_init.
+        # Measured directly from this scenario's agents (no arbitrary ±%).
+        initial_position_sigma = 0.0
+        try:
+            first_round = engine_round_results[0] if engine_round_results else {}
+            ag_list = first_round.get("agents") or []
+            positions = [
+                float(a.get("position", 0.0)) for a in ag_list
+                if isinstance(a.get("position"), (int, float))
+            ]
+            if len(positions) >= 3:
+                from statistics import stdev as _stdev
+                initial_position_sigma = float(_stdev(positions))
+        except Exception as exc:
+            logger.debug(f"MC: could not compute initial position sigma ({exc})")
+        # Convert opinion-axis std (~0..1) to polling-pp std using the same
+        # SHOCK_TO_PCT conversion factor.
+        INIT_PRO_SIGMA_PP = max(0.0, min(15.0, initial_position_sigma * SHOCK_TO_PCT))
+
         def _build_per_run_gt(run_seed: int) -> GroundTruth:
             """Per-run ground truth: actual main-sim shocks + observation noise.
 
             run_seed=42 → identical to the unperturbed main-sim trajectory
             (noise-free). Other seeds add Gaussian noise on each round's
-            shock magnitude so the synthetic sim sees a plausibly-different
-            event sequence."""
+            shock magnitude AND a one-shot draw on the initial pro_pct
+            from the observed cross-sectional position dispersion."""
             import random as _r
             rng = _r.Random(run_seed)
             is_baseline = run_seed == 42
-            pro = 50.0
+            # C: per-run initial-condition draw from the measured agent
+            # position dispersion. Run 0 stays at 50/50 as the deterministic
+            # reference line.
+            if is_baseline or INIT_PRO_SIGMA_PP <= 0:
+                pro = 50.0
+            else:
+                pro = max(5.0, min(95.0, 50.0 + rng.gauss(0.0, INIT_PRO_SIGMA_PP)))
             polling_pts: list[PollingDataPoint] = []
             key_events: list[dict] = []
             for r_idx in range(config.num_rounds):
@@ -1275,7 +1302,9 @@ class SimulationManager:
         if actual_trajectory:
             logger.info(
                 f"MC: anchored to {len(actual_trajectory)} main-sim rounds "
-                f"with σ_shock={SHOCK_NOISE_SIGMA:.2f} observation noise"
+                f"with σ_shock={SHOCK_NOISE_SIGMA:.2f} obs-noise and "
+                f"σ_init={INIT_PRO_SIGMA_PP:.1f}pp from "
+                f"{int(initial_position_sigma * 100) / 100:.2f} round-1 position dispersion"
             )
 
         # Generate parameter sets

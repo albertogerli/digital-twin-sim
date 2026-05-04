@@ -12,6 +12,7 @@ from typing import Optional
 
 from core.llm.base_client import BaseLLMClient
 from .web_research import _execute_searches
+from .brief_scope import BriefScope
 
 logger = logging.getLogger(__name__)
 
@@ -20,6 +21,8 @@ ENTITY_EXTRACTION_PROMPT = """Extract the most important named entities from thi
 Focus on people, organizations, and institutions that are key stakeholders in the scenario.
 
 SCENARIO BRIEF: {brief}
+
+{scope_section}
 
 RESEARCH CONTEXT:
 {web_context}
@@ -36,7 +39,9 @@ Respond with JSON:
   ]
 }}
 
-Return at most 8 entities, prioritized by relevance to the scenario. Include ONLY real, identifiable entities."""
+Return at most 8 entities, prioritized by relevance to the scenario. Include ONLY real, identifiable entities.
+If SCOPE CONSTRAINTS are provided above, only extract entities that sit INSIDE the scope (sector +
+geography + tier). Skip out-of-scope figures even if they appear in the context."""
 
 
 ENTITY_SYNTHESIS_PROMPT = """You are a research analyst. Based on targeted research about specific stakeholders,
@@ -76,14 +81,21 @@ async def research_entities(
     llm: BaseLLMClient,
     max_entities: int = 5,
     progress_callback=None,
+    scope: Optional[BriefScope] = None,
 ) -> str:
     """Extract entities from web context and do targeted deep-dive research.
 
     Returns a formatted string of structured stakeholder profiles
     suitable for injection into agent generation prompts.
+
+    When `scope` is provided, entity extraction is constrained to the scope
+    (sector/geography/tier) so out-of-scope celebrities from the web context
+    are filtered out before the deep-dive search spend.
     """
     if not web_context:
         return ""
+
+    scope_section = scope.prompt_block() if scope is not None else ""
 
     try:
         # Step 1: Extract entities
@@ -95,6 +107,7 @@ async def research_entities(
         extraction = await llm.generate_json(
             prompt=ENTITY_EXTRACTION_PROMPT.format(
                 brief=brief,
+                scope_section=scope_section,
                 web_context=web_context[:6000],
             ),
             temperature=0.3,

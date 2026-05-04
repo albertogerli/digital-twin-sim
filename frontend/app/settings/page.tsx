@@ -26,26 +26,47 @@ export default function SettingsPage() {
     <div className="p-5 space-y-6 max-w-3xl">
       {/* Access management */}
       <section>
-        <div className="eyebrow mb-2">Access</div>
-        <Link
-          href="/admin/invites"
-          className="flex items-center gap-3 bg-ki-surface-raised border border-ki-border rounded p-3 hover:bg-ki-surface-hover transition-colors group"
-        >
-          <span className="w-8 h-8 grid place-items-center rounded-md bg-ki-primary-soft text-ki-primary flex-shrink-0">
-            <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'wght' 500" }}>
-              add_link
+        <div className="eyebrow mb-2">Admin</div>
+        <div className="grid sm:grid-cols-2 gap-2">
+          <Link
+            href="/admin/invites"
+            className="flex items-center gap-3 bg-ki-surface-raised border border-ki-border rounded p-3 hover:bg-ki-surface-hover transition-colors group"
+          >
+            <span className="w-8 h-8 grid place-items-center rounded-md bg-ki-primary-soft text-ki-primary flex-shrink-0">
+              <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'wght' 500" }}>
+                add_link
+              </span>
             </span>
-          </span>
-          <div className="flex-1 min-w-0">
-            <div className="text-[13px] font-medium text-ki-on-surface">Invite links</div>
-            <div className="text-[11px] text-ki-on-surface-muted">
-              Generate shareable URLs that auto-sign-in without a password.
+            <div className="flex-1 min-w-0">
+              <div className="text-[13px] font-medium text-ki-on-surface">Invite links</div>
+              <div className="text-[11px] text-ki-on-surface-muted">
+                Generate shareable URLs that auto-sign-in without a password.
+              </div>
             </div>
-          </div>
-          <span className="material-symbols-outlined text-[14px] text-ki-on-surface-muted group-hover:text-ki-on-surface" style={{ fontVariationSettings: "'wght' 400" }}>
-            arrow_forward
-          </span>
-        </Link>
+            <span className="material-symbols-outlined text-[14px] text-ki-on-surface-muted group-hover:text-ki-on-surface" style={{ fontVariationSettings: "'wght' 400" }}>
+              arrow_forward
+            </span>
+          </Link>
+          <Link
+            href="/admin/jobs"
+            className="flex items-center gap-3 bg-ki-surface-raised border border-ki-border rounded p-3 hover:bg-ki-surface-hover transition-colors group"
+          >
+            <span className="w-8 h-8 grid place-items-center rounded-md bg-ki-primary-soft text-ki-primary flex-shrink-0">
+              <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'wght' 500" }}>
+                play_circle
+              </span>
+            </span>
+            <div className="flex-1 min-w-0">
+              <div className="text-[13px] font-medium text-ki-on-surface">Background jobs</div>
+              <div className="text-[11px] text-ki-on-surface-muted">
+                Manually trigger calibration loop + stakeholder updater.
+              </div>
+            </div>
+            <span className="material-symbols-outlined text-[14px] text-ki-on-surface-muted group-hover:text-ki-on-surface" style={{ fontVariationSettings: "'wght' 400" }}>
+              arrow_forward
+            </span>
+          </Link>
+        </div>
       </section>
 
       {/* Intelligence Hub */}

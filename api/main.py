@@ -936,3 +936,132 @@ async def calibration_recent(limit: int = 30):
     from core.calibration.continuous import recent_evaluations
     rows = recent_evaluations(limit=max(1, min(limit, 200)))
     return {"rows": rows, "count": len(rows)}
+
+
+# ── Admin jobs (background tasks) ────────────────────────────────
+
+import threading as _threading
+import subprocess as _subprocess
+
+# In-memory job status registry (process-local).
+# Key: job_name, value: {state, started_at, finished_at, exit_code, output_tail, pid}
+_admin_jobs_state: dict[str, dict] = {}
+_admin_jobs_lock = _threading.Lock()
+
+_PY = sys.executable or "python"
+
+_ADMIN_JOBS = {
+    "calibration-forecast": {
+        "label": "Self-calibration forecast",
+        "description": "Fetch headlines for the watchlist, run shadow forecast, persist to SQLite.",
+        "cmds": [[_PY, "-m", "scripts.continuous_calibration", "forecast"]],
+        "icon": "auto_graph",
+    },
+    "calibration-evaluate": {
+        "label": "Self-calibration T+1/T+3/T+7 evaluate",
+        "description": "Score pending forecasts against realised yfinance returns.",
+        "cmds": [
+            [_PY, "scripts/continuous_calibration.py", "evaluate", "--horizon", str(h)]
+            for h in (1, 3, 7)
+        ],
+        "icon": "verified",
+    },
+    "stakeholder-update": {
+        "label": "Stakeholder graph nightly update",
+        "description": "Crawl RSS + Google News, EMA-update agent positions on detected mentions.",
+        "cmds": [[_PY, "-m", "stakeholder_graph.updater"]],
+        "icon": "groups",
+    },
+}
+
+
+def _run_admin_job_in_thread(job_name: str):
+    job = _ADMIN_JOBS.get(job_name)
+    if not job:
+        return
+    with _admin_jobs_lock:
+        _admin_jobs_state[job_name] = {
+            "state": "running",
+            "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "finished_at": None,
+            "exit_code": None,
+            "output_tail": [],
+        }
+    try:
+        all_output: list[str] = []
+        last_code = 0
+        for cmd in job["cmds"]:
+            try:
+                proc = _subprocess.run(
+                    cmd,
+                    cwd=PROJECT_ROOT,
+                    capture_output=True, text=True,
+                    timeout=600,
+                )
+                all_output.extend(proc.stdout.splitlines()[-50:])
+                all_output.extend([f"[stderr] {l}" for l in proc.stderr.splitlines()[-20:]])
+                last_code = proc.returncode
+                if proc.returncode != 0:
+                    break
+            except _subprocess.TimeoutExpired:
+                all_output.append(f"[TIMEOUT] command exceeded 600s: {' '.join(cmd)}")
+                last_code = 124
+                break
+            except Exception as e:
+                all_output.append(f"[EXCEPTION] {e}")
+                last_code = 1
+                break
+        with _admin_jobs_lock:
+            _admin_jobs_state[job_name].update({
+                "state": "completed" if last_code == 0 else "failed",
+                "finished_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                "exit_code": last_code,
+                "output_tail": all_output[-100:],
+            })
+    except Exception as e:
+        with _admin_jobs_lock:
+            _admin_jobs_state[job_name].update({
+                "state": "failed",
+                "finished_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                "exit_code": -1,
+                "output_tail": [f"[FATAL] {e}"],
+            })
+
+
+@app.get("/api/admin/jobs")
+@cached(ttl_seconds=3.0)
+async def admin_jobs_status():
+    """Return registry of available admin jobs + their last-run status."""
+    with _admin_jobs_lock:
+        states = dict(_admin_jobs_state)
+    return {
+        "jobs": [
+            {
+                "name": name,
+                "label": meta["label"],
+                "description": meta["description"],
+                "icon": meta["icon"],
+                "last_run": states.get(name),
+            }
+            for name, meta in _ADMIN_JOBS.items()
+        ]
+    }
+
+
+@app.post("/api/admin/jobs/{job_name}/run")
+@limiter.limit(LIMIT_READS)
+async def admin_jobs_run(
+    job_name: str,
+    request: Request,
+    tenant: Optional[Tenant] = Depends(verify_api_key),
+):
+    """Trigger an admin job in a background thread. Returns immediately."""
+    if job_name not in _ADMIN_JOBS:
+        raise HTTPException(404, f"Unknown job '{job_name}'. Known: {list(_ADMIN_JOBS)}")
+    with _admin_jobs_lock:
+        current = _admin_jobs_state.get(job_name, {})
+        if current.get("state") == "running":
+            raise HTTPException(409, f"Job '{job_name}' is already running")
+    t = _threading.Thread(target=_run_admin_job_in_thread, args=(job_name,), daemon=True)
+    t.start()
+    return {"job": job_name, "state": "queued", "message": "Job started in background"}

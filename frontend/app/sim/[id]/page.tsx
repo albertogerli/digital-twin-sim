@@ -41,6 +41,12 @@ interface ProgressEvent {
   data: Record<string, any>;
 }
 
+// Drop ticker-shaped names from custom_metrics rendering. Old sims (pre
+// commit c355720) stored ticker labels as 0-100 LLM scores ("TIT.MI: 22");
+// new sims emit them via round.ticker_prices instead. Filter on the
+// frontend so legacy data also displays cleanly.
+const TICKER_LIKE_RE = /(?:^|[^A-Za-z0-9])([A-Z][A-Z0-9]{0,5}(?:[.\-][A-Z]{1,4})?)(?:[^A-Za-z0-9]|$)/;
+
 interface LiveRound {
   round: number;
   timeline_label: string;
@@ -356,8 +362,13 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
     ? (status.current_round / status.total_rounds) * 100
     : 0;
 
-  // Collect all custom metric keys across rounds
-  const allMetricKeys = [...new Set(rounds.flatMap((r) => Object.keys(r.custom_metrics)))];
+  // Collect all custom metric keys across rounds, filtering out
+  // ticker-shaped names (e.g. "TIT.MI_Prezzo_Azione") that the old
+  // pipeline produced as 0-100 LLM scores. Real ticker prices live
+  // in round.ticker_prices and render separately with currency.
+  const allMetricKeys = [...new Set(
+    rounds.flatMap((r) => Object.keys(r.custom_metrics))
+  )].filter((k) => !TICKER_LIKE_RE.test(k));
 
   // Chart data
   const polarizationData = rounds.map((r) => ({ round: r.round, polarization: r.polarization }));
@@ -746,12 +757,15 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
           <div className="bg-ki-error" style={{ width: `${round.sentiment.negative * 100}%` }} />
         </div>
 
-        {/* Custom metrics badges */}
-        {Object.entries(round.custom_metrics).slice(0, 2).map(([k, v]) => (
-          <span key={k} className="hidden md:inline-block px-1.5 py-0.5 rounded-sm bg-ki-primary/10 font-data text-[10px] text-ki-primary flex-shrink-0">
-            {k.slice(0, 20)}: {v}
-          </span>
-        ))}
+        {/* Custom metrics badges (skip ticker-shaped legacy keys) */}
+        {Object.entries(round.custom_metrics)
+          .filter(([k]) => !TICKER_LIKE_RE.test(k))
+          .slice(0, 2)
+          .map(([k, v]) => (
+            <span key={k} className="hidden md:inline-block px-1.5 py-0.5 rounded-sm bg-ki-primary/10 font-data text-[10px] text-ki-primary flex-shrink-0">
+              {k.slice(0, 20)}: {v}
+            </span>
+          ))}
 
         <svg className={`w-3.5 h-3.5 text-ki-on-surface-muted transition-transform flex-shrink-0 ${expanded ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -852,12 +866,12 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
 
             {/* Sidebar: coalitions + metrics + agents */}
             <div className="space-y-3">
-              {/* Custom metrics */}
-              {Object.keys(round.custom_metrics).length > 0 && (
+              {/* Custom metrics (filter ticker-shaped legacy keys) */}
+              {Object.entries(round.custom_metrics).filter(([k]) => !TICKER_LIKE_RE.test(k)).length > 0 && (
                 <div>
                   <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider mb-1.5">Metriche</p>
                   <div className="space-y-1.5">
-                    {Object.entries(round.custom_metrics).map(([k, v]) => (
+                    {Object.entries(round.custom_metrics).filter(([k]) => !TICKER_LIKE_RE.test(k)).map(([k, v]) => (
                       <div key={k}>
                         <div className="flex justify-between text-[11px] mb-0.5">
                           <span className="text-ki-on-surface-secondary truncate">{k}</span>

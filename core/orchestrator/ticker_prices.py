@@ -74,7 +74,13 @@ def _universe() -> dict:
 # Allow MIC suffixes (.MI, .DE, .PA, .L, .AS, .MC, .SS, .HK, etc.) and pure
 # US tickers up to 5 letters. Rejects all-digits and very common English
 # words by intersecting with the loaded universe afterwards.
-_TICKER_RE = re.compile(r"\b([A-Z][A-Z0-9]{0,5}(?:[.-][A-Z]{1,4})?)\b")
+#
+# Lookbehind/lookahead use [A-Za-z0-9] (NOT \w) so that underscores act as
+# terminators — handles user-typed KPI labels like "TIT.MI_Prezzo_Azione"
+# where \b would fail on the MI→_ transition because \w includes underscore.
+_TICKER_RE = re.compile(
+    r"(?<![A-Za-z0-9])([A-Z][A-Z0-9]{0,5}(?:[.\-][A-Z]{1,4})?)(?![A-Za-z0-9])"
+)
 
 
 def extract_tickers(text: str, limit: int = 10) -> list[str]:

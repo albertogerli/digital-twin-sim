@@ -1,0 +1,46 @@
+name: Nightly admin jobs
+
+on:
+  # 04:00 UTC daily — after EU markets close, before US pre-market.
+  # Gives stakeholder updater fresh European political news + lets
+  # calibration-evaluate score yesterday's T+1 against realised closes.
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:  # manual trigger from GitHub UI
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      RAIL: https://digital-twin-sim-production.up.railway.app
+    steps:
+      - name: Trigger calibration-forecast
+        run: |
+          set -euxo pipefail
+          curl -sS -X POST -w "\nHTTP %{http_code}\n" \
+            "$RAIL/api/admin/jobs/calibration-forecast/run"
+
+      - name: Wait + trigger calibration-evaluate (T+1, T+3, T+7)
+        run: |
+          set -euxo pipefail
+          # Forecast typically completes in <30s; give it a buffer
+          sleep 90
+          curl -sS -X POST -w "\nHTTP %{http_code}\n" \
+            "$RAIL/api/admin/jobs/calibration-evaluate/run"
+
+      - name: Wait + trigger stakeholder-update
+        run: |
+          set -euxo pipefail
+          # Evaluate runs 3 sequential subprocesses, ~3-5 min total
+          sleep 360
+          curl -sS -X POST -w "\nHTTP %{http_code}\n" \
+            "$RAIL/api/admin/jobs/stakeholder-update/run"
+
+      - name: Final status snapshot
+        if: always()
+        run: |
+          set -euxo pipefail
+          # Stakeholder run takes ~80-120s; sleep then dump status
+          sleep 180
+          curl -sS "$RAIL/api/admin/jobs" | python3 -m json.tool

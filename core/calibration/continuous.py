@@ -50,16 +50,45 @@ DEFAULT_DRIFT_LOG = REPO_ROOT / "outputs" / "continuous_calibration_drift.jsonl"
 logger = logging.getLogger(__name__)
 
 
-# ── Default watchlist (Italy-centric, demo-friendly for Sella) ───────────────
-# Operator can override via the CLI --tickers flag.
-DEFAULT_WATCHLIST: tuple[str, ...] = (
-    "UCG.MI",   # UniCredit
-    "ISP.MI",   # Intesa Sanpaolo
-    "ENI.MI",   # ENI
-    "ENEL.MI",  # Enel
-    "STLAM.MI", # Stellantis
-    "G.MI",     # Generali
+# ── Default watchlist ────────────────────────────────────────────────────────
+# Loaded from frontend/public/data/stock_universe.json (≈190 tickers across
+# IT/EU/UK/US/JP plus a handful of indices). The shadow forecast is
+# deterministic (correlation matrix + sector betas + impulse response — no
+# per-ticker LLM call) so expanding from 6 to ~190 has negligible cost
+# impact: only the single CRI/intensity inference call is shared across
+# all tickers in a run. Operator can still override via `--tickers`.
+_FALLBACK_WATCHLIST: tuple[str, ...] = (
+    "UCG.MI", "ISP.MI", "ENI.MI", "ENEL.MI", "STLAM.MI", "G.MI",
 )
+
+
+def _load_default_watchlist() -> tuple[str, ...]:
+    universe_path = REPO_ROOT / "frontend" / "public" / "data" / "stock_universe.json"
+    try:
+        data = json.loads(universe_path.read_text())
+        tickers: list[str] = []
+        # Stocks
+        for s in data.get("stocks", []):
+            t = s.get("ticker")
+            if t:
+                tickers.append(t)
+        # Major indices help benchmark direction-only accuracy
+        for idx in data.get("indices", []):
+            t = idx.get("ticker")
+            if t:
+                tickers.append(t)
+        if tickers:
+            # Dedup while preserving order
+            seen: set[str] = set()
+            out = [t for t in tickers if not (t in seen or seen.add(t))]
+            logger.info(f"Loaded {len(out)} tickers from stock_universe.json")
+            return tuple(out)
+    except Exception as e:
+        logger.warning(f"Could not load stock_universe.json ({e}); falling back to 6-ticker IT default")
+    return _FALLBACK_WATCHLIST
+
+
+DEFAULT_WATCHLIST: tuple[str, ...] = _load_default_watchlist()
 
 
 # ── Data classes ────────────────────────────────────────────────────────────

@@ -16,6 +16,7 @@ import argparse
 import asyncio
 import json
 import logging
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -246,12 +247,50 @@ async def cmd_run(args, data_dir: Path):
     print(f"{'═' * 50}\n")
 
 
+def _resolve_data_dir() -> Path:
+    """Pick a writable data dir, seeding from the canonical source on first boot.
+
+    Priority:
+      1. STAKEHOLDER_DATA_DIR env var (operator override)
+      2. <REPO_ROOT>/outputs/stakeholder_graph_data — survives Railway redeploys
+         when /app/outputs is mounted as a persistent volume. Seeded from the
+         canonical source on first run so the country JSONs are always present.
+      3. <stakeholder_graph>/data — committed-to-repo source of truth.
+         Used as fallback if outputs/ is unavailable (e.g. local dev without
+         a volume mount).
+
+    The seed step copies country dirs (italy/, france/, …) but never overwrites
+    files that already exist in outputs/, so position updates persist across
+    deploys.
+    """
+    import shutil
+    canonical = Path(__file__).parent.parent / "data"
+    override = os.environ.get("STAKEHOLDER_DATA_DIR")
+    if override:
+        return Path(override)
+    repo_root = canonical.parent.parent
+    persistent = repo_root / "outputs" / "stakeholder_graph_data"
+    try:
+        persistent.mkdir(parents=True, exist_ok=True)
+        # Seed: copy country directories that aren't already present in persistent/
+        if canonical.exists():
+            for country_dir in canonical.iterdir():
+                if not country_dir.is_dir() or country_dir.name.startswith("."):
+                    continue
+                target_country = persistent / country_dir.name
+                if not target_country.exists():
+                    shutil.copytree(country_dir, target_country)
+        return persistent
+    except Exception as e:
+        logging.warning(f"Persistent data_dir setup failed ({e}); falling back to canonical {canonical}")
+        return canonical
+
+
 def main():
     args = parse_args()
     setup_logging(args.verbose)
 
-    # Resolve data dir
-    data_dir = Path(__file__).parent.parent / "data"
+    data_dir = _resolve_data_dir()
 
     if args.report:
         cmd_report(data_dir)

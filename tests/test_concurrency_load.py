@@ -136,11 +136,14 @@ async def test_llm_semaphore_and_budget_cap():
     BUDGET = 0.05
     MAX_CONCURRENT = 8
     COST_PER_CALL = 0.005
-    overshoot_tolerance = BUDGET + MAX_CONCURRENT * COST_PER_CALL  # = 0.09
+    # Float-point: BUDGET + 8 * 0.005 = 0.09000000000000001 (1 ulp drift),
+    # so we add a 1e-6 tolerance — accounts for accumulated floating-point
+    # error across N committed reservations without weakening the bound.
+    overshoot_tolerance = BUDGET + MAX_CONCURRENT * COST_PER_CALL + 1e-6
     assert llm.stats.total_cost <= overshoot_tolerance, (
-        f"Cost {llm.stats.total_cost:.4f} exceeded contract bound "
-        f"{overshoot_tolerance:.4f} (budget={BUDGET} + max_concurrent={MAX_CONCURRENT}"
-        f" * cost_per_call={COST_PER_CALL})"
+        f"Cost {llm.stats.total_cost:.6f} exceeded contract bound "
+        f"{overshoot_tolerance:.6f} (budget={BUDGET} + max_concurrent={MAX_CONCURRENT}"
+        f" * cost_per_call={COST_PER_CALL} + ε)"
     )
     # Semaphore must cap actual concurrency.
     assert llm.peak_in_flight <= MAX_CONCURRENT

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo, useRef } from "react";
+import Link from "next/link";
 import {
   BacktestScenario,
   computeAggregates,
@@ -107,6 +108,14 @@ export default function BacktestDashboard() {
     <div className="min-h-screen bg-ki-surface text-ki-on-surface flex flex-col">
       {/* ── Sub-toolbar ──────────────────────────────────── */}
       <header className="h-11 flex items-center px-4 gap-3 border-b border-ki-border bg-ki-surface-raised flex-shrink-0">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1 text-[12px] text-ki-on-surface-muted hover:text-ki-on-surface transition-colors"
+          aria-label="Back to dashboard"
+        >
+          <span className="material-symbols-outlined text-[14px]" style={{ fontVariationSettings: "'wght' 400" }}>arrow_back</span>
+        </Link>
+        <span className="text-ki-border-strong">|</span>
         <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted">DigitalTwinSim</span>
         <span className="text-ki-border-strong">/</span>
         <span className="text-[14px] font-medium text-ki-on-surface tracking-[-0.005em]">Backtest</span>

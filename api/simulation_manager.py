@@ -1149,7 +1149,7 @@ class SimulationManager:
                 ))
 
     async def _run_monte_carlo(
-        self, sim_id: str, config, engine, n_runs: int = 10, perturbation: float = 0.25
+        self, sim_id: str, config, engine, n_runs: int = 10, perturbation: float = 0.15
     ) -> dict:
         """Run Monte Carlo analysis using synthetic sim (zero LLM cost).
 
@@ -1181,65 +1181,33 @@ class SimulationManager:
                 cal = data.get("calibrated_params", {})
                 base_params.update(cal)
 
-        # Build a GroundTruth-like structure for Monte Carlo. Two
-        # variability injections to fix the "all 20 runs land in the
-        # same place" problem we saw on demo runs:
-        #   1. Per-run random initial polling spread (±8pp around 50/50)
-        #      so each run starts from a different prior, then dynamics
-        #      diverge naturally.
-        #   2. Per-run shock injection at a random round with random
-        #      magnitude/direction. Without events the synthetic sim
-        #      just smooths toward equilibrium — flat MC by design.
+        # Build a GroundTruth-like structure for Monte Carlo
+        polling = [
+            PollingDataPoint(
+                round_equivalent=i + 1,
+                pro_pct=50.0,
+                against_pct=40.0,
+                undecided_pct=10.0,
+            )
+            for i in range(config.num_rounds)
+        ]
 
-        # For Monte Carlo, we don't need ground truth — we just run N synthetic sims
-        # and aggregate the results
+        gt = GroundTruth(
+            scenario_name=config.name,
+            description=getattr(config, 'description', ''),
+            final_outcome_pro_pct=50.0,
+            final_outcome_against_pct=50.0,
+            polling_trajectory=polling,
+            key_events=[],
+        )
+
         # Generate parameter sets
         param_sets = mc_engine.generate_parameter_sets(base_params)
 
         # Run N synthetic simulations
-        import random as _mc_random
-
         all_runs = []
         for i, params in enumerate(param_sets):
             try:
-                rng = _mc_random.Random(42 + i)
-                # Initial-condition variability — keep run 0 (baseline) at 50/50.
-                if i == 0:
-                    pro_init = 50.0
-                    shock_round = -1
-                    shock_delta = 0.0
-                else:
-                    pro_init = 50.0 + rng.uniform(-8.0, 8.0)
-                    # Inject a shock by stepping pro_pct at one round so the
-                    # synthetic sim's polling-delta sees an actual signal.
-                    shock_round = rng.randint(2, max(2, config.num_rounds - 1))
-                    shock_delta = rng.uniform(-12.0, 12.0)
-                polling = []
-                for r in range(config.num_rounds):
-                    pro_r = pro_init
-                    if shock_round > 0 and (r + 1) >= shock_round:
-                        pro_r = max(5.0, min(95.0, pro_init + shock_delta))
-                    polling.append(PollingDataPoint(
-                        round_equivalent=r + 1,
-                        pro_pct=pro_r,
-                        against_pct=max(0.0, 100 - pro_r - 10.0),
-                        undecided_pct=10.0,
-                    ))
-                key_events = []
-                if shock_round > 0:
-                    key_events = [{
-                        "round_equivalent": shock_round,
-                        "description": f"MC stochastic shock (run {i})",
-                        "impact_magnitude": shock_delta / 12.0,  # Normalised to ~[-1, 1]
-                    }]
-                gt = GroundTruth(
-                    scenario_name=config.name,
-                    description=getattr(config, 'description', ''),
-                    final_outcome_pro_pct=pro_init + (shock_delta if shock_round > 0 else 0.0),
-                    final_outcome_against_pct=100 - pro_init - (shock_delta if shock_round > 0 else 0.0),
-                    polling_trajectory=polling,
-                    key_events=key_events,
-                )
                 final_pro, positions_per_round = run_synthetic_simulation(
                     gt, params, n_agents=200, seed=42 + i
                 )

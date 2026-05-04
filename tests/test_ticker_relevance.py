@@ -15,7 +15,20 @@ from core.orchestrator.ticker_relevance import (
 
 class TestMarketContext:
     """MarketContext + StaticUniverseProvider replaces the legacy
-    UniverseLoader singleton. These tests guard the same invariants."""
+    UniverseLoader singleton. These tests guard the same invariants
+    against the *static* beta table in stock_universe.json — the
+    empirical override at shared/sector_betas_empirical.json (built
+    by Phase B Sprint 75) is bypassed via the autouse fixture below
+    so we test the static-regime resolution path in isolation. The
+    empirical override path has its own dedicated tests."""
+
+    @pytest.fixture(autouse=True)
+    def _bypass_empirical_betas(self, monkeypatch):
+        """Force the empirical-beta loader to an empty dict so get_beta
+        falls through to the static stock_universe.json table the
+        original tests were written against."""
+        from core.orchestrator import market_context as mc
+        monkeypatch.setattr(mc, "_empirical_betas_cache", {})
 
     def test_loads_universe(self):
         ctx = MarketContext(geography="IT")
@@ -90,6 +103,39 @@ class TestMarketContext:
         scorer = TickerRelevanceScorer(market=ctx)
         assert scorer.market.geography == "US"
         assert scorer.market is ctx
+
+
+class TestEmpiricalBetaOverride:
+    """Verifies the empirical-beta loader (Phase B Sprint 75) wins over
+    the static stock_universe.json table when its JSON is present.
+    Companion to TestMarketContext, which bypasses the override to
+    test the static path in isolation."""
+
+    def test_empirical_overrides_static_when_present(self, monkeypatch):
+        from core.orchestrator import market_context as mc
+        # Inject a synthetic empirical table that differs from static
+        monkeypatch.setattr(mc, "_empirical_betas_cache", {
+            "IT": {"banking": {
+                "political_beta": 2.42,
+                "crisis_alpha_pct": 1.11,
+            }}
+        })
+        ctx = mc.MarketContext(geography="IT")
+        beta = ctx.get_beta("banking")
+        assert beta.political_beta == 2.42  # empirical, not 1.85 static
+        assert beta.crisis_alpha == 1.11
+
+    def test_empirical_falls_through_when_cell_absent(self, monkeypatch):
+        """A geography that has no empirical cell should fall through
+        to the static beta table — empirical override is not all-or-nothing."""
+        from core.orchestrator import market_context as mc
+        monkeypatch.setattr(mc, "_empirical_betas_cache", {
+            "FR": {"banking": {"political_beta": 9.99, "crisis_alpha_pct": 0.0}}
+            # no IT entry → IT geography falls through to static
+        })
+        ctx = mc.MarketContext(geography="IT")
+        beta = ctx.get_beta("banking", regime="IT")
+        assert beta.political_beta == 1.85  # static, no empirical IT cell
 
 
 class TestTickerRelevanceScorer:

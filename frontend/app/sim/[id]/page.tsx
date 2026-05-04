@@ -53,6 +53,17 @@ interface LiveRound {
   sentiment: { positive: number; neutral: number; negative: number };
   coalitions: any[];
   custom_metrics: Record<string, number>;
+  ticker_prices?: Record<string, {
+    ticker: string;
+    name: string;
+    anchor_price: number;
+    current_price: number;
+    round_pct: number;
+    cum_pct: number;
+    currency: string;
+    country: string;
+    sector: string;
+  }>;
   cost: number;
   shock_magnitude: number;
   shock_direction: number;
@@ -165,7 +176,8 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
                 agents,
                 sentiment: { positive: sent.positive ?? 0, neutral: sent.neutral ?? 0, negative: sent.negative ?? 0 },
                 coalitions,
-                custom_metrics: {},
+                custom_metrics: raw.custom_metrics || {},
+                ticker_prices: raw.ticker_prices || {},
                 cost: data.cost || 0,
                 shock_magnitude: raw.event?.shock_magnitude ?? 0,
                 shock_direction: raw.event?.shock_direction ?? 0,
@@ -274,6 +286,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             sentiment: d.sentiment || { positive: 0, neutral: 0, negative: 0 },
             coalitions: d.coalitions || [],
             custom_metrics: d.custom_metrics || {},
+            ticker_prices: d.ticker_prices || {},
             cost: d.cost || 0,
             shock_magnitude: d.shock_magnitude ?? 0,
             shock_direction: d.shock_direction ?? 0,
@@ -748,6 +761,58 @@ function LiveRoundCard({ round, positionAxis }: { round: LiveRound; positionAxis
       {/* Expanded content */}
       {expanded && (
         <div className="px-3 pb-3 border-t border-ki-border pt-3">
+          {/* Real-price ticker strip — anchored to yfinance, repriced
+              deterministically each round via sector beta + impulse response */}
+          {round.ticker_prices && Object.keys(round.ticker_prices).length > 0 && (
+            <div className="mb-3">
+              <div className="flex items-baseline justify-between mb-1.5">
+                <p className="font-data text-[10px] text-ki-on-surface-muted uppercase tracking-wider">
+                  Prezzi · twin finanziario
+                </p>
+                <span className="font-data text-[10px] text-ki-on-surface-muted">
+                  vs anchor t0
+                </span>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1.5">
+                {Object.values(round.ticker_prices).map((tp) => {
+                  const up = tp.cum_pct > 0;
+                  const flat = Math.abs(tp.cum_pct) < 0.05;
+                  const tone = flat
+                    ? "text-ki-on-surface-secondary"
+                    : up
+                      ? "text-ki-success"
+                      : "text-ki-error";
+                  const arrow = flat ? "·" : up ? "▲" : "▼";
+                  const fmt = (n: number) => {
+                    if (n >= 100) return n.toFixed(2);
+                    if (n >= 1) return n.toFixed(3);
+                    return n.toFixed(4);
+                  };
+                  const sym = tp.currency === "EUR" ? "€" : tp.currency === "USD" ? "$" : tp.currency === "GBP" ? "£" : tp.currency === "JPY" ? "¥" : "";
+                  return (
+                    <div key={tp.ticker} className="bg-ki-surface-sunken border border-ki-border rounded-sm p-1.5">
+                      <div className="flex items-baseline justify-between gap-1">
+                        <span className="font-data text-[11px] text-ki-on-surface font-medium truncate" title={tp.name}>
+                          {tp.ticker}
+                        </span>
+                        <span className={`font-data tabular text-[10px] ${tone}`}>
+                          {arrow} {tp.cum_pct >= 0 ? "+" : ""}{tp.cum_pct.toFixed(2)}%
+                        </span>
+                      </div>
+                      <div className="flex items-baseline gap-1 mt-0.5">
+                        <span className="font-data tabular text-[13px] text-ki-on-surface">
+                          {sym}{fmt(tp.current_price)}
+                        </span>
+                        <span className="font-data text-[9px] text-ki-on-surface-muted">
+                          / {sym}{fmt(tp.anchor_price)}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
           {/* Agent Position Strip in expanded view */}
           {round.agents.length > 0 && (
             <div className="mb-3">

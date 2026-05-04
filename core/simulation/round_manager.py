@@ -105,6 +105,41 @@ class RoundManager:
         # loan elasticity, NIM compression, regulatory floors). Defaults are
         # Italian commercial-bank reference (EBA / ECB / BdI 2025); override
         # via scenario_context or future scenario.financial_twin_overrides.
+        # ── Real-price ticker tracking ─────────────────────────────────────
+        # Domain-agnostic: any brief or KPI label that names a known ticker
+        # (TIT.MI, ENEL.MI, AAPL, etc.) gets fetched at anchor + repriced
+        # per round via the empirical financial twin (sector beta + impulse
+        # response). Replaces the old "TLIT.MI Stock Price = 32" 0-100
+        # LLM-score anti-pattern with deterministic real prices in the
+        # ticker's native currency.
+        self.ticker_price_state = None
+        try:
+            from core.orchestrator.ticker_prices import TickerPriceState
+            self.ticker_price_state = TickerPriceState(
+                brief_text=scenario_context or "",
+                extra_metric_names=self.metrics_to_track,
+            )
+            if self.ticker_price_state.tickers:
+                logger.info(
+                    f"TickerPriceState armed: {len(self.ticker_price_state.tickers)} "
+                    f"ticker(s) {self.ticker_price_state.tickers}"
+                )
+        except Exception as exc:
+            logger.warning(f"TickerPriceState init failed (continuing without): {exc}")
+            self.ticker_price_state = None
+
+        # Strip ticker-shaped names from LLM 0-100 metrics to avoid
+        # double-counting + label confusion. Real prices are emitted
+        # under round_result["ticker_prices"], which the frontend renders
+        # separately with currency formatting.
+        if self.ticker_price_state and self.ticker_price_state.tickers:
+            ticker_set = set(self.ticker_price_state.tickers)
+            from core.orchestrator.ticker_prices import is_ticker
+            self.metrics_to_track = [
+                m for m in self.metrics_to_track
+                if not (m in ticker_set or is_ticker(m))
+            ]
+
         self.financial_twin = None
         if domain_id == "financial":
             try:
@@ -851,6 +886,21 @@ class RoundManager:
             except Exception as exc:
                 logger.warning(f"FinancialTwin step failed at round {round_num}: {exc}")
 
+        # ── Step the TickerPriceState (real-price tracking) ────────────────
+        # Uses CRI from contagion_scorer + intensity proxy from
+        # escalation_engine.active_wave (1-5). Skipped silently if no
+        # tickers were extracted from the brief.
+        ticker_prices = {}
+        if self.ticker_price_state is not None and self.ticker_price_state.tickers:
+            try:
+                cri_val = float(orchestrator_data.get("contagion_risk_index", 0.0) or 0.0)
+                intensity_val = float(orchestrator_data.get("active_wave", 1) or 1)
+                ticker_prices = self.ticker_price_state.step(
+                    cri=cri_val, intensity=intensity_val,
+                )
+            except Exception as exc:
+                logger.warning(f"TickerPriceState step failed at round {round_num}: {exc}")
+
         result = {
             "round": round_num,
             "timeline_label": timeline_label,
@@ -861,6 +911,7 @@ class RoundManager:
             "coalitions": coalitions,
             "domain_metrics": domain_metrics,
             "custom_metrics": custom_metrics,
+            "ticker_prices": ticker_prices,
             "cost": self.llm.stats.total_cost,
             "confidence_interval": confidence_interval,
             "regime_info": regime_info,
@@ -896,6 +947,7 @@ class RoundManager:
             "coalitions": coalitions_data,
             "domain_metrics": domain_metrics,
             "custom_metrics": custom_metrics,
+            "ticker_prices": ticker_prices,
             "shock_magnitude": event.get("shock_magnitude", 0),
             "shock_direction": event.get("shock_direction", 0),
             "confidence_interval": confidence_interval,

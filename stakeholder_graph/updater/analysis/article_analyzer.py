@@ -77,9 +77,9 @@ class ArticleAnalyzer:
             try:
                 self._call_count += 1
                 response = await self.llm.generate_json(
+                    prompt=prompt,
                     system_prompt=SYSTEM_PROMPT,
-                    user_prompt=prompt,
-                    schema_hint="ArticleAnalysis",
+                    component="stakeholder_updater",
                 )
                 await asyncio.sleep(self.rate_limit_delay)
 

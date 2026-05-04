@@ -536,11 +536,67 @@ Effort: 2-3 settimane (le primitive ci sono già: `correlation_lookup`, EnKF in 
 
 Moat: dopo 12 mesi di operatività, lo stato del filtro Bayesiano della piattaforma incorpora ~360 calibrazioni event-driven che un competitor che fork del codice oggi non recupera senza ri-running il loop. Tesla-Autopilot-style data moat.
 
-### 13.2 Export XBRL/DORA per compliance regolatoria
+### 13.2 Export DORA Major Incident Report — ✅ MVP IMPLEMENTATO (Maggio 2026, Sprint 88-90)
 
-Modulo che converte l'output del FinancialTwin nella tassonomia ufficiale ECB/Banca d'Italia per i report DORA (Digital Operational Resilience Act, in vigore EU dal 2025) o EBA stress test. Un Chief Risk Officer ha budget compliance illimitato vs budget Strategy tagliato; vendere alla CRO con "automatizza i report DORA obbligatori, taglia €50K/trimestre di KPMG" è un sales motion completamente diverso (e più veloce) della pre-deliberation.
+Modulo che prende l'output di una simulazione wargame di crisi operativa/cyber e genera **automaticamente il Major ICT-related Incident Report** richiesto da DORA (Regulation EU 2022/2554, Art. 19-20, in vigore dal 17 Gennaio 2025) nel formato XML prescritto da EBA/EIOPA/ESMA Joint Committee Final Report JC 2024-43 (Luglio 2024).
 
-Effort: 4-6 settimane (la spec XBRL è pubblica ma verbosa; serve un domain expert su DORA per mappare correttamente i campi del nostro `FinancialTwin` ai requisiti del regolatore; serve passare un audit di conformità su 1-2 cicli reali). Vendita: target Chief Risk Officer / Compliance Officer, non Strategy.
+**Use case Sella, esempio concreto.** Il CRO simula un attacco DDoS al sistema di internet banking (`/wargame` in modalità "Cyber crisis"). Il sistema:
+1. Esegue 5-9 round di simulazione con stakeholder reali (SOC, Banca d'Italia, BCE, stampa, clienti retail)
+2. Tracciava metriche: clienti impattati, downtime ore, perdita economica stimata, polarization mediatica, viral posts
+3. **Al termine, emette automaticamente** `outputs/<scenario>_dora_incident.xml` pronto per upload al portale regolatorio
+
+**Stato implementazione (Sprint 88-90, Maggio 2026):**
+
+- ✅ **Scope decision** documentato (`docs/DORA_EXPORT_SCOPE.md`): MVP target = Major Incident Report (Art. 19) — non COREP/FINREP XBRL (deferred a v1.0 perché richiede 4-6 settimane + domain expert ALM analyst).
+- ✅ **Schema Pydantic** (`core/dora/schema.py`): `IncidentReport` + `ClassificationCriteria` + `FinancialEntity` + `AffectedFunction` + `MitigationAction` con i ~40 campi di Annex IV. Le 7 classification criteria mappano agli output del simulator.
+- ✅ **XML exporter** (`core/dora/exporter.py`): zero-dependency (solo `xml.etree.ElementTree` stdlib), namespace `urn:eu:europa:dora:incident:report:1.0`, output pretty-printed e human-reviewable prima dell'upload.
+- ✅ **Classification helper** (`core/dora/classification.py`): mapping deterministico ed esplicito da metriche simulator quantitative → 7 livelli qualitativi DORA. Audit-friendly: un CRO può vedere esattamente perché un incidente è classificato "high" su clients_affected (es. perché 420.000 clienti impattati cadono nel bucket [10k, 1M)).
+- ✅ **15 unit test**: schema construction, classification (è "major" se >= high su qualsiasi axis OR downtime > 2h), XML rendering (well-formed, namespace, classification, mitigation, comms), final-report extras only when ReportType=FINAL, omission opzionali quando ImpactMetrics non ancora quantificate (caso INITIAL report 24h dopo).
+
+**Esempio output (estratto dal golden test):**
+
+```xml
+<IncidentReport xmlns="urn:eu:europa:dora:incident:report:1.0"
+                reportType="final" schemaVersion="1.0">
+  <Header>
+    <ReferenceNumber>SELLA-2026-INC-0042</ReferenceNumber>
+    <SubmissionTimestamp>2026-05-04T10:00:00Z</SubmissionTimestamp>
+    ...
+  </Header>
+  <Entity>
+    <LegalName>Banca Sella Holding S.p.A.</LegalName>
+    <LEI>815600B6E5DC0F5BF3D9</LEI>
+    <CompetentAuthority>Banca d'Italia</CompetentAuthority>
+    <Country>IT</Country>
+  </Entity>
+  <Classification>
+    <ClientsAffected>high</ClientsAffected>
+    <DataLosses>medium</DataLosses>
+    <ReputationalImpact>high</ReputationalImpact>
+    <DurationDowntimeHours>4.5</DurationDowntimeHours>
+    <GeographicalSpread>national</GeographicalSpread>
+    <EconomicImpactBand>1m-10m</EconomicImpactBand>
+    <CriticalityOfServicesAffected>critical</CriticalityOfServicesAffected>
+    <IsMajor>true</IsMajor>
+  </Classification>
+  ...
+</IncidentReport>
+```
+
+**Sales motion**: il CRO smette di pagare $50K/trimestre a KPMG per compilare a mano i report DORA. Il bot del simulatore li produce in 30 secondi a fine wargame. Il "moat" è doppio:
+1. Una volta certificato conforme contro la XSD ufficiale, i clienti restano per inertia regolatoria
+2. Il modulo entra nel critical path del compliance team, non solo nel "nice-to-have" della Strategy team
+
+**Effort residuo per certificazione enterprise:**
+- ⏳ Validazione contro XSD ufficiale EBA (la XSD richiede download dal portale regolatore con login entità — 1-2 settimane post-pilota Sella)
+- ⏳ Audit di conformità su 1-2 cicli reali con un compliance officer Sella (3-6 mesi calendar)
+- ⏳ Estensione a COREP/FINREP XBRL templates (4-6 settimane separate, richiede domain expert ALM)
+- ⏳ DORA ICT third-party register (Art. 28): aggiungibile in 1 settimana ma richiede un input table separato (contratti firmati con fornitori IT)
+
+**Limiti dichiarati** (in `docs/DORA_EXPORT_SCOPE.md`):
+1. XML well-formed e mappato a Annex IV ma NON ancora XSD-validato contro la specifica ufficiale (download da EBA reporting portal richiede registrazione entità).
+2. MVP emette solo il "final report" template (più completo); initial e intermediate report sono subset derivabili impostando i campi later-availability a null (out of scope per MVP).
+3. Mappatura metric→livello qualitativo è deterministica (`classify_from_simulation`) — un CRO può overridare manualmente prima del submit.
 
 Moat: una volta certificato conforme, i clienti restano per inertia regolatoria — cambiare vendor su un report DORA significa rifare l'audit interno.
 

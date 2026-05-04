@@ -1,0 +1,335 @@
+[
+  {
+    "id": "giuseppe_gola",
+    "name": "Giuseppe Gola",
+    "role": "Amministratore Delegato Open Fiber",
+    "country": "IT",
+    "category": "ceo",
+    "party_or_org": "Open Fiber (CDP Equity 60% / Macquarie 40%)",
+    "archetype": "ceo",
+    "tier": 1,
+    "influence": 0.55,
+    "rigidity": 0.4,
+    "bio": "Amministratore Delegato di Open Fiber, operatore wholesale FTTH italiano. Background in M&A e ristrutturazioni industriali. Ha ereditato un piano di copertura nazionale FTTH parzialmente sovrapposto alla rete TIM/NetCo, da cui la ricorrente discussione su 'rete unica'.",
+    "communication_style": "Tecnico-industriale, mirato a investitori e regolatori; raramente polemico in pubblico, prediligge note formali e audizioni parlamentari",
+    "key_traits": ["pragmatico", "infrastrutturale", "wholesale-first"],
+    "platform_primary": "press",
+    "platform_secondary": "parliament",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": -0.3, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "wholesale_only_model", "value": 0.85, "source": "institutional_statement", "confidence": "high"},
+      {"topic_tag": "fiscal_policy", "value": 0.0, "source": "inferred", "confidence": "low"}
+    ],
+    "relationships": [
+      {"target_id": "dario_scannapieco", "type": "shareholder", "strength": 0.85},
+      {"target_id": "pietro_labriola", "type": "competitor", "strength": 0.7},
+      {"target_id": "adolfo_urso", "type": "regulated_by", "strength": 0.55}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["company_disclosure", "il_sole_24_ore"]
+  },
+  {
+    "id": "dario_scannapieco",
+    "name": "Dario Scannapieco",
+    "role": "Amministratore Delegato Cassa Depositi e Prestiti",
+    "country": "IT",
+    "category": "institutional",
+    "party_or_org": "CDP",
+    "archetype": "ceo",
+    "tier": 1,
+    "influence": 0.75,
+    "rigidity": 0.5,
+    "bio": "AD di CDP dal 2021, ex vice-presidente BEI. Ha gestito le partecipazioni strategiche dello Stato (Open Fiber, Saipem, Ansaldo Energia) e mediato tra MEF e ministeri industriali nelle operazioni infrastrutturali principali del Paese.",
+    "communication_style": "Istituzionale, prudente, diplomatico; predilige comunicazioni scritte e dichiarazioni misurate alle interviste",
+    "key_traits": ["istituzionale", "diplomatico", "esperto-finanza-pubblica"],
+    "platform_primary": "press",
+    "platform_secondary": "parliament",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": 0.4, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "state_capacity", "value": 0.55, "source": "voting_record", "confidence": "high"},
+      {"topic_tag": "eu_integration", "value": 0.6, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giancarlo_giorgetti", "type": "supervised_by", "strength": 0.85},
+      {"target_id": "giuseppe_gola", "type": "shareholder", "strength": 0.85},
+      {"target_id": "adolfo_urso", "type": "coordinates_with", "strength": 0.5}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["cdp_press", "wikipedia"]
+  },
+  {
+    "id": "andrea_randone",
+    "name": "Andrea Randone",
+    "role": "Equity Analyst TLC Mediobanca Securities",
+    "country": "IT",
+    "category": "analyst",
+    "party_or_org": "Mediobanca Securities",
+    "archetype": "analyst",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.3,
+    "bio": "Analista equity senior per il settore TLC italiano; copre TIM, Inwit, Open Fiber/Macquarie, dei principali operatori europei. Le sue note sono lettura obbligata per gli investitori istituzionali sulla 'rete unica' e i suoi target price su TIT.MI muovono il titolo.",
+    "communication_style": "Analitico, data-driven, cita multipli e DCF; in chat istituzionali è diretto; sui social posta sintesi di research",
+    "key_traits": ["data-driven", "skeptical", "institutional"],
+    "platform_primary": "analyst_report",
+    "platform_secondary": "fintwit",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": 0.1, "source": "research_note", "confidence": "high"},
+      {"topic_tag": "telco_consolidation", "value": 0.35, "source": "research_note", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "pietro_labriola", "type": "covers", "strength": 0.8},
+      {"target_id": "giuseppe_gola", "type": "covers", "strength": 0.7}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["mediobanca_research"]
+  },
+  {
+    "id": "domenico_ghilotti",
+    "name": "Domenico Ghilotti",
+    "role": "Senior Analyst Equita SIM",
+    "country": "IT",
+    "category": "analyst",
+    "party_or_org": "Equita SIM",
+    "archetype": "analyst",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.3,
+    "bio": "Analista TLC e infrastrutture per Equita; punto di riferimento per la buy-side italiana mid-cap. Le sue note sulle implicazioni della 'rete unica' su EBITDA e leverage TIM sono ampiamente citate.",
+    "communication_style": "Sintetico, focalizzato su rating BUY/HOLD/SELL, cita comparable europei",
+    "key_traits": ["mid-cap-focused", "rapid", "italian-market"],
+    "platform_primary": "analyst_report",
+    "platform_secondary": "fintwit",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": -0.05, "source": "research_note", "confidence": "high"},
+      {"topic_tag": "telco_consolidation", "value": 0.3, "source": "research_note", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "andrea_randone", "type": "peer_competitor", "strength": 0.4}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["equita_research"]
+  },
+  {
+    "id": "michele_azzola",
+    "name": "Michele Azzola",
+    "role": "Segretario Generale SLC-CGIL",
+    "country": "IT",
+    "category": "union_leader",
+    "party_or_org": "SLC-CGIL (Sindacato Lavoratori Comunicazione)",
+    "archetype": "union_leader",
+    "tier": 2,
+    "influence": 0.4,
+    "rigidity": 0.7,
+    "bio": "Segretario nazionale del sindacato CGIL del settore comunicazione, rappresenta i lavoratori telco (TIM, Open Fiber, FiberCop). Voce critica delle ristrutturazioni post-KKR e della corsa al risparmio sui costi del lavoro nelle fusioni infrastrutturali.",
+    "communication_style": "Combattivo, focalizzato su occupazione e clausole sociali; mobilita scioperi e manifestazioni",
+    "key_traits": ["worker-protection", "anti-financialization", "mobilizer"],
+    "platform_primary": "press",
+    "platform_secondary": "x",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": -0.5, "source": "press_statement", "confidence": "high"},
+      {"topic_tag": "labor_protection", "value": 0.9, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "pietro_labriola", "type": "negotiates_with", "strength": 0.4}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["slc_cgil_press"]
+  },
+  {
+    "id": "riccardo_saccone",
+    "name": "Riccardo Saccone",
+    "role": "Segretario Generale UILcom-UIL",
+    "country": "IT",
+    "category": "union_leader",
+    "party_or_org": "UILcom-UIL",
+    "archetype": "union_leader",
+    "tier": 2,
+    "influence": 0.3,
+    "rigidity": 0.65,
+    "bio": "Segretario UILcom, sindacato moderato del settore comunicazione. Posizione meno conflittuale di SLC-CGIL ma sempre attento alle clausole occupazionali nelle operazioni infrastrutturali TLC.",
+    "communication_style": "Misurato, contrattuale, predilige tavoli istituzionali",
+    "key_traits": ["moderate", "contractual", "institutional"],
+    "platform_primary": "press",
+    "platform_secondary": "press",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": -0.2, "source": "press_statement", "confidence": "medium"},
+      {"topic_tag": "labor_protection", "value": 0.75, "source": "press_statement", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "michele_azzola", "type": "peer_competitor", "strength": 0.3}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["uilcom_press"]
+  },
+  {
+    "id": "henna_virkkunen",
+    "name": "Henna Virkkunen",
+    "role": "Vicepresidente Esecutiva Commissione UE per Sovranità Tecnologica, Sicurezza e Democrazia",
+    "country": "EU",
+    "category": "institutional",
+    "party_or_org": "European Commission (EPP)",
+    "archetype": "policymaker",
+    "tier": 1,
+    "influence": 0.55,
+    "rigidity": 0.45,
+    "bio": "Commissaria UE per sovranità digitale, supervisiona Gigabit Infrastructure Act e Digital Networks Act. Linea favorevole al consolidamento telco europeo come risposta alla competizione USA/Cina, ma vincolata dai criteri DG Comp sulle concentrazioni nazionali.",
+    "communication_style": "Diplomatica, orientata ai dossier tecnici, post X regolari su digitalizzazione UE",
+    "key_traits": ["digital-sovereignty", "consolidation-friendly", "EPP"],
+    "platform_primary": "press",
+    "platform_secondary": "x",
+    "positions": [
+      {"topic_tag": "telco_consolidation", "value": 0.55, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "digital_sovereignty", "value": 0.8, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "teresa_ribera", "type": "commission_peer", "strength": 0.5}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["ec_press", "wikipedia"],
+    "wikidata_qid": "Q5717180"
+  },
+  {
+    "id": "teresa_ribera",
+    "name": "Teresa Ribera",
+    "role": "Vicepresidente Esecutiva Commissione UE per Transizione Pulita, Giusta e Competitiva (Antitrust)",
+    "country": "EU",
+    "category": "institutional",
+    "party_or_org": "European Commission (S&D)",
+    "archetype": "policymaker",
+    "tier": 1,
+    "influence": 0.7,
+    "rigidity": 0.5,
+    "bio": "Commissaria DG Competition, supervisiona casi di concentrazione e aiuti di Stato. Linea storicamente cauta sui consolidamenti telco nazionali (precedente Vestager su KPN/T-Mobile NL, O2/Three UK). Ha la firma sui via libera state-aid alle operazioni Open Fiber/CDP.",
+    "communication_style": "Formale, giuridica, basata su precedenti antitrust",
+    "key_traits": ["antitrust-rigorous", "state-aid-watch", "S&D"],
+    "platform_primary": "press",
+    "platform_secondary": "x",
+    "positions": [
+      {"topic_tag": "telco_consolidation", "value": -0.35, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "state_aid_oversight", "value": 0.7, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "henna_virkkunen", "type": "commission_peer", "strength": 0.5}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["ec_press", "wikipedia"],
+    "wikidata_qid": "Q19823498"
+  },
+  {
+    "id": "stefano_quintarelli",
+    "name": "Stefano Quintarelli",
+    "role": "Tecnologo, ex deputato, esperto policy digitale",
+    "country": "IT",
+    "category": "expert",
+    "party_or_org": "indipendente (ex Civici e Innovatori)",
+    "archetype": "expert_commentator",
+    "tier": 2,
+    "influence": 0.4,
+    "rigidity": 0.4,
+    "bio": "Imprenditore digitale italiano, ex parlamentare con dossier su SPID, fattura elettronica, identità digitale. Voce molto seguita su X (~50k follower) per critiche taglienti a operazioni TLC con sovrapposizioni di rete pubblico-privato e su sovvenzioni statali al digitale.",
+    "communication_style": "Sintetico, ironico, pesantemente tecnico, post X che generano dibattito",
+    "key_traits": ["technical-expert", "public-interest", "X-power-user"],
+    "platform_primary": "x",
+    "platform_secondary": "press",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": -0.2, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "digital_sovereignty", "value": 0.5, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "state_aid_oversight", "value": 0.65, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["wikipedia", "x_profile"],
+    "wikidata_qid": "Q3974620"
+  },
+  {
+    "id": "carlo_bonomi",
+    "name": "Carlo Bonomi",
+    "role": "Presidente Confindustria",
+    "country": "IT",
+    "category": "industry_association",
+    "party_or_org": "Confindustria",
+    "archetype": "lobbyist",
+    "tier": 1,
+    "influence": 0.55,
+    "rigidity": 0.5,
+    "bio": "Presidente di Confindustria, voce dell'industria italiana sulle infrastrutture digitali abilitanti per la competitività. Ha sostenuto l'urgenza di una rete FTTH unica per ridurre i costi wholesale per le PMI, ma con cautela sui rischi di monopolio.",
+    "communication_style": "Industriale, lobby-style, predilige Sole 24 Ore e audizioni",
+    "key_traits": ["industry-voice", "competitiveness-first", "moderate"],
+    "platform_primary": "press",
+    "platform_secondary": "parliament",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": 0.3, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "infrastructure_investment", "value": 0.7, "source": "voting_record", "confidence": "high"}
+    ],
+    "relationships": [
+      {"target_id": "giancarlo_giorgetti", "type": "lobbies", "strength": 0.5},
+      {"target_id": "adolfo_urso", "type": "lobbies", "strength": 0.6}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["confindustria_press", "wikipedia"]
+  },
+  {
+    "id": "alessandro_aresu",
+    "name": "Alessandro Aresu",
+    "role": "Consigliere scientifico Limes, esperto geopolitica industriale",
+    "country": "IT",
+    "category": "expert",
+    "party_or_org": "indipendente",
+    "archetype": "expert_commentator",
+    "tier": 2,
+    "influence": 0.35,
+    "rigidity": 0.35,
+    "bio": "Saggista e analista geopolitico, autore di volumi su tecnologia e potere statuale. Le sue analisi su Limes e Domani inquadrano i dossier infrastrutturali (Open Fiber, KKR, fondi sovrani) nella competizione strategica USA-UE-Cina.",
+    "communication_style": "Saggistico-geopolitico, riferimenti a sovranità tecnologica, post X lunghi e citati",
+    "key_traits": ["geopolitical-frame", "strategic-autonomy", "policy-thinker"],
+    "platform_primary": "press",
+    "platform_secondary": "x",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": 0.15, "source": "public_statement", "confidence": "medium"},
+      {"topic_tag": "digital_sovereignty", "value": 0.7, "source": "public_statement", "confidence": "high"},
+      {"topic_tag": "foreign_capital_in_strategic_assets", "value": -0.4, "source": "public_statement", "confidence": "high"}
+    ],
+    "relationships": [],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["limes_articles", "wikipedia"]
+  },
+  {
+    "id": "chiara_albanese",
+    "name": "Chiara Albanese",
+    "role": "Bloomberg Italy reporter — finanza e M&A",
+    "country": "IT",
+    "category": "journalist",
+    "party_or_org": "Bloomberg",
+    "archetype": "journalist",
+    "tier": 2,
+    "influence": 0.45,
+    "rigidity": 0.25,
+    "bio": "Reporter Bloomberg per l'Italia su deal M&A, banche e infrastrutture. Le sue scoop sui dossier Open Fiber/NetCo/MEF muovono spesso la quotazione di TIM nelle ore precedenti l'apertura di Piazza Affari.",
+    "communication_style": "Scoop-driven, breve, citazioni di fonti vicine al dossier; post X virali alla pubblicazione del flash",
+    "key_traits": ["scoop-driven", "anglo-financial", "market-moving"],
+    "platform_primary": "press",
+    "platform_secondary": "x",
+    "positions": [
+      {"topic_tag": "rete_unica_merger", "value": 0.0, "source": "inferred", "confidence": "low"},
+      {"topic_tag": "transparency", "value": 0.7, "source": "inferred", "confidence": "medium"}
+    ],
+    "relationships": [
+      {"target_id": "andrea_randone", "type": "source_relationship", "strength": 0.4}
+    ],
+    "active": true,
+    "last_updated": "2026-04-01",
+    "data_sources": ["bloomberg_byline"]
+  }
+]

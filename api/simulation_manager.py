@@ -1161,25 +1161,50 @@ class SimulationManager:
         from calibration.synthetic_sim import run_synthetic_simulation
         from calibration.historical_scenario import GroundTruth, PollingDataPoint
 
-        mc_engine = MonteCarloEngine(n_runs=n_runs, perturbation_pct=perturbation)
-
-        # Load calibrated base params for this domain
-        calibrated_path = os.path.join(
-            PROJECT_ROOT, "calibration", "results",
-            f"calibrated_params_{config.domain}.json"
-        )
-        base_params = {
+        # Source of truth #1: v2 hierarchical Bayesian posterior.
+        # Provides both point estimates AND ci95 per parameter, so the
+        # MC perturbation magnitude reflects measured uncertainty from
+        # the calibration fit instead of an arbitrary ±%.
+        posteriors: dict = {}
+        base_params: dict = {
             "anchor_weight": 0.1, "social_weight": 0.15,
             "event_weight": 0.05, "herd_weight": 0.05,
             "herd_threshold": 0.2, "direct_shift_weight": 0.4,
             "anchor_drift_rate": 0.2,
         }
-        if os.path.exists(calibrated_path):
-            import json as _json
-            with open(calibrated_path) as f:
-                data = _json.load(f)
-                cal = data.get("calibrated_params", {})
-                base_params.update(cal)
+        try:
+            from core.simulation.param_loader import CalibratedParamLoader
+            loader = CalibratedParamLoader()
+            v2 = loader.get_params(domain=config.domain, include_uncertainty=True)
+            if v2 and v2.get("_source") in ("global", "domain"):
+                # Strip metadata; keep only model knobs
+                base_params.update({k: v for k, v in v2.items() if not k.startswith("_")})
+                posteriors = dict(v2.get("_ci95") or {})
+                logger.info(
+                    f"MC: using v2 posterior ({v2.get('_source')}) for {config.domain} "
+                    f"with CI95 on {sorted(posteriors.keys())}"
+                )
+        except Exception as exc:
+            logger.warning(f"MC: v2 posterior load failed ({exc}); falling back to v1 grid + ±{perturbation:.0%} uniform")
+
+        # Fallback chain — v1 grid file (no CI), then hardcoded defaults.
+        if not posteriors:
+            calibrated_path = os.path.join(
+                PROJECT_ROOT, "calibration", "results",
+                f"calibrated_params_{config.domain}.json"
+            )
+            if os.path.exists(calibrated_path):
+                import json as _json
+                with open(calibrated_path) as f:
+                    data = _json.load(f)
+                    cal = data.get("calibrated_params", {})
+                    base_params.update(cal)
+
+        mc_engine = MonteCarloEngine(
+            n_runs=n_runs,
+            perturbation_pct=perturbation,
+            posteriors=posteriors,
+        )
 
         # Build a GroundTruth-like structure for Monte Carlo
         polling = [

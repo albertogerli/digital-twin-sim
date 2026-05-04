@@ -36,6 +36,26 @@ class MonteCarloRoundResult:
 
 
 @dataclass
+class ScenarioCluster:
+    """A distinct trajectory-shape cluster discovered across MC runs.
+
+    Each cluster groups runs that share a similar trajectory (round-by-round
+    avg_position + final polarization), letting the UI show probabilistic
+    "what-if" scenarios instead of a single averaged outcome.
+    """
+    cluster_id: int
+    n_runs: int
+    pct: float  # share of all runs landing in this cluster
+    label: str  # semantic label derived from the cluster centroid
+    mean_final_position: float
+    mean_final_polarization: float
+    outcome_pro_pct: float  # pro share within this cluster only
+    outcome_against_pct: float
+    mean_trajectory: list[dict]  # [{round, avg_position, polarization}, ...]
+    run_ids: list[int]
+
+
+@dataclass
 class MonteCarloResult:
     """Complete Monte Carlo analysis result."""
     n_runs: int
@@ -51,17 +71,31 @@ class MonteCarloResult:
     outcome_against_pct: float
     parameter_sets: list[dict]
     per_run_summaries: list[dict]
+    scenario_clusters: list[ScenarioCluster] = field(default_factory=list)
 
 
 def perturb_params(
     base_params: dict,
     perturbation_pct: float = 0.15,
     seed: int = None,
+    posteriors: dict | None = None,
 ) -> dict:
-    """Perturb calibrated parameters by ±perturbation_pct.
+    """Sample a parameter set for one Monte Carlo run.
 
-    Uses uniform distribution around each parameter value.
-    Clamps to reasonable ranges.
+    If ``posteriors`` is provided as ``{param_name: (ci95_lo, ci95_hi)}``
+    (e.g. from ``CalibratedParamLoader.get_params(include_uncertainty=True)``
+    `_ci95` field), each posterior-covered parameter is drawn from
+    ``Normal(mean=base, sigma=(hi-lo)/3.92)`` (the 1.96·σ → CI95 mapping)
+    truncated to the safety range. This is the principled path: the
+    spread reflects measured uncertainty from the NumPyro hierarchical
+    fit, not an operator-tuned dial.
+
+    Parameters NOT covered by ``posteriors`` (or when ``posteriors`` is
+    None) fall back to a uniform ±perturbation_pct around the base value
+    — same legacy behaviour as before this commit.
+
+    Clamps every output to ``param_ranges`` so a wide CI tail can't push
+    a weight outside what OpinionDynamics tolerates.
     """
     rng = random.Random(seed)
     perturbed = {}
@@ -76,14 +110,23 @@ def perturb_params(
         "anchor_drift_rate": (0.05, 0.50),
     }
 
+    posteriors = posteriors or {}
+    Z95 = 1.959964  # 95% normal quantile
+
     for key, value in base_params.items():
-        if key in param_ranges:
-            lo, hi = param_ranges[key]
-            delta = value * perturbation_pct
-            perturbed_val = rng.uniform(value - delta, value + delta)
-            perturbed[key] = max(lo, min(hi, perturbed_val))
-        else:
+        if key not in param_ranges:
             perturbed[key] = value
+            continue
+        lo_safe, hi_safe = param_ranges[key]
+        ci = posteriors.get(key)
+        if ci is not None and ci[1] > ci[0]:
+            ci_lo, ci_hi = float(ci[0]), float(ci[1])
+            sigma = max(1e-6, (ci_hi - ci_lo) / (2 * Z95))
+            sampled = rng.gauss(value, sigma)
+        else:
+            delta = value * perturbation_pct
+            sampled = rng.uniform(value - delta, value + delta)
+        perturbed[key] = max(lo_safe, min(hi_safe, sampled))
 
     return perturbed
 
@@ -102,6 +145,140 @@ def _compute_ci(values: list[float], confidence: float = 0.95) -> tuple[float, f
     return (m - margin, m + margin)
 
 
+def _label_cluster(mean_final_position: float) -> str:
+    """Human-readable label for a cluster from its mean final avg_position."""
+    if mean_final_position >= 0.30:
+        return "Vittoria netta (Pro)"
+    if mean_final_position >= 0.10:
+        return "Vittoria risicata (Pro)"
+    if mean_final_position > -0.10:
+        return "Testa a testa"
+    if mean_final_position > -0.30:
+        return "Vittoria risicata (Contro)"
+    return "Vittoria netta (Contro)"
+
+
+def _compute_scenario_clusters(
+    all_runs: list[dict],
+    max_rounds: int,
+    random_state: int = 42,
+) -> list[ScenarioCluster]:
+    """Cluster MC runs by trajectory shape and emit per-cluster probabilities.
+
+    Feature vector per run = [pos_r1, ..., pos_rN, final_polarization/10].
+    K auto-selected in [2, 5] via silhouette; falls back to no clustering when
+    sklearn is unavailable or we have too few runs for the technique to be
+    meaningful (minimum 4 runs to support k=2 with ≥2 members per cluster).
+    """
+    if len(all_runs) < 4 or max_rounds < 1:
+        return []
+
+    try:
+        import numpy as np
+        from sklearn.cluster import KMeans
+        from sklearn.metrics import silhouette_score
+    except Exception as e:  # pragma: no cover - sklearn is a declared dep
+        logger.warning("sklearn unavailable, skipping scenario clustering: %s", e)
+        return []
+
+    # Build feature matrix (pad shorter runs with their last observed value)
+    features = []
+    for run in all_runs:
+        rounds = run.get("rounds", [])
+        traj = [r.get("avg_position", 0.0) for r in rounds[:max_rounds]]
+        if not traj:
+            traj = [0.0]
+        while len(traj) < max_rounds:
+            traj.append(traj[-1])
+        # Polarization is 0-10; normalize so it lives on a comparable scale.
+        traj.append(run.get("final_polarization", 0.0) / 10.0)
+        features.append(traj)
+
+    X = np.array(features, dtype=float)
+    # z-score normalize per feature; guard against zero-variance columns
+    mu = X.mean(axis=0)
+    sigma = X.std(axis=0)
+    sigma[sigma < 1e-9] = 1.0
+    X_norm = (X - mu) / sigma
+
+    max_k = min(5, len(all_runs) - 1)
+    best_k = None
+    best_score = -1.0
+    best_labels = None
+
+    for k in range(2, max_k + 1):
+        km = KMeans(n_clusters=k, random_state=random_state, n_init=10)
+        labels = km.fit_predict(X_norm)
+        if len(set(labels)) < 2:
+            continue
+        try:
+            score = silhouette_score(X_norm, labels)
+        except Exception:
+            continue
+        if score > best_score:
+            best_score = score
+            best_k = k
+            best_labels = labels
+
+    if best_k is None or best_labels is None:
+        # Fallback to k=2 deterministically
+        km = KMeans(n_clusters=2, random_state=random_state, n_init=10)
+        best_labels = km.fit_predict(X_norm)
+        best_k = 2
+
+    # Assemble cluster summaries
+    clusters: list[ScenarioCluster] = []
+    for cid in range(best_k):
+        member_idx = [i for i, lbl in enumerate(best_labels) if lbl == cid]
+        if not member_idx:
+            continue
+        members = [all_runs[i] for i in member_idx]
+
+        mean_traj = []
+        for rd in range(max_rounds):
+            pols = []
+            poss = []
+            for m in members:
+                rounds = m.get("rounds", [])
+                if rd < len(rounds):
+                    pols.append(rounds[rd].get("polarization", 0.0))
+                    poss.append(rounds[rd].get("avg_position", 0.0))
+            mean_traj.append({
+                "round": rd + 1,
+                "avg_position": round(mean(poss), 3) if poss else 0.0,
+                "polarization": round(mean(pols), 2) if pols else 0.0,
+            })
+
+        final_positions = [m.get("final_avg_position", 0.0) for m in members]
+        final_pols = [m.get("final_polarization", 0.0) for m in members]
+        mean_final_pos = mean(final_positions) if final_positions else 0.0
+        mean_final_pol = mean(final_pols) if final_pols else 0.0
+
+        pro = sum(1 for p in final_positions if p > 0.05)
+        against = sum(1 for p in final_positions if p < -0.05)
+        decided = pro + against or 1
+
+        clusters.append(ScenarioCluster(
+            cluster_id=cid,
+            n_runs=len(members),
+            pct=round(len(members) / len(all_runs) * 100, 1),
+            label=_label_cluster(mean_final_pos),
+            mean_final_position=round(mean_final_pos, 3),
+            mean_final_polarization=round(mean_final_pol, 2),
+            outcome_pro_pct=round(pro / decided * 100, 1),
+            outcome_against_pct=round(against / decided * 100, 1),
+            mean_trajectory=mean_traj,
+            run_ids=member_idx,
+        ))
+
+    # Sort by probability share (desc) and reindex
+    clusters.sort(key=lambda c: c.pct, reverse=True)
+    for new_id, c in enumerate(clusters):
+        c.cluster_id = new_id
+
+    return clusters
+
+
 class MonteCarloEngine:
     """Runs N simulations with perturbed parameters and aggregates results."""
 
@@ -110,10 +287,14 @@ class MonteCarloEngine:
         n_runs: int = 20,
         perturbation_pct: float = 0.15,
         base_seed: int = 42,
+        posteriors: dict | None = None,
     ):
         self.n_runs = n_runs
         self.perturbation_pct = perturbation_pct
         self.base_seed = base_seed
+        # When provided, perturb_params will sample each covered weight
+        # from its NumPyro posterior CI95 instead of uniform ±%.
+        self.posteriors = posteriors or {}
 
     def generate_parameter_sets(self, base_params: dict) -> list[dict]:
         """Generate N parameter sets: first is base, rest are perturbed."""
@@ -123,6 +304,7 @@ class MonteCarloEngine:
                 base_params,
                 perturbation_pct=self.perturbation_pct,
                 seed=self.base_seed + i,
+                posteriors=self.posteriors,
             ))
         return param_sets
 
@@ -194,6 +376,8 @@ class MonteCarloEngine:
         against_count = sum(1 for p in final_positions if p < -0.05)
         decided = pro_count + against_count or 1
 
+        scenario_clusters = _compute_scenario_clusters(all_runs, max_rounds)
+
         return MonteCarloResult(
             n_runs=self.n_runs,
             n_completed=len(all_runs),
@@ -216,6 +400,7 @@ class MonteCarloEngine:
                 }
                 for i, r in enumerate(all_runs)
             ],
+            scenario_clusters=scenario_clusters,
         )
 
     def result_to_dict(self, result: MonteCarloResult) -> dict:
@@ -261,4 +446,19 @@ class MonteCarloEngine:
                 for r in result.rounds
             ],
             "per_run": result.per_run_summaries,
+            "scenario_clusters": [
+                {
+                    "cluster_id": c.cluster_id,
+                    "n_runs": c.n_runs,
+                    "pct": c.pct,
+                    "label": c.label,
+                    "mean_final_position": c.mean_final_position,
+                    "mean_final_polarization": c.mean_final_polarization,
+                    "outcome_pro_pct": c.outcome_pro_pct,
+                    "outcome_against_pct": c.outcome_against_pct,
+                    "mean_trajectory": c.mean_trajectory,
+                    "run_ids": c.run_ids,
+                }
+                for c in result.scenario_clusters
+            ],
         }

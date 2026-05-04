@@ -362,7 +362,8 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
   return (
     <main className="flex flex-col h-[calc(100vh-44px)] text-ki-on-surface">
       {/* Sub-toolbar: identity + live indicator + actions */}
-      <div className="flex items-center gap-3 px-4 h-11 border-b border-ki-border bg-ki-surface-raised flex-shrink-0">
+      <div className="border-b border-ki-border bg-ki-surface-raised flex-shrink-0">
+       <div className="flex items-center gap-3 px-4 h-11 max-w-[1600px] mx-auto w-full">
         <div className="flex items-center gap-2 min-w-0 flex-1">
           {status?.domain && (
             <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted shrink-0">
@@ -403,10 +404,12 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             </Link>
           )}
         </div>
+       </div>
       </div>
 
       {/* KPI strip */}
-      <div className="flex border-b border-ki-border bg-ki-surface-raised flex-shrink-0">
+      <div className="border-b border-ki-border bg-ki-surface-raised flex-shrink-0">
+       <div className="flex max-w-[1600px] mx-auto w-full">
         <div className="flex-1 px-4 py-2 border-r border-ki-border">
           <div className="eyebrow">Status</div>
           <div className="text-[14px] font-medium text-ki-on-surface mt-0.5">{statusLabel}</div>
@@ -446,6 +449,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             {status?.brief || "—"}
           </div>
         </div>
+       </div>
       </div>
 
       {/* Phase indicator (only while a round is running) */}
@@ -459,7 +463,8 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
         </div>
       )}
 
-      <div className="flex-1 overflow-y-auto px-4 py-4">
+      <div className="flex-1 overflow-y-auto">
+       <div className="max-w-[1600px] mx-auto w-full px-4 py-4">
 
         {/* Briefing Progress (pre-round phase) — visible anche prima del primo evento */}
         <BriefingProgress steps={briefingSteps} visible={!!isBriefing} />
@@ -674,6 +679,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
         </div>
 
         <div ref={bottomRef} />
+       </div>
       </div>
     </main>
   );

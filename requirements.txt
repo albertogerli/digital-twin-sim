@@ -16,3 +16,7 @@ redis>=5.0.0
 structlog>=24.0.0
 sentry-sdk[fastapi]>=2.0.0
 prometheus-fastapi-instrumentator>=7.0.0
+# Stakeholder graph updater (RSS crawl + Google News)
+aiohttp>=3.9.0
+certifi>=2024.0.0
+feedparser>=6.0.0

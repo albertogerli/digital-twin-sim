@@ -16,7 +16,7 @@ from sse_starlette.sse import EventSourceResponse
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from api.models import (
     SimulationRequest, BranchRequest, ObservationInput, WargameIntervention,
     MAX_UPLOAD_SIZE_BYTES, MAX_UPLOAD_FILES,
@@ -691,3 +691,217 @@ async def health():
         "max_concurrent": int(os.getenv("DTS_MAX_CONCURRENT", "4")),
         "version": "1.0.0",
     }
+
+
+# ── Compliance: BYOD enclave + DORA export ───────────────────────
+
+@app.get("/api/compliance/byod/status")
+@cached(ttl_seconds=5.0)
+async def byod_status():
+    """Current BYOD mode + aggregate audit summary. Public diagnostic
+    so the frontend can show a status badge without credentials."""
+    from core.byod.sanitizer import audit_summary, get_mode
+    summary = audit_summary()
+    return {
+        "mode": get_mode().value,
+        "n_audit_rows": summary["n_rows"],
+        "by_site": summary["by_site"],
+        "by_category": summary["by_category"],
+    }
+
+
+@app.get("/api/compliance/byod/audit")
+@limiter.limit(LIMIT_READS)
+async def byod_audit_recent(
+    request: Request,
+    limit: int = 50,
+    tenant: Optional[Tenant] = Depends(verify_api_key),
+):
+    """Tail the BYOD audit log (last N rows). Used by the /compliance
+    page to render a recent-leakage table."""
+    import json as _json
+    from core.byod.sanitizer import DEFAULT_AUDIT_PATH
+    if not DEFAULT_AUDIT_PATH.exists():
+        return {"rows": [], "count": 0, "path": str(DEFAULT_AUDIT_PATH)}
+    rows = []
+    with DEFAULT_AUDIT_PATH.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rows.append(_json.loads(line))
+            except _json.JSONDecodeError:
+                continue
+    rows = rows[-max(1, min(limit, 1000)):]
+    return {"rows": rows, "count": len(rows)}
+
+
+class _ByodTestBody(BaseModel):
+    prompt: str = Field(..., max_length=20_000)
+    mode: Optional[str] = None  # OFF / LOG / STRICT / BLOCK
+
+
+@app.post("/api/compliance/byod/test")
+@limiter.limit(LIMIT_READS)
+async def byod_test(
+    body: _ByodTestBody,
+    request: Request,
+    tenant: Optional[Tenant] = Depends(verify_api_key),
+):
+    """Interactive sanitizer playground — paste a prompt, see what would
+    be redacted in STRICT mode without actually emitting an audit row."""
+    from core.byod.sanitizer import (
+        BYODMode, BYODLeakError, sanitize_prompt,
+    )
+    requested = (body.mode or "STRICT").upper()
+    try:
+        mode = BYODMode(requested)
+    except ValueError:
+        raise HTTPException(400, f"Invalid mode '{requested}' — use OFF/LOG/STRICT/BLOCK")
+    try:
+        # Use a tmp audit path so the playground never pollutes real audit log
+        import tempfile
+        from pathlib import Path
+        with tempfile.NamedTemporaryFile(suffix=".jsonl", delete=False) as tf:
+            tmp_path = Path(tf.name)
+        try:
+            res = sanitize_prompt(
+                body.prompt,
+                call_site="ui:byod_test",
+                mode=mode,
+                audit_path=tmp_path,
+                tenant="ui-playground",
+            )
+            return {
+                "mode": res.mode,
+                "input_chars": len(body.prompt),
+                "output_chars": len(res.text),
+                "sanitized_text": res.text,
+                "modified": res.modified,
+                "detections": res.detections,
+            }
+        finally:
+            tmp_path.unlink(missing_ok=True)
+    except BYODLeakError as e:
+        return {
+            "mode": "BLOCK",
+            "blocked": True,
+            "reason": str(e),
+            "detections": e.detections,
+        }
+
+
+@app.get("/api/compliance/dora/preview/{sim_id}")
+@limiter.limit(LIMIT_READS)
+async def dora_preview(
+    sim_id: str,
+    request: Request,
+    tenant: Optional[Tenant] = Depends(verify_api_key),
+):
+    """Preview the DORA classification for a completed simulation
+    *without* emitting the full XML. Used by the /compliance page to
+    render the 7-criterion grid before letting the user download."""
+    from core.dora.classification import classify_from_simulation
+    sim = await manager.get(sim_id, tenant_id=_tenant_id(tenant, request))
+    if not sim:
+        raise HTTPException(404, "Simulation not found")
+    if sim.status != "completed":
+        raise HTTPException(400, "Simulation must be completed to generate DORA report")
+
+    # Pull simulation metrics (best-effort, all fields optional)
+    metrics = (sim.result or {}).get("metrics", {}) if hasattr(sim, "result") else {}
+    cri = classify_from_simulation(
+        customers_affected=int(metrics.get("customers_affected", 0)),
+        economic_impact_eur=float(metrics.get("economic_impact_eur", 0.0)),
+        countries_affected=int(metrics.get("countries_affected", 1)),
+        polarization_peak=float(metrics.get("polarization_peak", 0.0)),
+        viral_posts_count=int(metrics.get("viral_posts_count", 0)),
+        data_records_lost=int(metrics.get("data_records_lost", 0)),
+        affected_core_functions=int(metrics.get("affected_core_functions", 0)),
+        downtime_hours=float(metrics.get("downtime_hours", 0.0)),
+    )
+    return {
+        "sim_id": sim_id,
+        "scenario_name": getattr(sim, "name", sim_id),
+        "classification": {
+            "clients_affected": cri.clients_affected,
+            "data_losses": cri.data_losses,
+            "reputational_impact": cri.reputational_impact,
+            "duration_downtime_hours": cri.duration_downtime_hours,
+            "geographical_spread": cri.geographical_spread,
+            "economic_impact_eur_band": cri.economic_impact_eur_band,
+            "criticality_of_services_affected": cri.criticality_of_services_affected,
+        },
+        "is_major": cri.is_major(),
+        "metrics_used": metrics,
+    }
+
+
+@app.get("/api/compliance/dora/export/{sim_id}")
+@limiter.limit(LIMIT_READS)
+async def dora_export(
+    sim_id: str,
+    request: Request,
+    tenant: Optional[Tenant] = Depends(verify_api_key),
+):
+    """Download the DORA Major Incident Report XML for a completed sim."""
+    from datetime import datetime, timezone
+    from fastapi.responses import Response
+    from core.dora.classification import classify_from_simulation
+    from core.dora.exporter import build_incident_report
+    from core.dora.schema import (
+        FinancialEntity, IncidentType, ReportType, RootCauseCategory,
+    )
+
+    sim = await manager.get(sim_id, tenant_id=_tenant_id(tenant, request))
+    if not sim:
+        raise HTTPException(404, "Simulation not found")
+    if sim.status != "completed":
+        raise HTTPException(400, "Simulation must be completed to generate DORA report")
+
+    metrics = (sim.result or {}).get("metrics", {}) if hasattr(sim, "result") else {}
+    cri = classify_from_simulation(
+        customers_affected=int(metrics.get("customers_affected", 0)),
+        economic_impact_eur=float(metrics.get("economic_impact_eur", 0.0)),
+        countries_affected=int(metrics.get("countries_affected", 1)),
+        polarization_peak=float(metrics.get("polarization_peak", 0.0)),
+        viral_posts_count=int(metrics.get("viral_posts_count", 0)),
+        data_records_lost=int(metrics.get("data_records_lost", 0)),
+        affected_core_functions=int(metrics.get("affected_core_functions", 0)),
+        downtime_hours=float(metrics.get("downtime_hours", 0.0)),
+    )
+
+    # Tenant-derived entity placeholder — real deployment overrides this
+    # via env vars or a tenant config table.
+    entity = FinancialEntity(
+        legal_name=os.getenv("DORA_ENTITY_NAME", "Tenant Entity (placeholder)"),
+        lei_code=os.getenv("DORA_ENTITY_LEI", "00000000000000000000"),
+        competent_authority=os.getenv("DORA_COMPETENT_AUTHORITY", "Banca d'Italia"),
+        country=os.getenv("DORA_ENTITY_COUNTRY", "IT"),
+    )
+
+    now = datetime.now(timezone.utc)
+    xml = build_incident_report(
+        reference_number=f"{(getattr(sim, 'name', sim_id) or sim_id)[:30]}-{sim_id[:8]}",
+        report_type=ReportType.FINAL,
+        entity=entity,
+        classification=cri,
+        incident_type=IncidentType.AVAILABILITY,
+        root_cause_category=RootCauseCategory.SYSTEM_FAILURE,
+        root_cause_description=getattr(sim, "brief", "Simulator-derived crisis scenario.")[:1800],
+        detected_at=now,
+        classified_at=now,
+        customers_affected=int(metrics.get("customers_affected", 0)) or None,
+        economic_impact_eur=float(metrics.get("economic_impact_eur", 0.0)) or None,
+        notified_clients=bool(metrics.get("notified_clients", False)),
+        public_communication_issued=bool(metrics.get("public_communication_issued", False)),
+        permanent_remediation_summary=metrics.get("permanent_remediation_summary"),
+        lessons_learned=metrics.get("lessons_learned"),
+    )
+    filename = f"dora_incident_{sim_id[:8]}.xml"
+    return Response(
+        content=xml,
+        media_type="application/xml",
+        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+    )

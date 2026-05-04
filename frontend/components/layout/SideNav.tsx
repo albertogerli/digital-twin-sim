@@ -10,11 +10,12 @@ import { usePathname } from "next/navigation";
    ─────────────────────────────────────────────────────────── */
 
 const NAV_ITEMS = [
-  { href: "/",         label: "Dashboard",     icon: "grid_view" },
-  { href: "/new",      label: "New simulation",icon: "add" },
-  { href: "/wargame",  label: "Wargame",       icon: "swords" },
-  { href: "/backtest", label: "Backtest",      icon: "target" },
-  { href: "/paper",    label: "Paper",         icon: "description" },
+  { href: "/",           label: "Dashboard",      icon: "grid_view" },
+  { href: "/new",        label: "New simulation", icon: "add" },
+  { href: "/wargame",    label: "Wargame",        icon: "swords" },
+  { href: "/backtest",   label: "Backtest",       icon: "target" },
+  { href: "/compliance", label: "Compliance",     icon: "verified_user" },
+  { href: "/paper",      label: "Paper",          icon: "description" },
 ];
 
 const BOTTOM_ITEMS = [

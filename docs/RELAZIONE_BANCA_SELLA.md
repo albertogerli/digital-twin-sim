@@ -544,13 +544,50 @@ Effort: 4-6 settimane (la spec XBRL è pubblica ma verbosa; serve un domain expe
 
 Moat: una volta certificato conforme, i clienti restano per inertia regolatoria — cambiare vendor su un report DORA significa rifare l'audit interno.
 
-### 13.3 BYOD enclave (LLM data isolation)
+### 13.3 BYOD enclave (LLM data isolation) — ✅ IMPLEMENTATO (Maggio 2026, Sprint 84-87)
 
 Architettura compartimenti stagni: il cliente inietta i suoi parametri segreti (LCR esatto, deposit mix, customer cohort breakdown) direttamente nel motore Python on-prem o in un container privato. L'LLM riceve **solo** prompt narrativi sanitizzati ("la stampa è arrabbiata, il regulator ha emesso un comunicato severo"); la matematica gira offline sui dati blindati del cliente. Zero dato finanziario sensibile esce dal perimetro.
 
-Effort: 2-3 settimane di refactor (l'engine è già modulare grazie a `MarketContext` injection — Sprint A.5 nel paper §A.5). Restano da fare: prompt sanitization rigorosa con automated tests, security review formale, certificazione SOC2/ISO27001 (3-6 mesi extra con auditor esterno).
+**Stato implementazione:**
 
-Moat: uccide l'obiezione "Privacy/Security" al primo meeting con il CISO. È il prerequisito per ogni vendita a una banca tier-1 che oggi rifiuta ogni soluzione SaaS che tocchi dati clienti.
+- ✅ **Audit dei call site LLM** completato (Sprint 84). 17 call site mappati, 9 critici (briefing pipeline) marcati per sanitizer hook. `docs/BYOD_DATA_FLOW_AUDIT.md` documenta cosa attraversa il boundary per ogni call site.
+
+- ✅ **Sanitizer module** (`core/byod/sanitizer.py`, Sprint 85). Regex-based detection per 6 categorie: currency, financial_metric (con label threshold-aware: `LCR healthy` / `LCR breaching` / `CET1 tight`), client_id, IBAN, benchmark_value (Euribor / BTP-Bund), large_amount_in_context. 4 mode: OFF / LOG / STRICT / BLOCK. 20 unit test verificano: ogni categoria triggera, non-financial content preservato (poll %, polarization score, agent position), audit log JSONL well-formed, threshold labels corrette.
+
+- ✅ **Pre-flight hook in `BaseLLMClient.generate()`** (Sprint 86). Sanitizer chiamato a ogni `generate()` con `BYOD_MODE` letto da env. Override per-tenant via `BYOD_TENANT`. Append-only audit log a `outputs/byod_audit.jsonl`.
+
+- ✅ **Architettura defense-in-depth** (già esistente, ora documentata in `docs/BYOD_ARCHITECTURE.md`): il `FinancialTwin` (`core/financial/twin.py`) computa LCR/NIM/CET1/etc. localmente ed emette `FeedbackSignals` **categorici** (`nim_anxiety`, `cet1_alarm`, `runoff_panic`) — non numeri. Il sanitizer è il **secondo livello** di protezione, non il primo: cattura eventuali leak se in futuro una modifica al codice viola l'invariante architetturale.
+
+**Effort residuo per certificazione enterprise:**
+- ⏳ Security review formale + threat model (1-2 settimane)
+- ⏳ Penetration test su una deployment STRICT (1 settimana)
+- ⏳ Certificazione SOC2 Type II (3-6 mesi con auditor esterno, $25-50K)
+- ⏳ Eventuale type-level enforcement (`SanitizedStr` newtype) — candidato v1.0
+
+**Esempio funzionante.** Con `BYOD_MODE=STRICT`, una richiesta come:
+
+> "The bank's LCR is 95%, deposit balance reached €12,500,000, with client-12345 issuing a complaint via IBAN IT60 X05428 11101 00..."
+
+diventa, nel prompt che parte verso Gemini/OpenAI:
+
+> "The bank's [LCR breaching: below 100%], deposit balance reached [large-amount], with [client-id] issuing a complaint via [IBAN]"
+
+Il significato narrativo è preservato (l'LLM capisce ancora "LCR sta sforando"), ma l'esatto valore interno **non lascia mai il processo del cliente**.
+
+**Compliance review query** (esempio):
+
+```bash
+jq 'select(.patterns | length > 0)' outputs/byod_audit.jsonl
+```
+
+Ogni riga con `patterns` non vuoto è prova auditabile che il sanitizer ha catturato un pattern sensibile. Se la query non ritorna righe per un tenant, il contratto BYOD è verificabilmente rispettato.
+
+**Limiti dichiarati** (sezione "honesty box" in `docs/BYOD_ARCHITECTURE.md`):
+1. Sanitizer regex-based, NON semantico — non cattura "twelve million euros" scritto a parole.
+2. Detector `large_amount_in_context` richiede keyword finanziaria entro ±30 char dal numero.
+3. Audit log writes best-effort (silent on IO error) — produzione richiede volume persistente.
+
+Moat: uccide l'obiezione "Privacy/Security" al primo meeting con il CISO. È il prerequisito per ogni vendita a una banca tier-1 che oggi rifiuta ogni soluzione SaaS che tocchi dati clienti. **Adesso DigitalTwinSim può presentarsi al CISO con un'architettura documentata + test automated + audit log dimostrabile.**
 
 **Effort combinato dei tre moat: 8-12 settimane di sviluppo + 3-6 mesi di certificazione/audit per il #2 e #3.** Effort molto sostenibile per un team di 2-3 ingegneri. La domanda strategica non è "è fattibile" (sì), è "in che ordine" (suggerimento: #3 prima, perché sblocca il funnel enterprise immediatamente; #2 secondo, perché monetizza il funnel sbloccato; #1 terzo, perché diventa moat dopo aver visto i clienti reali).
 

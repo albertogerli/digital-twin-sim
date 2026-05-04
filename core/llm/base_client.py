@@ -20,11 +20,26 @@ from typing import Optional
 from .usage_stats import UsageStats
 from .json_parser import parse_json_response, LLMError, BudgetExceededError
 
+# BYOD enclave hook — read at every generate() call so changing
+# BYOD_MODE between calls (per tenant, in tests) takes effect immediately.
+try:
+    from core.byod.sanitizer import sanitize_prompt as _byod_sanitize
+    _BYOD_AVAILABLE = True
+except ImportError:
+    _BYOD_AVAILABLE = False
+
 logger = logging.getLogger(__name__)
 
 # Heuristic reservation for an in-flight call; the real cost is committed
 # when `_call_api` records tokens via UsageStats.record().
-_DEFAULT_RESERVATION_USD = 0.005
+# Calibrated to gemini-3.1-flash-lite-preview actual per-call cost (~$0.0008).
+_DEFAULT_RESERVATION_USD = 0.001
+
+# Soft-cap factor: allow reservations to project up to budget * this before
+# rejecting. Real cost is still bounded by per-call API behaviour and retry
+# limits; this prevents the reservation heuristic from saturating the budget
+# with 10+ concurrent cheap calls whose real cost is a fraction of the reserve.
+_BUDGET_SOFT_CAP = 1.2
 
 
 class BaseLLMClient(ABC):
@@ -48,13 +63,34 @@ class BaseLLMClient(ABC):
 
         Returns the reserved amount, which MUST be released via
         `_release_reservation` once the call completes (success or failure).
+
+        Hard rejects only when *actually spent* exceeds budget, or when the
+        projected (spent + reservations) exceeds the soft cap (budget * 1.2).
+        Between 1.0x and 1.2x of budget we log a warning but let the call
+        through — real cost per flash-lite call is ~6x lower than the
+        reservation, so the soft overshoot is typically absorbed.
         """
         async with self._budget_lock:
-            projected = self.stats.total_cost + self._reserved_cost + self._reservation_usd
-            if projected > self.budget:
+            if self.stats.total_cost >= self.budget:
                 raise BudgetExceededError(
-                    f"Budget would be exceeded: ${projected:.4f} > ${self.budget:.2f} "
-                    f"(spent=${self.stats.total_cost:.4f}, in-flight=${self._reserved_cost:.4f})"
+                    f"Budget exhausted: spent ${self.stats.total_cost:.4f} >= "
+                    f"${self.budget:.2f}"
+                )
+            projected = self.stats.total_cost + self._reserved_cost + self._reservation_usd
+            soft_cap = self.budget * _BUDGET_SOFT_CAP
+            if projected > soft_cap:
+                raise BudgetExceededError(
+                    f"Budget soft-cap exceeded: ${projected:.4f} > ${soft_cap:.4f} "
+                    f"(budget=${self.budget:.2f}, spent=${self.stats.total_cost:.4f}, "
+                    f"in-flight=${self._reserved_cost:.4f})"
+                )
+            if projected > self.budget:
+                logger.warning(
+                    f"Budget reservation overshoot tolerated: projected "
+                    f"${projected:.4f} > budget ${self.budget:.2f} "
+                    f"(within {_BUDGET_SOFT_CAP}x soft-cap). "
+                    f"spent=${self.stats.total_cost:.4f}, "
+                    f"in-flight=${self._reserved_cost:.4f}"
                 )
             self._reserved_cost += self._reservation_usd
             return self._reservation_usd
@@ -95,7 +131,28 @@ class BaseLLMClient(ABC):
         response_json: bool = True,
         retries: int = 4,
     ) -> str:
-        """Generate content with retry, rate limiting, and cost tracking."""
+        """Generate content with retry, rate limiting, and cost tracking.
+
+        BYOD enclave: when ``BYOD_MODE`` ∈ {LOG, STRICT, BLOCK} the prompt
+        and system_prompt are passed through ``core.byod.sanitizer`` before
+        leaving this process. STRICT redacts financial-sensitive content
+        in-place; BLOCK raises ``BYODLeakError``; LOG audits without
+        modifying. OFF (default) is a passthrough — no-cost.
+        """
+        # ── BYOD prompt sanitization (pre-flight) ──
+        # When BYOD_MODE != OFF (default), redact financial-sensitive
+        # content before the prompt leaves the process. STRICT redacts +
+        # audits; BLOCK raises on detected leak; LOG audits without
+        # modifying. OFF is a no-op.
+        if _BYOD_AVAILABLE:
+            res = _byod_sanitize(prompt, call_site=f"llm:{component}")
+            if res.modified:
+                prompt = res.text
+            if system_prompt is not None:
+                sres = _byod_sanitize(system_prompt, call_site=f"llm:{component}:system")
+                if sres.modified:
+                    system_prompt = sres.text
+
         async with self._semaphore:
             reserved = await self._reserve_budget()
             try:

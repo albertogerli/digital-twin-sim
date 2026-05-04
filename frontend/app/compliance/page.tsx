@@ -90,7 +90,7 @@ const LEVEL_TONE: Record<string, string> = {
 };
 
 export default function CompliancePage() {
-  const [tab, setTab] = useState<"byod" | "dora">("byod");
+  const [tab, setTab] = useState<"byod" | "dora" | "calibration">("byod");
 
   return (
     <div className="min-h-screen bg-ki-surface text-ki-on-surface">
@@ -108,10 +108,11 @@ export default function CompliancePage() {
             </Link>
           </div>
           <p className="text-[12px] text-ki-on-surface-muted mt-1 max-w-3xl">
-            Two regulatory tracks. <strong>BYOD</strong>: zero customer-sensitive data leaves the
-            process to the LLM provider — sanitizer + audit log per Reg. (EU) 2022/2554. <strong>DORA</strong>:
-            Major Incident Report XML auto-generated from any completed wargame scenario per
-            EBA/EIOPA/ESMA JC 2024-43 (Art. 19-20).
+            Three regulatory tracks. <strong>BYOD</strong>: zero customer-sensitive data leaves the
+            process to the LLM provider. <strong>DORA</strong>: Major Incident Report XML
+            auto-generated from any completed wargame scenario.
+            <strong> Self-calibration</strong>: nightly shadow forecasts scored against realised
+            yfinance returns — the data network effect that compounds with operating time.
           </p>
         </div>
         <div className="px-6 max-w-6xl mx-auto flex gap-1">
@@ -121,11 +122,14 @@ export default function CompliancePage() {
           <TabBtn active={tab === "dora"} onClick={() => setTab("dora")}>
             DORA export
           </TabBtn>
+          <TabBtn active={tab === "calibration"} onClick={() => setTab("calibration")}>
+            Self-calibration
+          </TabBtn>
         </div>
       </header>
 
       <main className="px-6 py-6 max-w-6xl mx-auto">
-        {tab === "byod" ? <ByodPanel /> : <DoraPanel />}
+        {tab === "byod" ? <ByodPanel /> : tab === "dora" ? <DoraPanel /> : <CalibrationPanel />}
       </main>
     </div>
   );
@@ -588,6 +592,203 @@ function ComplianceLink({ href, children }: { href: string; children: React.Reac
       <a href={href} target="_blank" rel="noopener" className="underline hover:text-ki-on-surface">
         {children}
       </a>
+    </div>
+  );
+}
+
+/* ───────────────────────────────────────────────────────────
+   Self-calibration panel
+   ─────────────────────────────────────────────────────────── */
+
+interface CalibrationSummary {
+  n_forecasts: number;
+  n_evaluations: number;
+  last_forecast_date: string | null;
+  last_evaluation_date: string | null;
+  mae_t1_running: number | null;
+  mae_t3_running: number | null;
+  mae_t7_running: number | null;
+  direction_acc_t1: number | null;
+  by_ticker: Record<string, { mae_t1?: number; mae_t3?: number; mae_t7?: number }>;
+}
+
+interface CalibrationRow {
+  forecast_date: string;
+  ticker: string;
+  horizon_days: number;
+  predicted_pct: number;
+  realized_pct: number;
+  abs_error_pp: number;
+  evaluated_at: string;
+}
+
+function CalibrationPanel() {
+  const [summary, setSummary] = useState<CalibrationSummary | null>(null);
+  const [rows, setRows] = useState<CalibrationRow[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    Promise.all([
+      fetch(`${API_BASE}/api/compliance/calibration/summary`).then((r) => r.json()),
+      fetch(`${API_BASE}/api/compliance/calibration/recent?limit=30`).then((r) => r.json()),
+    ])
+      .then(([s, r]) => {
+        setSummary(s);
+        setRows(r.rows ?? []);
+        setLoading(false);
+      })
+      .catch((e) => {
+        setError(String(e));
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div className="text-[12px] text-ki-on-surface-muted">Loading calibration history<span className="cursor-blink">_</span></div>;
+  }
+  if (error || !summary) {
+    return <div className="text-[12px] text-ki-on-surface-muted">Calibration history unavailable: {error}</div>;
+  }
+
+  const empty = summary.n_forecasts === 0;
+
+  return (
+    <div className="space-y-6">
+      {/* Top stats strip */}
+      <section className="border border-ki-border rounded p-5 bg-ki-surface-raised">
+        <div className="eyebrow text-ki-primary mb-3">Loop status</div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <Stat label="Forecasts recorded" value={summary.n_forecasts.toLocaleString()} />
+          <Stat label="Evaluations scored" value={summary.n_evaluations.toLocaleString()} />
+          <Stat label="Last forecast" value={summary.last_forecast_date ?? "—"} />
+          <Stat label="Last evaluation" value={summary.last_evaluation_date?.slice(0, 10) ?? "—"} />
+        </div>
+        {empty && (
+          <p className="text-[11px] text-ki-on-surface-muted mt-3">
+            No forecasts yet. Run on the host machine:&nbsp;
+            <code>python scripts/continuous_calibration.py forecast</code>.
+            T+7 evaluations require waiting 7 trading days after the first forecast.
+          </p>
+        )}
+      </section>
+
+      {/* Running MAE cards */}
+      <section className="border border-ki-border rounded p-5">
+        <div className="eyebrow text-ki-primary mb-3">Running mean absolute error vs realised yfinance returns</div>
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
+          <MaeCard label="MAE T+1" value={summary.mae_t1_running} />
+          <MaeCard label="MAE T+3" value={summary.mae_t3_running} />
+          <MaeCard label="MAE T+7" value={summary.mae_t7_running} />
+          <DirCard label="Direction acc T+1" value={summary.direction_acc_t1} />
+        </div>
+      </section>
+
+      {/* By ticker */}
+      <section className="border border-ki-border rounded p-5">
+        <div className="eyebrow text-ki-primary mb-3">By ticker</div>
+        {Object.keys(summary.by_ticker).length === 0 ? (
+          <div className="text-[12px] text-ki-on-surface-muted">No per-ticker history yet.</div>
+        ) : (
+          <table className="w-full text-[12px]">
+            <thead>
+              <tr className="text-left border-b border-ki-border">
+                <th className="py-1.5 font-medium text-ki-on-surface-muted">Ticker</th>
+                <th className="py-1.5 font-medium text-ki-on-surface-muted text-right">MAE T+1</th>
+                <th className="py-1.5 font-medium text-ki-on-surface-muted text-right">MAE T+3</th>
+                <th className="py-1.5 font-medium text-ki-on-surface-muted text-right">MAE T+7</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(summary.by_ticker)
+                .sort()
+                .map(([tk, m]) => (
+                  <tr key={tk} className="border-b border-ki-border last:border-0">
+                    <td className="py-1.5 font-data">{tk}</td>
+                    <td className="py-1.5 text-right font-data tabular-nums">{m.mae_t1 != null ? `${m.mae_t1.toFixed(2)}pp` : "—"}</td>
+                    <td className="py-1.5 text-right font-data tabular-nums">{m.mae_t3 != null ? `${m.mae_t3.toFixed(2)}pp` : "—"}</td>
+                    <td className="py-1.5 text-right font-data tabular-nums">{m.mae_t7 != null ? `${m.mae_t7.toFixed(2)}pp` : "—"}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        )}
+      </section>
+
+      {/* Recent evaluations table */}
+      <section className="border border-ki-border rounded p-5">
+        <div className="eyebrow text-ki-primary mb-3">Recent evaluations</div>
+        {rows.length === 0 ? (
+          <div className="text-[12px] text-ki-on-surface-muted">No evaluations recorded yet.</div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-[11px]">
+              <thead>
+                <tr className="text-left border-b border-ki-border">
+                  <th className="py-1.5 font-medium text-ki-on-surface-muted">Forecast date</th>
+                  <th className="py-1.5 font-medium text-ki-on-surface-muted">Ticker</th>
+                  <th className="py-1.5 font-medium text-ki-on-surface-muted">Horizon</th>
+                  <th className="py-1.5 font-medium text-ki-on-surface-muted text-right">Predicted</th>
+                  <th className="py-1.5 font-medium text-ki-on-surface-muted text-right">Realised</th>
+                  <th className="py-1.5 font-medium text-ki-on-surface-muted text-right">|err|</th>
+                  <th className="py-1.5 font-medium text-ki-on-surface-muted">Scored</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr key={i} className="border-b border-ki-border last:border-0">
+                    <td className="py-1.5 font-data">{r.forecast_date}</td>
+                    <td className="py-1.5 font-data">{r.ticker}</td>
+                    <td className="py-1.5 font-data">T+{r.horizon_days}</td>
+                    <td className={`py-1.5 text-right font-data tabular-nums ${r.predicted_pct >= 0 ? "text-emerald-700" : "text-red-700"}`}>
+                      {r.predicted_pct >= 0 ? "+" : ""}{r.predicted_pct.toFixed(2)}pp
+                    </td>
+                    <td className={`py-1.5 text-right font-data tabular-nums ${r.realized_pct >= 0 ? "text-emerald-700" : "text-red-700"}`}>
+                      {r.realized_pct >= 0 ? "+" : ""}{r.realized_pct.toFixed(2)}pp
+                    </td>
+                    <td className="py-1.5 text-right font-data tabular-nums">{r.abs_error_pp.toFixed(2)}pp</td>
+                    <td className="py-1.5 font-data text-ki-on-surface-muted">{r.evaluated_at?.slice(0, 16)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </section>
+
+      <ComplianceLink href="https://github.com/albertogerli/digital-twin-sim/blob/main/scripts/continuous_calibration.py">
+        scripts/continuous_calibration.py — CLI scheduler →
+      </ComplianceLink>
+    </div>
+  );
+}
+
+function MaeCard({ label, value }: { label: string; value: number | null }) {
+  return (
+    <div className="border border-ki-border rounded p-3">
+      <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted">{label}</div>
+      <div className="font-data tabular text-[20px] font-medium mt-1">
+        {value != null ? `${value.toFixed(2)} pp` : "—"}
+      </div>
+    </div>
+  );
+}
+
+function DirCard({ label, value }: { label: string; value: number | null }) {
+  const pct = value != null ? Math.round(value * 100) : null;
+  const tone = pct == null
+    ? "bg-gray-50 text-gray-700 border-gray-200"
+    : pct >= 60
+      ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+      : pct >= 50
+        ? "bg-amber-50 text-amber-700 border-amber-200"
+        : "bg-red-50 text-red-700 border-red-200";
+  return (
+    <div className={`border rounded p-3 ${tone}`}>
+      <div className="text-[10px] uppercase tracking-wider opacity-80">{label}</div>
+      <div className="font-data tabular text-[20px] font-medium mt-1">
+        {pct != null ? `${pct}%` : "—"}
+      </div>
     </div>
   );
 }

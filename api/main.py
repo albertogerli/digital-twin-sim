@@ -905,3 +905,34 @@ async def dora_export(
         media_type="application/xml",
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
+
+
+# ── Self-calibration (continuous) ─────────────────────────────
+
+@app.get("/api/compliance/calibration/summary")
+@cached(ttl_seconds=30.0)
+async def calibration_summary():
+    """Running aggregate from the continuous self-calibration loop —
+    n forecasts/evaluations, MAE per horizon, direction acc, per-ticker."""
+    from core.calibration.continuous import running_summary
+    s = running_summary()
+    return {
+        "n_forecasts": s.n_forecasts,
+        "n_evaluations": s.n_evaluations,
+        "last_forecast_date": s.last_forecast_date,
+        "last_evaluation_date": s.last_evaluation_date,
+        "mae_t1_running": s.mae_t1_running,
+        "mae_t3_running": s.mae_t3_running,
+        "mae_t7_running": s.mae_t7_running,
+        "direction_acc_t1": s.direction_acc_t1,
+        "by_ticker": s.by_ticker,
+    }
+
+
+@app.get("/api/compliance/calibration/recent")
+@cached(ttl_seconds=10.0)
+async def calibration_recent(limit: int = 30):
+    """Tail recent evaluations for the UI table."""
+    from core.calibration.continuous import recent_evaluations
+    rows = recent_evaluations(limit=max(1, min(limit, 200)))
+    return {"rows": rows, "count": len(rows)}

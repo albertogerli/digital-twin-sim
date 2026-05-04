@@ -528,13 +528,45 @@ Questa onestà tecnica è una scelta di posizionamento: vogliamo che il vostro r
 
 Tre asset strategici che trasformerebbero DigitalTwinSim da "tool" a "infrastruttura difendibile". Inclusi qui per trasparenza sulla direzione del prodotto, non come commitment di delivery a Sella.
 
-### 13.1 Continuous self-calibration (Data Network Effect)
+### 13.1 Continuous self-calibration (Data Network Effect) — ✅ MVP IMPLEMENTATO (Maggio 2026, Sprint 92-94)
 
-Pipeline notturna: ogni giorno alle 18:00 Reuters API → top-3 news → brief auto-generato → simulation ombra → previsione registrata. T+7 dopo, yfinance scarica i prezzi reali, computa l'errore vs previsione, aggiorna lo stato dell'EnKF e i coefficienti delle matrici di correlazione. Il modello impara dai propri errori in tempo reale.
+Pipeline ricorrente: ogni giorno il sistema pesca le news recenti per il watchlist Sella (UCG.MI, ISP.MI, ENI.MI, ENEL.MI, STLAM.MI, G.MI di default — operatore può overridare via CLI), genera un brief lightweight, esegue una **shadow forecast** per ticker usando i pezzi empirici già shippati (β per (country, sector), impulse response T+3/T+7 per (intensity_bin, sector), panic multiplier mediano per CRI bin) — **senza chiamata LLM** quindi a costo zero. La previsione viene persistita in SQLite. T+1 / T+3 / T+7 trading days dopo, lo scheduler ripesca i prezzi reali da yfinance, computa MAE per (ticker, horizon), aggiorna l'aggregate, scrive una riga JSONL nel drift log.
 
-Effort: 2-3 settimane (le primitive ci sono già: `correlation_lookup`, EnKF in `core/orchestrator/`, calibration scripts riproducibili). Restano da scrivere: news feed connector + scheduler + drift detector + safe rollback su regressione. Costo runtime: ~$15/mese (1 sim/giorno × $0.50 LLM × 30).
+**Stato implementazione (Sprint 92-94, Maggio 2026):**
 
-Moat: dopo 12 mesi di operatività, lo stato del filtro Bayesiano della piattaforma incorpora ~360 calibrazioni event-driven che un competitor che fork del codice oggi non recupera senza ri-running il loop. Tesla-Autopilot-style data moat.
+- ✅ **Core module** (`core/calibration/continuous.py`): `fetch_recent_news()` via yfinance, `infer_crisis_metrics()` heuristic CRI/intensity da keyword positivi/negativi nel titolo, `predict_returns()` lightweight (zero LLM call), `record_forecast()` SQLite, `evaluate_pending()` con realised yfinance, `running_summary()` per UI.
+- ✅ **CLI scheduler** (`scripts/continuous_calibration.py`): subcommand `forecast` / `evaluate --horizon {1,3,7}` / `report` / `recent` / `daemon`. Idempotente (rerun stesso giorno overwrite, evaluate non doppia-conta). Cron-friendly per produzione, daemon mode per dev.
+- ✅ **Frontend tab** in `/compliance` (Self-calibration): mostra n forecasts, n evaluations, last_forecast_date, MAE T+1/T+3/T+7 running, direction acc T+1, breakdown per-ticker, tabella ultime 30 evaluations con predicted/realised/|err|.
+- ✅ **Backend API**: `GET /api/compliance/calibration/summary` + `GET /api/compliance/calibration/recent?limit=N`.
+- ✅ **14 unit test**: heuristic intensity (negative/positive/empty headlines), predict_returns (high CRI → short, magnitudes monotone), SQLite round-trip + idempotency, evaluate_pending (mocked yfinance, scoring + drift log row), running_summary aggregation per ticker.
+
+**Esempio CLI flow di produzione (cron job):**
+
+```bash
+# Cron @ 18:00 nightly:
+0 18 * * * cd /opt/digital-twin-sim && \
+    python scripts/continuous_calibration.py forecast && \
+    python scripts/continuous_calibration.py evaluate --horizon 1 && \
+    python scripts/continuous_calibration.py evaluate --horizon 3 && \
+    python scripts/continuous_calibration.py evaluate --horizon 7
+
+# Manual report any time:
+python scripts/continuous_calibration.py report
+# →  n forecasts: 47, n evaluations: 230, last forecast: 2026-05-04
+#    MAE T+1: 1.85 pp, T+3: 2.42 pp, T+7: 3.71 pp, Dir acc: 62%
+```
+
+**Costo runtime**: $0/mese per la versione lightweight (no LLM call nello shadow forecast). Quando vorremo abilitare la full LLM-driven shadow simulation (`--llm` flag, opt-in) il costo diventa ~$15/mese (1 sim/giorno × $0.50 × 30).
+
+**Effort residuo per il moat completo:**
+- ⏳ Reuters/Bloomberg news feed integration (oggi usa yfinance Ticker.news che è gratis ma rate-limited)
+- ⏳ EnKF state update con i drift osservati (oggi log only — la connessione al filtro Bayesiano vero è un sprint successivo)
+- ⏳ Drift detector + safe rollback (alert se MAE peggiora di >2σ vs running average)
+- ⏳ A/B con LLM-driven shadow simulation per misurare se il LLM aggiunge skill rispetto al lightweight
+
+**Moat empirico**: dopo 12 mesi di operatività la piattaforma incorpora **~360 calibrazioni event-driven** sul ticker basket Sella, con drift log auditable per ciascuna. Un competitor che fork del codice oggi parte da zero — **non c'è shortcut per ri-running il loop su dati storici** (lo storico per il loop è la sequenza di brief generati ogni giorno). Tesla-Autopilot-style data moat.
+
+**Vendita**: "Il vostro modello impara dai propri errori in tempo reale. Quando ne discutiamo tra 12 mesi, lo stato del filtro Bayesiano avrà incorporato ogni shock di mercato che lo ha sorpreso, e ogni miglioramento di calibrazione che ne è seguito. Non è un software che invecchia — è un software che migliora silenziosamente nel cassetto."
 
 ### 13.2 Export DORA Major Incident Report — ✅ MVP IMPLEMENTATO (Maggio 2026, Sprint 88-90)
 

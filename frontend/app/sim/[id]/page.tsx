@@ -443,7 +443,7 @@ export default function SimulationLiveDashboard({ params }: { params: { id: stri
             ${(status?.cost || 0).toFixed(3)}
           </div>
         </div>
-        <div className="flex-1 px-4 py-2">
+        <div className="flex-1 min-w-0 px-4 py-2">
           <div className="eyebrow">Brief</div>
           <div className="text-[12px] text-ki-on-surface-secondary mt-0.5 truncate" title={status?.brief}>
             {status?.brief || "—"}

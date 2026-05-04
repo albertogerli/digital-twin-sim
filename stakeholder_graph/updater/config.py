@@ -53,7 +53,7 @@ class UpdaterConfig:
     match_title_boost: bool = True         # name in title = automatic match
 
     # ── LLM Analysis ──
-    llm_model: str = "gemini-2.0-flash"
+    llm_model: str = "gemini-3.1-flash-lite-preview"
     llm_concurrency: int = 5
     llm_rate_limit_delay: float = 0.5
     max_articles_per_stakeholder: int = 5  # cap to avoid budget blowout

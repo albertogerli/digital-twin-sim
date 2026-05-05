@@ -40,53 +40,97 @@ logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 MARKET_CAPS_PATH = REPO_ROOT / "shared" / "ticker_market_caps.json"
+INCIDENTS_PATH = REPO_ROOT / "shared" / "dora_reference_incidents.json"
+CALIBRATION_OUTPUT_PATH = REPO_ROOT / "outputs" / "dora_calibration.json"
 
 
-# ── Calibration anchors ────────────────────────────────────────────────
+# ── Calibration anchors — loaded from disk, not hardcoded ─────────────
 
-# (sim_shock_units, real_cost_eur_millions, label) — manually-curated
-# anchor table. These are PUBLIC-DOMAIN cost figures from regulatory
-# disclosures, press, and EBA stress-test post-mortems. Not perfect
-# (cost includes confounders) but defensible.
-_REF_INCIDENTS: list[tuple[float, float, str]] = [
-    (1.4,  2_100, "Banca MPS deposit run (2016)"),
-    (1.6,  3_900, "MPS bail-in (2017)"),
-    (0.8,    700, "TIM downgrade chain (2014)"),
-    (2.4,  9_000, "SVB collapse (2023)"),
-    (2.8, 10_000, "CrowdStrike outage (2024)"),
-    (3.2, 30_000, "Brexit Wave-1 cascade (2016)"),
-]
+_INCIDENTS_CACHE: Optional[list[tuple[float, float, str, str]]] = None
+
+
+def _load_reference_incidents() -> list[tuple[float, float, str, str]]:
+    """Load (shock_units, cost_eur_m, id, category) from disk.
+
+    Source of truth: shared/dora_reference_incidents.json — auditable,
+    version-controlled, refreshable without code changes. Each incident
+    cites its public sources in the JSON.
+    """
+    global _INCIDENTS_CACHE
+    if _INCIDENTS_CACHE is not None:
+        return _INCIDENTS_CACHE
+    try:
+        data = json.loads(INCIDENTS_PATH.read_text())
+        out: list[tuple[float, float, str, str]] = []
+        for entry in data.get("incidents", []):
+            su = float(entry.get("shock_units", 0) or 0)
+            cm = float(entry.get("cost_eur_m", 0) or 0)
+            if su > 0 and cm > 0:
+                out.append((su, cm, entry.get("id", "?"), entry.get("category", "?")))
+        _INCIDENTS_CACHE = out
+        return out
+    except Exception as e:
+        logger.warning(f"reference incidents load failed: {e}; using fallback small sample")
+        # Tiny fallback so the system never breaks even if the file is gone.
+        _INCIDENTS_CACHE = [
+            (1.6,  3_900, "mps_bailin_2017", "banking_it"),
+            (2.4,  9_000, "svb_2023",        "banking_us"),
+            (3.2, 30_000, "brexit_wave1_2016", "sovereign"),
+        ]
+        return _INCIDENTS_CACHE
 
 
 def _calibrated_alpha() -> tuple[float, float, float]:
-    """OLS slope from reference incidents (no intercept).
+    """OLS slope (no intercept) on the loaded reference incidents.
 
     Returns (alpha_eur_millions_per_unit, sigma_residual, R2).
     Solving min Σ (cost - α·shock)² gives α = Σ(s·c) / Σ(s²).
     """
-    if not _REF_INCIDENTS:
+    incidents = _load_reference_incidents()
+    if not incidents:
         return 50.0, 0.0, 0.0
-    sx2 = sum(s * s for s, _, _ in _REF_INCIDENTS)
-    sxy = sum(s * c for s, c, _ in _REF_INCIDENTS)
+    sx2 = sum(s * s for s, _, _, _ in incidents)
+    sxy = sum(s * c for s, c, _, _ in incidents)
     alpha = sxy / sx2 if sx2 > 0 else 50.0
-    # Residual variance — proxy for prediction uncertainty
-    residuals = [c - alpha * s for s, c, _ in _REF_INCIDENTS]
-    n = len(_REF_INCIDENTS)
+    residuals = [c - alpha * s for s, c, _, _ in incidents]
+    n = len(incidents)
     sigma = (sum(r * r for r in residuals) / max(1, n - 1)) ** 0.5
-    # R² (vs zero-mean, since no intercept)
-    ss_tot = sum(c * c for _, c, _ in _REF_INCIDENTS)
+    ss_tot = sum(c * c for _, c, _, _ in incidents)
     ss_res = sum(r * r for r in residuals)
     r2 = max(0.0, 1.0 - ss_res / ss_tot) if ss_tot > 0 else 0.0
     return alpha, sigma, r2
 
 
+def calibration_summary() -> dict:
+    """Detailed calibration diagnostics — written to disk by the
+    nightly calibrate_dora_alpha.py script and consumed by the
+    /api/compliance/dora/calibration/status endpoint (TODO).
+    """
+    alpha, sigma, r2 = _calibrated_alpha()
+    incidents = _load_reference_incidents()
+    by_cat: dict[str, int] = {}
+    for _, _, _, cat in incidents:
+        by_cat[cat] = by_cat.get(cat, 0) + 1
+    return {
+        "n_incidents": len(incidents),
+        "n_by_category": by_cat,
+        "alpha_eur_millions_per_unit": round(alpha, 2),
+        "alpha_eur_per_unit": round(alpha * 1_000_000, 0),
+        "sigma_residual_eur_millions": round(sigma, 2),
+        "r2": round(r2, 4),
+        "method": "OLS no-intercept",
+        "incidents_path": str(INCIDENTS_PATH.relative_to(REPO_ROOT)),
+    }
+
+
 CALIBRATION_NOTES = (
-    "α calibrated by OLS (no intercept) on 6 historical incidents with public cost: "
-    "MPS deposit run 2016, MPS bail-in 2017, TIM 2014, SVB 2023, CrowdStrike 2024, "
-    "Brexit Wave-1 2016. Sample is small (N=6) and EU-bank-heavy; residual sigma is "
-    "wide. CI band ≈ ±1.65σ (coarse 90%). Sensitive to brief framing — a single "
-    "outlier event would shift α materially. Update _REF_INCIDENTS in "
-    "core/dora/economic_impact.py when new incidents are added."
+    "α is OLS-fitted (no intercept) on the reference incident table at "
+    "shared/dora_reference_incidents.json — currently {N} incidents across "
+    "banking_it / banking_eu / banking_us / sovereign / cyber / telco / "
+    "energy categories with public-domain cost figures. Refit nightly via "
+    "scripts/calibrate_dora_alpha.py + GitHub Actions. CI band is ±1.65·σ "
+    "(coarse 90%). Sensitive to single outliers; switch to OLS+intercept "
+    "and heteroscedastic-robust SE once N > 50."
 )
 
 

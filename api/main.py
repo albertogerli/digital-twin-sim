@@ -1149,6 +1149,12 @@ _ADMIN_JOBS = {
         "cmds": [[_PY, "-m", "stakeholder_graph.updater"]],
         "icon": "groups",
     },
+    "dora-recalibrate": {
+        "label": "DORA α refit (economic_impact_eur)",
+        "description": "Re-fit OLS-no-intercept α on the reference incident table at shared/dora_reference_incidents.json. Writes outputs/dora_calibration.json with overall + per-category α, R², and per-incident residuals.",
+        "cmds": [[_PY, "-m", "scripts.calibrate_dora_alpha", "--by-category"]],
+        "icon": "calculate",
+    },
 }
 
 

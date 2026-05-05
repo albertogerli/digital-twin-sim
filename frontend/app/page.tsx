@@ -343,15 +343,16 @@ export default function Home() {
         )}
       </div>
 
-      {/* Scenario shelf */}
+      {/* Scenario shelf — all scenarios, scrollable when count > 8 rows */}
       {scenarios.length > 0 && (
         <div className="border-t border-ki-border bg-ki-surface-sunken">
-          <div className="flex items-center gap-2 px-4 py-1.5">
+          <div className="sticky top-0 z-10 flex items-center gap-2 px-4 py-1.5 bg-ki-surface-sunken border-b border-ki-border-faint">
             <span className="eyebrow">Scenarios</span>
             <span className="font-data text-[10px] text-ki-on-surface-muted">{scenarios.length}</span>
+            <span className="ml-auto font-data text-[10px] text-ki-on-surface-muted">click any to open · scroll for more</span>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-ki-border-faint">
-            {scenarios.slice(0, 8).map((s) => {
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-ki-border-faint max-h-[420px] overflow-y-auto">
+            {scenarios.map((s) => {
               const cap = DOMAIN_CAP[s.domain] || "bg-ki-on-surface-faint";
               return (
                 <Link

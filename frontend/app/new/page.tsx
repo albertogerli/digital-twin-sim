@@ -202,6 +202,10 @@ export default function NewSimulation() {
     <div className="flex h-[calc(100vh-44px)] text-ki-on-surface overflow-hidden">
       {/* LEFT RAIL — steps + estimated cost */}
       <aside className="w-[260px] border-r border-ki-border bg-ki-surface-sunken flex flex-col py-5 px-4 flex-shrink-0">
+        <Link href="/" className="inline-flex items-center gap-1 text-[11px] text-ki-on-surface-muted hover:text-ki-on-surface mb-3 -mt-1 group">
+          <span className="material-symbols-outlined text-[12px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+          Dashboard
+        </Link>
         <div className="eyebrow">Workflow</div>
         <div className="text-[15px] font-medium text-ki-on-surface tracking-[-0.005em] mt-1">Briefing</div>
         <p className="text-[12px] text-ki-on-surface-muted mt-1 leading-relaxed">

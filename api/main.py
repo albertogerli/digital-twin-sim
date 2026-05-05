@@ -803,14 +803,18 @@ async def dora_preview(
     *without* emitting the full XML. Used by the /compliance page to
     render the 7-criterion grid before letting the user download."""
     from core.dora.classification import classify_from_simulation
-    sim = await manager.get(sim_id, tenant_id=_tenant_id(tenant, request))
+    sim = manager.get_state(sim_id, tenant_id=_tenant_id(tenant, request))
     if not sim:
         raise HTTPException(404, "Simulation not found")
     if sim.status != "completed":
         raise HTTPException(400, "Simulation must be completed to generate DORA report")
 
     # Pull simulation metrics (best-effort, all fields optional)
-    metrics = (sim.result or {}).get("metrics", {}) if hasattr(sim, "result") else {}
+    metrics = getattr(sim, "result", None) or {}
+    if isinstance(metrics, dict):
+        metrics = metrics.get("metrics", {}) or {}
+    else:
+        metrics = {}
     cri = classify_from_simulation(
         customers_affected=int(metrics.get("customers_affected", 0)),
         economic_impact_eur=float(metrics.get("economic_impact_eur", 0.0)),
@@ -823,7 +827,7 @@ async def dora_preview(
     )
     return {
         "sim_id": sim_id,
-        "scenario_name": getattr(sim, "name", sim_id),
+        "scenario_name": (getattr(sim, "scenario_name", None) or sim_id),
         "classification": {
             "clients_affected": cri.clients_affected,
             "data_losses": cri.data_losses,
@@ -854,13 +858,17 @@ async def dora_export(
         FinancialEntity, IncidentType, ReportType, RootCauseCategory,
     )
 
-    sim = await manager.get(sim_id, tenant_id=_tenant_id(tenant, request))
+    sim = manager.get_state(sim_id, tenant_id=_tenant_id(tenant, request))
     if not sim:
         raise HTTPException(404, "Simulation not found")
     if sim.status != "completed":
         raise HTTPException(400, "Simulation must be completed to generate DORA report")
 
-    metrics = (sim.result or {}).get("metrics", {}) if hasattr(sim, "result") else {}
+    metrics = getattr(sim, "result", None) or {}
+    if isinstance(metrics, dict):
+        metrics = metrics.get("metrics", {}) or {}
+    else:
+        metrics = {}
     cri = classify_from_simulation(
         customers_affected=int(metrics.get("customers_affected", 0)),
         economic_impact_eur=float(metrics.get("economic_impact_eur", 0.0)),

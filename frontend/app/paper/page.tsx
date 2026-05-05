@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell,
@@ -183,7 +184,11 @@ export default function PaperPage() {
   return (
     <main>
       {/* Title block */}
-      <div className="max-w-4xl mx-auto px-5 pt-10 pb-6">
+      <div className="max-w-4xl mx-auto px-5 pt-6 pb-6">
+        <Link href="/" className="inline-flex items-center gap-1 text-[12px] text-ki-on-surface-muted hover:text-ki-on-surface mb-3 group">
+          <span className="material-symbols-outlined text-[14px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+          Dashboard
+        </Link>
         <div className="eyebrow text-ki-primary mb-2">Working paper</div>
         <h1 className="text-[28px] sm:text-[34px] font-medium tracking-tight2 text-ki-on-surface leading-[1.15] mb-4">
           DigitalTwinSim: Bayesian Calibration, Null-Baseline Benchmarking, and Online Data Assimilation for LLM-Agent Opinion Dynamics

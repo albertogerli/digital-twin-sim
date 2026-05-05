@@ -870,6 +870,30 @@ def _derive_dora_metrics_from_export(sim) -> dict:
         logger.warning(f"DORA: replay walk failed: {e}")
     metrics["viral_posts_count"] = viral_count
 
+    # 6-pre. Collect ticker_price history for Method B (economic impact
+    # via direct market-cap loss). Tries the per-round replay first
+    # (newer scenarios export ticker_prices) and falls back to scanning
+    # checkpoint state_*.json files (where round_manager patches them).
+    ticker_history: list[dict] = []
+    for r in rounds_data:
+        tp = r.get("ticker_prices")
+        if isinstance(tp, dict) and tp:
+            ticker_history.append(tp)
+    if not ticker_history:
+        try:
+            cp_glob = os.path.join(OUTPUTS_DIR, f"state_{scenario_id}_r*.json")
+            import glob as _glob
+            for cp_path in sorted(_glob.glob(cp_glob)):
+                try:
+                    cp = json.load(open(cp_path))
+                    tp = cp.get("ticker_prices")
+                    if isinstance(tp, dict) and tp:
+                        ticker_history.append(tp)
+                except Exception:
+                    continue
+        except Exception as e:
+            logger.debug(f"DORA: checkpoint ticker_prices scan skipped: {e}")
+
     # 4-5. Country & institutional impact from agents.json
     ag_path = os.path.join(export_dir, "agents.json")
     if os.path.isfile(ag_path):
@@ -911,11 +935,24 @@ def _derive_dora_metrics_from_export(sim) -> dict:
         except Exception as e:
             logger.warning(f"DORA: agents parse failed: {e}")
 
-    # 6. Economic impact proxy — calibrated EUR per cumulative shock unit.
-    # 50M EUR per absolute-shock-unit is a deliberately conservative anchor;
-    # roughly aligns to "moderate operational incident" tier in EBA RTS.
-    CALIBRATION_EUR_PER_SHOCK_UNIT = 50_000_000.0
-    metrics["economic_impact_eur"] = round(total_shock * CALIBRATION_EUR_PER_SHOCK_UNIT, 2)
+    # 6. Economic impact — combined Method A (calibrated shock anchor)
+    # + Method B (direct ticker market-cap loss × contagion γ).
+    try:
+        from core.dora.economic_impact import (
+            estimate_anchor, estimate_ticker, combine,
+        )
+        anchor_est = estimate_anchor(total_shock_units=total_shock)
+        ticker_est = estimate_ticker(ticker_price_history=ticker_history)
+        combined = combine(anchor_est, ticker_est)
+        metrics["economic_impact_eur"] = float(combined.get("point_eur", 0.0))
+        # Expose full breakdown so the UI can render the methodology
+        # transparently (selected method, low/high band, per-ticker losses,
+        # calibration-α reference incidents).
+        metrics["economic_impact_breakdown"] = combined
+    except Exception as e:
+        logger.warning(f"DORA: economic_impact computation failed ({e}); falling back to legacy 50M anchor")
+        metrics["economic_impact_eur"] = round(total_shock * 50_000_000.0, 2)
+        metrics["economic_impact_breakdown"] = None
 
     # 7-8. Sim has no native data-loss / downtime — leave as 0
     metrics.setdefault("data_records_lost", 0)

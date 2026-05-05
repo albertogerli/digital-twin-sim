@@ -38,7 +38,39 @@ interface DoraPreview {
     criticality_of_services_affected: string;
   };
   is_major: boolean;
-  metrics_used: Record<string, number | string>;
+  metrics_used: Record<string, any>;
+}
+
+interface EconomicImpactBreakdown {
+  point_eur: number;
+  low_eur: number;
+  high_eur: number;
+  selected_method: "anchor" | "ticker";
+  anchor_estimate: {
+    point_eur: number;
+    low_eur: number;
+    high_eur: number;
+    inputs: {
+      total_shock_units: number;
+      alpha_eur_per_unit: number;
+      sigma_residual_eur: number;
+      r2_anchor_fit: number;
+      n_reference_incidents: number;
+    };
+    formula: string;
+  };
+  ticker_estimate: {
+    point_eur: number;
+    inputs: {
+      tickers_priced: number;
+      tickers_unknown: number;
+      direct_loss_eur: number;
+      contagion_multiplier: number;
+      per_ticker?: { ticker: string; cum_pct: number; mcap_eur_m: number; loss_eur_m: number }[];
+    };
+    formula: string;
+  };
+  calibration_notes: string;
 }
 
 interface ScenarioListItem {
@@ -508,6 +540,8 @@ function DoraPanel() {
 function DoraPreviewCard({ preview, simId }: { preview: DoraPreview; simId: string }) {
   const c = preview.classification;
   const tones = LEVEL_TONE;
+  const breakdown: EconomicImpactBreakdown | null =
+    (preview.metrics_used?.economic_impact_breakdown as EconomicImpactBreakdown) || null;
   return (
     <div className="border border-ki-border rounded">
       <div className="px-5 py-4 border-b border-ki-border flex items-baseline justify-between">
@@ -526,6 +560,11 @@ function DoraPreviewCard({ preview, simId }: { preview: DoraPreview; simId: stri
           {preview.is_major ? "Major incident — reportable" : "Not major"}
         </span>
       </div>
+
+      {/* ── Hero KPI · Economic impact (the most-loaded number) ─────── */}
+      {breakdown && (
+        <EconomicImpactHero breakdown={breakdown} />
+      )}
 
       <div className="p-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-[11px]">
         <ClassCell label="Clients affected" value={c.clients_affected} tones={tones} />
@@ -560,6 +599,118 @@ function DoraPreviewCard({ preview, simId }: { preview: DoraPreview; simId: stri
           View in browser
         </a>
       </div>
+    </div>
+  );
+}
+
+function fmtEur(v: number): { num: string; suffix: string } {
+  if (!Number.isFinite(v) || v <= 0) return { num: "0", suffix: "EUR" };
+  if (v >= 1e9) return { num: (v / 1e9).toFixed(2), suffix: "B EUR" };
+  if (v >= 1e6) return { num: (v / 1e6).toFixed(0), suffix: "M EUR" };
+  if (v >= 1e3) return { num: (v / 1e3).toFixed(0), suffix: "K EUR" };
+  return { num: v.toFixed(0), suffix: "EUR" };
+}
+
+function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown }) {
+  const [showMethods, setShowMethods] = useState(false);
+  const point = fmtEur(breakdown.point_eur);
+  const low = fmtEur(breakdown.low_eur);
+  const high = fmtEur(breakdown.high_eur);
+  // Tier colour based on point estimate magnitude
+  const v = breakdown.point_eur;
+  const tier = v >= 5e9 ? "critical" : v >= 1e9 ? "high" : v >= 100e6 ? "medium" : "low";
+  const tierStyle: Record<string, { box: string; num: string; chip: string; label: string }> = {
+    critical: { box: "bg-red-50 border-red-200", num: "text-red-700", chip: "bg-red-100 text-red-700 border-red-300", label: "≥5B · systemic / sovereign-class" },
+    high:     { box: "bg-orange-50 border-orange-200", num: "text-orange-700", chip: "bg-orange-100 text-orange-700 border-orange-300", label: "1-5B · major bank or sector-wide" },
+    medium:   { box: "bg-amber-50 border-amber-200", num: "text-amber-700", chip: "bg-amber-100 text-amber-700 border-amber-300", label: "100M-1B · single-firm / regional" },
+    low:      { box: "bg-emerald-50 border-emerald-200", num: "text-emerald-700", chip: "bg-emerald-100 text-emerald-700 border-emerald-300", label: "<100M · contained / operational" },
+  };
+  const style = tierStyle[tier];
+  const a = breakdown.anchor_estimate;
+  const t = breakdown.ticker_estimate;
+  return (
+    <div className={`m-5 mb-0 p-4 border rounded-sm ${style.box}`}>
+      <div className="flex items-baseline justify-between gap-3 mb-2">
+        <div className="flex items-baseline gap-2">
+          <span className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted font-data">Economic impact estimate</span>
+          <span className={`text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border ${style.chip}`}>{tier}</span>
+        </div>
+        <button
+          onClick={() => setShowMethods((v) => !v)}
+          className="text-[11px] text-ki-on-surface-muted hover:text-ki-on-surface underline decoration-dotted"
+        >
+          {showMethods ? "hide methodology" : "show methodology"}
+        </button>
+      </div>
+      <div className="flex items-baseline gap-2 flex-wrap">
+        <span className={`font-data tabular text-[44px] leading-none font-medium ${style.num}`}>€{point.num}</span>
+        <span className="font-data text-[14px] text-ki-on-surface-muted">{point.suffix}</span>
+        <span className="ml-3 font-data text-[11px] text-ki-on-surface-muted">
+          90% CI [€{low.num}{low.suffix.replace(" EUR","")} – €{high.num}{high.suffix.replace(" EUR","")}]
+        </span>
+      </div>
+      <div className="mt-1 text-[11px] text-ki-on-surface-secondary">
+        {style.label} · selected by <code className="font-data text-[10px] bg-white/40 px-1 rounded-sm">{breakdown.selected_method}</code> method
+      </div>
+
+      {showMethods && (
+        <div className="mt-3 pt-3 border-t border-ki-border/40 space-y-3 text-[11px]">
+          {/* Method A */}
+          <div>
+            <div className="font-data text-[10px] uppercase tracking-wider text-ki-on-surface-muted mb-1">
+              Method A — calibrated shock anchor
+              {breakdown.selected_method === "anchor" && <span className="ml-2 text-[9px] text-ki-primary">(SELECTED)</span>}
+            </div>
+            <div className="text-ki-on-surface">
+              <code className="font-data text-[10px] bg-white/40 px-1 rounded-sm">{a.formula}</code>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 mt-1 text-[10px] font-data text-ki-on-surface-secondary">
+              <span>Σ shock: <span className="text-ki-on-surface">{a.inputs.total_shock_units.toFixed(3)}</span></span>
+              <span>α: <span className="text-ki-on-surface">€{(a.inputs.alpha_eur_per_unit / 1e9).toFixed(2)}B/unit</span></span>
+              <span>R²: <span className="text-ki-on-surface">{a.inputs.r2_anchor_fit}</span></span>
+              <span>n incidents: <span className="text-ki-on-surface">{a.inputs.n_reference_incidents}</span></span>
+            </div>
+            <div className="font-data text-[11px] text-ki-on-surface mt-1">
+              → <span className="font-medium">€{fmtEur(a.point_eur).num}{fmtEur(a.point_eur).suffix.replace(" EUR","")}</span>
+            </div>
+          </div>
+          {/* Method B */}
+          <div>
+            <div className="font-data text-[10px] uppercase tracking-wider text-ki-on-surface-muted mb-1">
+              Method B — ticker market-cap loss × contagion γ
+              {breakdown.selected_method === "ticker" && <span className="ml-2 text-[9px] text-ki-primary">(SELECTED)</span>}
+            </div>
+            <div className="text-ki-on-surface">
+              <code className="font-data text-[10px] bg-white/40 px-1 rounded-sm">{t.formula}</code>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 mt-1 text-[10px] font-data text-ki-on-surface-secondary">
+              <span>Tickers priced: <span className="text-ki-on-surface">{t.inputs.tickers_priced}</span></span>
+              <span>Unknown mcap: <span className="text-ki-on-surface">{t.inputs.tickers_unknown}</span></span>
+              <span>γ contagion: <span className="text-ki-on-surface">{t.inputs.contagion_multiplier}×</span></span>
+              <span>Direct loss: <span className="text-ki-on-surface">€{fmtEur(t.inputs.direct_loss_eur).num}{fmtEur(t.inputs.direct_loss_eur).suffix.replace(" EUR","")}</span></span>
+            </div>
+            {t.inputs.per_ticker && t.inputs.per_ticker.length > 0 && (
+              <div className="mt-1.5 grid grid-cols-1 sm:grid-cols-2 gap-x-3 text-[10px] font-data">
+                {t.inputs.per_ticker.slice(0, 6).map((row) => (
+                  <div key={row.ticker} className="flex items-baseline gap-2 text-ki-on-surface-secondary">
+                    <span className="w-14 text-ki-on-surface">{row.ticker}</span>
+                    <span className={row.cum_pct < 0 ? "text-red-700" : "text-emerald-700"}>{row.cum_pct >= 0 ? "+" : ""}{row.cum_pct.toFixed(2)}%</span>
+                    <span className="text-ki-on-surface-muted">× €{row.mcap_eur_m.toLocaleString()}M</span>
+                    <span className="ml-auto text-ki-on-surface">€{row.loss_eur_m.toLocaleString()}M</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            <div className="font-data text-[11px] text-ki-on-surface mt-1">
+              → <span className="font-medium">€{fmtEur(t.point_eur).num}{fmtEur(t.point_eur).suffix.replace(" EUR","")}</span>
+            </div>
+          </div>
+          {/* Notes */}
+          <div className="text-[10px] text-ki-on-surface-muted leading-relaxed pt-1 border-t border-ki-border/40">
+            {breakdown.calibration_notes}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

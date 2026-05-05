@@ -948,6 +948,25 @@ class RoundManager:
             except Exception as exc:
                 logger.warning(f"TickerPriceState step failed at round {round_num}: {exc}")
 
+        # Patch checkpoint with ticker_prices so DORA economic_impact
+        # (Method B) can rebuild the per-round price trajectory after
+        # the sim is over. Same pattern used by financial_twin above.
+        if ticker_prices:
+            try:
+                import json as _json
+                safe_name = "".join(
+                    c if c.isalnum() or c in "-_" else "_" for c in self.scenario_name
+                )
+                cp_path = f"{self.checkpoint_dir}/state_{safe_name}_r{round_num}.json"
+                if os.path.exists(cp_path):
+                    with open(cp_path, "r") as _f:
+                        _cp_data = _json.load(_f)
+                    _cp_data["ticker_prices"] = ticker_prices
+                    with open(cp_path, "w") as _f:
+                        _json.dump(_cp_data, _f, indent=2, ensure_ascii=False)
+            except Exception as _exc:
+                logger.debug(f"checkpoint ticker_prices patch skipped: {_exc}")
+
         result = {
             "round": round_num,
             "timeline_label": timeline_label,

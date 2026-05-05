@@ -2,11 +2,15 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCurrentUser } from "@/lib/use-current-user";
 
 /* ───────────────────────────────────────────────────────────
    Quiet Intelligence Terminal — 56px icon rail.
    Active item: subtle raised tile + 2px accent bar on the
    left edge. Tooltips via title attr (hover delay = native).
+   Admin icon (group_add) appears only for password-login
+   sessions where isAdmin=true — invite-redeemed users don't
+   see it (they're guests).
    ─────────────────────────────────────────────────────────── */
 
 const NAV_ITEMS = [
@@ -18,12 +22,18 @@ const NAV_ITEMS = [
   { href: "/paper",      label: "Paper",          icon: "description" },
 ];
 
+const ADMIN_ITEMS = [
+  { href: "/admin/invites", label: "Invita utente",  icon: "group_add" },
+  { href: "/admin/jobs",    label: "Background jobs", icon: "play_circle" },
+];
+
 const BOTTOM_ITEMS = [
   { href: "/settings", label: "Settings", icon: "settings" },
 ];
 
 export default function SideNav() {
   const pathname = usePathname();
+  const user = useCurrentUser();
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
@@ -75,6 +85,12 @@ export default function SideNav() {
 
       <nav className="flex-1 flex flex-col items-center gap-1">
         {NAV_ITEMS.map(navLink)}
+        {user?.isAdmin && (
+          <>
+            <div className="w-6 h-px bg-ki-border my-1.5" aria-hidden />
+            {ADMIN_ITEMS.map(navLink)}
+          </>
+        )}
       </nav>
 
       <div className="flex flex-col items-center gap-1">

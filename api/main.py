@@ -935,19 +935,28 @@ def _derive_dora_metrics_from_export(sim) -> dict:
         except Exception as e:
             logger.warning(f"DORA: agents parse failed: {e}")
 
-    # 6. Economic impact — combined Method A (calibrated shock anchor)
-    # + Method B (direct ticker market-cap loss × contagion γ).
+    # 6. Economic impact — combined Method A (calibrated shock anchor,
+    # category-conditioned when possible) + Method B (direct ticker
+    # market-cap loss × contagion γ).
     try:
         from core.dora.economic_impact import (
-            estimate_anchor, estimate_ticker, combine,
+            estimate_anchor, estimate_ticker, combine, detect_category,
         )
-        anchor_est = estimate_anchor(total_shock_units=total_shock)
+        # Auto-detect category from the brief — banking_it / banking_eu /
+        # banking_us / sovereign / cyber / telco / energy. When detected
+        # (and that bucket has ≥3 incidents), Method A uses the within-
+        # category α — much tighter than the overall pool.
+        brief_text = ""
+        try:
+            brief_text = (sim.request.brief or "") if hasattr(sim, "request") else ""
+        except Exception:
+            pass
+        detected_cat, cat_scores = detect_category(brief_text)
+        anchor_est = estimate_anchor(total_shock_units=total_shock, category=detected_cat)
         ticker_est = estimate_ticker(ticker_price_history=ticker_history)
-        combined = combine(anchor_est, ticker_est)
+        combined = combine(anchor_est, ticker_est, detected_category=detected_cat,
+                           category_scores=cat_scores)
         metrics["economic_impact_eur"] = float(combined.get("point_eur", 0.0))
-        # Expose full breakdown so the UI can render the methodology
-        # transparently (selected method, low/high band, per-ticker losses,
-        # calibration-α reference incidents).
         metrics["economic_impact_breakdown"] = combined
     except Exception as e:
         logger.warning(f"DORA: economic_impact computation failed ({e}); falling back to legacy 50M anchor")

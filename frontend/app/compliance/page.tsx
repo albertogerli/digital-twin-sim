@@ -46,6 +46,8 @@ interface EconomicImpactBreakdown {
   low_eur: number;
   high_eur: number;
   selected_method: "anchor" | "ticker";
+  detected_category: string | null;
+  category_scores: Record<string, number>;
   anchor_estimate: {
     point_eur: number;
     low_eur: number;
@@ -56,6 +58,9 @@ interface EconomicImpactBreakdown {
       sigma_residual_eur: number;
       r2_anchor_fit: number;
       n_reference_incidents: number;
+      calibration_scope: string;
+      requested_category?: string | null;
+      fallback_overall_alpha_eur_per_unit?: number | null;
     };
     formula: string;
   };
@@ -631,9 +636,14 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
   return (
     <div className={`m-5 mb-0 p-4 border rounded-sm ${style.box}`}>
       <div className="flex items-baseline justify-between gap-3 mb-2">
-        <div className="flex items-baseline gap-2">
+        <div className="flex items-baseline gap-2 flex-wrap">
           <span className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted font-data">Economic impact estimate</span>
           <span className={`text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border ${style.chip}`}>{tier}</span>
+          {breakdown.detected_category && (
+            <span className="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border bg-white/40 border-ki-border text-ki-on-surface-secondary" title="Category auto-detected from brief — Method A α conditioned on within-category incidents only">
+              {breakdown.detected_category.replace("_", " ")}
+            </span>
+          )}
         </div>
         <button
           onClick={() => setShowMethods((v) => !v)}
@@ -659,6 +669,7 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
           <div>
             <div className="font-data text-[10px] uppercase tracking-wider text-ki-on-surface-muted mb-1">
               Method A — calibrated shock anchor
+              <span className="ml-2 text-[9px] normal-case text-ki-on-surface-muted">scope: {a.inputs.calibration_scope || "overall"}</span>
               {breakdown.selected_method === "anchor" && <span className="ml-2 text-[9px] text-ki-primary">(SELECTED)</span>}
             </div>
             <div className="text-ki-on-surface">
@@ -670,6 +681,13 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
               <span>R²: <span className="text-ki-on-surface">{a.inputs.r2_anchor_fit}</span></span>
               <span>n incidents: <span className="text-ki-on-surface">{a.inputs.n_reference_incidents}</span></span>
             </div>
+            {a.inputs.fallback_overall_alpha_eur_per_unit && (
+              <div className="text-[10px] text-ki-on-surface-muted mt-1">
+                Without category-conditioning, overall α would have been
+                <span className="font-data ml-1">€{(a.inputs.fallback_overall_alpha_eur_per_unit / 1e9).toFixed(2)}B/unit</span>
+                — using the tighter within-category fit.
+              </div>
+            )}
             <div className="font-data text-[11px] text-ki-on-surface mt-1">
               → <span className="font-medium">€{fmtEur(a.point_eur).num}{fmtEur(a.point_eur).suffix.replace(" EUR","")}</span>
             </div>

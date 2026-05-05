@@ -42,11 +42,15 @@ interface DoraPreview {
 }
 
 interface ScenarioListItem {
-  sim_id: string;
-  name?: string;
+  // Backend /api/simulations returns id/scenario_name/total_rounds, NOT
+  // sim_id/name/rounds. The earlier mismatch caused empty rows in the
+  // DORA picker ("financial · -r" with no title and an undefined key).
+  id: string;
+  scenario_name?: string;
   status: string;
   domain?: string;
-  rounds?: number;
+  total_rounds?: number;
+  brief?: string;
 }
 
 const MODE_TONE: Record<Mode, { label: string; tone: string; dot: string; help: string }> = {
@@ -457,21 +461,24 @@ function DoraPanel() {
             </div>
           ) : (
             <ul className="max-h-[60vh] overflow-y-auto">
-              {scenarios.map((s) => (
-                <li key={s.sim_id}>
-                  <button
-                    onClick={() => setSelectedId(s.sim_id)}
-                    className={`w-full text-left px-3 py-2 text-[12px] border-b border-ki-border last:border-0 hover:bg-ki-surface-sunken transition-colors ${
-                      selectedId === s.sim_id ? "bg-ki-surface-sunken" : ""
-                    }`}
-                  >
-                    <div className="font-medium truncate">{s.name || s.sim_id}</div>
-                    <div className="text-[10px] font-data text-ki-on-surface-muted">
-                      {s.domain || "—"} · {s.rounds || "—"}r
-                    </div>
-                  </button>
-                </li>
-              ))}
+              {scenarios.map((s) => {
+                const title = s.scenario_name || (s.brief ? s.brief.slice(0, 60) + "…" : s.id);
+                return (
+                  <li key={s.id}>
+                    <button
+                      onClick={() => setSelectedId(s.id)}
+                      className={`w-full text-left px-3 py-2 text-[12px] border-b border-ki-border last:border-0 hover:bg-ki-surface-sunken transition-colors ${
+                        selectedId === s.id ? "bg-ki-surface-sunken" : ""
+                      }`}
+                    >
+                      <div className="font-medium truncate" title={title}>{title}</div>
+                      <div className="text-[10px] font-data text-ki-on-surface-muted">
+                        {s.domain || "—"} · {s.total_rounds ? `${s.total_rounds}r` : "—"} · <span className="text-ki-on-surface-muted">{s.id.slice(0, 6)}</span>
+                      </div>
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </aside>

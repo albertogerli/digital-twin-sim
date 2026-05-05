@@ -94,12 +94,18 @@ export default function CommandCenter({ scenarioId, meta, rounds }: Props) {
     const netSent = totalSent > 0
       ? (indicators.sentimentDistribution.positive - indicators.sentimentDistribution.negative) / totalSent
       : 0;
+    // Polarization is real (= std·10 from polarization_index). Confidence
+    // panel was a hardcoded 0.84 mislabelled as "EnKF assimilation" — that
+    // was misleading: no Kalman filter actually runs in the replay path.
+    // Compute a derivable proxy instead: agreement = 1 - polarization/10
+    // (high when positions are tight, low when polarised). Honest label.
+    const agreementProxy = Math.max(0, Math.min(1, 1 - indicators.polarization / 10));
     return {
       tick: `${state.currentRound}/${totalRounds || "?"}`,
       polarization: indicators.polarization.toFixed(2),
       netSent,
       posts: indicators.postCount,
-      confidence: 0.84, // placeholder until calibration band threads through
+      agreement: agreementProxy,
     };
   }, [indicators, state.currentRound, totalRounds]);
 
@@ -217,7 +223,7 @@ export default function CommandCenter({ scenarioId, meta, rounds }: Props) {
         <KPICell
           label="Polarization"
           value={kpi.polarization}
-          sub={`σ²(opinion) · range 0–10`}
+          sub={`σ(positions) × 10 · range 0–10`}
         />
         <KPICell
           label="Net sentiment"
@@ -231,9 +237,9 @@ export default function CommandCenter({ scenarioId, meta, rounds }: Props) {
           sub={`${indicators.reactionCount.toLocaleString()} reactions`}
         />
         <KPICell
-          label="Confidence"
-          value={kpi.confidence.toFixed(2)}
-          sub="EnKF assimilation"
+          label="Agreement"
+          value={kpi.agreement.toFixed(2)}
+          sub="1 − polarization/10"
         />
         <KPICell
           label="Speed"

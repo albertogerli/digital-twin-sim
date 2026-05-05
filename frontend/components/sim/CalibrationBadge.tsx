@@ -33,7 +33,7 @@ export default function CalibrationBadge({ source, showDetails = false }: Calibr
   };
 
   return (
-    <div className="inline-flex flex-col">
+    <div className="relative inline-block">
       <button
         onClick={() => showDetails && setExpanded(!expanded)}
         className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-sm text-[10px] font-medium border ${badgeColor} ${
@@ -56,17 +56,40 @@ export default function CalibrationBadge({ source, showDetails = false }: Calibr
       </button>
 
       {expanded && (
-        <div className="mt-1 p-2 bg-ki-surface-raised border border-ki-border rounded-sm text-[10px] text-ki-on-surface-muted space-y-0.5">
-          <div>Model: {version} hierarchical Bayesian</div>
-          <div>Source: {originLabels[origin] || origin}</div>
-          {isV2 && (
-            <>
-              <div>Training: 34 scenarios (8 test holdout)</div>
-              <div>Test MAE: 12.6pp | 90% coverage: 85.7%</div>
-              <div>Discrepancy: sigma_within = 0.558 logit</div>
-            </>
-          )}
-        </div>
+        <>
+          {/* click-outside backdrop */}
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setExpanded(false)}
+            aria-hidden
+          />
+          <div
+            role="dialog"
+            className="absolute top-full left-0 mt-1.5 z-50 w-64 p-2.5 bg-ki-surface border border-ki-border-strong rounded-sm shadow-lg text-[10px] text-ki-on-surface-secondary space-y-1"
+          >
+            <div className="flex items-baseline justify-between border-b border-ki-border-faint pb-1 mb-1">
+              <span className="font-data text-[10px] uppercase tracking-wider text-ki-on-surface-muted">
+                Calibration source
+              </span>
+              <button
+                onClick={(e) => { e.stopPropagation(); setExpanded(false); }}
+                aria-label="Close"
+                className="text-ki-on-surface-muted hover:text-ki-on-surface text-[12px] leading-none"
+              >
+                ×
+              </button>
+            </div>
+            <div><span className="text-ki-on-surface-muted">Model:</span> <span className="text-ki-on-surface ml-1">{version} hierarchical Bayesian</span></div>
+            <div><span className="text-ki-on-surface-muted">Source:</span> <span className="text-ki-on-surface ml-1">{originLabels[origin] || origin}</span></div>
+            {isV2 && (
+              <>
+                <div><span className="text-ki-on-surface-muted">Training:</span> <span className="text-ki-on-surface ml-1">34 scenarios (8 test holdout)</span></div>
+                <div><span className="text-ki-on-surface-muted">Test MAE:</span> <span className="text-ki-on-surface ml-1">12.6pp · 90% coverage 85.7%</span></div>
+                <div><span className="text-ki-on-surface-muted">Discrepancy:</span> <span className="text-ki-on-surface ml-1">σ_within = 0.558 logit</span></div>
+              </>
+            )}
+          </div>
+        </>
       )}
     </div>
   );

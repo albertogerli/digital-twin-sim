@@ -1,49 +1,475 @@
 {
-  "_doc": "Reference table for DORA economic_impact_eur calibration. Each entry maps an estimated sim shock_units value to the real public cost in EUR millions of a known historical incident. Used by core.dora.economic_impact._calibrated_alpha() to fit the OLS slope α (EUR per shock unit). Update via scripts/calibrate_dora_alpha.py and refit nightly via the GitHub Actions cron. Sources cited per row — when public, the regulatory disclosure / parliamentary inquiry / earnings call is preferred over press summaries.",
+  "_doc": "Reference table for DORA economic_impact_eur calibration. Each entry maps an estimated sim shock_units value to the real public cost in EUR millions of a known historical incident. Used by core.dora.economic_impact._calibrated_alpha() to fit the OLS slope \u03b1 (EUR per shock unit). Update via scripts/calibrate_dora_alpha.py and refit nightly via the GitHub Actions cron. Sources cited per row \u2014 when public, the regulatory disclosure / parliamentary inquiry / earnings call is preferred over press summaries.",
   "_schema_version": "1.0",
   "_last_updated": "2026-05-05",
   "_calibration_method": "OLS no-intercept (proportional model). When N grows past ~50 we switch to OLS with intercept + heteroscedastic-robust SE.",
-  "_shock_units_methodology": "Shock units = simulated Σ |shock_magnitude × shock_direction| accumulated across N rounds when the brief replays the incident. We use heuristic estimates here pending a re-simulation pass. Severity tiers: 0.5-1.2 single-firm contained, 1.2-2.0 protracted single-firm or sector-wide moderate, 2.0-3.0 major sector or sovereign-adjacent, 3.0+ systemic / sovereign-class.",
+  "_shock_units_methodology": "Shock units = simulated \u03a3 |shock_magnitude \u00d7 shock_direction| accumulated across N rounds when the brief replays the incident. We use heuristic estimates here pending a re-simulation pass. Severity tiers: 0.5-1.2 single-firm contained, 1.2-2.0 protracted single-firm or sector-wide moderate, 2.0-3.0 major sector or sovereign-adjacent, 3.0+ systemic / sovereign-class.",
   "incidents": [
-    {"id": "mps_deposit_run_2016",      "shock_units": 1.4, "cost_eur_m":  2100, "category": "banking_it",  "label": "MPS deposit run (2016)",                    "sources": ["EBA SREP 2016", "ECB statistical bulletin"]},
-    {"id": "mps_bailin_2017",           "shock_units": 1.6, "cost_eur_m":  3900, "category": "banking_it",  "label": "MPS precautionary recapitalisation (2017)", "sources": ["DG Comp state aid SA.47677", "MEF press release 2017-07-04"]},
-    {"id": "carige_2019",               "shock_units": 1.3, "cost_eur_m":  1800, "category": "banking_it",  "label": "Banca Carige resolution (2019)",            "sources": ["FITD intervention disclosure", "BdI annual report 2019"]},
-    {"id": "veneto_popvicenza_2017",    "shock_units": 2.0, "cost_eur_m":  5200, "category": "banking_it",  "label": "Veneto Banche + Pop Vicenza wind-down (2017)","sources": ["DG Comp state aid SA.45664", "Italian DL 99/2017"]},
-    {"id": "popolare_bari_2019",        "shock_units": 1.0, "cost_eur_m":   900, "category": "banking_it",  "label": "Banca Popolare di Bari rescue (2019)",      "sources": ["MEF DL 142/2019", "FITD VS"]},
-    {"id": "tercas_2014",               "shock_units": 0.8, "cost_eur_m":   300, "category": "banking_it",  "label": "Tercas FITD intervention (2014)",           "sources": ["EU state aid case T-98/16"]},
-    {"id": "northern_rock_2007",        "shock_units": 1.5, "cost_eur_m": 38000, "category": "banking_eu",  "label": "Northern Rock liquidity support (2007)",    "sources": ["BoE liquidity peak Sept 2007", "HMT WMS"]},
-    {"id": "dexia_bailout_2008_2011",   "shock_units": 2.5, "cost_eur_m": 90000, "category": "banking_eu",  "label": "Dexia FR/BE/LU bailout (2008-2011)",        "sources": ["DG Comp SA.33760", "Belgian Court of Auditors 2014"]},
-    {"id": "abn_amro_2008",             "shock_units": 2.0, "cost_eur_m": 27000, "category": "banking_eu",  "label": "ABN AMRO / Fortis nationalisation (2008)",  "sources": ["Dutch MoF 2008-10-03", "DG Comp SA.28855"]},
-    {"id": "banco_espirito_santo_2014", "shock_units": 1.7, "cost_eur_m":  4900, "category": "banking_eu",  "label": "Banco Espirito Santo / Novo Banco (2014)",  "sources": ["Banco de Portugal resolution 2014-08-03"]},
-    {"id": "credit_suisse_ubs_2023",    "shock_units": 2.6, "cost_eur_m": 17000, "category": "banking_eu",  "label": "Credit Suisse forced merger w/ UBS (2023)", "sources": ["FINMA notice 2023-03-19", "AT1 CHF15.6B wipeout"]},
-    {"id": "sberbank_europe_2022",      "shock_units": 1.2, "cost_eur_m":  1100, "category": "banking_eu",  "label": "Sberbank Europe sanctions failure (2022)",  "sources": ["SRB resolution 2022-02-28"]},
-    {"id": "greensill_2021",            "shock_units": 1.3, "cost_eur_m":  4500, "category": "banking_eu",  "label": "Greensill Capital collapse (2021)",         "sources": ["FCA enforcement 2021", "CS exposure disclosures"]},
-    {"id": "wirecard_2020",             "shock_units": 1.6, "cost_eur_m":  4200, "category": "banking_eu",  "label": "Wirecard fraud collapse (2020)",            "sources": ["BaFin investigation 2020", "Munich prosecutor"]},
-    {"id": "svb_2023",                  "shock_units": 2.4, "cost_eur_m":  9000, "category": "banking_us",  "label": "Silicon Valley Bank collapse (2023)",       "sources": ["FDIC press release 2023-03-10"]},
-    {"id": "signature_2023",            "shock_units": 1.8, "cost_eur_m":  5000, "category": "banking_us",  "label": "Signature Bank resolution (2023)",          "sources": ["FDIC press release 2023-03-12"]},
-    {"id": "first_republic_2023",       "shock_units": 1.7, "cost_eur_m":  4500, "category": "banking_us",  "label": "First Republic JPM acquisition (2023)",     "sources": ["FDIC press release 2023-05-01"]},
-    {"id": "lehman_2008",               "shock_units": 4.0, "cost_eur_m":600000, "category": "banking_us",  "label": "Lehman Brothers bankruptcy (2008)",         "sources": ["IMF Global Financial Stability Report 2009"]},
-    {"id": "bear_stearns_2008",         "shock_units": 2.0, "cost_eur_m": 27000, "category": "banking_us",  "label": "Bear Stearns JPM acquisition (2008)",       "sources": ["Fed primary dealer credit facility 2008"]},
-    {"id": "wamu_2008",                 "shock_units": 2.2, "cost_eur_m": 25000, "category": "banking_us",  "label": "Washington Mutual receivership (2008)",     "sources": ["OTS / FDIC 2008-09-25"]},
-    {"id": "ltcm_1998",                 "shock_units": 1.5, "cost_eur_m":  4000, "category": "banking_us",  "label": "LTCM consortium bailout (1998)",            "sources": ["Fed Williams 1998 disclosure"]},
-    {"id": "brexit_wave1_2016",         "shock_units": 3.2, "cost_eur_m": 30000, "category": "sovereign",   "label": "Brexit referendum Wave-1 (2016-06-23)",     "sources": ["BoE FSR Aug 2016", "FX + FTSE100 first-week loss"]},
-    {"id": "brexit_wave2_2019",         "shock_units": 2.0, "cost_eur_m": 15000, "category": "sovereign",   "label": "Brexit no-deal cliff (2019-Q1)",            "sources": ["OBR Fiscal Risks Report 2019"]},
-    {"id": "italy_budget_2018",         "shock_units": 1.8, "cost_eur_m": 25000, "category": "sovereign",   "label": "Italian budget standoff vs EU (2018)",      "sources": ["BTP-Bund spread × bond market loss", "Bankitalia DGS"]},
-    {"id": "greece_2015",               "shock_units": 2.6, "cost_eur_m": 40000, "category": "sovereign",   "label": "Greek referendum + capital controls (2015)","sources": ["IMF Country Report 16/130", "ELA peak"]},
-    {"id": "cyprus_2013",               "shock_units": 2.3, "cost_eur_m": 15000, "category": "sovereign",   "label": "Cyprus bail-in (2013)",                     "sources": ["Eurogroup statement 2013-03-25", "ESM disbursement"]},
-    {"id": "argentina_2001",            "shock_units": 3.5, "cost_eur_m": 82000, "category": "sovereign",   "label": "Argentina sovereign default (2001)",        "sources": ["IMF Country Report 04/195"]},
-    {"id": "crowdstrike_2024",          "shock_units": 2.8, "cost_eur_m": 10000, "category": "cyber",       "label": "CrowdStrike global outage (2024)",          "sources": ["Delta 8-K filing", "Parametrix estimate"]},
-    {"id": "solarwinds_2020",           "shock_units": 2.3, "cost_eur_m":100000, "category": "cyber",       "label": "SolarWinds supply-chain compromise (2020)", "sources": ["CISA AA20-352A", "long-tail remediation est."]},
-    {"id": "colonial_pipeline_2021",    "shock_units": 1.8, "cost_eur_m":  4400, "category": "cyber",       "label": "Colonial Pipeline ransomware (2021)",       "sources": ["DOJ 2021-06-07", "EIA gasoline supply"]},
-    {"id": "equifax_2017",              "shock_units": 1.5, "cost_eur_m":  1400, "category": "cyber",       "label": "Equifax breach + settlements (2017)",       "sources": ["FTC settlement 2019-07-22", "Equifax 10-K"]},
-    {"id": "wannacry_2017",             "shock_units": 2.5, "cost_eur_m":  4000, "category": "cyber",       "label": "WannaCry ransomware worm (2017)",           "sources": ["NHS England report 2018", "Cyence estimate"]},
-    {"id": "notpetya_2017",             "shock_units": 2.6, "cost_eur_m": 10000, "category": "cyber",       "label": "NotPetya / Maersk + Merck + WPP (2017)",    "sources": ["Maersk 8-K", "Merck 10-Q Q3-2017"]},
-    {"id": "tim_downgrade_2014",        "shock_units": 0.8, "cost_eur_m":   700, "category": "telco",       "label": "TIM IT rating downgrade chain (2014)",      "sources": ["Mediobanca research 2014", "TIT.MI mcap loss"]},
-    {"id": "wind3_merger_fallout_2017", "shock_units": 0.9, "cost_eur_m":  1200, "category": "telco",       "label": "Wind/3 merger competition fallout (2017)",  "sources": ["AGCom decision 2017", "Vodafone 10-K"]},
-    {"id": "vodafone_de_churn_2023",    "shock_units": 1.0, "cost_eur_m":  2000, "category": "telco",       "label": "Vodafone Germany churn crisis (2023)",      "sources": ["VOD.L H1-2024 results", "Bundesnetzagentur"]},
-    {"id": "bt_pension_2017",           "shock_units": 1.2, "cost_eur_m": 11000, "category": "telco",       "label": "BT pension deficit recognition (2017)",     "sources": ["BT 2017 annual report"]},
-    {"id": "uniper_rescue_2022",        "shock_units": 2.4, "cost_eur_m": 34000, "category": "energy",      "label": "Uniper rescue (Germany 2022)",              "sources": ["BMWK 2022-09-21", "Bundestag DS 20/3429"]},
-    {"id": "engie_hedging_2020",        "shock_units": 1.1, "cost_eur_m":  1100, "category": "energy",      "label": "Engie commodity hedging losses (2020)",     "sources": ["Engie H1-2020 results"]},
-    {"id": "eni_gabon_writedown_2020",  "shock_units": 0.7, "cost_eur_m":   300, "category": "energy",      "label": "ENI Gabon asset writedown (2020)",          "sources": ["ENI Q2-2020 results"]}
-  ]
+    {
+      "id": "mps_deposit_run_2016",
+      "shock_units": 1.4,
+      "cost_eur_m": 2100,
+      "category": "banking_it",
+      "label": "MPS deposit run (2016)",
+      "sources": [
+        "EBA SREP 2016",
+        "ECB statistical bulletin"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "mps_bailin_2017",
+      "shock_units": 1.6,
+      "cost_eur_m": 3900,
+      "category": "banking_it",
+      "label": "MPS precautionary recapitalisation (2017)",
+      "sources": [
+        "DG Comp state aid SA.47677",
+        "MEF press release 2017-07-04"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "carige_2019",
+      "shock_units": 1.3,
+      "cost_eur_m": 1800,
+      "category": "banking_it",
+      "label": "Banca Carige resolution (2019)",
+      "sources": [
+        "FITD intervention disclosure",
+        "BdI annual report 2019"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "veneto_popvicenza_2017",
+      "shock_units": 2.0,
+      "cost_eur_m": 5200,
+      "category": "banking_it",
+      "label": "Veneto Banche + Pop Vicenza wind-down (2017)",
+      "sources": [
+        "DG Comp state aid SA.45664",
+        "Italian DL 99/2017"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "popolare_bari_2019",
+      "shock_units": 1.0,
+      "cost_eur_m": 900,
+      "category": "banking_it",
+      "label": "Banca Popolare di Bari rescue (2019)",
+      "sources": [
+        "MEF DL 142/2019",
+        "FITD VS"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "tercas_2014",
+      "shock_units": 0.8,
+      "cost_eur_m": 300,
+      "category": "banking_it",
+      "label": "Tercas FITD intervention (2014)",
+      "sources": [
+        "EU state aid case T-98/16"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "northern_rock_2007",
+      "shock_units": 1.5,
+      "cost_eur_m": 38000,
+      "category": "banking_eu",
+      "label": "Northern Rock liquidity support (2007)",
+      "sources": [
+        "BoE liquidity peak Sept 2007",
+        "HMT WMS"
+      ],
+      "regime": "calm"
+    },
+    {
+      "id": "dexia_bailout_2008_2011",
+      "shock_units": 2.5,
+      "cost_eur_m": 90000,
+      "category": "banking_eu",
+      "label": "Dexia FR/BE/LU bailout (2008-2011)",
+      "sources": [
+        "DG Comp SA.33760",
+        "Belgian Court of Auditors 2014"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "abn_amro_2008",
+      "shock_units": 2.0,
+      "cost_eur_m": 27000,
+      "category": "banking_eu",
+      "label": "ABN AMRO / Fortis nationalisation (2008)",
+      "sources": [
+        "Dutch MoF 2008-10-03",
+        "DG Comp SA.28855"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "banco_espirito_santo_2014",
+      "shock_units": 1.7,
+      "cost_eur_m": 4900,
+      "category": "banking_eu",
+      "label": "Banco Espirito Santo / Novo Banco (2014)",
+      "sources": [
+        "Banco de Portugal resolution 2014-08-03"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "credit_suisse_ubs_2023",
+      "shock_units": 2.6,
+      "cost_eur_m": 17000,
+      "category": "banking_eu",
+      "label": "Credit Suisse forced merger w/ UBS (2023)",
+      "sources": [
+        "FINMA notice 2023-03-19",
+        "AT1 CHF15.6B wipeout"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "sberbank_europe_2022",
+      "shock_units": 1.2,
+      "cost_eur_m": 1100,
+      "category": "banking_eu",
+      "label": "Sberbank Europe sanctions failure (2022)",
+      "sources": [
+        "SRB resolution 2022-02-28"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "greensill_2021",
+      "shock_units": 1.3,
+      "cost_eur_m": 4500,
+      "category": "banking_eu",
+      "label": "Greensill Capital collapse (2021)",
+      "sources": [
+        "FCA enforcement 2021",
+        "CS exposure disclosures"
+      ],
+      "regime": "calm"
+    },
+    {
+      "id": "wirecard_2020",
+      "shock_units": 1.6,
+      "cost_eur_m": 4200,
+      "category": "banking_eu",
+      "label": "Wirecard fraud collapse (2020)",
+      "sources": [
+        "BaFin investigation 2020",
+        "Munich prosecutor"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "svb_2023",
+      "shock_units": 2.4,
+      "cost_eur_m": 9000,
+      "category": "banking_us",
+      "label": "Silicon Valley Bank collapse (2023)",
+      "sources": [
+        "FDIC press release 2023-03-10"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "signature_2023",
+      "shock_units": 1.8,
+      "cost_eur_m": 5000,
+      "category": "banking_us",
+      "label": "Signature Bank resolution (2023)",
+      "sources": [
+        "FDIC press release 2023-03-12"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "first_republic_2023",
+      "shock_units": 1.7,
+      "cost_eur_m": 4500,
+      "category": "banking_us",
+      "label": "First Republic JPM acquisition (2023)",
+      "sources": [
+        "FDIC press release 2023-05-01"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "lehman_2008",
+      "shock_units": 4.0,
+      "cost_eur_m": 600000,
+      "category": "banking_us",
+      "label": "Lehman Brothers bankruptcy (2008)",
+      "sources": [
+        "IMF Global Financial Stability Report 2009"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "bear_stearns_2008",
+      "shock_units": 2.0,
+      "cost_eur_m": 27000,
+      "category": "banking_us",
+      "label": "Bear Stearns JPM acquisition (2008)",
+      "sources": [
+        "Fed primary dealer credit facility 2008"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "wamu_2008",
+      "shock_units": 2.2,
+      "cost_eur_m": 25000,
+      "category": "banking_us",
+      "label": "Washington Mutual receivership (2008)",
+      "sources": [
+        "OTS / FDIC 2008-09-25"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "ltcm_1998",
+      "shock_units": 1.5,
+      "cost_eur_m": 4000,
+      "category": "banking_us",
+      "label": "LTCM consortium bailout (1998)",
+      "sources": [
+        "Fed Williams 1998 disclosure"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "brexit_wave1_2016",
+      "shock_units": 3.2,
+      "cost_eur_m": 30000,
+      "category": "sovereign",
+      "label": "Brexit referendum Wave-1 (2016-06-23)",
+      "sources": [
+        "BoE FSR Aug 2016",
+        "FX + FTSE100 first-week loss"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "brexit_wave2_2019",
+      "shock_units": 2.0,
+      "cost_eur_m": 15000,
+      "category": "sovereign",
+      "label": "Brexit no-deal cliff (2019-Q1)",
+      "sources": [
+        "OBR Fiscal Risks Report 2019"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "italy_budget_2018",
+      "shock_units": 1.8,
+      "cost_eur_m": 25000,
+      "category": "sovereign",
+      "label": "Italian budget standoff vs EU (2018)",
+      "sources": [
+        "BTP-Bund spread \u00d7 bond market loss",
+        "Bankitalia DGS"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "greece_2015",
+      "shock_units": 2.6,
+      "cost_eur_m": 40000,
+      "category": "sovereign",
+      "label": "Greek referendum + capital controls (2015)",
+      "sources": [
+        "IMF Country Report 16/130",
+        "ELA peak"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "cyprus_2013",
+      "shock_units": 2.3,
+      "cost_eur_m": 15000,
+      "category": "sovereign",
+      "label": "Cyprus bail-in (2013)",
+      "sources": [
+        "Eurogroup statement 2013-03-25",
+        "ESM disbursement"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "argentina_2001",
+      "shock_units": 3.5,
+      "cost_eur_m": 82000,
+      "category": "sovereign",
+      "label": "Argentina sovereign default (2001)",
+      "sources": [
+        "IMF Country Report 04/195"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "crowdstrike_2024",
+      "shock_units": 2.8,
+      "cost_eur_m": 10000,
+      "category": "cyber",
+      "label": "CrowdStrike global outage (2024)",
+      "sources": [
+        "Delta 8-K filing",
+        "Parametrix estimate"
+      ],
+      "regime": "calm"
+    },
+    {
+      "id": "solarwinds_2020",
+      "shock_units": 2.3,
+      "cost_eur_m": 100000,
+      "category": "cyber",
+      "label": "SolarWinds supply-chain compromise (2020)",
+      "sources": [
+        "CISA AA20-352A",
+        "long-tail remediation est."
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "colonial_pipeline_2021",
+      "shock_units": 1.8,
+      "cost_eur_m": 4400,
+      "category": "cyber",
+      "label": "Colonial Pipeline ransomware (2021)",
+      "sources": [
+        "DOJ 2021-06-07",
+        "EIA gasoline supply"
+      ],
+      "regime": "calm"
+    },
+    {
+      "id": "equifax_2017",
+      "shock_units": 1.5,
+      "cost_eur_m": 1400,
+      "category": "cyber",
+      "label": "Equifax breach + settlements (2017)",
+      "sources": [
+        "FTC settlement 2019-07-22",
+        "Equifax 10-K"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "wannacry_2017",
+      "shock_units": 2.5,
+      "cost_eur_m": 4000,
+      "category": "cyber",
+      "label": "WannaCry ransomware worm (2017)",
+      "sources": [
+        "NHS England report 2018",
+        "Cyence estimate"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "notpetya_2017",
+      "shock_units": 2.6,
+      "cost_eur_m": 10000,
+      "category": "cyber",
+      "label": "NotPetya / Maersk + Merck + WPP (2017)",
+      "sources": [
+        "Maersk 8-K",
+        "Merck 10-Q Q3-2017"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "tim_downgrade_2014",
+      "shock_units": 0.8,
+      "cost_eur_m": 700,
+      "category": "telco",
+      "label": "TIM IT rating downgrade chain (2014)",
+      "sources": [
+        "Mediobanca research 2014",
+        "TIT.MI mcap loss"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "wind3_merger_fallout_2017",
+      "shock_units": 0.9,
+      "cost_eur_m": 1200,
+      "category": "telco",
+      "label": "Wind/3 merger competition fallout (2017)",
+      "sources": [
+        "AGCom decision 2017",
+        "Vodafone 10-K"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "vodafone_de_churn_2023",
+      "shock_units": 1.0,
+      "cost_eur_m": 2000,
+      "category": "telco",
+      "label": "Vodafone Germany churn crisis (2023)",
+      "sources": [
+        "VOD.L H1-2024 results",
+        "Bundesnetzagentur"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "bt_pension_2017",
+      "shock_units": 1.2,
+      "cost_eur_m": 11000,
+      "category": "telco",
+      "label": "BT pension deficit recognition (2017)",
+      "sources": [
+        "BT 2017 annual report"
+      ],
+      "regime": "stressed"
+    },
+    {
+      "id": "uniper_rescue_2022",
+      "shock_units": 2.4,
+      "cost_eur_m": 34000,
+      "category": "energy",
+      "label": "Uniper rescue (Germany 2022)",
+      "sources": [
+        "BMWK 2022-09-21",
+        "Bundestag DS 20/3429"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "engie_hedging_2020",
+      "shock_units": 1.1,
+      "cost_eur_m": 1100,
+      "category": "energy",
+      "label": "Engie commodity hedging losses (2020)",
+      "sources": [
+        "Engie H1-2020 results"
+      ],
+      "regime": "crisis"
+    },
+    {
+      "id": "eni_gabon_writedown_2020",
+      "shock_units": 0.7,
+      "cost_eur_m": 300,
+      "category": "energy",
+      "label": "ENI Gabon asset writedown (2020)",
+      "sources": [
+        "ENI Q2-2020 results"
+      ],
+      "regime": "crisis"
+    }
+  ],
+  "_regime_methodology": "Each incident tagged with a market-stress regime: 'calm' (BTP-Bund < 100bp + VIX < 18), 'stressed' (BTP-Bund 100-200bp OR VIX 18-30), 'crisis' (BTP-Bund > 200bp OR VIX > 30 OR single-firm bailout). Manually assigned for now; will derive from contemporaneous market anchors when shock_units are replay-derived in Sprint D.4."
 }

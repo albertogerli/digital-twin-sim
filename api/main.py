@@ -943,17 +943,28 @@ def _derive_dora_metrics_from_export(sim) -> dict:
             estimate_anchor, estimate_ticker, combine, detect_category,
         )
         from core.dora.llm_judge import estimate_via_llm_judge
+        from core.dora.live_data import sovereign_spread_snapshot
         # Auto-detect category from the brief — banking_it / banking_eu /
-        # banking_us / sovereign / cyber / telco / energy. When detected
-        # (and that bucket has ≥3 incidents), Method A uses the within-
-        # category α — much tighter than the overall pool.
+        # banking_us / sovereign / cyber / telco / energy. Plus current
+        # market regime from the live BTP-Bund spread (Sprint D.3).
+        # Method A's α is sliced on (category × regime) when both have
+        # ≥3 incidents in the intersection, falling back progressively.
         brief_text = ""
         try:
             brief_text = (sim.request.brief or "") if hasattr(sim, "request") else ""
         except Exception:
             pass
         detected_cat, cat_scores = detect_category(brief_text)
-        anchor_est = estimate_anchor(total_shock_units=total_shock, category=detected_cat)
+        try:
+            spread_snap = sovereign_spread_snapshot()
+            current_regime = spread_snap.get("regime") if spread_snap.get("status") == "ok" else None
+        except Exception:
+            current_regime = None
+        anchor_est = estimate_anchor(
+            total_shock_units=total_shock,
+            category=detected_cat,
+            regime=current_regime,
+        )
         ticker_est = estimate_ticker(ticker_price_history=ticker_history)
         # Method C — LLM judge (gemini-3.1-pro-preview), fires once.
         # Returns None on missing API key / budget exhaustion / parse

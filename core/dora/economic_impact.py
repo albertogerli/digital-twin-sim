@@ -42,62 +42,76 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 MARKET_CAPS_PATH = REPO_ROOT / "shared" / "ticker_market_caps.json"
 INCIDENTS_PATH = REPO_ROOT / "shared" / "dora_reference_incidents.json"
 CALIBRATION_OUTPUT_PATH = REPO_ROOT / "outputs" / "dora_calibration.json"
+VAR_CONTAGION_PATH = REPO_ROOT / "shared" / "sector_contagion_var.json"
+STOCK_UNIVERSE_PATH = REPO_ROOT / "shared" / "stock_universe.json"
 
 
 # ── Calibration anchors — loaded from disk, not hardcoded ─────────────
 
-_INCIDENTS_CACHE: Optional[list[tuple[float, float, str, str]]] = None
+_INCIDENTS_CACHE: Optional[list[tuple[float, float, str, str, str]]] = None
 
 
-def _load_reference_incidents() -> list[tuple[float, float, str, str]]:
-    """Load (shock_units, cost_eur_m, id, category) from disk.
+def _load_reference_incidents() -> list[tuple[float, float, str, str, str]]:
+    """Load (shock_units, cost_eur_m, id, category, regime) from disk.
 
     Source of truth: shared/dora_reference_incidents.json — auditable,
     version-controlled, refreshable without code changes. Each incident
     cites its public sources in the JSON.
+
+    `regime` is "calm" / "stressed" / "crisis" — added in Sprint D.3 to
+    let α be sliced by market-stress regime as well as category.
+    Defaults to "stressed" if a row has no regime label.
     """
     global _INCIDENTS_CACHE
     if _INCIDENTS_CACHE is not None:
         return _INCIDENTS_CACHE
     try:
         data = json.loads(INCIDENTS_PATH.read_text())
-        out: list[tuple[float, float, str, str]] = []
+        out: list[tuple[float, float, str, str, str]] = []
         for entry in data.get("incidents", []):
             su = float(entry.get("shock_units", 0) or 0)
             cm = float(entry.get("cost_eur_m", 0) or 0)
             if su > 0 and cm > 0:
-                out.append((su, cm, entry.get("id", "?"), entry.get("category", "?")))
+                out.append((
+                    su, cm,
+                    entry.get("id", "?"),
+                    entry.get("category", "?"),
+                    entry.get("regime", "stressed"),
+                ))
         _INCIDENTS_CACHE = out
         return out
     except Exception as e:
         logger.warning(f"reference incidents load failed: {e}; using fallback small sample")
-        # Tiny fallback so the system never breaks even if the file is gone.
         _INCIDENTS_CACHE = [
-            (1.6,  3_900, "mps_bailin_2017", "banking_it"),
-            (2.4,  9_000, "svb_2023",        "banking_us"),
-            (3.2, 30_000, "brexit_wave1_2016", "sovereign"),
+            (1.6,  3_900, "mps_bailin_2017", "banking_it", "stressed"),
+            (2.4,  9_000, "svb_2023",        "banking_us", "stressed"),
+            (3.2, 30_000, "brexit_wave1_2016", "sovereign", "stressed"),
         ]
         return _INCIDENTS_CACHE
 
 
-def _ols_no_intercept(incidents: list[tuple[float, float, str, str]]) -> tuple[float, float, float, list[tuple[str, float]]]:
-    """Plain OLS-no-intercept fit. Returns (α, σ, R², residuals_list)."""
+def _ols_no_intercept(incidents: list[tuple]) -> tuple[float, float, float, list[tuple[str, float]]]:
+    """Plain OLS-no-intercept fit. Returns (α, σ, R², residuals_list).
+
+    Accepts incidents as either 4-tuples (s, c, id, cat) or 5-tuples
+    (s, c, id, cat, regime) — only s and c are used.
+    """
     if not incidents:
         return 50.0, 0.0, 0.0, []
-    sx2 = sum(s * s for s, _, _, _ in incidents)
-    sxy = sum(s * c for s, c, _, _ in incidents)
+    sx2 = sum(row[0] * row[0] for row in incidents)
+    sxy = sum(row[0] * row[1] for row in incidents)
     alpha = sxy / sx2 if sx2 > 0 else 50.0
-    resid = [(ident, c - alpha * s) for s, c, ident, _ in incidents]
+    resid = [(row[2], row[1] - alpha * row[0]) for row in incidents]
     n = len(incidents)
     sigma = (sum(r * r for _, r in resid) / max(1, n - 1)) ** 0.5
-    ss_tot = sum(c * c for _, c, _, _ in incidents)
+    ss_tot = sum(row[1] * row[1] for row in incidents)
     ss_res = sum(r * r for _, r in resid)
     r2 = max(0.0, 1.0 - ss_res / ss_tot) if ss_tot > 0 else 0.0
     return alpha, sigma, r2, resid
 
 
 def _huber_no_intercept(
-    incidents: list[tuple[float, float, str, str]],
+    incidents: list[tuple],
     epsilon: float = 1.345,
     max_iter: int = 50,
 ) -> tuple[float, float, float, list[tuple[str, float]]]:
@@ -113,29 +127,29 @@ def _huber_no_intercept(
     # OLS init
     alpha, sigma, _, _ = _ols_no_intercept(incidents)
     if sigma <= 0:
-        return alpha, sigma, 0.0, [(i, 0.0) for _, _, i, _ in incidents]
-    # IRLS
+        return alpha, sigma, 0.0, [(row[2], 0.0) for row in incidents]
+    # IRLS — accept 4- or 5-tuple rows; only s and c used
     for _ in range(max_iter):
         weights = []
-        for s, c, _, _ in incidents:
+        for row in incidents:
+            s, c = row[0], row[1]
             r = c - alpha * s
             if abs(r) <= epsilon * sigma:
                 w = 1.0
             else:
                 w = (epsilon * sigma) / max(1e-9, abs(r))
             weights.append(w)
-        sx2 = sum(w * s * s for w, (s, _, _, _) in zip(weights, incidents))
-        sxy = sum(w * s * c for w, (s, c, _, _) in zip(weights, incidents))
+        sx2 = sum(w * row[0] * row[0] for w, row in zip(weights, incidents))
+        sxy = sum(w * row[0] * row[1] for w, row in zip(weights, incidents))
         new_alpha = sxy / sx2 if sx2 > 0 else alpha
         if abs(new_alpha - alpha) / max(1.0, abs(alpha)) < 1e-5:
             alpha = new_alpha
             break
         alpha = new_alpha
-        # Update sigma from un-weighted residuals so the band is honest
-        resid = [c - alpha * s for s, c, _, _ in incidents]
+        resid = [row[1] - alpha * row[0] for row in incidents]
         sigma = (sum(r * r for r in resid) / max(1, len(resid) - 1)) ** 0.5
-    resid = [(ident, c - alpha * s) for s, c, ident, _ in incidents]
-    ss_tot = sum(c * c for _, c, _, _ in incidents)
+    resid = [(row[2], row[1] - alpha * row[0]) for row in incidents]
+    ss_tot = sum(row[1] * row[1] for row in incidents)
     ss_res = sum(r * r for _, r in resid)
     r2 = max(0.0, 1.0 - ss_res / ss_tot) if ss_tot > 0 else 0.0
     return alpha, sigma, r2, resid
@@ -143,33 +157,45 @@ def _huber_no_intercept(
 
 def _calibrated_alpha(
     category: Optional[str] = None,
+    regime: Optional[str] = None,
     robust: bool = True,
 ) -> tuple[float, float, float, int]:
     """Slope (no intercept) on the loaded reference incidents.
 
     Returns (alpha_eur_millions_per_unit, sigma_residual, R2, n_used).
 
-    When `robust=True` (default since Sprint D.1) uses Huber regression
-    (IRLS, k=1.345) — bounds the influence of 2σ+ outliers like
-    Lehman 2008 (€600B) and SolarWinds 2020 (€100B) that dragged the
-    overall OLS α up to €24B/unit. With robust fit, overall α drops
-    to ~€10B/unit and per-category R² jumps materially.
+    Filtering precedence:
+      • If category AND regime given AND the bucket has ≥3 incidents,
+        slice on both (Sprint D.3 behaviour).
+      • Else if category alone has ≥3 incidents, slice on category.
+      • Else if regime alone has ≥3 incidents, slice on regime.
+      • Else fall back to the overall pool.
 
-    When `category` is given (and at least 3 incidents in that bucket),
-    fits within-category — much tighter than the overall pool.
+    Regime = "calm" / "stressed" / "crisis" — same incident behaves
+    very differently across regimes (Italian-bank cost in 2017 stressed
+    BTP-Bund regime ≠ same in 2008 crisis regime).
+
+    `robust=True` (default since D.1) uses Huber regression (IRLS,
+    k=1.345) bounding the influence of 2σ+ outliers like Lehman 2008.
     """
     incidents = _load_reference_incidents()
+    # Try most-specific filter first; widen progressively until ≥3 rows
+    candidates = []
+    if category and regime:
+        candidates.append([r for r in incidents if r[3] == category and r[4] == regime])
     if category:
-        sub = [row for row in incidents if row[3] == category]
-        if len(sub) >= 3:
-            incidents = sub
-    if not incidents:
+        candidates.append([r for r in incidents if r[3] == category])
+    if regime:
+        candidates.append([r for r in incidents if r[4] == regime])
+    candidates.append(incidents)  # fallback overall
+    chosen = next((c for c in candidates if len(c) >= 3), incidents)
+    if not chosen:
         return 50.0, 0.0, 0.0, 0
     if robust:
-        alpha, sigma, r2, _ = _huber_no_intercept(incidents)
+        alpha, sigma, r2, _ = _huber_no_intercept(chosen)
     else:
-        alpha, sigma, r2, _ = _ols_no_intercept(incidents)
-    return alpha, sigma, r2, len(incidents)
+        alpha, sigma, r2, _ = _ols_no_intercept(chosen)
+    return alpha, sigma, r2, len(chosen)
 
 
 def backtest_loo(category: Optional[str] = None, robust: bool = True) -> dict:
@@ -415,11 +441,92 @@ CALIBRATION_NOTES = (
 )
 
 
-# Cross-sector contagion multiplier — applied on top of direct ticker
-# losses in Method B. Calibrated against the 2016 Brexit cascade where
-# direct equity hit was ~12B but second-order banking/forex cost
-# pushed total to ~30B (multiplier ≈ 2.5). Conservative anchor at 1.6.
-GAMMA_CONTAGION = 1.6
+# Cross-sector contagion multiplier — Sprint D.5: derive per-brief
+# from the empirical VAR(1) network in shared/sector_contagion_var.json
+# instead of a hardcoded 1.6. Fall back to 1.6 only if the VAR file is
+# missing or no significant edges fire.
+GAMMA_CONTAGION_DEFAULT = 1.6
+
+
+_VAR_CACHE: Optional[dict] = None
+_TICKER_TO_SECTOR_CACHE: Optional[dict[str, str]] = None
+
+
+def _load_var_matrix() -> dict:
+    """Load and cache the cross-sector VAR(1) matrix (Sprint 82)."""
+    global _VAR_CACHE
+    if _VAR_CACHE is not None:
+        return _VAR_CACHE
+    try:
+        _VAR_CACHE = json.loads(VAR_CONTAGION_PATH.read_text()) or {}
+    except Exception as e:
+        logger.warning(f"VAR matrix load failed: {e}")
+        _VAR_CACHE = {}
+    return _VAR_CACHE
+
+
+def _ticker_to_sector(tk: str) -> Optional[str]:
+    """Cached ticker → sector lookup from stock_universe.json."""
+    global _TICKER_TO_SECTOR_CACHE
+    if _TICKER_TO_SECTOR_CACHE is None:
+        try:
+            data = json.loads(STOCK_UNIVERSE_PATH.read_text())
+            _TICKER_TO_SECTOR_CACHE = {}
+            for s in data.get("stocks", []):
+                t = s.get("ticker")
+                if t:
+                    _TICKER_TO_SECTOR_CACHE[t] = s.get("sector", "unknown")
+        except Exception as e:
+            logger.warning(f"stock universe load failed: {e}")
+            _TICKER_TO_SECTOR_CACHE = {}
+    return _TICKER_TO_SECTOR_CACHE.get(tk)
+
+
+def _gamma_from_var(source_sectors: set[str], t_threshold: float = 1.96) -> tuple[float, list[dict]]:
+    """Compute γ_contagion from VAR(1) network for the given source sectors.
+
+    For each source sector mentioned in the brief (via priced tickers),
+    sum the absolute β of all statistically-significant outgoing edges
+    (|t-stat| > 1.96) to OTHER sectors. γ = 1 + mean(per-source sum).
+
+    Returns (γ, evidence_list) where evidence_list documents each
+    significant edge — auditable by the CRO.
+    """
+    var = _load_var_matrix()
+    matrix = var.get("matrix") or {}
+    if not matrix or not source_sectors:
+        return GAMMA_CONTAGION_DEFAULT, []
+
+    per_source_sums: list[float] = []
+    evidence: list[dict] = []
+    for src in source_sectors:
+        row = matrix.get(src) or {}
+        if not isinstance(row, dict):
+            continue
+        edge_sum = 0.0
+        for dst, info in row.items():
+            if dst == src or not isinstance(info, dict):
+                continue
+            try:
+                beta = float(info.get("beta", 0) or 0)
+                t_stat = float(info.get("t_stat", 0) or 0)
+            except (TypeError, ValueError):
+                continue
+            if abs(t_stat) >= t_threshold:
+                edge_sum += abs(beta)
+                evidence.append({
+                    "from": src, "to": dst,
+                    "beta": round(beta, 4), "t_stat": round(t_stat, 2),
+                })
+        per_source_sums.append(edge_sum)
+
+    if not per_source_sums:
+        return GAMMA_CONTAGION_DEFAULT, evidence
+    mean_edge_sum = sum(per_source_sums) / len(per_source_sums)
+    gamma = round(1.0 + mean_edge_sum, 3)
+    # Bound to a sane range: 1.0 (no contagion) up to 4.0 (extreme)
+    gamma = max(1.0, min(4.0, gamma))
+    return gamma, sorted(evidence, key=lambda e: -abs(e["beta"]))[:20]
 
 
 # ── Market caps ────────────────────────────────────────────────────────
@@ -445,26 +552,36 @@ def _market_caps() -> dict[str, float]:
 # ── Public API ─────────────────────────────────────────────────────────
 
 
-def estimate_anchor(total_shock_units: float, category: Optional[str] = None) -> dict:
+def estimate_anchor(
+    total_shock_units: float,
+    category: Optional[str] = None,
+    regime: Optional[str] = None,
+) -> dict:
     """Method A — α-calibrated shock anchor.
 
-    When `category` is provided AND the per-category fit has at least 3
-    incidents, uses the within-category α (much tighter, R² typically
-    0.55-0.88 vs 0.25 overall). Otherwise falls back to the overall α.
+    Slices α on (category, regime) when both have ≥3 incidents in the
+    intersection — banking_it×stressed gives a much tighter fit than
+    banking_it alone or stressed alone, when both signals are present.
 
     Returns a dict with point estimate + 90% CI band + breakdown so
     the UI can render the methodology transparently.
     """
-    cat_alpha, cat_sigma, cat_r2, cat_n = _calibrated_alpha(category) if category else (0.0, 0.0, 0.0, 0)
     overall_alpha, overall_sigma, overall_r2, overall_n = _calibrated_alpha()
-    used_category = category if category and cat_n >= 3 else None
-    if used_category:
-        alpha, sigma, r2, n = cat_alpha, cat_sigma, cat_r2, cat_n
+    alpha, sigma, r2, n = _calibrated_alpha(category=category, regime=regime)
+
+    # Determine actual scope used (the most-specific filter that hit ≥3 rows)
+    incidents = _load_reference_incidents()
+    if category and regime and len([r for r in incidents if r[3] == category and r[4] == regime]) >= 3:
+        scope = f"{category} × {regime}"
+    elif category and len([r for r in incidents if r[3] == category]) >= 3:
+        scope = category
+    elif regime and len([r for r in incidents if r[4] == regime]) >= 3:
+        scope = f"{regime} regime"
     else:
-        alpha, sigma, r2, n = overall_alpha, overall_sigma, overall_r2, overall_n
+        scope = "overall"
 
     point_eur = float(total_shock_units * alpha * 1_000_000)
-    band = 1.645 * sigma * 1_000_000  # 90% normal CI
+    band = 1.645 * sigma * 1_000_000
     return {
         "method": "anchor",
         "point_eur": round(point_eur, 2),
@@ -476,30 +593,38 @@ def estimate_anchor(total_shock_units: float, category: Optional[str] = None) ->
             "sigma_residual_eur": round(sigma * 1_000_000, 0),
             "r2_anchor_fit": round(r2, 3),
             "n_reference_incidents": n,
-            "calibration_scope": used_category or "overall",
+            "calibration_scope": scope,
             "requested_category": category,
-            # Surface the alternative for transparency: if a category was
-            # requested but had n<3, show what overall would have given.
-            "fallback_overall_alpha_eur_per_unit": round(overall_alpha * 1_000_000, 0) if used_category != None and used_category != "overall" else None,
+            "requested_regime": regime,
+            "fallback_overall_alpha_eur_per_unit":
+                round(overall_alpha * 1_000_000, 0) if scope != "overall" else None,
         },
         "formula": "|Σ shock_mag × shock_dir| × α",
     }
 
 
 def estimate_ticker(ticker_price_history: list[dict]) -> dict:
-    """Method B — direct ticker market-cap loss × contagion γ.
+    """Method B — direct ticker market-cap loss × VAR(1)-derived γ.
 
     `ticker_price_history` is a list of per-round snapshots, each one a
     dict from `TickerPriceState.step()`: { ticker → {cum_pct, ...} }.
     We take the LAST snapshot (final cumulative move) per ticker as the
     representative loss.
+
+    γ_contagion (Sprint D.5): derived from the empirical cross-sector
+    VAR(1) coefficients (shared/sector_contagion_var.json) by summing
+    the |β| of statistically-significant outgoing edges (|t|>1.96) from
+    each source sector touched by the brief. Replaces the hardcoded
+    γ=1.6 anchored to Brexit alone.
     """
     if not ticker_price_history:
         return {
             "method": "ticker",
             "point_eur": 0.0, "low_eur": 0.0, "high_eur": 0.0,
             "inputs": {"tickers_priced": 0, "tickers_unknown": 0,
-                       "direct_loss_eur": 0.0, "contagion_multiplier": GAMMA_CONTAGION},
+                       "direct_loss_eur": 0.0,
+                       "contagion_multiplier": GAMMA_CONTAGION_DEFAULT,
+                       "contagion_source": "default (no tickers)"},
             "formula": "Σ |cum_pct[t]| × mcap[t] × γ_contagion",
         }
     # Final snapshot per ticker (last round in which the ticker appears)
@@ -515,9 +640,13 @@ def estimate_ticker(ticker_price_history: list[dict]) -> dict:
     priced = 0
     unknown = 0
     breakdown: list[dict] = []
+    source_sectors: set[str] = set()
     for tk, v in final_snap.items():
         cum_pct = abs(float(v.get("cum_pct", 0.0) or 0.0))
         mcap_m = caps.get(tk)
+        sect = _ticker_to_sector(tk)
+        if sect:
+            source_sectors.add(sect)
         if mcap_m is None:
             unknown += 1
             continue
@@ -526,15 +655,18 @@ def estimate_ticker(ticker_price_history: list[dict]) -> dict:
         priced += 1
         breakdown.append({
             "ticker": tk,
+            "sector": sect or "unknown",
             "cum_pct": round(float(v.get("cum_pct", 0.0)), 3),
             "mcap_eur_m": mcap_m,
             "loss_eur_m": round(loss_m, 2),
         })
     breakdown.sort(key=lambda x: x["loss_eur_m"], reverse=True)
-    point_m = direct_loss_m * GAMMA_CONTAGION
-    # CI on Method B is harder — for now, ±25% as rough band reflecting
-    # uncertainty on γ_contagion (which itself was anchored to Brexit).
-    band_m = point_m * 0.25
+
+    gamma, var_evidence = _gamma_from_var(source_sectors)
+    contagion_source = "VAR(1) empirical" if var_evidence else "default fallback (no significant edges)"
+
+    point_m = direct_loss_m * gamma
+    band_m = point_m * 0.25  # ±25% on γ uncertainty
     return {
         "method": "ticker",
         "point_eur": round(point_m * 1_000_000, 2),
@@ -544,8 +676,11 @@ def estimate_ticker(ticker_price_history: list[dict]) -> dict:
             "tickers_priced": priced,
             "tickers_unknown": unknown,
             "direct_loss_eur": round(direct_loss_m * 1_000_000, 2),
-            "contagion_multiplier": GAMMA_CONTAGION,
-            "per_ticker": breakdown[:10],  # top 10 by loss
+            "contagion_multiplier": gamma,
+            "contagion_source": contagion_source,
+            "source_sectors": sorted(source_sectors),
+            "var_evidence": var_evidence[:8],  # top 8 strongest edges
+            "per_ticker": breakdown[:10],
         },
         "formula": "Σ |cum_pct[t]| × mcap[t] × γ_contagion",
     }

@@ -131,7 +131,7 @@ const LEVEL_TONE: Record<string, string> = {
 };
 
 export default function CompliancePage() {
-  const [tab, setTab] = useState<"byod" | "dora" | "calibration">("byod");
+  const [tab, setTab] = useState<"byod" | "dora" | "calibration" | "dora_validation">("byod");
 
   return (
     <div className="min-h-screen bg-ki-surface text-ki-on-surface">
@@ -163,6 +163,9 @@ export default function CompliancePage() {
           <TabBtn active={tab === "dora"} onClick={() => setTab("dora")}>
             DORA export
           </TabBtn>
+          <TabBtn active={tab === "dora_validation"} onClick={() => setTab("dora_validation")}>
+            DORA validation
+          </TabBtn>
           <TabBtn active={tab === "calibration"} onClick={() => setTab("calibration")}>
             Self-calibration
           </TabBtn>
@@ -170,7 +173,10 @@ export default function CompliancePage() {
       </header>
 
       <main className="px-6 py-6 max-w-6xl mx-auto">
-        {tab === "byod" ? <ByodPanel /> : tab === "dora" ? <DoraPanel /> : <CalibrationPanel />}
+        {tab === "byod" ? <ByodPanel /> :
+         tab === "dora" ? <DoraPanel /> :
+         tab === "dora_validation" ? <DoraValidationPanel /> :
+         <CalibrationPanel />}
       </main>
     </div>
   );
@@ -604,6 +610,226 @@ function DoraPreviewCard({ preview, simId }: { preview: DoraPreview; simId: stri
           View in browser
         </a>
       </div>
+    </div>
+  );
+}
+
+/* ───────────────────────────────────────────────────────────
+   DORA Validation panel — leave-one-out CV + OLS vs Huber
+   ─────────────────────────────────────────────────────────── */
+
+interface BacktestResult {
+  id: string;
+  label: string;
+  category: string;
+  shock_units: number;
+  actual_eur_m: number;
+  predicted_eur_m: number;
+  error_eur_m: number;
+  error_pct: number;
+  within_50pct: boolean;
+  within_100pct: boolean;
+  within_200pct: boolean;
+}
+
+interface BacktestPayload {
+  status: string;
+  method: string;
+  category_filter: string;
+  n_total: number;
+  mae_eur_m: number;
+  rmse_eur_m: number;
+  median_abs_pct_error: number;
+  hit_rate_within_50pct: number;
+  hit_rate_within_100pct: number;
+  hit_rate_within_200pct: number;
+  results: BacktestResult[];
+}
+
+interface DiagnosticsPayload {
+  category: string;
+  n_incidents: number;
+  ols: { alpha_eur_m_per_unit: number; sigma_eur_m: number; r2: number };
+  huber_robust: { alpha_eur_m_per_unit: number; sigma_eur_m: number; r2: number; epsilon: number };
+  outliers_2sigma: { id: string; ols_residual_eur_m: number; outlier_z: number | null }[];
+  alpha_drift_pct: number | null;
+}
+
+const DORA_CATEGORIES = ["overall", "banking_it", "banking_eu", "banking_us", "sovereign", "cyber", "telco", "energy"];
+
+function DoraValidationPanel() {
+  const [category, setCategory] = useState<string>("overall");
+  const [diag, setDiag] = useState<DiagnosticsPayload | null>(null);
+  const [bt, setBt] = useState<BacktestPayload | null>(null);
+  const [err, setErr] = useState<string | null>(null);
+
+  useEffect(() => {
+    setDiag(null); setBt(null); setErr(null);
+    const params = category === "overall" ? "" : `?category=${category}`;
+    Promise.all([
+      fetch(`${API_BASE}/api/compliance/dora/calibration/diagnostics${params}`).then(r => r.json()),
+      fetch(`${API_BASE}/api/compliance/dora/backtest${params}`).then(r => r.json()),
+    ])
+      .then(([d, b]) => { setDiag(d); setBt(b); })
+      .catch(e => setErr(String(e)));
+  }, [category]);
+
+  if (err) return <div className="text-[12px] text-ki-on-surface-muted">{err}</div>;
+  if (!diag || !bt) {
+    return <div className="text-[12px] text-ki-on-surface-muted">Loading validation<span className="cursor-blink">_</span></div>;
+  }
+
+  return (
+    <div className="space-y-6">
+      <section>
+        <div className="eyebrow text-ki-primary mb-2">Validation slice</div>
+        <p className="text-[12px] text-ki-on-surface-secondary mb-3 leading-relaxed max-w-3xl">
+          Leave-one-out cross-validation on the {bt.n_total === 1 ? "incident" : `${bt.n_total} reference incidents`} per
+          category — fit α on N-1, predict held-out, measure error. Plus OLS vs Huber robust regression
+          comparison so a CRO can see the impact of outliers like Lehman 2008.
+        </p>
+        <div className="flex gap-1 flex-wrap">
+          {DORA_CATEGORIES.map(c => (
+            <button key={c}
+              onClick={() => setCategory(c)}
+              className={`px-2 py-1 text-[11px] rounded-sm border ${
+                category === c
+                  ? "bg-ki-on-surface text-ki-surface border-ki-on-surface"
+                  : "border-ki-border text-ki-on-surface-secondary hover:bg-ki-surface-hover"
+              }`}>
+              {c.replace("_", " ")}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {/* Diagnostics — OLS vs Huber */}
+      <section className="border border-ki-border rounded p-5">
+        <div className="eyebrow text-ki-primary mb-3">Calibration · OLS vs Huber robust</div>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="border border-ki-border rounded p-3">
+            <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted mb-1">OLS no-intercept</div>
+            <div className="font-data tabular text-[20px] font-medium text-ki-on-surface mt-0.5">
+              €{(diag.ols.alpha_eur_m_per_unit / 1000).toFixed(2)}B<span className="text-[12px] text-ki-on-surface-muted">/unit</span>
+            </div>
+            <div className="text-[11px] text-ki-on-surface-muted mt-1">
+              R² {diag.ols.r2.toFixed(3)} · σ €{(diag.ols.sigma_eur_m / 1000).toFixed(1)}B
+            </div>
+          </div>
+          <div className="border border-ki-border rounded p-3">
+            <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted mb-1">
+              Huber robust (k=1.345)
+              {diag.alpha_drift_pct !== null && (
+                <span className={`ml-2 text-[10px] font-data ${diag.alpha_drift_pct < 0 ? "text-emerald-700" : "text-amber-700"}`}>
+                  {diag.alpha_drift_pct >= 0 ? "+" : ""}{diag.alpha_drift_pct.toFixed(1)}%
+                </span>
+              )}
+            </div>
+            <div className="font-data tabular text-[20px] font-medium text-ki-on-surface mt-0.5">
+              €{(diag.huber_robust.alpha_eur_m_per_unit / 1000).toFixed(2)}B<span className="text-[12px] text-ki-on-surface-muted">/unit</span>
+            </div>
+            <div className="text-[11px] text-ki-on-surface-muted mt-1">
+              R² {diag.huber_robust.r2.toFixed(3)} · σ €{(diag.huber_robust.sigma_eur_m / 1000).toFixed(1)}B · used in production
+            </div>
+          </div>
+        </div>
+        {diag.outliers_2sigma.length > 0 && (
+          <div className="mt-3">
+            <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted mb-1.5">
+              Outliers (|z| &gt; 2σ from OLS) · {diag.outliers_2sigma.length} {diag.outliers_2sigma.length === 1 ? "incident" : "incidents"}
+            </div>
+            <div className="grid sm:grid-cols-2 gap-1.5">
+              {diag.outliers_2sigma.map(o => (
+                <div key={o.id} className="text-[11px] font-data flex items-baseline justify-between bg-ki-surface-sunken border border-ki-border rounded-sm px-2 py-1">
+                  <span className="text-ki-on-surface">{o.id}</span>
+                  <span className="text-ki-on-surface-muted">z={o.outlier_z}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[10px] text-ki-on-surface-muted mt-2 leading-relaxed">
+              Huber regression downweights these without dropping them — they still contribute, but not enough to drag
+              α away from the bulk of the data.
+            </p>
+          </div>
+        )}
+      </section>
+
+      {/* Backtest summary */}
+      <section className="border border-ki-border rounded p-5">
+        <div className="eyebrow text-ki-primary mb-3">Backtest · leave-one-out cross-validation</div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <BTStat label="Hit ±50%" value={`${(bt.hit_rate_within_50pct * 100).toFixed(0)}%`} accent="primary" />
+          <BTStat label="Hit ±100%" value={`${(bt.hit_rate_within_100pct * 100).toFixed(0)}%`} />
+          <BTStat label="MAE" value={`€${(bt.mae_eur_m / 1000).toFixed(1)}B`} />
+          <BTStat label="Median |%err|" value={`${bt.median_abs_pct_error.toFixed(0)}%`} />
+        </div>
+        <p className="text-[11px] text-ki-on-surface-muted mt-3 leading-relaxed">
+          For each incident, α was re-fitted on the other {bt.n_total - 1} and used to predict the held-out cost.
+          Method: <code className="font-data">{bt.method}</code> regression. Hit-rates are the share of out-of-sample
+          predictions within the threshold.
+        </p>
+      </section>
+
+      {/* Per-incident table */}
+      <section className="border border-ki-border rounded">
+        <div className="px-5 py-3 border-b border-ki-border flex items-baseline justify-between">
+          <div className="eyebrow text-ki-primary">Per-incident predictions (worst → best)</div>
+          <span className="font-data text-[11px] text-ki-on-surface-muted">{bt.results.length} rows</span>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-[11px]">
+            <thead className="bg-ki-surface-sunken">
+              <tr className="text-left border-b border-ki-border">
+                <th className="px-3 py-2 font-medium text-ki-on-surface-muted">Incident</th>
+                <th className="px-3 py-2 font-medium text-ki-on-surface-muted">Cat.</th>
+                <th className="px-3 py-2 font-medium text-ki-on-surface-muted text-right">Shock</th>
+                <th className="px-3 py-2 font-medium text-ki-on-surface-muted text-right">Actual €M</th>
+                <th className="px-3 py-2 font-medium text-ki-on-surface-muted text-right">Predicted €M</th>
+                <th className="px-3 py-2 font-medium text-ki-on-surface-muted text-right">% err</th>
+                <th className="px-3 py-2 font-medium text-ki-on-surface-muted text-center">Bands</th>
+              </tr>
+            </thead>
+            <tbody>
+              {bt.results.map((r, i) => {
+                const tone = r.within_50pct ? "text-emerald-700" : r.within_100pct ? "text-amber-700" : "text-red-700";
+                return (
+                  <tr key={r.id} className={`border-b border-ki-border-faint last:border-0 ${i < 3 ? "bg-red-50/30" : ""}`}>
+                    <td className="px-3 py-2 max-w-[320px]" title={r.label}>
+                      <div className="text-ki-on-surface">{r.label}</div>
+                      <div className="font-data text-[10px] text-ki-on-surface-muted">{r.id}</div>
+                    </td>
+                    <td className="px-3 py-2 font-data text-[10px] text-ki-on-surface-muted">{r.category}</td>
+                    <td className="px-3 py-2 text-right font-data tabular">{r.shock_units.toFixed(2)}</td>
+                    <td className="px-3 py-2 text-right font-data tabular">{r.actual_eur_m.toLocaleString()}</td>
+                    <td className="px-3 py-2 text-right font-data tabular">{r.predicted_eur_m.toLocaleString()}</td>
+                    <td className={`px-3 py-2 text-right font-data tabular font-medium ${tone}`}>
+                      {r.error_pct >= 0 ? "+" : ""}{r.error_pct.toFixed(0)}%
+                    </td>
+                    <td className="px-3 py-2 text-center">
+                      <span className={`inline-block w-3 h-3 rounded-full mr-1 ${r.within_50pct ? "bg-emerald-500" : "bg-ki-border-strong"}`} title="±50%" />
+                      <span className={`inline-block w-3 h-3 rounded-full mr-1 ${r.within_100pct ? "bg-amber-500" : "bg-ki-border-strong"}`} title="±100%" />
+                      <span className={`inline-block w-3 h-3 rounded-full ${r.within_200pct ? "bg-orange-500" : "bg-ki-border-strong"}`} title="±200%" />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <ComplianceLink href="https://github.com/albertogerli/digital-twin-sim/blob/main/docs/DORA_ECONOMIC_IMPACT_PIPELINE.md">
+        DORA economic-impact pipeline · full documentation →
+      </ComplianceLink>
+    </div>
+  );
+}
+
+function BTStat({ label, value, accent }: { label: string; value: string; accent?: "primary" }) {
+  return (
+    <div className={`border rounded p-3 ${accent === "primary" ? "border-ki-primary/40 bg-ki-primary-soft" : "border-ki-border"}`}>
+      <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted">{label}</div>
+      <div className="font-data tabular text-[20px] font-medium text-ki-on-surface mt-1">{value}</div>
     </div>
   );
 }

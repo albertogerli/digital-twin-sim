@@ -1003,6 +1003,31 @@ def _derive_dora_metrics_from_export(sim) -> dict:
     return metrics
 
 
+@app.get("/api/compliance/dora/calibration/diagnostics")
+@cached(ttl_seconds=60.0)
+async def dora_calibration_diagnostics(category: Optional[str] = None):
+    """OLS vs Huber pair-of-fits + 2σ outliers, per-category or overall.
+
+    Used by /compliance to show "α drops 42% when we exclude Lehman as
+    outlier" — the kind of transparency a CRO needs."""
+    from core.dora.economic_impact import calibration_diagnostics
+    return calibration_diagnostics(category=category)
+
+
+@app.get("/api/compliance/dora/backtest")
+@cached(ttl_seconds=60.0)
+async def dora_backtest(category: Optional[str] = None, robust: bool = True):
+    """Leave-one-out CV across the reference incident table.
+
+    For each incident i, fit α on the other N-1, predict cost_i,
+    measure |error|. Returns hit rates within ±50% / ±100% / ±200%
+    plus per-incident predictions sorted by abs error. The sales/CRO
+    answer to "how do you know your method works?".
+    """
+    from core.dora.economic_impact import backtest_loo
+    return backtest_loo(category=category, robust=robust)
+
+
 @app.get("/api/compliance/dora/preview/{sim_id}")
 @limiter.limit(LIMIT_READS)
 async def dora_preview(

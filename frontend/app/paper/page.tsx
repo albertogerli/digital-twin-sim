@@ -43,6 +43,7 @@ const VERSION_COMPARISON = [
   { version: "v2.2", scenarios: "20 (15/5)", maeTest: 11.4, maeTrain: 15.3, rmseTest: 16.8, cov90train: 73.3, cov90test: 80.0, strategy: "Hybrid grounding", pollFree: true },
   { version: "v2.3", scenarios: "20 (15/5)", maeTest: 13.6, maeTrain: 13.9, rmseTest: 20.0, cov90train: 86.7, cov90test: 80.0, strategy: "Hybrid + PubOp\u2020", pollFree: false },
   { version: "v2.8", scenarios: "42 (34/8)", maeTest: 17.6, maeTrain: 14.0, rmseTest: 24.7, cov90train: 82.4, cov90test: 87.5, strategy: "Discrepancy + Sprint 1-13 sim hardening", pollFree: true },
+  { version: "v2.9", scenarios: "42 (34/8)", maeTest: 17.6, maeTrain: 14.0, rmseTest: 24.7, cov90train: 82.4, cov90test: 87.5, strategy: "v2.8 + DORA economic-impact estimator (power-law \u03B2\u00B7s^\u03B3, LOO \u00B1100% = 80%)", pollFree: true },
 ];
 
 const TEST_RESULTS = [
@@ -1399,7 +1400,7 @@ export default function PaperPage() {
         {/* Footer */}
         <div className="mt-12 pt-4 border-t border-ki-border">
           <div className="flex items-center justify-between text-xs text-ki-on-surface-muted">
-            <span>DigitalTwinSim &mdash; Technical Paper v2.8</span>
+            <span>DigitalTwinSim &mdash; Technical Paper v2.9</span>
             <span>April 2026</span>
           </div>
         </div>

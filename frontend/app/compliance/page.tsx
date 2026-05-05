@@ -1157,7 +1157,7 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
                   </span>
                 </div>
                 <div className="text-[9px] text-emerald-800/80 mt-1 leading-tight">
-                  Promoted to primary because LOO ±100% hit-rate is 80% (vs 35% for linear α·s). γ=3 means doubling shock_units roughly 8× the cost — the linear model can't capture that.
+                  Promoted to primary because LOO ±100% hit-rate is 80% (vs 35% for linear α·s). γ=3 means doubling shock_units roughly 8× the cost — the linear model cannot capture that.
                 </div>
               </div>
             )}

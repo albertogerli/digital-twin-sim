@@ -1,9 +1,9 @@
 {
-  "_doc": "Reference table for DORA economic_impact_eur calibration. Each entry maps an estimated sim shock_units value to the real public cost in EUR millions of a known historical incident. Used by core.dora.economic_impact._calibrated_alpha() to fit the OLS slope \u03b1 (EUR per shock unit). Update via scripts/calibrate_dora_alpha.py and refit nightly via the GitHub Actions cron. Sources cited per row \u2014 when public, the regulatory disclosure / parliamentary inquiry / earnings call is preferred over press summaries.",
-  "_schema_version": "1.0",
+  "_doc": "Reference table for DORA economic_impact_eur calibration. Each entry maps an estimated sim shock_units value to the real public cost in EUR millions of a known historical incident. Used by core.dora.economic_impact._calibrated_alpha() to fit the OLS slope α (EUR per shock unit). Update via scripts/calibrate_dora_alpha.py and refit nightly via the GitHub Actions cron. Sources cited per row — when public, the regulatory disclosure / parliamentary inquiry / earnings call is preferred over press summaries.",
+  "_schema_version": "1.1",
   "_last_updated": "2026-05-05",
   "_calibration_method": "OLS no-intercept (proportional model). When N grows past ~50 we switch to OLS with intercept + heteroscedastic-robust SE.",
-  "_shock_units_methodology": "Shock units = simulated \u03a3 |shock_magnitude \u00d7 shock_direction| accumulated across N rounds when the brief replays the incident. We use heuristic estimates here pending a re-simulation pass. Severity tiers: 0.5-1.2 single-firm contained, 1.2-2.0 protracted single-firm or sector-wide moderate, 2.0-3.0 major sector or sovereign-adjacent, 3.0+ systemic / sovereign-class.",
+  "_shock_units_methodology": "Shock units = simulated Σ |shock_magnitude × shock_direction| accumulated across N rounds when the brief replays the incident. We use heuristic estimates here pending a re-simulation pass. Severity tiers: 0.5-1.2 single-firm contained, 1.2-2.0 protracted single-firm or sector-wide moderate, 2.0-3.0 major sector or sovereign-adjacent, 3.0+ systemic / sovereign-class.",
   "incidents": [
     {
       "id": "mps_deposit_run_2016",
@@ -15,7 +15,8 @@
         "EBA SREP 2016",
         "ECB statistical bulletin"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2016-12-22"
     },
     {
       "id": "mps_bailin_2017",
@@ -27,7 +28,8 @@
         "DG Comp state aid SA.47677",
         "MEF press release 2017-07-04"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2017-07-04"
     },
     {
       "id": "carige_2019",
@@ -39,7 +41,8 @@
         "FITD intervention disclosure",
         "BdI annual report 2019"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2019-01-08"
     },
     {
       "id": "veneto_popvicenza_2017",
@@ -51,7 +54,8 @@
         "DG Comp state aid SA.45664",
         "Italian DL 99/2017"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2017-06-25"
     },
     {
       "id": "popolare_bari_2019",
@@ -63,7 +67,8 @@
         "MEF DL 142/2019",
         "FITD VS"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2019-12-13"
     },
     {
       "id": "tercas_2014",
@@ -74,7 +79,8 @@
       "sources": [
         "EU state aid case T-98/16"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2014-07-23"
     },
     {
       "id": "northern_rock_2007",
@@ -86,7 +92,8 @@
         "BoE liquidity peak Sept 2007",
         "HMT WMS"
       ],
-      "regime": "calm"
+      "regime": "calm",
+      "incident_date": "2007-09-14"
     },
     {
       "id": "dexia_bailout_2008_2011",
@@ -98,7 +105,8 @@
         "DG Comp SA.33760",
         "Belgian Court of Auditors 2014"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2011-10-09"
     },
     {
       "id": "abn_amro_2008",
@@ -110,7 +118,8 @@
         "Dutch MoF 2008-10-03",
         "DG Comp SA.28855"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2008-10-03"
     },
     {
       "id": "banco_espirito_santo_2014",
@@ -121,7 +130,8 @@
       "sources": [
         "Banco de Portugal resolution 2014-08-03"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2014-08-03"
     },
     {
       "id": "credit_suisse_ubs_2023",
@@ -133,7 +143,8 @@
         "FINMA notice 2023-03-19",
         "AT1 CHF15.6B wipeout"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2023-03-19"
     },
     {
       "id": "sberbank_europe_2022",
@@ -144,7 +155,8 @@
       "sources": [
         "SRB resolution 2022-02-28"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2022-02-28"
     },
     {
       "id": "greensill_2021",
@@ -156,7 +168,8 @@
         "FCA enforcement 2021",
         "CS exposure disclosures"
       ],
-      "regime": "calm"
+      "regime": "calm",
+      "incident_date": "2021-03-08"
     },
     {
       "id": "wirecard_2020",
@@ -168,7 +181,8 @@
         "BaFin investigation 2020",
         "Munich prosecutor"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2020-06-25"
     },
     {
       "id": "svb_2023",
@@ -179,7 +193,8 @@
       "sources": [
         "FDIC press release 2023-03-10"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2023-03-10"
     },
     {
       "id": "signature_2023",
@@ -190,7 +205,8 @@
       "sources": [
         "FDIC press release 2023-03-12"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2023-03-12"
     },
     {
       "id": "first_republic_2023",
@@ -201,7 +217,8 @@
       "sources": [
         "FDIC press release 2023-05-01"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2023-05-01"
     },
     {
       "id": "lehman_2008",
@@ -212,7 +229,8 @@
       "sources": [
         "IMF Global Financial Stability Report 2009"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2008-09-15"
     },
     {
       "id": "bear_stearns_2008",
@@ -223,7 +241,8 @@
       "sources": [
         "Fed primary dealer credit facility 2008"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2008-03-16"
     },
     {
       "id": "wamu_2008",
@@ -234,7 +253,8 @@
       "sources": [
         "OTS / FDIC 2008-09-25"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2008-09-25"
     },
     {
       "id": "ltcm_1998",
@@ -245,7 +265,8 @@
       "sources": [
         "Fed Williams 1998 disclosure"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "1998-09-23"
     },
     {
       "id": "brexit_wave1_2016",
@@ -257,7 +278,8 @@
         "BoE FSR Aug 2016",
         "FX + FTSE100 first-week loss"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2016-06-24"
     },
     {
       "id": "brexit_wave2_2019",
@@ -268,7 +290,8 @@
       "sources": [
         "OBR Fiscal Risks Report 2019"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2019-03-29"
     },
     {
       "id": "italy_budget_2018",
@@ -277,10 +300,11 @@
       "category": "sovereign",
       "label": "Italian budget standoff vs EU (2018)",
       "sources": [
-        "BTP-Bund spread \u00d7 bond market loss",
+        "BTP-Bund spread × bond market loss",
         "Bankitalia DGS"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2018-10-23"
     },
     {
       "id": "greece_2015",
@@ -292,7 +316,8 @@
         "IMF Country Report 16/130",
         "ELA peak"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2015-07-05"
     },
     {
       "id": "cyprus_2013",
@@ -304,7 +329,8 @@
         "Eurogroup statement 2013-03-25",
         "ESM disbursement"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2013-03-25"
     },
     {
       "id": "argentina_2001",
@@ -315,7 +341,8 @@
       "sources": [
         "IMF Country Report 04/195"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2001-12-23"
     },
     {
       "id": "crowdstrike_2024",
@@ -327,7 +354,8 @@
         "Delta 8-K filing",
         "Parametrix estimate"
       ],
-      "regime": "calm"
+      "regime": "calm",
+      "incident_date": "2024-07-19"
     },
     {
       "id": "solarwinds_2020",
@@ -339,7 +367,8 @@
         "CISA AA20-352A",
         "long-tail remediation est."
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2020-12-13"
     },
     {
       "id": "colonial_pipeline_2021",
@@ -351,7 +380,8 @@
         "DOJ 2021-06-07",
         "EIA gasoline supply"
       ],
-      "regime": "calm"
+      "regime": "calm",
+      "incident_date": "2021-05-07"
     },
     {
       "id": "equifax_2017",
@@ -363,7 +393,8 @@
         "FTC settlement 2019-07-22",
         "Equifax 10-K"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2017-09-07"
     },
     {
       "id": "wannacry_2017",
@@ -375,7 +406,8 @@
         "NHS England report 2018",
         "Cyence estimate"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2017-05-12"
     },
     {
       "id": "notpetya_2017",
@@ -387,7 +419,8 @@
         "Maersk 8-K",
         "Merck 10-Q Q3-2017"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2017-06-27"
     },
     {
       "id": "tim_downgrade_2014",
@@ -399,7 +432,8 @@
         "Mediobanca research 2014",
         "TIT.MI mcap loss"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2014-12-09"
     },
     {
       "id": "wind3_merger_fallout_2017",
@@ -411,7 +445,8 @@
         "AGCom decision 2017",
         "Vodafone 10-K"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2017-01-05"
     },
     {
       "id": "vodafone_de_churn_2023",
@@ -423,7 +458,8 @@
         "VOD.L H1-2024 results",
         "Bundesnetzagentur"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2023-11-14"
     },
     {
       "id": "bt_pension_2017",
@@ -434,7 +470,8 @@
       "sources": [
         "BT 2017 annual report"
       ],
-      "regime": "stressed"
+      "regime": "stressed",
+      "incident_date": "2017-05-10"
     },
     {
       "id": "uniper_rescue_2022",
@@ -446,7 +483,8 @@
         "BMWK 2022-09-21",
         "Bundestag DS 20/3429"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2022-09-21"
     },
     {
       "id": "engie_hedging_2020",
@@ -457,7 +495,8 @@
       "sources": [
         "Engie H1-2020 results"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2020-07-30"
     },
     {
       "id": "eni_gabon_writedown_2020",
@@ -468,8 +507,12 @@
       "sources": [
         "ENI Q2-2020 results"
       ],
-      "regime": "crisis"
+      "regime": "crisis",
+      "incident_date": "2020-07-31"
     }
   ],
-  "_regime_methodology": "Each incident tagged with a market-stress regime: 'calm' (BTP-Bund < 100bp + VIX < 18), 'stressed' (BTP-Bund 100-200bp OR VIX 18-30), 'crisis' (BTP-Bund > 200bp OR VIX > 30 OR single-firm bailout). Manually assigned for now; will derive from contemporaneous market anchors when shock_units are replay-derived in Sprint D.4."
+  "_regime_methodology": "Each incident tagged with a market-stress regime: 'calm' (BTP-Bund < 100bp + VIX < 18), 'stressed' (BTP-Bund 100-200bp OR VIX 18-30), 'crisis' (BTP-Bund > 200bp OR VIX > 30 OR single-firm bailout). Manually assigned for now; will derive from contemporaneous market anchors when shock_units are replay-derived in Sprint D.4.",
+  "_changelog": [
+    "v1.1 (2026-05-05) — added incident_date (ISO YYYY-MM-DD) for E.2 HMM regime conditioning + E.5 IV instrument"
+  ]
 }

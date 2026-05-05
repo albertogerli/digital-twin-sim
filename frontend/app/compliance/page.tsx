@@ -52,10 +52,65 @@ interface EconomicImpactBreakdown {
     point_eur: number;
     low_eur: number;
     high_eur: number;
+    band_method?: string;
+    epistemic_range?: {
+      low_eur: number;
+      high_eur: number;
+      p_low: number;
+      p_high: number;
+      method: string;
+      n_bootstrap: number;
+      n_succeeded?: number;
+      alpha_q05_eur_per_unit: number | null;
+      alpha_q95_eur_per_unit: number | null;
+      alpha_bootstrap_std_eur_per_unit: number | null;
+      hc3_se_eur_per_unit: number;
+    };
+    fragility?: {
+      status: string;
+      gamma?: number;
+      std_err_gamma?: number;
+      n?: number;
+      log_r2?: number;
+      interpretation?: string;
+      reason?: string;
+    };
+    tail_diagnostics?: {
+      status: string;
+      tail_index?: number;
+      k?: number;
+      threshold_eur_m?: number;
+      n_total?: number;
+      interpretation?: string;
+      reason?: string;
+    };
+    regime_mixture?: {
+      status: string;
+      alpha_low_eur_m_per_unit?: number;
+      alpha_high_eur_m_per_unit?: number;
+      alpha_high_to_low_ratio?: number | null;
+      n_used?: number;
+      p_mean_high_regime?: number;
+      r2?: number;
+      reason?: string;
+    };
+    iv_2sls?: {
+      status: string;
+      beta_2sls_eur_m_per_unit?: number;
+      beta_ols_eur_m_per_unit?: number;
+      iv_minus_ols_eur_m_per_unit?: number;
+      n?: number;
+      first_stage_F?: number;
+      first_stage_pi1?: number;
+      iv_strength?: string;
+      instrument?: string;
+      reason?: string;
+    };
     inputs: {
       total_shock_units: number;
       alpha_eur_per_unit: number;
       sigma_residual_eur: number;
+      hc3_se_eur_per_unit?: number;
       r2_anchor_fit: number;
       n_reference_incidents: number;
       calibration_scope: string;
@@ -890,12 +945,63 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
       <div className="flex items-baseline gap-2 flex-wrap">
         <span className={`font-data tabular text-[44px] leading-none font-medium ${style.num}`}>€{point.num}</span>
         <span className="font-data text-[14px] text-ki-on-surface-muted">{point.suffix}</span>
-        <span className="ml-3 font-data text-[11px] text-ki-on-surface-muted">
-          90% CI [€{low.num}{low.suffix.replace(" EUR","")} – €{high.num}{high.suffix.replace(" EUR","")}]
+        <span
+          className="ml-3 font-data text-[11px] text-ki-on-surface-muted cursor-help"
+          title={
+            a.epistemic_range
+              ? `Empirical 5°/95° quantiles of α from ${a.epistemic_range.n_bootstrap.toLocaleString()}-replicate pairs-bootstrap on the calibration subset (Sprint E.1). Includes regime + category uncertainty. HC3 sandwich SE = €${(a.epistemic_range.hc3_se_eur_per_unit / 1e6).toFixed(0)}M/unit (Sprint E.3, heteroscedastic-robust).`
+              : "Coarse ±1.65σ Gaussian band on Huber residuals."
+          }
+        >
+          Epistemic range [€{low.num}{low.suffix.replace(" EUR","")} – €{high.num}{high.suffix.replace(" EUR","")}]
+          <span className="ml-1 opacity-60">(n={a.inputs.n_reference_incidents})</span>
         </span>
       </div>
       <div className="mt-1 text-[11px] text-ki-on-surface-secondary">
         {style.label} · selected by <code className="font-data text-[10px] bg-white/40 px-1 rounded-sm">{breakdown.selected_method}</code> method
+        {a.band_method === "bootstrap_q90_pairs" && (
+          <span className="ml-2 text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border bg-white/40 border-ki-border text-ki-on-surface-muted" title="Empirical bootstrap quantile band — no Gaussian assumption">
+            bootstrap-q90
+          </span>
+        )}
+        {a.fragility && a.fragility.status === "ok" && a.fragility.gamma !== undefined && a.fragility.gamma > 1.10 && (
+          <span
+            className="ml-1 text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border bg-amber-50 border-amber-300 text-amber-800"
+            title={`Log-log slope γ=${a.fragility.gamma} (R²=${a.fragility.log_r2}, n=${a.fragility.n}). Cost grows super-linearly with shock — Taleb-style convex/fragile exposure. Linear α-anchor under-estimates large shocks.`}
+          >
+            fragile γ={a.fragility.gamma?.toFixed(2)}
+          </span>
+        )}
+        {a.tail_diagnostics && a.tail_diagnostics.status === "ok" && a.tail_diagnostics.tail_index !== undefined && a.tail_diagnostics.tail_index < 2 && (
+          <span
+            className="ml-1 text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border bg-red-50 border-red-300 text-red-800"
+            title={`Hill estimator tail index α̂=${a.tail_diagnostics.tail_index} on |residuals| above the 90° percentile (k=${a.tail_diagnostics.k}). α̂<2 ⇒ infinite variance regime — point estimate is meaningful, but the upper tail is genuinely unbounded.`}
+          >
+            heavy tail α={a.tail_diagnostics.tail_index?.toFixed(2)}
+          </span>
+        )}
+        {a.regime_mixture && a.regime_mixture.status === "ok" && a.regime_mixture.alpha_high_to_low_ratio && a.regime_mixture.alpha_high_to_low_ratio > 3 && (
+          <span
+            className="ml-1 text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border bg-purple-50 border-purple-300 text-purple-800"
+            title={`HMM 2-state regime mixture (Andrew Lo). α_low=€${((a.regime_mixture.alpha_low_eur_m_per_unit ?? 0)/1e3).toFixed(1)}B/unit (calm), α_high=€${((a.regime_mixture.alpha_high_eur_m_per_unit ?? 0)/1e3).toFixed(1)}B/unit (high-vol). Each unit of shock costs ${a.regime_mixture.alpha_high_to_low_ratio?.toFixed(1)}× more during high-vol regimes. R²=${a.regime_mixture.r2}, n=${a.regime_mixture.n_used}.`}
+          >
+            regime ×{a.regime_mixture.alpha_high_to_low_ratio?.toFixed(1)}
+          </span>
+        )}
+        {a.iv_2sls && a.iv_2sls.status === "ok" && a.iv_2sls.iv_strength && (
+          <span
+            className={`ml-1 text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border ${
+              a.iv_2sls.iv_strength.startsWith("strong")
+                ? "bg-emerald-50 border-emerald-300 text-emerald-800"
+                : a.iv_2sls.iv_strength.startsWith("moderate")
+                ? "bg-amber-50 border-amber-300 text-amber-800"
+                : "bg-gray-50 border-gray-300 text-gray-700"
+            }`}
+            title={`Hansen 2SLS-IV with HMM regime posterior as instrument for shock_units. β_OLS=€${((a.iv_2sls.beta_ols_eur_m_per_unit ?? 0)/1e3).toFixed(1)}B/unit, β_2SLS=€${((a.iv_2sls.beta_2sls_eur_m_per_unit ?? 0)/1e3).toFixed(1)}B/unit. First-stage F=${a.iv_2sls.first_stage_F} (need F≥10 for valid inference). Endogeneity correction is unreliable when F<10 — published as a diagnostic, not as the point estimate.`}
+          >
+            IV F={a.iv_2sls.first_stage_F}
+          </span>
+        )}
       </div>
 
       {showMethods && (
@@ -921,6 +1027,82 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
                 Without category-conditioning, overall α would have been
                 <span className="font-data ml-1">€{(a.inputs.fallback_overall_alpha_eur_per_unit / 1e9).toFixed(2)}B/unit</span>
                 — using the tighter within-category fit.
+              </div>
+            )}
+            {a.epistemic_range && a.epistemic_range.alpha_q05_eur_per_unit !== null && (
+              <div className="mt-2 p-2 bg-white/40 rounded-sm border border-ki-border/40">
+                <div className="font-data text-[9px] uppercase tracking-wider text-ki-on-surface-muted mb-1">
+                  Sprint E.1 + E.3 — α uncertainty quantification
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 text-[10px] font-data text-ki-on-surface-secondary">
+                  <span title="Empirical 5° quantile of α from N=5000 pairs-bootstrap on the calibration subset">
+                    α q05: <span className="text-ki-on-surface">€{((a.epistemic_range.alpha_q05_eur_per_unit ?? 0) / 1e9).toFixed(2)}B</span>
+                  </span>
+                  <span title="Empirical 95° quantile of α (bootstrap)">
+                    α q95: <span className="text-ki-on-surface">€{((a.epistemic_range.alpha_q95_eur_per_unit ?? 0) / 1e9).toFixed(2)}B</span>
+                  </span>
+                  <span title="Bootstrap standard deviation of α">
+                    σ̂ boot: <span className="text-ki-on-surface">€{((a.epistemic_range.alpha_bootstrap_std_eur_per_unit ?? 0) / 1e6).toFixed(0)}M</span>
+                  </span>
+                  <span title="HC3 (Eicker-Huber-White-MacKinnon) sandwich standard error — heteroscedastic-robust">
+                    HC3 SE: <span className="text-ki-on-surface">€{(a.epistemic_range.hc3_se_eur_per_unit / 1e6).toFixed(0)}M</span>
+                  </span>
+                </div>
+                <div className="text-[9px] text-ki-on-surface-muted mt-1 leading-tight">
+                  Replaces the ±1.645·σ Gaussian band — empirical quantiles capture skew, HC3 captures heteroscedasticity (bigger residuals for bigger shocks).
+                </div>
+              </div>
+            )}
+            {a.regime_mixture && a.regime_mixture.status === "ok" && (
+              <div className="mt-2 p-2 bg-white/40 rounded-sm border border-ki-border/40">
+                <div className="font-data text-[9px] uppercase tracking-wider text-ki-on-surface-muted mb-1">
+                  Sprint E.2 — HMM regime mixture (Andrew Lo)
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 text-[10px] font-data text-ki-on-surface-secondary">
+                  <span title="α conditional on low-vol regime (P(high)≈0)">
+                    α low: <span className="text-ki-on-surface">€{((a.regime_mixture.alpha_low_eur_m_per_unit ?? 0) / 1e3).toFixed(2)}B</span>
+                  </span>
+                  <span title="α conditional on high-vol regime (P(high)≈1)">
+                    α high: <span className="text-ki-on-surface">€{((a.regime_mixture.alpha_high_eur_m_per_unit ?? 0) / 1e3).toFixed(2)}B</span>
+                  </span>
+                  <span title="High/low cost amplification">
+                    ratio: <span className="text-ki-on-surface">{a.regime_mixture.alpha_high_to_low_ratio?.toFixed(1) ?? "n/a"}×</span>
+                  </span>
+                  <span title="Mean P(high-vol regime) across the calibration sample">
+                    p̄ high: <span className="text-ki-on-surface">{((a.regime_mixture.p_mean_high_regime ?? 0) * 100).toFixed(0)}%</span>
+                  </span>
+                </div>
+                <div className="text-[9px] text-ki-on-surface-muted mt-1 leading-tight">
+                  2-state Gaussian HMM on log(VIX) monthly 1997-2025. Each incident gets a posterior P(high|date), and α is fit as a smooth mixture. Replaces the brittle hand-coded calm/stressed/crisis label. R²={a.regime_mixture.r2}, n={a.regime_mixture.n_used}.
+                </div>
+              </div>
+            )}
+            {a.iv_2sls && a.iv_2sls.status === "ok" && (
+              <div className="mt-2 p-2 bg-white/40 rounded-sm border border-ki-border/40">
+                <div className="font-data text-[9px] uppercase tracking-wider text-ki-on-surface-muted mb-1">
+                  Sprint E.5 — 2SLS-IV endogeneity diagnostic (Hansen)
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 text-[10px] font-data text-ki-on-surface-secondary">
+                  <span title="Standard OLS β (no IV correction)">
+                    β OLS: <span className="text-ki-on-surface">€{((a.iv_2sls.beta_ols_eur_m_per_unit ?? 0) / 1e3).toFixed(2)}B</span>
+                  </span>
+                  <span title="2SLS estimate using HMM regime as IV — reliable only when F≥10">
+                    β 2SLS: <span className="text-ki-on-surface">€{((a.iv_2sls.beta_2sls_eur_m_per_unit ?? 0) / 1e3).toFixed(2)}B</span>
+                  </span>
+                  <span title="First-stage F-statistic on the instrument">
+                    F: <span className="text-ki-on-surface">{a.iv_2sls.first_stage_F}</span>
+                  </span>
+                  <span title="Stock-Yogo strength threshold">
+                    strength: <span className={
+                      a.iv_2sls.iv_strength?.startsWith("strong") ? "text-emerald-700" :
+                      a.iv_2sls.iv_strength?.startsWith("moderate") ? "text-amber-700" :
+                      "text-gray-700"
+                    }>{a.iv_2sls.iv_strength}</span>
+                  </span>
+                </div>
+                <div className="text-[9px] text-ki-on-surface-muted mt-1 leading-tight">
+                  Instruments shock_units (potentially endogenous to sim calibration) with an exogenous stress signal — HMM regime posterior. {a.iv_2sls.iv_strength?.startsWith("weak") ? "F<10 ⇒ instrument is currently weak, so β_2SLS is unreliable. Published as a diagnostic, not the headline." : "F≥10 ⇒ inference is well-identified."} Headline α stays from Huber + bootstrap.
+                </div>
               </div>
             )}
             <div className="font-data text-[11px] text-ki-on-surface mt-1">

@@ -1,6 +1,16 @@
 # DORA Economic Impact — Calibration Pipeline
 
-**Status:** Sprints A · A.2 · B (partial) · C · D.1 · D.2 · D.3 · D.5 LIVE.  D.4 infrastructure shipped, replay backfill is the operator's call (cost ~$25, 3h).
+**Status:** Sprints A · A.2 · B (partial) · C · D.1 · D.2 · D.3 · D.5 · **E.1 · E.2 · E.3 · E.4 · E.5 · E.6** LIVE.  D.4 infrastructure shipped, replay backfill is the operator's call (cost ~$25, 3h).
+
+**Sprint E ("Nobel-laureate panel" CI tightening, 2026-05-05):**
+- E.1 (Shiller-King) — Empirical pairs-bootstrap of α (5000 replicates) replaces the ±1.645σ Gaussian band. Surfaced as "Epistemic range" with N=40 footnote.
+- E.2 (Andrew Lo) — 2-state Gaussian HMM on log(VIX) monthly 1997-2025. Each incident inherits posterior P(high_vol_regime|date). α fitted as smooth mixture α_low·(1-p)·s + α_high·p·s. Replaces brittle hand-coded calm/stressed/crisis label. Empirical regime amplification ≈20× (high vs low).
+- E.3 (Engle) — HC3 Eicker-Huber-White-MacKinnon sandwich SE on α. Reported alongside the homoscedastic σ.
+- E.4 (Shiller) — Hill estimator for the Pareto tail index on |residuals| above the 90° percentile. Flags infinite-variance regimes (α̂<2).
+- E.5 (Hansen) — 2SLS-IV using HMM regime posterior as instrument for shock_units. Reports first-stage F as endogeneity diagnostic. Currently F<10 ⇒ instrument too weak for headline use, published as a sanity check.
+- E.6 (Taleb) — Log-log slope γ as fragility exponent. Overall γ=3.36 (R²=0.72) ⇒ strong convex/fragile signal. Linear α-anchor systematically under-estimates large shocks; future work: switch to power-law cost model y = β·s^γ.
+
+Files: `core/dora/regime_hmm.py` (new), `core/dora/economic_impact.py` (extended), `shared/vix_monthly_cache.json` (new), `shared/dora_reference_incidents.json` (schema v1.1, +incident_date), `frontend/app/compliance/page.tsx` (Hero updated with epistemic-range relabel + 4 new diagnostic chips + 2 new methodology blocks).
 **Owner:** Alberto Gerli
 **Last refit:** see `outputs/dora_calibration.json` `generated_at`
 

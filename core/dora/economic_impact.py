@@ -33,6 +33,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import random
 from pathlib import Path
 from typing import Optional
 
@@ -155,6 +156,357 @@ def _huber_no_intercept(
     return alpha, sigma, r2, resid
 
 
+def _hc3_sandwich_se_alpha(
+    incidents: list[tuple],
+    alpha: float,
+) -> float:
+    """HC3 (Eicker-Huber-White-MacKinnon) sandwich SE for α in y = α·s.
+
+    For 1-D no-intercept regression:
+      X'X       = Σ s_i²
+      h_i       = s_i² / Σ s_j²              (leverage)
+      meat      = Σ s_i² · (r_i / (1 - h_i))²
+      Var(α̂)    = meat / (X'X)²
+      SE(α̂)     = sqrt(Var)
+
+    HC3 is the most outlier-robust of the HC family — divides residuals
+    by (1-h_i) rather than (1-h_i)^(1/2) [HC2] or 1 [HC0]. Recommended
+    by MacKinnon-White (1985) for small N and influential observations.
+
+    Returns SE in the same units as α (EUR-millions / shock-unit).
+    """
+    if not incidents:
+        return 0.0
+    sx2 = sum(row[0] * row[0] for row in incidents)
+    if sx2 <= 0:
+        return 0.0
+    meat = 0.0
+    for row in incidents:
+        s, c = row[0], row[1]
+        h = (s * s) / sx2
+        denom = max(1e-9, 1.0 - h)
+        r_adj = (c - alpha * s) / denom
+        meat += (s * s) * (r_adj * r_adj)
+    var_alpha = meat / (sx2 * sx2)
+    return var_alpha ** 0.5 if var_alpha > 0 else 0.0
+
+
+def _bootstrap_alpha_quantiles(
+    incidents: list[tuple],
+    n_resample: int = 5000,
+    quantiles: tuple[float, ...] = (0.05, 0.50, 0.95),
+    seed: int = 42,
+    robust: bool = True,
+) -> dict:
+    """Empirical bootstrap of α — resample incidents with replacement,
+    refit Huber/OLS each replicate, return quantiles of the α distribution.
+
+    Replaces the Gaussian ±1.645·σ band approximation with empirical
+    quantiles that capture skew + heavy tails honestly. Bootstrapping
+    the row indices (rather than just the residuals) propagates BOTH
+    coefficient uncertainty AND residual variance into the band.
+
+    Per Shiller-King epistemic-honesty framing: report what the data say
+    about α directly, not what a normal-error model says they should say.
+
+    Returns:
+      {
+        "n_resample": …,
+        "method": "bootstrap_pairs",
+        "alpha_q05": …, "alpha_q50": …, "alpha_q95": …,
+        "alpha_mean": …, "alpha_std": …,
+        "n_failed": …,  # replicates that produced degenerate fits
+      }
+    """
+    n = len(incidents)
+    if n < 3:
+        return {"method": "bootstrap_skipped", "n_resample": 0, "reason": f"n={n} < 3"}
+    rng = random.Random(seed)
+    fit = _huber_no_intercept if robust else _ols_no_intercept
+    alphas: list[float] = []
+    failed = 0
+    for _ in range(n_resample):
+        sample = [incidents[rng.randrange(n)] for _ in range(n)]
+        try:
+            a, _s, _r, _resid = fit(sample)
+            if a > 0 and not (a != a):  # not NaN, positive
+                alphas.append(a)
+            else:
+                failed += 1
+        except Exception:
+            failed += 1
+    if not alphas:
+        return {"method": "bootstrap_failed", "n_resample": n_resample, "n_failed": failed}
+    alphas.sort()
+    m = len(alphas)
+    def q(p: float) -> float:
+        idx = max(0, min(m - 1, int(p * (m - 1))))
+        return alphas[idx]
+    mean_a = sum(alphas) / m
+    var_a = sum((a - mean_a) ** 2 for a in alphas) / max(1, m - 1)
+    return {
+        "method": "bootstrap_pairs",
+        "n_resample": n_resample,
+        "n_succeeded": m,
+        "n_failed": failed,
+        "alpha_q05": q(quantiles[0]),
+        "alpha_q50": q(quantiles[1]),
+        "alpha_q95": q(quantiles[2]),
+        "alpha_mean": mean_a,
+        "alpha_std": var_a ** 0.5,
+    }
+
+
+def _load_incident_dates() -> dict[str, str]:
+    """id → ISO date map, for joining HMM regime posteriors to incidents."""
+    try:
+        data = json.loads(INCIDENTS_PATH.read_text())
+        return {e["id"]: e.get("incident_date", "") for e in data.get("incidents", [])
+                if e.get("incident_date")}
+    except Exception:
+        return {}
+
+
+def _regime_posteriors_for_incidents(incidents: list[tuple]) -> list[Optional[float]]:
+    """For each incident in the input list, return P(state=high|date) from the HMM,
+    or None when the incident has no date or falls outside the VIX cache."""
+    try:
+        from core.dora.regime_hmm import regime_posterior_for_date
+    except Exception:
+        return [None] * len(incidents)
+    date_map = _load_incident_dates()
+    out: list[Optional[float]] = []
+    for row in incidents:
+        iid = row[2]
+        d = date_map.get(iid)
+        out.append(regime_posterior_for_date(d) if d else None)
+    return out
+
+
+def _alpha_regime_split(incidents: list[tuple]) -> dict:
+    """E.2 — Two-coefficient OLS: cost = α_low·(1-p)·s + α_high·p·s + ε
+    where p = HMM posterior P(high_vol_regime | incident_date).
+
+    Replaces the hand-coded categorical regime label with the smooth
+    posterior. When p≈1 (LTCM-1998-style) the high-α dominates; when
+    p≈0 (Cyprus-2013-style, despite being labelled crisis) the low-α
+    dominates. This is Andrew-Lo regime-mixture in spirit.
+
+    Returns {alpha_low, alpha_high, n_used, p_mean, status, ...}.
+    """
+    posts = _regime_posteriors_for_incidents(incidents)
+    pairs = [
+        (incidents[i], posts[i]) for i in range(len(incidents))
+        if posts[i] is not None
+    ]
+    if len(pairs) < 10:
+        return {"status": "skipped", "reason": f"n={len(pairs)} dated incidents < 10 (insufficient for 2-coefficient fit)"}
+    # Build the 2-feature design
+    z0 = []  # (1-p)·s
+    z1 = []  # p·s
+    y = []
+    for (row, p) in pairs:
+        s, c = row[0], row[1]
+        z0.append((1 - p) * s)
+        z1.append(p * s)
+        y.append(c)
+    n = len(y)
+    # Normal equations for 2-feature no-intercept OLS:
+    #   [z0'z0  z0'z1] [α_l]   [z0'y]
+    #   [z0'z1  z1'z1] [α_h] = [z1'y]
+    s00 = sum(a * a for a in z0)
+    s11 = sum(a * a for a in z1)
+    s01 = sum(z0[i] * z1[i] for i in range(n))
+    sy0 = sum(z0[i] * y[i] for i in range(n))
+    sy1 = sum(z1[i] * y[i] for i in range(n))
+    det = s00 * s11 - s01 * s01
+    if abs(det) < 1e-9:
+        return {"status": "skipped", "reason": "singular design"}
+    alpha_low = (s11 * sy0 - s01 * sy1) / det
+    alpha_high = (s00 * sy1 - s01 * sy0) / det
+    p_mean = sum(p for _, p in pairs) / n
+    # Predict + residual diagnostics
+    pred = [alpha_low * z0[i] + alpha_high * z1[i] for i in range(n)]
+    resid = [y[i] - pred[i] for i in range(n)]
+    ss_tot = sum(yy * yy for yy in y)
+    ss_res = sum(r * r for r in resid)
+    r2 = max(0.0, 1.0 - ss_res / ss_tot) if ss_tot > 0 else 0.0
+    return {
+        "status": "ok",
+        "alpha_low_eur_m_per_unit": round(alpha_low, 2),
+        "alpha_high_eur_m_per_unit": round(alpha_high, 2),
+        "alpha_high_to_low_ratio": round(alpha_high / alpha_low, 3) if alpha_low > 0 else None,
+        "n_used": n,
+        "p_mean_high_regime": round(p_mean, 3),
+        "r2": round(r2, 3),
+    }
+
+
+def _iv_2sls_alpha(incidents: list[tuple]) -> dict:
+    """E.5 — 2SLS with HMM regime posterior as instrument for shock_units.
+
+    Structural:    cost_i  = β · shock_i + ε_i
+    First stage:   shock_i = π_0 + π_1 · regime_p_i + u_i  (fitted ŝ_i)
+    Second stage:  cost_i  = β · ŝ_i + ν_i
+
+    Identification: regime is observed independently of the sim-derived
+    shock measurement and arguably exogenous to the cost residual
+    (latent-stress framing — both shock and cost respond to a common
+    regime, but residual cost-shocks shouldn't drive month-VIX jumps).
+
+    Just-identified case ⇒ β_2SLS = Cov(p,c) / Cov(p,s) (Wald estimator).
+
+    Returns {beta_2sls, n, first_stage_F, alpha_eur_m_per_unit, status}.
+    """
+    posts = _regime_posteriors_for_incidents(incidents)
+    pairs = [
+        (incidents[i], posts[i]) for i in range(len(incidents))
+        if posts[i] is not None
+    ]
+    if len(pairs) < 5:
+        return {"status": "skipped", "reason": f"n={len(pairs)} dated incidents < 5"}
+    n = len(pairs)
+    p = [pp for _, pp in pairs]
+    s = [row[0] for row, _ in pairs]
+    c = [row[1] for row, _ in pairs]
+    mp = sum(p) / n
+    ms = sum(s) / n
+    mc = sum(c) / n
+    cov_ps = sum((p[i] - mp) * (s[i] - ms) for i in range(n)) / max(1, n - 1)
+    cov_pc = sum((p[i] - mp) * (c[i] - mc) for i in range(n)) / max(1, n - 1)
+    var_p = sum((p[i] - mp) ** 2 for i in range(n)) / max(1, n - 1)
+    if abs(cov_ps) < 1e-9 or var_p < 1e-9:
+        return {"status": "skipped", "reason": "weak instrument (cov(p,s)≈0)"}
+    beta = cov_pc / cov_ps  # Wald
+    # First-stage F: t² of π_1 in s ~ p regression
+    var_s = sum((s[i] - ms) ** 2 for i in range(n)) / max(1, n - 1)
+    pi1 = cov_ps / var_p
+    s_resid = [s[i] - (ms - pi1 * mp + pi1 * p[i]) for i in range(n)]
+    s2_u = sum(r * r for r in s_resid) / max(1, n - 2)
+    se_pi1 = (s2_u / (var_p * (n - 1))) ** 0.5 if var_p > 0 else float("inf")
+    fstat = (pi1 / se_pi1) ** 2 if se_pi1 > 0 else 0.0
+    # OLS comparison
+    sxx = sum(ss * ss for ss in s)
+    sxy = sum(s[i] * c[i] for i in range(n))
+    beta_ols = sxy / sxx if sxx > 0 else 0.0
+    return {
+        "status": "ok",
+        "beta_2sls_eur_m_per_unit": round(beta, 2),
+        "beta_ols_eur_m_per_unit": round(beta_ols, 2),
+        "iv_minus_ols_eur_m_per_unit": round(beta - beta_ols, 2),
+        "n": n,
+        "first_stage_F": round(fstat, 2),
+        "first_stage_pi1": round(pi1, 4),
+        "iv_strength": (
+            "weak (F<10)" if fstat < 10 else
+            "moderate (10≤F<30)" if fstat < 30 else
+            "strong (F≥30)"
+        ),
+        "instrument": "HMM P(high_vol_regime | incident_date) — log(VIX) 2-state Gaussian HMM",
+    }
+
+
+def _fragility_exponent(incidents: list[tuple]) -> dict:
+    """E.6 — Taleb fragility ratio: γ in log(cost) = log(β) + γ·log(shock_units).
+
+    Linear y=α·s assumes γ=1 (proportional). Reality often shows γ>1
+    (convex/fragile — doubling shock more than doubles cost) or γ<1
+    (concave/antifragile). We fit the log-log slope by OLS and return γ
+    as a single fragility number.
+
+    γ > 1.10  → fragile, convex exposure (Taleb red flag)
+    γ ≈ 1.00  → linear (current α-anchor assumption holds)
+    γ < 0.90  → antifragile / saturating
+
+    Returns {gamma, std_err_gamma, n, beta_eur_m, log_r2}.
+    """
+    if len(incidents) < 4:
+        return {"status": "skipped", "reason": f"n={len(incidents)} < 4"}
+    import math
+    pts = [(math.log(row[0]), math.log(row[1])) for row in incidents
+           if row[0] > 0 and row[1] > 0]
+    if len(pts) < 4:
+        return {"status": "skipped", "reason": "non-positive observations"}
+    n = len(pts)
+    mx = sum(p[0] for p in pts) / n
+    my = sum(p[1] for p in pts) / n
+    sxx = sum((p[0] - mx) ** 2 for p in pts)
+    sxy = sum((p[0] - mx) * (p[1] - my) for p in pts)
+    if sxx <= 0:
+        return {"status": "skipped", "reason": "no x variance"}
+    gamma = sxy / sxx
+    intercept = my - gamma * mx
+    resid_log = [p[1] - (intercept + gamma * p[0]) for p in pts]
+    sse = sum(r * r for r in resid_log)
+    sst = sum((p[1] - my) ** 2 for p in pts)
+    r2 = max(0.0, 1.0 - sse / sst) if sst > 0 else 0.0
+    s2 = sse / max(1, n - 2)
+    se_gamma = (s2 / sxx) ** 0.5 if sxx > 0 else 0.0
+    return {
+        "status": "ok",
+        "gamma": round(gamma, 3),
+        "std_err_gamma": round(se_gamma, 3),
+        "n": n,
+        "beta_eur_m": round(math.exp(intercept), 1),
+        "log_r2": round(r2, 3),
+        "interpretation": (
+            "fragile (convex)" if gamma > 1.10 else
+            "antifragile (concave)" if gamma < 0.90 else
+            "near-linear"
+        ),
+    }
+
+
+def _tail_index_hill(incidents: list[tuple], alpha: float, p_threshold: float = 0.90) -> dict:
+    """E.4 — Hill estimator for the Pareto tail index of |residuals|.
+
+    Above the p_threshold quantile of |r|, fit a Pareto distribution
+    via the Hill estimator:
+      α̂_Hill = 1 / [ (1/k) Σ log(r_(i)) - log(r_(k+1)) ]
+    where r_(1) ≥ … ≥ r_(k) are the top-k residuals.
+
+    α̂ < 2 → infinite variance (very heavy tail)
+    α̂ < 3 → finite variance, infinite skewness
+    α̂ ≥ 3 → moderate tail (near-Gaussian behavior practical)
+
+    Returns {tail_index, k, threshold_eur_m, n_total}.
+    """
+    if not incidents or len(incidents) < 5:
+        return {"status": "skipped", "reason": f"n={len(incidents)} < 5"}
+    abs_resid = sorted(
+        [abs(row[1] - alpha * row[0]) for row in incidents],
+        reverse=True,
+    )
+    n = len(abs_resid)
+    k = max(2, int(n * (1 - p_threshold)))  # how many tail observations
+    if k >= n:
+        return {"status": "skipped", "reason": "k≥n"}
+    threshold = abs_resid[k]  # the (k+1)th value
+    if threshold <= 0:
+        return {"status": "skipped", "reason": "threshold non-positive"}
+    import math
+    log_ratios = [math.log(abs_resid[i] / threshold) for i in range(k) if abs_resid[i] > 0]
+    if not log_ratios:
+        return {"status": "skipped", "reason": "no positive log-ratios"}
+    mean_log_ratio = sum(log_ratios) / len(log_ratios)
+    if mean_log_ratio <= 0:
+        return {"status": "skipped", "reason": "degenerate mean log ratio"}
+    tail_idx = 1.0 / mean_log_ratio
+    return {
+        "status": "ok",
+        "tail_index": round(tail_idx, 3),
+        "k": k,
+        "threshold_eur_m": round(threshold, 1),
+        "n_total": n,
+        "p_threshold": p_threshold,
+        "interpretation": (
+            "very heavy tail (infinite variance)" if tail_idx < 2 else
+            "heavy tail (infinite skewness)" if tail_idx < 3 else
+            "moderate tail"
+        ),
+    }
+
+
 def _calibrated_alpha(
     category: Optional[str] = None,
     regime: Optional[str] = None,
@@ -251,7 +603,7 @@ def backtest_loo(category: Optional[str] = None, robust: bool = True) -> dict:
 
     for i in range(len(incidents)):
         held = incidents[i]
-        s_held, c_held, id_held, cat_held = held
+        s_held, c_held, id_held, cat_held = held[0], held[1], held[2], held[3]
         train = incidents[:i] + incidents[i + 1:]
         if not train:
             continue
@@ -416,7 +768,8 @@ def calibration_summary() -> dict:
     alpha, sigma, r2, n = _calibrated_alpha()
     incidents = _load_reference_incidents()
     by_cat: dict[str, int] = {}
-    for _, _, _, cat in incidents:
+    for row in incidents:
+        cat = row[3] if len(row) >= 4 else "?"
         by_cat[cat] = by_cat.get(cat, 0) + 1
     return {
         "n_incidents": len(incidents),
@@ -438,10 +791,18 @@ def _calibration_notes() -> str:
         f"across banking_it / banking_eu / banking_us / sovereign / cyber / "
         f"telco / energy categories with public-domain cost figures. Refit "
         f"nightly via scripts/calibrate_dora_alpha.py + GitHub Actions. "
-        f"CI band is ±1.65·σ (coarse 90%). When the per-category bucket has "
-        f"≥3 incidents the within-category α is used (banking_it R²≈0.88, "
-        f"sovereign R²≈0.83). Regime conditioning (calm/stressed/crisis) "
-        f"further slices α when both filters have ≥3 rows in the intersection."
+        f"Headline range = empirical 5°/95° quantiles of α from a 5000-replicate "
+        f"pairs-bootstrap on the per-scope subset (Sprint E.1, Shiller-King), with "
+        f"HC3 sandwich SE reported for transparency (Sprint E.3, Engle). "
+        f"Diagnostics overlay: log-log fragility γ (E.6, Taleb) flags convex "
+        f"exposure when γ>1.10; Hill estimator (E.4, Shiller) flags infinite-"
+        f"variance tails when α̂<2; HMM 2-state regime mixture on log(VIX) "
+        f"(E.2, Andrew Lo) reports α_low/α_high amplification; 2SLS-IV with "
+        f"the regime posterior as instrument (E.5, Hansen) reports the "
+        f"first-stage F as an endogeneity check (β_2SLS only meaningful when "
+        f"F≥10). When the per-category bucket has ≥3 incidents the within-"
+        f"category α is used. Hand-labeled regime (calm/stressed/crisis) "
+        f"slices α further when both filters have ≥3 rows."
     )
 
 
@@ -588,17 +949,79 @@ def estimate_anchor(
     else:
         scope = "overall"
 
+    # Re-derive the actual incident slice used for the fit so we can
+    # bootstrap + HC3 against the same data α was estimated on.
+    if category and regime and len([r for r in incidents if r[3] == category and r[4] == regime]) >= 3:
+        fit_incidents = [r for r in incidents if r[3] == category and r[4] == regime]
+    elif category and len([r for r in incidents if r[3] == category]) >= 3:
+        fit_incidents = [r for r in incidents if r[3] == category]
+    elif regime and len([r for r in incidents if r[4] == regime]) >= 3:
+        fit_incidents = [r for r in incidents if r[4] == regime]
+    else:
+        fit_incidents = incidents
+
+    # E.3 — HC3 sandwich SE on α (heteroscedastic-robust)
+    hc3_se = _hc3_sandwich_se_alpha(fit_incidents, alpha)
+
+    # E.1 — empirical bootstrap of α (replaces ±1.645σ Gaussian band)
+    boot = _bootstrap_alpha_quantiles(fit_incidents, n_resample=5000, robust=True)
+
+    # E.6 — Taleb fragility exponent (log-log slope ≠ 1 ⇒ convex/concave)
+    fragility = _fragility_exponent(fit_incidents)
+
+    # E.4 — Hill tail-index estimator for |residuals|
+    tail = _tail_index_hill(fit_incidents, alpha)
+
+    # E.2 — Regime-mixture α (HMM-posterior-weighted, not categorical)
+    regime_split = _alpha_regime_split(fit_incidents)
+
+    # E.5 — 2SLS-IV with HMM regime as instrument for shock_units
+    iv = _iv_2sls_alpha(fit_incidents)
+
     point_eur = float(total_shock_units * alpha * 1_000_000)
-    band = 1.645 * sigma * 1_000_000
+
+    if boot.get("method") == "bootstrap_pairs":
+        low_eur = float(total_shock_units * boot["alpha_q05"] * 1_000_000)
+        high_eur = float(total_shock_units * boot["alpha_q95"] * 1_000_000)
+        band_method = "bootstrap_q90_pairs"
+    else:
+        # Fallback to homoscedastic Gaussian if bootstrap couldn't run (n<3)
+        band = 1.645 * sigma * 1_000_000
+        low_eur = point_eur - band
+        high_eur = point_eur + band
+        band_method = "gaussian_1645sigma_fallback"
+
     return {
         "method": "anchor",
         "point_eur": round(point_eur, 2),
-        "low_eur": max(0.0, round(point_eur - band, 2)),
-        "high_eur": round(point_eur + band, 2),
+        "low_eur": max(0.0, round(low_eur, 2)),
+        "high_eur": round(high_eur, 2),
+        "band_method": band_method,
+        "epistemic_range": {
+            "low_eur": max(0.0, round(low_eur, 2)),
+            "high_eur": round(high_eur, 2),
+            "p_low": 0.05,
+            "p_high": 0.95,
+            "method": band_method,
+            "n_bootstrap": boot.get("n_resample", 0),
+            "n_succeeded": boot.get("n_succeeded", 0),
+            "alpha_q05_eur_per_unit": round(boot["alpha_q05"] * 1_000_000, 0)
+                if "alpha_q05" in boot else None,
+            "alpha_q95_eur_per_unit": round(boot["alpha_q95"] * 1_000_000, 0)
+                if "alpha_q95" in boot else None,
+            "alpha_bootstrap_std_eur_per_unit": round(boot["alpha_std"] * 1_000_000, 0)
+                if "alpha_std" in boot else None,
+            "hc3_se_eur_per_unit": round(hc3_se * 1_000_000, 0),
+        },
+        "fragility": fragility,
+        "tail_diagnostics": tail,
+        "regime_mixture": regime_split,
+        "iv_2sls": iv,
         "inputs": {
             "total_shock_units": round(float(total_shock_units), 4),
             "alpha_eur_per_unit": round(alpha * 1_000_000, 0),
             "sigma_residual_eur": round(sigma * 1_000_000, 0),
+            "hc3_se_eur_per_unit": round(hc3_se * 1_000_000, 0),
             "r2_anchor_fit": round(r2, 3),
             "n_reference_incidents": n,
             "calibration_scope": scope,

@@ -1,0 +1,1402 @@
+{
+  "_schema_version": "1.0",
+  "_source": "Yahoo Finance ^VIX (CBOE Volatility Index), month-end close",
+  "_last_updated": "2026-05-05T20:04:30Z",
+  "_n": 348,
+  "_first": "1997-01",
+  "_last": "2025-12",
+  "monthly": [
+    {
+      "month": "1997-01",
+      "vix_close": 19.47
+    },
+    {
+      "month": "1997-02",
+      "vix_close": 21.1
+    },
+    {
+      "month": "1997-03",
+      "vix_close": 22.14
+    },
+    {
+      "month": "1997-04",
+      "vix_close": 20.06
+    },
+    {
+      "month": "1997-05",
+      "vix_close": 19.19
+    },
+    {
+      "month": "1997-06",
+      "vix_close": 21.53
+    },
+    {
+      "month": "1997-07",
+      "vix_close": 21.48
+    },
+    {
+      "month": "1997-08",
+      "vix_close": 24.76
+    },
+    {
+      "month": "1997-09",
+      "vix_close": 22.91
+    },
+    {
+      "month": "1997-10",
+      "vix_close": 35.09
+    },
+    {
+      "month": "1997-11",
+      "vix_close": 27.43
+    },
+    {
+      "month": "1997-12",
+      "vix_close": 24.01
+    },
+    {
+      "month": "1998-01",
+      "vix_close": 21.47
+    },
+    {
+      "month": "1998-02",
+      "vix_close": 18.55
+    },
+    {
+      "month": "1998-03",
+      "vix_close": 24.22
+    },
+    {
+      "month": "1998-04",
+      "vix_close": 21.18
+    },
+    {
+      "month": "1998-05",
+      "vix_close": 21.32
+    },
+    {
+      "month": "1998-06",
+      "vix_close": 19.71
+    },
+    {
+      "month": "1998-07",
+      "vix_close": 24.8
+    },
+    {
+      "month": "1998-08",
+      "vix_close": 44.28
+    },
+    {
+      "month": "1998-09",
+      "vix_close": 40.95
+    },
+    {
+      "month": "1998-10",
+      "vix_close": 28.05
+    },
+    {
+      "month": "1998-11",
+      "vix_close": 26.01
+    },
+    {
+      "month": "1998-12",
+      "vix_close": 24.42
+    },
+    {
+      "month": "1999-01",
+      "vix_close": 26.25
+    },
+    {
+      "month": "1999-02",
+      "vix_close": 27.88
+    },
+    {
+      "month": "1999-03",
+      "vix_close": 23.26
+    },
+    {
+      "month": "1999-04",
+      "vix_close": 25.07
+    },
+    {
+      "month": "1999-05",
+      "vix_close": 25.39
+    },
+    {
+      "month": "1999-06",
+      "vix_close": 21.09
+    },
+    {
+      "month": "1999-07",
+      "vix_close": 24.64
+    },
+    {
+      "month": "1999-08",
+      "vix_close": 24.45
+    },
+    {
+      "month": "1999-09",
+      "vix_close": 25.41
+    },
+    {
+      "month": "1999-10",
+      "vix_close": 22.2
+    },
+    {
+      "month": "1999-11",
+      "vix_close": 24.18
+    },
+    {
+      "month": "1999-12",
+      "vix_close": 24.64
+    },
+    {
+      "month": "2000-01",
+      "vix_close": 24.95
+    },
+    {
+      "month": "2000-02",
+      "vix_close": 23.37
+    },
+    {
+      "month": "2000-03",
+      "vix_close": 24.11
+    },
+    {
+      "month": "2000-04",
+      "vix_close": 26.2
+    },
+    {
+      "month": "2000-05",
+      "vix_close": 23.65
+    },
+    {
+      "month": "2000-06",
+      "vix_close": 19.54
+    },
+    {
+      "month": "2000-07",
+      "vix_close": 20.74
+    },
+    {
+      "month": "2000-08",
+      "vix_close": 16.84
+    },
+    {
+      "month": "2000-09",
+      "vix_close": 20.57
+    },
+    {
+      "month": "2000-10",
+      "vix_close": 23.63
+    },
+    {
+      "month": "2000-11",
+      "vix_close": 29.65
+    },
+    {
+      "month": "2000-12",
+      "vix_close": 26.85
+    },
+    {
+      "month": "2001-01",
+      "vix_close": 22.02
+    },
+    {
+      "month": "2001-02",
+      "vix_close": 28.35
+    },
+    {
+      "month": "2001-03",
+      "vix_close": 28.64
+    },
+    {
+      "month": "2001-04",
+      "vix_close": 25.48
+    },
+    {
+      "month": "2001-05",
+      "vix_close": 22.64
+    },
+    {
+      "month": "2001-06",
+      "vix_close": 19.06
+    },
+    {
+      "month": "2001-07",
+      "vix_close": 21.62
+    },
+    {
+      "month": "2001-08",
+      "vix_close": 24.92
+    },
+    {
+      "month": "2001-09",
+      "vix_close": 31.93
+    },
+    {
+      "month": "2001-10",
+      "vix_close": 33.56
+    },
+    {
+      "month": "2001-11",
+      "vix_close": 23.84
+    },
+    {
+      "month": "2001-12",
+      "vix_close": 23.8
+    },
+    {
+      "month": "2002-01",
+      "vix_close": 21.09
+    },
+    {
+      "month": "2002-02",
+      "vix_close": 21.59
+    },
+    {
+      "month": "2002-03",
+      "vix_close": 17.4
+    },
+    {
+      "month": "2002-04",
+      "vix_close": 21.91
+    },
+    {
+      "month": "2002-05",
+      "vix_close": 19.98
+    },
+    {
+      "month": "2002-06",
+      "vix_close": 25.4
+    },
+    {
+      "month": "2002-07",
+      "vix_close": 32.03
+    },
+    {
+      "month": "2002-08",
+      "vix_close": 32.64
+    },
+    {
+      "month": "2002-09",
+      "vix_close": 39.69
+    },
+    {
+      "month": "2002-10",
+      "vix_close": 31.14
+    },
+    {
+      "month": "2002-11",
+      "vix_close": 27.5
+    },
+    {
+      "month": "2002-12",
+      "vix_close": 28.62
+    },
+    {
+      "month": "2003-01",
+      "vix_close": 31.17
+    },
+    {
+      "month": "2003-02",
+      "vix_close": 29.63
+    },
+    {
+      "month": "2003-03",
+      "vix_close": 29.15
+    },
+    {
+      "month": "2003-04",
+      "vix_close": 21.21
+    },
+    {
+      "month": "2003-05",
+      "vix_close": 19.47
+    },
+    {
+      "month": "2003-06",
+      "vix_close": 19.52
+    },
+    {
+      "month": "2003-07",
+      "vix_close": 19.49
+    },
+    {
+      "month": "2003-08",
+      "vix_close": 18.63
+    },
+    {
+      "month": "2003-09",
+      "vix_close": 22.72
+    },
+    {
+      "month": "2003-10",
+      "vix_close": 16.1
+    },
+    {
+      "month": "2003-11",
+      "vix_close": 16.32
+    },
+    {
+      "month": "2003-12",
+      "vix_close": 18.31
+    },
+    {
+      "month": "2004-01",
+      "vix_close": 16.63
+    },
+    {
+      "month": "2004-02",
+      "vix_close": 14.55
+    },
+    {
+      "month": "2004-03",
+      "vix_close": 16.74
+    },
+    {
+      "month": "2004-04",
+      "vix_close": 17.19
+    },
+    {
+      "month": "2004-05",
+      "vix_close": 15.5
+    },
+    {
+      "month": "2004-06",
+      "vix_close": 14.34
+    },
+    {
+      "month": "2004-07",
+      "vix_close": 15.32
+    },
+    {
+      "month": "2004-08",
+      "vix_close": 15.29
+    },
+    {
+      "month": "2004-09",
+      "vix_close": 13.34
+    },
+    {
+      "month": "2004-10",
+      "vix_close": 16.27
+    },
+    {
+      "month": "2004-11",
+      "vix_close": 13.24
+    },
+    {
+      "month": "2004-12",
+      "vix_close": 13.29
+    },
+    {
+      "month": "2005-01",
+      "vix_close": 12.82
+    },
+    {
+      "month": "2005-02",
+      "vix_close": 12.08
+    },
+    {
+      "month": "2005-03",
+      "vix_close": 14.02
+    },
+    {
+      "month": "2005-04",
+      "vix_close": 15.31
+    },
+    {
+      "month": "2005-05",
+      "vix_close": 13.29
+    },
+    {
+      "month": "2005-06",
+      "vix_close": 12.04
+    },
+    {
+      "month": "2005-07",
+      "vix_close": 11.57
+    },
+    {
+      "month": "2005-08",
+      "vix_close": 12.6
+    },
+    {
+      "month": "2005-09",
+      "vix_close": 11.92
+    },
+    {
+      "month": "2005-10",
+      "vix_close": 15.32
+    },
+    {
+      "month": "2005-11",
+      "vix_close": 12.06
+    },
+    {
+      "month": "2005-12",
+      "vix_close": 12.07
+    },
+    {
+      "month": "2006-01",
+      "vix_close": 12.95
+    },
+    {
+      "month": "2006-02",
+      "vix_close": 12.34
+    },
+    {
+      "month": "2006-03",
+      "vix_close": 11.39
+    },
+    {
+      "month": "2006-04",
+      "vix_close": 11.59
+    },
+    {
+      "month": "2006-05",
+      "vix_close": 16.44
+    },
+    {
+      "month": "2006-06",
+      "vix_close": 13.08
+    },
+    {
+      "month": "2006-07",
+      "vix_close": 14.95
+    },
+    {
+      "month": "2006-08",
+      "vix_close": 12.31
+    },
+    {
+      "month": "2006-09",
+      "vix_close": 11.98
+    },
+    {
+      "month": "2006-10",
+      "vix_close": 11.1
+    },
+    {
+      "month": "2006-11",
+      "vix_close": 10.91
+    },
+    {
+      "month": "2006-12",
+      "vix_close": 11.56
+    },
+    {
+      "month": "2007-01",
+      "vix_close": 10.42
+    },
+    {
+      "month": "2007-02",
+      "vix_close": 15.42
+    },
+    {
+      "month": "2007-03",
+      "vix_close": 14.64
+    },
+    {
+      "month": "2007-04",
+      "vix_close": 14.22
+    },
+    {
+      "month": "2007-05",
+      "vix_close": 13.05
+    },
+    {
+      "month": "2007-06",
+      "vix_close": 16.23
+    },
+    {
+      "month": "2007-07",
+      "vix_close": 23.52
+    },
+    {
+      "month": "2007-08",
+      "vix_close": 23.38
+    },
+    {
+      "month": "2007-09",
+      "vix_close": 18.0
+    },
+    {
+      "month": "2007-10",
+      "vix_close": 18.53
+    },
+    {
+      "month": "2007-11",
+      "vix_close": 22.87
+    },
+    {
+      "month": "2007-12",
+      "vix_close": 22.5
+    },
+    {
+      "month": "2008-01",
+      "vix_close": 26.2
+    },
+    {
+      "month": "2008-02",
+      "vix_close": 26.54
+    },
+    {
+      "month": "2008-03",
+      "vix_close": 25.61
+    },
+    {
+      "month": "2008-04",
+      "vix_close": 20.79
+    },
+    {
+      "month": "2008-05",
+      "vix_close": 17.83
+    },
+    {
+      "month": "2008-06",
+      "vix_close": 23.95
+    },
+    {
+      "month": "2008-07",
+      "vix_close": 22.94
+    },
+    {
+      "month": "2008-08",
+      "vix_close": 20.65
+    },
+    {
+      "month": "2008-09",
+      "vix_close": 39.39
+    },
+    {
+      "month": "2008-10",
+      "vix_close": 59.89
+    },
+    {
+      "month": "2008-11",
+      "vix_close": 55.28
+    },
+    {
+      "month": "2008-12",
+      "vix_close": 40.0
+    },
+    {
+      "month": "2009-01",
+      "vix_close": 44.84
+    },
+    {
+      "month": "2009-02",
+      "vix_close": 46.35
+    },
+    {
+      "month": "2009-03",
+      "vix_close": 44.14
+    },
+    {
+      "month": "2009-04",
+      "vix_close": 36.5
+    },
+    {
+      "month": "2009-05",
+      "vix_close": 28.92
+    },
+    {
+      "month": "2009-06",
+      "vix_close": 26.35
+    },
+    {
+      "month": "2009-07",
+      "vix_close": 25.92
+    },
+    {
+      "month": "2009-08",
+      "vix_close": 26.01
+    },
+    {
+      "month": "2009-09",
+      "vix_close": 25.61
+    },
+    {
+      "month": "2009-10",
+      "vix_close": 30.69
+    },
+    {
+      "month": "2009-11",
+      "vix_close": 24.51
+    },
+    {
+      "month": "2009-12",
+      "vix_close": 21.68
+    },
+    {
+      "month": "2010-01",
+      "vix_close": 24.62
+    },
+    {
+      "month": "2010-02",
+      "vix_close": 19.5
+    },
+    {
+      "month": "2010-03",
+      "vix_close": 17.59
+    },
+    {
+      "month": "2010-04",
+      "vix_close": 22.05
+    },
+    {
+      "month": "2010-05",
+      "vix_close": 32.07
+    },
+    {
+      "month": "2010-06",
+      "vix_close": 34.54
+    },
+    {
+      "month": "2010-07",
+      "vix_close": 23.5
+    },
+    {
+      "month": "2010-08",
+      "vix_close": 26.05
+    },
+    {
+      "month": "2010-09",
+      "vix_close": 23.7
+    },
+    {
+      "month": "2010-10",
+      "vix_close": 21.2
+    },
+    {
+      "month": "2010-11",
+      "vix_close": 23.54
+    },
+    {
+      "month": "2010-12",
+      "vix_close": 17.75
+    },
+    {
+      "month": "2011-01",
+      "vix_close": 19.53
+    },
+    {
+      "month": "2011-02",
+      "vix_close": 18.35
+    },
+    {
+      "month": "2011-03",
+      "vix_close": 17.74
+    },
+    {
+      "month": "2011-04",
+      "vix_close": 14.75
+    },
+    {
+      "month": "2011-05",
+      "vix_close": 15.45
+    },
+    {
+      "month": "2011-06",
+      "vix_close": 16.52
+    },
+    {
+      "month": "2011-07",
+      "vix_close": 25.25
+    },
+    {
+      "month": "2011-08",
+      "vix_close": 31.62
+    },
+    {
+      "month": "2011-09",
+      "vix_close": 42.96
+    },
+    {
+      "month": "2011-10",
+      "vix_close": 29.96
+    },
+    {
+      "month": "2011-11",
+      "vix_close": 27.8
+    },
+    {
+      "month": "2011-12",
+      "vix_close": 23.4
+    },
+    {
+      "month": "2012-01",
+      "vix_close": 19.44
+    },
+    {
+      "month": "2012-02",
+      "vix_close": 18.43
+    },
+    {
+      "month": "2012-03",
+      "vix_close": 15.5
+    },
+    {
+      "month": "2012-04",
+      "vix_close": 17.15
+    },
+    {
+      "month": "2012-05",
+      "vix_close": 24.06
+    },
+    {
+      "month": "2012-06",
+      "vix_close": 17.08
+    },
+    {
+      "month": "2012-07",
+      "vix_close": 18.93
+    },
+    {
+      "month": "2012-08",
+      "vix_close": 17.47
+    },
+    {
+      "month": "2012-09",
+      "vix_close": 15.73
+    },
+    {
+      "month": "2012-10",
+      "vix_close": 18.6
+    },
+    {
+      "month": "2012-11",
+      "vix_close": 15.87
+    },
+    {
+      "month": "2012-12",
+      "vix_close": 18.02
+    },
+    {
+      "month": "2013-01",
+      "vix_close": 14.28
+    },
+    {
+      "month": "2013-02",
+      "vix_close": 15.51
+    },
+    {
+      "month": "2013-03",
+      "vix_close": 12.7
+    },
+    {
+      "month": "2013-04",
+      "vix_close": 13.52
+    },
+    {
+      "month": "2013-05",
+      "vix_close": 16.3
+    },
+    {
+      "month": "2013-06",
+      "vix_close": 16.86
+    },
+    {
+      "month": "2013-07",
+      "vix_close": 13.45
+    },
+    {
+      "month": "2013-08",
+      "vix_close": 17.01
+    },
+    {
+      "month": "2013-09",
+      "vix_close": 16.6
+    },
+    {
+      "month": "2013-10",
+      "vix_close": 13.75
+    },
+    {
+      "month": "2013-11",
+      "vix_close": 13.7
+    },
+    {
+      "month": "2013-12",
+      "vix_close": 13.72
+    },
+    {
+      "month": "2014-01",
+      "vix_close": 18.41
+    },
+    {
+      "month": "2014-02",
+      "vix_close": 14.0
+    },
+    {
+      "month": "2014-03",
+      "vix_close": 13.88
+    },
+    {
+      "month": "2014-04",
+      "vix_close": 13.41
+    },
+    {
+      "month": "2014-05",
+      "vix_close": 11.4
+    },
+    {
+      "month": "2014-06",
+      "vix_close": 11.57
+    },
+    {
+      "month": "2014-07",
+      "vix_close": 16.95
+    },
+    {
+      "month": "2014-08",
+      "vix_close": 12.09
+    },
+    {
+      "month": "2014-09",
+      "vix_close": 16.31
+    },
+    {
+      "month": "2014-10",
+      "vix_close": 14.03
+    },
+    {
+      "month": "2014-11",
+      "vix_close": 13.33
+    },
+    {
+      "month": "2014-12",
+      "vix_close": 19.2
+    },
+    {
+      "month": "2015-01",
+      "vix_close": 20.97
+    },
+    {
+      "month": "2015-02",
+      "vix_close": 13.34
+    },
+    {
+      "month": "2015-03",
+      "vix_close": 15.29
+    },
+    {
+      "month": "2015-04",
+      "vix_close": 14.55
+    },
+    {
+      "month": "2015-05",
+      "vix_close": 13.84
+    },
+    {
+      "month": "2015-06",
+      "vix_close": 18.23
+    },
+    {
+      "month": "2015-07",
+      "vix_close": 12.12
+    },
+    {
+      "month": "2015-08",
+      "vix_close": 28.43
+    },
+    {
+      "month": "2015-09",
+      "vix_close": 24.5
+    },
+    {
+      "month": "2015-10",
+      "vix_close": 15.07
+    },
+    {
+      "month": "2015-11",
+      "vix_close": 16.13
+    },
+    {
+      "month": "2015-12",
+      "vix_close": 18.21
+    },
+    {
+      "month": "2016-01",
+      "vix_close": 20.2
+    },
+    {
+      "month": "2016-02",
+      "vix_close": 20.55
+    },
+    {
+      "month": "2016-03",
+      "vix_close": 13.95
+    },
+    {
+      "month": "2016-04",
+      "vix_close": 15.7
+    },
+    {
+      "month": "2016-05",
+      "vix_close": 14.19
+    },
+    {
+      "month": "2016-06",
+      "vix_close": 15.63
+    },
+    {
+      "month": "2016-07",
+      "vix_close": 11.87
+    },
+    {
+      "month": "2016-08",
+      "vix_close": 13.42
+    },
+    {
+      "month": "2016-09",
+      "vix_close": 13.29
+    },
+    {
+      "month": "2016-10",
+      "vix_close": 17.06
+    },
+    {
+      "month": "2016-11",
+      "vix_close": 13.33
+    },
+    {
+      "month": "2016-12",
+      "vix_close": 14.04
+    },
+    {
+      "month": "2017-01",
+      "vix_close": 11.99
+    },
+    {
+      "month": "2017-02",
+      "vix_close": 12.92
+    },
+    {
+      "month": "2017-03",
+      "vix_close": 12.37
+    },
+    {
+      "month": "2017-04",
+      "vix_close": 10.82
+    },
+    {
+      "month": "2017-05",
+      "vix_close": 10.41
+    },
+    {
+      "month": "2017-06",
+      "vix_close": 11.18
+    },
+    {
+      "month": "2017-07",
+      "vix_close": 10.26
+    },
+    {
+      "month": "2017-08",
+      "vix_close": 10.59
+    },
+    {
+      "month": "2017-09",
+      "vix_close": 9.51
+    },
+    {
+      "month": "2017-10",
+      "vix_close": 10.18
+    },
+    {
+      "month": "2017-11",
+      "vix_close": 11.28
+    },
+    {
+      "month": "2017-12",
+      "vix_close": 11.04
+    },
+    {
+      "month": "2018-01",
+      "vix_close": 13.54
+    },
+    {
+      "month": "2018-02",
+      "vix_close": 19.85
+    },
+    {
+      "month": "2018-03",
+      "vix_close": 19.97
+    },
+    {
+      "month": "2018-04",
+      "vix_close": 15.93
+    },
+    {
+      "month": "2018-05",
+      "vix_close": 15.43
+    },
+    {
+      "month": "2018-06",
+      "vix_close": 16.09
+    },
+    {
+      "month": "2018-07",
+      "vix_close": 12.83
+    },
+    {
+      "month": "2018-08",
+      "vix_close": 12.86
+    },
+    {
+      "month": "2018-09",
+      "vix_close": 12.12
+    },
+    {
+      "month": "2018-10",
+      "vix_close": 21.23
+    },
+    {
+      "month": "2018-11",
+      "vix_close": 18.07
+    },
+    {
+      "month": "2018-12",
+      "vix_close": 25.42
+    },
+    {
+      "month": "2019-01",
+      "vix_close": 16.57
+    },
+    {
+      "month": "2019-02",
+      "vix_close": 14.78
+    },
+    {
+      "month": "2019-03",
+      "vix_close": 13.71
+    },
+    {
+      "month": "2019-04",
+      "vix_close": 13.12
+    },
+    {
+      "month": "2019-05",
+      "vix_close": 18.71
+    },
+    {
+      "month": "2019-06",
+      "vix_close": 15.08
+    },
+    {
+      "month": "2019-07",
+      "vix_close": 16.12
+    },
+    {
+      "month": "2019-08",
+      "vix_close": 18.98
+    },
+    {
+      "month": "2019-09",
+      "vix_close": 16.24
+    },
+    {
+      "month": "2019-10",
+      "vix_close": 13.22
+    },
+    {
+      "month": "2019-11",
+      "vix_close": 12.62
+    },
+    {
+      "month": "2019-12",
+      "vix_close": 13.78
+    },
+    {
+      "month": "2020-01",
+      "vix_close": 18.84
+    },
+    {
+      "month": "2020-02",
+      "vix_close": 40.11
+    },
+    {
+      "month": "2020-03",
+      "vix_close": 53.54
+    },
+    {
+      "month": "2020-04",
+      "vix_close": 34.15
+    },
+    {
+      "month": "2020-05",
+      "vix_close": 27.51
+    },
+    {
+      "month": "2020-06",
+      "vix_close": 30.43
+    },
+    {
+      "month": "2020-07",
+      "vix_close": 24.46
+    },
+    {
+      "month": "2020-08",
+      "vix_close": 26.41
+    },
+    {
+      "month": "2020-09",
+      "vix_close": 26.37
+    },
+    {
+      "month": "2020-10",
+      "vix_close": 38.02
+    },
+    {
+      "month": "2020-11",
+      "vix_close": 20.57
+    },
+    {
+      "month": "2020-12",
+      "vix_close": 22.75
+    },
+    {
+      "month": "2021-01",
+      "vix_close": 33.09
+    },
+    {
+      "month": "2021-02",
+      "vix_close": 27.95
+    },
+    {
+      "month": "2021-03",
+      "vix_close": 19.4
+    },
+    {
+      "month": "2021-04",
+      "vix_close": 18.61
+    },
+    {
+      "month": "2021-05",
+      "vix_close": 16.76
+    },
+    {
+      "month": "2021-06",
+      "vix_close": 15.83
+    },
+    {
+      "month": "2021-07",
+      "vix_close": 18.24
+    },
+    {
+      "month": "2021-08",
+      "vix_close": 16.48
+    },
+    {
+      "month": "2021-09",
+      "vix_close": 23.14
+    },
+    {
+      "month": "2021-10",
+      "vix_close": 16.26
+    },
+    {
+      "month": "2021-11",
+      "vix_close": 27.19
+    },
+    {
+      "month": "2021-12",
+      "vix_close": 17.22
+    },
+    {
+      "month": "2022-01",
+      "vix_close": 24.83
+    },
+    {
+      "month": "2022-02",
+      "vix_close": 30.15
+    },
+    {
+      "month": "2022-03",
+      "vix_close": 20.56
+    },
+    {
+      "month": "2022-04",
+      "vix_close": 33.4
+    },
+    {
+      "month": "2022-05",
+      "vix_close": 26.19
+    },
+    {
+      "month": "2022-06",
+      "vix_close": 28.71
+    },
+    {
+      "month": "2022-07",
+      "vix_close": 21.33
+    },
+    {
+      "month": "2022-08",
+      "vix_close": 25.87
+    },
+    {
+      "month": "2022-09",
+      "vix_close": 31.62
+    },
+    {
+      "month": "2022-10",
+      "vix_close": 25.88
+    },
+    {
+      "month": "2022-11",
+      "vix_close": 20.58
+    },
+    {
+      "month": "2022-12",
+      "vix_close": 21.67
+    },
+    {
+      "month": "2023-01",
+      "vix_close": 19.4
+    },
+    {
+      "month": "2023-02",
+      "vix_close": 20.7
+    },
+    {
+      "month": "2023-03",
+      "vix_close": 18.7
+    },
+    {
+      "month": "2023-04",
+      "vix_close": 15.78
+    },
+    {
+      "month": "2023-05",
+      "vix_close": 17.94
+    },
+    {
+      "month": "2023-06",
+      "vix_close": 13.59
+    },
+    {
+      "month": "2023-07",
+      "vix_close": 13.63
+    },
+    {
+      "month": "2023-08",
+      "vix_close": 13.57
+    },
+    {
+      "month": "2023-09",
+      "vix_close": 17.52
+    },
+    {
+      "month": "2023-10",
+      "vix_close": 18.14
+    },
+    {
+      "month": "2023-11",
+      "vix_close": 12.92
+    },
+    {
+      "month": "2023-12",
+      "vix_close": 12.45
+    },
+    {
+      "month": "2024-01",
+      "vix_close": 14.35
+    },
+    {
+      "month": "2024-02",
+      "vix_close": 13.4
+    },
+    {
+      "month": "2024-03",
+      "vix_close": 13.01
+    },
+    {
+      "month": "2024-04",
+      "vix_close": 15.65
+    },
+    {
+      "month": "2024-05",
+      "vix_close": 12.92
+    },
+    {
+      "month": "2024-06",
+      "vix_close": 12.44
+    },
+    {
+      "month": "2024-07",
+      "vix_close": 16.36
+    },
+    {
+      "month": "2024-08",
+      "vix_close": 15.0
+    },
+    {
+      "month": "2024-09",
+      "vix_close": 16.73
+    },
+    {
+      "month": "2024-10",
+      "vix_close": 23.16
+    },
+    {
+      "month": "2024-11",
+      "vix_close": 13.51
+    },
+    {
+      "month": "2024-12",
+      "vix_close": 17.35
+    },
+    {
+      "month": "2025-01",
+      "vix_close": 16.43
+    },
+    {
+      "month": "2025-02",
+      "vix_close": 19.63
+    },
+    {
+      "month": "2025-03",
+      "vix_close": 22.28
+    },
+    {
+      "month": "2025-04",
+      "vix_close": 24.7
+    },
+    {
+      "month": "2025-05",
+      "vix_close": 18.57
+    },
+    {
+      "month": "2025-06",
+      "vix_close": 16.73
+    },
+    {
+      "month": "2025-07",
+      "vix_close": 16.72
+    },
+    {
+      "month": "2025-08",
+      "vix_close": 15.36
+    },
+    {
+      "month": "2025-09",
+      "vix_close": 16.28
+    },
+    {
+      "month": "2025-10",
+      "vix_close": 17.44
+    },
+    {
+      "month": "2025-11",
+      "vix_close": 16.35
+    },
+    {
+      "month": "2025-12",
+      "vix_close": 14.95
+    }
+  ]
+}

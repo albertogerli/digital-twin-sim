@@ -1027,16 +1027,27 @@ async def dora_calibration_diagnostics(category: Optional[str] = None):
 
 @app.get("/api/compliance/dora/backtest")
 @cached(ttl_seconds=60.0)
-async def dora_backtest(category: Optional[str] = None, robust: bool = True):
+async def dora_backtest(
+    category: Optional[str] = None,
+    robust: bool = True,
+    mode: str = "power_law",
+):
     """Leave-one-out CV across the reference incident table.
 
-    For each incident i, fit α on the other N-1, predict cost_i,
-    measure |error|. Returns hit rates within ±50% / ±100% / ±200%
-    plus per-incident predictions sorted by abs error. The sales/CRO
-    answer to "how do you know your method works?".
+    Modes (default `power_law`, the production estimator):
+      - `power_law`: cost = β·s^γ refit per category for each held-out
+        incident. Captures convexity (Sprint E.6, γ≈3 in real data).
+        Hit-rate ±100% ≈ 80% on the N=40 corpus.
+      - `category_aware`: linear cost = α·s, refit per category. Hit-rate
+        ±100% ≈ 40% — included as the "what production used to do" baseline.
+      - `overall`: linear, single α across all categories. Worst case;
+        only useful to show the cost of NOT category-conditioning.
+
+    Returns hit rates within ±50% / ±100% / ±200%, MAE/RMSE, and per-
+    incident predictions sorted by |error|.
     """
     from core.dora.economic_impact import backtest_loo
-    return backtest_loo(category=category, robust=robust)
+    return backtest_loo(category=category, robust=robust, mode=mode)
 
 
 @app.get("/api/compliance/dora/preview/{sim_id}")

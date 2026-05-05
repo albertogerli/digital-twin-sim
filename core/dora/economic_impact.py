@@ -550,44 +550,66 @@ def _calibrated_alpha(
     return alpha, sigma, r2, len(chosen)
 
 
-def backtest_loo(category: Optional[str] = None, robust: bool = True) -> dict:
+def backtest_loo(
+    category: Optional[str] = None,
+    robust: bool = True,
+    mode: str = "power_law",
+) -> dict:
     """Leave-one-out cross-validation across the reference incident table.
 
-    For each incident i: fit α on the other N-1, predict cost_i, compute
-    |error| and error %. Aggregate hit rates within ±50% / ±100% / ±200%,
-    plus MAE and RMSE. This is what we show on /compliance to answer
-    the CRO question "how do you know your method works?".
+    Modes:
+      "category_aware" (default, **production realism**) — for each held-out
+        incident, refit α using only its own category subset (minus itself).
+        This mimics what happens at request time: detect_category() routes
+        an MPS-like brief to banking_it (α≈€1.9B/unit), not to overall.
+      "overall" — train α on all N-1 incidents pooled. Worst-case baseline,
+        useful only to show the price of NOT category-conditioning.
+      "scoped" — same as old behaviour: scope the LOO to a single category
+        passed via the `category` argument.
 
     Returns:
       {
         "n_total": 40,
         "method": "huber" | "ols",
+        "mode": "category_aware" | "overall" | "scoped",
         "category_filter": "overall" | "banking_it" | …,
-        "mae_eur_m": …,
-        "rmse_eur_m": …,
-        "hit_rate_within_50pct": …,
-        "hit_rate_within_100pct": …,
-        "hit_rate_within_200pct": …,
+        "mae_eur_m": …, "rmse_eur_m": …,
+        "hit_rate_within_50pct": …, "hit_rate_within_100pct": …, "hit_rate_within_200pct": …,
         "median_abs_pct_error": …,
-        "results": [
-          {id, label, category, shock_units, actual_eur_m, predicted_eur_m,
-           error_eur_m, error_pct, within_50pct, within_100pct},
-          …
-        ]
+        "results": [{id, label, category, shock_units, actual_eur_m,
+                     predicted_eur_m, fit_scope, error_eur_m, error_pct,
+                     within_50pct, within_100pct}, …]
       }
     """
     all_incidents = _load_reference_incidents()
-    incidents = (
-        [row for row in all_incidents if row[3] == category]
-        if category else all_incidents
-    )
-    if len(incidents) < 4:
+
+    # Decide what data to LOO over and how to fit each held-out point
+    if category:
+        # Explicit per-category LOO (legacy "scoped" mode — UI calls this
+        # when user picks a category in the validation panel)
+        loo_pool = [row for row in all_incidents if row[3] == category]
+        effective_mode = "scoped"
+    elif mode == "overall":
+        loo_pool = all_incidents
+        effective_mode = "overall"
+    elif mode == "power_law":
+        # Power-law LOO: cost = β·s^γ fitted on the held-out's category subset
+        # (or overall if bucket too thin). Captures convexity (Sprint E.6).
+        loo_pool = all_incidents
+        effective_mode = "power_law"
+    else:
+        loo_pool = all_incidents
+        effective_mode = "category_aware"
+
+    if len(loo_pool) < 4:
         return {
             "status": "skipped",
-            "reason": f"need ≥4 incidents for LOO (got {len(incidents)})",
-            "n_total": len(incidents),
+            "reason": f"need ≥4 incidents for LOO (got {len(loo_pool)})",
+            "n_total": len(loo_pool),
+            "mode": effective_mode,
         }
 
+    use_power_law = (mode == "power_law")
     fit = _huber_no_intercept if robust else _ols_no_intercept
     results = []
     abs_errors_m = []
@@ -601,14 +623,41 @@ def backtest_loo(category: Optional[str] = None, robust: bool = True) -> dict:
     except Exception:
         meta = {}
 
-    for i in range(len(incidents)):
-        held = incidents[i]
+    for i in range(len(loo_pool)):
+        held = loo_pool[i]
         s_held, c_held, id_held, cat_held = held[0], held[1], held[2], held[3]
-        train = incidents[:i] + incidents[i + 1:]
+
+        # Build the training set per the chosen mode
+        if effective_mode in ("category_aware", "power_law"):
+            same_cat = [r for r in all_incidents if r[3] == cat_held and r[2] != id_held]
+            if len(same_cat) >= 4:  # need ≥4 for power_law (degrees of freedom)
+                train = same_cat
+                fit_scope = cat_held
+            else:
+                train = [r for r in all_incidents if r[2] != id_held]
+                fit_scope = "overall (fallback)"
+        else:
+            train = loo_pool[:i] + loo_pool[i + 1:]
+            fit_scope = "overall" if effective_mode == "overall" else cat_held
+
         if not train:
             continue
-        alpha, _, _, _ = fit(train)
-        predicted = alpha * s_held
+
+        if use_power_law:
+            # log(cost) = log(β) + γ·log(s) — Taleb power-law
+            frag = _fragility_exponent(train)
+            if frag.get("status") == "ok":
+                gamma = frag["gamma"]
+                beta = frag["beta_eur_m"]
+                predicted = beta * (s_held ** gamma)
+                alpha = predicted / s_held if s_held > 0 else 0.0  # implied α at this s
+            else:
+                # Fallback to linear if log-log can't fit
+                alpha, _, _, _ = fit(train)
+                predicted = alpha * s_held
+        else:
+            alpha, _, _, _ = fit(train)
+            predicted = alpha * s_held
         error = predicted - c_held
         pct = (error / c_held * 100) if c_held > 0 else 0
         results.append({
@@ -618,6 +667,8 @@ def backtest_loo(category: Optional[str] = None, robust: bool = True) -> dict:
             "shock_units": s_held,
             "actual_eur_m": c_held,
             "predicted_eur_m": round(predicted, 1),
+            "fit_scope": fit_scope,
+            "fit_alpha_eur_m_per_unit": round(alpha, 1),
             "error_eur_m": round(error, 1),
             "error_pct": round(pct, 1),
             "within_50pct": abs(pct) <= 50,
@@ -642,6 +693,7 @@ def backtest_loo(category: Optional[str] = None, robust: bool = True) -> dict:
     return {
         "status": "ok",
         "method": "huber" if robust else "ols",
+        "mode": effective_mode,
         "category_filter": category or "overall",
         "n_total": n,
         "mae_eur_m": round(mae, 2),

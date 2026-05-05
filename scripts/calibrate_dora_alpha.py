@@ -44,10 +44,11 @@ logger = logging.getLogger(__name__)
 
 
 def fit_overall() -> dict:
-    alpha, sigma, r2 = _calibrated_alpha()
+    alpha, sigma, r2, _n = _calibrated_alpha()
     incidents = _load_reference_incidents()
     residuals = []
-    for s, c, ident, cat in incidents:
+    for row in incidents:
+        s, c, ident, cat = row[0], row[1], row[2], row[3]
         pred = alpha * s
         res = c - pred
         residuals.append({
@@ -75,7 +76,8 @@ def fit_overall() -> dict:
 def fit_by_category() -> dict:
     incidents = _load_reference_incidents()
     by_cat: dict[str, list] = {}
-    for s, c, ident, cat in incidents:
+    for row in incidents:
+        s, c, ident, cat = row[0], row[1], row[2], row[3]
         by_cat.setdefault(cat, []).append((s, c, ident))
     out: dict[str, dict] = {}
     for cat, rows in by_cat.items():

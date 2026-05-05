@@ -689,6 +689,8 @@ interface BacktestResult {
   shock_units: number;
   actual_eur_m: number;
   predicted_eur_m: number;
+  fit_scope?: string;
+  fit_alpha_eur_m_per_unit?: number;
   error_eur_m: number;
   error_pct: number;
   within_50pct: boolean;
@@ -699,6 +701,7 @@ interface BacktestResult {
 interface BacktestPayload {
   status: string;
   method: string;
+  mode?: string;
   category_filter: string;
   n_total: number;
   mae_eur_m: number;
@@ -723,20 +726,24 @@ const DORA_CATEGORIES = ["overall", "banking_it", "banking_eu", "banking_us", "s
 
 function DoraValidationPanel() {
   const [category, setCategory] = useState<string>("overall");
+  const [mode, setMode] = useState<"power_law" | "category_aware" | "overall">("power_law");
   const [diag, setDiag] = useState<DiagnosticsPayload | null>(null);
   const [bt, setBt] = useState<BacktestPayload | null>(null);
   const [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
     setDiag(null); setBt(null); setErr(null);
-    const params = category === "overall" ? "" : `?category=${category}`;
+    const qs = new URLSearchParams();
+    if (category !== "overall") qs.set("category", category);
+    qs.set("mode", mode);
+    const diagParams = category === "overall" ? "" : `?category=${category}`;
     Promise.all([
-      fetch(`${API_BASE}/api/compliance/dora/calibration/diagnostics${params}`).then(r => r.json()),
-      fetch(`${API_BASE}/api/compliance/dora/backtest${params}`).then(r => r.json()),
+      fetch(`${API_BASE}/api/compliance/dora/calibration/diagnostics${diagParams}`).then(r => r.json()),
+      fetch(`${API_BASE}/api/compliance/dora/backtest?${qs.toString()}`).then(r => r.json()),
     ])
       .then(([d, b]) => { setDiag(d); setBt(b); })
       .catch(e => setErr(String(e)));
-  }, [category]);
+  }, [category, mode]);
 
   if (err) return <div className="text-[12px] text-ki-on-surface-muted">{err}</div>;
   if (!diag || !bt) {
@@ -764,6 +771,33 @@ function DoraValidationPanel() {
               {c.replace("_", " ")}
             </button>
           ))}
+        </div>
+
+        <div className="mt-3">
+          <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted mb-1.5">
+            LOO model
+            <span className="ml-2 text-[9px] normal-case text-ki-on-surface-muted">
+              (production uses power-law; the others are diagnostic baselines)
+            </span>
+          </div>
+          <div className="flex gap-1 flex-wrap">
+            {[
+              { k: "power_law" as const,      label: "power-law β·s^γ",       help: "Production estimator. Per-category γ from log-log Huber fit. Captures convexity (γ≈3 in real data)." },
+              { k: "category_aware" as const, label: "linear (per category)", help: "Linear cost = α·s, α refit on the held-out's own category subset. Old default before E.6 power-law." },
+              { k: "overall" as const,        label: "linear (overall)",      help: "Linear cost = α·s, single α across all categories. Worst-case baseline; never used in production." },
+            ].map(m => (
+              <button key={m.k}
+                onClick={() => setMode(m.k)}
+                title={m.help}
+                className={`px-2 py-1 text-[11px] rounded-sm border ${
+                  mode === m.k
+                    ? "bg-ki-on-surface text-ki-surface border-ki-on-surface"
+                    : "border-ki-border text-ki-on-surface-secondary hover:bg-ki-surface-hover"
+                }`}>
+                {m.label}
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -820,7 +854,15 @@ function DoraValidationPanel() {
 
       {/* Backtest summary */}
       <section className="border border-ki-border rounded p-5">
-        <div className="eyebrow text-ki-primary mb-3">Backtest · leave-one-out cross-validation</div>
+        <div className="flex items-baseline justify-between mb-3">
+          <div className="eyebrow text-ki-primary">Backtest · leave-one-out cross-validation</div>
+          {bt.mode && (
+            <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded-sm border bg-white/40 border-ki-border text-ki-on-surface-muted"
+                  title={bt.mode === "power_law" ? "Production estimator: cost = β·s^γ, per-category" : bt.mode === "category_aware" ? "Linear cost = α·s, per-category" : "Linear cost = α·s, single α across all categories"}>
+              {bt.mode.replace("_", " ")}
+            </span>
+          )}
+        </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <BTStat label="Hit ±50%" value={`${(bt.hit_rate_within_50pct * 100).toFixed(0)}%`} accent="primary" />
           <BTStat label="Hit ±100%" value={`${(bt.hit_rate_within_100pct * 100).toFixed(0)}%`} />
@@ -828,9 +870,14 @@ function DoraValidationPanel() {
           <BTStat label="Median |%err|" value={`${bt.median_abs_pct_error.toFixed(0)}%`} />
         </div>
         <p className="text-[11px] text-ki-on-surface-muted mt-3 leading-relaxed">
-          For each incident, α was re-fitted on the other {bt.n_total - 1} and used to predict the held-out cost.
-          Method: <code className="font-data">{bt.method}</code> regression. Hit-rates are the share of out-of-sample
-          predictions within the threshold.
+          For each incident, the model was re-fitted on the other {bt.n_total - 1} and used to predict the held-out cost.
+          Method: <code className="font-data">{bt.method}</code> regression
+          {bt.mode === "power_law" && ", with γ from a per-category log-log fit (cost = β·s^γ)"}
+          {bt.mode === "category_aware" && ", α refit per category for each held-out incident"}
+          {bt.mode === "overall" && ", single α across all 40 incidents (no category conditioning)"}.
+          Hit-rates are the share of out-of-sample predictions within the threshold. {bt.mode === "power_law" && (
+            <span> Toggle the model above to see why production uses β·s^γ — linear α-anchor only hits ±100% on ~40% of incidents because real cost responds super-linearly to shock magnitude.</span>
+          )}
         </p>
       </section>
 

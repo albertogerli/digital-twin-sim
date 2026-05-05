@@ -64,6 +64,28 @@ export async function POST(req: Request) {
     auth.secret,
   );
 
+  // Best-effort: log the redemption to the backend so /admin/invites
+  // can show usage stats. Fire-and-forget; failure here doesn't block
+  // the user's login (network blip on Railway shouldn't cost a session).
+  const apiBase = process.env.NEXT_PUBLIC_API_URL || "";
+  if (apiBase) {
+    try {
+      // We don't await — Edge runtime allows in-flight fetches via waitUntil
+      // semantics, and a slow Railway shouldn't add latency to the redirect.
+      fetch(`${apiBase}/api/admin/invites/log-redemption`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "User-Agent": req.headers.get("user-agent") || "",
+        },
+        body: JSON.stringify({
+          sub: invite.sub ?? "guest",
+          label: invite.label ?? "",
+        }),
+      }).catch(() => { /* swallow */ });
+    } catch { /* swallow */ }
+  }
+
   const res = NextResponse.json({ ok: true, label: invite.label ?? "" });
   res.cookies.set({
     name: COOKIE_NAME,

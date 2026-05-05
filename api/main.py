@@ -1065,3 +1065,165 @@ async def admin_jobs_run(
     t = _threading.Thread(target=_run_admin_job_in_thread, args=(job_name,), daemon=True)
     t.start()
     return {"job": job_name, "state": "queued", "message": "Job started in background"}
+
+
+# ── Invite usage analytics ─────────────────────────────────────────
+# Two storage layers, both append-only on disk so they survive Railway
+# redeploys when /app/outputs is mounted as a persistent volume:
+#   1. _INVITE_REDEMPTIONS_PATH: one JSONL line per /api/auth/invite/redeem
+#      success — captures (sub, label, redeemed_at, ua_hint) so we can show
+#      "X invitees clicked the link in the last 7 days" even if they
+#      never ran a sim afterwards.
+#   2. simulations table (already persisted) — we aggregate sim count
+#      and last activity per tenant_id (= sub from the invite token).
+
+_INVITE_REDEMPTIONS_PATH = os.path.join(PROJECT_ROOT, "outputs", "invite_redemptions.jsonl")
+
+
+@app.post("/api/admin/invites/log-redemption")
+async def log_invite_redemption(request: Request):
+    """Append-only log of one invite redemption.
+
+    Called by the Edge runtime /api/auth/invite/redeem after it
+    validates the HMAC signature. We trust the frontend here because
+    (a) the same Vercel project signs both the invite token and the
+    log call, and (b) the worst case of a forged log is a misleading
+    metric, not a security boundary leak.
+    """
+    try:
+        body = await request.json()
+    except Exception:
+        raise HTTPException(400, "invalid json body")
+    sub = (body.get("sub") or "").strip()
+    label = (body.get("label") or "").strip()
+    if not sub:
+        raise HTTPException(400, "sub required")
+    entry = {
+        "sub": sub,
+        "label": label[:120],
+        "redeemed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "ua_hint": (request.headers.get("user-agent") or "")[:200],
+        "ip_hint": (request.client.host if request.client else "")[:64],
+    }
+    try:
+        os.makedirs(os.path.dirname(_INVITE_REDEMPTIONS_PATH), exist_ok=True)
+        with open(_INVITE_REDEMPTIONS_PATH, "a") as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+    except Exception as exc:
+        logger.warning(f"invite redemption log write failed: {exc}")
+        raise HTTPException(500, "log write failed")
+    return {"ok": True}
+
+
+@app.get("/api/admin/invites/stats")
+@cached(ttl_seconds=15.0)
+async def admin_invites_stats():
+    """Per-invitee aggregate: redemptions + sim activity.
+
+    Returns:
+      {
+        "total_redemptions": N,
+        "unique_invitees": M,
+        "redemptions_last_7d": K,
+        "redemptions_last_30d": K,
+        "users": [
+          {sub, label, first_redeemed, last_redeemed, redemption_count,
+           sim_count, last_sim_at, total_cost, sim_status_breakdown}
+        ]
+      }
+    """
+    # 1. Read redemption log (best-effort)
+    redemptions_by_sub: dict[str, list[dict]] = {}
+    try:
+        if os.path.exists(_INVITE_REDEMPTIONS_PATH):
+            with open(_INVITE_REDEMPTIONS_PATH) as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        e = json.loads(line)
+                        sub = e.get("sub", "")
+                        if sub:
+                            redemptions_by_sub.setdefault(sub, []).append(e)
+                    except json.JSONDecodeError:
+                        continue
+    except Exception as exc:
+        logger.warning(f"invite redemption log read failed: {exc}")
+
+    # 2. Aggregate sim activity per tenant_id
+    sims_by_tenant: dict[str, list] = {}
+    for sim in manager.simulations.values():
+        tid = sim.tenant_id
+        if not tid or tid == "default":
+            continue
+        sims_by_tenant.setdefault(tid, []).append(sim)
+
+    # 3. Merge — every tenant_id we've seen (either in log or in sims)
+    all_subs = set(redemptions_by_sub) | set(sims_by_tenant)
+    now = time.time()
+    cutoff_7d = now - 7 * 24 * 3600
+    cutoff_30d = now - 30 * 24 * 3600
+
+    def _ts(s: str) -> float:
+        try:
+            return time.mktime(time.strptime(s.replace("Z", ""), "%Y-%m-%dT%H:%M:%S"))
+        except (ValueError, TypeError):
+            return 0.0
+
+    users = []
+    rd_7d = 0
+    rd_30d = 0
+    for sub in sorted(all_subs):
+        rds = redemptions_by_sub.get(sub, [])
+        sims = sims_by_tenant.get(sub, [])
+        # Pick most recent label across redemptions (or sim brief if no log)
+        label = ""
+        if rds:
+            label = rds[-1].get("label") or ""
+        first_rd = rds[0].get("redeemed_at") if rds else None
+        last_rd = rds[-1].get("redeemed_at") if rds else None
+        # Status breakdown
+        status_counts: dict[str, int] = {}
+        for s in sims:
+            status_counts[s.status] = status_counts.get(s.status, 0) + 1
+        # Last sim activity
+        last_sim_at = None
+        if sims:
+            timestamps = [s.completed_at or s.created_at for s in sims if s.completed_at or s.created_at]
+            if timestamps:
+                last_sim_at = max(timestamps)
+        # Total cost
+        total_cost = sum(getattr(s, "cost", 0.0) or 0.0 for s in sims)
+        users.append({
+            "sub": sub,
+            "label": label,
+            "first_redeemed": first_rd,
+            "last_redeemed": last_rd,
+            "redemption_count": len(rds),
+            "sim_count": len(sims),
+            "last_sim_at": last_sim_at,
+            "total_cost": round(total_cost, 4),
+            "sim_status_breakdown": status_counts,
+        })
+        for r in rds:
+            ts = _ts(r.get("redeemed_at", ""))
+            if ts >= cutoff_7d:
+                rd_7d += 1
+            if ts >= cutoff_30d:
+                rd_30d += 1
+
+    # Sort users: most recently active first
+    def _activity_key(u):
+        return u.get("last_sim_at") or u.get("last_redeemed") or ""
+    users.sort(key=_activity_key, reverse=True)
+
+    total_redemptions = sum(len(v) for v in redemptions_by_sub.values())
+    return {
+        "total_redemptions": total_redemptions,
+        "unique_invitees": len(redemptions_by_sub),
+        "redemptions_last_7d": rd_7d,
+        "redemptions_last_30d": rd_30d,
+        "users": users,
+        "users_total": len(users),
+    }

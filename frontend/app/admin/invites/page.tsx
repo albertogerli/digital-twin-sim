@@ -1,15 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 /* ───────────────────────────────────────────────────────────
-   Admin · Invites — generate shareable login links.
-   Gated by middleware (any logged-in user can access).
-   Stateless: tokens are HMAC-signed; no server-side storage,
-   so we can't enforce single-use or revoke individual invites
-   without rotating DTS_AUTH_SECRET (which kills ALL sessions).
+   Admin · Invites — generate shareable login links + usage stats.
+   Gated by middleware (any logged-in admin can access).
+   Stateless invites: tokens are HMAC-signed; no server-side
+   storage of issued invites. Usage stats come from two sources:
+     1. Backend /api/admin/invites/stats aggregates the
+        outputs/invite_redemptions.jsonl log + simulations table
+        per tenant_id (= invite sub).
+     2. The current-session "Generated" list below — in-memory,
+        clears on refresh.
    ─────────────────────────────────────────────────────────── */
+
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "";
 
 interface CreatedInvite {
   url: string;
@@ -17,6 +23,27 @@ interface CreatedInvite {
   expiresAt: string;
   sub: string;
   createdAt: string;
+}
+
+interface InviteUserStat {
+  sub: string;
+  label: string;
+  first_redeemed: string | null;
+  last_redeemed: string | null;
+  redemption_count: number;
+  sim_count: number;
+  last_sim_at: string | null;
+  total_cost: number;
+  sim_status_breakdown: Record<string, number>;
+}
+
+interface InviteStats {
+  total_redemptions: number;
+  unique_invitees: number;
+  redemptions_last_7d: number;
+  redemptions_last_30d: number;
+  users: InviteUserStat[];
+  users_total: number;
 }
 
 const EXPIRY_OPTIONS = [
@@ -33,6 +60,8 @@ export default function AdminInvitesPage() {
   const [error, setError] = useState("");
   const [created, setCreated] = useState<CreatedInvite[]>([]);
   const [copiedSub, setCopiedSub] = useState<string | null>(null);
+  const [stats, setStats] = useState<InviteStats | null>(null);
+  const [statsErr, setStatsErr] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -91,8 +120,44 @@ export default function AdminInvitesPage() {
     }
   };
 
+  const fmtAbsolute = (iso: string | null) => {
+    if (!iso) return "—";
+    try {
+      const d = new Date(iso);
+      const ms = Date.now() - d.getTime();
+      const h = Math.round(ms / 3600000);
+      if (h < 1) return "<1h ago";
+      if (h < 24) return `${h}h ago`;
+      const days = Math.round(h / 24);
+      if (days < 30) return `${days}d ago`;
+      return d.toISOString().slice(0, 10);
+    } catch { return iso; }
+  };
+
+  // Load usage stats on mount + poll every 20s so a redemption from an
+  // invitee shows up without a hard refresh.
+  useEffect(() => {
+    let cancelled = false;
+    const fetchStats = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/api/admin/invites/stats`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        if (!cancelled) {
+          setStats(data);
+          setStatsErr("");
+        }
+      } catch (e) {
+        if (!cancelled) setStatsErr(e instanceof Error ? e.message : String(e));
+      }
+    };
+    fetchStats();
+    const id = setInterval(fetchStats, 20000);
+    return () => { cancelled = true; clearInterval(id); };
+  }, []);
+
   return (
-    <div className="p-5 space-y-6 max-w-3xl">
+    <div className="p-5 space-y-6 max-w-4xl">
       {/* Header */}
       <div>
         <div className="eyebrow">Admin</div>
@@ -163,6 +228,150 @@ export default function AdminInvitesPage() {
           </div>
         )}
       </form>
+
+      {/* ── Usage statistics across ALL invitees ─────────────────── */}
+      <section className="bg-ki-surface-raised border border-ki-border rounded p-4">
+        <div className="flex items-baseline justify-between mb-3">
+          <div className="eyebrow text-ki-primary">Usage statistics</div>
+          {stats && (
+            <span className="font-data text-[11px] text-ki-on-surface-muted">
+              {stats.users_total} invitees tracked
+            </span>
+          )}
+        </div>
+        {statsErr && (
+          <div className="bg-ki-error-soft border border-ki-error/30 rounded p-2 text-[11px] text-ki-error mb-3">
+            Stats unavailable: {statsErr}
+          </div>
+        )}
+        {!stats ? (
+          <div className="text-[12px] text-ki-on-surface-muted">Loading statistics<span className="cursor-blink">_</span></div>
+        ) : (
+          <>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+              <div className="bg-ki-surface-sunken border border-ki-border rounded-sm p-2.5">
+                <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted">Redemptions</div>
+                <div className="font-data tabular text-[18px] font-medium text-ki-on-surface mt-0.5">
+                  {stats.total_redemptions.toLocaleString()}
+                </div>
+                <div className="text-[10px] text-ki-on-surface-muted mt-0.5">
+                  {stats.unique_invitees} unique
+                </div>
+              </div>
+              <div className="bg-ki-surface-sunken border border-ki-border rounded-sm p-2.5">
+                <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted">Last 7 days</div>
+                <div className="font-data tabular text-[18px] font-medium text-ki-on-surface mt-0.5">
+                  {stats.redemptions_last_7d.toLocaleString()}
+                </div>
+                <div className="text-[10px] text-ki-on-surface-muted mt-0.5">redemptions</div>
+              </div>
+              <div className="bg-ki-surface-sunken border border-ki-border rounded-sm p-2.5">
+                <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted">Last 30 days</div>
+                <div className="font-data tabular text-[18px] font-medium text-ki-on-surface mt-0.5">
+                  {stats.redemptions_last_30d.toLocaleString()}
+                </div>
+                <div className="text-[10px] text-ki-on-surface-muted mt-0.5">redemptions</div>
+              </div>
+              <div className="bg-ki-surface-sunken border border-ki-border rounded-sm p-2.5">
+                <div className="text-[10px] uppercase tracking-wider text-ki-on-surface-muted">Total sims run</div>
+                <div className="font-data tabular text-[18px] font-medium text-ki-on-surface mt-0.5">
+                  {stats.users.reduce((a, u) => a + u.sim_count, 0).toLocaleString()}
+                </div>
+                <div className="text-[10px] text-ki-on-surface-muted mt-0.5">
+                  ${stats.users.reduce((a, u) => a + u.total_cost, 0).toFixed(3)} spent
+                </div>
+              </div>
+            </div>
+
+            {stats.users.length === 0 ? (
+              <div className="text-[12px] text-ki-on-surface-muted py-3 text-center">
+                Nessun invito ancora utilizzato. Genera un link e condividilo: i numeri si popoleranno appena qualcuno lo apre.
+              </div>
+            ) : (
+              <div className="overflow-x-auto -mx-4">
+                <table className="w-full text-[11px]">
+                  <thead className="bg-ki-surface-sunken">
+                    <tr className="text-left border-y border-ki-border">
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted">Invitato</th>
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted">ID</th>
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted text-right">Click</th>
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted">Primo</th>
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted">Ultimo</th>
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted text-right">Sim</th>
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted">Stato sim</th>
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted">Ultima attività</th>
+                      <th className="px-3 py-2 font-medium text-ki-on-surface-muted text-right">Costo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {stats.users.map((u) => {
+                      const recentlyActive = u.last_sim_at && (Date.now() - new Date(u.last_sim_at).getTime() < 7 * 24 * 3600000);
+                      return (
+                        <tr key={u.sub} className="border-b border-ki-border-faint hover:bg-ki-surface-hover">
+                          <td className="px-3 py-2 truncate max-w-[200px]" title={u.label}>
+                            {u.label || <span className="text-ki-on-surface-muted italic">— (no label)</span>}
+                          </td>
+                          <td className="px-3 py-2 font-data text-[10px] text-ki-on-surface-muted">{u.sub}</td>
+                          <td className="px-3 py-2 text-right font-data tabular">
+                            {u.redemption_count > 0 ? u.redemption_count : "—"}
+                          </td>
+                          <td className="px-3 py-2 font-data text-[10px] text-ki-on-surface-muted whitespace-nowrap">
+                            {fmtAbsolute(u.first_redeemed)}
+                          </td>
+                          <td className="px-3 py-2 font-data text-[10px] text-ki-on-surface-muted whitespace-nowrap">
+                            {fmtAbsolute(u.last_redeemed)}
+                          </td>
+                          <td className="px-3 py-2 text-right font-data tabular">
+                            {u.sim_count > 0 ? (
+                              <span className="text-ki-on-surface font-medium">{u.sim_count}</span>
+                            ) : <span className="text-ki-on-surface-muted">0</span>}
+                          </td>
+                          <td className="px-3 py-2">
+                            {Object.keys(u.sim_status_breakdown).length === 0 ? (
+                              <span className="text-ki-on-surface-muted">—</span>
+                            ) : (
+                              <span className="flex flex-wrap gap-1">
+                                {Object.entries(u.sim_status_breakdown).map(([s, c]) => {
+                                  const tone = s === "completed" ? "bg-ki-success-soft text-ki-success border-ki-success/30"
+                                    : s === "failed" ? "bg-ki-error-soft text-ki-error border-ki-error/30"
+                                    : "bg-ki-surface-sunken text-ki-on-surface-muted border-ki-border";
+                                  return (
+                                    <span key={s} className={`inline-block px-1.5 rounded-sm border text-[9px] font-data ${tone}`}>
+                                      {s} {c}
+                                    </span>
+                                  );
+                                })}
+                              </span>
+                            )}
+                          </td>
+                          <td className="px-3 py-2 font-data text-[10px] whitespace-nowrap">
+                            {recentlyActive ? (
+                              <span className="inline-flex items-center gap-1 text-ki-success">
+                                <span className="w-1.5 h-1.5 rounded-full bg-ki-success" />
+                                {fmtAbsolute(u.last_sim_at)}
+                              </span>
+                            ) : (
+                              <span className="text-ki-on-surface-muted">{fmtAbsolute(u.last_sim_at)}</span>
+                            )}
+                          </td>
+                          <td className="px-3 py-2 text-right font-data tabular text-ki-on-surface-muted">
+                            ${u.total_cost.toFixed(3)}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            <p className="text-[10px] text-ki-on-surface-muted mt-3 leading-relaxed">
+              Aggregato da <code className="font-data">outputs/invite_redemptions.jsonl</code> (click → backend log)
+              + <code className="font-data">simulations</code> table (per <code>tenant_id</code>). Persiste tra
+              redeploy se il volume Railway è montato su <code>/app/outputs</code>. Auto-refresh ogni 20s.
+            </p>
+          </>
+        )}
+      </section>
 
       {/* List of generated invites (this session) */}
       {created.length > 0 ? (

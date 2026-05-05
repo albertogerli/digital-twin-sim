@@ -1089,9 +1089,15 @@ async def dora_preview(
 async def dora_export(
     sim_id: str,
     request: Request,
+    inline: bool = False,
     tenant: Optional[Tenant] = Depends(verify_api_key),
 ):
-    """Download the DORA Major Incident Report XML for a completed sim."""
+    """DORA Major Incident Report XML for a completed sim.
+
+    With ?inline=1 the response Content-Disposition is `inline` so the
+    browser renders the XML in the tab; without it the response is a
+    download attachment (the original behaviour for the "Download XML"
+    button)."""
     from datetime import datetime, timezone
     from fastapi.responses import Response
     from core.dora.classification import classify_from_simulation
@@ -1146,10 +1152,11 @@ async def dora_export(
         lessons_learned=metrics.get("lessons_learned"),
     )
     filename = f"dora_incident_{sim_id[:8]}.xml"
+    disposition = "inline" if inline else "attachment"
     return Response(
         content=xml,
         media_type="application/xml",
-        headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+        headers={"Content-Disposition": f'{disposition}; filename="{filename}"'},
     )
 
 

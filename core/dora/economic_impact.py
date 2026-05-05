@@ -430,15 +430,23 @@ def calibration_summary() -> dict:
     }
 
 
-CALIBRATION_NOTES = (
-    "α is OLS-fitted (no intercept) on the reference incident table at "
-    "shared/dora_reference_incidents.json — currently {N} incidents across "
-    "banking_it / banking_eu / banking_us / sovereign / cyber / telco / "
-    "energy categories with public-domain cost figures. Refit nightly via "
-    "scripts/calibrate_dora_alpha.py + GitHub Actions. CI band is ±1.65·σ "
-    "(coarse 90%). Sensitive to single outliers; switch to OLS+intercept "
-    "and heteroscedastic-robust SE once N > 50."
-)
+def _calibration_notes() -> str:
+    n = len(_load_reference_incidents())
+    return (
+        f"α is Huber-fitted (k=1.345, no intercept) on the reference incident "
+        f"table at shared/dora_reference_incidents.json — currently {n} incidents "
+        f"across banking_it / banking_eu / banking_us / sovereign / cyber / "
+        f"telco / energy categories with public-domain cost figures. Refit "
+        f"nightly via scripts/calibrate_dora_alpha.py + GitHub Actions. "
+        f"CI band is ±1.65·σ (coarse 90%). When the per-category bucket has "
+        f"≥3 incidents the within-category α is used (banking_it R²≈0.88, "
+        f"sovereign R²≈0.83). Regime conditioning (calm/stressed/crisis) "
+        f"further slices α when both filters have ≥3 rows in the intersection."
+    )
+
+
+# Backwards-compat shim: some callers still reference the old constant
+CALIBRATION_NOTES = _calibration_notes()
 
 
 # Cross-sector contagion multiplier — Sprint D.5: derive per-brief
@@ -759,7 +767,7 @@ def combine(
             "anchor_estimate": anchor,
             "ticker_estimate": ticker,
             "judge_estimate": judge,
-            "calibration_notes": CALIBRATION_NOTES,
+            "calibration_notes": _calibration_notes(),
         }
 
     # Fallback: max(A, B) — Sprint A/A.2 behaviour
@@ -776,5 +784,5 @@ def combine(
         "anchor_estimate": anchor,
         "ticker_estimate": ticker,
         "judge_estimate": judge,  # may be None — UI shows "judge skipped"
-        "calibration_notes": CALIBRATION_NOTES,
+        "calibration_notes": _calibration_notes(),
     }

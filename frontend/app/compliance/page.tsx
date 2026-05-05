@@ -589,8 +589,17 @@ function DoraPreviewCard({ preview, simId }: { preview: DoraPreview; simId: stri
 
       <div className="px-5 pb-5">
         <div className="eyebrow mb-2">Source metrics from simulation</div>
-        <pre className="text-[11px] font-data bg-ki-surface-sunken border border-ki-border rounded p-2 overflow-auto">
-          {JSON.stringify(preview.metrics_used || {}, null, 2)}
+        <pre className="text-[11px] font-data bg-ki-surface-sunken border border-ki-border rounded p-2 overflow-x-auto max-h-64 whitespace-pre-wrap break-words">
+          {JSON.stringify(
+            // Drop the breakdown — already rendered in the hero;
+            // including it here was bloating the pre block to ~80 lines.
+            Object.fromEntries(
+              Object.entries(preview.metrics_used || {})
+                .filter(([k]) => k !== "economic_impact_breakdown")
+            ),
+            null,
+            2,
+          )}
         </pre>
       </div>
 
@@ -603,7 +612,7 @@ function DoraPreviewCard({ preview, simId }: { preview: DoraPreview; simId: stri
           Download XML
         </a>
         <a
-          href={`${API_BASE}/api/compliance/dora/export/${simId}`}
+          href={`${API_BASE}/api/compliance/dora/export/${simId}?inline=1`}
           target="_blank" rel="noopener"
           className="border border-ki-border text-[12px] px-3 py-1.5 rounded hover:bg-ki-surface-sunken"
         >

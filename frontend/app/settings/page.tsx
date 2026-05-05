@@ -24,6 +24,10 @@ export default function SettingsPage() {
 
   return (
     <div className="p-5 space-y-6 max-w-3xl">
+      <Link href="/" className="inline-flex items-center gap-1 text-[12px] text-ki-on-surface-muted hover:text-ki-on-surface group">
+        <span className="material-symbols-outlined text-[14px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+        Dashboard
+      </Link>
       {/* Access management */}
       <section>
         <div className="eyebrow mb-2">Admin</div>

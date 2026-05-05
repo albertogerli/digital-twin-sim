@@ -182,8 +182,12 @@ export default function BranchesPage({ params }: { params: { id: string } }) {
     <div className="min-h-screen bg-ki-surface text-ki-on-surface flex flex-col">
       {/* Sub-toolbar */}
       <div className="sticky top-0 z-30 bg-ki-surface-raised/95 backdrop-blur border-b border-ki-border h-11 flex items-center px-4 gap-3">
+        <Link href="/" className="inline-flex items-center gap-1 text-[11px] text-ki-on-surface-muted hover:text-ki-on-surface transition-colors group" title="Dashboard">
+          <span className="material-symbols-outlined text-[14px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+        </Link>
+        <span className="text-ki-border-strong">/</span>
         <Link href={`/scenario/${params.id}`} className="inline-flex items-center gap-1.5 text-[11px] text-ki-on-surface-muted hover:text-ki-on-surface transition-colors">
-          ← Scenario
+          Scenario
         </Link>
         <span className="text-ki-border-strong">/</span>
         <span className="font-data text-[10px] uppercase tracking-[0.08em] text-ki-on-surface-muted">Scenario tree</span>

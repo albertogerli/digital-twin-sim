@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const DOMAINS = [
   { id: "",              label: "Auto-detect",      desc: "L'AI sceglie il dominio dal brief" },

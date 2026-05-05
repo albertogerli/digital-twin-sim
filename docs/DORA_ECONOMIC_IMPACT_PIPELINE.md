@@ -1,6 +1,6 @@
 # DORA Economic Impact — Calibration Pipeline
 
-**Status:** Sprint A landed (40 incidents, refit nightly). Sprint B + C scaffolded.
+**Status:** Sprints A · A.2 · B (partial) · C · D.1 · D.2 · D.3 · D.5 LIVE.  D.4 infrastructure shipped, replay backfill is the operator's call (cost ~$25, 3h).
 **Owner:** Alberto Gerli
 **Last refit:** see `outputs/dora_calibration.json` `generated_at`
 

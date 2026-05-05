@@ -1,0 +1,49 @@
+{
+  "_doc": "Brief texts used by scripts/replay_historical_incident.py to re-run each historical incident through the simulator and derive its shock_units empirically. One entry per incident_id from dora_reference_incidents.json. Each brief reproduces the publicly-known facts at incident onset (without using hindsight that wasn't available at t0) so the sim's measurement is realistic. Sprint D.4 ships briefs for 6 representative incidents (1 per category); the operator can extend to the full 40 incrementally as time/budget allows.",
+  "_schema_version": "1.0",
+  "_last_updated": "2026-05-05",
+  "briefs": {
+    "mps_bailin_2017": {
+      "brief": "Banca Monte dei Paschi di Siena (BMPS.MI), the world's oldest bank, has failed the ECB stress test with a CET1 shortfall of €5.4bn in adverse scenario. After a failed €5bn private capital raise, the Italian Treasury announces precautionary recapitalisation under BRRD. Junior bondholders face mandatory burden-sharing. EU DG Comp opens state-aid procedure SA.47677. ECB SREP letter signals continuing capital concerns. Italian press signals depositor anxiety; deposit run rumours intensify on social. Senate Banking Commission schedules emergency hearing. Mediobanca/Equita publish downgrade notes on the Italian banking sector.",
+      "domain": "financial",
+      "num_rounds": 5,
+      "budget_usd": 1.0,
+      "_notes": "Mid-size single-firm bailout in stressed BTP-Bund regime (~190bp). Expected shock_units in 1.4-2.0 range."
+    },
+    "credit_suisse_ubs_2023": {
+      "brief": "After a year of deposit outflows and the implosion of a key client (Greensill, Archegos), Credit Suisse (CSGN.SW) sees overnight liquidity drain accelerate. SNB extends emergency CHF 50bn liquidity line; markets unconvinced. Over the weekend, Swiss authorities (FINMA + SNB + Federal Council) force a UBS takeover at CHF 0.76/share. CHF 16bn of AT1 instruments are written down to zero ahead of equity, triggering global panic in subordinated bank debt. Bondholder lawsuits announced. EU and UK regulators issue separate statements on AT1 hierarchy. Italian banks (UCG.MI, ISP.MI) under cross-asset selling pressure. ECB convenes emergency call.",
+      "domain": "financial",
+      "num_rounds": 5,
+      "budget_usd": 1.0,
+      "_notes": "Cross-border systemic bank failure, 2023 stressed regime. Expected shock_units 2.4-3.0."
+    },
+    "svb_2023": {
+      "brief": "Silicon Valley Bank (SIVB), the 16th-largest US bank and primary banker to ~50% of US venture-backed startups, discloses a $1.8bn loss on AFS bond sales and a $2.25bn capital raise. Within 36 hours, depositors withdraw $42bn (a quarter of total deposits). California DFPI takes possession; FDIC announces receivership. Treasury, Fed, FDIC announce systemic-risk exception making depositors whole. Two days later Signature Bank also fails. Founders Fund, Coatue, Y Combinator portfolio companies report inability to make payroll. Regional bank ETF (KRE) drops -25% in 5 days. First Republic deposits flee.",
+      "domain": "financial",
+      "num_rounds": 5,
+      "budget_usd": 1.0,
+      "_notes": "Concentrated regional-bank failure, 2023 stressed regime. Expected shock_units 2.0-2.6."
+    },
+    "brexit_wave1_2016": {
+      "brief": "Against the polls' expectations, the UK referendum returns 51.9% in favour of leaving the EU. PM Cameron resigns on the morning of June 24. GBP/USD drops -10% intraday (1.50 → 1.32), the largest single-day move in modern history. FTSE 100 opens -8% but recovers; FTSE 250 (domestic stocks) closes -7%. UK banking and homebuilder stocks lose 20-30% in a week. S&P downgrades UK sovereign rating from AAA to AA. ECB activates contingency liquidity measures. Bank of England signals additional QE. EU leaders demand rapid Article 50 invocation. Italian and Spanish bank shares fall on contagion fears; BTP-Bund spread widens 35bp.",
+      "domain": "financial",
+      "num_rounds": 5,
+      "budget_usd": 1.2,
+      "_notes": "Sovereign / cross-asset shock, 2016 stressed regime. Expected shock_units 2.8-3.5."
+    },
+    "crowdstrike_2024": {
+      "brief": "A defective channel-file update from CrowdStrike Falcon (CRWD) sensor causes Windows hosts globally to enter BSOD recovery loops. ~8.5 million machines affected. Delta Air Lines cancels 7,000 flights over 5 days; Microsoft 365 services degraded; banks (JPM, BAC) report intermittent ATM outages; UK NHS, Deutsche Bahn, broadcasters, hospitals worldwide affected. Microsoft and CrowdStrike publish coordinated post-mortem. Class action suits filed within 48h. CRWD stock drops -32% in two weeks. Cyber insurance market re-prices. Senate Homeland Security committee announces hearing. EU and UK regulators (ENISA, NCSC) issue advisories.",
+      "domain": "financial",
+      "num_rounds": 5,
+      "budget_usd": 1.0,
+      "_notes": "Software supply-chain operational outage, 2024 calm regime. Expected shock_units 2.4-3.0."
+    },
+    "tim_downgrade_2014": {
+      "brief": "Standard & Poor's downgrades Telecom Italia (TIT.MI) sovereign-linked debt rating from BB+ to BB, citing a deteriorating wireline market in Italy, regulatory pressure from AGCom on wholesale ULL pricing, and high net debt (€26.8bn vs. EBITDA €8.4bn). The downgrade triggers covenant repricing on €1.2bn of revolving facilities. Analyst notes from Mediobanca and Equita target -8% on the stock. Vivendi's Vincent Bolloré (largest shareholder ~24%) signals dissatisfaction; board reshuffle rumours. Italian government (PD-led) signals concern over strategic autonomy of national telecom infrastructure. AGCom postpones decision on FTTH wholesale tariffs. Mid-size Italian bond funds (Mediolanum, Anima) reduce TIM exposure.",
+      "domain": "financial",
+      "num_rounds": 5,
+      "budget_usd": 1.0,
+      "_notes": "Single-firm sector downgrade, 2014 stressed regime. Expected shock_units 0.6-1.0."
+    }
+  }
+}

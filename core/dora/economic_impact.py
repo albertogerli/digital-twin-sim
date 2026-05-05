@@ -406,6 +406,69 @@ def _iv_2sls_alpha(incidents: list[tuple]) -> dict:
     }
 
 
+def _bootstrap_powerlaw_predictions(
+    incidents: list[tuple],
+    target_shock: float,
+    n_resample: int = 5000,
+    quantiles: tuple[float, ...] = (0.05, 0.50, 0.95),
+    seed: int = 42,
+) -> Optional[dict]:
+    """Pairs-bootstrap of cost predictions under the power-law model.
+
+    For each replicate: resample N rows with replacement, refit (β, γ) via
+    log-log OLS, predict β·s^γ at target_shock. Returns empirical 5°/50°/95°
+    quantiles of the predicted cost distribution.
+
+    Captures the JOINT uncertainty in β and γ + skew + heavy tails — strictly
+    more honest than ±1.65σ Gaussian on residuals from the wrong (linear) model.
+    """
+    if len(incidents) < 4 or target_shock <= 0:
+        return None
+    import math
+    rng = random.Random(seed)
+    n = len(incidents)
+    preds_m: list[float] = []
+    for _ in range(n_resample):
+        sample = [incidents[rng.randrange(n)] for _ in range(n)]
+        # Inline log-log OLS (faster than calling _fragility_exponent which builds a dict)
+        pts = [(math.log(row[0]), math.log(row[1])) for row in sample
+               if row[0] > 0 and row[1] > 0]
+        if len(pts) < 4:
+            continue
+        m = len(pts)
+        mx = sum(p[0] for p in pts) / m
+        my = sum(p[1] for p in pts) / m
+        sxx = sum((p[0] - mx) ** 2 for p in pts)
+        sxy = sum((p[0] - mx) * (p[1] - my) for p in pts)
+        if sxx <= 1e-9:
+            continue
+        gamma = sxy / sxx
+        intercept = my - gamma * mx
+        try:
+            pred = math.exp(intercept) * (target_shock ** gamma)
+        except (OverflowError, ValueError):
+            continue
+        if pred > 0 and not (pred != pred):
+            preds_m.append(pred)
+    if not preds_m:
+        return None
+    preds_m.sort()
+    k = len(preds_m)
+    def q(p: float) -> float:
+        return preds_m[max(0, min(k - 1, int(p * (k - 1))))]
+    mean_p = sum(preds_m) / k
+    var_p = sum((p - mean_p) ** 2 for p in preds_m) / max(1, k - 1)
+    return {
+        "n_resample": n_resample,
+        "n_succeeded": k,
+        "q05": q(quantiles[0]),
+        "q50": q(quantiles[1]),
+        "q95": q(quantiles[2]),
+        "mean": mean_p,
+        "std": var_p ** 0.5,
+    }
+
+
 def _fragility_exponent(incidents: list[tuple]) -> dict:
     """E.6 — Taleb fragility ratio: γ in log(cost) = log(β) + γ·log(shock_units).
 
@@ -838,7 +901,11 @@ def calibration_summary() -> dict:
 def _calibration_notes() -> str:
     n = len(_load_reference_incidents())
     return (
-        f"α is Huber-fitted (k=1.345, no intercept) on the reference incident "
+        f"Production estimator is power-law (cost = β·s^γ) per category, with γ "
+        f"from a log-log Huber fit on the reference table. LOO backtest hit-rate "
+        f"±100% = 80% on N={n} (vs 35% for the linear α·s baseline). "
+        f"α (linear) is still computed for transparency: Huber-fitted (k=1.345, "
+        f"no intercept) on the reference incident "
         f"table at shared/dora_reference_incidents.json — currently {n} incidents "
         f"across banking_it / banking_eu / banking_us / sovereign / cyber / "
         f"telco / energy categories with public-domain cost figures. Refit "
@@ -1030,18 +1097,77 @@ def estimate_anchor(
     # E.5 — 2SLS-IV with HMM regime as instrument for shock_units
     iv = _iv_2sls_alpha(fit_incidents)
 
-    point_eur = float(total_shock_units * alpha * 1_000_000)
+    # ──────── Headline model selection: power-law vs linear ────────
+    # The LOO backtest shows power-law (β·s^γ) hits ±100% on 80% of
+    # incidents, vs 35% for linear α·s. We promote power-law to primary
+    # whenever the log-log fit is good (R² ≥ 0.5 in log-space). Linear is
+    # always reported as a transparency baseline.
 
+    # Linear point + bootstrap band (always computed, used as fallback)
+    point_linear = float(total_shock_units * alpha * 1_000_000)
     if boot.get("method") == "bootstrap_pairs":
-        low_eur = float(total_shock_units * boot["alpha_q05"] * 1_000_000)
-        high_eur = float(total_shock_units * boot["alpha_q95"] * 1_000_000)
-        band_method = "bootstrap_q90_pairs"
+        low_linear = float(total_shock_units * boot["alpha_q05"] * 1_000_000)
+        high_linear = float(total_shock_units * boot["alpha_q95"] * 1_000_000)
     else:
-        # Fallback to homoscedastic Gaussian if bootstrap couldn't run (n<3)
         band = 1.645 * sigma * 1_000_000
-        low_eur = point_eur - band
-        high_eur = point_eur + band
-        band_method = "gaussian_1645sigma_fallback"
+        low_linear = point_linear - band
+        high_linear = point_linear + band
+
+    # Power-law point + bootstrap band (preferred when fit is good)
+    point_pl = None
+    pl_band = None
+    pl_extrapolation = None
+    if fragility.get("status") == "ok" and fragility.get("log_r2", 0) >= 0.5:
+        gamma_fit = fragility["gamma"]
+        beta_fit = fragility["beta_eur_m"]
+        try:
+            point_pl_m = beta_fit * (max(0.0, float(total_shock_units)) ** gamma_fit)
+            point_pl = float(point_pl_m * 1_000_000)
+            pl_band = _bootstrap_powerlaw_predictions(fit_incidents, total_shock_units)
+            # Flag extrapolation outside training range (β·s^γ explodes outside)
+            train_shocks = [r[0] for r in fit_incidents]
+            s_min, s_max = min(train_shocks), max(train_shocks)
+            ts = float(total_shock_units)
+            if ts > 1.3 * s_max:
+                pl_extrapolation = {
+                    "warning": "extrapolating above training range",
+                    "ratio_to_max": round(ts / s_max, 2),
+                    "training_max_shock": s_max,
+                }
+            elif ts < 0.7 * s_min:
+                pl_extrapolation = {
+                    "warning": "extrapolating below training range",
+                    "ratio_to_min": round(ts / s_min, 2) if s_min > 0 else None,
+                    "training_min_shock": s_min,
+                }
+        except (OverflowError, ValueError):
+            point_pl = None
+
+    if point_pl is not None and pl_band is not None:
+        point_eur = point_pl
+        low_eur = float(pl_band["q05"] * 1_000_000)
+        high_eur = float(pl_band["q95"] * 1_000_000)
+        band_method = "power_law_bootstrap_q90"
+        active_model = "power_law"
+        model_choice_reason = (
+            f"power-law β·s^γ (γ={fragility['gamma']:.2f}, log-R²={fragility['log_r2']:.2f}) "
+            f"— LOO hit-rate ±100% = 80% on N=40 vs 35% for linear α·s"
+        )
+    else:
+        point_eur = point_linear
+        low_eur = low_linear
+        high_eur = high_linear
+        band_method = "bootstrap_q90_pairs" if boot.get("method") == "bootstrap_pairs" else "gaussian_1645sigma_fallback"
+        active_model = "linear"
+        if fragility.get("status") == "ok":
+            model_choice_reason = (
+                f"power-law fit had log-R²={fragility.get('log_r2', 0):.2f} < 0.5 — falling "
+                f"back to linear α·s for stability"
+            )
+        else:
+            model_choice_reason = (
+                f"power-law fit unavailable ({fragility.get('reason', 'unknown')}) — using linear α·s"
+            )
 
     return {
         "method": "anchor",
@@ -1049,14 +1175,36 @@ def estimate_anchor(
         "low_eur": max(0.0, round(low_eur, 2)),
         "high_eur": round(high_eur, 2),
         "band_method": band_method,
+        "active_model": active_model,
+        "model_choice_reason": model_choice_reason,
+        "linear_baseline": {
+            "point_eur": round(point_linear, 2),
+            "low_eur": max(0.0, round(low_linear, 2)),
+            "high_eur": round(high_linear, 2),
+            "alpha_eur_per_unit": round(alpha * 1_000_000, 0),
+            "formula": "α·s",
+        },
+        "power_law_estimate": {
+            "point_eur": round(point_pl, 2) if point_pl is not None else None,
+            "low_eur": round(pl_band["q05"] * 1_000_000, 2) if pl_band else None,
+            "high_eur": round(pl_band["q95"] * 1_000_000, 2) if pl_band else None,
+            "median_eur": round(pl_band["q50"] * 1_000_000, 2) if pl_band else None,
+            "beta_eur_m": fragility.get("beta_eur_m"),
+            "gamma": fragility.get("gamma"),
+            "log_r2": fragility.get("log_r2"),
+            "n_bootstrap": pl_band["n_resample"] if pl_band else 0,
+            "n_succeeded": pl_band["n_succeeded"] if pl_band else 0,
+            "formula": "β·s^γ",
+            "extrapolation": pl_extrapolation,
+        } if point_pl is not None else None,
         "epistemic_range": {
             "low_eur": max(0.0, round(low_eur, 2)),
             "high_eur": round(high_eur, 2),
             "p_low": 0.05,
             "p_high": 0.95,
             "method": band_method,
-            "n_bootstrap": boot.get("n_resample", 0),
-            "n_succeeded": boot.get("n_succeeded", 0),
+            "n_bootstrap": (pl_band["n_resample"] if pl_band else boot.get("n_resample", 0)),
+            "n_succeeded": (pl_band["n_succeeded"] if pl_band else boot.get("n_succeeded", 0)),
             "alpha_q05_eur_per_unit": round(boot["alpha_q05"] * 1_000_000, 0)
                 if "alpha_q05" in boot else None,
             "alpha_q95_eur_per_unit": round(boot["alpha_q95"] * 1_000_000, 0)

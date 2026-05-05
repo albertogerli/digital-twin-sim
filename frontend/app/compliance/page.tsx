@@ -53,6 +53,34 @@ interface EconomicImpactBreakdown {
     low_eur: number;
     high_eur: number;
     band_method?: string;
+    active_model?: "power_law" | "linear";
+    model_choice_reason?: string;
+    linear_baseline?: {
+      point_eur: number;
+      low_eur: number;
+      high_eur: number;
+      alpha_eur_per_unit: number;
+      formula: string;
+    };
+    power_law_estimate?: {
+      point_eur: number | null;
+      low_eur: number | null;
+      high_eur: number | null;
+      median_eur: number | null;
+      beta_eur_m: number | null;
+      gamma: number | null;
+      log_r2: number | null;
+      n_bootstrap: number;
+      n_succeeded: number;
+      formula: string;
+      extrapolation: {
+        warning: string;
+        ratio_to_max?: number;
+        ratio_to_min?: number;
+        training_max_shock?: number;
+        training_min_shock?: number;
+      } | null;
+    } | null;
     epistemic_range?: {
       low_eur: number;
       high_eur: number;
@@ -992,11 +1020,25 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
       <div className="flex items-baseline gap-2 flex-wrap">
         <span className={`font-data tabular text-[44px] leading-none font-medium ${style.num}`}>€{point.num}</span>
         <span className="font-data text-[14px] text-ki-on-surface-muted">{point.suffix}</span>
+        {a.active_model && (
+          <span
+            className={`text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-sm border cursor-help ${
+              a.active_model === "power_law"
+                ? "bg-emerald-50 border-emerald-300 text-emerald-800"
+                : "bg-gray-50 border-gray-300 text-gray-700"
+            }`}
+            title={a.model_choice_reason || ""}
+          >
+            {a.active_model === "power_law" ? `power-law β·s^${a.power_law_estimate?.gamma?.toFixed(2) ?? "γ"}` : "linear α·s"}
+          </span>
+        )}
         <span
-          className="ml-3 font-data text-[11px] text-ki-on-surface-muted cursor-help"
+          className="ml-2 font-data text-[11px] text-ki-on-surface-muted cursor-help"
           title={
-            a.epistemic_range
-              ? `Empirical 5°/95° quantiles of α from ${a.epistemic_range.n_bootstrap.toLocaleString()}-replicate pairs-bootstrap on the calibration subset (Sprint E.1). Includes regime + category uncertainty. HC3 sandwich SE = €${(a.epistemic_range.hc3_se_eur_per_unit / 1e6).toFixed(0)}M/unit (Sprint E.3, heteroscedastic-robust).`
+            a.active_model === "power_law" && a.power_law_estimate
+              ? `Empirical 5°/95° quantiles of β·s^γ from ${a.power_law_estimate.n_bootstrap.toLocaleString()}-replicate pairs-bootstrap on the calibration subset (joint β,γ uncertainty). LOO hit-rate ±100% = 80% on N=40.`
+              : a.epistemic_range
+              ? `Empirical 5°/95° quantiles of α from ${a.epistemic_range.n_bootstrap.toLocaleString()}-replicate pairs-bootstrap. HC3 sandwich SE = €${(a.epistemic_range.hc3_se_eur_per_unit / 1e6).toFixed(0)}M/unit.`
               : "Coarse ±1.65σ Gaussian band on Huber residuals."
           }
         >
@@ -1004,6 +1046,11 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
           <span className="ml-1 opacity-60">(n={a.inputs.n_reference_incidents})</span>
         </span>
       </div>
+      {a.power_law_estimate?.extrapolation && (
+        <div className="mt-1 text-[10px] text-amber-700 bg-amber-50 border border-amber-200 px-2 py-1 rounded-sm inline-block">
+          ⚠ {a.power_law_estimate.extrapolation.warning} — target shock is {a.power_law_estimate.extrapolation.ratio_to_max ? `${a.power_law_estimate.extrapolation.ratio_to_max}× the historical max (${a.power_law_estimate.extrapolation.training_max_shock})` : `${a.power_law_estimate.extrapolation.ratio_to_min}× the historical min (${a.power_law_estimate.extrapolation.training_min_shock})`}
+        </div>
+      )}
       <div className="mt-1 text-[11px] text-ki-on-surface-secondary">
         {style.label} · selected by <code className="font-data text-[10px] bg-white/40 px-1 rounded-sm">{breakdown.selected_method}</code> method
         {a.band_method === "bootstrap_q90_pairs" && (
@@ -1076,10 +1123,67 @@ function EconomicImpactHero({ breakdown }: { breakdown: EconomicImpactBreakdown 
                 — using the tighter within-category fit.
               </div>
             )}
+            {a.power_law_estimate && a.linear_baseline && (
+              <div className="mt-2 p-2 bg-emerald-50/40 rounded-sm border border-emerald-200">
+                <div className="font-data text-[9px] uppercase tracking-wider text-emerald-800 mb-1">
+                  Active estimator — power-law (cost = β·s^γ)
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 text-[10px] font-data text-ki-on-surface-secondary">
+                  <span title="Power-law point estimate">
+                    point: <span className="text-ki-on-surface">€{((a.power_law_estimate.point_eur ?? 0) / 1e9).toFixed(2)}B</span>
+                  </span>
+                  <span title="Convexity exponent (1 = linear, &gt;1 = fragile, &lt;1 = antifragile)">
+                    γ: <span className="text-ki-on-surface">{a.power_law_estimate.gamma?.toFixed(2)}</span>
+                  </span>
+                  <span title="Pre-multiplier in EUR-millions at s=1">
+                    β: <span className="text-ki-on-surface">€{a.power_law_estimate.beta_eur_m?.toFixed(0)}M</span>
+                  </span>
+                  <span title="Log-log fit quality">
+                    log R²: <span className="text-ki-on-surface">{a.power_law_estimate.log_r2?.toFixed(2)}</span>
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 text-[10px] font-data text-ki-on-surface-secondary mt-1">
+                  <span title="Bootstrap 5° quantile of β·s^γ">
+                    range low: <span className="text-ki-on-surface">€{((a.power_law_estimate.low_eur ?? 0) / 1e9).toFixed(2)}B</span>
+                  </span>
+                  <span title="Bootstrap 95° quantile">
+                    range high: <span className="text-ki-on-surface">€{((a.power_law_estimate.high_eur ?? 0) / 1e9).toFixed(2)}B</span>
+                  </span>
+                  <span title="Bootstrap median">
+                    median: <span className="text-ki-on-surface">€{((a.power_law_estimate.median_eur ?? 0) / 1e9).toFixed(2)}B</span>
+                  </span>
+                  <span>
+                    boot ok: <span className="text-ki-on-surface">{a.power_law_estimate.n_succeeded.toLocaleString()}/{a.power_law_estimate.n_bootstrap.toLocaleString()}</span>
+                  </span>
+                </div>
+                <div className="text-[9px] text-emerald-800/80 mt-1 leading-tight">
+                  Promoted to primary because LOO ±100% hit-rate is 80% (vs 35% for linear α·s). γ=3 means doubling shock_units roughly 8× the cost — the linear model can't capture that.
+                </div>
+              </div>
+            )}
+            {a.linear_baseline && (
+              <div className="mt-1 p-2 bg-gray-50/60 rounded-sm border border-gray-200">
+                <div className="font-data text-[9px] uppercase tracking-wider text-gray-700 mb-1">
+                  Linear baseline — for transparency only (not the headline)
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 text-[10px] font-data text-ki-on-surface-secondary">
+                  <span>
+                    point: <span className="text-ki-on-surface">€{(a.linear_baseline.point_eur / 1e9).toFixed(2)}B</span>
+                  </span>
+                  <span>
+                    α: <span className="text-ki-on-surface">€{(a.linear_baseline.alpha_eur_per_unit / 1e9).toFixed(2)}B/unit</span>
+                  </span>
+                  <span>
+                    range: <span className="text-ki-on-surface">€{(a.linear_baseline.low_eur / 1e9).toFixed(2)}B – €{(a.linear_baseline.high_eur / 1e9).toFixed(2)}B</span>
+                  </span>
+                  <span className="text-gray-600">formula: <code>{a.linear_baseline.formula}</code></span>
+                </div>
+              </div>
+            )}
             {a.epistemic_range && a.epistemic_range.alpha_q05_eur_per_unit !== null && (
               <div className="mt-2 p-2 bg-white/40 rounded-sm border border-ki-border/40">
                 <div className="font-data text-[9px] uppercase tracking-wider text-ki-on-surface-muted mb-1">
-                  Sprint E.1 + E.3 — α uncertainty quantification
+                  Sprint E.1 + E.3 — α uncertainty quantification (linear baseline)
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-3 gap-y-1 text-[10px] font-data text-ki-on-surface-secondary">
                   <span title="Empirical 5° quantile of α from N=5000 pairs-bootstrap on the calibration subset">

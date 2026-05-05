@@ -37,6 +37,22 @@ jobs:
           curl -sS -X POST -w "\nHTTP %{http_code}\n" \
             "$RAIL/api/admin/jobs/stakeholder-update/run"
 
+      - name: DORA — refresh live market caps (yfinance)
+        run: |
+          set -euxo pipefail
+          # Stakeholder updater takes ~80-120s; market caps fetch is fast (~30s)
+          sleep 180
+          curl -sS -X POST -w "\nHTTP %{http_code}\n" \
+            "$RAIL/api/admin/jobs/dora-refresh-live/run"
+
+      - name: DORA — refit α on reference incidents
+        run: |
+          set -euxo pipefail
+          # Run AFTER mcap refresh so α is fitted against current numbers
+          sleep 60
+          curl -sS -X POST -w "\nHTTP %{http_code}\n" \
+            "$RAIL/api/admin/jobs/dora-recalibrate/run"
+
       - name: Final status snapshot
         if: always()
         run: |

@@ -942,6 +942,7 @@ def _derive_dora_metrics_from_export(sim) -> dict:
         from core.dora.economic_impact import (
             estimate_anchor, estimate_ticker, combine, detect_category,
         )
+        from core.dora.llm_judge import estimate_via_llm_judge
         # Auto-detect category from the brief — banking_it / banking_eu /
         # banking_us / sovereign / cyber / telco / energy. When detected
         # (and that bucket has ≥3 incidents), Method A uses the within-
@@ -954,8 +955,31 @@ def _derive_dora_metrics_from_export(sim) -> dict:
         detected_cat, cat_scores = detect_category(brief_text)
         anchor_est = estimate_anchor(total_shock_units=total_shock, category=detected_cat)
         ticker_est = estimate_ticker(ticker_price_history=ticker_history)
-        combined = combine(anchor_est, ticker_est, detected_category=detected_cat,
-                           category_scores=cat_scores)
+        # Method C — LLM judge (gemini-3.1-pro-preview), fires once.
+        # Returns None on missing API key / budget exhaustion / parse
+        # failure; combine() falls back to max(A,B) cleanly.
+        sim_summary_for_judge = {
+            "n_rounds": len(rounds_data) if rounds_data else None,
+            "polarization_peak": metrics.get("polarization_peak"),
+            "total_shock_units": round(total_shock, 4),
+            "viral_posts_count": metrics.get("viral_posts_count"),
+            "countries_affected": metrics.get("countries_affected"),
+            "ticker_final_pcts": {
+                tk: float(v.get("cum_pct", 0) or 0)
+                for snap in (ticker_history[-1:] if ticker_history else [])
+                for tk, v in (snap.items() if isinstance(snap, dict) else [])
+            } if ticker_history else {},
+        }
+        judge_est = estimate_via_llm_judge(
+            brief=brief_text,
+            sim_summary=sim_summary_for_judge,
+            detected_category=detected_cat,
+            total_shock=total_shock,
+        )
+        combined = combine(anchor_est, ticker_est,
+                           detected_category=detected_cat,
+                           category_scores=cat_scores,
+                           judge=judge_est)
         metrics["economic_impact_eur"] = float(combined.get("point_eur", 0.0))
         metrics["economic_impact_breakdown"] = combined
     except Exception as e:

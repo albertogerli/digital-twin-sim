@@ -174,20 +174,50 @@ def fetch_recent_incidents_from_news(
     return []
 
 
-def sovereign_spread_snapshot() -> dict:
-    """TODO Sprint B — current BTP-Bund / OAT-Bund spreads for
-    regime-conditioned α.
+def sovereign_spread_snapshot(country: str = "IT") -> dict:
+    """Current sovereign-spread snapshot tagged with a market regime.
 
-    Plan:
-      • Read from existing core.financial.market_data
-        (already pulls live ECB / yfinance values; just expose).
-      • Tag the calibration snapshot with the regime: "calm" /
-        "stressed" / "crisis" so α can be sliced accordingly.
+    Pulls live BTP-Bund (or OAT-Bund / Bonos-Bund) spread via the
+    existing core.financial.market_data anchors. Adds a regime tag
+    based on historical bps thresholds:
+
+        spread <= 100bp     → "calm"
+        100 < spread <= 200 → "stressed"
+        spread > 200        → "crisis"
+
+    Calibration consumers can use this to slice α by regime — e.g.
+    Italian banking_it incidents during sovereign-stress regimes
+    behave very differently from calm-period ones (MPS 2016 hit
+    when BTP-Bund was ~190bp; Italian budget crisis 2018 was ~325bp).
     """
     try:
         from core.financial.market_data import refresh_market_anchors
-        anchors = refresh_market_anchors(use_cache=True, country="IT")
-        return {"status": "ok", "anchors": anchors}
+        anchors = refresh_market_anchors(use_cache=True, country=country)
     except Exception as e:
         logger.debug(f"market_data not available: {e}")
-        return {"status": "stub", "anchors": None}
+        return {"status": "stub", "country": country, "anchors": None, "regime": None}
+
+    if not isinstance(anchors, dict):
+        return {"status": "error", "country": country, "anchors": None, "regime": None}
+
+    spread_bp = anchors.get("sovereign_spread_bp") or anchors.get("btp_bund_bp") or 0.0
+    try:
+        spread_bp = float(spread_bp)
+    except (TypeError, ValueError):
+        spread_bp = 0.0
+
+    if spread_bp <= 100:
+        regime = "calm"
+    elif spread_bp <= 200:
+        regime = "stressed"
+    else:
+        regime = "crisis"
+
+    return {
+        "status": "ok",
+        "country": country,
+        "anchors": anchors,
+        "spread_bp": round(spread_bp, 1),
+        "regime": regime,
+        "regime_thresholds_bp": {"calm": 100, "stressed": 200},
+    }

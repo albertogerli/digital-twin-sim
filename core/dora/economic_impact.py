@@ -346,27 +346,95 @@ def estimate_ticker(ticker_price_history: list[dict]) -> dict:
     }
 
 
-def combine(anchor: dict, ticker: dict, detected_category: Optional[str] = None,
-            category_scores: Optional[dict] = None) -> dict:
-    """Combined estimate — take the larger of the two methods.
+def combine(
+    anchor: dict, ticker: dict,
+    detected_category: Optional[str] = None,
+    category_scores: Optional[dict] = None,
+    judge: Optional[dict] = None,
+) -> dict:
+    """Combined estimate — weighted average across A (anchor), B (ticker),
+    C (LLM judge), with fallback to max(A, B) when C is missing.
 
-    Rationale: anchor captures broad systemic spillover the brief
-    implies; ticker captures direct named-asset hit. The larger
-    accommodates both worlds without double-counting (max, not sum).
-    Reports both so the operator can audit.
+    Weights (heuristic until holdout calibration ships):
+      w_A = 0.30
+      w_B = 0.30 (or 0.0 when ticker.point == 0)
+      w_C = 0.40 × judge.confidence_score (so a low-confidence C
+            de-weights itself and the residual mass goes to A and B
+            renormalised)
+    All re-normalised to Σw = 1.0 over the methods that have non-zero
+    point estimates.
+
+    When `judge` is None or returns 0:
+      → fall back to max(A, B) — same behaviour as before Sprint C.
     """
-    a = float(anchor.get("point_eur", 0.0) or 0.0)
-    t = float(ticker.get("point_eur", 0.0) or 0.0)
-    use_method = "ticker" if t > a else "anchor"
-    chosen = ticker if t > a else anchor
+    a_pt = float(anchor.get("point_eur", 0.0) or 0.0)
+    b_pt = float(ticker.get("point_eur", 0.0) or 0.0)
+    c_pt = float(judge.get("point_eur", 0.0) or 0.0) if judge else 0.0
+    c_conf = float(judge.get("confidence_score", 0.0) or 0.0) if judge else 0.0
+
+    if c_pt > 0 and c_conf > 0:
+        # Triple-method weighted average. Drop methods with zero point
+        # so a sim with no tickers (b_pt=0) doesn't get a B penalty.
+        weights = {"anchor": 0.30, "ticker": 0.30 if b_pt > 0 else 0.0,
+                   "judge": 0.40 * c_conf}
+        # Normalise across methods that have non-zero point
+        active_w = {k: w for k, w in weights.items() if w > 0 and (
+            (k == "anchor" and a_pt > 0) or
+            (k == "ticker" and b_pt > 0) or
+            (k == "judge" and c_pt > 0))}
+        wsum = sum(active_w.values()) or 1.0
+        norm = {k: w / wsum for k, w in active_w.items()}
+        point_eur = (
+            norm.get("anchor", 0.0) * a_pt +
+            norm.get("ticker", 0.0) * b_pt +
+            norm.get("judge", 0.0) * c_pt
+        )
+        # Combined band: weighted average of low/high too
+        a_lo = float(anchor.get("low_eur", a_pt) or 0.0)
+        a_hi = float(anchor.get("high_eur", a_pt) or 0.0)
+        b_lo = float(ticker.get("low_eur", b_pt) or 0.0)
+        b_hi = float(ticker.get("high_eur", b_pt) or 0.0)
+        c_lo = float(judge.get("low_eur", c_pt) or 0.0) if judge else 0.0
+        c_hi = float(judge.get("high_eur", c_pt) or 0.0) if judge else 0.0
+        low_eur = min(
+            (norm.get("anchor", 0.0) * a_lo +
+             norm.get("ticker", 0.0) * b_lo +
+             norm.get("judge", 0.0) * c_lo),
+            point_eur,
+        )
+        high_eur = max(
+            (norm.get("anchor", 0.0) * a_hi +
+             norm.get("ticker", 0.0) * b_hi +
+             norm.get("judge", 0.0) * c_hi),
+            point_eur,
+        )
+        return {
+            "point_eur": round(point_eur, 2),
+            "low_eur": max(0.0, round(low_eur, 2)),
+            "high_eur": round(high_eur, 2),
+            "selected_method": "weighted_avg",
+            "weights": {k: round(v, 3) for k, v in norm.items()},
+            "detected_category": detected_category,
+            "category_scores": category_scores or {},
+            "anchor_estimate": anchor,
+            "ticker_estimate": ticker,
+            "judge_estimate": judge,
+            "calibration_notes": CALIBRATION_NOTES,
+        }
+
+    # Fallback: max(A, B) — Sprint A/A.2 behaviour
+    use_method = "ticker" if b_pt > a_pt else "anchor"
+    chosen = ticker if b_pt > a_pt else anchor
     return {
         "point_eur": chosen.get("point_eur", 0.0),
         "low_eur": chosen.get("low_eur", 0.0),
         "high_eur": chosen.get("high_eur", 0.0),
         "selected_method": use_method,
+        "weights": None,
         "detected_category": detected_category,
         "category_scores": category_scores or {},
         "anchor_estimate": anchor,
         "ticker_estimate": ticker,
+        "judge_estimate": judge,  # may be None — UI shows "judge skipped"
         "calibration_notes": CALIBRATION_NOTES,
     }

@@ -36,6 +36,7 @@ class DomainRegistry:
             "domains.corporate",
             "domains.public_health",
             "domains.financial",
+            "domains.telecommunications",
         ]
         for pkg in domain_packages:
             try:

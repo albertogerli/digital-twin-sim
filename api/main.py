@@ -1164,6 +1164,12 @@ _ADMIN_JOBS = {
         "cmds": [[_PY, "-m", "scripts.calibrate_dora_alpha", "--by-category"]],
         "icon": "calculate",
     },
+    "dora-refresh-live": {
+        "label": "DORA live data refresh (market caps)",
+        "description": "Pull live market caps from yfinance (with EUR FX conversion via ECB-style cross rates) for the curated ticker set. Writes shared/ticker_market_caps.json. 24h disk cache.",
+        "cmds": [[_PY, "-m", "scripts.refresh_dora_live_data"]],
+        "icon": "savings",
+    },
 }
 
 

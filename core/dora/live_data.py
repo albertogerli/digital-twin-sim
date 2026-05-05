@@ -31,24 +31,120 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 CACHE_TTL_SEC = 24 * 3600
 
 
-def refresh_market_caps(force: bool = False) -> dict:
-    """TODO Sprint B — refresh shared/ticker_market_caps.json from yfinance.
+def refresh_market_caps(force: bool = False, max_tickers: int = 100) -> dict:
+    """Refresh shared/ticker_market_caps.json from yfinance.
 
-    Plan:
-      • For each ticker in shared/stock_universe.json, call
-        yf.Ticker(t).fast_info → shares_outstanding × close
-      • Convert to EUR via fxrate snapshot (ECB SDW reference rate)
-      • Write back rounded to nearest 10M EUR
-      • Cache 24h on disk; respect `force` flag to bypass
+    For each ticker already in the static caps file (curated, ~45
+    rows): fetch shares_outstanding × close, convert to EUR via a
+    USD/GBP/EUR fx snapshot, write back rounded to nearest 10M EUR.
+    24h disk cache via _last_refreshed_at marker.
 
-    Until implemented: returns a no-op marker so callers can detect
-    the stub and fall back to the static file.
+    Returns a structured summary the admin-jobs UI can render.
     """
+    caps_path = REPO_ROOT / "shared" / "ticker_market_caps.json"
+    if not caps_path.exists():
+        return {"status": "error", "note": f"caps file missing: {caps_path}"}
+
+    try:
+        data = json.loads(caps_path.read_text())
+    except Exception as e:
+        return {"status": "error", "note": f"caps file unreadable: {e}"}
+
+    last = data.get("_last_refreshed_at", 0)
+    if not force and last and (time.time() - last) < CACHE_TTL_SEC:
+        return {
+            "status": "cached",
+            "tickers_refreshed": 0,
+            "note": f"cache valid (age {int(time.time() - last)}s); use force=True to bypass",
+        }
+
+    try:
+        import yfinance as yf
+    except ImportError:
+        return {"status": "error", "note": "yfinance not installed"}
+
+    # FX snapshot: prefer ECB SDW rates if available, fall back to yfinance
+    # cross-rates against EUR. Only the 3 majors we care about.
+    fx_to_eur: dict[str, float] = {"EUR": 1.0}
+    for ccy, yf_pair in (("USD", "EURUSD=X"), ("GBP", "EURGBP=X"),
+                         ("CHF", "EURCHF=X"), ("JPY", "EURJPY=X")):
+        try:
+            h = yf.Ticker(yf_pair).history(period="5d")
+            if h is not None and not h.empty:
+                eur_per_ccy = 1.0 / float(h["Close"].iloc[-1])
+                fx_to_eur[ccy] = eur_per_ccy
+        except Exception as e:
+            logger.debug(f"FX fetch {yf_pair} failed: {e}")
+
+    caps_eur_m = data.get("caps_eur_millions", {})
+    tickers = list(caps_eur_m)[:max_tickers]
+    refreshed: dict[str, dict] = {}
+    skipped: list[str] = []
+
+    for tk in tickers:
+        try:
+            t = yf.Ticker(tk)
+            fi = t.fast_info
+            shares = float(getattr(fi, "shares", 0) or fi.get("shares", 0) or 0)
+            price = float(getattr(fi, "last_price", 0) or fi.get("last_price", 0) or 0)
+            ccy = (getattr(fi, "currency", None) or fi.get("currency") or "USD").upper()
+            if shares <= 0 or price <= 0:
+                skipped.append(tk)
+                continue
+            mcap_native = shares * price
+            fx = fx_to_eur.get(ccy, 1.0)
+            mcap_eur_m = round((mcap_native * fx) / 1_000_000.0, 0)
+            # Round to nearest 10M for storage stability
+            rounded = round(mcap_eur_m / 10) * 10
+            refreshed[tk] = {
+                "old": caps_eur_m.get(tk),
+                "new": rounded,
+                "currency": ccy,
+                "shares_m": round(shares / 1e6, 1),
+                "price_native": round(price, 4),
+            }
+            caps_eur_m[tk] = rounded
+        except Exception as e:
+            logger.debug(f"mcap fetch {tk} failed: {e}")
+            skipped.append(tk)
+
+    if not refreshed:
+        return {
+            "status": "error",
+            "tickers_refreshed": 0,
+            "skipped": skipped,
+            "note": "no tickers refreshed — yfinance returned empty for all",
+        }
+
+    # Persist
+    data["caps_eur_millions"] = caps_eur_m
+    data["_last_refreshed_at"] = int(time.time())
+    data["_last_refreshed_human"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    data["_fx_to_eur"] = {k: round(v, 6) for k, v in fx_to_eur.items()}
+    try:
+        caps_path.write_text(json.dumps(data, indent=2))
+    except Exception as e:
+        return {"status": "error", "note": f"write failed: {e}", "tickers_refreshed": len(refreshed)}
+
+    # Compute drift summary so the admin-jobs log is useful
+    drifts = []
+    for tk, info in refreshed.items():
+        old = info.get("old")
+        new = info.get("new")
+        if old and new and old > 0:
+            pct = (new - old) / old * 100
+            drifts.append((tk, pct, old, new))
+    drifts.sort(key=lambda r: -abs(r[1]))
     return {
-        "status": "stub",
-        "fetched_at": None,
-        "tickers_refreshed": 0,
-        "note": "Sprint B not yet implemented — using static shared/ticker_market_caps.json",
+        "status": "ok",
+        "tickers_refreshed": len(refreshed),
+        "skipped": skipped,
+        "fx_to_eur": fx_to_eur,
+        "top_drift": [
+            {"ticker": tk, "pct": round(pct, 2), "old_m": old, "new_m": new}
+            for tk, pct, old, new in drifts[:10]
+        ],
+        "fetched_at": data["_last_refreshed_human"],
     }
 
 

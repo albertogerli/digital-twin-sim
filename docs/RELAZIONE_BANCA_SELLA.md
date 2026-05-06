@@ -579,11 +579,14 @@ Modulo che prende l'output di una simulazione wargame di crisi operativa/cyber e
 
 **Stato implementazione (Sprint 88-90, Maggio 2026):**
 
-- ✅ **Scope decision** documentato (`docs/DORA_EXPORT_SCOPE.md`): MVP target = Major Incident Report (Art. 19) — non COREP/FINREP XBRL (deferred a v1.0 perché richiede 4-6 settimane + domain expert ALM analyst).
-- ✅ **Schema Pydantic** (`core/dora/schema.py`): `IncidentReport` + `ClassificationCriteria` + `FinancialEntity` + `AffectedFunction` + `MitigationAction` con i ~40 campi di Annex IV. Le 7 classification criteria mappano agli output del simulator.
-- ✅ **XML exporter** (`core/dora/exporter.py`): zero-dependency (solo `xml.etree.ElementTree` stdlib), namespace `urn:eu:europa:dora:incident:report:1.0`, output pretty-printed e human-reviewable prima dell'upload.
-- ✅ **Classification helper** (`core/dora/classification.py`): mapping deterministico ed esplicito da metriche simulator quantitative → 7 livelli qualitativi DORA. Audit-friendly: un CRO può vedere esattamente perché un incidente è classificato "high" su clients_affected (es. perché 420.000 clienti impattati cadono nel bucket [10k, 1M)).
-- ✅ **15 unit test**: schema construction, classification (è "major" se >= high su qualsiasi axis OR downtime > 2h), XML rendering (well-formed, namespace, classification, mitigation, comms), final-report extras only when ReportType=FINAL, omission opzionali quando ImpactMetrics non ancora quantificate (caso INITIAL report 24h dopo).
+- ✅ **Scope decision** documentato (`docs/DORA_EXPORT_SCOPE.md`): MVP target = Major Incident Report (Art. 19).
+- ✅ **Motore Econometrico per la stima in Euro** (`core/dora/economic_impact.py`): Invece di approssimazioni qualitative, il sistema quantifica il `EconomicImpactBand` tramite un pannello di 6 stimatori statistici standard (riferimenti accademici nel dossier tecnico):
+  - **Regressione di Huber** (Huber 1964) su 40 crisi storiche, robusta agli outlier come Lehman 2008.
+  - **HMM Gaussiano a 2 stati** (Hamilton 1989, EM via Baum-Welch) sul log(VIX) per calcolare la probabilità a posteriori del regime di mercato (calm/stressed/crisis), leggendo live lo spread BTP-Bund.
+  - **Pairs-bootstrap** (Efron 1979; Davison & Hinkley 1997) a 5000 repliche per stringere l'intervallo di confidenza (da 25x a 1.8x).
+  - **Contagio VAR(1) Cross-Sector** (Sims 1980) per calcolare l'esponente di propagazione reale e deterministico.
+- ✅ **Backtest Leave-One-Out (LOO)**: Modulo di validazione trasparente integrato nella dashboard CRO per testare la solidità del calcolo davanti alla Banca d'Italia.
+- ✅ **Schema XML e Classification helper**: Mapping deterministico da metriche simulator a 7 livelli qualitativi DORA, con esportazione XML zero-dependency conforme al namespace EU `urn:eu:europa:dora:incident:report:1.0`.
 
 **Esempio output (estratto dal golden test):**
 

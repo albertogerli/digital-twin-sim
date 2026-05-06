@@ -206,8 +206,10 @@ def _bootstrap_alpha_quantiles(
     the row indices (rather than just the residuals) propagates BOTH
     coefficient uncertainty AND residual variance into the band.
 
-    Per Shiller-King epistemic-honesty framing: report what the data say
-    about α directly, not what a normal-error model says they should say.
+    Standard pairs (or "case-resampling") bootstrap; see Efron (1979)
+    for the original method and Davison & Hinkley (1997) for the modern
+    treatment. Reporting empirical quantiles rather than a parametric
+    band makes no normality assumption on the residual distribution.
 
     Returns:
       {
@@ -911,17 +913,19 @@ def _calibration_notes() -> str:
         f"telco / energy categories with public-domain cost figures. Refit "
         f"nightly via scripts/calibrate_dora_alpha.py + GitHub Actions. "
         f"Headline range = empirical 5°/95° quantiles of α from a 5000-replicate "
-        f"pairs-bootstrap on the per-scope subset (Sprint E.1, Shiller-King), with "
-        f"HC3 sandwich SE reported for transparency (Sprint E.3, Engle). "
-        f"Diagnostics overlay: log-log fragility γ (E.6, Taleb) flags convex "
-        f"exposure when γ>1.10; Hill estimator (E.4, Shiller) flags infinite-"
-        f"variance tails when α̂<2; HMM 2-state regime mixture on log(VIX) "
-        f"(E.2, Andrew Lo) reports α_low/α_high amplification; 2SLS-IV with "
-        f"the regime posterior as instrument (E.5, Hansen) reports the "
-        f"first-stage F as an endogeneity check (β_2SLS only meaningful when "
-        f"F≥10). When the per-category bucket has ≥3 incidents the within-"
-        f"category α is used. Hand-labeled regime (calm/stressed/crisis) "
-        f"slices α further when both filters have ≥3 rows."
+        f"pairs-bootstrap on the per-scope subset (Efron 1979; Davison & Hinkley "
+        f"1997), with HC3 sandwich SE reported for transparency (Eicker 1967, "
+        f"Huber 1967, White 1980, MacKinnon & White 1985). "
+        f"Diagnostics overlay: log-log fragility γ flags convex exposure when "
+        f"γ>1.10 (concept after Taleb 2012, log-log regression standard); Hill "
+        f"estimator (Hill 1975) flags infinite-variance tails when α̂<2; HMM "
+        f"2-state regime mixture on log(VIX) (Hamilton 1989) reports α_low/α_high "
+        f"amplification; 2SLS-IV with the regime posterior as instrument (Theil "
+        f"1953, Basmann 1957; Stock & Yogo 2005 for weak-instrument thresholds) "
+        f"reports the first-stage F as an endogeneity check (β_2SLS only "
+        f"meaningful when F≥10). When the per-category bucket has ≥3 incidents "
+        f"the within-category α is used. Hand-labeled regime (calm/stressed/"
+        f"crisis) slices α further when both filters have ≥3 rows."
     )
 
 

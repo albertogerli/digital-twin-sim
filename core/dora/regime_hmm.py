@@ -1,6 +1,9 @@
 """Two-state Gaussian HMM on log(VIX) for posterior regime inference.
 
-Sprint E.2 (Andrew Lo / regime-mixture).
+Sprint E.2 — regime-switching HMM. The 2-state Gaussian regime-switching
+formulation is from Hamilton (1989, *Econometrica* 57(2):357–384). EM
+estimation via Baum–Welch / forward–backward follows Baum et al. (1970);
+log-space implementation is standard (Rabiner 1989).
 
 Replaces hand-coded "calm/stressed/crisis" regime labels with a probabilistic
 posterior — each historical incident gets P(state=high_vol | observation

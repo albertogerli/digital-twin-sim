@@ -812,13 +812,23 @@ position non vengono redatti).
 **Schema** Pydantic approssima EBA/EIOPA/ESMA Joint Committee Final
 Report JC 2024-43 (Luglio 2024) per Reg. (EU) 2022/2554 Art. 19-20.
 
-**Classification helper** (`core/dora/classification.py`): mapping
-deterministico simulator metrics → 7 livelli qualitativi DORA Annex I:
+**Pannello Econometrico (Sprint E)** (`core/dora/economic_impact.py` e `core/dora/regime_hmm.py`): 
+La stima del danno economico non è più qualitativa. Il calcolo dell'`EconomicImpactBand` usa 6 stimatori, tutti tecniche standard della letteratura econometrica con riferimenti puntuali:
+1. **Regressione di Huber** (Huber 1964) su 40 incidenti storici, robusta contro gli outlier come Lehman 2008.
+2. **HMM Gaussiano a 2 stati con regime-switching** (Hamilton 1989, *Econometrica* 57:357; EM via Baum-Welch 1970) sul log(VIX) mensile dal 1997 per assegnare dinamicamente il regime di mercato e modulare il moltiplicatore `α`.
+3. **Pairs-bootstrap** (Efron 1979; Davison & Hinkley 1997) a 5000 repliche per l'intervallo di confidenza empirico (5°/95° quantili).
+4. **HC3 Sandwich SE** (Eicker 1967, Huber 1967, White 1980, MacKinnon & White 1985) per robustezza eteroschedastica.
+5. **2SLS Instrumental Variables** (Theil 1953, Basmann 1957; Stock & Yogo 2005 per le soglie di weak-instrument) per test di endogeneità.
+6. **Hill estimator** (Hill 1975, *Annals of Statistics* 3:1163) per la stima dell'indice di coda Pareto e flag di regimi a varianza infinita.
+
+**Nota su attribuzione**: Versioni interne precedenti delle docs facevano riferimento a "panel di laureati Nobel" (Shiller-King, Andrew Lo, Engle, Hansen, Taleb) come framing narrativo. Le tecniche sono effettivamente standard e correttamente attribuite sopra; il framing Nobel era retorica di pitch, non citazione accademica. La matematica implementata è identica a quella descritta in qualunque manuale di econometria (Greene, *Econometric Analysis*; Hamilton, *Time Series Analysis*).
+
+**Classification helper** (`core/dora/classification.py`): mapping deterministico simulator metrics → 7 livelli qualitativi DORA Annex I:
 
 ```python
 classify_from_simulation(
     customers_affected=420_000,    # → "high" (bucket [10k, 1M))
-    economic_impact_eur=2_400_000, # → "1m-10m" band
+    economic_impact_eur=2_400_000, # → Dalla pipeline econometrica
     countries_affected=2,          # → "national"
     polarization_peak=7.5,         # → "high" reputational
     viral_posts_count=12,          # → "high" reputational

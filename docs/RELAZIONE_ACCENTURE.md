@@ -191,13 +191,13 @@ Notte +7: evaluate(forecast_T-7)
 - Per ogni evento: brief sintetico → forward simulation → confronto con polling reale (per eventi politici) o yfinance (per eventi finanziari)
 - **MAE pubblicato nel paper v2.8**: 3.2pp per scenari politici IT, 1.8pp per scenari finanziari IT
 
-### 7.4 · Monte Carlo a 3 fonti di varianza misurate
-Non un dial soggettivo, ma 3 incertezze indipendenti:
-1. **Posterior CI95** sui pesi opinion dynamics → sample Gaussiano
-2. **Shock magnitude** del main sim perturbato con σ_obs = 0.20 (calibrata da residui backtest)
-3. **Initial pro_pct** sample da N(50, σ_init) dove σ_init è la cross-sectional std delle posizioni agenti round 1 × 14pp
+### 7.4 · Monte Carlo a 3 fonti di varianza misurate empiriche
+Non un dial soggettivo (es. ±25%), ma 3 incertezze indipendenti e misurate:
+1. **Posterior CI95** sui pesi opinion dynamics → sample Gaussiano diretto dalla distribuzione a posteriori di NumPyro.
+2. **Shock magnitude** del main sim perturbato con σ_obs (calibrata dai residui del backtest storico).
+3. **Initial pro_pct** perturbato campionando la dispersione iniziale reale (cross-sectional std) degli agenti al round 1.
 
-Risultato: la confidence band riflette tre incertezze **moltiplicative**, ognuna giustificabile davanti a un risk manager.
+Risultato: la confidence band riflette tre incertezze **moltiplicative ed empiriche**, difendibili in qualsiasi sede di audit o validazione del rischio.
 
 ---
 
@@ -212,11 +212,17 @@ Risponde alla preoccupazione #1 di ogni CISO/CRO bancario europeo: *"i dati dei 
 - **Sanitizer playground** UI per testare interattivamente prima di andare in produzione
 - Hook diretto in `BaseLLMClient` — qualsiasi nuovo punto di chiamata LLM eredita la sanitizzazione automatica
 
-### 8.2 · DORA Major Incident Report exporter
+### 8.2 · DORA Major Incident Report exporter & Motore Econometrico
 Risponde a EBA/EIOPA/ESMA JC 2024-43 (DORA Art. 19–20):
-- Classificazione automatica per griglia 7-criteri Annex I (clients_affected, data_losses, reputational_impact, duration_downtime_hours, geographical_spread, economic_impact_eur_band, criticality_of_services_affected)
-- Output XML conformity-ready, scaricabile da `/compliance/dora/export/{sim_id}`
-- Funziona su qualsiasi simulazione completata: il sistema mappa metriche del twin → criteri DORA
+- Classificazione automatica per griglia 7-criteri Annex I (clients_affected, data_losses, reputational_impact, duration_downtime_hours, geographical_spread, economic_impact_eur_band, criticality_of_services_affected).
+- **Stima Econometrica del Danno Economico**: Non usiamo approssimazioni qualitative. Il sistema combina 6 stimatori standard della letteratura econometrica per quantificare l'impatto in Euro:
+  - **Huber Regression** (Huber 1964) su 40 incidenti storici, robusta agli outlier.
+  - **HMM Gaussiano a 2 stati con regime-switching** (Hamilton 1989) sul log(VIX) mensile (1997-oggi) per definire dinamicamente il regime di mercato (calm/stressed/crisis).
+  - **Pairs-bootstrap** (Efron 1979; Davison & Hinkley 1997) a 5000 repliche per l'intervallo di confidenza empirico (epistemic range ristretto a 1.8x).
+  - **HC3 Sandwich SE** (MacKinnon & White 1985) per correggere l'eteroschedasticità.
+  - **Contagio Settoriale VAR(1)** (Sims 1980) per derivare empiricamente i moltiplicatori di propagazione.
+- **Validazione Leave-One-Out (LOO)** integrata e trasparente per audit Banca d'Italia.
+- Output XML conformity-ready, scaricabile da `/compliance/dora/export/{sim_id}`.
 
 ### 8.3 · Auth + isolation
 - HMAC-SHA256 cookie auth + API key headers (`Tenant` model)
@@ -341,8 +347,9 @@ In una relazione tecnica ad Accenture conviene esibire i limiti:
 2. **Non simuliamo dinamiche di micro-mercato** (order book, market microstructure). Il financial twin lavora su orizzonti T+1/T+3/T+7, non intraday.
 3. **Non sostituiamo Gotham** se servono fonti intel classificate. DTS lavora su dati pubblici (RSS, Google News, yfinance, openparlamento, Wikidata).
 4. **Calibration drift è un rischio noto**: se i meccanismi di mercato cambiano radicalmente (es. nuovo regime regolatorio), il modello backtest può degradare. Per questo c'è il drift log.
-5. **LLM hallucination residual risk**: nonostante realism gate + reflective memory, in <2% dei post un agente può divergere dal personaggio. Tagged + flaggato nel report.
-6. **Domain coverage incompleto**: 8 domini implementati (political, financial, corporate, marketing, public_health, commercial, energy, environmental). Settori esotici (es. agritech, fashion supply chain) richiedono nuovo plugin.
+5. **Eventi a varianza infinita**: Il sistema applica l'estimatore di Hill per le code Paretiane. Se l'incidente entra in un regime a varianza infinita (α̂ < 2), il sistema lo segnala esplicitamente e l'intervallo di confidenza esplode, indicando che i danni massimi non sono calcolabili in modo affidabile.
+6. **LLM hallucination residual risk**: nonostante realism gate + reflective memory, in <2% dei post un agente può divergere dal personaggio. Tagged + flaggato nel report.
+7. **Domain coverage incompleto**: 8 domini implementati (political, financial, corporate, marketing, public_health, commercial, energy, environmental). Settori esotici (es. agritech, fashion supply chain) richiedono nuovo plugin.
 
 ---
 

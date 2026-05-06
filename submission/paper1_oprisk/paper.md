@@ -440,50 +440,50 @@ The framework's natural next steps are corpus expansion toward $N \geq 60$ (Sect
 
 ## Appendix A: Full Reference Dataset
 
-The 40 reference incidents are reproduced below with their assigned shock-magnitude, cost, category, ISO date, and a single condensed source citation. Full source lists are in the JSON file.
+The 40 reference incidents are reproduced below with their assigned shock-magnitude, cost, category, and ISO incident date. Full source citations (≥2 per incident) are in the JSON file at `shared/dora_reference_incidents.json` in the project repository (Section 8); the JSON is the source of truth and this table is regenerated from it. Incidents are grouped by category and ordered chronologically within category.
 
-| # | id | category | $s$ | $c$ (€M) | date | source |
-|---|---|---|---|---|---|---|
-| 1 | mps_deposit_run_2016 | banking_it | 1.4 | 2,100 | 2016-12-22 | EBA SREP 2016 |
-| 2 | mps_bailin_2017 | banking_it | 1.6 | 3,900 | 2017-07-04 | DG Comp SA.47677 |
-| 3 | carige_2019 | banking_it | 1.3 | 1,800 | 2019-01-08 | FITD intervention disclosure |
-| 4 | veneto_popvicenza_2017 | banking_it | 2.0 | 5,200 | 2017-06-25 | Italian Banking Resolution Decree 99/2017 |
-| 5 | popolare_bari_2019 | banking_it | 1.0 | 900 | 2019-12-13 | BdI Annual Report 2019 |
-| 6 | tercas_2014 | banking_it | 0.8 | 300 | 2014-07-23 | FITD intervention disclosure |
-| 7 | northern_rock_2007 | banking_eu | 1.5 | 38,000 | 2007-09-14 | BoE Quarterly Bulletin 2008 |
-| 8 | dexia_bailout_2008_2011 | banking_eu | 2.5 | 90,000 | 2011-10-09 | EC Decision SA.33760 |
-| 9 | abn_amro_2008 | banking_eu | 2.0 | 27,000 | 2008-10-03 | DNB Annual Report 2008 |
-| 10 | banco_espirito_santo_2014 | banking_eu | 1.7 | 4,900 | 2014-08-03 | Banco de Portugal resolution |
-| 11 | credit_suisse_ubs_2023 | banking_eu | 2.6 | 17,000 | 2023-03-19 | FINMA / SNB joint statement |
-| 12 | sberbank_europe_2022 | banking_eu | 1.2 | 1,100 | 2022-02-28 | EBA SRB resolution |
-| 13 | greensill_2021 | banking_eu | (n/a) | 500 | 2021-03-08 | UK PRA review 2021 |
-| 14 | wirecard_2020 | banking_eu | 1.6 | 4,200 | 2020-06-25 | BaFin annual report 2020 |
-| 15 | svb_2023 | banking_us | 2.4 | 9,000 | 2023-03-10 | FDIC receivership announcement |
-| 16 | signature_2023 | banking_us | 1.8 | 5,000 | 2023-03-12 | NYDFS press release |
-| 17 | first_republic_2023 | banking_us | 1.7 | 4,500 | 2023-05-01 | FDIC press release |
-| 18 | lehman_2008 | banking_us | 4.0 | 600,000 | 2008-09-15 | FCIC Final Report 2011 |
-| 19 | bear_stearns_2008 | banking_us | 2.0 | 27,000 | 2008-03-16 | Fed Maiden Lane facility disclosure |
-| 20 | wamu_2008 | banking_us | 2.2 | 25,000 | 2008-09-25 | OTS receivership filing |
-| 21 | ltcm_1998 | banking_us | 1.5 | 4,000 | 1998-09-23 | Fed/PWG report 1999 |
-| 22 | brexit_wave1_2016 | sovereign | 3.2 | 30,000 | 2016-06-24 | UK HMT economic impact assessment |
-| 23 | brexit_wave2_2019 | sovereign | 2.0 | 15,000 | 2019-03-29 | OBR 2019 forecast |
-| 24 | italy_budget_2018 | sovereign | 1.8 | 25,000 | 2018-10-23 | EC Budget assessment 2018 |
-| 25 | greece_2015 | sovereign | 2.6 | 40,000 | 2015-07-05 | ESM stability support disclosure |
-| 26 | cyprus_2013 | sovereign | 2.3 | 15,000 | 2013-03-25 | ESM/IMF programme documents |
-| 27 | argentina_2001 | sovereign | 3.5 | 82,000 | 2001-12-23 | IMF Article IV consultation 2002 |
-| 28 | crowdstrike_2024 | cyber | 2.8 | 10,000 | 2024-07-19 | Microsoft + CrowdStrike joint post-mortem |
-| 29 | solarwinds_2020 | cyber | 2.3 | 100,000 | 2020-12-13 | CISA emergency directive 21-01 |
-| 30 | colonial_pipeline_2021 | cyber | 1.8 | 4,400 | 2021-05-07 | TSA security directive 2021 |
-| 31 | equifax_2017 | cyber | 1.5 | 1,400 | 2017-09-07 | FTC settlement 2019 |
-| 32 | wannacry_2017 | cyber | 2.5 | 4,000 | 2017-05-12 | Europol Internet Organised Crime Threat Assessment 2017 |
-| 33 | notpetya_2017 | cyber | 2.6 | 10,000 | 2017-06-27 | White House attribution statement 2018 |
-| 34 | tim_downgrade_2014 | telco | 0.8 | 700 | 2014-12-09 | S&P credit rating action |
-| 35 | wind3_merger_fallout_2017 | telco | 0.9 | 1,200 | 2017-01-05 | EC Merger decision M.7758 |
-| 36 | vodafone_de_churn_2023 | telco | 1.0 | 2,000 | 2023-11-14 | Vodafone Group Q3 trading update |
-| 37 | bt_pension_2017 | telco | 1.2 | 11,000 | 2017-05-10 | BT Group annual report 2017 |
-| 38 | uniper_rescue_2022 | energy | 2.4 | 34,000 | 2022-09-21 | Bundesregierung press release |
-| 39 | engie_hedging_2020 | energy | 1.1 | 1,100 | 2020-07-30 | Engie H1 2020 results |
-| 40 | eni_gabon_writedown_2020 | energy | 0.7 | 300 | 2020-07-31 | ENI H1 2020 results |
+| # | id | category | $s$ | $c$ (€M) | date |
+|---|---|---|---|---|---|
+| 1 | `tercas_2014` | banking_it | 0.8 | 300 | 2014-07-23 |
+| 2 | `mps_deposit_run_2016` | banking_it | 1.4 | 2,100 | 2016-12-22 |
+| 3 | `veneto_popvicenza_2017` | banking_it | 2.0 | 5,200 | 2017-06-25 |
+| 4 | `mps_bailin_2017` | banking_it | 1.6 | 3,900 | 2017-07-04 |
+| 5 | `carige_2019` | banking_it | 1.3 | 1,800 | 2019-01-08 |
+| 6 | `popolare_bari_2019` | banking_it | 1.0 | 900 | 2019-12-13 |
+| 7 | `northern_rock_2007` | banking_eu | 1.5 | 38,000 | 2007-09-14 |
+| 8 | `abn_amro_2008` | banking_eu | 2.0 | 27,000 | 2008-10-03 |
+| 9 | `dexia_bailout_2008_2011` | banking_eu | 2.5 | 90,000 | 2011-10-09 |
+| 10 | `banco_espirito_santo_2014` | banking_eu | 1.7 | 4,900 | 2014-08-03 |
+| 11 | `wirecard_2020` | banking_eu | 1.6 | 4,200 | 2020-06-25 |
+| 12 | `greensill_2021` | banking_eu | 1.3 | 4,500 | 2021-03-08 |
+| 13 | `sberbank_europe_2022` | banking_eu | 1.2 | 1,100 | 2022-02-28 |
+| 14 | `credit_suisse_ubs_2023` | banking_eu | 2.6 | 17,000 | 2023-03-19 |
+| 15 | `ltcm_1998` | banking_us | 1.5 | 4,000 | 1998-09-23 |
+| 16 | `bear_stearns_2008` | banking_us | 2.0 | 27,000 | 2008-03-16 |
+| 17 | `lehman_2008` | banking_us | 4.0 | 600,000 | 2008-09-15 |
+| 18 | `wamu_2008` | banking_us | 2.2 | 25,000 | 2008-09-25 |
+| 19 | `svb_2023` | banking_us | 2.4 | 9,000 | 2023-03-10 |
+| 20 | `signature_2023` | banking_us | 1.8 | 5,000 | 2023-03-12 |
+| 21 | `first_republic_2023` | banking_us | 1.7 | 4,500 | 2023-05-01 |
+| 22 | `argentina_2001` | sovereign | 3.5 | 82,000 | 2001-12-23 |
+| 23 | `cyprus_2013` | sovereign | 2.3 | 15,000 | 2013-03-25 |
+| 24 | `greece_2015` | sovereign | 2.6 | 40,000 | 2015-07-05 |
+| 25 | `brexit_wave1_2016` | sovereign | 3.2 | 30,000 | 2016-06-24 |
+| 26 | `italy_budget_2018` | sovereign | 1.8 | 25,000 | 2018-10-23 |
+| 27 | `brexit_wave2_2019` | sovereign | 2.0 | 15,000 | 2019-03-29 |
+| 28 | `wannacry_2017` | cyber | 2.5 | 4,000 | 2017-05-12 |
+| 29 | `notpetya_2017` | cyber | 2.6 | 10,000 | 2017-06-27 |
+| 30 | `equifax_2017` | cyber | 1.5 | 1,400 | 2017-09-07 |
+| 31 | `solarwinds_2020` | cyber | 2.3 | 100,000 | 2020-12-13 |
+| 32 | `colonial_pipeline_2021` | cyber | 1.8 | 4,400 | 2021-05-07 |
+| 33 | `crowdstrike_2024` | cyber | 2.8 | 10,000 | 2024-07-19 |
+| 34 | `tim_downgrade_2014` | telco | 0.8 | 700 | 2014-12-09 |
+| 35 | `wind3_merger_fallout_2017` | telco | 0.9 | 1,200 | 2017-01-05 |
+| 36 | `bt_pension_2017` | telco | 1.2 | 11,000 | 2017-05-10 |
+| 37 | `vodafone_de_churn_2023` | telco | 1.0 | 2,000 | 2023-11-14 |
+| 38 | `engie_hedging_2020` | energy | 1.1 | 1,100 | 2020-07-30 |
+| 39 | `eni_gabon_writedown_2020` | energy | 0.7 | 300 | 2020-07-31 |
+| 40 | `uniper_rescue_2022` | energy | 2.4 | 34,000 | 2022-09-21 |
 
 ---
 

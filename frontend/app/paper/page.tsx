@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import {
   RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Cell,
@@ -181,16 +182,430 @@ function BarInline({ value, max, color }: { value: number; max: number; color: s
 
 /* ── Page ──────────────────────────────────────────── */
 
+type PaperTab = "oprisk" | "framework";
+
+const PAPERS: { id: PaperTab; label: string; status: string; venue: string }[] = [
+  { id: "oprisk",    label: "Op-Risk Power-Law (v1.0)",     status: "submission-ready", venue: "Journal of Operational Risk" },
+  { id: "framework", label: "DigitalTwinSim Framework (v2.9)", status: "internal report", venue: "JASSS / arXiv" },
+];
+
 export default function PaperPage() {
+  const [tab, setTab] = useState<PaperTab>("oprisk");
   return (
     <main>
-      {/* Title block */}
-      <div className="max-w-4xl mx-auto px-5 pt-6 pb-6">
+      {/* Paper picker */}
+      <div className="max-w-4xl mx-auto px-5 pt-6 pb-3">
         <Link href="/" className="inline-flex items-center gap-1 text-[12px] text-ki-on-surface-muted hover:text-ki-on-surface mb-3 group">
           <span className="material-symbols-outlined text-[14px] group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
           Dashboard
         </Link>
-        <div className="eyebrow text-ki-primary mb-2">Working paper</div>
+        <div className="eyebrow text-ki-primary mb-2">Working papers</div>
+        <div className="flex gap-2 flex-wrap mb-1">
+          {PAPERS.map(p => (
+            <button
+              key={p.id}
+              onClick={() => setTab(p.id)}
+              className={`px-3 py-1.5 text-[12px] rounded-sm border transition-colors ${
+                tab === p.id
+                  ? "bg-ki-on-surface text-ki-surface border-ki-on-surface"
+                  : "border-ki-border text-ki-on-surface-secondary hover:bg-ki-surface-hover"
+              }`}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+        <div className="text-[10px] text-ki-on-surface-muted">
+          {PAPERS.find(p => p.id === tab)?.status} · target venue: {PAPERS.find(p => p.id === tab)?.venue}
+        </div>
+      </div>
+
+      {tab === "oprisk" && <OpRiskPaper />}
+      {tab === "framework" && <FrameworkPaper />}
+    </main>
+  );
+}
+
+/* ── Paper #1: Op-Risk Power-Law (publication-targeted) ───────────────── */
+
+function OpRiskPaper() {
+  return (
+    <>
+      <div className="max-w-4xl mx-auto px-5 pt-2 pb-6">
+        <h1 className="text-[26px] sm:text-[30px] font-medium tracking-tight2 text-ki-on-surface leading-[1.2] mb-3">
+          A Power-Law Cost Model for Operational-Risk Incident Reports: Calibration on 40 Historical Incidents and Implications for DORA Compliance
+        </h1>
+        <div className="flex flex-wrap gap-x-6 gap-y-1 text-[12px] text-ki-on-surface-secondary mb-1">
+          <span>Alberto Giovanni Gerli</span>
+          <span className="font-data">v1.0 · May 2026</span>
+        </div>
+        <div className="text-[12px] text-ki-on-surface-muted mb-6">
+          Tourbillon Tech Srl · Università degli Studi di Milano
+        </div>
+
+        <div className="bg-ki-surface-sunken border border-ki-border rounded p-5 mb-6">
+          <div className="eyebrow mb-2">Abstract</div>
+          <p className="text-[12px] text-ki-on-surface-secondary leading-relaxed">
+            DORA (EU Reg. 2022/2554) requires regulated financial entities to report the economic impact
+            of major ICT incidents within deadlines defined by a seven-criterion classification.
+            Existing approaches rely on hand-selected historical analogues or qualitative tier mappings
+            and lack a defensible quantitative model with a transparent uncertainty band.
+            We propose a calibrated power-law cost model <em>ĉ(s) = β · s<sup>γ</sup></em> fitted by log-log
+            Huber regression on a curated reference table of <strong>N=40</strong> historical incidents
+            (1998–2024) across seven operational categories. We document the dataset, the per-category fits,
+            and a model selection rule that promotes the power-law from diagnostic to primary headline
+            when the log-space R² ≥ 0.5.
+            <br /><br />
+            Leave-one-out cross-validation reports a hit-rate within ±100% of <strong>80%</strong> under the
+            power-law against <strong>35%</strong> for a linear baseline; median absolute percent error drops
+            from <strong>394%</strong> to <strong>57%</strong>. The headline is reported alongside six
+            independent statistical diagnostics (pairs-bootstrap quantile band, HC3 sandwich SE,
+            HMM regime mixture on log(VIX) 1997–2025, Hill estimator for tail index, 2SLS-IV endogeneity
+            check, fragility exponent), each targeting a falsifiable assumption. The reference dataset,
+            calibration code, and validation harness are released as an open benchmark.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          <StatCard label="Hit ±100%" value="80%" sub="LOO, power-law" />
+          <StatCard label="Median |err|" value="57%" sub="vs 394% linear" />
+          <StatCard label="Reference incidents" value="40" sub="1998–2024, 7 categories" />
+          <StatCard label="Bootstrap replicates" value="5,000" sub="empirical band" />
+        </div>
+
+        <nav className="mb-6 p-4 bg-ki-surface-sunken rounded-sm border border-ki-border">
+          <h3 className="text-xs font-data uppercase text-ki-on-surface-muted tracking-wider mb-2">Contents</h3>
+          <ol className="space-y-1.5 text-sm">
+            {[
+              ["op-intro",       "1. Introduction · Motivation, Contribution"],
+              ["op-related",     "2. Related Work · Op-risk modelling, power laws, regime-switching"],
+              ["op-dataset",     "3. Reference Incident Dataset (N=40)"],
+              ["op-model",       "4. Power-Law Cost Model (M1, M2, M3)"],
+              ["op-diagnostics", "5. Six-Layer Diagnostic Stack"],
+              ["op-validation",  "6. Leave-One-Out Cross-Validation"],
+              ["op-discussion",  "7. Discussion · Limitations, External Validity"],
+              ["op-benchmark",   "8. Open Benchmark Release"],
+              ["op-conclusion",  "9. Conclusion"],
+            ].map(([id, label]) => (
+              <li key={id}>
+                <a href={`#${id}`} className="text-ki-primary hover:text-ki-primary transition-colors">{label}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+
+      <article className="max-w-4xl mx-auto px-5 pb-16">
+        <Section id="op-intro" title="1. Introduction">
+          <p className="mb-3">
+            Article 19 of EU Reg. 2022/2554 (DORA) requires regulated financial entities to submit
+            major-incident reports to their supervisory authority. Annex I of the implementing technical
+            standards (RTS, Joint Committee Final Report JC 2024-43) defines a seven-criterion classification
+            matrix that includes a quantitative <code className="bg-ki-surface-sunken px-1 py-0.5 rounded text-[11px]">economic_impact_eur</code> field
+            with four reporting tiers — non-material (&lt;€100k), low (€100k–€1m), high (€1m–€10m),
+            critical (≥€10m) — to be selected within four hours of classification.
+          </p>
+          <p className="mb-3">
+            Existing implementations fall into two families: <strong>historical-cost analogue selection</strong> (a
+            single peer event used as proxy, with no formal uncertainty band) and <strong>qualitative tier
+            mapping</strong> (rule-based GRC engines that lose precision at tier boundaries). Neither
+            provides what an external auditor expects: a documented input-to-output relationship, a calibrated
+            parameter set with measurable goodness-of-fit on historical data, and a propagated uncertainty
+            band with formal coverage properties.
+          </p>
+          <p className="mb-3">
+            We propose a calibrated <strong>power-law cost model</strong> <em>ĉ(s) = β · s<sup>γ</sup></em>
+            with category-specific (β<sub>k</sub>, γ<sub>k</sub>) fitted by log-log Huber regression on a
+            curated reference table of N=40 historical incidents across seven operational categories.
+            The contribution is six-fold:
+          </p>
+          <ol className="list-decimal list-outside ml-6 space-y-1.5 mb-3">
+            <li><strong>An open reference dataset</strong> (CC-BY-4.0): N=40 incidents 1998–2024 with shock-magnitude estimates, public-domain euro costs, ISO dates, regime labels, and ≥2 source citations per row.</li>
+            <li><strong>Empirical evidence of strong cost convexity</strong>: γ̂ ≈ 3.36 overall (R²<sub>log</sub> = 0.72), γ̂ = 3.12 banking-IT (R²<sub>log</sub> = 0.97). Linear ĉ(s) = αs is mis-specified.</li>
+            <li><strong>A model selection rule</strong> that promotes the power-law to primary when R²<sub>log</sub> ≥ 0.5 and falls back to linear otherwise.</li>
+            <li><strong>LOO cross-validation</strong> under three modes (overall linear, per-category linear, per-category power-law). Power-law clears 80% within ±100%; median error drops 394% → 57%.</li>
+            <li><strong>A six-layer diagnostic stack</strong>: pairs-bootstrap, HC3 SE, HMM regime mixture, Hill tail index, 2SLS-IV, fragility exponent.</li>
+            <li><strong>Open-benchmark release</strong>: dataset, code, tests, refit script (MIT/CC-BY-4.0).</li>
+          </ol>
+        </Section>
+
+        <Section id="op-related" title="2. Related Work">
+          <p className="mb-3">
+            <strong>Operational-risk modelling.</strong> The Loss Distribution Approach (Frachot et al. 2001;
+            Cruz 2002; Aue & Kalkbrener 2006; Chernobai et al. 2007) targets aggregate-portfolio
+            Value-at-Risk via frequency–severity convolution, but is not designed for single-incident
+            prospective estimation under a four-hour deadline. Cope et al. (2009), Hess (2011), and
+            Bardoscia et al. (2017) document category-conditional regularities in operational losses but
+            stop short of releasing a public benchmark.
+          </p>
+          <p className="mb-3">
+            <strong>Power laws in financial losses.</strong> Gabaix et al. (2003), Bouchaud et al. (2002),
+            Reinhart & Rogoff (2009), and Laeven & Valencia (2018) document Pareto-type tails across
+            equity returns and systemic-banking losses. Theoretically Acemoglu et al. (2012),
+            Battiston et al. (2012), and Caccioli et al. (2014) derive c ∝ s<sup>γ</sup> with γ &gt; 1 in
+            cascade and contagion models. Our work applies the regularity to DORA reporting and
+            cross-validates on a held-out historical sample.
+          </p>
+          <p className="mb-3">
+            <strong>Regime-switching econometrics.</strong> The 2-state Gaussian HMM is from Hamilton (1989),
+            with EM via Baum–Welch (Baum et al. 1970) and log-space implementation (Rabiner 1989). We
+            use the regime posterior as a diagnostic cross-check on category-conditional fits.
+          </p>
+        </Section>
+
+        <Section id="op-dataset" title="3. Reference Incident Dataset (N=40)">
+          <p className="mb-3">
+            The reference dataset (<code className="bg-ki-surface-sunken px-1 py-0.5 rounded text-[11px]">shared/dora_reference_incidents.json</code>, schema v1.1) comprises N=40
+            historical operational-risk incidents (Sep 1998 – Jul 2024). Each incident has a public-domain
+            cost estimate, a shock-magnitude on a four-tier heuristic (0.5–1.2 single-firm contained,
+            1.2–2.0 sector-wide moderate, 2.0–3.0 major / sovereign-adjacent, ≥3.0 systemic), a
+            categorical label, an ISO date, a hand-coded regime tag (calm/stressed/crisis), and ≥2
+            source citations.
+          </p>
+          <div className="overflow-x-auto rounded border border-ki-border mb-3">
+            <table className="w-full text-[11px]">
+              <thead className="bg-ki-surface-sunken">
+                <tr className="border-b border-ki-border">
+                  <th className="text-left px-3 py-2 font-medium text-ki-on-surface-muted">Category</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">n</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">mean s</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">median c (€M)</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">max c (€M)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["banking_it",  6, 1.18,  1950,    5200],
+                  ["banking_eu",  8, 1.81,  7150,   90000],
+                  ["banking_us",  7, 2.27,  9000,  600000],
+                  ["sovereign",   6, 2.57, 27500,   82000],
+                  ["cyber",       6, 2.25,  7000,  100000],
+                  ["telco",       4, 1.05,  1600,   11000],
+                  ["energy",      3, 1.40, 11000,   34000],
+                ].map(([cat, n, ms, mc, xc]) => (
+                  <tr key={cat as string} className="border-b border-ki-border last:border-0">
+                    <td className="px-3 py-1.5 font-mono">{cat}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{n as number}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{(ms as number).toFixed(2)}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{(mc as number).toLocaleString()}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{(xc as number).toLocaleString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[11px] text-ki-on-surface-muted">
+            banking-US is dominated by Lehman 2008 (c=€600B, s=4.0), 66× the next-largest in-bucket observation.
+            Retained in the calibration set for tail extrapolation but flagged as a high-leverage outlier in §6.2.
+          </p>
+        </Section>
+
+        <Section id="op-model" title="4. Power-Law Cost Model">
+          <p className="mb-3">
+            We compare three specifications: <strong>M1</strong> linear pooled (single α across N=40),
+            <strong> M2</strong> linear per-category (α<sub>k</sub> per bucket), and <strong>M3</strong>
+            per-category power-law β<sub>k</sub> · s<sup>γ<sub>k</sub></sup> fitted by log-log OLS.
+            M1 and M2 use Huber regression (k=1.345) for outlier robustness; M3 uses OLS in log-space
+            since the post-log residuals are nearly Gaussian.
+          </p>
+          <div className="overflow-x-auto rounded border border-ki-border mb-3">
+            <table className="w-full text-[11px]">
+              <thead className="bg-ki-surface-sunken">
+                <tr className="border-b border-ki-border">
+                  <th className="text-left px-3 py-2 font-medium text-ki-on-surface-muted">Category</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">M2 α (€M/unit)</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">R²</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">M3 β̂ (€M)</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">γ̂</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">R²<sub>log</sub></th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["banking_it",  1946, 0.88,   745, 3.12, 0.97],
+                  ["banking_eu", 14455, 0.55,  1820, 3.38, 0.78],
+                  ["banking_us", 65502, 0.46,  4620, 3.92, 0.82],
+                  ["sovereign",  14277, 0.83,  6180, 1.96, 0.74],
+                  ["cyber",       9612, 0.29,  2130, 2.81, 0.69],
+                  ["telco",       4329, 0.57,  1210, 2.34, 0.80],
+                  ["energy",     11129, 0.80,  8920, 1.65, 0.84],
+                  ["Overall",    13989, 0.20,  1158, 3.36, 0.72],
+                ].map((r, i) => (
+                  <tr key={i} className={`border-b border-ki-border last:border-0 ${r[0] === "Overall" ? "font-medium bg-ki-surface-sunken" : ""}`}>
+                    <td className="px-3 py-1.5 font-mono">{r[0] as string}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{(r[1] as number).toLocaleString()}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{(r[2] as number).toFixed(2)}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{(r[3] as number).toLocaleString()}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{(r[4] as number).toFixed(2)}</td>
+                    <td className="px-3 py-1.5 text-right font-data">{(r[5] as number).toFixed(2)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mb-3">
+            <strong>γ̂<sub>k</sub> &gt; 1 on every category</strong>, ranging from 1.65 (energy, n=3) to 3.92
+            (banking-US). The hypothesis H<sub>0</sub>: γ = 1 is rejected at p &lt; 0.01 on every category
+            with n ≥ 4. R²<sub>log</sub> in M3 exceeds R² in M2 across all categories. The cost-vs-shock
+            relationship is structurally super-linear.
+          </p>
+          <p>
+            <strong>Selection rule:</strong> M3 is promoted to primary when R²<sub>log</sub> ≥ 0.5;
+            otherwise M2 is retained. <strong>Extrapolation flag:</strong> a warning fires when target shock
+            exceeds 1.3 × max<sub>i</sub>(s<sub>i</sub>) on the calibration subset.
+          </p>
+        </Section>
+
+        <Section id="op-diagnostics" title="5. Six-Layer Diagnostic Stack">
+          <p className="mb-3">
+            The headline is reported alongside six independent diagnostics, each targeting a falsifiable
+            assumption. The diagnostic stack is designed for external audit: every claim traces to a
+            published method with an inspectable parameter and a reproducible computation.
+          </p>
+          <ol className="list-decimal list-outside ml-6 space-y-2 mb-3">
+            <li>
+              <strong>Empirical pairs-bootstrap on (β, γ)</strong> (Efron 1979; Davison & Hinkley 1997).
+              B=5,000 replicates; epistemic interval = empirical 5°/95° quantile of the bootstrap distribution.
+              Propagates joint (β, γ) uncertainty; no normality assumption.
+            </li>
+            <li>
+              <strong>HC3 sandwich standard error</strong> (Eicker 1967; Huber 1967; White 1980; MacKinnon &
+              White 1985). Heteroscedastic-robust SE on M2&apos;s α̂. The difference σ̂<sub>HC3</sub> − σ̂<sub>OLS</sub> is itself
+              a heteroscedasticity diagnostic.
+            </li>
+            <li>
+              <strong>2-state Gaussian HMM regime posterior</strong> (Hamilton 1989; Baum–Welch).
+              Fitted on monthly log(VIX) 1997-01 → 2025-12 (T=348). Low regime ≈ VIX 14.7,
+              high regime ≈ 24.9, both ~96% persistent. Each incident inherits P(z=high|date);
+              regime-mixture α (low €2.4B/unit, high €47.7B/unit, ratio 20×) cross-checks the per-category fit.
+            </li>
+            <li>
+              <strong>Hill estimator for the Pareto tail index</strong> (Hill 1975). On overall corpus
+              α̂<sub>Hill</sub> = 0.74 (infinite-variance regime, dominated by Lehman). On banking-IT
+              α̂<sub>Hill</sub> = 4.91 (moderate). Flags upper-tail unboundedness.
+            </li>
+            <li>
+              <strong>2SLS with HMM regime as instrument for s</strong> (Theil 1953; Basmann 1957;
+              Stock & Yogo 2005). On N=40 first-stage F ≈ 0.9 (well below F ≥ 10 threshold). Published
+              as endogeneity diagnostic; not the headline. The honest reading: the only currently
+              available instrument is too weak to bound endogeneity bias.
+            </li>
+            <li>
+              <strong>Log-log slope as fragility exponent</strong> (Taleb 2012, conceptual). γ̂ &gt; 1.10
+              flags the linear baseline as mis-specified. Currently γ̂ overall = 3.36, γ̂ banking-IT = 3.12.
+            </li>
+          </ol>
+        </Section>
+
+        <Section id="op-validation" title="6. Leave-One-Out Cross-Validation">
+          <p className="mb-3">
+            For each held-out incident the chosen specification is refit on the remaining N−1 and the
+            held-out cost is predicted. Hit-rates aggregate the per-incident percent error.
+          </p>
+          <div className="overflow-x-auto rounded border border-ki-border mb-3">
+            <table className="w-full text-[12px]">
+              <thead className="bg-ki-surface-sunken">
+                <tr className="border-b border-ki-border">
+                  <th className="text-left px-3 py-2 font-medium text-ki-on-surface-muted">Mode</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">Hit ±50%</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">Hit ±100%</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">Hit ±200%</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">Median |err|</th>
+                  <th className="text-right px-3 py-2 font-medium text-ki-on-surface-muted">MAE (€B)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-ki-border">
+                  <td className="px-3 py-1.5">overall (M1, linear)</td>
+                  <td className="px-3 py-1.5 text-right font-data">20%</td>
+                  <td className="px-3 py-1.5 text-right font-data">35%</td>
+                  <td className="px-3 py-1.5 text-right font-data">40%</td>
+                  <td className="px-3 py-1.5 text-right font-data">394%</td>
+                  <td className="px-3 py-1.5 text-right font-data">31.9</td>
+                </tr>
+                <tr className="border-b border-ki-border">
+                  <td className="px-3 py-1.5">category_aware (M2, linear)</td>
+                  <td className="px-3 py-1.5 text-right font-data">20%</td>
+                  <td className="px-3 py-1.5 text-right font-data">40%</td>
+                  <td className="px-3 py-1.5 text-right font-data">52%</td>
+                  <td className="px-3 py-1.5 text-right font-data">166%</td>
+                  <td className="px-3 py-1.5 text-right font-data">43.3</td>
+                </tr>
+                <tr className="font-medium bg-ki-success-soft/40">
+                  <td className="px-3 py-1.5">power_law (M3, proposed)</td>
+                  <td className="px-3 py-1.5 text-right font-data">48%</td>
+                  <td className="px-3 py-1.5 text-right font-data">80%</td>
+                  <td className="px-3 py-1.5 text-right font-data">88%</td>
+                  <td className="px-3 py-1.5 text-right font-data">57%</td>
+                  <td className="px-3 py-1.5 text-right font-data">25.7</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-[11px] text-ki-on-surface-muted mb-2">
+            Tier-correct interpretation: a supervisor reading &ldquo;estimated €5B&rdquo; is not misled by truth €4–6B
+            but is misled by truth €500M or €50B (one tier). 80% within ±100% means tier-correct prediction
+            in 4 of 5 cases historically.
+          </p>
+        </Section>
+
+        <Section id="op-discussion" title="7. Discussion: Limitations and External Validity">
+          <ul className="list-disc list-outside ml-6 space-y-1.5 mb-3">
+            <li><strong>Sample size N=40</strong>: smallest bucket (energy) at n=3. Active expansion target N≥60 with no bucket below n=6 for v2.0.</li>
+            <li><strong>Shock-magnitude heuristic sensitivity</strong>: ±0.1 perturbations on each s leave hit-rate ±100% in [76%, 82%], median |err| in [51%, 64%]. Headline is robust.</li>
+            <li><strong>Endogeneity</strong>: F &lt; 1 on the available instrument; cannot bound bias on present sample. Remediation: stronger instrument or larger sample.</li>
+            <li><strong>Tail risk</strong>: α̂<sub>Hill</sub> = 0.74 overall ⇒ infinite-variance regime. Headline is central tendency, not worst case. Bootstrap 95° quantile is the honest worst case.</li>
+            <li><strong>External validity</strong>: dataset is EU/US-centric (+1 Argentine sovereign). Non-EU deployments require regional recalibration. Methodology transfers.</li>
+          </ul>
+        </Section>
+
+        <Section id="op-benchmark" title="8. Open Benchmark Release">
+          <p className="mb-3">Released artefacts at the project repository:</p>
+          <ul className="list-disc list-outside ml-6 space-y-1 mb-3">
+            <li><code className="bg-ki-surface-sunken px-1 py-0.5 rounded text-[11px]">shared/dora_reference_incidents.json</code> · CC-BY-4.0 · the N=40 reference table</li>
+            <li><code className="bg-ki-surface-sunken px-1 py-0.5 rounded text-[11px]">core/dora/economic_impact.py</code> · MIT · linear / power-law fits + 6 diagnostics + LOO harness</li>
+            <li><code className="bg-ki-surface-sunken px-1 py-0.5 rounded text-[11px]">shared/vix_monthly_cache.json</code> · CC-BY-4.0 · monthly log(VIX) 1997-01 → 2025-12 (T=348)</li>
+            <li><code className="bg-ki-surface-sunken px-1 py-0.5 rounded text-[11px]">tests/test_dora_economic_impact.py</code> · 35 unit tests, runs in &lt;2s</li>
+            <li><code className="bg-ki-surface-sunken px-1 py-0.5 rounded text-[11px]">scripts/calibrate_dora_alpha.py</code> · re-fit script, produces versioned snapshot</li>
+          </ul>
+          <p>
+            We invite alternative estimators evaluated on the same corpus under the same LOO protocol.
+            Standardised comparison: model spec, hit-rate ±50%/±100%/±200%, median |err|, MAE.
+          </p>
+        </Section>
+
+        <Section id="op-conclusion" title="9. Conclusion">
+          <p className="mb-3">
+            The cost-vs-shock relationship in operational-risk events is super-linear with γ̂ ≈ 3 on the
+            overall corpus and γ̂ ranging 1.65–3.92 across seven categories. Promoting a per-category
+            power-law β<sub>k</sub> · s<sup>γ<sub>k</sub></sup> from diagnostic to primary lifts LOO hit-rate
+            ±100% from 35% (linear pooled) to 80% and reduces median |err| from 394% to 57%.
+          </p>
+          <p>
+            The headline is reported alongside six independent statistical diagnostics, each targeting
+            a falsifiable assumption. The reference dataset, calibration code, and validation harness
+            are released as an open benchmark. We invite alternative estimators on the same corpus
+            under the same protocol — a falsifiable skill floor on a curated public-domain dataset is
+            the most concrete contribution we can offer.
+          </p>
+        </Section>
+
+        <div className="mt-8 text-[10px] text-ki-on-surface-muted">
+          Full markdown source: <code>paper/op_risk_powerlaw_v1.0.md</code> · GitHub
+        </div>
+      </article>
+    </>
+  );
+}
+
+/* ── Paper #2: existing DigitalTwinSim Framework (v2.9) ───────────────── */
+
+function FrameworkPaper() {
+  return (
+    <>
+      {/* Title block */}
+      <div className="max-w-4xl mx-auto px-5 pt-2 pb-6">
+        <div className="eyebrow text-ki-primary mb-2">Working paper · v2.9 (2026-05-05)</div>
         <h1 className="text-[28px] sm:text-[34px] font-medium tracking-tight2 text-ki-on-surface leading-[1.15] mb-4">
           DigitalTwinSim: Bayesian Calibration, Null-Baseline Benchmarking, and Online Data Assimilation for LLM-Agent Opinion Dynamics
         </h1>
@@ -1401,10 +1816,10 @@ export default function PaperPage() {
         <div className="mt-12 pt-4 border-t border-ki-border">
           <div className="flex items-center justify-between text-xs text-ki-on-surface-muted">
             <span>DigitalTwinSim &mdash; Technical Paper v2.9</span>
-            <span>April 2026</span>
+            <span>May 2026</span>
           </div>
         </div>
       </article>
-    </main>
+    </>
   );
 }
